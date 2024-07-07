@@ -1,0 +1,322 @@
+research:
+  - name: STR_POWER_SUIT            # Terminator Suit
+    cost: 205
+    points: 20
+    dependencies:
+      - STR_ELERIUM_115
+      - STR_UFO_POWER_SOURCE
+      - STR_HIGHTIER_PREREQ #Was Midtier
+      - STR_PERSONAL_ARMOR
+    unlocks:
+      - STR_TERMINATOR_ARMOR_SM_CODEX
+    getOneFree:
+      - STR_TSARGENT # Terminator Cyclone is now part of regular Terminator suits
+
+  - name: STR_TSARGENT
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_SMOKE_BOMB_UNLOCK     # SmokeBomb requirement - Added to give SM access
+    cost: 100
+    points: 25
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_TATICAL # Tactical Strategy
+      - STR_SMOKE
+
+  - name: STR_OGRYN_REQUISITION     # Keep IG ability to buy smokebombs intact
+    getOneFree:
+      - STR_SMOKE_BOMB_UNLOCK
+
+  - name: STR_TATICAL               # Tactical Strat Chosen
+    cost: 5
+    points: 0
+    dependencies:
+      - STR_MARINES_STRATEGY
+    lookup: STR_CHOSEN_TATICAL
+    unlocks:
+      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      - STR_MOTION_SCANNER
+      - STR_LASER_WEAPONS
+      - STR_MARINE_CHAPEL
+      - STR_HOLOGRAM_GRENADE_REQUISITION
+      - STR_THUNDERHAWKTYPE1
+      - STR_STORMHAWKR
+      - STR_PERSONAL_ARMOR
+      - STR_MELTABOMB
+      - STR_SMOKE
+      - STR_CRATED_DROPPODS
+      - STR_NOT_PRIMARIS
+    disables:
+      - STR_PRIMARIS
+      - STR_ASSAULT
+      - STR_DEVASTATOR
+      - STR_SCOUT
+      - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
+    spawnedEvent: STR_TACTICAL_CARE_PACKAGE
+
+  - name: STR_ASSAULT               # Assault Strat Chosen
+    cost: 5
+    points: 0
+    dependencies:
+      - STR_MARINES_STRATEGY
+    lookup: STR_CHOSEN_ASSAULT
+    unlocks:
+      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      - STR_MOTION_SCANNER
+      - STR_LASER_WEAPONS
+      - STR_MARINE_CHAPEL
+      - STR_HOLOGRAM_GRENADE_REQUISITION
+      - STR_THUNDERHAWKTYPE2
+      - STR_SPEEDR
+      - STR_ASS_ARMOR
+      - STR_HAND_FLAMETHROWER_REQUISITION
+      - STR_SMOKE
+      - STR_CRATED_DROPPODS
+      - STR_NOT_PRIMARIS
+    disables:
+      - STR_PRIMARIS
+      - STR_TATICAL
+      - STR_DEVASTATOR
+      - STR_SCOUT
+      - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
+    spawnedEvent: STR_ASSAULT_CARE_PACKAGE
+
+  - name: STR_DEVASTATOR            # Devastator Strat Chosen
+    cost: 5
+    points: 0
+    dependencies:
+      - STR_MARINES_STRATEGY
+    lookup: STR_CHOSEN_DEVASTATOR
+    unlocks:
+      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      - STR_MOTION_SCANNER
+      - STR_LASER_WEAPONS
+      - STR_MARINE_CHAPEL
+      - STR_HOLOGRAM_GRENADE_REQUISITION
+      - STR_THUNDERHAWKTYPE1
+      - STR_STORMHAWKR
+      - STR_SMOKE
+      - STR_CRATED_DROPPODS
+      - STR_DEV_ARMOR
+      - STR_GLAUNCHER_PREREQ
+      - STR_HBOLTER_AMMO_PREREQ
+      - STR_NOT_PRIMARIS
+    disables:
+      - STR_PRIMARIS
+      - STR_ASSAULT
+      - STR_TATICAL
+      - STR_SCOUT
+      - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
+    spawnedEvent: STR_DEVASTATOR_CARE_PACKAGE
+
+  - name: STR_SCOUT                 # Scout Strat Chosen
+    cost: 5
+    points: 0
+    dependencies:
+      - STR_MARINES_STRATEGY
+    lookup: STR_CHOSEN_SCOUT
+    unlocks:
+      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      - STR_MOTION_SCANNER
+      - STR_LASER_WEAPONS
+      - STR_HOLOGRAM_GRENADE_REQUISITION
+      - STR_THUNDERHAWKTYPE2
+      - STR_MARINE_CHAPEL
+      - STR_SMOKE
+      - STR_CRATED_DROPPODS
+      - STR_TRAINFACILITYR
+      - STR_GLAUNCHER_PREREQ
+      - STR_NOT_PRIMARIS
+    disables:
+      - STR_PRIMARIS
+      - STR_ASSAULT
+      - STR_DEVASTATOR
+      - STR_TATICAL
+      - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
+    spawnedEvent: STR_SCOUT_CARE_PACKAGE
+
+  - name: STR_PRIMARIS              # Primaris Strat Chosen
+    cost: 5
+    points: 0
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_GENERALLOCK # Disable for now, probably just breaks stuff
+    lookup: STR_CHOSEN_PRIMARIS
+    unlocks:
+      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      - STR_MOTION_SCANNER
+      - STR_LASER_WEAPONS
+      - STR_SPELLSR
+      - STR_HOLOGRAM_GRENADE_REQUISITION
+      - STR_SMOKE
+      - STR_APOTHECARY
+      - STR_PRIMARIS_AND_DEATHWATCH
+      - STR_PRIMARIS_AND_ADEPTAS
+    disables:
+      - STR_PERSONAL_ARMOR
+      - STR_TATICAL
+      - STR_ASSAULT
+      - STR_DEVASTATOR
+      - STR_SCOUT
+    spawnedEvent: STR_PRIMARIS_CARE_PACKAGE
+
+  - name: STR_SPEEDR                # Landspeeder
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+    unlocks:
+      - STR_SPEEDC
+
+  - name: STR_PERSONAL_ARMOR        # Tactical Armor
+    cost: 180
+    points: 20
+    dependencies:
+      - STR_ALIEN_ALLOYS
+      - STR_MIDTIER_PREREQ # All basic armor types unlocked at Midtier
+      - STR_MARINES_STRATEGY
+
+  - name: STR_ASS_ARMOR             # Assault Armor
+    cost: 180
+    points: 20
+    dependencies:
+      - STR_ALIEN_ALLOYS
+      - STR_MIDTIER_PREREQ # All basic armor types unlocked at Midtier
+      - STR_MARINES_STRATEGY
+    unlocks:
+      - STR_MEDI_KIT # Unlock for Apoth so all strats can get it in early tier
+
+  - name: STR_DEV_ARMOR             # Devastator Armor
+    cost: 180
+    points: 20
+    dependencies:
+      - STR_ALIEN_ALLOYS
+      - STR_MIDTIER_PREREQ # All basic armor types unlocked at Midtier
+      - STR_MARINES_STRATEGY
+    unlocks:
+      - STR_MEDI_KIT # Unlock for Apoth so all strats can get it in early tier
+
+  - name: STR_SCOUTH_RESEARCH       # Advanced Scout Armor
+    cost: 180
+    points: 20
+    dependencies:
+      - STR_SCOUT # Removed midtier prereqs, now scout strat starting armor
+    unlocks:
+      - STR_MEDI_KIT # Unlock for Apoth so all strats can get it in early tier
+
+  - name: STR_CHAINSWORD_MC         # MC Chainswords (Assault)
+    cost: 60
+    points: 25
+    dependencies:
+      - STR_ASSAULT
+      - STR_MASTER_CRAFTING_AMMO # Midtier MC instead of Hightier
+      - STR_MARINES_STRATEGY
+
+  - name: STR_MARINE_BOLTERS        # Astartes Bolters Unlock
+    cost: 80
+    points: 20
+    dependencies:
+      - STR_MIDTIER_PREREQ
+      - STR_MARINES_STRATEGY
+      - STR_THREAT_ONE
+    unlocks:
+      - STR_HB_DEP1 # storm bolter req
+    listOrder: 9 # push above corpses/etc
+
+  - name: STR_GLAUNCHER_PREREQ      # Grenade Launcher + Ammo Unlock
+    cost: 40
+    points: 10
+    dependencies:
+      - STR_GENERALLOCK
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_HBOLTER_PREREQ        # Heavy Bolter unlock
+    cost: 100
+    points: 20
+    dependencies:
+      - STR_MIDTIER_PREREQ # Devastator strat still needs to wait for midtier
+      - STR_DEV_ARMOR
+    getOneFree:
+      - STR_HBOLTER_AMMO_PREREQ
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_HBOLTER_AMMO_PREREQ   # Heavy Bolter Ammo unlock
+    cost: 5 # only Devastator strat needs to research this
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_DEV_MARS_BOLTER       # Mars Heavy Bolter unlock
+    cost: 100
+    points: 20
+    dependencies:
+      - STR_DEVASTATOR
+      - STR_MASTER_CRAFTING_AMMO # Midtier Mastercrafting
+      - STR_HBOLTER_PREREQ
+      - STR_MARINE_BOLTERS
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_MARINE_CHAPEL         # Early unlock for Chapel
+    cost: 100
+    points: 10
+    dependencies:
+      - STR_GENERALLOCK
+    getOneFree:
+      - STR_PSI_LAB
+    disables:
+      - STR_PSI_AMP
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_SPELLSR               # Old Chapter Teachings - Disabled
+    cost: 120
+    points: 10
+    dependencies:
+      - STR_GENERALLOCK
+    unlocks:
+      - STR_SPELLS_PREREQ
+    lookup: STR_SPELLS_PREREQ
+
+  - name: STR_LIBRARY               # Library
+    cost: 100
+    points: 15
+    dependencies:
+      - STR_MARINE_CHAPEL
+      - STR_MIDTIER_PREREQ
+
+  - name: STR_TEC_BAYR              # Techmarine - removed Apoth requirement
+    cost: 100
+    points: 15
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_MIDTIER_PREREQ
+
+  - name: STR_CHAP_ARMOR            # Chaplain Armor - Reused for Crozius/Rosary
+    cost: 200 # was 300
+    points: 20
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_HIGHTIER_PREREQ
+      - STR_PSI_LAB
+
+  - name: STR_MIND_SHIELD           # Base Cloaking
+    dependencies: # push back to mid tier
+      - STR_PSI_LAB
+      - STR_MIDTIER_PREREQ
+
+  - name: STR_MT                    # Marine Midtier
+    cost: 200
+    points: 200
+    dependencies:
+      - STR_HEAVY_LASER
+      - STR_ALIEN_ALLOYS
+      - STR_MOTION_SCANNER
+      - STR_MEDI_KIT_PREREQ
+      - STR_MARINES_STRATEGY
+    unlocks:
+      - STR_MIDTIER_PREREQ
+      - STR_CASS_R
+      #- STR_HB_DEP1 # moved to High Quality Bolters research
+      - STR_SIDEOPERATIONS
+    cutscene: c2

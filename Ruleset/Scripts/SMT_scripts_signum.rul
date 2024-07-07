@@ -1,0 +1,75 @@
+extended:
+  tags:
+    RuleItem:
+      SMT_SIGNUM_DURATION: int #Length of Signum FA buff in turns
+    RuleArmor:
+      SMT_SIGNUM_ARMOR: int #Check for if is unit wearing a signum
+    BattleUnit:
+      SMT_SIGNUM_ORIGINAL_FA: int #store original firing accuracy
+      SMT_SIGNUM_ENDTURN: int #store buff duration
+
+  scripts:
+    newTurnUnit:
+      #*** Script that removes FA bonuses from unit once turn ends ***
+      - new: SMTS_signum_removebuff
+        offset: 20
+        code: |
+          var int faction;
+          var int endTurn;
+          var int originalFiring;
+
+          unit.getTag endTurn Tag.SMT_SIGNUM_ENDTURN;
+          unit.getTag originalFiring Tag.SMT_SIGNUM_ORIGINAL_FA;
+          #debug_log "SignumRemoveBuff Pinged" endTurn originalFiring;
+          if eq turn 1;
+            set endTurn 0; # reset at the start for multi-stage missions
+          end;
+
+          if and neq originalFiring 0 le turn endTurn;
+            #debug_log "Signum Restoring FA: " originalFiring;
+            unit.Stats.setFiring originalFiring; 
+            unit.setTag Tag.SMT_SIGNUM_ORIGINAL_FA 0; #cancel tag
+          end;
+          return;
+
+items:
+  - type: STR_SMT_SIGNUM
+    tags:
+      SMT_SIGNUM_DURATION: 1
+    scripts:
+      damageUnitAmmo: |
+        var ptr RuleItem itemRuleset;
+        var int statValue;
+        var int buffTime;
+        var int temp;
+
+        damaging_item.getRuleItem itemRuleset;
+        itemRuleset.getTag buffTime Tag.SMT_SIGNUM_DURATION;
+        unit.getTag temp Tag.SMT_SIGNUM_ORIGINAL_FA; #used here to check if unit already has signum buff
+        #debug_log "SignumBuff Pinged" buffTime temp;
+
+        if neq temp 0; # skip if target already has signum buff
+          #debug_log "SignumBuff Aborted - " signumUser temp;
+          return;
+        end;
+
+
+        unit.Stats.getFiring statValue; #remember original Firing stat
+        #debug_log "Signum values: " currPower statValue;
+        if gt currPower statValue; # only boost if signum user FA is greater than the target FA
+          unit.setTag Tag.SMT_SIGNUM_ORIGINAL_FA statValue;
+          #debug_log "original FA: " statValue;
+          set temp currPower;
+          div temp 2;
+          add statValue temp; # add half Signum user FA to target FA
+          limit_upper statValue currPower; # don't exceed Signum user FA
+          unit.Stats.setFiring statValue;
+          #debug_log "buffed FA: " statValue;
+
+          battle_game.getTurn temp;
+          add temp buffTime; #define end turn for buff
+          unit.setTag Tag.SMT_SIGNUM_ENDTURN temp;
+        end;
+
+
+        return;

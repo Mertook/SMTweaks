@@ -1,0 +1,507 @@
+ufopaedia:
+    ### CODEX
+  - id: STR_SMT_PROMOTION_TREE              # Marine Promotion
+    type_id: 10
+    section: STR_SMT_INFO
+    image_id: TODO.SPK
+    text: STR_SMT_PROMOTION_TREE_UFOPEDIA
+    listOrder: 21010
+
+  - id: STR_GENESEED_DETAILS                # Geneseed
+    type_id: 10
+    section: STR_SMT_INFO
+    image_id: TODO.SPK
+    text: STR_GENESEED_DETAILS_UFOPEDIA
+    listOrder: 21011
+
+  - id: STR_SMT_PROMOTION_SPECIALISTS       # Chaplain/Librarian Promotion
+    type_id: 10
+    section: STR_SMT_INFO
+    image_id: TODO.SPK
+    text: STR_SMT_PROMOTION_SPECIALISTS_UFOPEDIA
+    listOrder: 21020
+
+  - id: STR_SMT_LIBRARIAN_SPELLS            # Librarian Abilities
+    type_id: 10
+    section: STR_SMT_INFO
+    image_id: TODO.SPK
+    text: STR_SMT_LIBRARIAN_SPELLS_UFOPEDIA
+    listOrder: 21030
+
+  - id: STR_SMT_REGENERATION                # Regen
+    type_id: 10
+    section: STR_SMT_INFO
+    image_id: TODO.SPK
+    text: STR_SMT_REGENERATION_UFOPEDIA
+    listOrder: 21040
+
+  - id: STR_SMT_HEROICSAVE                  # Heroic Save
+    type_id: 10
+    section: STR_SMT_INFO
+    image_id: TODO.SPK
+    text: STR_SMT_HEROICSAVE_UFOPEDIA
+    listOrder: 21050
+
+  - id: STR_SMT_ARMOR_SHRED                 # Armor Shred Resistance
+    type_id: 10
+    section: STR_SMT_INFO
+    image_id: TODO.SPK
+    text: STR_SMT_ARMOR_SHRED_UFOPEDIA
+    listOrder: 21060
+
+  - id: STR_SMT_RECOIL                      # Recoil changes
+    type_id: 10
+    section: STR_SMT_INFO
+    image_id: TODO.SPK
+    text: STR_SMT_RECOIL_UFOPEDIA
+    listOrder: 21070
+
+  - id: STR_SMT_HWP                         # Heavy Weapon changes
+    type_id: 10
+    section: STR_SMT_INFO
+    image_id: TODO.SPK
+    text: STR_SMT_HWP_UFOPEDIA
+    listOrder: 21080
+
+  - id: STR_SMT_BOLTER_CHANGES          # MC Ammo Bonus
+    type_id: 10
+    section: STR_SMT_INFO
+    image_id: TODO.SPK
+    text: STR_SMT_BOLTER_CHANGES_UFOPEDIA
+    listOrder: 21090
+
+  - id: STR_SMT_MASTERCRAFTED_AMMO          # MC Ammo Bonus
+    type_id: 10
+    section: STR_SMT_INFO
+    image_id: TODO.SPK
+    text: STR_SMT_MASTERCRAFTED_AMMO_UFOPEDIA
+    listOrder: 21091
+
+    ### ARMOR
+
+  - id: STR_CHAP_ARMOR_UC                  # Chaplain Armor
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0CHA.SPK
+    text: STR_CHAP_ARMOR_UFOPEDIA
+    requires: # unlock when Chaplains are unlocked
+      - STR_MARINE_CHAPEL
+      - STR_MIDTIER_PREREQ
+    listOrder: 5900
+
+  - id: STR_SMT_LIB_ARMOR_UC               # Librarian Armor
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0LIB.SPK
+    text: STR_LIB_ARMOR_UFOPEDIA
+    requires: 
+      - STR_NOT_PRIMARIS
+      - STR_MARINES_STRATEGY
+      - STR_LIBRARY # PsiAmp tech not used for Marines
+    listOrder: 6000
+
+  - id: BIKE_ARMOR_UC                       # Assault Bike
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: C15.SPK
+    text: BIKE_ARMOR_UC_UFOPEDIA
+
+    ### WEAPONS
+  - id: STR_STRIKE_VOX_FALSE                # Strike Vox
+    requires:
+      - STR_NAVY_COMUNICATIONS
+    type_id: 14
+    section: STR_SMT_INFO #STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1VOX.SPK
+    text: STR_STRIKE_VOX_UFOPEDIA
+    listOrder: 21100
+
+  - id: STR_HEAVY_BOLTER_MARS               # Mars HBolter
+    requires:
+      - STR_DEV_MARS_BOLTER
+    type_id: 14
+    section: STR_SMT_INFO #STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1HB.SPK # Heavybolter image
+    text: STR_HEAVY_BOLTER_MARS_UFOPEDIA
+    listOrder: 21101
+
+  - id: STR_GRENADE_LAUNCHER_ASTARTES       # SM Grenade Launcher
+    requires:
+      - STR_GLAUNCHER_PREREQ
+    type_id: 14
+    section: STR_SMT_INFO #STR_WEAPONS_AND_EQUIPMENT
+    image_id: CODEX_STR_GRENADE_LAUNCHER_STEEL_LEGION.SPK # SL grenade image
+    text: STR_GRENADE_LAUNCHER_ASTARTES_UFOPEDIA
+    listOrder: 21102
+
+  - id: AUX_CROZIUS                         # Crozius Arcanum
+    requires:
+      - STR_CHAP_ARMOR
+    type_id: 14
+    section: STR_SMT_INFO #STR_WEAPONS_AND_EQUIPMENT
+    image_id: CROZIUS.SPK
+    text: AUX_CROZIUS_UFOPEDIA
+
+  - id: STR_CHAINSWORD_LIGHTSM              # Light Chainsword
+    requires:
+      - STR_MARINES_STRATEGY
+    type_id: 14
+    section: STR_SMT_INFO #STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1CS.SPK
+    text: STR_CHAINSWORD_GUARD_UFOPAEDIA # standard chainsword text without Str requirement note
+
+  - id: STR_CLAWS                           # Lightning Claws
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1PC.SPK
+    text: STR_CLAWS_UFOPEDIA
+    requires: 
+      - STR_MARINES_STRATEGY
+    listOrder: 12700
+
+###BOLTERS
+
+  - id: STR_BOLTER_ENFORCER                 # Light Bolter (Locke)
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1MB.SPK
+    text: STR_LIGHT_BOLTERS_UFOPEDIA
+    listOrder: 10291
+
+  - id: STR_BOLTER_LOCKE                    # Light Bolter (Enforcer)
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1MB.SPK
+    text: STR_LIGHT_BOLTERS_UFOPEDIA
+    listOrder: 10292
+
+  - id: STR_BOLTER_LIGHT_ULTRA              # Light Bolter (Ultra)
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1MB.SPK
+    text: STR_LIGHT_BOLTERS_UFOPEDIA
+
+  - id: STR_MCRIFLE                         # Bolter (Mastercrafted)
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1MCMB.SPK
+    text: STR_MCRIFLE_UFOPEDIA
+
+  - id: STR_MCPISTOL                        # Boltpistol (Mastercrafted)
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1MCBP2.SPK
+    text: STR_MCPISTOL_UFOPEDIA
+
+  - id: STR_PISTOLH                         # Tigrus (Chaos)
+    requires:
+      - STR_GENERALLOCK # hide
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1BP3.SPK
+    text: STR_PISTOLH_UFOPEDIA
+
+  - id: STR_PISTOLH_SM                      # Tigrus (Astartes)
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1BP3.SPK
+    text: STR_PISTOLH_UFOPEDIA
+    listOrder: 10120
+
+  - id: STR_BOLT_SNIPER_RIFLE               # Bolt Rifle Sniper (Scout Strat)
+    requires:
+      - STR_SCOUT
+      - STR_UFO_CONSTRUCTION
+    type_id: 14
+    section: STR_SMT_INFO #STR_WEAPONS_AND_EQUIPMENT
+    image_id: orksnipercodex.SPK
+    text: STR_BOLT_SNIPER_RIFLE_UFOPEDIA
+    listOrder: 10776
+
+### Craft
+  - id: STR_SPEEDC                          # Landspeeder
+    type_id: 11
+    section: STR_XCOM_CRAFT_ARMAMENT
+    text: STR_SPEED_UFOPEDIA
+    listOrder: 200
+    image_id: SPEED.SPK
+    requires:
+      - STR_MARINES_STRATEGY # dedicated tech removed, show immediately
+
+  - id: AUX_BOLTER                          # Craft Heavy Bolter
+    type_id: 14
+    section: STR_HEAVY_WEAPONS_PLATFORMS #STR_HEAVY_WEAPONS_PLATFORMS
+    image_id: 1HB.SPK
+    text: STR_AUTO_CANNON_UFOPEDIA
+    listOrder: 350006
+
+### Stats for Nerds only
+  - id: STR_SM_OFFICER_FIST                 # Officer Inspire
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_SM_OFFICER_FIST
+  - id: STR_SMT_SIGNUM                      # Signum
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_SMT_SIGNUM
+  - id: STR_CLAWS_ASS                       # Vanguard Claw
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_CLAWS_ASS
+  - id: STR_AC_AP_BELT                      # Mars Ammo Belt AP
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_AC_AP_BELT
+  - id: STR_AC_HE_BELT                      # Mars Ammo Belt HE
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_AC_AP_BELT
+  - id: STR_AC_I_BELT                       # Mars Ammo Belt I
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_AC_AP_BELT
+  - id: STR_AC_MC_BELT                      # Mars Ammo Belt MC
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_AC_AP_BELT
+  - id: STR_BOLT_SNIPER_AMMO_AP             # Bolt Sniper AP Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_BOLT_SNIPER_AMMO_AP
+  - id: STR_BOLT_SNIPER_AMMO_FRAG           # Bolt Sniper Frag Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_BOLT_SNIPER_AMMO_FRAG
+  - id: STR_BOLT_SNIPER_AMMO_KRAK           # Bolt Sniper Krak Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_BOLT_SNIPER_AMMO_KRAK
+  - id: STR_BOLT_SNIPER_AMMO_SHRED          # Bolt Sniper Shred Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_BOLT_SNIPER_AMMO_SHRED
+  - id: STR_SMITE_TOME                      # Librarian Smite Ability
+    type_id: 14
+    section: STR_NOT_AVAILABLE # STR_BOOKS
+    text: STR_SMITE_UFOPEDIA
+    requires:
+      - STR_LIBRARY
+  - id: STR_LIB_SPEED_TOME                  # Librarian Speed Ability
+    type_id: 14
+    section: STR_NOT_AVAILABLE # STR_BOOKS
+    text: STR_LIB_HASTE_SKILL
+    requires:
+      - STR_LIBRARY
+  - id: STR_LIB_LOCKDOWN_TOME               # Librarian Lockdown Ability
+    type_id: 14
+    section: STR_NOT_AVAILABLE # STR_BOOKS
+    text: STR_LIB_LOCKDOWN_SKILL
+    requires:
+      - STR_LIBRARY
+  - id: STR_LIB_SHIELD_TOME                 # Librarian Shield Ability
+    type_id: 14
+    section: STR_NOT_AVAILABLE # STR_BOOKS
+    text: STR_LIB_SHIELD_SKILL
+    requires:
+      - STR_LIBRARY
+  - id: STR_LIB_SMOKE_TOME                  # Librarian Smoke Ability
+    type_id: 14
+    section: STR_NOT_AVAILABLE # STR_BOOKS
+    text: STR_LIB_SMOKE_SKILL
+    requires:
+      - STR_LIBRARY
+  - id: AUX_RAM_SMT                         # Bike Chainsword attack
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: AUX_RAM_SMT
+
+extraStrings:
+  - type: en-US
+    strings:
+      ### MISC
+      STR_AUTO_SHOT_COUNT: "Auto (x{0})"
+      STR_SNAP_SHOT_COUNT: "Snap (x{0})"
+      STR_FULL_AUTO: Full Auto
+      STR_FULL_AUTO_COUNT: "Full Auto (x{0})"
+      STR_STRIKE_AUTO_COUNT: "Barrage (x{0})"
+      STR_CROZIUS_AIMED_COUNT: "Sanctify (x{0})"
+      ### ARMOR
+      STR_ASS_ARMOR_HONOR_CLAW: MK7 Vanguard Armor (Claw)
+      STR_CHAP_TERMINATOR_UC: Chaplain Terminator Armor
+      STR_CHAP_ASSAULT_UC: Chaplain Assault Armor
+      STR_SMT_LIB_ARMOR_UC: MK7 Librarian Armor
+      STR_LIB_TERMINATOR_UC: Terminator Librarian Armor
+      STR_TSARGENT_UC: Terminator Cyclone Armor
+      STR_TSARGENT_UFOPEDIA: "{NEWLINE} The immense strength of Terminator armor allows it to support heavy weaponry with ease, unleashing devastating missile barrages while leaving hands free to carry other weapons to fit any situation."
+      STR_SIGNAL_ARMOR_UFOPEDIA: "{NEWLINE} MK7 Armor given to Sergeants of Devasator squads. Equipped with a Signum that allows the user to share battlefield data with squadmates, enhancing their accuracy."
+      STR_SARGENT_ARMOR_UFOPEDIA: "{NEWLINE} A Sergeant is an Astartes non-commissioned officer who commands a squad of Space Marines. They can direct their Battle Brothers in combat and bolster morale."
+      STR_HONOR_ARMOR_UC: "MK7 Artificer Armor"
+      STR_HONOR_ARMOR: "MK7 Artificer Armor"
+      STR_HONOR_ARMOR_UFOPEDIA: "{NEWLINE} Artificer Armors are ancient and ornate Power Suits that have been carefully maintained by Techmarines for generations and used only by the Chapters greatest heroes. The protection it offers is far above that of regular power armor."
+      BIKE_ARMOR_UC_UFOPEDIA: "{NEWLINE} Assault Bikes are incredibly deadly and robust bikes used by the Space Marines for lightning-quick raids and reconnaissance."
+      ### ITEMS
+      AUX_RAM_SMT: Chainsword
+      STR_SM_SCOUT_SCANNER: Scout Auspex
+      AUX_BOLTER: Mounted Heavy Bolter
+      STR_SMT_CRAFT_SMOKE: Smoke Launcher
+      STR_SMT_RAZORBACK_STORMBOLT: Razorback Stormbolter
+      STR_SMT_RAZORBACK_HBOLTER: Razorback Heavy Bolter
+      STR_RAZOR_HBOLTER: Razorback Heavy Bolter
+      STR_SMT_RAZORBACK_LASCANNON: Razorback Lascannon
+      STR_RAZOR_LAS: Razorback Lascannon
+      STR_SMT_RAZORBACK_HFLAMER: Razorback Heavy Flamer
+      STR_RAZOR_HFLAME: Razorback Heavy Flamer
+      STR_SMT_SMOKEL: Smoke Launcher
+      STR_SMT_RAZORBACK: Razorback Turret
+      STR_CLAWS_ASS: Lightning Claw
+      STR_SM_OFFICER_FIST: Officer's Fist
+      STR_SM_OFFICER_FIST_UFOPEDIA: Officer's Fist
+      STR_SM_CHAPLAIN_FIST: Chaplain's Fist
+      STR_SM_CHAPLAIN_FIST_UFOPEDIA: Chaplain's Fist
+      STR_SMT_SIGNUM: Signum Sensor Pack
+      STR_SIGNUM_ACTION: Squad Link
+      STR_STRIKE_VOX: Strike Vox-caster
+      STR_STRIKE_VOX_FALSE: Strike Vox-caster
+      STR_STRIKE_VOX_UFOPEDIA: "{NEWLINE} Vox-casters enable soldiers on the field to call in firesupport to deliver wide-area bombardments. {NEWLINE}{NEWLINE}There is a one-turn delay before the barrage hits."
+      STR_STRIKE_AUTO: Call Strike
+      STR_STRIKE_BEACON: Strike Beacon
+      STR_SMT_GENESEED: Pure Geneseed
+      STR_SMT_GENESEED_IMPURE: Unrefined Geneseed
+      INV_NULL_3X1_BACKPACK_BLESS: ""
+      INV_NULL_3X3_BACKPACK_BLESS: ""
+      STR_LIB_LOCKDOWN_TOME: Tome of the Empyrean
+      STR_LIB_SHIELD_TOME: Tome of the Empyrean
+      STR_LIB_SPEED_TOME: Tome of the Mind
+      STR_LIB_SMOKE_TOME: Tome of the Mind
+      STR_SMITE_TOME: Tome of Fulmination
+      STR_LAUNCH_SALVO_AUTO: Bombardment
+      STR_BOLT_SNIPER_RIFLE: Bolt Sniper Rifle
+      STR_BOLT_SNIPER_RIFLE_UFOPEDIA: "{NEWLINE}A long range Bolt-rifle used by experienced Marine Scouts to eliminate distant targets. It can be loaded with a variety of specialist rounds to deal with any foe.{NEWLINE}{NEWLINE} RECOIL: {ALT} 75"
+      STR_BOLT_SNIPER_AMMO_AP: AP Bolt
+      STR_BOLT_SNIPER_AMMO_FRAG: Frag Bolt
+      STR_BOLT_SNIPER_AMMO_KRAK: Krak Bolt
+      STR_BOLT_SNIPER_AMMO_SHRED: Shredder Bolt
+      STR_HEAVY_BOLTER_MARS: Mars-Pattern Heavy Bolter
+      STR_HEAVY_BOLTER_MARS_UFOPEDIA: "{NEWLINE} The Mars-Pattern Heavy Bolter features a belt-fed design that can be supplied from the users backpack, allowing it to carry more rounds and maintain a high rate of fire.{NEWLINE}{NEWLINE}Recoil: {ALT}90"
+      STR_AC_AP_BELT: AP Ammo Belt
+      STR_AC_HE_BELT: HE Ammo Belt
+      STR_AC_I_BELT: I Ammo Belt
+      STR_AC_MC_BELT: MC Heavy Bolter Belt # 'Master Crafted' is too long, gets cut off
+      STR_AC_MC_AMMO: MC Heavy Bolter Case # 'Master Crafted' is too long, gets cut off
+      STR_GRENADE_LAUNCHER_ASTARTES: Astartes Grenade Launcher
+      STR_GRENADE_LAUNCHER_ASTARTES_UFOPEDIA: "{NEWLINE} The Astartes Grenade Launcher serves the role of a launcher weapon that can be used and carried by Scouts-in-training. They are fired in arcing shots designed to clear obstructions and strike farther into an enemy formation as well as simply being fired directly at foes. This Grenade Launcher holds a magazine of six grenades and is burst fire capable."
+      STR_HONOR_CORPSE: Veteran Corpse
+      STR_CROZIUS_AIMED: Sanctify
+      STR_CHAINSWORD_LIGHTSM: Scout Chainsword
+      STR_PISTOLH: Chaos Tigrus Boltpistol
+      STR_PISTOLH_SM: Boltpistol Tigrus Pattern
+      STR_LIGHT_BOLTERS_UFOPEDIA: "{NEWLINE} 'Light' Bolters are designed for Scouts-in-training who can't yet handle standard Space Marine bolters. They fire smaller rounds and have a lower rate of fire, reducing the fearsome recoil down to a more manageable level.{NEWLINE}{NEWLINE}Recoil: {ALT}30"
+      STR_ROCKET_LAUNCHER_UFOPEDIA: "{NEWLINE} The Soundstrike-pattern Missile Launcher used by Adeptus Astartes features an autoloader and can be quickly readied to fire on the move by Devastator Marines, though its weight makes this impractical for regular soldiers.{NEWLINE}{NEWLINE}Recoil: {ALT}50"
+      STR_RIFLE_UFOPEDIA: "{NEWLINE} The Bolter, also called a Boltgun, and its variants are some of the most powerful hand-held ballistic anti-personnel weaponry in use by the military forces of the Imperium of Man.{NEWLINE}{NEWLINE}Recoil: {ALT}65"
+      STR_MCPISTOL_UFOPEDIA: "{NEWLINE} A Master crafted weapon is used by all of the Imperial armies and can be requisitioned by an exchange of foes' corpses. Any weapon may be master-crafted and due to the improved design of the weapon, it is more likely that a target will be hit by attacks from this weapon.{NEWLINE}{NEWLINE}Recoil: {ALT}40"
+      STR_MCRIFLE_UFOPEDIA: "{NEWLINE} A Master crafted weapon is used by all of the Imperial armies and can be requisitioned by an exchange of foes' corpses. Any weapon may be master-crafted and due to the improved design of the weapon, it is more likely that a target will be hit by attacks from this weapon.{NEWLINE}{NEWLINE}Recoil: {ALT}65"
+      STR_PISTOLH_UFOPEDIA: "{NEWLINE} The Tigrus Pattern is a hybrid lightweight Bolter design equipped with a scope and pistol grip, allowing skilled users to effectively wield it with one hand.{NEWLINE}{NEWLINE}Recoil: {ALT}60"
+      STR_AUTO_CANNON_UFOPEDIA: "{NEWLINE} A Heavy Bolter is a powerful Bolt weapon that is used for anti-infantry and fire support roles. Unlike the Boltgun, it is relatively common in both Imperial Guard armies and Space Marine Chapters.{NEWLINE}{NEWLINE}Recoil: {ALT}90"
+      STR_HB_UFOPEDIA: "{NEWLINE} The Storm Bolter is a double-barrelled version of the standard .75 caliber Bolter. As it is heavier and has more recoil than a normal Bolter, Storm Bolters are generally only employed by Space Marine Terminators or as a vehicle-mounted weapon.{NEWLINE}{NEWLINE}Recoil: {ALT}80"
+      STR_HB_MC_UFOPEDIA: "{NEWLINE} A Master crafted weapon is used by all of the Imperial armies and can be requisitioned by an exchange of foes' corpses. Any weapon may be master-crafted and due to the improved design of the weapon, it is more likely that a target will be hit by attacks from this weapon.{NEWLINE}{NEWLINE}Recoil: {ALT}80"
+      AUX_CROZIUS_UFOPEDIA: "{NEWLINE} The Crozius Arcanum serves as both a sacred staff of office and a close combat weapon for Space Marine Chaplains. It is a formidable Power weapon, and in the hands of a Chaplain can also be used to smite enemies with the Emperors fury."
+      STR_ASSC_UFOPEDIA: "{NEWLINE} The Assault Cannon is a six-barrelled, self-loading rotary Autocannon, effective against infantry targets and light vehicles at close to medium range. It fires medium caliber rounds as its 6 barrels are cycled past a single chamber by an electric motor.{NEWLINE}{NEWLINE}Recoil: {ALT}130"
+      STR_CLAWS_UFOPEDIA: "{NEWLINE} Vicious power weapons used by elite Space Marines, Lightning Claws tear through armor and inflict heavy wounds."
+      ### SOLDIERS
+      STR_SOLDIER_NEOPHYTE: Neophyte
+      STR_SOLDIER_TERMINATOR: Veteran Marine
+      STR_SOLDIER_CHAPLAIN: Chaplain
+      STR_SOLDIER_LIBRARIAN: Librarian
+      STR_SOLDIER_LIBRARIAN_TERM: Vet Librarian
+      STR_NEOPHYTE_RANK_0: Neophyte
+      STR_NEOPHYTE_RANK_1: Scout
+      STR_ROOKIE: Marine
+      STR_SQUADDIE: Brother Marine
+      STR_SERGEANT: Sergeant
+      STR_CAPTAIN: Veteran
+      STR_COLONEL: Hero
+      STR_COMMANDER: Champion
+      STR_TERMINATOR_RANK_0: Battle Brother
+      STR_TERMINATOR_RANK_1: Battle Brother
+      STR_TERMINATOR_RANK_2: Vet Sergeant
+      STR_TERMINATOR_RANK_3: Captain
+      STR_TERMINATOR_RANK_4: Honor Guard
+      STR_TERMINATOR_RANK_5: Commander
+      STR_CHAPLAIN_RANK_0: Chaplain
+      STR_CHAPLAIN_RANK_1: Chaplain
+      STR_LIBRARIAN_RANK_0: Librarian
+      STR_LIBRARIAN_RANK_1: Librarian
+      STR_LIBRARIAN_RANK_2: Lexicanium
+      STR_LIBRARIAN_RANK_3: Codicier
+      STR_LIBRARIAN_RANK_4: Epistolary
+      STR_LIBRARIAN_RANK_5: Chief Librarian
+      STR_TERMINATOR_CROSS_DESCRIPTION: Space Marines awarded with the Crux Terminatus are recognized as elites, allowing promotion to the highest ranks and access to rare relics including Terminator Armor. {NEWLINE}{NEWLINE} For this honor the Space Marine needs to have achieved 40 enemy kills in a campaign.
+      ### SKILLS
+      STR_BLESS_SKILL: Bless
+      STR_LIB_SMOKE_SKILL: Shroud
+      STR_LIB_LOCKDOWN_SKILL: Lockdown
+      STR_LIB_SHIELD_SKILL: Project Shield
+      STR_LIB_HASTE_SKILL: Accelerate
+      ### TRANSFORMATIONS
+      STR_PROMOTE_TERMINATOR: Promote Vet Marine
+      STR_HARVEST_GENESEED: Recover Geneseed
+      STR_PROMOTE_NEOPHYTE: Induct Neophyte
+      STR_PROMOTE_CHAPLAIN: Anoint Chaplain
+      STR_PROMOTE_LIBRARIAN: Train Librarian
+      STR_PROMOTE_LIB_TERMINATOR: Promote Vet Librarian
+      STR_CHAPLAIN_ROSARY: Award Rosary
+      ### RESEARCH
+      STR_PERSONAL_ARMOR: MK7 Tactical Armor
+      STR_SMOKE_BOMB_UNLOCK: Smoke Bomb Requisition
+      STR_MARINE_BOLTERS: High-Quality Bolters
+      STR_MARINE_CHAPEL: Chapter Teachings
+      STR_CHAP_ARMOR: Chaplain Relics
+      STR_GLAUNCHER_PREREQ: Grenade Launchers
+      STR_DEV_MARS_BOLTER: Mars Pattern Heavy Bolter
+      STR_HBOLTER_PREREQ: Heavy Bolters
+      STR_HBOLTER_AMMO_PREREQ: Heavy Bolter Cases
+      STR_HONOR_ARMOR_RESEARCH: "MK7 Vanguard Armor Requisition"
+      ### MANUFACTURE
+      STR_GENESEED: Geneseed
+      STR_SMT_GENESEED_REQ: Requisition Geneseed
+      STR_SMT_GENESEED_REFINE: Refine Geneseed
+      ### SCRIPTS
+      STR_SCRIPT_HEROIC_SAVE: Unit endured fatal damage!
+      ### FACILITIES
+      STR_LIBRARY_UFOPEDIA: "{NEWLINE} This vast sealed chamber known as the Librarium is filled from floor to ceiling with books, scrolls, and data crystals. The Librarium is the repository of all the Chapter's knowledge and history. The Librarians of the Astartes are expected to record the great deeds of their Chapter and maintain the Chapter's storehouse of ancient lore. This facility allows the training of Librarians."
+      STR_TRAINFACILITY_UFOPEDIA: "{NEWLINE} This facility allows us to train up to 40 soldiers at a time."
+      ### EVENTS
+      STR_GENESEED_PACKAGE_EARLY: Geneseed Harvest
+      STR_GENESEED_PACKAGE_MID: Geneseed Harvest
+      STR_GENESEED_PACKAGE_LATE: Geneseed Harvest
+      STR_GENESEED_PACKAGE_DESCRIPTION: "Our Apothecaries have collected newly matured geneseed, ready to implant into promising recuits and induct them into the Chapter as honored Battle Brothers."
+      STR_TACTICAL_CARE_PACKAGE_DESCRIPTION: "Wargear appropriate for your chosen strategy will arrive within an hour. A compliment of neophytes is en route and will arrive in one day.{NEWLINE}{NEWLINE}A Drop Pod deployment craft has been placed at your disposal, as well as the option to requisition a Razorback or Landspeeder craft - once the requisition order arrives, have your manufacturing servitors complete the requisition. A spare hangar is required for the delivery of the craft."
+      STR_ASSAULT_CARE_PACKAGE_DESCRIPTION: "Wargear appropriate for your chosen strategy will arrive within an hour. A compliment of neophytes is en route and will arrive in one day.{NEWLINE}{NEWLINE}A Drop Pod deployment craft has been placed at your disposal, as well as the option to requisition a Razorback or Landspeeder craft - once the requisition order arrives, have your manufacturing servitors complete the requisition. A spare hangar is required for the delivery of the craft."
+      STR_DEVASTATOR_CARE_PACKAGE_DESCRIPTION: "Wargear appropriate for your chosen strategy will arrive within an hour. A compliment of neophytes is en route and will arrive in one day.{NEWLINE}{NEWLINE}A Drop Pod deployment craft has been placed at your disposal, as well as the option to requisition a Razorback or Landspeeder craft - once the requisition order arrives, have your manufacturing servitors complete the requisition. A spare hangar is required for the delivery of the craft."
+      STR_SCOUT_CARE_PACKAGE_DESCRIPTION: "Wargear appropriate for your chosen strategy will arrive within an hour. A compliment of neophytes is en route and will arrive in one day.{NEWLINE}{NEWLINE}A Drop Pod deployment craft has also been placed at your disposal - once the requisition order arrives, have your manufacturing servitors complete the requisition. A spare hangar is required for the delivery of the craft."
+      ### UFOPAEDIA EXTRA
+      STR_SMT_INFO: SPACE MARINE TWEAKS
+      STR_SMT_UFOPAEDIA_UNFINISHED: "{NEWLINE}{NEWLINE} Codex Unfinished"
+      STR_MC_PRECISION: "Precision %"
+      STR_GENESEED_DETAILS: "Geneseed"
+      STR_GENESEED_DETAILS_UFOPEDIA: "{NEWLINE} Gene-seed is the unique genetic material used to transform humans into the super-human Space Marines. It is essential to the survival of a Chapter and must be carefully preserved.{NEWLINE} A small amount of Geneseed is accrued over time by our Apothecaries, though most of it will need to be refined into the Pure Geneseed required to create new Marines. Fallen Battle Brothers whose bodies have been recovered can have their progenoid glands extracted, recovering their Geneseed."
+      STR_SMT_RECOIL: Recoil Changes
+      STR_SMT_RECOIL_UFOPEDIA: "{NEWLINE} Recoil has been slightly changed. Using a weapon without a free hand increases the recoil of that weapon by {ALT}+50%{ALT}, increasing the strength required to fire it without penalty."
+      STR_SMT_HWP: Weapon Stabilizers
+      STR_SMT_HWP_UFOPEDIA: "{NEWLINE} Devastators and Terminators have weapon stablizers built into their armor, reducing the penalty that comes from using heavy weapons with reduced TUs.{NEWLINE}{NEWLINE}Wearing Devastator armor reduces the penalty by 50%{NEWLINE}{NEWLINE}Wearing Terminator armor removes the penalty entirely{NEWLINE}{NEWLINE}This bonus has no effect when using Sniper Rifles."
+      STR_SMT_HEROICSAVE: Heroic Save
+      STR_SMT_HEROICSAVE_UFOPEDIA: "{NEWLINE} When taking lethal damage Space Marines have a chance to heroically endure. Instead of dying they will be knocked unconcious and can be revived to fight on.{NEWLINE} This effect may also protect them from instant-death attacks, but can't prevent death from fatal wounds, fire or corruption.{NEWLINE}{NEWLINE} The chance to endure increases with Health, Devotion, and Veterancy. Units blessed by a Chaplain have their bonus from Devotion doubled."
+      STR_SMT_REGENERATION: Marine Healing
+      STR_SMT_REGENERATION_UFOPEDIA: "{NEWLINE} Marines undergo extensive genetic modification, improving their ability to recover from injury far above that of regular humans. This allows them to recover from fatal wounds and restore health even on the battlefield. Units can heal up to 80% of their max health, but lost health restored this way still incurs post-mission recovery time.{NEWLINE}{NEWLINE}Each Turn:{NEWLINE} {ALT}Neophytes heal 2 HP{NEWLINE} Marines heal 6 HP/2 Wounds{NEWLINE} Vet Marines heal 8 HP/3 Wounds"
+      STR_SMT_PROMOTION_TREE: Promoting Marines
+      STR_SMT_PROMOTION_TREE_UFOPEDIA: "{NEWLINE} Neophytes who have earned the Battle Tested medal with {ALT}60+ HP and 50+ Strength{ALT} can undergo the final transformation into true Marines using Pure Geneseed, dramatically improving their stats and allowing use of MK7 armor.{NEWLINE}{NEWLINE} Marines who have earned the Crux Terminatus can be further promoted to Veterans, increasing their stat limits and allowing use of rare relic armors."
+      STR_SMT_PROMOTION_SPECIALISTS: Specialist Marines
+      STR_SMT_PROMOTION_SPECIALISTS_UFOPEDIA: "{NEWLINE} Marines who have earned Crux Terminatus with {ALT}80+ Bravery and 60+ Devotion{ALT} can be promoted to Chaplains instead of becoming Veteran Marines.{NEWLINE}Chaplains have the ability to Bless their fellow Marines; purging corruption and restoring morale.{NEWLINE}{NEWLINE} Battle-tested Neophytes with {ALT}80+ PsiStrength{ALT} can be trained into Librarians instead of becoming regular Marines.{NEWLINE}Librarians can use powerful psychic abilities."
+      STR_SMT_LIBRARIAN_SPELLS: Librarian Abilities
+      STR_SMT_LIBRARIAN_SPELLS_UFOPEDIA: "{NEWLINE} Librarians have 5 different psyker abilities.{NEWLINE}{NEWLINE} {ALT}Smite{ALT} - Deals armor-ignoring damage to an enemy{NEWLINE} {ALT}Lockdown{ALT} - Drains enemy time units, paralysing them{NEWLINE} {ALT}Shroud{ALT} - Creates a blast of smoke to obscure vision{NEWLINE} {ALT}Shield{ALT} - Grants a temporary energy shield to an ally (No LoS needed){NEWLINE} {ALT}Accelerate{ALT} - Grants an ally reduced TU costs while moving{NEWLINE}{NEWLINE} All abilities scale with PsiStr only"
+      STR_SMT_BOLTER_CHANGES: Bolter Changes
+      STR_SMT_BOLTER_CHANGES_UFOPEDIA: "{NEWLINE} Bolters fire powerful high-caliber self-propelled explosive rounds. They have limited propulsion and lack accuracy at range, instead optimizing for devastating close range firepower.{NEWLINE} Compared to Rosigma SMT Bolters have greater falloff outside of optimal range but deal more damage and fire faster, specializing in autofire bursts.{NEWLINE}{NEWLINE} Heavy Bolter rounds are larger with more propulsion and don't suffer any additonal range penalties."
+      STR_SMT_MASTERCRAFTED_AMMO: Mastercrafted Bolts
+      STR_SMT_MASTERCRAFTED_AMMO_UFOPEDIA: "{NEWLINE} Mastercrafted Bolts do not get a flat power boost, instead the damage comes from a precision bonus when used by elite troops.{NEWLINE}{NEWLINE} Units with more than 90 firing accuracy gain power equal to {NEWLINE} {ALT}(FA - 90) x Precision%{ALT} when firing Mastercrafted ammo."
+      STR_SMT_ARMOR_SHRED: Armor Shredding
+      STR_SMT_ARMOR_SHRED_UFOPEDIA: "{NEWLINE} Space Marine armor is finely crafted and well maintained to a standard far above that of regular Imperial equipment. It stands immovable against the enemies of the Emperor, reducing the durability it loses from enemy attacks.{NEWLINE}{NEWLINE} Terminator Armor is especially effective, reducing durability lost from attacks by 80%"

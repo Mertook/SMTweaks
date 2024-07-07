@@ -1,0 +1,72 @@
+extended:
+  tags:
+    RuleItem:
+      SMT_ITEM_MOVESPEED_BOOST: int #
+    BattleUnit:
+      SMT_HASTE_ENDTURN: int #store buff duration
+      SMT_HASTE_ORIGINAL_SPEED: int #stores units original speed
+
+  scripts:
+    newTurnUnit:
+      #*** Script that removes haste bonus from unit once turn ends ***
+      - new: SMTS_haste_removebuff
+        offset: 22
+        code: |
+          var int currTurn;
+          var int endTurn;
+          var int originalSpeed;
+
+          # Make sure this doesn't run an extra time when civilians have a turn
+          if eq side 2;
+            return;
+          end;
+
+          unit.getTag endTurn Tag.SMT_HASTE_ENDTURN;
+          unit.getTag originalSpeed Tag.SMT_HASTE_ORIGINAL_SPEED;
+          battle_game.getTurn currTurn;
+
+          if and neq originalSpeed 0 eq currTurn endTurn;
+            unit.MoveCost.setBaseTimePercent originalSpeed; 
+            unit.setTag Tag.SMT_HASTE_ORIGINAL_SPEED 0; #cancel tag
+            #debug_log "HasteBuff removed - " currTurn endTurn originalSpeed;
+          end;
+          return;
+
+    damageUnit: 
+      - new: SMTS_haste_applybuff    #*** Script that increases the movespeed of units ***
+        offset: 52
+        code: |
+          var ptr RuleItem itemRuleset;
+          var int hasteMod;
+          var int originalSpeed;
+          var int buffTime;
+          var int temp;
+
+          damaging_item.getRuleItem itemRuleset;
+          itemRuleset.getTag buffTime Tag.SMT_ITEM_MOVESPEED_BOOST;
+          unit.getTag temp Tag.SMT_HASTE_ORIGINAL_SPEED;
+
+          if and eq temp 0 gt buffTime 0; # skip if not haste spell or if target already has haste
+          # Power <100 = no change, 100-124 = 75% cost, 125-150 = 50% cost, >=150 = 25%
+            set hasteMod currPower;
+            div hasteMod 25;
+            sub hasteMod 3; # <100 do nothing
+            #debug_log "HasteBuff Ping - " buffTime currPower hasteMod;
+            limit hasteMod 0 3; # eliminate negatives and cap power
+            if gt hasteMod 0; # only continue if move cost would change
+              mul hasteMod 25;
+              set temp 100;
+              sub temp hasteMod;
+              unit.MoveCost.getBaseTimePercent originalSpeed; #remember original movement cost
+              unit.setTag Tag.SMT_HASTE_ORIGINAL_SPEED originalSpeed;
+              unit.MoveCost.setBaseTimePercent temp;
+              #debug_log "HasteBuff Speed change N/O - " temp originalSpeed;
+
+              battle_game.getTurn temp;
+              add temp buffTime; #define end turn for buff
+              unit.setTag Tag.SMT_HASTE_ENDTURN temp;
+            end;
+          end;
+
+          return;
+          

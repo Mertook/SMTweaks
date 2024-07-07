@@ -1,0 +1,52 @@
+soldiers:
+  - type: STR_SOLDIER_CHAPLAIN
+    tags:
+      SMT_IS_CHAPLAIN: 1
+
+items:
+  - type: AUX_CROZIUS
+    tags:
+      SMT_NEEDS_CHAPLAIN: 1
+    scripts:
+      hitUnitAmmo: |
+        var ptr RuleSoldier unitSoldier;
+        var int temp;
+
+        attacker.getRuleSoldier unitSoldier;
+        unitSoldier.getTag temp Tag.SMT_IS_CHAPLAIN;
+        if and neq temp 1 neq battle_action battle_action_hit; # melee attacks can still do damage
+          #debug_log "CroziusHit damage negated: " temp;
+          set power 0;
+        end;
+
+        return power part side;
+
+extended:
+  tags:
+    RuleSoldier:
+      SMT_IS_CHAPLAIN: int # Check to only allow Chaplains to properly use the Crozius
+    RuleItem:
+      SMT_NEEDS_CHAPLAIN: int # Item should only be usable by Chaplains
+
+  scripts:
+    accuracyMultiplierBonusStats:
+      - new: SMTS_crozius_accuracy
+        offset: 51
+        code: |
+          var ptr RuleSoldier unitSoldier;
+          var ptr RuleItem itemRuleset;
+          var int temp;
+
+          weapon.getRuleItem itemRuleset;
+          itemRuleset.getTag temp Tag.SMT_NEEDS_CHAPLAIN;
+          if eq temp 0;
+            return bonus;
+          end;
+
+          unit.getRuleSoldier unitSoldier;
+          unitSoldier.getTag temp Tag.SMT_IS_CHAPLAIN;
+          if neq temp 1;
+            set bonus 0;
+          end;
+
+          return bonus; # final accuracy

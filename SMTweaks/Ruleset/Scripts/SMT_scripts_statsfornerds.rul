@@ -1,0 +1,60 @@
+extended:
+  tags:
+    RuleItem:
+      SMT_AMMO_BONUSDMG_FIRINGACC: int      # % bonus damage granted from units Firing Accuracy: (FA - 90) * Tag / 100
+    RuleArmor:
+      SMT_ARMOR_HEAVY_WEAPON_USER: int      # armor that counteracts the penalty for heavy weapons - 1 = half base penalty, 2 = no penalty
+      SMT_ARMOR_SHRED_RESISTANCE: int       # Reduce armor damage by % (Non-melta damage sources)
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: int # Reduce armor damage by % (Melta damage)
+      SMT_ARMOR_REGEN_HP: int #passive hp regen from armor
+      ARMOR_REGENERATES_WOUNDS: 1 #wound regen from armor
+
+  scripts:
+    statsForNerdsArmor:
+      - new: SMT_nerdstats_armor
+        offset: 24
+        code: |
+          var int temp;
+
+          rule.getTag temp Tag.SMT_ARMOR_HEAVY_WEAPON_USER;         # HWP User
+          if eq temp 1;
+            stats_state.addTextRow "HWP Penalty" "-50%";
+          end;
+          if eq temp 2;
+            stats_state.addTextRow "HWP Penalty" "None";
+          end;
+
+          rule.getTag temp Tag.SMT_ARMOR_REGEN_HP;                  # Health Regeneration
+          if gt temp 0;
+            stats_state.addIntRow "Bonus HP Regen" temp;
+          end;
+
+          rule.getTag temp Tag.ARMOR_REGENERATES_WOUNDS;                  # Health Regeneration
+          if gt temp 0;
+            stats_state.addIntRow "Wound Healing" temp;
+          end;
+
+          rule.getTag temp Tag.SMT_ARMOR_SHRED_RESISTANCE;          # Armorshred 
+          if gt temp 0;
+            stats_state.addIntRow "Shred Resist (Standard)" temp;
+          end;
+
+          rule.getTag temp Tag.SMT_ARMOR_SHRED_MELTA_RESISTANCE;    # Armorshred Melta
+          if gt temp 0;
+            stats_state.addIntRow "Shred Resist (Melta)" temp;
+          end;
+
+          return;
+
+    statsForNerdsItem:
+      - new: SMT_nerdstats_item
+        offset: 24
+        code: |
+          var int temp;
+
+          rule.getTag temp Tag.SMT_AMMO_BONUSDMG_FIRINGACC;         # MC Precision bonus
+          if gt temp 0;
+            stats_state.addIntRow "STR_MC_PRECISION" temp;
+          end;
+
+          return;

@@ -1,0 +1,873 @@
+armors:
+  - &STR_MARINE_ARMOR               #ARMOR TEMPLATE
+    visibilityAtDay: 40
+    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
+    heatVision: 20 #Add anti-smoke vision to all marine armour
+    antiCamouflageAtDay: 6
+    antiCamouflageAtDark: 6
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.0 #discipline and resolve reinforces their faith
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats: # No values inherited from this, defined in each armor
+      tu: 0             # base 10 
+      stamina: 0        # base 20 
+      health: 0         # base 10 
+      bravery: 0        # base 0  
+      reactions: 0      # base 10 
+      firing: 0         # base 0  
+      throwing: 0       # base 5  
+      strength: 0       # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 0          # base 10 
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.7 #FLAMES - was 0.8
+      - 0.7 #HE
+      - 0.8 #LASCANON
+      - 1.0 #PLASMA - was 1.1
+      - 1.0 #STUN - was 1.1
+      - 1.0 #MELEE - was 1.1
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+
+  - &STR_MARINE_OFFICER_ARMOR       #SPECIALIST TEMPLATE
+    update: STR_SIGNALFALSE_ARMOR_UC
+    visibilityAtDay: 40
+    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
+    heatVision: 20 #Add anti-smoke vision to all marine armour
+    antiCamouflageAtDay: 7 # slight officer bonus
+    antiCamouflageAtDark: 7
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.0 #FAITH IS MY SHIELD
+      moraleCurrent: 1.1 #discipline and resolve reinforces their faith (+10% officer bonus)
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    damageModifier: #2.7 values for officers
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.7 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.8 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+
+  - update: STR_SCOUT_UC            #SCOUT
+    visibilityAtDay: 40
+    visibilityAtDark: 20 # nerfed scout nightvision, armor meant for novices rather than expert rangers
+    antiCamouflageAtDay: 2 # reduced anticamo, lacks optics of proper power armor
+    antiCamouflageAtDark: 2
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.0 #FAITH IS MY SHIELD
+      moraleCurrent: 0.8 #discipline and resolve reinforces their faith -20% scout penalty
+    loftempsSet: [ 3 ]
+    stats:
+      tu: 20            # base 10 +10
+      stamina: 10       # base 20 -10
+      health: 0         # base 10 -10
+      bravery: 0        # base 0  
+      reactions: 15     # base 10 +5
+      firing: 0         # base 0  
+      throwing: 10      # base 5  +5
+      strength: 0       # base 10 -10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 0          # base 10 -10
+    units:
+      - STR_SOLDIER
+      - STR_SOLDIER_TERMINATOR
+      - STR_SOLDIER_NEOPHYTE
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+
+  - update: STR_PERSONAL_ARMOR_UC   #TACTICAL
+    refNode: *STR_MARINE_ARMOR
+    stats:
+      tu: 25            # base 10 +15
+      stamina: 20       # base 20 
+      health: 10        # base 10 
+      bravery: 10       # base 0  +10
+      reactions: 20     # base 10 +10
+      firing: 10        # base 0  +10
+      throwing: 15      # base 5  +10
+      strength: 15      # base 10 +5
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
+
+  - update: STR_ASS_ARMOR_UC        #ASSAULT
+    refNode: *STR_MARINE_ARMOR
+    frontArmor: 135 # base 125 +10
+    sideArmor: 125  # base 120 +5
+    rearArmor: 110  # base 100 +10
+    underArmor: 125 # base 125
+    stats:
+      tu: 25            # base 10 +15
+      stamina: 20       # base 20
+      health: 20        # base 10 +10
+      bravery: 10       # base 0  +10
+      reactions: 25     # base 10 +15
+      firing: -10       # base 0  -10
+      throwing: 0       # base 5  -5
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 25         # base 10 +15
+    builtInWeapons: #make sure they don't get a backpack
+      - INV_NULL_3X3
+
+  - update: STR_DEV_ARMOR_UC        #DEVASTATOR
+    refNode: *STR_MARINE_ARMOR
+    frontArmor: 130 # base 125 +5 devastator
+    sideArmor: 120 # base 120
+    rearArmor: 95 # base 100 -5 devastator
+    underArmor: 125 # base 125
+    stats:
+      tu: 0             # base 10 -10
+      stamina: 10       # base 20 -10
+      health: 10        # base 10 
+      bravery: 0        # base 0  
+      reactions: -5     # base 10 -15
+      firing: 25        # base 0  +25
+      throwing: 5       # base 5  
+      strength: 40      # base 10 +30
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: -20        # base 10 -30 (ranged specialist & also to offset strength bonus)
+
+  - update: STR_APOT_ARMOR_UC       #APOTH
+    refNode: *STR_MARINE_ARMOR
+    frontArmor: 130 # base 125 +5 apoth
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats:
+      tu: 5             # base 10 -5
+      stamina: 20       # base 20 
+      health: 30        # base 10 +20
+      bravery: 10       # base 0  +10
+      reactions: 5      # base 10 -5
+      firing: 0         # base 0
+      throwing: -10     # base 5 -15
+      strength: 10      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 15         # base 10 +5
+    builtInWeapons: #improved medkit
+      - INV_NULL_3X3
+      - AUX_MEDI_KIT_ADVANCED
+    tags: #Apoth gets better regeneration
+      SMT_ARMOR_REGEN_HP: 3
+      ARMOR_REGENERATES_WOUNDS: 1
+
+  - update: STR_TECH_ARMOR_UC       #TECHMARINE
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    heatVision: 50 # techmarines get advanced sensors
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10 # techmarines get advanced sensors
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats:
+      tu: 10            # base 10 
+      stamina: 10       # base 20 -10
+      health: 20        # base 10 +10
+      bravery: 0        # base 0  (overridden by 40k to +10)
+      reactions: 10     # base 10 
+      firing: 0         # base 0  
+      throwing: -10     # base 5  -15
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 15         # base 10 +5
+
+  - update: STR_SARGENT_ARMOR_UC    #SERGEANT
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats:
+      tu: 10            # base 10 
+      stamina: 20       # base 20 
+      health: 10        # base 0  +10
+      bravery: 10       # base 0  +10
+      reactions: 10     # base 10 
+      firing: 10        # base 0  +10
+      throwing: 15      # base 5  +10
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 20      # base 0  +20 sarg
+      melee: 10         # base 10
+    specialWeapon: STR_SM_OFFICER_FIST #Officer Fist with Inspire ability
+    builtInWeapons: #added 3x2 backpack
+      - INV_NULL_3X1_BACKPACK
+
+  - update: STR_HONOR_ARMOR_UC      #TACTICAL HONOR (Honor Guard)
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    stats:
+      tu: 25            # base 10 +15 tac
+      stamina: 20       # base 20
+      health: 20        # base 10 +10 elite
+      bravery: 10       # base 0  +10 tac
+      reactions: 25     # base 10 +10 tac +5 elite
+      firing: 20        # base 0  +10 tac +10 elite
+      throwing: 25      # base 5  +10 tac +10 elite
+      strength: 15      # base 10 +5  tac
+      psiStrength: 0    # base 0  
+      psiSkill: 20      # base 0  +20 elite
+      melee: 25         # base 10 +5 tac +10 elite
+    frontArmor: 135 # base 125 +10 elite
+    sideArmor: 130 # base 120 +10 elite
+    rearArmor: 110 # base 100 +10 elite
+    underArmor: 135 # base 125 +10 elite
+    builtInWeapons: #added 3x2 backpack
+      - INV_NULL_3X1_BACKPACK
+    units: #now exclusive to terminator promoted troops
+      - STR_SOLDIER_TERMINATOR
+    tags: #added small energy shield
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 10
+      ARMOR_ENERGY_SHIELD_DECAY: 25
+
+
+  - update: STR_ASS_ARMOR_HONOR_UC  #ASSAULT HONOR (Vanguard)
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    stats:
+      tu: 30            # base 10 +15 ass +5 elite
+      stamina: 30       # base 20 +10 elite
+      health: 30        # base 10 +10 ass +10 elite
+      bravery: 10       # base 0  +10 ass
+      reactions: 30     # base 10 +15 ass +5  elite
+      firing: 5         # base 0  -10 ass +15 elite
+      throwing: 10      # base 5  -5  ass +10 elite
+      strength: 10      # base 10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 30         # base 10 +15 ass +5 elite
+    frontArmor: 140 # base 125 +10 assault +5 elite
+    sideArmor: 130  # base 120 +5  assault +5 elite
+    rearArmor: 115  # base 100 +10 assault +5 elite
+    underArmor: 125 # base 125
+    units: #now exclusive to terminator promoted troops
+      - STR_SOLDIER_TERMINATOR
+
+  - type: STR_ASS_ARMOR_HONOR_CLAW  #ASSAULT HONOR (Vanguard) WITH CLAW
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    ufopediaType: STR_ASS_ARMOR_HONOR_UC
+    spriteSheet: XCOM_HASS.PCK
+    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 15}
+    corpseBattle:
+      - STR_HONOR_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_JUMP_GAUNTLET_PLUS
+    storeItem: STR_ASS_ARMOR_HONOR
+    frontArmor: 140 # base 125 +10 assault +5 elite
+    sideArmor: 130  # base 120 +5  assault +5 elite
+    rearArmor: 115  # base 100 +10 assault +5 elite
+    underArmor: 125 # base 125
+    stats:
+      tu: 30            # base 10 +15 ass +5 elite
+      stamina: 30       # base 20 +10 elite
+      health: 30        # base 10 +10 ass +10 elite
+      bravery: 10       # base 0  +10 ass
+      reactions: 30     # base 10 +15 ass +5  elite
+      firing: 5         # base 0  -10 ass +15 elite
+      throwing: 10      # base 5  -5  ass +10 elite
+      strength: 10      # base 10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 30         # base 10 +15 ass +5 elite
+    units: #now exclusive to terminator promoted troops
+      - STR_SOLDIER_TERMINATOR
+    builtInWeapons: #given lightning claw, on par with MC power sword
+      - STR_CLAWS_ASS
+      - INV_NULL_3X3
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      MaxFlight: 2
+      MaxCoolDown: 1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+
+  - update: STR_SIGNAL_ARMOR_UC     #DEVASTATOR HONOR (Signum)
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    visibilityAtDark: 40 # signum equipment provides advanced vision
+    heatVision: 40 # signum equipment provides advanced vision
+    antiCamouflageAtDay: 10 # signum equipment provides strong detection
+    antiCamouflageAtDark: 10
+    spriteSheet: DEVH.PCK
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats:
+      tu: 10            # base 10 
+      stamina: 20       # base 20 
+      health: 20        # base 10 +10 elite
+      bravery: 0        # base 0  
+      reactions: 10     # base 10 
+      firing: 20        # base 0  +20 signum
+      throwing: 5       # base 5  
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
+    specialWeapon: STR_SMT_SIGNUM # changed from Airstrike
+    units: # exclusive to terminator promoted troops
+      - STR_SOLDIER_TERMINATOR
+
+  - &STR_ADVANCED_SCOUT_ARMOR       #SCOUT HONOR BROWN (Advanced Scout)
+    update: STR_SCOUTH_UC
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # infiltrator equipment
+    heatVision: 30 # improved smoke vision
+    camouflageAtDay: -15 # was 15
+    camouflageAtDark: -10 # was 10
+    antiCamouflageAtDay: 16 # advanced detection
+    antiCamouflageAtDark: 16
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.0 #discipline and resolve reinforces their faith
+    frontArmor: 90
+    sideArmor: 80
+    rearArmor: 50
+    underArmor: 80
+    specialWeapon: STR_SM_SCOUT_SCANNER # motion scanner
+    stats:
+      tu: 35            # base 10 +20 scout +5  elite
+      stamina: 30       # base 20 -10 scout +20 elite
+      health: 10        # base 10 -10 scout +10 elite
+      bravery: 10       # base 0  +10 elite
+      reactions: 35     # base 10 +10 scout +15  elite
+      firing: 10        # base 0  +10 elite
+      throwing: 10      # base 5  +5  scout
+      strength: 5       # base 10 -10 scout +5  elite
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 -10 scout +10 elite
+    recovery:
+      energy:
+        stamina: 0.5 # +10% AdvScout bonus
+    units: #
+      - STR_SOLDIER
+      - STR_SOLDIER_TERMINATOR
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+
+
+  - update: STR_SCOUTHW_UC          #SCOUT HONOR WHITE
+    refNode: *STR_ADVANCED_SCOUT_ARMOR
+
+  - update: STR_SCOUTHB_UC          #SCOUT HONOR BLACK
+    refNode: *STR_ADVANCED_SCOUT_ARMOR
+
+  - update: STR_SCOUTHR_UC          #SCOUT HONOR RED
+    refNode: *STR_ADVANCED_SCOUT_ARMOR
+
+  - update: STR_SCOUTHY_UC          #SCOUT HONOR YELLOW
+    refNode: *STR_ADVANCED_SCOUT_ARMOR
+
+  - update: STR_SCOUTHG_UC          #SCOUT HONOR GREEN
+    refNode: *STR_ADVANCED_SCOUT_ARMOR
+
+  - &STR_TERMINATOR_ARMOR           #TERMINATOR TEMPLATE
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Terminators get full nightvision
+    heatVision: 30 # Terminators get better sensors
+    antiCamouflageAtDay: 8
+    antiCamouflageAtDark: 8
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.2 #discipline and resolve reinforces their faith (+20% terminator bonus)
+    damageModifier: #TERMINATOR ARMOR 2.7 values
+      - 1.0 #none
+      - 0.7 #AP (was 0.6)
+      - 0.3 #FLAMES
+      - 0.6 #HE (was 0.4)
+      - 0.8 #LASCANON
+      - 0.8 #PLASMA
+      - 1.0 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID (was 0.8)
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+    frontArmor: 175 #was 150
+    sideArmor: 170 #was 130
+    rearArmor: 120 #was 100
+    underArmor: 170  #was 150
+    loftempsSet: [ 4 ]
+    allowsRunning: false
+    allowsKneeling: false
+    stats:
+      tu: 10            # base 10
+      stamina: 20       # base 20
+      firing: 20        # base 20
+      health: 30        # base 30
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      throwing: 10      # base 10
+      strength: 90      # base 90
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+
+  - update: STR_CAPTAIN_UC          #TERMINATOR CAPTAIN
+    refNode: *STR_TERMINATOR_ARMOR
+    specialWeapon: STR_SM_OFFICER_FIST #Officer Fist with Inspire ability
+    stats:
+      tu: 20            # base 10 +10
+      stamina: 20       # base 20
+      firing: 20        # base 20
+      health: 40        # base 30 +10
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      throwing: 10      # base 10
+      strength: 90      # base 90
+      psiStrength: 0    # base 0
+      psiSkill: 20      # base 0 +20
+      melee: 10         # base 10
+
+  - update: STR_POWER_SUIT_UC       #TERMINATOR
+    refNode: *STR_TERMINATOR_ARMOR
+
+  - update: STR_TSARGENT_UC         #TERMINATOR CYCLONE
+    refNode: *STR_TERMINATOR_ARMOR
+    spriteSheet: TERMCYCLONE.PCK # declawed :(
+    storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
+    stats:
+      tu: 10            # base 10
+      stamina: 20       # base 20
+      firing: 20        # base 20
+      health: 30        # base 30
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      throwing: 10      # base 10
+      strength: 35      # base 90 -55 Penalty for using Cyclone (Fixed weapons have no weight?)
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    builtInWeapons: # removed lighting claw
+      - INV_NULL_3X3
+      - INV_NULL_2X1_RL
+      - INV_NULL_2X1_LL
+
+  - update: STR_FLYING_SUIT_UC      #TERMINATOR ASSAULT (SHIELD)
+    refNode: *STR_TERMINATOR_ARMOR
+    rearArmor: 130 # +10 assault
+    stats:
+      tu: 30            # base 10  +20
+      stamina: 30       # base 20  +10
+      firing: -10       # base 20  -30
+      health: 30        # base 30  
+      bravery: 20       # base 10  +10
+      reactions: -10    # base -10 
+      throwing: 10      # base 30  -20
+      strength: 90      # base 90 
+      psiStrength: 0    # base 0   
+      psiSkill: 0       # base 0   
+      melee: 30         # base 10  +20
+
+  - update: STR_TASS_ARMOR_CLAWS    #TERMINATOR ASSAULT (CLAWS)
+    refNode: *STR_TERMINATOR_ARMOR
+    rearArmor: 130 # +10 assault
+    stats:
+      tu: 30            # base 10  +20
+      stamina: 30       # base 20  +10
+      firing: -10       # base 20  -30
+      health: 30        # base 30  
+      bravery: 20       # base 10  +10
+      reactions: -10    # base -10 
+      throwing: 10      # base 30  -20
+      strength: 90      # base 90 
+      psiStrength: 0    # base 0   
+      psiSkill: 0       # base 0   
+      melee: 30         # base 10  +20
+
+  - update: STR_CHAP_ARMOR_UC       #CHAPLAIN
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    storeItem: STR_NONE # Now default to Chaplain type soldiers
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #Chaplains are supremely resistant to warp influence
+      moraleCurrent: 1.2
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats:
+      tu: 10            # base 10 
+      stamina: 20       # base 20 
+      health: 20        # base 10 +10
+      bravery: 0        # base 0  
+      reactions: 10     # base 10 
+      firing: 5         # base 0  +10 tact -5 chap (would rather have 0 but base chaplain overrides)
+      throwing: 5       # base 5  
+      strength: 10      # base 10 
+      psiStrength: 5    # base 0  +5 (stat is irrelevant to Chaplains anyway - inherited from 40k - I wish values of 0 would override instead of being ignored)
+      psiSkill: 0       # base 0  
+      melee: 15         # base 10 +5
+    units:
+      - STR_SOLDIER_CHAPLAIN
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_3X1_BACKPACK_BLESS #custom backpack blocker that enables bless ability
+    tags:
+      INFECTION_RESIST: 100 #infection immune - Chaplains bonus
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
+
+  - type: STR_CHAP_TERMINATOR_UC    #CHAPLAIN TERMINATOR
+    refNode: *STR_TERMINATOR_ARMOR
+    ufopediaType: STR_POWER_SUIT_UC
+    spriteSheet: CHAPTERM.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 13}
+    corpseBattle:
+      - STR_CHAP_CORPSE
+    storeItem: STR_POWER_SUIT
+    corpseGeo: STR_FALLEN_CORPSE
+    stats:
+      tu: 10            # base 10
+      stamina: 20       # base 20
+      firing: 15        # base 20 -5
+      health: 30        # base 30
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      throwing: 30      # base 30
+      strength: 90      # base 90
+      psiStrength: 5    # base 0  +5 (only done for consistency with regular Chap armor, stat should't matter)
+      psiSkill: 0       # base 0
+      melee: 15         # base 10 +5
+    units:
+      - STR_SOLDIER_CHAPLAIN
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #Chaplains are supremely resistant to warp influence
+      moraleCurrent: 1.0
+    forcedTorso: 1
+    specialWeapon: STR_MFIST # Term Powerfist
+    builtInWeapons:
+      - INV_NULL_3X3_BACKPACK_BLESS #custom backpack blocker that enables bless ability
+      - INV_NULL_2X1_RL
+      - INV_NULL_2X1_LL
+    tags:
+      INFECTION_RESIST: 100 #infection immune - Chaplains bonus
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+
+  - type: STR_CHAP_ASSAULT_UC       #CHAPLAIN ASSAULT (Vanguard)
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    ufopediaType: STR_ASS_ARMOR_HONOR_UC
+    spriteSheet: CHAPASS.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 13}
+    corpseBattle:
+      - STR_CHAP_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_JUMP_GAUNTLET_PLUS
+    storeItem: STR_ASS_ARMOR_HONOR
+    stats: # Vanguard stats
+      tu: 30            # base 10 +15 ass +5 elite
+      stamina: 30       # base 20 +10 elite
+      health: 30        # base 10 +10 ass +10 elite
+      bravery: 10       # base 0  +10 ass
+      reactions: 35     # base 10 +15 ass +10 elite
+      firing: 0         # base 0  -10 ass +15 elite - 5 chaplain
+      throwing: 10      # base 5  -5  ass +10 elite
+      strength: 10      # base 10
+      psiStrength: 5    # base 0  +5 (only done for consistency with regular Chap armor, stat should't matter)
+      psiSkill: 0       # base 0  
+      melee: 30         # base 10 +15 ass +5 elite
+    frontArmor: 140     # base 125 +10 assault +5 elite
+    sideArmor: 130      # base 120 +5  assault +5 elite
+    rearArmor: 115      # base 100 +10 assault +5 elite
+    underArmor: 125     # base 125
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #Chaplains are supremely resistant to warp influence
+      moraleCurrent: 1.0
+    builtInWeapons:
+      - INV_NULL_3X3_BACKPACK_BLESS #custom backpack blocker that enables bless ability
+    units:
+      - STR_SOLDIER_CHAPLAIN
+    tags:
+      INFECTION_RESIST: 100 #infection immune - Chaplains bonus
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      MaxFlight: 2
+      MaxCoolDown: 1
+
+  - type: STR_SMT_LIB_ARMOR_UC      #LIBRARIAN
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    spriteSheet: XCOM_24.PCK
+    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 12}
+    corpseBattle:
+      - STR_LIB_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    storeItem: STR_NONE # Default to Librarians
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS # doesn't get confuse anymore, just regular punch
+    heatVision: 33 # psyker powers aid detection
+    antiCamouflageAtDay: 10 # psyker powers aid detection
+    antiCamouflageAtDark: 10
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats: # No values inherited from this, defined in each armor
+      tu: 10            # base 10 
+      stamina: 20       # base 20 
+      health: 0         # base 10 -10 lib
+      bravery: 0        # base 0  
+      reactions: 0      # base 10 -10 lib
+      firing: 0         # base 0  
+      throwing: 0       # base 5  
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
+    builtInWeapons: # Smite tome sits in hand, other tomes occupy leg slots and are used via skills
+      - INV_NULL_3X1_BACKPACK
+      - STR_LIB_SPEED_TOME
+      - STR_LIB_SMOKE_TOME
+      - STR_LIB_LOCKDOWN_TOME
+      - STR_LIB_SHIELD_TOME
+      - STR_SMITE_TOME
+    units:
+      - STR_SOLDIER_LIBRARIAN
+      - STR_SOLDIER_LIBRARIAN_TERM
+    psiDefence:
+      psiStrength: 1.0 # psyker
+      psiSkill: 0.1 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
+      moraleCurrent: 0.7 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 5
+      ARMOR_ENERGY_SHIELD_DECAY: 25
+      UNIT_TYPE_PSYKER: 1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+
+  - type: STR_LIB_TERMINATOR_UC     #LIBRARIAN TERMINATOR
+    refNode: *STR_TERMINATOR_ARMOR
+    ufopediaType: STR_POWER_SUIT_UC
+    spriteSheet: LIBTERM.PCK
+    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 12}
+    corpseBattle:
+      - STR_LIB_CORPSE
+    storeItem: STR_POWER_SUIT
+    corpseGeo: STR_FALLEN_CORPSE
+    antiCamouflageAtDay: 10 # psyker powers aid detection
+    antiCamouflageAtDark: 10
+    heatVision: 40 # psyker powers + terminator bonus
+    stats:
+      tu: 10            # base 10
+      stamina: 20       # base 20
+      firing: 10        # base 20  -10 Lib
+      health: 30        # base 30
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      throwing: 10      # base 30  -20 Lib
+      strength: 90      # base 90
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    units:
+      - STR_SOLDIER_LIBRARIAN_TERM
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 1.0 # psyker
+      psiSkill: 0.1 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
+      moraleCurrent: 0.7 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
+    forcedTorso: 1
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS # no power fist, just regular punching
+    builtInWeapons: # Smite tome sits in hand, other tomes occupy leg slots and are used via skills
+      - INV_NULL_3X3
+      - STR_LIB_SPEED_TOME
+      - STR_LIB_SMOKE_TOME
+      - STR_LIB_LOCKDOWN_TOME
+      - STR_LIB_SHIELD_TOME
+      - STR_SMITE_TOME
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 5
+      ARMOR_ENERGY_SHIELD_DECAY: 25
+      UNIT_TYPE_PSYKER: 1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+  
+  - type: BIKE_ARMOR_UC             #BIKE
+    visibilityAtDay: 40
+    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
+    heatVision: 20 #Add anti-smoke vision to all marine armour
+    antiCamouflageAtDay: 6 # advanced senses and inbuilt armor sensors
+    antiCamouflageAtDark: 6
+    frontArmor: 150 # base 125 +25 Bike     - was 160
+    sideArmor: 140  # base 125 +15 Bike     - was 150
+    rearArmor: 100  # base 100              - was 85
+    underArmor: 145 # base 125 + 20 Bike    - was 145
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.0 #discipline and resolve reinforces their faith
+    allowsRunning: false
+    allowsKneeling: false
+    stats:
+      tu: 50
+      stamina: 50
+      firing: 0
+      health: 20 # was 0
+      bravery: 0
+      reactions: 0
+      throwing: 0
+      strength: 20 # was 0
+      psiStrength: 0
+      psiSkill: 0
+      melee: 15 # was 0
+    builtInWeapons:
+      - AUX_TANK_CANNON
+      - AUX_RAM_SMT
+      - INV_NULL_3X3
+      - INV_NULL_4X2
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.5 #FLAMES (Standard 0.8)
+      - 0.7 #HE
+      - 0.8 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 0.0 #IMPACT
+      - 1.0 #MELTA
+    moveCost:
+      baseNormalPercent: [50,50] #halved movement costs
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+
+  - &STR_DREADNOUGHT_ARMOR          #DREAD ARMOR NORMAL
+    type: DREAD_ARMOR_UC
+    visibilityAtDay: 40
+    visibilityAtDark: 40
+    heatVision: 50 # Vehicle sensors
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    frontArmor: 240
+    sideArmor: 230
+    rearArmor: 180
+    underArmor: 240
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.2 #discipline and resolve reinforces their faith (+20% dread bonus)
+    stats: #
+      tu: 30            # base 30 
+      stamina: 20       # base 20 
+      health: 80        # base 80 
+      bravery: 10       # base 10 
+      reactions: 20     # base 20 
+      firing: 20        # base 20 
+      throwing: 0       # base 0  
+      strength: 80      # base 50 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 20         # base 20 
+    damageModifier: # Moved closer to Terminator Values
+      - 1.0 #none
+      - 0.6 #AP - was 0.8
+      - 0.2 #FLAMES
+      - 0.5 #HE - was 0.7
+      - 0.8 #LASCANON - was 1.1
+      - 0.8 #PLASMA
+      - 0.0 #STUN
+      - 0.8 #MELEE
+      - 0.8 #ACID
+      - 0.0 #SMOKE
+      - 0.0 #IMPACT
+      - 1.0 #MELTA - was 1.2
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 4 # Gain 1-4 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_MECHANICAL: 1
+
+  - type: DREAD_ARMOR2_UC           #DREAD ARMOR PLASMA
+    refNode: *STR_DREADNOUGHT_ARMOR
+
+  - type: DREAD_ARMOR3_UC           #DREAD ARMOR MLAUNCHER
+    refNode: *STR_DREADNOUGHT_ARMOR
+
+  - type: DREAD_ARMOR4_UC           #DREAD ARMOR ?
+    refNode: *STR_DREADNOUGHT_ARMOR
+
+  - type: DREAD_ARMOR5_UC           #DREAD ARMOR VENERABLE
+    refNode: *STR_DREADNOUGHT_ARMOR
+
+  - type: STR_SIGNAL_ARMOR_UC_HULK  #SUPERHULK REWARD ARMOR
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # was 30
+    antiCamouflageAtDay: 7 # was 5
+    antiCamouflageAtDark: 7 # was 5
+    stats:
+      tu: 25        # was 15
+      stamina: 25   # was 25
+      health: 35    # was 35
+      bravery: 10   # was 20
+      reactions: 25 # was 25
+      firing: 20    # was 25
+      throwing: 10  # was 10
+      strength: 25  # was 35
+      psiStrength: 0 # was 10
+      psiSkill: 20  # was 10
+      melee: 25     # was 25
+    frontArmor: 150 # was 150
+    sideArmor: 140  # was 140
+    rearArmor: 100  # was 100
+    underArmor: 130 # was 110
+    damageModifier: # Officer resists - was using standard Marine resists
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.7 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.8 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+    tags: # give it bonus hp regen
+      SMT_ARMOR_REGEN_HP: 4
+
+

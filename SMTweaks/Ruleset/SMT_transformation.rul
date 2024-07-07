@@ -1,0 +1,184 @@
+commendations:
+  - type: STR_TERMINATOR_CROSS # promote to terminator
+    description: STR_TERMINATOR_CROSS_DESCRIPTION
+    sprite: 5
+    criteria:
+      killsWithCriteriaCareer: [40] #was 30
+    killCriteria:
+       -
+         - [1, ["STATUS_DEAD", "FACTION_HOSTILE"]]
+
+soldierTransformation:
+  - name: STR_PROMOTE_TERMINATOR        # Marine -> Vet Marine
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_MIDTIER_PREREQ #Was POWER_SUIT
+    producedSoldierType: STR_SOLDIER_TERMINATOR
+    cost: 25000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 160 # was 70
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_SOLDIER
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    listOrder: 50
+
+  - name: STR_PROMOTE_NEOPHYTE          # Neophyte -> Marine
+    requires:
+      - STR_MARINES_STRATEGY
+      #- STR_NOT_PRIMARIS
+    producedSoldierType: STR_SOLDIER
+    cost: 100000
+    requiredItems:
+      STR_SMT_GENESEED: 1
+      STR_KILLPOINT_TOKEN: 40 # was 30
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_SOLDIER_NEOPHYTE
+    transferTime: 0
+    recoveryTime: 3
+    requiredCommendations:
+      STR_BATTLE_TESTED: 0
+    requiredMinStats:
+      health: 60 # Neophyte base 40-55, Marine minimum 75
+      strength: 50 # Neophyte base 30-40, Marine minimum 55
+    listOrder: 30
+
+  - name: STR_HARVEST_GENESEED          # Recover Geneseed from Corpses
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
+    cost: 5000
+    producedItem: STR_SMT_GENESEED
+    allowsDeadSoldiers: true
+    allowsLiveSoldiers: false
+    allowsWoundedSoldiers: false
+    needsCorpseRecovered: true
+    transferTime: 0
+    allowedSoldierTypes:
+      - STR_SOLDIER
+      - STR_SOLDIER_TERMINATOR
+      - STR_SOLDIER_CHAPLAIN
+      - STR_SOLDIER_LIBRARIAN
+      - STR_SOLDIER_LIBRARIAN_TERM
+    listOrder: 10
+
+  - name: STR_PROMOTE_CHAPLAIN          # Marine -> Chaplain
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_MIDTIER_PREREQ
+      - STR_PSI_LAB
+    producedSoldierType: STR_SOLDIER_CHAPLAIN
+    cost: 40000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 30
+      STR_KILLPOINT_TOKEN: 260 # was 200
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_SOLDIER
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requiresBaseFunc: [PSI] #needs chapel
+    requiredMinStats:
+      bravery: 80 #80 - max Neophyte starting stat is 60
+      psiSkill: 60 #60
+    listOrder: 70
+
+  - name: STR_PROMOTE_LIBRARIAN         # Neophyte -> Librarian
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_LIBRARY
+    producedSoldierType: STR_SOLDIER_LIBRARIAN
+    cost: 125000
+    requiredItems:
+      STR_SMT_GENESEED: 1
+      STR_ALIEN_ALLOYS: 30
+      STR_KILLPOINT_TOKEN: 160 # was 100
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_SOLDIER_NEOPHYTE
+    transferTime: 0
+    recoveryTime: 5
+    requiredCommendations:
+      STR_BATTLE_TESTED: 0
+    requiresBaseFunc: [LIB] #needs library
+    requiredMinStats:
+      health: 60 # Neophyte base 40-55, Marine minimum 75
+      strength: 50 # Neophyte base 30-40, Marine minimum 55
+      psiStrength: 80 #
+    listOrder: 40
+      
+  - name: STR_PROMOTE_LIB_TERMINATOR    # Librarian -> Vet Librarian
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_MIDTIER_PREREQ
+      - STR_LIBRARY
+    producedSoldierType: STR_SOLDIER_LIBRARIAN_TERM
+    cost: 40000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 160 # was 150
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_SOLDIER_LIBRARIAN
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requiredMinStats:
+      psiStrength: 80 #
+    listOrder: 60
+
+  - name: STR_CHAPLAIN_ROSARY           # Chaplain Shield
+    forbiddenPreviousTransformations:
+      - STR_CHAPLAIN_ROSARY
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_CHAP_ARMOR
+    cost: 60000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 200
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    transferTime: 0
+    allowedSoldierTypes:
+      - STR_SOLDIER_CHAPLAIN
+    soldierBonusType: STR_BONUS_PERSONAL_SHIELD
+    listOrder: 80
+
+  - name: STR_RESURRECT_MARINE          # Create Dreadnought
+    requires:
+      - STR_DREADNOUGHT_MARINE
+      - STR_NOT_PRIMARIS
+    requiredItems:
+      STR_ALIEN_ALLOYS: 30
+      STR_ELERIUM_115: 30
+      STR_UFO_CONSTRUCTION: 10
+      STR_KILLPOINT_TOKEN: 60 # was 300
+    allowedSoldierTypes:
+      - STR_SOLDIER
+      - STR_SOLDIER_TERMINATOR
+      - STR_SOLDIER_CHAPLAIN
+      - STR_SOLDIER_LIBRARIAN
+      - STR_SOLDIER_LIBRARIAN_TERM
+      - STR_SOLDIER_JOAN
+    listOrder: 20
+

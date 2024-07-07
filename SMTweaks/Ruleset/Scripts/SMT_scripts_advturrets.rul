@@ -1,0 +1,223 @@
+### Credit to the amazing Filip_H who did the Advanced Turrets mod for IG that this is a shameless copy of ###
+
+extended:
+  tags:
+    RuleItem:
+      SMT_TURRET_TOKEN: int         # is this item a Turret token?
+      SMT_RAZOR_HBOLTER: int        # Razorback Heavy Bolter token
+      SMT_RAZOR_LAS: int            # Razorback Lascannon token
+      SMT_RAZOR_HFLAME: int         # Razorback Heavy Flamer token
+    RuleArmor:
+      SMT_RAZORBACK_TURRET: int     # marks unit as Razorback default turret that can be replaced
+      SMT_RAZOR_SBOLTER_TURRET: int # marks unit as Razorback Stormbolter turret
+      SMT_RAZOR_HBOLTER_TURRET: int # marks unit as Razorback Heavy Bolter turret
+      SMT_RAZOR_LAS_TURRET: int     # marks unit as Razorback Lascannon turret
+      SMT_RAZOR_HFLAME_TURRET: int  # marks unit as Razorback Heavy Flamer turret
+    BattleGame:
+      SMT_RAZOR_HBOLTER_COUNT: int  # number of Razorback HeavyBolter tokens
+      SMT_RAZOR_HBOLTER_DEATHS: int # number of Razorback HeavyBolter turrets lost
+      SMT_RAZOR_LAS_COUNT: int      # number of Razorback Lascannon tokens
+      SMT_RAZOR_LAS_DEATHS: int     # number of Razorback Lascannon turrets lost
+      SMT_RAZOR_HFLAME_COUNT: int   # number of Razorback HeavyFlamer tokens
+      SMT_RAZOR_HFLAME_DEATHS: int  # number of Razorback HeavyFlamer turrets lost
+
+  scripts:
+    createItem:
+      #*** Script that collects the number of turrets purchased ***
+      - new: SMTS_turret_count
+        offset: 80
+        code: |
+          var int temp;
+          var int temp2;
+
+          item.getTag temp Tag.SMT_TURRET_TOKEN;
+          battle_game.getTurn temp2;
+          if and eq temp 1 eq temp2 0;
+            item.getTag temp Tag.SMT_RAZOR_HBOLTER; ## Count Razorback Heavy Bolter Tokens
+            if eq temp 1;
+              battle_game.getTag temp2 Tag.SMT_RAZOR_HBOLTER_COUNT;
+              add temp2 1; # +1 to count
+              battle_game.setTag Tag.SMT_RAZOR_HBOLTER_COUNT temp2;
+              #debug_log "TurretCounter (HeavyBolter) " temp2;
+            end;
+            
+            item.getTag temp Tag.SMT_RAZOR_LAS; ## Count Razorback Lascannon Tokens
+            if eq temp 1;
+              battle_game.getTag temp2 Tag.SMT_RAZOR_LAS_COUNT;
+              add temp2 1; # +1 to count
+              battle_game.setTag Tag.SMT_RAZOR_LAS_COUNT temp2;
+              #debug_log "TurretCounter (Lascannon) " temp2;
+            end;
+            
+            item.getTag temp Tag.SMT_RAZOR_HFLAME; ## Count Razorback Heavy Flamer Tokens
+            if eq temp 1;
+              battle_game.getTag temp2 Tag.SMT_RAZOR_HFLAME_COUNT;
+              add temp2 1; # +1 to count
+              battle_game.setTag Tag.SMT_RAZOR_HFLAME_COUNT temp2;
+              #debug_log "TurretCounter (HeavyFlamer) " temp2;
+            end;
+          end;
+          
+          return;
+
+    createUnit:
+      #*** Script that replaces default turrets with advanced turrets ***
+      - new: SMTS_turret_replace
+        offset: 81
+        code: |
+          var ptr RuleArmor unitArmor;
+          var ptr RuleUnit turretUnit;
+          var int isTurret;
+          var int temp;
+
+          unit.getTag isTurret Tag.SMT_RAZORBACK_TURRET; # Handle Razorback Turrets - Priority is Lascannon > Heavy Flamer > Heavy Bolter > Stormbolter
+          #debug_log "CreateTurret Ping " isTurret;
+          if eq isTurret 1; # Razorback start
+            battle_game.getTag temp Tag.SMT_RAZOR_LAS_COUNT; # Razorback Lascannon
+            if gt temp 0;
+              rules.getRuleUnit turretUnit "STR_SMT_RAZORBACK_LASCANNON";
+              unit.setSpawnUnit turretUnit;
+              unit.setSpawnUnitFaction FACTION_PLAYER;
+              unit.setSpawnUnitInstantRespawn 1;
+              #debug_log "Spawn Las (tokens) " temp;
+              sub temp 1;
+              battle_game.setTag Tag.SMT_RAZOR_LAS_COUNT temp;
+              return;
+            end;
+            
+            battle_game.getTag temp Tag.SMT_RAZOR_HFLAME_COUNT; # Razorback Heavy Flamer
+            if gt temp 0;
+              rules.getRuleUnit turretUnit "STR_SMT_RAZORBACK_HFLAMER";
+              unit.setSpawnUnit turretUnit;
+              unit.setSpawnUnitFaction FACTION_PLAYER;
+              unit.setSpawnUnitInstantRespawn 1;
+              #debug_log "Spawn HFlamer (tokens) " temp;
+              sub temp 1;
+              battle_game.setTag Tag.SMT_RAZOR_HFLAME_COUNT temp;
+              return;
+            end;
+            
+            battle_game.getTag temp Tag.SMT_RAZOR_HBOLTER_COUNT; # Razorback Heavy Bolter
+            if gt temp 0;
+              rules.getRuleUnit turretUnit "STR_SMT_RAZORBACK_HBOLTER";
+              unit.setSpawnUnit turretUnit;
+              unit.setSpawnUnitFaction FACTION_PLAYER;
+              unit.setSpawnUnitInstantRespawn 1;
+              #debug_log "Spawn HBolter (tokens) " temp;
+              sub temp 1;
+              battle_game.setTag Tag.SMT_RAZOR_HBOLTER_COUNT temp;
+              return;
+            end;
+          
+            rules.getRuleUnit turretUnit "STR_SMT_RAZORBACK_STORMBOLT"; # Razorback Storm Bolter - Fallback option
+            unit.setSpawnUnit turretUnit;
+            unit.setSpawnUnitFaction FACTION_PLAYER;
+            unit.setSpawnUnitInstantRespawn 1;
+            #debug_log "Spawn SBolter";
+          end; # Razorback end
+          return;
+
+      #*** Script that gives new turrets TUs on turn 1 ***
+      - new: SMTS_turret_tu_restore
+        offset: 99
+        code: |
+          var int turret;
+          var int timeUnits;
+
+          unit.getTag turret Tag.SMT_RAZOR_HBOLTER_TURRET;
+          if eq turret 1;
+            unit.getTimeUnitsMax timeUnits;
+            unit.setTimeUnits timeUnits;
+          end;
+          unit.getTag turret Tag.SMT_RAZOR_LAS_TURRET;
+          if eq turret 1;
+            unit.getTimeUnitsMax timeUnits;
+            unit.setTimeUnits timeUnits;
+          end;
+          unit.getTag turret Tag.SMT_RAZOR_HFLAME_TURRET;
+          if eq turret 1;
+            unit.getTimeUnitsMax timeUnits;
+            unit.setTimeUnits timeUnits;
+          end;
+          unit.getTag turret Tag.SMT_RAZOR_SBOLTER_TURRET;
+          if eq turret 1;
+            unit.getTimeUnitsMax timeUnits;
+            unit.setTimeUnits timeUnits;
+          end;
+          return;
+
+    damageUnit:
+      #*** Script that counts destroyed turrets ***
+      - new: SMTS_turret_destruction
+        offset: 83
+        code: |
+          var ptr RuleArmor unitArmor;
+          var int health;
+          var int temp;
+          var int deaths;
+
+          unit.getHealth health;
+          if gt to_health health; # if lethal damage
+            unit.getTag temp Tag.SMT_RAZOR_HBOLTER_TURRET;   # Razorback Heavy Bolter
+            if eq temp 1;
+              battle_game.getTag deaths Tag.SMT_RAZOR_HBOLTER_DEATHS;
+              add deaths 1;
+              battle_game.setTag Tag.SMT_RAZOR_HBOLTER_DEATHS deaths;
+            end;
+            unit.getTag temp Tag.SMT_RAZOR_LAS_TURRET;       # Razorback Lascannon
+            if eq temp 1;
+              battle_game.getTag deaths Tag.SMT_RAZOR_LAS_DEATHS;
+              add deaths 1;
+              battle_game.setTag Tag.SMT_RAZOR_LAS_DEATHS deaths;
+            end;
+            unit.getTag temp Tag.SMT_RAZOR_HFLAME_TURRET;    # Razorback HeavyFlamer
+            if eq temp 1;
+              battle_game.getTag deaths Tag.SMT_RAZOR_HFLAME_DEATHS;
+              add deaths 1;
+              battle_game.setTag Tag.SMT_RAZOR_HFLAME_DEATHS deaths;
+            end;
+          end;
+          return;
+          
+          
+    newTurnItem:
+      #*** Script that destroys turret tokens if a turret died ***
+      - new: SMTS_turret_destruction
+        offset: 84
+        code: |
+          var int temp;
+          var int deadRazorHBolter;
+          var int deadRazorLas;
+          var int deadRazorHFlame;
+
+          item.getTag temp Tag.SMT_TURRET_TOKEN;
+          if gt temp 0;
+            item.getTag temp Tag.SMT_RAZOR_HBOLTER; # Razorback Heavy Bolter
+            battle_game.getTag deadRazorHBolter Tag.SMT_RAZOR_HBOLTER_DEATHS;
+            if and gt temp 0 gt deadRazorHBolter 0;
+              sub deadRazorHBolter 1;
+              battle_game.setTag Tag.SMT_RAZOR_HBOLTER_DEATHS deadRazorHBolter;
+              item.setFuseTimer 0;
+              return;
+            end;
+            
+            item.getTag temp Tag.SMT_RAZOR_LAS; # Razorback Lascannon
+            battle_game.getTag deadRazorLas Tag.SMT_RAZOR_LAS_DEATHS;
+            if and gt temp 0 gt deadRazorLas 0;
+              sub deadRazorLas 1;
+              battle_game.setTag Tag.SMT_RAZOR_LAS_DEATHS deadRazorLas;
+              item.setFuseTimer 0;
+              return;
+            end;
+            
+            item.getTag temp Tag.SMT_RAZOR_HFLAME; # Razorback Heavy Flamer
+            battle_game.getTag deadRazorHFlame Tag.SMT_RAZOR_HFLAME_DEATHS;
+            if and gt temp 0 gt deadRazorHFlame 0;
+              sub deadRazorHFlame 1;
+              battle_game.setTag Tag.SMT_RAZOR_HFLAME_DEATHS deadRazorHFlame;
+              item.setFuseTimer 0;
+              return;
+            end;
+          end;
+          return;
+          

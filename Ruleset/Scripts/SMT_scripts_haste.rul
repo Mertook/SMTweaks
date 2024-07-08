@@ -1,7 +1,7 @@
 extended:
   tags:
     RuleItem:
-      SMT_ITEM_MOVESPEED_BOOST: int #
+      SMT_ITEM_MOVESPEED_BOOST: int # duration of movement speed boost buff
     BattleUnit:
       SMT_HASTE_ENDTURN: int #store buff duration
       SMT_HASTE_ORIGINAL_SPEED: int #stores units original speed
@@ -46,8 +46,8 @@ extended:
           damaging_item.getRuleItem itemRuleset;
           itemRuleset.getTag buffTime Tag.SMT_ITEM_MOVESPEED_BOOST;
 
-          if gt buffTime 0; # skip if not haste spell or if target already has haste
-          # Power <100 = no change, 100-124 = 75% cost, 125-150 = 50% cost, >=150 = 25%
+          if gt buffTime 0; # skip if not haste spell
+          # Power <30 = no change, 30-59 = 75% cost, 60-89 = 50% cost, >=90 = 25%
             set hasteMod currPower;
             div hasteMod 30;
             #sub hasteMod 3; # <100 do nothing
@@ -57,15 +57,16 @@ extended:
               mul hasteMod 25;
               set temp 100;
               sub temp hasteMod;
-              unit.MoveCost.getBaseTimePercent currentSpeed; #remember original movement cost
-              if lt temp currentSpeed; # only change if new speed is lower than current
+              unit.MoveCost.getBaseTimePercent currentSpeed; # get current speed
+              if lt temp currentSpeed; # only change if new speed is faster than current
                 unit.MoveCost.setBaseTimePercent temp;
+                #debug_log "HasteBuff Speed Changed " temp currentSpeed;
               end;
-              unit.getTag originalSpeed Tag.SMT_HASTE_ORIGINAL_SPEED;
-              if eq originalSpeed 0; # only update units original speed if it wasn't already set
+              unit.getTag originalSpeed Tag.SMT_HASTE_ORIGINAL_SPEED; #
+              if eq originalSpeed 0; # only set with units original speed if it wasn't already set
                 unit.setTag Tag.SMT_HASTE_ORIGINAL_SPEED currentSpeed;
               end;
-              #debug_log "HasteBuff Speed change N/O - " temp currentSpeed;
+              #debug_log "HasteBuff Final N/C/O - " temp currentSpeed originalSpeed;
 
               battle_game.getTurn temp;
               add temp buffTime; #define end turn for buff

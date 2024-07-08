@@ -19,7 +19,7 @@ startingBase:
     STR_SHOTGUN: 1
     STR_SHOTGUN_SHELLS: 4
     STR_HEAVY_CANNON: 1 #sniper
-    STR_HC_AP_AMMO: 4
+    STR_HC_AP_AMMO: 4 #sniper ammo
     STR_ROCKET_LAUNCHER: 1
     STR_SMALL_ROCKET: 6
     STR_FLAMETHROWER: 1
@@ -39,11 +39,11 @@ events:
       STR_CRATED_RHINO: 1
       STR_CRATED_LANDSPEEDER: 1
       STR_TATICAL_ARMOR: 2 
-      STR_RIFLE: 2 #
-      STR_RIFLEB: 1 # 2 ultra patterns in january is too strong
-      STR_RIFLE_CLIP: 20
+      STR_RIFLE: 3 # 2 ultra patterns in january is too strong
+      STR_RIFLE_CLIP: 10
       STR_RIFLE_CLIP_AP: 10
       STR_RIFLE_CLIP_EX: 10
+      STR_RIFLE_CLIP_MC: 6
       STR_HIGH_EXPLOSIVE: 8
       STR_SMT_GENESEED_IMPURE: 5
     spawnedPersons: 18
@@ -91,8 +91,8 @@ events:
       STR_CRATED_LANDSPEEDER: 1
       STR_SCOUTH: 2 #Adv Scout Armor
       STR_PISTOLH_SM: 2 # Tigrus
-      STR_PISTOL_CLIP_AP: 15
-      STR_PISTOL_CLIP_EX: 15
+      STR_RIFLE_CLIP_AP: 15
+      STR_RIFLE_CLIP_EX: 15
       STR_GRENADE_LAUNCHER_ASTARTES: 2
       STR_FRAG_GRENADE_DRUM: 4
       STR_SMOKE_GRENADE_DRUM: 4
@@ -105,7 +105,7 @@ events:
     spawnedPersonType: STR_PRIMARISLV1
 
   - name: STR_GENESEED_PACKAGE_STARTER    # First Geneseed Monthly Package - Avg 0+8 
-    description: STR_GENESEED_PACKAGE_DESCRIPTION
+    description: STR_GENESEED_PACKAGE_DESCRIPTION_FIRST
     randomMultiItemList:
       -
         STR_SMT_GENESEED_IMPURE: 7
@@ -118,53 +118,61 @@ events:
     timer: 360 # 6 hours
     timerRandom: 0
 
-  - name: STR_GENESEED_PACKAGE_EARLY    # Early Geneseed Monthly Package - Avg 0+12 - was 1+14
-    description: STR_GENESEED_PACKAGE_DESCRIPTION
-    randomMultiItemList:
-      -
-        STR_SMT_GENESEED_IMPURE: 9
-      -
-        STR_SMT_GENESEED_IMPURE: 11
-      -
-        STR_SMT_GENESEED_IMPURE: 13
-      -
-        STR_SMT_GENESEED_IMPURE: 15
-    timer: 1440 # 1 day
-    timerRandom: 5760 # +4 days
-
-  - name: STR_GENESEED_PACKAGE_MID      # Mid Geneseed Monthly Package   - Avg 0+20 - was 1+22.5
-    description: STR_GENESEED_PACKAGE_DESCRIPTION
-    randomMultiItemList:
-      -
-        STR_SMT_GENESEED_IMPURE: 17
-      -
-        STR_SMT_GENESEED_IMPURE: 19
-      -
-        STR_SMT_GENESEED_IMPURE: 21
-      -
-        STR_SMT_GENESEED_IMPURE: 23
-    timer: 1440 # 1 day
-    timerRandom: 5760 # +4 days
-
-  - name: STR_GENESEED_PACKAGE_LATE     # Late Geneseed Monthly Package  - Avg 1+26
+  - name: STR_GENESEED_PACKAGE_EARLY    # Early Geneseed Monthly Package - Avg 1+2.5 - was 1+14
     description: STR_GENESEED_PACKAGE_DESCRIPTION
     randomMultiItemList:
       -
         STR_SMT_GENESEED: 1
-        STR_SMT_GENESEED_IMPURE: 23
+        STR_SMT_GENESEED_IMPURE: 1
+      -
+        STR_SMT_GENESEED: 1
+        STR_SMT_GENESEED_IMPURE: 2
+      -
+        STR_SMT_GENESEED: 1
+        STR_SMT_GENESEED_IMPURE: 3
+      -
+        STR_SMT_GENESEED: 1
+        STR_SMT_GENESEED_IMPURE: 4
+    timer: 1440 # 1 day
+    timerRandom: 5760 # +4 days
+
+  - name: STR_GENESEED_PACKAGE_MID      # Mid Geneseed Monthly Package   - Avg 1+10 - was 0+20
+    description: STR_GENESEED_PACKAGE_DESCRIPTION
+    randomMultiItemList:
+      -
+        STR_SMT_GENESEED: 1
+        STR_SMT_GENESEED_IMPURE: 7
+      -
+        STR_SMT_GENESEED: 1
+        STR_SMT_GENESEED_IMPURE: 9
+      -
+        STR_SMT_GENESEED: 1
+        STR_SMT_GENESEED_IMPURE: 11
+      -
+        STR_SMT_GENESEED: 1
+        STR_SMT_GENESEED_IMPURE: 13
+    timer: 1440 # 1 day
+    timerRandom: 5760 # +4 days
+
+  - name: STR_GENESEED_PACKAGE_LATE     # Late Geneseed Monthly Package  - Avg 1+23
+    description: STR_GENESEED_PACKAGE_DESCRIPTION
+    randomMultiItemList:
+      -
+        STR_SMT_GENESEED: 1
+        STR_SMT_GENESEED_IMPURE: 17
+      -
+        STR_SMT_GENESEED: 1
+        STR_SMT_GENESEED_IMPURE: 21
       -
         STR_SMT_GENESEED: 1
         STR_SMT_GENESEED_IMPURE: 25
-      -
-        STR_SMT_GENESEED: 1
-        STR_SMT_GENESEED_IMPURE: 27
       -
         STR_SMT_GENESEED: 1
         STR_SMT_GENESEED_IMPURE: 29
     timer: 1440 # 1 day
     timerRandom: 5760 # +4 days
 
-  - name: STR_GENESEED_PACKAGE_EXLATE   # Late Geneseed Monthly Package  - Avg 1+34
+  - name: STR_GENESEED_PACKAGE_EXLATE   # Late Geneseed Monthly Package  - Avg 1+32
     description: STR_GENESEED_PACKAGE_DESCRIPTION
     randomMultiItemList:
       -
@@ -175,10 +183,10 @@ events:
         STR_SMT_GENESEED_IMPURE: 31
       -
         STR_SMT_GENESEED: 1
-        STR_SMT_GENESEED_IMPURE: 37
+        STR_SMT_GENESEED_IMPURE: 35
       -
         STR_SMT_GENESEED: 1
-        STR_SMT_GENESEED_IMPURE: 39
+        STR_SMT_GENESEED_IMPURE: 37
     timer: 1440 # 1 day
     timerRandom: 5760 # +4 days
 
@@ -190,8 +198,7 @@ eventScripts:
       1:
        STR_GENESEED_PACKAGE_STARTER: 100
       2:
-       STR_GENESEED_PACKAGE_STARTER: 33
-       STR_GENESEED_PACKAGE_EARLY: 66
+       STR_GENESEED_PACKAGE_EARLY: 100
       3:
        STR_GENESEED_PACKAGE_EARLY: 100
       4:

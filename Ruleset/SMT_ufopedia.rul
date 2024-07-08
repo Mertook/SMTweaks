@@ -14,11 +14,18 @@ ufopaedia:
     text: STR_GENESEED_DETAILS_UFOPEDIA
     listOrder: 21011
 
-  - id: STR_SMT_PROMOTION_SPECIALISTS       # Chaplain/Librarian Promotion
+  - id: STR_SMT_PROMOTION_CHAPLAINS       # Chaplain Promotion
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
-    text: STR_SMT_PROMOTION_SPECIALISTS_UFOPEDIA
+    text: STR_SMT_PROMOTION_CHAPLAINS_UFOPEDIA
+    listOrder: 21019
+
+  - id: STR_SMT_PROMOTION_LIBRARIANS       # Librarian Promotion
+    type_id: 10
+    section: STR_SMT_INFO
+    image_id: TODO.SPK
+    text: STR_SMT_PROMOTION_LIBRARIANS_UFOPEDIA
     listOrder: 21020
 
   - id: STR_SMT_LIBRARIAN_SPELLS            # Librarian Abilities
@@ -63,7 +70,7 @@ ufopaedia:
     text: STR_SMT_HWP_UFOPEDIA
     listOrder: 21080
 
-  - id: STR_SMT_BOLTER_CHANGES          # MC Ammo Bonus
+  - id: STR_SMT_BOLTER_CHANGES              # MC Ammo Bonus
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
@@ -118,7 +125,7 @@ ufopaedia:
 
   - id: STR_HEAVY_BOLTER_MARS               # Mars HBolter
     requires:
-      - STR_DEV_MARS_BOLTER
+      - STR_DEVASTATOR # unlock early because of starting gear
     type_id: 14
     section: STR_SMT_INFO #STR_WEAPONS_AND_EQUIPMENT
     image_id: 1HB.SPK # Heavybolter image
@@ -211,7 +218,6 @@ ufopaedia:
   - id: STR_BOLT_SNIPER_RIFLE               # Bolt Rifle Sniper (Scout Strat)
     requires:
       - STR_SCOUT
-      - STR_UFO_CONSTRUCTION
     type_id: 14
     section: STR_SMT_INFO #STR_WEAPONS_AND_EQUIPMENT
     image_id: orksnipercodex.SPK
@@ -370,8 +376,8 @@ extraStrings:
       STR_STRIKE_VOX_UFOPEDIA: "{NEWLINE} Vox-casters enable soldiers on the field to call in firesupport to deliver wide-area bombardments. {NEWLINE}{NEWLINE}There is a one-turn delay before the barrage hits."
       STR_STRIKE_AUTO: Call Strike
       STR_STRIKE_BEACON: Strike Beacon
-      STR_SMT_GENESEED: Pure Geneseed
-      STR_SMT_GENESEED_IMPURE: Unrefined Geneseed
+      STR_SMT_GENESEED: Geneseed
+      STR_SMT_GENESEED_IMPURE: Immature Geneseed
       INV_NULL_3X1_BACKPACK_BLESS: ""
       INV_NULL_3X3_BACKPACK_BLESS: ""
       STR_LIB_LOCKDOWN_TOME: Tome of the Empyrean
@@ -476,9 +482,12 @@ extraStrings:
       STR_LIBRARY_UFOPEDIA: "{NEWLINE} This vast sealed chamber known as the Librarium is filled from floor to ceiling with books, scrolls, and data crystals. The Librarium is the repository of all the Chapter's knowledge and history. The Librarians of the Astartes are expected to record the great deeds of their Chapter and maintain the Chapter's storehouse of ancient lore. This facility allows the training of Librarians."
       STR_TRAINFACILITY_UFOPEDIA: "{NEWLINE} This facility allows us to train up to 40 soldiers at a time."
       ### EVENTS
+      STR_GENESEED_PACKAGE_STARTER: Geneseed Harvest
       STR_GENESEED_PACKAGE_EARLY: Geneseed Harvest
       STR_GENESEED_PACKAGE_MID: Geneseed Harvest
       STR_GENESEED_PACKAGE_LATE: Geneseed Harvest
+      STR_GENESEED_PACKAGE_EXLATE: Geneseed Harvest
+      STR_GENESEED_PACKAGE_DESCRIPTION_FIRST: "Our Apothecaries have begun the slow process of creating more Geneseed to expand our forces. This initial harvest is small, but  with our existing reserves will be enough to complete the transformation of a Neophyte into an honored Battle Brother.{NEWLINE}{NEWLINE}Our yield of Geneseed is expected to increase over time, but each one is precious and should be treated with reverence."
       STR_GENESEED_PACKAGE_DESCRIPTION: "Our Apothecaries have collected newly matured geneseed, ready to implant into promising recuits and induct them into the Chapter as honored Battle Brothers."
       STR_TACTICAL_CARE_PACKAGE_DESCRIPTION: "Wargear appropriate for your chosen strategy will arrive within an hour. A compliment of neophytes is en route and will arrive in one day.{NEWLINE}{NEWLINE}A Drop Pod deployment craft has been placed at your disposal, as well as the option to requisition a Razorback or Landspeeder craft - once the requisition order arrives, have your manufacturing servitors complete the requisition. A spare hangar is required for the delivery of the craft."
       STR_ASSAULT_CARE_PACKAGE_DESCRIPTION: "Wargear appropriate for your chosen strategy will arrive within an hour. A compliment of neophytes is en route and will arrive in one day.{NEWLINE}{NEWLINE}A Drop Pod deployment craft has been placed at your disposal, as well as the option to requisition a Razorback or Landspeeder craft - once the requisition order arrives, have your manufacturing servitors complete the requisition. A spare hangar is required for the delivery of the craft."
@@ -489,7 +498,7 @@ extraStrings:
       STR_SMT_UFOPAEDIA_UNFINISHED: "{NEWLINE}{NEWLINE} Codex Unfinished"
       STR_MC_PRECISION: "Precision %"
       STR_GENESEED_DETAILS: "Geneseed"
-      STR_GENESEED_DETAILS_UFOPEDIA: "{NEWLINE} Gene-seed is the unique genetic material used to transform humans into the super-human Space Marines. It is essential to the survival of a Chapter and must be carefully preserved.{NEWLINE} A small amount of Geneseed is accrued over time by our Apothecaries, though most of it will need to be refined into the Pure Geneseed required to create new Marines. Fallen Battle Brothers whose bodies have been recovered can have their progenoid glands extracted, recovering their Geneseed."
+      STR_GENESEED_DETAILS_UFOPEDIA: "{NEWLINE} Gene-seed is the unique genetic material used to transform humans into the super-human Space Marines. It is essential to the survival of a Chapter and must be carefully preserved.{NEWLINE} A small amount is accrued over time by our Apothecaries, though some of it will need to be refined into the matured Geneseed required to create new Marines. Fallen Battle Brothers whose bodies have been not been lost or corrupted can have their progenoid glands extracted, recovering their Geneseed."
       STR_SMT_RECOIL: Recoil Changes
       STR_SMT_RECOIL_UFOPEDIA: "{NEWLINE} Recoil has been slightly changed. Using a weapon without a free hand increases the recoil of that weapon by {ALT}+50%{ALT}, increasing the strength required to fire it without penalty."
       STR_SMT_HWP: Weapon Stabilizers
@@ -499,13 +508,13 @@ extraStrings:
       STR_SMT_REGENERATION: Marine Healing
       STR_SMT_REGENERATION_UFOPEDIA: "{NEWLINE} Marines undergo extensive genetic modification, improving their ability to recover from injury far above that of regular humans. This allows them to recover from fatal wounds and restore health even on the battlefield. Units can heal up to 80% of their max health, but lost health restored this way still incurs post-mission recovery time.{NEWLINE}{NEWLINE}Each Turn:{NEWLINE} {ALT}Neophytes heal 2 HP{NEWLINE} Marines heal 6 HP/2 Wounds{NEWLINE} Vet Marines heal 8 HP/3 Wounds"
       STR_SMT_PROMOTION_TREE: Promoting Marines
-      STR_SMT_PROMOTION_TREE_UFOPEDIA: "{NEWLINE} Neophytes who have earned the Battle Tested medal with {ALT}60+ HP and 50+ Strength{ALT} can undergo the final transformation into true Marines using Pure Geneseed, dramatically improving their stats and allowing use of MK7 armor.{NEWLINE}{NEWLINE} Marines who have earned the Crux Terminatus can be further promoted to Veterans, increasing their stat limits and allowing use of rare relic armors."
+      STR_SMT_PROMOTION_TREE_UFOPEDIA: "{NEWLINE} Neophytes who have earned the Battle Tested medal with {ALT}60+ HP and 50+ Strength{ALT} can undergo the final transformation into true Marines using Mature Geneseed, dramatically improving their stats and allowing use of MK7 armor.{NEWLINE}{NEWLINE} Marines who have earned the Crux Terminatus can be further promoted to Veterans, increasing their stat limits and allowing use of rare relic armors."
       STR_SMT_PROMOTION_CHAPLAINS: Chaplains
-      STR_SMT_PROMOTION_CHAPLAINS_UFOPEDIA: "{NEWLINE} Marines who have earned Crux Terminatus with at least {ALT}70 Bravery and Devotion{ALT} can be promoted to {ALT}Chaplains{ALT} instead of becoming Veteran Marines. Chaplains have the Bless ability; On use it restores morale and purges chaos corruption to nearby units. It also applies a one turn buff that grants resistance to further corruption, improves melee skill, and increases the chances of Heroic Save protecting a unit from death." 
+      STR_SMT_PROMOTION_CHAPLAINS_UFOPEDIA: "{NEWLINE} Marines who have earned Crux Terminatus with at least {ALT}70 Bravery and Devotion{ALT} can be promoted to Chaplains instead of becoming Veteran Marines.{NEWLINE}{NEWLINE} Chaplains have the Bless ability which restores morale and purges chaos corruption from nearby units. It also applies a one turn buff that grants resistance to further corruption, improves melee skill, and increases the chances of Heroic Save protecting a unit from death."
       STR_SMT_PROMOTION_LIBRARIANS: Librarians
-      STR_SMT_PROMOTION_LIBRARIANS_UFOPEDIA: "{NEWLINE} Battle-tested Neophytes with {ALT}20+ PsiStrength{ALT} can be trained into {ALT}Librarians{ALT} instead of becoming regular Marines.{NEWLINE}Librarians can use powerful psychic abilities that depend on PsiStrength, which is improved through use in battle.{NEWLINE}{NEWLINE} Librarians with Crux Terminatus and {ALT}90+ PsiStr{ALT} can be further promoted to Veterans, increasing their maximum potential and allowing the use of Terminator Armor."
+      STR_SMT_PROMOTION_LIBRARIANS_UFOPEDIA: "{NEWLINE} Neophytes with {ALT}20+ PsiStr{ALT} can be trained into Librarians instead of becoming regular Marines.{NEWLINE}Librarians can use powerful psychic abilities that depend on Psi Strength, which is improved through use in battle.{NEWLINE}{NEWLINE} Librarians with Crux Terminatus and {ALT}90+ PsiStr{ALT} can be further promoted to Veterans, increasing their maximum potential and allowing the use of Terminator Armor."
       STR_SMT_LIBRARIAN_SPELLS: Librarian Abilities
-      STR_SMT_LIBRARIAN_SPELLS_UFOPEDIA: "{NEWLINE} Librarians have 5 different psyker abilities.{NEWLINE}{NEWLINE} {ALT}Smite{ALT} - Deals armor-ignoring damage to an enemy{NEWLINE} {ALT}Lockdown{ALT} - Drains enemy time units, paralysing them{NEWLINE} {ALT}Shroud{ALT} - Creates a blast of smoke to obscure vision{NEWLINE} {ALT}Shield{ALT} - Grants a temporary energy shield to an ally (No LoS needed){NEWLINE} {ALT}Accelerate{ALT} - Grants an ally reduced TU costs while moving{NEWLINE}{NEWLINE} All abilities scale with PsiStr only"
+      STR_SMT_LIBRARIAN_SPELLS_UFOPEDIA: "{NEWLINE} Librarians have 5 different psyker abilities.{NEWLINE}{NEWLINE} {ALT}Smite{ALT} - Deals armor-ignoring damage to an enemy{NEWLINE} {ALT}Lockdown{ALT} - Drains enemy time units, paralysing them{NEWLINE} {ALT}Shroud{ALT} - Creates a blast of smoke to obscure vision{NEWLINE} {ALT}Shield{ALT} - Grants a temporary energy shield to an ally{NEWLINE} {ALT}Accelerate{ALT} - Grants an ally reduced TU costs while moving{NEWLINE}{NEWLINE} All abilities scale with PsiStr only"
       STR_SMT_BOLTER_CHANGES: Bolter Changes
       STR_SMT_BOLTER_CHANGES_UFOPEDIA: "{NEWLINE} Bolters fire powerful high-caliber self-propelled explosive rounds. They have limited propulsion and lack accuracy at range, instead optimizing for devastating close range firepower.{NEWLINE} Compared to Rosigma SMT Bolters have greater falloff outside of optimal range but deal more damage and fire faster, specializing in autofire bursts.{NEWLINE}{NEWLINE} Heavy Bolter rounds are larger with more propulsion and don't suffer any additonal range penalties."
       STR_SMT_MASTERCRAFTED_AMMO: Mastercrafted Bolts

@@ -7,7 +7,7 @@ extended:
       SMT_ARMOR_SHRED_RESISTANCE: int       # Reduce armor damage by % (Non-melta damage sources)
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: int # Reduce armor damage by % (Melta damage)
       SMT_ARMOR_REGEN_HP: int #passive hp regen from armor
-      ARMOR_REGENERATES_WOUNDS: 1 #wound regen from armor
+      ARMOR_REGENERATES_WOUNDS: int #wound regen from armor
 
   scripts:
     statsForNerdsArmor:

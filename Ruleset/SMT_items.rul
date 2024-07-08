@@ -601,8 +601,8 @@ items:
     accuracySnap: 85 # was 90
     accuracyAimed: 0
     tuAimed: 0
-    tuAuto: 30 # was 35
     tuSnap: 20 # was 22
+    tuAuto: 30 # was 35
     requiresBuy:
       - STR_MARINE_BOLTERS
 
@@ -944,7 +944,7 @@ items:
     followProjectiles: false
     confSnap:
       shots: 2
-    kneelBonus: 115 # was 130, Astartes version meant to be hipfired by marines
+    kneelBonus: 120 # was 130, Astartes version meant to be hipfired by devastator marines
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
 
@@ -999,7 +999,7 @@ items:
       name: STR_FULL_AUTO
       shortName: STR_FULL_AUTO_COUNT
       shots: 12
-    kneelBonus: 115 # was 130, Astartes version meant to be hipfired by marines
+    kneelBonus: 120 # was 130, Astartes version meant to be hipfired by devastator marines
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
 
@@ -1183,7 +1183,7 @@ items:
     tuAimed: 0
     tags:
       ITEM_RECOIL: 80 # +5 - harsh requirement, terminator handgun
-      REACTION_MULTIPLIER: 150 # +50% reactions, pistol grip
+      REACTION_MULTIPLIER: 150 # +75% reactions, pistol grip
 
   - update: STR_HB_MC                       # MC Stormbolter
     armor: 200
@@ -1199,7 +1199,7 @@ items:
     tuAimed: 0
     tags:
       ITEM_RECOIL: 80 # +5 - harsh requirement, terminator handgun
-      REACTION_MULTIPLIER: 150 # +50% reactions, pistol grip
+      REACTION_MULTIPLIER: 175 # +75% reactions, pistol grip
 
   - update: STR_HB_CLIP                     # Stormbolter Ammo
     damageType: 1
@@ -1489,7 +1489,7 @@ items:
       name: STR_LAUNCH_SALVO_AUTO
       shots: 6
     costAuto:
-      time: 75 # was 80
+      time: 75 # was 80 for 3
     confAimed:
       name: STR_LAUNCH_SALVO
       shots: 2
@@ -1498,9 +1498,9 @@ items:
     accuracyAuto: 33
     accuracyAimed: 66
     accuracyMultiplier:
-      firing: 0.5
-      throwing: 0.5
-    power: 80 # was 100
+      firing: 0.6 # was 0.8
+      throwing: 0.6 # was 0.8
+    power: 100 # was 100
     damageType: 3
     damageAlter: #high explosive
       ToArmorPre: 0.25 # was 0.1
@@ -1513,7 +1513,7 @@ items:
       ToTime: 0.0 # was 0.3
       ToTile: 0.75
       ToItem: 0.75
-      FixRadius: 8 # was 10
+      FixRadius: 10 # was 10
     arcingShot: true
     # Given regular marine fist melee - not power fist
     minRange: 5

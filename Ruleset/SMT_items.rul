@@ -980,8 +980,8 @@ items:
     aimRange: 15 # regular 15
     accuracyAuto: 50 #
     accuracySnap: 66 # regular 60
-    accuracyAimed: 55 # regular 50
-    tuAuto: 65 # 
+    accuracyAimed: 58 # regular 50
+    tuAuto: 80 # 12 shots
     tuSnap: 25 # regular 25
     tuAimed: 55 # regular 60 for 8
     tuLoad: 40
@@ -1183,7 +1183,7 @@ items:
     tuAimed: 0
     tags:
       ITEM_RECOIL: 80 # +5 - harsh requirement, terminator handgun
-      REACTION_MULTIPLIER: 150 # +75% reactions, pistol grip
+      REACTION_MULTIPLIER: 150 # +50% reactions, pistol grip
 
   - update: STR_HB_MC                       # MC Stormbolter
     armor: 200

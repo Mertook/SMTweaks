@@ -1,0 +1,51 @@
+armors:
+  - &STR_MARINE_VOICE_TEMPLATE       # Generic Marine Voice
+    selectUnitMale:     [{mod: 40k, index: 511}, {mod: 40k, index: 512}, {mod: 40k, index: 513}, {mod: 40k, index: 514}, {mod: 40k, index: 515}]
+    selectUnitFemale:   [{mod: 40k, index: 531}, {mod: 40k, index: 532}, {mod: 40k, index: 533}, {mod: 40k, index: 534}, {mod: 40k, index: 535}]
+    startMovingMale:    [{mod: 40k, index: 506}, {mod: 40k, index: 507}, {mod: 40k, index: 508}, {mod: 40k, index: 509}, {mod: 40k, index: 510}]
+    startMovingFemale:  [{mod: 40k, index: 526}, {mod: 40k, index: 527}, {mod: 40k, index: 528}, {mod: 40k, index: 529}, {mod: 40k, index: 530}]
+    selectWeaponMale:   [{mod: 40k, index: 501}, {mod: 40k, index: 502}, {mod: 40k, index: 503}, {mod: 40k, index: 504}, {mod: 40k, index: 505}]
+    selectWeaponFemale: [{mod: 40k, index: 521}, {mod: 40k, index: 522}, {mod: 40k, index: 523}, {mod: 40k, index: 524}, {mod: 40k, index: 525}]
+    annoyedMale:        [{mod: 40k, index: 516}, {mod: 40k, index: 517}, {mod: 40k, index: 518}, {mod: 40k, index: 519}, {mod: 40k, index: 520}]
+    annoyedFemale:      [{mod: 40k, index: 536}, {mod: 40k, index: 537}, {mod: 40k, index: 538}, {mod: 40k, index: 539}, {mod: 40k, index: 540}]
+    deathMale:     [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
+    deathFemale:   [{mod: 40k, index: 161}, {mod: 40k, index: 162}, {mod: 40k, index: 163}, {mod: 40k, index: 164}, {mod: 40k, index: 165}, {mod: 40k, index: 166}, {mod: 40k, index: 167}, {mod: 40k, index: 168}]
+
+  - &STR_TERM_VOICE_TEMPLATE        # Terminator Voice
+    selectUnitMale:     [{mod: 40k, index: 411}, {mod: 40k, index: 412}, {mod: 40k, index: 413}, {mod: 40k, index: 414}, {mod: 40k, index: 415}]
+    selectUnitFemale:   [{mod: 40k, index: 431}, {mod: 40k, index: 432}, {mod: 40k, index: 433}, {mod: 40k, index: 434}, {mod: 40k, index: 435}]
+    startMovingMale:    [{mod: 40k, index: 406}, {mod: 40k, index: 407}, {mod: 40k, index: 408}, {mod: 40k, index: 409}, {mod: 40k, index: 410}]
+    startMovingFemale:  [{mod: 40k, index: 426}, {mod: 40k, index: 427}, {mod: 40k, index: 428}, {mod: 40k, index: 429}, {mod: 40k, index: 430}]
+    selectWeaponMale:   [{mod: 40k, index: 401}, {mod: 40k, index: 402}, {mod: 40k, index: 403}, {mod: 40k, index: 404}, {mod: 40k, index: 405}]
+    selectWeaponFemale: [{mod: 40k, index: 421}, {mod: 40k, index: 422}, {mod: 40k, index: 423}, {mod: 40k, index: 424}, {mod: 40k, index: 425}]
+    annoyedMale:        [{mod: 40k, index: 416}, {mod: 40k, index: 417}, {mod: 40k, index: 418}, {mod: 40k, index: 419}, {mod: 40k, index: 420}]
+    annoyedFemale:      [{mod: 40k, index: 436}, {mod: 40k, index: 437}, {mod: 40k, index: 438}, {mod: 40k, index: 439}, {mod: 40k, index: 440}]
+    deathMale:     [{mod: 40k, index: 396}, {mod: 40k, index: 397}, {mod: 40k, index: 398}, {mod: 40k, index: 399}]
+    deathFemale:   [{mod: 40k, index: 396}, {mod: 40k, index: 397}, {mod: 40k, index: 398}, {mod: 40k, index: 399}]
+
+  - &STR_LIB_VOICE_TEMPLATE         # Librarian Voice
+    selectUnitMale:     [{mod: 40k, index: 1011}, {mod: 40k, index: 1012}, {mod: 40k, index: 1013}, {mod: 40k, index: 1014}, {mod: 40k, index: 1015}]
+    selectUnitFemale:   [{mod: 40k, index: 1036}, {mod: 40k, index: 1037}, {mod: 40k, index: 1038}, {mod: 40k, index: 1039}, {mod: 40k, index: 1040}]
+    startMovingMale:    [{mod: 40k, index: 1006}, {mod: 40k, index: 1007}, {mod: 40k, index: 1008}, {mod: 40k, index: 1009}, {mod: 40k, index: 1010}]
+    startMovingFemale:  [{mod: 40k, index: 1031}, {mod: 40k, index: 1032}, {mod: 40k, index: 1033}, {mod: 40k, index: 1034}, {mod: 40k, index: 1035}]
+    selectWeaponMale:   [{mod: 40k, index: 1001}, {mod: 40k, index: 1002}, {mod: 40k, index: 1003}, {mod: 40k, index: 1004}, {mod: 40k, index: 1005}]
+    selectWeaponFemale: [{mod: 40k, index: 1026}, {mod: 40k, index: 1027}, {mod: 40k, index: 1028}, {mod: 40k, index: 1029}, {mod: 40k, index: 1030}]
+    annoyedMale:        [{mod: 40k, index: 1016}, {mod: 40k, index: 1017}, {mod: 40k, index: 1018}, {mod: 40k, index: 1019}, {mod: 40k, index: 1020}]
+    annoyedFemale:      [{mod: 40k, index: 1041}, {mod: 40k, index: 1042}, {mod: 40k, index: 1043}, {mod: 40k, index: 1044}, {mod: 40k, index: 1045}]
+    deathMale:     [{mod: 40k, index: 1021}, {mod: 40k, index: 1022}, {mod: 40k, index: 1023}, {mod: 40k, index: 1024}, {mod: 40k, index: 1025}]
+    deathFemale:   [{mod: 40k, index: 1046}, {mod: 40k, index: 1047}, {mod: 40k, index: 1048}, {mod: 40k, index: 1049}, {mod: 40k, index: 1050}]
+
+  - type: STR_ASS_ARMOR_HONOR_CLAW  # Vanguard (Claw)
+    refNode: *STR_MARINE_VOICE_TEMPLATE
+
+  - type: STR_SMT_LIB_ARMOR_UC      # Librarian MK7
+    refNode: *STR_LIB_VOICE_TEMPLATE
+
+  - type: STR_LIB_TERMINATOR_UC     # Librarian Terminator
+    refNode: *STR_LIB_VOICE_TEMPLATE
+
+  - type: STR_CHAP_TERMINATOR_UC    # Chaplain Terminator
+    refNode: *STR_TERM_VOICE_TEMPLATE
+
+  - type: STR_CHAP_ASSAULT_UC       # Chaplain Vanguard
+    refNode: *STR_MARINE_VOICE_TEMPLATE

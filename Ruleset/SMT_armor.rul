@@ -35,7 +35,7 @@ armors:
       - 1.0 #PLASMA - was 1.1
       - 1.0 #STUN - was 1.1
       - 1.0 #MELEE - was 1.1
-      - 1.0 #ACID
+      - 0.8 #ACID - was 1.0
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
@@ -67,7 +67,7 @@ armors:
       - 0.9 #PLASMA
       - 0.8 #STUN
       - 0.9 #MELEE
-      - 0.8 #ACID
+      - 0.7 #ACID - was 0.7
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
@@ -359,11 +359,11 @@ armors:
     underArmor: 80
     specialWeapon: STR_SM_SCOUT_SCANNER # motion scanner
     stats:
-      tu: 35            # base 10 +20 scout +5  elite
+      tu: 30            # base 10 +10 scout +10  elite
       stamina: 30       # base 20 -10 scout +20 elite
       health: 10        # base 10 -10 scout +10 elite
       bravery: 10       # base 0  +10 elite
-      reactions: 35     # base 10 +10 scout +15  elite
+      reactions: 30     # base 10 +5  scout +15  elite
       firing: 10        # base 0  +10 elite
       throwing: 10      # base 5  +5  scout
       strength: 5       # base 10 -10 scout +5  elite

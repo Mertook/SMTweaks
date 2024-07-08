@@ -39,8 +39,10 @@ events:
       STR_CRATED_RHINO: 1
       STR_CRATED_LANDSPEEDER: 1
       STR_TATICAL_ARMOR: 2 
-      STR_RIFLE: 2 # 2 ultra patterns in january is too strong
+      STR_RIFLE: 2 #
+      STR_RIFLEB: 1 # 2 ultra patterns in january is too strong
       STR_RIFLE_CLIP: 20
+      STR_RIFLE_CLIP_AP: 10
       STR_RIFLE_CLIP_EX: 10
       STR_HIGH_EXPLOSIVE: 8
       STR_SMT_GENESEED_IMPURE: 5
@@ -71,11 +73,12 @@ events:
       STR_CRATED_RHINO: 1
       STR_CRATED_LANDSPEEDER: 1
       STR_DEV_ARMOR: 2
-      STR_AUTO_CANNON: 1 # heavy bolter
-      STR_AC_AP_AMMO: 10 #
-      STR_AC_HE_AMMO: 6
+      STR_HEAVY_BOLTER_MARS: 1 # Mars Heavy Bolter
+      STR_AC_AP_AMMO: 4
+      STR_AC_HE_AMMO: 4
       STR_ROCKET_LAUNCHER: 1
       STR_HEAVY_ROCKET_HE: 10
+      STR_HEAVY_ROCKET_KRAK: 4
       STR_SMT_GENESEED_IMPURE: 5
     spawnedPersons: 18
     spawnedPersonType: STR_SOLDIER_NEOPHYTE
@@ -183,11 +186,12 @@ eventScripts:
   - type: STR_GENESEED_MONTHLY_PACKAGE_SCRIPT
     eventWeights:
       0:
-       STR_GENESEED_PACKAGE_STARTER: 100
+       STR_GENESEED_PACKAGE_STARTER: 100 # doesn't trigger
       1:
        STR_GENESEED_PACKAGE_STARTER: 100
       2:
-       STR_GENESEED_PACKAGE_EARLY: 100
+       STR_GENESEED_PACKAGE_STARTER: 33
+       STR_GENESEED_PACKAGE_EARLY: 66
       3:
        STR_GENESEED_PACKAGE_EARLY: 100
       4:

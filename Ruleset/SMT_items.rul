@@ -565,6 +565,7 @@ items:
   - update: STR_RIFLE                       # Bolter (Godwyn)
     refNode: *STR_BOLTER
     costBuy: 25000 # was 10000 - Now mid-tier weapon instead of starter gear
+    costSell: 10000
     autoRange: 11 # v3.1 (13) - was 9 - weapon focused on aggressive mid range engagements
     snapRange: 15 # was 14
     aimRange: 0
@@ -1275,11 +1276,11 @@ items:
     defaultInvSlotX: 3
     defaultInvSlotY: 1
     targetMatrix: 1
-    power: 20
+    power: 2
     maxRange: 10
     LOSRequired: true # gets ignored?
     damageBonus:
-      psiStrength: 1 # <100 = nothing; >=100 power (80psi) = 75% movecost; >=125 power (105psi) = 50% movecost; >=150 power (130psi) = 25% movecost
+      psiStrength: 0.7 # <30 - nothing, >=30 <60 - 75% (40 PsiStr), >=60 <90 - 50% (87 PsiStr), >=90 - 25% move cost (126 PsiStr)
     accuracyUse: 100
     accuracyMultiplier:
       flatHundred: 1.30
@@ -1306,12 +1307,12 @@ items:
     damageAlter:
       ToTime: 10.0
     damageBonus:
-      psiStrength: 0.8 # 80 Str = 79 power; 140 psiStr gives 127 power
+      psiStrength: 0.8 # 40 Str = 47 power; 140 psiStr gives 127 power
     costUse:
       energy: 25
       stun: 10
       morale: 10
-    accuracyUse: 25
+    accuracyUse: 30 # was 25
     psiAttackName: STR_LOCKDOWN_SPELL
     tags:
       ITEM_CAUSES_LOCKDOWN: 100
@@ -1333,10 +1334,10 @@ items:
     accuracyMultiplier:
       flatHundred: 1.30
       psi: 0.0
-    power: 20 # was 50 + 0.01 psi
+    power: 14 # was 50 + 0.01 psi
     maxRange: 10
     damageBonus:
-      psiStrength: 0.75 # 80 psiStr gives 80 power 140 psiStr gives 125 power
+      psiStrength: 0.9 # 40 psiStr gives 50 power 140 psiStr gives 140 power
     isFireExtinguisher: true
     tags:
       ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 100
@@ -1365,8 +1366,9 @@ items:
       psiStrength: 1.0
     noLOSAccuracyPenalty: 75
     damageBonus:
-      psiStrength: 0.9
+      psiStrength: 1.0
     damageAlter:
+      RandomType: 2 # 50-150%
       ToHealth: 0.0
       ToItem: 0.00
       ToTile: 0.00
@@ -1390,9 +1392,9 @@ items:
     experienceTrainingMode: 25 # PsiStr
     tuUse: 20 # was 25 flat
     flatRate: false
-    power: 10 # was 10
+    power: 5 # was 10
     damageBonus:
-      psiStrength: 0.15 # was 0.002 psi
+      psiStrength: 0.3 # was 0.002 psi
     damageAlter:
       RandomType: 6 # 0-100 x2 - was 2 (50-150)
     costUse:

@@ -67,7 +67,7 @@ armors:
       - 0.9 #PLASMA
       - 0.8 #STUN
       - 0.9 #MELEE
-      - 0.7 #ACID - was 0.7
+      - 0.7 #ACID - was 0.8
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
@@ -414,7 +414,7 @@ armors:
       - 0.8 #PLASMA
       - 1.0 #STUN
       - 0.9 #MELEE
-      - 0.7 #ACID (was 0.8)
+      - 0.6 #ACID (was 0.8)
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
@@ -786,10 +786,10 @@ armors:
     sideArmor: 230
     rearArmor: 180
     underArmor: 240
-    psiDefence:
+    psiDefence: # does this matter for 2x2 units?
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
-      moraleCurrent: 1.2 #discipline and resolve reinforces their faith (+20% dread bonus)
+      moraleCurrent: 1.5 #discipline and resolve reinforces their faith (+50% dread bonus)
     stats: #
       tu: 30            # base 30 
       stamina: 20       # base 20 
@@ -811,7 +811,7 @@ armors:
       - 0.8 #PLASMA
       - 0.0 #STUN
       - 0.8 #MELEE
-      - 0.8 #ACID
+      - 0.6 #ACID
       - 0.0 #SMOKE
       - 0.0 #IMPACT
       - 1.0 #MELTA - was 1.2

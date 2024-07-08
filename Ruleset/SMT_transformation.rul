@@ -120,7 +120,7 @@ soldierTransformation:
     requiredMinStats:
       health: 60 # Neophyte base 40-55, Marine minimum 75
       strength: 50 # Neophyte base 30-40, Marine minimum 55
-      psiStrength: 80 #
+      psiStrength: 20 # Neophyte base 0-25
     listOrder: 40
       
   - name: STR_PROMOTE_LIB_TERMINATOR    # Librarian -> Vet Librarian
@@ -142,7 +142,7 @@ soldierTransformation:
     requiredCommendations:
       STR_TERMINATOR_CROSS: 0
     requiredMinStats:
-      psiStrength: 80 #
+      psiStrength: 90 #
     listOrder: 60
 
   - name: STR_CHAPLAIN_ROSARY           # Chaplain Shield

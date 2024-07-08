@@ -24,7 +24,7 @@ skills:
       stun: 10
       morale: 15
     flatUse:
-      time: false #     33% TU
+      time: false #     25% TU
       energy: false #   20% energy
       stun: false #     10% Stun
       morale: false #   20% morale
@@ -35,15 +35,15 @@ skills:
     battleType: 9
     checkHandsOnly: false
     costUse:
-      time: 40 # was 25
+      time: 35 # was 25
       energy: 25
       stun: 15 # was 5
-      morale: 20 # was 10
+      morale: 15 # was 10
     flatUse:
-      time: false #     40% TU
+      time: false #     35% TU
       energy: false #   25% energy
       stun: false #     15% Stun
-      morale: false #   20% morale
+      morale: false #   15% morale
 
   - type: STR_LIB_SHIELD_SKILL      # Librarian Shield
     targetMode: 11
@@ -75,4 +75,4 @@ skills:
       time: false #     25% TU
       energy: false #   20% energy
       stun: false #     5% Stun
-      morale: false #   20% morale
+      morale: false #   15% morale

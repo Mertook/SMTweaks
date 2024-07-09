@@ -20,6 +20,7 @@ items:
       time: 12 # MC power weapon
       energy: 4 #heavier than regular power weapons
     flatRate: true
+    experienceTrainingMode: 13
     accuracyMelee: 90
     meleeMultiplier:
       melee: 0.9
@@ -35,7 +36,6 @@ items:
     ufopediaType: STR_CLAWS
     twoHanded: false
     fixedWeapon: true
-    experienceTrainingMode: 13
     battleType: 3
     clipSize: -1
     invWidth: 2
@@ -593,7 +593,7 @@ items:
 
   - update: STR_RIFLEB                      # Bolter (Ultra)
     refNode: *STR_BOLTER
-    costBuy: 250000 # was 200000 - Higher end gear
+    costBuy: 200000 # was 200000 - Higher end gear
     autoRange: 12 # v3.1 (14) was 9
     snapRange: 16 # was 16
     aimRange: 0
@@ -609,7 +609,7 @@ items:
   - update: STR_RIFLEC                      # Bolter (Stalker)
     refNode: *STR_BOLTER
     ufopediaType: STR_RIFLEC # was pointed at Godwyn for some reason
-    costBuy: 250000 # was 200000 - Higher end gear
+    costBuy: 200000 # was 200000 - Higher end gear
     dropoff: 7 # was 4
     autoRange: 7
     snapRange: 17 # was 16
@@ -774,6 +774,7 @@ items:
       REACTION_MULTIPLIER: 150 # was 200 - carbine rather than pure pistol
       ITEM_AIMED_ACCURACY_POWER_BONUS: 12 # was 25
       ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - update: STR_BOLTPISTOL_DEAZ             # Light Boltpistol (Deaz)
     dropoff: 9 # light boltguns get -1 dropoff compared to regular (easier to handle) - was 6
@@ -1977,6 +1978,7 @@ items:
 
   - type: STR_MOTION_SCANNER                # Motion Scanner
     bigSprite: 3134
+    armor: 200
     weight: 8 # was 3
     invWidth: 2 # was 1x2
     invHeight: 1

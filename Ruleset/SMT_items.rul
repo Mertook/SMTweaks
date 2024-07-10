@@ -1665,8 +1665,7 @@ items:
     weight: 50
     size: 0.4
     requiresBuy:
-      - STR_SCOUT
-      - STR_UFO_CONSTRUCTION # Ceramite
+      - STR_SCOUT_BOLT_RIFLE
     requiresBuyBaseFunc: [TRADE]
     costBuy: 450000
     costSell: 50000
@@ -1714,6 +1713,7 @@ items:
   - &STR_SNIPER_BOLT_AMMO                   # Bolt Sniper Ammo Base
     categories: [STR_CAT_SNIPER]
     size: 0.02
+    costSell: 200
     armor: 200
     weight: 2
     battleType: 2
@@ -1729,11 +1729,9 @@ items:
     refNode: *STR_SNIPER_BOLT_AMMO
     bigSprite: 3130
     listOrder: 11932
-    costBuy: 1500 # single shot
-    costSell: 500
+    costBuy: 500 # single shot
     requiresBuy:
-      - STR_SCOUT
-      - STR_UFO_CONSTRUCTION #ceramite tier
+      - STR_SCOUT_BOLT_RIFLE
     hitSound: {mod: 40k, index: 712}
     hitAnimation: {mod: 40k, index: 26}
     damageAlter:

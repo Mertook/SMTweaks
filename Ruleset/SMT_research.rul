@@ -258,6 +258,15 @@ research:
       - STR_MARINE_BOLTERS
     listOrder: 10 # push above corpses/etc
 
+  - name: STR_SCOUT_BOLT_RIFLE      # Bolt Sniper Rifle unlock
+    cost: 100
+    points: 20
+    dependencies:
+      - STR_SCOUT
+      - STR_UFO_CONSTRUCTION # ceramite
+      - STR_MARINE_BOLTERS
+    listOrder: 10 # push above corpses/etc
+
   - name: STR_MARINE_CHAPEL         # Early unlock for Chapel
     cost: 100
     points: 10

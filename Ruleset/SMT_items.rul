@@ -196,7 +196,8 @@ items:
       ToTile: 0.0
       ToItem: 0.0
       RadiusReduction: 0.0
-      FixRadius: 3
+      FixRadius: -1 # make higher power more valuable
+      RadiusEffectiveness: 10
     confAimed:
       name: STR_GUARD_PRIEST_BLESS
     costAimed:
@@ -481,6 +482,7 @@ items:
 
   - update: STR_LIGHT_BOLTPISTOL_AMMO_AP    # Krak Light Boltpistol Ammo
     bigSprite: 3117
+    listOrder: 10096 # group with other light boltpistol ammo
 
   - update: STR_PISTOL_CLIP_MC              # Mastercraft Boltpistol Ammo
     damageAlter:
@@ -500,6 +502,7 @@ items:
 
   - update: STR_LIGHT_BOLTPISTOL_AMMO_MC    # Mastercraft Light Boltpistol Ammo
     bigSprite: 3119
+    listOrder: 10098 # group with other light boltpistol ammo
     power: 55 # now gets bonus power from high FA instead
     damageAlter:
       RandomType: 7 # 50-200% instead of 0-200%
@@ -539,6 +542,7 @@ items:
   - update: STR_LIGHT_BOLTPISTOL_AMMO_EX    # Metalstorm LBoltPistol Ammo
     refNode: *STR_BOLTER_AMMO_METAL_STORM
     bigSprite: 3118
+    listOrder: 10097 # group with other light boltpistol ammo
     power: 55 
 
   - update: STR_PISTOL_CLIP_EX              # Metalstorm BoltPistol Ammo
@@ -614,7 +618,7 @@ items:
     dropoff: 7 # was 4
     autoRange: 7
     snapRange: 17 # was 16
-    aimRange: 22 # was 22
+    aimRange: 23 # was 22
     accuracyAuto: 66 # was 66
     accuracySnap: 80 # was 80
     accuracyAimed: 100 # was 100
@@ -628,7 +632,7 @@ items:
   - update: STR_RIFLED                      # Bolter (Cawl)
     refNode: *STR_BOLTER
     autoRange: 10 # v3.1 (13) was 7
-    snapRange: 14 # was 16
+    snapRange: 15 # was 16
     aimRange: 0
     accuracyAuto: 66
     accuracySnap: 80
@@ -640,13 +644,13 @@ items:
 
   - update: STR_RIFLEDW                     # Bolter (Cawl Deathwatch)
     refNode: *STR_BOLTER
-    autoRange: 13 # v3.1 (14) was 8
-    snapRange: 15 # was 17
+    autoRange: 11 # v3.1 (14) was 8
+    snapRange: 16 # was 17
     accuracyAuto: 70
     accuracySnap: 85
     accuracyAimed: 0
-    tuAuto: 33 # was 40
     tuSnap: 20 # was 25
+    tuAuto: 33 # was 40
     tuAimed: 0
     autoShots: 5
 
@@ -679,6 +683,7 @@ items:
       - STR_MIDTIER_PREREQ
 
   - update: STR_PISTOLB                     # BoltPistol (Ultra)
+    costBuy: 100000 # was 150k
     dropoff: 10 # was 6
     autoRange: 7 # add 2shot autofire
     snapRange: 11 # was 11
@@ -708,12 +713,13 @@ items:
     tuLoad: 5 
 
   - update: STR_PISTOLS                     # BoltPistol (Spectris)
+    costBuy: 100000 # was 150k
     dropoff: 9 # -1 for scope - was 5
     autoRange: 0
     snapRange: 14
     aimRange: 18 # was 17
     accuracyAuto: 0
-    accuracySnap: 75
+    accuracySnap: 80 # was 75
     accuracyAimed: 100
     tuAuto: 0
     tuSnap: 22
@@ -761,19 +767,19 @@ items:
     attraction: 1
     dropoff: 9 # was 5
     autoRange: 7 # was 7
-    snapRange: 15 # was 11
+    snapRange: 14 # was 11
     aimRange: 18 # was 17
     accuracyAuto: 55 # was 55
     accuracySnap: 75
     accuracyAimed: 88 # was 100
     tuSnap: 20 # was 22
-    tuAimed: 50 # was 35 - aimed MC ammo shots with high level marines do a lot of damage
+    tuAimed: 45 # was 35 - aimed MC ammo shots with high level marines do a lot of damage
     tuAuto: 30 # was 33
     autoShots: 2
     tags:
       ITEM_RECOIL: 60 # harder requirement, can fire bolter rounds
       REACTION_MULTIPLIER: 150 # was 200 - carbine rather than pure pistol
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 12 # was 25
+      ITEM_AIMED_ACCURACY_POWER_BONUS: 10 # was 25
       ITEM_POWER_BONUS_PERCENTILE: 1 #use %
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
@@ -795,6 +801,8 @@ items:
       - STR_LIGHT_BOLTPISTOL_AMMO_EX
 
   - update: STR_BOLTPISTOL_LIGHT_ULTRA      # Light Boltpistol (Ultra)
+    listOrder: 10091 # move to just under deaz
+    costBuy: 50000 # was 75k - trainee weapon
     dropoff: 9 # light boltguns get -1 dropoff compared to regular (easier to handle) - was 6
     autoRange: 0
     snapRange: 11 # was 11
@@ -812,6 +820,7 @@ items:
       - STR_LIGHT_BOLTPISTOL_AMMO_EX
 
   - update: STR_MC_BOLTPISTOL_DEAZ          # Light Boltpistol (MC)
+    listOrder: 10092 # move to just under ultra
     dropoff: 9 # light boltguns get -1 dropoff compared to regular (easier to handle) - was 6
     autoRange: 0
     snapRange: 13 # was 12

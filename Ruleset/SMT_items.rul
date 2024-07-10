@@ -434,6 +434,7 @@ items:
   - update: STR_PISTOL_CLIP                 # Boltpistol Ammo
     damageAlter:
       RandomType: 1 # 0-200%
+      ToArmorPre: 0.15 # was 0.1
     power: 70 # was 60
     weight: 4 # 2x weight
     clipSize: 15 # +50% clip size
@@ -442,6 +443,7 @@ items:
   - update: STR_RIFLE_CLIP                  # Bolter Ammo
     damageAlter:
       RandomType: 1 # 0-200%
+      ToArmorPre: 0.15 # was 0.1
     power: 75 # was 65
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
@@ -459,7 +461,7 @@ items:
       RandomType: 1 # 0-200%
       ArmorEffectiveness: 0.5 # was 0.5
       ToArmorPre: 0.01 # was 0.02
-      ToArmor: 0.10 # was 0.05, decent destruction if it manages to pen
+      ToArmor: 0.15 # was 0.05, decent destruction if it manages to pen
       ToHealth: 0.9
       ToStun: 0.1 # was 0.3; solid AP round rather than concussive
       ToEnergy: 0.1
@@ -488,6 +490,7 @@ items:
   - update: STR_PISTOL_CLIP_MC              # Mastercraft Boltpistol Ammo
     damageAlter:
       RandomType: 7 # 50-200% instead of 0-200%
+      ToArmorPre: 0.2 # was 0.15
     power: 70 # now gets bonus power from high FA instead
     weight: 4 # 2x weight
     clipSize: 15 # +50% clip size
@@ -496,6 +499,7 @@ items:
   - update: STR_RIFLE_CLIP_MC               # Mastercraft Bolter Ammo
     damageAlter:
       RandomType: 7 # 50-200% instead of 0-200%
+      ToArmorPre: 0.2 # was 0.15
     power: 75 # now gets bonus power from high FA instead
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
@@ -1126,7 +1130,7 @@ items:
       index: 120
     damageAlter:
       RandomType: 7 # 50-200%
-      ToArmorPre: 0.15 # was 0.05
+      ToArmorPre: 0.2 # was 0.15
       ArmorEffectiveness: 0.8 # was 0.9
       ToArmor: 0.15
       ToHealth: 1.15
@@ -1149,6 +1153,8 @@ items:
     costBuy: 6000 # was 1200
     requiresBuy:
       - STR_HBOLTER_AMMO_PREREQ
+    damageAlter:
+      ToArmorPre: 0.15 # was 0.1
     listOrder: 12021
 
   - update: STR_AC_I_AMMO                   # Heavy Bolter Incin Ammo
@@ -1163,6 +1169,7 @@ items:
     power: 90 # was 95
     clipSize: 50
     damageAlter:
+      ToArmorPre: 0.2 # was 0.15
       RandomType: 7 # 50-200%
     listOrder: 12024
 

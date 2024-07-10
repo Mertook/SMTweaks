@@ -195,9 +195,9 @@ items:
       ToArmor: 0.0
       ToTile: 0.0
       ToItem: 0.0
-      RadiusReduction: 0.0
+      RadiusReduction: 0.0 # no power dropoff from center
       FixRadius: -1 # make higher power more valuable
-      RadiusEffectiveness: 10
+      RadiusEffectiveness: 0.03 # 3% of power as radius
     confAimed:
       name: STR_GUARD_PRIEST_BLESS
     costAimed:
@@ -223,6 +223,7 @@ items:
       ITEM_BLESS_MELEE_ACCURACY: 1
       ITEM_IS_BUFF_WEAPON: 1
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
+      ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
 
   - type: INV_NULL_3X1_BACKPACK_BLESS       # Invisible Backpack item that enables Bless skill for chaplains - 3x1 Tact Armor Version
     refNode: *STR_SKILL_BLESS

@@ -1434,13 +1434,13 @@ items:
     recover: true
     dropoff: 4
     maxRange: 25 # was unlimited (but with power reduction after 20)
-    powerRangeThreshold: 25
+    powerRangeThreshold: 0
     powerRangeReduction: 0
     aimRange: 10
     costAimed:
-      time: 33 # was 20/40 flat for snap/aimed
+      time: 30 # was 20/40 flat for snap/aimed
       energy: 20 # was 40
-      morale: 15 # was 20
+      morale: 20 # was 20
     flatAimed:
       time: false # 33% TU
       energy: false # 20% energy
@@ -1459,7 +1459,7 @@ items:
     accuracySnap: 0
     accuracyAimed: 100
     accuracyMultiplier:
-      bravery: 0.4
+      bravery: 0.5
       psiSkill: 1.0
     power: 10 # was 10
     damageType: 2 # Fire
@@ -1468,12 +1468,15 @@ items:
       FireBlastCalc: false
       IgnoreOverKill: false
       IgnoreSelfDestruct: false # default true for HE, fire, smoke, stun, mel
+      IgnoreDirection: true # always hits front armor
       ToHealth: 0.7 # was 1.0
-      ToTile: 0.3
-      ToItem: 0.3
-      ToMorale: 4.0 # was 5.0
+      ToArmor: 0.4 # was 0
+      ToTile: 0.1
+      ToMorale: 5.0 # was 5.0
       ArmorEffectiveness: 0.2 # was 0.5
+      RadiusReduction: 0.0 # no power dropoff from center
       FixRadius: -1
+      RadiusEffectiveness: 0.02 # 2% of power as radius
     damageBonus:
       bravery: 0.3 # was 0.5
       psiSkill: 0.7 # was 0.5

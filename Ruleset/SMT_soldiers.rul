@@ -69,6 +69,7 @@ soldiers:
     value: 30
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 30
+      SMT_ALPHA_ATTACKER_MODIFIER: 5 # max 4% chance to be Alpharius
 
 
   - type: STR_SOLDIER_NEOPHYTE          #Neophyte/Scout
@@ -222,7 +223,8 @@ soldiers:
       - STR_TERMINATOR_RANK_4
       - STR_TERMINATOR_RANK_5
     tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 30
+      SOLDIER_WOUND_TIME_MULTIPLIER: 25 # vet bonus
+      SMT_ALPHA_ATTACKER_MODIFIER: -1 # can't turn traitor
 
   - type: STR_SOLDIER_CHAPLAIN          #Chaplain
     costSalary: 80000
@@ -300,8 +302,9 @@ soldiers:
     skills: # Gives bless ability when combined with backpack item
       - STR_BLESS_SKILL
     tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 30
+      SOLDIER_WOUND_TIME_MULTIPLIER: 25 # vet bonus
       SMT_IS_CHAPLAIN: 1
+      SMT_ALPHA_ATTACKER_MODIFIER: -1 # can't turn traitor
 
   - type: STR_SOLDIER_LIBRARIAN         #Librarian
     costSalary: 60000
@@ -386,6 +389,7 @@ soldiers:
     skillIconSprite:  {mod: 40k, index: 11}
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 30
+      SMT_ALPHA_ATTACKER_MODIFIER: 5 # max 4% chance to be Alpharius
 
   - type: STR_SOLDIER_LIBRARIAN_TERM    #Librarian Terminator
     costSalary: 90000
@@ -469,7 +473,8 @@ soldiers:
       - STR_LIB_HASTE_SKILL
     skillIconSprite:  {mod: 40k, index: 11}
     tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 30
+      SOLDIER_WOUND_TIME_MULTIPLIER: 25 # vet bonus
+      SMT_ALPHA_ATTACKER_MODIFIER: -1 # can't turn traitor
 
   - type: STR_FALLEN                    #Dreadnought Pilot
     minStats: # boosted to Marine values

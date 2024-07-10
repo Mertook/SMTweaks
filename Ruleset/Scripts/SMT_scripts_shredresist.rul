@@ -17,7 +17,6 @@ armors:
     tags:
       SMT_ARMOR_SHRED_RESISTANCE: 30 # specialist armor is slightly more resistant than regular (25)
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10 # only elite armor gets melta resistance
-      ARMOR_ALPHA_ATTACKER_BONUS_MODIFIER: -1 # Instantly losing a vet marine & their geneseed to stray friendly fire is way too harsh
     scripts:
       damageUnit: |
         var ptr RuleArmor unitArmor;

@@ -158,6 +158,7 @@ items:
     tags:
       ITEM_IS_BUFF_WEAPON: 1
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
+      ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
 
   - type: STR_SM_SCOUT_SCANNER              # Motion Scanner for AdvScouts
     weight: 0
@@ -617,8 +618,8 @@ items:
     accuracyAuto: 66 # was 66
     accuracySnap: 80 # was 80
     accuracyAimed: 100 # was 100
-    tuAuto: 35 # was 40
-    tuSnap: 26 # v3.1 28 - was 25
+    tuAuto: 33 # was 40
+    tuSnap: 25 # was 25
     tuAimed: 60 # was 60
     autoShots: 2
     requiresBuy:
@@ -632,8 +633,8 @@ items:
     accuracyAuto: 66
     accuracySnap: 80
     accuracyAimed: 0
-    tuAuto: 33 # was 40
     tuSnap: 20 # was 25
+    tuAuto: 35 # was 40
     tuAimed: 0
     autoShots: 5
 

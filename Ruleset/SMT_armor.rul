@@ -221,7 +221,7 @@ armors:
       throwing: 15      # base 5  +10
       strength: 10      # base 10 
       psiStrength: 0    # base 0  
-      psiSkill: 20      # base 0  +20 sarg
+      psiSkill: 10      # base 0  +10 sarg
       melee: 10         # base 10
     specialWeapon: STR_SM_OFFICER_FIST #Officer Fist with Inspire ability
     builtInWeapons: #added 3x2 backpack
@@ -239,7 +239,7 @@ armors:
       throwing: 25      # base 5  +10 tac +10 elite
       strength: 15      # base 10 +5  tac
       psiStrength: 0    # base 0  
-      psiSkill: 20      # base 0  +20 elite
+      psiSkill: 10      # base 0  +10 elite
       melee: 25         # base 10 +5 tac +10 elite
     frontArmor: 135 # base 125 +10 elite
     sideArmor: 130 # base 120 +10 elite
@@ -774,6 +774,7 @@ armors:
       baseNormalPercent: [50,50] #halved movement costs
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      UNIT_TYPE_LIVING: 1 # allow Inspire
 
   - &STR_DREADNOUGHT_ARMOR          #DREAD ARMOR NORMAL
     type: DREAD_ARMOR_UC

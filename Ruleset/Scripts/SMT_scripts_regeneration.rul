@@ -148,7 +148,7 @@ extended:
           if neq woundTimeMultiplier 0; #adjust based on soldier recovery speed
             muldiv recoverPenalty woundTimeMultiplier 100;
           end;
-          limit_upper recoverPenalty 20; # don't add more than 20 extra days to woundtime
+          limit_upper recoverPenalty 15; # don't add more than 15 extra days to woundtime
 
           add recovery_time recoverPenalty;
           #debug_log "Final Recoverytime: " recovery_time recoverPenalty;

@@ -1677,7 +1677,7 @@ items:
     requiresBuy:
       - STR_SCOUT_BOLT_RIFLE
     requiresBuyBaseFunc: [TRADE]
-    costBuy: 450000
+    costBuy: 350000
     costSell: 50000
     bigSprite: 3128
     floorSprite: 3128
@@ -2023,3 +2023,35 @@ items:
       RandomType: 6 #Gaussian
       ArmorEffectiveness: 0.8
       ToArmorPre: 0.2
+    tuMelee: 25 # was 15
+    flatMelee: true
+    accuracyMelee: 70 # was 100 flat
+    meleeMultiplier: # powerfist values
+      melee: 0.7
+      strength: 0.3
+    meleePower: 40 # was 110 flat
+    meleeBonus:
+      strength: 1.5 # powerfist
+    meleeType: 5
+    meleeAlter: # powerfist
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.2
+      ToHealth: 0.9
+      RandomType: 6
+
+  - update: STR_DREAD_MELEE_WEAPON          # Dread Fist
+    tuMelee: 25 # was 15
+    flatMelee: true
+    accuracyMelee: 70 # was 100 flat
+    meleeMultiplier: # powerfist values
+      melee: 0.7
+      strength: 0.3
+    power: 40 # was 110 flat
+    damageBonus:
+      strength: 1.5 # powerfist
+    damageType: 5
+    damageAlter: # powerfist
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.2
+      ToHealth: 0.9
+      RandomType: 6

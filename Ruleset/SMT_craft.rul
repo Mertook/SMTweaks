@@ -521,6 +521,9 @@ crafts:
     fuelMax: 1100 # enough to reach opposite side of globe when full - was 1000, just barely short
     requiresBuyBaseFunc: [HANGAR] # was missing?
     speedMax: 360 #was 240, worse than first company! - give it some chance to compete with landspeeders
+    soldiers: 16 # was 12
+    vehicles: 999
+    maxLargeUnits: 0 # was 1
     battlescapeTerrainData:
       name: RAZOR_SMT
       mapDataSets:
@@ -539,12 +542,16 @@ crafts:
             STR_RAZORBACK_TURRET_SPAWNER: [0, 0]
     craftInventoryTile: [5, 6, 0]
     deployment:
+      - [5, 3, 0, 0] # razorback 1
+      - [6, 3, 0, 0]
       - [5, 4, 0, 0] # razorback 1
       - [6, 4, 0, 0]
       - [5, 5, 0, 0]
       - [6, 5, 0, 0]
       - [5, 6, 0, 0]
       - [6, 6, 0, 0] # razorback 1
+      - [3, 13, 0, 0] # razorback 2
+      - [4, 13, 0, 0]
       - [3, 14, 0, 0] # razorback 2
       - [4, 14, 0, 0]
       - [3, 15, 0, 0]

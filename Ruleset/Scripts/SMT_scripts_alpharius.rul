@@ -7,11 +7,11 @@ extended:
       ARMOR_ALPHA_ATTACKER_BONUS_MODIFIER: int #attacker armor property; modifies the final modifier by this as a percent after all other modifiers
       ARMOR_ALPHA_TARGET_VALUE_MODIFIER: int #target armor property; modifies the final modifier by this as a percent after all other modifiers
     RuleSoldier:
-      SMT_ALPHA_ATTACKER_MODIFIER: int #Modifier to chance to resist fatal damage
+      SMT_ALPHA_ATTACKER_MODIFIER: int #Modifier to chance to turn traitor when attacking
 
   scripts:
     damageUnit:
-      - override: ROSIGMA_dU_alpha_infiltration # modified to give reduced chance to turn traitor at the soldier level
+      - override: ROSIGMA_dU_alpha_infiltration # modified to give reduced chance to turn traitor based on soldier tags
         offset: 90
         code: |
           var int faction;

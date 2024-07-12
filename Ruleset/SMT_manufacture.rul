@@ -75,8 +75,8 @@ manufacture:
     time: 800
     cost: 60000 #was 30k
     requiredItems:
-      STR_ALIEN_ALLOYS: 30 #adjusted cost -30 alloy +80 token
-      STR_KILLPOINT_TOKEN: 120
+      STR_ALIEN_ALLOYS: 30
+      STR_KILLPOINT_TOKEN: 240
   - name: STR_HONOR_ARMOR                           # Tact Honor
     category: STR_PERSONAL_ARMOR
     requires:
@@ -86,8 +86,9 @@ manufacture:
     time: 800
     cost: 40000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 100
+      STR_KILLPOINT_TOKEN: 250
       STR_ALIEN_ALLOYS: 30
+      STR_UFO_CONSTRUCTION: 4
   - name: STR_SCOUTH                                # Scout Honor
     category: STR_PERSONAL_ARMOR
     requires:
@@ -97,7 +98,7 @@ manufacture:
     time: 800
     cost: 40000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 30
+      STR_KILLPOINT_TOKEN: 80
       STR_ALIEN_ALLOYS: 15
   - name: STR_SIGNAL_ARMOR                          # Dev Honor
     category: STR_PERSONAL_ARMOR
@@ -108,8 +109,9 @@ manufacture:
     time: 800
     cost: 40000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 100
+      STR_KILLPOINT_TOKEN: 250
       STR_ALIEN_ALLOYS: 30
+      STR_UFO_CONSTRUCTION: 4
   - name: STR_ASS_ARMOR_HONOR                       # Assault Honor
     category: STR_PERSONAL_ARMOR
     requires:
@@ -119,8 +121,9 @@ manufacture:
     time: 800
     cost: 40000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 100
+      STR_KILLPOINT_TOKEN: 250
       STR_ALIEN_ALLOYS: 30
+      STR_UFO_CONSTRUCTION: 4
   - name: STR_POWER_SUIT                            # Terminator
     category: STR_PERSONAL_ARMOR
     requires:
@@ -163,7 +166,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 80
       STR_UFO_CONSTRUCTION: 10
       STR_ELERIUM_115: 20
-      STR_KILLPOINT_TOKEN: 1000 #was 200
+      STR_KILLPOINT_TOKEN: 850 #was 200
 
   - name: STR_TSARGENT                              # Terminator Sergeant
     category: STR_PERSONAL_ARMOR
@@ -395,10 +398,10 @@ manufacture:
     category: STR_GENESEED
     requires:
       - STR_CHAPTER_PURITY
-      - STR_MIDTIER_PREREQ
+      - STR_HIGHTIER_PREREQ
     requiresBaseFunc: [MED] #Apothecary
     space: 0
-    time: 2400 #slow, 1 day each with 100 engineers
+    time: 1200 #slow, 1 day with 50 engineers
     cost: 20000
     requiredItems:
       STR_KILLPOINT_TOKEN: 20 # 200 tokens total for a Mature Geneseed

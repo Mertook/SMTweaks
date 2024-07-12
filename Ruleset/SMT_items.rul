@@ -1356,16 +1356,17 @@ items:
     accuracyMultiplier:
       flatHundred: 1.30
       psi: 0.0
-    power: 14 # was 50 + 0.01 psi
+    power: 20 # was 50 + 0.01 psi
     maxRange: 10
     damageBonus:
-      psiStrength: 0.9 # 40 psiStr gives 50 power 140 psiStr gives 140 power
+      psiStrength: 2.0 # 40 psiStr gives 10 power 140 psiStr gives 300 power
     isFireExtinguisher: true
     tags:
       ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 100
-      ITEM_SETS_ENERGY_SHIELD_DECAY: 60
+      ITEM_SETS_ENERGY_SHIELD_DECAY: 40 # triggers at start of enemy turn
       ITEM_IS_BUFF_WEAPON: 1
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
+      ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
 
   - type: STR_LIB_SMOKE_TOME                # Tome Smoke
     refNode: *STR_TOME_BASE
@@ -1657,7 +1658,7 @@ items:
     aimRange: 32
     noLOSAccuracyPenalty: 66 # default 50 - Sniper Rifle bonus
     accuracyAuto: 0
-    accuracySnap: 70 # was 55 - tu increase + heavy weapon penalty
+    accuracySnap: 65 # was 55 - tu increase + heavy weapon penalty
     accuracyAimed: 105 # was 120 - shifted for kneel bonus
     tuAuto: 0
     tuSnap: 60 # was 45
@@ -1705,7 +1706,7 @@ items:
     noLOSAccuracyPenalty: 66 # default 50 - Sniper Rifle bonus
     accuracySnap: 55
     accuracyAuto: 0
-    accuracyAimed: 90
+    accuracyAimed: 85
     tuAuto: 0
     tuSnap: 65
     tuAimed: 85
@@ -1767,12 +1768,12 @@ items:
       ResistType: 1 # AP resist
       FixRadius: 1
       RandomType: 6
-      ToHealth: 0.8
-      ToArmorPre: 0.1
+      ToHealth: 0.7
+      ToArmorPre: 0.3
       ToArmor: 0.3
       ToTile: 1.0
       ToItem: 1.0
-      ArmorEffectiveness: 0.5
+      ArmorEffectiveness: 0.7
     powerForAnimation: 48 # 5 / 5 = 1 - Krak round
 
   - type: STR_BOLT_SNIPER_AMMO_FRAG         # Bolt Sniper Frag Ammo
@@ -1782,7 +1783,7 @@ items:
     damageAlter: # metalstorm/frag hybrid
       FixRadius: 4
       RandomType: 6
-      ArmorEffectiveness: 1.1 #
+      ArmorEffectiveness: 1.2 #
       ToHealth: 1.3 #
       ToArmorPre: 0.05 #
       ToStun: 0.2 #
@@ -1804,7 +1805,7 @@ items:
       ToArmorPre: 0.8 # dedicated armor shredding round
       ToHealth: 0.4 # ineffective as antipersonnel weapon
       ToArmor: 0.8
-      ToWound: 0.05
+      ToWound: 0.02
       RandomWound: false
 
   - update: STR_BIKE_ARMOR                  # Bike Armor (Item)
@@ -2045,7 +2046,7 @@ items:
   - update: STR_DREAD_MELEE_WEAPON          # Dread Fist
     tuMelee: 25 # was 15
     flatMelee: true
-    accuracyMelee: 70 # was 100 flat
+    accuracyMelee: 75 # was 100 flat - +5 over powerfist
     meleeMultiplier: # powerfist values
       melee: 0.7
       strength: 0.3

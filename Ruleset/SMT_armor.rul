@@ -226,6 +226,8 @@ armors:
     specialWeapon: STR_SM_OFFICER_FIST #Officer Fist with Inspire ability
     builtInWeapons: #added 3x2 backpack
       - INV_NULL_3X1_BACKPACK
+    units: #now exclusive to terminator promoted troops
+      - STR_SOLDIER_TERMINATOR
 
   - update: STR_HONOR_ARMOR_UC      #TACTICAL HONOR (Honor Guard)
     refNode: *STR_MARINE_OFFICER_ARMOR

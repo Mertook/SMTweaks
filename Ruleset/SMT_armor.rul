@@ -250,8 +250,8 @@ armors:
     units: #now exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
     tags: #added small energy shield
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 10
-      ARMOR_ENERGY_SHIELD_DECAY: 25
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 40
+      ARMOR_ENERGY_SHIELD_DECAY: 100
 
 
   - update: STR_ASS_ARMOR_HONOR_UC  #ASSAULT HONOR (Vanguard)
@@ -418,10 +418,10 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
-    frontArmor: 175 #was 150
-    sideArmor: 170 #was 130
-    rearArmor: 120 #was 100
-    underArmor: 170  #was 150
+    frontArmor: 180 #was 150
+    sideArmor: 175 #was 130
+    rearArmor: 125 #was 100
+    underArmor: 175  #was 150
     loftempsSet: [ 4 ]
     allowsRunning: false
     allowsKneeling: false
@@ -439,6 +439,8 @@ armors:
       melee: 10         # base 10
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 40
+      ARMOR_ENERGY_SHIELD_DECAY: 100
 
   - update: STR_CAPTAIN_UC          #TERMINATOR CAPTAIN
     refNode: *STR_TERMINATOR_ARMOR
@@ -495,6 +497,9 @@ armors:
       psiStrength: 0    # base 0   
       psiSkill: 0       # base 0   
       melee: 30         # base 10  +20
+    tags:
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 50 # better shield for assault term
+      ARMOR_ENERGY_SHIELD_DECAY: 100
 
   - update: STR_TASS_ARMOR_CLAWS    #TERMINATOR ASSAULT (CLAWS)
     refNode: *STR_TERMINATOR_ARMOR
@@ -511,6 +516,9 @@ armors:
       psiStrength: 0    # base 0   
       psiSkill: 0       # base 0   
       melee: 30         # base 10  +20
+    tags:
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 50 # better shield for assault term
+      ARMOR_ENERGY_SHIELD_DECAY: 100
 
   - update: STR_CHAP_ARMOR_UC       #CHAPLAIN
     refNode: *STR_MARINE_OFFICER_ARMOR
@@ -670,8 +678,8 @@ armors:
       moraleCurrent: 0.7 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 5
-      ARMOR_ENERGY_SHIELD_DECAY: 25
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 15 # buffed for new shield mechanics
+      ARMOR_ENERGY_SHIELD_DECAY: 50
       UNIT_TYPE_PSYKER: 1
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
@@ -718,8 +726,8 @@ armors:
       - STR_SMITE_TOME
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 5
-      ARMOR_ENERGY_SHIELD_DECAY: 25
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 50 # improved shield
+      ARMOR_ENERGY_SHIELD_DECAY: 100
       UNIT_TYPE_PSYKER: 1
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
@@ -870,5 +878,7 @@ armors:
       - 1.0 #MELTA
     tags: # give it bonus hp regen
       SMT_ARMOR_REGEN_HP: 4
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20 # double shield regen to account for new shield mechanics
+      ARMOR_ENERGY_SHIELD_DECAY: 20
 
 

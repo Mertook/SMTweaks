@@ -5,12 +5,12 @@ skills:
     battleType: 1
     checkHandsOnly: false
     costUse:
-      time: 25
-      energy: 20
+      time: 20
+      energy: 15
       stun: 5
     flatUse:
-      time: false #     25% TU
-      energy: false #   20% energy
+      time: false #     20% TU
+      energy: false #   15% energy
       stun: false #     5% Stun
 
   - type: STR_LIB_SMOKE_SKILL       # Librarian Smoke
@@ -19,15 +19,15 @@ skills:
     battleType: 1
     checkHandsOnly: false
     costUse:
-      time: 25
+      time: 20
       energy: 20
       stun: 10
-      morale: 15
+      morale: 10
     flatUse:
-      time: false #     25% TU
+      time: false #     20% TU
       energy: false #   20% energy
       stun: false #     10% Stun
-      morale: false #   20% morale
+      morale: false #   10% morale
 
   - type: STR_LIB_LOCKDOWN_SKILL    # Librarian Lockdown
     targetMode: 11
@@ -51,12 +51,12 @@ skills:
     battleType: 9
     checkHandsOnly: false
     costUse:
-      time: 20
+      time: 30
       energy: 10
       stun: 5
       morale: 10
     flatUse:
-      time: false #     20% TU
+      time: false #     30% TU
       energy: false #   10% energy
       stun: false #     5% Stun
       morale: false #   10% morale
@@ -67,12 +67,12 @@ skills:
     battleType: 9
     checkHandsOnly: false
     costUse:
-      time: 60 # was 25 - this skill is really strong
+      time: 55 # was 25 - this skill is really strong
       energy: 33
       stun: 15
       morale: 20
     flatUse:
-      time: false #     60% TU
+      time: false #     55% TU
       energy: false #   20% energy
       stun: false #     5% Stun
       morale: false #   15% morale

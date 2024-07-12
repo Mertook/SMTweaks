@@ -1,0 +1,156 @@
+extended:
+  tags:
+    RuleItem:
+      SMT_ITEM_SHIELD_DURATION: int             # duration of temporary energy shield
+      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: int   # % of power converted into shield for target
+      ITEM_SETS_ENERGY_SHIELD_DECAY: int        # decay rate of shield applied by item
+    RuleArmor:
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: int      # shield regen from armor
+      ARMOR_ENERGY_SHIELD_DECAY: int            # shield decay from armor
+    BattleUnit:
+      UNIT_ENERGY_SHIELD_HP: int                # raw shield value
+      UNIT_BONUS_ENERGY_SHIELD_HP_PER_TURN: int # shield regen from soldierbonus
+      UNIT_BONUS_ENERGY_SHIELD_DECAY: int       # shield decay from soldierbonus
+      UNIT_ENERGY_SHIELD_DECAY: int             # shield decay from item/ability
+      SMT_SHIELD_ENDTURN: int                   # store duration for shield from item/ability
+
+  scripts:
+    newTurnUnit:
+      #*** Handles decay of energy shields and shield HP added by armors - from 40k, updated to integrate Rosigma's soldierBonus shields and handle 1 turn shield buffs***
+      - override: 40k_nTU_personal_shields
+        offset: 13
+        code: |
+          var ptr RuleArmor armorRuleset;
+          var int shieldHP;
+          var int shieldDecay;
+          var int shieldAdded;
+          var int temp;
+          var int endTurn;
+
+          # Only run this at the start of the players turn - no double dipping for recharge/drain (generally makes armor shields worse)
+          if neq side 0;
+            return;
+          end;
+
+          # Check armor/unit first for decay parameter
+          unit.getRuleArmor armorRuleset;
+          armorRuleset.getTag shieldDecay Tag.ARMOR_ENERGY_SHIELD_DECAY;
+          unit.getTag temp Tag.UNIT_BONUS_ENERGY_SHIELD_DECAY;
+          if and gt shieldDecay 0 gt temp 0; # if unit has both sources of shield decay, average them
+            add shieldDecay temp;
+            div shieldDecay 2;
+          else;
+            limit_lower shieldDecay temp; # if unit only has one source, use that
+          end;
+
+          # If they don't have either, use decay set by item
+          if eq shieldDecay 0;
+            unit.getTag shieldDecay Tag.UNIT_ENERGY_SHIELD_DECAY;
+          end;
+
+          set temp shieldDecay; # use temp var to keep calcuated shieldDecay intact for later
+          # Apply the decay, treating it like the percent lost per turn
+          unit.getTag shieldHP Tag.UNIT_ENERGY_SHIELD_HP;
+          sub temp 100;
+          mul temp -1;
+          muldiv shieldHP temp 100;
+          # Now add the per-turn amount, to be balanced by decay parameter
+          armorRuleset.getTag shieldAdded Tag.ARMOR_ENERGY_SHIELD_HP_PER_TURN;
+          unit.getTag temp Tag.UNIT_BONUS_ENERGY_SHIELD_HP_PER_TURN;
+          add shieldAdded temp; # combine shield gain from armor and soldierBonus
+          add shieldHP shieldAdded;
+
+          # Handle removing temporary shields that don't decay
+          unit.getTag endTurn Tag.SMT_SHIELD_ENDTURN;
+          #debug_log "Shield newTurn Ping (turn/endTurn/shields) " turn endTurn shieldHP;
+          if and neq endTurn 0 ge turn endTurn; # if shield has an expiry turn and it has expired
+            if gt shieldAdded 0;
+              if neq 0 shieldDecay;
+                muldiv shieldAdded 100 shieldDecay;
+              end;
+              limit_upper shieldHP shieldAdded; # if unit has inbuilt shield, limit their remaining shield to whatever max it provides
+            else;
+              set shieldHP 0; # if they don't, remove any remaining shield
+            end;
+            unit.setTag Tag.SMT_SHIELD_ENDTURN 0;
+          end;
+
+          if eq shieldHP 0;
+            unit.setTag Tag.UNIT_ENERGY_SHIELD_DECAY 0;
+          end;
+          unit.setTag Tag.UNIT_ENERGY_SHIELD_HP shieldHP;
+          #debug_log "Shield newTurn Final (Added/Decay/NewHP) " shieldAdded shieldDecay shieldHP;
+
+          return;
+
+      - delete: ROSIGMA_nTU_personal_shield_soldier_bonus # this script is already handled in the above - deleted to prevent units benefiting from shield regen twice
+
+
+
+    damageUnit: 
+      #*** Spells that add to energy shields - modified from 40k to account for turn-limited shields that don't decay***
+      - override: 40k_dU_spell_personal_shields
+        offset: 11
+        code: |
+          var ptr RuleItem weaponRuleset;
+          var int shieldAdded;
+          var int scalingFactor;
+          var int linearAddition;
+          var int diminishingAddition;
+          var int shieldHP;
+          var int shieldDecay;
+          var int currentDecay;
+          var int currTurn;
+          var int endTurn;
+
+          damaging_item.getRuleItem weaponRuleset;
+          weaponRuleset.getTag shieldAdded Tag.ITEM_ADDS_ENERGY_SHIELD_FROM_POWER;
+
+          if eq shieldAdded 0;
+            weapon_item.getRuleItem weaponRuleset;
+            weaponRuleset.getTag shieldAdded Tag.ITEM_ADDS_ENERGY_SHIELD_FROM_POWER;
+            if eq shieldAdded 0;
+              return;
+            end;
+          end;
+
+          set scalingFactor 50; # Percent factor for diminishing returns beyond the power of the item
+
+          set linearAddition currPower;
+          muldiv linearAddition shieldAdded 100;
+          set diminishingAddition linearAddition;
+
+          unit.getTag shieldHP Tag.UNIT_ENERGY_SHIELD_HP;
+          sub linearAddition shieldHP;
+
+          if gt linearAddition 0;
+            set diminishingAddition shieldHP;
+          else;
+            mul linearAddition -1;
+            muldiv linearAddition 100 diminishingAddition;
+            sub scalingFactor linearAddition;
+            limit_lower scalingFactor 0;
+            set linearAddition 0;
+          end;
+
+          muldiv diminishingAddition scalingFactor 100;
+          add linearAddition diminishingAddition;
+          add shieldHP linearAddition;
+          unit.setTag Tag.UNIT_ENERGY_SHIELD_HP shieldHP;
+
+          weaponRuleset.getTag shieldDecay Tag.ITEM_SETS_ENERGY_SHIELD_DECAY;
+          unit.getTag currentDecay Tag.UNIT_ENERGY_SHIELD_DECAY;
+          if gt shieldDecay currentDecay;
+            unit.setTag Tag.UNIT_ENERGY_SHIELD_DECAY shieldDecay;
+          end;
+
+          weaponRuleset.getTag endTurn Tag.SMT_ITEM_SHIELD_DURATION;
+          if gt endTurn 0;
+            battle_game.getTurn currTurn;
+            add endTurn currTurn;
+            unit.setTag Tag.SMT_SHIELD_ENDTURN endTurn;
+          end;
+
+          #debug_log "PsyShield (Shield/Power/Decay/endTurn/currTurn) " shieldHP currPower shieldDecay endTurn currTurn;
+
+          return;

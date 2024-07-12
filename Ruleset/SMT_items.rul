@@ -1356,14 +1356,15 @@ items:
     accuracyMultiplier:
       flatHundred: 1.30
       psi: 0.0
-    power: 20 # was 50 + 0.01 psi
+    power: 0 # was 50 + 0.01 psi
     maxRange: 10
     damageBonus:
-      psiStrength: 2.0 # 40 psiStr gives 10 power 140 psiStr gives 300 power
+      psiStrength: 2.5 # 40 psiStr gives 100 power 140 psiStr gives 350 power
     isFireExtinguisher: true
     tags:
       ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 100
-      ITEM_SETS_ENERGY_SHIELD_DECAY: 40 # triggers at start of enemy turn
+      ITEM_SETS_ENERGY_SHIELD_DECAY: 0 # not used, is removed entirely when duration ends
+      SMT_ITEM_SHIELD_DURATION: 1
       ITEM_IS_BUFF_WEAPON: 1
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
       ITEM_DAMAGE_PERCENT_VS_PILOTED: 100

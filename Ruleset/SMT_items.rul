@@ -303,8 +303,8 @@ items:
     fireSound: {mod: 40k, index: 699}
     hitAnimation: {mod: 40k, index: 150}
     hitSound: 0 # consider changing
-    armor: 200
     ufopediaType: STR_STRIKE_VOX_FALSE
+    armor: 200
     battleType: 1
     invWidth: 2
     invHeight: 2
@@ -386,6 +386,7 @@ items:
     dropoff: 0
     noLOSAccuracyPenalty: 100
     arcingShot: true
+    armor: 200
     power: 250
     damageType: 3 #HE
     confAuto:
@@ -1061,9 +1062,10 @@ items:
     hitAnimation:
       mod: 40k
       index: 120
+    powerForAnimation: 50
     damageAlter:
       RandomType: 6
-      ToArmorPre: 0.20
+      ToArmorPre: 0.30
       ToArmor: 0.2
       ArmorEffectiveness: 1.0
       ToStun: 0.6
@@ -1179,8 +1181,9 @@ items:
     costBuy: 5000 # was 1500
     requiresBuy:
       - STR_HBOLTER_AMMO_PREREQ
+    powerForAnimation: 50
     damageAlter:
-      ToArmorPre: 0.20 # was 0.05
+      ToArmorPre: 0.30 # was 0.05
       FixRadius: 3 # was 2
       ArmorEffectiveness: 1.0 # was 0.9
       ToStun: 0.6 #concussive
@@ -1280,7 +1283,7 @@ items:
       morale: 10
     flatRate: true
     accuracyUse: 0
-    experienceTrainingMode: 25
+    experienceTrainingMode: 24
     tags:
       ITEM_IS_PSYCHIC_POWER: 1
       ITEM_PSYCHIC_POWER_MODIFIER: 3 # was 5
@@ -1408,7 +1411,7 @@ items:
       ITEM_PSYCHIC_POWER_FLAT_CHECK: 1 # only check for perils once per turn
 
   - update: STR_SMITE_TOME                  # Tome Smite
-    experienceTrainingMode: 25 # PsiStr
+    experienceTrainingMode: 24 # PsiStr
     tuUse: 20 # was 25 flat
     flatRate: false
     power: 5 # was 10

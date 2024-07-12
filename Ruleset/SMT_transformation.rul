@@ -26,6 +26,13 @@ soldierTransformation:
     transferTime: 0
     requiredCommendations:
       STR_TERMINATOR_CROSS: 0
+    requiredMinStats:
+      health: 100   # marine max 120 - training cap 80
+      firing: 100   # marine min 70  - training cap 100
+      melee: 80     # marine min 70  - training cap 100
+      reactions: 80 # marine min 65  - no training
+      strength: 80  # marine min 55  - training cap 80
+      psiSkill: 60  # marine min 35  - training cap 100
     listOrder: 50
 
   - name: STR_PROMOTE_NEOPHYTE          # Neophyte -> Marine
@@ -48,8 +55,8 @@ soldierTransformation:
     requiredCommendations:
       STR_BATTLE_TESTED: 0
     requiredMinStats:
-      health: 60 # Neophyte base 40-55, Marine minimum 75
-      strength: 50 # Neophyte base 30-40, Marine minimum 55
+      health: 65 # Neophyte base 40-55, Marine minimum 75
+      strength: 55 # Neophyte base 30-40, Marine minimum 55
     listOrder: 30
 
   - name: STR_HARVEST_GENESEED          # Recover Geneseed from Corpses
@@ -92,8 +99,13 @@ soldierTransformation:
       STR_TERMINATOR_CROSS: 0
     requiresBaseFunc: [PSI] #needs chapel
     requiredMinStats:
+      health: 100 # marine max 120  - training cap 80
+      firing: 100 # marine max 120  - training cap 100
+      melee: 80 # marine max 120   - training cap 100
+      reactions: 80 # marine max 110
+      strength: 80 # marine max 100 - training cap 80
       bravery: 70 # max Neophyte starting is 60, marine minimum is 50
-      psiSkill: 70 #
+      psiSkill: 90 #
     listOrder: 70
 
   - name: STR_PROMOTE_LIBRARIAN         # Neophyte -> Librarian
@@ -105,7 +117,7 @@ soldierTransformation:
     requiredItems:
       STR_SMT_GENESEED: 1
       STR_ALIEN_ALLOYS: 30
-      STR_KILLPOINT_TOKEN: 160 # was 100
+      STR_KILLPOINT_TOKEN: 200 # was 100
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -118,11 +130,11 @@ soldierTransformation:
       STR_BATTLE_TESTED: 0
     requiresBaseFunc: [LIB] #needs library
     requiredMinStats:
-      health: 60 # Neophyte base 40-55, Marine minimum 75
-      strength: 50 # Neophyte base 30-40, Marine minimum 55
+      health: 65 # Neophyte base 40-55, Marine minimum 75
+      strength: 55 # Neophyte base 30-40, Marine minimum 55
       psiStrength: 20 # Neophyte base 0-25
     listOrder: 40
-      
+
   - name: STR_PROMOTE_LIB_TERMINATOR    # Librarian -> Vet Librarian
     requires:
       - STR_MARINES_STRATEGY
@@ -131,7 +143,7 @@ soldierTransformation:
     producedSoldierType: STR_SOLDIER_LIBRARIAN_TERM
     cost: 40000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 160 # was 150
+      STR_KILLPOINT_TOKEN: 180 # was 150
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -142,7 +154,7 @@ soldierTransformation:
     requiredCommendations:
       STR_TERMINATOR_CROSS: 0
     requiredMinStats:
-      psiStrength: 90 #
+      psiStrength: 95 #
     listOrder: 60
 
   - name: STR_CHAPLAIN_ROSARY           # Chaplain Shield

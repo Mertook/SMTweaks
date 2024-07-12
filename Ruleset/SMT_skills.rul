@@ -67,12 +67,12 @@ skills:
     battleType: 9
     checkHandsOnly: false
     costUse:
-      time: 25
-      energy: 20
-      stun: 10
-      morale: 15
+      time: 60 # was 25 - this skill is really strong
+      energy: 33
+      stun: 15
+      morale: 20
     flatUse:
-      time: false #     25% TU
+      time: false #     60% TU
       energy: false #   20% energy
       stun: false #     5% Stun
       morale: false #   15% morale

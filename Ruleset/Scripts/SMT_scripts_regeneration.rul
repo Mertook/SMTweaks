@@ -143,6 +143,7 @@ extended:
           unit.getRuleSoldier soldierRuleset;
           soldierRuleset.getTag woundTimeMultiplier Tag.SOLDIER_WOUND_TIME_MULTIPLIER;
           unit.getTag recoverPenalty Tag.SMT_RECOVERY_TIME;
+          muldiv recoverPenalty 2 3; # 66% penalty
           #debug_log "Initial RecoveryTime: " recovery_time recoverPenalty;
 
           if neq woundTimeMultiplier 0; #adjust based on soldier recovery speed

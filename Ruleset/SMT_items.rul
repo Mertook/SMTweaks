@@ -5,7 +5,7 @@ items:
     power: 100 # same as power weapon
     damageType: 5
     damageBonus:
-      strength: 0.2
+      strength: 0.3 # standard is 0.2 - mounted on armor fists
       melee: 0.3
     damageAlter:
       RandomType: 2 # 50-150%
@@ -15,6 +15,7 @@ items:
       RandomType: 2
       RandomWound: false
       ToWound: 0.2 #inflicts 20% wounds
+      ToTile: 1.5 #koolaid man v2
       IgnoreSelfDestruct: true #melee weapon with plasma damage
     costMelee:
       time: 12 # MC power weapon
@@ -433,6 +434,7 @@ items:
     recoveryPoints: 2
 
   - update: STR_PISTOL_CLIP                 # Boltpistol Ammo
+    size: 0.05 # was 0.1
     damageAlter:
       RandomType: 1 # 0-200%
       ToArmorPre: 0.15 # was 0.1
@@ -442,6 +444,7 @@ items:
     armor: 200
 
   - update: STR_RIFLE_CLIP                  # Bolter Ammo
+    size: 0.05 # was 0.1
     damageAlter:
       RandomType: 1 # 0-200%
       ToArmorPre: 0.15 # was 0.1
@@ -451,13 +454,16 @@ items:
     armor: 200
 
   - update: STR_LIGHT_BOLTER_AMMO           # Light Bolter Ammo
+    size: 0.05 # was 0.1
     bigSprite: 3112
 
   - update: STR_LIGHT_BOLTPISTOL_AMMO       # Light BoltPistol Ammo
+    size: 0.05 # was 0.1
     bigSprite: 3116
 
 
   - &STR_BOLTER_AMMO_KRAK                   # Krak Ammo defaults
+    size: 0.05 # was 0.1
     damageAlter:
       RandomType: 1 # 0-200%
       ArmorEffectiveness: 0.5 # was 0.5
@@ -481,14 +487,17 @@ items:
     clipSize: 30 # +50% clip size
 
   - update: STR_LIGHT_BOLTER_AMMO_PEN       # Krak Light Bolter Ammo
+    size: 0.05 # was 0.1
     bigSprite: 3113
     listOrder: 10297
 
   - update: STR_LIGHT_BOLTPISTOL_AMMO_AP    # Krak Light Boltpistol Ammo
+    size: 0.05 # was 0.1
     bigSprite: 3117
     listOrder: 10096 # group with other light boltpistol ammo
 
   - update: STR_PISTOL_CLIP_MC              # Mastercraft Boltpistol Ammo
+    size: 0.05 # was 0.1
     damageAlter:
       RandomType: 7 # 50-200% instead of 0-200%
       ToArmorPre: 0.2 # was 0.15
@@ -498,6 +507,7 @@ items:
     armor: 200
   
   - update: STR_RIFLE_CLIP_MC               # Mastercraft Bolter Ammo
+    size: 0.05 # was 0.1
     damageAlter:
       RandomType: 7 # 50-200% instead of 0-200%
       ToArmorPre: 0.2 # was 0.15
@@ -507,6 +517,7 @@ items:
     armor: 200
 
   - update: STR_LIGHT_BOLTPISTOL_AMMO_MC    # Mastercraft Light Boltpistol Ammo
+    size: 0.05 # was 0.1
     bigSprite: 3119
     listOrder: 10098 # group with other light boltpistol ammo
     power: 55 # now gets bonus power from high FA instead
@@ -515,6 +526,7 @@ items:
     armor: 200
 
   - update: STR_LIGHT_BOLTER_AMMO_MC        # Mastercraft Light Bolter Ammo
+    size: 0.05 # was 0.1
     bigSprite: 3115
     power: 60 # now gets bonus power from high FA instead
     damageAlter:
@@ -522,6 +534,7 @@ items:
     armor: 200
 
   - &STR_BOLTER_AMMO_METAL_STORM            # Metalstorm Ammo Defaults
+    size: 0.05 # was 0.1
     armor: 200
     damageType: 1 # AP type, was HE - Shrapnel blast
     damageAlter:
@@ -1224,6 +1237,7 @@ items:
       REACTION_MULTIPLIER: 175 # +75% reactions, pistol grip
 
   - update: STR_HB_CLIP                     # Stormbolter Ammo
+    size: 0.1 # was 0.3
     damageType: 1
     power: 75 # was 70
     damageAlter:
@@ -1234,6 +1248,7 @@ items:
       ToHealth: 1.1
 
   - update: STR_HB_CLIP_MC                  # MC Stormbolter Ammo
+    size: 0.1 # was 0.3
     power: 75 # was 95
     damageAlter:
       ToArmorPre: 0.2
@@ -1282,8 +1297,8 @@ items:
       stun: 10
       morale: 10
     flatRate: true
-    accuracyUse: 0
-    experienceTrainingMode: 24
+    accuracyUse: 100
+    experienceTrainingMode: 25
     tags:
       ITEM_IS_PSYCHIC_POWER: 1
       ITEM_PSYCHIC_POWER_MODIFIER: 3 # was 5
@@ -1334,7 +1349,7 @@ items:
       energy: 25
       stun: 10
       morale: 10
-    accuracyUse: 30 # was 25
+    accuracyUse: 25 # was 25
     psiAttackName: STR_LOCKDOWN_SPELL
     tags:
       ITEM_CAUSES_LOCKDOWN: 100
@@ -1366,8 +1381,6 @@ items:
       ITEM_SETS_ENERGY_SHIELD_DECAY: 0 # not used, is removed entirely when duration ends
       SMT_ITEM_SHIELD_DURATION: 1
       ITEM_IS_BUFF_WEAPON: 1
-      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
-      ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
 
   - type: STR_LIB_SMOKE_TOME                # Tome Smoke
     refNode: *STR_TOME_BASE
@@ -1413,10 +1426,14 @@ items:
       ITEM_PSYCHIC_POWER_FLAT_CHECK: 1 # only check for perils once per turn
 
   - update: STR_SMITE_TOME                  # Tome Smite
-    experienceTrainingMode: 24 # PsiStr
+    experienceTrainingMode: 25 # PsiStr
     tuUse: 20 # was 25 flat
     flatRate: false
     power: 5 # was 10
+    accuracyUse: 20 # was 20
+    accuracyMultiplier: # was 1.0 psiStr + 0.02 devotion
+      psiStrength: 1.0
+      flatHundred: 0.5
     damageBonus:
       psiStrength: 0.3 # was 0.002 psi
     damageAlter:
@@ -1482,20 +1499,21 @@ items:
       IgnoreSelfDestruct: false # default true for HE, fire, smoke, stun, mel
       IgnoreDirection: true # always hits front armor
       ToHealth: 0.7 # was 1.0
-      ToArmor: 0.4 # was 0
+      ToArmorPre: 0.1 # was 0
+      ToArmor: 0.6 # was 0
       ToTile: 0.1
       ToMorale: 5.0 # was 5.0
       ArmorEffectiveness: 0.2 # was 0.5
       RadiusReduction: 0.0 # no power dropoff from center
       FixRadius: -1
-      RadiusEffectiveness: 0.02 # 2% of power as radius
+      RadiusEffectiveness: 0.04 # 4% of power as radius
     damageBonus:
       bravery: 0.3 # was 0.5
       psiSkill: 0.7 # was 0.5
     meleePower: 100
     meleeBonus: # normal power weapons are 0.2 str 0.3 melee
-      strength: 0.1 # was 0.2
-      melee: 0.1 # was 0.2
+      strength: 0.0 # was 0.2
+      melee: 0.3 # was 0.2
       psiSkill: 0.3 # was 0
     meleeMultiplier:
       melee: 0.8
@@ -1599,14 +1617,14 @@ items:
     costBuy: 3000
 
   - update: STR_HEAVY_ROCKET_HE             # Large Frag Missile
-    size: 0.2 # was 0.3
+    size: 0.1 # was 0.3
     costBuy: 6000 # was 20k
     costSell: 3000
     damageAlter:
       ToItem: 0.25 # shrapnel
 
   - update: STR_HEAVY_ROCKET_KRAK           # Large Krak Missile
-    size: 0.2 # was 0.3
+    size: 0.1 # was 0.3
     costBuy: 8000 # was 40k!
     costSell: 4000
     power: 140 # was 140
@@ -1614,7 +1632,7 @@ items:
       - STR_LASER_WEAPONS #Weapon Req - was Midtier
 
   - update: STR_HEAVY_ROCKET                # Melta Missile
-    size: 0.2 # was 0.3
+    size: 0.1 # was 0.3
     costBuy: 20000 # was 80k!!
     costSell: 10000
     damageAlter:

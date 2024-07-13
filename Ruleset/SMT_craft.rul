@@ -521,9 +521,9 @@ crafts:
     fuelMax: 1100 # enough to reach opposite side of globe when full - was 1000, just barely short
     requiresBuyBaseFunc: [HANGAR] # was missing?
     speedMax: 360 #was 240, worse than first company! - give it some chance to compete with landspeeders
-    soldiers: 16 # was 12
+    soldiers: 16 # was 12 - flagrant abuse of the codex - this is where the two missing spots from rhinos went
     vehicles: 999
-    maxLargeUnits: 0 # was 1
+    maxLargeUnits: 1 # was 1
     battlescapeTerrainData:
       name: RAZOR_SMT
       mapDataSets:
@@ -569,11 +569,13 @@ crafts:
       mapBlocks:
         - name: ARMY
           width: 10
-          length: 20    
+          length: 20
           items:
             STR_RAZORBACK_TURRET_SPAWNER:
               - [1, 15, 1] 
               - [7, 14, 1] 
+            STR_SMOKELAUNCHER_TURRET_SPAWNER:
+              - [8, 8, 2] 
             STR_LEFT_THUNDERHAWK_SPAWNER:
               - [0, 3, 0] 
             STR_RIGHT_THUNDERHAWK_SPAWNER:
@@ -583,6 +585,7 @@ crafts:
               - [8, 5, 1]
           fuseTimers:
             STR_RAZORBACK_TURRET_SPAWNER: [0, 0]
+            STR_SMOKELAUNCHER_TURRET_SPAWNER: [0, 0]
             STR_LEFT_THUNDERHAWK_SPAWNER: [0, 0]
             STR_RIGHT_THUNDERHAWK_SPAWNER: [0, 0]
             STR_SKULL_SPAWNER: [0, 0]

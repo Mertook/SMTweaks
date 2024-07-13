@@ -226,8 +226,6 @@ armors:
     specialWeapon: STR_SM_OFFICER_FIST #Officer Fist with Inspire ability
     builtInWeapons: #added 3x2 backpack
       - INV_NULL_3X1_BACKPACK
-    units: #now exclusive to terminator promoted troops
-      - STR_SOLDIER_TERMINATOR
 
   - update: STR_HONOR_ARMOR_UC      #TACTICAL HONOR (Honor Guard)
     refNode: *STR_MARINE_OFFICER_ARMOR
@@ -419,7 +417,7 @@ armors:
       - 0.6 #ACID (was 0.8)
       - 0.0 #SMOKE
       - 0.2 #IMPACT
-      - 1.0 #MELTA
+      - 0.8 #MELTA (was 1.0)
     frontArmor: 180 #was 150
     sideArmor: 175 #was 130
     rearArmor: 125 #was 100
@@ -443,6 +441,8 @@ armors:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 40
       ARMOR_ENERGY_SHIELD_DECAY: 100
+      SMT_ARMOR_REGEN_HP: 2
+      ARMOR_REGENERATES_WOUNDS: 1
 
   - update: STR_CAPTAIN_UC          #TERMINATOR CAPTAIN
     refNode: *STR_TERMINATOR_ARMOR
@@ -453,12 +453,25 @@ armors:
       firing: 20        # base 20
       health: 40        # base 30 +10
       bravery: 10       # base 10
-      reactions: -10    # base -10
+      reactions: 10     # base -10 +20
       throwing: 10      # base 10
       strength: 90      # base 90
       psiStrength: 0    # base 0
       psiSkill: 20      # base 0 +20
-      melee: 10         # base 10
+      melee: 20         # base 10 +10
+    damageModifier: #TERMINATOR ARMOR 2.7 values
+      - 1.0 #none
+      - 0.6 #AP (was 0.6)
+      - 0.3 #FLAMES
+      - 0.5 #HE (was 0.4)
+      - 0.8 #LASCANON
+      - 0.7 #PLASMA (was 0.8)
+      - 0.9 #STUN (was 1.0)
+      - 0.8 #MELEE (was 0.9)
+      - 0.5 #ACID (was 0.8)
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.7 #MELTA (was 1.0)
 
   - update: STR_POWER_SUIT_UC       #TERMINATOR
     refNode: *STR_TERMINATOR_ARMOR
@@ -831,6 +844,7 @@ armors:
       INFECTION_RESIST: 100
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_LIVING: 1 # allow Inspire
 
   - type: DREAD_ARMOR2_UC           #DREAD ARMOR PLASMA
     refNode: *STR_DREADNOUGHT_ARMOR

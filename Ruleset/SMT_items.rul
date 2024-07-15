@@ -1320,7 +1320,8 @@ items:
       psiStrength: 0.7 # <30 - nothing, >=30 <60 - 75% (40 PsiStr), >=60 <90 - 50% (87 PsiStr), >=90 - 25% move cost (126 PsiStr)
     accuracyUse: 100
     accuracyMultiplier:
-      flatHundred: 1.30
+      psiStrength: 1.0
+      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
     dropoff: 0
     tags:
       SMT_ITEM_MOVESPEED_BOOST: 1
@@ -1369,15 +1370,15 @@ items:
     accuracyUse: 100
     LOSRequired: false
     accuracyMultiplier:
-      flatHundred: 1.30
-      psi: 0.0
+      psiStrength: 1.0
+      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
     power: 0 # was 50 + 0.01 psi
     maxRange: 10
     damageBonus:
-      psiStrength: 2.5 # 40 psiStr gives 100 power 140 psiStr gives 350 power
+      psiStrength: 1.0 # 40 psiStr gives 100 power 140 psiStr gives 350 power
     isFireExtinguisher: true
     tags:
-      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 100
+      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 250 # done to stop the dumb '200 power hits knocks flyers out of the air' quirk of rosigma
       ITEM_SETS_ENERGY_SHIELD_DECAY: 0 # not used, is removed entirely when duration ends
       SMT_ITEM_SHIELD_DURATION: 1
       ITEM_IS_BUFF_WEAPON: 1

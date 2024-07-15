@@ -518,6 +518,7 @@ crafts:
   - type: STR_RHINO_NO_TT                   # Razorback
     costBuy: 500000 # was 900k - droppods 200k, landspeeder 600k
     costRent: 400000 # was 480k - droppods are 200k, landspeeder 400k
+    costSell: 400000 # landspeeder 400k
     fuelMax: 1100 # enough to reach opposite side of globe when full - was 1000, just barely short
     requiresBuyBaseFunc: [HANGAR] # was missing?
     speedMax: 360 #was 240, worse than first company! - give it some chance to compete with landspeeders
@@ -589,7 +590,8 @@ crafts:
             STR_LEFT_THUNDERHAWK_SPAWNER: [0, 0]
             STR_RIGHT_THUNDERHAWK_SPAWNER: [0, 0]
             STR_SKULL_SPAWNER: [0, 0]
-    deployment: # fix broken loadout
+    craftInventoryTile: [1, 17, 0] # back of rhino 1
+    deployment: #
       - [2, 4, 0, 4] #landraider
       - [3, 4, 0, 4]
       - [2, 5, 0, 4]

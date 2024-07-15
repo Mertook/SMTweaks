@@ -262,7 +262,7 @@ armors:
       health: 30        # base 10 +10 ass +10 elite
       bravery: 10       # base 0  +10 ass
       reactions: 30     # base 10 +15 ass +5  elite
-      firing: 5         # base 0  -10 ass +15 elite
+      firing: 10        # base 0  -10 ass +20 elite
       throwing: 10      # base 5  -5  ass +10 elite
       strength: 10      # base 10
       psiStrength: 0    # base 0  
@@ -295,7 +295,7 @@ armors:
       health: 30        # base 10 +10 ass +10 elite
       bravery: 10       # base 0  +10 ass
       reactions: 30     # base 10 +15 ass +5  elite
-      firing: 5         # base 0  -10 ass +15 elite
+      firing: 10        # base 0  -10 ass +20 elite
       throwing: 10      # base 5  -5  ass +10 elite
       strength: 10      # base 10
       psiStrength: 0    # base 0  
@@ -330,7 +330,7 @@ armors:
       health: 20        # base 10 +10 elite
       bravery: 0        # base 0  
       reactions: 10     # base 10 
-      firing: 20        # base 0  +20 signum
+      firing: 25        # base 0  +25 signum
       throwing: 5       # base 5  
       strength: 10      # base 10 
       psiStrength: 0    # base 0  
@@ -624,7 +624,7 @@ armors:
       health: 30        # base 10 +10 ass +10 elite
       bravery: 10       # base 0  +10 ass
       reactions: 35     # base 10 +15 ass +10 elite
-      firing: 0         # base 0  -10 ass +15 elite - 5 chaplain
+      firing: 0         # base 0  -10 ass +20 elite - 10 chaplain
       throwing: 10      # base 5  -5  ass +10 elite
       strength: 10      # base 10
       psiStrength: 5    # base 0  +5 (only done for consistency with regular Chap armor, stat should't matter)
@@ -748,7 +748,7 @@ armors:
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
   
-  - type: BIKE_ARMOR_UC             #BIKE
+  - update: BIKE_ARMOR_UC           #BIKE
     visibilityAtDay: 40
     visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
     heatVision: 20 #Add anti-smoke vision to all marine armour
@@ -848,19 +848,19 @@ armors:
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_LIVING: 1 # allow Inspire
 
-  - type: DREAD_ARMOR2_UC           #DREAD ARMOR PLASMA
+  - update: DREAD_ARMOR2_UC         #DREAD ARMOR PLASMA
     refNode: *STR_DREADNOUGHT_ARMOR
 
-  - type: DREAD_ARMOR3_UC           #DREAD ARMOR MLAUNCHER
+  - update: DREAD_ARMOR3_UC         #DREAD ARMOR MLAUNCHER
     refNode: *STR_DREADNOUGHT_ARMOR
 
-  - type: DREAD_ARMOR4_UC           #DREAD ARMOR LASCANNON
+  - update: DREAD_ARMOR4_UC         #DREAD ARMOR LASCANNON
     refNode: *STR_DREADNOUGHT_ARMOR
 
-  - type: DREAD_ARMOR5_UC           #DREAD ARMOR VENERABLE
+  - update: DREAD_ARMOR5_UC         #DREAD ARMOR VENERABLE
     refNode: *STR_DREADNOUGHT_ARMOR
 
-  - type: STR_SIGNAL_ARMOR_UC_HULK  #SUPERHULK REWARD ARMOR
+  - update: STR_SIGNAL_ARMOR_UC_HULK #SUPERHULK REWARD ARMOR
     visibilityAtDay: 40
     visibilityAtDark: 40 # was 30
     antiCamouflageAtDay: 7 # was 5

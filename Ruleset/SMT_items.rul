@@ -1381,6 +1381,8 @@ items:
       ITEM_SETS_ENERGY_SHIELD_DECAY: 0 # not used, is removed entirely when duration ends
       SMT_ITEM_SHIELD_DURATION: 1
       ITEM_IS_BUFF_WEAPON: 1
+      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 100
+      ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
 
   - type: STR_LIB_SMOKE_TOME                # Tome Smoke
     refNode: *STR_TOME_BASE

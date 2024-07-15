@@ -1,7 +1,7 @@
 soldiers:
   - type: STR_SOLDIER
     tags:
-      SMT_HEROICSAVE_CHANCE: 35 # success chance is (((Current HP% * 2) + (Devotion/2)) * saveChance/100) / # of Save checks made
+      SMT_HEROICSAVE_CHANCE: 30 # success chance is (((Current HP% * 2) + (Devotion/2)) * saveChance/100) / # of Save checks made
       SMT_HEROICSAVE_HP: 30
 
   - type: STR_SOLDIER_NEOPHYTE
@@ -11,22 +11,22 @@ soldiers:
 
   - type: STR_SOLDIER_TERMINATOR
     tags:
-      SMT_HEROICSAVE_CHANCE: 60
+      SMT_HEROICSAVE_CHANCE: 65
       SMT_HEROICSAVE_HP: 45 # was 60 - now that wound protection is in this can stand to be lower
 
   - type: STR_SOLDIER_CHAPLAIN
     tags:
-      SMT_HEROICSAVE_CHANCE: 60
+      SMT_HEROICSAVE_CHANCE: 65
       SMT_HEROICSAVE_HP: 45
 
   - type: STR_SOLDIER_LIBRARIAN
     tags:
-      SMT_HEROICSAVE_CHANCE: 35
+      SMT_HEROICSAVE_CHANCE: 30
       SMT_HEROICSAVE_HP: 30
 
   - type: STR_SOLDIER_LIBRARIAN_TERM
     tags:
-      SMT_HEROICSAVE_CHANCE: 60
+      SMT_HEROICSAVE_CHANCE: 65
       SMT_HEROICSAVE_HP: 45
 
   - type: STR_FALLEN

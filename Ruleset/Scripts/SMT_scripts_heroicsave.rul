@@ -74,8 +74,10 @@ extended:
           else;
             set temp woundsTotal;
             add temp to_health;
+            unit.getTag temp2 Tag.CURRENT_INFECTION_DAMAGE;
+            add temp temp2;
             if gt currentHealth temp; # on enemy turn consider wounds as part of damage
-              return; # skip if damage + wounds isn't fatal
+              return; # skip if damage + wounds + corruption isn't fatal
             end;
           end;
           

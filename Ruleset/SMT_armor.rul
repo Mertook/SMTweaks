@@ -807,10 +807,10 @@ armors:
     heatVision: 50 # Vehicle sensors
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
-    frontArmor: 240
-    sideArmor: 230
-    rearArmor: 180
-    underArmor: 240
+    frontArmor: 210 # was 240
+    sideArmor: 200 # was 230
+    rearArmor: 180 # was 180
+    underArmor: 220 # was 240
     psiDefence: # does this matter for 2x2 units?
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -829,14 +829,14 @@ armors:
       melee: 20         # base 20 
     damageModifier: # Moved closer to Terminator Values
       - 1.0 #none
-      - 0.6 #AP - was 0.8
+      - 0.8 #AP - was 0.8
       - 0.2 #FLAMES
-      - 0.5 #HE - was 0.7
+      - 0.6 #HE - was 0.7
       - 0.8 #LASCANON - was 1.1
       - 0.8 #PLASMA
       - 0.0 #STUN
       - 0.8 #MELEE
-      - 0.6 #ACID
+      - 0.7 #ACID
       - 0.0 #SMOKE
       - 0.0 #IMPACT
       - 1.0 #MELTA - was 1.2

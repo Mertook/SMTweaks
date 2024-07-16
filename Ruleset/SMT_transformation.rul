@@ -68,6 +68,7 @@ soldierTransformation:
     allowsLiveSoldiers: false
     allowsWoundedSoldiers: false
     needsCorpseRecovered: true
+    createsClone: true
     transferTime: 0
     allowedSoldierTypes:
       - STR_SOLDIER
@@ -181,7 +182,7 @@ soldierTransformation:
       STR_ALIEN_ALLOYS: 30
       STR_ELERIUM_115: 30
       STR_UFO_CONSTRUCTION: 10
-      STR_KILLPOINT_TOKEN: 60 # was 300
+      STR_KILLPOINT_TOKEN: 450 # was 300
     allowedSoldierTypes:
       - STR_SOLDIER
       - STR_SOLDIER_TERMINATOR

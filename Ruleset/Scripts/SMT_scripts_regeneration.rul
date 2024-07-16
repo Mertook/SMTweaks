@@ -29,6 +29,11 @@ soldiers:
       SMT_UNIT_REGEN_HP: 8
       SMT_UNIT_REGEN_WOUND: 2
 
+  - type: STR_FALLEN
+    tags:
+      SMT_UNIT_REGEN_HP: 12
+      SMT_UNIT_REGEN_WOUND: 0 # dreadnoughts can't get wounded
+
 extended:
   tags:
     RuleArmor:

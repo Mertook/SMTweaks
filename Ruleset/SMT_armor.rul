@@ -807,10 +807,10 @@ armors:
     heatVision: 50 # Vehicle sensors
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
-    frontArmor: 210 # was 240
-    sideArmor: 200 # was 230
+    frontArmor: 200 # was 240
+    sideArmor: 190 # was 230
     rearArmor: 180 # was 180
-    underArmor: 220 # was 240
+    underArmor: 240 # was 240
     psiDefence: # does this matter for 2x2 units?
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -818,7 +818,7 @@ armors:
     stats: #
       tu: 30            # base 30 
       stamina: 20       # base 20 
-      health: 80        # base 80 
+      health: 100       # base 100 
       bravery: 0        # base 0 - dreads are immune to most morale effects anyway
       reactions: 20     # base 20 
       firing: 20        # base 20 
@@ -832,8 +832,8 @@ armors:
       - 0.8 #AP - was 0.8
       - 0.2 #FLAMES
       - 0.6 #HE - was 0.7
-      - 0.8 #LASCANON - was 1.1
-      - 0.8 #PLASMA
+      - 1.0 #LASCANON - was 1.1
+      - 1.0 #PLASMA
       - 0.0 #STUN
       - 0.8 #MELEE
       - 0.7 #ACID
@@ -847,6 +847,7 @@ armors:
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_LIVING: 1 # allow Inspire
+      SMT_ARMOR_REGEN_HP: 10
 
   - update: DREAD_ARMOR2_UC         #DREAD ARMOR PLASMA
     refNode: *STR_DREADNOUGHT_ARMOR

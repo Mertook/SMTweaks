@@ -5,6 +5,7 @@ extended:
     RuleArmor:
       SMT_ARMOR_HEAVY_WEAPON_USER: int      # armor that counteracts the penalty for heavy weapons - 1 = half base penalty, 2 = no penalty
       SMT_ARMOR_SHRED_RESISTANCE: int       # Reduce armor damage by % (Non-melta damage sources)
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: int    # Reduce armor damage by % (Plasma damage)
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: int # Reduce armor damage by % (Melta damage)
       SMT_ARMOR_REGEN_HP: int #passive hp regen from armor
       ARMOR_REGENERATES_WOUNDS: int #wound regen from armor
@@ -29,7 +30,7 @@ extended:
             stats_state.addIntRow "Bonus HP Regen" temp;
           end;
 
-          rule.getTag temp Tag.ARMOR_REGENERATES_WOUNDS;                  # Health Regeneration
+          rule.getTag temp Tag.ARMOR_REGENERATES_WOUNDS;            # Wound Regeneration
           if gt temp 0;
             stats_state.addIntRow "Wound Healing" temp;
           end;
@@ -37,6 +38,11 @@ extended:
           rule.getTag temp Tag.SMT_ARMOR_SHRED_RESISTANCE;          # Armorshred 
           if gt temp 0;
             stats_state.addIntRow "Shred Resist (Standard)" temp;
+          end;
+
+          rule.getTag temp Tag.SMT_ARMOR_SHRED_PLASMA_RESISTANCE;   # Armorshred Plasma
+          if gt temp 0;
+            stats_state.addIntRow "Shred Resist (Plasma)" temp;
           end;
 
           rule.getTag temp Tag.SMT_ARMOR_SHRED_MELTA_RESISTANCE;    # Armorshred Melta

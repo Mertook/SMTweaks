@@ -231,11 +231,13 @@ armors:
 
   - type: STR_SMT_RAZOR_LAS_ARMOR           # Razorback Lascannon
     refNode: *STR_SMT_TURRET_BASE
+    spriteSheet: RB_LAS.PCK
     tags:
       SMT_RAZOR_LAS_TURRET: 1
 
   - type: STR_SMT_RAZOR_HF_ARMOR            # Razorback HeavyFlamer
     refNode: *STR_SMT_TURRET_BASE
+    spriteSheet: RB_HF.PCK
     tags:
       SMT_RAZOR_HFLAME_TURRET: 1
 
@@ -518,7 +520,7 @@ crafts:
   - type: STR_RHINO_NO_TT                   # Razorback
     costBuy: 500000 # was 900k - droppods 200k, landspeeder 600k
     costRent: 400000 # was 480k - droppods are 200k, landspeeder 400k
-    costSell: 400000 # landspeeder 400k
+    costSell: 400000 # was 0 - landspeeder 400k
     fuelMax: 1100 # enough to reach opposite side of globe when full - was 1000, just barely short
     requiresBuyBaseFunc: [HANGAR] # was missing?
     speedMax: 360 #was 240, worse than first company! - give it some chance to compete with landspeeders

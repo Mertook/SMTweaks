@@ -137,7 +137,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 80 #was 75
       STR_UFO_CONSTRUCTION: 10
       STR_ELERIUM_115: 20
-      STR_KILLPOINT_TOKEN: 650 #was 60
+      STR_KILLPOINT_TOKEN: 700 #was 60
   - name: STR_FLYING_SUIT                           # Terminator Assault
     category: STR_PERSONAL_ARMOR
     requires:
@@ -152,7 +152,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 80 #was 150
       STR_UFO_CONSTRUCTION: 10
       STR_ELERIUM_115: 20
-      STR_KILLPOINT_TOKEN: 650 #was 60
+      STR_KILLPOINT_TOKEN: 700 #was 60
   - name: STR_CAPTAIN_SUIT                          # Terminator Captain
     category: STR_PERSONAL_ARMOR
     requires:
@@ -166,7 +166,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 80
       STR_UFO_CONSTRUCTION: 10
       STR_ELERIUM_115: 20
-      STR_KILLPOINT_TOKEN: 900 #was 200
+      STR_KILLPOINT_TOKEN: 1000 #was 200
 
   - name: STR_TSARGENT                              # Terminator Sergeant
     category: STR_PERSONAL_ARMOR
@@ -397,16 +397,15 @@ manufacture:
   - name: STR_SMT_GENESEED_REQ                      # Geneseed requisition
     category: STR_GENESEED
     requires:
-      - STR_CHAPTER_PURITY
-      - STR_HIGHTIER_PREREQ
+      - STR_SMT_GENESEED_REQ
     requiresBaseFunc: [MED] #Apothecary
     space: 0
-    time: 1200 #slow, 1 day with 50 engineers
+    time: 2400 #slow, 1 day with 100 engineers
     cost: 20000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 20 # 200 tokens total for a Mature Geneseed
+      STR_KILLPOINT_TOKEN: 60 # 200 tokens total for a Mature Geneseed
     producedItems:
-      STR_SMT_GENESEED_IMPURE: 1
+      STR_SMT_GENESEED_IMPURE: 3
     listOrder: 4
 
   - name: STR_PATCHMORAL                            # Tome of Morale

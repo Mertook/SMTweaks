@@ -329,3 +329,11 @@ research:
       #- STR_HB_DEP1 # moved to High Quality Bolters research
       - STR_SIDEOPERATIONS
     cutscene: c2
+
+  - name: STR_SMT_GENESEED_REQ      # Geneseed Requisition
+    cost: 100
+    points: 200
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_HIGHTIER_PREREQ
+    listOrder: 1 # push above corpses/etc

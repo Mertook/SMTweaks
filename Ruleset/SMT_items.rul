@@ -182,14 +182,14 @@ items:
     power: 0 # bless
     damageBonus:
       bravery: 0.5
-      psiSkill: 1.0
+      psiSkill: 0.5
     damageType: 0
     damageAlter:
       ResistType: 0
       RandomType: 3
       ArmorEffectiveness: 0.0
       ToStun: 0.0
-      ToMorale: -0.5
+      ToMorale: -1.0
       ToTime: 0.0
       ToHealth: 0.0
       ToWound: 0.0
@@ -198,7 +198,7 @@ items:
       ToItem: 0.0
       RadiusReduction: 0.0 # no power dropoff from center
       FixRadius: -1 # make higher power more valuable
-      RadiusEffectiveness: 0.03 # 3% of power as radius
+      RadiusEffectiveness: 0.06 # 6% of power as radius
     confAimed:
       name: STR_GUARD_PRIEST_BLESS
     costAimed:
@@ -1465,10 +1465,10 @@ items:
     weight: 15
     recover: true
     dropoff: 4
-    maxRange: 25 # was unlimited (but with power reduction after 20)
+    maxRange: 20 # was unlimited (but with power reduction after 20)
     powerRangeThreshold: 0
     powerRangeReduction: 0
-    aimRange: 10
+    aimRange: 10 # was 20
     costAimed:
       time: 30 # was 20/40 flat for snap/aimed
       energy: 20 # was 40
@@ -1507,7 +1507,7 @@ items:
       ToTile: 0.1
       ToMorale: 5.0 # was 5.0
       ArmorEffectiveness: 0.2 # was 0.5
-      RadiusReduction: 0.0 # no power dropoff from center
+      RadiusReduction: 1.0 # minor power dropoff from center
       FixRadius: -1
       RadiusEffectiveness: 0.04 # 4% of power as radius
     damageBonus:
@@ -2021,7 +2021,7 @@ items:
     experienceTrainingMode: 13
     listOrder: 12399 # just above regular chainswords
 
-  - type: STR_MOTION_SCANNER                # Motion Scanner
+  - update: STR_MOTION_SCANNER              # Motion Scanner
     bigSprite: 3134
     armor: 200
     weight: 8 # was 3
@@ -2064,6 +2064,30 @@ items:
       ToArmorPre: 0.2
       ToHealth: 0.9
       RandomType: 6
+
+  - update: AUX_HOVERTANK_LAUNCHER          # Dread Missile Launcher
+    dropoff: 4
+    autoRange: 25
+    snapRange: 0
+    aimRange: 30
+    accuracyAuto: 70
+    accuracySnap: 0
+    accuracyAimed: 100
+    tuAuto: 66 # was 0
+    tuSnap: 0
+    tuAimed: 66
+    confAuto:
+      shots: 2
+
+  - update: STR_HWP_FUSION_BOMB             # Dread Missile ammo
+    power: 130
+    damageType: 11 # Melta - was HE
+    damageAlter:
+      RandomType: 2
+      ToArmorPre: 0.5
+      ArmorEffectiveness: 0.75
+    clipSize: 8 # was 8
+    blastRadius: 11
 
   - update: STR_DREAD_MELEE_WEAPON          # Dread Fist
     tuMelee: 25 # was 15

@@ -131,8 +131,8 @@ events:
       -
         STR_SMT_GENESEED: 1
         STR_SMT_GENESEED_IMPURE: 4
-    timer: 1440 # 1 day
-    timerRandom: 5760 # +4 days
+    timer: 720 # 1/2 day
+    timerRandom: 6480 # +4.5~ days
 
   - name: STR_GENESEED_PACKAGE_MID      # Mid Geneseed Monthly Package   - Avg 1+10 - was 0+20
     description: STR_GENESEED_PACKAGE_DESCRIPTION
@@ -149,26 +149,26 @@ events:
       -
         STR_SMT_GENESEED: 1
         STR_SMT_GENESEED_IMPURE: 13
-    timer: 1440 # 1 day
-    timerRandom: 5760 # +4 days
+    timer: 720 # 1/2 day
+    timerRandom: 6480 # +4.5~ days
 
-  - name: STR_GENESEED_PACKAGE_LATE     # Late Geneseed Monthly Package  - Avg 1+23
+  - name: STR_GENESEED_PACKAGE_LATE     # Late Geneseed Monthly Package  - Avg 1+17
     description: STR_GENESEED_PACKAGE_DESCRIPTION
     randomMultiItemList:
       -
         STR_SMT_GENESEED: 1
-        STR_SMT_GENESEED_IMPURE: 17
+        STR_SMT_GENESEED_IMPURE: 13
+      -
+        STR_SMT_GENESEED: 1
+        STR_SMT_GENESEED_IMPURE: 15
+      -
+        STR_SMT_GENESEED: 1
+        STR_SMT_GENESEED_IMPURE: 19
       -
         STR_SMT_GENESEED: 1
         STR_SMT_GENESEED_IMPURE: 21
-      -
-        STR_SMT_GENESEED: 1
-        STR_SMT_GENESEED_IMPURE: 25
-      -
-        STR_SMT_GENESEED: 1
-        STR_SMT_GENESEED_IMPURE: 29
-    timer: 1440 # 1 day
-    timerRandom: 5760 # +4 days
+    timer: 720 # 1/2 day
+    timerRandom: 6480 # +4.5~ days
 
   - name: STR_GENESEED_PACKAGE_EXLATE   # Late Geneseed Monthly Package  - Avg 1+32
     description: STR_GENESEED_PACKAGE_DESCRIPTION
@@ -185,8 +185,8 @@ events:
       -
         STR_SMT_GENESEED: 1
         STR_SMT_GENESEED_IMPURE: 37
-    timer: 1440 # 1 day
-    timerRandom: 5760 # +4 days
+    timer: 720 # 1/2 day
+    timerRandom: 6480 # +4.5~ days
 
 eventScripts:
   - type: STR_GENESEED_MONTHLY_PACKAGE_SCRIPT
@@ -214,7 +214,7 @@ eventScripts:
       9:
        STR_GENESEED_PACKAGE_LATE: 100
       10:
-       STR_GENESEED_PACKAGE_EXLATE: 100
+       STR_GENESEED_PACKAGE_LATE: 100
       11:
        STR_GENESEED_PACKAGE_EXLATE: 100
       12:

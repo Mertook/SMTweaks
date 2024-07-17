@@ -1,26 +1,3 @@
-soldiers:
-  - type: STR_SOLDIER_CHAPLAIN
-    tags:
-      SMT_IS_CHAPLAIN: 1
-
-items:
-  - type: AUX_CROZIUS
-    tags:
-      SMT_NEEDS_CHAPLAIN: 1
-    scripts:
-      hitUnitAmmo: |
-        var ptr RuleSoldier unitSoldier;
-        var int temp;
-
-        attacker.getRuleSoldier unitSoldier;
-        unitSoldier.getTag temp Tag.SMT_IS_CHAPLAIN;
-        if and neq temp 1 neq battle_action battle_action_hit; # melee attacks can still do damage
-          #debug_log "CroziusHit damage negated: " temp;
-          set power 0;
-        end;
-
-        return power part side;
-
 extended:
   tags:
     RuleSoldier:
@@ -50,3 +27,26 @@ extended:
           end;
 
           return bonus; # final accuracy
+
+soldiers:
+  - type: STR_SOLDIER_CHAPLAIN
+    tags:
+      SMT_IS_CHAPLAIN: 1
+
+items:
+  - type: AUX_CROZIUS
+    tags:
+      SMT_NEEDS_CHAPLAIN: 1
+    scripts:
+      hitUnitAmmo: |
+        var ptr RuleSoldier unitSoldier;
+        var int temp;
+
+        attacker.getRuleSoldier unitSoldier;
+        unitSoldier.getTag temp Tag.SMT_IS_CHAPLAIN;
+        if and neq temp 1 neq battle_action battle_action_hit; # melee attacks can still do damage
+          #debug_log "CroziusHit damage negated: " temp;
+          set power 0;
+        end;
+
+        return power part side;

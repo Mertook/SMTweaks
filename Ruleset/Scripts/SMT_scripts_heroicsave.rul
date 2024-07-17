@@ -89,7 +89,7 @@ extended:
             return;
           end;
 
-          debug_log "HeroSave ping (health|damage|baseChance) - " currentHealth to_health unitSaveMod;
+          #debug_log "HeroSave ping (health|damage|baseChance) - " currentHealth to_health unitSaveMod;
           unit.getHealthMax maxHealth;
           set saveChance currentHealth;
           if lt maxHealth 100;
@@ -109,7 +109,7 @@ extended:
           limit_lower saveCount 1; #sanity check to make sure there's no /0 nonsense
           div saveChance saveCount; #divide chance by number of successful saves made by this unit +1
           battle_game.randomRange temp 0 100; 
-          debug_log "HeroSave randomRoll (chance|roll) - " saveChance temp;
+          #debug_log "HeroSave randomRoll (chance|roll) - " saveChance temp;
           if lt saveChance temp; # fail if random roll 0-100 > save chance
             return;
           end;
@@ -126,6 +126,7 @@ extended:
           unit.setTag Tag.CURRENT_INFECTION_DAMAGE 0; #clear all infection/corruption
           unit.setTag Tag.CURRENT_INFECTION_TYPE 0; #clear all infection/corruption
           unit.setFire 0; # extinguish fire
+          set to_transform 0; # prevent any chance of transforming
           unit.getTag temp Tag.SMT_RECOVERY_TIME;
           add temp 20; # divided by unit woundrecovery modifier
           unit.setTag Tag.SMT_RECOVERY_TIME temp; # increase post-mission recovery time
@@ -133,14 +134,14 @@ extended:
           unit.setTag Tag.SMT_HEROICSAVE_TRIGGERS saveCount; # increment save counter;
           battle_game.flashMessage "STR_SCRIPT_HEROIC_SAVE"; # 'Unit endured the hit'
 
-          debug_log "HeroSave Final (currHp|tohp|tostun|wound|saveHp|turn)- " currentHealth to_health to_stun temp saveHealth temp2;
+          #debug_log "HeroSave Final (currHp|tohp|tostun|wound|saveHp|turn)- " currentHealth to_health to_stun temp saveHealth temp2;
           if and ge woundsTotal saveHealth neq turnSide 0; #
             add temp 1;
             unit.Stats.setHealth temp; # set health to current wounds +1
             add to_stun to_health; # convert remaining incoming health damage to stun
             set to_health 0; # negate incoming damage
             unit.getHealth currentHealth;
-            debug_log "HeroSave Woundsave " temp currentHealth to_stun;
+            #debug_log "HeroSave Woundsave " temp currentHealth to_stun;
           end;
 
           return;

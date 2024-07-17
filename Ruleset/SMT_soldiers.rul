@@ -235,7 +235,7 @@ soldiers:
       tu: 75
       stamina: 80
       health: 90
-      bravery: 70
+      bravery: 80
       reactions: 65
       firing: 80
       throwing: 70
@@ -303,7 +303,6 @@ soldiers:
       - STR_BLESS_SKILL
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 25 # vet bonus
-      SMT_IS_CHAPLAIN: 1
       SMT_ALPHA_ATTACKER_MODIFIER: -1 # can't turn traitor
 
   - type: STR_SOLDIER_LIBRARIAN         #Librarian
@@ -504,7 +503,7 @@ soldiers:
     statCaps:
       tu: 100
       stamina: 120
-      health: 120
+      health: 150
       bravery: 110
       reactions: 120
       firing: 140 # higher than marine, lower than vet

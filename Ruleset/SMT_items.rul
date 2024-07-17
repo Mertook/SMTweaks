@@ -454,10 +454,12 @@ items:
     armor: 200
 
   - update: STR_LIGHT_BOLTER_AMMO           # Light Bolter Ammo
+    armor: 200
     size: 0.05 # was 0.1
     bigSprite: 3112
 
   - update: STR_LIGHT_BOLTPISTOL_AMMO       # Light BoltPistol Ammo
+    armor: 200
     size: 0.05 # was 0.1
     bigSprite: 3116
 
@@ -487,11 +489,13 @@ items:
     clipSize: 30 # +50% clip size
 
   - update: STR_LIGHT_BOLTER_AMMO_PEN       # Krak Light Bolter Ammo
+    armor: 200
     size: 0.05 # was 0.1
     bigSprite: 3113
     listOrder: 10297
 
   - update: STR_LIGHT_BOLTPISTOL_AMMO_AP    # Krak Light Boltpistol Ammo
+    armor: 200
     size: 0.05 # was 0.1
     bigSprite: 3117
     listOrder: 10096 # group with other light boltpistol ammo
@@ -517,6 +521,7 @@ items:
     armor: 200
 
   - update: STR_LIGHT_BOLTPISTOL_AMMO_MC    # Mastercraft Light Boltpistol Ammo
+    armor: 200
     size: 0.05 # was 0.1
     bigSprite: 3119
     listOrder: 10098 # group with other light boltpistol ammo
@@ -526,6 +531,7 @@ items:
     armor: 200
 
   - update: STR_LIGHT_BOLTER_AMMO_MC        # Mastercraft Light Bolter Ammo
+    armor: 200
     size: 0.05 # was 0.1
     bigSprite: 3115
     power: 60 # now gets bonus power from high FA instead
@@ -857,6 +863,7 @@ items:
       - STR_LIGHT_BOLTPISTOL_AMMO_EX
 
   - update: STR_BOLTER_ENFORCER             # Light Bolter (Enforcer - Doublesnap)
+    armor: 200
     dropoff: 8 # light boltguns get -1 dropoff compared to regular (easier to handle) - was 6
     autoRange: 0
     snapRange: 15 # was 14 - hybrid snap/auto
@@ -883,6 +890,7 @@ items:
 
 
   - update: STR_BOLTER_LOCKE                # Light Bolter (Locke - Standard)
+    armor: 200
     dropoff: 8 # light boltguns get -1 dropoff compared to regular (easier to handle) - was 6
     autoRange: 10 # was 7
     snapRange: 16 # was 14
@@ -1163,6 +1171,7 @@ items:
     listOrder: 12028
 
   - update: STR_AC_AP_AMMO                  # Heavy Bolter AP Ammo
+    armor: 200
     power: 90 # was 80
     clipSize: 50
     costBuy: 6000 # was 1200
@@ -1173,6 +1182,7 @@ items:
     listOrder: 12021
 
   - update: STR_AC_I_AMMO                   # Heavy Bolter Incin Ammo
+    armor: 200
     power: 80 # was 60
     clipSize: 50
     costBuy: 5000 # was 1400
@@ -1181,6 +1191,7 @@ items:
     listOrder: 12022
 
   - update: STR_AC_MC_AMMO                  # Heavy Bolter MC Ammo
+    armor: 200
     power: 90 # was 95
     clipSize: 50
     damageAlter:
@@ -1189,6 +1200,7 @@ items:
     listOrder: 12024
 
   - update: STR_AC_HE_AMMO                  # Heavy Bolter HE Ammo
+    armor: 200
     power: 80 # was 60
     clipSize: 50
     costBuy: 5000 # was 1500
@@ -1237,6 +1249,7 @@ items:
       REACTION_MULTIPLIER: 175 # +75% reactions, pistol grip
 
   - update: STR_HB_CLIP                     # Stormbolter Ammo
+    armor: 200
     size: 0.1 # was 0.3
     damageType: 1
     power: 75 # was 70
@@ -1248,6 +1261,7 @@ items:
       ToHealth: 1.1
 
   - update: STR_HB_CLIP_MC                  # MC Stormbolter Ammo
+    armor: 200
     size: 0.1 # was 0.3
     power: 75 # was 95
     damageAlter:
@@ -1452,6 +1466,7 @@ items:
     bigSprite: 3102
     invWidth: 2
     invHeight: 2 # was 2
+    armor: 200
 
   - update: STR_SMOKE_BOMB                  # Smokebomb
     requiresBuy: # allow TactStrat to buy smokebombs
@@ -1460,6 +1475,7 @@ items:
     bigSprite: 3103
     invWidth: 2
     invHeight: 2 # was 2
+    armor: 200
 
   - update: AUX_CROZIUS                     # Crozius
     weight: 15
@@ -1501,8 +1517,8 @@ items:
       IgnoreOverKill: false
       IgnoreSelfDestruct: false # default true for HE, fire, smoke, stun, mel
       IgnoreDirection: true # always hits front armor
-      ToHealth: 0.7 # was 1.0
-      ToArmorPre: 0.1 # was 0
+      ToHealth: 0.6 # was 1.0
+      ToArmorPre: 0.2 # was 0
       ToArmor: 0.6 # was 0
       ToTile: 0.1
       ToMorale: 5.0 # was 5.0
@@ -1594,6 +1610,7 @@ items:
     size: 0.1 # was 0.2
     costBuy: 3000
     costSell: 1500
+    armor: 200
     power: 90 # +20 over grenade, was 80
     damageType: 1 # For some reason small frag missiles lack all of the standard frag explosion damage traits
     damageAlter:
@@ -1614,10 +1631,12 @@ items:
     size: 0.1 # was 0.2
     costBuy: 4000
     costSell: 2000
+    armor: 200
 
   - update: STR_INCENDIARY_ROCKET           # Incendiary missile
     size: 0.1 # was 0.2
     costBuy: 3000
+    armor: 200
 
   - update: STR_HEAVY_ROCKET_HE             # Large Frag Missile
     size: 0.1 # was 0.3
@@ -2111,3 +2130,52 @@ items:
 
   - update: STR_CRATED_LANDSPEEDER          # Boxed Landspeeder
     costSell: 400000 # was 0, set so that you don't have to unpack & then sell vehicle
+
+  - update: STR_HEAVY_LASER                 # Meltagun
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_BLASTER_LAUNCHER            # Multimelta
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_MCPLASMA_RIFLE               # MC Plasma Rifle
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_PLASMA_RIFLE                # Plasma Rifle
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_PLASMA_RIFLE_CLIP           # Plasma Rifle Ammo
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_HEAVY_PLASMA_MC             # MC Heavy Plasma
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_HEAVY_PLASMA_TERRAN         # Heavy Plasma
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_HEAVY_PLASMA_CLIP           # Heavy Plasma Ammo
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_GRAVGUN_MC                  # MC Gravgun
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_SMALL_LAUNCHER_TERRAN       # Gravgun
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_HFLAMER                     # Heavy Flamer
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_HFLAMER_CLIP                # Heavy Flamer Ammo
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_STUN_ROD                    # Shock Maul
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_ASSC_CLIP                   # Assault Cannon Ammo
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_LASCAN_CLIP                 # Lascannon Ammo
+    armor: 200 # I'm sick of these things being destroyed in transports
+
+  - update: STR_LASCANNON_CLIP_MALTHUS      # Light Lascannon Ammo
+    armor: 200 # I'm sick of these things being destroyed in transports
+

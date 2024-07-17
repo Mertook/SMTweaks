@@ -296,7 +296,10 @@ soldiers:
     value: 50
     rankStrings:
       - STR_CHAPLAIN_RANK_0
-      - STR_CHAPLAIN_RANK_1 # same name but bump them up to Squaddies
+      - STR_CHAPLAIN_RANK_1
+      - STR_CHAPLAIN_RANK_2
+      - STR_CHAPLAIN_RANK_3
+      - STR_CHAPLAIN_RANK_4
     moraleLossWhenKilled: 300 # Spirital leaders, significant morale penalty on death (3x)
     skillIconSprite:  {mod: 40k, index: 8}
     skills: # Gives bless ability when combined with backpack item

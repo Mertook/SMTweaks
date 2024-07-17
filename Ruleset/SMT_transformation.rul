@@ -3,7 +3,8 @@ commendations:
     description: STR_TERMINATOR_CROSS_DESCRIPTION
     sprite: 5
     criteria:
-      killsWithCriteriaCareer: [40] # was 30
+      killsWithCriteriaCareer: [30] # was 30
+      totalWins: [15] # was 0
       totalMonthlyService: [3] # was 0
     killCriteria:
        -

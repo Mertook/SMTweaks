@@ -20,12 +20,12 @@ skills:
     checkHandsOnly: false
     costUse:
       time: 20
-      energy: 20
+      energy: 15
       stun: 10
       morale: 10
     flatUse:
       time: false #     20% TU
-      energy: false #   20% energy
+      energy: false #   15% energy
       stun: false #     10% Stun
       morale: false #   10% morale
 
@@ -53,13 +53,13 @@ skills:
     costUse:
       time: 30
       energy: 10
-      stun: 5
-      morale: 10
+      stun: 15
+      morale: 15
     flatUse:
       time: false #     30% TU
       energy: false #   10% energy
-      stun: false #     5% Stun
-      morale: false #   10% morale
+      stun: false #     15% Stun
+      morale: false #   15% morale
 
   - type: STR_LIB_HASTE_SKILL       # Librarian Haste
     targetMode: 11
@@ -69,10 +69,10 @@ skills:
     costUse:
       time: 55 # was 25 - this skill is really strong
       energy: 33
-      stun: 15
+      stun: 20
       morale: 20
     flatUse:
       time: false #     55% TU
-      energy: false #   20% energy
-      stun: false #     5% Stun
-      morale: false #   15% morale
+      energy: false #   33% energy
+      stun: false #     20% Stun
+      morale: false #   20% morale

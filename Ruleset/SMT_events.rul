@@ -14,8 +14,6 @@ startingBase:
     STR_LIGHT_BOLTPISTOL_AMMO: 16
     STR_BOLTER_LOCKE: 8 # light bolter
     STR_LIGHT_BOLTER_AMMO: 24
-    STR_RIFLE: 1 # godwyn bolter
-    STR_RIFLE_CLIP: 4
     STR_SHOTGUN: 1
     STR_SHOTGUN_SHELLS: 4
     STR_HEAVY_CANNON: 1 #sniper
@@ -40,11 +38,10 @@ events:
       STR_CRATED_LANDSPEEDER: 1
       STR_TATICAL_ARMOR: 2 
       STR_RIFLE: 3 # ultra patterns in january is too strong
-      STR_RIFLE_CLIP: 20
+      STR_RIFLE_CLIP: 30
       STR_RIFLE_CLIP_AP: 10
       STR_RIFLE_CLIP_EX: 10
-      STR_RIFLE_CLIP_MC: 4
-      STR_HIGH_EXPLOSIVE: 8
+      STR_SMOKE_BOMB: 8
       STR_SMT_GENESEED_IMPURE: 6
     spawnedPersons: 18
     spawnedPersonType: STR_SOLDIER_NEOPHYTE
@@ -56,9 +53,9 @@ events:
       STR_CRATED_RHINO: 1
       STR_CRATED_LANDSPEEDER: 1
       STR_ASS_ARMOR: 2
-      STR_CHAINSWORD_MC: 1 # A single fancy toy
+      STR_CHAINSWORD_MC: 1 # Gets a little taste of the fancy stuff early
       STR_CHAINSWORD: 1
-      STR_PISTOLB: 2
+      STR_PISTOLB: 3
       STR_PISTOL_CLIP: 30
       STR_PISTOL_CLIP_AP: 15
       STR_PISTOL_CLIP_EX: 15
@@ -77,7 +74,7 @@ events:
       STR_HEAVY_BOLTER_MARS: 1 # Mars Heavy Bolter
       STR_AC_AP_AMMO: 4
       STR_AC_HE_AMMO: 4
-      STR_ROCKET_LAUNCHER: 1
+      STR_ROCKET_LAUNCHER: 2
       STR_HEAVY_ROCKET_HE: 10
       STR_SMT_GENESEED_IMPURE: 6
     spawnedPersons: 18
@@ -90,10 +87,10 @@ events:
       STR_CRATED_RHINO: 1
       STR_CRATED_LANDSPEEDER: 1
       STR_SCOUTH: 2 #Adv Scout Armor
-      STR_PISTOLH_SM: 2 # Tigrus
+      STR_RIFLEC: 1 # Stalker Bolter
+      STR_RIFLE_CLIP: 20
+      STR_PISTOLS: 2 # Spectris Pistol
       STR_PISTOL_CLIP: 30
-      STR_PISTOL_CLIP_AP: 15
-      STR_PISTOL_CLIP_EX: 15
       STR_GRENADE_LAUNCHER_ASTARTES: 2
       STR_FRAG_GRENADE_DRUM: 8
       STR_SMT_GENESEED_IMPURE: 6

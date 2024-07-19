@@ -63,6 +63,7 @@ extended:
           var int temp;
           var int temp2;
 
+          ### Work out if the Unit needs saving
           unit.getHealth currentHealth;
           battle_game.getTurnSide turnSide;
           if eq turnSide 0;
@@ -72,16 +73,15 @@ extended:
           else;
             unit.getFatalwoundsTotal woundsTotal;   # existing wounds
             add woundsTotal to_wound;               # incoming wounds
-            unit.getTag temp2 Tag.CURRENT_INFECTION_DAMAGE;
-            add woundsTotal temp2;                  # existing corruption
-            add woundsTotal to_mana;                # incoming corruption
             set temp woundsTotal;
+            unit.getTag temp2 Tag.CURRENT_INFECTION_DAMAGE;
+            add temp temp2;                         # existing corruption
+            add temp to_mana;                       # incoming corruption
             add temp to_health;
             if gt currentHealth temp; # on enemy turn consider wounds as part of damage
               return; # skip if damage + wounds + corruption isn't fatal
             end;
           end;
-          
           unit.getRuleSoldier unitSoldier;
           unitSoldier.getTag unitSaveMod Tag.SMT_HEROICSAVE_CHANCE;
           unitSoldier.getTag saveHealth Tag.SMT_HEROICSAVE_HP;
@@ -90,6 +90,7 @@ extended:
             return;
           end;
 
+          ### Handle chance to be protected by Heroic Save
           #debug_log "HeroSave ping (health|damage|baseChance) - " currentHealth to_health unitSaveMod;
           unit.getHealthMax maxHealth;
           set saveChance currentHealth;
@@ -115,6 +116,7 @@ extended:
             return;
           end;
 
+          ### Handle protecting the unit on successful Save
           set to_transform 0; # prevent any potential transform
           set temp2 to_health;
           muldiv saveHealth currentHealth 100; # convert % saveHealth into actual health value
@@ -129,14 +131,14 @@ extended:
           unit.getTag temp Tag.SMT_RECOVERY_TIME;
           add temp 20; # divided by unit woundrecovery modifier
           unit.setTag Tag.SMT_RECOVERY_TIME temp; # increase post-mission recovery time
-          add saveCount 1; # ramp failure chance for successful saves faster
           unit.setTag Tag.SMT_HEROICSAVE_TRIGGERS saveCount; # increment save counter;
           battle_game.flashMessage "STR_SCRIPT_HEROIC_SAVE"; # 'Unit endured the hit'
 
+          ### Handle wound protection to stop saved units from dying at the start of your turn
           #debug_log "HeroSave Final (currHp|tohp|tostun|wound|saveHp|turn)- " currentHealth to_health to_stun temp saveHealth temp2;
-          if and ge woundsTotal saveHealth neq turnSide 0; #
+          if and ge woundsTotal saveHealth neq turnSide 0;
             add temp 1;
-            unit.Stats.setHealth temp; # set health to current wounds +1
+            unit.Stats.setHealth temp; # set health to current wounds +1 - corruption damage happens at the start of enemy turn, we don't need to account for it
             add to_stun to_health; # convert remaining incoming health damage to stun
             limit_lower to_stun temp; # make sure to stun the unit in the case that they have excessive wounds and would die, but haven't taken enough raw damage to get stunned
             set to_health 0; # negate incoming damage

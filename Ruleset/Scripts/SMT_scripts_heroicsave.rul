@@ -126,10 +126,12 @@ extended:
           set to_health temp; # only damage unit up to the saveHealth limit
           sub temp2 temp; # get overflow damage
           add to_stun temp2; # add overflow to stun damage
+          add to_stun to_mana; # add incoming corruption to stun
+          set to_mana 0; # negate incoming corruption - prevent any immediate corruption transformations
           unit.setFire 0; # extinguish fire
           set to_transform 0; # prevent any chance of transforming
           unit.getTag temp Tag.SMT_RECOVERY_TIME;
-          add temp 20; # divided by unit woundrecovery modifier
+          add temp 20; # divided by unit woundRecovery modifier
           unit.setTag Tag.SMT_RECOVERY_TIME temp; # increase post-mission recovery time
           unit.setTag Tag.SMT_HEROICSAVE_TRIGGERS saveCount; # increment save counter;
           battle_game.flashMessage "STR_SCRIPT_HEROIC_SAVE"; # 'Unit endured the hit'

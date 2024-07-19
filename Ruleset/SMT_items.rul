@@ -617,7 +617,7 @@ items:
     tags:
       ITEM_RECOIL: 65 # +25 - harder requirement, not meant for regular humans
     scripts:
-      selectItemSprite:
+      selectItemSprite: # handle sprite changes for loading different ammo types
         var ptr BattleItem ammoItem;
         var ptr RuleItem ammoRuleset;
         var int skipBigobs;
@@ -626,10 +626,10 @@ items:
         ammoItem.getRuleItem ammoRuleset;
         ammoRuleset.getTag skipBigobs Tag.ITEM_AMMO_SKIP_BIGOBS;
 
-        if and gt skipBigobs 0 eq blit_part blit_item_big;
+        if and gt skipBigobs 0 eq blit_part blit_item_big; # if ammo changes sprite (and we're handling bigObs)
           add sprite_index skipBigobs;
         else;
-          add sprite_index sprite_offset;
+          add sprite_index sprite_offset; # otherwise do the normal sprite handling (needed otherwise handObs break)
         end;
 
         return sprite_index;
@@ -786,7 +786,8 @@ items:
     tuSnap: 16 # was 21
     tuAimed: 0
     autoShots: 3
-    tuLoad: 5 # MCpistol bonus
+    tuLoad: 2 # MCpistol bonus
+    tuUnload: 2 # MCpistol bonus
 
   - update: STR_PISTOLS                     # BoltPistol (Spectris)
     costBuy: 75000 # was 150k

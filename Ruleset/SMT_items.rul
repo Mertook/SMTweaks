@@ -793,7 +793,7 @@ items:
     dropoff: 9 # -1 for scope - was 5
     autoRange: 0
     snapRange: 14
-    aimRange: 18 # was 17
+    aimRange: 19 # was 17
     accuracyAuto: 0
     accuracySnap: 80 # was 75
     accuracyAimed: 100
@@ -841,21 +841,21 @@ items:
     bulletSpeed: 30
     attraction: 1
     dropoff: 9 # was 5
-    autoRange: 8 # was 7
+    autoRange: 10 # was 7
     snapRange: 13 # was 11
     aimRange: 17 # was 17
     accuracyAuto: 60 # was 55
     accuracySnap: 75
-    accuracyAimed: 88 # was 100
+    accuracyAimed: 90 # was 100
     tuSnap: 22 # was 22
     tuAimed: 35 # was 35
     tuAuto: 35 # was 33
     autoShots: 3
     tuLoad: 10 # pistol bonus
     tags:
-      ITEM_RECOIL: 50 # harder requirement, hybrid weapon
+      ITEM_RECOIL: 60 # harder requirement, hybrid weapon
       REACTION_MULTIPLIER: 150 # was 200 - carbine rather than pure pistol
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 10 # was 25
+      ITEM_AIMED_ACCURACY_POWER_BONUS: 15 # was 25
       ITEM_POWER_BONUS_PERCENTILE: 1 #use %
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 

@@ -626,10 +626,10 @@ items:
         ammoItem.getRuleItem ammoRuleset;
         ammoRuleset.getTag skipBigobs Tag.ITEM_AMMO_SKIP_BIGOBS;
 
-        if and gt skipBigobs 0 eq blit_part blit_item_big; # if ammo changes sprite (and we're handling bigObs)
+        if and gt skipBigobs 0 eq blit_part blit_item_big;
           add sprite_index skipBigobs;
         else;
-          add sprite_index sprite_offset; # otherwise do the normal sprite handling (needed otherwise handObs break)
+          add sprite_index sprite_offset;
         end;
 
         return sprite_index;

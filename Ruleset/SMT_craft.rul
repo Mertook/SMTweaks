@@ -13,7 +13,7 @@ units:
       psiStrength: 250
       psiSkill: 0
       melee: 0
-      mana: 18 # 9 shots
+      mana: 6 # 3 shots - one turn reload
     armor: STR_SMT_SMOKEL_ARMOR
     moraleLossWhenKilled: 0
     standHeight: 8 # short
@@ -354,6 +354,8 @@ items:
       time: 1
       energy: 2
       mana: 2
+    tags:
+      TURRET_RELOAD_TURNS: 1
 
   - type: STR_SMT_CRAFT_LASCANNON           # Craft Lascannon weapon - using IG tank lascannon as base
     refNode: *STR_SMT_TURRET_GUN_DEFAULT

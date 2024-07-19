@@ -367,8 +367,8 @@ items:
       FixRadius: 9 # was 7
       RadiusReduction: 5 #better damage spread
       ToArmorPre: 0.4 #heavy ablation
-      ArmorEffectiveness: 1.1 #
-      ToHealth: 0.7 #
+      ArmorEffectiveness: 1.0 #
+      ToHealth: 1.0 #
       ToTime: 0.2 #concussive
       ToStun: 0.4 #concussive
       ToWound: 0.1
@@ -438,10 +438,12 @@ items:
     damageAlter:
       RandomType: 1 # 0-200%
       ToArmorPre: 0.15 # was 0.1
-    power: 70 # was 60
+    power: 75 # was 60
     weight: 4 # 2x weight
-    clipSize: 15 # +50% clip size
+    clipSize: 12 # +20% clip size
     armor: 200
+    tags:
+      ITEM_AMMO_SKIP_BIGOBS: 2
 
   - update: STR_RIFLE_CLIP                  # Bolter Ammo
     size: 0.05 # was 0.1
@@ -452,6 +454,8 @@ items:
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
     armor: 200
+    tags:
+      ITEM_AMMO_SKIP_BIGOBS: 1
 
   - update: STR_LIGHT_BOLTER_AMMO           # Light Bolter Ammo
     armor: 200
@@ -478,15 +482,19 @@ items:
 
   - update: STR_PISTOL_CLIP_AP              # Krak Boltpistol Ammo
     refNode: *STR_BOLTER_AMMO_KRAK
-    power: 70
+    power: 75
     weight: 4 # 2x weight
-    clipSize: 15 # +50% clip size
+    clipSize: 12 # +20% clip size
+    tags:
+      ITEM_AMMO_SKIP_BIGOBS: 2
 
   - update: STR_RIFLE_CLIP_AP               # Krak Bolter Ammo
     refNode: *STR_BOLTER_AMMO_KRAK
     power: 75
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
+    tags:
+      ITEM_AMMO_SKIP_BIGOBS: 1
 
   - update: STR_LIGHT_BOLTER_AMMO_PEN       # Krak Light Bolter Ammo
     armor: 200
@@ -505,10 +513,12 @@ items:
     damageAlter:
       RandomType: 7 # 50-200% instead of 0-200%
       ToArmorPre: 0.2 # was 0.15
-    power: 70 # now gets bonus power from high FA instead
+    power: 75 # now gets bonus power from high FA instead
     weight: 4 # 2x weight
-    clipSize: 15 # +50% clip size
+    clipSize: 12 # +20% clip size
     armor: 200
+    tags:
+      ITEM_AMMO_SKIP_BIGOBS: 2
   
   - update: STR_RIFLE_CLIP_MC               # Mastercraft Bolter Ammo
     size: 0.05 # was 0.1
@@ -519,6 +529,8 @@ items:
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
     armor: 200
+    tags:
+      ITEM_AMMO_SKIP_BIGOBS: 1
 
   - update: STR_LIGHT_BOLTPISTOL_AMMO_MC    # Mastercraft Light Boltpistol Ammo
     armor: 200
@@ -572,11 +584,13 @@ items:
 
   - update: STR_PISTOL_CLIP_EX              # Metalstorm BoltPistol Ammo
     refNode: *STR_BOLTER_AMMO_METAL_STORM
-    power: 70 # 
+    power: 75 # 
     weight: 4 # 2x weight
-    clipSize: 15 # +50% clip size
+    clipSize: 12 # +20% clip size
     damageAlter:
       FixRadius: 3 # give it a larger area effect
+    tags:
+      ITEM_AMMO_SKIP_BIGOBS: 2
 
   - update: STR_RIFLE_CLIP_EX               # Metalstorm Bolter Ammo
     refNode: *STR_BOLTER_AMMO_METAL_STORM
@@ -585,15 +599,42 @@ items:
     clipSize: 30 # +50% clip size
     damageAlter:
       FixRadius: 3
+    tags:
+      ITEM_AMMO_SKIP_BIGOBS: 1
 
   - &STR_BOLTER                             # Generic Bolter Reference
     dropoff: 9 # v3.1 (8) standard was 5 - Bolts are short range projectiles that fall off quickly outside of their standard range
     weight: 28 # +8 weight, not meant for regular humans
+    compatibleAmmo: # bolters can use boltpistol ammo
+      - STR_RIFLE_CLIP
+      - STR_RIFLE_CLIP_AP
+      - STR_RIFLE_CLIP_EX
+      - STR_RIFLE_CLIP_MC
+      - STR_PISTOL_CLIP
+      - STR_PISTOL_CLIP_AP
+      - STR_PISTOL_CLIP_EX
+      - STR_PISTOL_CLIP_MC
     tags:
       ITEM_RECOIL: 65 # +25 - harder requirement, not meant for regular humans
+    scripts:
+      selectItemSprite:
+        var ptr BattleItem ammoItem;
+        var ptr RuleItem ammoRuleset;
+        var int skipBigobs;
+
+        item.getAmmoItem ammoItem;
+        ammoItem.getRuleItem ammoRuleset;
+        ammoRuleset.getTag skipBigobs Tag.ITEM_AMMO_SKIP_BIGOBS;
+
+        if and gt skipBigobs 0 eq blit_part blit_item_big;
+          add sprite_index skipBigobs;
+        end;
+
+        return sprite_index;
   
   - update: STR_RIFLE                       # Bolter (Godwyn)
     refNode: *STR_BOLTER
+    bigSprite: 3136
     costBuy: 25000 # was 10000 - Now mid-tier weapon instead of starter gear
     costSell: 10000
     autoRange: 11 # v3.1 (13) - was 9 - weapon focused on aggressive mid range engagements
@@ -604,13 +645,14 @@ items:
     accuracyAimed: 0
     tuAimed: 0
     tuSnap: 20 # was 24
-    tuAuto: 33 # was 40 - higher strength of marines allows greater RPM on bolters than light variants meant for regular humans
+    tuAuto: 30 # was 40 - higher strength of marines allows greater RPM on bolters than light variants meant for regular humans
     requiresBuy:
       - STR_MARINES_STRATEGY
       - STR_MIDTIER_PREREQ
 
   - update: STR_RIFLEA                      # Bolter (Artifex DW)
     refNode: *STR_BOLTER
+    bigSprite: 3139
     autoRange: 12 #+1 DW
     snapRange: 16 #-1 vs Stalker
     aimRange: 21 #-1 vs Stalker
@@ -623,12 +665,13 @@ items:
 
   - update: STR_RIFLEB                      # Bolter (Ultra)
     refNode: *STR_BOLTER
+    bigSprite: 3142
     costBuy: 200000 # was 200000 - Higher end gear
     autoRange: 12 # v3.1 (14) was 9
     snapRange: 16 # was 16
     aimRange: 0
-    accuracyAuto: 70 # v3.1 80 - was 75
-    accuracySnap: 85 # was 90
+    accuracyAuto: 72 # was 75
+    accuracySnap: 90 # was 90
     accuracyAimed: 0
     tuAimed: 0
     tuSnap: 20 # was 22
@@ -638,12 +681,13 @@ items:
 
   - update: STR_RIFLEC                      # Bolter (Stalker)
     refNode: *STR_BOLTER
+    bigSprite: 3145
     ufopediaType: STR_RIFLEC # was pointed at Godwyn for some reason
     costBuy: 200000 # was 200000 - Higher end gear
     dropoff: 7 # was 4
     autoRange: 7
     snapRange: 17 # was 16
-    aimRange: 23 # was 22
+    aimRange: 24 # was 22 - starts falling behind original at 27 tiles
     accuracyAuto: 66 # was 66
     accuracySnap: 80 # was 80
     accuracyAimed: 100 # was 100
@@ -656,6 +700,7 @@ items:
 
   - update: STR_RIFLED                      # Bolter (Cawl)
     refNode: *STR_BOLTER
+    bigSprite: 3148
     autoRange: 10 # v3.1 (13) was 7
     snapRange: 15 # was 16
     aimRange: 0
@@ -669,6 +714,7 @@ items:
 
   - update: STR_RIFLEDW                     # Bolter (Cawl Deathwatch)
     refNode: *STR_BOLTER
+    bigSprite: 3151
     autoRange: 11 # v3.1 (14) was 8
     snapRange: 16 # was 17
     accuracyAuto: 70
@@ -681,11 +727,12 @@ items:
 
   - update: STR_MCRIFLE                     # Bolter (MC) - Now TactStrat exclusive
     refNode: *STR_BOLTER
+    bigSprite: 3154
     autoRange: 12 # v3.1 (14) was 11
     snapRange: 16 # was 15
     aimRange: 0
-    accuracyAuto: 70 # was 86 - MC weapons should be stronger but not easier to use
-    accuracySnap: 85 # was 100
+    accuracyAuto: 72 # was 86 - MC weapons should be stronger but not easier to use
+    accuracySnap: 90 # was 100
     accuracyAimed: 0
     tuSnap: 18 # was 25
     tuAuto: 30 # was 40
@@ -708,7 +755,7 @@ items:
       - STR_MIDTIER_PREREQ
 
   - update: STR_PISTOLB                     # BoltPistol (Ultra)
-    costBuy: 100000 # was 150k
+    costBuy: 75000 # was 150k
     dropoff: 10 # was 6
     autoRange: 7 # add 2shot autofire
     snapRange: 11 # was 11
@@ -731,14 +778,14 @@ items:
     accuracyAuto: 66
     accuracySnap: 80 # was 105 - MC weapons should be stronger but not easier to use
     accuracyAimed: 0
-    tuAuto: 25
+    tuAuto: 22
     tuSnap: 16 # was 21
     tuAimed: 0
     autoShots: 3
     tuLoad: 5 
 
   - update: STR_PISTOLS                     # BoltPistol (Spectris)
-    costBuy: 100000 # was 150k
+    costBuy: 75000 # was 150k
     dropoff: 9 # -1 for scope - was 5
     autoRange: 0
     snapRange: 14
@@ -747,10 +794,12 @@ items:
     accuracySnap: 80 # was 75
     accuracyAimed: 100
     tuAuto: 0
-    tuSnap: 22
+    tuSnap: 20 # was 22
     tuAimed: 35 # was 35
     requiresBuy:
       - STR_MARINE_BOLTERS
+    tags:
+      ITEM_AIMED_ACCURACY_POWER_BONUS: 10 # was 25
 
   - update: STR_PISTOLH                     # BoltPistol (Tigrus Original)
     ufopediaType: STR_PISTOLH_SM
@@ -776,33 +825,29 @@ items:
     bulletSprite: {mod: 40k, index: 6}
     fireSound: {mod: 40k, index: 707}
     battleType: 1
-    compatibleAmmo:
+    compatibleAmmo: # doesn't get rifle ammo - it's a pistol at its core
       - STR_PISTOL_CLIP
-      - STR_PISTOL_CLIP_EX
       - STR_PISTOL_CLIP_AP
+      - STR_PISTOL_CLIP_EX
       - STR_PISTOL_CLIP_MC
-      - STR_RIFLE_CLIP
-      - STR_RIFLE_CLIP_MC
-      - STR_RIFLE_CLIP_AP
-      - STR_RIFLE_CLIP_EX
     twoHanded: false
     invWidth: 2
     invHeight: 3
     bulletSpeed: 30
     attraction: 1
     dropoff: 9 # was 5
-    autoRange: 7 # was 7
+    autoRange: 9 # was 7
     snapRange: 14 # was 11
     aimRange: 18 # was 17
     accuracyAuto: 55 # was 55
     accuracySnap: 75
     accuracyAimed: 88 # was 100
     tuSnap: 20 # was 22
-    tuAimed: 45 # was 35 - aimed MC ammo shots with high level marines do a lot of damage
+    tuAimed: 35 # was 35
     tuAuto: 30 # was 33
-    autoShots: 2
+    autoShots: 3
     tags:
-      ITEM_RECOIL: 60 # harder requirement, can fire bolter rounds
+      ITEM_RECOIL: 50 # harder requirement, hybrid weapon
       REACTION_MULTIPLIER: 150 # was 200 - carbine rather than pure pistol
       ITEM_AIMED_ACCURACY_POWER_BONUS: 10 # was 25
       ITEM_POWER_BONUS_PERCENTILE: 1 #use %

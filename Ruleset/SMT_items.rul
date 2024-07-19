@@ -1443,6 +1443,7 @@ items:
       ITEM_PSYCHIC_POWER_FLAT_CHECK: 1 # only check for perils once per turn
 
   - update: STR_SMITE_TOME                  # Tome Smite
+    defaultInventorySlot: STR_LEFT_HAND
     experienceTrainingMode: 25 # PsiStr
     tuUse: 20 # was 25 flat
     flatRate: false
@@ -1958,6 +1959,7 @@ items:
       - STR_GLAUNCHER_PREREQ
 
   - update: AUX_MEDI_KIT_ADVANCED           # Advanced Apoth Medkit
+    defaultInventorySlot: STR_LEFT_HAND
     tuUse: 10
     flatRate: true
     medikitTargetSelf: true

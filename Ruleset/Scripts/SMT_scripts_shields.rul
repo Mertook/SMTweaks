@@ -27,8 +27,9 @@ extended:
           var int temp;
           var int endTurn;
 
-          # Only run this at the start of the players turn - no double dipping for recharge/drain (generally makes armor shields worse)
-          if neq side 0;
+          # Only run this at the start of the units turn - no double dipping for recharge/drain (generally makes inbuilt shields worse)
+          unit.getFaction temp;
+          if neq side temp;
             return;
           end;
 

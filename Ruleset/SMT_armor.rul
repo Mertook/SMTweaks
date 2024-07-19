@@ -8,8 +8,8 @@ armors:
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
-      psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
-      moraleCurrent: 1.0 #discipline and resolve reinforces their faith
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill) - sorcerers don't care?
+      moraleCurrent: 1.5 #discipline and resolve reinforces their faith
     frontArmor: 125 # base 125
     sideArmor: 120 # base 120
     rearArmor: 100 # base 100
@@ -52,8 +52,8 @@ armors:
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
-      psiSkill: 1.0 #FAITH IS MY SHIELD
-      moraleCurrent: 1.1 #discipline and resolve reinforces their faith (+10% officer bonus)
+      psiSkill: 1.5 #FAITH IS MY SHIELD
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
     frontArmor: 125 # base 125
     sideArmor: 120 # base 120
     rearArmor: 100 # base 100
@@ -81,8 +81,8 @@ armors:
     antiCamouflageAtDark: 2
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
-      psiSkill: 1.0 #FAITH IS MY SHIELD
-      moraleCurrent: 0.8 #discipline and resolve reinforces their faith -20% scout penalty
+      psiSkill: 1.5 #FAITH IS MY SHIELD
+      moraleCurrent: 1.5 #discipline and resolve reinforces their faith
     loftempsSet: [ 3 ]
     stats:
       tu: 20            # base 10 +10
@@ -403,8 +403,8 @@ armors:
     antiCamouflageAtDark: 8
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
-      psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
-      moraleCurrent: 1.2 #discipline and resolve reinforces their faith (+20% terminator bonus)
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 2.0 #discipline and resolve reinforces their faith (+50% terminator bonus)
     damageModifier: #TERMINATOR ARMOR 2.7 values
       - 1.0 #none
       - 0.7 #AP (was 0.6)
@@ -541,12 +541,14 @@ armors:
     storeItem: STR_NONE # Now default to Chaplain type soldiers
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
-      psiSkill: 1.5 #Chaplains are supremely resistant to warp influence
-      moraleCurrent: 1.2
+      psiSkill: 2.0 #Chaplains are supremely resistant to warp influence
+      moraleCurrent: 2.0
     frontArmor: 125 # base 125
     sideArmor: 120 # base 120
     rearArmor: 100 # base 100
     underArmor: 125 # base 125
+    fearImmune: true
+    zombiImmune: true
     stats:
       tu: 10            # base 10 
       stamina: 20       # base 20 
@@ -577,6 +579,8 @@ armors:
       - STR_CHAP_CORPSE
     storeItem: STR_POWER_SUIT
     corpseGeo: STR_FALLEN_CORPSE
+    fearImmune: true
+    zombiImmune: true
     stats:
       tu: 10            # base 10
       stamina: 20       # base 20
@@ -594,8 +598,8 @@ armors:
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
-      psiSkill: 1.5 #Chaplains are supremely resistant to warp influence
-      moraleCurrent: 1.0
+      psiSkill: 2.0 #Chaplains are supremely resistant to warp influence
+      moraleCurrent: 2.0
     forcedTorso: 1
     specialWeapon: STR_MFIST # Term Powerfist
     builtInWeapons:
@@ -618,6 +622,8 @@ armors:
     corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     storeItem: STR_ASS_ARMOR_HONOR
+    fearImmune: true
+    zombiImmune: true
     stats: # Vanguard stats
       tu: 30            # base 10 +15 ass +5 elite
       stamina: 30       # base 20 +10 elite
@@ -636,8 +642,8 @@ armors:
     underArmor: 125     # base 125
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
-      psiSkill: 1.5 #Chaplains are supremely resistant to warp influence
-      moraleCurrent: 1.0
+      psiSkill: 2.0 #Chaplains are supremely resistant to warp influence
+      moraleCurrent: 2.0
     builtInWeapons:
       - INV_NULL_3X3_BACKPACK_BLESS #custom backpack blocker that enables bless ability
     units:

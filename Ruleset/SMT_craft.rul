@@ -147,7 +147,7 @@ armors:
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_IMPERIUM: 1
 
-  - &STR_SMT_TURRET_BASE                    # Razorback Turret defaults
+  - &STR_SMT_RB_TURRET_BASE                    # Razorback Turret defaults
     visibilityAtDay: 40
     visibilityAtDark: 35 # marine standard
     antiCamouflageAtDay: 10
@@ -209,34 +209,36 @@ armors:
     loftempsSet: [ 92, 89, 90, 91 ]
     specialWeapon: STR_TURRET_RELOAD
     tags:
+      SMT_TURRET_UNIT: 1 # marks unit as a vehicle turret to make sure it has full starting TUs
       INFECTION_RESIST: 100 #infection immune
       INTIMIDATION_RESISTANCE: 100 #intimidation immune
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_IMPERIUM: 1
 
   - type: STR_SMT_RAZOR_DEFAULT_ARMOR       # Razorback Stormbolter
-    refNode: *STR_SMT_TURRET_BASE
+    refNode: *STR_SMT_RB_TURRET_BASE
     tags:
+      SMT_TURRET_UNIT: 0 # doesn't need to be marked, doesn't stay on battlefield
       SMT_RAZORBACK_TURRET: 1 # marks unit as a Razorback default turret that can be replaced
 
   - type: STR_SMT_RAZOR_SB_ARMOR            # Razorback Stormbolter
-    refNode: *STR_SMT_TURRET_BASE
+    refNode: *STR_SMT_RB_TURRET_BASE
     tags:
       SMT_RAZOR_SBOLTER_TURRET: 1 # marks unit as a Razorback default turret that can be replaced
 
   - type: STR_SMT_RAZOR_HB_ARMOR            # Razorback HeavyBolter
-    refNode: *STR_SMT_TURRET_BASE
+    refNode: *STR_SMT_RB_TURRET_BASE
     tags:
       SMT_RAZOR_HBOLTER_TURRET: 1
 
   - type: STR_SMT_RAZOR_LAS_ARMOR           # Razorback Lascannon
-    refNode: *STR_SMT_TURRET_BASE
+    refNode: *STR_SMT_RB_TURRET_BASE
     spriteSheet: RB_LAS.PCK
     tags:
       SMT_RAZOR_LAS_TURRET: 1
 
   - type: STR_SMT_RAZOR_HF_ARMOR            # Razorback HeavyFlamer
-    refNode: *STR_SMT_TURRET_BASE
+    refNode: *STR_SMT_RB_TURRET_BASE
     spriteSheet: RB_HF.PCK
     tags:
       SMT_RAZOR_HFLAME_TURRET: 1

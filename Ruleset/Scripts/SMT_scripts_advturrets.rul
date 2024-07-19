@@ -8,6 +8,7 @@ extended:
       SMT_RAZOR_LAS: int            # Razorback Lascannon token
       SMT_RAZOR_HFLAME: int         # Razorback Heavy Flamer token
     RuleArmor:
+      SMT_TURRET_UNIT: int          # marks unit as generic Turret type unit
       SMT_RAZORBACK_TURRET: int     # marks unit as Razorback default turret that can be replaced
       SMT_RAZOR_SBOLTER_TURRET: int # marks unit as Razorback Stormbolter turret
       SMT_RAZOR_HBOLTER_TURRET: int # marks unit as Razorback Heavy Bolter turret
@@ -124,22 +125,7 @@ extended:
           var int turret;
           var int timeUnits;
 
-          unit.getTag turret Tag.SMT_RAZOR_HBOLTER_TURRET;
-          if eq turret 1;
-            unit.getTimeUnitsMax timeUnits;
-            unit.setTimeUnits timeUnits;
-          end;
-          unit.getTag turret Tag.SMT_RAZOR_LAS_TURRET;
-          if eq turret 1;
-            unit.getTimeUnitsMax timeUnits;
-            unit.setTimeUnits timeUnits;
-          end;
-          unit.getTag turret Tag.SMT_RAZOR_HFLAME_TURRET;
-          if eq turret 1;
-            unit.getTimeUnitsMax timeUnits;
-            unit.setTimeUnits timeUnits;
-          end;
-          unit.getTag turret Tag.SMT_RAZOR_SBOLTER_TURRET;
+          unit.getTag turret Tag.SMT_TURRET_UNIT;
           if eq turret 1;
             unit.getTimeUnitsMax timeUnits;
             unit.setTimeUnits timeUnits;

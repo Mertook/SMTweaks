@@ -10,7 +10,7 @@ extended:
     newTurnUnit:
       #*** Script that removes haste bonus from unit once turn ends ***
       - new: SMTS_haste_removebuff
-        offset: 22
+        offset: 88
         code: |
           var int currTurn;
           var int endTurn;
@@ -34,7 +34,7 @@ extended:
 
     damageUnit: 
       - new: SMTS_haste_applybuff    #*** Script that increases the movespeed of units ***
-        offset: 52
+        offset: 88
         code: |
           var ptr RuleItem itemRuleset;
           var int hasteMod;

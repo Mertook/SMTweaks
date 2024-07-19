@@ -750,6 +750,7 @@ items:
     tuAuto: 0
     tuSnap: 18 # was 21
     tuAimed: 0
+    tuLoad: 10 # pistol bonus
     requiresBuy:
       - STR_MARINES_STRATEGY
       - STR_MIDTIER_PREREQ
@@ -767,6 +768,7 @@ items:
     tuSnap: 18 # was 21
     tuAimed: 0
     autoShots: 2
+    tuLoad: 10 # pistol bonus
     requiresBuy:
       - STR_MARINE_BOLTERS
 
@@ -782,7 +784,7 @@ items:
     tuSnap: 16 # was 21
     tuAimed: 0
     autoShots: 3
-    tuLoad: 5 
+    tuLoad: 5 # MCpistol bonus
 
   - update: STR_PISTOLS                     # BoltPistol (Spectris)
     costBuy: 75000 # was 150k
@@ -796,6 +798,7 @@ items:
     tuAuto: 0
     tuSnap: 20 # was 22
     tuAimed: 35 # was 35
+    tuLoad: 10 # pistol bonus
     requiresBuy:
       - STR_MARINE_BOLTERS
     tags:
@@ -844,8 +847,9 @@ items:
     accuracyAimed: 88 # was 100
     tuSnap: 20 # was 22
     tuAimed: 35 # was 35
-    tuAuto: 30 # was 33
+    tuAuto: 35 # was 33
     autoShots: 3
+    tuLoad: 10 # pistol bonus
     tags:
       ITEM_RECOIL: 50 # harder requirement, hybrid weapon
       REACTION_MULTIPLIER: 150 # was 200 - carbine rather than pure pistol
@@ -864,6 +868,7 @@ items:
     tuAuto: 0
     tuSnap: 21
     tuAimed: 0
+    tuLoad: 10 # pistol bonus
     compatibleAmmo: # make sure they can use all the appropriate ammo
       - STR_LIGHT_BOLTPISTOL_AMMO
       - STR_LIGHT_BOLTPISTOL_AMMO_MC
@@ -883,6 +888,7 @@ items:
     tuAuto: 0
     tuSnap: 21
     tuAimed: 0
+    tuLoad: 10 # pistol bonus
     compatibleAmmo: # make sure they can use all the appropriate ammo
       - STR_LIGHT_BOLTPISTOL_AMMO
       - STR_LIGHT_BOLTPISTOL_AMMO_MC
@@ -901,6 +907,7 @@ items:
     tuAuto: 0
     tuSnap: 21
     tuAimed: 0
+    tuLoad: 10 # pistol bonus
     compatibleAmmo: # make sure they can use all the appropriate ammo
       - STR_LIGHT_BOLTPISTOL_AMMO
       - STR_LIGHT_BOLTPISTOL_AMMO_MC
@@ -911,13 +918,13 @@ items:
     armor: 200
     dropoff: 8 # light boltguns get -1 dropoff compared to regular (easier to handle) - was 6
     autoRange: 0
-    snapRange: 15 # was 14 - hybrid snap/auto
+    snapRange: 16 # was 14 - hybrid snap/auto
     aimRange: 0
     accuracyAuto: 0
     accuracySnap: 75 # was 80
     accuracyAimed: 0
     tuAuto: 0
-    tuSnap: 35 # was 40 - make Enforcer a little more exciting over the Locke
+    tuSnap: 32 # was 40 - make Enforcer a little more exciting over the Locke
     tuAimed: 0
     autoShots: 0
     confSnap:
@@ -944,7 +951,7 @@ items:
     accuracySnap: 80
     accuracyAimed: 0
     tuSnap: 25
-    tuAuto: 40
+    tuAuto: 35
     tuAimed: 0
     autoShots: 3
     compatibleAmmo: # make sure they can use all the appropriate ammo
@@ -968,7 +975,7 @@ items:
     accuracySnap: 90
     accuracyAimed: 0
     tuSnap: 25
-    tuAuto: 40
+    tuAuto: 35
     tuAimed: 0
     compatibleAmmo: # make sure they can use all the appropriate ammo
       - STR_LIGHT_BOLTER_AMMO

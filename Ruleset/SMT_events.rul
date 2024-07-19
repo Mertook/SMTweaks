@@ -40,12 +40,12 @@ events:
       STR_CRATED_LANDSPEEDER: 1
       STR_TATICAL_ARMOR: 2 
       STR_RIFLE: 3 # ultra patterns in january is too strong
-      STR_RIFLE_CLIP: 10
+      STR_RIFLE_CLIP: 20
       STR_RIFLE_CLIP_AP: 10
       STR_RIFLE_CLIP_EX: 10
       STR_RIFLE_CLIP_MC: 4
       STR_HIGH_EXPLOSIVE: 8
-      STR_SMT_GENESEED_IMPURE: 5
+      STR_SMT_GENESEED_IMPURE: 6
     spawnedPersons: 18
     spawnedPersonType: STR_SOLDIER_NEOPHYTE
 
@@ -59,10 +59,11 @@ events:
       STR_CHAINSWORD_MC: 1 # A single fancy toy
       STR_CHAINSWORD: 1
       STR_PISTOLB: 2
+      STR_PISTOL_CLIP: 30
       STR_PISTOL_CLIP_AP: 15
       STR_PISTOL_CLIP_EX: 15
       STR_MGRENADE: 8
-      STR_SMT_GENESEED_IMPURE: 5
+      STR_SMT_GENESEED_IMPURE: 6
     spawnedPersons: 18
     spawnedPersonType: STR_SOLDIER_NEOPHYTE
 
@@ -78,7 +79,7 @@ events:
       STR_AC_HE_AMMO: 4
       STR_ROCKET_LAUNCHER: 1
       STR_HEAVY_ROCKET_HE: 10
-      STR_SMT_GENESEED_IMPURE: 5
+      STR_SMT_GENESEED_IMPURE: 6
     spawnedPersons: 18
     spawnedPersonType: STR_SOLDIER_NEOPHYTE
 
@@ -90,11 +91,12 @@ events:
       STR_CRATED_LANDSPEEDER: 1
       STR_SCOUTH: 2 #Adv Scout Armor
       STR_PISTOLH_SM: 2 # Tigrus
-      STR_RIFLE_CLIP_AP: 15
-      STR_RIFLE_CLIP_EX: 15
+      STR_PISTOL_CLIP: 30
+      STR_PISTOL_CLIP_AP: 15
+      STR_PISTOL_CLIP_EX: 15
       STR_GRENADE_LAUNCHER_ASTARTES: 2
       STR_FRAG_GRENADE_DRUM: 8
-      STR_SMT_GENESEED_IMPURE: 5
+      STR_SMT_GENESEED_IMPURE: 6
     spawnedPersons: 18
     spawnedPersonType: STR_SOLDIER_NEOPHYTE
     
@@ -116,12 +118,9 @@ events:
     timer: 360 # 6 hours
     timerRandom: 0
 
-  - name: STR_GENESEED_PACKAGE_EARLY    # Early Geneseed Monthly Package - Avg 1+2.5 - was 1+14
+  - name: STR_GENESEED_PACKAGE_EARLY    # Early Geneseed Monthly Package - Avg 1+3 - was 1+14
     description: STR_GENESEED_PACKAGE_DESCRIPTION
     randomMultiItemList:
-      -
-        STR_SMT_GENESEED: 1
-        STR_SMT_GENESEED_IMPURE: 1
       -
         STR_SMT_GENESEED: 1
         STR_SMT_GENESEED_IMPURE: 2

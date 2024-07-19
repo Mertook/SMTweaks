@@ -637,7 +637,6 @@ items:
   - update: STR_RIFLE                       # Bolter (Godwyn)
     refNode: *STR_BOLTER
     bigSprite: 3136
-    handSprite: {mod: 40k, index: 1496}
     costBuy: 25000 # was 10000 - Now mid-tier weapon instead of starter gear
     costSell: 10000
     autoRange: 11 # v3.1 (13) - was 9 - weapon focused on aggressive mid range engagements
@@ -656,7 +655,6 @@ items:
   - update: STR_RIFLEA                      # Bolter (Artifex DW)
     refNode: *STR_BOLTER
     bigSprite: 3139
-    handSprite: {mod: 40k, index: 1496}
     autoRange: 12 #+1 DW
     snapRange: 16 #-1 vs Stalker
     aimRange: 21 #-1 vs Stalker
@@ -670,7 +668,6 @@ items:
   - update: STR_RIFLEB                      # Bolter (Ultra)
     refNode: *STR_BOLTER
     bigSprite: 3142
-    handSprite: {mod: 40k, index: 1496}
     costBuy: 200000 # was 200000 - Higher end gear
     autoRange: 12 # v3.1 (14) was 9
     snapRange: 16 # was 16
@@ -687,7 +684,6 @@ items:
   - update: STR_RIFLEC                      # Bolter (Stalker)
     refNode: *STR_BOLTER
     bigSprite: 3145
-    handSprite: {mod: 40k, index: 1496}
     ufopediaType: STR_RIFLEC # was pointed at Godwyn for some reason
     costBuy: 200000 # was 200000 - Higher end gear
     dropoff: 7 # was 4
@@ -707,7 +703,6 @@ items:
   - update: STR_RIFLED                      # Bolter (Cawl)
     refNode: *STR_BOLTER
     bigSprite: 3148
-    handSprite: {mod: 40k, index: 1496}
     autoRange: 10 # v3.1 (13) was 7
     snapRange: 15 # was 16
     aimRange: 0
@@ -722,7 +717,6 @@ items:
   - update: STR_RIFLEDW                     # Bolter (Cawl Deathwatch)
     refNode: *STR_BOLTER
     bigSprite: 3151
-    handSprite: {mod: 40k, index: 1496}
     autoRange: 11 # v3.1 (14) was 8
     snapRange: 16 # was 17
     accuracyAuto: 70
@@ -736,7 +730,6 @@ items:
   - update: STR_MCRIFLE                     # Bolter (MC) - Now TactStrat exclusive
     refNode: *STR_BOLTER
     bigSprite: 3154
-    handSprite: {mod: 40k, index: 1496}
     autoRange: 12 # v3.1 (14) was 11
     snapRange: 16 # was 15
     aimRange: 0

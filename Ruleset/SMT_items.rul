@@ -439,7 +439,7 @@ items:
       RandomType: 1 # 0-200%
       ToArmorPre: 0.15 # was 0.1
     power: 75 # was 60
-    weight: 4 # 2x weight
+    weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
     armor: 200
     tags:
@@ -483,7 +483,7 @@ items:
   - update: STR_PISTOL_CLIP_AP              # Krak Boltpistol Ammo
     refNode: *STR_BOLTER_AMMO_KRAK
     power: 75
-    weight: 4 # 2x weight
+    weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
     tags:
       ITEM_AMMO_SKIP_BIGOBS: 2
@@ -514,7 +514,7 @@ items:
       RandomType: 7 # 50-200% instead of 0-200%
       ToArmorPre: 0.2 # was 0.15
     power: 75 # now gets bonus power from high FA instead
-    weight: 4 # 2x weight
+    weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
     armor: 200
     tags:
@@ -585,7 +585,7 @@ items:
   - update: STR_PISTOL_CLIP_EX              # Metalstorm BoltPistol Ammo
     refNode: *STR_BOLTER_AMMO_METAL_STORM
     power: 75 # 
-    weight: 4 # 2x weight
+    weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
     damageAlter:
       FixRadius: 3 # give it a larger area effect
@@ -603,7 +603,7 @@ items:
       ITEM_AMMO_SKIP_BIGOBS: 1
 
   - &STR_BOLTER                             # Generic Bolter Reference
-    dropoff: 9 # v3.1 (8) standard was 5 - Bolts are short range projectiles that fall off quickly outside of their standard range
+    dropoff: 9 # standard was 5 - Bolts are short range projectiles that fall off quickly outside of their standard range
     weight: 28 # +8 weight, not meant for regular humans
     compatibleAmmo: # bolters can use boltpistol ammo
       - STR_RIFLE_CLIP

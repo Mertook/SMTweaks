@@ -140,7 +140,7 @@ extended:
           #debug_log "HeroSave Final (currHp|tohp|tostun|wound|saveHp|turn)- " currentHealth to_health to_stun temp saveHealth temp2;
           if and ge woundsTotal saveHealth neq turnSide 0;
             add temp 1;
-            unit.Stats.setHealth temp; # set health to current wounds +1 - corruption damage happens at the start of enemy turn, we don't need to account for it
+            unit.setHealth temp; # set health to current wounds +1 - corruption damage happens at the start of enemy turn, we don't need to account for it
             add to_stun to_health; # convert remaining incoming health damage to stun
             limit_lower to_stun temp; # make sure to stun the unit in the case that they have excessive wounds and would die, but haven't taken enough raw damage to get stunned
             set to_health 0; # negate incoming damage

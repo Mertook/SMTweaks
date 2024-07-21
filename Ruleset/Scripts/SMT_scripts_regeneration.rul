@@ -145,6 +145,10 @@ extended:
           var int woundTimeMultiplier;
           var int recoverPenalty;
 
+          if eq recovery_time 0; # skip if the unit has no recovery time (either because it ignores injury time or was healed to full by medics)
+            return;
+          end;
+
           unit.getRuleSoldier soldierRuleset;
           soldierRuleset.getTag woundTimeMultiplier Tag.SOLDIER_WOUND_TIME_MULTIPLIER;
           unit.getTag recoverPenalty Tag.SMT_RECOVERY_TIME;

@@ -338,3 +338,13 @@ research:
       - STR_MARINES_STRATEGY
       - STR_HIGHTIER_PREREQ
     listOrder: 1 # push above corpses/etc
+
+  - name: STR_GUARD_IMPERIAL_ASSASSIN_REQUISITION
+    getOneFree:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_VINDICARE_AMMO_REQ    # Exitus Rifle/Pistol ammo unlock for rare Vindicare event
+    cost: 5
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK

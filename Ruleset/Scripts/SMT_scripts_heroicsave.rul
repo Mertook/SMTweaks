@@ -131,7 +131,7 @@ extended:
           unit.setFire 0; # extinguish fire
           set to_transform 0; # prevent any chance of transforming
           unit.getTag temp Tag.SMT_RECOVERY_TIME;
-          add temp 20; # divided by unit woundRecovery modifier
+          add temp 15; # divided by unit woundRecovery modifier
           unit.setTag Tag.SMT_RECOVERY_TIME temp; # increase post-mission recovery time
           unit.setTag Tag.SMT_HEROICSAVE_TRIGGERS saveCount; # increment save counter;
           battle_game.flashMessage "STR_SCRIPT_HEROIC_SAVE"; # 'Unit endured the hit'
@@ -153,7 +153,7 @@ extended:
     damageSpecialUnit:
       #*** Script for protecting units from instant-kill zombifying effects ***
       - new: SMTS_heroic_save_transform
-        offset: 61
+        offset: 2
         code: |
           var ptr RuleSoldier unitSoldier;
           var int saveChance;

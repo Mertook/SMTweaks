@@ -145,7 +145,7 @@ extended:
           var int woundTimeMultiplier;
           var int recoverPenalty;
 
-          if eq recovery_time 0; # skip if the unit has no recovery time (either because it ignores injury time or was healed to full by medics)
+          if eq recovery_time 0; # skip if the unit has no initial recovery time (either because it ignores injury time or was healed to full by medics)
             return;
           end;
 
@@ -158,7 +158,7 @@ extended:
           if neq woundTimeMultiplier 0; #adjust based on soldier recovery speed
             muldiv recoverPenalty woundTimeMultiplier 100;
           end;
-          limit_upper recoverPenalty 15; # don't add more than 15 extra days to woundtime
+          limit_upper recoverPenalty 10; # don't add more than 10 extra days to woundtime
 
           add recovery_time recoverPenalty;
           #debug_log "Final Recoverytime: " recovery_time recoverPenalty;

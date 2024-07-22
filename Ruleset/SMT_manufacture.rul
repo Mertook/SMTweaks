@@ -44,7 +44,7 @@ manufacture:
       STR_ELERIUM_115: 1
     producedItems:
       STR_PISTOL_CLIP_EX: 20
-  - name: STR_LIGHT_BOLTER_AMMO_EX                  # MetalStorm ammo - LightBolter
+  - name: STR_LIGHT_BOLTER_AMMO_EX                  # MetalStorm ammo - Light Bolter
     category: STR_AMMUNITION
     requires:
       - STR_LIGHT_BOLTERS
@@ -55,7 +55,7 @@ manufacture:
       STR_ELERIUM_115: 1
     producedItems:
       STR_LIGHT_BOLTER_AMMO_EX: 15
-  - name: STR_LIGHT_BOLTPISTOL_AMMO_EX              # MetalStorm ammo - LightBoltPistol
+  - name: STR_LIGHT_BOLTPISTOL_AMMO_EX              # MetalStorm ammo - Light Boltpistol
     category: STR_AMMUNITION
     requires:
       - STR_LIGHT_BOLTERS
@@ -66,6 +66,59 @@ manufacture:
       STR_ELERIUM_115: 1
     producedItems:
       STR_LIGHT_BOLTPISTOL_AMMO_EX: 30
+
+  - name: STR_LIGHT_BOLTPISTOL_AMMO_MC              # MC ammo - Light Boltpistol
+    category: STR_AMMUNITION
+    requires:
+      - STR_MASTER_CRAFTING_AMMO
+    space: 0
+    time: 200
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 3 # was 4
+      STR_UFO_CONSTRUCTION: 3 # was 4
+    producedItems:
+      STR_LIGHT_BOLTPISTOL_AMMO_MC: 30 # was 20
+
+  - name: STR_LIGHT_BOLTER_AMMO_MC                  # MC ammo - Light Bolter
+    category: STR_AMMUNITION
+    requires:
+      - STR_MASTER_CRAFTING_AMMO
+    space: 0
+    time: 200
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 4
+      STR_UFO_CONSTRUCTION: 4
+    producedItems:
+      STR_LIGHT_BOLTER_AMMO_MC: 20
+
+  - name: STR_PISTOL_CLIP_MC                        # MC ammo - Boltpistol
+    category: STR_AMMUNITION
+    requires:
+      - STR_MASTER_CRAFTING_AMMO
+    space: 0
+    time: 200
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 3 # was 4
+      STR_UFO_CONSTRUCTION: 3 # was 4
+    producedItems:
+      STR_PISTOL_CLIP_MC: 30 # was 20
+
+  - name: STR_RIFLE_CLIP_MC                         # MC ammo - Bolter
+    category: STR_AMMUNITION
+    requires:
+      - STR_MASTER_CRAFTING_AMMO
+    space: 0
+    time: 200
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+      STR_UFO_CONSTRUCTION: 5
+    producedItems:
+      STR_RIFLE_CLIP_MC: 20
+
   - name: STR_SARGENT_ARMOR                         # Sergeant
     category: STR_PERSONAL_ARMOR
     requires:
@@ -457,3 +510,36 @@ manufacture:
     producedItems:
       STR_SPEEDC: 1
     listOrder: 2 # Push it to the top
+
+  - name: STR_EXITUS_AMMO                           # Vindicare Sniper Ammo
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_EXITUS_AMMO_HELLFIRE                  # Vindicare Sniper Ammo (Hellfire)
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_EXITUS_AMMO_TURBOPENETRATOR           # Vindicare Sniper Ammo (Penetrator)
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_EXITUS_AMMO_SHELLBREAKER              # Vindicare Sniper Ammo (Breaker)
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_EXITUS_PISTOL_AMMO                    # Vindicare Pistol Ammo
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_EXITUS_PISTOL_AMMO_HELLFIRE           # Vindicare Pistol Ammo (Hellfire)
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_EXITUS_PISTOL_AMMO_TURBOPENETRATOR    # Vindicare Pistol Ammo (Penetrator)
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_EXITUS_PISTOL_AMMO_SHELLBREAKER       # Vindicare Pistol Ammo (Breaker)
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+

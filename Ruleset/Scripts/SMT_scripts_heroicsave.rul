@@ -49,7 +49,7 @@ extended:
     damageUnit:
       #*** Script for protecting units from fatal damage ***
       - new: SMTS_heroic_save
-        offset: 1 # run before anything that would kill the unit prematurely (corruption)
+        offset: 1.1 # run before anything that would kill the unit prematurely (corruption)
         code: |
           var ptr RuleSoldier unitSoldier;
           var int saveChance;

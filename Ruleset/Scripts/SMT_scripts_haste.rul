@@ -30,13 +30,13 @@ extended:
             if neq temp 0;
               unit.MoveCost.setBaseTimePercent temp; 
               unit.setTag Tag.SMT_HASTE_ORIGINAL_SPEED 0; #cancel tag
-              debug_log "HasteBuff Speed removed - " currTurn endTurn temp;
+              #debug_log "HasteBuff Speed removed - " currTurn endTurn temp;
             end;
             unit.getTag temp Tag.SMT_HASTE_ORIGINAL_REACTION;
             if neq temp 0;
               unit.Stats.setReactions temp; 
               unit.setTag Tag.SMT_HASTE_ORIGINAL_REACTION 0; #cancel tag
-              debug_log "HasteBuff Reactions removed - " currTurn endTurn temp;
+              #debug_log "HasteBuff Reactions removed - " currTurn endTurn temp;
             end;
           end;
           return;
@@ -58,10 +58,10 @@ items:
         itemRuleset.getTag buffTime Tag.SMT_ITEM_MOVESPEED_BOOST;
 
         if gt buffTime 0; # skip if not haste spell
-        # Power <50 = no change, >=50 = 75% cost
+        # Power <100 = no change, >=100 = 75% cost
           set hasteMod currPower;
-          div hasteMod 50;
-          debug_log "HasteBuff Ping - " buffTime currPower hasteMod;
+          div hasteMod 100;
+          #debug_log "HasteBuff Ping - " buffTime currPower hasteMod;
           limit hasteMod 0 1; # eliminate negatives and cap power
           if gt hasteMod 0; # only continue if move cost would change
             mul hasteMod 25;
@@ -90,7 +90,7 @@ items:
             unit.Stats.setReactions temp;
             unit.setTag Tag.SMT_HASTE_ORIGINAL_REACTION originalReactions;
           end;
-          debug_log "HasteBuff Reactions N/C/O" temp currentReactions originalReactions;
+          #debug_log "HasteBuff Reactions N/C/O" temp currentReactions originalReactions;
 
           battle_game.getTurn temp;
           add temp buffTime; #define end turn for buff

@@ -5,6 +5,7 @@ extended:
     BattleUnit:
       SMT_HASTE_ENDTURN: int #store buff duration
       SMT_HASTE_ORIGINAL_SPEED: int #stores units original speed
+      SMT_HASTE_ORIGINAL_REACTION: int # stores units original reaction skill
 
   scripts:
     newTurnUnit:
@@ -14,64 +15,86 @@ extended:
         code: |
           var int currTurn;
           var int endTurn;
-          var int originalSpeed;
-
-          # Make sure this doesn't run an extra time when civilians have a turn
-          if eq side 2;
-            return;
-          end;
-
-          unit.getTag endTurn Tag.SMT_HASTE_ENDTURN;
-          unit.getTag originalSpeed Tag.SMT_HASTE_ORIGINAL_SPEED;
-          battle_game.getTurn currTurn;
-
-          if and neq originalSpeed 0 eq currTurn endTurn;
-            unit.MoveCost.setBaseTimePercent originalSpeed; 
-            unit.setTag Tag.SMT_HASTE_ORIGINAL_SPEED 0; #cancel tag
-            #debug_log "HasteBuff removed - " currTurn endTurn originalSpeed;
-          end;
-          return;
-
-    damageUnit: 
-      - new: SMTS_haste_applybuff    #*** Script that increases the movespeed of units ***
-        offset: 88
-        code: |
-          var ptr RuleItem itemRuleset;
-          var int hasteMod;
-          var int currentSpeed;
-          var int originalSpeed;
-          var int buffTime;
           var int temp;
 
-          damaging_item.getRuleItem itemRuleset;
-          itemRuleset.getTag buffTime Tag.SMT_ITEM_MOVESPEED_BOOST;
-
-          if gt buffTime 0; # skip if not haste spell
-          # Power <30 = no change, 30-59 = 75% cost, 60-89 = 50% cost, >=90 = 25%
-            set hasteMod currPower;
-            div hasteMod 30;
-            #debug_log "HasteBuff Ping - " buffTime currPower hasteMod;
-            limit hasteMod 0 3; # eliminate negatives and cap power
-            if gt hasteMod 0; # only continue if move cost would change
-              mul hasteMod 25;
-              set temp 100;
-              sub temp hasteMod;
-              unit.MoveCost.getBaseTimePercent currentSpeed; # get current speed
-              #debug_log "HasteBuff Speed N/C " temp currentSpeed;
-              if lt temp currentSpeed; # only change if new speed is faster than current
-                unit.MoveCost.setBaseTimePercent temp;
-              end;
-              unit.getTag originalSpeed Tag.SMT_HASTE_ORIGINAL_SPEED; #
-              if eq originalSpeed 0; # only set with units original speed if it wasn't already set
-                unit.setTag Tag.SMT_HASTE_ORIGINAL_SPEED currentSpeed;
-              end;
-              #debug_log "HasteBuff Final N/C/O - " temp currentSpeed originalSpeed;
-
-              battle_game.getTurn temp;
-              add temp buffTime; #define end turn for buff
-              unit.setTag Tag.SMT_HASTE_ENDTURN temp;
+          if neq side 0; # only run at the start of the players turn
+            return;
+          end;
+          unit.getTag endTurn Tag.SMT_HASTE_ENDTURN;
+          battle_game.getTurn currTurn;
+          if eq endTurn 0;
+            return;
+          end;
+          if or le currTurn 1 ge currTurn endTurn; # if buff expires or it's turn 1 (entering a new stage of multi-part mission)
+            unit.getTag temp Tag.SMT_HASTE_ORIGINAL_SPEED;
+            if neq temp 0;
+              unit.MoveCost.setBaseTimePercent temp; 
+              unit.setTag Tag.SMT_HASTE_ORIGINAL_SPEED 0; #cancel tag
+              debug_log "HasteBuff Speed removed - " currTurn endTurn temp;
+            end;
+            unit.getTag temp Tag.SMT_HASTE_ORIGINAL_REACTION;
+            if neq temp 0;
+              unit.Stats.setReactions temp; 
+              unit.setTag Tag.SMT_HASTE_ORIGINAL_REACTION 0; #cancel tag
+              debug_log "HasteBuff Reactions removed - " currTurn endTurn temp;
             end;
           end;
-
           return;
-          
+
+items:
+  - type: STR_LIB_SPEED_TOME
+    scripts:
+      damageUnitAmmo: |
+        var ptr RuleItem itemRuleset;
+        var int hasteMod;
+        var int currentSpeed;
+        var int originalSpeed;
+        var int currentReactions;
+        var int originalReactions;
+        var int buffTime;
+        var int temp;
+
+        damaging_item.getRuleItem itemRuleset;
+        itemRuleset.getTag buffTime Tag.SMT_ITEM_MOVESPEED_BOOST;
+
+        if gt buffTime 0; # skip if not haste spell
+        # Power <50 = no change, >=50 = 75% cost
+          set hasteMod currPower;
+          div hasteMod 50;
+          debug_log "HasteBuff Ping - " buffTime currPower hasteMod;
+          limit hasteMod 0 1; # eliminate negatives and cap power
+          if gt hasteMod 0; # only continue if move cost would change
+            mul hasteMod 25;
+            set temp 100;
+            sub temp hasteMod;
+            unit.MoveCost.getBaseTimePercent currentSpeed; # get current speed
+            #debug_log "HasteBuff Speed N/C " temp currentSpeed;
+            if lt temp currentSpeed; # only change if new speed is faster than current
+              unit.MoveCost.setBaseTimePercent temp;
+            end;
+            unit.getTag originalSpeed Tag.SMT_HASTE_ORIGINAL_SPEED; #
+            if eq originalSpeed 0; # only set with units original speed if it wasn't already set
+              unit.setTag Tag.SMT_HASTE_ORIGINAL_SPEED currentSpeed;
+            end;
+            #debug_log "HasteBuff Speed Final N/C/O - " temp currentSpeed originalSpeed;
+          end;
+
+          unit.getTag originalReactions Tag.SMT_HASTE_ORIGINAL_REACTION;
+          unit.Stats.getReactions currentReactions;
+          if eq originalReactions 0;
+            set originalReactions currentReactions;
+          end;
+          set temp originalReactions;
+          add temp currPower;
+          if gt temp currentReactions; # only change if new power would be an improvement
+            unit.Stats.setReactions temp;
+            unit.setTag Tag.SMT_HASTE_ORIGINAL_REACTION originalReactions;
+          end;
+          debug_log "HasteBuff Reactions N/C/O" temp currentReactions originalReactions;
+
+          battle_game.getTurn temp;
+          add temp buffTime; #define end turn for buff
+          unit.setTag Tag.SMT_HASTE_ENDTURN temp;
+        end;
+
+        return;

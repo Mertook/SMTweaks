@@ -1386,11 +1386,11 @@ items:
     defaultInvSlotX: 3
     defaultInvSlotY: 1
     targetMatrix: 1
-    power: 2
+    power: 10
     maxRange: 10
     LOSRequired: true # gets ignored?
     damageBonus:
-      psiStrength: 0.7 # <30 - nothing, >=30 <60 - 75% (40 PsiStr), >=60 <90 - 50% (87 PsiStr), >=90 - 25% move cost (126 PsiStr)
+      psiStrength: 1.0 # <95 PsiStr = no movespeed bonus, >= 90 PsiStr = 75% movespeed cost - Power = bonus Reaction
     accuracyUse: 100
     accuracyMultiplier:
       psiStrength: 1.0

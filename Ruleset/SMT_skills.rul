@@ -52,12 +52,12 @@ skills:
     checkHandsOnly: false
     costUse:
       time: 30
-      energy: 10
+      energy: 15
       stun: 15
       morale: 15
     flatUse:
       time: false #     30% TU
-      energy: false #   10% energy
+      energy: false #   15% energy
       stun: false #     15% stun
       morale: false #   15% morale
 
@@ -67,12 +67,12 @@ skills:
     battleType: 9
     checkHandsOnly: false
     costUse:
-      time: 75 # was 25 - this skill is really strong
-      energy: 33
-      stun: 40
+      time: 50 # was 75 - nerfed effect means it can have lower costs
+      energy: 20
+      stun: 15
       morale: 20
     flatUse:
-      time: false #     75% TU
-      energy: false #   33% energy
-      stun: false #     40% stun
+      time: false #     50% TU
+      energy: false #   20% energy
+      stun: false #     15% stun
       morale: false #   20% morale

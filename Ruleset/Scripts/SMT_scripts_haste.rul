@@ -50,7 +50,6 @@ extended:
           # Power <30 = no change, 30-59 = 75% cost, 60-89 = 50% cost, >=90 = 25%
             set hasteMod currPower;
             div hasteMod 30;
-            #sub hasteMod 3; # <100 do nothing
             #debug_log "HasteBuff Ping - " buffTime currPower hasteMod;
             limit hasteMod 0 3; # eliminate negatives and cap power
             if gt hasteMod 0; # only continue if move cost would change

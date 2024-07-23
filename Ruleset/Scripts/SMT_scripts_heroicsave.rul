@@ -49,7 +49,7 @@ extended:
     damageUnit:
       #*** Script for protecting units from fatal damage ***
       - new: SMTS_heroic_save
-        offset: 1.1 # run before anything that would kill the unit prematurely (corruption)
+        offset: 22.1 # run after corruption damage is applied but before the unit gets instakilled for having too much corruption
         code: |
           var ptr RuleSoldier unitSoldier;
           var int saveChance;
@@ -74,12 +74,9 @@ extended:
             unit.getFatalwoundsTotal woundsTotal;   # existing wounds
             add woundsTotal to_wound;               # incoming wounds
             set temp woundsTotal;
-            unit.getTag temp2 Tag.CURRENT_INFECTION_DAMAGE;
-            add temp temp2;                         # existing corruption
-            add temp to_mana;                       # incoming corruption
             add temp to_health;
             if gt currentHealth temp; # on enemy turn consider wounds as part of damage
-              return; # skip if damage + wounds + corruption isn't fatal
+              return; # skip if damage + wounds isn't fatal
             end;
           end;
           unit.getRuleSoldier unitSoldier;
@@ -126,8 +123,6 @@ extended:
           set to_health temp; # only damage unit up to the saveHealth limit
           sub temp2 temp; # get overflow damage
           add to_stun temp2; # add overflow to stun damage
-          add to_stun to_mana; # add incoming corruption to stun
-          set to_mana 0; # negate incoming corruption - prevent any immediate corruption transformations
           unit.setFire 0; # extinguish fire
           set to_transform 0; # prevent any chance of transforming
           unit.getTag temp Tag.SMT_RECOVERY_TIME;

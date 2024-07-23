@@ -2162,13 +2162,14 @@ items:
     confAuto:
       shots: 2
 
-  - update: STR_HWP_FUSION_BOMB             # Dread Missile ammo
+  - update: STR_HWP_FUSION_BOMB             # Dread Hellfire Missile ammo
     power: 130
     damageType: 11 # Melta - was HE
     damageAlter:
-      RandomType: 2
+      RandomType: 6 # was 2
       ToArmorPre: 0.5
       ArmorEffectiveness: 0.75
+      FireThreshold: 1
     clipSize: 8 # was 8
     blastRadius: 11
 

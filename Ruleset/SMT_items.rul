@@ -1737,6 +1737,7 @@ items:
   - update: STR_ROCKET_LAUNCHER             # SM Rocket Launcher
     costBuy: 30000 # was 100k!!
     costSell: 5000 # was 3000
+    weight: 40 # was 50
     dropoff: 4
     autoRange: 21
     snapRange: 0
@@ -1916,6 +1917,44 @@ items:
       ToArmor: 0.8
       ToWound: 0.02
       RandomWound: false
+
+  - type: STR_SHOTGUN_MARINE                # Astartes Shotgun
+    categories: [ STR_CAT_SHOTGUN, STR_CAT_SCOUT]
+    size: 0.2
+    costSell: 5000
+    weight: 23
+    armor: 200
+    bigSprite: 3107
+    floorSprite: 3107
+    handSprite: 3610
+    bulletSprite: {mod: 40k, index: 2}
+    fireSound: {mod: 40k, index: 755}
+    compatibleAmmo:
+      - STR_SHOTGUN_SHELLS
+    accuracySnap: 96
+    tuSnap: 25
+    battleType: 1
+    twoHanded: true
+    invWidth: 1
+    invHeight: 3
+    listOrder: 10700
+    aimRange: 10
+    snapRange: 8
+    dropoff: 5
+
+  - type: STR_MCSHOTGUN
+    weight: 9
+    armor: 200
+    dropoff: 5
+    autoRange: 0
+    snapRange: 10
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 85
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 20 # was 25
+    tuAimed: 0
 
   - update: STR_BIKE_ARMOR                  # Bike Armor (Item)
     costBuy: 280000 # was 360k

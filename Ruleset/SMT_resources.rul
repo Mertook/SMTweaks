@@ -234,7 +234,7 @@ extraSprites:
       3104: Resources/ITEMS/book1.png                       # Lib Book sprites
       3105: Resources/ITEMS/book2.png                       # Lib Book sprites
       3106: Resources/ITEMS/blank.png                       # Lib Book sprites
-#      3107: Resources/ITEMS/book2b.png      # Lib Book sprites
+      3107: Resources/ITEMS/SHOTGUN/shotgun.png             # Astartes Shotgun
       3108: Resources/ITEMS/HBOLTER/hbolterAP.png           # Mars HBolter Ammo AP
       3109: Resources/ITEMS/HBOLTER/hbolterHE.png           # Mars HBolter Ammo HE
       3110: Resources/ITEMS/HBOLTER/hbolterI.png            # Mars HBolter Ammo I
@@ -284,6 +284,7 @@ extraSprites:
     files:
       3100: Resources/ITEMS/VoxF01.png
       3101: Resources/ITEMS/BeaconF01.png
+      3107: Resources/ITEMS/SHOTGUN/shotgun_FloorOb.png     # Astartes Shotgun
       3128: Resources/ITEMS/BSNIPER/HeavySniper_FloorOb.png # Bolt Sniper Rifle
 
 ###Item HandOBs - need 8 slots per item
@@ -294,6 +295,7 @@ extraSprites:
     subY: 40
     files:
       3600: Resources/ITEMS/BSNIPER/HeavySniper_HandOb.png  # Bolt Sniper Rifle
+      3610: Resources/ITEMS/SHOTGUN/shotgun_HandOb.png  # Astartes Shotgun
 
 ###Ability Icons
   - type: SPICONS.DAT

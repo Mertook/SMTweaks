@@ -157,7 +157,6 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: -20        # base 10 -30 (ranged specialist & also to offset strength bonus)
-    builtInWeapons: # give them a full-size backpack
 
   - update: STR_APOT_ARMOR_UC       #APOTH
     refNode: *STR_MARINE_ARMOR
@@ -318,8 +317,8 @@ armors:
     refNode: *STR_MARINE_OFFICER_ARMOR
     visibilityAtDark: 40 # signum equipment provides advanced vision
     heatVision: 40 # signum equipment provides advanced vision
-    antiCamouflageAtDay: 10 # signum equipment provides strong detection
-    antiCamouflageAtDark: 10
+    antiCamouflageAtDay: 12 # signum equipment provides strong detection
+    antiCamouflageAtDark: 12
     spriteSheet: DEVH.PCK
     frontArmor: 125 # base 125
     sideArmor: 120 # base 120
@@ -908,7 +907,8 @@ armors:
       - STR_PRIMARISLV3
       - STR_PRIMARISLV4
       - STR_PRIMARISLV5
-    tags: # give it bonus hp regen
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_REGEN_HP: 4
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20 # double shield regen to account for new shield mechanics
       ARMOR_ENERGY_SHIELD_DECAY: 20

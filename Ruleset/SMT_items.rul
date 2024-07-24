@@ -1168,7 +1168,8 @@ items:
     hitSound: {mod: 40k, index: 708}
     hitAnimation:
       mod: 40k
-      index: 110
+      index: 88
+    powerForAnimation: 40
     damageAlter:
       IgnoreDirection: false
       FireBlastCalc: false
@@ -1241,6 +1242,11 @@ items:
     power: 90 # was 60
     clipSize: 50
     costBuy: 5000 # was 1400
+    hitSound: {mod: 40k, index: 708}
+    hitAnimation:
+      mod: 40k
+      index: 88
+    powerForAnimation: 40
     damageAlter:
       FixRadius: 1
       ToArmorPre: 0.1 # was 0.05

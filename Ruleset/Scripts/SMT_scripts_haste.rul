@@ -84,8 +84,10 @@ items:
           if eq originalReactions 0;
             set originalReactions currentReactions;
           end;
-          set temp originalReactions;
-          add temp currPower;
+          set temp currPower;
+          div temp 2; # flatten power bonus
+          add temp 50; # make low power more effective and high power slightly less effective
+          add temp originalReactions;
           if gt temp currentReactions; # only change if new power would be an improvement
             unit.Stats.setReactions temp;
             unit.setTag Tag.SMT_HASTE_ORIGINAL_REACTION originalReactions;

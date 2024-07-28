@@ -649,8 +649,7 @@ items:
     tuSnap: 20 # was 24
     tuAuto: 30 # was 40 - higher strength of marines allows greater RPM on bolters than light variants meant for regular humans
     requiresBuy:
-      - STR_MARINES_STRATEGY
-      - STR_MIDTIER_PREREQ
+      - STR_MARINE_BOLTERS
 
   - update: STR_RIFLEA                      # Bolter (Artifex DW)
     refNode: *STR_BOLTER
@@ -679,7 +678,7 @@ items:
     tuSnap: 20 # was 22
     tuAuto: 30 # was 35
     requiresBuy:
-      - STR_MARINE_BOLTERS
+      - STR_MARINE_BOLTERS_ADV
 
   - update: STR_RIFLEC                      # Bolter (Stalker)
     refNode: *STR_BOLTER
@@ -698,7 +697,7 @@ items:
     tuAimed: 60 # was 60
     autoShots: 2
     requiresBuy:
-      - STR_MARINE_BOLTERS
+      - STR_MARINE_BOLTERS_ADV
 
   - update: STR_RIFLED                      # Bolter (Cawl)
     refNode: *STR_BOLTER
@@ -753,9 +752,9 @@ items:
     tuSnap: 18 # was 21
     tuAimed: 0
     tuLoad: 10 # pistol bonus
+    tuUnload: 4 # pistol bonus
     requiresBuy:
-      - STR_MARINES_STRATEGY
-      - STR_MIDTIER_PREREQ
+      - STR_MARINE_BOLTERS
 
   - update: STR_PISTOLB                     # BoltPistol (Ultra)
     costBuy: 75000 # was 150k
@@ -764,15 +763,16 @@ items:
     snapRange: 11 # was 11
     aimRange: 0
     accuracyAuto: 66
-    accuracySnap: 80 # was 90
+    accuracySnap: 90 # was 90
     accuracyAimed: 0
     tuAuto: 25
     tuSnap: 18 # was 21
     tuAimed: 0
     autoShots: 2
     tuLoad: 10 # pistol bonus
+    tuUnload: 4 # pistol bonus
     requiresBuy:
-      - STR_MARINE_BOLTERS
+      - STR_MARINE_BOLTERS_ADV
 
   - update: STR_MCPISTOL                    # BoltPistol (MC) - Now AssStrat exclusive
     dropoff: 10 # was 6
@@ -780,7 +780,7 @@ items:
     snapRange: 11 # was 12
     aimRange: 0
     accuracyAuto: 66
-    accuracySnap: 80 # was 105 - MC weapons should be stronger but not easier to use
+    accuracySnap: 90 # was 105 - MC weapons should be stronger but not easier to use
     accuracyAimed: 0
     tuAuto: 22
     tuSnap: 16 # was 21
@@ -788,6 +788,8 @@ items:
     autoShots: 3
     tuLoad: 2 # MCpistol bonus
     tuUnload: 2 # MCpistol bonus
+    tags:
+      REACTION_MULTIPLIER: 250 # was 200 - MCpistol bonus
 
   - update: STR_PISTOLS                     # BoltPistol (Spectris)
     costBuy: 75000 # was 150k
@@ -802,8 +804,9 @@ items:
     tuSnap: 20 # was 22
     tuAimed: 35 # was 35
     tuLoad: 10 # pistol bonus
+    tuUnload: 4 # pistol bonus
     requiresBuy:
-      - STR_MARINE_BOLTERS
+      - STR_MARINE_BOLTERS_ADV
     tags:
       ITEM_AIMED_ACCURACY_POWER_BONUS: 15 # was 25
 
@@ -818,7 +821,7 @@ items:
     categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
     size: 0.2
     requiresBuy:
-      - STR_MARINE_BOLTERS
+      - STR_MARINE_BOLTERS_ADV
     requiresBuyBaseFunc: [TRADE]
     costBuy: 150000
     costSell: 1000
@@ -853,6 +856,7 @@ items:
     tuAuto: 35 # was 33
     autoShots: 3
     tuLoad: 10 # pistol bonus
+    tuUnload: 4 # pistol bonus
     tags:
       ITEM_RECOIL: 60 # harder requirement, hybrid weapon
       REACTION_MULTIPLIER: 150 # was 200 - carbine rather than pure pistol
@@ -1931,6 +1935,9 @@ items:
     fireSound: {mod: 40k, index: 755}
     compatibleAmmo:
       - STR_SHOTGUN_SHELLS
+      - STR_SHOTGUN_SHELLS_AP
+      - STR_SHOTGUN_SHELLS_INC
+      - STR_SHOTGUN_SHELLS_MC
     accuracySnap: 96
     tuSnap: 25
     battleType: 1
@@ -1942,7 +1949,7 @@ items:
     snapRange: 8
     dropoff: 5
 
-  - type: STR_MCSHOTGUN
+  - update: STR_MCSHOTGUN                   # Mastercrafted Shotgun
     weight: 9
     armor: 200
     dropoff: 5
@@ -1955,6 +1962,22 @@ items:
     tuAuto: 0
     tuSnap: 20 # was 25
     tuAimed: 0
+    compatibleAmmo:
+      - STR_SHOTGUN_SHELLS
+      - STR_SHOTGUN_SHELLS_AP
+      - STR_SHOTGUN_SHELLS_INC
+      - STR_SHOTGUN_SHELLS_MC
+
+  - update: STR_SHOTGUN_SHELLS_AP           # Shotgun Krak Ammo
+    requiresBuy:
+      - STR_SHOTGUNS_ADV
+
+  - update: STR_SHOTGUN_SHELLS_INC          # Shotgun Incin Ammo
+    requiresBuy:
+      - STR_SHOTGUNS_ADV
+
+  - update: STR_SHOTGUN_SHELLS_MC           # Shotgun MC Ammo
+
 
   - update: STR_BIKE_ARMOR                  # Bike Armor (Item)
     costBuy: 280000 # was 360k

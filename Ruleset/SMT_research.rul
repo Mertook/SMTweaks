@@ -214,8 +214,23 @@ research:
       - STR_MASTER_CRAFTING_AMMO # Midtier MC instead of Hightier
       - STR_MARINES_STRATEGY
 
+  - name: STR_HEAVY_LASER
+    cost: 260 # was 460 - split with Marine Bolters
+    points: 10
+    dependencies:
+      - STR_LASER_WEAPONS
+    spawnedItem: STR_HEAVY_LASER
+
   - name: STR_MARINE_BOLTERS        # Astartes Bolters Unlock
-    cost: 80
+    cost: 200
+    points: 10
+    dependencies:
+      - STR_LASER_WEAPONS
+    listOrder: 9 # push above corpses/etc
+    spawnedItem: STR_RIFLEB
+
+  - name: STR_MARINE_BOLTERS_ADV     # Special Astartes Bolters Unlock
+    cost: 100
     points: 20
     dependencies:
       - STR_MIDTIER_PREREQ
@@ -249,6 +264,13 @@ research:
       - STR_GENERALLOCK
     listOrder: 10 # push above corpses/etc
 
+  - name: STR_SHOTGUNS_ADV          # Shotgun research for SM/Arbites - unlocks krak/incin ammo
+    cost: 25
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+    listOrder: 10 # push above corpses/etc
+
   - name: STR_DEV_MARS_BOLTER       # Mars Heavy Bolter unlock
     cost: 100
     points: 20
@@ -256,7 +278,7 @@ research:
       - STR_DEVASTATOR
       - STR_UFO_CONSTRUCTION # ceramite
       - STR_HBOLTER_PREREQ
-      - STR_MARINE_BOLTERS
+      - STR_MARINE_BOLTERS_ADV
     listOrder: 10 # push above corpses/etc
 
   - name: STR_SCOUT_BOLT_RIFLE      # Bolt Sniper Rifle unlock
@@ -265,7 +287,7 @@ research:
     dependencies:
       - STR_SCOUT
       - STR_UFO_CONSTRUCTION # ceramite
-      - STR_MARINE_BOLTERS
+      - STR_MARINE_BOLTERS_ADV
     listOrder: 10 # push above corpses/etc
 
   - name: STR_MARINE_CHAPEL         # Early unlock for Chapel
@@ -319,7 +341,7 @@ research:
     cost: 200
     points: 200
     dependencies:
-      - STR_HEAVY_LASER
+      - STR_MARINE_BOLTERS # was melta
       - STR_ALIEN_ALLOYS
       - STR_MOTION_SCANNER
       - STR_MEDI_KIT_PREREQ

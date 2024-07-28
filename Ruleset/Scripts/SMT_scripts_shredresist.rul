@@ -42,7 +42,7 @@ armors:
           #debug_log "Armor resist: " armorResist;
         end;
 
-        if neq armorResist 0; #Only run if the armor actually has resist
+        if and neq armorResist 0 gt to_armor 0; #Only run if the armor actually has resist (and damage is being dealt)
           set damageReduction to_armor;
           muldiv damageReduction armorResist 100;
           #debug_log "Armor DmgReduction: " damageReduction;

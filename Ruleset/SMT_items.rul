@@ -616,23 +616,6 @@ items:
       - STR_PISTOL_CLIP_MC
     tags:
       ITEM_RECOIL: 65 # +25 - harder requirement, not meant for regular humans
-    scripts:
-      selectItemSprite: # handle sprite changes for loading different ammo types
-        var ptr BattleItem ammoItem;
-        var ptr RuleItem ammoRuleset;
-        var int skipBigobs;
-
-        item.getAmmoItem ammoItem;
-        ammoItem.getRuleItem ammoRuleset;
-        ammoRuleset.getTag skipBigobs Tag.ITEM_AMMO_SKIP_BIGOBS;
-
-        if and gt skipBigobs 0 eq blit_part blit_item_big;
-          add sprite_index skipBigobs;
-        else;
-          add sprite_index sprite_offset;
-        end;
-
-        return sprite_index;
   
   - update: STR_RIFLE                       # Bolter (Godwyn)
     refNode: *STR_BOLTER
@@ -1525,6 +1508,8 @@ items:
       psiStrength: 0.3 # was 0.002 psi
     damageAlter:
       RandomType: 6 # 0-100 x2 - was 2 (50-150)
+      ToWound: 0 # brain blast, doesn't inflict flesh wounds
+      RandomWound: false
     costUse:
       energy: 10
       stun: 5
@@ -1948,7 +1933,7 @@ items:
     autoRange: 6
     snapRange: 9
     tuSnap: 18
-    tuAuto: 30
+    tuAuto: 25
     autoShots: 3
     battleType: 1
     twoHanded: true
@@ -1971,10 +1956,12 @@ items:
     accuracyAuto: 70
     accuracySnap: 85
     accuracyAimed: 0
-    tuAuto: 25
+    tuAuto: 22
     tuSnap: 16 # was 25
     tuAimed: 0
     autoShots: 3
+    tuLoad: 8 # MC bonus
+    tuUnload: 4 # MC bonus
     compatibleAmmo:
       - STR_SHOTGUN_SHELLS
       - STR_SHOTGUN_SHELLS_AP
@@ -2238,7 +2225,7 @@ items:
     meleeMultiplier: # powerfist values
       melee: 0.7
       strength: 0.3
-    meleePower: 40 # was 110 flat
+    meleePower: 80 # was 110 flat - +40 over regular, dread bonus
     meleeBonus:
       strength: 1.5 # powerfist
     meleeType: 5
@@ -2249,6 +2236,7 @@ items:
       RandomType: 6
 
   - update: AUX_HOVERTANK_LAUNCHER          # Dread Missile Launcher
+    bigSprite: 3158
     dropoff: 4
     autoRange: 25
     snapRange: 0
@@ -2259,8 +2247,37 @@ items:
     tuAuto: 66 # was 0
     tuSnap: 0
     tuAimed: 66
+    compatibleAmmo:
+      - STR_DREAD_MISSILES
+      - STR_HWP_FUSION_BOMB
     confAuto:
       shots: 2
+
+  - type: STR_DREAD_MISSILES                # Dread Regular Missile ammo
+    bigSprite: {mod: 40k, index: 384}
+    floorSprite: {mod: 40k, index: 237}
+    handSprite: {mod: 40k, index: 800}
+    size: 0.3
+    costBuy: 60000
+    costSell: 30000
+    transferTime: 48
+    listOrder: 6634
+    weight: 20
+    battleType: 2
+    invWidth: 2
+    invHeight: 3
+    armor: 200
+    power: 130
+    clipSize: 8 # was 8
+    damageType: 3 # HE
+    damageAlter:
+      RandomType: 6 # was 2
+      ToArmorPre: 0.5
+      ArmorEffectiveness: 0.75
+      FireThreshold: 1
+      FixRadius: 8
+    tags:
+      ITEM_AMMO_SKIP_BIGOBS: 1
 
   - update: STR_HWP_FUSION_BOMB             # Dread Hellfire Missile ammo
     armor: 200
@@ -2271,17 +2288,20 @@ items:
       ToArmorPre: 0.5
       ArmorEffectiveness: 0.75
       FireThreshold: 1
+      FixRadius: 11
     clipSize: 8 # was 8
-    blastRadius: 11
+    tags:
+      ITEM_AMMO_SKIP_BIGOBS: 2
 
-  - update: STR_DREAD_MELEE_WEAPON          # Dread Fist
+  - update: STR_DREAD_MELEE_WEAPON          # Dread Fist (with added Stormbolter)
+    bigSprite: 3157
     tuMelee: 25 # was 15
     flatMelee: true
     accuracyMelee: 75 # was 100 flat - +5 over powerfist
     meleeMultiplier: # powerfist values
       melee: 0.7
       strength: 0.3
-    power: 40 # was 110 flat
+    power: 80 # was 110 flat - +40 over regular, dread bonus
     damageBonus:
       strength: 1.5 # powerfist
     damageType: 5

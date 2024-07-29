@@ -113,6 +113,27 @@ ufopaedia:
     image_id: C15.SPK
     text: BIKE_ARMOR_UC_UFOPEDIA
 
+
+  - id: DREAD_ARMOR3_UC
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: DREAD3.SPK
+    requires:
+      - STR_DREAD_R
+      - STR_LASER_CANNON
+    text: STR_DREAD_ARMOR3_UC_UFOPEDIA
+    listOrder: 6440
+
+  - id: DREAD_ARMOR4_UC
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: DREAD4.SPK
+    requires:
+      - STR_DREAD_R
+      - STR_ASSC
+    text: STR_DREAD_ARMOR4_UC_UFOPEDIA
+    listOrder: 6450
+
     ### WEAPONS
   - id: STR_STRIKE_VOX_FALSE                # Strike Vox
     requires:

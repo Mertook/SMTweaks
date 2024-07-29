@@ -1,0 +1,45 @@
+items:
+  - &STR_WEAPON_SPRITE_SWAP_TEMPLATE        # Script Template
+    scripts:
+      selectItemSprite: # handle sprite changes for loading different ammo types
+        var ptr BattleItem ammoItem;
+        var ptr RuleItem ammoRuleset;
+        var int skipBigobs;
+
+        item.getAmmoItem ammoItem;
+        ammoItem.getRuleItem ammoRuleset;
+        ammoRuleset.getTag skipBigobs Tag.ITEM_AMMO_SKIP_BIGOBS;
+
+        if and gt skipBigobs 0 eq blit_part blit_item_big;
+          add sprite_index skipBigobs;
+        else;
+          add sprite_index sprite_offset;
+        end;
+
+        return sprite_index;
+
+### Relevant ammo needs the tag ITEM_AMMO_SKIP_BIGOBS
+
+  - type: STR_RIFLE                 # Bolter (Godwyn)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+
+  - type: STR_RIFLEA                # Bolter (Artifex)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+
+  - type: STR_RIFLEB                # Bolter (Ultra)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+
+  - type: STR_RIFLEC                # Bolter (Stalker)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+
+  - type: STR_RIFLED                # Bolter (Cawl)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+
+  - type: STR_RIFLEDW               # Bolter (Cawl DW)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+
+  - type: STR_MCRIFLE               # Bolter (Mastercrafted)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+
+  - type: AUX_HOVERTANK_LAUNCHER    # Dreadnought Missile Launcher
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE

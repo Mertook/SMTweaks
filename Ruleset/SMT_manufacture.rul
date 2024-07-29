@@ -295,6 +295,51 @@ manufacture:
     requires:
       - STR_GENERALLOCK # Now default gear of Librarian soldiers, this shouldn't be used
 
+  - name: STR_DREAD2_ARMOR                          # Dread Plasma
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+      - STR_PLASMA_CANNON
+      - STR_NEW_FIGHTER_CRAFT
+      - STR_NOT_PRIMARIS
+    space: 0
+    time: 1200
+    cost: 600000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 40
+      STR_ELERIUM_115: 10
+      STR_KILLPOINT_TOKEN: 60
+
+  - name: STR_DREAD3_ARMOR                          # Dread Lascannon + Missile (Formerly Missile)
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+      - STR_LASER_CANNON
+      - STR_NEW_FIGHTER_CRAFT
+      - STR_NOT_PRIMARIS
+    space: 0
+    time: 1200
+    cost: 600000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 40
+      STR_ELERIUM_115: 10
+      STR_KILLPOINT_TOKEN: 60
+
+  - name: STR_DREAD4_ARMOR                          # Dread Assault Cannon (Formerly Lascannon)
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+      - STR_ASSC
+      - STR_NEW_FIGHTER_CRAFT
+      - STR_NOT_PRIMARIS
+    space: 0
+    time: 1200
+    cost: 600000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 40
+      STR_ELERIUM_115: 10
+      STR_KILLPOINT_TOKEN: 60
+
   - name: STR_HEAVY_BOLTER_MARS                     # Mars Heavy Bolter
     category: STR_WEAPON
     space: 0
@@ -425,6 +470,15 @@ manufacture:
       - STR_ASSAULT # Now Assault Strat exclusive
       - STR_UFO_CONSTRUCTION
       - STR_MARINE_BOLTERS_ADV
+    requiredItems:
+      STR_ALIEN_ALLOYS: 2 # was 1
+      STR_KILLPOINT_TOKEN: 120 # was 180
+
+  - name: STR_MCSHOTGUN                             # MC Shotgun
+    category: STR_WEAPON
+    requires:
+      - STR_MASTER_CRAFTING_AMMO
+      #- STR_SCOUT # Scout Strat exclusive
     requiredItems:
       STR_ALIEN_ALLOYS: 2 # was 1
       STR_KILLPOINT_TOKEN: 120 # was 180

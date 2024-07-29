@@ -858,11 +858,29 @@ armors:
   - update: DREAD_ARMOR2_UC         #DREAD ARMOR PLASMA
     refNode: *STR_DREADNOUGHT_ARMOR
 
-  - update: DREAD_ARMOR3_UC         #DREAD ARMOR MLAUNCHER
+  - update: DREAD_ARMOR3_UC         #DREAD ARMOR LAS+MISSILE (Formerly Missile)
     refNode: *STR_DREADNOUGHT_ARMOR
+    spriteInv: DREADINVHF
+    spriteSheet: DREADSHF.PCK
+    builtInWeapons:
+      - AUX_HOVERTANK_LASER #dread las
+      - AUX_HOVERTANK_LAUNCHER #dread missile
+      - INV_NULL_3X3
+      - INV_NULL_2X1_RL
+      - INV_NULL_2X1_LL
+      - INV_NULL_4X2
 
-  - update: DREAD_ARMOR4_UC         #DREAD ARMOR LASCANNON
+  - update: DREAD_ARMOR4_UC         #DREAD ARMOR ASSAULT (Formerly Lascannon)
     refNode: *STR_DREADNOUGHT_ARMOR
+    spriteInv: DREADINVASC
+    spriteSheet: DREADSASC.PCK
+    builtInWeapons:
+      - AUX_DREAD_ASSC
+      - AUX_DREAD_FLAMER
+      - INV_NULL_3X3
+      - INV_NULL_2X1_RL
+      - INV_NULL_2X1_LL
+      - INV_NULL_4X2
 
   - update: DREAD_ARMOR5_UC         #DREAD ARMOR VENERABLE
     refNode: *STR_DREADNOUGHT_ARMOR

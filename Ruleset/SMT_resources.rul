@@ -197,6 +197,32 @@ extraSprites:
     files:
       0: Resources/UNITS/CYCLONE/TERMCYCLONE-SPRITE.png
 
+###Dreadnought3 - Las+Missiles (Hellfire)
+  - type: DREADINVHF.SPK
+    singleImage: true
+    files:
+      0: Resources/UNITS/DREAD/DREAD_HELLFIRE_I.png
+  - type: DREADSHF.PCK
+    width: 256
+    height: 840
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DREAD/DREAD_HELLFIRE_S.png
+
+###Dreadnought4 - AssaultCannon
+  - type: DREADINVASC.SPK
+    singleImage: true
+    files:
+      0: Resources/UNITS/DREAD/DREAD_ASSC_I.png
+  - type: DREADSASC.PCK
+    width: 256
+    height: 840
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DREAD/DREAD_ASSC_S.png
+
 ###LandSpeeder Smokelauncher
   - type: SLT.PCK #Smokelauncher Turret
     width: 256
@@ -277,6 +303,10 @@ extraSprites:
       3154: Resources/ITEMS/BOLTER/rifleMC_0.png            # Bolter MC (unloaded)
       3155: Resources/ITEMS/BOLTER/rifleMC_1.png            # Bolter MC (regular)
       3156: Resources/ITEMS/BOLTER/rifleMC_2.png            # Bolter MC (pistol)
+      3157: Resources/UNITS/DREAD/WDREAD_FIST1.png          # Dreadnought Bolter Fist
+      3158: Resources/UNITS/DREAD/WDREAD_MISSILE0.png       # Dreadnought Hellfire Launcher (unloaded)
+      3159: Resources/UNITS/DREAD/WDREAD_MISSILE1.png       # Dreadnought Hellfire Launcher (regular)
+      3160: Resources/UNITS/DREAD/WDREAD_MISSILE2.png       # Dreadnought Hellfire Launcher (hellfire)
 
 
 ###Item FloorOBs
@@ -326,6 +356,12 @@ extraSprites:
     height: 200
     files:
       0: Resources/UFO/CROZIUSUFO.png
+
+  - typeSingle: DREAD3UFO.SPK
+    fileSingle: Resources/UFO/DREAD3.png
+
+  - typeSingle: DREAD4UFO.SPK
+    fileSingle: Resources/UFO/DREAD4.png
 
 ###SOUNDS
 extraSounds:

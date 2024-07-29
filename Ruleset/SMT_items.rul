@@ -1925,7 +1925,10 @@ items:
   - type: STR_SHOTGUN_MARINE                # Astartes Shotgun
     categories: [ STR_CAT_SHOTGUN, STR_CAT_SCOUT]
     size: 0.2
+    costBuy: 25000
     costSell: 5000
+    requiresBuy:
+      - STR_SHOTGUNS_ADV
     weight: 23
     armor: 200
     bigSprite: 3107

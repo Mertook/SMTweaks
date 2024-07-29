@@ -1929,8 +1929,8 @@ items:
     costSell: 5000
     requiresBuy:
       - STR_SHOTGUNS_ADV
-    weight: 23
     armor: 200
+    listOrder: 10700
     bigSprite: 3107
     floorSprite: 3107
     handSprite: 3610
@@ -1941,46 +1941,75 @@ items:
       - STR_SHOTGUN_SHELLS_AP
       - STR_SHOTGUN_SHELLS_INC
       - STR_SHOTGUN_SHELLS_MC
-    accuracySnap: 96
-    tuSnap: 25
+    weight: 22
+    dropoff: 5
+    accuracySnap: 75
+    accuracyAuto: 70
+    autoRange: 6
+    snapRange: 9
+    tuSnap: 18
+    tuAuto: 30
+    autoShots: 3
     battleType: 1
     twoHanded: true
+    oneHandedPenalty: 100 # no penalty for dual-wielding if you can handle recoil
     invWidth: 1
     invHeight: 3
-    listOrder: 10700
-    aimRange: 10
-    snapRange: 8
-    dropoff: 5
+    tags:
+      REACTION_MULTIPLIER: 200 # 200% of normal - shotgun bonus
+      ITEM_RECOIL: 40 # High recoil, strong scouts or marines only
 
   - update: STR_MCSHOTGUN                   # Mastercrafted Shotgun
     weight: 9
     armor: 200
+    weight: 22
+    oneHandedPenalty: 100 # no penalty for dual-wielding if you can handle recoil
     dropoff: 5
-    autoRange: 0
+    autoRange: 9
     snapRange: 10
     aimRange: 0
-    accuracyAuto: 0
+    accuracyAuto: 70
     accuracySnap: 85
     accuracyAimed: 0
-    tuAuto: 0
-    tuSnap: 20 # was 25
+    tuAuto: 25
+    tuSnap: 16 # was 25
     tuAimed: 0
+    autoShots: 3
     compatibleAmmo:
       - STR_SHOTGUN_SHELLS
       - STR_SHOTGUN_SHELLS_AP
       - STR_SHOTGUN_SHELLS_INC
       - STR_SHOTGUN_SHELLS_MC
+    tags:
+      REACTION_MULTIPLIER: 250 # 250% of normal - MCshotgun bonus
+      ITEM_RECOIL: 40 # High recoil, strong scouts or marines only
 
   - update: STR_SHOTGUN_SHELLS_AP           # Shotgun Krak Ammo
     requiresBuy:
       - STR_SHOTGUNS_ADV
+    damageAlter: # Bolter Krak values
+      RandomType: 1 # 0-200%
+      ArmorEffectiveness: 0.5 # was 0.5
+      ToArmorPre: 0.01 # was 0
+      ToArmor: 0.15 # was 0, decent destruction if it manages to pen
+      ToHealth: 0.8 # was 1.0
+      ToStun: 0.1 # was 0.5; AP round rather than concussive
 
   - update: STR_SHOTGUN_SHELLS_INC          # Shotgun Incin Ammo
     requiresBuy:
       - STR_SHOTGUNS_ADV
 
   - update: STR_SHOTGUN_SHELLS_MC           # Shotgun MC Ammo
-
+    damageAlter: # MC Bolt values - was blank
+      RandomType: 7 # 50-200%
+      ToArmorPre: 0.2
+      ArmorEffectiveness: 0.8
+      ToArmor: 0.15
+      ToHealth: 1.15
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
 
   - update: STR_BIKE_ARMOR                  # Bike Armor (Item)
     costBuy: 280000 # was 360k

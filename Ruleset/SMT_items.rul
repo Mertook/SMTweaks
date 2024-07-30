@@ -2225,14 +2225,21 @@ items:
     flatRate: true # was false
     listOrder: 14200
 
-  - update: STR_DREAD_MELEE_WEAPON          # Dread Fist (with added Stormbolter)
+  - type: STR_DREAD_STORMBOLTER             # Dread Stormbolter Fist
     bigSprite: 3157
-    battleType: 1
     bulletSprite: {mod: 40k, index: 6}
-    fireSound: {mod: 40k, index: 707}
+    fireSound: {mod: 40k, index: 12}
     hitAnimation: {mod: 40k, index: 26}
+    meleeSound:  {mod: 40k, index: 710}
+    meleeHitSound:  {mod: 40k, index: 772}
+    meleeAnimation:  {mod: 40k, index: 28}
+    battleType: 1
+    clipSize: -1
+    fixedWeapon: true
+    invWidth: 2
+    invHeight: 3
+    recover: false
     bulletSpeed: 50
-    damageType: 1
     dropoff: 6 # Bike values
     autoRange: 0
     snapRange: 18
@@ -2241,9 +2248,10 @@ items:
     accuracySnap: 75
     accuracyAimed: 0
     tuAuto: 0
-    tuSnap: 28
+    tuSnap: 25
     tuAimed: 0
-    power: 75 # was 110 flat - +40 over regular, dread bonus
+    damageType: 1
+    power: 75
     damageAlter:
       RandomType: 1
       ToArmorPre: 0.15
@@ -2259,7 +2267,7 @@ items:
     shotgunPellets: 2
     tuMelee: 25 # was 15
     flatMelee: true
-    accuracyMelee: 80 # was 100 flat +10 over regular fist
+    accuracyMelee: 80 # was 100 flat +10 over regular pfist
     meleeMultiplier: # powerfist values
       melee: 0.7
       strength: 0.3
@@ -2278,7 +2286,7 @@ items:
     power: 80 # was 60 - give it heavy flamer values
     powerRangeReduction: 15
     powerRangeThreshold: 22
-    autoShots: 4
+    autoShots: 4 # was 6
     damageAlter:
       FireBlastCalc: false
       IgnoreOverKill: false
@@ -2296,7 +2304,7 @@ items:
     clipSize: -1
     tuMelee: 25 # was 15
     flatMelee: true
-    accuracyMelee: 80 # was 100 flat
+    accuracyMelee: 80 # was 100 flat +10 over regular pfist
     meleeMultiplier: # powerfist values
       melee: 0.7
       strength: 0.3
@@ -2310,6 +2318,35 @@ items:
       ToArmorPre: 0.2
       ToHealth: 0.9
       RandomType: 6
+
+  - update: AUX_DREAD_ASSC                  # Dread Assault Cannon
+    sprayWaypoints: 2
+    dropoff: 6 #
+    autoRange: 12 #
+    snapRange: 0
+    aimRange: 15 #
+    tuAuto: 70 #
+    tuAimed: 40
+    accuracyAuto: 60
+    accuracyAimed: 70
+    followProjectiles: false
+    bulletSpeed: 100
+    explosionSpeed: 5
+    power: 100
+    damageAlter:
+      ToArmorPre: 0.1
+      ArmorEffectiveness: 0.85
+      ToArmor: 0.1
+      ToHealth: 1.0
+      ToStun: 0.5
+    confAimed:
+      name: STR_AUTO_SHOT
+      shortName: STR_AUTO_SHOT_COUNT
+      shots: 8
+    confAuto:
+      name: STR_FULL_AUTO
+      shortName: STR_FULL_AUTO_COUNT
+      shots: 20 # regular 16 - dread bonus
 
   - update: AUX_HOVERTANK_LAUNCHER          # Dread Missile Launcher
     bigSprite: 3158

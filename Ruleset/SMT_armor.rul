@@ -806,8 +806,7 @@ armors:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       UNIT_TYPE_LIVING: 1 # allow Inspire
 
-  - &STR_DREADNOUGHT_ARMOR          #DREAD ARMOR NORMAL
-    type: DREAD_ARMOR_UC
+  - &STR_DREADNOUGHT_ARMOR          #DREAD ARMOR TEMPLATE
     visibilityAtDay: 40
     visibilityAtDark: 40
     heatVision: 50 # Vehicle sensors
@@ -855,8 +854,25 @@ armors:
       UNIT_TYPE_LIVING: 1 # allow Inspire
       SMT_ARMOR_REGEN_HP: 10
 
+  - update: DREAD_ARMOR_UC          #DREAD ARMOR DOUBLE FIST
+    refNode: *STR_DREADNOUGHT_ARMOR
+    builtInWeapons:
+      - AUX_DREAD_FLAMER
+      - STR_DREAD_STORMBOLTER
+      - INV_NULL_3X3
+      - INV_NULL_2X1_RL
+      - INV_NULL_2X1_LL
+      - INV_NULL_4X2
+
   - update: DREAD_ARMOR2_UC         #DREAD ARMOR PLASMA
     refNode: *STR_DREADNOUGHT_ARMOR
+    builtInWeapons:
+      - AUX_HOVERTANK_PLASMA
+      - STR_DREAD_STORMBOLTER
+      - INV_NULL_3X3
+      - INV_NULL_2X1_RL
+      - INV_NULL_2X1_LL
+      - INV_NULL_4X2
 
   - update: DREAD_ARMOR3_UC         #DREAD ARMOR LAS+MISSILE (Formerly Missile)
     refNode: *STR_DREADNOUGHT_ARMOR

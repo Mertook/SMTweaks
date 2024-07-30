@@ -117,7 +117,7 @@ ufopaedia:
   - id: DREAD_ARMOR3_UC
     type_id: 15
     section: STR_ARMORPEDIA
-    image_id: DREAD3.SPK
+    image_id: DREAD3UFO.SPK
     requires:
       - STR_DREAD_R
       - STR_LASER_CANNON
@@ -127,7 +127,7 @@ ufopaedia:
   - id: DREAD_ARMOR4_UC
     type_id: 15
     section: STR_ARMORPEDIA
-    image_id: DREAD4.SPK
+    image_id: DREAD4UFO.SPK
     requires:
       - STR_DREAD_R
       - STR_ASSC
@@ -186,6 +186,16 @@ ufopaedia:
     requires: 
       - STR_MARINES_STRATEGY
     listOrder: 12700
+
+  - id: STR_SHOTGUN_MARINE                           # Lightning Claws
+    type_id: 14
+    section: STR_SMT_INFO #STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1LB.SPK
+    text: STR_SHOTGUN_MARINE_UFOPEDIA
+    requires: 
+      - STR_SHOTGUNS_ADV
+    #listOrder: 12700
+
 
 ###BOLTERS
 
@@ -345,6 +355,10 @@ ufopaedia:
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: AUX_MEDI_KIT_ADVANCED
+  - id: STR_DREAD_MISSILES                  # Dreadnought Missiles
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_DREAD_MISSILES
 
 
 extraStrings:
@@ -371,8 +385,18 @@ extraStrings:
       STR_HONOR_ARMOR: "MK7 Artificer Armor"
       STR_HONOR_ARMOR_UFOPEDIA: "{NEWLINE} Artificer Armors are ancient and ornate Power Suits that have been carefully maintained by Techmarines for generations and used only by the Chapters greatest heroes. The protection it offers is far above that of regular power armor."
       BIKE_ARMOR_UC_UFOPEDIA: "{NEWLINE} Assault Bikes are incredibly deadly and robust bikes used by the Space Marines for lightning-quick raids and reconnaissance."
+      STR_DREAD_ARMOR1_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Flamer and Stormbolter"
+      DREAD_ARMOR2_UC: "Mortis Dreadnought Armor"
+      STR_DREAD_ARMOR2_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Plasma and Stormbolter"
+      DREAD_ARMOR3_UC: "Hellfire Dreadnought Armor"
+      STR_DREAD_ARMOR3_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Lascannon and Missiles"
+      DREAD_ARMOR4_UC: "Castraferrum Dreadnought Armor"
+      STR_DREAD_ARMOR4_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Assault Cannon and Flamer"
       ### ITEMS
       AUX_RAM_SMT: Chainsword
+      STR_DREAD_MISSILES: Dreadnought Missiles
+      STR_DREAD_MELEE_WEAPON: Stormbolter Fist
+      STR_SHOTGUN_MARINE: Astartes Shotgun
       STR_SM_SCOUT_SCANNER: Scout Auspex
       STR_CLAWS_ASS: Lightning Claw
       STR_SM_OFFICER_FIST: Officer's Fist
@@ -432,6 +456,7 @@ extraStrings:
       AUX_CROZIUS_UFOPEDIA: "{NEWLINE} The Crozius Arcanum serves as both a sacred staff of office and a close combat weapon for Space Marine Chaplains. It is a formidable Power weapon, and in the hands of a Chaplain can also be used to smite enemies with the Emperors fury."
       STR_ASSC_UFOPEDIA: "{NEWLINE} The Assault Cannon is a six-barrelled, self-loading rotary Autocannon, effective against infantry targets and light vehicles at close to medium range. It fires medium caliber rounds as its 6 barrels are cycled past a single chamber by an electric motor.{NEWLINE}{NEWLINE}Recoil: {ALT}130"
       STR_CLAWS_UFOPEDIA: "{NEWLINE} Vicious power weapons used by elite Space Marines, Lightning Claws tear through armor and inflict heavy wounds."
+      STR_SHOTGUN_MARINE_UFOPEDIA: "{NEWLINE} The Astartes assault shotgun is a more powerful and versatile version of the shotgun. Assault shotguns are best used in urban and close-quarters combat, as well as in boarding actions aboard voidships.{NEWLINE}{NEWLINE}Recoil: {ALT}45"
       ### CRAFT
       AUX_BOLTER: Mounted Heavy Bolter
       STR_SMT_CRAFT_SMOKE: Smoke Launcher

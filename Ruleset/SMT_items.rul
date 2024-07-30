@@ -51,7 +51,6 @@ items:
     flatRate: true #was false
 
   - &STR_FIST                               # SM Armor Fist melee values
-    type: STR_UNARMED_GAUNTLET_PLUS
     twoHanded: false
     invWidth: 1
     invHeight: 2
@@ -84,6 +83,9 @@ items:
     flatMelee:
       time: true
       energy: true
+
+  - update: STR_UNARMED_GAUNTLET_PLUS       # Regular Marine Armor Punch
+    refNode: *STR_FIST
 
   - update: STR_JUMP_GAUNTLET_PLUS          # Jumpsuit Punch
     #*** Melee punch
@@ -1915,7 +1917,7 @@ items:
     requiresBuy:
       - STR_SHOTGUNS_ADV
     armor: 200
-    listOrder: 10700
+    listOrder: 10601
     bigSprite: 3107
     floorSprite: 3107
     handSprite: 3610
@@ -1928,13 +1930,15 @@ items:
       - STR_SHOTGUN_SHELLS_MC
     weight: 22
     dropoff: 5
-    accuracySnap: 75
     accuracyAuto: 70
+    accuracySnap: 75
     autoRange: 6
     snapRange: 9
-    tuSnap: 18
-    tuAuto: 25
+    tuSnap: 16
+    tuAuto: 22
     autoShots: 3
+    tuLoad: 10 # shotgun bonus
+    tuUnload: 5 # shotgun bonus
     battleType: 1
     twoHanded: true
     oneHandedPenalty: 100 # no penalty for dual-wielding if you can handle recoil
@@ -1942,26 +1946,25 @@ items:
     invHeight: 3
     tags:
       REACTION_MULTIPLIER: 200 # 200% of normal - shotgun bonus
-      ITEM_RECOIL: 40 # High recoil, strong scouts or marines only
+      ITEM_RECOIL: 45 # High recoil, marines or strong scouts
 
   - update: STR_MCSHOTGUN                   # Mastercrafted Shotgun
-    weight: 9
     armor: 200
     weight: 22
     oneHandedPenalty: 100 # no penalty for dual-wielding if you can handle recoil
     dropoff: 5
     autoRange: 9
-    snapRange: 10
+    snapRange: 12
     aimRange: 0
-    accuracyAuto: 70
-    accuracySnap: 85
+    accuracyAuto: 75
+    accuracySnap: 90
     accuracyAimed: 0
-    tuAuto: 22
-    tuSnap: 16 # was 25
+    tuAuto: 20
+    tuSnap: 12 # was 25
     tuAimed: 0
     autoShots: 3
-    tuLoad: 8 # MC bonus
-    tuUnload: 4 # MC bonus
+    tuLoad: 5 # MC bonus
+    tuUnload: 2 # MC bonus
     compatibleAmmo:
       - STR_SHOTGUN_SHELLS
       - STR_SHOTGUN_SHELLS_AP
@@ -1969,7 +1972,7 @@ items:
       - STR_SHOTGUN_SHELLS_MC
     tags:
       REACTION_MULTIPLIER: 250 # 250% of normal - MCshotgun bonus
-      ITEM_RECOIL: 40 # High recoil, strong scouts or marines only
+      ITEM_RECOIL: 45 # High recoil, marines or strong scouts
 
   - update: STR_SHOTGUN_SHELLS_AP           # Shotgun Krak Ammo
     requiresBuy:
@@ -1983,10 +1986,18 @@ items:
       ToStun: 0.1 # was 0.5; AP round rather than concussive
 
   - update: STR_SHOTGUN_SHELLS_INC          # Shotgun Incin Ammo
+    weight: 3 # was 5?
+    hitSound: {mod: 40k, index: 708}
+    hitAnimation:
+      mod: 40k
+      index: 88
+    power: 75 # doesn't get multiple pellets because of AoE splash
+    shotgunPellets: 1 # was 6, doesn't work
     requiresBuy:
       - STR_SHOTGUNS_ADV
 
   - update: STR_SHOTGUN_SHELLS_MC           # Shotgun MC Ammo
+    bigSprite: 3162
     damageAlter: # MC Bolt values - was blank
       RandomType: 7 # 50-200%
       ToArmorPre: 0.2
@@ -2040,6 +2051,18 @@ items:
       melee: 0.9
       reactions: 0.1
     experienceTrainingMode: 13
+
+  - update: AUX_TANK_CANNON                 # Bike Bolter
+    dropoff: 6 # was 4
+    autoRange: 0
+    snapRange: 18 # was 21
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 75
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 28
+    tuAimed: 0
 
   - update: STR_HWP_CANNON_SHELLS           # Bike Ammo
     power: 75 # was 65
@@ -2119,6 +2142,7 @@ items:
       reactions: 0.1
 
   - update: STR_TELEPORT                    # Terminator Teleport tool
+    refNode: *STR_FIST
     tags:
       ITEM_TELEPORTER_ENERGY: 20 # was 10
 
@@ -2201,10 +2225,60 @@ items:
     flatRate: true # was false
     listOrder: 14200
 
+  - update: STR_DREAD_MELEE_WEAPON          # Dread Fist (with added Stormbolter)
+    bigSprite: 3157
+    battleType: 1
+    bulletSprite: {mod: 40k, index: 6}
+    fireSound: {mod: 40k, index: 707}
+    hitAnimation: {mod: 40k, index: 26}
+    bulletSpeed: 50
+    damageType: 1
+    dropoff: 6 # Bike values
+    autoRange: 0
+    snapRange: 18
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 75
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 28
+    tuAimed: 0
+    power: 75 # was 110 flat - +40 over regular, dread bonus
+    damageAlter:
+      RandomType: 1
+      ToArmorPre: 0.15
+      ArmorEffectiveness: 0.9
+      ToArmor: 0.15
+      ToHealth: 1.1
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    shotgunSpread: 1
+    shotgunBehavior: 1
+    shotgunPellets: 2
+    tuMelee: 25 # was 15
+    flatMelee: true
+    accuracyMelee: 80 # was 100 flat +10 over regular fist
+    meleeMultiplier: # powerfist values
+      melee: 0.7
+      strength: 0.3
+    meleePower: 80 # was 110 flat - +40 over regular, dread bonus
+    meleeBonus:
+      strength: 1.5 # powerfist
+    meleeType: 5
+    meleeAlter: # powerfist
+      RandomType: 7 # 50-200%
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.2
+      ToHealth: 0.9
+      RandomType: 6
+
   - update: AUX_DREAD_FLAMER                # Dread Flamer Palm
     power: 80 # was 60 - give it heavy flamer values
     powerRangeReduction: 15
     powerRangeThreshold: 22
+    autoShots: 4
     damageAlter:
       FireBlastCalc: false
       IgnoreOverKill: false
@@ -2219,9 +2293,10 @@ items:
       RandomType: 6 #Gaussian
       ArmorEffectiveness: 0.8
       ToArmorPre: 0.2
+    clipSize: -1
     tuMelee: 25 # was 15
     flatMelee: true
-    accuracyMelee: 70 # was 100 flat
+    accuracyMelee: 80 # was 100 flat
     meleeMultiplier: # powerfist values
       melee: 0.7
       strength: 0.3
@@ -2230,6 +2305,7 @@ items:
       strength: 1.5 # powerfist
     meleeType: 5
     meleeAlter: # powerfist
+      RandomType: 7 # 50-200%
       ArmorEffectiveness: 0.7
       ToArmorPre: 0.2
       ToHealth: 0.9
@@ -2254,9 +2330,9 @@ items:
       shots: 2
 
   - type: STR_DREAD_MISSILES                # Dread Regular Missile ammo
-    bigSprite: {mod: 40k, index: 384}
-    floorSprite: {mod: 40k, index: 237}
-    handSprite: {mod: 40k, index: 800}
+    bigSprite: 3161
+    floorSprite: 3161
+    handSprite: 3620
     size: 0.3
     costBuy: 60000
     costSell: 30000
@@ -2271,10 +2347,9 @@ items:
     clipSize: 8 # was 8
     damageType: 3 # HE
     damageAlter:
-      RandomType: 6 # was 2
-      ToArmorPre: 0.5
+      RandomType: 6
+      ToArmorPre: 0.3
       ArmorEffectiveness: 0.75
-      FireThreshold: 1
       FixRadius: 8
     tags:
       ITEM_AMMO_SKIP_BIGOBS: 1
@@ -2285,31 +2360,13 @@ items:
     damageType: 11 # Melta - was HE
     damageAlter:
       RandomType: 6 # was 2
-      ToArmorPre: 0.5
+      ToArmorPre: 0.75 # was 0.5
       ArmorEffectiveness: 0.75
       FireThreshold: 1
       FixRadius: 11
     clipSize: 8 # was 8
     tags:
       ITEM_AMMO_SKIP_BIGOBS: 2
-
-  - update: STR_DREAD_MELEE_WEAPON          # Dread Fist (with added Stormbolter)
-    bigSprite: 3157
-    tuMelee: 25 # was 15
-    flatMelee: true
-    accuracyMelee: 75 # was 100 flat - +5 over powerfist
-    meleeMultiplier: # powerfist values
-      melee: 0.7
-      strength: 0.3
-    power: 80 # was 110 flat - +40 over regular, dread bonus
-    damageBonus:
-      strength: 1.5 # powerfist
-    damageType: 5
-    damageAlter: # powerfist
-      ArmorEffectiveness: 0.7
-      ToArmorPre: 0.2
-      ToHealth: 0.9
-      RandomType: 6
 
   - update: STR_CRATED_RHINO                # Boxed Razorback
     costSell: 400000 # was 0, set so that you don't have to unpack & then sell vehicle

@@ -89,7 +89,7 @@ extended:
           end;
 
           ### Handle chance to be protected by Heroic Save
-          debug_log "HeroSave ping (health|damage|baseChance) - " currentHealth to_health unitSaveMod;
+          #debug_log "HeroSave ping (health|damage|baseChance) - " currentHealth to_health unitSaveMod;
           unit.getHealthMax maxHealth;
           set saveChance currentHealth;
           if lt maxHealth 100;
@@ -109,7 +109,7 @@ extended:
           limit_lower saveCount 1; #sanity check to make sure there's no /0 nonsense
           div saveChance saveCount; #divide chance by number of successful saves made by this unit +1
           battle_game.randomRange temp 0 100; 
-          debug_log "HeroSave randomRoll (chance|roll) - " saveChance temp;
+          #debug_log "HeroSave randomRoll (chance|roll) - " saveChance temp;
           if lt saveChance temp; # fail if random roll 0-100 > save chance
             return;
           end;
@@ -118,7 +118,7 @@ extended:
           set to_transform 0; # prevent any potential transform
           set temp2 to_health;
           muldiv saveHealth currentHealth 100; # convert % saveHealth into actual health value
-          limit_lower saveHealth 5; # make sure remaining health is at least 5
+          limit_lower saveHealth 10; # make sure remaining health is at least 10
           set temp currentHealth;
           sub temp saveHealth;
           set to_health temp; # only damage unit up to the saveHealth limit
@@ -133,15 +133,15 @@ extended:
           battle_game.flashMessage "STR_SCRIPT_HEROIC_SAVE"; # 'Unit endured the hit'
 
           ### Handle wound protection to stop saved units from dying at the start of your turn
-          debug_log "HeroSave Final (currHp|tohp|tostun|wound|saveHp|turn)- " currentHealth to_health to_stun temp saveHealth temp2;
+          #debug_log "HeroSave Final (currHp|tohp|tostun|wound|saveHp|turn)- " currentHealth to_health to_stun temp saveHealth temp2;
           if and ge woundsTotal saveHealth neq turnSide 0;
-            add temp 5;
-            unit.setHealth temp; # set health to current wounds +5 - corruption damage happens at the start of enemy turn, we don't need to account for it
+            add temp 10;
+            unit.setHealth temp; # set health to current wounds +10 - corruption damage happens at the start of enemy turn, we don't need to account for it
             add to_stun to_health; # convert remaining incoming health damage to stun
             limit_lower to_stun temp; # make sure to stun the unit in the case that they have excessive wounds and would die, but haven't taken enough raw damage to get stunned
             set to_health 0; # negate incoming damage
             unit.getHealth currentHealth;
-            debug_log "HeroSave Woundsave " temp currentHealth to_stun;
+            #debug_log "HeroSave Woundsave " temp currentHealth to_stun;
           end;
 
           return;

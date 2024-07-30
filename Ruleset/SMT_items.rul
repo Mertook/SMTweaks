@@ -2286,7 +2286,11 @@ items:
     power: 80 # was 60 - give it heavy flamer values
     powerRangeReduction: 15
     powerRangeThreshold: 22
-    autoShots: 4 # was 6
+    accuracyAuto: 30
+    accuracySnap: 40
+    tuAuto: 45
+    tuSnap: 15
+    autoShots: 4
     damageAlter:
       FireBlastCalc: false
       IgnoreOverKill: false

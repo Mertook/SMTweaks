@@ -1,0 +1,101 @@
+items:
+  - type: STR_DW_TOKEN                      # Token used to buy DW Marines
+    battleType: 0
+    size: 0.01
+    weight: 3
+    bigSprite: 100
+    armor: 200
+    invWidth: 1
+    invHeight: 1
+    recover: true
+    recoveryPoints: 20
+
+  - &STR_BOLTER_DW                          # Generic DW Bolter Reference
+    dropoff: 8 # regular bolters are 9 - DW bonus
+    weight: 28 # +8 weight, not meant for regular humans
+    requiresBuy:
+      - STR_DW_WEAPONS
+    compatibleAmmo: # bolters can use boltpistol ammo
+      - STR_RIFLE_CLIP
+      - STR_RIFLE_CLIP_AP
+      - STR_RIFLE_CLIP_EX
+      - STR_RIFLE_CLIP_MC
+      - STR_PISTOL_CLIP
+      - STR_PISTOL_CLIP_AP
+      - STR_PISTOL_CLIP_EX
+      - STR_PISTOL_CLIP_MC
+    tags:
+      ITEM_RECOIL: 65 # +25 - harder requirement, not meant for regular humans
+      ITEM_DW_EXCLUSIVE: 1
+
+  - update: STR_RIFLEA                      # Bolter (Artifex DW) - Close range DW Bolter
+    refNode: *STR_BOLTER_DW
+    bigSprite: 3139
+    autoRange: 12 #+1 DW
+    snapRange: 16 #-1 vs Stalker
+    aimRange: 20 #-1 vs Stalker
+    accuracyAuto: 75
+    accuracySnap: 80
+    accuracyAimed: 100
+    tuAuto: 33 # was 35
+    tuSnap: 20 # was 25
+    tuAimed: 65 # was 60
+    autoShots: 5 # was 3
+    requiresBuy:
+      - STR_DW_WEAPONS
+
+  - update: STR_RIFLEDW                     # Bolter (Cawl Deathwatch) - Long range DW Bolter battlerifle
+    refNode: *STR_BOLTER_DW
+    bigSprite: 3151
+    autoRange: 11 # v3.1 (14) was 8
+    snapRange: 16 # was 17
+    accuracyAuto: 70
+    accuracySnap: 85
+    accuracyAimed: 0
+    tuSnap: 20 # was 25
+    tuAuto: 33 # was 40
+    tuAimed: 0
+    autoShots: 5
+    requiresBuy:
+      - STR_DW_WEAPONS
+
+  - type: STR_AUTO_CANNON_DW                # Heavy Bolter (Artifex DW)
+    dropoff: 4 # larger HB shells have better propulsion and accuracy at range
+    sprayWaypoints: 2
+    autoRange: 14 #
+    snapRange: 18 # regular 18
+    aimRange: 15 # regular 15
+    accuracyAuto: 50 #
+    accuracySnap: 66 # regular 60
+    accuracyAimed: 58 # regular 50
+    tuAuto: 80 # 12 shots
+    tuSnap: 25 # regular 25
+    tuAimed: 55 # regular 60 for 8
+    tuLoad: 30 # was 40
+    minRange: 5 #heavy weapon; cumbersome, not suited to CQC
+    autoShots: 12 # +4
+    followProjectiles: false
+    requiresBuy:
+      - STR_DW_WEAPONS
+    compatibleAmmo: #Heavy Bolter Ammo
+      - STR_AC_AP_AMMO
+      - STR_AC_MC_AMMO
+      - STR_AC_HE_AMMO
+      - STR_AC_I_AMMO
+      - STR_AC_AP_BELT
+      - STR_AC_HE_BELT
+      - STR_AC_I_BELT
+      - STR_AC_MC_BELT
+    confSnap:
+      shots: 2
+    confAimed:
+      name: STR_AUTO_SHOT
+      shortName: STR_AUTO_SHOT_COUNT
+      shots: 6
+    confAuto:
+      name: STR_FULL_AUTO
+      shortName: STR_FULL_AUTO_COUNT
+      shots: 12
+    kneelBonus: 120 # was 130, Astartes version meant to be hipfired by devastator marines
+    tags:
+      ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines

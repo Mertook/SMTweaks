@@ -129,7 +129,7 @@ soldierTransformation:
       STR_BATTLE_TESTED: 0
     requiresBaseFunc: [LIB] #needs library
     requiredMinStats:
-      health: 65 # Neophyte base 40-55, training cap 60, Marine minimum 75
+      health: 60 # Neophyte base 40-55, training cap 60, Marine minimum 75
       strength: 55 # Neophyte base 30-40, training cap 55, Marine minimum 55
       psiStrength: 20 # Neophyte base 0-25
     listOrder: 40
@@ -176,6 +176,7 @@ soldierTransformation:
     listOrder: 80
 
   - name: STR_RESURRECT_MARINE          # Create Dreadnought
+    upperBoundAtStatCaps: true
     requires:
       - STR_DREADNOUGHT_MARINE
       - STR_NOT_PRIMARIS
@@ -192,4 +193,23 @@ soldierTransformation:
       - STR_SOLDIER_LIBRARIAN_TERM
       - STR_SOLDIER_JOAN
     listOrder: 20
+
+  # - name: STR_RESURRECT_HERO            # Create Ven Dreadnought
+    # upperBoundAtStatCaps: true
+    # requires:
+      # - STR_DREADNOUGHT_MARINE
+      # - STR_NOT_PRIMARIS
+    # requiredCommendations:
+      # STR_HERO_TO_THE_IMPERIUM: 0
+    # producedSoldierType: STR_FALLEN_HERO
+    # requiredItems:
+      # STR_ALIEN_ALLOYS: 30
+      # STR_ELERIUM_115: 30
+      # STR_UFO_CONSTRUCTION: 10
+      # STR_KILLPOINT_TOKEN: 400 # was 300
+    # allowedSoldierTypes:
+      # - STR_SOLDIER_TERMINATOR
+      # - STR_SOLDIER_CHAPLAIN
+      # - STR_SOLDIER_LIBRARIAN_TERM
+    # listOrder: 20
 

@@ -1,0 +1,30 @@
+research:
+  - name: STR_DEATHWATCH        # Deathwatch Strat
+    cost: 5
+    points: 0
+    dependencies:
+      - STR_CHAMBERMILITANT
+    lookup: STR_CHOSEN_DEATHWATCH
+    unlocks:
+      - STR_POWER_ARMOR_SM_CODEX
+      - STR_TERMINATOR_ARMOR_SM_CODEX
+      - STR_NOT_PRIMARIS
+      - STR_DEATHWATCH_AND_ADEPTAS
+      - STR_PRIMARIS_AND_DEATHWATCH
+      - STR_MARINES_AND_DEATHWATCH
+      - STR_CORVUS_RESEARCH #instead of STR_DEATHWATCH_AND_ADEPTAS setup
+      - STR_LASER_WEAPONS
+      - STR_MOTION_SCANNER
+      - STR_SMOKE
+    getOneFree:
+      - STR_PERSONAL_ARMOR
+    disables:
+      - STR_GREYKNIGHTS
+      - STR_CHAOS_PATH
+    spawnedEvent: STR_DEATHWATCH_CARE_PACKAGE
+
+  - name: STR_DW_WEAPONS        # Deathwatch Weapons Basic tier
+    cost: 40
+    points: 10
+    dependencies:
+      - STR_DEATHWATCH

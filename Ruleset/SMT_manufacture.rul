@@ -299,7 +299,7 @@ manufacture:
     category: STR_PERSONAL_ARMOR
     requires:
       - STR_MARINES_AND_DEATHWATCH
-      - STR_PLASMA_CANNON
+      - STR_PLASMA_CANNON # craft Plasma cannon
       - STR_DREADNOUGHT_MARINE
       - STR_NOT_PRIMARIS
     space: 0
@@ -314,7 +314,7 @@ manufacture:
     category: STR_PERSONAL_ARMOR
     requires:
       - STR_MARINES_AND_DEATHWATCH
-      - STR_LASER_CANNON
+      - STR_LASER_CANNON # craft Lascannon
       - STR_DREADNOUGHT_MARINE
       - STR_NOT_PRIMARIS
     space: 0
@@ -346,6 +346,7 @@ manufacture:
     time: 1800
     cost: 150000
     requires:
+      - STR_DEVASTATOR # make the Mars-pattern Dev exclusive while allowing DW to use ammo belts
       - STR_DEV_MARS_BOLTER
     requiredItems:
       STR_ALIEN_ALLOYS: 4

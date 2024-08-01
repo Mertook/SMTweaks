@@ -1,0 +1,36 @@
+soldierTransformation:
+  - name: STR_RECYCLE_DW            # Recover DW Token from dead
+    requires:
+      - STR_DEATHWATCH
+    cost: 5000
+    producedItem: STR_DW_TOKEN
+    allowsDeadSoldiers: true
+    allowsLiveSoldiers: false
+    allowsWoundedSoldiers: false
+    needsCorpseRecovered: false
+    createsClone: true
+    transferTime: 0
+    allowedSoldierTypes:
+      - STR_ULTRAMARINE
+      - STR_ULTRAMARINE_PRIMARIS
+      - STR_IMPERIALF
+      - STR_IMPERIALF_PRIMARIS
+      - STR_BLOODANGELS
+      - STR_BLOODANGELS_PRIMARIS
+      - STR_SALAMANDAR
+      - STR_SALAMANDAR_PRIMARIS
+      - STR_BLACKT
+      - STR_BLACKT_PRIMARIS
+      - STR_WHITES
+      - STR_WHITES_PRIMARIS
+      - STR_DARKANGELS
+      - STR_DARKANGELS_PRIMARIS
+      - STR_SPACEW
+      - STR_SPACEW_PRIMARIS
+      - STR_CRISMONF
+      - STR_CRISMONF_PRIMARIS
+    listOrder: 10
+
+  - name: STR_RESURRECT_MARINE_DW
+    requires:
+      - STR_GENERALLOCK # disable Dreadnoughts

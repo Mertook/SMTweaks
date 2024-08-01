@@ -1,5 +1,5 @@
 armors:
-  - &STR_MARINE_ARMOR               #ARMOR TEMPLATE
+  - &STR_MARINE_ARMOR                       #ARMOR TEMPLATE
     visibilityAtDay: 40
     visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
     heatVision: 20 #Add anti-smoke vision to all marine armour
@@ -42,7 +42,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
 
-  - &STR_MARINE_OFFICER_ARMOR       #SPECIALIST TEMPLATE
+  - &STR_MARINE_OFFICER_ARMOR               #SPECIALIST TEMPLATE
     update: STR_SIGNALFALSE_ARMOR_UC
     visibilityAtDay: 40
     visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
@@ -74,7 +74,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
 
-  - update: STR_SCOUT_UC            #SCOUT
+  - update: STR_SCOUT_UC                    #SCOUT
     visibilityAtDay: 40
     visibilityAtDark: 20 # nerfed scout nightvision, armor meant for novices rather than expert rangers
     antiCamouflageAtDay: 2 # reduced anticamo, lacks optics of proper power armor
@@ -103,7 +103,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
 
-  - update: STR_PERSONAL_ARMOR_UC   #TACTICAL
+  - update: STR_PERSONAL_ARMOR_UC           #TACTICAL
     refNode: *STR_MARINE_ARMOR
     stats:
       tu: 25            # base 10 +15
@@ -118,7 +118,7 @@ armors:
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
 
-  - update: STR_ASS_ARMOR_UC        #ASSAULT
+  - update: STR_ASS_ARMOR_UC                #ASSAULT
     refNode: *STR_MARINE_ARMOR
     frontArmor: 135 # base 125 +10
     sideArmor: 125  # base 120 +5
@@ -139,7 +139,7 @@ armors:
     builtInWeapons: #make sure they don't get a backpack
       - INV_NULL_3X3
 
-  - update: STR_DEV_ARMOR_UC        #DEVASTATOR
+  - update: STR_DEV_ARMOR_UC                #DEVASTATOR
     refNode: *STR_MARINE_ARMOR
     frontArmor: 130 # base 125 +5 devastator
     sideArmor: 120 # base 120
@@ -158,7 +158,7 @@ armors:
       psiSkill: 0       # base 0  
       melee: -20        # base 10 -30 (ranged specialist & also to offset strength bonus)
 
-  - update: STR_APOT_ARMOR_UC       #APOTH
+  - update: STR_APOT_ARMOR_UC               #APOTH
     refNode: *STR_MARINE_ARMOR
     frontArmor: 130 # base 125 +5 apoth
     sideArmor: 120 # base 120
@@ -183,7 +183,7 @@ armors:
       SMT_ARMOR_REGEN_HP: 3
       ARMOR_REGENERATES_WOUNDS: 1
 
-  - update: STR_TECH_ARMOR_UC       #TECHMARINE
+  - update: STR_TECH_ARMOR_UC               #TECHMARINE
     refNode: *STR_MARINE_OFFICER_ARMOR
     heatVision: 50 # techmarines get advanced sensors
     antiCamouflageAtDay: 10
@@ -205,7 +205,7 @@ armors:
       psiSkill: 0       # base 0  
       melee: 15         # base 10 +5
 
-  - update: STR_SARGENT_ARMOR_UC    #SERGEANT
+  - update: STR_SARGENT_ARMOR_UC            #SERGEANT
     refNode: *STR_MARINE_OFFICER_ARMOR
     frontArmor: 125 # base 125
     sideArmor: 120 # base 120
@@ -227,7 +227,7 @@ armors:
     builtInWeapons: #added 3x2 backpack
       - INV_NULL_3X1_BACKPACK
 
-  - update: STR_HONOR_ARMOR_UC      #TACTICAL HONOR (Honor Guard)
+  - update: STR_HONOR_ARMOR_UC              #TACTICAL HONOR (Honor Guard)
     refNode: *STR_MARINE_OFFICER_ARMOR
     stats:
       tu: 25            # base 10 +15 tac
@@ -254,7 +254,7 @@ armors:
       ARMOR_ENERGY_SHIELD_DECAY: 100
 
 
-  - update: STR_ASS_ARMOR_HONOR_UC  #ASSAULT HONOR (Vanguard)
+  - update: STR_ASS_ARMOR_HONOR_UC          #ASSAULT HONOR (Vanguard)
     refNode: *STR_MARINE_OFFICER_ARMOR
     stats:
       tu: 30            # base 10 +15 ass +5 elite
@@ -275,7 +275,7 @@ armors:
     units: #now exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
 
-  - type: STR_ASS_ARMOR_HONOR_CLAW  #ASSAULT HONOR (Vanguard) WITH CLAW
+  - type: STR_ASS_ARMOR_HONOR_CLAW          #ASSAULT HONOR (Vanguard) WITH CLAW
     refNode: *STR_MARINE_OFFICER_ARMOR
     ufopediaType: STR_ASS_ARMOR_HONOR_UC
     spriteSheet: XCOM_HASS.PCK
@@ -313,7 +313,7 @@ armors:
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
 
-  - update: STR_SIGNAL_ARMOR_UC     #DEVASTATOR HONOR (Signum)
+  - update: STR_SIGNAL_ARMOR_UC             #DEVASTATOR HONOR (Signum)
     refNode: *STR_MARINE_OFFICER_ARMOR
     visibilityAtDark: 40 # signum equipment provides advanced vision
     heatVision: 40 # signum equipment provides advanced vision
@@ -340,7 +340,7 @@ armors:
     units: # exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
 
-  - &STR_ADVANCED_SCOUT_ARMOR       #SCOUT HONOR BROWN (Advanced Scout)
+  - &STR_ADVANCED_SCOUT_ARMOR               #SCOUT HONOR BROWN (Advanced Scout)
     update: STR_SCOUTH_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # infiltrator equipment
@@ -380,22 +380,22 @@ armors:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
 
 
-  - update: STR_SCOUTHW_UC          #SCOUT HONOR WHITE
+  - update: STR_SCOUTHW_UC                  #SCOUT HONOR WHITE
     refNode: *STR_ADVANCED_SCOUT_ARMOR
 
-  - update: STR_SCOUTHB_UC          #SCOUT HONOR BLACK
+  - update: STR_SCOUTHB_UC                  #SCOUT HONOR BLACK
     refNode: *STR_ADVANCED_SCOUT_ARMOR
 
-  - update: STR_SCOUTHR_UC          #SCOUT HONOR RED
+  - update: STR_SCOUTHR_UC                  #SCOUT HONOR RED
     refNode: *STR_ADVANCED_SCOUT_ARMOR
 
-  - update: STR_SCOUTHY_UC          #SCOUT HONOR YELLOW
+  - update: STR_SCOUTHY_UC                  #SCOUT HONOR YELLOW
     refNode: *STR_ADVANCED_SCOUT_ARMOR
 
-  - update: STR_SCOUTHG_UC          #SCOUT HONOR GREEN
+  - update: STR_SCOUTHG_UC                  #SCOUT HONOR GREEN
     refNode: *STR_ADVANCED_SCOUT_ARMOR
 
-  - &STR_TERMINATOR_ARMOR           #TERMINATOR TEMPLATE
+  - &STR_TERMINATOR_ARMOR                   #TERMINATOR TEMPLATE
     visibilityAtDay: 40
     visibilityAtDark: 40 # Terminators get full nightvision
     heatVision: 30 # Terminators get better sensors
@@ -445,7 +445,7 @@ armors:
       SMT_ARMOR_REGEN_HP: 4
       ARMOR_REGENERATES_WOUNDS: 1
 
-  - update: STR_CAPTAIN_UC          #TERMINATOR CAPTAIN
+  - update: STR_CAPTAIN_UC                  #TERMINATOR CAPTAIN
     refNode: *STR_TERMINATOR_ARMOR
     specialWeapon: STR_SM_OFFICER_FIST #Officer Fist with Inspire ability
     stats:
@@ -474,10 +474,10 @@ armors:
       - 0.2 #IMPACT
       - 0.7 #MELTA (was 1.0)
 
-  - update: STR_POWER_SUIT_UC       #TERMINATOR
+  - update: STR_POWER_SUIT_UC               #TERMINATOR
     refNode: *STR_TERMINATOR_ARMOR
 
-  - update: STR_TSARGENT_UC         #TERMINATOR CYCLONE
+  - update: STR_TSARGENT_UC                 #TERMINATOR CYCLONE
     refNode: *STR_TERMINATOR_ARMOR
     spriteSheet: TERMCYCLONE.PCK # declawed :(
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
@@ -498,7 +498,7 @@ armors:
       - INV_NULL_2X1_RL
       - INV_NULL_2X1_LL
 
-  - update: STR_FLYING_SUIT_UC      #TERMINATOR ASSAULT (SHIELD)
+  - update: STR_FLYING_SUIT_UC              #TERMINATOR ASSAULT (SHIELD)
     refNode: *STR_TERMINATOR_ARMOR
     rearArmor: 130 # +10 assault
     stats:
@@ -517,7 +517,7 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 50 # better shield for assault term
       ARMOR_ENERGY_SHIELD_DECAY: 100
 
-  - update: STR_TASS_ARMOR_CLAWS    #TERMINATOR ASSAULT (CLAWS)
+  - update: STR_TASS_ARMOR_CLAWS            #TERMINATOR ASSAULT (CLAWS)
     refNode: *STR_TERMINATOR_ARMOR
     rearArmor: 130 # +10 assault
     stats:
@@ -536,7 +536,7 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 50 # better shield for assault term
       ARMOR_ENERGY_SHIELD_DECAY: 100
 
-  - update: STR_CHAP_ARMOR_UC       #CHAPLAIN
+  - update: STR_CHAP_ARMOR_UC               #CHAPLAIN
     refNode: *STR_MARINE_OFFICER_ARMOR
     storeItem: STR_NONE # Now default to Chaplain type soldiers
     psiDefence:
@@ -570,7 +570,7 @@ armors:
       INFECTION_RESIST: 100 #infection immune - Chaplains bonus
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
 
-  - type: STR_CHAP_TERMINATOR_UC    #CHAPLAIN TERMINATOR
+  - type: STR_CHAP_TERMINATOR_UC            #CHAPLAIN TERMINATOR
     refNode: *STR_TERMINATOR_ARMOR
     ufopediaType: STR_POWER_SUIT_UC
     spriteSheet: CHAPTERM.PCK
@@ -612,7 +612,7 @@ armors:
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
 
-  - type: STR_CHAP_ASSAULT_UC       #CHAPLAIN ASSAULT (Vanguard)
+  - type: STR_CHAP_ASSAULT_UC               #CHAPLAIN ASSAULT (Vanguard)
     refNode: *STR_MARINE_OFFICER_ARMOR
     ufopediaType: STR_ASS_ARMOR_HONOR_UC
     spriteSheet: CHAPASS.PCK
@@ -656,7 +656,7 @@ armors:
       MaxFlight: 2
       MaxCoolDown: 1
 
-  - type: STR_SMT_LIB_ARMOR_UC      #LIBRARIAN
+  - type: STR_SMT_LIB_ARMOR_UC              #LIBRARIAN
     refNode: *STR_MARINE_OFFICER_ARMOR
     spriteSheet: XCOM_24.PCK
     customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 12}
@@ -706,7 +706,7 @@ armors:
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
 
-  - type: STR_LIB_TERMINATOR_UC     #LIBRARIAN TERMINATOR
+  - type: STR_LIB_TERMINATOR_UC             #LIBRARIAN TERMINATOR
     refNode: *STR_TERMINATOR_ARMOR
     ufopediaType: STR_POWER_SUIT_UC
     spriteSheet: LIBTERM.PCK
@@ -754,7 +754,7 @@ armors:
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
   
-  - update: BIKE_ARMOR_UC           #BIKE
+  - update: BIKE_ARMOR_UC                   #BIKE
     visibilityAtDay: 40
     visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
     heatVision: 20 #Add anti-smoke vision to all marine armour
@@ -806,7 +806,7 @@ armors:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       UNIT_TYPE_LIVING: 1 # allow Inspire
 
-  - &STR_DREADNOUGHT_ARMOR          #DREAD ARMOR TEMPLATE
+  - &STR_DREADNOUGHT_ARMOR                  #DREAD ARMOR TEMPLATE
     visibilityAtDay: 40
     visibilityAtDark: 40
     heatVision: 50 # Vehicle sensors
@@ -854,7 +854,7 @@ armors:
       UNIT_TYPE_LIVING: 1 # allow Inspire
       SMT_ARMOR_REGEN_HP: 10
 
-  - update: DREAD_ARMOR_UC          #DREAD ARMOR DOUBLE FIST
+  - update: DREAD_ARMOR_UC                  #DREAD ARMOR DOUBLE FIST
     refNode: *STR_DREADNOUGHT_ARMOR
     builtInWeapons:
       - AUX_DREAD_FLAMER
@@ -864,7 +864,7 @@ armors:
       - INV_NULL_2X1_LL
       - INV_NULL_4X2
 
-  - update: DREAD_ARMOR2_UC         #DREAD ARMOR PLASMA
+  - update: DREAD_ARMOR2_UC                 #DREAD ARMOR PLASMA
     refNode: *STR_DREADNOUGHT_ARMOR
     builtInWeapons:
       - AUX_HOVERTANK_PLASMA
@@ -874,7 +874,7 @@ armors:
       - INV_NULL_2X1_LL
       - INV_NULL_4X2
 
-  - update: DREAD_ARMOR3_UC         #DREAD ARMOR LAS+MISSILE (Formerly Missile)
+  - update: DREAD_ARMOR3_UC                 #DREAD ARMOR LAS+MISSILE (Formerly Missile)
     refNode: *STR_DREADNOUGHT_ARMOR
     spriteInv: DREADINVHF
     spriteSheet: DREADSHF.PCK
@@ -886,7 +886,7 @@ armors:
       - INV_NULL_2X1_LL
       - INV_NULL_4X2
 
-  - update: DREAD_ARMOR4_UC         #DREAD ARMOR ASSAULT (Formerly Lascannon)
+  - update: DREAD_ARMOR4_UC                 #DREAD ARMOR ASSAULT (Formerly Lascannon)
     refNode: *STR_DREADNOUGHT_ARMOR
     spriteInv: DREADINVASC
     spriteSheet: DREADSASC.PCK
@@ -898,10 +898,10 @@ armors:
       - INV_NULL_2X1_LL
       - INV_NULL_4X2
 
-  - update: DREAD_ARMOR5_UC         #DREAD ARMOR VENERABLE
+  - update: DREAD_ARMOR5_UC                 #DREAD ARMOR VENERABLE
     refNode: *STR_DREADNOUGHT_ARMOR
 
-  - update: STR_SIGNAL_ARMOR_UC_HULK #SUPERHULK REWARD ARMOR
+  - update: STR_SIGNAL_ARMOR_UC_HULK        #SUPERHULK REWARD ARMOR
     visibilityAtDay: 40
     visibilityAtDark: 40 # was 30
     antiCamouflageAtDay: 7 # was 5
@@ -951,4 +951,17 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20 # double shield regen to account for new shield mechanics
       ARMOR_ENERGY_SHIELD_DECAY: 20
 
-
+  - update: STR_BLOODRAVENS_TACTICAL_ARMOR  #BLOODRAVEN TACTICAL
+    refNode: *STR_MARINE_ARMOR
+    stats: # tac stats
+      tu: 25            # base 10 +15
+      stamina: 20       # base 20 
+      health: 10        # base 10 
+      bravery: 10       # base 0  +10
+      reactions: 20     # base 10 +10
+      firing: 10        # base 0  +10
+      throwing: 15      # base 5  +10
+      strength: 15      # base 10 +5
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 

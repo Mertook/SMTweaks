@@ -1,0 +1,50 @@
+events: 
+  - name: STR_DEATHWATCH_CARE_PACKAGE
+    description: STR_DEATHWATCH_REINFORCEMENTS
+    background: BACK13.SCR
+    spawnedCraftType: STR_CORVUS 
+    everyMultiItemList:
+      STR_CRATED_CORVUS: 1
+      STR_DW_TOKEN: 2
+      STR_RIFLEA: 2
+      STR_RIFLE_CLIP: 10
+      STR_RIFLE_CLIP_AP: 10
+      STR_RIFLE_CLIP_EX: 10
+      STR_RIFLE_CLIP_MC: 10
+      STR_KILLPOINT_TOKEN: 400 # used to buy your first two marines
+    spawnedPersons: 0
+    spawnedPersonType: STR_ULTRAMARINE
+
+eventScripts:
+  - type: STR_DW_EVENT_SCRIPTIF
+    executionOdds: 0
+    researchTriggers:
+       STR_GENERALLOCK: true
+  - type: STR_DW_EVENT_SCRIPTBA
+    executionOdds: 0
+    researchTriggers:
+       STR_GENERALLOCK: true
+  - type: STR_DW_EVENT_SCRIPTSALA
+    executionOdds: 0
+    researchTriggers:
+       STR_GENERALLOCK: true
+  - type: STR_DW_EVENT_SCRIPTBT
+    executionOdds: 0
+    researchTriggers:
+       STR_GENERALLOCK: true
+  - type: STR_DW_EVENT_SCRIPTWS
+    executionOdds: 0
+    researchTriggers:
+       STR_GENERALLOCK: true
+  - type: STR_DW_EVENT_SCRIPTSW
+    executionOdds: 0
+    researchTriggers:
+       STR_GENERALLOCK: true
+  - type: STR_DW_EVENT_SCRIPTDA
+    executionOdds: 0
+    researchTriggers:
+       STR_GENERALLOCK: true
+  - type: STR_DW_EVENT_SCRIPTCF
+    executionOdds: 0
+    researchTriggers:
+       STR_GENERALLOCK: true

@@ -73,6 +73,8 @@ items:
       ToStun: 0.5
       ToHealth: 1.0
       ToTile: 1.50 #coolaid man punch through walls
+      RandomWound: false
+      ToWound: 0.0
     accuracyMelee: 90
     meleeMultiplier:
       reactions: 0.25
@@ -422,6 +424,7 @@ items:
     invHeight: 1
     recover: true
     recoveryPoints: 20
+    ufopediaType: STR_GENESEED_DETAILS
 
   - type: STR_SMT_GENESEED_IMPURE           # Refined into Geneseed 10:1
     costSell: 20000 # make excess geneseed useful (also for other factions if they ever manage to get it)
@@ -434,6 +437,7 @@ items:
     invHeight: 1
     recover: true
     recoveryPoints: 2
+    ufopediaType: STR_GENESEED_DETAILS
 
   - update: STR_PISTOL_CLIP                 # Boltpistol Ammo
     size: 0.05 # was 0.1
@@ -636,19 +640,6 @@ items:
     requiresBuy:
       - STR_MARINE_BOLTERS
 
-  - update: STR_RIFLEA                      # Bolter (Artifex DW)
-    refNode: *STR_BOLTER
-    bigSprite: 3139
-    autoRange: 12 #+1 DW
-    snapRange: 16 #-1 vs Stalker
-    aimRange: 21 #-1 vs Stalker
-    accuracyAuto: 66
-    accuracySnap: 80
-    accuracyAimed: 100
-    tuAuto: 33 # was 35
-    tuSnap: 20 # was 25
-    tuAimed: 65 # was 60
-
   - update: STR_RIFLEB                      # Bolter (Ultra)
     refNode: *STR_BOLTER
     bigSprite: 3142
@@ -671,13 +662,13 @@ items:
     ufopediaType: STR_RIFLEC # was pointed at Godwyn for some reason
     costBuy: 200000 # was 200000 - Higher end gear
     dropoff: 7 # was 4
-    autoRange: 7
+    autoRange: 9 # was 7
     snapRange: 17 # was 16
     aimRange: 24 # was 22 - starts falling behind original at 27 tiles
     accuracyAuto: 66 # was 66
     accuracySnap: 80 # was 80
     accuracyAimed: 100 # was 100
-    tuAuto: 33 # was 40
+    tuAuto: 35 # was 40
     tuSnap: 25 # was 25
     tuAimed: 60 # was 60
     autoShots: 2
@@ -687,29 +678,17 @@ items:
   - update: STR_RIFLED                      # Bolter (Cawl)
     refNode: *STR_BOLTER
     bigSprite: 3148
-    autoRange: 10 # v3.1 (13) was 7
-    snapRange: 15 # was 16
+    dropoff: 8 # longer battle rifle
+    autoRange: 14 # was 7
+    snapRange: 18 # was 16
     aimRange: 0
-    accuracyAuto: 66
-    accuracySnap: 80
+    accuracyAuto: 66 # was 66
+    accuracySnap: 85 # was 80
     accuracyAimed: 0
     tuSnap: 20 # was 25
-    tuAuto: 35 # was 40
+    tuAuto: 30 # was 40
     tuAimed: 0
-    autoShots: 5
-
-  - update: STR_RIFLEDW                     # Bolter (Cawl Deathwatch)
-    refNode: *STR_BOLTER
-    bigSprite: 3151
-    autoRange: 11 # v3.1 (14) was 8
-    snapRange: 16 # was 17
-    accuracyAuto: 70
-    accuracySnap: 85
-    accuracyAimed: 0
-    tuSnap: 20 # was 25
-    tuAuto: 33 # was 40
-    tuAimed: 0
-    autoShots: 5
+    autoShots: 3 # was 5
 
   - update: STR_MCRIFLE                     # Bolter (MC) - Now TactStrat exclusive
     refNode: *STR_BOLTER
@@ -1066,7 +1045,7 @@ items:
     tuAuto: 80 # 12 shots
     tuSnap: 25 # regular 25
     tuAimed: 55 # regular 60 for 8
-    tuLoad: 40
+    tuLoad: 30
     minRange: 5
     autoShots: 12 # +4
     sprayWaypoints: 2
@@ -1674,14 +1653,14 @@ items:
       FixRadius: 7 # +2 over grenades, was 6
       ToArmorPre: 0.05 #small ablation
       ArmorEffectiveness: 1.1 #concussive + shrapnel everywhere
-      ToHealth: 0.7 #much damage dealt in the form of debuffs
-      ToTime: 0.2 #painful
-      ToStun: 0.4 #painful
-      ToMorale: 0.5 #painful
-      ToEnergy: 0.4 #painful
-      ToWound: 0.4 #shrapnel
+      ToHealth: 0.9 #
+      ToTime: 0.2 #
+      ToStun: 0.4 #
+      ToMorale: 0.5 #
+      ToEnergy: 0.4 #
+      ToWound: 0.4 #
       RandomWound: false
-      ToTile: 0.25 #it's shrapnel; deals relatively little damage to the terrain.
+      ToTile: 0.25 #
       ToItem: 0.25
 
   - update: STR_LARGE_ROCKET                # Small Krak Missile
@@ -1716,7 +1695,8 @@ items:
     costSell: 8000
     damageAlter:
       ArmorEffectiveness: 1.0 # was 0.9
-      ToArmorPre: 0.6 # was 0.5
+      ToArmorPre: 0.75 # was 0.5
+      FireThreshold: 1 # was missing, melta explosions should set everything on fire
     requiresBuy:
       - STR_HEAVY_LASER # Melta tech - was Midtier
 
@@ -1929,13 +1909,13 @@ items:
       - STR_SHOTGUN_SHELLS_INC
       - STR_SHOTGUN_SHELLS_MC
     weight: 22
-    dropoff: 5
+    dropoff: 7 # was 5
     accuracyAuto: 70
     accuracySnap: 75
     autoRange: 6
     snapRange: 9
     tuSnap: 16
-    tuAuto: 22
+    tuAuto: 30
     autoShots: 3
     tuLoad: 10 # shotgun bonus
     tuUnload: 5 # shotgun bonus
@@ -1952,14 +1932,14 @@ items:
     armor: 200
     weight: 22
     oneHandedPenalty: 100 # no penalty for dual-wielding if you can handle recoil
-    dropoff: 5
+    dropoff: 7 # was 5
     autoRange: 9
     snapRange: 12
     aimRange: 0
     accuracyAuto: 75
     accuracySnap: 90
     accuracyAimed: 0
-    tuAuto: 20
+    tuAuto: 26
     tuSnap: 12 # was 25
     tuAimed: 0
     autoShots: 3
@@ -1992,7 +1972,9 @@ items:
       mod: 40k
       index: 88
     power: 75 # doesn't get multiple pellets because of AoE splash
-    shotgunPellets: 1 # was 6, doesn't work
+    damageAlter:
+      ToHealth: 1.3 # was 1.1
+    shotgunPellets: 1 # was 6, doesn't work with projectiles that have explosion radius
     requiresBuy:
       - STR_SHOTGUNS_ADV
 
@@ -2000,7 +1982,7 @@ items:
     bigSprite: 3162
     damageAlter: # MC Bolt values - was blank
       RandomType: 7 # 50-200%
-      ToArmorPre: 0.2
+      ToArmorPre: 0.1 # bolter is .2, too good with 6 pellets
       ArmorEffectiveness: 0.8
       ToArmor: 0.15
       ToHealth: 1.15
@@ -2377,6 +2359,11 @@ items:
     size: 0.3
     costBuy: 60000
     costSell: 30000
+    requiresBuy:
+      - STR_MARINES_AND_DEATHWATCH
+      - STR_LASER_CANNON
+      - STR_DREADNOUGHT_MARINE
+      - STR_NOT_PRIMARIS
     transferTime: 48
     listOrder: 6634
     weight: 20

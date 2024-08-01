@@ -1,38 +1,104 @@
 soldiers:
-  - type: STR_SOLDIER
+  - type: STR_SOLDIER                   # Marine
     tags:
       SMT_HEROICSAVE_CHANCE: 30 # success chance is (((Current HP% * 2) + (Devotion/2)) * saveChance/100) / # of Save checks made
       SMT_HEROICSAVE_HP: 30
 
-  - type: STR_SOLDIER_NEOPHYTE
+  - type: STR_SOLDIER_NEOPHYTE          # Neophyte
     tags:
       SMT_HEROICSAVE_CHANCE: 5
       SMT_HEROICSAVE_HP: 10
 
-  - type: STR_SOLDIER_TERMINATOR
+  - type: STR_SOLDIER_TERMINATOR        # Veteran Marine
     tags:
       SMT_HEROICSAVE_CHANCE: 65
       SMT_HEROICSAVE_HP: 45 # was 60 - now that wound protection is in this can stand to be lower
 
-  - type: STR_SOLDIER_CHAPLAIN
+  - type: STR_SOLDIER_CHAPLAIN          # Chaplain
     tags:
       SMT_HEROICSAVE_CHANCE: 65
       SMT_HEROICSAVE_HP: 45
 
-  - type: STR_SOLDIER_LIBRARIAN
+  - type: STR_SOLDIER_LIBRARIAN         # Librarian
     tags:
       SMT_HEROICSAVE_CHANCE: 30
       SMT_HEROICSAVE_HP: 30
 
-  - type: STR_SOLDIER_LIBRARIAN_TERM
+  - type: STR_SOLDIER_LIBRARIAN_TERM    # Veteran Librarian
     tags:
       SMT_HEROICSAVE_CHANCE: 65
       SMT_HEROICSAVE_HP: 45
 
-  - type: STR_FALLEN
+  - type: STR_FALLEN                    # Dreadnought
     tags:
       SMT_HEROICSAVE_CHANCE: 0 # dreadnoughts can't get stunned, heroic save leaves them standing
       SMT_HEROICSAVE_HP: 0
+
+  - type: STR_BLOODRAVENS_MARINE        # Event Marine
+    tags:
+      SMT_HEROICSAVE_CHANCE: 30
+      SMT_HEROICSAVE_HP: 30
+
+
+  - &STR_DEATHWATCH_MARINE              # Deathwatch Marines
+    tags:
+      SMT_HEROICSAVE_CHANCE: 75 # +10 over vets
+      SMT_HEROICSAVE_HP: 50 # +5 over vets
+
+  - type: STR_ULTRAMARINE
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_ULTRAMARINE_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_IMPERIALF
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_IMPERIALF_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_BLOODANGELS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_BLOODANGELS_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_SALAMANDAR
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_SALAMANDAR_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_BLACKT
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_BLACKT_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_WHITES
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_WHITES_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_DARKANGELS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_DARKANGELS_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_SPACEW
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_SPACEW_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_CRISMONF
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_CRISMONF_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
 
 extended:
   tags:

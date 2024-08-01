@@ -29,10 +29,72 @@ soldiers:
       SMT_UNIT_REGEN_HP: 8
       SMT_UNIT_REGEN_WOUND: 2
 
-  - type: STR_FALLEN
+  - type: STR_BLOODRAVENS_MARINE
     tags:
-      SMT_UNIT_REGEN_HP: 0 # given by armor instead - better UI display
-      SMT_UNIT_REGEN_WOUND: 0 # dreadnoughts can't get wounded
+      SMT_UNIT_REGEN_HP: 5
+      SMT_UNIT_REGEN_WOUND: 1
+
+
+  - &STR_DEATHWATCH_MARINE              # Deathwatch Marines
+    tags:
+      SMT_UNIT_REGEN_HP: 10 # +2 over Vets
+      SMT_UNIT_REGEN_WOUND: 3 # +1 over Vets
+
+  - type: STR_ULTRAMARINE
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_ULTRAMARINE_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_IMPERIALF
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_IMPERIALF_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_BLOODANGELS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_BLOODANGELS_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_SALAMANDAR
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_SALAMANDAR_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_BLACKT
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_BLACKT_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_WHITES
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_WHITES_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_DARKANGELS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_DARKANGELS_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_SPACEW
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_SPACEW_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_CRISMONF
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_CRISMONF_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+
 
 extended:
   tags:

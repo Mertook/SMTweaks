@@ -1,0 +1,86 @@
+manufacture:
+  - &STR_DWRECRUIT_TEMPLATE
+    category: STR_DEATHWATCH_RECRUIT
+    requires:
+      - STR_DEATHWATCH
+    space: 0
+    time: 50
+    cost: 100000
+    requiredItems:
+      STR_DW_TOKEN: 1
+      STR_KILLPOINT_TOKEN: 200
+    producedItems:
+      STR_KILLPOINT_TOKEN: 1 # needed because otherwise game assumes you're trying to make an item with the name of the manufacture
+
+  - name: STR_DWULTRA_FB                    # Ultramarine Firstborn
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_ULTRAMARINE
+
+  - name: STR_DWULTRA_P                     # Ultramarine Primaris
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_ULTRAMARINE_PRIMARIS
+
+  - name: STR_DWIMPFIST_FB                  # Imperial Fists Firstborn
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_IMPERIALF
+
+  - name: STR_DWIMPFIST_P                   # Imperial Fists Primaris
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_IMPERIALF_PRIMARIS
+
+  - name: STR_DWBLOODA_FB                   # Blood Angel Firstborn
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_BLOODANGELS
+
+  - name: STR_DWBLOODA_P                    # Blood Angel Primaris
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_BLOODANGELS_PRIMARIS
+
+  - name: STR_DWSALAM_FB                    # Salamander Firstborn
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_SALAMANDAR
+
+  - name: STR_DWSALAM_P                     # Salamander Primaris
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_SALAMANDAR_PRIMARIS
+
+  - name: STR_DWBLACKT_FB                   # Black Templar Firstborn
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_BLACKT
+
+  - name: STR_DWBLACKT_P                    # Black Templar Primaris
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_BLACKT_PRIMARIS
+
+  - name: STR_DWWHITES_FB                   # White Scar Firstborn
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_WHITES
+
+  - name: STR_DWWHITES_P                    # White Scar Primaris
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_WHITES_PRIMARIS
+
+  - name: STR_DWDARKA_FB                    # Dark Angel Firstborn
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_DARKANGELS
+
+  - name: STR_DWDARKA_P                     # Dark Angel Primaris
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_DARKANGELS_PRIMARIS
+
+  - name: STR_DWSWOLF_FB                    # Space Wolf Firstborn
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_SPACEW
+
+  - name: STR_DWSWOLF_P                     # Space Wolf Primaris
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_SPACEW_PRIMARIS
+
+  - name: STR_DWCRIMSON_FB                  # Crimson Fist Firstborn
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_CRISMONF
+
+  - name: STR_DWCRIMSON_P                   # Crimson Fist Primaris
+    refNode: *STR_DWRECRUIT_TEMPLATE
+    spawnedPersonType: STR_CRISMONF_PRIMARIS
+

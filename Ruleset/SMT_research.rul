@@ -241,7 +241,7 @@ research:
       - STR_MASTER_CRAFTING_AMMO # Midtier MC instead of Hightier
       - STR_MARINES_STRATEGY
 
-  - name: STR_HEAVY_LASER
+  - name: STR_HEAVY_LASER           # Meltagun
     cost: 260 # was 460 - split with Marine Bolters
     points: 10
     dependencies:
@@ -252,11 +252,12 @@ research:
     cost: 200
     points: 10
     dependencies:
+      - STR_MARINES_STRATEGY
       - STR_LASER_WEAPONS
     listOrder: 9 # push above corpses/etc
     spawnedItem: STR_RIFLEB
 
-  - name: STR_MARINE_BOLTERS_ADV     # Special Astartes Bolters Unlock
+  - name: STR_MARINE_BOLTERS_ADV    # Special Astartes Bolters Unlock
     cost: 100
     points: 20
     dependencies:
@@ -285,11 +286,10 @@ research:
     listOrder: 10 # push above corpses/etc
 
   - name: STR_HBOLTER_AMMO_PREREQ   # Heavy Bolter Ammo unlock
-    cost: 5 # only Devastator strat needs to research this
+    cost: 0
     points: 0
     dependencies:
       - STR_GENERALLOCK
-    listOrder: 10 # push above corpses/etc
 
   - name: STR_SHOTGUNS_ADV          # Shotgun research for SM/Arbites - unlocks krak/incin ammo
     cost: 25
@@ -394,7 +394,7 @@ research:
       - STR_VINDICARE_AMMO_REQ
 
   - name: STR_VINDICARE_AMMO_REQ    # Exitus Rifle/Pistol ammo unlock for rare Vindicare event
-    cost: 5
+    cost: 0
     points: 0
     dependencies:
       - STR_GENERALLOCK

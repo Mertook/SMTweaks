@@ -1,0 +1,90 @@
+extended:
+  tags:
+    RuleSoldier:
+      SMT_RESTRICTED_ITEM_USER: int # Soldier is allowed to used restricted item (1 = Chaplain, 2 = Deathwatch Marine)
+    RuleItem:
+      SMT_RESTRICTED_ITEM: int # Item should only be usable by certain units (1 = Crozius, 2 = Deathwatch Weapons)
+      SMT_RESTRICTED_ACCURACY_PEN: int # Percentage of weapon accuracy lost when used by incorrect units
+      SMT_RESTRICTED_DAMAGE_PEN: int # Percentage of weapon power lost when used by incorrect units
+
+  scripts:
+    accuracyMultiplierBonusStats:
+      - new: SMTS_restricted_item_accuracy
+        offset: 80
+        code: |
+          var ptr RuleSoldier unitSoldier;
+          var int itemValue;
+          var int unitValue;
+          var int penalty;
+
+          weapon.getTag itemValue Tag.SMT_RESTRICTED_ITEM;
+          if eq itemValue 0;
+            return bonus;
+          end;
+
+          unit.getRuleSoldier unitSoldier;
+          unitSoldier.getTag unitValue Tag.SMT_RESTRICTED_ITEM_USER;
+          if neq unitValue itemValue;
+            weapon.getTag penalty Tag.SMT_RESTRICTED_ACCURACY_PEN;
+            if gt penalty 0;
+              muldiv bonus penalty 100; # divide accuracy by penalty value if set
+            else;
+              set bonus 0; # otherwise reduce to 0
+            end;
+          end;
+          debug_log "Restricted Item Ping - " itemValue unitValue penalty;
+
+          return bonus; # final accuracy
+
+items:
+  - &STR_RESTRICTED_ITEM    # Template
+    scripts:
+      hitUnitAmmo: |
+        var ptr RuleSoldier unitSoldier;
+        var int itemValue;
+        var int unitValue;
+        var int penalty;
+
+        weapon_item.getTag itemValue Tag.SMT_RESTRICTED_ITEM;
+        attacker.getRuleSoldier unitSoldier;
+        unitSoldier.getTag unitValue Tag.SMT_RESTRICTED_ITEM_USER;
+        if and neq itemValue unitValue neq battle_action battle_action_hit; # melee attacks can still do damage
+          weapon_item.getTag penalty Tag.SMT_RESTRICTED_DAMAGE_PEN;
+          if gt penalty 0;
+            muldiv power penalty 100; # divide power by penalty value if set
+          else;
+            set power 0; # otherwise reduce to 0
+          end;
+        end;
+        debug_log "Restricted Item Ping - " itemValue unitValue penalty;
+
+        return power part side;
+
+  - type: AUX_CROZIUS                   # Crozius Arcanum (Chaplain - 1)
+    refNode: *STR_RESTRICTED_ITEM
+    tags:
+      SMT_RESTRICTED_ITEM: 1
+
+  - type: STR_RIFLEA                    # Artifex Bolter (Deathwatch - 2)
+    refNode: *STR_RESTRICTED_ITEM
+    tags:
+      SMT_RESTRICTED_ITEM: 2
+      SMT_RESTRICTED_DAMAGE_PEN: 50
+
+  - type: STR_RIFLEDW                   # DW Cawl Bolter (Deathwatch - 2)
+    refNode: *STR_RESTRICTED_ITEM
+    tags:
+      SMT_RESTRICTED_ITEM: 2
+      SMT_RESTRICTED_DAMAGE_PEN: 50
+
+  - type: STR_AUTO_CANNON_DW            # Artifex Heavy Bolter (Deathwatch - 2)
+    refNode: *STR_RESTRICTED_ITEM
+    tags:
+      SMT_RESTRICTED_ITEM: 2
+      SMT_RESTRICTED_DAMAGE_PEN: 50
+
+  - type: STR_BOLT_SNIPER_RIFLE_DW      # DW Bolt Sniper Rifle (Deathwatch - 2)
+    refNode: *STR_RESTRICTED_ITEM
+    tags:
+      SMT_RESTRICTED_ITEM: 2
+      SMT_RESTRICTED_DAMAGE_PEN: 50

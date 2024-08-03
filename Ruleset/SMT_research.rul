@@ -212,6 +212,7 @@ research:
       - STR_ALIEN_ALLOYS
       - STR_MIDTIER_PREREQ # All basic armor types unlocked at Midtier
       - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
     unlocks:
       - STR_MEDI_KIT # Unlock for Apoth so all strats can get it in early tier
 
@@ -222,6 +223,7 @@ research:
       - STR_ALIEN_ALLOYS
       - STR_MIDTIER_PREREQ # All basic armor types unlocked at Midtier
       - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
     unlocks:
       - STR_MEDI_KIT # Unlock for Apoth so all strats can get it in early tier
 
@@ -307,7 +309,15 @@ research:
       - STR_UFO_CONSTRUCTION # ceramite
       - STR_HBOLTER_PREREQ
       - STR_MARINE_BOLTERS_ADV
+    unlocks:
+      - STR_HBOLTER_AMMO_BELTS
     listOrder: 10 # push above corpses/etc
+
+  - name: STR_HBOLTER_AMMO_BELTS    # Heavy Bolter Ammobelts unlock
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
 
   - name: STR_SCOUT_BOLT_RIFLE      # Bolt Sniper Rifle unlock
     cost: 100
@@ -316,7 +326,15 @@ research:
       - STR_SCOUT
       - STR_UFO_CONSTRUCTION # ceramite
       - STR_MARINE_BOLTERS_ADV
+    unlocks:
+      - STR_BOLT_RIFLE_AMMO
     listOrder: 10 # push above corpses/etc
+
+  - name: STR_BOLT_RIFLE_AMMO       # Bolt Sniper Ammo unlock
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
 
   - name: STR_MARINE_CHAPEL         # Early unlock for Chapel
     cost: 100
@@ -380,6 +398,12 @@ research:
       #- STR_HB_DEP1 # moved to High Quality Bolters research
       - STR_SIDEOPERATIONS
     cutscene: c2
+
+  - name: STR_DREAD_R # unused, replaced by STR_DREADNOUGHT_MARINE in rosigma for some reason
+    cost: 180
+    points: 20
+    dependencies:
+      - STR_GENERALLOCK
 
   - name: STR_SMT_GENESEED_REQ      # Geneseed Requisition
     cost: 100

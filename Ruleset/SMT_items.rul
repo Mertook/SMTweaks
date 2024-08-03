@@ -678,22 +678,28 @@ items:
   - update: STR_RIFLED                      # Bolter (Cawl)
     refNode: *STR_BOLTER
     bigSprite: 3148
-    dropoff: 8 # longer battle rifle
-    autoRange: 14 # was 7
+    weight: 34 # +6 over regular - larger battle rifle
+    dropoff: 8 # -1 over regular - larger battle rifle
+    minRange: 3 #cumbersome, not suited to CQC
+    autoRange: 13 # was 7
     snapRange: 18 # was 16
     aimRange: 0
     accuracyAuto: 66 # was 66
-    accuracySnap: 85 # was 80
+    accuracySnap: 80 # was 80
     accuracyAimed: 0
-    tuSnap: 20 # was 25
-    tuAuto: 30 # was 40
+    tuSnap: 28 # was 25
+    tuAuto: 40 # was 40
     tuAimed: 0
-    autoShots: 3 # was 5
+    confSnap:
+      shots: 2 # was 1
+    autoShots: 5 # was 5
+    tags:
+      ITEM_RECOIL: 75 # +10 over regular - larger battle rifle
 
   - update: STR_MCRIFLE                     # Bolter (MC) - Now TactStrat exclusive
     refNode: *STR_BOLTER
     bigSprite: 3154
-    autoRange: 12 # v3.1 (14) was 11
+    autoRange: 12 # was 11
     snapRange: 16 # was 15
     aimRange: 0
     accuracyAuto: 72 # was 86 - MC weapons should be stronger but not easier to use
@@ -1503,6 +1509,14 @@ items:
     invWidth: 2
     invHeight: 2 # was 2
     armor: 200
+    weight: 20 # was 30
+    costThrow:
+      energy: 40
+      time: 60 # was 80!
+    costPrime:
+      time: 20 # was 40!
+    costUnprime:
+      time: 5
 
   - update: STR_SMOKE_BOMB                  # Smokebomb
     requiresBuy: # allow TactStrat to buy smokebombs
@@ -1579,7 +1593,7 @@ items:
     experienceTrainingMode: 19 # Trains Bravery when used
 
   - update: AUX_MORTAR                      # Terminator Cyclone Launcher
-    weight: 40 # doesn't actually weigh anything as fixed weapon?
+    weight: 40 # fixed weapon ignores this?
     clipSize: 12 # was 6
     dropoff: 4
     autoRange: 10
@@ -1697,6 +1711,7 @@ items:
       ArmorEffectiveness: 1.0 # was 0.9
       ToArmorPre: 0.75 # was 0.5
       FireThreshold: 1 # was missing, melta explosions should set everything on fire
+      ToTile: 1.5 # was 1.0, Melta
     requiresBuy:
       - STR_HEAVY_LASER # Melta tech - was Midtier
 
@@ -1760,6 +1775,7 @@ items:
     weight: 50
     size: 0.4
     requiresBuy:
+      - STR_MARINES_STRATEGY
       - STR_SCOUT_BOLT_RIFLE
     requiresBuyBaseFunc: [TRADE]
     costBuy: 350000
@@ -1826,7 +1842,7 @@ items:
     listOrder: 11932
     costBuy: 500 # single shot
     requiresBuy:
-      - STR_SCOUT_BOLT_RIFLE
+      - STR_BOLT_RIFLE_AMMO
     hitSound: {mod: 40k, index: 712}
     hitAnimation: {mod: 40k, index: 26}
     damageAlter:
@@ -1895,6 +1911,7 @@ items:
     costBuy: 25000
     costSell: 5000
     requiresBuy:
+      - STR_MARINES_STRATEGY
       - STR_SHOTGUNS_ADV
     armor: 200
     listOrder: 10601

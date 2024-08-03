@@ -10,12 +10,21 @@ items:
     recover: true
     recoveryPoints: 20
 
+  - type: STR_DW_TOKEN_LEADER               # Token used to buy DW Squad Leader
+    battleType: 0
+    size: 0.01
+    weight: 3
+    bigSprite: 100
+    armor: 200
+    invWidth: 1
+    invHeight: 1
+    recover: true
+    recoveryPoints: 20
+
   - &STR_BOLTER_DW                          # Generic DW Bolter Reference
-    dropoff: 8 # regular bolters are 9 - DW bonus
-    weight: 28 # +8 weight, not meant for regular humans
     requiresBuy:
-      - STR_DW_WEAPONS
-    compatibleAmmo: # bolters can use boltpistol ammo
+      - STR_DEATHWATCH
+    compatibleAmmo: # 
       - STR_RIFLE_CLIP
       - STR_RIFLE_CLIP_AP
       - STR_RIFLE_CLIP_EX
@@ -24,40 +33,44 @@ items:
       - STR_PISTOL_CLIP_AP
       - STR_PISTOL_CLIP_EX
       - STR_PISTOL_CLIP_MC
-    tags:
-      ITEM_RECOIL: 65 # +25 - harder requirement, not meant for regular humans
-      ITEM_DW_EXCLUSIVE: 1
 
-  - update: STR_RIFLEA                      # Bolter (Artifex DW) - Close range DW Bolter
+  - update: STR_RIFLEA                      # Bolter (Artifex DW) - DW Stalker Bolter
     refNode: *STR_BOLTER_DW
     bigSprite: 3139
-    autoRange: 12 #+1 DW
-    snapRange: 16 #-1 vs Stalker
-    aimRange: 20 #-1 vs Stalker
+    weight: 28 # was 20
+    dropoff: 8 # regular bolters are 9 - DW bonus
+    autoRange: 12 # match MC
+    snapRange: 17 # match Stalker
+    aimRange: 22 # -2 from Stalker
     accuracyAuto: 75
-    accuracySnap: 80
+    accuracySnap: 85 # was 80
     accuracyAimed: 100
-    tuAuto: 33 # was 35
-    tuSnap: 20 # was 25
-    tuAimed: 65 # was 60
-    autoShots: 5 # was 3
-    requiresBuy:
-      - STR_DW_WEAPONS
+    tuAuto: 30 # was 35
+    tuSnap: 18 # was 25
+    tuAimed: 60 # was 60
+    autoShots: 3 # was 3
+    tags:
+      ITEM_RECOIL: 65 #
 
-  - update: STR_RIFLEDW                     # Bolter (Cawl Deathwatch) - Long range DW Bolter battlerifle
+  - update: STR_RIFLEDW                     # Bolter (Cawl Deathwatch) - DW Cawl Battlerifle
     refNode: *STR_BOLTER_DW
     bigSprite: 3151
-    autoRange: 11 # v3.1 (14) was 8
-    snapRange: 16 # was 17
+    weight: 34 # was 20
+    dropoff: 7 # regular cawl are 8 - DW bonus
+    minRange: 3 #cumbersome, not suited to CQC
+    autoRange: 13 #
+    snapRange: 18 # was 17
     accuracyAuto: 70
     accuracySnap: 85
     accuracyAimed: 0
-    tuSnap: 20 # was 25
-    tuAuto: 33 # was 40
+    tuAuto: 40 # was 40
+    tuSnap: 25 # was 25
     tuAimed: 0
+    confSnap:
+      shots: 2 # was 1
     autoShots: 5
-    requiresBuy:
-      - STR_DW_WEAPONS
+    tags:
+      ITEM_RECOIL: 75 #
 
   - type: STR_AUTO_CANNON_DW                # Heavy Bolter (Artifex DW)
     dropoff: 4 # larger HB shells have better propulsion and accuracy at range
@@ -76,7 +89,7 @@ items:
     autoShots: 12 # +4
     followProjectiles: false
     requiresBuy:
-      - STR_DW_WEAPONS
+      - STR_DW_HWP
     compatibleAmmo: #Heavy Bolter Ammo
       - STR_AC_AP_AMMO
       - STR_AC_MC_AMMO
@@ -99,3 +112,54 @@ items:
     kneelBonus: 120 # was 130, Astartes version meant to be hipfired by devastator marines
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
+
+  - type: STR_BOLT_SNIPER_RIFLE_DW           # Bolt Sniper Rifle - DW edition
+    categories: [STR_CAT_SNIPER]
+    dropoff: 3 #scoped sniper rifle
+    weight: 50
+    size: 0.4
+    requiresBuy:
+      - STR_DW_SNIPER
+    requiresBuyBaseFunc: [TRADE]
+    costBuy: 350000
+    costSell: 50000
+    bigSprite: 3128 ###CHANGEME
+    floorSprite: 3128 ###CHANGEME
+    handSprite: 3600 ###CHANGEME
+    bulletSprite: {mod: 40k, index: 6}
+    fireSound: {mod: 40k, index: 12}
+    compatibleAmmo:
+      - STR_BOLT_SNIPER_AMMO_AP
+      - STR_BOLT_SNIPER_AMMO_FRAG
+      - STR_BOLT_SNIPER_AMMO_KRAK
+      - STR_BOLT_SNIPER_AMMO_SHRED
+    battleType: 1
+    twoHanded: true
+    blockBothHands: true
+    invWidth: 2
+    invHeight: 3
+    armor: 200
+    bulletSpeed: 50
+    autoRange: 0
+    snapRange: 20
+    aimRange: 33
+    noLOSAccuracyPenalty: 66 # default 50 - Sniper Rifle bonus
+    accuracySnap: 55
+    accuracyAuto: 0
+    accuracyAimed: 85
+    tuAuto: 0
+    tuSnap: 65
+    tuAimed: 85
+    listOrder: 11931
+    tuLoad: 5 # single round shots
+    accuracyMultiplier: #sniper rifle accuracy
+      firing: [0.5, 0.005]
+    kneelBonus: 150
+    minRange: 10
+    tags:
+      ITEM_IS_HEAVY_WEAPON: 2 # Sniper Rifle
+      REACTION_MULTIPLIER: 10 # 10% of normal - Sniper rifle, bad at reactions
+      ITEM_RECOIL: 75
+      ITEM_AIMED_ACCURACY_POWER_BONUS: 50
+      ITEM_SNAP_ACCURACY_POWER_BONUS: 20
+      ITEM_POWER_BONUS_PERCENTILE: 1

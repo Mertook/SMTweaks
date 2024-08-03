@@ -11,9 +11,27 @@ events:
       STR_RIFLE_CLIP_AP: 10
       STR_RIFLE_CLIP_EX: 10
       STR_RIFLE_CLIP_MC: 10
-      STR_KILLPOINT_TOKEN: 400 # used to buy your first two marines
+      STR_KILLPOINT_TOKEN: 200 # used to buy your first two marines
     spawnedPersons: 0
     spawnedPersonType: STR_ULTRAMARINE
+
+  - name: STR_DEATHWATCH_EXPANSION_1
+    description: STR_DEATHWATCH_EXPANSION1
+    background: BACK13.SCR
+    everyMultiItemList:
+      STR_DW_TOKEN: 1
+
+  - name: STR_DEATHWATCH_EXPANSION_2
+    description: STR_DEATHWATCH_EXPANSION2
+    background: BACK13.SCR
+    everyMultiItemList:
+      STR_DW_TOKEN: 2
+
+  - name: STR_DEATHWATCH_EXPANSION_L
+    description: STR_DEATHWATCH_EXPANSIONL
+    background: BACK13.SCR
+    everyMultiItemList:
+      STR_DW_TOKEN_LEADER: 1
 
 eventScripts:
   - type: STR_DW_EVENT_SCRIPTIF

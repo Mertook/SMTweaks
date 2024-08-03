@@ -4,11 +4,11 @@ manufacture:
     requires:
       - STR_DEATHWATCH
     space: 0
-    time: 50
+    time: 5 # has 24 hour transfer time after manufacture
     cost: 100000
     requiredItems:
       STR_DW_TOKEN: 1
-      STR_KILLPOINT_TOKEN: 200
+      STR_KILLPOINT_TOKEN: 100
     producedItems:
       STR_KILLPOINT_TOKEN: 1 # needed because otherwise game assumes you're trying to make an item with the name of the manufacture
 
@@ -84,3 +84,45 @@ manufacture:
     refNode: *STR_DWRECRUIT_TEMPLATE
     spawnedPersonType: STR_CRISMONF_PRIMARIS
 
+
+  - &STR_DWLEADER_TEMPLATE
+    category: STR_DEATHWATCH_RECRUIT
+    requires:
+      - STR_DEATHWATCH
+      - STR_COMMANDER_PLUS
+    space: 0
+    time: 50
+    cost: 100000
+    requiredItems:
+      STR_DW_TOKEN_LEADER: 1
+      STR_KILLPOINT_TOKEN: 400
+    producedItems:
+      STR_KILLPOINT_TOKEN: 1 # needed because otherwise game assumes you're trying to make an item with the name of the manufacture
+
+  - name: STR_DWULTRA_L                     # Ultramarine Leader
+    refNode: *STR_DWLEADER_TEMPLATE
+    spawnedPersonType: STR_ULTRAMARINE_LEADER
+  - name: STR_DWIMPFIST_L                   # Imperial Fists Leader
+    refNode: *STR_DWLEADER_TEMPLATE
+    spawnedPersonType: STR_IMPERIALF_LEADER
+  - name: STR_DWBLOODA_L                    # Blood Angel Leader
+    refNode: *STR_DWLEADER_TEMPLATE
+    spawnedPersonType: STR_BLOODANGELS_LEADER
+  - name: STR_DWSALAM_L                     # Salamander Leader
+    refNode: *STR_DWLEADER_TEMPLATE
+    spawnedPersonType: STR_SALAMANDAR_LEADER
+  - name: STR_DWBLACKT_L                    # Black Templar Leader
+    refNode: *STR_DWLEADER_TEMPLATE
+    spawnedPersonType: STR_BLACKT_LEADER
+  - name: STR_DWWHITES_L                    # White Scar Leader
+    refNode: *STR_DWLEADER_TEMPLATE
+    spawnedPersonType: STR_WHITES_LEADER
+  - name: STR_DWDARKA_L                     # Dark Angel Leader
+    refNode: *STR_DWLEADER_TEMPLATE
+    spawnedPersonType: STR_DARKANGELS_LEADER
+  - name: STR_DWSWOLF_L                     # Space Wolf Leader
+    refNode: *STR_DWLEADER_TEMPLATE
+    spawnedPersonType: STR_SPACEW_LEADER
+  - name: STR_DWCRIMSON_L                   # Crimson Fist Leader
+    refNode: *STR_DWLEADER_TEMPLATE
+    spawnedPersonType: STR_CRISMONF_LEADER

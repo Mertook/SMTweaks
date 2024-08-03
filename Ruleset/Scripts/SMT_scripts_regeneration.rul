@@ -216,11 +216,11 @@ extended:
           unit.getTag recoverPenalty Tag.SMT_RECOVERY_TIME;
           muldiv recoverPenalty 4 5; # 80% penalty
           #debug_log "Initial RecoveryTime: " recovery_time recoverPenalty;
+          limit_upper recoverPenalty 25; # don't add more than 25 extra days to woundtime (pre multiplier)
 
           if neq woundTimeMultiplier 0; #adjust based on soldier recovery speed
             muldiv recoverPenalty woundTimeMultiplier 100;
           end;
-          limit_upper recoverPenalty 10; # don't add more than 10 extra days to woundtime
 
           add recovery_time recoverPenalty;
           #debug_log "Final Recoverytime: " recovery_time recoverPenalty;

@@ -1,30 +1,211 @@
 research:
-  - name: STR_DEATHWATCH        # Deathwatch Strat
+  - name: STR_DEATHWATCH            # Deathwatch Strat
     cost: 5
     points: 0
     dependencies:
       - STR_CHAMBERMILITANT
     lookup: STR_CHOSEN_DEATHWATCH
     unlocks:
+      #- STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      #- STR_LASER_WEAPONS
+      #- STR_MOTION_SCANNER
+      #- STR_SMOKE
       - STR_POWER_ARMOR_SM_CODEX
-      - STR_TERMINATOR_ARMOR_SM_CODEX
       - STR_NOT_PRIMARIS
       - STR_DEATHWATCH_AND_ADEPTAS
       - STR_PRIMARIS_AND_DEATHWATCH
       - STR_MARINES_AND_DEATHWATCH
-      - STR_CORVUS_RESEARCH #instead of STR_DEATHWATCH_AND_ADEPTAS setup
-      - STR_LASER_WEAPONS
-      - STR_MOTION_SCANNER
-      - STR_SMOKE
+      - STR_CORVUS_RESEARCH
+      - STR_MEDI_KIT # Apothecary armor - added since personal armor prereq has been removed from DW
+      - STR_XENO_WEAPONS
+      - STR_INQUISITION
     getOneFree:
-      - STR_PERSONAL_ARMOR
+      - STR_SHOTGUNS_ADV #replaces personal armor unlock - making Tac armor is useless for DW
     disables:
       - STR_GREYKNIGHTS
+      - STR_RADICAL_INQUISITOR_STRATEGY
       - STR_CHAOS_PATH
     spawnedEvent: STR_DEATHWATCH_CARE_PACKAGE
 
-  - name: STR_DW_WEAPONS        # Deathwatch Weapons Basic tier
-    cost: 40
-    points: 10
+  - name: STR_MT_DW                 # Deathwatch Mid tier
+    cost: 200
+    points: 200
+    dependencies:
+      - STR_DW_HWP
+      - STR_DW_SNIPER
+      - STR_ALIEN_ALLOYS
+      - STR_MOTION_SCANNER
+      - STR_DEATHWATCH
+    unlocks:
+      - STR_MIDTIER_PREREQ
+      - STR_CASS_R
+      - STR_HB_DEP1
+      - STR_NEW_FIGHTER_TRANSPORTER
+      - STR_SIDEOPERATIONS
+    cutscene: c2
+
+  - name: STR_DW_HIGHTIER           # Deathwatch High tier
+    cost: 900
+    points: 30
+    dependencies:
+      - STR_MIDTIER_PREREQ
+      - STR_DEATHWATCH
+      - STR_DEATHWATCH_BUST
+    unlocks:
+      - STR_HIGHTIER_PREREQ
+
+  - name: STR_DW_SQUAD1             # Deathwatch Squad Expansion +1 (Threat One)
+    cost: 0
+    points: 0
     dependencies:
       - STR_DEATHWATCH
+      - STR_THREAT_ONE
+    spawnedEvent: STR_DEATHWATCH_EXPANSION_1
+
+  - name: STR_DW_SQUAD2             # Deathwatch Squad Expansion +1 (Warp origins)
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_DEATHWATCH
+      - STR_ALIEN_ORIGINS
+    spawnedEvent: STR_DEATHWATCH_EXPANSION_1
+
+  - name: STR_DW_SQUAD3             # Deathwatch Squad Expansion +2 (Leader)
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_DEATHWATCH
+      - STR_LEADER_PLUS
+    spawnedEvent: STR_DEATHWATCH_EXPANSION_2
+
+  - name: STR_DW_SQUAD4             # Deathwatch Squad Expansion +1 (Final Solution)
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_DEATHWATCH
+      - STR_THE_MARTIAN_SOLUTION
+    spawnedEvent: STR_DEATHWATCH_EXPANSION_1
+
+  - name: STR_DW_SQUAD5             # Deathwatch Squad Expansion +L (Commander)
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_DEATHWATCH
+      - STR_COMMANDER_PLUS
+    spawnedEvent: STR_DEATHWATCH_EXPANSION_L
+
+  - name: STR_DW_SQUAD6             # Deathwatch Squad Expansion +2 (Ending the Warp)
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_DEATHWATCH
+      - STR_CYDONIA_OR_BUST
+    spawnedEvent: STR_DEATHWATCH_EXPANSION_2
+
+  - name: STR_XENO_WEAPONS          # Inquisitor Xeno weapon tech for DW/Radical
+    cost: 160
+    points: 20
+    dependencies:
+      - STR_RADICAL_INQUISITOR
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_NECRONTECH_RESEARCH #grant access to Necron Weapons
+    cost: 2000
+    points: -250
+    dependencies:
+      - STR_XENO_WEAPONS
+      - STR_GAUSS_BLASTER
+      - STR_HYPERPHASESWORD
+      - STR_SYNAPTIC_DISINTEGRATOR
+      - STR_GAUSS_FLAYER
+      - STR_GAUSS_REAPER
+
+  - name: STR_XENO_ONLY #grant access to Xeno Weapons (not chaos)
+    cost: 250
+    points: -100
+    dependencies:
+      - STR_XENO_WEAPONS
+      - STR_ELDAR_SEER #live interrogation
+
+
+  - name: STR_DW_HWP                # Deathwatch Gear Basic Tier (Devastator armor + Heavy Bolter)
+    cost: 160
+    points: 20
+    dependencies:
+      - STR_DEATHWATCH
+    unlocks:
+      - STR_HBOLTER_AMMO_BELTS
+    getOneFree:
+      - STR_DEV_ARMOR
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_DW_SNIPER             # Deathwatch Gear Basic Tier (Phobos armor + Sniper Boltrifle)
+    cost: 160
+    points: 20
+    dependencies:
+      - STR_DEATHWATCH
+    unlock:
+      - STR_BOLT_RIFLE_AMMO
+    getOneFree:
+      - STR_MKX_PHB_ARMOR
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_DW_AMMO               # Deathwatch Gear Mid Tier (Special Ammo)
+    cost: 120
+    points: 10
+    dependencies:
+      - STR_MT_DW
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_DW_ASSAULT            # Deathwatch Gear Mid Tier (Assault armor + Omnis armor)
+    cost: 120
+    points: 10
+    dependencies:
+      - STR_MT_DW
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_DW_HTARMOR            # Deathwatch Gear High Tier (Terminator armor + Gravis armor)
+    cost: 120
+    points: 10
+    dependencies:
+      - STR_DW_HIGHTIER
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_PRIMARIS_ARMOR        # Primaris Tac Armor
+    cost: 180
+    points: 20
+    dependencies:
+      - STR_PRIMARIS # was Primaris + Deathwatch, DW doesn't need this tech
+      - STR_ALIEN_ALLOYS
+      - STR_THREAT_ONE
+  - name: STR_MKX_PHB_ARMOR         # Primaris Phobos Armor
+    cost: 180
+    points: 20
+    dependencies:
+      - STR_ALIEN_ALLOYS
+      - STR_PRIMARIS_ARMOR
+  - name: STR_MKX_INC_ARMOR         # Primaris Jet Armor
+    cost: 180
+    points: 20
+    dependencies:
+      - STR_PRIMARIS
+      - STR_MKX_GRV_ARMOR
+      - STR_PRIMARIS_ARMOR
+      - STR_MKX_PHB_ARMOR
+  - name: STR_MKX_GRV_ARMOR         # Primaris Gravis Armor
+    cost: 205
+    points: 20
+    dependencies:
+      - STR_PRIMARIS
+      - STR_ELERIUM_115
+      - STR_UFO_POWER_SOURCE
+      - STR_MIDTIER_PREREQ
+      - STR_PRIMARIS_ARMOR
+  - name: STR_MKX_CHP_ARMOR         # Primaris Chap Armor
+    cost: 205
+    points: 20
+    dependencies:
+      - STR_PRIMARIS
+      - STR_HIGHTIER_PREREQ
+      - STR_PRIMARIS_ARMOR
+

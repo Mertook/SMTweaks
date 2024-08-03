@@ -113,13 +113,21 @@ ufopaedia:
     image_id: C15.SPK
     text: BIKE_ARMOR_UC_UFOPEDIA
 
+  - id: DREAD_ARMOR_UC
+    requires:
+      - STR_DREADNOUGHT_MARINE
+
+  - id: DREAD_ARMOR2_UC
+    requires:
+      - STR_DREADNOUGHT_MARINE
+      - STR_PLASMA_CANNON
 
   - id: DREAD_ARMOR3_UC
     type_id: 15
     section: STR_ARMORPEDIA
     image_id: DREAD3UFO.SPK
     requires:
-      - STR_DREAD_R
+      - STR_DREADNOUGHT_MARINE
       - STR_LASER_CANNON
     text: STR_DREAD_ARMOR3_UC_UFOPEDIA
     listOrder: 6440
@@ -129,7 +137,7 @@ ufopaedia:
     section: STR_ARMORPEDIA
     image_id: DREAD4UFO.SPK
     requires:
-      - STR_DREAD_R
+      - STR_DREADNOUGHT_MARINE
       - STR_ASSC
     text: STR_DREAD_ARMOR4_UC_UFOPEDIA
     listOrder: 6450

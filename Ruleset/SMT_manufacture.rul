@@ -240,7 +240,7 @@ manufacture:
   - name: STR_DEV_ARMOR                             # Devastator
     category: STR_PERSONAL_ARMOR
     requires:
-      - STR_CHAPTER_PURITY
+      - STR_MARINES_AND_DEATHWATCH
       - STR_DEV_ARMOR
     space: 0
     time: 800
@@ -251,7 +251,7 @@ manufacture:
   - name: STR_ASS_ARMOR                             # Assault
     category: STR_PERSONAL_ARMOR
     requires:
-      - STR_CHAPTER_PURITY
+      - STR_MARINES_AND_DEATHWATCH
       - STR_ASS_ARMOR
     space: 0
     time: 800
@@ -262,7 +262,6 @@ manufacture:
   - name: STR_APOT_ARMOR                            # Apothecary
     category: STR_PERSONAL_ARMOR
     requires:
-      - STR_CHAPTER_PURITY
       - STR_MARINES_AND_DEATHWATCH
       - STR_MEDI_KIT_PREREQ
     space: 0
@@ -298,7 +297,7 @@ manufacture:
   - name: STR_DREAD2_ARMOR                          # Dread Plasma
     category: STR_PERSONAL_ARMOR
     requires:
-      - STR_MARINES_AND_DEATHWATCH
+      - STR_MARINES_STRATEGY
       - STR_PLASMA_CANNON # craft Plasma cannon
       - STR_DREADNOUGHT_MARINE
       - STR_NOT_PRIMARIS
@@ -313,7 +312,7 @@ manufacture:
   - name: STR_DREAD3_ARMOR                          # Dread Lascannon + Missile (Formerly Missile)
     category: STR_PERSONAL_ARMOR
     requires:
-      - STR_MARINES_AND_DEATHWATCH
+      - STR_MARINES_STRATEGY
       - STR_LASER_CANNON # craft Lascannon
       - STR_DREADNOUGHT_MARINE
       - STR_NOT_PRIMARIS
@@ -328,7 +327,7 @@ manufacture:
   - name: STR_DREAD4_ARMOR                          # Dread Assault Cannon (Formerly Lascannon)
     category: STR_PERSONAL_ARMOR
     requires:
-      - STR_MARINES_AND_DEATHWATCH
+      - STR_MARINES_STRATEGY
       - STR_ASSC
       - STR_DREADNOUGHT_MARINE
       - STR_NOT_PRIMARIS
@@ -358,7 +357,7 @@ manufacture:
     time: 240
     cost: 5000
     requires:
-      - STR_DEV_MARS_BOLTER
+      - STR_HBOLTER_AMMO_BELTS
     requiredItems:
       STR_ALIEN_ALLOYS: 1
     producedItems:
@@ -370,7 +369,7 @@ manufacture:
     time: 240
     cost: 5000
     requires:
-      - STR_DEV_MARS_BOLTER
+      - STR_HBOLTER_AMMO_BELTS
     requiredItems:
       STR_ELERIUM_115: 1
     producedItems:
@@ -382,7 +381,7 @@ manufacture:
     time: 240
     cost: 5000
     requires:
-      - STR_DEV_MARS_BOLTER
+      - STR_HBOLTER_AMMO_BELTS
     requiredItems:
       STR_ELERIUM_115: 1
     producedItems:
@@ -394,7 +393,8 @@ manufacture:
     time: 240
     cost: 20000
     requires:
-      - STR_DEV_MARS_BOLTER
+      - STR_MASTER_CRAFTING_AMMO
+      - STR_HBOLTER_AMMO_BELTS
     requiredItems:
       STR_ALIEN_ALLOYS: 5
       STR_UFO_CONSTRUCTION: 5

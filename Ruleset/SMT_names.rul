@@ -39,7 +39,6 @@ extraStrings:
       STR_STRIKE_BEACON: Strike Beacon
       STR_SMT_GENESEED: Geneseed
       STR_SMT_GENESEED_IMPURE: Immature Geneseed
-      STR_DW_TOKEN: Deathwatch Requisition
       INV_NULL_3X1_BACKPACK_BLESS: ""
       INV_NULL_3X3_BACKPACK_BLESS: ""
       STR_LIB_LOCKDOWN_TOME: Tome of the Empyrean
@@ -134,12 +133,12 @@ extraStrings:
       STR_CHAP_ARMOR: Chaplain Relics
       STR_GLAUNCHER_PREREQ: Grenade Launchers
       STR_DEV_MARS_BOLTER: Mars Pattern Heavy Bolter
+      STR_HBOLTER_AMMO_BELTS: Heavy Bolter Ammobelts
       STR_HBOLTER_PREREQ: Heavy Bolters
       STR_HBOLTER_AMMO_PREREQ: Heavy Bolter Cases
       STR_HONOR_ARMOR_RESEARCH: "MK7 Vanguard Armor"
       STR_SCOUT_BOLT_RIFLE: Bolt Sniper Rifle
       STR_VINDICARE_AMMO_REQ: Exitus Ammo
-      STR_DW_WEAPONS: Deathwatch Armory
       ### MANUFACTURE
       STR_GENESEED: Geneseed
       STR_SMT_GENESEED_REQ: Requisition Geneseed
@@ -159,23 +158,71 @@ extraStrings:
       STR_ASSAULT_CARE_PACKAGE_DESCRIPTION: "Wargear appropriate for your chosen strategy will arrive within an hour. A compliment of neophytes is en route and will arrive in one day.{NEWLINE}{NEWLINE}A Drop Pod deployment craft has been placed at your disposal, as well as the option to requisition a Razorback or Landspeeder craft - once the requisition order arrives, have your manufacturing servitors complete the requisition. A spare hangar is required for the delivery of the craft."
       STR_DEVASTATOR_CARE_PACKAGE_DESCRIPTION: "Wargear appropriate for your chosen strategy will arrive within an hour. A compliment of neophytes is en route and will arrive in one day.{NEWLINE}{NEWLINE}A Drop Pod deployment craft has been placed at your disposal, as well as the option to requisition a Razorback or Landspeeder craft - once the requisition order arrives, have your manufacturing servitors complete the requisition. A spare hangar is required for the delivery of the craft."
       STR_SCOUT_CARE_PACKAGE_DESCRIPTION: "Wargear appropriate for your chosen strategy will arrive within an hour. A compliment of neophytes is en route and will arrive in one day.{NEWLINE}{NEWLINE}A Drop Pod deployment craft has also been placed at your disposal - once the requisition order arrives, have your manufacturing servitors complete the requisition. A spare hangar is required for the delivery of the craft."
+      ### DEATHWATCH SOLDIERS
+      STR_ULTRAMARINE_LEADER: Deathwatch Captain ¥
+      STR_IMPERIALF_LEADER: Deathwatch Captain ¿
+      STR_BLOODANGELS_LEADER: Deathwatch Captain ¢
+      STR_SALAMANDAR_LEADER: Deathwatch Captain ¦
+      STR_BLACKT_LEADER: Deathwatch Captain £
+      STR_WHITES_LEADER: Deathwatch Captain ©
+      STR_DARKANGELS_LEADER: Deathwatch Captain ²
+      STR_SPACEW_LEADER: Deathwatch Captain ¾
+      STR_CRISMONF_LEADER: Deathwatch Captain ¼
       ### DEATHWATCH RECRUITMENT
       STR_DEATHWATCH_RECRUIT: Deathwatch Marine
       STR_DWULTRA_FB: Recruit ¥ Firstborn
       STR_DWULTRA_P: Recruit ¥ Primaris
+      STR_DWULTRA_L: Recruit ¥ Leader
       STR_DWIMPFIST_FB: Recruit ¿ Firstborn
       STR_DWIMPFIST_P: Recruit ¿ Primaris
+      STR_DWIMPFIST_L: Recruit ¿ Leader
       STR_DWBLOODA_FB: Recruit ¢ Firstborn
       STR_DWBLOODA_P: Recruit ¢ Primaris
+      STR_DWBLOODA_L: Recruit ¢ Leader
       STR_DWSALAM_FB: Recruit ¦ Firstborn
       STR_DWSALAM_P: Recruit ¦ Primaris
+      STR_DWSALAM_L: Recruit ¦ Leader
       STR_DWBLACKT_FB: Recruit £ Firstborn
       STR_DWBLACKT_P: Recruit £ Primaris
+      STR_DWBLACKT_L: Recruit £ Leader
       STR_DWWHITES_FB: Recruit © Firstborn
       STR_DWWHITES_P: Recruit © Primaris
+      STR_DWWHITES_L: Recruit © Leader
       STR_DWSWOLF_FB: Recruit ² Firstborn
       STR_DWSWOLF_P: Recruit ² Primaris
+      STR_DWSWOLF_L: Recruit ² Leader
       STR_DWDARKA_FB: Recruit ¾ Firstborn
       STR_DWDARKA_P: Recruit ¾ Primaris
+      STR_DWDARKA_L: Recruit ¾ Leader
       STR_DWCRIMSON_FB: Recruit ¼ Firstborn
       STR_DWCRIMSON_P: Recruit ¼ Primaris
+      STR_DWCRIMSON_L: Recruit ¼ Leader
+      STR_RECYCLE_DW: Report Fallen Marine
+      ### DEATHWATCH ITEMS
+      STR_DW_TOKEN: Deathwatch Requisition
+      STR_DW_TOKEN_LEADER: Deathwatch Captain Requisition
+      STR_BOLT_SNIPER_RIFLE_DW: Shrike Bolt Sniper
+      ### DEATHWATCH RESEARCH
+      STR_INQUISITION: Inquisition
+      STR_DW_HWP: Deathwatch Heavy Weaponry
+      STR_DW_SNIPER: Deathwatch Infiltrator Gear
+      STR_DW_AMMO: DW Specialist Ammo
+      STR_DW_ASSAULT: Deathwatch Flight Armor
+      STR_DW_HTARMOR: Deathwatch Elite Armor
+      STR_DW_SQUAD1: "(Deathwatch Requisition)"
+      STR_DW_SQUAD2: "(Deathwatch Requisition)"
+      STR_DW_SQUAD3: "(Deathwatch Requisition)"
+      STR_DW_SQUAD4: "(Deathwatch Requisition)"
+      STR_DW_SQUAD5: "(Deathwatch Requisition)"
+      STR_DW_SQUAD6: "(Deathwatch Requisition)"
+      STR_XENO_WEAPONS: Xenotech Weaponry
+      STR_RADICAL_INQUISITOR_UNLOCK: Embrace Radical Means
+      STR_RADICAL_INQUISITOR: "(Radical Path)"
+      ### DEATHWATCH EVENTS
+      STR_DEATHWATCH_REINFORCEMENTS: "Contact with local Deathwatch forces has been established.{NEWLINE} Requisition authorization for two Deathwatch Marines has been granted, they will arrive once our Servitors complete the formal requests.{NEWLINE} Learning more about the severity of the threat on this planet should allow us to request additional Marines."
+      STR_DEATHWATCH_EXPANSION_1: "Deathwatch Reinforcements"
+      STR_DEATHWATCH_EXPANSION1: "After our new reports about the threats plaguing this planet we have been granted greater authority by the Ordo Xenos.{NEWLINE} We can now requisition an additional Deathwatch Marine to support our investigations."
+      STR_DEATHWATCH_EXPANSION_2: "Deathwatch Reinforcements"
+      STR_DEATHWATCH_EXPANSION2: "After our new reports about the threats plaguing this planet we have been granted greater authority by the Ordo Xenos.{NEWLINE} We can now requisition two additional Deathwatch Marines to support our investigations."
+      STR_DEATHWATCH_EXPANSION_L: "Deathwatch Captain"
+      STR_DEATHWATCH_EXPANSIONL: "With the true nature and source of the Warp Storm uncovered the Ordo Xenos has agreed to dispatch an elite Deathwatch Captain to lead the Marines in our service.{NEWLINE} Be sure to consult the Codex to learn the strengths of each squad leader and choose appropriately."

@@ -39,10 +39,9 @@ soldiers:
       SMT_HEROICSAVE_CHANCE: 30
       SMT_HEROICSAVE_HP: 30
 
-
   - &STR_DEATHWATCH_MARINE              # Deathwatch Marines
     tags:
-      SMT_HEROICSAVE_CHANCE: 75 # +10 over vets
+      SMT_HEROICSAVE_CHANCE: 65 # vet level
       SMT_HEROICSAVE_HP: 50 # +5 over vets
 
   - type: STR_ULTRAMARINE
@@ -98,6 +97,37 @@ soldiers:
 
   - type: STR_CRISMONF_PRIMARIS
     refNode: *STR_DEATHWATCH_MARINE
+
+  - &STR_DEATHWATCH_LEADER              # Deathwatch Leaders
+    tags:
+      SMT_HEROICSAVE_CHANCE: 75 # +10 over vets
+      SMT_HEROICSAVE_HP: 55 # +10 over vets
+
+  - type: STR_ULTRAMARINE_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_IMPERIALF_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_BLOODANGELS_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+  - type: STR_SALAMANDAR_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_BLACKT_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_WHITES_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_DARKANGELS_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_SPACEW_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_CRISMONF_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
 
 
 extended:

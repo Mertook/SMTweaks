@@ -110,7 +110,7 @@ research:
     listOrder: 10 # push above corpses/etc
 
   - name: STR_NECRONTECH_RESEARCH #grant access to Necron Weapons
-    cost: 2000
+    cost: 1200 # was 2000
     points: -250
     dependencies:
       - STR_XENO_WEAPONS
@@ -134,6 +134,7 @@ research:
     dependencies:
       - STR_DEATHWATCH
     unlocks:
+      - STR_HBOLTER_AMMO_PREREQ
       - STR_HBOLTER_AMMO_BELTS
     getOneFree:
       - STR_DEV_ARMOR
@@ -150,23 +151,38 @@ research:
       - STR_MKX_PHB_ARMOR
     listOrder: 10 # push above corpses/etc
 
-  - name: STR_DW_AMMO               # Deathwatch Gear Mid Tier (Special Ammo)
+  - name: STR_DW_AMMO               # Deathwatch Gear MidTier (Special Ammo)
     cost: 120
     points: 10
     dependencies:
       - STR_MT_DW
     listOrder: 10 # push above corpses/etc
 
-  - name: STR_DW_ASSAULT            # Deathwatch Gear Mid Tier (Assault armor + Omnis armor)
-    cost: 120
-    points: 10
+  - name: STR_DW_ASSAULT            # Deathwatch Gear MidTier (Assault armor)
+    cost: 180
+    points: 20
     dependencies:
       - STR_MT_DW
     listOrder: 10 # push above corpses/etc
 
-  - name: STR_DW_HTARMOR            # Deathwatch Gear High Tier (Terminator armor + Gravis armor)
-    cost: 120
-    points: 10
+  - name: STR_DW_GRAVIS             # Deathwatch Gear Midtier+ (Gravis)
+    cost: 180
+    points: 20
+    dependencies:
+      - STR_MT_DW
+      - STR_UFO_CONSTRUCTION # ceramite
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_DW_TERM            # Deathwatch Gear High Tier (Terminator armor)
+    cost: 220
+    points: 30
+    dependencies:
+      - STR_DW_HIGHTIER
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_DW_OMNIS            # Deathwatch Gear High Tier (Omnis armor)
+    cost: 220
+    points: 30
     dependencies:
       - STR_DW_HIGHTIER
     listOrder: 10 # push above corpses/etc

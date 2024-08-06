@@ -1,0 +1,108 @@
+extended:
+  tags:
+    RuleItem:
+      SMT_AMMO_BONUSDMG_FIRINGACC: int # % bonus damage granted from units Firing Accuracy: (FA - 90) * Tag / 100
+      SMT_DEREVENANT_AMMO: int # % bonus based on stun dealt to units with tenacious
+
+items:
+  - &STR_PRECISION_AMMO
+    type: STR_PISTOL_CLIP_MC            #Boltpistol
+    tags:
+      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 75
+    scripts:
+      hitUnitAmmo: |
+        var int attackerFA;
+        var int precisionBonus;
+
+        damaging_item.getTag precisionBonus Tag.SMT_AMMO_BONUSDMG_FIRINGACC;
+        attacker.Stats.getFiring attackerFA;
+        sub attackerFA 100; # only units with FA above 100 benefit
+        #debug_log "PrecisionDmg pinged " precisionBonus attackerFA;
+        if and gt precisionBonus 0 gt attackerFA 0;
+          muldiv attackerFA precisionBonus 100;
+          add power attackerFA;
+          #debug_log "PrecisionDmg " attackerFA power;
+        end;
+
+        return power part side;
+
+  - type: STR_RIFLE_CLIP_MC             #Bolter
+    refNode: *STR_PRECISION_AMMO
+    tags:
+      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 75
+
+  - type: STR_LIGHT_BOLTPISTOL_AMMO_MC  #Light Boltpistol
+    refNode: *STR_PRECISION_AMMO
+    tags:
+      SMT_AMMO_BONUSDMG_FIRINGACC: 15 # base power 65 (+10 over regular)
+
+  - type: STR_LIGHT_BOLTER_AMMO_MC      #Light Bolter
+    refNode: *STR_PRECISION_AMMO
+    tags:
+      SMT_AMMO_BONUSDMG_FIRINGACC: 15 # base power 70 (+10 over regular)
+
+  - type: STR_AC_MC_AMMO                #Heavy Bolter
+    refNode: *STR_PRECISION_AMMO
+    tags:
+      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 90
+
+  - type: STR_AC_MC_BELT                #Heavy Bolter Belt
+    refNode: *STR_PRECISION_AMMO
+    tags:
+      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 90
+
+  - type: STR_HB_CLIP_MC                #Stormbolter
+    refNode: *STR_PRECISION_AMMO
+    tags:
+      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 75
+
+
+  - &STR_DEREVENANT_AMMO
+    type: STR_RIFLE_CLIP_DEREV          #DW Bolter ammo
+    tags:
+      SMT_DEREVENANT_AMMO: 25
+    scripts:
+      damageUnitAmmo: |
+        var ptr RuleArmor targetArmor;
+        var int derevBonus;
+        var int totalStun;
+        var int temp;
+
+        unit.getRuleArmor targetArmor;
+        targetArmor.getTag temp Tag.ARMOR_TENACIOUS_HP_MOD; # enemy tag
+        damaging_item.getTag derevBonus Tag.SMT_DEREVENANT_AMMO;
+        if and gt temp 0 gt derevBonus 0;
+
+          debug_log "DerevDmg pinged B/H " derevBonus to_health;
+          targetArmor.getSize temp; # if unit is 2x2 deal extra damage directly (2x2 can't be stunned)
+          if ge temp 2;
+            mul derevBonus 3;
+            add derevBonus 100;
+            muldiv to_health derevBonus 100; # Derev value is added to damage as % bonus
+            debug_log "DerevDmg 2x2 B/H " derevBonus to_health;
+            return;
+          end;
+
+          unit.getStun totalStun;
+          add totalStun to_stun;
+          muldiv derevBonus totalStun 100; # deal bonus damage based off unit stun
+          add totalStun to_health;
+          unit.getHealth temp;
+          if gt totalStun temp; # if unit is or will be knocked unconcious, multiply damage bonus
+            add derevBonus 5;
+            mul derevBonus 3;
+          end;
+          add to_health derevBonus;
+          debug_log "DerevDmg S/B/H " totalStun derevBonus to_health;
+        end;
+
+        return;
+
+  - type: STR_BOLT_SNIPER_AMMO_DEREV    # DW Bolt Sniper ammo
+    refNode: *STR_DEREVENANT_AMMO
+    tags:
+      SMT_DEREVENANT_AMMO: 45
+
+
+
+

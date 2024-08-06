@@ -1,31 +1,32 @@
 armors:
-  - type: STR_DEV_ARMOR_UC #DEVASTATOR
+  - type: STR_CAPTAIN_UC # TERMINATOR CAPTAIN
     tags:
       SMT_ARMOR_HEAVY_WEAPON_USER: 1
 
-  - type: STR_CAPTAIN_UC # TERMINATOR CAPTAIN
-    tags:
-      SMT_ARMOR_HEAVY_WEAPON_USER: 2
-
   - type: STR_POWER_SUIT_UC # TERMINATOR
     tags:
-      SMT_ARMOR_HEAVY_WEAPON_USER: 2
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1
 
   - type: STR_TSARGENT_UC # TERMINATOR CYCLONE
     tags:
-      SMT_ARMOR_HEAVY_WEAPON_USER: 2
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1
 
   - type: STR_FLYING_SUIT_UC # TERMINATOR ASSAULT
     tags:
-      SMT_ARMOR_HEAVY_WEAPON_USER: 2
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1
 
   - type: STR_CHAP_TERMINATOR_UC # TERMINATOR CHAPLAIN
     tags:
-      SMT_ARMOR_HEAVY_WEAPON_USER: 2
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1
 
   - type: STR_LIB_TERMINATOR_UC # TERMINATOR LIBRARIAN
     tags:
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1
+      
+  - type: STR_DEV_ARMOR_UC #DEVASTATOR
+    tags:
       SMT_ARMOR_HEAVY_WEAPON_USER: 2
+
 
 extended:
   tags:
@@ -34,7 +35,7 @@ extended:
       ITEM_HAS_BIPOD: int
       ITEM_IS_HEAVY_WEAPON: int # infantry but not mounted/vehicle hwp - 1 = normal penalty, 2 = can't be reduced by armor bonus (see below) meant for snipers etc
     RuleArmor:
-      SMT_ARMOR_HEAVY_WEAPON_USER: int # armor that counteracts the penalty for heavy weapons - 1 = half base penalty, 2 = no penalty
+      SMT_ARMOR_HEAVY_WEAPON_USER: int # armor that counteracts the penalty for heavy weapons - 1 = 0 penalty, 2+ gives scaling reduction - 2 = 1/2, 3 = 2/3, 4 = 3/4 etc
 
   scripts:
     accuracyMultiplierBonusStats:
@@ -65,7 +66,7 @@ extended:
 
           unit.getRuleArmor unitArmor;
           unitArmor.getTag hwpUser Tag.SMT_ARMOR_HEAVY_WEAPON_USER; #ignore if user has appropriate armor
-          if and eq hwpUser 2 neq hwpPenalty 2; # HWP with value 2 can't be ignored by HWP specialist armor
+          if and eq hwpUser 1 neq hwpPenalty 2; # HWP with value 2 can't be ignored by HWP specialist armor
             return bonus; # final accuracy
           end;
 
@@ -92,21 +93,25 @@ extended:
             # debug_log "20 bonus" bonus;
           end;
 
-          if and eq hwpUser 1 neq hwpPenalty 2; # half effective penalty if user has appropriate armor
-            add bonus temp; # (current bonus + starting bonus) / 2
-            div bonus 2;
+          if and ge hwpUser 2 neq hwpPenalty 2; # adjusted penalty if wearing appropriate armor
+            sub hwpUser 1;
+            limit_lower hwpUser 1;
+            mul bonus hwpUser;
+            add bonus temp;
+            add hwpUser 1;
+            div bonus hwpUser; # (reduced bonus * hwpBonus + starting bonus) / hwpBonus
           end;
 
-          if and eq kneeling 1 eq weaponWithBipod 1;
-            add bonus temp; # (current bonus + starting bonus * 2) / 3
+          if and eq kneeling 1 eq weaponWithBipod 1; # 1/3 penalty if kneeling with bipod
             add bonus temp;
-            div bonus 3;
+            add bonus temp; # (current bonus + starting bonus * 2) / 3
+            div bonus 3; # 1/3 penalty
             # debug_log "kneel+bipod bonus";
           end;
 
-          if and eq kneeling 1 eq weaponWithBipod 0;
+          if and eq kneeling 1 eq weaponWithBipod 0; # 1/2 penalty if kneeling without bipod
             add bonus temp; # (current bonus + starting bonus) / 2
-            div bonus 2;
+            div bonus 2; # 1/2 penalty
           end;
           # debug_log "battle_action" battle_action;
           # debug_log "current bonus" bonus;

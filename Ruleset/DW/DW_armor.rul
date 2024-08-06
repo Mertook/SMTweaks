@@ -1,0 +1,687 @@
+armors:
+  - &STR_DW_TAC_MK7                         #Tactical Armor (Firstborn)
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 25 # +5 - DW bonus
+    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats: # Standard Tac values
+      tu: 25            # base 10 +15
+      stamina: 20       # base 20 
+      health: 10        # base 10 
+      bravery: 10       # base 0  +10
+      reactions: 20     # base 10 +10
+      firing: 10        # base 0  +10
+      throwing: 15      # base 5  +10
+      strength: 15      # base 10 +5
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - &STR_DW_APOTH_MK7                       #Apothecary Armor (Firstborn)
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 25 # +5 - DW bonus
+    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats: # apoth values
+      tu: 5             # base 10 -5
+      stamina: 20       # base 20 
+      health: 30        # base 10 +20
+      bravery: 10       # base 0  +10
+      reactions: 5      # base 10 -5
+      firing: 0         # base 0
+      throwing: -10     # base 5 -15
+      strength: 10      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 15         # base 10 +5
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_REGEN_HP: 3
+      ARMOR_REGENERATES_WOUNDS: 1
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - &STR_DW_DEV_MK7                         #Devastator Armor (Firstborn)
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 25 # +5 - DW bonus
+    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 130 # base 125 +5 devastator
+    sideArmor: 120 # base 120
+    rearArmor: 95 # base 100 -5 devastator
+    underArmor: 125 # base 125
+    stats: # devastator values
+      tu: 0             # base 10 -10
+      stamina: 10       # base 20 -10
+      health: 10        # base 10 
+      bravery: 0        # base 0  
+      reactions: -5     # base 10 -15
+      firing: 25        # base 0  +25
+      throwing: 5       # base 5  
+      strength: 40      # base 10 +30
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: -20        # base 10 -30 (ranged specialist & also to offset strength bonus)
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/2 HWP penalties
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - &STR_DW_ASS_MK7                         #Assault Armor (Firstborn)
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 25 # +5 - DW bonus
+    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 135 # base 125 +10
+    sideArmor: 125  # base 120 +5
+    rearArmor: 110  # base 100 +10
+    underArmor: 125 # base 125
+    stats: # assault values
+      tu: 25            # base 10 +15
+      stamina: 20       # base 20
+      health: 20        # base 10 +10
+      bravery: 10       # base 0  +10
+      reactions: 25     # base 10 +15
+      firing: -10       # base 0  -10
+      throwing: 0       # base 5  -5
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 25         # base 10 +15
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - &STR_DW_TECH_MK7                        #Techmarine Armor (Firstborn)
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 50 # Techmarine Standard
+    antiCamouflageAtDay: 10 # Techmarine Standard
+    antiCamouflageAtDark: 10 # Techmarine Standard
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats:
+      tu: 10            # base 10 
+      stamina: 10       # base 20 -10
+      health: 20        # base 10 +10
+      bravery: 0        # base 0  (overridden by 40k to +10)
+      reactions: 10     # base 10 
+      firing: 0         # base 0  
+      throwing: -10     # base 5  -15
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 15         # base 10 +5
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 60 # Techmarine maintenance bonus
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - &STR_DW_TERM_MK7                        #Terminator Armor (Firstborn)
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 35 # +5 - DW bonus
+    antiCamouflageAtDay: 9 # +1 over regular Terminators - DW bonus
+    antiCamouflageAtDark: 9 # +1 over regular Terminators - DW bonus
+    loftempsSet: [ 4 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 2.0 #discipline and resolve reinforces their faith (+50% terminator bonus)
+    frontArmor: 180
+    sideArmor: 175
+    rearArmor: 125
+    underArmor: 175
+    stats:
+      tu: 10            # base 10
+      stamina: 20       # base 20
+      health: 30        # base 30
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 20        # base 20
+      throwing: 10      # base 10
+      strength: 90      # base 90
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    damageModifier: #TERMINATOR ARMOR
+      - 1.0 #none
+      - 0.7 #AP (was 0.6)
+      - 0.3 #FLAMES
+      - 0.6 #HE (was 0.4)
+      - 0.8 #LASCANON
+      - 0.8 #PLASMA
+      - 1.0 #STUN
+      - 0.8 #MELEE (was 0.9)
+      - 0.6 #ACID (was 0.8)
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (was 1.0)
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 80
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 55
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalties
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - &STR_DW_TAC_MKX                         #Tactical Armor (Primaris)
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 25 # +5 - DW bonus
+    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats: # Standard Tac values
+      tu: 25            # base 10 +15
+      stamina: 20       # base 20 
+      health: 10        # base 10 
+      bravery: 10       # base 0  +10
+      reactions: 20     # base 10 +10
+      firing: 10        # base 0  +10
+      throwing: 15      # base 5  +10
+      strength: 15      # base 10 +5
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - &STR_DW_APOTH_MKX                       #Apothecary Armor (Primaris)
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 25 # +5 - DW bonus
+    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats: # apoth values
+      tu: 5             # base 10 -5
+      stamina: 20       # base 20 
+      health: 30        # base 10 +20
+      bravery: 10       # base 0  +10
+      reactions: 5      # base 10 -5
+      firing: 0         # base 0
+      throwing: -10     # base 5 -15
+      strength: 10      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 15         # base 10 +5
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_REGEN_HP: 3
+      ARMOR_REGENERATES_WOUNDS: 1
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - &STR_DW_PHB_MKX                         #Phobos Armor (Primaris)
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 25 # +5 - DW bonus
+    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 110 # base 125
+    sideArmor: 100 # base 120
+    rearArmor: 90 # base 100
+    underArmor: 100 # base 125
+    stats: # Scout/Tac hybrid gear
+      tu: 40            # base 10 +30
+      stamina: 30       # base 20 +10
+      health: 10        # base 10 
+      bravery: 10       # base 0  +10
+      reactions: 30     # base 10 +30
+      firing: 5         # base 0  +5
+      throwing: 15      # base 5  +10
+      strength: 5       # base 10 -5
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 15         # base 10 +5
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    builtInWeapons:
+      - INV_NULL_3X1_BACKPACK # was 3x3
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - &STR_DW_GRV_MKX_BS                      #Gravis Armor (Primaris) - Boltstorm Gauntlet x2 + Fragstorm
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 25 # +5 - DW bonus
+    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    loftempsSet: [ 4 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 140
+    sideArmor: 135
+    rearArmor: 115
+    underArmor: 140
+    stats:
+      tu: 5             # base 10 -5
+      stamina: 20       # base 20
+      health: 20        # base 20
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 15        # base 20
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    specialWeapon: STR_GRAV_MORTAR
+    builtInWeapons:
+      - STR_GRAV_BOLTER_DW
+      - STR_GRAV_BOLTER_DW
+      - INV_NULL_3X3
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/2 HWP penalties
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - &STR_DW_GRV_MKX_AC                      #Gravis Armor (Primaris) - Autocannon Gauntlet x2
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 25 # +5 - DW bonus
+    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    loftempsSet: [ 4 ]
+    corpseBattle:
+      - STR_MKX_GRV_CORPSE
+    storeItem: STR_MKX_GRV_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 140
+    sideArmor: 135
+    rearArmor: 115
+    underArmor: 140
+    stats:
+      tu: 5             # base 10 -5
+      stamina: 20       # base 20
+      health: 20        # base 20
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 15        # base 20
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    builtInWeapons:
+      - STR_GRAV_AUTOC_DW
+      - STR_GRAV_AUTOC_DW
+      - INV_NULL_3X3
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/2 HWP penalties
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - &STR_DW_GRV_MKX_FS                      #Gravis Armor (Primaris) - Flamestorm Gauntlet x2
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 25 # +5 - DW bonus
+    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    loftempsSet: [ 4 ]
+    corpseBattle:
+      - STR_MKX_GRV_CORPSE
+    storeItem: STR_MKX_GRV_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 140
+    sideArmor: 135
+    rearArmor: 115
+    underArmor: 140
+    stats:
+      tu: 5             # base 10 -5
+      stamina: 20       # base 20
+      health: 20        # base 20
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 15        # base 20
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    builtInWeapons:
+      - STR_GRAV_FLAMER_DW
+      - STR_GRAV_FLAMER_DW
+      - INV_NULL_3X3
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/2 HWP penalties
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - &STR_DW_INC_MKX                         #Omnis Armor (Primaris)
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 25 # +5 - DW bonus
+    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    loftempsSet: [ 4 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 135
+    sideArmor: 130
+    rearArmor: 110
+    underArmor: 130
+    stats:
+      tu: 5             # base 10 -5
+      stamina: 20       # base 20
+      health: 20        # base 20
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 15        # base 20
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/2 HWP penalties
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+
+
+

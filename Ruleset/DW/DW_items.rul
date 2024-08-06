@@ -29,6 +29,9 @@ items:
       - STR_RIFLE_CLIP_AP
       - STR_RIFLE_CLIP_EX
       - STR_RIFLE_CLIP_MC
+      - STR_RIFLE_CLIP_DEREV
+      - STR_RIFLE_CLIP_FUSION
+      - STR_RIFLE_CLIP_DRAGON
       - STR_PISTOL_CLIP
       - STR_PISTOL_CLIP_AP
       - STR_PISTOL_CLIP_EX
@@ -51,6 +54,8 @@ items:
     autoShots: 3 # was 3
     tags:
       ITEM_RECOIL: 65 #
+      ITEM_AIMED_ACCURACY_POWER_BONUS: 25 # Stalker bonus
+      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
 
   - update: STR_RIFLEDW                     # Bolter (Cawl Deathwatch) - DW Cawl Battlerifle
     refNode: *STR_BOLTER_DW
@@ -71,6 +76,98 @@ items:
     autoShots: 5
     tags:
       ITEM_RECOIL: 75 #
+
+  - &STR_BOLTER_AMMO_DW                     # DW Bolter ammo reference
+    categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
+    floorSprite: {mod: 40k, index: 2}
+    handSprite: {mod: 40k, index: 464}
+    hitSound: {mod: 40k, index: 708}
+    hitAnimation: {mod: 40k, index: 26}
+    battleType: 2
+    size: 0.05
+    weight: 6
+    costSell: 400
+    clipSize: 30
+    armor: 200
+    power: 75
+    damageType: 1 # AP
+    damageAlter: # Standard bolter ammo
+      RandomType: 1 # 0-200%
+      ToArmorPre: 0.15
+      ArmorEffectiveness: 0.9
+      ToArmor: 0.15
+      ToHealth: 1.1
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    tags:
+      ITEM_AMMO_SKIP_BIGOBS: 1
+
+  - type: STR_RIFLE_CLIP_DEREV              # Derevenant Bolter ammo
+    refNode: *STR_BOLTER_AMMO_DW
+    bigSprite: 3164
+    damageType: 11
+    damageAlter:
+      ResistType: 1
+      RandomType: 1 # 0-200%
+      ToArmorPre: 0.15
+      ArmorEffectiveness: 1.0
+      ToHealth: 1.0
+      ToArmor: 0.15
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    tags:
+      ITEM_AMMO_COLOR: 3 # green 1
+
+  - type: STR_RIFLE_CLIP_FUSION             # Inertial Fusion Bolter ammo
+    refNode: *STR_BOLTER_AMMO_DW
+    bigSprite: 3164
+    power: 30
+    damageType: 1 # AP
+    damageAlter: # Standard bolter ammo
+      ResistType: 0 # Blank - unresisted
+      RandomType: 1 # 0-200%
+      ToArmorPre: 0.5 # grav
+      ArmorEffectiveness: 0.5
+      ToArmor: 1.0 # grav
+      ToHealth: 1.0
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.1
+      RandomWound: false
+    tags:
+      ITEM_AMMO_COLOR: 4 # green 2
+      GravPercentage: 4
+
+  - type: STR_RIFLE_CLIP_DRAGON             # Dragonfire Bolter ammo
+    refNode: *STR_BOLTER_AMMO_DW
+    bigSprite: 3164
+    hitSound: {mod: 40k, index: 708}
+    hitAnimation:
+      mod: 40k
+      index: 88
+    damageType: 2 # Incin
+    damageAlter:
+      IgnoreDirection: false
+      FireBlastCalc: false
+      RandomType: 6 # 0-100 + 0-100
+      FireThreshold: 1
+      ArmorEffectiveness: 0.9
+      ToArmorPre: 0.05
+      ToArmor: 0.15
+      ToMorale: 2.0
+      ToHealth: 1.4
+      ToStun: 0.2
+      ToEnergy: 0.3
+      ToWound: 0.5
+      ToTile: 0.25 #firey gas, not explosive
+      ToItem: 0.25 #firey gas, not explosive
+      FixRadius: 2 # smaller area for light ammo
+    tags:
+      ITEM_AMMO_COLOR: 9 # yellow
 
   - type: STR_AUTO_CANNON_DW                # Heavy Bolter (Artifex DW)
     dropoff: 4 # larger HB shells have better propulsion and accuracy at range
@@ -113,7 +210,7 @@ items:
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
 
-  - type: STR_BOLT_SNIPER_RIFLE_DW           # Bolt Sniper Rifle - DW edition
+  - type: STR_BOLT_SNIPER_RIFLE_DW          # Bolt Sniper Rifle - DW edition
     categories: [STR_CAT_SNIPER]
     dropoff: 3 #scoped sniper rifle
     weight: 50
@@ -123,9 +220,9 @@ items:
     requiresBuyBaseFunc: [TRADE]
     costBuy: 350000
     costSell: 50000
-    bigSprite: 3128 ###CHANGEME
-    floorSprite: 3128 ###CHANGEME
-    handSprite: 3600 ###CHANGEME
+    bigSprite: 3164
+    floorSprite: 3164
+    handSprite: 3630
     bulletSprite: {mod: 40k, index: 6}
     fireSound: {mod: 40k, index: 12}
     compatibleAmmo:
@@ -133,6 +230,8 @@ items:
       - STR_BOLT_SNIPER_AMMO_FRAG
       - STR_BOLT_SNIPER_AMMO_KRAK
       - STR_BOLT_SNIPER_AMMO_SHRED
+      - STR_BOLT_SNIPER_AMMO_DEREV
+      - STR_BOLT_SNIPER_AMMO_HELS
     battleType: 1
     twoHanded: true
     blockBothHands: true
@@ -144,14 +243,15 @@ items:
     snapRange: 20
     aimRange: 33
     noLOSAccuracyPenalty: 66 # default 50 - Sniper Rifle bonus
-    accuracySnap: 55
+    accuracySnap: 60
     accuracyAuto: 0
-    accuracyAimed: 85
+    accuracyAimed: 90
     tuAuto: 0
     tuSnap: 65
     tuAimed: 85
     listOrder: 11931
     tuLoad: 5 # single round shots
+    tuUnload: 2
     accuracyMultiplier: #sniper rifle accuracy
       firing: [0.5, 0.005]
     kneelBonus: 150
@@ -163,3 +263,154 @@ items:
       ITEM_AIMED_ACCURACY_POWER_BONUS: 50
       ITEM_SNAP_ACCURACY_POWER_BONUS: 20
       ITEM_POWER_BONUS_PERCENTILE: 1
+
+  - type: STR_BOLT_SNIPER_AMMO_DEREV        # Bolt Sniper Derevenant Ammo
+    categories: [STR_CAT_SNIPER]
+    bigSprite: 3169
+    floorSprite: 3130
+    handSprite: {mod: 40k, index: 464}
+    battleType: 2
+    size: 0.02
+    costSell: 200
+    armor: 200
+    weight: 2
+    invWidth: 1
+    invHeight: 1
+    listOrder: 11935
+    hitSound: {mod: 40k, index: 712}
+    hitAnimation: {mod: 40k, index: 26}
+    clipSize: 1
+    power: 120
+    damageType: 11
+    damageAlter:
+      ResistType: 1
+      RandomType: 1
+      ArmorEffectiveness: 0.8 # normal 0.7
+      ToHealth: 0.7 # normal 1.0
+      ToStun: 0.3
+      ToArmorPre: 0.1
+      ToArmor: 0.2
+      ToWound: 0.02
+      ToTile: 0.33
+      RandomWound: false
+      FireThreshold: 999 # don't set things on fire
+
+  - type: STR_BOLT_SNIPER_AMMO_HELS         # Bolt Sniper Helspear Ammo
+    categories: [STR_CAT_SNIPER]
+    bigSprite: 3170
+    floorSprite: 3130
+    handSprite: {mod: 40k, index: 464}
+    size: 0.02
+    costSell: 200
+    armor: 200
+    weight: 2
+    battleType: 2
+    invWidth: 1
+    invHeight: 1
+    clipSize: 1
+    power: 120
+    damageType: 1
+    listOrder: 11935
+    hitSound: {mod: 40k, index: 712}
+    hitAnimation: {mod: 40k, index: 26}
+    damageAlter:
+      RandomType: 1
+      ArmorEffectiveness: 1.0 # normal 0.7
+      ToHealth: 1.0
+      ToArmorPre: 0.1
+      ToArmor: 0.2
+      ToWound: 0.02
+      ToTile: 0.33
+      RandomWound: false
+    tags:
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 90 # shield buster ammo
+      ITEM_ENERGY_SHIELD_REDUCTION_PERCENT: 50
+
+  - type: STR_SHOTGUN_DW                    # Deathwatch Shotgun
+    categories: [ STR_CAT_SHOTGUN, STR_CAT_SCOUT]
+    size: 0.2
+    costBuy: 25000
+    costSell: 5000
+    requiresBuy:
+      - STR_DEATHWATCH
+      - STR_SHOTGUNS_ADV
+    armor: 200
+    listOrder: 10601
+    bigSprite: 3169
+    floorSprite: 3163
+    handSprite: 3640
+    bulletSprite: {mod: 40k, index: 2}
+    fireSound: {mod: 40k, index: 755}
+    compatibleAmmo:
+      - STR_SHOTGUN_SHELLS
+      - STR_SHOTGUN_SHELLS_AP
+      - STR_SHOTGUN_SHELLS_INC
+      - STR_SHOTGUN_SHELLS_MC
+      - STR_SHOTGUN_SHELLS_WYRM
+    weight: 22
+    dropoff: 5 # was 5
+    accuracyAuto: 70
+    accuracySnap: 75
+    autoRange: 6
+    snapRange: 9
+    tuSnap: 16
+    tuAuto: 30
+    autoShots: 3
+    tuLoad: 5 # DW shotgun bonus
+    tuUnload: 2 # DW shotgun bonus
+    battleType: 1
+    twoHanded: true
+    oneHandedPenalty: 100 # no penalty for dual-wielding if you can handle recoil
+    invWidth: 1
+    invHeight: 3
+    tags:
+      REACTION_MULTIPLIER: 200 # 200% of normal - shotgun bonus
+      ITEM_RECOIL: 45 # High recoil, marines or strong scouts
+
+  - type: STR_SHOTGUN_SHELLS_WYRM           # Shotgun Wyrmsbreath Ammo
+    categories: [STR_CAT_SHOTGUN]
+    bigSprite: {mod: 40k, index: 803}
+    floorSprite: {mod: 40k, index: 119}
+    handSprite: {mod: 40k, index: 464}
+    size: 0.02
+    costSell: 200
+    armor: 200
+    weight: 2
+    battleType: 2
+    invWidth: 1
+    invHeight: 1
+    clipSize: 8
+    damageType: 1
+    listOrder: 11935
+    hitSound: {mod: 40k, index: 708}
+    hitAnimation:
+      mod: 40k
+      index: 88
+    bulletSpeed: 50
+    explosionSpeed: 10
+    powerRangeThreshold: 18
+    powerRangeReduction: 3
+    power: 75 # doesn't get multiple pellets because of AoE splash
+    shotgunPellets: 1 # was 6, doesn't work with projectiles that have explosion radius
+    damageType: 2 # Incin
+    damageAlter:
+      RandomType: 6
+      FireBlastCalc: false
+      IgnoreSelfDestruct: false
+      IgnoreDirection: false
+      FireThreshold: 1
+      ArmorEffectiveness: 0.7
+      ToHealth: 1.4 #
+      ToArmorPre: 0.05
+      ToArmor: 0.15
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      ToMorale: 2.0 #burning damage unpleasant
+      RadiusReduction: 3 # low power reduction
+      ToTile: 0.0
+      RandomWound: false
+      FixRadius: 4
+
+
+

@@ -19,10 +19,13 @@ extended:
 
           rule.getTag temp Tag.SMT_ARMOR_HEAVY_WEAPON_USER;         # HWP User
           if eq temp 1;
-            stats_state.addTextRow "HWP Penalty" "-50%";
+            stats_state.addTextRow "HWP Penalty Reduction" "100%";
           end;
           if eq temp 2;
-            stats_state.addTextRow "HWP Penalty" "None";
+            stats_state.addTextRow "HWP Penalty Reduction" "50%";
+          end;
+          if eq temp 3;
+            stats_state.addTextRow "HWP Penalty Reduction" "33%";
           end;
 
           rule.getTag temp Tag.SMT_ARMOR_REGEN_HP;                  # Health Regeneration

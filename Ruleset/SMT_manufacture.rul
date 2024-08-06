@@ -494,6 +494,7 @@ manufacture:
     category: STR_GENESEED
     requires:
       - STR_CHAPTER_PURITY
+      - STR_MARINES_STRATEGY
     space: 0
     time: 1200
     cost: 10000
@@ -506,6 +507,7 @@ manufacture:
   - name: STR_SMT_GENESEED_REQ                      # Geneseed requisition
     category: STR_GENESEED
     requires:
+      - STR_MARINES_STRATEGY
       - STR_SMT_GENESEED_REQ
     requiresBaseFunc: [MED] #Apothecary
     space: 0

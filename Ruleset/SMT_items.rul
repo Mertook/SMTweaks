@@ -828,7 +828,7 @@ items:
     tuLoad: 10 # pistol bonus
     tuUnload: 4 # pistol bonus
     tags:
-      ITEM_RECOIL: 60 # harder requirement, hybrid weapon
+      ITEM_RECOIL: 55 # harder requirement, hybrid weapon
       REACTION_MULTIPLIER: 150 # was 200 - carbine rather than pure pistol
       ITEM_AIMED_ACCURACY_POWER_BONUS: 15 # was 25
       ITEM_POWER_BONUS_PERCENTILE: 1 #use %
@@ -986,6 +986,79 @@ items:
       - STR_LIGHT_BOLTER_AMMO_INF
     tags:
       ITEM_RECOIL: 30 # was 25
+
+  - type: STR_ABSOLVOR_PISTOL               # Absolvor Bolt Pistol
+    categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
+    battleType: 1
+    size: 0.2
+    requiresBuy:
+      - STR_PRIMARIS_AND_DEATHWATCH
+    requiresBuyBaseFunc: [TRADE]
+    costBuy: 150000
+    costSell: 1000
+    armor: 200
+    listOrder: 10100
+    weight: 20
+    bigSprite: 3171
+    floorSprite: 3171
+    handSprite: 3650
+    bulletSprite: {mod: 40k, index: 6}
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    compatibleAmmo: # doesn't use regular pistol ammo
+      - STR_ABSOLVOR_AMMO
+    twoHanded: false
+    invWidth: 1
+    invHeight: 3
+    bulletSpeed: 30
+    attraction: 1
+    dropoff: 8 # regular pistols 10 - bigger rifle-size profile + larger bolts
+    autoRange: 0 #
+    snapRange: 14 # ultra 11
+    aimRange: 0 #
+    accuracyAuto: 0 #
+    accuracySnap: 80 #
+    accuracyAimed: 0 #
+    tuAuto: 0 #
+    tuSnap: 20 #
+    tuAimed: 0 #
+    autoShots: 0
+    tuLoad: 10 # pistol bonus
+    tuUnload: 4 # pistol bonus
+    tags:
+      ITEM_RECOIL: 60 # high requirement - Primaris + heavy pistol
+      REACTION_MULTIPLIER: 200 # was 200 - carbine rather than pure pistol
+
+  - type: STR_ABSOLVOR_AMMO                 # Absolvor Pistol Ammo
+    categories: [STR_CAT_BOLTER, STR_CAT_DEVASTATOR]
+    battleType: 2
+    size: 0.05
+    costBuy: 1000
+    costSell: 500
+    weight: 3
+    armor: 200
+    listOrder: 10101
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 1022}
+    floorSprite: {mod: 40k, index: 12}
+    handSprite: {mod: 40k, index: 464}
+    hitSound: {mod: 40k, index: 708}
+    hitAnimation:
+      mod: 40k
+      index: 120
+    explosionSpeed: 3
+    power: 80 # +5 over regular bolter ammo
+    damageAlter: # bolter values as base
+      ToArmorPre: 0.15
+      ArmorEffectiveness: 0.6 # comparable AP to krak
+      ToArmor: 0.15
+      ToHealth: 1.1
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    damageType: 1
+    clipSize: 6
+    invWidth: 1
+    invHeight: 1
 
   - update: STR_AUTO_CANNON                 # Heavy Bolter MK4
     costBuy: 90000 # was 13500 - Now mid-tier weapon instead of starter gear
@@ -1463,6 +1536,7 @@ items:
     damageAlter:
       RandomType: 2 # 50-150%
       ToHealth: 0.0
+      ToStun: 0.00
       ToItem: 0.00
       ToTile: 0.00
       ToArmor: 0.00
@@ -1536,7 +1610,7 @@ items:
     powerRangeReduction: 0
     aimRange: 10 # was 20
     costAimed:
-      time: 30 # was 20/40 flat for snap/aimed
+      time: 40 # was 20/40 flat for snap/aimed
       energy: 20 # was 40
       morale: 20 # was 20
     flatAimed:
@@ -1562,18 +1636,19 @@ items:
     power: 10 # was 10
     damageType: 2 # Fire
     damageAlter:
+      ResistType: 11 # Melta
       RandomType: 2 # 50-150
       FireBlastCalc: false
       IgnoreOverKill: false
       IgnoreSelfDestruct: false # default true for HE, fire, smoke, stun, mel
       IgnoreDirection: true # always hits front armor
-      ToHealth: 0.5 # was 1.0
-      ToArmorPre: 0.3 # was 0
+      ToHealth: 0.4 # was 1.0
+      ToArmorPre: 0.4 # was 0
       ToArmor: 0.6 # was 0
       ToTile: 0.1
       ToMorale: 5.0 # was 5.0
       ArmorEffectiveness: 0.2 # was 0.5
-      RadiusReduction: 1.0 # minor power dropoff from center
+      RadiusReduction: 3.0 # minor power dropoff from center
       FixRadius: -1
       RadiusEffectiveness: 0.04 # 4% of power as radius
     damageBonus:
@@ -1655,6 +1730,216 @@ items:
     flatMelee:
       time: true
       energy: true
+
+  - type: STR_GRAV_MORTAR                   # Gravis Fragstorm Launcher
+    battleType: 1
+    weight: 0
+    bigSprite: {mod: 40k, index: 262}
+    bulletSprite: {mod: 40k, index: 4}
+    fireSound: {mod: 40k, index: 2}
+    twoHanded: false
+    invWidth: 2
+    invHeight: 3
+    recover: false
+    fixedWeapon: true
+    specialIconSprite: {mod: 40k, index: 2}
+    specialUseEmptyHand: false
+    confAuto:
+      name: STR_LAUNCH_SALVO_AUTO
+      shots: 3
+    costAuto:
+      time: 75
+    confAimed:
+      name: STR_LAUNCH_FRAGS
+      shots: 1
+    costAimed:
+      time: 40
+    autoRange: 10
+    snapRange: 0
+    aimRange: 15
+    accuracyAuto: 33
+    accuracyAimed: 66
+    accuracyMultiplier:
+      firing: 0.6 # was 0.8
+      throwing: 0.6 # was 0.8
+    dropoff: 4
+    arcingShot: true
+    minRange: 5
+    clipSize: 6
+    power: 100 # was 100
+    damageType: 3
+    damageAlter: #high explosive
+      ResistType: 1 # frags deal standard damage
+      ToArmorPre: 0.1 # was 0.1
+      RandomType: 6
+      ArmorEffectiveness: 1.1 # was 0.9
+      ToHealth: 1.0 # was 1.0
+      ToArmor: 0.2
+      ToStun: 0.6 # was 0.6
+      ToEnergy: 0.4 # was 0.4
+      ToTime: 0.3 # was 0.3
+      ToTile: 0.25
+      ToItem: 0.25
+      FixRadius: 10 # was 10
+
+
+  - update: STR_GRAV_AUTOC                  # Gravis Autocannon Gauntlet
+    dropoff: 4
+    autoRange: 12
+    snapRange: 21
+    aimRange: 0
+    accuracyAuto: 50
+    accuracySnap: 75
+    accuracyAimed: 0
+    tuAuto: 20 # was 30
+    tuSnap: 20
+    tuAimed: 0
+    autoShots: 2
+    power: 110
+    damageAlter:
+      ToArmorPre: 0.05
+      ArmorEffectiveness: 0.9
+      ToArmor: 0.1
+      ToHealth: 1.0
+      ToStun: 0.5
+
+  - update: STR_GRAV_AUTOC_DW               # Gravis Autocannon Gauntlet (DW)
+    dropoff: 4
+    autoRange: 12
+    snapRange: 21
+    aimRange: 0
+    accuracyAuto: 50
+    accuracySnap: 75
+    accuracyAimed: 0
+    tuAuto: 30
+    tuSnap: 20
+    tuAimed: 0
+    autoShots: 2
+    power: 110
+    damageAlter:
+      ToArmorPre: 0.05
+      ArmorEffectiveness: 0.9
+      ToArmor: 0.1
+      ToHealth: 1.0
+      ToStun: 0.5
+
+  - update: STR_GRAV_BOLTER                 # Gravis Boltstorm Gauntlet 
+    dropoff: 9 # was 4
+    autoRange: 13 # was 12
+    snapRange: 21
+    aimRange: 0
+    accuracyAuto: 60 # was 50
+    accuracySnap: 75
+    accuracyAimed: 0
+    tuAuto: 15
+    tuSnap: 15
+    tuAimed: 0
+    power: 75 # was 60
+    damageAlter: # standard bolter ammo
+      ToArmorPre: 0.15
+      ArmorEffectiveness: 0.9
+      ToArmor: 0.15
+      ToHealth: 1.1
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    confSnap:
+      shots: 2 # was 1
+      name: STR_DUAL_SNAP
+    autoShots: 8 # was 5
+
+  - update: STR_GRAV_BOLTER_DW              # Gravis Boltstorm Gauntlet (DW)
+    dropoff: 9 # was 4
+    autoRange: 14 # was 12
+    snapRange: 21
+    aimRange: 0
+    accuracyAuto: 60 # was 50
+    accuracySnap: 75
+    accuracyAimed: 0
+    tuAuto: 15
+    tuSnap: 15
+    tuAimed: 0
+    power: 75 # was 60
+    damageAlter: # standard bolter ammo
+      ToArmorPre: 0.15
+      ArmorEffectiveness: 0.9
+      ToArmor: 0.15
+      ToHealth: 1.1
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    confSnap:
+      shots: 2 # was 1
+      name: STR_DUAL_SNAP
+    autoShots: 8 # was 5
+
+  - update: STR_GRAV_FLAMER                 # Gravis Flamestorm Gauntlet
+    dropoff: 5
+    autoRange: 8
+    snapRange: 0
+    aimRange: 0
+    accuracyAuto: 30 # 40k 20
+    accuracySnap: 0
+    accuracyAimed: 0
+    tuAuto: 20
+    tuSnap: 0
+    tuAimed: 0
+    maxRange: 16 # was 9
+    autoShots: 6
+    power: 60
+    damageType: 2
+    blastRadius: 2
+    arcingShot: true
+    noLOSAccuracyPenalty: 75 #indirect fire weapon
+    damageAlter:
+      # IgnoreSelfDestruct: false
+      IgnoreDirection: false
+      FireBlastCalc: false
+      FixRadius: 3 # was 2
+      ToHealth: 1.5
+      ToTile: 0.3
+      ToItem: 0.3
+      ArmorEffectiveness: 0.7 # was 1.0, promethium value
+      ToArmorPre: 0.05 # was 0.01
+      ToArmor: 0.1 # was 0.0
+      ToMorale: 5.0
+      ToTime: 0.2 #debilitating pain
+      RandomType: 6 #Gaussian
+
+  - update: STR_GRAV_FLAMER_DW              # Gravis Flamestorm Gauntlet (DW)
+    dropoff: 5
+    autoRange: 8
+    snapRange: 0
+    aimRange: 0
+    accuracyAuto: 30 # 40k 20
+    accuracySnap: 0
+    accuracyAimed: 0
+    tuAuto: 20
+    tuSnap: 0
+    tuAimed: 0
+    maxRange: 16 # was 9
+    autoShots: 6
+    power: 60
+    damageType: 2
+    blastRadius: 2
+    arcingShot: true
+    noLOSAccuracyPenalty: 75 #indirect fire weapon
+    damageAlter:
+      # IgnoreSelfDestruct: false
+      IgnoreDirection: false
+      FireBlastCalc: false
+      FixRadius: 3 # was 2
+      ToHealth: 1.5
+      ToTile: 0.3
+      ToItem: 0.3
+      ArmorEffectiveness: 0.7 # was 1.0, promethium value
+      ToArmorPre: 0.05 # was 0.01
+      ToArmor: 0.1 # was 0.0
+      ToMorale: 5.0
+      ToTime: 0.2 #debilitating pain
+      RandomType: 6 #Gaussian
 
   - update: STR_SMALL_ROCKET                # Small Frag Missile
     size: 0.1 # was 0.2
@@ -1809,6 +2094,7 @@ items:
     tuAimed: 85
     listOrder: 11931
     tuLoad: 5 # single round shots
+    tuUnload: 2
     accuracyMultiplier: #sniper rifle accuracy
       firing: [0.5, 0.005]
     kneelBonus: 150
@@ -1831,7 +2117,7 @@ items:
     invWidth: 1
     invHeight: 1
     clipSize: 1
-    floorSprite: {mod: 40k, index: 12}
+    floorSprite: 3130
     handSprite: {mod: 40k, index: 464}
     power: 120
     damageType: 1
@@ -1851,7 +2137,7 @@ items:
       ToHealth: 1.0
       ToArmorPre: 0.1
       ToArmor: 0.2
-      ToWound: 0.05
+      ToWound: 0.02
       ToTile: 0.33
       RandomWound: false
 
@@ -1899,7 +2185,7 @@ items:
     power: 100
     damageAlter:
       ArmorEffectiveness: 1.8 # secondary effects heavily resisted by intact armor
-      ToArmorPre: 0.8 # dedicated armor shredding round
+      ToArmorPre: 0.9 # dedicated armor shredding round
       ToHealth: 0.4 # ineffective as antipersonnel weapon
       ToArmor: 0.8
       ToWound: 0.02
@@ -1926,54 +2212,61 @@ items:
       - STR_SHOTGUN_SHELLS_INC
       - STR_SHOTGUN_SHELLS_MC
     weight: 22
-    dropoff: 7 # was 5
-    accuracyAuto: 70
-    accuracySnap: 75
-    autoRange: 6
-    snapRange: 9
+    dropoff: 5 # was 5
+    accuracyAuto: 55
+    accuracySnap: 65
+    autoRange: 7
+    snapRange: 9 # was 9
     tuSnap: 16
-    tuAuto: 30
+    tuAuto: 33
     autoShots: 3
-    tuLoad: 10 # shotgun bonus
-    tuUnload: 5 # shotgun bonus
     battleType: 1
     twoHanded: true
-    oneHandedPenalty: 100 # no penalty for dual-wielding if you can handle recoil
+    oneHandedPenalty: 80 # minor penalty for dual-wielding if you can handle recoil
     invWidth: 1
     invHeight: 3
     tags:
-      REACTION_MULTIPLIER: 200 # 200% of normal - shotgun bonus
+      REACTION_MULTIPLIER: 175 # 175% of normal - shotgun bonus
       ITEM_RECOIL: 45 # High recoil, marines or strong scouts
 
   - update: STR_MCSHOTGUN                   # Mastercrafted Shotgun
     armor: 200
     weight: 22
-    oneHandedPenalty: 100 # no penalty for dual-wielding if you can handle recoil
-    dropoff: 7 # was 5
-    autoRange: 9
-    snapRange: 12
+    oneHandedPenalty: 80 # minor penalty for dual-wielding if you can handle recoil
+    dropoff: 5 # was 5
+    autoRange: 8
+    snapRange: 10
     aimRange: 0
-    accuracyAuto: 75
-    accuracySnap: 90
+    accuracyAuto: 60
+    accuracySnap: 75 # was 85
     accuracyAimed: 0
-    tuAuto: 26
-    tuSnap: 12 # was 25
+    tuAuto: 30
+    tuSnap: 14 # was 25
     tuAimed: 0
     autoShots: 3
-    tuLoad: 5 # MC bonus
-    tuUnload: 2 # MC bonus
     compatibleAmmo:
       - STR_SHOTGUN_SHELLS
       - STR_SHOTGUN_SHELLS_AP
       - STR_SHOTGUN_SHELLS_INC
       - STR_SHOTGUN_SHELLS_MC
     tags:
-      REACTION_MULTIPLIER: 250 # 250% of normal - MCshotgun bonus
+      REACTION_MULTIPLIER: 200 # 200% of normal - MCshotgun bonus
       ITEM_RECOIL: 45 # High recoil, marines or strong scouts
 
+  - update: STR_SHOTGUN_SHELLS              # Shotgun Ammo
+    powerRangeThreshold: 18
+    powerRangeReduction: 3
+
+  - update: STR_SHOTGUN_DRUM                # Shotgun Drum Ammo
+    powerRangeThreshold: 18
+    powerRangeReduction: 3
+
   - update: STR_SHOTGUN_SHELLS_AP           # Shotgun Krak Ammo
+    bigSprite: 3173
     requiresBuy:
       - STR_SHOTGUNS_ADV
+    powerRangeThreshold: 18
+    powerRangeReduction: 3
     damageAlter: # Bolter Krak values
       RandomType: 1 # 0-200%
       ArmorEffectiveness: 0.5 # was 0.5
@@ -1988,6 +2281,8 @@ items:
     hitAnimation:
       mod: 40k
       index: 88
+    powerRangeThreshold: 18
+    powerRangeReduction: 3
     power: 75 # doesn't get multiple pellets because of AoE splash
     damageAlter:
       ToHealth: 1.3 # was 1.1
@@ -1997,12 +2292,15 @@ items:
 
   - update: STR_SHOTGUN_SHELLS_MC           # Shotgun MC Ammo
     bigSprite: 3162
+    powerRangeThreshold: 18
+    powerRangeReduction: 3
+    power: 50 # was 60
     damageAlter: # MC Bolt values - was blank
       RandomType: 7 # 50-200%
-      ToArmorPre: 0.1 # bolter is .2, too good with 6 pellets
-      ArmorEffectiveness: 0.8
+      ToArmorPre: 0.04 # bolter is .2, too good with 6 pellets
+      ArmorEffectiveness: 0.9 # bolter is 0.8
       ToArmor: 0.15
-      ToHealth: 1.15
+      ToHealth: 1.0 # bolter is 1.15
       ToStun: 0.5
       ToEnergy: 0.3
       ToWound: 0.2
@@ -2173,7 +2471,7 @@ items:
 
   - type: STR_CHAINSWORD_LIGHTSM            # SM Light Chainsword
     requiresBuy:
-      - STR_MARINES_STRATEGY
+      - STR_MARINES_AND_DEATHWATCH
     categories: [STR_CAT_MELEE]
     size: 0.2
     costBuy: 4000
@@ -2282,20 +2580,20 @@ items:
       RandomType: 6
 
   - update: AUX_DREAD_FLAMER                # Dread Flamer Palm
-    power: 80 # was 60 - give it heavy flamer values
+    power: 60 #
     powerRangeReduction: 15
     powerRangeThreshold: 22
     accuracyAuto: 30
-    accuracySnap: 40
+    accuracySnap: 50
     tuAuto: 45
     tuSnap: 15
-    autoShots: 4
+    autoShots: 6
     damageAlter:
       FireBlastCalc: false
       IgnoreOverKill: false
       IgnoreDirection: false
       FixRadius: 3
-      ToHealth: 1.7
+      ToHealth: 1.5
       ToStun: 0.4
       ToTile: 0.3
       ToItem: 0.3

@@ -17,6 +17,7 @@ extended:
           var int unitIsKneeling;
           var int unitStrength;
           var int accuracyFloor;
+          var int temp;
 
           weapon.getRuleItem weaponRuleset;
           weaponRuleset.getTag itemRecoil Tag.ITEM_RECOIL;
@@ -52,6 +53,12 @@ extended:
           # less than 50% = full penalty
           # 50% to 100% = scaling penalty
           unit.Stats.getStrength unitStrength;
+          if lt unitStrength itemRecoil;
+            set temp unitStrength;
+            add temp 50;
+            div temp 2;
+            limit_upper unitStrength temp; # greater scaling penalty when failing str requirements with high str/recoil values (>50)
+          end;
           muldiv unitStrength 100 itemRecoil;
 
           if lt unitStrength 100;

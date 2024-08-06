@@ -10,7 +10,7 @@ manufacture:
       STR_DW_TOKEN: 1
       STR_KILLPOINT_TOKEN: 100
     producedItems:
-      STR_KILLPOINT_TOKEN: 1 # needed because otherwise game assumes you're trying to make an item with the name of the manufacture
+      STR_RIFLE_CLIP_MC: 5 # needed because otherwise game assumes you're trying to make an item with the name of the manufacture
 
   - name: STR_DWULTRA_FB                    # Ultramarine Firstborn
     refNode: *STR_DWRECRUIT_TEMPLATE
@@ -97,7 +97,7 @@ manufacture:
       STR_DW_TOKEN_LEADER: 1
       STR_KILLPOINT_TOKEN: 400
     producedItems:
-      STR_KILLPOINT_TOKEN: 1 # needed because otherwise game assumes you're trying to make an item with the name of the manufacture
+      STR_RIFLE_CLIP_DEREV: 5 # needed because otherwise game assumes you're trying to make an item with the name of the manufacture
 
   - name: STR_DWULTRA_L                     # Ultramarine Leader
     refNode: *STR_DWLEADER_TEMPLATE
@@ -126,3 +126,82 @@ manufacture:
   - name: STR_DWCRIMSON_L                   # Crimson Fist Leader
     refNode: *STR_DWLEADER_TEMPLATE
     spawnedPersonType: STR_CRISMONF_LEADER
+
+  - name: STR_RIFLE_CLIP_DEREV
+    category: STR_AMMUNITION
+    space: 0
+    time: 240
+    cost: 10000
+    requires:
+      - STR_DW_AMMO
+    requiredItems:
+      STR_UFO_CONSTRUCTION: 1
+      STR_KILLPOINT_TOKEN: 30
+    producedItems:
+      STR_RIFLE_CLIP_DEREV: 10
+
+  - name: STR_RIFLE_CLIP_FUSION
+    category: STR_AMMUNITION
+    space: 0
+    time: 240
+    cost: 10000
+    requires:
+      - STR_DW_AMMO
+    requiredItems:
+      STR_UFO_CONSTRUCTION: 1
+      STR_ELERIUM_115: 1
+      STR_KILLPOINT_TOKEN: 30
+    producedItems:
+      STR_RIFLE_CLIP_FUSION: 10
+
+  - name: STR_RIFLE_CLIP_DRAGON
+    category: STR_AMMUNITION
+    space: 0
+    time: 240
+    cost: 5000
+    requires:
+      - STR_DW_AMMO
+    requiredItems:
+      STR_ELERIUM_115: 1
+    producedItems:
+      STR_RIFLE_CLIP_DRAGON: 20
+
+  - name: STR_BOLT_SNIPER_AMMO_DEREV
+    category: STR_AMMUNITION
+    space: 0
+    time: 240
+    cost: 10000
+    requires:
+      - STR_DW_AMMO
+    requiredItems:
+      STR_UFO_CONSTRUCTION: 1
+      STR_ELERIUM_115: 1
+      STR_KILLPOINT_TOKEN: 20
+    producedItems:
+      STR_BOLT_SNIPER_AMMO_DEREV: 20
+
+  - name: STR_BOLT_SNIPER_AMMO_HELS
+    category: STR_AMMUNITION
+    space: 0
+    time: 240
+    cost: 10000
+    requires:
+      - STR_DW_AMMO
+    requiredItems:
+      STR_UFO_CONSTRUCTION: 1
+      STR_ELERIUM_115: 1
+      STR_KILLPOINT_TOKEN: 20
+    producedItems:
+      STR_BOLT_SNIPER_AMMO_HELS: 20
+
+  - name: STR_SHOTGUN_SHELLS_WYRM
+    category: STR_AMMUNITION
+    space: 0
+    time: 240
+    cost: 5000
+    requires:
+      - STR_DW_AMMO
+    requiredItems:
+      STR_ELERIUM_115: 1
+    producedItems:
+      STR_SHOTGUN_SHELLS_WYRM: 20

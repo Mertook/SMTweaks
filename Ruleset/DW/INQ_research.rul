@@ -1,4 +1,4 @@
-research: ### For techs that don't directly touch DW strategy but are needed to make other Chamber Militant strategies work with the changes made
+research: ### For techs that don't directly touch DW but are needed to make Chamber Militant strategies work with the changes made
 
   - name: STR_CHAMBERMILITANT
     cost: 0
@@ -80,6 +80,7 @@ research: ### For techs that don't directly touch DW strategy but are needed to 
       - STR_RADICAL_INQUISITOR_STRATEGY
       - STR_CHAOS_PATH
       - STR_XENO_WEAPONS
+      - STR_RADICAL_INQUISITOR_UNLOCK
     spawnedEvent: STR_REINFORCEMENTS_GK
 
   - name: STR_RADICAL_INQUISITOR            # mark faction as being radical - "The Radical Road" start or researching "Radical means" as DW/GK
@@ -92,7 +93,7 @@ research: ### For techs that don't directly touch DW strategy but are needed to 
     cost: 100
     points: -1000 # Radical options have score penalty
     dependencies:
-      - STR_GENERALLOCK
+      - STR_INQUISITION
 
   - name: STR_HALLEBARD                     # tech was given for free in rosigma, causes issue with GK strategy selection
     cost: 50
@@ -101,5 +102,204 @@ research: ### For techs that don't directly touch DW strategy but are needed to 
       - STR_GREYKNIGHTS
       - STR_MASTER_CRAFTING_AMMO # item manufacture is locked behind this tech anyway
     needItem: false
+
+  - name: STR_HAND_MULTILASER_RESEARCH_INQUISITION  # Multilaser
+    cost: 100
+    points: 50
+    dependencies:
+      - STR_INQUISITION
+
+  - name: STR_LIBRARY_GK # Make GK exclusive
+    cost: 100
+    points: 15
+    getOneFree:
+      - STR_LIBRARY
+    dependencies:
+      - STR_GREYKNIGHTS
+      - STR_PSI_AMP
+
+  - name: STR_TEC_BAY_CHAMBER_R # Make GK exclusive
+    cost: 100
+    points: 15
+    dependencies:
+      - STR_MIDTIER_PREREQ
+      - STR_GREYKNIGHTS
+      - STR_APOC_BAY
+
+  - name: STR_INQ_TROOP_REQS                # Tech to lock the various Inquisition teams
+    cost: 25
+    points: 15
+    dependencies:
+      - STR_INQUISITION
+
+  - name: STR_REQUISITION_IMPERIAL_ASSASSINS_RESEARCH
+    cost: 1000
+    points: -100
+    dependencies:
+      - STR_INQ_TROOP_REQS
+    spawnedEvent: STR_REINFORCEMENTS_IMPERIAL_ASSASSINS_INQ
+
+  - name: STR_SUMMON_IMPERIAL_AGENTS_RESEARCH #also triggers a eventscript that sends monthly random agents
+    cost: 250 # was 500
+    points: 10
+    dependencies:
+      - STR_INQ_TROOP_REQS
+    spawnedEvent: STR_REINFORCEMENTS_FRATERIS_INQ
+
+  - name: STR_REQUEST_ARBITES_RESEARCH
+    cost: 250
+    points: -100
+    dependencies:
+      - STR_INQ_TROOP_REQS
+    spawnedEvent: STR_REINFORCEMENTS_ENFORCERS_INQ
+
+  - name: STR_REQUEST_JUDGES_RESEARCH
+    cost: 500
+    points: -250
+    dependencies:
+      - STR_INQ_TROOP_REQS
+      - STR_MIDTIER_PREREQ
+    unlocks:
+      - STR_HWP_CANNON_SHELLS
+    spawnedEvent: STR_REINFORCEMENTS_ARBITES_INQ
+
+  - name: STR_REQUEST_GUARD_PILOTS_RESEARCH
+    cost: 250
+    points: -100
+    dependencies:
+      - STR_INQ_TROOP_REQS
+    spawnedEvent: STR_REINFORCEMENTS_PILOT_GUARD_INQ
+
+  - name: STR_REQUEST_ADEPTAS_PILOTS_RESEARCH
+    cost: 250
+    points: -250
+    dependencies:
+      - STR_INQ_TROOP_REQS
+      - STR_MIDTIER_PREREQ
+    spawnedEvent: STR_REINFORCEMENTS_ADEPTAS_PILOTS_INQ
+
+  - name: STR_REQUEST_KRIEG_KILLTEAM_RESEARCH
+    cost: 500
+    points: -100
+    dependencies:
+      - STR_INQ_TROOP_REQS
+    spawnedEvent: STR_REINFORCEMENTS_KRIEG_INQ
+
+  - name: STR_REQUEST_KRIEG_GRENADIER_KILLTEAM_RESEARCH
+    cost: 500
+    points: -250
+    dependencies:
+      - STR_INQ_TROOP_REQS
+      - STR_MIDTIER_PREREQ
+    spawnedEvent: STR_REINFORCEMENTS_KRIEG_GRENADIER_INQ
+
+  - name: STR_REQUEST_KRIEG_PANZERGRENADIER_KILLTEAM_RESEARCH
+    cost: 750
+    points: -500
+    dependencies:
+      - STR_INQ_TROOP_REQS
+      - STR_UFO_CONSTRUCTION #ceramite tier
+    spawnedEvent: STR_REINFORCEMENTS_KRIEG_PANZERGRENADIER_INQ
+
+  - name: STR_REQUEST_ADEPTAS_AID_RESEARCH
+    cost: 750
+    points: -250
+    dependencies:
+      - STR_INQ_TROOP_REQS
+    spawnedEvent: STR_REINFORCEMENTS_ADEPTAS_INQ
+
+  - name: STR_REQUEST_ADEPTAS_AID_RESEARCH_2
+    cost: 1000
+    points: -500
+    dependencies:
+      - STR_INQ_TROOP_REQS
+      - STR_MIDTIER_PREREQ
+    spawnedEvent: STR_REINFORCEMENTS_ADEPTAS_INQ_2
+
+  - name: STR_REQUEST_OGRYN_AID_RESEARCH
+    cost: 500
+    points: -100
+    dependencies:
+      - STR_INQ_TROOP_REQS
+    spawnedEvent: STR_REINFORCEMENTS_OGRYN_INQ
+  - name: STR_REQUEST_OGRYN_AID_RESEARCH_2
+    cost: 750
+    points: -250
+    dependencies:
+      - STR_INQ_TROOP_REQS
+      - STR_MIDTIER_PREREQ # was GK exclusive
+    spawnedEvent: STR_REINFORCEMENTS_OGRYN_INQ_2
+
+  - name: STR_REQUEST_GUARD_AID_RESEARCH
+    cost: 500
+    points: -100
+    dependencies:
+      - STR_INQ_TROOP_REQS
+    spawnedEvent: STR_REINFORCEMENTS_VETERAN_GUARD_INQ
+
+  - name: STR_REQUEST_POWER_GUARD_AID_RESEARCH
+    cost: 1500
+    points: -500
+    dependencies:
+      - STR_INQ_TROOP_REQS
+      - STR_MIDTIER_PREREQ # was GK exclusive
+    spawnedEvent: STR_REINFORCEMENTS_VETERAN_GUARD_INQ_POWERED
+
+  - name: STR_CONTACT_THE_ABHUMANS_RESEARCH
+    cost: 500
+    points: -250
+    dependencies:
+      - STR_RADICAL_INQUISITOR
+    spawnedEvent: STR_REINFORCEMENTS_BEASTMEN_INQ
+
+  - name: STR_RECRUIT_OGRYN_RESEARCH
+    cost: 500
+    points: -100
+    dependencies:
+      - STR_RADICAL_INQUISITOR
+      - STR_INQ_TROOP_REQS
+      - STR_CONTACT_THE_ABHUMANS_RESEARCH
+    spawnedEvent: STR_REINFORCEMENTS_UNARMORED_OGRYN_INQ
+  - name: STR_A_DEAL_WITH_THE_SQUATS_RESEARCH
+    cost: 500
+    points: -250
+    dependencies:
+      - STR_RADICAL_INQUISITOR
+      - STR_CONTACT_THE_ABHUMANS_RESEARCH
+    spawnedEvent: STR_REINFORCEMENTS_SQUATS_INQ
+
+  - name: STR_IMPERIAL_INQUISITOR_REQUISITION #To recruit Inquisitors
+    cost: 1000
+    points: 10
+    dependencies:
+      - STR_CHAMBERMILITANT
+      - STR_MIDTIER_PREREQ
+    getOneFree:
+      - STR_IMPERIAL_INQUISITOR
+
+  - name: STR_IMPERIAL_INQUISITOR #For other nonGK factions to unlock manufacture recruitment of Inquisitors?
+    cost: 1500
+    points: 10
+    dependencies:
+      - STR_GENERALLOCK
+      - STR_IMPERIAL_INQUISITOR_REQUISITION
+
+  - name: STR_INQ_STORMTROOPER_REQUISITION #Inquisition Stormtrooper
+    cost: 500
+    points: 10
+    dependencies:
+      - STR_CHAMBERMILITANT
+      - STR_ELITE_STRATEGY_ADEPTAS
+    getOneFree:
+      - STR_INQ_STORMTROOPER
+
+  - name: STR_INQ_STORMTROOPER #For other nonGK factions to unlock manufacture recruitment of Inq Stormtroopers?
+    cost: 500
+    points: 10
+    dependencies:
+      - STR_GENERALLOCK
+      - STR_INQ_STORMTROOPER_REQUISITION
+
+
 
 

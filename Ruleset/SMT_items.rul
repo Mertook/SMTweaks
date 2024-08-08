@@ -992,7 +992,7 @@ items:
     battleType: 1
     size: 0.2
     requiresBuy:
-      - STR_MARINE_BOLTERS #STR_PRIMARIS_AND_DEATHWATCH
+      - STR_PRIMARIS_AND_DEATHWATCH
     requiresBuyBaseFunc: [TRADE]
     costBuy: 150000
     costSell: 1000
@@ -1034,6 +1034,8 @@ items:
     size: 0.05
     costBuy: 1000
     costSell: 500
+    requiresBuy:
+      - STR_PRIMARIS_AND_DEATHWATCH
     weight: 3
     armor: 200
     listOrder: 10101

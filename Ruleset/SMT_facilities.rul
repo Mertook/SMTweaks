@@ -17,3 +17,33 @@ facilities:
 
   - type: STR_ARMORY
     storage: 50 # was 25 - general stores is 100
+
+  - &DW_QUARTERS
+    type: STR_DW_QUARTERS_ULTRA
+    requires:
+      - STR_GENERALLOCK
+    refundValue: 100000
+    canBeBuiltOver: true
+    destroyedFacility: STR_CORRIDOR
+  - type: STR_DW_QUARTERS_IF
+    refNode: *DW_QUARTERS
+  - type: STR_DW_QUARTERS_BA
+    refNode: *DW_QUARTERS
+  - type: STR_DW_QUARTERS_SALA
+    refNode: *DW_QUARTERS
+  - type: STR_DW_QUARTERS_BT
+    refNode: *DW_QUARTERS
+  - type: STR_DW_QUARTERS_WS
+    refNode: *DW_QUARTERS
+  - type: STR_DW_QUARTERS_SW
+    refNode: *DW_QUARTERS
+  - type: STR_DW_QUARTERS_DA
+    refNode: *DW_QUARTERS
+  - type: STR_DW_QUARTERS_CF
+    refNode: *DW_QUARTERS
+  - type: STR_DW_QUARTERS
+    refNode: *DW_QUARTERS
+
+  - type: STR_OUTPOST_GK
+    requires:
+      - STR_GREYKNIGHTS

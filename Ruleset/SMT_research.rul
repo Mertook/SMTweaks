@@ -367,7 +367,7 @@ research:
     cost: 100
     points: 15
     dependencies:
-      - STR_MARINES_STRATEGY
+      - STR_MARINES_AND_DEATHWATCH
       - STR_MIDTIER_PREREQ
 
   - name: STR_CHAP_ARMOR            # Chaplain Armor - Reused for Crozius/Rosary
@@ -413,12 +413,46 @@ research:
       - STR_HIGHTIER_PREREQ
     listOrder: 1 # push above corpses/etc
 
-  - name: STR_GUARD_IMPERIAL_ASSASSIN_REQUISITION
-    getOneFree:
-      - STR_VINDICARE_AMMO_REQ
-
-  - name: STR_VINDICARE_AMMO_REQ    # Exitus Rifle/Pistol ammo unlock for rare Vindicare event
-    cost: 0
-    points: 0
+  - name: STR_PRIMARIS_ARMOR        # Primaris Armor
+    cost: 180
+    points: 20
     dependencies:
-      - STR_GENERALLOCK
+      - STR_PRIMARIS
+      - STR_ALIEN_ALLOYS
+      - STR_THREAT_ONE
+      - STR_MARINES_STRATEGY
+
+  - name: STR_MKX_PHB_ARMOR         # Primaris Phobos Armor
+    cost: 180
+    points: 20
+    dependencies:
+      - STR_PRIMARIS
+      - STR_ALIEN_ALLOYS
+      - STR_PRIMARIS_ARMOR
+
+  - name: STR_MKX_INC_ARMOR         # Primaris Interceptor/Omnis Armor
+    cost: 180
+    points: 20
+    dependencies:
+      - STR_PRIMARIS
+      - STR_MKX_GRV_ARMOR
+      - STR_PRIMARIS_ARMOR
+      - STR_MKX_PHB_ARMOR
+
+  - name: STR_MKX_GRV_ARMOR         # Primaris Gravis Armor
+    cost: 205
+    points: 20
+    dependencies:
+      - STR_PRIMARIS
+      - STR_ELERIUM_115
+      - STR_UFO_POWER_SOURCE
+      - STR_MIDTIER_PREREQ
+      - STR_PRIMARIS_ARMOR
+
+  - name: STR_MKX_CHP_ARMOR         # Primaris Chaplain Armor
+    cost: 205
+    points: 20
+    dependencies:
+      - STR_PRIMARIS
+      - STR_HIGHTIER_PREREQ
+      - STR_PRIMARIS_ARMOR

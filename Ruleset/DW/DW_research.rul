@@ -109,7 +109,7 @@ research:
       - STR_RADICAL_INQUISITOR
     listOrder: 10 # push above corpses/etc
 
-  - name: STR_NECRONTECH_RESEARCH #grant access to Necron Weapons
+  - name: STR_NECRONTECH_RESEARCH   # Necron weapon tech
     cost: 1200 # was 2000
     points: -250
     dependencies:
@@ -120,13 +120,12 @@ research:
       - STR_GAUSS_FLAYER
       - STR_GAUSS_REAPER
 
-  - name: STR_XENO_ONLY #grant access to Xeno Weapons (not chaos)
+  - name: STR_XENO_ONLY             # Eldar weapon tech
     cost: 250
     points: -100
     dependencies:
       - STR_XENO_WEAPONS
       - STR_ELDAR_SEER #live interrogation
-
 
   - name: STR_DW_HWP                # Deathwatch Gear Basic Tier (Devastator armor + Heavy Bolter)
     cost: 160
@@ -138,7 +137,7 @@ research:
       - STR_HBOLTER_AMMO_BELTS
     getOneFree:
       - STR_DEV_ARMOR
-    listOrder: 10 # push above corpses/etc
+    listOrder: 5 # push above corpses/etc
 
   - name: STR_DW_SNIPER             # Deathwatch Gear Basic Tier (Phobos armor + Sniper Boltrifle)
     cost: 160
@@ -149,21 +148,23 @@ research:
       - STR_BOLT_RIFLE_AMMO
     getOneFree:
       - STR_MKX_PHB_ARMOR
-    listOrder: 10 # push above corpses/etc
+    listOrder: 6 # push above corpses/etc
 
   - name: STR_DW_AMMO               # Deathwatch Gear MidTier (Special Ammo)
     cost: 120
     points: 10
     dependencies:
       - STR_MT_DW
-    listOrder: 10 # push above corpses/etc
+    listOrder: 7 # push above corpses/etc
 
   - name: STR_DW_ASSAULT            # Deathwatch Gear MidTier (Assault armor)
     cost: 180
     points: 20
     dependencies:
       - STR_MT_DW
-    listOrder: 10 # push above corpses/etc
+    getOneFree:
+      - STR_ASS_ARMOR
+    listOrder: 8 # push above corpses/etc
 
   - name: STR_DW_GRAVIS             # Deathwatch Gear Midtier+ (Gravis)
     cost: 180
@@ -171,57 +172,27 @@ research:
     dependencies:
       - STR_MT_DW
       - STR_UFO_CONSTRUCTION # ceramite
-    listOrder: 10 # push above corpses/etc
-
-  - name: STR_DW_TERM            # Deathwatch Gear High Tier (Terminator armor)
-    cost: 220
-    points: 30
-    dependencies:
-      - STR_DW_HIGHTIER
-    listOrder: 10 # push above corpses/etc
-
-  - name: STR_DW_OMNIS            # Deathwatch Gear High Tier (Omnis armor)
-    cost: 220
-    points: 30
-    dependencies:
-      - STR_DW_HIGHTIER
-    listOrder: 10 # push above corpses/etc
-
-  - name: STR_PRIMARIS_ARMOR        # Primaris Tac Armor
-    cost: 180
-    points: 20
-    dependencies:
-      - STR_PRIMARIS # was Primaris + Deathwatch, DW doesn't need this tech
-      - STR_ALIEN_ALLOYS
-      - STR_THREAT_ONE
-  - name: STR_MKX_PHB_ARMOR         # Primaris Phobos Armor
-    cost: 180
-    points: 20
-    dependencies:
-      - STR_ALIEN_ALLOYS
-      - STR_PRIMARIS_ARMOR
-  - name: STR_MKX_INC_ARMOR         # Primaris Jet Armor
-    cost: 180
-    points: 20
-    dependencies:
-      - STR_PRIMARIS
+    getOneFree:
       - STR_MKX_GRV_ARMOR
-      - STR_PRIMARIS_ARMOR
-      - STR_MKX_PHB_ARMOR
-  - name: STR_MKX_GRV_ARMOR         # Primaris Gravis Armor
-    cost: 205
-    points: 20
+    listOrder: 9 # push above corpses/etc
+
+  - name: STR_DW_TERM               # Deathwatch Gear High Tier (Terminator armor)
+    cost: 220
+    points: 30
     dependencies:
-      - STR_PRIMARIS
-      - STR_ELERIUM_115
-      - STR_UFO_POWER_SOURCE
-      - STR_MIDTIER_PREREQ
-      - STR_PRIMARIS_ARMOR
-  - name: STR_MKX_CHP_ARMOR         # Primaris Chap Armor
-    cost: 205
-    points: 20
+      - STR_DW_HIGHTIER
+    getOneFree:
+      - STR_POWER_SUIT
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_DW_PRIMARIS_FLIGHT    # Deathwatch Gear High Tier (Omnis + Light Gravis armor)
+    cost: 220
+    points: 30
     dependencies:
-      - STR_PRIMARIS
-      - STR_HIGHTIER_PREREQ
-      - STR_PRIMARIS_ARMOR
+      - STR_DW_HIGHTIER
+    getOneFree:
+      - STR_MKX_INC_ARMOR
+    listOrder: 10 # push above corpses/etc
+
+
 

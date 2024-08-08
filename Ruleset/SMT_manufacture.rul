@@ -339,6 +339,97 @@ manufacture:
       STR_ELERIUM_115: 10
       STR_KILLPOINT_TOKEN: 60
 
+  - name: STR_MKX_APO_ARMOR                         # Primaris Apothecary
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_MEDI_KIT_PREREQ
+      - STR_PRIMARIS_AND_DEATHWATCH
+    space: 0
+    time: 800
+    cost: 22000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 30
+      STR_KILLPOINT_TOKEN: 60
+
+  - name: STR_MKX_TEC_ARMOR                         # Primaris Techmarine
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_TEC_BAYR
+      - STR_PRIMARIS_AND_DEATHWATCH
+    space: 0
+    time: 800
+    cost: 50000
+    requiresBaseFunc: [TEC]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 30
+      STR_KILLPOINT_TOKEN: 60
+
+  - name: STR_MKX_PHB_ARMOR                         # Primaris Phobos
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_MKX_PHB_ARMOR
+    space: 0
+    time: 800
+    cost: 22000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 15
+
+  - name: STR_MKX_GRV_ARMOR                         # Primaris Gravis
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_MKX_GRV_ARMOR
+    space: 0
+    time: 800
+    cost: 28000
+    requiresBaseFunc: [ARMO]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 50
+      STR_KILLPOINT_TOKEN: 100 # was 30
+
+  - name: STR_MKX_INC_ARMOR                         # Primaris Omnis/Interceptor
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_MKX_INC_ARMOR
+    space: 0
+    time: 800
+    cost: 28000
+    requiresBaseFunc: [ARMO]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 50
+      STR_KILLPOINT_TOKEN: 100 # was 30
+
+  - name: STR_MKX_LIB_ARMOR                         # Primaris Librarian
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_PRIMARIS
+      - STR_PRIMARIS_ARMOR
+      - STR_PSI_AMP
+    space: 0
+    time: 800
+    cost: 22000
+    requiresBaseFunc: [LIB]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 120
+      STR_KILLPOINT_TOKEN: 60
+
+  - name: STR_MKX_CHP_ARMOR                         # Primaris Chaplain
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_PRIMARIS
+      - STR_MKX_CHP_ARMOR
+    space: 0
+    time: 800
+    cost: 22000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 120
+      STR_KILLPOINT_TOKEN: 60
+
   - name: STR_HEAVY_BOLTER_MARS                     # Mars Heavy Bolter
     category: STR_WEAPON
     space: 0

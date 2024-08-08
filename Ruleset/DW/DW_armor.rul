@@ -26,6 +26,9 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: # DW Marines get Officer values innately
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -48,6 +51,48 @@ armors:
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
+
+  - type: STR_DW_TAC_ARMOR_BA_UC
+    refNode: *STR_DW_TAC_MK7
+    instantWoundRecovery: true
+  - type: STR_DW_TAC_ARMOR_BT_UC
+    refNode: *STR_DW_TAC_MK7
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_DW_TAC_ARMOR_CF_UC
+    refNode: *STR_DW_TAC_MK7
+  - type: STR_DW_TAC_ARMOR_DA_UC
+    refNode: *STR_DW_TAC_MK7
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_DW_TAC_ARMOR_IF_UC
+    refNode: *STR_DW_TAC_MK7
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_DW_TAC_ARMOR_SALA_UC
+    refNode: *STR_DW_TAC_MK7
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_DW_TAC_ARMOR_SW_UC
+    refNode: *STR_DW_TAC_MK7
+  - type: STR_DW_TAC_ARMOR_ULTRA_UC
+    refNode: *STR_DW_TAC_MK7
+  - type: STR_DW_TAC_ARMOR_WS_UC
+    refNode: *STR_DW_TAC_MK7
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_APOTH_MK7                       #Apothecary Armor (Firstborn)
     visibilityAtDay: 40
@@ -76,6 +121,9 @@ armors:
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 15         # base 10 +5
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: # DW Marines get Officer values innately
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -100,6 +148,48 @@ armors:
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
+
+  - type: STR_DW_APOT_ARMOR_BA_UC
+    refNode: *STR_DW_APOTH_MK7
+    instantWoundRecovery: true
+  - type: STR_DW_APOT_ARMOR_BT_UC
+    refNode: *STR_DW_APOTH_MK7
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_DW_APOT_ARMOR_CF_UC
+    refNode: *STR_DW_APOTH_MK7
+  - type: STR_DW_APOT_ARMOR_DA_UC
+    refNode: *STR_DW_APOTH_MK7
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_DW_APOT_ARMOR_IF_UC
+    refNode: *STR_DW_APOTH_MK7
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_DW_APOT_ARMOR_SALA_UC
+    refNode: *STR_DW_APOTH_MK7
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_DW_APOT_ARMOR_SW_UC
+    refNode: *STR_DW_APOTH_MK7
+  - type: STR_DW_APOT_ARMOR_ULTRA_UC
+    refNode: *STR_DW_APOTH_MK7
+  - type: STR_DW_APOT_ARMOR_WS_UC
+    refNode: *STR_DW_APOTH_MK7
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_DEV_MK7                         #Devastator Armor (Firstborn)
     visibilityAtDay: 40
@@ -128,6 +218,9 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: -20        # base 10 -30 (ranged specialist & also to offset strength bonus)
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: # DW Marines get Officer values innately
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -151,6 +244,48 @@ armors:
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
+
+  - type: STR_DW_DEV_ARMOR_BA_UC
+    refNode: *STR_DW_DEV_MK7
+    instantWoundRecovery: true
+  - type: STR_DW_DEV_ARMOR_BT_UC
+    refNode: *STR_DW_DEV_MK7
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_DW_DEV_ARMOR_CF_UC
+    refNode: *STR_DW_DEV_MK7
+  - type: STR_DW_DEV_ARMOR_DA_UC
+    refNode: *STR_DW_DEV_MK7
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_DW_DEV_ARMOR_IF_UC
+    refNode: *STR_DW_DEV_MK7
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_DW_DEV_ARMOR_SALA_UC
+    refNode: *STR_DW_DEV_MK7
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_DW_DEV_ARMOR_SW_UC
+    refNode: *STR_DW_DEV_MK7
+  - type: STR_DW_DEV_ARMOR_ULTRA_UC
+    refNode: *STR_DW_DEV_MK7
+  - type: STR_DW_DEV_ARMOR_WS_UC
+    refNode: *STR_DW_DEV_MK7
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_ASS_MK7                         #Assault Armor (Firstborn)
     visibilityAtDay: 40
@@ -179,6 +314,9 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 25         # base 10 +15
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: # DW Marines get Officer values innately
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -202,12 +340,54 @@ armors:
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
+  - type: STR_DW_ASS_ARMOR_BA_UC
+    refNode: *STR_DW_ASS_MK7
+    instantWoundRecovery: true
+  - type: STR_DW_ASS_ARMOR_BT_UC
+    refNode: *STR_DW_ASS_MK7
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_DW_ASS_ARMOR_CF_UC
+    refNode: *STR_DW_ASS_MK7
+  - type: STR_DW_ASS_ARMOR_DA_UC
+    refNode: *STR_DW_ASS_MK7
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_DW_ASS_ARMOR_IF_UC
+    refNode: *STR_DW_ASS_MK7
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_DW_ASS_ARMOR_SALA_UC
+    refNode: *STR_DW_ASS_MK7
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_DW_ASS_ARMOR_SW_UC
+    refNode: *STR_DW_ASS_MK7
+  - type: STR_DW_ASS_ARMOR_ULTRA_UC
+    refNode: *STR_DW_ASS_MK7
+  - type: STR_DW_ASS_ARMOR_WS_UC
+    refNode: *STR_DW_ASS_MK7
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
+
   - &STR_DW_TECH_MK7                        #Techmarine Armor (Firstborn)
     visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    visibilityAtDark: 40
     heatVision: 50 # Techmarine Standard
-    antiCamouflageAtDay: 10 # Techmarine Standard
-    antiCamouflageAtDark: 10 # Techmarine Standard
+    antiCamouflageAtDay: 12 # +2 over Techmarine Standard
+    antiCamouflageAtDark: 12 # +2 over Techmarine Standard
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -229,6 +409,9 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 15         # base 10 +5
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: # DW Marines get Officer values innately
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -242,6 +425,8 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.9 #MELTA
+    builtInWeapons:
+      - STR_TT_DW_SPAWNER
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # Techmarine maintenance bonus
@@ -251,6 +436,48 @@ armors:
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
+
+  - type: STR_DW_TECH_ARMOR_BA_UC
+    refNode: *STR_DW_TECH_MK7
+    instantWoundRecovery: true
+  - type: STR_DW_TECH_ARMOR_BT_UC
+    refNode: *STR_DW_TECH_MK7
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_DW_TECH_ARMOR_CF_UC
+    refNode: *STR_DW_TECH_MK7
+  - type: STR_DW_TECH_ARMOR_DA_UC
+    refNode: *STR_DW_TECH_MK7
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_DW_TECH_ARMOR_IF_UC
+    refNode: *STR_DW_TECH_MK7
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_DW_TECH_ARMOR_SALA_UC
+    refNode: *STR_DW_TECH_MK7
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_DW_TECH_ARMOR_SW_UC
+    refNode: *STR_DW_TECH_MK7
+  - type: STR_DW_TECH_ARMOR_ULTRA_UC
+    refNode: *STR_DW_TECH_MK7
+  - type: STR_DW_TECH_ARMOR_WS_UC
+    refNode: *STR_DW_TECH_MK7
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_TERM_MK7                        #Terminator Armor (Firstborn)
     visibilityAtDay: 40
@@ -279,6 +506,9 @@ armors:
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 10         # base 10
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: #TERMINATOR ARMOR
       - 1.0 #none
       - 0.7 #AP (was 0.6)
@@ -298,10 +528,54 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 55
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalties
+      SMT_ARMOR_REGEN_HP: 4
+      ARMOR_REGENERATES_WOUNDS: 1
       INFECTION_RESIST: 75 #Resistant to GSC infection
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
+
+  - type: STR_DW_TER_ARMOR_BA_UC
+    refNode: *STR_DW_TERM_MK7
+    instantWoundRecovery: true
+  - type: STR_DW_TER_ARMOR_BT_UC
+    refNode: *STR_DW_TERM_MK7
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_DW_TER_ARMOR_CF_UC
+    refNode: *STR_DW_TERM_MK7
+  - type: STR_DW_TER_ARMOR_DA_UC
+    refNode: *STR_DW_TERM_MK7
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_DW_TER_ARMOR_IF_UC
+    refNode: *STR_DW_TERM_MK7
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_DW_TER_ARMOR_SALA_UC
+    refNode: *STR_DW_TERM_MK7
+    damageModifier:
+      - 1.0 #none
+      - 0.7 #AP
+      - 0.05 #FLAMES (default 0.3, Salamander bonus)
+      - 0.6 #HE
+      - 0.8 #LASCANON
+      - 0.8 #PLASMA
+      - 1.0 #STUN
+      - 0.8 #MELEE
+      - 0.6 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.7 #MELTA (default 0.8, Salamander bonus) 
+  - type: STR_DW_TER_ARMOR_SW_UC
+    refNode: *STR_DW_TERM_MK7
+  - type: STR_DW_TER_ARMOR_ULTRA_UC
+    refNode: *STR_DW_TERM_MK7
+  - type: STR_DW_TER_ARMOR_WS_UC
+    refNode: *STR_DW_TERM_MK7
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_TAC_MKX                         #Tactical Armor (Primaris)
     visibilityAtDay: 40
@@ -330,6 +604,9 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: # DW Marines get Officer values innately
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -352,6 +629,48 @@ armors:
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
+
+  - type: STR_MKX_DW_TAC_BA_UC
+    refNode: *STR_DW_TAC_MKX
+    instantWoundRecovery: true
+  - type: STR_MKX_DW_TAC_BT_UC
+    refNode: *STR_DW_TAC_MKX
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_MKX_DW_TAC_CF_UC
+    refNode: *STR_DW_TAC_MKX
+  - type: STR_MKX_DW_TAC_DA_UC
+    refNode: *STR_DW_TAC_MKX
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_MKX_DW_TAC_IF_UC
+    refNode: *STR_DW_TAC_MKX
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_MKX_DW_TAC_SALA_UC
+    refNode: *STR_DW_TAC_MKX
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_MKX_DW_TAC_SW_UC
+    refNode: *STR_DW_TAC_MKX
+  - type: STR_MKX_DW_TAC_ULTRA_UC
+    refNode: *STR_DW_TAC_MKX
+  - type: STR_MKX_DW_TAC_WS_UC
+    refNode: *STR_DW_TAC_MKX
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_APOTH_MKX                       #Apothecary Armor (Primaris)
     visibilityAtDay: 40
@@ -380,6 +699,9 @@ armors:
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 15         # base 10 +5
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: # DW Marines get Officer values innately
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -405,12 +727,155 @@ armors:
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
+  - type: STR_MKX_DW_APO_BA_UC
+    refNode: *STR_DW_APOTH_MKX
+    instantWoundRecovery: true
+  - type: STR_MKX_DW_APO_BT_UC
+    refNode: *STR_DW_APOTH_MKX
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_MKX_DW_APO_CF_UC
+    refNode: *STR_DW_APOTH_MKX
+  - type: STR_MKX_DW_APO_DA_UC
+    refNode: *STR_DW_APOTH_MKX
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_MKX_DW_APO_IF_UC
+    refNode: *STR_DW_APOTH_MKX
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_MKX_DW_APO_SALA_UC
+    refNode: *STR_DW_APOTH_MKX
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_MKX_DW_APO_SW_UC
+    refNode: *STR_DW_APOTH_MKX
+  - type: STR_MKX_DW_APO_ULTRA_UC
+    refNode: *STR_DW_APOTH_MKX
+  - type: STR_MKX_DW_APO_WS_UC
+    refNode: *STR_DW_APOTH_MKX
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
+
+
+
+  - &STR_DW_TECH_MKX                       #Techmarine Armor (Primaris)
+    visibilityAtDay: 40
+    visibilityAtDark: 40
+    heatVision: 50
+    antiCamouflageAtDay: 12 # +2 over regular - DW bonus
+    antiCamouflageAtDark: 12 # +2 over regular - DW bonus
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats:
+      tu: 10            # base 10 
+      stamina: 10       # base 20 -10
+      health: 20        # base 10 +10
+      bravery: 10       # base 0
+      reactions: 10     # base 10 
+      firing: 0         # base 0  
+      throwing: -10     # base 5  -15
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 15         # base 10 +5
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    builtInWeapons:
+      - STR_TF_DW_SPAWNER
+      - STR_THUNDERFIRE_SHELL
+      - STR_THUNDERFIRE_SHELL
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 60
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - type: STR_MKX_DW_TEC_BA_UC
+    refNode: *STR_DW_TECH_MKX
+    instantWoundRecovery: true
+  - type: STR_MKX_DW_TEC_BT_UC
+    refNode: *STR_DW_TECH_MKX
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_MKX_DW_TEC_CF_UC
+    refNode: *STR_DW_TECH_MKX
+  - type: STR_MKX_DW_TEC_DA_UC
+    refNode: *STR_DW_TECH_MKX
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_MKX_DW_TEC_IF_UC
+    refNode: *STR_DW_TECH_MKX
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_MKX_DW_TEC_SALA_UC
+    refNode: *STR_DW_TECH_MKX
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_MKX_DW_TEC_SW_UC
+    refNode: *STR_DW_TECH_MKX
+  - type: STR_MKX_DW_TEC_ULTRA_UC
+    refNode: *STR_DW_TECH_MKX
+  - type: STR_MKX_DW_TEC_WS_UC
+    refNode: *STR_DW_TECH_MKX
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
+
   - &STR_DW_PHB_MKX                         #Phobos Armor (Primaris)
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    heatVision: 35 # +15 - DW bonus + Phobos bonus
+    antiCamouflageAtDay: 9 # +2 over regular Officers - DW bonus + Phobos bonus
+    antiCamouflageAtDark: 9 # +2 over regular Officers - DW bonus + Phobos bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -425,13 +890,16 @@ armors:
       stamina: 30       # base 20 +10
       health: 10        # base 10 
       bravery: 10       # base 0  +10
-      reactions: 30     # base 10 +30
+      reactions: 40     # base 10 +30
       firing: 5         # base 0  +5
       throwing: 15      # base 5  +10
       strength: 10      # base 10 
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 25         # base 10 +15
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: # DW Marines get Officer values innately
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -457,7 +925,49 @@ armors:
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
-  - &STR_DW_GRV_MKX_BS                      #Gravis Armor (Primaris) - Boltstorm Gauntlet x2 + Fragstorm
+  - type: STR_MKX_DW_PHB_BA_UC
+    refNode: *STR_DW_PHB_MKX
+    instantWoundRecovery: true
+  - type: STR_MKX_DW_PHB_BT_UC
+    refNode: *STR_DW_PHB_MKX
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_MKX_DW_PHB_CF_UC
+    refNode: *STR_DW_PHB_MKX
+  - type: STR_MKX_DW_PHB_DA_UC
+    refNode: *STR_DW_PHB_MKX
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_MKX_DW_PHB_IF_UC
+    refNode: *STR_DW_PHB_MKX
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_MKX_DW_PHB_SALA_UC
+    refNode: *STR_DW_PHB_MKX
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_MKX_DW_PHB_SW_UC
+    refNode: *STR_DW_PHB_MKX
+  - type: STR_MKX_DW_PHB_ULTRA_UC
+    refNode: *STR_DW_PHB_MKX
+  - type: STR_MKX_DW_PHB_WS_UC
+    refNode: *STR_DW_PHB_MKX
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
+
+  - &STR_DW_GRV_MKX_BS                      #Gravis Armor (Primaris) - Boltstorm Gauntlet
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
@@ -484,6 +994,9 @@ armors:
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 10         # base 10
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: # DW Marines get Officer values innately
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -497,9 +1010,7 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.9 #MELTA
-    specialWeapon: STR_GRAV_MORTAR
     builtInWeapons:
-      - STR_GRAV_BOLTER_DW
       - STR_GRAV_BOLTER_DW
       - INV_NULL_3X3
     tags:
@@ -512,6 +1023,201 @@ armors:
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
+
+  - type: STR_MKX_DW_GRV_BA_UC
+    refNode: *STR_DW_GRV_MKX_BS
+    instantWoundRecovery: true
+    spriteSheet: DWGRVBSBA.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVBSBA", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVBSBA", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVBSBA", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVBSBA", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVBSBA", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVBSBA", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVBSBA", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVBSBA", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVBSBA", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVBSBA", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVBSBA", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVBSBA", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRV_BT_UC
+    refNode: *STR_DW_GRV_MKX_BS
+    spriteSheet: DWGRVBSBT.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVBSBT", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVBSBT", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVBSBT", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVBSBT", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVBSBT", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVBSBT", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVBSBT", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVBSBT", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVBSBT", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVBSBT", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVBSBT", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVBSBT", "F5_FACE", "GOLA"]
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_MKX_DW_GRV_CF_UC
+    refNode: *STR_DW_GRV_MKX_BS
+    spriteSheet: DWGRVBSCF.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVBSCF", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVBSCF", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVBSCF", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVBSCF", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVBSCF", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVBSCF", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVBSCF", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVBSCF", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVBSCF", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVBSCF", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVBSCF", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVBSCF", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRV_DA_UC
+    refNode: *STR_DW_GRV_MKX_BS
+    spriteSheet: DWGRVBSDA.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVBSDA", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVBSDA", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVBSDA", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVBSDA", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVBSDA", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVBSDA", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVBSDA", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVBSDA", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVBSDA", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVBSDA", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVBSDA", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVBSDA", "F5_FACE", "GOLA"]
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_MKX_DW_GRV_IF_UC
+    refNode: *STR_DW_GRV_MKX_BS
+    spriteSheet: DWGRVBSIF.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVBSIF", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVBSIF", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVBSIF", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVBSIF", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVBSIF", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVBSIF", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVBSIF", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVBSIF", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVBSIF", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVBSIF", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVBSIF", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVBSIF", "F5_FACE", "GOLA"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_MKX_DW_GRV_SALA_UC
+    refNode: *STR_DW_GRV_MKX_BS
+    spriteSheet: DWGRVBSSA.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVBSSA", "M0_FACES", "GOLA"]
+      M1: ["0", "GRVBSSA", "M1_FACES", "GOLA"]
+      M2: ["0", "GRVBSSA", "M2_FACES", "GOLA"]
+      M3: ["0", "GRVBSSA", "M3_FACES", "GOLA"]
+      M4: ["0", "GRVBSSA", "M4_FACES", "GOLA"]
+      M5: ["0", "GRVBSSA", "M5_FACES", "GOLA"]
+      F0: ["0", "GRVBSSA", "F0_FACES", "GOLA"]
+      F1: ["0", "GRVBSSA", "F1_FACES", "GOLA"]
+      F2: ["0", "GRVBSSA", "F2_FACES", "GOLA"]
+      F3: ["0", "GRVBSSA", "F3_FACES", "GOLA"]
+      F4: ["0", "GRVBSSA", "F4_FACES", "GOLA"]
+      F5: ["0", "GRVBSSA", "F5_FACES", "GOLA"]
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_MKX_DW_GRV_SW_UC
+    refNode: *STR_DW_GRV_MKX_BS
+    spriteSheet: DWGRVBSSW.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVBSSW", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVBSSW", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVBSSW", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVBSSW", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVBSSW", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVBSSW", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVBSSW", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVBSSW", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVBSSW", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVBSSW", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVBSSW", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVBSSW", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRV_ULTRA_UC
+    refNode: *STR_DW_GRV_MKX_BS
+    spriteSheet: DWGRVBSUM.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVBSUM", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVBSUM", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVBSUM", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVBSUM", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVBSUM", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVBSUM", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVBSUM", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVBSUM", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVBSUM", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVBSUM", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVBSUM", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVBSUM", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRV_WS_UC
+    refNode: *STR_DW_GRV_MKX_BS
+    spriteSheet: DWGRVBSWS.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVBSWS", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVBSWS", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVBSWS", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVBSWS", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVBSWS", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVBSWS", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVBSWS", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVBSWS", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVBSWS", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVBSWS", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVBSWS", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVBSWS", "F5_FACE", "GOLA"]
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_GRV_MKX_AC                      #Gravis Armor (Primaris) - Autocannon Gauntlet x2
     visibilityAtDay: 40
@@ -544,6 +1250,9 @@ armors:
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 10         # base 10
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: # DW Marines get Officer values innately
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -572,7 +1281,202 @@ armors:
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
-  - &STR_DW_GRV_MKX_FS                      #Gravis Armor (Primaris) - Flamestorm Gauntlet x2
+  - type: STR_MKX_DW_GRVAC_BA_UC
+    refNode: *STR_DW_GRV_MKX_AC
+    instantWoundRecovery: true
+    spriteSheet: DWGRVACBA.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVACBA", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVACBA", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVACBA", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVACBA", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVACBA", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVACBA", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVACBA", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVACBA", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVACBA", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVACBA", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVACBA", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVACBA", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRVAC_BT_UC
+    refNode: *STR_DW_GRV_MKX_AC
+    spriteSheet: DWGRVACBT.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVACBT", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVACBT", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVACBT", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVACBT", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVACBT", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVACBT", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVACBT", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVACBT", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVACBT", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVACBT", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVACBT", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVACBT", "F5_FACE", "GOLA"]
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_MKX_DW_GRVAC_CF_UC
+    refNode: *STR_DW_GRV_MKX_AC
+    spriteSheet: DWGRVACCF.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVACCF", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVACCF", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVACCF", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVACCF", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVACCF", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVACCF", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVACCF", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVACCF", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVACCF", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVACCF", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVACCF", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVACCF", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRVAC_DA_UC
+    refNode: *STR_DW_GRV_MKX_AC
+    spriteSheet: DWGRVACDA.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVACDA", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVACDA", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVACDA", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVACDA", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVACDA", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVACDA", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVACDA", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVACDA", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVACDA", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVACDA", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVACDA", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVACDA", "F5_FACE", "GOLA"]
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_MKX_DW_GRVAC_IF_UC
+    refNode: *STR_DW_GRV_MKX_AC
+    spriteSheet: DWGRVACIF.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVACIF", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVACIF", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVACIF", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVACIF", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVACIF", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVACIF", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVACIF", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVACIF", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVACIF", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVACIF", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVACIF", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVACIF", "F5_FACE", "GOLA"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_MKX_DW_GRVAC_SALA_UC
+    refNode: *STR_DW_GRV_MKX_AC
+    spriteSheet: DWGRVACSA.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVACSA", "M0_FACES", "GOLA"]
+      M1: ["0", "GRVACSA", "M1_FACES", "GOLA"]
+      M2: ["0", "GRVACSA", "M2_FACES", "GOLA"]
+      M3: ["0", "GRVACSA", "M3_FACES", "GOLA"]
+      M4: ["0", "GRVACSA", "M4_FACES", "GOLA"]
+      M5: ["0", "GRVACSA", "M5_FACES", "GOLA"]
+      F0: ["0", "GRVACSA", "F0_FACES", "GOLA"]
+      F1: ["0", "GRVACSA", "F1_FACES", "GOLA"]
+      F2: ["0", "GRVACSA", "F2_FACES", "GOLA"]
+      F3: ["0", "GRVACSA", "F3_FACES", "GOLA"]
+      F4: ["0", "GRVACSA", "F4_FACES", "GOLA"]
+      F5: ["0", "GRVACSA", "F5_FACES", "GOLA"]
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_MKX_DW_GRVAC_SW_UC
+    refNode: *STR_DW_GRV_MKX_AC
+    spriteSheet: DWGRVACSW.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVACSW", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVACSW", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVACSW", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVACSW", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVACSW", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVACSW", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVACSW", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVACSW", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVACSW", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVACSW", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVACSW", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVACSW", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRVAC_ULTRA_UC
+    refNode: *STR_DW_GRV_MKX_AC
+    spriteSheet: DWGRVACUM.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVACUM", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVACUM", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVACUM", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVACUM", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVACUM", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVACUM", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVACUM", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVACUM", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVACUM", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVACUM", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVACUM", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVACUM", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRVAC_WS_UC
+    refNode: *STR_DW_GRV_MKX_AC
+    spriteSheet: DWGRVACWS.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVACWS", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVACWS", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVACWS", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVACWS", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVACWS", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVACWS", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVACWS", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVACWS", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVACWS", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVACWS", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVACWS", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVACWS", "F5_FACE", "GOLA"]
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
+
+  - &STR_DW_GRV_MKX_FS                      #Gravis Armor (Primaris) - Flamestorm Gauntlet
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
@@ -603,6 +1507,9 @@ armors:
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 10         # base 10
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: # DW Marines get Officer values innately
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -618,7 +1525,6 @@ armors:
       - 0.9 #MELTA
     builtInWeapons:
       - STR_GRAV_FLAMER_DW
-      - STR_GRAV_FLAMER_DW
       - INV_NULL_3X3
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
@@ -630,6 +1536,201 @@ armors:
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
+
+  - type: STR_MKX_DW_GRVFS_BA_UC
+    refNode: *STR_DW_GRV_MKX_FS
+    instantWoundRecovery: true
+    spriteSheet: DWGRVFSBA.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVFSBA", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVFSBA", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVFSBA", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVFSBA", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVFSBA", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVFSBA", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVFSBA", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVFSBA", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVFSBA", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVFSBA", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVFSBA", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVFSBA", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRVFS_BT_UC
+    refNode: *STR_DW_GRV_MKX_FS
+    spriteSheet: DWGRVFSBT.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVFSBT", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVFSBT", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVFSBT", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVFSBT", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVFSBT", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVFSBT", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVFSBT", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVFSBT", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVFSBT", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVFSBT", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVFSBT", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVFSBT", "F5_FACE", "GOLA"]
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_MKX_DW_GRVFS_CF_UC
+    refNode: *STR_DW_GRV_MKX_FS
+    spriteSheet: DWGRVFSCF.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVFSCF", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVFSCF", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVFSCF", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVFSCF", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVFSCF", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVFSCF", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVFSCF", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVFSCF", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVFSCF", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVFSCF", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVFSCF", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVFSCF", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRVFS_DA_UC
+    refNode: *STR_DW_GRV_MKX_FS
+    spriteSheet: DWGRVFSDA.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVFSDA", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVFSDA", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVFSDA", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVFSDA", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVFSDA", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVFSDA", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVFSDA", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVFSDA", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVFSDA", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVFSDA", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVFSDA", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVFSDA", "F5_FACE", "GOLA"]
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_MKX_DW_GRVFS_IF_UC
+    refNode: *STR_DW_GRV_MKX_FS
+    spriteSheet: DWGRVFSIF.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVFSIF", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVFSIF", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVFSIF", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVFSIF", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVFSIF", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVFSIF", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVFSIF", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVFSIF", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVFSIF", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVFSIF", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVFSIF", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVFSIF", "F5_FACE", "GOLA"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_MKX_DW_GRVFS_SALA_UC
+    refNode: *STR_DW_GRV_MKX_FS
+    spriteSheet: DWGRVFSSA.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVFSSA", "M0_FACES", "GOLA"]
+      M1: ["0", "GRVFSSA", "M1_FACES", "GOLA"]
+      M2: ["0", "GRVFSSA", "M2_FACES", "GOLA"]
+      M3: ["0", "GRVFSSA", "M3_FACES", "GOLA"]
+      M4: ["0", "GRVFSSA", "M4_FACES", "GOLA"]
+      M5: ["0", "GRVFSSA", "M5_FACES", "GOLA"]
+      F0: ["0", "GRVFSSA", "F0_FACES", "GOLA"]
+      F1: ["0", "GRVFSSA", "F1_FACES", "GOLA"]
+      F2: ["0", "GRVFSSA", "F2_FACES", "GOLA"]
+      F3: ["0", "GRVFSSA", "F3_FACES", "GOLA"]
+      F4: ["0", "GRVFSSA", "F4_FACES", "GOLA"]
+      F5: ["0", "GRVFSSA", "F5_FACES", "GOLA"]
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_MKX_DW_GRVFS_SW_UC
+    refNode: *STR_DW_GRV_MKX_FS
+    spriteSheet: DWGRVFSSW.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVFSSW", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVFSSW", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVFSSW", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVFSSW", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVFSSW", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVFSSW", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVFSSW", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVFSSW", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVFSSW", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVFSSW", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVFSSW", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVFSSW", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRVFS_ULTRA_UC
+    refNode: *STR_DW_GRV_MKX_FS
+    spriteSheet: DWGRVFSUM.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVFSUM", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVFSUM", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVFSUM", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVFSUM", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVFSUM", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVFSUM", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVFSUM", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVFSUM", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVFSUM", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVFSUM", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVFSUM", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVFSUM", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRVFS_WS_UC
+    refNode: *STR_DW_GRV_MKX_FS
+    spriteSheet: DWGRVFSWS.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVFSWS", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVFSWS", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVFSWS", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVFSWS", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVFSWS", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVFSWS", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVFSWS", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVFSWS", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVFSWS", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVFSWS", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVFSWS", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVFSWS", "F5_FACE", "GOLA"]
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_INC_MKX                         #Omnis Armor (Primaris)
     visibilityAtDay: 40
@@ -646,18 +1747,21 @@ armors:
     sideArmor: 130
     rearArmor: 110
     underArmor: 130
-    stats:
-      tu: 5             # base 10 -5
+    stats: # 
+      tu: 10            # base 10 +5
       stamina: 20       # base 20
-      health: 20        # base 20
-      bravery: 10       # base 10
-      reactions: -10    # base -10
-      firing: 15        # base 20
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 10         # base 10
+      health: 20        # base 10 +10
+      bravery: 10       # base 0  +10
+      reactions: 25     # base 10 +15
+      firing: 15        # base 0  -+10
+      throwing: 0       # base 5  -5
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: -10        # base 10 -20
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: # DW Marines get Officer values innately
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -681,6 +1785,48 @@ armors:
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
+
+  - type: STR_MKX_DW_INC_BA_UC
+    refNode: *STR_DW_INC_MKX
+    instantWoundRecovery: true
+  - type: STR_MKX_DW_INC_BT_UC
+    refNode: *STR_DW_INC_MKX
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_MKX_DW_INC_CF_UC
+    refNode: *STR_DW_INC_MKX
+  - type: STR_MKX_DW_INC_DA_UC
+    refNode: *STR_DW_INC_MKX
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_MKX_DW_INC_IF_UC
+    refNode: *STR_DW_INC_MKX
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_MKX_DW_INC_SALA_UC
+    refNode: *STR_DW_INC_MKX
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_MKX_DW_INC_SW_UC
+    refNode: *STR_DW_INC_MKX
+  - type: STR_MKX_DW_INC_ULTRA_UC
+    refNode: *STR_DW_INC_MKX
+  - type: STR_MKX_DW_INC_WS_UC
+    refNode: *STR_DW_INC_MKX
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_INC_MKX_AC                      #Omnis Armor (Primaris) - Accelerator Autocannon
     visibilityAtDay: 40
@@ -701,18 +1847,21 @@ armors:
     sideArmor: 130
     rearArmor: 110
     underArmor: 130
-    stats:
-      tu: 5             # base 10 -5
+    stats: # 
+      tu: 10            # base 10 +5
       stamina: 20       # base 20
-      health: 20        # base 20
-      bravery: 10       # base 10
-      reactions: -10    # base -10
-      firing: 15        # base 20
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 10         # base 10
+      health: 20        # base 10 +10
+      bravery: 10       # base 0  +10
+      reactions: 25     # base 10 +15
+      firing: 15        # base 0  -+10
+      throwing: 0       # base 5  -5
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: -10        # base 10 -20
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: # DW Marines get Officer values innately
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -741,6 +1890,210 @@ armors:
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
+  - type: STR_MKX_DW_INCAC_BA_UC
+    refNode: *STR_DW_INC_MKX_AC
+    instantWoundRecovery: true
+    spriteSheet: MKXINCDWBA.PCK
+    customArmorPreviewIndex: 434
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWBA", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWBA", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWBA", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWBA", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWBA", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWBA", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWBA", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWBA", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWBA", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWBA", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWBA", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWBA", "M5_FACE", "GOLA"]
+  - type: STR_MKX_DW_INCAC_BT_UC
+    refNode: *STR_DW_INC_MKX_AC
+    spriteSheet: MKXINCDWBT.PCK
+    customArmorPreviewIndex: 436
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWBT", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWBT", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWBT", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWBT", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWBT", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWBT", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWBT", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWBT", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWBT", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWBT", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWBT", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWBT", "M5_FACE", "GOLA"]
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_MKX_DW_INCAC_CF_UC
+    refNode: *STR_DW_INC_MKX_AC
+    spriteSheet: MKXINCDWCF.PCK
+    customArmorPreviewIndex: 432
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWCF", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWCF", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWCF", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWCF", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWCF", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWCF", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWCF", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWCF", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWCF", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWCF", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWCF", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWCF", "M5_FACE", "GOLA"]
+  - type: STR_MKX_DW_INCAC_DA_UC
+    refNode: *STR_DW_INC_MKX_AC
+    spriteSheet: MKXINCDWDA.PCK
+    customArmorPreviewIndex: 435
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWDA", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWDA", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWDA", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWDA", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWDA", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWDA", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWDA", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWDA", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWDA", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWDA", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWDA", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWDA", "M5_FACE", "GOLA"]
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_MKX_DW_INCAC_IF_UC
+    refNode: *STR_DW_INC_MKX_AC
+    spriteSheet: MKXINCDWIF.PCK
+    customArmorPreviewIndex: 433
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWIF", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWIF", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWIF", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWIF", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWIF", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWIF", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWIF", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWIF", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWIF", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWIF", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWIF", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWIF", "M5_FACE", "GOLA"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_MKX_DW_INCAC_SALA_UC
+    refNode: *STR_DW_INC_MKX_AC
+    spriteSheet: MKXINCDWSALA.PCK
+    customArmorPreviewIndex: 435
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWSALA", "M0_FACES", "GOLA"]
+      M1: ["0", "INCDWSALA", "M1_FACES", "GOLA"]
+      M2: ["0", "INCDWSALA", "M2_FACES", "GOLA"]
+      M3: ["0", "INCDWSALA", "M3_FACES", "GOLA"]
+      M4: ["0", "INCDWSALA", "M4_FACES", "GOLA"]
+      M5: ["0", "INCDWSALA", "M5_FACES", "GOLA"]
+      F0: ["0", "INCDWSALA", "M0_FACES", "GOLA"]
+      F1: ["0", "INCDWSALA", "M1_FACES", "GOLA"]
+      F2: ["0", "INCDWSALA", "M2_FACES", "GOLA"]
+      F3: ["0", "INCDWSALA", "M3_FACES", "GOLA"]
+      F4: ["0", "INCDWSALA", "M4_FACES", "GOLA"]
+      F5: ["0", "INCDWSALA", "M5_FACES", "GOLA"]
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_MKX_DW_INCAC_SW_UC
+    refNode: *STR_DW_INC_MKX_AC
+    spriteSheet: MKXINCDWSW.PCK
+    customArmorPreviewIndex: 433
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWSW", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWSW", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWSW", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWSW", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWSW", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWSW", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWSW", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWSW", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWSW", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWSW", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWSW", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWSW", "M5_FACE", "GOLA"]
+  - type: STR_MKX_DW_INCAC_ULTRA_UC
+    refNode: *STR_DW_INC_MKX_AC
+    spriteSheet: MKXINCDWULTRA.PCK
+    customArmorPreviewIndex: 432
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWULTRA", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWULTRA", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWULTRA", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWULTRA", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWULTRA", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWULTRA", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWULTRA", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWULTRA", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWULTRA", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWULTRA", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWULTRA", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWULTRA", "M5_FACE", "GOLA"]
+  - type: STR_MKX_DW_INCAC_WS_UC
+    refNode: *STR_DW_INC_MKX_AC
+    spriteSheet: MKXINCDWWS.PCK
+    customArmorPreviewIndex: 437
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWWS", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWWS", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWWS", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWWS", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWWS", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWWS", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWWS", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWWS", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWWS", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWWS", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWWS", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWWS", "M5_FACE", "GOLA"]
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
+
   - &STR_DW_INC_MKX_PE                      #Omnis Armor (Primaris) - Plasma Exterminators x2
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -760,18 +2113,21 @@ armors:
     sideArmor: 130
     rearArmor: 110
     underArmor: 130
-    stats:
-      tu: 5             # base 10 -5
+    stats: # 
+      tu: 10            # base 10 +5
       stamina: 20       # base 20
-      health: 20        # base 20
-      bravery: 10       # base 10
-      reactions: -10    # base -10
-      firing: 15        # base 20
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 10         # base 10
+      health: 20        # base 10 +10
+      bravery: 10       # base 0  +10
+      reactions: 25     # base 10 +15
+      firing: 15        # base 0  -+10
+      throwing: 0       # base 5  -5
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: -10        # base 10 -20
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
     damageModifier: # DW Marines get Officer values innately
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -786,8 +2142,8 @@ armors:
       - 0.2 #IMPACT
       - 0.9 #MELTA
     builtInWeapons:
-      - STR_GRAV_FLAMER_DW
-      - STR_GRAV_FLAMER_DW
+      - STR_PLASMA_EXTERMINATOR_FIXED
+      - STR_PLASMA_EXTERMINATOR_FIXED2
       - INV_NULL_3X3
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
@@ -799,6 +2155,223 @@ armors:
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
+
+  - type: STR_MKX_DW_INCPE_BA_UC
+    refNode: *STR_DW_INC_MKX_PE
+    instantWoundRecovery: true
+    spriteSheet: MKXINCDWBA.PCK
+    customArmorPreviewIndex: 434
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWBA", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWBA", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWBA", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWBA", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWBA", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWBA", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWBA", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWBA", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWBA", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWBA", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWBA", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWBA", "M5_FACE", "GOLA"]
+  - type: STR_MKX_DW_INCPE_BT_UC
+    refNode: *STR_DW_INC_MKX_PE
+    spriteSheet: MKXINCDWBT.PCK
+    customArmorPreviewIndex: 436
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWBT", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWBT", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWBT", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWBT", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWBT", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWBT", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWBT", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWBT", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWBT", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWBT", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWBT", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWBT", "M5_FACE", "GOLA"]
+    tags:
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_MKX_DW_INCPE_CF_UC
+    refNode: *STR_DW_INC_MKX_PE
+    spriteSheet: MKXINCDWCF.PCK
+    customArmorPreviewIndex: 432
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWCF", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWCF", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWCF", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWCF", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWCF", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWCF", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWCF", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWCF", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWCF", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWCF", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWCF", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWCF", "M5_FACE", "GOLA"]
+  - type: STR_MKX_DW_INCPE_DA_UC
+    refNode: *STR_DW_INC_MKX_PE
+    spriteSheet: MKXINCDWDA.PCK
+    customArmorPreviewIndex: 435
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWDA", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWDA", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWDA", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWDA", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWDA", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWDA", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWDA", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWDA", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWDA", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWDA", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWDA", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWDA", "M5_FACE", "GOLA"]
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_MKX_DW_INCPE_IF_UC
+    refNode: *STR_DW_INC_MKX_PE
+    spriteSheet: MKXINCDWIF.PCK
+    customArmorPreviewIndex: 433
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWIF", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWIF", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWIF", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWIF", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWIF", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWIF", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWIF", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWIF", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWIF", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWIF", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWIF", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWIF", "M5_FACE", "GOLA"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_MKX_DW_INCPE_SALA_UC
+    refNode: *STR_DW_INC_MKX_PE
+    spriteSheet: MKXINCDWSALA.PCK
+    customArmorPreviewIndex: 435
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWSALA", "M0_FACES", "GOLA"]
+      M1: ["0", "INCDWSALA", "M1_FACES", "GOLA"]
+      M2: ["0", "INCDWSALA", "M2_FACES", "GOLA"]
+      M3: ["0", "INCDWSALA", "M3_FACES", "GOLA"]
+      M4: ["0", "INCDWSALA", "M4_FACES", "GOLA"]
+      M5: ["0", "INCDWSALA", "M5_FACES", "GOLA"]
+      F0: ["0", "INCDWSALA", "M0_FACES", "GOLA"]
+      F1: ["0", "INCDWSALA", "M1_FACES", "GOLA"]
+      F2: ["0", "INCDWSALA", "M2_FACES", "GOLA"]
+      F3: ["0", "INCDWSALA", "M3_FACES", "GOLA"]
+      F4: ["0", "INCDWSALA", "M4_FACES", "GOLA"]
+      F5: ["0", "INCDWSALA", "M5_FACES", "GOLA"]
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_MKX_DW_INCPE_SW_UC
+    refNode: *STR_DW_INC_MKX_AC
+    spriteSheet: MKXINCDWSW.PCK
+    customArmorPreviewIndex: 433
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWSW", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWSW", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWSW", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWSW", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWSW", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWSW", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWSW", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWSW", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWSW", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWSW", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWSW", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWSW", "M5_FACE", "GOLA"]
+  - type: STR_MKX_DW_INCPE_ULTRA_UC
+    refNode: *STR_DW_INC_MKX_PE
+    spriteSheet: MKXINCDWULTRA.PCK
+    customArmorPreviewIndex: 432
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWULTRA", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWULTRA", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWULTRA", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWULTRA", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWULTRA", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWULTRA", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWULTRA", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWULTRA", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWULTRA", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWULTRA", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWULTRA", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWULTRA", "M5_FACE", "GOLA"]
+  - type: STR_MKX_DW_INCPE_WS_UC
+    refNode: *STR_DW_INC_MKX_PE
+    spriteSheet: MKXINCDWWS.PCK
+    customArmorPreviewIndex: 437
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      0: 0
+    layersDefinition:
+      M0: ["0", "INCDWWS", "M0_FACE", "GOLA"]
+      M1: ["0", "INCDWWS", "M1_FACE", "GOLA"]
+      M2: ["0", "INCDWWS", "M2_FACE", "GOLA"]
+      M3: ["0", "INCDWWS", "M3_FACE", "GOLA"]
+      M4: ["0", "INCDWWS", "M4_FACE", "GOLA"]
+      M5: ["0", "INCDWWS", "M5_FACE", "GOLA"]
+      F0: ["0", "INCDWWS", "M0_FACE", "GOLA"]
+      F1: ["0", "INCDWWS", "M1_FACE", "GOLA"]
+      F2: ["0", "INCDWWS", "M2_FACE", "GOLA"]
+      F3: ["0", "INCDWWS", "M3_FACE", "GOLA"]
+      F4: ["0", "INCDWWS", "M4_FACE", "GOLA"]
+      F5: ["0", "INCDWWS", "M5_FACE", "GOLA"]
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

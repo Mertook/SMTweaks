@@ -125,7 +125,7 @@ items:
   - type: STR_RIFLE_CLIP_FUSION             # Inertial Fusion Bolter ammo
     refNode: *STR_BOLTER_AMMO_DW
     bigSprite: 3164
-    power: 30
+    power: 25
     damageType: 1 # AP
     damageAlter: # Standard bolter ammo
       ResistType: 0 # Blank - unresisted
@@ -165,7 +165,7 @@ items:
       ToWound: 0.5
       ToTile: 0.25 #firey gas, not explosive
       ToItem: 0.25 #firey gas, not explosive
-      FixRadius: 2 # smaller area for light ammo
+      FixRadius: 2 #
     tags:
       ITEM_AMMO_COLOR: 9 # yellow
 
@@ -293,7 +293,6 @@ items:
       ToWound: 0.02
       ToTile: 0.33
       RandomWound: false
-      FireThreshold: 999 # don't set things on fire
 
   - type: STR_BOLT_SNIPER_AMMO_HELS         # Bolt Sniper Helspear Ammo
     categories: [STR_CAT_SNIPER]
@@ -307,12 +306,12 @@ items:
     battleType: 2
     invWidth: 1
     invHeight: 1
-    clipSize: 1
-    power: 120
-    damageType: 1
     listOrder: 11935
     hitSound: {mod: 40k, index: 712}
     hitAnimation: {mod: 40k, index: 26}
+    clipSize: 1
+    power: 120
+    damageType: 1
     damageAlter:
       RandomType: 1
       ArmorEffectiveness: 1.0 # normal 0.7
@@ -391,7 +390,7 @@ items:
     powerRangeThreshold: 18
     powerRangeReduction: 3
     power: 75 # doesn't get multiple pellets because of AoE splash
-    shotgunPellets: 1 # was 6, doesn't work with projectiles that have explosion radius
+    shotgunPellets: 1 #
     damageType: 2 # Incin
     damageAlter:
       RandomType: 6

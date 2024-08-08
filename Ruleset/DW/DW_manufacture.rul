@@ -8,7 +8,7 @@ manufacture:
     cost: 100000
     requiredItems:
       STR_DW_TOKEN: 1
-      STR_KILLPOINT_TOKEN: 100
+      STR_KILLPOINT_TOKEN: 200
     producedItems:
       STR_RIFLE_CLIP_MC: 5 # needed because otherwise game assumes you're trying to make an item with the name of the manufacture
 
@@ -78,10 +78,18 @@ manufacture:
 
   - name: STR_DWCRIMSON_FB                  # Crimson Fist Firstborn
     refNode: *STR_DWRECRUIT_TEMPLATE
+    cost: 25000
+    requiredItems:
+      STR_DW_TOKEN: 1
+      STR_KILLPOINT_TOKEN: 25
     spawnedPersonType: STR_CRISMONF
 
   - name: STR_DWCRIMSON_P                   # Crimson Fist Primaris
     refNode: *STR_DWRECRUIT_TEMPLATE
+    cost: 25000
+    requiredItems:
+      STR_DW_TOKEN: 1
+      STR_KILLPOINT_TOKEN: 25
     spawnedPersonType: STR_CRISMONF_PRIMARIS
 
 
@@ -92,10 +100,10 @@ manufacture:
       - STR_COMMANDER_PLUS
     space: 0
     time: 50
-    cost: 100000
+    cost: 200000
     requiredItems:
       STR_DW_TOKEN_LEADER: 1
-      STR_KILLPOINT_TOKEN: 400
+      STR_KILLPOINT_TOKEN: 800
     producedItems:
       STR_RIFLE_CLIP_DEREV: 5 # needed because otherwise game assumes you're trying to make an item with the name of the manufacture
 
@@ -125,6 +133,10 @@ manufacture:
     spawnedPersonType: STR_SPACEW_LEADER
   - name: STR_DWCRIMSON_L                   # Crimson Fist Leader
     refNode: *STR_DWLEADER_TEMPLATE
+    cost: 50000
+    requiredItems:
+      STR_DW_TOKEN_LEADER: 1
+      STR_KILLPOINT_TOKEN: 200
     spawnedPersonType: STR_CRISMONF_LEADER
 
   - name: STR_RIFLE_CLIP_DEREV
@@ -205,3 +217,4 @@ manufacture:
       STR_ELERIUM_115: 1
     producedItems:
       STR_SHOTGUN_SHELLS_WYRM: 20
+

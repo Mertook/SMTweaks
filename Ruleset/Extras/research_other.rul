@@ -41,7 +41,54 @@ research: # Research changes only made to maintain functionality for other facti
     dependencies:
       - STR_GENERALLOCK
 
-  - name: STR_HEAVY_WEAPONS_IG    # Let IG/Arbites buy Heavy Bolter ammo
+  - name: STR_HEAVY_WEAPONS_IG      # Let IG/Arbites buy Heavy Bolter ammo
     unlocks:
       - STR_HBOLTER_AMMO_PREREQ
+
+  - name: STR_MULTIMELTA_PREREQ     # Let you research Multimeltas even if you don't find a chaos multimelta (only a couple of enemy factions even have the chance to carry multimeltas)
+    cost: 900
+    points: 30
+    dependencies:
+      - STR_HIGHTIER_PREREQ
+
+  - name: STR_BLASTER_LAUNCHER                  # Chaos Multimelta
+    cost: 750 # was 900
+    points: 15 # was 30
+    dependencies:
+      - STR_HEAVY_LASER
+    needItem: true
+    getOneFree:
+      - STR_MULTIMELTA_PREREQ
+
+  - name: STR_ADEPTAS_SENTINEL_MELTALANCE_REQ   # Multimelta stuff
+    cost: 200
+    points: 25
+    dependencies:
+      - STR_MIDTIER_PREREQ
+      - STR_FAITHFUL_ARMORY
+      - STR_ADEPTAS_SOB_MOBILIZATION
+      - STR_UFO_CONSTRUCTION
+      - STR_MULTIMELTA_PREREQ
+
+  - name: STR_FUSION_MISSILE                    # Multimelta stuff
+    cost: 880
+    points: 25
+    dependencies:
+      - STR_MULTIMELTA_PREREQ
+      - STR_BLASTER_BOMB
+
+  - name: STR_MELTABOMB                         # Multimelta stuff
+    cost: 100
+    points: 25
+    dependencies:
+      - STR_MIDTIER_PREREQ
+      - STR_MULTIMELTA_PREREQ
+
+  - name: STR_BLASTER_BOMB                      # Multimelta stuff
+    cost: 300
+    points: 30
+    dependencies:
+      - STR_MULTIMELTA_PREREQ
+    needItem: false # was true
+
 

@@ -992,7 +992,7 @@ items:
     battleType: 1
     size: 0.2
     requiresBuy:
-      - STR_MARINE_BOLTERS        #STR_PRIMARIS_AND_DEATHWATCH
+      - STR_MARINE_BOLTERS #STR_PRIMARIS_AND_DEATHWATCH
     requiresBuyBaseFunc: [TRADE]
     costBuy: 150000
     costSell: 1000
@@ -1026,7 +1026,7 @@ items:
     tuUnload: 4 # pistol bonus
     tags:
       ITEM_RECOIL: 60 # high requirement - Primaris + heavy pistol
-      REACTION_MULTIPLIER: 200 # was 200 - carbine rather than pure pistol
+      REACTION_MULTIPLIER: 200 # pistol
 
   - type: STR_ABSOLVOR_AMMO                 # Absolvor Pistol Ammo
     categories: [STR_CAT_BOLTER, STR_CAT_DEVASTATOR]
@@ -1056,7 +1056,7 @@ items:
       ToWound: 0.2
       RandomWound: false
     damageType: 1
-    clipSize: 6
+    clipSize: 8
     invWidth: 1
     invHeight: 1
 
@@ -1850,6 +1850,7 @@ items:
     autoShots: 8 # was 5
 
   - update: STR_GRAV_BOLTER_DW              # Gravis Boltstorm Gauntlet (DW)
+    defaultInventorySlot: STR_LEFT_HAND
     dropoff: 9 # was 4
     autoRange: 14 # was 12
     snapRange: 21
@@ -1870,10 +1871,7 @@ items:
       ToEnergy: 0.3
       ToWound: 0.2
       RandomWound: false
-    confSnap:
-      shots: 2 # was 1
-      name: STR_DUAL_SNAP
-    autoShots: 8 # was 5
+    autoShots: 5 # was 5
 
   - update: STR_GRAV_FLAMER                 # Gravis Flamestorm Gauntlet
     dropoff: 5
@@ -1909,6 +1907,7 @@ items:
       RandomType: 6 #Gaussian
 
   - update: STR_GRAV_FLAMER_DW              # Gravis Flamestorm Gauntlet (DW)
+    defaultInventorySlot: STR_LEFT_HAND
     dropoff: 5
     autoRange: 8
     snapRange: 0
@@ -1940,6 +1939,88 @@ items:
       ToMorale: 5.0
       ToTime: 0.2 #debilitating pain
       RandomType: 6 #Gaussian
+
+  - type: STR_PLASMA_EXTERMINATOR_FIXED     # Plasma Exterminator (Interceptor version - single)
+    battleType: 1
+    weight: 0
+    bigSprite: 3174
+    handSprite: 3660
+    bulletSprite: { mod: 40k, index: 11 }
+    fireSound: { mod: 40k, index: 18 }
+    twoHanded: false
+    invWidth: 2
+    invHeight: 3
+    recover: false
+    fixedWeapon: true
+    clipSize: -1
+    dropoff: 5
+    autoRange: 0
+    snapRange: 15
+    aimRange: 20
+    accuracyAuto: 0
+    accuracySnap: 75
+    accuracyAimed: 75
+    tuAuto: 0
+    tuSnap: 30
+    tuAimed: 45 
+    confAimed:
+      name: STR_MAXIMAL_SHOT
+    power: 100
+    damageType: 5 # Plasma
+    damageAlter:
+      RandomType: 6
+      ToHealth: 1.0
+      ToArmorPre: 0.1 #melts some armor on the way in
+      ArmorEffectiveness: 0.75 #*** PLASMA rebalance
+      FireThreshold: 70 #can ignite at high damage
+      ToArmor: 0.1
+    powerRangeReduction: 5
+    powerRangeThreshold: 25.0 #plasma range penalty
+    tags:
+      ITEM_AIMED_FLAT_POWER_BONUS: 50 #Maximal Shot Bonus
+      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+
+  - type: STR_PLASMA_EXTERMINATOR_FIXED2    # Plasma Exterminator (Interceptor version - double)
+    battleType: 1
+    weight: 0
+    bigSprite: 3175
+    handSprite: 3660
+    bulletSprite: { mod: 40k, index: 11 }
+    fireSound: { mod: 40k, index: 18 }
+    twoHanded: false
+    invWidth: 2
+    invHeight: 3
+    recover: false
+    fixedWeapon: true
+    clipSize: -1
+    dropoff: 5
+    autoRange: 10
+    snapRange: 15
+    aimRange: 0
+    accuracyAuto: 50
+    accuracySnap: 60
+    accuracyAimed: 0
+    tuAuto: 55
+    tuSnap: 30
+    tuAimed: 45 #
+    autoShots: 6
+    confSnap:
+      name: STR_DUAL_SNAP
+      shots: 2
+    power: 100
+    damageType: 5 # Plasma
+    damageAlter:
+      RandomType: 6
+      ToHealth: 1.0
+      ToArmorPre: 0.1 #melts some armor on the way in
+      ArmorEffectiveness: 0.75 #*** PLASMA rebalance
+      FireThreshold: 70 #can ignite at high damage
+      ToArmor: 0.1
+    powerRangeReduction: 5
+    powerRangeThreshold: 25.0 #plasma range penalty
+    tags:
+      ITEM_AIMED_FLAT_POWER_BONUS: 50 #Maximal Shot Bonus
+      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
 
   - update: STR_SMALL_ROCKET                # Small Frag Missile
     size: 0.1 # was 0.2

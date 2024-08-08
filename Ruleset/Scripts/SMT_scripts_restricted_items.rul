@@ -4,8 +4,8 @@ extended:
       SMT_RESTRICTED_ITEM_USER: int # Soldier is allowed to used restricted item (1 = Chaplain, 2 = Deathwatch Marine)
     RuleItem:
       SMT_RESTRICTED_ITEM: int # Item should only be usable by certain units (1 = Crozius, 2 = Deathwatch Weapons)
-      SMT_RESTRICTED_ACCURACY_PEN: int # Percentage of weapon accuracy used when used by incorrect units
-      SMT_RESTRICTED_DAMAGE_PEN: int # Percentage of weapon power used when used by incorrect units
+      SMT_RESTRICTED_ACCURACY_PEN: int # Percentage of weapon accuracy when used by incorrect units
+      SMT_RESTRICTED_DAMAGE_PEN: int # Percentage of weapon power when used by incorrect units
 
   scripts:
     accuracyMultiplierBonusStats:
@@ -89,7 +89,7 @@ items:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 50
 
-  - type: STR_SHOTGUN_DW                # Deathwatch Shotgun
+  - type: STR_SHOTGUN_DW                # Deathwatch Shotgun (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2

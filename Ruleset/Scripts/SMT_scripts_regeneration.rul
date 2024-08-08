@@ -34,11 +34,11 @@ soldiers:
       SMT_UNIT_REGEN_HP: 5
       SMT_UNIT_REGEN_WOUND: 1
 
-
   - &STR_DEATHWATCH_MARINE              # Deathwatch Marines
     tags:
-      SMT_UNIT_REGEN_HP: 10 # +2 over Vets
-      SMT_UNIT_REGEN_WOUND: 3 # +1 over Vets
+      SMT_UNIT_REGEN_HP: 8 # Vet level
+      SMT_UNIT_REGEN_WOUND: 2 # Vet level
+      SMT_UNIT_REGEN_PENALTY_REDUCTION: 50 # DW bonus, ignore 50% of recovery time added by healing
 
   - type: STR_ULTRAMARINE
     refNode: *STR_DEATHWATCH_MARINE
@@ -83,16 +83,59 @@ soldiers:
     refNode: *STR_DEATHWATCH_MARINE
 
   - type: STR_SPACEW
-    refNode: *STR_DEATHWATCH_MARINE
+    tags:
+      SMT_UNIT_REGEN_HP: 12 # +4 Spacewolf Bonus
+      SMT_UNIT_REGEN_WOUND: 5 # +3 Spacewolf Bonus
+      SMT_UNIT_REGEN_PENALTY_REDUCTION: 80 # +30% Spacewolf Bonus
 
   - type: STR_SPACEW_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
+    tags:
+      SMT_UNIT_REGEN_HP: 12 # +4 Spacewolf Bonus
+      SMT_UNIT_REGEN_WOUND: 5 # +3 Spacewolf Bonus
+      SMT_UNIT_REGEN_PENALTY_REDUCTION: 80 # +30% Spacewolf Bonus
 
   - type: STR_CRISMONF
     refNode: *STR_DEATHWATCH_MARINE
 
   - type: STR_CRISMONF_PRIMARIS
     refNode: *STR_DEATHWATCH_MARINE
+
+  - &STR_DEATHWATCH_LEADER              # Deathwatch Captains
+    tags:
+      SMT_UNIT_REGEN_HP: 10 # Vet level +2
+      SMT_UNIT_REGEN_WOUND: 3 # Vet level +1
+      SMT_UNIT_REGEN_PENALTY_REDUCTION: 50 # DW bonus, ignore 50% of recovery time added by healing
+
+  - type: STR_ULTRAMARINE_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_BLOODANGELS_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_IMPERIALF_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_SALAMANDAR_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_BLACKT_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_DARKANGELS_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_WHITES_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_SPACEW_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+    tags:
+      SMT_UNIT_REGEN_HP: 16 # +6 Spacewolf Bonus
+      SMT_UNIT_REGEN_WOUND: 8 # +5 Spacewolf Bonus
+      SMT_UNIT_REGEN_PENALTY_REDUCTION: 80 # +30% Spacewolf Bonus
+
+  - type: STR_CRISMONF_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
 
 
 
@@ -105,12 +148,13 @@ extended:
     RuleSoldier:
       SMT_UNIT_REGEN_HP: int #passive hp regen from soldier type
       SMT_UNIT_REGEN_WOUND: int #passive wound regen from soldier type
+      SMT_UNIT_REGEN_PENALTY_REDUCTION: int #reduces the wound recovery time penalty for regenerating health
 
   scripts:
     newTurnUnit:
       #*** Script that regenerates unit health while increasing wound recovery time ***
       - new: SMTS_regen_health
-        offset: 21
+        offset: 1
         code: |
           var ptr RuleArmor unitArmor;
           var ptr RuleSoldier unitSoldier;
@@ -156,7 +200,7 @@ extended:
           return;
 
       - new: SMTS_regen_wounds
-        offset: 22
+        offset: 2
         code: |
           var ptr RuleSoldier unitSoldier;
           var int woundRecovery;
@@ -201,10 +245,11 @@ extended:
     returnFromMissionUnit:
       #*** Increases wound times for soldiers who received battlefield healing ***
       - new: SMTS_healing_recovery_penalty
-        offset: 40
+        offset: 80
         code: |
           var ptr RuleSoldier soldierRuleset;
           var int woundTimeMultiplier;
+          var int recoverPenaltyMultiplier;
           var int recoverPenalty;
 
           if eq recovery_time 0; # skip if the unit has no initial recovery time (either because it ignores injury time or was healed to full by medics)
@@ -214,9 +259,16 @@ extended:
           unit.getRuleSoldier soldierRuleset;
           soldierRuleset.getTag woundTimeMultiplier Tag.SOLDIER_WOUND_TIME_MULTIPLIER;
           unit.getTag recoverPenalty Tag.SMT_RECOVERY_TIME;
-          muldiv recoverPenalty 4 5; # 80% penalty
+          soldierRuleset.getTag recoverPenaltyMultiplier Tag.SMT_UNIT_REGEN_PENALTY_REDUCTION;
+          if ge recoverPenaltyMultiplier 100;
+            return; # skip if unit ignores penalty for healing
+          end;
+          
+          sub recoverPenaltyMultiplier 100;
+          mul recoverPenaltyMultiplier -1;
+          muldiv recoverPenalty recoverPenaltyMultiplier 100;
           #debug_log "Initial RecoveryTime: " recovery_time recoverPenalty;
-          limit_upper recoverPenalty 25; # don't add more than 25 extra days to woundtime (pre multiplier)
+          limit_upper recoverPenalty 20; # don't add more than 20 extra days to woundtime (pre multiplier)
 
           if neq woundTimeMultiplier 0; #adjust based on soldier recovery speed
             muldiv recoverPenalty woundTimeMultiplier 100;

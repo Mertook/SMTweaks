@@ -16,3 +16,35 @@ manufacture:
       - STR_BLASTER_BOMB
       - STR_HEAVY_SENTINEL
 
+  - name: STR_EXITUS_AMMO                           # Vindicare Sniper Ammo
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_EXITUS_AMMO_HELLFIRE                  # Vindicare Sniper Ammo (Hellfire)
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_EXITUS_AMMO_TURBOPENETRATOR           # Vindicare Sniper Ammo (Penetrator)
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_EXITUS_AMMO_SHELLBREAKER              # Vindicare Sniper Ammo (Breaker)
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_EXITUS_PISTOL_AMMO                    # Vindicare Pistol Ammo
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_EXITUS_PISTOL_AMMO_HELLFIRE           # Vindicare Pistol Ammo (Hellfire)
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_EXITUS_PISTOL_AMMO_TURBOPENETRATOR    # Vindicare Pistol Ammo (Penetrator)
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+
+  - name: STR_EXITUS_PISTOL_AMMO_SHELLBREAKER       # Vindicare Pistol Ammo (Breaker)
+    requires:
+      - STR_VINDICARE_AMMO_REQ
+

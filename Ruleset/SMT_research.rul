@@ -1,4 +1,28 @@
 research:
+  - name: STR_MARINES_STRATEGY      # Picked Marines
+    cost: 0
+    points: 0
+    lookup: STR_IMPERIUM_RESEARCH
+    dependencies:
+      - STR_GENERALLOCK
+    unlocks:
+      - STR_HWP_CANNON_SHELLS
+      - STR_POWER_ARMOR_SM_CODEX
+      - STR_HARDER_MISSIONS
+      - STR_LIGHT_BOLTERS
+      - STR_GUARD_SUPORT
+      - STR_MARINES_AND_ADEPTAS
+      - STR_MARINES_AND_DEATHWATCH
+      - STR_MARINES_AND_INQUISITION
+      - STR_ADEPTAS_MARINES_AND_INQUISITION
+      - STR_IMPERIUM_RESEARCH
+      - STR_NOT_STEEL_LEGION_STRATEGY # needed to buy guard lasguns
+    disables:
+      - STR_ARBITES
+      - STR_IMPERIAL_GUARD_OPERATIONS
+      - STR_ADEPTAS
+      - STR_DEFENSE_CORRIDORBR
+
   - name: STR_POWER_SUIT            # Terminator Suit
     cost: 205
     points: 20
@@ -12,7 +36,15 @@ research:
     getOneFree:
       - STR_TSARGENT # Terminator Cyclone is now part of regular Terminator suits
 
-  - name: STR_TSARGENT
+  - name: STR_FLYING_SUIT           # Terminator Assault
+    cost: 330
+    points: 20
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_POWER_SUIT
+      - STR_UFO_NAVIGATION
+
+  - name: STR_TSARGENT              # Terminator Sergeant (unused)
     dependencies:
       - STR_GENERALLOCK
 
@@ -204,6 +236,8 @@ research:
       - STR_ALIEN_ALLOYS
       - STR_MIDTIER_PREREQ # All basic armor types unlocked at Midtier
       - STR_MARINES_STRATEGY
+    unlocks:
+      - STR_APOTHECARY_PREREQ # Unlock for Apoth so all strats can get it in early tier
 
   - name: STR_ASS_ARMOR             # Assault Armor
     cost: 180
@@ -214,7 +248,7 @@ research:
       - STR_MARINES_STRATEGY
       - STR_NOT_PRIMARIS
     unlocks:
-      - STR_MEDI_KIT # Unlock for Apoth so all strats can get it in early tier
+      - STR_APOTHECARY_PREREQ # Unlock for Apoth so all strats can get it in early tier
 
   - name: STR_DEV_ARMOR             # Devastator Armor
     cost: 180
@@ -225,7 +259,7 @@ research:
       - STR_MARINES_STRATEGY
       - STR_NOT_PRIMARIS
     unlocks:
-      - STR_MEDI_KIT # Unlock for Apoth so all strats can get it in early tier
+      - STR_APOTHECARY_PREREQ # Unlock for Apoth so all strats can get it in early tier
 
   - name: STR_SCOUTH_RESEARCH       # Advanced Scout Armor
     cost: 180
@@ -233,7 +267,24 @@ research:
     dependencies:
       - STR_SCOUT # Removed midtier prereqs, now scout strat starting armor
     unlocks:
-      - STR_MEDI_KIT # Unlock for Apoth so all strats can get it in early tier
+      - STR_APOTHECARY_PREREQ # Unlock for Apoth so all strats can get it in early tier
+
+  - name: STR_APOTHECARY_PREREQ     # Prereq for Apothecary armor (to stop not-SM factions from getting Apothecary Armor research)
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_MEDI_KIT              # Apothecary Armor
+    cost: 210
+    points: 20
+    dependencies:
+      - STR_NOT_PRIMARIS
+      - STR_MARINES_STRATEGY
+      - STR_APOTHECARY_PREREQ
+    unlocks:
+      - STR_MEDI_KIT_PREREQ
+    lookup: STR_MEDI_KIT_PREREQ
 
   - name: STR_CHAINSWORD_MC         # MC Chainswords (Assault)
     cost: 60
@@ -264,7 +315,7 @@ research:
     points: 20
     dependencies:
       - STR_MIDTIER_PREREQ
-      - STR_MARINES_STRATEGY
+      - STR_MARINE_BOLTERS
       - STR_THREAT_ONE
     unlocks:
       - STR_HB # storm bolters
@@ -394,7 +445,7 @@ research:
       - STR_MARINES_STRATEGY
     unlocks:
       - STR_MIDTIER_PREREQ
-      - STR_CASS_R
+      - STR_ASSC # Assault Cannon, was Assault Cannon Tech
       #- STR_HB_DEP1 # moved to High Quality Bolters research
       - STR_SIDEOPERATIONS
     cutscene: c2

@@ -558,7 +558,7 @@ extraSprites:
       3104: Resources/ITEMS/book1.png                           # Lib Book sprites
       3105: Resources/ITEMS/book2.png                           # Lib Book sprites
       3106: Resources/ITEMS/blank.png                           # Lib Book sprites
-      3107: Resources/ITEMS/SHOTGUN/shotgun.png                 # Astartes Shotgun
+      3107: Resources/ITEMS/SHOTGUN/shotgun_BigOb.png           # Astartes Shotgun
       3108: Resources/ITEMS/HBOLTER/hbolterAP.png               # Mars HBolter Ammo AP
       3109: Resources/ITEMS/HBOLTER/hbolterHE.png               # Mars HBolter Ammo HE
       3110: Resources/ITEMS/HBOLTER/hbolterI.png                # Mars HBolter Ammo I
@@ -672,6 +672,13 @@ extraSprites:
     height: 200
     files:
       0: Resources/UFO/MISSINGUFO.png
+
+  - type: ABSOLVOR.SPK
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/UFO/ABSOLVORUFO.png
 
   - type: CROZIUS.SPK
     singleImage: true

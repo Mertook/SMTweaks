@@ -120,9 +120,9 @@ armors:
 
   - update: STR_ASS_ARMOR_UC                #ASSAULT
     refNode: *STR_MARINE_ARMOR
-    frontArmor: 135 # base 125 +10
+    frontArmor: 130 # base 125 +5
     sideArmor: 125  # base 120 +5
-    rearArmor: 110  # base 100 +10
+    rearArmor: 100  # base 100
     underArmor: 125 # base 125
     stats:
       tu: 25            # base 10 +15
@@ -135,7 +135,7 @@ armors:
       strength: 10      # base 10 
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
-      melee: 25         # base 10 +15
+      melee: 30         # base 10 +20
     builtInWeapons: #make sure they don't get a backpack
       - INV_NULL_3X3
 
@@ -251,8 +251,8 @@ armors:
     units: #now exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
     tags: #added small energy shield
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 40
-      ARMOR_ENERGY_SHIELD_DECAY: 100
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
+      ARMOR_ENERGY_SHIELD_DECAY: 50
 
 
   - update: STR_ASS_ARMOR_HONOR_UC          #ASSAULT HONOR (Vanguard)
@@ -268,10 +268,10 @@ armors:
       strength: 10      # base 10
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
-      melee: 30         # base 10 +15 ass +5 elite
-    frontArmor: 140 # base 125 +10 assault +5 elite
+      melee: 35         # base 10 +20 ass +5 elite
+    frontArmor: 135 # base 125 +5 assault +5 elite
     sideArmor: 130  # base 120 +5  assault +5 elite
-    rearArmor: 115  # base 100 +10 assault +5 elite
+    rearArmor: 110  # base 100 +10 elite
     underArmor: 125 # base 125
     units: #now exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
@@ -286,9 +286,9 @@ armors:
     corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     storeItem: STR_ASS_ARMOR_HONOR
-    frontArmor: 140 # base 125 +10 assault +5 elite
+    frontArmor: 135 # base 125 +5 assault +5 elite
     sideArmor: 130  # base 120 +5  assault +5 elite
-    rearArmor: 115  # base 100 +10 assault +5 elite
+    rearArmor: 110  # base 100 +10 elite
     underArmor: 125 # base 125
     stats:
       tu: 30            # base 10 +15 ass +5 elite
@@ -301,7 +301,7 @@ armors:
       strength: 10      # base 10
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
-      melee: 30         # base 10 +15 ass +5 elite
+      melee: 35         # base 10 +20 ass +5 elite
     units: #now exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
     builtInWeapons: #given lightning claw, on par with MC power sword
@@ -467,8 +467,8 @@ armors:
       melee: 10         # base 10
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 40
-      ARMOR_ENERGY_SHIELD_DECAY: 100
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
+      ARMOR_ENERGY_SHIELD_DECAY: 50
       INTIMIDATION_RESISTANCE: 50
       SMT_ARMOR_REGEN_HP: 4
       ARMOR_REGENERATES_WOUNDS: 1
@@ -542,8 +542,8 @@ armors:
       psiSkill: 0       # base 0   
       melee: 30         # base 10  +20
     tags:
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 50 # better shield for assault term
-      ARMOR_ENERGY_SHIELD_DECAY: 100
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30 # better shield for assault term
+      ARMOR_ENERGY_SHIELD_DECAY: 50
 
   - update: STR_TASS_ARMOR_CLAWS            #TERMINATOR ASSAULT (CLAWS)
     refNode: *STR_TERMINATOR_ARMOR
@@ -560,9 +560,10 @@ armors:
       psiStrength: 0    # base 0   
       psiSkill: 0       # base 0   
       melee: 30         # base 10  +20
+    specialWeapon: STR_TELEPORT_CLAWS # gets extra teleport distance
     tags:
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 50 # better shield for assault term
-      ARMOR_ENERGY_SHIELD_DECAY: 100
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30 # better shield for assault term
+      ARMOR_ENERGY_SHIELD_DECAY: 50
 
   - update: STR_CHAP_ARMOR_UC               #CHAPLAIN
     refNode: *STR_MARINE_OFFICER_ARMOR
@@ -660,11 +661,11 @@ armors:
       strength: 10      # base 10
       psiStrength: 5    # base 0  +5 (only done for consistency with regular Chap armor, stat should't matter)
       psiSkill: 0       # base 0  
-      melee: 30         # base 10 +15 ass +5 elite
-    frontArmor: 140     # base 125 +10 assault +5 elite
-    sideArmor: 130      # base 120 +5  assault +5 elite
-    rearArmor: 115      # base 100 +10 assault +5 elite
-    underArmor: 125     # base 125
+      melee: 35         # base 10 +20 ass +5 elite
+    frontArmor: 135 # base 125 +5 assault +5 elite
+    sideArmor: 130  # base 120 +5  assault +5 elite
+    rearArmor: 110  # base 100 +10 elite
+    underArmor: 125 # base 125
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 2.0 #Chaplains are supremely resistant to warp influence
@@ -773,8 +774,8 @@ armors:
       - STR_SMITE_TOME
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 50 # improved shield
-      ARMOR_ENERGY_SHIELD_DECAY: 100
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30 # improved shield
+      ARMOR_ENERGY_SHIELD_DECAY: 50
       UNIT_TYPE_PSYKER: 1
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
@@ -877,7 +878,6 @@ armors:
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_LIVING: 1 # allow Inspire
-      SMT_ARMOR_REGEN_HP: 10
 
   - update: DREAD_ARMOR_UC                  #DREAD ARMOR DOUBLE FIST
     refNode: *STR_DREADNOUGHT_ARMOR

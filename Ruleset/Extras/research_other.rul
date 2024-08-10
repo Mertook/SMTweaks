@@ -91,4 +91,14 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_MULTIMELTA_PREREQ
     needItem: false # was true
 
+  - name: STR_KHORNE_UNGOR                   # Khornugor (was missing)
+    cost: 75
+    points: 20
+    needItem: true
+    unlocks:
+      - STR_INTERROGATION_COMPLETED
+      - STR_THREAT_ONE
+    getOneFree:
+      - STR_KHORNEGOR_UNGOR
+    destroyItem: true
 

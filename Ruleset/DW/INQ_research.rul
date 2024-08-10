@@ -13,6 +13,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_ADEPTAS_AND_INQUISITION
       - STR_MARINES_AND_INQUISITION
       - STR_ADEPTAS_MARINES_AND_INQUISITION
+      - STR_NOT_STEEL_LEGION_STRATEGY
       #- STR_HARDER_MISSIONS
       - STR_IMPERIUM_RESEARCH
     disables:
@@ -37,10 +38,10 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_LIGHT_BOLTERS
       - STR_LIGHT_BOLTERS_LOWTIER
       - STR_LIGHT_BOLTERS_MIDTIER
-      - STR_INQ_STORMTROOPER_REQUISITION
-      - STR_SUMMON_IMPERIAL_AGENTS_RESEARCH
-      - STR_REQUEST_ADEPTAS_AID_RESEARCH
-      - STR_REQUEST_GUARD_AID_RESEARCH
+      #- STR_INQ_STORMTROOPER_REQUISITION
+      #- STR_SUMMON_IMPERIAL_AGENTS_RESEARCH
+      #- STR_REQUEST_ADEPTAS_AID_RESEARCH
+      #- STR_REQUEST_GUARD_AID_RESEARCH
 
   - name: STR_RADICAL_INQUISITOR_STRATEGY
     cost: 5 # was 100 - is now starting strategy
@@ -49,10 +50,8 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_CHAMBERMILITANT
     lookup: STR_CHOSEN_DEATHWATCH ###CHANGEME
     unlocks:
-      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
       - STR_CORVUS_RESEARCH
       - STR_LASER_WEAPONS
-      - STR_XENO_WEAPONS
       - STR_MOTION_SCANNER
       - STR_MEDI_KIT_PREREQ
       - STR_RADICAL_INQUISITOR
@@ -74,26 +73,73 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     unlocks:
       - STR_APOTHECARY_GK
       - STR_INQUISITION
+      - STR_HARDER_MISSIONS
     disables:
       - STR_PERSONAL_ARMOR
       - STR_DEATHWATCH
       - STR_RADICAL_INQUISITOR_STRATEGY
       - STR_CHAOS_PATH
       - STR_XENO_WEAPONS
-      - STR_RADICAL_INQUISITOR_UNLOCK
     spawnedEvent: STR_REINFORCEMENTS_GK
+
+  - name: STR_MT_GK                         # GK and RR Midtier
+    cost: 500
+    points: 200
+    dependencies:
+      - STR_HEAVY_LASER
+      - STR_ALIEN_ALLOYS
+      - STR_MOTION_SCANNER
+      - STR_MEDI_KIT_PREREQ
+      - STR_CHAMBERMILITANT
+      # - STR_GREYKNIGHTS
+    unlocks:
+      - STR_MIDTIER_PREREQ
+      - STR_ASSC
+      - STR_SIDEOPERATIONS
+      - STR_HARDER_MISSIONS # For Radical Road, GK gets Harder Missions immediately
+    getOneFree:
+      - STR_POWER_SWORD
+    cutscene: c2
+    spawnedEvent: ""
+    # spawnedEvent: STR_REINFORCEMENTS_GK_3
 
   - name: STR_RADICAL_INQUISITOR            # mark faction as being radical - "The Radical Road" start or researching "Radical means" as DW/GK
     cost: 0
     points: 0
     dependencies:
       - STR_GENERALLOCK
-      
+
   - name: STR_RADICAL_INQUISITOR_UNLOCK     # alternate way to get radical options for strategies other than "The Radical Road" start
     cost: 100
     points: -1000 # Radical options have score penalty
     dependencies:
       - STR_INQUISITION
+    unlocks:
+      - STR_RADICAL_INQUISITOR
+
+  - name: STR_HERETICAL_INQUISITOR_STRATEGY #
+    cost: 100
+    points: -1000
+    getOneFree:
+      - STR_ALIENS_ONLY
+    unlocks:
+      - STR_CONVINCE_CHAOS_RESEARCH
+    dependencies:
+      - STR_RADICAL_INQUISITOR
+    reenables:
+      - STR_CHAOS_PATH
+    disables:
+      - STR_GREYKNIGHTS
+      - STR_REINFORCEMENT
+      - STR_REINFORCEMENT_2
+      - STR_REINFORCEMENT_3
+      - STR_REINFORCEMENT_3
+      - STR_REINFORCEMENT_4
+      - STR_REINFORCEMENT_5
+      - STR_REINFORCEMENT_6
+      - STR_REINFORCEMENT_7
+      - STR_REINFORCEMENT_8
+      - STR_REINFORCEMENT_9
 
   - name: STR_HALLEBARD                     # tech was given for free in rosigma, causes issue with GK strategy selection
     cost: 50
@@ -103,9 +149,9 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_MASTER_CRAFTING_AMMO # item manufacture is locked behind this tech anyway
     needItem: false
 
-  - name: STR_HAND_MULTILASER_RESEARCH_INQUISITION  # Multilaser
-    cost: 100
-    points: 50
+  - name: STR_HAND_MULTILASER_RESEARCH_INQUISITION  # Multilaser?
+    cost: 0
+    points: 0
     dependencies:
       - STR_INQUISITION
 
@@ -127,10 +173,15 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_APOC_BAY
 
   - name: STR_INQ_TROOP_REQS                # Tech to lock the various Inquisition teams
-    cost: 25
+    cost: 150
     points: 15
     dependencies:
       - STR_INQUISITION
+    unlocks:
+      - STR_INQ_STORMTROOPER_REQUISITION
+    getOneFree:
+      - STR_SUMMON_IMPERIAL_AGENTS_RESEARCH
+    listOrder: 2 # push above corpses/etc
 
   - name: STR_REQUISITION_IMPERIAL_ASSASSINS_RESEARCH
     cost: 1000
@@ -143,7 +194,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     cost: 250 # was 500
     points: 10
     dependencies:
-      - STR_INQ_TROOP_REQS
+      - STR_GENERALLOCK
     spawnedEvent: STR_REINFORCEMENTS_FRATERIS_INQ
 
   - name: STR_REQUEST_ARBITES_RESEARCH
@@ -250,6 +301,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     points: -250
     dependencies:
       - STR_RADICAL_INQUISITOR
+      - STR_INQ_TROOP_REQS
     spawnedEvent: STR_REINFORCEMENTS_BEASTMEN_INQ
 
   - name: STR_RECRUIT_OGRYN_RESEARCH
@@ -272,7 +324,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     cost: 1000
     points: 10
     dependencies:
-      - STR_CHAMBERMILITANT
+      - STR_INQUISITION
       - STR_MIDTIER_PREREQ
     getOneFree:
       - STR_IMPERIAL_INQUISITOR
@@ -288,7 +340,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     cost: 500
     points: 10
     dependencies:
-      - STR_CHAMBERMILITANT
+      - STR_INQUISITION
       - STR_ELITE_STRATEGY_ADEPTAS
     getOneFree:
       - STR_INQ_STORMTROOPER
@@ -298,8 +350,37 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     points: 10
     dependencies:
       - STR_GENERALLOCK
-      - STR_INQ_STORMTROOPER_REQUISITION
 
 
+  - name: STR_ENTANGLE_ADEPTAS_RESEARCH
+    cost: 1000
+    points: 100
+    dependencies:
+      - STR_RADICAL_INQUISITOR
+    spawnedEvent: STR_REINFORCEMENTS_ADEPTAS_INQ_ENTANGLED
+
+  - name: STR_ENTICE_BRIBES
+    cost: 1000
+    points: 100
+    dependencies:
+      - STR_RADICAL_INQUISITOR
+    spawnedEvent: STR_REWARD_INQUISITION_STORMTROOPERS
+
+  - name: STR_PARTAKE_IN_A_DEATHCULT_RITUAL
+    cost: 1500
+    points: -250
+    dependencies:
+      - STR_RADICAL_INQUISITOR
+    spawnedEvent: STR_REINFORCEMENTS_DCA
+
+  - name: STR_MARINE_BOLTERS_INQ # Radical path unlock for Marine bolters
+    cost: 150
+    points: -250
+    dependencies:
+      - STR_RADICAL_INQUISITOR
+    unlocks:
+      - STR_MARINE_BOLTERS
+      - STR_HBOLTER_PREREQ
+    spawnedItem: STR_PISTOLB
 
 

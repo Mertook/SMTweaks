@@ -10,21 +10,22 @@ research:
       #- STR_LASER_WEAPONS
       #- STR_MOTION_SCANNER
       #- STR_SMOKE
-      - STR_POWER_ARMOR_SM_CODEX
+      #- STR_MEDI_KIT # Apothecary armor - not needed since Inquisition gets Medkit prereq for free
+      #- STR_POWER_ARMOR_SM_CODEX
       - STR_NOT_PRIMARIS
       - STR_DEATHWATCH_AND_ADEPTAS
       - STR_PRIMARIS_AND_DEATHWATCH
       - STR_MARINES_AND_DEATHWATCH
       - STR_CORVUS_RESEARCH
-      - STR_MEDI_KIT # Apothecary armor - added since personal armor prereq has been removed from DW
-      - STR_XENO_WEAPONS
       - STR_INQUISITION
+      - STR_XENO_WEAPONS
     getOneFree:
       - STR_SHOTGUNS_ADV #replaces personal armor unlock - making Tac armor is useless for DW
     disables:
       - STR_GREYKNIGHTS
       - STR_RADICAL_INQUISITOR_STRATEGY
       - STR_CHAOS_PATH
+      - STR_MT_GK
     spawnedEvent: STR_DEATHWATCH_CARE_PACKAGE
 
   - name: STR_MT_DW                 # Deathwatch Mid tier
@@ -35,10 +36,11 @@ research:
       - STR_DW_SNIPER
       - STR_ALIEN_ALLOYS
       - STR_MOTION_SCANNER
+      - STR_HARDER_MISSIONS
       - STR_DEATHWATCH
     unlocks:
       - STR_MIDTIER_PREREQ
-      - STR_CASS_R
+      - STR_ASSC # Assault Cannon, was Assault Cannon Tech
       - STR_HB_DEP1
       - STR_NEW_FIGHTER_TRANSPORTER
       - STR_SIDEOPERATIONS
@@ -55,44 +57,49 @@ research:
       - STR_HIGHTIER_PREREQ
 
   - name: STR_DW_SQUAD1             # Deathwatch Squad Expansion +1 (Threat One)
-    cost: 0
+    cost: 5
     points: 0
     dependencies:
       - STR_DEATHWATCH
       - STR_THREAT_ONE
     spawnedEvent: STR_DEATHWATCH_EXPANSION_1
+    listOrder: 2 # push above corpses/etc
 
   - name: STR_DW_SQUAD2             # Deathwatch Squad Expansion +1 (Warp origins)
-    cost: 0
+    cost: 5
     points: 0
     dependencies:
       - STR_DEATHWATCH
       - STR_ALIEN_ORIGINS
     spawnedEvent: STR_DEATHWATCH_EXPANSION_1
+    listOrder: 2 # push above corpses/etc
 
   - name: STR_DW_SQUAD3             # Deathwatch Squad Expansion +2 (Leader)
-    cost: 0
+    cost: 5
     points: 0
     dependencies:
       - STR_DEATHWATCH
       - STR_LEADER_PLUS
     spawnedEvent: STR_DEATHWATCH_EXPANSION_2
+    listOrder: 2 # push above corpses/etc
 
   - name: STR_DW_SQUAD4             # Deathwatch Squad Expansion +1 (Final Solution)
-    cost: 0
+    cost: 5
     points: 0
     dependencies:
       - STR_DEATHWATCH
       - STR_THE_MARTIAN_SOLUTION
     spawnedEvent: STR_DEATHWATCH_EXPANSION_1
+    listOrder: 2 # push above corpses/etc
 
   - name: STR_DW_SQUAD5             # Deathwatch Squad Expansion +L (Commander)
-    cost: 0
+    cost: 5
     points: 0
     dependencies:
       - STR_DEATHWATCH
       - STR_COMMANDER_PLUS
     spawnedEvent: STR_DEATHWATCH_EXPANSION_L
+    listOrder: 2 # push above corpses/etc
 
   - name: STR_DW_SQUAD6             # Deathwatch Squad Expansion +2 (Ending the Warp)
     cost: 0
@@ -101,12 +108,14 @@ research:
       - STR_DEATHWATCH
       - STR_CYDONIA_OR_BUST
     spawnedEvent: STR_DEATHWATCH_EXPANSION_2
+    listOrder: 2 # push above corpses/etc
 
   - name: STR_XENO_WEAPONS          # Inquisitor Xeno weapon tech for DW/Radical
     cost: 160
     points: 20
     dependencies:
       - STR_RADICAL_INQUISITOR
+      - STR_MIDTIER_PREREQ
     listOrder: 10 # push above corpses/etc
 
   - name: STR_NECRONTECH_RESEARCH   # Necron weapon tech
@@ -144,7 +153,7 @@ research:
     points: 20
     dependencies:
       - STR_DEATHWATCH
-    unlock:
+    unlocks:
       - STR_BOLT_RIFLE_AMMO
     getOneFree:
       - STR_MKX_PHB_ARMOR
@@ -180,7 +189,7 @@ research:
     cost: 220
     points: 30
     dependencies:
-      - STR_DW_HIGHTIER
+      - STR_DW_SQUAD5 # commander gated
     getOneFree:
       - STR_POWER_SUIT
     listOrder: 10 # push above corpses/etc
@@ -189,7 +198,7 @@ research:
     cost: 220
     points: 30
     dependencies:
-      - STR_DW_HIGHTIER
+      - STR_DW_SQUAD5 # commander gated
     getOneFree:
       - STR_MKX_INC_ARMOR
     listOrder: 10 # push above corpses/etc

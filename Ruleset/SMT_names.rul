@@ -21,6 +21,7 @@ extraStrings:
       DREAD_ARMOR3_UC: "Hellfire Dreadnought Armor"
       DREAD_ARMOR4_UC: "Castraferrum Dreadnought Armor"
       ### ITEMS
+      STR_TELEPORT_CLAWS: Teleporter
       AUX_RAM_SMT: Chainsword
       STR_DREAD_MISSILES: Dreadnought Missiles
       STR_DREAD_STORMBOLTER: Stormbolter Fist
@@ -72,6 +73,12 @@ extraStrings:
       STR_PISTOLH_SM: Boltpistol Tigrus Pattern
       STR_ABSOLVOR_PISTOL: Absolvor Bolt Pistol
       STR_ABSOLVOR_AMMO: Absolvor Rounds
+      STR_PLASMA_EXTERMINATOR_FIXED: Plasma Exterminator
+      STR_PLASMA_EXTERMINATOR_FIXED2: Dual Plasma Exterminators
+      STR_ACCEL_AUTOCANNON_FIXED: Accelerator Autocannon
+      STR_GRAV_BOLTER_DW: Boltstorm Gauntlet
+      STR_GRAV_AUTOC_DW: Autocannon Gauntlet
+      STR_GRAV_FLAMER_DW: Flame Gauntlet
       ### CRAFT
       AUX_BOLTER: Mounted Heavy Bolter
       STR_SMT_CRAFT_SMOKE: Smoke Launcher
@@ -140,14 +147,16 @@ extraStrings:
       STR_MARINE_CHAPEL: Chapter Teachings
       STR_CHAP_ARMOR: Chaplain Relics
       STR_GLAUNCHER_PREREQ: Grenade Launchers
+      STR_HBOLTER_PREREQ: MK. IV Heavy Bolter
+      STR_HBOLTER_AMMO_PREREQ: Heavy Bolter Cases
       STR_DEV_MARS_BOLTER: Mars Pattern Heavy Bolter
       STR_HBOLTER_AMMO_BELTS: Heavy Bolter Ammobelts
-      STR_HBOLTER_PREREQ: Heavy Bolters
-      STR_HBOLTER_AMMO_PREREQ: Heavy Bolter Cases
       STR_HONOR_ARMOR_RESEARCH: "MK7 Vanguard Armor"
       STR_SCOUT_BOLT_RIFLE: Bolt Sniper Rifle
       STR_VINDICARE_AMMO_REQ: Exitus Ammo
       STR_MULTIMELTA_PREREQ: Multimelta Technology
+      STR_BOLT_RIFLE_AMMO: Bolt Sniper Ammo
+      STR_APOTHECARY_PREREQ: (Apothecary Unlock)
       ### MANUFACTURE
       STR_GENESEED: Geneseed
       STR_SMT_GENESEED_REQ: Requisition Geneseed
@@ -161,12 +170,12 @@ extraStrings:
       STR_GENESEED_PACKAGE_MID: Geneseed Harvest
       STR_GENESEED_PACKAGE_LATE: Geneseed Harvest
       STR_GENESEED_PACKAGE_EXLATE: Geneseed Harvest
-      STR_GENESEED_PACKAGE_DESCRIPTION_FIRST: "Our Apothecaries have begun the slow process of creating more Geneseed to expand our forces. This initial harvest is small, but with our existing reserves it will be enough to complete the transformation of a Neophyte into an honored Battle Brother.{NEWLINE}{NEWLINE}Our yield of Geneseed is expected to increase over time, but each one is precious and should be treated with reverence."
+      STR_GENESEED_PACKAGE_DESCRIPTION_FIRST: "Our Apothecaries have begun the slow process of creating more Geneseed to expand our forces. This initial harvest is small, but together with our existing reserves it will be enough to complete the transformation of a Neophyte into an honored Battle Brother.{NEWLINE}{NEWLINE}Our yield of Geneseed is expected to increase over time, but each one is precious and should be treated with reverence."
       STR_GENESEED_PACKAGE_DESCRIPTION: "Our Apothecaries have collected newly matured geneseed, ready to implant into promising recuits and induct them into the Chapter as honored Battle Brothers."
       STR_TACTICAL_CARE_PACKAGE_DESCRIPTION: "Wargear appropriate for your chosen strategy will arrive within an hour. A compliment of neophytes is en route and will arrive in one day.{NEWLINE}{NEWLINE}A Drop Pod deployment craft has been placed at your disposal, as well as the option to requisition a Razorback or Landspeeder craft - once the requisition order arrives, have your manufacturing servitors complete the requisition. A spare hangar is required for the delivery of the craft."
       STR_ASSAULT_CARE_PACKAGE_DESCRIPTION: "Wargear appropriate for your chosen strategy will arrive within an hour. A compliment of neophytes is en route and will arrive in one day.{NEWLINE}{NEWLINE}A Drop Pod deployment craft has been placed at your disposal, as well as the option to requisition a Razorback or Landspeeder craft - once the requisition order arrives, have your manufacturing servitors complete the requisition. A spare hangar is required for the delivery of the craft."
       STR_DEVASTATOR_CARE_PACKAGE_DESCRIPTION: "Wargear appropriate for your chosen strategy will arrive within an hour. A compliment of neophytes is en route and will arrive in one day.{NEWLINE}{NEWLINE}A Drop Pod deployment craft has been placed at your disposal, as well as the option to requisition a Razorback or Landspeeder craft - once the requisition order arrives, have your manufacturing servitors complete the requisition. A spare hangar is required for the delivery of the craft."
-      STR_SCOUT_CARE_PACKAGE_DESCRIPTION: "Wargear appropriate for your chosen strategy will arrive within an hour. A compliment of neophytes is en route and will arrive in one day.{NEWLINE}{NEWLINE}A Drop Pod deployment craft has also been placed at your disposal - once the requisition order arrives, have your manufacturing servitors complete the requisition. A spare hangar is required for the delivery of the craft."
+      STR_SCOUT_CARE_PACKAGE_DESCRIPTION: "Wargear appropriate for your chosen strategy will arrive within an hour. A compliment of neophytes is en route and will arrive in one day.{NEWLINE}{NEWLINE}A Drop Pod deployment craft has been placed at your disposal, as well as the option to requisition a Razorback or Landspeeder craft - once the requisition order arrives, have your manufacturing servitors complete the requisition. A spare hangar is required for the delivery of the craft."
       ### DEATHWATCH SOLDIERS
       STR_ULTRAMARINE_LEADER: Deathwatch Captain ¥
       STR_IMPERIALF_LEADER: Deathwatch Captain ¿
@@ -177,6 +186,7 @@ extraStrings:
       STR_DARKANGELS_LEADER: Deathwatch Captain ²
       STR_SPACEW_LEADER: Deathwatch Captain ¾
       STR_CRISMONF_LEADER: Deathwatch Captain ¼
+      STR_DW_ARMOR_DUMMY: Deathwatch Marine
       ### DEATHWATCH RECRUITMENT
       STR_DEATHWATCH_RECRUIT: Deathwatch Marine
       STR_DWULTRA_FB: Recruit ¥ Firstborn
@@ -253,6 +263,16 @@ extraStrings:
       STR_MKX_DW_GRVFS_SW_UC: Gravis Armor Flamestorm
       STR_MKX_DW_GRVFS_ULTRA_UC: Gravis Armor Flamestorm
       STR_MKX_DW_GRVFS_WS_UC: Gravis Armor Flamestorm
+      STR_DW_TAC_CODEX_UC: DW Tactical Armor
+      STR_DW_APOTH_CODEX_UC: DW Apothecary Armor
+      STR_DW_DEV_CODEX_UC: DW Devastator Armor
+      STR_DW_ASS_CODEX_UC: DW Assault Armor
+      STR_DW_TECH_CODEX_UC: DW Techmarine Armor
+      STR_DW_TERM_CODEX_UC: DW Terminator Armor
+      STR_DW_PHB_CODEX_UC: DW Phobos Armor
+      STR_DW_GRV_CODEX_UC: DW Gravis Armor
+      STR_DW_INC_CODEX_UC: DW Omnis Armor
+      STR_DW_CAP_CODEX_UC: DW Captain Armor
       ### DEATHWATCH ITEMS
       STR_DW_TOKEN: Deathwatch Requisition
       STR_DW_TOKEN_LEADER: Deathwatch Captain Requisition
@@ -272,22 +292,23 @@ extraStrings:
       STR_DW_ASSAULT: Deathwatch Assault Armor
       STR_DW_GRAVIS: Deathwatch Gravis Armor
       STR_DW_TERM: Deathwatch Terminator Armor
-      STR_DW_OMNIS: Deathwatch Omnis Armor
-      STR_DW_SQUAD1: "(Deathwatch Requisition)"
-      STR_DW_SQUAD2: "(Deathwatch Requisition)"
-      STR_DW_SQUAD3: "(Deathwatch Requisition)"
-      STR_DW_SQUAD4: "(Deathwatch Requisition)"
-      STR_DW_SQUAD5: "(Deathwatch Requisition)"
-      STR_DW_SQUAD6: "(Deathwatch Requisition)"
+      STR_DW_PRIMARIS_FLIGHT: Deathwatch Omnis Armor
+      STR_DW_SQUAD1: "Deathwatch Report"
+      STR_DW_SQUAD2: "Deathwatch Report"
+      STR_DW_SQUAD3: "Deathwatch Report"
+      STR_DW_SQUAD4: "Deathwatch Report"
+      STR_DW_SQUAD5: "Deathwatch Report"
+      STR_DW_SQUAD6: "Deathwatch Report"
       STR_XENO_WEAPONS: Xenotech Weaponry
       STR_RADICAL_INQUISITOR_UNLOCK: Embrace Radical Means
       STR_RADICAL_INQUISITOR: "(Radical Path)"
       STR_INQ_TROOP_REQS: Troop Requisitions
+      STR_MARINE_BOLTERS_INQ: Marine Bolter Blackmarket Contacts
       ### DEATHWATCH EVENTS
-      STR_DEATHWATCH_REINFORCEMENTS: "Contact with Deathwatch forces has been established. Requisition authorization for two Deathwatch Marines has been granted, they will arrive once our Servitors complete the formal requests.{NEWLINE} Learning more about the severity of the threat on this planet should allow us to request additional Marines."
+      STR_DEATHWATCH_REINFORCEMENTS: "Contact with Deathwatch forces has been established. Requisition authorization for two Deathwatch Marines has been granted, they will arrive once our Servitors complete the formal requests.{NEWLINE}{NEWLINE} Learning more about the severity of the threat on this planet should allow us to request additional Marines."
       STR_DEATHWATCH_EXPANSION_1: "Deathwatch Reinforcements"
-      STR_DEATHWATCH_EXPANSION1: "After our new reports about the threats plaguing this planet we have been granted greater authority by the Ordo Xenos.{NEWLINE} We can now requisition an additional Deathwatch Marine to support our investigations."
+      STR_DEATHWATCH_EXPANSION1: "After our newest reports about the threats plaguing this planet we have been granted greater authority by the Ordo Xenos.{NEWLINE} We can now requisition an additional Deathwatch Marine to support our investigations."
       STR_DEATHWATCH_EXPANSION_2: "Deathwatch Reinforcements"
-      STR_DEATHWATCH_EXPANSION2: "After our new reports about the threats plaguing this planet we have been granted greater authority by the Ordo Xenos.{NEWLINE} We can now requisition two additional Deathwatch Marines to support our investigations."
+      STR_DEATHWATCH_EXPANSION2: "After our newest reports about the threats plaguing this planet we have been granted greater authority by the Ordo Xenos.{NEWLINE} We can now requisition two additional Deathwatch Marines to support our investigations."
       STR_DEATHWATCH_EXPANSION_L: "Deathwatch Captain"
-      STR_DEATHWATCH_EXPANSIONL: "With the true nature and source of the Warp Storm uncovered the Ordo Xenos has agreed to dispatch an elite Deathwatch Captain to lead the Marines in our service.{NEWLINE} Be sure to consult the Codex to learn the strengths of each squad leader and choose appropriately."
+      STR_DEATHWATCH_EXPANSIONL: "With the true nature and source of the Warp Storm uncovered the Ordo Xenos has agreed to dispatch an elite Deathwatch Captain to lead the Kill-Team in our command.{NEWLINE} Be sure to consult the Codex to learn the strengths of each squad leader and choose appropriately."

@@ -190,7 +190,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 80 #was 75
       STR_UFO_CONSTRUCTION: 10
       STR_ELERIUM_115: 20
-      STR_KILLPOINT_TOKEN: 700 #was 60
+      STR_KILLPOINT_TOKEN: 800 #was 60
   - name: STR_FLYING_SUIT                           # Terminator Assault
     category: STR_PERSONAL_ARMOR
     requires:
@@ -205,7 +205,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 80 #was 150
       STR_UFO_CONSTRUCTION: 10
       STR_ELERIUM_115: 20
-      STR_KILLPOINT_TOKEN: 700 #was 60
+      STR_KILLPOINT_TOKEN: 800 #was 60
   - name: STR_CAPTAIN_SUIT                          # Terminator Captain
     category: STR_PERSONAL_ARMOR
     requires:
@@ -362,7 +362,7 @@ manufacture:
     cost: 50000
     requiresBaseFunc: [TEC]
     requiredItems:
-      STR_ALIEN_ALLOYS: 30
+      STR_ALIEN_ALLOYS: 35 # was 30
       STR_KILLPOINT_TOKEN: 60
 
   - name: STR_MKX_PHB_ARMOR                         # Primaris Phobos
@@ -370,6 +370,7 @@ manufacture:
     requires:
       - STR_CHAPTER_PURITY
       - STR_MKX_PHB_ARMOR
+      - STR_PRIMARIS_AND_DEATHWATCH
     space: 0
     time: 800
     cost: 22000
@@ -381,26 +382,28 @@ manufacture:
     requires:
       - STR_CHAPTER_PURITY
       - STR_MKX_GRV_ARMOR
+      - STR_PRIMARIS_AND_DEATHWATCH
     space: 0
     time: 800
     cost: 28000
     requiresBaseFunc: [ARMO]
     requiredItems:
       STR_ALIEN_ALLOYS: 50
-      STR_KILLPOINT_TOKEN: 100 # was 30
+      STR_KILLPOINT_TOKEN: 200 # was 30
 
   - name: STR_MKX_INC_ARMOR                         # Primaris Omnis/Interceptor
     category: STR_PERSONAL_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_MKX_INC_ARMOR
+      - STR_PRIMARIS_AND_DEATHWATCH
     space: 0
     time: 800
     cost: 28000
     requiresBaseFunc: [ARMO]
     requiredItems:
       STR_ALIEN_ALLOYS: 50
-      STR_KILLPOINT_TOKEN: 100 # was 30
+      STR_KILLPOINT_TOKEN: 200 # was 30
 
   - name: STR_MKX_LIB_ARMOR                         # Primaris Librarian
     category: STR_PERSONAL_ARMOR
@@ -498,7 +501,7 @@ manufacture:
     time: 120
     cost: 2000
     requires:
-      - STR_SCOUT_BOLT_RIFLE
+      - STR_BOLT_RIFLE_AMMO
     requiredItems:
       STR_ALIEN_ALLOYS: 1
     producedItems:
@@ -510,7 +513,7 @@ manufacture:
     time: 120
     cost: 2000
     requires:
-      - STR_SCOUT_BOLT_RIFLE
+      - STR_BOLT_RIFLE_AMMO
     requiredItems:
       STR_ALIEN_ALLOYS: 1
       STR_ELERIUM_115: 1
@@ -523,7 +526,7 @@ manufacture:
     time: 120
     cost: 2000
     requires:
-      - STR_SCOUT_BOLT_RIFLE
+      - STR_BOLT_RIFLE_AMMO
     requiredItems:
       STR_ALIEN_ALLOYS: 1
       STR_ELERIUM_115: 1
@@ -536,7 +539,7 @@ manufacture:
     time: 120
     cost: 2000
     requires:
-      - STR_SCOUT_BOLT_RIFLE
+      - STR_BOLT_RIFLE_AMMO
     requiredItems:
       STR_UFO_CONSTRUCTION: 1
     producedItems:
@@ -650,6 +653,7 @@ manufacture:
     category: STR_CRAFT
     requires:
       - STR_CHAPTER_PURITY
+      - STR_MARINES_STRATEGY
     space: 0
     time: 50
     cost: 1000
@@ -663,6 +667,7 @@ manufacture:
     category: STR_CRAFT
     requires:
       - STR_CHAPTER_PURITY
+      - STR_MARINES_STRATEGY
     space: 0
     time: 50
     cost: 1000
@@ -671,36 +676,4 @@ manufacture:
     producedItems:
       STR_SPEEDC: 1
     listOrder: 2 # Push it to the top
-
-  - name: STR_EXITUS_AMMO                           # Vindicare Sniper Ammo
-    requires:
-      - STR_VINDICARE_AMMO_REQ
-
-  - name: STR_EXITUS_AMMO_HELLFIRE                  # Vindicare Sniper Ammo (Hellfire)
-    requires:
-      - STR_VINDICARE_AMMO_REQ
-
-  - name: STR_EXITUS_AMMO_TURBOPENETRATOR           # Vindicare Sniper Ammo (Penetrator)
-    requires:
-      - STR_VINDICARE_AMMO_REQ
-
-  - name: STR_EXITUS_AMMO_SHELLBREAKER              # Vindicare Sniper Ammo (Breaker)
-    requires:
-      - STR_VINDICARE_AMMO_REQ
-
-  - name: STR_EXITUS_PISTOL_AMMO                    # Vindicare Pistol Ammo
-    requires:
-      - STR_VINDICARE_AMMO_REQ
-
-  - name: STR_EXITUS_PISTOL_AMMO_HELLFIRE           # Vindicare Pistol Ammo (Hellfire)
-    requires:
-      - STR_VINDICARE_AMMO_REQ
-
-  - name: STR_EXITUS_PISTOL_AMMO_TURBOPENETRATOR    # Vindicare Pistol Ammo (Penetrator)
-    requires:
-      - STR_VINDICARE_AMMO_REQ
-
-  - name: STR_EXITUS_PISTOL_AMMO_SHELLBREAKER       # Vindicare Pistol Ammo (Breaker)
-    requires:
-      - STR_VINDICARE_AMMO_REQ
 

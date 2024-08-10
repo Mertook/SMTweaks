@@ -19,7 +19,6 @@ extended:
 
 armors:
   - &STR_DODGE_ARMOR # Template
-    type: STR_ASS_ARMOR_HONOR_CLAW # Vanguard Armor with Claw
     tags:
       DODGE_CHANCE: 0
       FLIGHT_DODGE_CHANCE: 25 #Same as other copy of Vanguard Armor
@@ -208,10 +207,150 @@ armors:
         return new_pixel;
 
 #
+  - type: STR_ASS_ARMOR_HONOR_CLAW # Vanguard Armor with Claw
+    refNode: *STR_DODGE_ARMOR
+    tags:
+      FLIGHT_DODGE_CHANCE: 25 #Same as other copy of Vanguard Armor
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+
   - type: STR_CHAP_ASSAULT_UC # Chaplain Assault Armor
     refNode: *STR_DODGE_ARMOR
     tags:
       FLIGHT_DODGE_CHANCE: 25 #Same as other copy of Vanguard Armor
       ARMOR_MAX_SUCCESSFUL_DODGES: 2
 
+###DEATHWATCH (tags defined in DW_armor.rul)
+  - type: STR_MKX_DW_PHB_BA_UC
+    refNode: *STR_DODGE_ARMOR
 
+  - type: STR_MKX_DW_PHB_BT_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_PHB_CF_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_PHB_DA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_PHB_IF_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_PHB_SALA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_PHB_SW_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_PHB_ULTRA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_PHB_WS_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_DW_ASS_ARMOR_BA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_DW_ASS_ARMOR_BT_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_DW_ASS_ARMOR_CF_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_DW_ASS_ARMOR_DA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_DW_ASS_ARMOR_IF_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_DW_ASS_ARMOR_SALA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_DW_ASS_ARMOR_SW_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_DW_ASS_ARMOR_ULTRA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_DW_ASS_ARMOR_WS_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INC_BA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INC_BT_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INC_CF_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INC_DA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INC_IF_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INC_SALA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INC_SW_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INC_ULTRA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INC_WS_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCAC_BA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCAC_BT_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCAC_CF_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCAC_DA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCAC_IF_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCAC_SALA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCAC_SW_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCAC_ULTRA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCAC_WS_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCPE_BA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCPE_BT_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCPE_CF_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCPE_DA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCPE_IF_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCPE_SALA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCPE_SW_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCPE_ULTRA_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_DW_INCPE_WS_UC
+    refNode: *STR_DODGE_ARMOR

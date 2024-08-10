@@ -40,6 +40,7 @@ items:
   - update: STR_RIFLEA                      # Bolter (Artifex DW) - DW Stalker Bolter
     refNode: *STR_BOLTER_DW
     bigSprite: 3139
+    costBuy: 50000
     weight: 28 # was 20
     dropoff: 8 # regular bolters are 9 - DW bonus
     autoRange: 12 # match MC
@@ -60,6 +61,7 @@ items:
   - update: STR_RIFLEDW                     # Bolter (Cawl Deathwatch) - DW Cawl Battlerifle
     refNode: *STR_BOLTER_DW
     bigSprite: 3151
+    costBuy: 50000
     weight: 34 # was 20
     dropoff: 7 # regular cawl are 8 - DW bonus
     minRange: 3 #cumbersome, not suited to CQC
@@ -89,6 +91,10 @@ items:
     costSell: 400
     clipSize: 30
     armor: 200
+    invHeight: 2
+    invWidth: 1
+    bulletSpeed: 30
+    explosionSpeed: 5
     power: 75
     damageType: 1 # AP
     damageAlter: # Standard bolter ammo
@@ -106,16 +112,17 @@ items:
 
   - type: STR_RIFLE_CLIP_DEREV              # Derevenant Bolter ammo
     refNode: *STR_BOLTER_AMMO_DW
-    bigSprite: 3164
+    bigSprite: 3165
+    listOrder: 10443
     damageType: 11
     damageAlter:
       ResistType: 1
       RandomType: 1 # 0-200%
       ToArmorPre: 0.15
-      ArmorEffectiveness: 1.0
-      ToHealth: 1.0
+      ArmorEffectiveness: 0.9
+      ToHealth: 0.9 # normal 1.1
       ToArmor: 0.15
-      ToStun: 0.5
+      ToStun: 0.6 # normal 0.5
       ToEnergy: 0.3
       ToWound: 0.2
       RandomWound: false
@@ -124,14 +131,15 @@ items:
 
   - type: STR_RIFLE_CLIP_FUSION             # Inertial Fusion Bolter ammo
     refNode: *STR_BOLTER_AMMO_DW
-    bigSprite: 3164
+    bigSprite: 3166
+    listOrder: 10442
     power: 25
     damageType: 1 # AP
     damageAlter: # Standard bolter ammo
       ResistType: 0 # Blank - unresisted
       RandomType: 1 # 0-200%
-      ToArmorPre: 0.5 # grav
-      ArmorEffectiveness: 0.5
+      ToArmorPre: 1.0 # grav
+      ArmorEffectiveness: 0.25
       ToArmor: 1.0 # grav
       ToHealth: 1.0
       ToStun: 0.5
@@ -144,7 +152,8 @@ items:
 
   - type: STR_RIFLE_CLIP_DRAGON             # Dragonfire Bolter ammo
     refNode: *STR_BOLTER_AMMO_DW
-    bigSprite: 3164
+    bigSprite: 3168
+    listOrder: 10441
     hitSound: {mod: 40k, index: 708}
     hitAnimation:
       mod: 40k
@@ -167,23 +176,24 @@ items:
       ToItem: 0.25 #firey gas, not explosive
       FixRadius: 2 #
     tags:
-      ITEM_AMMO_COLOR: 9 # yellow
+      ITEM_AMMO_COLOR: 9 # gold
 
   - type: STR_AUTO_CANNON_DW                # Heavy Bolter (Artifex DW)
+    costBuy: 125000
     dropoff: 4 # larger HB shells have better propulsion and accuracy at range
     sprayWaypoints: 2
     autoRange: 14 #
     snapRange: 18 # regular 18
     aimRange: 15 # regular 15
     accuracyAuto: 50 #
-    accuracySnap: 66 # regular 60
-    accuracyAimed: 58 # regular 50
+    accuracySnap: 70 # regular 66
+    accuracyAimed: 60 # regular 58
     tuAuto: 80 # 12 shots
-    tuSnap: 25 # regular 25
-    tuAimed: 55 # regular 60 for 8
-    tuLoad: 30 # was 40
+    tuSnap: 25 #
+    tuAimed: 55 #
+    tuLoad: 30 #
     minRange: 5 #heavy weapon; cumbersome, not suited to CQC
-    autoShots: 12 # +4
+    autoShots: 12 #
     followProjectiles: false
     requiresBuy:
       - STR_DW_HWP
@@ -217,8 +227,7 @@ items:
     size: 0.4
     requiresBuy:
       - STR_DW_SNIPER
-    requiresBuyBaseFunc: [TRADE]
-    costBuy: 350000
+    costBuy: 125000
     costSell: 50000
     bigSprite: 3164
     floorSprite: 3164
@@ -285,8 +294,8 @@ items:
     damageAlter:
       ResistType: 1
       RandomType: 1
-      ArmorEffectiveness: 0.8 # normal 0.7
-      ToHealth: 0.7 # normal 1.0
+      ArmorEffectiveness: 0.7 #
+      ToHealth: 0.6 # normal 1.0
       ToStun: 0.3
       ToArmorPre: 0.1
       ToArmor: 0.2
@@ -328,14 +337,14 @@ items:
   - type: STR_SHOTGUN_DW                    # Deathwatch Shotgun
     categories: [ STR_CAT_SHOTGUN, STR_CAT_SCOUT]
     size: 0.2
-    costBuy: 25000
+    costBuy: 50000
     costSell: 5000
     requiresBuy:
       - STR_DEATHWATCH
       - STR_SHOTGUNS_ADV
     armor: 200
     listOrder: 10601
-    bigSprite: 3169
+    bigSprite: 3163
     floorSprite: 3163
     handSprite: 3640
     bulletSprite: {mod: 40k, index: 2}

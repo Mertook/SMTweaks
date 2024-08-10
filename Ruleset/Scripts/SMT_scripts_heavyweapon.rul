@@ -27,15 +27,15 @@ armors:
     tags:
       SMT_ARMOR_HEAVY_WEAPON_USER: 2
 
+### Deathwatch Armor HWP tags are defined in DW_armor.rul
 
 extended:
   tags:
     RuleItem:
-      ITEM_RECOIL: int
       ITEM_HAS_BIPOD: int
       ITEM_IS_HEAVY_WEAPON: int # infantry but not mounted/vehicle hwp - 1 = normal penalty, 2 = can't be reduced by armor bonus (see below) meant for snipers etc
     RuleArmor:
-      SMT_ARMOR_HEAVY_WEAPON_USER: int # armor that counteracts the penalty for heavy weapons - 1 = 0 penalty, 2+ gives scaling reduction - 2 = 1/2, 3 = 2/3, 4 = 3/4 etc
+      SMT_ARMOR_HEAVY_WEAPON_USER: int # armor that counteracts the penalty for heavy weapons - 1 = no penalty, 2+ gives scaling reduction - 2 = 1/2, 3 = 2/3, 4 = 3/4 etc
 
   scripts:
     accuracyMultiplierBonusStats:

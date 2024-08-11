@@ -6,6 +6,7 @@ extended:
       SMT_RESTRICTED_ITEM: int # Item should only be usable by certain units (1 = Crozius, 2 = Deathwatch Weapons)
       SMT_RESTRICTED_ACCURACY_PEN: int # Percentage of weapon accuracy when used by incorrect units
       SMT_RESTRICTED_DAMAGE_PEN: int # Percentage of weapon power when used by incorrect units
+      SMT_RESTRICTED_ITEM_MELEE: int # if !0, also penalize power of melee hits
 
   scripts:
     accuracyMultiplierBonusStats:
@@ -13,18 +14,18 @@ extended:
         offset: 80
         code: |
           var ptr RuleSoldier unitSoldier;
-          var int itemValue;
-          var int unitValue;
+          var int itemVal;
+          var int unitVal;
           var int penalty;
 
-          weapon.getTag itemValue Tag.SMT_RESTRICTED_ITEM;
-          if eq itemValue 0;
+          weapon.getTag itemVal Tag.SMT_RESTRICTED_ITEM;
+          if eq itemVal 0;
             return bonus;
           end;
 
           unit.getRuleSoldier unitSoldier;
-          unitSoldier.getTag unitValue Tag.SMT_RESTRICTED_ITEM_USER;
-          if neq unitValue itemValue;
+          unitSoldier.getTag unitVal Tag.SMT_RESTRICTED_ITEM_USER;
+          if neq unitVal itemVal;
             weapon.getTag penalty Tag.SMT_RESTRICTED_ACCURACY_PEN;
             if gt penalty 0;
               muldiv bonus penalty 100; # divide accuracy by penalty value if set
@@ -32,7 +33,7 @@ extended:
               set bonus 0; # otherwise reduce to 0
             end;
           end;
-          #debug_log "Restricted Item Acc Ping - " itemValue unitValue penalty;
+          #debug_log "Restricted Item Acc Ping - " itemVal unitVal penalty;
 
           return bonus; # final accuracy
 
@@ -41,22 +42,40 @@ items:
     scripts:
       hitUnitAmmo: |
         var ptr RuleSoldier unitSoldier;
-        var int itemValue;
-        var int unitValue;
+        var int itemVal;
+        var int unitVal;
         var int penalty;
+        var int checkVal;
 
-        weapon_item.getTag itemValue Tag.SMT_RESTRICTED_ITEM;
+        weapon_item.getTag itemVal Tag.SMT_RESTRICTED_ITEM;
         attacker.getRuleSoldier unitSoldier;
-        unitSoldier.getTag unitValue Tag.SMT_RESTRICTED_ITEM_USER;
-        if and neq itemValue unitValue neq battle_action battle_action_hit; # melee attacks can still do damage
-          weapon_item.getTag penalty Tag.SMT_RESTRICTED_DAMAGE_PEN;
-          if gt penalty 0;
-            muldiv power penalty 100; # divide power by penalty value if set
-          else;
-            set power 0; # otherwise reduce to 0
-          end;
+        unitSoldier.getTag unitVal Tag.SMT_RESTRICTED_ITEM_USER;
+        
+        set checkVal unitVal;
+        mod checkVal 10;
+        if eq checkVal itemVal; # first digit check
+          return power part side;
         end;
-        debug_log "Restricted Item Dmg Ping - " itemValue unitValue penalty;
+        
+        set checkVal unitVal;
+        div checkVal 10;
+        mod checkVal 10;
+        if eq checkVal itemVal; # second digit check
+          return power part side;
+        end;
+
+        weapon_item.getTag itemVal Tag.SMT_RESTRICTED_ITEM_MELEE; # are melee attacks unrestricted?
+        if and eq itemVal 0 eq battle_action battle_action_hit;
+          return power part side;
+        end;
+
+        weapon_item.getTag penalty Tag.SMT_RESTRICTED_DAMAGE_PEN;
+        if gt penalty 0;
+          muldiv power penalty 100; # divide power by penalty value if set
+        else;
+          set power 0; # otherwise reduce to 0
+        end;
+        debug_log "Restricted Item Dmg Ping - " itemVal unitVal penalty;
 
         return power part side;
 

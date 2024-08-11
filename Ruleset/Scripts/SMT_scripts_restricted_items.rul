@@ -50,13 +50,14 @@ items:
         weapon_item.getTag itemVal Tag.SMT_RESTRICTED_ITEM;
         attacker.getRuleSoldier unitSoldier;
         unitSoldier.getTag unitVal Tag.SMT_RESTRICTED_ITEM_USER;
-        
+        #debug_log "Restricted Item Dmg Ping - " itemVal unitVal;
+
         set checkVal unitVal;
         mod checkVal 10;
         if eq checkVal itemVal; # first digit check
           return power part side;
         end;
-        
+
         set checkVal unitVal;
         div checkVal 10;
         mod checkVal 10;
@@ -75,7 +76,6 @@ items:
         else;
           set power 0; # otherwise reduce to 0
         end;
-        debug_log "Restricted Item Dmg Ping - " itemVal unitVal penalty;
 
         return power part side;
 

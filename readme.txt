@@ -1,6 +1,6 @@
 ### Space Marine Tweaks - By Darox ###
 
-This is an overhaul mod for 40k & Rosigma that remakes the Space Marine faction to give them a unique identity and make them feel like proper elite supersoldiers.
+This is an overhaul mod for 40k & Rosigma that remakes the Space Marine faction and Deathwatch strategy to give them unique identities and make them feel like proper elite supersoldiers.
 
 New Features:
 - A proper Marine upgrade tree, transforming weak starting Neophytes all the way to Veteran Terminators
@@ -8,5 +8,7 @@ New Features:
 - New armors and significant reworks to existing armor
 - New weapons added and several existing weapons rebalanced and made more appropriate for the Emperors elite forces
 - New scripted abilities to keep your Marines alive and bring destruction to the Forces of Chaos
-- Smoke Launchers for Landspeeders!
-- Custom Turrets for Razorbacks! Heavy Bolters, Heavy Flamers & Lascannons
+- Smoke Launchers for Landspeeders
+- Customizable Turrets for Razorbacks; Heavy Bolters, Heavy Flamers & Lascannons
+- A complete rework of how Deathwatch Marines are hired, build a small super-elite Kill-Team
+- 6 new custom ammo types just for Deathwatch

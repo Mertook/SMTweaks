@@ -60,6 +60,7 @@ armors:
     refNode: *STR_DW_TAC_MK7
     tags:
       INFECTION_RESIST_TYPE: 0 # universal resist
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
   - type: STR_DW_TAC_ARMOR_CF_UC
     refNode: *STR_DW_TAC_MK7
   - type: STR_DW_TAC_ARMOR_DA_UC
@@ -160,6 +161,7 @@ armors:
   - type: STR_DW_APOT_ARMOR_BT_UC
     refNode: *STR_DW_APOTH_MK7
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_APOT_ARMOR_CF_UC
     refNode: *STR_DW_APOTH_MK7
@@ -257,6 +259,7 @@ armors:
   - type: STR_DW_DEV_ARMOR_BT_UC
     refNode: *STR_DW_DEV_MK7
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_DEV_ARMOR_CF_UC
     refNode: *STR_DW_DEV_MK7
@@ -358,6 +361,7 @@ armors:
   - type: STR_DW_ASS_ARMOR_BT_UC
     refNode: *STR_DW_ASS_MK7
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_ASS_ARMOR_CF_UC
     refNode: *STR_DW_ASS_MK7
@@ -456,6 +460,7 @@ armors:
   - type: STR_DW_TECH_ARMOR_BT_UC
     refNode: *STR_DW_TECH_MK7
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_TECH_ARMOR_CF_UC
     refNode: *STR_DW_TECH_MK7
@@ -555,6 +560,7 @@ armors:
   - type: STR_DW_TER_ARMOR_BT_UC
     refNode: *STR_DW_TERM_MK7
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_TER_ARMOR_CF_UC
     refNode: *STR_DW_TERM_MK7
@@ -651,6 +657,7 @@ armors:
   - type: STR_MKX_DW_TAC_BT_UC
     refNode: *STR_DW_TAC_MKX
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_TAC_CF_UC
     refNode: *STR_DW_TAC_MKX
@@ -752,6 +759,7 @@ armors:
   - type: STR_MKX_DW_APO_BT_UC
     refNode: *STR_DW_APOTH_MKX
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_APO_CF_UC
     refNode: *STR_DW_APOTH_MKX
@@ -854,6 +862,7 @@ armors:
   - type: STR_MKX_DW_TEC_BT_UC
     refNode: *STR_DW_TECH_MKX
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_TEC_CF_UC
     refNode: *STR_DW_TECH_MKX
@@ -958,6 +967,7 @@ armors:
   - type: STR_MKX_DW_PHB_BT_UC
     refNode: *STR_DW_PHB_MKX
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_PHB_CF_UC
     refNode: *STR_DW_PHB_MKX
@@ -1092,6 +1102,7 @@ armors:
       F4: ["0", "GRVBSBT", "F4_FACE", "GOLA"]
       F5: ["0", "GRVBSBT", "F5_FACE", "GOLA"]
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_GRV_CF_UC
     refNode: *STR_DW_GRV_MKX_BS
@@ -1354,6 +1365,7 @@ armors:
       F4: ["0", "GRVACBT", "F4_FACE", "GOLA"]
       F5: ["0", "GRVACBT", "F5_FACE", "GOLA"]
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_GRVAC_CF_UC
     refNode: *STR_DW_GRV_MKX_AC
@@ -1629,6 +1641,7 @@ armors:
       F4: ["0", "GRVFSBT", "F4_FACE", "GOLA"]
       F5: ["0", "GRVFSBT", "F5_FACE", "GOLA"]
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_GRVFS_CF_UC
     refNode: *STR_DW_GRV_MKX_FS
@@ -1868,6 +1881,7 @@ armors:
     units:
       - STR_BLACKT_PRIMARIS
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_INC_CF_UC
     refNode: *STR_DW_INC_MKX
@@ -2032,6 +2046,7 @@ armors:
       F4: ["0", "INCDWBT", "M4_FACE", "GOLA"]
       F5: ["0", "INCDWBT", "M5_FACE", "GOLA"]
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_INCAC_CF_UC
     refNode: *STR_DW_INC_MKX_AC
@@ -2323,6 +2338,7 @@ armors:
       F4: ["0", "INCDWBT", "M4_FACE", "GOLA"]
       F5: ["0", "INCDWBT", "M5_FACE", "GOLA"]
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_INCPE_CF_UC
     refNode: *STR_DW_INC_MKX_PE
@@ -2600,6 +2616,7 @@ armors:
       F4: ["CAPEP", "MKXCAPDW", "M4_FACE", ""]
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 8 # Gain 1-8 Devotion in any fight where this unit gains xp
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_LEADER_CF_UC
     refNode: *STR_DW_LEADER_ARMOR
@@ -2767,6 +2784,8 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
 
   - type: STR_DW_APOTH_CODEX_UC             # Apothecary Codex Dummy
     refNode: *STR_DW_APOTH_MK7
@@ -2774,6 +2793,8 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
 
   - type: STR_DW_DEV_CODEX_UC               # Devastator Codex Dummy
     refNode: *STR_DW_DEV_MK7
@@ -2781,6 +2802,8 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
 
   - type: STR_DW_ASS_CODEX_UC               # Assault Codex Dummy
     refNode: *STR_DW_ASS_MK7
@@ -2788,6 +2811,8 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
 
   - type: STR_DW_TECH_CODEX_UC              # Techmarine Codex Dummy
     refNode: *STR_DW_TECH_MK7
@@ -2795,6 +2820,8 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
 
   - type: STR_DW_TERM_CODEX_UC              # Terminator Codex Dummy
     refNode: *STR_DW_TERM_MK7
@@ -2802,6 +2829,8 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
 
   - type: STR_DW_PHB_CODEX_UC               # Phobos Codex Dummy
     refNode: *STR_DW_PHB_MKX
@@ -2809,6 +2838,8 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
 
   - type: STR_DW_GRV_CODEX_UC               # Gravis Codex Dummy
     refNode: *STR_DW_GRV_MKX_BS
@@ -2820,6 +2851,8 @@ armors:
       - STR_GRAV_BOLTER_DW
       - STR_GRAV_AUTOC_DW
       - STR_GRAV_FLAMER_DW
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
 
   - type: STR_DW_INC_CODEX_UC               # Omnis Codex Dummy
     refNode: *STR_DW_INC_MKX
@@ -2830,6 +2863,8 @@ armors:
     builtInWeapons:
       - STR_PLASMA_EXTERMINATOR_FIXED
       - STR_ACCEL_AUTOCANNON_FIXED
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
 
   - type: STR_DW_CAP_CODEX_UC               # Captain Codex Dummy
     refNode: *STR_DW_LEADER_ARMOR
@@ -2837,6 +2872,8 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
 
 
 

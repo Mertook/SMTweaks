@@ -31,6 +31,32 @@ soldierTransformation:
       - STR_CRISMONF_PRIMARIS
     listOrder: 10
 
+
+  - name: STR_RECYCLE_DW_LEADER            # Recover DW Token from dead captain
+    requires:
+      - STR_DEATHWATCH
+      - STR_COMMANDER_PLUS
+    cost: 10000
+    producedItem: STR_DW_TOKEN_LEADER
+    allowsDeadSoldiers: true
+    allowsLiveSoldiers: false
+    allowsWoundedSoldiers: false
+    needsCorpseRecovered: false
+    createsClone: true
+    transferTime: 0
+    allowedSoldierTypes:
+      - STR_ULTRAMARINE_LEADER
+      - STR_IMPERIALF_LEADER
+      - STR_BLOODANGELS_LEADER
+      - STR_SALAMANDAR_LEADER
+      - STR_BLACKT_LEADER
+      - STR_WHITES_LEADER
+      - STR_DARKANGELS_LEADER
+      - STR_SPACEW_LEADER
+      - STR_CRISMONF_LEADER
+    listOrder: 10
+
+
   - name: STR_RESURRECT_MARINE_DW
     requires:
       - STR_GENERALLOCK # disable Dreadnoughts

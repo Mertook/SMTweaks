@@ -98,7 +98,7 @@ items:
         else;
           set power 0; # otherwise reduce to 0
         end;
-        debug_log "Restricted Item Dmg End - " itemVal penalty power;
+        #debug_log "Restricted Item Dmg End - " itemVal penalty power;
 
         return power part side;
 

@@ -48,6 +48,14 @@ research:
     dependencies:
       - STR_GENERALLOCK
 
+  - name: STR_CAPTAIN_SUIT          # Terminator Captain
+    cost: 205
+    points: 20
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_POWER_SUIT
+      - STR_COMMANDER_PLUS
+
   - name: STR_SMOKE_BOMB_UNLOCK     # SmokeBomb requirement - Added to give SM access
     cost: 100
     points: 25

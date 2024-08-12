@@ -1,0 +1,14 @@
+events: 
+
+  - name: STR_BASIC_SPAWN_MARINE_CHAPLAIN
+    description: STR_BASIC_SPAWN_MARINE_CHAPLAIN_DESC 
+    background: BACK02.SCR #SoldierBG
+    spawnedPersons: 1
+    spawnedPersonType: STR_SOLDIER_CHAPLAIN
+    everyMultiItemList:
+      STR_PISTOLB: 1
+      STR_PISTOL_CLIP: 6
+      AUX_CROZIUS: 1
+    timer: 60
+    timerRandom: 60
+

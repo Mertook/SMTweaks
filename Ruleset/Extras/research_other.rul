@@ -102,3 +102,132 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_KHORNEGOR_UNGOR
     destroyItem: true
 
+
+  - name: STR_XENO_ONLY             # was Gate for Seer recruitment + Eldar/Ork weapons, now just Ork gear
+    cost: 150 # was 250
+    points: -100
+    dependencies:
+      - STR_XENO_WEAPONS
+
+  - name: STR_ELDAR_INTERROGATION   # Prereq for Eldar tech
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+  
+  - name: STR_ELDAR_WEAPONRY        # Eldar weapon tech
+    cost: 400
+    points: -100
+    dependencies:
+      - STR_XENO_WEAPONS
+      - STR_ELDAR_INTERROGATION
+
+  - name: STR_ELDAR_ALLIES_IG       # Eldar prereq for IG/Arbites
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GUARD_AND_ARBITES
+      - STR_ELDAR_SEER
+    unlocks:
+      - STR_ELDAR_ALLIANCE
+
+  - name: STR_ELDAR_ALLIANCE        # Allow Seer recruitment + prereq to Eldar outposts for IG/Arbites
+    cost: 1000
+    points: -500
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_ELDAR_PATH #XENO ALLIANCE
+    cost: 1000
+    points: -400 # was -500, gets -100 from STR_ELDAR_WEAPONRY unlock
+    dependencies:
+      - STR_GUARD_AND_ARBITES
+      - STR_ELDAR_ALLIANCE
+      - STR_ELDAR_SEER
+    getOneFree:
+      - STR_ELDAR_WEAPONRY # was Eldar Platform ???
+    lookup: STR_CHOSEN_ELDAR
+    spawnedItemList:
+      - STR_ELDAR_PLAT
+      - STR_ELDAR_DAVENGER
+      - STR_ELDAR_SCORPION
+      - STR_ELDAR_REAPER
+      - STR_ELDAR_HEMLOCK_UFO_DATA
+      - STR_ELDAR_WAVESERPENT_UFO_DATA
+      - STR_ELDAR_COBRA_UFO_DATA
+      - STR_ELDAR_HORNET_UFO_DATA
+      - STR_WRAITHGUARD_CORPSE
+      - STR_CATAPULT_PISTOL
+      - STR_CATAPULT
+      - STR_SHURIKEN_CLIP
+      - STR_EPOWER_SWORD
+      - STR_ELDAR_MGRENADE
+      - STR_ELDAR_GRENADE
+      - STR_ELDAR_CHAINSWORD
+      - STR_PLAT_CORPSE         # why?
+      - STR_DAVENGER_CORPSE     # why?
+      - STR_SCORPION_CORPSE     # why?
+      - STR_GUARDIAN_CORPSE     # why?
+      - STR_ELDAR_REAPER_CORPSE # why?
+    spawnedItemCount: 1
+
+  - name: STR_ELDAR_DAVENGER
+    cost: 150
+    points: 50
+    needItem: true
+    unlocks:
+      - STR_INTERROGATION_COMPLETED
+      - STR_ELDAR_INTERROGATION
+    destroyItem: true
+
+  - name: STR_ELDAR_SCORPION
+    cost: 150
+    points: 50
+    needItem: true
+    unlocks:
+      - STR_INTERROGATION_COMPLETED
+      - STR_ELDAR_INTERROGATION
+    destroyItem: true
+
+  - name: STR_ELDAR_SEER
+    cost: 192
+    points: 50
+    needItem: true
+    getOneFree:
+      - STR_ELDAR_PLAT
+    unlocks:
+      - STR_INTERROGATION_COMPLETED
+      - STR_ELDAR_INTERROGATION
+    destroyItem: true
+
+  - name: STR_ELDAR_GUARDIAN
+    cost: 150
+    points: 50
+    needItem: true
+    unlocks:
+      - STR_INTERROGATION_COMPLETED
+      - STR_ELDAR_INTERROGATION
+    destroyItem: true
+
+  - name: STR_ELDAR_BANSHEE
+    cost: 150
+    points: 50
+    needItem: true
+    unlocks:
+      - STR_INTERROGATION_COMPLETED
+      - STR_ELDAR_INTERROGATION
+    destroyItem: true
+
+  - name: STR_ELDAR_REAPER
+    cost: 150
+    points: 50
+    needItem: true
+    unlocks:
+      - STR_INTERROGATION_COMPLETED
+      - STR_ELDAR_INTERROGATION
+    destroyItem: true
+
+
+
+
+

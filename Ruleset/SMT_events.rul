@@ -37,7 +37,7 @@ events:
       STR_CRATED_RHINO: 1
       STR_CRATED_LANDSPEEDER: 1
       STR_TATICAL_ARMOR: 2 
-      STR_RIFLE: 3 # ultra patterns in january is too strong
+      STR_RIFLE: 4 # ultra patterns in january is too strong
       STR_RIFLE_CLIP: 30
       STR_RIFLE_CLIP_AP: 10
       STR_RIFLE_CLIP_EX: 10
@@ -118,7 +118,7 @@ events:
     timer: 360 # 6 hours
     timerRandom: 0
 
-  - name: STR_GENESEED_PACKAGE_EARLY        # Early Geneseed Monthly Package - Avg 1+3 - was 1+14
+  - name: STR_GENESEED_PACKAGE_EARLY        # Early Geneseed Monthly Package - Avg 1+3
     description: STR_GENESEED_PACKAGE_DESCRIPTION
     randomMultiItemList:
       -
@@ -133,7 +133,7 @@ events:
     timer: 720 # 1/2 day
     timerRandom: 6480 # +4.5~ days
 
-  - name: STR_GENESEED_PACKAGE_MID          # Mid Geneseed Monthly Package   - Avg 1+10 - was 0+20
+  - name: STR_GENESEED_PACKAGE_MID          # Mid Geneseed Monthly Package   - Avg 1+10
     description: STR_GENESEED_PACKAGE_DESCRIPTION
     randomMultiItemList:
       -
@@ -191,7 +191,7 @@ eventScripts:
   - type: STR_GENESEED_MONTHLY_PACKAGE_SCRIPT
     eventWeights:
       0:
-       STR_GENESEED_PACKAGE_STARTER: 100 # doesn't trigger on year 1
+       STR_GENESEED_PACKAGE_STARTER: 100 # doesn't trigger
       1:
        STR_GENESEED_PACKAGE_STARTER: 100
       2:
@@ -199,8 +199,7 @@ eventScripts:
       3:
        STR_GENESEED_PACKAGE_EARLY: 100
       4:
-       STR_GENESEED_PACKAGE_EARLY: 33
-       STR_GENESEED_PACKAGE_MID: 66
+       STR_GENESEED_PACKAGE_MID: 100
       5:
        STR_GENESEED_PACKAGE_MID: 100
       6:
@@ -213,10 +212,6 @@ eventScripts:
       9:
        STR_GENESEED_PACKAGE_LATE: 100
       10:
-       STR_GENESEED_PACKAGE_LATE: 100
-      11:
-       STR_GENESEED_PACKAGE_EXLATE: 100
-      12:
        STR_GENESEED_PACKAGE_EXLATE: 100
     firstMonth: 0
     executionOdds: 100

@@ -8,3 +8,36 @@ items:
   - type: STR_BLASTER_LAUNCHER_TERRAN
     requires:
       - STR_MULTIMELTA_PREREQ
+
+  - type: STR_CATAPULT_PISTOL   # Eldar pistol
+    requires:
+      - STR_ELDAR_WEAPONRY
+    tags:
+      REACTION_MULTIPLIER: 200
+  - type: STR_CATAPULT          # Eldar rifle
+    requires:
+      - STR_ELDAR_WEAPONRY
+  - type: STR_SHURIKEN_CLIP     # Eldar ammo
+    requires:
+      - STR_ELDAR_WEAPONRY
+  - type: STR_EPOWER_SWORD      # Eldar sword
+    requires:
+      - STR_ELDAR_WEAPONRY
+  - type: STR_ELDAR_MGRENADE    # Eldar Melta Grenade
+    requires:
+      - STR_ELDAR_WEAPONRY
+  - type: STR_ELDAR_GRENADE     # Eldar Grenade
+    requires:
+      - STR_ELDAR_WEAPONRY
+
+  - type: STR_NECRON_SCARAB_SPAWNER_GRENADE            #Scarab spawner
+    requires:
+      - STR_ALIENS_ONLY # was xenotech, never spawns friendly
+
+  - type: STR_LIBERATOR_AUTOSTUB_KELER # Kelermorph pistol
+    requires:
+      - STR_ALIENS_ONLY # was xenotech, you can't recover this item
+
+  - type: STR_GSC_NEEDLER_RIFLE
+    requires:
+      - STR_ALIENS_ONLY # was xenotech

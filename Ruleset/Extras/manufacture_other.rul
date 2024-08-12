@@ -48,3 +48,19 @@ manufacture:
     requires:
       - STR_VINDICARE_AMMO_REQ
 
+  - name: STR_RECRUIT_CAPTIVE_FARSEER
+    category: STR_CAT_RADICAL
+    requires:
+      - STR_ELDAR_ALLIANCE #Inq, IG & Arbities
+    space: 0
+    time: 1000 #time consuming
+    cost: 500000
+    requiredItems:
+      STR_ELDAR_SEER: 1
+      STR_KILLPOINT_TOKEN: 100
+      STR_ELERIUM_115: 50
+    spawnedPersonType: STR_ELDAR_FARSEER #player version
+    producedItems:
+      STR_KILLPOINT_TOKEN: 1
+
+

@@ -56,6 +56,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_MEDI_KIT_PREREQ
       - STR_RADICAL_INQUISITOR
       - STR_INQUISITION
+      - STR_NOT_DEATHWATCH
     disables:
       - STR_GREYKNIGHTS
       - STR_DEATHWATCH
@@ -74,6 +75,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_APOTHECARY_GK
       - STR_INQUISITION
       - STR_HARDER_MISSIONS
+      - STR_NOT_DEATHWATCH
     disables:
       - STR_PERSONAL_ARMOR
       - STR_DEATHWATCH
@@ -91,7 +93,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_MOTION_SCANNER
       - STR_MEDI_KIT_PREREQ
       - STR_CHAMBERMILITANT
-      # - STR_GREYKNIGHTS
+      - STR_NOT_DEATHWATCH
     unlocks:
       - STR_MIDTIER_PREREQ
       - STR_ASSC
@@ -102,6 +104,56 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     cutscene: c2
     spawnedEvent: ""
     # spawnedEvent: STR_REINFORCEMENTS_GK_3
+
+  - name: STR_GK_HIGHTIER                   # GK and RR Hightier
+    cost: 900
+    points: 30
+    dependencies:
+      - STR_MIDTIER_PREREQ
+      # - STR_GREYKNIGHTS
+      - STR_CYDONIA_OR_BUST
+      - STR_CHAMBERMILITANT
+      - STR_NOT_DEATHWATCH
+    unlocks:
+      - STR_HIGHTIER_PREREQ
+    getOneFree:
+      - STR_HAMMER
+
+  - name: STR_NOT_DEATHWATCH                # Tech to lock Chamber Militant techs that DW shouldn't get (because they have their own versions)
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_THUNDERHAWK_GK_REQ            # Grey Knight Thunderhawk unlock
+    cost: 900
+    points: 30
+    dependencies:
+      # - STR_GK_HIGHTIER
+      # - STR_GREYKNIGHTS
+      # - STR_HIGHTIER_PREREQ
+      - STR_ELERIUM_115
+      - STR_MIDTIER_PREREQ
+      - STR_CHAMBERMILITANT
+      - STR_NOT_DEATHWATCH
+    getOneFree:
+      - STR_NEW_FIGHTER_TRANSPORTER
+
+  - name: STR_STORMEAGLE_INTERCEPTOR_GK     # Grey Knight Stormeagle unlock
+    cost: 600
+    points: 25
+    listOrder: 5050
+    dependencies:
+      # - STR_GK_HIGHTIER
+      # - STR_GREYKNIGHTS
+      # - STR_HIGHTIER_PREREQ
+      - STR_CHAMBERMILITANT
+      - STR_MIDTIER_PREREQ
+      - STR_ELERIUM_115
+      - STR_NOT_DEATHWATCH
+    getOneFree:
+      - STR_STORMEAGLE_INTERCEPTOR
+
 
   - name: STR_RADICAL_INQUISITOR            # mark faction as being radical - "The Radical Road" start or researching "Radical means" as DW/GK
     cost: 0
@@ -184,19 +236,27 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_SUMMON_IMPERIAL_AGENTS_RESEARCH
     listOrder: 2 # push above corpses/etc
 
+  - name: STR_SUMMON_IMPERIAL_AGENTS_RESEARCH #also triggers a eventscript that sends monthly random agents
+    cost: 150 # was 500
+    points: 10
+    dependencies:
+      - STR_GENERALLOCK
+    spawnedEvent: STR_REINFORCEMENTS_FRATERIS_INQ
+
+  - name: STR_REQUEST_GUARD_RESEARCH    # Start recurring IG recruitment
+    cost: 150
+    points: -50
+    dependencies:
+      - STR_INQ_TROOP_REQS
+    spawnedEvent: STR_REINFORCEMENTS_GUARD_REGULAR_INQ
+    listOrder: 15
+
   - name: STR_REQUISITION_IMPERIAL_ASSASSINS_RESEARCH
     cost: 1000
     points: -100
     dependencies:
       - STR_INQ_TROOP_REQS
     spawnedEvent: STR_REINFORCEMENTS_IMPERIAL_ASSASSINS_INQ
-
-  - name: STR_SUMMON_IMPERIAL_AGENTS_RESEARCH #also triggers a eventscript that sends monthly random agents
-    cost: 250 # was 500
-    points: 10
-    dependencies:
-      - STR_GENERALLOCK
-    spawnedEvent: STR_REINFORCEMENTS_FRATERIS_INQ
 
   - name: STR_REQUEST_ARBITES_RESEARCH
     cost: 250
@@ -385,4 +445,32 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     spawnedItem: STR_PISTOLB
     listOrder: 15
 
+  - name: STR_XENO_WEAPONS          # Inquisitor Xeno weapon tech
+    cost: 160
+    points: 20
+    dependencies:
+      - STR_RADICAL_INQUISITOR
+      - STR_MIDTIER_PREREQ
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_NECRONTECH_RESEARCH   # Necron weapon tech
+    cost: 1200 # was 2000
+    points: -250
+    dependencies:
+      - STR_XENO_WEAPONS
+      - STR_GAUSS_BLASTER
+      - STR_HYPERPHASESWORD
+      - STR_SYNAPTIC_DISINTEGRATOR
+      - STR_GAUSS_FLAYER
+      - STR_GAUSS_REAPER
+
+  - name: STR_ELDAR_ALLIES_INQ
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_CHAMBERMILITANT
+      - STR_RADICAL_INQUISITOR
+      - STR_ELDAR_SEER
+    unlocks:
+      - STR_ELDAR_ALLIANCE
 

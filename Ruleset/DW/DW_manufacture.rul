@@ -148,7 +148,7 @@ manufacture:
       - STR_DW_AMMO
     requiredItems:
       STR_UFO_CONSTRUCTION: 1
-      STR_KILLPOINT_TOKEN: 30
+      STR_KILLPOINT_TOKEN: 20
     producedItems:
       STR_RIFLE_CLIP_DEREV: 10
 
@@ -162,7 +162,7 @@ manufacture:
     requiredItems:
       STR_UFO_CONSTRUCTION: 1
       STR_ELERIUM_115: 1
-      STR_KILLPOINT_TOKEN: 30
+      STR_KILLPOINT_TOKEN: 20
     producedItems:
       STR_RIFLE_CLIP_FUSION: 10
 
@@ -188,7 +188,7 @@ manufacture:
     requiredItems:
       STR_UFO_CONSTRUCTION: 1
       STR_ELERIUM_115: 1
-      STR_KILLPOINT_TOKEN: 20
+      STR_KILLPOINT_TOKEN: 10
     producedItems:
       STR_BOLT_SNIPER_AMMO_DEREV: 20
 
@@ -202,7 +202,7 @@ manufacture:
     requiredItems:
       STR_UFO_CONSTRUCTION: 1
       STR_ELERIUM_115: 1
-      STR_KILLPOINT_TOKEN: 20
+      STR_KILLPOINT_TOKEN: 10
     producedItems:
       STR_BOLT_SNIPER_AMMO_HELS: 20
 
@@ -217,4 +217,17 @@ manufacture:
       STR_ELERIUM_115: 1
     producedItems:
       STR_SHOTGUN_SHELLS_WYRM: 20
+
+
+  - name: STR_THUNDERHAWNK_GK               # Grey Knight Thunderhawk
+    requires:
+      - STR_CHAMBERMILITANT
+      - STR_NEW_FIGHTER_TRANSPORTER
+      - STR_NOT_DEATHWATCH
+
+  - name: STR_STORMEAGLE_GK                 # Grey Knight Stormeagle
+    requires: 
+      - STR_CHAMBERMILITANT
+      - STR_STORMEAGLE_INTERCEPTOR
+      - STR_NOT_DEATHWATCH
 

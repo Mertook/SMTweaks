@@ -420,29 +420,30 @@ items:
       RandomWound: false
       FixRadius: 4
 
-  - update: AUX_CROZIUS_DW                   # Crozius (Black Templar Captain
+  - type: AUX_CROZIUS_DW                    # Crozius (Black Templar Captain)
     bigSprite: {mod: 40k, index: 253}
     floorSprite: {mod: 40k, index: 134}
     handSprite: {mod: 40k, index: 424}
     bulletSprite: {mod: 40k, index: 19}
-    fireSound:
-      mod: 40k
-      index: [758, 759, 760, 761, 762, 763]
+    fireSound: [{mod: 40k, index: 758}, {mod: 40k, index: 759}, {mod: 40k, index: 760}, {mod: 40k, index: 761}, {mod: 40k, index: 762}, {mod: 40k, index: 763}]
     explosionHitSound: {mod: 40k, index: 771}
     meleeSound: {mod: 40k, index: 753}
     meleeHitSound: {mod: 40k, index: 743}
     meleeAnimation: {mod: 40k, index: 28}
+    battleType: 1
+    invWidth: 2
+    invHeight: 3
     weight: 15
-    recover: false
-    supportedInventorySections: # don't let this go on the ground
-      - STR_BACK_PACK
-      - STR_BELT
-      - STR_LEFT_HAND
-      - STR_RIGHT_HAND
+    clipSize: -1
+    recover: false # generated item
+    ufopediaType: AUX_CROZIUS
     dropoff: 4
     maxRange: 20 #
-    powerRangeThreshold: 0
-    powerRangeReduction: 0
+    powerRangeThreshold: 20
+    powerRangeReduction: 5
+    confAimed:
+      name: STR_CROZIUS_AIMED
+      shortName: STR_CROZIUS_AIMED_COUNT
     costAimed:
       time: 35 # normal 40
       energy: 20 #
@@ -450,15 +451,13 @@ items:
     flatAimed:
       time: false # 35% TU
       energy: false # 20% energy
-    confAimed:
-      name: STR_CROZIUS_AIMED
-      shortName: STR_CROZIUS_AIMED_COUNT
     accuracySnap: 0
     accuracyAimed: 100
     accuracyAuto: 0
     snapRange: 0
     aimRange: 10 #
     autoRange: 0
+    tuAimed: 35
     tuSnap: 0
     tuAuto: 0
     accuracyMultiplier:
@@ -481,7 +480,7 @@ items:
       ArmorEffectiveness: 0.2 #
       RadiusReduction: 3.0 #
       FixRadius: -1
-      RadiusEffectiveness: 0.05 # regular 0.04
+      RadiusEffectiveness: 0.04
     damageBonus:
       bravery: 0.3 #
       psiSkill: 0.7 #
@@ -490,6 +489,7 @@ items:
       strength: 0.0 #
       melee: 0.3 #
       psiSkill: 0.3 #
+    accuracyMelee: 90
     meleeMultiplier:
       melee: 0.8
       psiSkill: 0.2
@@ -497,5 +497,9 @@ items:
       time: 15 #
       energy: 2 #
     experienceTrainingMode: 19 #
+    tags:
+      ITEM_DOESNT_HURT_USER: 1
+
+
 
 

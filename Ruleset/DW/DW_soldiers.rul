@@ -55,6 +55,7 @@ soldiers:
       firing: 25
     allowPiloting: true
     value: 50
+    moraleLossWhenKilled: 150 # Seeing an elite marine die is shocking for regular troops
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 20 # -5 over Vet Marines
       SMT_ALPHA_ATTACKER_MODIFIER: -1 # can't turn traitor
@@ -310,6 +311,7 @@ soldiers:
     costSalary: 200000
     requires:
       - STR_DEATHWATCH
+      - STR_CHAPTER_PURITY
     minStats: # extremely high starting stats, lategame elites
       tu: 105
       stamina: 130
@@ -366,12 +368,16 @@ soldiers:
     femaleFrequency: 0
     avatarOffsetX: 67
     avatarOffsetY: 42
+    rankSprite: 990
+    rankBattleSprite: 325
+    rankTinySprite: 235
     soldierNames:
       - delete
       - MarineName/
     deathMale: [{mod: 40k, index: 713}, {mod: 40k, index: 714}, {mod: 40k, index: 715}, {mod: 40k, index: 716}, {mod: 40k, index: 717}, {mod: 40k, index: 718}, {mod: 40k, index: 719}, {mod: 40k, index: 720}, {mod: 40k, index: 721}, {mod: 40k, index: 722}]
     deathFemale: [{mod: 40k, index: 744}, {mod: 40k, index: 745}, {mod: 40k, index: 746}, {mod: 40k, index: 747}, {mod: 40k, index: 748}, {mod: 40k, index: 749}, {mod: 40k, index: 750}, {mod: 40k, index: 751}, {mod: 40k, index: 752}]
     value: 50
+    moraleLossWhenKilled: 150 # Seeing an elite marine die is shocking for regular troops
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 15 # -5 over DW regulars
       SMT_ALPHA_ATTACKER_MODIFIER: -1 # can't turn traitor
@@ -380,38 +386,118 @@ soldiers:
   - type: STR_ULTRAMARINE_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_ULTRA_UC
+    rankStrings:
+      - STR_DW_U_RANK_0
+      - STR_DW_U_RANK_1
+      - STR_DW_U_RANK_2
+      - STR_DW_U_RANK_3
+      - STR_DW_U_RANK_4
+      - STR_DW_U_RANK_5
 
   - type: STR_IMPERIALF_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_IF_UC
+    rankStrings:
+      - STR_DW_IF_RANK_0
+      - STR_DW_IF_RANK_1
+      - STR_DW_IF_RANK_2
+      - STR_DW_IF_RANK_3
+      - STR_DW_IF_RANK_4
+      - STR_DW_IF_RANK_5
 
   - type: STR_BLOODANGELS_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_BA_UC
+    rankStrings:
+      - STR_DW_BA_RANK_0
+      - STR_DW_BA_RANK_1
+      - STR_DW_BA_RANK_2
+      - STR_DW_BA_RANK_3
+      - STR_DW_BA_RANK_4
+      - STR_DW_BA_RANK_5
 
   - type: STR_SALAMANDAR_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_SALA_UC
+    rankStrings:
+      - STR_DW_SALA_RANK_0
+      - STR_DW_SALA_RANK_1
+      - STR_DW_SALA_RANK_2
+      - STR_DW_SALA_RANK_3
+      - STR_DW_SALA_RANK_4
+      - STR_DW_SALA_RANK_5
 
   - type: STR_BLACKT_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_BT_UC
+    statCaps:
+      tu: 120
+      stamina: 140
+      health: 150
+      bravery: 110
+      reactions: 120
+      firing: 150
+      throwing: 140
+      strength: 110
+      psiStrength: 100
+      psiSkill: 150 # bonus devotion cap
+      melee: 150
+    rankStrings:
+      - STR_DW_BT_RANK_0
+      - STR_DW_BT_RANK_1
+      - STR_DW_BT_RANK_2
+      - STR_DW_BT_RANK_3
+      - STR_DW_BT_RANK_4
+      - STR_DW_BT_RANK_5
+    skillIconSprite:  {mod: 40k, index: 8}
+    skills: # Gives bless ability when combined with backpack item
+      - STR_BLESS_SKILL
+    tags:
+      SMT_RESTRICTED_ITEM_USER: 12 # can use Crozius and DW gear
 
   - type: STR_WHITES_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_WS_UC
+    rankStrings:
+      - STR_DW_WS_RANK_0
+      - STR_DW_WS_RANK_1
+      - STR_DW_WS_RANK_2
+      - STR_DW_WS_RANK_3
+      - STR_DW_WS_RANK_4
+      - STR_DW_WS_RANK_5
 
   - type: STR_DARKANGELS_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_DA_UC
+    rankStrings:
+      - STR_DW_DA_RANK_0
+      - STR_DW_DA_RANK_1
+      - STR_DW_DA_RANK_2
+      - STR_DW_DA_RANK_3
+      - STR_DW_DA_RANK_4
+      - STR_DW_DA_RANK_5
 
   - type: STR_SPACEW_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_SW_UC
+    rankStrings:
+      - STR_DW_SW_RANK_0
+      - STR_DW_SW_RANK_1
+      - STR_DW_SW_RANK_2
+      - STR_DW_SW_RANK_3
+      - STR_DW_SW_RANK_4
+      - STR_DW_SW_RANK_5
 
   - type: STR_CRISMONF_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_CF_UC
+    rankStrings:
+      - STR_DW_CF_RANK_0
+      - STR_DW_CF_RANK_1
+      - STR_DW_CF_RANK_2
+      - STR_DW_CF_RANK_3
+      - STR_DW_CF_RANK_4
+      - STR_DW_CF_RANK_5
 
   - type: STR_DW_ARMOR_DUMMY            # Dummy unit, used for DW Armor codex entries
     requires:

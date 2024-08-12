@@ -379,8 +379,8 @@ ufopaedia:
     listOrder: 21102
 
   - id: AUX_CROZIUS                         # Crozius Arcanum
-    requires:
-      - STR_CHAP_ARMOR
+    # requires:
+      # - STR_CHAP_ARMOR
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: CROZIUS.SPK
@@ -738,7 +738,7 @@ extraStrings:
       STR_PISTOLS_UFOPEDIA: "{NEWLINE} The Spectris Boltpistol is specialized for range with a scope allowing carefully aimed shots, making it an ideal sidearm for Marines that need an option for engaging at a distance.{NEWLINE}{NEWLINE}Recoil: {ALT}40"
       STR_PISTOLH_UFOPEDIA: "{NEWLINE} The Tigrus Pattern is a hybrid carbine design meant to combine the benefits of both Bolters and Boltpistols. It is capable of autofire and scoped shots, and comes with a pistol grip allowing particularly skilled users to effectively wield it with one hand.{NEWLINE}{NEWLINE}Recoil: {ALT}55"
       STR_RIFLE_UFOPEDIA: "{NEWLINE} The Bolter is the iconic weapon of the Space Marines. They are optimized for close quarters engagements, tearing apart enemies with rapid-fire destructive bolts. {NEWLINE}{NEWLINE}Recoil: {ALT}65"
-      STR_RIFLEA_UFOPEDIA: "{NEWLINE} Deathwatch Killteams utilize the best equipment the Imperium can offer. This scoped Artifex Bolter is capable of both long range engagements and close range burst fire, as well as fire custom Deathwatch Bolts. {NEWLINE}{NEWLINE} Recoil: {ALT}65{NEWLINE} Genelocked - Deathwatch Only"
+      STR_RIFLEA_UFOPEDIA: "{NEWLINE} Deathwatch Killteams utilize the best equipment the Imperium can offer. This scoped Artifex Bolter is capable of both long range engagements and close range burst fire, as well as firing custom Deathwatch Bolts. {NEWLINE}{NEWLINE} Recoil: {ALT}65{NEWLINE} Genelocked - Deathwatch Only"
       STR_RIFLEB_UFOPEDIA: "{NEWLINE} The Ultra-pattern Bolter is a high quality variant of the Godwyn Bolter, granting it more effective range and accuracy.{NEWLINE}{NEWLINE}Recoil: {ALT}65"
       STR_RIFLEC_UFOPEDIA: "{NEWLINE} The Stalker-pattern Bolter is equipped with an extended barrel and scope, allowing it to function as a hybrid battle rifle / sniper weapon. It boasts superior range and powerful aimed shots but sacrifices the rapid-fire capability typical of Bolters.{NEWLINE}{NEWLINE}Recoil: {ALT}65"
       STR_RIFLED_UFOPEDIA: "{NEWLINE} The Cawl-Pattern Boltrifle is a newer variant of the Bolter, introduced for Primaris Marines. Bulkier and with a longer barrel, it is able to lay down heavy fire at mid-range.{NEWLINE}{NEWLINE}Recoil: {ALT}75"

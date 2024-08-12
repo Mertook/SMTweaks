@@ -1,0 +1,19 @@
+
+eventScripts:
+
+  - type: STR_BASIC_SPAWN_MARINE_CHAPLAIN_RESTRICTED
+    eventWeights:
+      0:
+       STR_BASIC_SPAWN_MARINE_CHAPLAIN: 100
+    firstMonth: 3
+    executionOdds: 4 # low chance
+    minScore: 1000
+    maxScore: 30000
+    researchTriggers:
+      STR_THREAT_ONE: true
+      STR_MIDTIER_PREREQ: true
+      STR_PSI_LAB: true # chapel tech
+      STR_MARINES_STRATEGY: false
+      STR_CHAOS_PATH: false
+    facilityTriggers:
+      STR_PSIONIC_LABORATORY: true # chapel building

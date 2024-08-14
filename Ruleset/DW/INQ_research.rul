@@ -463,6 +463,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_SYNAPTIC_DISINTEGRATOR
       - STR_GAUSS_FLAYER
       - STR_GAUSS_REAPER
+    listOrder: 15 # push above corpses/etc
 
   - name: STR_ELDAR_ALLIES_INQ
     cost: 0
@@ -473,6 +474,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_ELDAR_SEER
     unlocks:
       - STR_ELDAR_ALLIANCE
+    listOrder: 15 # push above corpses/etc
 
   - name: STR_ELDAR_WEAPON_REQ      # Activates monthly events that delivers Eldar weapons/ammo
     cost: 1000
@@ -482,4 +484,5 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_RADICAL_INQUISITOR
       - STR_ELDAR_ALLIANCE
     spawnedEvent: STR_ELDAR_WEAPON_SUPPLY_RECCUR
+    listOrder: 15 # push above corpses/etc
 

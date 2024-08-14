@@ -42,17 +42,17 @@ items:
     bigSprite: 3139
     costBuy: 50000
     weight: 28 # was 20
-    dropoff: 8 # regular bolters are 9 - DW bonus
+    dropoff: 8 # standard
     autoRange: 12 # match MC
     snapRange: 17 # match Stalker
-    aimRange: 22 # -2 from Stalker
+    aimRange: 24 # match Stalker
     accuracyAuto: 75
-    accuracySnap: 85 # was 80
+    accuracySnap: 90 # match ultra
     accuracyAimed: 100
-    tuAuto: 30 # was 35
-    tuSnap: 18 # was 25
-    tuAimed: 60 # was 60
-    autoShots: 3 # was 3
+    tuAuto: 30 # ultra 30
+    tuSnap: 20 # ultra 20
+    tuAimed: 55 # stalker 60
+    autoShots: 4 # was 3
     tags:
       ITEM_RECOIL: 65 #
       ITEM_AIMED_ACCURACY_POWER_BONUS: 25 # Stalker bonus
@@ -63,19 +63,19 @@ items:
     bigSprite: 3151
     costBuy: 50000
     weight: 34 # was 20
-    dropoff: 7 # regular cawl are 8 - DW bonus
+    dropoff: 7 # cawl
     minRange: 3 #cumbersome, not suited to CQC
     autoRange: 13 #
     snapRange: 18 # was 17
     accuracyAuto: 70
     accuracySnap: 85
     accuracyAimed: 0
-    tuAuto: 40 # was 40
-    tuSnap: 25 # was 25
+    tuAuto: 35 # cawl 35
+    tuSnap: 25 # cawl 28
     tuAimed: 0
     confSnap:
       shots: 2 # was 1
-    autoShots: 5
+    autoShots: 6 # was 5
     tags:
       ITEM_RECOIL: 75 #
 
@@ -98,7 +98,7 @@ items:
     power: 75
     damageType: 1 # AP
     damageAlter: # Standard bolter ammo
-      RandomType: 1 # 0-200%
+      RandomType: 7 # 50-200%
       ToArmorPre: 0.15
       ArmorEffectiveness: 0.9
       ToArmor: 0.15
@@ -117,10 +117,9 @@ items:
     damageType: 11
     damageAlter:
       ResistType: 1
-      RandomType: 1 # 0-200%
       ToArmorPre: 0.15
       ArmorEffectiveness: 0.9
-      ToHealth: 0.9 # normal 1.1
+      ToHealth: 1.0 # normal 1.1
       ToArmor: 0.15
       ToStun: 0.6 # normal 0.5
       ToEnergy: 0.3
@@ -131,13 +130,14 @@ items:
 
   - type: STR_RIFLE_CLIP_FUSION             # Inertial Fusion Bolter ammo
     refNode: *STR_BOLTER_AMMO_DW
-    bigSprite: 3166
+    bigSprite: 3167
     listOrder: 10442
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2100}
     power: 25
     damageType: 1 # AP
     damageAlter: # Standard bolter ammo
       ResistType: 0 # Blank - unresisted
-      RandomType: 1 # 0-200%
+      RandomType: 2 # 50-150%
       ToArmorPre: 1.0 # grav
       ArmorEffectiveness: 0.25
       ToArmor: 1.0 # grav
@@ -147,7 +147,7 @@ items:
       ToWound: 0.1
       RandomWound: false
     tags:
-      ITEM_AMMO_COLOR: 4 # green 2
+      ITEM_AMMO_COLOR: 8 # blue
       GravPercentage: 4
 
   - type: STR_RIFLE_CLIP_DRAGON             # Dragonfire Bolter ammo
@@ -162,7 +162,6 @@ items:
     damageAlter:
       IgnoreDirection: false
       FireBlastCalc: false
-      RandomType: 6 # 0-100 + 0-100
       FireThreshold: 1
       ArmorEffectiveness: 0.9
       ToArmorPre: 0.05
@@ -182,16 +181,16 @@ items:
     costBuy: 125000
     dropoff: 4 # larger HB shells have better propulsion and accuracy at range
     sprayWaypoints: 2
-    autoRange: 14 #
-    snapRange: 18 # regular 18
-    aimRange: 15 # regular 15
+    autoRange: 16 #
+    snapRange: 20 # regular 19
+    aimRange: 18 # regular 17
     accuracyAuto: 50 #
     accuracySnap: 70 # regular 66
     accuracyAimed: 60 # regular 58
-    tuAuto: 80 # 12 shots
-    tuSnap: 25 #
-    tuAimed: 55 #
-    tuLoad: 30 #
+    tuAuto: 75 # Mars 80
+    tuSnap: 22 # Mars 24
+    tuAimed: 45 # Mars 50
+    tuLoad: 25 #
     minRange: 5 #heavy weapon; cumbersome, not suited to CQC
     autoShots: 12 #
     followProjectiles: false
@@ -216,7 +215,7 @@ items:
       name: STR_FULL_AUTO
       shortName: STR_FULL_AUTO_COUNT
       shots: 12
-    kneelBonus: 120 # was 130, Astartes version meant to be hipfired by devastator marines
+    kneelBonus: 125 # was 130, Astartes version meant to be hipfired by devastator marines
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
 
@@ -249,9 +248,9 @@ items:
     armor: 200
     bulletSpeed: 50
     autoRange: 0
-    snapRange: 20
-    aimRange: 33
-    noLOSAccuracyPenalty: 66 # default 50 - Sniper Rifle bonus
+    snapRange: 25 # +5 DW
+    aimRange: 38 # +5 DW
+    noLOSAccuracyPenalty: 75 # default 50, regular 66 - Sniper bonus + DW bonus
     accuracySnap: 60
     accuracyAuto: 0
     accuracyAimed: 90
@@ -419,6 +418,70 @@ items:
       ToTile: 0.0
       RandomWound: false
       FixRadius: 4
+
+  - type: STR_DW_PLASMA_GRENADE             # Plasma Grenade
+    categories: [ STR_CAT_GRENADES, STR_CAT_TACTICAL]
+    bigSprite: 3176
+    floorSprite: 3176
+    handSprite: 3670
+    explosionHitSound: {mod: 40k, index: 690}
+    hitAnimation: {mod: 40k, index: 112}
+    powerForAnimation: 5
+    primeSound: {mod: 40k_ROSIGMA_edits, index: 2425}
+    size: 0.1
+    requiresBuy:
+      - STR_DW_AMMO
+    costBuy: 32000 # expensive
+    costSell: 8000
+    listOrder: 13902 # just after Melta grenades
+    battleType: 4
+    invHeight: 2
+    invWidth: 1
+    fuseType: -2 #impact
+    noLOSAccuracyPenalty: 75 #indirect fire weapon
+    weight: 8 # heavy grenade
+    throwRange: 18 # need 58 strength to throw this far, 31 str to reach 10 tiles
+    costThrow:
+      energy: 5
+      time: 35
+    costPrime:
+      time: 20
+    costUnprime:
+      time: 10
+    unprimeActionName: STR_UNPRIME_GRENADE
+    flatPrime:
+      time: false
+      energy: true
+    power: 120 # heavy plasma shot in a can
+    damageType: 5 # Plasma
+    damageAlter:
+      RandomType: 6
+      ToHealth: 1.0
+      ToArmorPre: 0.1 #
+      ArmorEffectiveness: 0.75 #
+      FireThreshold: 70 #
+      ToArmor: 0.1
+      FixRadius: 1
+    scripts:
+      selectItemSprite: # change BigObs sprite when primed
+        var int fuse;
+        item.isFuseEnabled fuse;
+
+        if and gt fuse 0 eq blit_part blit_item_big;
+          add sprite_index fuse;
+        else;
+          add sprite_index sprite_offset;
+        end;
+
+        return sprite_index;
+
+  - type: AUX_SHIELD_DW                     # DW Terminator Storm Shield
+    defaultInventorySlot: STR_LEFT_HAND
+    clipSize: 61 # Shield HP + 1
+    tuMelee: 0
+    tags:
+      ITEM_SHIELD_BLOCKING_STRENGTH: 20
+      ITEM_SHIELD_RECHARGES: 1
 
   - type: AUX_CROZIUS_DW                    # Crozius (Black Templar Captain)
     bigSprite: {mod: 40k, index: 253}

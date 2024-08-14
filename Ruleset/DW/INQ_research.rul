@@ -206,7 +206,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     cost: 0
     points: 0
     dependencies:
-      - STR_INQUISITION
+      - STR_GENERALLOCK
 
   - name: STR_LIBRARY_GK # Make GK exclusive
     cost: 100
@@ -259,14 +259,14 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     spawnedEvent: STR_REINFORCEMENTS_IMPERIAL_ASSASSINS_INQ
 
   - name: STR_REQUEST_ARBITES_RESEARCH
-    cost: 250
+    cost: 150 # was 250
     points: -100
     dependencies:
       - STR_INQ_TROOP_REQS
     spawnedEvent: STR_REINFORCEMENTS_ENFORCERS_INQ
 
   - name: STR_REQUEST_JUDGES_RESEARCH
-    cost: 500
+    cost: 250 # was 500
     points: -250
     dependencies:
       - STR_INQ_TROOP_REQS
@@ -276,14 +276,14 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     spawnedEvent: STR_REINFORCEMENTS_ARBITES_INQ
 
   - name: STR_REQUEST_GUARD_PILOTS_RESEARCH
-    cost: 250
+    cost: 100 # was 250
     points: -100
     dependencies:
       - STR_INQ_TROOP_REQS
     spawnedEvent: STR_REINFORCEMENTS_PILOT_GUARD_INQ
 
   - name: STR_REQUEST_ADEPTAS_PILOTS_RESEARCH
-    cost: 250
+    cost: 100 # was 250
     points: -250
     dependencies:
       - STR_INQ_TROOP_REQS
@@ -291,14 +291,14 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     spawnedEvent: STR_REINFORCEMENTS_ADEPTAS_PILOTS_INQ
 
   - name: STR_REQUEST_KRIEG_KILLTEAM_RESEARCH
-    cost: 500
+    cost: 150 # was 500
     points: -100
     dependencies:
       - STR_INQ_TROOP_REQS
     spawnedEvent: STR_REINFORCEMENTS_KRIEG_INQ
 
   - name: STR_REQUEST_KRIEG_GRENADIER_KILLTEAM_RESEARCH
-    cost: 500
+    cost: 250 # was 500
     points: -250
     dependencies:
       - STR_INQ_TROOP_REQS
@@ -306,7 +306,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     spawnedEvent: STR_REINFORCEMENTS_KRIEG_GRENADIER_INQ
 
   - name: STR_REQUEST_KRIEG_PANZERGRENADIER_KILLTEAM_RESEARCH
-    cost: 750
+    cost: 500 # was 750
     points: -500
     dependencies:
       - STR_INQ_TROOP_REQS
@@ -314,14 +314,14 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     spawnedEvent: STR_REINFORCEMENTS_KRIEG_PANZERGRENADIER_INQ
 
   - name: STR_REQUEST_ADEPTAS_AID_RESEARCH
-    cost: 750
+    cost: 250 # was 750
     points: -250
     dependencies:
       - STR_INQ_TROOP_REQS
     spawnedEvent: STR_REINFORCEMENTS_ADEPTAS_INQ
 
   - name: STR_REQUEST_ADEPTAS_AID_RESEARCH_2
-    cost: 1000
+    cost: 500 # was 1000
     points: -500
     dependencies:
       - STR_INQ_TROOP_REQS
@@ -329,13 +329,13 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     spawnedEvent: STR_REINFORCEMENTS_ADEPTAS_INQ_2
 
   - name: STR_REQUEST_OGRYN_AID_RESEARCH
-    cost: 500
+    cost: 300 # was 500
     points: -100
     dependencies:
       - STR_INQ_TROOP_REQS
     spawnedEvent: STR_REINFORCEMENTS_OGRYN_INQ
   - name: STR_REQUEST_OGRYN_AID_RESEARCH_2
-    cost: 750
+    cost: 500 # was 750
     points: -250
     dependencies:
       - STR_INQ_TROOP_REQS
@@ -350,7 +350,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     spawnedEvent: STR_REINFORCEMENTS_VETERAN_GUARD_INQ
 
   - name: STR_REQUEST_POWER_GUARD_AID_RESEARCH
-    cost: 1500
+    cost: 1000 # was 1500
     points: -500
     dependencies:
       - STR_INQ_TROOP_REQS
@@ -358,7 +358,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     spawnedEvent: STR_REINFORCEMENTS_VETERAN_GUARD_INQ_POWERED
 
   - name: STR_CONTACT_THE_ABHUMANS_RESEARCH
-    cost: 500
+    cost: 400 # was 500
     points: -250
     dependencies:
       - STR_RADICAL_INQUISITOR
@@ -366,7 +366,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     spawnedEvent: STR_REINFORCEMENTS_BEASTMEN_INQ
 
   - name: STR_RECRUIT_OGRYN_RESEARCH
-    cost: 500
+    cost: 300 # was 500
     points: -100
     dependencies:
       - STR_RADICAL_INQUISITOR
@@ -374,7 +374,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_CONTACT_THE_ABHUMANS_RESEARCH
     spawnedEvent: STR_REINFORCEMENTS_UNARMORED_OGRYN_INQ
   - name: STR_A_DEAL_WITH_THE_SQUATS_RESEARCH
-    cost: 500
+    cost: 300 # was 500
     points: -250
     dependencies:
       - STR_RADICAL_INQUISITOR
@@ -382,7 +382,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     spawnedEvent: STR_REINFORCEMENTS_SQUATS_INQ
 
   - name: STR_IMPERIAL_INQUISITOR_REQUISITION #To recruit Inquisitors
-    cost: 1000
+    cost: 800 # was 1000
     points: 10
     dependencies:
       - STR_INQUISITION
@@ -391,7 +391,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_IMPERIAL_INQUISITOR
 
   - name: STR_IMPERIAL_INQUISITOR #For other nonGK factions to unlock manufacture recruitment of Inquisitors?
-    cost: 1500
+    cost: 800 # was 1500
     points: 10
     dependencies:
       - STR_GENERALLOCK
@@ -414,7 +414,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
 
 
   - name: STR_ENTANGLE_ADEPTAS_RESEARCH
-    cost: 1000
+    cost: 800 # was 1000
     points: 100
     dependencies:
       - STR_RADICAL_INQUISITOR
@@ -428,7 +428,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     spawnedEvent: STR_REWARD_INQUISITION_STORMTROOPERS
 
   - name: STR_PARTAKE_IN_A_DEATHCULT_RITUAL
-    cost: 1500
+    cost: 500 # was 1500
     points: -250
     dependencies:
       - STR_RADICAL_INQUISITOR
@@ -473,4 +473,13 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_ELDAR_SEER
     unlocks:
       - STR_ELDAR_ALLIANCE
+
+  - name: STR_ELDAR_WEAPON_REQ      # Activates monthly events that delivers Eldar weapons/ammo
+    cost: 1000
+    points: -500
+    dependencies:
+      - STR_CHAMBERMILITANT
+      - STR_RADICAL_INQUISITOR
+      - STR_ELDAR_ALLIANCE
+    spawnedEvent: STR_ELDAR_WEAPON_SUPPLY_RECCUR
 

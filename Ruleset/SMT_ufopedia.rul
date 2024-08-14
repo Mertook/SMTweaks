@@ -291,6 +291,24 @@ ufopaedia:
     text: STR_DW_TERM_CODEX_UC_UFOPEDIA
     listOrder: 5206
 
+  - id: STR_DW_TERM_CYC_CODEX_UC            # DW Terminator (Cyclone)
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0TS.SPK
+    requires:
+      - STR_DEATHWATCH
+    text: STR_DW_TERM_CYC_CODEX_UC_UFOPEDIA
+    listOrder: 5207
+
+  - id: STR_DW_TERM_ASS_CODEX_UC            # DW Terminator (Assault)
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0TA.SPK
+    requires:
+      - STR_DEATHWATCH
+    text: STR_DW_TERM_ASS_CODEX_UC_UFOPEDIA
+    listOrder: 5208
+
   - id: STR_DW_PHB_CODEX_UC                 # DW Phobos
     type_id: 15
     section: STR_ARMORPEDIA
@@ -326,6 +344,7 @@ ufopaedia:
       - STR_DEATHWATCH
     text: STR_DW_CAP_CODEX_UC_UFOPEDIA
     listOrder: 5214
+
 
 ### WEAPONS
   - id: STR_STRIKE_VOX_FALSE                # Strike Vox
@@ -429,6 +448,8 @@ ufopaedia:
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: 1LB.SPK
+    requires: 
+      - STR_DEATHWATCH
     text: STR_SHOTGUN_DW_UFOPEDIA
     listOrder: 21116
 
@@ -438,6 +459,16 @@ ufopaedia:
     image_id: ABSOLVOR.SPK
     text: STR_ABSOLVOR_PISTOL_UFOPEDIA
     listOrder: 21120
+
+  - id: STR_DW_PLASMA_GRENADE                 # Absolvor Pistol
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1FM.SPK
+    requires: 
+      - STR_DEATHWATCH
+    text: STR_DW_PLASMA_GRENADE_UFOPEDIA
+    listOrder: 21130
+
 
 ###BOLTERS
   - id: STR_BOLTER_ENFORCER                 # Light Bolter (Locke)
@@ -469,6 +500,8 @@ ufopaedia:
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: 1MB6.SPK
+    requires: 
+      - STR_DEATHWATCH
     text: STR_RIFLEA_UFOPEDIA
 
   - id: STR_RIFLEB                          # Bolter (Ultra)
@@ -490,6 +523,8 @@ ufopaedia:
   - id: STR_RIFLEDW                         # Bolter (Cawl DW)
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
+    requires: 
+      - STR_DEATHWATCH
     text: STR_RIFLEDW_UFOPEDIA
 
   - id: STR_MCRIFLE                         # Bolter (Mastercrafted)
@@ -717,50 +752,57 @@ extraStrings:
       STR_DW_APOTH_CODEX_UC_UFOPEDIA: "{NEWLINE} Deathwatch Apothecaries act as field medics for the Kill-Team and preserve the geneseed of any fallen Brother."
       STR_DW_DEV_CODEX_UC_UFOPEDIA: "{NEWLINE} Deployed when long range firepower is required, Deathwatch Devastators rain destruction from afar."
       STR_DW_ASS_CODEX_UC_UFOPEDIA: "{NEWLINE} Used to rapidly raid key enemy positions, Deathwatch Assault teams make powerful shock troopers."
-      STR_DW_TECH_CODEX_UC_UFOPEDIA: "{NEWLINE} Deathwatch Techmarines are sent out to investigate Xenotech findings, and are able to maintain their Battle-Brothers armor."
+      STR_DW_TECH_CODEX_UC_UFOPEDIA: "{NEWLINE} Deathwatch Techmarines are sent out to investigate Xenotech findings, and are able to maintain their Battle-Brothers armor.{NEWLINE}{NEWLINE} Firstborn >{ALT} Tarantula Sentry{ALT}{NEWLINE} Primaris > Thunderfire Drone{ALT} "
       STR_DW_TERM_CODEX_UC_UFOPEDIA: "{NEWLINE} Deathwatch Terminators are deployed to clear out Space Hulks and other high-threat engagements, using their immense bulk to carry heavy weaponry while shrugging off enemy attacks."
       STR_DW_PHB_CODEX_UC_UFOPEDIA: "{NEWLINE} Built for mobility and stealth, Phobos Armor is used for rapid undercover strikes.{NEWLINE}{NEWLINE} Deathwatch Marines use less energy when moving while wearing Phobos armor."
       STR_DW_GRV_CODEX_UC_UFOPEDIA: "{NEWLINE} Gravis Armor is a heavier variant of MKX Tacticus, wielding powerful fist-mounted weaponry.{NEWLINE}{NEWLINE} Weapon Options:{NEWLINE}{ALT} Boltstorm Gauntlet{NEWLINE} Flamer Gauntlet{NEWLINE} Twin Autocannon Gauntlets"
-      STR_DW_INC_CODEX_UC_UFOPEDIA: "{NEWLINE} A lighter variant of Gravis Armor capable of flight, Omnis Armor allows to user to unleash firepower from the skies.{NEWLINE}{NEWLINE} Weapon Options:{NEWLINE}{ALT} Accelerator Autocannon{NEWLINE} Plasma Exterminators"
+      STR_DW_INC_CODEX_UC_UFOPEDIA: "{NEWLINE} A lighter variant of Gravis Armor capable of flight, Omnis Armor allows to user to unleash firepower from the skies.{NEWLINE}{NEWLINE} Weapon Options:{NEWLINE}{ALT} Accelerator Autocannon{NEWLINE} Twin Plasma Exterminators"
       STR_DW_CAP_CODEX_UC_UFOPEDIA: "{NEWLINE}{ALT} UNDER CONSTRUCTION - Will eventually be unique for each Chapter Captain."
+      STR_DW_TERM_CYC_CODEX_UC_UFOPEDIA: "{NEWLINE} The immense strength provided by Terminator armor makes it a powerful heavy weapons platform, raining destruction down on hordes of Xenos."
+      STR_DW_TERM_ASS_CODEX_UC_UFOPEDIA: "{NEWLINE} Utilizing Teleport Beacons to strike deep into enemy formations, Assault Terminators able to tear apart fearsome Xenos beasts.{NEWLINE}{NEWLINE} Weapon Options:{NEWLINE}{ALT} Storm Shield{NEWLINE} Lighting Claws"
       ### ITEMS
       STR_STRIKE_VOX_UFOPEDIA: "{NEWLINE} Vox-casters enable soldiers on the field to call in firesupport to deliver wide-area bombardments.{NEWLINE}{NEWLINE} There is a one-turn delay before the barrage hits."
       STR_BOLT_SNIPER_RIFLE_UFOPEDIA: "{NEWLINE} A long range Bolt-Sniper used by experienced Marine sharpshooters to eliminate distant targets. It can be loaded with a variety of specialist rounds to deal with any foe.{NEWLINE}{NEWLINE} RECOIL: {ALT} 75"
       STR_BOLT_SNIPER_RIFLE_DW_UFOPEDIA: "{NEWLINE} The Deathwatch Bolt-Sniper is used to eliminate key Xenos leaders from a distance. It can be loaded with a wide variety of specialist ammo, including some rounds only available to the Deathwatch.{NEWLINE}{NEWLINE} RECOIL: {ALT} 75{NEWLINE} Genelocked - Deathwatch Only"
       STR_GRENADE_LAUNCHER_ASTARTES_UFOPEDIA: "{NEWLINE} The Astartes Grenade Launcher serves the role of a launcher weapon that can be used and carried by Scouts-in-training. They are fired in arcing shots designed to clear obstructions and strike farther into an enemy formation as well as simply being fired directly at foes. This Grenade Launcher holds a magazine of six grenades and is burst fire capable."
-      STR_LIGHT_BOLTERS_UFOPEDIA: "{NEWLINE} 'Light' Bolters are designed for Scouts-in-training who can't yet handle standard Space Marine bolters. They fire smaller rounds and have a lower rate of fire, reducing the fearsome recoil down to a more manageable level.{NEWLINE}{NEWLINE}Recoil: {ALT}30"
-      STR_ROCKET_LAUNCHER_UFOPEDIA: "{NEWLINE} The Soundstrike-pattern Missile Launcher used by Adeptus Astartes features an autoloader and can be quickly readied to fire on the move by Devastator Marines, though its weight makes this impractical for regular soldiers.{NEWLINE}{NEWLINE}Recoil: {ALT}50"
-      STR_RIFLE_UFOPEDIA: "{NEWLINE} The Bolter, also called a Boltgun, and its variants are some of the most powerful hand-held ballistic anti-personnel weaponry in use by the military forces of the Imperium of Man.{NEWLINE}{NEWLINE}Recoil: {ALT}65"
-      STR_MCPISTOL_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE}Recoil: {ALT}40"
-      STR_MCRIFLE_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE}Recoil: {ALT}65"
-      STR_PISTOL_UFOPEDIA: "{NEWLINE} Bolt Pistols are a compact Bolt weapon. They have less range and capacity than the Bolter but can be easily fired with one hand, making them ideal as sidearms.{NEWLINE}{NEWLINE}Recoil: {ALT}40"
-      STR_PISTOLB_UFOPEDIA: "{NEWLINE} The Boltpistol Ultra-pattern has an improved design allowing rapid fire, making it particularly prized by Assault Marines for close quarters fighting.{NEWLINE}{NEWLINE}Recoil: {ALT}40"
-      STR_PISTOLS_UFOPEDIA: "{NEWLINE} The Spectris Boltpistol is specialized for range with a scope allowing carefully aimed shots, making it an ideal sidearm for Marines that need an option for engaging at a distance.{NEWLINE}{NEWLINE}Recoil: {ALT}40"
-      STR_PISTOLH_UFOPEDIA: "{NEWLINE} The Tigrus Pattern is a hybrid carbine design meant to combine the benefits of both Bolters and Boltpistols. It is capable of autofire and scoped shots, and comes with a pistol grip allowing particularly skilled users to effectively wield it with one hand.{NEWLINE}{NEWLINE}Recoil: {ALT}55"
-      STR_RIFLE_UFOPEDIA: "{NEWLINE} The Bolter is the iconic weapon of the Space Marines. They are optimized for close quarters engagements, tearing apart enemies with rapid-fire destructive bolts. {NEWLINE}{NEWLINE}Recoil: {ALT}65"
+      STR_LIGHT_BOLTERS_UFOPEDIA: "{NEWLINE} 'Light' Bolters are designed for Scouts-in-training who can't yet handle standard Space Marine bolters. They fire smaller rounds and have a lower rate of fire, reducing the fearsome recoil down to a more manageable level.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
+      STR_ROCKET_LAUNCHER_UFOPEDIA: "{NEWLINE} The Soundstrike-pattern Missile Launcher used by Adeptus Astartes features an autoloader and can be quickly readied to fire on the move by Devastator Marines, though its weight makes this impractical for regular soldiers.{NEWLINE}{NEWLINE} Recoil: {ALT}50"
+      STR_RIFLE_UFOPEDIA: "{NEWLINE} The Bolter, also called a Boltgun, and its variants are some of the most powerful hand-held ballistic anti-personnel weaponry in use by the military forces of the Imperium of Man.{NEWLINE}{NEWLINE} Recoil: {ALT}65"
+      STR_MCPISTOL_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}40"
+      STR_MCRIFLE_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}65"
+      STR_PISTOL_UFOPEDIA: "{NEWLINE} Bolt Pistols are a compact Bolt weapon. They have less range and capacity than the Bolter but can be easily fired with one hand, making them ideal as sidearms.{NEWLINE}{NEWLINE} Recoil: {ALT}40"
+      STR_PISTOLB_UFOPEDIA: "{NEWLINE} The Boltpistol Ultra-pattern has an improved design allowing rapid fire, making it particularly prized by Assault Marines for close quarters fighting.{NEWLINE}{NEWLINE} Recoil: {ALT}40"
+      STR_PISTOLS_UFOPEDIA: "{NEWLINE} The Spectris Boltpistol is specialized for range with a scope allowing carefully aimed shots, making it an ideal sidearm for Marines that need an option for engaging at a distance.{NEWLINE}{NEWLINE} Recoil: {ALT}40"
+      STR_PISTOLH_UFOPEDIA: "{NEWLINE} The Tigrus Pattern is a hybrid carbine design meant to combine the benefits of both Bolters and Boltpistols. It is capable of autofire and scoped shots, and comes with a pistol grip allowing particularly skilled users to effectively wield it with one hand.{NEWLINE}{NEWLINE} Recoil: {ALT}55"
+      STR_RIFLE_UFOPEDIA: "{NEWLINE} The Bolter is the iconic weapon of the Space Marines. They are optimized for close quarters engagements, tearing apart enemies with rapid-fire destructive bolts. {NEWLINE}{NEWLINE} Recoil: {ALT}65"
       STR_RIFLEA_UFOPEDIA: "{NEWLINE} Deathwatch Killteams utilize the best equipment the Imperium can offer. This scoped Artifex Bolter is capable of both long range engagements and close range burst fire, as well as firing custom Deathwatch Bolts. {NEWLINE}{NEWLINE} Recoil: {ALT}65{NEWLINE} Genelocked - Deathwatch Only"
-      STR_RIFLEB_UFOPEDIA: "{NEWLINE} The Ultra-pattern Bolter is a high quality variant of the Godwyn Bolter, granting it more effective range and accuracy.{NEWLINE}{NEWLINE}Recoil: {ALT}65"
-      STR_RIFLEC_UFOPEDIA: "{NEWLINE} The Stalker-pattern Bolter is equipped with an extended barrel and scope, allowing it to function as a hybrid battle rifle / sniper weapon. It boasts superior range and powerful aimed shots but sacrifices the rapid-fire capability typical of Bolters.{NEWLINE}{NEWLINE}Recoil: {ALT}65"
-      STR_RIFLED_UFOPEDIA: "{NEWLINE} The Cawl-Pattern Boltrifle is a newer variant of the Bolter, introduced for Primaris Marines. Bulkier and with a longer barrel, it is able to lay down heavy fire at mid-range.{NEWLINE}{NEWLINE}Recoil: {ALT}75"
+      STR_RIFLEB_UFOPEDIA: "{NEWLINE} The Ultra-pattern Bolter is a high quality variant of the Godwyn Bolter, granting it more effective range and accuracy.{NEWLINE}{NEWLINE} Recoil: {ALT}65"
+      STR_RIFLEC_UFOPEDIA: "{NEWLINE} The Stalker-pattern Bolter is equipped with an extended barrel and scope, allowing it to function as a hybrid battle rifle / sniper weapon. It boasts superior range and powerful aimed shots but sacrifices the rapid-fire capability typical of Bolters.{NEWLINE}{NEWLINE} Recoil: {ALT}65"
+      STR_RIFLED_UFOPEDIA: "{NEWLINE} The Cawl-Pattern Boltrifle is a newer variant of the Bolter, introduced for Primaris Marines. Bulkier and with a longer barrel, it is able to lay down heavy fire at mid-range.{NEWLINE}{NEWLINE} Recoil: {ALT}75"
       STR_RIFLEDW_UFOPEDIA: "{NEWLINE} Deathwatch Killteams utilize the best equipment the Imperium can offer. This Artifex Boltrifle is excellent at laying down heavy fire at longer ranges and can fire custom Deathwatch Bolts. {NEWLINE}{NEWLINE} Recoil: {ALT}75{NEWLINE} Genelocked - Deathwatch Only"
-      STR_AUTO_CANNON_UFOPEDIA: "{NEWLINE} A Heavy Bolter is a powerful Bolt weapon that is used for anti-infantry and fire support roles. The Heavy Bolter is widely used throughout the Imperium, though unlike stationary or vehicle-mounted versions the Mk.IV variant is hand-carried by Devastator Marines.{NEWLINE}{NEWLINE}Recoil: {ALT}90"
-      STR_HEAVY_BOLTER_MARS_UFOPEDIA: "{NEWLINE} The Mars-Pattern Heavy Bolter features a belt-fed design that can be supplied from the users backpack, allowing it to carry more rounds and maintain a high rate of fire.{NEWLINE}{NEWLINE}Recoil: {ALT}90"
+      STR_AUTO_CANNON_UFOPEDIA: "{NEWLINE} A Heavy Bolter is a powerful Bolt weapon that is used for anti-infantry and fire support roles. The Heavy Bolter is widely used throughout the Imperium, though unlike stationary or vehicle-mounted versions the Mk.IV variant is hand-carried by Devastator Marines.{NEWLINE}{NEWLINE} Recoil: {ALT}90"
+      STR_HEAVY_BOLTER_MARS_UFOPEDIA: "{NEWLINE} The Mars-Pattern Heavy Bolter features a belt-fed design that can be supplied from the users backpack, allowing it to carry more rounds and maintain a high rate of fire.{NEWLINE}{NEWLINE} Recoil: {ALT}90"
       STR_AUTO_CANNON_DW_UFOPEDIA: "{NEWLINE} The Artifex Heavy Bolter provides Deathwatch Killteams with powerful fire support, belt-fed with large ammo packs to allow a constant hail of fire. {NEWLINE}{NEWLINE} Recoil: {ALT}90{NEWLINE} Genelocked - Deathwatch Only"
       STR_LASCAN_DW_UFOPEDIA: "{NEWLINE} The Lascannon is the most formidable type of laser weapon, producing an energetic shot of coherent light capable of penetrating most armored vehicles. This Artifex variant is created specifically for Deathwatch Kill-Teams and boasts greater performance.{NEWLINE}{NEWLINE} Recoil: {ALT}60{NEWLINE} Genelocked - Deathwatch Only"
-      STR_HB_UFOPEDIA: "{NEWLINE} The Storm Bolter is a double-barrelled version of the standard .75 caliber Bolter. As it is heavier and has more recoil than a normal Bolter, Storm Bolters are generally only employed by Space Marine Terminators or as a vehicle-mounted weapon.{NEWLINE}{NEWLINE}Recoil: {ALT}80"
-      STR_HB_MC_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE}Recoil: {ALT}80"
+      STR_HB_UFOPEDIA: "{NEWLINE} The Storm Bolter is a double-barrelled version of the standard .75 caliber Bolter. As it is heavier and has more recoil than a normal Bolter, Storm Bolters are generally only employed by Space Marine Terminators or as a vehicle-mounted weapon.{NEWLINE}{NEWLINE} Recoil: {ALT}80"
+      STR_HB_MC_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}80"
       STR_CHAINSWORD_MC_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to attack more rapidly.{NEWLINE}{NEWLINE}Strength required: {ALT}25"
-      STR_MC_BOLTPISTOL_DEAZ_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE}Recoil: {ALT}20"
-      STR_MC_BOLTER_DEAZ_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE}Recoil: {ALT}30"
+      STR_MC_BOLTPISTOL_DEAZ_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}20"
+      STR_MC_BOLTER_DEAZ_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
       STR_MASTER_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to attack more rapidly."
       AUX_CROZIUS_UFOPEDIA: "{NEWLINE} The Crozius Arcanum serves as both a sacred staff of office and a close combat weapon for Space Marine Chaplains. It is a formidable Power weapon, and in the hands of a Chaplain can also be used to smite enemies with the Emperors fury."
-      STR_ASSC_UFOPEDIA: "{NEWLINE} The Assault Cannon is a six-barrelled, self-loading rotary Autocannon, effective against infantry targets and light vehicles at close to medium range. It fires medium caliber rounds as its 6 barrels are cycled past a single chamber by an electric motor.{NEWLINE}{NEWLINE}Recoil: {ALT}130"
+      STR_ASSC_UFOPEDIA: "{NEWLINE} The Assault Cannon is a six-barrelled, self-loading rotary Autocannon, effective against infantry targets and light vehicles at close to medium range. It fires medium caliber rounds as its 6 barrels are cycled past a single chamber by an electric motor.{NEWLINE}{NEWLINE} Recoil: {ALT}130"
       STR_CLAWS_UFOPEDIA: "{NEWLINE} Vicious power weapons used by elite Space Marines, Lightning Claws tear through armor and inflict heavy wounds."
-      STR_SHOTGUN_MARINE_UFOPEDIA: "{NEWLINE} The Astartes assault shotgun is a more powerful and versatile version of the shotgun. Assault shotguns are best used in urban and close-quarters combat, as well as in boarding actions aboard voidships.{NEWLINE}{NEWLINE}Recoil: {ALT}45"
+      STR_SHOTGUN_MARINE_UFOPEDIA: "{NEWLINE} The Astartes assault shotgun is a more powerful and versatile version of the shotgun. Assault shotguns are best used in urban and close-quarters combat, as well as in boarding actions aboard voidships.{NEWLINE}{NEWLINE} Recoil: {ALT}45"
       STR_SHOTGUN_DW_UFOPEDIA: "{NEWLINE} Deathwatch Shotguns are optimized for close-range combat in Space Hulks and other cramped enviroments. In addition to regular shells they can also utilize Wyrmsbreath shells to engulf an area in fire, purging entire rooms of lightly armored Xenos.{NEWLINE}{NEWLINE} Recoil: {ALT}45{NEWLINE} Genelocked - Deathwatch Only"
-      STR_MCSHOTGUN_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE}Recoil: {ALT}45"
-      ### ITEMS PRIMARIS
-      STR_ABSOLVOR_PISTOL_UFOPEDIA: "{NEWLINE} Wielded most commonly by Primaris Chaplains and Apothecaries, the Absolvor is a massive pistol that would match the size of any regular rifle. It fires penetrating bolts meant to punch through armor.{NEWLINE}{NEWLINE}Recoil: {ALT}60"
+      STR_MCSHOTGUN_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}45"
+      STR_ABSOLVOR_PISTOL_UFOPEDIA: "{NEWLINE} Wielded most commonly by Primaris Chaplains and Apothecaries, the Absolvor is a massive pistol that would match the size of any regular rifle. It fires penetrating bolts meant to punch through armor.{NEWLINE}{NEWLINE} Recoil: {ALT}60"
+      STR_DW_PLASMA_GRENADE_UFOPEDIA: "{NEWLINE} Making use of intentional containment collapse to cause an explosive meltdown, Plasma Grenades are extremely destructive. They are only used by certain elite Imperial Forces, with select few circles of the Adeptus Mechanicus knowing the secrets of their construction."
+      STR_BOLTER_UMBRA_UFOPEDIA: "{NEWLINE} The Umbra Pattern Bolter is one of the earliest patterns of Bolter and its reliable design has lead to widespread use. It has a fearsome recoil but can still be handled by trained Guardsmen. {NEWLINE}{NEWLINE} Recoil: {ALT}30"
+      STR_BOLTER_LIGHT_UMBRA_UNDERSLUNG_CODEX: "{NEWLINE} The Umbra Pattern Bolter fitted with a underslung 40mm grenade launcher that can use the common guard 40mm grenades and shotgun rounds. Incendiary, Krak and Melta grenades as well as slug and buckshot shells.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
+      STR_BOLTER_LIGHT_LMG_UFOPEDIA: "{NEWLINE} The Accatran MkVe is a bolter pattern variant chambered for light bolter calibre rounds, favored by light troops and Elysian drop troops for the extra firepower it provides. Equipped with a bipod, this squad based support bolter brings superior firepower compared to a heavy stubber. {NEWLINE}{NEWLINE} Recoil: {ALT}70{ALT} - Attached Bipod"
+      STR_HEAVY_BOLTER_GUARD_UFOPEDIA: "{NEWLINE} The Godwyn pattern heavy bolter is a variant commonly in use by the Astra Militarum for anti-infantry fire support. A bipod is deployed when kneeling to brace against the fierce recoil while firing.{NEWLINE}{NEWLINE} Recoil: {ALT}90{ALT} - Attached Bipod"
+      STR_BOLTER_HEAVY_SOLAR_CODEX: "{NEWLINE} An ancient design produced in select manufactorums, the Solar-pattern heavy bolter is as hotly sought after as it is temperamental. The additional litanies required to calm its machine spirit, as well as the lack of a handle, mean only the strongest soldiers can fire it without first bracing it. {NEWLINE} Recoil: {ALT}90{ALT} - Attached Bipod"
       ### CRAFT
       ### SOLDIERS
       STR_TERMINATOR_CROSS_DESCRIPTION: Space Marines awarded with the Crux Terminatus are recognized as elites, allowing promotion to the highest ranks and access to rare relics including Terminator Armor. {NEWLINE}{NEWLINE} For this honor the Space Marine needs to have achieved 30 enemy kills, 15 successful missions and serve for three months.
@@ -827,7 +869,7 @@ extraStrings:
       STR_SMT_LIBRARIAN_SPELLS: Librarian Abilities
       STR_SMT_LIBRARIAN_SPELLS_UFOPEDIA: "{NEWLINE} Librarians have 5 different psyker abilities.{NEWLINE}{NEWLINE}{ALT}>Smite{ALT} - Deals armor-ignoring damage to an enemy{NEWLINE}{ALT}>Lockdown{ALT} - Drains enemy time units, paralysing them{NEWLINE}{ALT}>Shroud{ALT} - Creates a blast of smoke to obscure vision{NEWLINE}{ALT}>Shield{ALT} - Grants a temporary energy shield to an ally{NEWLINE}{ALT}>Accelerate{ALT} - Increases reactions and at high levels even increases movespeed{NEWLINE}{NEWLINE} All abilities scale with PsiStr only"
       STR_SMT_BOLTER_CHANGES: Bolter Changes
-      STR_SMT_BOLTER_CHANGES_UFOPEDIA: "{NEWLINE} Bolters fire powerful high-caliber self-propelled explosive rounds. They have limited propulsion and lack accuracy at range, instead optimizing for devastating close range firepower.{NEWLINE} Compared to Rosigma SMT Bolters have greater falloff outside of optimal range but deal more damage and fire faster, specializing in autofire bursts.{NEWLINE}{NEWLINE} Heavy Bolter rounds are larger with more propulsion and don't suffer any additonal range penalties."
+      STR_SMT_BOLTER_CHANGES_UFOPEDIA: "{NEWLINE} Bolters fire powerful high-caliber self-propelled explosive rounds. They have limited propulsion and lack accuracy at range, instead optimizing for devastating close range firepower.{NEWLINE} Compared to Rosigma SMT Bolters have greater accuracy falloff outside of optimal range but deal more damage and fire faster, specializing in autofire bursts.{NEWLINE}{NEWLINE} Heavy Bolter rounds are larger with more propulsion and aren't given any additonal falloff penalties."
       STR_SMT_MASTERCRAFTED_AMMO: Mastercrafted Bolts
       STR_SMT_MASTERCRAFTED_AMMO_UFOPEDIA: "{NEWLINE} Mastercrafted Bolts do not get a flat power boost, instead the damage comes from a precision bonus when used by elite troops.{NEWLINE}{NEWLINE} Units with more than 100 firing accuracy gain power equal to {NEWLINE} {ALT}(FA - 100) x Precision%{ALT} when firing Mastercrafted ammo."
       STR_SMT_ARMOR_SHRED: Armor Shredding

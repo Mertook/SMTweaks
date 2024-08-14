@@ -28,25 +28,26 @@ research:
     points: 20
     dependencies:
       - STR_ELERIUM_115
-      - STR_UFO_POWER_SOURCE
+      - STR_UFO_POWER_SOURCE # power source
+      - STR_UFO_NAVIGATION # warp drive
       - STR_HIGHTIER_PREREQ #Was Midtier
       - STR_PERSONAL_ARMOR
     unlocks:
       - STR_TERMINATOR_ARMOR_SM_CODEX
-    getOneFree:
-      - STR_TSARGENT # Terminator Cyclone is now part of regular Terminator suits
 
   - name: STR_FLYING_SUIT           # Terminator Assault
     cost: 330
     points: 20
     dependencies:
-      - STR_MARINES_STRATEGY
+      - STR_MARINES_AND_DEATHWATCH
       - STR_POWER_SUIT
-      - STR_UFO_NAVIGATION
 
-  - name: STR_TSARGENT              # Terminator Sergeant (unused)
+  - name: STR_TSARGENT              # Terminator Cyclone
+    cost: 330
+    points: 20
     dependencies:
-      - STR_GENERALLOCK
+      - STR_MARINES_AND_DEATHWATCH
+      - STR_POWER_SUIT
 
   - name: STR_CAPTAIN_SUIT          # Terminator Captain
     cost: 205
@@ -314,6 +315,7 @@ research:
     points: 10
     dependencies:
       - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
       - STR_LASER_WEAPONS
     listOrder: 9 # push above corpses/etc
     spawnedItem: STR_RIFLEB
@@ -322,7 +324,7 @@ research:
     cost: 100
     points: 20
     dependencies:
-      - STR_MIDTIER_PREREQ
+      - STR_UFO_CONSTRUCTION # ceramite
       - STR_MARINE_BOLTERS
       - STR_THREAT_ONE
     unlocks:
@@ -340,6 +342,7 @@ research:
     cost: 100
     points: 20
     dependencies:
+      - STR_MARINES_STRATEGY
       - STR_MIDTIER_PREREQ # Devastator strat still needs to wait for midtier
       - STR_DEV_ARMOR
     getOneFree:

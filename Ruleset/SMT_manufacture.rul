@@ -194,9 +194,10 @@ manufacture:
   - name: STR_FLYING_SUIT                           # Terminator Assault
     category: STR_PERSONAL_ARMOR
     requires:
-      - STR_CHAPTER_PURITY
-      - STR_PERSONAL_ARMOR
-      - STR_FLYING_SUIT
+      - STR_GENERALLOCK # Now an alt of regular Terminator armor, this shouldn't be used
+      #- STR_CHAPTER_PURITY
+      #- STR_PERSONAL_ARMOR
+      #- STR_FLYING_SUIT
     space: 0
     time: 4800
     cost: 80000 #was 20k
@@ -206,6 +207,12 @@ manufacture:
       STR_UFO_CONSTRUCTION: 10
       STR_ELERIUM_115: 20
       STR_KILLPOINT_TOKEN: 800 #was 60
+
+  - name: STR_TSARGENT                              # Terminator Sergeant
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_GENERALLOCK # Now an alt of regular Terminator armor, this shouldn't be used
+
   - name: STR_CAPTAIN_SUIT                          # Terminator Captain
     category: STR_PERSONAL_ARMOR
     requires:
@@ -220,11 +227,6 @@ manufacture:
       STR_UFO_CONSTRUCTION: 10
       STR_ELERIUM_115: 20
       STR_KILLPOINT_TOKEN: 1000 #was 200
-
-  - name: STR_TSARGENT                              # Terminator Sergeant
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_GENERALLOCK # Now an alt of regular Terminator armor, this shouldn't be used
 
   - name: STR_TATICAL_ARMOR                         # Tactical
     category: STR_PERSONAL_ARMOR
@@ -636,6 +638,11 @@ manufacture:
       STR_ALIEN_ALLOYS: 40 # was 20
       STR_KILLPOINT_TOKEN: 50 # was 300
       STR_STORMHAWK: 1
+
+  - name: STR_LASER_CANNON
+    cost: 175000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 30 # was 50
 
   # - name: STR_CRATED_DROPPODS                      # Unpackage Starter Droppods (not used)
     # category: STR_CRAFT

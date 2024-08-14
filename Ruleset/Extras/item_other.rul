@@ -1,43 +1,202 @@
 items:
 
-  - type: STR_MULTIMELTA_SPONSON
+  - update: STR_MULTIMELTA_SPONSON              # Multimelta (turret)
     requiresBuy:
       - STR_IMPERIAL_GUARD_OPERATIONS
       - STR_MULTIMELTA_PREREQ
 
-  - type: STR_BLASTER_LAUNCHER_TERRAN
+  - update: STR_BLASTER_LAUNCHER_TERRAN         # Multimelta
     requires:
       - STR_MULTIMELTA_PREREQ
 
-  - type: STR_CATAPULT_PISTOL   # Eldar pistol
+  - update: STR_CATAPULT_PISTOL                 # Eldar pistol
     requires:
       - STR_ELDAR_WEAPONRY
-    tags:
-      REACTION_MULTIPLIER: 200
-  - type: STR_CATAPULT          # Eldar rifle
-    requires:
-      - STR_ELDAR_WEAPONRY
-  - type: STR_SHURIKEN_CLIP     # Eldar ammo
-    requires:
-      - STR_ELDAR_WEAPONRY
-  - type: STR_EPOWER_SWORD      # Eldar sword
-    requires:
-      - STR_ELDAR_WEAPONRY
-  - type: STR_ELDAR_MGRENADE    # Eldar Melta Grenade
-    requires:
-      - STR_ELDAR_WEAPONRY
-  - type: STR_ELDAR_GRENADE     # Eldar Grenade
-    requires:
-      - STR_ELDAR_WEAPONRY
+    armor: 200
+    dropoff: 8 # was 5
+    autoRange: 0
+    snapRange: 14 # was 15
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 75 # was 75
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 21
+    tuAimed: 0
+    confSnap:
+      shots: 3 # was 1
 
-  - type: STR_NECRON_SCARAB_SPAWNER_GRENADE            #Scarab spawner
+  - update: STR_CATAPULT                        # Eldar rifle
+    requires:
+      - STR_ELDAR_WEAPONRY
+    armor: 200
+    dropoff: 7 # was 5
+    autoRange: 12 # was 7
+    snapRange: 16 # was 15
+    aimRange: 0
+    accuracyAuto: 70 # was 66
+    accuracySnap: 80 # was 80
+    accuracyAimed: 0
+    tuAuto: 40
+    tuSnap: 25
+    tuAimed: 0
+    confSnap:
+      shots: 4 # was 1
+    autoShots: 8 # was 3
+
+  - update: STR_SHURIKEN_CLIP                   # Eldar ammo
+    requires:
+      - STR_ELDAR_WEAPONRY
+    armor: 200
+    power: 50
+    clipSize: 60 # was 20
+
+  - update: STR_EPOWER_SWORD                    # Eldar sword
+    requires:
+      - STR_ELDAR_WEAPONRY
+    armor: 200
+
+  - update: STR_ELDAR_MGRENADE                  # Eldar Melta Grenade
+    requires:
+      - STR_ELDAR_WEAPONRY
+    armor: 200
+
+  - update: STR_ELDAR_GRENADE                   # Eldar Grenade
+    requires:
+      - STR_ELDAR_WEAPONRY
+    armor: 200
+
+  - update: STR_NECRON_SCARAB_SPAWNER_GRENADE   # Scarab spawner
     requires:
       - STR_ALIENS_ONLY # was xenotech, never spawns friendly
 
-  - type: STR_LIBERATOR_AUTOSTUB_KELER # Kelermorph pistol
+  - update: STR_LIBERATOR_AUTOSTUB_KELER        # Kelermorph pistol
     requires:
       - STR_ALIENS_ONLY # was xenotech, you can't recover this item
 
-  - type: STR_GSC_NEEDLER_RIFLE
+  - update: STR_GSC_NEEDLER_RIFLE               # GSC Sniper
     requires:
       - STR_ALIENS_ONLY # was xenotech
+
+  - update: STR_BOLTER_LIGHT_UMBRA              # IG Light Bolter Umbra
+    fireSound: {mod: 40k, index: 707} # light bolter gets light bolter sound
+    requiresBuy:
+      - STR_LIGHT_BOLTERS_MIDTIER
+      - STR_MIDTIER_PREREQ # was IG exclusive
+      - STR_UFO_CONSTRUCTION #ceramite tier
+    dropoff: 8 # was 5
+    autoRange: 15 # was 10, autofire focus +1 for no attachment
+    snapRange: 17 # was 13, +1 for no attachment
+    aimRange: 0
+    accuracyAuto: 72 # was 66, +6 for no attachment
+    accuracySnap: 80
+    accuracyAimed: 0
+    tuAuto: 32 # was 32
+    tuSnap: 20 # was 25
+    tuAimed: 0
+    confSnap:
+      shots: 1 # was 2
+    autoShots: 4
+    tags:
+      ITEM_RECOIL: 30 # was 25, light bolter with high RoF
+
+  - update: STR_BOLTER_LIGHT_UMBRA_UNDERSLUNG   # IG Light Bolter Umbra (GL)
+    fireSound: {mod: 40k, index: 707} # light bolter gets light bolter sound
+    requiresBuy:
+      - STR_LIGHT_BOLTERS_MIDTIER
+      - STR_MIDTIER_PREREQ # was IG exclusive
+      - STR_UFO_CONSTRUCTION #ceramite tier
+    dropoff: 8 # was 5
+    autoRange: 14 # was 10, autofire focus
+    snapRange: 16 # was 13
+    aimRange: 25 #underslung
+    accuracyAuto: 66 #
+    accuracySnap: 80 #
+    accuracyAimed: 50 #
+    tuSnap: 20 # was 25
+    tuAuto: 32 # was 33
+    tuAimed: 40
+    confSnap: #Bolter
+      shots: 1 # was 2
+      ammoSlot: 0
+      arcing: false
+    confAuto: #Bolter
+      ammoSlot: 0
+      name: STR_AUTOFIRE
+      arcing: false
+    confAimed: #Grenade launcher 40mm
+      ammoSlot: 1 #Grenades
+      name: STR_LAUNCH_GRENADE
+      shortName: STR_LAUNCH_GRENADE_SHORT
+      arcing: true
+    autoShots: 4 # was 6
+    tags:
+      ITEM_RECOIL: 30 # was 25, light bolter with high RoF
+
+  - update: STR_BOLTER_LIGHT_SOLO               # IG Light Bolter Single
+    dropoff: 8 # was 5
+    autoRange: 0
+    snapRange: 15 # was 14
+    aimRange: 24 # was 22 - falls behind regular at 28 tiles
+    accuracyAuto: 0
+    accuracySnap: 85
+    accuracyAimed: 105
+    tuAuto: 0
+    tuSnap: 25
+    tuAimed: 50
+
+  - update: STR_BOLTER_LIGHT_SOLO_DMR           # IG Light Bolter Single
+    dropoff: 7 # was 5
+    autoRange: 0
+    snapRange: 20
+    aimRange: 32 # was 31 - falls behind original at 35 tiles
+    accuracyAuto: 0
+    accuracySnap: 90 # was 85
+    accuracyAimed: 115
+    tuAuto: 0
+    tuSnap: 30
+    tuAimed: 45
+
+  - update: STR_BOLTER_LIGHT_SOLO_SHORT         # IG Light Bolter Single
+    dropoff: 8 # was 6
+    autoRange: 0
+    snapRange: 12 # was 11
+    aimRange: 17 # was 16
+    accuracyAuto: 0
+    accuracySnap: 80
+    accuracyAimed: 100
+    tuAuto: 0
+    tuSnap: 20 # was 21
+    tuAimed: 40 # was 45
+
+  - update: STR_BOLTER_LIGHT_LMG                # IG Accatran LMG Bolter
+    size: 0.3
+    weight: 28 # was 32, lower weight = lower requirement for solo bipod deployment
+    dropoff: 5 # was 5
+    autoRange: 12 # was 12
+    snapRange: 15 # was 15
+    aimRange: 0
+    accuracyAuto: 66
+    accuracySnap: 80
+    accuracyAimed: 0
+    tuAuto: 35 # was 60
+    tuSnap: 20 # was 35
+    tuAimed: 0
+    autoShots: 4 # was 5
+    kneelBonus: 110
+    tags:
+      ITEM_RECOIL: 70 # light version of heavy bolter, needs bipod setup for most IG forces
+
+  - update: STR_HEAVY_BOLTER_GUARD              # IG Heavy Bolter (Bipod)
+    autoShots: 8 # was 7
+    tags:
+      ITEM_RECOIL: 90 # was 60, offset by bipod
+
+  - update: STR_BOLTER_HEAVY_SOLAR              # Heavy Bolter Solar
+    requiresBuy:
+      - STR_UFO_CONSTRUCTION
+      - STR_IMPERIAL_GUARD_OPERATIONS # Make IG exclusive
+    tags:
+      ITEM_RECOIL: 90 # was 60, offset by bipod
+
+

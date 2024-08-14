@@ -6,12 +6,12 @@ items:
     damageType: 5
     damageBonus:
       strength: 0.3 # standard is 0.2 - mounted on armor fists
-      melee: 0.3
+      melee: 0.4
     damageAlter:
       RandomType: 2 # 50-150%
       ArmorEffectiveness: 0.7
       ToArmorPre: 0.4 #bonus armor shredding over power
-      ToHealth: 0.9
+      ToHealth: 1.0
       RandomType: 2
       RandomWound: false
       ToWound: 0.2 #inflicts 20% wounds
@@ -26,6 +26,9 @@ items:
     meleeMultiplier:
       melee: 0.9
       reactions: 0.1
+
+  - update: STR_CLAWS_DW                    # Lightning Claw (DW Terminator)
+    refNode: *STR_CLAW_DMG
 
   - type: STR_CLAWS_ASS                     # Lightning Claw (Vanguard)
     refNode: *STR_CLAW_DMG
@@ -439,26 +442,33 @@ items:
     recoveryPoints: 2
     ufopediaType: STR_GENESEED_DETAILS
 
-  - update: STR_PISTOL_CLIP                 # Boltpistol Ammo
+  - &STR_BOLTER_AMMO_STD                    # Bolter Ammo defaults
     size: 0.05 # was 0.1
+    damageAlter:
+      RandomType: 7 # 50-200%
+      ToArmorPre: 0.15 # was 0.1
+      ArmorEffectiveness: 0.9
+      ToArmor: 0.15
+      ToHealth: 1.1
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    armor: 200
+
+  - update: STR_PISTOL_CLIP                 # Boltpistol Ammo
+    refNode: *STR_BOLTER_AMMO_STD
     costBuy: 200 # was 450, more expensive than bolter clips??
     costSell: 100
-    damageAlter:
-      RandomType: 1 # 0-200%
-      ToArmorPre: 0.15 # was 0.1
-    power: 75 # was 60
+    power: 80 # was 60
     weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
-    armor: 200
     tags:
       ITEM_AMMO_SKIP_BIGOBS: 2
 
   - update: STR_RIFLE_CLIP                  # Bolter Ammo
-    size: 0.05 # was 0.1
-    damageAlter:
-      RandomType: 1 # 0-200%
-      ToArmorPre: 0.15 # was 0.1
-    power: 75 # was 65
+    refNode: *STR_BOLTER_AMMO_STD
+    power: 80 # was 65
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
     armor: 200
@@ -466,25 +476,28 @@ items:
       ITEM_AMMO_SKIP_BIGOBS: 1
 
   - update: STR_LIGHT_BOLTER_AMMO           # Light Bolter Ammo
-    armor: 200
-    size: 0.05 # was 0.1
+    refNode: *STR_BOLTER_AMMO_STD
     bigSprite: 3112
 
   - update: STR_LIGHT_BOLTPISTOL_AMMO       # Light BoltPistol Ammo
-    armor: 200
-    size: 0.05 # was 0.1
+    refNode: *STR_BOLTER_AMMO_STD
     bigSprite: 3116
 
+  - update: STR_LIGHT_BOLTER_AMMO_BELT      # Light Bolter AmmoBelt
+    refNode: *STR_BOLTER_AMMO_STD
+
+  - update: STR_LIGHT_BOLTER_AMMO_SHORT     # Light Bolter ShortMag
+    refNode: *STR_BOLTER_AMMO_STD
 
   - &STR_BOLTER_AMMO_KRAK                   # Krak Ammo defaults
     size: 0.05 # was 0.1
     damageAlter:
-      RandomType: 1 # 0-200%
+      RandomType: 7 # 50-200%
       ArmorEffectiveness: 0.5 # was 0.5
-      ToArmorPre: 0.01 # was 0.02
+      ToArmorPre: 0.01 # was 0.02, basically nothing
       ToArmor: 0.15 # was 0.05, decent destruction if it manages to pen
       ToHealth: 0.9
-      ToStun: 0.1 # was 0.3; solid AP round rather than concussive
+      ToStun: 0.2 # was 0.3; solid AP round rather than concussive
       ToEnergy: 0.1
     armor: 200
 
@@ -505,23 +518,27 @@ items:
       ITEM_AMMO_SKIP_BIGOBS: 1
 
   - update: STR_LIGHT_BOLTER_AMMO_PEN       # Krak Light Bolter Ammo
-    armor: 200
-    size: 0.05 # was 0.1
+    refNode: *STR_BOLTER_AMMO_KRAK
     bigSprite: 3113
     listOrder: 10297
 
   - update: STR_LIGHT_BOLTPISTOL_AMMO_AP    # Krak Light Boltpistol Ammo
-    armor: 200
-    size: 0.05 # was 0.1
+    refNode: *STR_BOLTER_AMMO_KRAK
     bigSprite: 3117
     listOrder: 10096 # group with other light boltpistol ammo
+
+  - update: STR_LIGHT_BOLTER_AMMO_BELT_PEN  # Krak Light Bolter AmmoBelt
+    refNode: *STR_BOLTER_AMMO_KRAK
+
+  - update: STR_LIGHT_BOLTER_AMMO_SHORT_PEN # Krak Light Bolter ShortMag
+    refNode: *STR_BOLTER_AMMO_KRAK
 
   - update: STR_PISTOL_CLIP_MC              # Mastercraft Boltpistol Ammo
     size: 0.05 # was 0.1
     damageAlter:
       RandomType: 7 # 50-200% instead of 0-200%
-      ToArmorPre: 0.2 # was 0.15
-    power: 75 # now gets bonus power from high FA instead
+      ToArmorPre: 0.25 # was 0.15
+    power: 80 # now gets bonus power from high FA instead
     weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
     armor: 200
@@ -532,8 +549,8 @@ items:
     size: 0.05 # was 0.1
     damageAlter:
       RandomType: 7 # 50-200% instead of 0-200%
-      ToArmorPre: 0.2 # was 0.15
-    power: 75 # now gets bonus power from high FA instead
+      ToArmorPre: 0.25 # was 0.15
+    power: 80 # now gets bonus power from high FA instead
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
     armor: 200
@@ -564,7 +581,7 @@ items:
     armor: 200
     damageType: 1 # AP type, was HE - Shrapnel blast
     damageAlter:
-      RandomType: 6 # 0-100 + 0-100%
+      RandomType: 7 # 50-200%
       ToArmorPre: 0.05 # was 0.02
       ArmorEffectiveness: 1.1 # was 1.2 (regular 0.9) - AP dmg less resisted than HE type by heavier armors
       ToArmor: 0.15 # was 0.1
@@ -611,8 +628,9 @@ items:
       ITEM_AMMO_SKIP_BIGOBS: 1
 
   - &STR_BOLTER                             # Generic Bolter Reference
-    dropoff: 9 # standard was 5 - Bolts are short range projectiles that fall off quickly outside of their standard range
+    dropoff: 8 # standard was 5 - Bolts are short range projectiles that fall off quickly outside of their standard range
     weight: 28 # +8 weight, not meant for regular humans
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
     compatibleAmmo: # bolters can use boltpistol ammo
       - STR_RIFLE_CLIP
       - STR_RIFLE_CLIP_AP
@@ -628,17 +646,18 @@ items:
   - update: STR_RIFLE                       # Bolter (Godwyn)
     refNode: *STR_BOLTER
     bigSprite: 3136
-    costBuy: 25000 # was 10000 - Now mid-tier weapon instead of starter gear
+    costBuy: 40000 # was 10000 - Now mid-tier weapon instead of starter gear
     costSell: 10000
     autoRange: 11 # v3.1 (13) - was 9 - weapon focused on aggressive mid range engagements
     snapRange: 15 # was 14
     aimRange: 0
-    accuracyAuto: 66
+    accuracyAuto: 66 # was 66
     accuracySnap: 80
     accuracyAimed: 0
     tuAimed: 0
     tuSnap: 20 # was 24
     tuAuto: 30 # was 40 - higher strength of marines allows greater RPM on bolters than light variants meant for regular humans
+    autoShots: 4 # was 3
     requiresBuy:
       - STR_MARINE_BOLTERS
 
@@ -649,12 +668,13 @@ items:
     autoRange: 12 # v3.1 (14) was 9
     snapRange: 16 # was 16
     aimRange: 0
-    accuracyAuto: 72 # was 75
+    accuracyAuto: 75 # was 75
     accuracySnap: 90 # was 90
     accuracyAimed: 0
     tuAimed: 0
     tuSnap: 20 # was 22
     tuAuto: 30 # was 35
+    autoShots: 4 # was 3
     requiresBuy:
       - STR_MARINE_BOLTERS_ADV
 
@@ -663,14 +683,14 @@ items:
     bigSprite: 3145
     ufopediaType: STR_RIFLEC # was pointed at Godwyn for some reason
     costBuy: 200000 # was 200000 - Higher end gear
-    dropoff: 7 # was 4
+    dropoff: 6 # was 4
     autoRange: 9 # was 7
     snapRange: 17 # was 16
-    aimRange: 24 # was 22 - starts falling behind original at 27 tiles
+    aimRange: 24 # was 22 - starts falling behind original at 28 tiles
     accuracyAuto: 66 # was 66
-    accuracySnap: 80 # was 80
+    accuracySnap: 90 # was 80
     accuracyAimed: 100 # was 100
-    tuAuto: 35 # was 40
+    tuAuto: 30 # was 40
     tuSnap: 25 # was 25
     tuAimed: 60 # was 60
     autoShots: 2
@@ -681,20 +701,20 @@ items:
     refNode: *STR_BOLTER
     bigSprite: 3148
     weight: 34 # +6 over regular - larger battle rifle
-    dropoff: 8 # -1 over regular - larger battle rifle
+    dropoff: 7 # -1 over regular - larger battle rifle
     minRange: 3 #cumbersome, not suited to CQC
     autoRange: 13 # was 7
-    snapRange: 18 # was 16
+    snapRange: 17 # was 16
     aimRange: 0
     accuracyAuto: 66 # was 66
     accuracySnap: 80 # was 80
     accuracyAimed: 0
     tuSnap: 28 # was 25
-    tuAuto: 40 # was 40
+    tuAuto: 35 # was 40
     tuAimed: 0
     confSnap:
       shots: 2 # was 1
-    autoShots: 5 # was 5
+    autoShots: 6 # was 5
     tags:
       ITEM_RECOIL: 75 # +10 over regular - larger battle rifle
 
@@ -704,16 +724,17 @@ items:
     autoRange: 12 # was 11
     snapRange: 16 # was 15
     aimRange: 0
-    accuracyAuto: 72 # was 86 - MC weapons should be stronger but not easier to use
+    accuracyAuto: 75 # was 86 - MC weapons should be stronger but not easier to use
     accuracySnap: 90 # was 100
     accuracyAimed: 0
     tuSnap: 18 # was 25
-    tuAuto: 30 # was 40
+    tuAuto: 28 # was 40
     tuAimed: 0
     autoShots: 5 # was 3
 
   - update: STR_PISTOL                      # BoltPistol (Ceres)
-    dropoff: 10 # was 6
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    dropoff: 9 # was 6
     autoRange: 0
     snapRange: 11 # was 11
     aimRange: 0
@@ -729,8 +750,9 @@ items:
       - STR_MARINE_BOLTERS
 
   - update: STR_PISTOLB                     # BoltPistol (Ultra)
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     costBuy: 75000 # was 150k
-    dropoff: 10 # was 6
+    dropoff: 9 # was 6
     autoRange: 7 # add 2shot autofire
     snapRange: 11 # was 11
     aimRange: 0
@@ -747,8 +769,9 @@ items:
       - STR_MARINE_BOLTERS_ADV
 
   - update: STR_MCPISTOL                    # BoltPistol (MC) - Now AssStrat exclusive
-    dropoff: 10 # was 6
-    autoRange: 7 # add 3shot autofire
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    dropoff: 9 # was 6
+    autoRange: 8 # add 3shot autofire
     snapRange: 11 # was 12
     aimRange: 0
     accuracyAuto: 66
@@ -764,8 +787,9 @@ items:
       REACTION_MULTIPLIER: 250 # was 200 - MCpistol bonus
 
   - update: STR_PISTOLS                     # BoltPistol (Spectris)
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     costBuy: 75000 # was 150k
-    dropoff: 9 # -1 for scope - was 5
+    dropoff: 8 # -1 for scope - was 5
     autoRange: 0
     snapRange: 14
     aimRange: 19 # was 17
@@ -804,7 +828,7 @@ items:
     floorSprite: {mod: 40k, index: 207}
     handSprite: {mod: 40k, index: 704}
     bulletSprite: {mod: 40k, index: 6}
-    fireSound: {mod: 40k, index: 707}
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     battleType: 1
     compatibleAmmo: # doesn't get rifle ammo - it's a pistol at its core
       - STR_PISTOL_CLIP
@@ -816,7 +840,7 @@ items:
     invHeight: 3
     bulletSpeed: 30
     attraction: 1
-    dropoff: 9 # was 5
+    dropoff: 8 # was 5
     autoRange: 10 # was 7
     snapRange: 13 # was 11
     aimRange: 17 # was 17
@@ -825,7 +849,7 @@ items:
     accuracyAimed: 90 # was 100
     tuSnap: 20 # was 22
     tuAimed: 35 # was 35
-    tuAuto: 35 # was 33
+    tuAuto: 33 # was 33
     autoShots: 3
     tuLoad: 10 # pistol bonus
     tuUnload: 4 # pistol bonus
@@ -837,7 +861,7 @@ items:
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - update: STR_BOLTPISTOL_DEAZ             # Light Boltpistol (Deaz)
-    dropoff: 9 # light boltguns get -1 dropoff compared to regular (easier to handle) - was 6
+    dropoff: 9 # was 6
     autoRange: 0
     snapRange: 11 # was 11
     aimRange: 0
@@ -857,7 +881,7 @@ items:
   - update: STR_BOLTPISTOL_LIGHT_ULTRA      # Light Boltpistol (Ultra)
     listOrder: 10091 # move to just under deaz
     costBuy: 50000 # was 75k - trainee weapon
-    dropoff: 9 # light boltguns get -1 dropoff compared to regular (easier to handle) - was 6
+    dropoff: 9 # was 6
     autoRange: 0
     snapRange: 11 # was 11
     aimRange: 0
@@ -876,7 +900,7 @@ items:
 
   - update: STR_MC_BOLTPISTOL_DEAZ          # Light Boltpistol (MC)
     listOrder: 10092 # move to just under ultra
-    dropoff: 9 # light boltguns get -1 dropoff compared to regular (easier to handle) - was 6
+    dropoff: 8 # was 6
     autoRange: 0
     snapRange: 13 # was 12
     aimRange: 0
@@ -895,15 +919,15 @@ items:
 
   - update: STR_BOLTER_ENFORCER             # Light Bolter (Enforcer - Doublesnap)
     armor: 200
-    dropoff: 8 # light boltguns get -1 dropoff compared to regular (easier to handle) - was 6
+    dropoff: 8 # was 6
     autoRange: 0
-    snapRange: 16 # was 14 - hybrid snap/auto
+    snapRange: 17 # was 14 - hybrid snap/auto
     aimRange: 0
     accuracyAuto: 0
     accuracySnap: 75 # was 80
     accuracyAimed: 0
     tuAuto: 0
-    tuSnap: 33 # was 40 - make Enforcer a little more exciting over the Locke
+    tuSnap: 30 # was 40 - make Enforcer a little more exciting over the Locke
     tuAimed: 0
     autoShots: 0
     confSnap:
@@ -919,18 +943,17 @@ items:
       ITEM_RECOIL: 30 # was 25, now matches min Neophyte strength & requirement of pistol + offhand
       REACTION_MULTIPLIER: 150 # carbine bonus - was 100 (default)
 
-
   - update: STR_BOLTER_LOCKE                # Light Bolter (Locke - Standard)
     armor: 200
-    dropoff: 8 # light boltguns get -1 dropoff compared to regular (easier to handle) - was 6
-    autoRange: 10 # was 7
+    dropoff: 8 # was 6
+    autoRange: 11 # was 7
     snapRange: 16 # was 14
     aimRange: 0
-    accuracyAuto: 66
+    accuracyAuto: 66 # was 66
     accuracySnap: 80
     accuracyAimed: 0
     tuSnap: 25
-    tuAuto: 40
+    tuAuto: 35 # was 40
     tuAimed: 0
     autoShots: 3
     compatibleAmmo: # make sure they can use all the appropriate ammo
@@ -946,16 +969,17 @@ items:
   - update: STR_BOLTER_LIGHT_ULTRA          # Light Bolter (Ultra)
     listOrder: 10293 # move to just under locke
     costBuy: 75000 # was 100k - trainee weapon
-    dropoff: 8 # light boltguns get -1 dropoff compared to regular (easier to handle) - was 6
-    autoRange: 10 # was 7
+    dropoff: 8 # was 6
+    autoRange: 11 # was 7
     snapRange: 16 # was 14
     aimRange: 0
     accuracyAuto: 75
     accuracySnap: 90
     accuracyAimed: 0
     tuSnap: 25
-    tuAuto: 40
+    tuAuto: 35 # was 40
     tuAimed: 0
+    autoShots: 3
     compatibleAmmo: # make sure they can use all the appropriate ammo
       - STR_LIGHT_BOLTER_AMMO
       - STR_LIGHT_BOLTER_AMMO_MC
@@ -968,8 +992,8 @@ items:
 
   - update: STR_MC_BOLTER_DEAZ              # Light Bolter (MC)
     listOrder: 10294 # move to just under locke
-    dropoff: 8 # light boltguns get -1 dropoff compared to regular (easier to handle) - was 6
-    autoRange: 11 # was 10
+    dropoff: 8 # was 6
+    autoRange: 12 # was 10
     snapRange: 18 # was 15
     aimRange: 0
     accuracyAimed: 0
@@ -977,7 +1001,7 @@ items:
     accuracyAuto: 86
     tuAimed: 0
     tuSnap: 25
-    tuAuto: 40
+    tuAuto: 35 # was 40
     autoShots: 3
     compatibleAmmo: # make sure they can use all the appropriate ammo
       - STR_LIGHT_BOLTER_AMMO
@@ -1068,17 +1092,18 @@ items:
     costSell: 45000 #
     weight: 50
     bulletSpeed: 50
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     requiresBuy:
       - STR_HBOLTER_PREREQ
     dropoff: 4 # larger HB shells have better propulsion and accuracy at range
-    autoRange: 15 # was 14
-    snapRange: 18 # was 20
+    autoRange: 17 # was 14
+    snapRange: 19 # was 20
     aimRange: 0
-    accuracyAuto: 50 # was 50
+    accuracyAuto: 45 # was 50
     accuracySnap: 60 # was 60
     accuracyAimed: 0
-    tuAuto: 60 #
-    tuSnap: 25 # was 20 for 1 shot
+    tuAuto: 55 # was 60
+    tuSnap: 24 # was 20 for 1 shot
     tuAimed: 0
     tuLoad: 30 # was 40
     minRange: 5 #heavy weapon; cumbersome, not suited to CQC
@@ -1086,7 +1111,7 @@ items:
     followProjectiles: false
     confSnap:
       shots: 2
-    kneelBonus: 120 # was 130, Astartes version meant to be hipfired by devastator marines
+    kneelBonus: 125 # was 130, Astartes version meant to be hipfired by devastator marines
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
 
@@ -1117,15 +1142,15 @@ items:
       - STR_AC_I_BELT
       - STR_AC_MC_BELT
     dropoff: 4 # larger HB shells have better propulsion and accuracy at range
-    autoRange: 14 #
-    snapRange: 18 # regular 18
-    aimRange: 15 # regular 15
+    autoRange: 16 #
+    snapRange: 20 # regular 19
+    aimRange: 18 # regular 17
     accuracyAuto: 50 #
     accuracySnap: 66 # regular 60
     accuracyAimed: 58 # regular 50
     tuAuto: 80 # 12 shots
-    tuSnap: 25 # regular 25
-    tuAimed: 55 # regular 60 for 8
+    tuSnap: 24 # regular 24
+    tuAimed: 50 # regular 55 for 8
     tuLoad: 30
     minRange: 5
     autoShots: 12 # +4
@@ -1141,7 +1166,7 @@ items:
       name: STR_FULL_AUTO
       shortName: STR_FULL_AUTO_COUNT
       shots: 12
-    kneelBonus: 120 # was 130, Astartes version meant to be hipfired by devastator marines
+    kneelBonus: 125 # was 130, Astartes version meant to be hipfired by devastator marines
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
 
@@ -1158,8 +1183,9 @@ items:
       mod: 40k
       index: 120
     damageAlter:
+      RandomType: 7 # 50-200%
       ToArmorPre: 0.1
-      ArmorEffectiveness: 0.9
+      ArmorEffectiveness: 0.85
       ToArmor: 0.15
       ToHealth: 1.1
       ToStun: 0.5
@@ -1189,7 +1215,7 @@ items:
       index: 120
     powerForAnimation: 50
     damageAlter:
-      RandomType: 6
+      RandomType: 7 # 50-200%
       ToArmorPre: 0.30
       ToArmor: 0.2
       ArmorEffectiveness: 1.0
@@ -1198,7 +1224,7 @@ items:
       ToTime: 0.1
       FixRadius: 3
     explosionSpeed: 3
-    power: 80
+    power: 85
     damageType: 3
     clipSize: 80
     armor: 200
@@ -1220,9 +1246,9 @@ items:
       index: 88
     powerForAnimation: 40
     damageAlter:
+      RandomType: 7 # 50-200%
       IgnoreDirection: false
       FireBlastCalc: false
-      RandomType: 6
       FixRadius: 1
       FireThreshold: 1
       ArmorEffectiveness: 1
@@ -1283,6 +1309,8 @@ items:
     requiresBuy:
       - STR_HBOLTER_AMMO_PREREQ
     damageAlter:
+      RandomType: 7 # 50-200%
+      ArmorEffectiveness: 0.85 # was 0.9
       ToArmorPre: 0.15 # was 0.1
     listOrder: 12021
 
@@ -1297,6 +1325,7 @@ items:
       index: 88
     powerForAnimation: 40
     damageAlter:
+      RandomType: 7 # 50-200%
       FixRadius: 1
       ToArmorPre: 0.1 # was 0.05
       ToStun: 0.2 # was 0.5
@@ -1315,13 +1344,14 @@ items:
 
   - update: STR_AC_HE_AMMO                  # Heavy Bolter HE Ammo
     armor: 200
-    power: 80 # was 60
+    power: 85 # was 60
     clipSize: 50
     costBuy: 5000 # was 1500
     requiresBuy:
       - STR_HBOLTER_AMMO_PREREQ
     powerForAnimation: 50
     damageAlter:
+      RandomType: 7 # 50-200%
       ToArmorPre: 0.30 # was 0.05
       FixRadius: 3 # was 2
       ArmorEffectiveness: 1.0 # was 0.9
@@ -1332,7 +1362,8 @@ items:
 
   - update: STR_HB                          # Stormbolter
     armor: 200
-    dropoff: 10 # was 4
+    twoHanded: false # was true (with 0 penalty) it's a terminator pistol - allows use with stormshield
+    dropoff: 9 # was 4
     autoRange: 0
     snapRange: 16 # was 15
     aimRange: 0
@@ -1348,7 +1379,8 @@ items:
 
   - update: STR_HB_MC                       # MC Stormbolter
     armor: 200
-    dropoff: 10 # was 4
+    twoHanded: false # was true (with 0 penalty) it's a terminator pistol - allows use with stormshield
+    dropoff: 9 # was 4
     autoRange: 0
     snapRange: 16 # was 15
     aimRange: 0
@@ -1366,9 +1398,9 @@ items:
     armor: 200
     size: 0.1 # was 0.3
     damageType: 1
-    power: 75 # was 70
+    power: 80 # was 70
     damageAlter:
-      RandomType: 1
+      RandomType: 7 # 50-200%
       ToArmorPre: 0.15
       ArmorEffectiveness: 0.9
       ToArmor: 0.15
@@ -1377,9 +1409,10 @@ items:
   - update: STR_HB_CLIP_MC                  # MC Stormbolter Ammo
     armor: 200
     size: 0.1 # was 0.3
-    power: 75 # was 95
+    power: 80 # was 95
     damageAlter:
-      ToArmorPre: 0.2
+      RandomType: 7 # 50-200%
+      ToArmorPre: 0.25
       ArmorEffectiveness: 0.8
 
   - update: STR_ASSC                        # Assault Cannon
@@ -1691,14 +1724,14 @@ items:
     aimRange: 15
     confAuto:
       name: STR_LAUNCH_SALVO_AUTO
-      shots: 6
+      shots: 4
     costAuto:
-      time: 75 # was 80 for 3
+      time: 55 # was 80 for 3
     confAimed:
       name: STR_LAUNCH_SALVO
       shots: 2
     costAimed:
-      time: 40
+      time: 35
     accuracyAuto: 33
     accuracyAimed: 66
     accuracyMultiplier:
@@ -1710,13 +1743,14 @@ items:
       ToArmorPre: 0.25 # was 0.1
       RandomType: 6
       ArmorEffectiveness: 1.0 # was 0.9
-      ToHealth: 0.8 # was 1.0
+      ToHealth: 1.0 # was 1.0
       ToArmor: 0.2
       ToStun: 0.2 # was 0.6
       ToEnergy: 0.0 # was 0.4
       ToTime: 0.0 # was 0.3
       ToTile: 0.75
       ToItem: 0.75
+      RadiusReduction: 3.0 # minor power dropoff from center
       FixRadius: 10 # was 10
     arcingShot: true
     # Given regular marine fist melee - not power fist
@@ -2145,11 +2179,6 @@ items:
       ToTile: 1.5 # was 1.0, Melta
     requiresBuy:
       - STR_HEAVY_LASER # Melta tech - was Midtier
-
-  - update: STR_BOLTER_HEAVY_SOLAR          # Heavy Bolter Solar
-    requiresBuy:
-      - STR_UFO_CONSTRUCTION
-      - STR_IMPERIAL_GUARD_OPERATIONS # Make IG exclusive
 
   - update: STR_ROCKET_LAUNCHER             # SM Rocket Launcher
     costBuy: 30000 # was 100k!!
@@ -2586,6 +2615,7 @@ items:
 
   - update: STR_TELEPORT                    # Terminator Teleport tool (Shield)
     refNode: *STR_FIST # add punch
+    tuUse: 5 # was 10
     tags:
       ITEM_TELEPORTER_ENERGY: 10 # was 10
 
@@ -2595,9 +2625,9 @@ items:
     medikitType: 3
     medikitActionName: STR_SCRIPT_TELEPORTER_TOGGLE
     medikitTargetSelf: true
-    painKiller: 999 # unexpected effects possible
-    battleType: 6 # not used as medikit
-    tuUse: 10
+    painKiller: 999 #
+    battleType: 6 #
+    tuUse: 5 # was 10
     flatRate: true
     fixedWeapon: true
     specialUseEmptyHand: true
@@ -2607,6 +2637,13 @@ items:
       ITEM_IS_TELEPORTER: 1
       ITEM_TELEPORTER_COOLDOWN: 1
       ITEM_TELEPORTER_ENERGY: 20 # was 10
+
+  - type: AUX_SHIELD                        # Terminator Storm Shield
+    clipSize: 41 # Shield HP + 1
+    tuMelee: 0
+    tags:
+      ITEM_SHIELD_BLOCKING_STRENGTH: 20
+      ITEM_SHIELD_RECHARGES: 1
 
   - update: STR_CHAINSWORD                  # Chainsword
     categories: [STR_CAT_MELEE, STR_CAT_ASSAULT]

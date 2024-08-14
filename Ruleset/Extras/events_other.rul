@@ -1,7 +1,7 @@
 events: 
 
   - name: STR_BASIC_SPAWN_MARINE_CHAPLAIN
-    description: STR_BASIC_SPAWN_MARINE_CHAPLAIN_DESC 
+    description: STR_BASIC_SPAWN_MARINE_CHAPLAIN_DESC
     background: BACK02.SCR #SoldierBG
     spawnedPersons: 1
     spawnedPersonType: STR_SOLDIER_CHAPLAIN
@@ -12,3 +12,16 @@ events:
     timer: 60
     timerRandom: 60
 
+
+  - name: STR_ELDAR_TREATY_FARSEER
+    description: STR_ELDAR_TREATY_FARSEER_DESC
+    background: BACK160.SCR #Eldar Banshees
+    spawnedPersons: 1
+    spawnedPersonType: STR_ELDAR_FARSEER
+    everyMultiItemList:
+      STR_EPOWER_SWORD: 1
+      STR_CATAPULT_PISTOL: 1
+      STR_SHURIKEN_CLIP: 3
+      STR_ELDAR_GRENADE: 2
+    timer: 60
+    timerRandom: 60

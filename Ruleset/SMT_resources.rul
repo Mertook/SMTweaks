@@ -127,6 +127,116 @@ armors:
 
 
 extraSprites:
+
+###Item BigOBs
+  - type: BIGOBS.PCK
+    files:
+      3100: Resources/ITEMS/VoxB01.png                          # Vox Strike
+      3101: Resources/ITEMS/BeaconB01.png                       # Target Marker
+      3102: Resources/ITEMS/MBOMB.png                           # 2x2 version
+      3103: Resources/ITEMS/smoke_bomb.png                      # 2x2 version
+      3104: Resources/ITEMS/book1.png                           # Lib Book sprites
+      3105: Resources/ITEMS/book2.png                           # Lib Book sprites
+      3106: Resources/ITEMS/blank.png                           # Lib Book sprites
+      3107: Resources/ITEMS/SHOTGUN/shotgun_BigOb.png           # Astartes Shotgun
+      3108: Resources/ITEMS/HBOLTER/hbolterAP.png               # Mars HBolter Ammo AP
+      3109: Resources/ITEMS/HBOLTER/hbolterHE.png               # Mars HBolter Ammo HE
+      3110: Resources/ITEMS/HBOLTER/hbolterI.png                # Mars HBolter Ammo I
+      3111: Resources/ITEMS/HBOLTER/hbolterMC.png               # Mars HBolter Ammo MC
+      3112: Resources/ITEMS/LBOLTER/LBoltN.png                  # Light Bolter Ammo
+      3113: Resources/ITEMS/LBOLTER/LBoltAP.png                 # Light Bolter Krak
+      3114: Resources/ITEMS/LBOLTER/LBoltEX.png                 # Light Bolter Metalstorm
+      3115: Resources/ITEMS/LBOLTER/LBoltMC.png                 # Light Bolter Mastercrafted
+      3116: Resources/ITEMS/LBOLTER/LBoltpN.png                 # Light BoltPistol Ammo
+      3117: Resources/ITEMS/LBOLTER/LBoltpAP.png                # Light BoltPistol Krak
+      3118: Resources/ITEMS/LBOLTER/LBoltpEX.png                # Light BoltPistol Metalstorm
+      3119: Resources/ITEMS/LBOLTER/LBoltpMC.png                # Light BoltPistol Mastercrafted
+      #20-27 potential full size bolter ammo
+      3128: Resources/ITEMS/BSNIPER/HeavySniper_BigOb.png       # Bolt Sniper Rifle
+      3129: Resources/ITEMS/SLT_BigOb.png                       # Smoke Launcher Turret
+      3130: Resources/ITEMS/BSNIPER/SniperBolt.png              # Bolt Sniper Ammo
+      3131: Resources/ITEMS/BSNIPER/SniperBoltKrak.png          # Bolt Sniper Krak Ammo
+      3132: Resources/ITEMS/BSNIPER/SniperBoltFrag.png          # Bolt Sniper Frag Ammo
+      3133: Resources/ITEMS/BSNIPER/SniperBoltShred.png         # Bolt Sniper Shredder Ammo
+      3134: Resources/ITEMS/motion.png                          # Motion Scanner
+      3135: Resources/ITEMS/LChainSM_BigOb.png                  # Light Chainsword
+      3136: Resources/ITEMS/BOLTER/rifle_0.png                  # Bolter Godwyn (unloaded)
+      3137: Resources/ITEMS/BOLTER/rifle_1.png                  # Bolter Godwyn (regular)
+      3138: Resources/ITEMS/BOLTER/rifle_2.png                  # Bolter Godwyn (pistol)
+      3139: Resources/ITEMS/BOLTER/rifleA_0.png                 # Bolter Artifex (unloaded)
+      3140: Resources/ITEMS/BOLTER/rifleA_1.png                 # Bolter Artifex (regular)
+      3141: Resources/ITEMS/BOLTER/rifleA_2.png                 # Bolter Artifex (pistol)
+      3142: Resources/ITEMS/BOLTER/rifleB_0.png                 # Bolter Ultra (unloaded)
+      3143: Resources/ITEMS/BOLTER/rifleB_1.png                 # Bolter Ultra (regular)
+      3144: Resources/ITEMS/BOLTER/rifleB_2.png                 # Bolter Ultra (pistol)
+      3145: Resources/ITEMS/BOLTER/rifleC_0.png                 # Bolter Stalker (unloaded)
+      3146: Resources/ITEMS/BOLTER/rifleC_1.png                 # Bolter Stalker (regular)
+      3147: Resources/ITEMS/BOLTER/rifleC_2.png                 # Bolter Stalker (pistol)
+      3148: Resources/ITEMS/BOLTER/rifleD_0.png                 # Bolter Cawl (unloaded)
+      3149: Resources/ITEMS/BOLTER/rifleD_1.png                 # Bolter Cawl (regular)
+      3150: Resources/ITEMS/BOLTER/rifleD_2.png                 # Bolter Cawl (pistol)
+      3151: Resources/ITEMS/BOLTER/rifleDW_0.png                # Bolter Cawl DW (unloaded)
+      3152: Resources/ITEMS/BOLTER/rifleDW_1.png                # Bolter Cawl DW (regular)
+      3153: Resources/ITEMS/BOLTER/rifleDW_2.png                # Bolter Cawl DW (pistol)
+      3154: Resources/ITEMS/BOLTER/rifleMC_0.png                # Bolter MC (unloaded)
+      3155: Resources/ITEMS/BOLTER/rifleMC_1.png                # Bolter MC (regular)
+      3156: Resources/ITEMS/BOLTER/rifleMC_2.png                # Bolter MC (pistol)
+      3157: Resources/UNITS/DREAD/WDREAD_FIST1.png              # Dreadnought Bolter Fist
+      3158: Resources/UNITS/DREAD/WDREAD_MISSILE0.png           # Dreadnought Hellfire Launcher (unloaded)
+      3159: Resources/UNITS/DREAD/WDREAD_MISSILE1.png           # Dreadnought Hellfire Launcher (regular)
+      3160: Resources/UNITS/DREAD/WDREAD_MISSILE2.png           # Dreadnought Hellfire Launcher (hellfire)
+      3161: Resources/UNITS/DREAD/DREADMISSILE_BigOb.png        # Dreadnought Missile (regular ammo)
+      3162: Resources/ITEMS/SHOTGUN/shells_MC.png               # MC Shotgun Shells
+      3163: Resources/ITEMS/SHOTGUN/shotgunDW_BigOb.png         # DW Shotgun 
+      3164: Resources/ITEMS/BSNIPER/HeavySniperDW_BigOb.png     # DW Bolt Sniper
+      3165: Resources/ITEMS/BOLTER/ammoDW_3.png                 # Derevenant Bolter Ammo
+      3166: Resources/ITEMS/BOLTER/ammoDW_4.png                 # Unused (Green 2) Bolter Ammo
+      3167: Resources/ITEMS/BOLTER/ammoDW_8.png                 # Inertial Fusion Bolter Ammo
+      3168: Resources/ITEMS/BOLTER/ammoDW_9.png                 # Dragonfire Bolter Ammo
+      3169: Resources/ITEMS/BSNIPER/SniperBoltDerev.png         # Derevenant Sniper Ammo
+      3170: Resources/ITEMS/BSNIPER/SniperBoltHelspear.png      # Helspear Sniper Ammo
+      3171: Resources/ITEMS/PRIMARIS/Absolvor_BigOb.png         # Absolvor Bolt Pistol
+      #3172 - unqiue Absolvor ammo?
+      3173: Resources/ITEMS/SHOTGUN/shells_Krak.png             # AP Shotgun Shells
+      3174: Resources/ITEMS/PRIMARIS/GEXTERMINATOR_BIGOB.png    # Interceptor Plasma Exterminator
+      3175: Resources/ITEMS/PRIMARIS/GEXTERMINATOR2_BIGOB.png   # Interceptor Plasma Exterminator (Dual-wielding)
+      3176: Resources/ITEMS/plasgrenade0_BigOb.png              # DW Plasma Grenade (inactive)
+      3177: Resources/ITEMS/plasgrenade1_BigOb.png              # DW Plasma Grenade (primed)
+
+
+###Item FloorOBs
+  - type: FLOOROB.PCK
+    files:
+      3100: Resources/ITEMS/VoxF01.png
+      3101: Resources/ITEMS/BeaconF01.png
+      3107: Resources/ITEMS/SHOTGUN/shotgun_FloorOb.png         # Astartes Shotgun
+      3128: Resources/ITEMS/BSNIPER/HeavySniper_FloorOb.png     # Bolt Sniper Rifle
+      3130: Resources/ITEMS/BSNIPER/SniperBolt_FloorOb.png      # Bolt Sniper Ammo
+      3161: Resources/UNITS/DREAD/DREADMISSILE_FloorOb.png      # Dreadnought Missile (regular ammo)
+      3163: Resources/ITEMS/SHOTGUN/shotgunDW_FloorOb.png       # DW Shotgun 
+      3164: Resources/ITEMS/BSNIPER/HeavySniperDW_FloorOb.png   # DW Bolt Sniper
+      3171: Resources/ITEMS/PRIMARIS/Absolvor_FloorOb.png       # Absolvor Bolt Pistol
+      3176: Resources/ITEMS/plasgrenade_FloorOb.png             # DW Plasma Grenade
+
+###Item HandOBs - need 8 slots per item
+  - type: HANDOB.PCK
+    height: 40
+    width: 256
+    subX: 32
+    subY: 40
+    files:
+      3600: Resources/ITEMS/BSNIPER/HeavySniper_HandOb.png      # Bolt Sniper Rifle
+      3610: Resources/ITEMS/SHOTGUN/shotgun_HandOb.png          # Astartes Shotgun
+      3620: Resources/UNITS/DREAD/DREADMISSILE_HandOb.png       # Dreadnought Missile (regular ammo)
+      3630: Resources/ITEMS/BSNIPER/HeavySniperDW_HandOb.png    # DW Bolt Sniper
+      3640: Resources/ITEMS/SHOTGUN/shotgunDW_HandOb.png        # DW Shotgun
+      3650: Resources/ITEMS/PRIMARIS/Absolvor_HandOb.png        # Absolvor Bolt Pistol
+      3660: Resources/ITEMS/PRIMARIS/GEXTERMINATOR_HANDOB.png   # Interceptor Plasma Exterminator
+      3670: Resources/ITEMS/plasgrenade_HandOb.png              # DW Plasma Grenade
+
+
+
+
 ###Assault Vanguard
   - typeSingle: HONORASSC__1__ASSAULTCMH
     fileSingle: Resources/UNITS/ASS/ASSAULTCMH.png
@@ -198,7 +308,189 @@ extraSprites:
     files:
       0: Resources/UNITS/CYCLONE/TERMCYCLONE-SPRITE.png
 
-###DW Gravis Armor (Autocannon) BA
+###DW Terminator Cyclone
+  - typeSingle: DWTERM__1__TERMCYCBA
+    fileSingle: Resources/UNITS/DW/TERM/TERMCYC_I_BA.png
+  - type: TERMCYCDWBA.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCYC_S_BA.png
+
+  - typeSingle: DWTERM__1__TERMCYCBT
+    fileSingle: Resources/UNITS/DW/TERM/TERMCYC_I_BT.png
+  - type: TERMCYCDWBT.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCYC_S_BT.png
+
+  - typeSingle: DWTERM__1__TERMCYCCF
+    fileSingle: Resources/UNITS/DW/TERM/TERMCYC_I_CF.png
+  - type: TERMCYCDWCF.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCYC_S_CF.png
+
+  - typeSingle: DWTERM__1__TERMCYCDA
+    fileSingle: Resources/UNITS/DW/TERM/TERMCYC_I_DA.png
+  - type: TERMCYCDWDA.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCYC_S_DA.png
+
+  - typeSingle: DWTERM__1__TERMCYCIF
+    fileSingle: Resources/UNITS/DW/TERM/TERMCYC_I_IF.png
+  - type: TERMCYCDWIF.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCYC_S_IF.png
+
+  - typeSingle: DWTERM__1__TERMCYCSA
+    fileSingle: Resources/UNITS/DW/TERM/TERMCYC_I_SA.png
+  - type: TERMCYCDWSA.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCYC_S_SA.png
+
+  - typeSingle: DWTERM__1__TERMCYCSW
+    fileSingle: Resources/UNITS/DW/TERM/TERMCYC_I_SW.png
+  - type: TERMCYCDWSW.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCYC_S_SW.png
+
+  - typeSingle: DWTERM__1__TERMCYCUM
+    fileSingle: Resources/UNITS/DW/TERM/TERMCYC_I_UM.png
+  - type: TERMCYCDWUM.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCYC_S_UM.png
+
+  - typeSingle: DWTERM__1__TERMCYCWS
+    fileSingle: Resources/UNITS/DW/TERM/TERMCYC_I_WS.png
+  - type: TERMCYCDWWS.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCYC_S_WS.png
+
+###DW Terminator Claw
+  - typeSingle: DWTERM__1__TERMCLWBA
+    fileSingle: Resources/UNITS/DW/TERM/TERMCLW_I_BA.png
+  - type: TERMCLWDWBA.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCLW_S_BA.png
+
+  - typeSingle: DWTERM__1__TERMCLWBT
+    fileSingle: Resources/UNITS/DW/TERM/TERMCLW_I_BT.png
+  - type: TERMCLWDWBT.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCLW_S_BT.png
+
+  - typeSingle: DWTERM__1__TERMCLWCF
+    fileSingle: Resources/UNITS/DW/TERM/TERMCLW_I_CF.png
+  - type: TERMCLWDWCF.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCLW_S_CF.png
+
+  - typeSingle: DWTERM__1__TERMCLWDA
+    fileSingle: Resources/UNITS/DW/TERM/TERMCLW_I_DA.png
+  - type: TERMCLWDWDA.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCLW_S_DA.png
+
+  - typeSingle: DWTERM__1__TERMCLWIF
+    fileSingle: Resources/UNITS/DW/TERM/TERMCLW_I_IF.png
+  - type: TERMCLWDWIF.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCLW_S_IF.png
+
+  - typeSingle: DWTERM__1__TERMCLWSA
+    fileSingle: Resources/UNITS/DW/TERM/TERMCLW_I_SA.png
+  - type: TERMCLWDWSA.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCLW_S_SA.png
+
+  - typeSingle: DWTERM__1__TERMCLWSW
+    fileSingle: Resources/UNITS/DW/TERM/TERMCLW_I_SW.png
+  - type: TERMCLWDWSW.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCLW_S_SW.png
+
+  - typeSingle: DWTERM__1__TERMCLWUM
+    fileSingle: Resources/UNITS/DW/TERM/TERMCLW_I_UM.png
+  - type: TERMCLWDWUM.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCLW_S_UM.png
+
+  - typeSingle: DWTERM__1__TERMCLWWS
+    fileSingle: Resources/UNITS/DW/TERM/TERMCLW_I_WS.png
+  - type: TERMCLWDWWS.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/TERM/TERMCLW_S_WS.png
+
+###DW Gravis Armor (Autocannon)
   - typeSingle: DWGRAVIS__1__GRVACBA
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_BA.png
   - type: DWGRVACBA.PCK
@@ -209,7 +501,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVAC_S_BA.png
 
-###DW Gravis Armor (Autocannon) BT
   - typeSingle: DWGRAVIS__1__GRVACBT
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_BT.png
   - type: DWGRVACBT.PCK
@@ -220,7 +511,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVAC_S_BT.png
 
-###DW Gravis Armor (Autocannon) CF
   - typeSingle: DWGRAVIS__1__GRVACCF
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_CF.png
   - type: DWGRVACCF.PCK
@@ -231,7 +521,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVAC_S_CF.png
 
-###DW Gravis Armor (Autocannon) DA
   - typeSingle: DWGRAVIS__1__GRVACDA
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_DA.png
   - type: DWGRVACDA.PCK
@@ -242,7 +531,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVAC_S_DA.png
 
-###DW Gravis Armor (Autocannon) IF
   - typeSingle: DWGRAVIS__1__GRVACIF
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_IF.png
   - type: DWGRVACIF.PCK
@@ -253,7 +541,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVAC_S_IF.png
 
-###DW Gravis Armor (Autocannon) SA
   - typeSingle: DWGRAVIS__1__GRVACSA
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_SA.png
   - type: DWGRVACSA.PCK
@@ -264,7 +551,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVAC_S_SA.png
 
-###DW Gravis Armor (Autocannon) SW
   - typeSingle: DWGRAVIS__1__GRVACSW
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_SW.png
   - type: DWGRVACSW.PCK
@@ -275,7 +561,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVAC_S_SW.png
 
-###DW Gravis Armor (Autocannon) UM
   - typeSingle: DWGRAVIS__1__GRVACUM
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_UM.png
   - type: DWGRVACUM.PCK
@@ -286,7 +571,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVAC_S_UM.png
 
-###DW Gravis Armor (Autocannon) WS
   - typeSingle: DWGRAVIS__1__GRVACWS
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_WS.png
   - type: DWGRVACWS.PCK
@@ -297,7 +581,7 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVAC_S_WS.png
 
-###DW Gravis Armor (Boltstorm) BA
+###DW Gravis Armor (Boltstorm)
   - typeSingle: DWGRAVIS__1__GRVBSBA
     fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_BA.png
   - type: DWGRVBSBA.PCK
@@ -308,7 +592,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVBS_S_BA.png
 
-###DW Gravis Armor (Boltstorm) BT
   - typeSingle: DWGRAVIS__1__GRVBSBT
     fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_BT.png
   - type: DWGRVBSBT.PCK
@@ -319,7 +602,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVBS_S_BT.png
 
-###DW Gravis Armor (Boltstorm) CF
   - typeSingle: DWGRAVIS__1__GRVBSCF
     fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_CF.png
   - type: DWGRVBSCF.PCK
@@ -330,7 +612,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVBS_S_CF.png
 
-###DW Gravis Armor (Boltstorm) DA
   - typeSingle: DWGRAVIS__1__GRVBSDA
     fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_DA.png
   - type: DWGRVBSDA.PCK
@@ -341,7 +622,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVBS_S_DA.png
 
-###DW Gravis Armor (Boltstorm) IF
   - typeSingle: DWGRAVIS__1__GRVBSIF
     fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_IF.png
   - type: DWGRVBSIF.PCK
@@ -352,7 +632,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVBS_S_IF.png
 
-###DW Gravis Armor (Boltstorm) SA
   - typeSingle: DWGRAVIS__1__GRVBSSA
     fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_SA.png
   - type: DWGRVBSSA.PCK
@@ -363,7 +642,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVBS_S_SA.png
 
-###DW Gravis Armor (Boltstorm) SW
   - typeSingle: DWGRAVIS__1__GRVBSSW
     fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_SW.png
   - type: DWGRVBSSW.PCK
@@ -374,7 +652,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVBS_S_SW.png
 
-###DW Gravis Armor (Boltstorm) UM
   - typeSingle: DWGRAVIS__1__GRVBSUM
     fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_UM.png
   - type: DWGRVBSUM.PCK
@@ -385,7 +662,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVBS_S_UM.png
 
-###DW Gravis Armor (Boltstorm) WS
   - typeSingle: DWGRAVIS__1__GRVBSWS
     fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_WS.png
   - type: DWGRVBSWS.PCK
@@ -396,7 +672,7 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVBS_S_WS.png
 
-###DW Gravis Armor (Flamestorm) BA
+###DW Gravis Armor (Flamestorm)
   - typeSingle: DWGRAVIS__1__GRVFSBA
     fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_BA.png
   - type: DWGRVFSBA.PCK
@@ -407,7 +683,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVFS_S_BA.png
 
-###DW Gravis Armor (Flamestorm) BT
   - typeSingle: DWGRAVIS__1__GRVFSBT
     fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_BT.png
   - type: DWGRVFSBT.PCK
@@ -418,7 +693,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVFS_S_BT.png
 
-###DW Gravis Armor (Flamestorm) CF
   - typeSingle: DWGRAVIS__1__GRVFSCF
     fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_CF.png
   - type: DWGRVFSCF.PCK
@@ -429,7 +703,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVFS_S_CF.png
 
-###DW Gravis Armor (Flamestorm) DA
   - typeSingle: DWGRAVIS__1__GRVFSDA
     fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_DA.png
   - type: DWGRVFSDA.PCK
@@ -440,7 +713,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVFS_S_DA.png
 
-###DW Gravis Armor (Flamestorm) IF
   - typeSingle: DWGRAVIS__1__GRVFSIF
     fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_IF.png
   - type: DWGRVFSIF.PCK
@@ -451,7 +723,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVFS_S_IF.png
 
-###DW Gravis Armor (Flamestorm) SA
   - typeSingle: DWGRAVIS__1__GRVFSSA
     fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_SA.png
   - type: DWGRVFSSA.PCK
@@ -462,7 +733,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVFS_S_SA.png
 
-###DW Gravis Armor (Flamestorm) SW
   - typeSingle: DWGRAVIS__1__GRVFSSW
     fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_SW.png
   - type: DWGRVFSSW.PCK
@@ -473,7 +743,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVFS_S_SW.png
 
-###DW Gravis Armor (Flamestorm) UM
   - typeSingle: DWGRAVIS__1__GRVFSUM
     fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_UM.png
   - type: DWGRVFSUM.PCK
@@ -484,7 +753,6 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/GRAV/GRVFS_S_UM.png
 
-###DW Gravis Armor (Flamestorm) WS
   - typeSingle: DWGRAVIS__1__GRVFSWS
     fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_WS.png
   - type: DWGRVFSWS.PCK
@@ -547,108 +815,6 @@ extraSprites:
     subY: 40
     files:
       0: Resources/CRAFT/RAZOR/RB_Las.png
-
-###Item BigOBs
-  - type: BIGOBS.PCK
-    files:
-      3100: Resources/ITEMS/VoxB01.png                          # Vox Strike
-      3101: Resources/ITEMS/BeaconB01.png                       # Target Marker
-      3102: Resources/ITEMS/MBOMB.png                           # 2x2 version
-      3103: Resources/ITEMS/smoke_bomb.png                      # 2x2 version
-      3104: Resources/ITEMS/book1.png                           # Lib Book sprites
-      3105: Resources/ITEMS/book2.png                           # Lib Book sprites
-      3106: Resources/ITEMS/blank.png                           # Lib Book sprites
-      3107: Resources/ITEMS/SHOTGUN/shotgun_BigOb.png           # Astartes Shotgun
-      3108: Resources/ITEMS/HBOLTER/hbolterAP.png               # Mars HBolter Ammo AP
-      3109: Resources/ITEMS/HBOLTER/hbolterHE.png               # Mars HBolter Ammo HE
-      3110: Resources/ITEMS/HBOLTER/hbolterI.png                # Mars HBolter Ammo I
-      3111: Resources/ITEMS/HBOLTER/hbolterMC.png               # Mars HBolter Ammo MC
-      3112: Resources/ITEMS/LBOLTER/LBoltN.png                  # Light Bolter Ammo
-      3113: Resources/ITEMS/LBOLTER/LBoltAP.png                 # Light Bolter Krak
-      3114: Resources/ITEMS/LBOLTER/LBoltEX.png                 # Light Bolter Metalstorm
-      3115: Resources/ITEMS/LBOLTER/LBoltMC.png                 # Light Bolter Mastercrafted
-      3116: Resources/ITEMS/LBOLTER/LBoltpN.png                 # Light BoltPistol Ammo
-      3117: Resources/ITEMS/LBOLTER/LBoltpAP.png                # Light BoltPistol Krak
-      3118: Resources/ITEMS/LBOLTER/LBoltpEX.png                # Light BoltPistol Metalstorm
-      3119: Resources/ITEMS/LBOLTER/LBoltpMC.png                # Light BoltPistol Mastercrafted
-      #20-27 potential full size bolter ammo
-      3128: Resources/ITEMS/BSNIPER/HeavySniper_BigOb.png       # Bolt Sniper Rifle
-      3129: Resources/ITEMS/SLT_BigOb.png                       # Smoke Launcher Turret
-      3130: Resources/ITEMS/BSNIPER/SniperBolt.png              # Bolt Sniper Ammo
-      3131: Resources/ITEMS/BSNIPER/SniperBoltKrak.png          # Bolt Sniper Krak Ammo
-      3132: Resources/ITEMS/BSNIPER/SniperBoltFrag.png          # Bolt Sniper Frag Ammo
-      3133: Resources/ITEMS/BSNIPER/SniperBoltShred.png         # Bolt Sniper Shredder Ammo
-      3134: Resources/ITEMS/motion.png                          # Motion Scanner
-      3135: Resources/ITEMS/LChainSM_BigOb.png                  # Light Chainsword
-      3136: Resources/ITEMS/BOLTER/rifle_0.png                  # Bolter Godwyn (unloaded)
-      3137: Resources/ITEMS/BOLTER/rifle_1.png                  # Bolter Godwyn (regular)
-      3138: Resources/ITEMS/BOLTER/rifle_2.png                  # Bolter Godwyn (pistol)
-      3139: Resources/ITEMS/BOLTER/rifleA_0.png                 # Bolter Artifex (unloaded)
-      3140: Resources/ITEMS/BOLTER/rifleA_1.png                 # Bolter Artifex (regular)
-      3141: Resources/ITEMS/BOLTER/rifleA_2.png                 # Bolter Artifex (pistol)
-      3142: Resources/ITEMS/BOLTER/rifleB_0.png                 # Bolter Ultra (unloaded)
-      3143: Resources/ITEMS/BOLTER/rifleB_1.png                 # Bolter Ultra (regular)
-      3144: Resources/ITEMS/BOLTER/rifleB_2.png                 # Bolter Ultra (pistol)
-      3145: Resources/ITEMS/BOLTER/rifleC_0.png                 # Bolter Stalker (unloaded)
-      3146: Resources/ITEMS/BOLTER/rifleC_1.png                 # Bolter Stalker (regular)
-      3147: Resources/ITEMS/BOLTER/rifleC_2.png                 # Bolter Stalker (pistol)
-      3148: Resources/ITEMS/BOLTER/rifleD_0.png                 # Bolter Cawl (unloaded)
-      3149: Resources/ITEMS/BOLTER/rifleD_1.png                 # Bolter Cawl (regular)
-      3150: Resources/ITEMS/BOLTER/rifleD_2.png                 # Bolter Cawl (pistol)
-      3151: Resources/ITEMS/BOLTER/rifleDW_0.png                # Bolter Cawl DW (unloaded)
-      3152: Resources/ITEMS/BOLTER/rifleDW_1.png                # Bolter Cawl DW (regular)
-      3153: Resources/ITEMS/BOLTER/rifleDW_2.png                # Bolter Cawl DW (pistol)
-      3154: Resources/ITEMS/BOLTER/rifleMC_0.png                # Bolter MC (unloaded)
-      3155: Resources/ITEMS/BOLTER/rifleMC_1.png                # Bolter MC (regular)
-      3156: Resources/ITEMS/BOLTER/rifleMC_2.png                # Bolter MC (pistol)
-      3157: Resources/UNITS/DREAD/WDREAD_FIST1.png              # Dreadnought Bolter Fist
-      3158: Resources/UNITS/DREAD/WDREAD_MISSILE0.png           # Dreadnought Hellfire Launcher (unloaded)
-      3159: Resources/UNITS/DREAD/WDREAD_MISSILE1.png           # Dreadnought Hellfire Launcher (regular)
-      3160: Resources/UNITS/DREAD/WDREAD_MISSILE2.png           # Dreadnought Hellfire Launcher (hellfire)
-      3161: Resources/UNITS/DREAD/DREADMISSILE_BigOb.png        # Dreadnought Missile (regular ammo)
-      3162: Resources/ITEMS/SHOTGUN/shells_MC.png               # MC Shotgun Shells
-      3163: Resources/ITEMS/SHOTGUN/shotgunDW_BigOb.png         # DW Shotgun 
-      3164: Resources/ITEMS/BSNIPER/HeavySniperDW_BigOb.png     # DW Bolt Sniper
-      3165: Resources/ITEMS/BOLTER/ammoDW_3.png                 # Derevenant Bolter Ammo
-      3166: Resources/ITEMS/BOLTER/ammoDW_4.png                 # Inertial Fusion Bolter Ammo
-      3167: Resources/ITEMS/BOLTER/ammoDW_8.png                 # Helspear Bolter Ammo
-      3168: Resources/ITEMS/BOLTER/ammoDW_9.png                 # Dragonfire Bolter Ammo
-      3169: Resources/ITEMS/BSNIPER/SniperBoltDerev.png         # Derevenant Sniper Ammo
-      3170: Resources/ITEMS/BSNIPER/SniperBoltHelspear.png      # Helspear Sniper Ammo
-      3171: Resources/ITEMS/PRIMARIS/Absolvor_BigOb.png         # Absolvor Bolt Pistol
-      #3172 - unqiue Absolvor ammo?
-      3173: Resources/ITEMS/SHOTGUN/shells_Krak.png             # AP Shotgun Shells
-      3174: Resources/ITEMS/PRIMARIS/GEXTERMINATOR_BIGOB.png    # Interceptor Plasma Exterminator
-      3175: Resources/ITEMS/PRIMARIS/GEXTERMINATOR2_BIGOB.png   # Interceptor Plasma Exterminator (Dual-wielding)
-
-
-###Item FloorOBs
-  - type: FLOOROB.PCK
-    files:
-      3100: Resources/ITEMS/VoxF01.png
-      3101: Resources/ITEMS/BeaconF01.png
-      3107: Resources/ITEMS/SHOTGUN/shotgun_FloorOb.png         # Astartes Shotgun
-      3128: Resources/ITEMS/BSNIPER/HeavySniper_FloorOb.png     # Bolt Sniper Rifle
-      3130: Resources/ITEMS/BSNIPER/SniperBolt_FloorOb.png      # Bolt Sniper Ammo
-      3161: Resources/UNITS/DREAD/DREADMISSILE_FloorOb.png      # Dreadnought Missile (regular ammo)
-      3163: Resources/ITEMS/SHOTGUN/shotgunDW_FloorOb.png       # DW Shotgun 
-      3164: Resources/ITEMS/BSNIPER/HeavySniperDW_FloorOb.png   # DW Bolt Sniper
-      3171: Resources/ITEMS/PRIMARIS/Absolvor_FloorOb.png       # Absolvor Bolt Pistol
-
-###Item HandOBs - need 8 slots per item
-  - type: HANDOB.PCK
-    height: 40
-    width: 256
-    subX: 32
-    subY: 40
-    files:
-      3600: Resources/ITEMS/BSNIPER/HeavySniper_HandOb.png      # Bolt Sniper Rifle
-      3610: Resources/ITEMS/SHOTGUN/shotgun_HandOb.png          # Astartes Shotgun
-      3620: Resources/UNITS/DREAD/DREADMISSILE_HandOb.png       # Dreadnought Missile (regular ammo)
-      3630: Resources/ITEMS/BSNIPER/HeavySniperDW_HandOb.png    # DW Bolt Sniper
-      3640: Resources/ITEMS/SHOTGUN/shotgunDW_HandOb.png        # DW Shotgun
-      3650: Resources/ITEMS/PRIMARIS/Absolvor_HandOb.png        # Absolvor Bolt Pistol
-      3660: Resources/ITEMS/PRIMARIS/GEXTERMINATOR_HANDOB.png   # Interceptor Plasma Exterminator
 
 ###Ability Icons
   - type: SPICONS.DAT

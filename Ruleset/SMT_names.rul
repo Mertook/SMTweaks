@@ -14,6 +14,8 @@ extraStrings:
       STR_CHAP_ASSAULT_UC: Chaplain Assault Armor
       STR_SMT_LIB_ARMOR_UC: MK7 Librarian Armor
       STR_LIB_TERMINATOR_UC: Terminator Librarian Armor
+      STR_TASS_ARMOR_CLAWS: Terminator Assault (Claws)
+      STR_FLYING_SUIT_UC: Terminator Assault (Shield)
       STR_TSARGENT_UC: Terminator Cyclone Armor
       STR_HONOR_ARMOR_UC: "MK7 Artificer Armor"
       STR_HONOR_ARMOR: "MK7 Artificer Armor"
@@ -79,6 +81,7 @@ extraStrings:
       STR_GRAV_BOLTER_DW: Boltstorm Gauntlet
       STR_GRAV_AUTOC_DW: Autocannon Gauntlet
       STR_GRAV_FLAMER_DW: Flame Gauntlet
+      STR_CLAWS_DW: Lighting Claw
       ### CRAFT
       AUX_BOLTER: Mounted Heavy Bolter
       STR_SMT_CRAFT_SMOKE: Smoke Launcher
@@ -157,6 +160,7 @@ extraStrings:
       STR_MULTIMELTA_PREREQ: Multimelta Technology
       STR_BOLT_RIFLE_AMMO: Bolt Sniper Ammo
       STR_APOTHECARY_PREREQ: (Apothecary Unlock)
+      STR_TSARGENT: Terminator Cyclone Launcher
       ### MANUFACTURE
       STR_GENESEED: Geneseed
       STR_SMT_GENESEED_REQ: Requisition Geneseed
@@ -264,6 +268,33 @@ extraStrings:
       STR_MKX_DW_GRVFS_SW_UC: Gravis Armor Flamestorm
       STR_MKX_DW_GRVFS_ULTRA_UC: Gravis Armor Flamestorm
       STR_MKX_DW_GRVFS_WS_UC: Gravis Armor Flamestorm
+      STR_DW_TASS_ARMOR_BA_UC: Terminator Assault (Shield)
+      STR_DW_TASS_ARMOR_BT_UC: Terminator Assault (Shield)
+      STR_DW_TASS_ARMOR_CF_UC: Terminator Assault (Shield)
+      STR_DW_TASS_ARMOR_DA_UC: Terminator Assault (Shield)
+      STR_DW_TASS_ARMOR_IF_UC: Terminator Assault (Shield)
+      STR_DW_TASS_ARMOR_SALA_UC: Terminator Assault (Shield)
+      STR_DW_TASS_ARMOR_SW_UC: Terminator Assault (Shield)
+      STR_DW_TASS_ARMOR_ULTRA_UC: Terminator Assault (Shield)
+      STR_DW_TASS_ARMOR_WS_UC: Terminator Assault (Shield)
+      STR_DW_TASS_ARMOR_BA_CLAWS_UC: Terminator Assault (Claws)
+      STR_DW_TASS_ARMOR_BT_CLAWS_UC: Terminator Assault (Claws)
+      STR_DW_TASS_ARMOR_CF_CLAWS_UC: Terminator Assault (Claws)
+      STR_DW_TASS_ARMOR_DA_CLAWS_UC: Terminator Assault (Claws)
+      STR_DW_TASS_ARMOR_IF_CLAWS_UC: Terminator Assault (Claws)
+      STR_DW_TASS_ARMOR_SALA_CLAWS_UC: Terminator Assault (Claws)
+      STR_DW_TASS_ARMOR_SW_CLAWS_UC: Terminator Assault (Claws)
+      STR_DW_TASS_ARMOR_ULTRA_CLAWS_UC: Terminator Assault (Claws)
+      STR_DW_TASS_ARMOR_WS_CLAWS_UC: Terminator Assault (Claws)
+      STR_DW_TSARGENT_ARMOR_BA_UC: Terminator Cyclone Armor
+      STR_DW_TSARGENT_ARMOR_BT_UC: Terminator Cyclone Armor
+      STR_DW_TSARGENT_ARMOR_CF_UC: Terminator Cyclone Armor
+      STR_DW_TSARGENT_ARMOR_DA_UC: Terminator Cyclone Armor
+      STR_DW_TSARGENT_ARMOR_IF_UC: Terminator Cyclone Armor
+      STR_DW_TSARGENT_ARMOR_SALA_UC: Terminator Cyclone Armor
+      STR_DW_TSARGENT_ARMOR_SW_UC: Terminator Cyclone Armor
+      STR_DW_TSARGENT_ARMOR_ULTRA_UC: Terminator Cyclone Armor
+      STR_DW_TSARGENT_ARMOR_WS_UC: Terminator Cyclone Armor
       STR_DW_TAC_CODEX_UC: DW Tactical Armor
       STR_DW_APOTH_CODEX_UC: DW Apothecary Armor
       STR_DW_DEV_CODEX_UC: DW Devastator Armor
@@ -274,6 +305,8 @@ extraStrings:
       STR_DW_GRV_CODEX_UC: DW Gravis Armor
       STR_DW_INC_CODEX_UC: DW Omnis Armor
       STR_DW_CAP_CODEX_UC: DW Captain Armor
+      STR_DW_TERM_CYC_CODEX_UC: DW Terminator Cyclone
+      STR_DW_TERM_ASS_CODEX_UC: DW Terminator Assault
       STR_DW_LEADER_BA_UC: ¢ Captain Armor
       STR_DW_LEADER_BT_UC: £ Captain Armor
       STR_DW_LEADER_CF_UC: ¼ Captain Armor
@@ -283,7 +316,7 @@ extraStrings:
       STR_DW_LEADER_SW_UC: ² Captain Armor
       STR_DW_LEADER_ULTRA_UC: ¥ Captain Armor
       STR_DW_LEADER_WS_UC: © Captain Armor
-      ### DEATHWATCH ITEMS
+      ### DEATHWATCH ITEMS - ¬ = DW Inquisition symbol
       STR_DW_TOKEN: Deathwatch Requisition
       STR_DW_TOKEN_LEADER: Deathwatch Captain Requisition
       STR_RIFLE_CLIP_DEREV: Derevenant Mag.
@@ -295,6 +328,7 @@ extraStrings:
       STR_SHOTGUN_DW: Deathwatch Shotgun
       STR_SHOTGUN_SHELLS_WYRM: Wyrmsbreath Shells
       AUX_CROZIUS_DW: "Crozius Arcanum"
+      STR_DW_PLASMA_GRENADE: ¬ Plasma Grenade
       ### DEATHWATCH RESEARCH
       STR_INQUISITION: Inquisition
       STR_DW_HWP: Deathwatch Heavy Weaponry
@@ -323,7 +357,9 @@ extraStrings:
       STR_ELDAR_ALLIANCE: Eldar Negotiations
       STR_DW_HIGHTIER: "Deathwatch High-tier Requisitions"
       STR_REQUEST_GUARD_RESEARCH: "Contact Planetary Guard Forces"
+      STR_ELDAR_WEAPON_REQ: "Request Eldar Weapon Supplies"
       STR_NOT_DEATHWATCH: "(Not Deathwatch)"
+      STR_GUARD_AND_INQUISITION: "(Guard or Inquisition)"
       ### DEATHWATCH EVENTS
       STR_DEATHWATCH_REINFORCEMENTS: "Contact with Deathwatch forces has been established. Requisition authorization for two Deathwatch Marines has been granted, they will arrive once our Servitors complete the formal requests.{NEWLINE}{NEWLINE} Learning more about the severity of the threat on this planet should allow us to request additional Marines."
       STR_DEATHWATCH_EXPANSION_1: "Deathwatch Reinforcements"
@@ -339,4 +375,9 @@ extraStrings:
       STR_REINFORCEMENTS_GUARD_REGULAR_INQ_DESCRIPTION: "Responding to our request (and for a modest fee) the local planetary forces have supplied us with fresh recruits to aid our investigations"
       STR_REINFORCEMENTS_GUARD_MEDIC_INQ_DESCRIPTION: "Responding to our request (and for a modest fee) the local planetary forces have supplied us with a group of field medics to aid our investigations"
       STR_REINFORCEMENTS_GUARD_SCION_INQ_DESCRIPTION: "Impressed by our status and eager to earn favor, a Noble House has ordered that a team of Scions be placed under our command"
+      STR_ELDAR_TREATY_FARSEER: "Eldar Envoy arrives"
+      STR_ELDAR_TREATY_FARSEER_DESC: "With Chaos machinations threatening to seize control of this planet, an Eldar Farseer has agreed to support our efforts in uncovering and eliminating the daemonic threat"
+      STR_ELDAR_WEAPON_SUPPLY_RECCUR: "Eldar Armaments Arrive"
+      STR_ELDAR_WEAPON_SUPPLY_RECCUR_DESC: "As part of our agreement with the Eldar we have received a new shipment of their exotic weapons and ammunition."
+
 

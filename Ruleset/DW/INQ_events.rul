@@ -123,8 +123,46 @@ events:
     spawnedPersons: 12
     spawnedPersonType: STR_PENITENT_GUARD
 
+  - name: STR_ELDAR_WEAPON_SUPPLY_RECCUR
+    description: STR_ELDAR_WEAPON_SUPPLY_RECCUR_DESC
+    background: BACK159.SCR
+    timer: 1440
+    timerRandom: 2880
+    funds: -50000
+    everyMultiItemList:
+      STR_CATAPULT_PISTOL: 1
+      STR_CATAPULT: 1
+      STR_SHURIKEN_CLIP: 24
+      STR_ELDAR_GRENADE: 8
+      STR_ELDAR_MGRENADE: 8
+
 
 eventScripts:
+
+  - type: STR_INQ_ELDAR_WEAPON_RESUPPLY_SCRIPT
+    eventWeights:
+      0:
+       STR_ELDAR_WEAPON_SUPPLY_RECCUR: 100
+      1:
+       STR_ELDAR_WEAPON_SUPPLY_RECCUR: 100
+      2:
+       STR_ELDAR_WEAPON_SUPPLY_RECCUR: 100
+      3:
+       STR_ELDAR_WEAPON_SUPPLY_RECCUR: 100
+      4:
+       STR_ELDAR_WEAPON_SUPPLY_RECCUR: 100
+      5:
+       STR_ELDAR_WEAPON_SUPPLY_RECCUR: 100
+      6:
+       STR_ELDAR_WEAPON_SUPPLY_RECCUR: 100
+      9:
+       STR_ELDAR_WEAPON_SUPPLY_RECCUR: 100
+    firstMonth: 0
+    executionOdds: 100
+    minScore: -2000 #
+    maxScore: 20000
+    researchTriggers:
+      STR_ELDAR_WEAPON_REQ: true
 
   - type: STR_INQ_REINFORCEMENTS_GUARDS_RANDOMIZED_SCRIPT
     eventWeights:

@@ -132,10 +132,11 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_ELDAR_ALLIANCE
 
   - name: STR_ELDAR_ALLIANCE        # Allow Seer recruitment + prereq to Eldar outposts for IG/Arbites
-    cost: 1000
+    cost: 750
     points: -500
     dependencies:
       - STR_GENERALLOCK
+    spawnedEvent: STR_ELDAR_TREATY_FARSEER
 
   - name: STR_ELDAR_PATH #XENO ALLIANCE
     cost: 1000
@@ -143,7 +144,6 @@ research: # Research changes only made to maintain functionality for other facti
     dependencies:
       - STR_GUARD_AND_ARBITES
       - STR_ELDAR_ALLIANCE
-      - STR_ELDAR_SEER
     getOneFree:
       - STR_ELDAR_WEAPONRY # was Eldar Platform ???
     lookup: STR_CHOSEN_ELDAR

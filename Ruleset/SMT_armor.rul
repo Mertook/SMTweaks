@@ -509,6 +509,7 @@ armors:
     refNode: *STR_TERMINATOR_ARMOR
     spriteSheet: TERMCYCLONE.PCK # declawed :(
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
+    requires: STR_TSARGENT
     stats:
       tu: 10            # base 10
       stamina: 20       # base 20
@@ -517,7 +518,7 @@ armors:
       bravery: 10       # base 10
       reactions: -10    # base -10
       throwing: 10      # base 10
-      strength: 35      # base 90 -55 Penalty for using Cyclone (Fixed weapons have no weight?)
+      strength: 45      # base 90 -45 Penalty for using Cyclone (Fixed weapons have no weight?)
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 10         # base 10
@@ -528,6 +529,8 @@ armors:
 
   - update: STR_FLYING_SUIT_UC              #TERMINATOR ASSAULT (SHIELD)
     refNode: *STR_TERMINATOR_ARMOR
+    storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
+    requires: STR_FLYING_SUIT
     rearArmor: 130 # +10 assault
     stats:
       tu: 30            # base 10  +20
@@ -547,6 +550,8 @@ armors:
 
   - update: STR_TASS_ARMOR_CLAWS            #TERMINATOR ASSAULT (CLAWS)
     refNode: *STR_TERMINATOR_ARMOR
+    storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
+    requires: STR_FLYING_SUIT
     rearArmor: 130 # +10 assault
     stats:
       tu: 30            # base 10  +20

@@ -549,6 +549,8 @@ armors:
       SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalties
       SMT_ARMOR_REGEN_HP: 4
       ARMOR_REGENERATES_WOUNDS: 1
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
+      ARMOR_ENERGY_SHIELD_DECAY: 50
       INFECTION_RESIST: 75 #Resistant to GSC infection
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
@@ -596,6 +598,655 @@ armors:
     refNode: *STR_DW_TERM_MK7
     moveCost:
       basePercent: [100, 50] # was 100, 25
+
+  - &STR_DW_TERM_ASS_SHIELD_MK7
+    ufopediaType: STR_DW_TERM_ASS_CODEX_UC
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 35 # +5 - DW bonus
+    antiCamouflageAtDay: 9 # +1 over regular Terminators - DW bonus
+    antiCamouflageAtDark: 9 # +1 over regular Terminators - DW bonus
+    loftempsSet: [ 4 ]
+    storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
+    requires: STR_FLYING_SUIT
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 2.0 #discipline and resolve reinforces their faith (+50% terminator bonus)
+    frontArmor: 180
+    sideArmor: 175
+    rearArmor: 125
+    underArmor: 175
+    stats:
+      tu: 10            # base 10
+      stamina: 20       # base 20
+      health: 30        # base 30
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 20        # base 20
+      throwing: 10      # base 10
+      strength: 90      # base 90
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    damageModifier: #TERMINATOR ARMOR
+      - 1.0 #none
+      - 0.7 #AP (was 0.6)
+      - 0.3 #FLAMES
+      - 0.6 #HE (was 0.4)
+      - 0.8 #LASCANON
+      - 0.8 #PLASMA
+      - 1.0 #STUN
+      - 0.8 #MELEE (was 0.9)
+      - 0.6 #ACID (was 0.8)
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (was 1.0)
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 80
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 55
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalties
+      SMT_ARMOR_REGEN_HP: 4
+      ARMOR_REGENERATES_WOUNDS: 1
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
+      ARMOR_ENERGY_SHIELD_DECAY: 50
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - type: STR_DW_TASS_ARMOR_BA_UC
+    refNode: *STR_DW_TERM_ASS_SHIELD_MK7
+    instantWoundRecovery: true
+  - type: STR_DW_TASS_ARMOR_BT_UC
+    refNode: *STR_DW_TERM_ASS_SHIELD_MK7
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_DW_TASS_ARMOR_CF_UC
+    refNode: *STR_DW_TERM_ASS_SHIELD_MK7
+  - type: STR_DW_TASS_ARMOR_DA_UC
+    refNode: *STR_DW_TERM_ASS_SHIELD_MK7
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_DW_TASS_ARMOR_IF_UC
+    refNode: *STR_DW_TERM_ASS_SHIELD_MK7
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_DW_TASS_ARMOR_SALA_UC
+    refNode: *STR_DW_TERM_ASS_SHIELD_MK7
+    damageModifier:
+      - 1.0 #none
+      - 0.7 #AP
+      - 0.05 #FLAMES (default 0.3, Salamander bonus)
+      - 0.6 #HE
+      - 0.8 #LASCANON
+      - 0.8 #PLASMA
+      - 1.0 #STUN
+      - 0.8 #MELEE
+      - 0.6 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.7 #MELTA (default 0.8, Salamander bonus) 
+  - type: STR_DW_TASS_ARMOR_SW_UC
+    refNode: *STR_DW_TERM_ASS_SHIELD_MK7
+  - type: STR_DW_TASS_ARMOR_ULTRA_UC
+    refNode: *STR_DW_TERM_ASS_SHIELD_MK7
+  - type: STR_DW_TASS_ARMOR_WS_UC
+    refNode: *STR_DW_TERM_ASS_SHIELD_MK7
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
+
+  - &STR_DW_TERM_ASS_CLAWS_MK7
+    ufopediaType: STR_DW_TERM_ASS_CODEX_UC
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 35 # +5 - DW bonus
+    antiCamouflageAtDay: 9 # +1 over regular Terminators - DW bonus
+    antiCamouflageAtDark: 9 # +1 over regular Terminators - DW bonus
+    loftempsSet: [ 4 ]
+    storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
+    requires: STR_FLYING_SUIT
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 2.0 #discipline and resolve reinforces their faith (+50% terminator bonus)
+    frontArmor: 180
+    sideArmor: 175
+    rearArmor: 125
+    underArmor: 175
+    stats:
+      tu: 10            # base 10
+      stamina: 20       # base 20
+      health: 30        # base 30
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 20        # base 20
+      throwing: 10      # base 10
+      strength: 90      # base 90
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    damageModifier: #TERMINATOR ARMOR
+      - 1.0 #none
+      - 0.7 #AP (was 0.6)
+      - 0.3 #FLAMES
+      - 0.6 #HE (was 0.4)
+      - 0.8 #LASCANON
+      - 0.8 #PLASMA
+      - 1.0 #STUN
+      - 0.8 #MELEE (was 0.9)
+      - 0.6 #ACID (was 0.8)
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (was 1.0)
+    specialWeapon: STR_TELEPORT_CLAWS # gets extra teleport distance
+    builtInWeapons:
+      - STR_CLAWS_DW
+      - STR_CLAWS_DW
+      - INV_NULL_3X3
+      - INV_NULL_2X1_RL
+      - INV_NULL_2X1_LL
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 80
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 55
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalties
+      SMT_ARMOR_REGEN_HP: 4
+      ARMOR_REGENERATES_WOUNDS: 1
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
+      ARMOR_ENERGY_SHIELD_DECAY: 50
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - type: STR_DW_TASS_ARMOR_BA_CLAWS_UC
+    refNode: *STR_DW_TERM_ASS_CLAWS_MK7
+    instantWoundRecovery: true
+    spriteSheet: TERMCLWDWBA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 518}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCLWBA", "M0_FACE"]
+      M1: ["0", "TERMCLWBA", "M1_FACE"]
+      M2: ["0", "TERMCLWBA", "M2_FACE"]
+      M3: ["0", "TERMCLWBA", "M3_FACE"]
+      M4: ["0", "TERMCLWBA", "M4_FACE"]
+      M5: ["0", "TERMCLWBA", "M5_FACE"]
+      F0: ["0", "TERMCLWBA", "F0_FACE"]
+      F1: ["0", "TERMCLWBA", "F1_FACE"]
+      F2: ["0", "TERMCLWBA", "F2_FACE"]
+      F3: ["0", "TERMCLWBA", "F3_FACE"]
+      F4: ["0", "TERMCLWBA", "F4_FACE"]
+      F5: ["0", "TERMCLWBA", "F5_FACE"]
+  - type: STR_DW_TASS_ARMOR_BT_CLAWS_UC
+    refNode: *STR_DW_TERM_ASS_CLAWS_MK7
+    spriteSheet: TERMCLWDWBT.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 520}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCLWBT", "M0_FACE"]
+      M1: ["0", "TERMCLWBT", "M1_FACE"]
+      M2: ["0", "TERMCLWBT", "M2_FACE"]
+      M3: ["0", "TERMCLWBT", "M3_FACE"]
+      M4: ["0", "TERMCLWBT", "M4_FACE"]
+      M5: ["0", "TERMCLWBT", "M5_FACE"]
+      F0: ["0", "TERMCLWBT", "F0_FACE"]
+      F1: ["0", "TERMCLWBT", "F1_FACE"]
+      F2: ["0", "TERMCLWBT", "F2_FACE"]
+      F3: ["0", "TERMCLWBT", "F3_FACE"]
+      F4: ["0", "TERMCLWBT", "F4_FACE"]
+      F5: ["0", "TERMCLWBT", "F5_FACE"]
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_DW_TASS_ARMOR_CF_CLAWS_UC
+    refNode: *STR_DW_TERM_ASS_CLAWS_MK7
+    spriteSheet: TERMCLWDWCF.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 516}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCLWCF", "M0_FACE"]
+      M1: ["0", "TERMCLWCF", "M1_FACE"]
+      M2: ["0", "TERMCLWCF", "M2_FACE"]
+      M3: ["0", "TERMCLWCF", "M3_FACE"]
+      M4: ["0", "TERMCLWCF", "M4_FACE"]
+      M5: ["0", "TERMCLWCF", "M5_FACE"]
+      F0: ["0", "TERMCLWCF", "F0_FACE"]
+      F1: ["0", "TERMCLWCF", "F1_FACE"]
+      F2: ["0", "TERMCLWCF", "F2_FACE"]
+      F3: ["0", "TERMCLWCF", "F3_FACE"]
+      F4: ["0", "TERMCLWCF", "F4_FACE"]
+      F5: ["0", "TERMCLWCF", "F5_FACE"]
+  - type: STR_DW_TASS_ARMOR_DA_CLAWS_UC
+    refNode: *STR_DW_TERM_ASS_CLAWS_MK7
+    spriteSheet: TERMCLWDWDA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 519}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCLWDA", "M0_FACE"]
+      M1: ["0", "TERMCLWDA", "M1_FACE"]
+      M2: ["0", "TERMCLWDA", "M2_FACE"]
+      M3: ["0", "TERMCLWDA", "M3_FACE"]
+      M4: ["0", "TERMCLWDA", "M4_FACE"]
+      M5: ["0", "TERMCLWDA", "M5_FACE"]
+      F0: ["0", "TERMCLWDA", "F0_FACE"]
+      F1: ["0", "TERMCLWDA", "F1_FACE"]
+      F2: ["0", "TERMCLWDA", "F2_FACE"]
+      F3: ["0", "TERMCLWDA", "F3_FACE"]
+      F4: ["0", "TERMCLWDA", "F4_FACE"]
+      F5: ["0", "TERMCLWDA", "F5_FACE"]
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_DW_TASS_ARMOR_IF_CLAWS_UC
+    refNode: *STR_DW_TERM_ASS_CLAWS_MK7
+    spriteSheet: TERMCLWDWIF.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 517}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCLWIF", "M0_FACE"]
+      M1: ["0", "TERMCLWIF", "M1_FACE"]
+      M2: ["0", "TERMCLWIF", "M2_FACE"]
+      M3: ["0", "TERMCLWIF", "M3_FACE"]
+      M4: ["0", "TERMCLWIF", "M4_FACE"]
+      M5: ["0", "TERMCLWIF", "M5_FACE"]
+      F0: ["0", "TERMCLWIF", "F0_FACE"]
+      F1: ["0", "TERMCLWIF", "F1_FACE"]
+      F2: ["0", "TERMCLWIF", "F2_FACE"]
+      F3: ["0", "TERMCLWIF", "F3_FACE"]
+      F4: ["0", "TERMCLWIF", "F4_FACE"]
+      F5: ["0", "TERMCLWIF", "F5_FACE"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_DW_TASS_ARMOR_SALA_CLAWS_UC
+    refNode: *STR_DW_TERM_ASS_CLAWS_MK7
+    spriteSheet: TERMCLWDWSA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 519}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCLWSA", "M0_FACES"]
+      M1: ["0", "TERMCLWSA", "M1_FACES"]
+      M2: ["0", "TERMCLWSA", "M2_FACES"]
+      M3: ["0", "TERMCLWSA", "M3_FACES"]
+      M4: ["0", "TERMCLWSA", "M4_FACES"]
+      M5: ["0", "TERMCLWSA", "M5_FACES"]
+      F0: ["0", "TERMCLWSA", "F0_FACES"]
+      F1: ["0", "TERMCLWSA", "F1_FACES"]
+      F2: ["0", "TERMCLWSA", "F2_FACES"]
+      F3: ["0", "TERMCLWSA", "F3_FACES"]
+      F4: ["0", "TERMCLWSA", "F4_FACES"]
+      F5: ["0", "TERMCLWSA", "F5_FACES"]
+    damageModifier:
+      - 1.0 #none
+      - 0.7 #AP
+      - 0.05 #FLAMES (default 0.3, Salamander bonus)
+      - 0.6 #HE
+      - 0.8 #LASCANON
+      - 0.8 #PLASMA
+      - 1.0 #STUN
+      - 0.8 #MELEE
+      - 0.6 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.7 #MELTA (default 0.8, Salamander bonus) 
+  - type: STR_DW_TASS_ARMOR_SW_CLAWS_UC
+    refNode: *STR_DW_TERM_ASS_CLAWS_MK7
+    spriteSheet: TERMCLWDWSW.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 517}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCLWSW", "M0_FACE"]
+      M1: ["0", "TERMCLWSW", "M1_FACE"]
+      M2: ["0", "TERMCLWSW", "M2_FACE"]
+      M3: ["0", "TERMCLWSW", "M3_FACE"]
+      M4: ["0", "TERMCLWSW", "M4_FACE"]
+      M5: ["0", "TERMCLWSW", "M5_FACE"]
+      F0: ["0", "TERMCLWSW", "F0_FACE"]
+      F1: ["0", "TERMCLWSW", "F1_FACE"]
+      F2: ["0", "TERMCLWSW", "F2_FACE"]
+      F3: ["0", "TERMCLWSW", "F3_FACE"]
+      F4: ["0", "TERMCLWSW", "F4_FACE"]
+      F5: ["0", "TERMCLWSW", "F5_FACE"]
+  - type: STR_DW_TASS_ARMOR_ULTRA_CLAWS_UC
+    refNode: *STR_DW_TERM_ASS_CLAWS_MK7
+    spriteSheet: TERMCLWDWUM.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 516}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCLWUM", "M0_FACE"]
+      M1: ["0", "TERMCLWUM", "M1_FACE"]
+      M2: ["0", "TERMCLWUM", "M2_FACE"]
+      M3: ["0", "TERMCLWUM", "M3_FACE"]
+      M4: ["0", "TERMCLWUM", "M4_FACE"]
+      M5: ["0", "TERMCLWUM", "M5_FACE"]
+      F0: ["0", "TERMCLWUM", "F0_FACE"]
+      F1: ["0", "TERMCLWUM", "F1_FACE"]
+      F2: ["0", "TERMCLWUM", "F2_FACE"]
+      F3: ["0", "TERMCLWUM", "F3_FACE"]
+      F4: ["0", "TERMCLWUM", "F4_FACE"]
+      F5: ["0", "TERMCLWUM", "F5_FACE"]
+  - type: STR_DW_TASS_ARMOR_WS_CLAWS_UC
+    refNode: *STR_DW_TERM_ASS_CLAWS_MK7
+    spriteSheet: TERMCLWDWWS.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 521}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCLWWS", "M0_FACE"]
+      M1: ["0", "TERMCLWWS", "M1_FACE"]
+      M2: ["0", "TERMCLWWS", "M2_FACE"]
+      M3: ["0", "TERMCLWWS", "M3_FACE"]
+      M4: ["0", "TERMCLWWS", "M4_FACE"]
+      M5: ["0", "TERMCLWWS", "M5_FACE"]
+      F0: ["0", "TERMCLWWS", "F0_FACE"]
+      F1: ["0", "TERMCLWWS", "F1_FACE"]
+      F2: ["0", "TERMCLWWS", "F2_FACE"]
+      F3: ["0", "TERMCLWWS", "F3_FACE"]
+      F4: ["0", "TERMCLWWS", "F4_FACE"]
+      F5: ["0", "TERMCLWWS", "F5_FACE"]
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
+
+  - &STR_DW_TERM_CYCLONE_MK7
+    ufopediaType: STR_DW_TERM_CYC_CODEX_UC
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 35 # +5 - DW bonus
+    antiCamouflageAtDay: 9 # +1 over regular Terminators - DW bonus
+    antiCamouflageAtDark: 9 # +1 over regular Terminators - DW bonus
+    loftempsSet: [ 4 ]
+    storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
+    requires: STR_TSARGENT
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 2.0 #discipline and resolve reinforces their faith (+50% terminator bonus)
+    frontArmor: 180
+    sideArmor: 175
+    rearArmor: 125
+    underArmor: 175
+    stats:
+      tu: 10            # base 10
+      stamina: 20       # base 20
+      health: 30        # base 30
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 20        # base 20
+      throwing: 10      # base 10
+      strength: 45      # base 90 -45 for cyclone launcher
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    damageModifier: #TERMINATOR ARMOR
+      - 1.0 #none
+      - 0.7 #AP (was 0.6)
+      - 0.3 #FLAMES
+      - 0.6 #HE (was 0.4)
+      - 0.8 #LASCANON
+      - 0.8 #PLASMA
+      - 1.0 #STUN
+      - 0.8 #MELEE (was 0.9)
+      - 0.6 #ACID (was 0.8)
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (was 1.0)
+    specialWeapon: AUX_MORTAR
+    builtInWeapons: # no claws
+      - INV_NULL_3X3
+      - INV_NULL_2X1_RL
+      - INV_NULL_2X1_LL
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 80
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 55
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalties
+      SMT_ARMOR_REGEN_HP: 4
+      ARMOR_REGENERATES_WOUNDS: 1
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
+      ARMOR_ENERGY_SHIELD_DECAY: 50
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - type: STR_DW_TSARGENT_ARMOR_BA_UC
+    refNode: *STR_DW_TERM_CYCLONE_MK7
+    instantWoundRecovery: true
+    spriteSheet: TERMCYCDWBA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 518}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCYCBA", "M0_FACE"]
+      M1: ["0", "TERMCYCBA", "M1_FACE"]
+      M2: ["0", "TERMCYCBA", "M2_FACE"]
+      M3: ["0", "TERMCYCBA", "M3_FACE"]
+      M4: ["0", "TERMCYCBA", "M4_FACE"]
+      M5: ["0", "TERMCYCBA", "M5_FACE"]
+      F0: ["0", "TERMCYCBA", "F0_FACE"]
+      F1: ["0", "TERMCYCBA", "F1_FACE"]
+      F2: ["0", "TERMCYCBA", "F2_FACE"]
+      F3: ["0", "TERMCYCBA", "F3_FACE"]
+      F4: ["0", "TERMCYCBA", "F4_FACE"]
+      F5: ["0", "TERMCYCBA", "F5_FACE"]
+  - type: STR_DW_TSARGENT_ARMOR_BT_UC
+    refNode: *STR_DW_TERM_CYCLONE_MK7
+    spriteSheet: TERMCYCDWBT.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 520}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCYCBT", "M0_FACE"]
+      M1: ["0", "TERMCYCBT", "M1_FACE"]
+      M2: ["0", "TERMCYCBT", "M2_FACE"]
+      M3: ["0", "TERMCYCBT", "M3_FACE"]
+      M4: ["0", "TERMCYCBT", "M4_FACE"]
+      M5: ["0", "TERMCYCBT", "M5_FACE"]
+      F0: ["0", "TERMCYCBT", "F0_FACE"]
+      F1: ["0", "TERMCYCBT", "F1_FACE"]
+      F2: ["0", "TERMCYCBT", "F2_FACE"]
+      F3: ["0", "TERMCYCBT", "F3_FACE"]
+      F4: ["0", "TERMCYCBT", "F4_FACE"]
+      F5: ["0", "TERMCYCBT", "F5_FACE"]
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_DW_TSARGENT_ARMOR_CF_UC
+    refNode: *STR_DW_TERM_CYCLONE_MK7
+    spriteSheet: TERMCYCDWCF.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 516}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCYCCF", "M0_FACE"]
+      M1: ["0", "TERMCYCCF", "M1_FACE"]
+      M2: ["0", "TERMCYCCF", "M2_FACE"]
+      M3: ["0", "TERMCYCCF", "M3_FACE"]
+      M4: ["0", "TERMCYCCF", "M4_FACE"]
+      M5: ["0", "TERMCYCCF", "M5_FACE"]
+      F0: ["0", "TERMCYCCF", "F0_FACE"]
+      F1: ["0", "TERMCYCCF", "F1_FACE"]
+      F2: ["0", "TERMCYCCF", "F2_FACE"]
+      F3: ["0", "TERMCYCCF", "F3_FACE"]
+      F4: ["0", "TERMCYCCF", "F4_FACE"]
+      F5: ["0", "TERMCYCCF", "F5_FACE"]
+  - type: STR_DW_TSARGENT_ARMOR_DA_UC
+    refNode: *STR_DW_TERM_CYCLONE_MK7
+    spriteSheet: TERMCYCDWDA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 519}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCYCDA", "M0_FACE"]
+      M1: ["0", "TERMCYCDA", "M1_FACE"]
+      M2: ["0", "TERMCYCDA", "M2_FACE"]
+      M3: ["0", "TERMCYCDA", "M3_FACE"]
+      M4: ["0", "TERMCYCDA", "M4_FACE"]
+      M5: ["0", "TERMCYCDA", "M5_FACE"]
+      F0: ["0", "TERMCYCDA", "F0_FACE"]
+      F1: ["0", "TERMCYCDA", "F1_FACE"]
+      F2: ["0", "TERMCYCDA", "F2_FACE"]
+      F3: ["0", "TERMCYCDA", "F3_FACE"]
+      F4: ["0", "TERMCYCDA", "F4_FACE"]
+      F5: ["0", "TERMCYCDA", "F5_FACE"]
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_DW_TSARGENT_ARMOR_IF_UC
+    refNode: *STR_DW_TERM_CYCLONE_MK7
+    spriteSheet: TERMCYCDWIF.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 517}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCYCIF", "M0_FACE"]
+      M1: ["0", "TERMCYCIF", "M1_FACE"]
+      M2: ["0", "TERMCYCIF", "M2_FACE"]
+      M3: ["0", "TERMCYCIF", "M3_FACE"]
+      M4: ["0", "TERMCYCIF", "M4_FACE"]
+      M5: ["0", "TERMCYCIF", "M5_FACE"]
+      F0: ["0", "TERMCYCIF", "F0_FACE"]
+      F1: ["0", "TERMCYCIF", "F1_FACE"]
+      F2: ["0", "TERMCYCIF", "F2_FACE"]
+      F3: ["0", "TERMCYCIF", "F3_FACE"]
+      F4: ["0", "TERMCYCIF", "F4_FACE"]
+      F5: ["0", "TERMCYCIF", "F5_FACE"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_DW_TSARGENT_ARMOR_SALA_UC
+    refNode: *STR_DW_TERM_CYCLONE_MK7
+    spriteSheet: TERMCYCDWSA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 519}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCYCSA", "M0_FACES"]
+      M1: ["0", "TERMCYCSA", "M1_FACES"]
+      M2: ["0", "TERMCYCSA", "M2_FACES"]
+      M3: ["0", "TERMCYCSA", "M3_FACES"]
+      M4: ["0", "TERMCYCSA", "M4_FACES"]
+      M5: ["0", "TERMCYCSA", "M5_FACES"]
+      F0: ["0", "TERMCYCSA", "F0_FACES"]
+      F1: ["0", "TERMCYCSA", "F1_FACES"]
+      F2: ["0", "TERMCYCSA", "F2_FACES"]
+      F3: ["0", "TERMCYCSA", "F3_FACES"]
+      F4: ["0", "TERMCYCSA", "F4_FACES"]
+      F5: ["0", "TERMCYCSA", "F5_FACES"]
+    damageModifier:
+      - 1.0 #none
+      - 0.7 #AP
+      - 0.05 #FLAMES (default 0.3, Salamander bonus)
+      - 0.6 #HE
+      - 0.8 #LASCANON
+      - 0.8 #PLASMA
+      - 1.0 #STUN
+      - 0.8 #MELEE
+      - 0.6 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.7 #MELTA (default 0.8, Salamander bonus) 
+  - type: STR_DW_TSARGENT_ARMOR_SW_UC
+    refNode: *STR_DW_TERM_CYCLONE_MK7
+    spriteSheet: TERMCYCDWSW.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 517}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCYCSW", "M0_FACE"]
+      M1: ["0", "TERMCYCSW", "M1_FACE"]
+      M2: ["0", "TERMCYCSW", "M2_FACE"]
+      M3: ["0", "TERMCYCSW", "M3_FACE"]
+      M4: ["0", "TERMCYCSW", "M4_FACE"]
+      M5: ["0", "TERMCYCSW", "M5_FACE"]
+      F0: ["0", "TERMCYCSW", "F0_FACE"]
+      F1: ["0", "TERMCYCSW", "F1_FACE"]
+      F2: ["0", "TERMCYCSW", "F2_FACE"]
+      F3: ["0", "TERMCYCSW", "F3_FACE"]
+      F4: ["0", "TERMCYCSW", "F4_FACE"]
+      F5: ["0", "TERMCYCSW", "F5_FACE"]
+  - type: STR_DW_TSARGENT_ARMOR_ULTRA_UC
+    refNode: *STR_DW_TERM_CYCLONE_MK7
+    spriteSheet: TERMCYCDWUM.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 516}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCYCUM", "M0_FACE"]
+      M1: ["0", "TERMCYCUM", "M1_FACE"]
+      M2: ["0", "TERMCYCUM", "M2_FACE"]
+      M3: ["0", "TERMCYCUM", "M3_FACE"]
+      M4: ["0", "TERMCYCUM", "M4_FACE"]
+      M5: ["0", "TERMCYCUM", "M5_FACE"]
+      F0: ["0", "TERMCYCUM", "F0_FACE"]
+      F1: ["0", "TERMCYCUM", "F1_FACE"]
+      F2: ["0", "TERMCYCUM", "F2_FACE"]
+      F3: ["0", "TERMCYCUM", "F3_FACE"]
+      F4: ["0", "TERMCYCUM", "F4_FACE"]
+      F5: ["0", "TERMCYCUM", "F5_FACE"]
+  - type: STR_DW_TSARGENT_ARMOR_WS_UC
+    refNode: *STR_DW_TERM_CYCLONE_MK7
+    spriteSheet: TERMCYCDWWS.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 521}
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWTERM
+    layersDefinition:
+      M0: ["0", "TERMCYCWS", "M0_FACE"]
+      M1: ["0", "TERMCYCWS", "M1_FACE"]
+      M2: ["0", "TERMCYCWS", "M2_FACE"]
+      M3: ["0", "TERMCYCWS", "M3_FACE"]
+      M4: ["0", "TERMCYCWS", "M4_FACE"]
+      M5: ["0", "TERMCYCWS", "M5_FACE"]
+      F0: ["0", "TERMCYCWS", "F0_FACE"]
+      F1: ["0", "TERMCYCWS", "F1_FACE"]
+      F2: ["0", "TERMCYCWS", "F2_FACE"]
+      F3: ["0", "TERMCYCWS", "F3_FACE"]
+      F4: ["0", "TERMCYCWS", "F4_FACE"]
+      F5: ["0", "TERMCYCWS", "F5_FACE"]
+    moveCost:
+      basePercent: [100, 50] # was 100, 25
+
 
   - &STR_DW_TAC_MKX                         #Tactical Armor (Primaris)
     ufopediaType: STR_DW_TAC_CODEX_UC
@@ -2843,6 +3494,9 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
+    builtInWeapons:
+      - STR_TT_DW_SPAWNER
+      - STR_TF_DW_SPAWNER
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
@@ -2897,6 +3551,27 @@ armors:
       - STR_MKX_DW_TAC_CORPSE
     tags:
       INFECTION_RESIST: 0 #don't show in codex
+
+  - type: STR_DW_TERM_CYC_CODEX_UC          # Terminator Cyclone Codex Dummy
+    refNode: *STR_DW_TERM_CYCLONE_MK7
+    units:
+      - STR_DW_ARMOR_DUMMY
+    corpseBattle:
+      - STR_MKX_DW_TAC_CORPSE
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
+
+  - type: STR_DW_TERM_ASS_CODEX_UC          # Terminator Assault Codex Dummy
+    refNode: *STR_DW_TERM_ASS_CLAWS_MK7
+    units:
+      - STR_DW_ARMOR_DUMMY
+    corpseBattle:
+      - STR_MKX_DW_TAC_CORPSE
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
+
+
+
 
 
 

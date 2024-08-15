@@ -24,22 +24,22 @@ extended:
             return bonus;
           end;
 
+          unit.getRuleSoldier unitSoldier;
+          unitSoldier.getTag unitVal Tag.SMT_RESTRICTED_ITEM_USER;
           set checkVal unitVal;
           mod checkVal 10;
-          #debug_log "Restricted Item Acc Check1 - " itemVal checkVal;
+          debug_log "Restricted Item Acc Check1 - " itemVal checkVal;
           if eq checkVal itemVal; # first digit check
             return bonus;
           end;
           set checkVal unitVal;
           div checkVal 10;
           mod checkVal 10;
-          #debug_log "Restricted Item Acc Check2 - " itemVal checkVal;
+          debug_log "Restricted Item Acc Check2 - " itemVal checkVal;
           if eq checkVal itemVal; # second digit check
             return bonus;
           end;
 
-          unit.getRuleSoldier unitSoldier;
-          unitSoldier.getTag unitVal Tag.SMT_RESTRICTED_ITEM_USER;
           if neq battle_action BA_HIT; # don't modify melee accuracy
             weapon.getTag penalty Tag.SMT_RESTRICTED_ACCURACY_PEN;
             if gt penalty 0;
@@ -48,7 +48,7 @@ extended:
               set bonus 0; # otherwise reduce to 0
             end;
           end;
-          #debug_log "Restricted Item Acc Ping - " itemVal unitVal penalty;
+          debug_log "Restricted Item Acc Ping - " itemVal unitVal penalty;
 
           return bonus; # final accuracy
 

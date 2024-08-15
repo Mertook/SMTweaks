@@ -28,14 +28,14 @@ extended:
           unitSoldier.getTag unitVal Tag.SMT_RESTRICTED_ITEM_USER;
           set checkVal unitVal;
           mod checkVal 10;
-          debug_log "Restricted Item Acc Check1 - " itemVal checkVal;
+          #debug_log "Restricted Item Acc Check1 - " itemVal checkVal;
           if eq checkVal itemVal; # first digit check
             return bonus;
           end;
           set checkVal unitVal;
           div checkVal 10;
           mod checkVal 10;
-          debug_log "Restricted Item Acc Check2 - " itemVal checkVal;
+          #debug_log "Restricted Item Acc Check2 - " itemVal checkVal;
           if eq checkVal itemVal; # second digit check
             return bonus;
           end;
@@ -48,7 +48,7 @@ extended:
               set bonus 0; # otherwise reduce to 0
             end;
           end;
-          debug_log "Restricted Item Acc Ping - " itemVal unitVal penalty;
+          #debug_log "Restricted Item Acc Ping - " itemVal unitVal penalty;
 
           return bonus; # final accuracy
 

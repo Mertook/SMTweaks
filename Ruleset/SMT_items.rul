@@ -109,6 +109,29 @@ items:
       reactions: 0.25
       melee: 0.75
 
+  - &STR_POWERFIST_TEMPLATE                 # Powerfist Values
+    weight: 0
+    meleeSound: {mod: 40k, index: 710}
+    meleeHitSound: {mod: 40k, index: 772}
+    meleeAnimation: {mod: 40k, index: 28}
+    tuMelee: 25
+    costMelee:
+      energy: 4
+    meleeMultiplier:
+      melee: 0.7
+      strength: 0.3
+    flatMelee: true
+    accuracyMelee: 70
+    power: 40
+    meleeBonus:
+      strength: 1.5
+    damageType: 7
+    damageAlter:
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.2
+      ToHealth: 0.9
+    skillApplied: true
+
   - type: STR_SM_OFFICER_FIST               # Custom SM Fist with Inspire for Sergeants/Captains
     refNode: *STR_FIST
     categories: [STR_CAT_SPELLS]
@@ -1753,29 +1776,27 @@ items:
       RadiusReduction: 3.0 # minor power dropoff from center
       FixRadius: 10 # was 10
     arcingShot: true
-    # Given regular marine fist melee - not power fist
     minRange: 5
     specialUseEmptyHand: true
-    meleeSound: {mod: 40k, index: 100}
-    meleeAnimation: {mod: 40k, index: 0}
-    meleeType: 7
-    meleePower: 20 # was 10
+    # Given power fist
+    meleeSound: {mod: 40k, index: 710}
+    meleeHitSound: {mod: 40k, index: 772}
+    meleeAnimation: {mod: 40k, index: 28}
+    meleeType: 5
+    power: 40
     meleeBonus:
-      strength: 0.3 # was 0.25 - Jetpack punch is 0.3
-      melee: 0.3 # was 0.25
+      strength: 1.5
     meleeAlter:
-      RandomType: 1
-      IgnoreDirection: false
-      ToStun: 0.5
-      ToHealth: 1.0
-      ToTile: 1.50 #coolaid man punch through walls
-    accuracyMelee: 90
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.2
+      ToHealth: 0.9
+    accuracyMelee: 70
     meleeMultiplier:
-      reactions: 0.25
-      melee: 0.75
+      melee: 0.7
+      strength: 0.3
     costMelee:
-      time: 10
-      energy: 1
+      time: 25
+      energy: 4
     flatMelee:
       time: true
       energy: true
@@ -2779,7 +2800,6 @@ items:
       ArmorEffectiveness: 0.7
       ToArmorPre: 0.2
       ToHealth: 0.9
-      RandomType: 6
 
   - update: AUX_DREAD_FLAMER                # Dread Flamer Palm
     power: 60 #

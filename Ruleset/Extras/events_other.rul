@@ -2,7 +2,7 @@ events:
 
   - name: STR_BASIC_SPAWN_MARINE_CHAPLAIN
     description: STR_BASIC_SPAWN_MARINE_CHAPLAIN_DESC
-    background: BACK02.SCR #SoldierBG
+    background: MarineBG.SCR #SoldierBG
     spawnedPersons: 1
     spawnedPersonType: STR_SOLDIER_CHAPLAIN
     everyMultiItemList:
@@ -15,7 +15,7 @@ events:
 
   - name: STR_ELDAR_TREATY_FARSEER
     description: STR_ELDAR_TREATY_FARSEER_DESC
-    background: BACK160.SCR #Eldar Banshees
+    background: EldarBG.SCR #Eldar Banshees
     spawnedPersons: 1
     spawnedPersonType: STR_ELDAR_FARSEER
     everyMultiItemList:

@@ -22,6 +22,7 @@ items:
     recoveryPoints: 20
 
   - &STR_BOLTER_DW                          # Generic DW Bolter Reference
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
     requiresBuy:
       - STR_DEATHWATCH
     compatibleAmmo: # 
@@ -178,6 +179,7 @@ items:
       ITEM_AMMO_COLOR: 9 # gold
 
   - type: STR_AUTO_CANNON_DW                # Heavy Bolter (Artifex DW)
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
     costBuy: 125000
     dropoff: 4 # larger HB shells have better propulsion and accuracy at range
     sprayWaypoints: 2
@@ -388,7 +390,7 @@ items:
     invHeight: 1
     clipSize: 8
     damageType: 1
-    listOrder: 11935
+    listOrder: 10609
     hitSound: {mod: 40k, index: 708}
     hitAnimation:
       mod: 40k

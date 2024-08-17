@@ -13,7 +13,7 @@ items:
     requires:
       - STR_ELDAR_WEAPONRY
     armor: 200
-    dropoff: 8 # was 5
+    dropoff: 6 # was 5
     autoRange: 0
     snapRange: 14 # was 15
     aimRange: 0
@@ -30,7 +30,7 @@ items:
     requires:
       - STR_ELDAR_WEAPONRY
     armor: 200
-    dropoff: 7 # was 5
+    dropoff: 5 # was 5
     autoRange: 12 # was 7
     snapRange: 16 # was 15
     aimRange: 0
@@ -146,6 +146,9 @@ items:
     tuAimed: 50
 
   - update: STR_BOLTER_LIGHT_SOLO_DMR           # IG Light Bolter Single
+    requiresBuy:
+      - STR_LIGHT_BOLTERS_MIDTIER
+      - STR_MIDTIER_PREREQ # was IG exclusive
     dropoff: 7 # was 5
     autoRange: 0
     snapRange: 20
@@ -174,7 +177,7 @@ items:
     weight: 28 # was 32, lower weight = lower requirement for solo bipod deployment
     dropoff: 5 # was 5
     autoRange: 12 # was 12
-    snapRange: 15 # was 15
+    snapRange: 16 # was 15
     aimRange: 0
     accuracyAuto: 66
     accuracySnap: 80
@@ -199,4 +202,9 @@ items:
     tags:
       ITEM_RECOIL: 90 # was 60, offset by bipod
 
+  - type: STR_LASGUN_CLIP_HOTSHOT
+    requiresBuyBaseFunc: [IMPERIUM]
+    requiresBuy:
+      - STR_LASER_WEAPONS
+      - STR_GUARD_AND_INQUISITION
 

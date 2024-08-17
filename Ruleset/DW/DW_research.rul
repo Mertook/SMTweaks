@@ -199,11 +199,14 @@ research:
     dependencies:
       - STR_GENERALLOCK # disabled
 
-  - name: STR_DW_PRIMARIS           # Deathwatch Primaris gear (disabled)
+  - name: STR_DW_PRIMARIS           # Deathwatch Primaris Craft
     cost: 205
     points: 20
     dependencies:
-      - STR_GENERALLOCK # disabled
-
-
+      - STR_ELERIUM_115
+      - STR_UFO_POWER_SOURCE
+      - STR_MIDTIER_PREREQ
+      - STR_DEATHWATCH
+    unlocks: []
+    getOneFree: []
 

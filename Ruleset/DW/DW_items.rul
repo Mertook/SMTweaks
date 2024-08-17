@@ -161,6 +161,7 @@ items:
       index: 88
     damageType: 2 # Incin
     damageAlter:
+      RandomType: 7 # 50-200%
       IgnoreDirection: false
       FireBlastCalc: false
       FireThreshold: 1
@@ -332,8 +333,7 @@ items:
       ToTile: 0.33
       RandomWound: false
     tags:
-      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 90 # shield buster ammo
-      ITEM_ENERGY_SHIELD_REDUCTION_PERCENT: 50
+      ITEM_ENERGY_SHIELD_REDUCTION_PERCENT: 100 # shield buster ammo
 
   - type: STR_SHOTGUN_DW                    # Deathwatch Shotgun
     categories: [ STR_CAT_SHOTGUN, STR_CAT_SCOUT]
@@ -389,7 +389,6 @@ items:
     invWidth: 1
     invHeight: 1
     clipSize: 8
-    damageType: 1
     listOrder: 10609
     hitSound: {mod: 40k, index: 708}
     hitAnimation:
@@ -408,14 +407,14 @@ items:
       IgnoreSelfDestruct: false
       IgnoreDirection: false
       FireThreshold: 1
-      ArmorEffectiveness: 0.7
+      ArmorEffectiveness: 0.8
       ToHealth: 1.4 #
       ToArmorPre: 0.05
       ToArmor: 0.15
       ToStun: 0.5
       ToEnergy: 0.3
       ToWound: 0.2
-      ToMorale: 2.0 #burning damage unpleasant
+      ToMorale: 2.0
       RadiusReduction: 3 # low power reduction
       ToTile: 0.0
       RandomWound: false

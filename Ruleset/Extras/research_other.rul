@@ -1,10 +1,6 @@
 research: # Research changes only made to maintain functionality for other factions
 
-  - name: STR_OGRYN_REQUISITION     # Keep IG ability to buy smokebombs intact
-    getOneFree:
-      - STR_SMOKE_BOMB_UNLOCK
-
-  - name: STR_ARBITES               # Keep Arbites ability to buy their special shotgun ammo
+  - name: STR_ARBITES                               # Arbites selected
     cost: 0
     points: 0
     lookup: STR_IMPERIUM_RESEARCH
@@ -31,27 +27,55 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_ADEPTAS
       - STR_GUARD_SUPORT
 
-  - name: STR_GUARD_IMPERIAL_ASSASSIN_REQUISITION
+  - name: STR_IMPERIAL_GUARD_OPERATIONS             # Imperial Guard Selected
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+    lookup: STR_IMPERIUM_RESEARCH
+    unlocks:
+      - STR_NORMAL_STRATEGY_IG
+      - STR_ELITE_STRATEGY_IG
+      - STR_ABHUMAN_STRATEGY_IG
+      - STR_STEEL_LEGION_STRATEGY
+      # - STR_MOTION_SCANNER
+      # - STR_LASER_WEAPONS
+      # - STR_SMOKE
+      - STR_RADICAL_RECRUITMENT_IG
+      - STR_GUARD_AND_ARBITES
+      # - STR_GUARD_SUPORT
+      - STR_IMPERIUM_RESEARCH
+      - STR_GUARD_AND_INQUISITION #
+    disables:
+      - STR_ARBITES
+      - STR_ADEPTAS
+      - STR_MARINES_STRATEGY
+      - STR_PERSONAL_ARMOR
+
+  - name: STR_OGRYN_REQUISITION                     # Keep IG ability to buy smokebombs intact
+    getOneFree:
+      - STR_SMOKE_BOMB_UNLOCK
+
+  - name: STR_GUARD_IMPERIAL_ASSASSIN_REQUISITION   # Vindicare Assassin tech
     getOneFree:
       - STR_VINDICARE_AMMO_REQ
 
-  - name: STR_VINDICARE_AMMO_REQ    # Exitus Rifle/Pistol ammo unlock for rare Vindicare event
+  - name: STR_VINDICARE_AMMO_REQ                    # Exitus Rifle/Pistol ammo unlock (given by Vindicare event)
     cost: 0
     points: 0
     dependencies:
       - STR_GENERALLOCK
 
-  - name: STR_HEAVY_WEAPONS_IG      # Let IG/Arbites buy Heavy Bolter ammo
+  - name: STR_HEAVY_WEAPONS_IG                      # Let IG/Arbites buy Heavy Bolter ammo
     unlocks:
       - STR_HBOLTER_AMMO_PREREQ
 
-  - name: STR_MULTIMELTA_PREREQ     # Let you research Multimeltas even if you don't find a chaos multimelta (only a couple of enemy factions even have the chance to carry multimeltas)
+  - name: STR_MULTIMELTA_PREREQ                     # Let you research Multimeltas even if you don't find a chaos multimelta (only a couple of enemy factions even have the chance to carry multimeltas)
     cost: 900
     points: 30
     dependencies:
       - STR_HIGHTIER_PREREQ
 
-  - name: STR_BLASTER_LAUNCHER                  # Chaos Multimelta
+  - name: STR_BLASTER_LAUNCHER                      # Chaos Multimelta
     cost: 750 # was 900
     points: 15 # was 30
     dependencies:
@@ -60,7 +84,7 @@ research: # Research changes only made to maintain functionality for other facti
     getOneFree:
       - STR_MULTIMELTA_PREREQ
 
-  - name: STR_ADEPTAS_SENTINEL_MELTALANCE_REQ   # Multimelta stuff
+  - name: STR_ADEPTAS_SENTINEL_MELTALANCE_REQ       # Multimelta stuff
     cost: 200
     points: 25
     dependencies:
@@ -70,28 +94,28 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_UFO_CONSTRUCTION
       - STR_MULTIMELTA_PREREQ
 
-  - name: STR_FUSION_MISSILE                    # Multimelta stuff
+  - name: STR_FUSION_MISSILE                        # Multimelta stuff
     cost: 880
     points: 25
     dependencies:
       - STR_MULTIMELTA_PREREQ
       - STR_BLASTER_BOMB
 
-  - name: STR_MELTABOMB                         # Multimelta stuff
+  - name: STR_MELTABOMB                             # Multimelta stuff
     cost: 100
     points: 25
     dependencies:
       - STR_MIDTIER_PREREQ
       - STR_MULTIMELTA_PREREQ
 
-  - name: STR_BLASTER_BOMB                      # Multimelta stuff
+  - name: STR_BLASTER_BOMB                          # Multimelta stuff
     cost: 300
     points: 30
     dependencies:
       - STR_MULTIMELTA_PREREQ
     needItem: false # was true
 
-  - name: STR_KHORNE_UNGOR                      # Khornugor (was missing)
+  - name: STR_KHORNE_UNGOR                          # Khornugor (was missing)
     cost: 75
     points: 20
     needItem: true
@@ -102,7 +126,7 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_KHORNEGOR_UNGOR
     destroyItem: true
 
-  - name: STR_NURGLE_CULTIST_LEADER_RITUALIST   # Nurgle Cult Leader (was missing)
+  - name: STR_NURGLE_CULTIST_LEADER_RITUALIST       # Nurgle Cult Leader (was missing)
     cost: 75
     points: 20
     needItem: true
@@ -117,26 +141,26 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_NURGLE_CULTIST_LEADER
     destroyItem: true
 
-  - name: STR_XENO_ONLY             # was Gate for Seer recruitment + Eldar/Ork weapons, now just Ork gear
+  - name: STR_XENO_ONLY                             # was Gate for Seer recruitment + Eldar/Ork weapons, now just Ork gear
     cost: 150 # was 250
     points: -100
     dependencies:
       - STR_XENO_WEAPONS
 
-  - name: STR_ELDAR_INTERROGATION   # Prereq for Eldar tech
+  - name: STR_ELDAR_INTERROGATION                   # Prereq for Eldar tech
     cost: 0
     points: 0
     dependencies:
       - STR_GENERALLOCK
   
-  - name: STR_ELDAR_WEAPONRY        # Eldar weapon tech
+  - name: STR_ELDAR_WEAPONRY                        # Eldar weapon tech
     cost: 400
     points: -100
     dependencies:
       - STR_XENO_WEAPONS
       - STR_ELDAR_INTERROGATION
 
-  - name: STR_ELDAR_ALLIES_IG       # Eldar prereq for IG/Arbites
+  - name: STR_ELDAR_ALLIES_IG                       # Eldar prereq for IG/Arbites
     cost: 0
     points: 0
     dependencies:
@@ -145,9 +169,9 @@ research: # Research changes only made to maintain functionality for other facti
     unlocks:
       - STR_ELDAR_ALLIANCE
 
-  - name: STR_ELDAR_ALLIANCE        # Allow Seer recruitment + prereq to Eldar outposts for IG/Arbites
+  - name: STR_ELDAR_ALLIANCE                        # Allow Seer recruitment + prereq to Eldar outposts for IG/Arbites
     cost: 750
-    points: -500
+    points: -500 # was -500
     dependencies:
       - STR_GENERALLOCK
       - STR_ELDAR_INTERROGATION
@@ -156,7 +180,7 @@ research: # Research changes only made to maintain functionality for other facti
 
   - name: STR_ELDAR_PATH #XENO ALLIANCE
     cost: 1000
-    points: -400 # was -500, gets -100 from STR_ELDAR_WEAPONRY unlock
+    points: -1500 # was -500
     dependencies:
       - STR_GUARD_AND_ARBITES
       - STR_ELDAR_ALLIANCE

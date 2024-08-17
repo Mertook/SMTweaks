@@ -125,6 +125,12 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     dependencies:
       - STR_GENERALLOCK
 
+  - name: STR_GUARD_AND_INQUISITION         # Tech for things that should be available to Chamber Militant and Imperial Guard
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
   - name: STR_THUNDERHAWK_GK_REQ            # Grey Knight Thunderhawk unlock
     cost: 900
     points: 30
@@ -478,7 +484,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
 
   - name: STR_ELDAR_WEAPON_REQ      # Activates monthly events that delivers Eldar weapons/ammo
     cost: 1000
-    points: -500
+    points: -1000
     dependencies:
       - STR_CHAMBERMILITANT
       - STR_RADICAL_INQUISITOR

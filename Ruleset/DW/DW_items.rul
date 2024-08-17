@@ -233,7 +233,7 @@ items:
     costSell: 50000
     bigSprite: 3164
     floorSprite: 3164
-    handSprite: 3630
+    handSprite: 3624
     bulletSprite: {mod: 40k, index: 6}
     fireSound: {mod: 40k, index: 12}
     compatibleAmmo:
@@ -347,7 +347,7 @@ items:
     listOrder: 10601
     bigSprite: 3163
     floorSprite: 3163
-    handSprite: 3640
+    handSprite: 3632
     bulletSprite: {mod: 40k, index: 2}
     fireSound: {mod: 40k, index: 755}
     compatibleAmmo:
@@ -398,16 +398,15 @@ items:
     explosionSpeed: 10
     powerRangeThreshold: 18
     powerRangeReduction: 3
-    power: 75 # doesn't get multiple pellets because of AoE splash
+    power: 80 # doesn't get multiple pellets because of AoE splash
     shotgunPellets: 1 #
     damageType: 2 # Incin
     damageAlter:
       RandomType: 6
       FireBlastCalc: false
-      IgnoreSelfDestruct: false
       IgnoreDirection: false
       FireThreshold: 1
-      ArmorEffectiveness: 0.8
+      ArmorEffectiveness: 0.7
       ToHealth: 1.4 #
       ToArmorPre: 0.05
       ToArmor: 0.15
@@ -415,7 +414,7 @@ items:
       ToEnergy: 0.3
       ToWound: 0.2
       ToMorale: 2.0
-      RadiusReduction: 3 # low power reduction
+      RadiusReduction: 3 # low power falloff
       ToTile: 0.0
       RandomWound: false
       FixRadius: 4
@@ -424,7 +423,7 @@ items:
     categories: [ STR_CAT_GRENADES, STR_CAT_TACTICAL]
     bigSprite: 3176
     floorSprite: 3176
-    handSprite: 3670
+    handSprite: 3656
     explosionHitSound: {mod: 40k, index: 690}
     hitAnimation: {mod: 40k, index: 112}
     powerForAnimation: 5
@@ -564,6 +563,49 @@ items:
     tags:
       ITEM_DOESNT_HURT_USER: 1
 
-
+  - type: STR_VOLKITE_DW
+    bigSprite: 3178
+    floorSprite: 3178
+    handSprite: 3664
+    bulletSprite: { mod: 40k, index: 11 }
+    fireSound: { mod: 40k, index: 847 }
+    explosionHitSound: {mod: 40k, index: 690}
+    hitSound: { mod: 40k, index: 19 }
+    hitAnimation: { mod: 40k, index: 128 }
+    explosionSpeed: 1
+    powerForAnimation: 5
+    vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 17} # 40k 1 orange, 2 blue, 3 green rosigma 1 yellow, 2 green 3 purple 4 red 5 sucks 6 orange 7 blue 8 orange (good) 9 lightblue 10 white 11 white 12 green 13 blue
+    vaporDensitySurface: 6
+    vaporProbabilitySurface: 45
+    battleType: 1
+    invWidth: 2
+    invHeight: 3
+    weight: 12
+    clipSize: -1
+    recover: false # generated item
+    accuracySnap: 80
+    accuracyAimed: 0
+    accuracyAuto: 0
+    snapRange: 20
+    aimRange: 0
+    autoRange: 0
+    tuAimed: 0
+    tuSnap: 30
+    tuAuto: 0
+    shotgunPellets: 1 # instant beam rather than projectile
+    power: 100 #
+    damageType: 11 # Melta type - cross between Las & Melta gun
+    damageAlter:
+      RandomType: 2 # 50-150%
+      ToHealth: 0.50 # deals 110% total, 60% ignores armor
+      ArmorEffectiveness: 0.8 #
+      ToArmorPre: 0.25 #
+      ToArmor: 0.4 #
+      ToTile: 1.5 # destructive
+      FireThreshold: 0
+      FixRadius: 1
+      ToWound: 0.2 # vicious burns
+      RandomWound: false
+      RadiusReduction: 60 # high dropoff if not direct hit
 
 

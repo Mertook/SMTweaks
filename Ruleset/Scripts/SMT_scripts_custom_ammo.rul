@@ -1,12 +1,12 @@
 extended:
   tags:
     RuleItem:
-      SMT_AMMO_BONUSDMG_FIRINGACC: int # % bonus damage granted from units Firing Accuracy: (FA - 90) * Tag / 100
-      SMT_DEREVENANT_AMMO: int # % bonus based on stun dealt to units with tenacious
+      SMT_AMMO_BONUSDMG_FIRINGACC: int # % bonus damage granted from units Firing Accuracy: (FA - 100) * Tag / 100
+      SMT_DEREVENANT_AMMO: int # % bonus health damage based on stun dealt to units with tenacious (Necrons)
+      SMT_AMMO_HP_PREDMG: int # % of power directly added to health damage ignoring armor
 
 items:
-  - &STR_PRECISION_AMMO
-    type: STR_PISTOL_CLIP_MC            #Boltpistol
+  - &STR_PRECISION_AMMO                 # Precision Template
     tags:
       SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 75
     scripts:
@@ -26,39 +26,43 @@ items:
 
         return power part side;
 
-  - type: STR_RIFLE_CLIP_MC             #Bolter
+  - type: STR_PISTOL_CLIP_MC            # Boltpistol
     refNode: *STR_PRECISION_AMMO
     tags:
       SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 75
 
-  - type: STR_LIGHT_BOLTPISTOL_AMMO_MC  #Light Boltpistol
+  - type: STR_RIFLE_CLIP_MC             # Bolter
+    refNode: *STR_PRECISION_AMMO
+    tags:
+      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 75
+
+  - type: STR_LIGHT_BOLTPISTOL_AMMO_MC  # Light Boltpistol
     refNode: *STR_PRECISION_AMMO
     tags:
       SMT_AMMO_BONUSDMG_FIRINGACC: 15 # base power 65 (+10 over regular)
 
-  - type: STR_LIGHT_BOLTER_AMMO_MC      #Light Bolter
+  - type: STR_LIGHT_BOLTER_AMMO_MC      # Light Bolter
     refNode: *STR_PRECISION_AMMO
     tags:
       SMT_AMMO_BONUSDMG_FIRINGACC: 15 # base power 70 (+10 over regular)
 
-  - type: STR_AC_MC_AMMO                #Heavy Bolter
+  - type: STR_AC_MC_AMMO                # Heavy Bolter
     refNode: *STR_PRECISION_AMMO
     tags:
       SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 90
 
-  - type: STR_AC_MC_BELT                #Heavy Bolter Belt
+  - type: STR_AC_MC_BELT                # Heavy Bolter Belt
     refNode: *STR_PRECISION_AMMO
     tags:
       SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 90
 
-  - type: STR_HB_CLIP_MC                #Stormbolter
+  - type: STR_HB_CLIP_MC                # Stormbolter
     refNode: *STR_PRECISION_AMMO
     tags:
       SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 75
 
 
-  - &STR_DEREVENANT_AMMO
-    type: STR_RIFLE_CLIP_DEREV          #DW Bolter ammo
+  - &STR_DEREVENANT_AMMO                # Derevenant Template
     tags:
       SMT_DEREVENANT_AMMO: 25
     scripts:
@@ -98,11 +102,40 @@ items:
 
         return;
 
+  - type: STR_RIFLE_CLIP_DEREV          # DW Bolter ammo
+    refNode: *STR_DEREVENANT_AMMO
+    tags:
+      SMT_DEREVENANT_AMMO: 45
+
   - type: STR_BOLT_SNIPER_AMMO_DEREV    # DW Bolt Sniper ammo
     refNode: *STR_DEREVENANT_AMMO
     tags:
       SMT_DEREVENANT_AMMO: 45
 
+
+  - &STR_ARMOR_IGNORING_AMMO            # Penetrating damage Template
+    tags:
+      SMT_AMMO_HP_PREDMG: 10
+    scripts:
+      damageUnitAmmo: |
+        var int hpPreDmg;
+        var int temp;
+
+        damaging_item.getTag hpPreDmg Tag.SMT_AMMO_HP_PREDMG;
+        debug_log "to_healthPre ammo Ping OP/CP/hpPre/tohp " orig_power currPower hpPreDmg to_health;
+        if and gt orig_power 0 gt hpPreDmg 0;
+          set temp orig_power;
+          muldiv temp hpPreDmg 100;
+          add to_health temp;
+        end;
+        debug_log "to_healthPre ammo End OP/CP/hpPre/tohp " orig_power currPower hpPreDmg to_health;
+
+        return;
+
+  - type: STR_VOLKITE_DW                # DW Volkite Rifle
+    refNode: *STR_ARMOR_IGNORING_AMMO
+    tags:
+      SMT_AMMO_HP_PREDMG: 60
 
 
 

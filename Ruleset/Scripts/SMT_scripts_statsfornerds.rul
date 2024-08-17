@@ -1,9 +1,10 @@
 extended:
   tags:
     RuleItem:
-      SMT_AMMO_BONUSDMG_FIRINGACC: int      # % bonus damage granted from units Firing Accuracy: (FA - 90) * Tag / 100
+      SMT_AMMO_BONUSDMG_FIRINGACC: int      # % bonus damage granted from units Firing Accuracy
+      SMT_AMMO_HP_PREDMG: int # % of power directly added to health damage ignoring armor
     RuleArmor:
-      SMT_ARMOR_HEAVY_WEAPON_USER: int      # armor that counteracts the penalty for heavy weapons - 1 = half base penalty, 2 = no penalty
+      SMT_ARMOR_HEAVY_WEAPON_USER: int      # armor that counteracts the penalty for heavy weapons - 1 = no penalty, 2+ = 1/2, 2/3, 3/4 etc penalty
       SMT_ARMOR_SHRED_RESISTANCE: int       # Reduce armor damage by % (Non-melta damage sources)
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: int    # Reduce armor damage by % (Plasma damage)
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: int # Reduce armor damage by % (Melta damage)
@@ -16,41 +17,38 @@ extended:
         offset: 24
         code: |
           var int temp;
+          var int temp2;
 
           rule.getTag temp Tag.SMT_ARMOR_HEAVY_WEAPON_USER;         # HWP User
-          if eq temp 1;
-            stats_state.addTextRow "HWP Penalty Reduction" "100%";
-          end;
-          if eq temp 2;
-            stats_state.addTextRow "HWP Penalty Reduction" "50%";
-          end;
-          if eq temp 3;
-            stats_state.addTextRow "HWP Penalty Reduction" "33%";
+          if gt temp 0;
+            set temp2 100;
+            div temp2 temp;
+            stats_state.addIntRow "SMT_ARMOR_HEAVY_WEAPON_USER" temp2;
           end;
 
           rule.getTag temp Tag.SMT_ARMOR_REGEN_HP;                  # Health Regeneration
           if gt temp 0;
-            stats_state.addIntRow "Bonus HP Regen" temp;
+            stats_state.addIntRow "SMT_ARMOR_REGEN_HP" temp;
           end;
 
           rule.getTag temp Tag.ARMOR_REGENERATES_WOUNDS;            # Wound Regeneration
           if gt temp 0;
-            stats_state.addIntRow "Wound Healing" temp;
+            stats_state.addIntRow "STR_ARMOR_WOUNDHEAL" temp;
           end;
 
           rule.getTag temp Tag.SMT_ARMOR_SHRED_RESISTANCE;          # Armorshred 
           if gt temp 0;
-            stats_state.addIntRow "Shred Resist (Standard)" temp;
+            stats_state.addIntRow "SMT_ARMOR_SHRED_RESISTANCE" temp;
           end;
 
           rule.getTag temp Tag.SMT_ARMOR_SHRED_PLASMA_RESISTANCE;   # Armorshred Plasma
           if gt temp 0;
-            stats_state.addIntRow "Shred Resist (Plasma)" temp;
+            stats_state.addIntRow "SMT_ARMOR_SHRED_PLASMA_RESISTANCE" temp;
           end;
 
           rule.getTag temp Tag.SMT_ARMOR_SHRED_MELTA_RESISTANCE;    # Armorshred Melta
           if gt temp 0;
-            stats_state.addIntRow "Shred Resist (Melta)" temp;
+            stats_state.addIntRow "SMT_ARMOR_SHRED_MELTA_RESISTANCE" temp;
           end;
 
           return;
@@ -63,7 +61,15 @@ extended:
 
           rule.getTag temp Tag.SMT_AMMO_BONUSDMG_FIRINGACC;         # MC Precision bonus
           if gt temp 0;
-            stats_state.addIntRow "STR_MC_PRECISION" temp;
+            stats_state.addIntRow "SMT_AMMO_BONUSDMG_FIRINGACC" temp;
           end;
+
+          rule.getTag temp Tag.SMT_AMMO_HP_PREDMG;                  # Armor-ignoring hp damage
+          if gt temp 0;
+            stats_state.addIntRow "SMT_AMMO_HP_PREDMG" temp;
+          end;
+
+
+
 
           return;

@@ -1049,7 +1049,7 @@ items:
     weight: 20
     bigSprite: 3171
     floorSprite: 3171
-    handSprite: 3650
+    handSprite: 3640
     bulletSprite: {mod: 40k, index: 6}
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     compatibleAmmo: # doesn't use regular pistol ammo
@@ -1512,7 +1512,7 @@ items:
     maxRange: 10
     LOSRequired: true # gets ignored?
     damageBonus:
-      psiStrength: 1.0 # <100 PsiStr = no movespeed bonus, >= 100 PsiStr = 75% movespeed cost - Power = bonus Reaction
+      psiStrength: 0.5 # <100 PsiStr = no movespeed bonus, >= 100 PsiStr = 75% movespeed cost
     accuracyUse: 100
     accuracyMultiplier:
       psiStrength: 1.0
@@ -1520,6 +1520,31 @@ items:
     dropoff: 0
     tags:
       SMT_ITEM_MOVESPEED_BOOST: 1
+      ITEM_IS_BUFF_WEAPON: 1
+      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
+
+  - type: STR_LIB_SPEED_TOME_DW                 # Tome Speed (Deathwatch White Scars)
+    refNode: *STR_TOME_BASE
+    defaultInventorySlot: STR_LEFT_LEG
+    bigSprite: 3106
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2080} # could do with something better/unique
+    invWidth: 1
+    invHeight: 1
+    defaultInvSlotX: 3
+    defaultInvSlotY: 1
+    targetMatrix: 1
+    power: 0
+    maxRange: 10
+    LOSRequired: true # gets ignored?
+    damageBonus:
+      psiStrength: 0.75 # 67 psiStr = 75% movespeed, 134 psiStr = 50% movespeed
+    accuracyUse: 100
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
+    dropoff: 0
+    tags:
+      SMT_ITEM_MOVESPEED_BOOST: 2 # can reduce target to 50% movecost
       ITEM_IS_BUFF_WEAPON: 1
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
 
@@ -2055,7 +2080,7 @@ items:
     battleType: 1
     weight: 0
     bigSprite: 3174
-    handSprite: 3660
+    handSprite: 3648
     bulletSprite: { mod: 40k, index: 11 }
     fireSound: { mod: 40k, index: 18 }
     hitSound: { mod: 40k, index: 19 }
@@ -2101,7 +2126,7 @@ items:
     battleType: 1
     weight: 0
     bigSprite: 3175
-    handSprite: 3660
+    handSprite: 3648
     bulletSprite: { mod: 40k, index: 11 }
     fireSound: { mod: 40k, index: 18 }
     hitSound: { mod: 40k, index: 19 }
@@ -2223,7 +2248,7 @@ items:
     minRange: 5
     kneelBonus: 130 # was 130
     tags:
-      ITEM_RECOIL: 50 # was 0, Spacemarine designed portable missile launcher - even steadying it is difficult without enough Str
+      ITEM_RECOIL: 45 # was 0, Spacemarine designed portable missile launcher - even steadying it is difficult without enough Str
 
   - update: STR_LASCAN                      # SM Lascannon
     tuAimed: 88 # was 90 - slightly easier to sidestep and fire without needing max TUs
@@ -2399,7 +2424,7 @@ items:
     listOrder: 10601
     bigSprite: 3107
     floorSprite: 3107
-    handSprite: 3610
+    handSprite: 3608
     bulletSprite: {mod: 40k, index: 2}
     fireSound: {mod: 40k, index: 755}
     compatibleAmmo:
@@ -2892,7 +2917,7 @@ items:
   - type: STR_DREAD_MISSILES                # Dread Regular Missile ammo
     bigSprite: 3161
     floorSprite: 3161
-    handSprite: 3620
+    handSprite: 3616
     size: 0.3
     costBuy: 60000
     costSell: 30000

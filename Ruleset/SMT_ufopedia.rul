@@ -460,7 +460,7 @@ ufopaedia:
     text: STR_ABSOLVOR_PISTOL_UFOPEDIA
     listOrder: 21120
 
-  - id: STR_DW_PLASMA_GRENADE                 # Absolvor Pistol
+  - id: STR_DW_PLASMA_GRENADE               # Absolvor Pistol
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: 1FM.SPK
@@ -468,6 +468,17 @@ ufopaedia:
       - STR_DEATHWATCH
     text: STR_DW_PLASMA_GRENADE_UFOPEDIA
     listOrder: 21130
+
+  - id: STR_VOLKITE_DW                      # Volkite Caliver
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1IP.SPK
+    requires: 
+      - STR_DEATHWATCH
+    text: STR_VOLKITE_RIFLE_UFOPEDIA
+    listOrder: 21140
+
+
 
 
 ###BOLTERS
@@ -803,6 +814,7 @@ extraStrings:
       STR_BOLTER_LIGHT_LMG_UFOPEDIA: "{NEWLINE} The Accatran MkVe is a bolter pattern variant chambered for light bolter calibre rounds, favored by light troops and Elysian drop troops for the extra firepower it provides. Equipped with a bipod, this squad based support bolter brings superior firepower compared to a heavy stubber. {NEWLINE}{NEWLINE} Recoil: {ALT}70{ALT} - Attached Bipod"
       STR_HEAVY_BOLTER_GUARD_UFOPEDIA: "{NEWLINE} The Godwyn pattern heavy bolter is a variant commonly in use by the Astra Militarum for anti-infantry fire support. A bipod is deployed when kneeling to brace against the fierce recoil while firing.{NEWLINE}{NEWLINE} Recoil: {ALT}90{ALT} - Attached Bipod"
       STR_BOLTER_HEAVY_SOLAR_CODEX: "{NEWLINE} An ancient design produced in select manufactorums, the Solar-pattern heavy bolter is as hotly sought after as it is temperamental. The additional litanies required to calm its machine spirit, as well as the lack of a handle, mean only the strongest soldiers can fire it without first bracing it. {NEWLINE} Recoil: {ALT}90{ALT} - Attached Bipod"
+      STR_VOLKITE_RIFLE_UFOPEDIA: "{NEWLINE} Volkite weapons deflagrate organic matter, explosively burning flesh into ash and jetting fire. They penetrate through armor, causing horrific damage."
       ### CRAFT
       ### SOLDIERS
       STR_TERMINATOR_CROSS_DESCRIPTION: Space Marines awarded with the Crux Terminatus are recognized as elites, allowing promotion to the highest ranks and access to rare relics including Terminator Armor. {NEWLINE}{NEWLINE} For this honor the Space Marine needs to have achieved 30 enemy kills, 15 successful missions and serve for three months.
@@ -850,7 +862,6 @@ extraStrings:
       ### UFOPAEDIA EXTRA
       STR_SMT_INFO: SPACE MARINE TWEAKS
       STR_SMT_UFOPAEDIA_UNFINISHED: "{NEWLINE}{NEWLINE} Codex Unfinished"
-      STR_MC_PRECISION: "Precision %"
       STR_GENESEED_DETAILS: "Geneseed"
       STR_GENESEED_DETAILS_UFOPEDIA: "{NEWLINE} Gene-seed is the unique genetic material used to transform humans into the super-human Space Marines. It is essential to the survival of a Chapter and must be carefully preserved.{NEWLINE} A small amount is accrued monthly by our Apothecaries, though some of it will need to be refined into the matured Geneseed required to create new Marines. Fallen Battle Brothers whose bodies have been not been lost or corrupted can have their progenoid glands extracted, recovering their Geneseed."
       STR_SMT_RECOIL: Recoil Changes

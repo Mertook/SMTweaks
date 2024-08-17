@@ -94,7 +94,7 @@ armors:
   - type: STR_DW_TAC_ARMOR_WS_UC
     refNode: *STR_DW_TAC_MK7
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_APOTH_MK7                       #Apothecary Armor (Firstborn)
     ufopediaType: STR_DW_APOTH_CODEX_UC
@@ -196,7 +196,7 @@ armors:
   - type: STR_DW_APOT_ARMOR_WS_UC
     refNode: *STR_DW_APOTH_MK7
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_DEV_MK7                         #Devastator Armor (Firstborn)
     ufopediaType: STR_DW_DEV_CODEX_UC
@@ -294,7 +294,7 @@ armors:
   - type: STR_DW_DEV_ARMOR_WS_UC
     refNode: *STR_DW_DEV_MK7
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_ASS_MK7                         #Assault Armor (Firstborn)
     ufopediaType: STR_DW_ASS_CODEX_UC
@@ -396,7 +396,7 @@ armors:
   - type: STR_DW_ASS_ARMOR_WS_UC
     refNode: *STR_DW_ASS_MK7
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_TECH_MK7                        #Techmarine Armor (Firstborn)
     ufopediaType: STR_DW_TECH_CODEX_UC
@@ -495,7 +495,7 @@ armors:
   - type: STR_DW_TECH_ARMOR_WS_UC
     refNode: *STR_DW_TECH_MK7
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_TERM_MK7                        #Terminator Armor (Firstborn)
     ufopediaType: STR_DW_TERM_CODEX_UC
@@ -597,7 +597,7 @@ armors:
   - type: STR_DW_TER_ARMOR_WS_UC
     refNode: *STR_DW_TERM_MK7
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_TERM_ASS_SHIELD_MK7
     ufopediaType: STR_DW_TERM_ASS_CODEX_UC
@@ -701,7 +701,7 @@ armors:
   - type: STR_DW_TASS_ARMOR_WS_UC
     refNode: *STR_DW_TERM_ASS_SHIELD_MK7
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_TERM_ASS_CLAWS_MK7
     ufopediaType: STR_DW_TERM_ASS_CODEX_UC
@@ -974,7 +974,7 @@ armors:
       F4: ["0", "TERMCLWWS", "F4_FACE"]
       F5: ["0", "TERMCLWWS", "F5_FACE"]
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_TERM_CYCLONE_MK7
     ufopediaType: STR_DW_TERM_CYC_CODEX_UC
@@ -1245,7 +1245,7 @@ armors:
       F4: ["0", "TERMCYCWS", "F4_FACE"]
       F5: ["0", "TERMCYCWS", "F5_FACE"]
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
 
   - &STR_DW_TAC_MKX                         #Tactical Armor (Primaris)
@@ -1343,7 +1343,7 @@ armors:
   - type: STR_MKX_DW_TAC_WS_UC
     refNode: *STR_DW_TAC_MKX
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_APOTH_MKX                       #Apothecary Armor (Primaris)
     ufopediaType: STR_DW_APOTH_CODEX_UC
@@ -1445,7 +1445,7 @@ armors:
   - type: STR_MKX_DW_APO_WS_UC
     refNode: *STR_DW_APOTH_MKX
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
 
 
@@ -1548,7 +1548,7 @@ armors:
   - type: STR_MKX_DW_TEC_WS_UC
     refNode: *STR_DW_TECH_MKX
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_PHB_MKX                         #Phobos Armor (Primaris)
     ufopediaType: STR_DW_PHB_CODEX_UC
@@ -1907,7 +1907,7 @@ armors:
       F4: ["0", "GRVBSWS", "F4_FACE", "GOLA"]
       F5: ["0", "GRVBSWS", "F5_FACE", "GOLA"]
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_GRV_MKX_AC                      #Gravis Armor (Primaris) - Autocannon Gauntlet x2
     ufopediaType: STR_DW_GRV_CODEX_UC
@@ -1957,6 +1957,7 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.9 #MELTA
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
       - STR_GRAV_AUTOC_DW
       - STR_GRAV_AUTOC_DW
@@ -2193,7 +2194,7 @@ armors:
       F4: ["0", "GRVACWS", "F4_FACE", "GOLA"]
       F5: ["0", "GRVACWS", "F5_FACE", "GOLA"]
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_GRV_MKX_FS                      #Gravis Armor (Primaris) - Flamestorm Gauntlet
     ufopediaType: STR_DW_GRV_CODEX_UC
@@ -2243,6 +2244,7 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.9 #MELTA
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
       - STR_GRAV_FLAMER_DW
       - INV_NULL_3X3
@@ -2478,7 +2480,7 @@ armors:
       F4: ["0", "GRVFSWS", "F4_FACE", "GOLA"]
       F5: ["0", "GRVFSWS", "F5_FACE", "GOLA"]
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_INC_MKX                         #Omnis Armor (Primaris)
     ufopediaType: STR_DW_INC_CODEX_UC
@@ -2599,7 +2601,7 @@ armors:
     units:
       - STR_WHITES_PRIMARIS
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_INC_MKX_AC                      #Omnis Armor (Primaris) - Accelerator Autocannon
     ufopediaType: STR_DW_INC_CODEX_UC
@@ -2890,7 +2892,7 @@ armors:
       F4: ["0", "INCDWWS", "M4_FACE", "GOLA"]
       F5: ["0", "INCDWWS", "M5_FACE", "GOLA"]
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_INC_MKX_PE                      #Omnis Armor (Primaris) - Plasma Exterminators x2
     ufopediaType: STR_DW_INC_CODEX_UC
@@ -3182,7 +3184,7 @@ armors:
       F4: ["0", "INCDWWS", "M4_FACE", "GOLA"]
       F5: ["0", "INCDWWS", "M5_FACE", "GOLA"]
     moveCost:
-      basePercent: [100, 50] # was 100, 25
+      basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_LEADER_ARMOR                    #DW Captain Armor template
     ufopediaType: STR_DW_CAP_CODEX_UC
@@ -3233,7 +3235,7 @@ armors:
       - 0.9 #MELTA
     builtInWeapons:
       - INV_NULL_3X1_BACKPACK
-    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    specialWeapon: STR_SM_OFFICER_FIST #Officer Fist with Inspire ability
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
@@ -3288,6 +3290,7 @@ armors:
     builtInWeapons:
       - INV_NULL_3X1_BACKPACK_BLESS #custom backpack blocker that enables bless ability
       - AUX_CROZIUS_DW
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 8 # Gain 1-8 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to all corruption - chaplain
@@ -3330,8 +3333,16 @@ armors:
       F3: ["CAPEP", "MKXCAPDW", "M3_FACE", ""]
       F4: ["CAPEP", "MKXCAPDW", "M4_FACE", ""]
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_3X1_BACKPACK
+      - STR_LIB_SPEED_TOME
+      - STR_LIB_SMOKE_TOME
+      - STR_LIB_LOCKDOWN_TOME
+      - STR_LIB_SHIELD_TOME
     tags:
       ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+
   - type: STR_DW_LEADER_IF_UC
     refNode: *STR_DW_LEADER_ARMOR
     units:
@@ -3388,6 +3399,10 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    specialWeapon: AUX_PROBE # Techmarine
+    builtInWeapons:
+      - INV_NULL_3X1_BACKPACK
+      - STR_VOLKITE_DW
   - type: STR_DW_LEADER_SW_UC
     refNode: *STR_DW_INC_MKX_AC
     units:
@@ -3448,9 +3463,13 @@ armors:
       F3: ["CAPEP", "MKXCAPDW", "M3_FACE", ""]
       F4: ["CAPEP", "MKXCAPDW", "M4_FACE", ""]
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_3X1_BACKPACK
+      - STR_LIB_SPEED_TOME_DW
+      - STR_LIB_SMOKE_TOME
     moveCost:
-      basePercent: [100, 50] # was 100, 25
-
+      basePercent: [100, 75] # was 100, 25
 
   - type: STR_DW_TAC_CODEX_UC               # Tactical Codex Dummy
     refNode: *STR_DW_TAC_MK7
@@ -3549,6 +3568,8 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
+    builtInWeapons:
+      - STR_VOLKITE_DW
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 

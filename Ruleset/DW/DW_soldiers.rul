@@ -368,9 +368,9 @@ soldiers:
     femaleFrequency: 0
     avatarOffsetX: 67
     avatarOffsetY: 42
-    rankSprite: 990
-    rankBattleSprite: 325
-    rankTinySprite: 235
+    rankSprite: {mod: 40k, index: 990}
+    rankBattleSprite: {mod: 40k, index: 325}
+    rankTinySprite: {mod: 40k, index: 235}
     soldierNames:
       - delete
       - MarineName/
@@ -381,7 +381,7 @@ soldiers:
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 15 # -5 over DW regulars
       SMT_ALPHA_ATTACKER_MODIFIER: -1 # can't turn traitor
-      SMT_RESTRICTED_ITEM_USER: 2 # can use DW gear
+      SMT_RESTRICTED_ITEM_USER: 23 # can use DW gear and DW captain gear
 
   - type: STR_ULTRAMARINE_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
@@ -458,6 +458,30 @@ soldiers:
   - type: STR_WHITES_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_WS_UC
+    minStats: # extremely high starting stats, lategame elites
+      tu: 105
+      stamina: 130
+      health: 135
+      bravery: 100
+      reactions: 105
+      firing: 135
+      throwing: 125
+      strength: 100
+      psiStrength: 90 # Stormseer, psyker
+      psiSkill: 90
+      melee: 135
+    maxStats:
+      tu: 115
+      stamina: 135
+      health: 145
+      bravery: 110
+      reactions: 110
+      firing: 145
+      throwing: 135
+      strength: 105
+      psiStrength: 140
+      psiSkill: 95
+      melee: 145
     rankStrings:
       - STR_DW_WS_RANK_0
       - STR_DW_WS_RANK_1
@@ -465,10 +489,38 @@ soldiers:
       - STR_DW_WS_RANK_3
       - STR_DW_WS_RANK_4
       - STR_DW_WS_RANK_5
+    skills:
+      - STR_LIB_SMOKE_SKILL
+      - STR_LIB_HASTE_SKILL
+    skillIconSprite:  {mod: 40k, index: 11}
 
   - type: STR_DARKANGELS_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_DA_UC
+    minStats: # extremely high starting stats, lategame elites
+      tu: 105
+      stamina: 130
+      health: 135
+      bravery: 100
+      reactions: 105
+      firing: 135
+      throwing: 125
+      strength: 100
+      psiStrength: 90 # Librarian, psyker
+      psiSkill: 90
+      melee: 135
+    maxStats:
+      tu: 115
+      stamina: 135
+      health: 145
+      bravery: 110
+      reactions: 110
+      firing: 145
+      throwing: 135
+      strength: 105
+      psiStrength: 140
+      psiSkill: 95
+      melee: 145
     rankStrings:
       - STR_DW_DA_RANK_0
       - STR_DW_DA_RANK_1
@@ -476,6 +528,12 @@ soldiers:
       - STR_DW_DA_RANK_3
       - STR_DW_DA_RANK_4
       - STR_DW_DA_RANK_5
+    skills:
+      - STR_LIB_SMOKE_SKILL
+      - STR_LIB_LOCKDOWN_SKILL
+      - STR_LIB_SHIELD_SKILL
+      - STR_LIB_HASTE_SKILL
+    skillIconSprite:  {mod: 40k, index: 11}
 
   - type: STR_SPACEW_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER

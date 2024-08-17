@@ -580,7 +580,7 @@ items:
     battleType: 1
     invWidth: 2
     invHeight: 3
-    weight: 12
+    weight: 22
     clipSize: -1
     recover: false # generated item
     accuracySnap: 80
@@ -592,6 +592,8 @@ items:
     tuAimed: 0
     tuSnap: 30
     tuAuto: 0
+    powerRangeReduction: 10 # higher than plasma
+    powerRangeThreshold: 25.0 #
     shotgunPellets: 1 # instant beam rather than projectile
     power: 100 #
     damageType: 11 # Melta type - cross between Las & Melta gun

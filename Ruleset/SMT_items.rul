@@ -1518,8 +1518,7 @@ items:
       psiStrength: 1.0
       flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
     dropoff: 0
-    tags:
-      SMT_ITEM_MOVESPEED_BOOST: 1
+    tags: # effect tag defined in haste script
       ITEM_IS_BUFF_WEAPON: 1
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
 
@@ -1543,8 +1542,7 @@ items:
       psiStrength: 1.0
       flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
     dropoff: 0
-    tags:
-      SMT_ITEM_MOVESPEED_BOOST: 2 # can reduce target to 50% movecost
+    tags: # effect tag defined in haste script
       ITEM_IS_BUFF_WEAPON: 1
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
 

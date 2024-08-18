@@ -560,7 +560,8 @@ items:
     size: 0.05 # was 0.1
     damageAlter:
       RandomType: 7 # 50-200% instead of 0-200%
-      ToArmorPre: 0.25 # was 0.15
+      ToArmorPre: 0.20 # was 0.15
+      ToArmor: 0.20 # was 0.15
     power: 80 # now gets bonus power from high FA instead
     weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
@@ -572,7 +573,8 @@ items:
     size: 0.05 # was 0.1
     damageAlter:
       RandomType: 7 # 50-200% instead of 0-200%
-      ToArmorPre: 0.25 # was 0.15
+      ToArmorPre: 0.20 # was 0.15
+      ToArmor: 0.20 # was 0.15
     power: 80 # now gets bonus power from high FA instead
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
@@ -602,6 +604,7 @@ items:
   - &STR_BOLTER_AMMO_METAL_STORM            # Metalstorm Ammo Defaults
     size: 0.05 # was 0.1
     armor: 200
+    powerForAnimation: 25 # was 1, bigger area
     damageType: 1 # AP type, was HE - Shrapnel blast
     damageAlter:
       RandomType: 7 # 50-200%
@@ -649,6 +652,143 @@ items:
       FixRadius: 3
     tags:
       ITEM_AMMO_SKIP_BIGOBS: 1
+
+  - &STR_BOLTRIFLE_DRUM_TEMPLATE            # Boltrifle Drum Defaults
+    categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
+    size: 0.1
+    costSell: 1500
+    weight: 8 # +2 over regular
+    battleType: 2
+    bigSprite: 3186
+    floorSprite: 3186
+    hitSound: {mod: 40k, index: 708}
+    hitAnimation:
+      mod: 40k
+      index: 120
+    explosionSpeed: 3
+    bulletSpeed: 50
+    armor: 200
+    invWidth: 2
+    invHeight: 1
+    clipSize: 45
+    power: 80
+    damageType: 1
+    damageAlter: # bolter defaults
+      RandomType: 7 # 50-200%
+      ToArmorPre: 0.15 # was 0.1
+      ArmorEffectiveness: 0.9
+      ToArmor: 0.15
+      ToHealth: 1.1
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    listOrder: 10455
+    tags:
+      ITEM_AMMO_SKIP_BIGOBS: 1
+
+  - type: STR_BOLTRIFLE_DRUM                # Boltrifle Drum Ammo (Standard)
+    refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
+    bigSprite: 3186
+    floorSprite: 3186
+    costBuy: 3000
+    requiresBuy:
+      - STR_MARINE_BOLTERS_ADV
+      - STR_PRIMARIS_AND_DEATHWATCH
+    tags:
+      ITEM_AMMO_COLOR: 15
+
+  - type: STR_BOLTRIFLE_DRUM_AP             # Boltrifle Drum Ammo (Krak)
+    refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
+    bigSprite: 3185
+    floorSprite: 3185
+    listOrder: 10456
+    costBuy: 6000
+    requiresBuyBaseFunc: [TRADE]
+    requiresBuy:
+      - STR_MARINE_BOLTERS_ADV
+      - STR_PRIMARIS_AND_DEATHWATCH
+    power: 75
+    damageAlter:
+      RandomType: 7 # 50-200%
+      ArmorEffectiveness: 0.5 # was 0.5
+      ToArmorPre: 0.01 # was 0.02, basically nothing
+      ToArmor: 0.15 # was 0.05, decent destruction if it manages to pen
+      ToHealth: 0.9
+      ToStun: 0.2 # was 0.3; solid AP round rather than concussive
+      ToEnergy: 0.1
+    tags:
+      ITEM_AMMO_COLOR: 8
+
+  - type: STR_BOLTRIFLE_DRUM_EX             # Boltrifle Drum Ammo (Metalstorm)
+    refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
+    bigSprite: 3184
+    floorSprite: 3184
+    hitSound: {mod: 40k, index: 708}
+    hitAnimation:
+      mod: 40k
+      index: 0
+    powerForAnimation: 25
+    listOrder: 10457
+    costBuy: 6000
+    requiresBuyBaseFunc: [TRADE]
+    requiresBuy:
+      - STR_MARINE_BOLTERS_ADV
+      - STR_PRIMARIS_AND_DEATHWATCH
+    power: 75
+    damageAlter:
+      RandomType: 7 # 50-200%
+      ToArmorPre: 0.05 # was 0.02
+      ArmorEffectiveness: 1.1 # was 1.2 (regular 0.9) - AP dmg less resisted than HE type by heavier armors
+      ToArmor: 0.15 # was 0.1
+      ToHealth: 1.5 # was 1.5 (regular 1.1)
+      ToStun: 0.2 # was 0.6 (regular 0.5)
+      ToEnergy: 0.4 # (regular 0.3)
+      ToWound: 0.4 # (regular 0.2)
+      ToTile: 0.0 #shrapnel, not explosive
+      ToItem: 0.0 #shrapnel, not explosive
+      IgnoreOverKill: true #shrapnel, not explosive
+      IgnoreSelfDestruct: false #shrapnel, not explosive
+      FixRadius: 3
+    tags:
+      ITEM_AMMO_COLOR: 2
+
+  - type: STR_BOLTRIFLE_DRUM_MC             # Boltrifle Drum Ammo (Mastercrafted)
+    refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
+    bigSprite: 3183
+    floorSprite: 3183
+    listOrder: 10458
+    damageAlter:
+      RandomType: 7 # 50-200% instead of 0-200%
+      ToArmorPre: 0.25 # was 0.15
+      ArmorEffectiveness: 0.8
+      ToArmor: 0.20 # was 0.15
+      ToHealth: 1.15
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    tags:
+      ITEM_AMMO_COLOR: 1
+
+  - type: STR_BOLTRIFLE_DRUM_MC_DW          # Boltrifle Drum Ammo (Mastercrafted) - DW Captain version, no recovery
+    refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
+    bigSprite: 3183
+    floorSprite: 3183
+    listOrder: 10458
+    recover: false # part of armor loadout
+    damageAlter:
+      RandomType: 7 # 50-200% instead of 0-200%
+      ToArmorPre: 0.25 # was 0.15
+      ArmorEffectiveness: 0.8
+      ToArmor: 0.20 # was 0.15
+      ToHealth: 1.15
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    tags:
+      ITEM_AMMO_COLOR: 1
 
   - &STR_BOLTER                             # Generic Bolter Reference
     dropoff: 8 # standard was 5 - Bolts are short range projectiles that fall off quickly outside of their standard range
@@ -708,7 +848,7 @@ items:
     costBuy: 200000 # was 200000 - Higher end gear
     dropoff: 6 # was 4
     autoRange: 9 # was 7
-    snapRange: 17 # was 16
+    snapRange: 18 # was 16
     aimRange: 24 # was 22 - starts falling behind original at 28 tiles
     accuracyAuto: 66 # was 66
     accuracySnap: 90 # was 80
@@ -726,20 +866,20 @@ items:
     weight: 34 # +6 over regular - larger battle rifle
     dropoff: 7 # -1 over regular - larger battle rifle
     minRange: 3 #cumbersome, not suited to CQC
-    autoRange: 13 # was 7
-    snapRange: 17 # was 16
+    autoRange: 12 # was 7
+    snapRange: 18 # was 16
     aimRange: 0
     accuracyAuto: 66 # was 66
     accuracySnap: 80 # was 80
     accuracyAimed: 0
-    tuSnap: 28 # was 25
-    tuAuto: 35 # was 40
+    tuSnap: 26 # was 25
+    tuAuto: 30 # was 40
     tuAimed: 0
     confSnap:
       shots: 2 # was 1
-    autoShots: 6 # was 5
+    autoShots: 4 # was 5
     tags:
-      ITEM_RECOIL: 75 # +10 over regular - larger battle rifle
+      ITEM_RECOIL: 70 # +5 over regular - larger battle rifle
 
   - update: STR_MCRIFLE                     # Bolter (MC) - Now TactStrat exclusive
     refNode: *STR_BOLTER
@@ -753,7 +893,50 @@ items:
     tuSnap: 18 # was 25
     tuAuto: 28 # was 40
     tuAimed: 0
-    autoShots: 5 # was 3
+    autoShots: 6 # was 3
+
+  - type: STR_HEAVY_BOLTRIFLE               # Heavy Bolt Rifle
+    battleType: 1
+    weight: 40 # +6 over regular Cawl
+    bigSprite: 3179
+    floorSprite: 3179
+    handSprite: 3672
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    bulletSprite: {mod: 40k, index: 6}
+    twoHanded: true
+    invWidth: 2
+    invHeight: 3
+    costBuy: 80000
+    costSell: 20000
+    listOrder: 10450
+    requiresBuy:
+      - STR_MARINE_BOLTERS_ADV
+      - STR_PRIMARIS_AND_DEATHWATCH
+    clipSize: 0
+    compatibleAmmo: # can only load heavy boltrifle drums
+      - STR_BOLTRIFLE_DRUM
+      - STR_BOLTRIFLE_DRUM_AP
+      - STR_BOLTRIFLE_DRUM_EX
+      - STR_BOLTRIFLE_DRUM_MC
+    dropoff: 7
+    minRange: 3 #cumbersome, not suited to CQC
+    autoRange: 14 # cawl 12
+    snapRange: 20 # cawl 18
+    aimRange: 0
+    accuracyAuto: 66 # cawl 66
+    accuracySnap: 80 # cawl 80
+    accuracyAimed: 0
+    tuAuto: 35 # cawl 30 for 4, hb 65 for 9
+    tuSnap: 26 # cawl 26 for 2, HB 28 for 3
+    tuAimed: 0
+    tuLoad: 20 # +5, bulky drum mags
+    confSnap:
+      shots: 3 # cawl 2
+    autoShots: 5 # cawl 4
+    tags:
+      ITEM_RECOIL: 80 # +15 over regular - extra large battle rifle
+      REACTION_MULTIPLIER: 80 # bulky
+      ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - update: STR_PISTOL                      # BoltPistol (Ceres)
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
@@ -1119,24 +1302,26 @@ items:
     requiresBuy:
       - STR_HBOLTER_PREREQ
     dropoff: 4 # larger HB shells have better propulsion and accuracy at range
-    autoRange: 17 # was 14
-    snapRange: 19 # was 20
+    autoRange: 16 # was 14
+    snapRange: 20 # was 20
     aimRange: 0
     accuracyAuto: 45 # was 50
     accuracySnap: 60 # was 60
     accuracyAimed: 0
-    tuAuto: 55 # was 60
-    tuSnap: 24 # was 20 for 1 shot
+    tuAuto: 65 # was 60
+    tuSnap: 28 # was 20 for 1 shot
     tuAimed: 0
     tuLoad: 30 # was 40
     minRange: 5 #heavy weapon; cumbersome, not suited to CQC
-    autoShots: 8 # was 7
+    autoShots: 9 # was 7
     followProjectiles: false
     confSnap:
-      shots: 2
+      name: STR_BURST_SNAP_SHOT
+      shots: 3
     kneelBonus: 125 # was 130, Astartes version meant to be hipfired by devastator marines
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
+      REACTION_MULTIPLIER: 66 # bulky
 
   - type: STR_HEAVY_BOLTER_MARS             # Heavy Bolter Mars - New DevStrat exclusive
     categories: [STR_CAT_BOLTER]
@@ -1166,21 +1351,22 @@ items:
       - STR_AC_MC_BELT
     dropoff: 4 # larger HB shells have better propulsion and accuracy at range
     autoRange: 16 #
-    snapRange: 20 # regular 19
-    aimRange: 18 # regular 17
+    snapRange: 20 # regular 20
+    aimRange: 18 #
     accuracyAuto: 50 #
     accuracySnap: 66 # regular 60
     accuracyAimed: 58 # regular 50
     tuAuto: 80 # 12 shots
-    tuSnap: 24 # regular 24
-    tuAimed: 50 # regular 55 for 8
+    tuSnap: 25 # regular 26
+    tuAimed: 45 # regular 65 for 9
     tuLoad: 30
     minRange: 5
     autoShots: 12 # +4
     sprayWaypoints: 2
     followProjectiles: false
     confSnap:
-      shots: 2
+      name: STR_BURST_SNAP_SHOT
+      shots: 3
     confAimed:
       name: STR_AUTO_SHOT
       shortName: STR_AUTO_SHOT_COUNT
@@ -1192,6 +1378,8 @@ items:
     kneelBonus: 125 # was 130, Astartes version meant to be hipfired by devastator marines
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
+      ITEM_IS_HEAVY_WEAPON: 1
+      REACTION_MULTIPLIER: 66 # bulky
 
   - type: STR_AC_AP_BELT                    # Heavy Bolter AP Ammo Beltfed
     categories: [STR_CAT_BOLTER, STR_CAT_DEVASTATOR]
@@ -1307,9 +1495,9 @@ items:
       index: 120
     damageAlter:
       RandomType: 7 # 50-200%
-      ToArmorPre: 0.2 # was 0.15
-      ArmorEffectiveness: 0.8 # was 0.9
-      ToArmor: 0.15
+      ToArmorPre: 0.25 # +0.05 over regular MC bolts
+      ToArmor: 0.20
+      ArmorEffectiveness: 0.8
       ToHealth: 1.15
       ToStun: 0.5
       ToEnergy: 0.3
@@ -1361,8 +1549,10 @@ items:
     power: 90 # was 95
     clipSize: 50
     damageAlter:
-      ToArmorPre: 0.2 # was 0.15
       RandomType: 7 # 50-200%
+      ToArmorPre: 0.25 # +0.05 over regular MC bolts
+      ToArmor: 0.20
+      ArmorEffectiveness: 0.8
     listOrder: 12024
 
   - update: STR_AC_HE_AMMO                  # Heavy Bolter HE Ammo
@@ -1435,7 +1625,8 @@ items:
     power: 80 # was 95
     damageAlter:
       RandomType: 7 # 50-200%
-      ToArmorPre: 0.25
+      ToArmorPre: 0.20
+      ToArmor: 0.20
       ArmorEffectiveness: 0.8
 
   - update: STR_ASSC                        # Assault Cannon

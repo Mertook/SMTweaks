@@ -99,7 +99,7 @@ extended:
             mul bonus hwpUser;
             add bonus temp;
             add hwpUser 1;
-            div bonus hwpUser; # (reduced bonus * hwpBonus + starting bonus) / hwpBonus
+            div bonus hwpUser; # (reduced Acc * hwpBonus + starting Acc) / hwpBonus
           end;
 
           if and eq kneeling 1 eq weaponWithBipod 1; # 1/3 penalty if kneeling with bipod

@@ -118,6 +118,7 @@ items:
     damageType: 11
     damageAlter:
       ResistType: 1
+      RandomType: 7 # 50-200%
       ToArmorPre: 0.15
       ArmorEffectiveness: 0.9
       ToHealth: 1.0 # normal 1.1
@@ -185,13 +186,13 @@ items:
     dropoff: 4 # larger HB shells have better propulsion and accuracy at range
     sprayWaypoints: 2
     autoRange: 16 #
-    snapRange: 20 # regular 19
-    aimRange: 18 # regular 17
+    snapRange: 20 # regular 20
+    aimRange: 18 #
     accuracyAuto: 50 #
     accuracySnap: 70 # regular 66
     accuracyAimed: 60 # regular 58
     tuAuto: 75 # Mars 80
-    tuSnap: 22 # Mars 24
+    tuSnap: 25 # Mars 25
     tuAimed: 45 # Mars 50
     tuLoad: 25 #
     minRange: 5 #heavy weapon; cumbersome, not suited to CQC
@@ -209,7 +210,8 @@ items:
       - STR_AC_I_BELT
       - STR_AC_MC_BELT
     confSnap:
-      shots: 2
+      name: STR_BURST_SNAP_SHOT
+      shots: 3
     confAimed:
       name: STR_AUTO_SHOT
       shortName: STR_AUTO_SHOT_COUNT
@@ -221,6 +223,8 @@ items:
     kneelBonus: 125 # was 130, Astartes version meant to be hipfired by devastator marines
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
+      ITEM_IS_HEAVY_WEAPON: 1
+      REACTION_MULTIPLIER: 66 # bulky
 
   - type: STR_BOLT_SNIPER_RIFLE_DW          # Bolt Sniper Rifle - DW edition
     categories: [STR_CAT_SNIPER]
@@ -563,7 +567,7 @@ items:
     tags:
       ITEM_DOESNT_HURT_USER: 1
 
-  - type: STR_VOLKITE_DW
+  - type: STR_VOLKITE_DW                    # Volkite Rifle (Salamander Captain)
     bigSprite: 3178
     floorSprite: 3178
     handSprite: 3664
@@ -582,6 +586,7 @@ items:
     invHeight: 3
     weight: 22
     clipSize: -1
+    twoHanded: true
     recover: false # generated item
     accuracySnap: 80
     accuracyAimed: 0
@@ -609,5 +614,48 @@ items:
       ToWound: 0.2 # vicious burns
       RandomWound: false
       RadiusReduction: 60 # high dropoff if not direct hit
+
+  - type: STR_HEAVY_BOLTRIFLE_DW               # Heavy Bolt Rifle (Ultramarine Captain)
+    battleType: 1
+    ufopediaType: STR_HEAVY_BOLTRIFLE
+    weight: 40 # +6 over regular Cawl
+    bigSprite: 3181
+    floorSprite: 3181
+    handSprite: 3680
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    bulletSprite: {mod: 40k, index: 6}
+    listOrder: 10450
+    twoHanded: true
+    recover: false # generated item
+    invWidth: 2
+    invHeight: 3
+    costBuy: 80000
+    costSell: 20000
+    clipSize: 0
+    compatibleAmmo: # can only load heavy boltrifle drums
+      - STR_BOLTRIFLE_DRUM
+      - STR_BOLTRIFLE_DRUM_AP
+      - STR_BOLTRIFLE_DRUM_EX
+      - STR_BOLTRIFLE_DRUM_MC
+      - STR_BOLTRIFLE_DRUM_MC_DW # free clip
+    dropoff: 7
+    minRange: 3 #cumbersome, not suited to CQC
+    autoRange: 15 # regular 14
+    snapRange: 20 # regular 20
+    aimRange: 0
+    accuracyAuto: 70 # cawl 66
+    accuracySnap: 90 # cawl 80
+    accuracyAimed: 0
+    tuAuto: 33 # regular 35
+    tuSnap: 25 # regular 26
+    tuAimed: 0
+    tuLoad: 20
+    confSnap:
+      shots: 3 #
+    autoShots: 5 #
+    tags:
+      ITEM_RECOIL: 80 # +15 over regular - extra large battle rifle
+      REACTION_MULTIPLIER: 80 # bulky
+      ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
 

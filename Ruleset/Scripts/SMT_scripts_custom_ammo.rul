@@ -8,7 +8,7 @@ extended:
 items:
   - &STR_PRECISION_AMMO                 # Precision Template
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 75
+      SMT_AMMO_BONUSDMG_FIRINGACC: 45
     scripts:
       hitUnitAmmo: |
         var int attackerFA;
@@ -29,12 +29,12 @@ items:
   - type: STR_PISTOL_CLIP_MC            # Boltpistol
     refNode: *STR_PRECISION_AMMO
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 75
+      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 80
 
   - type: STR_RIFLE_CLIP_MC             # Bolter
     refNode: *STR_PRECISION_AMMO
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 75
+      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 80
 
   - type: STR_LIGHT_BOLTPISTOL_AMMO_MC  # Light Boltpistol
     refNode: *STR_PRECISION_AMMO
@@ -59,7 +59,19 @@ items:
   - type: STR_HB_CLIP_MC                # Stormbolter
     refNode: *STR_PRECISION_AMMO
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 75
+      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 80
+
+  - type: STR_BOLTRIFLE_DRUM_MC         # Boltrifle Drum
+    refNode: *STR_PRECISION_AMMO
+    tags:
+      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 80
+
+  - type: STR_BOLTRIFLE_DRUM_MC_DW      # Boltrifle Drum (DW)
+    refNode: *STR_PRECISION_AMMO
+    tags:
+      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 80
+
+
 
 
   - &STR_DEREVENANT_AMMO                # Derevenant Template
@@ -122,13 +134,13 @@ items:
         var int temp;
 
         damaging_item.getTag hpPreDmg Tag.SMT_AMMO_HP_PREDMG;
-        debug_log "to_healthPre ammo Ping OP/CP/hpPre/tohp " orig_power currPower hpPreDmg to_health;
+        #debug_log "to_healthPre ammo Ping OP/CP/hpPre/tohp " orig_power currPower hpPreDmg to_health;
         if and gt orig_power 0 gt hpPreDmg 0;
           set temp orig_power;
           muldiv temp hpPreDmg 100;
           add to_health temp;
         end;
-        debug_log "to_healthPre ammo End OP/CP/hpPre/tohp " orig_power currPower hpPreDmg to_health;
+        #debug_log "to_healthPre ammo End OP/CP/hpPre/tohp " orig_power currPower hpPreDmg to_health;
 
         return;
 

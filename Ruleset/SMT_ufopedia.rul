@@ -580,6 +580,15 @@ ufopaedia:
     text: STR_PISTOLH_UFOPEDIA
     listOrder: 10120
 
+  - id: STR_HEAVY_BOLTRIFLE                 # Heavy Bolt Rifle
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1MB2.SPK
+    requires: 
+      - STR_PRIMARIS_AND_DEATHWATCH
+    text: STR_HEAVY_BOLTRIFLE_UFOPEDIA
+    listOrder: 21140
+
 
 
 ### Craft
@@ -612,6 +621,26 @@ ufopaedia:
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_CLAWS_ASS
+  - id: STR_BOLTRIFLE_DRUM                  # Boltrifle Drum Mag (Standard)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_BOLTRIFLE_DRUM
+  - id: STR_BOLTRIFLE_DRUM_AP               # Boltrifle Drum Mag (Krak)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_BOLTRIFLE_DRUM_AP
+  - id: STR_BOLTRIFLE_DRUM_EX               # Boltrifle Drum Mag (Metalstorm)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_BOLTRIFLE_DRUM_EX
+  - id: STR_BOLTRIFLE_DRUM_MC               # Boltrifle Drum Mag (Mastercrafted)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_BOLTRIFLE_DRUM_MC
+  - id: STR_BOLTRIFLE_DRUM_MC_DW            # Boltrifle Drum Mag (Mastercrafted DW)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_BOLTRIFLE_DRUM_MC_DW
   - id: STR_AC_AP_BELT                      # Mars Ammo Belt AP
     type_id: 14
     section: STR_NOT_AVAILABLE
@@ -815,6 +844,7 @@ extraStrings:
       STR_HEAVY_BOLTER_GUARD_UFOPEDIA: "{NEWLINE} The Godwyn pattern heavy bolter is a variant commonly in use by the Astra Militarum for anti-infantry fire support. A bipod is deployed when kneeling to brace against the fierce recoil while firing.{NEWLINE}{NEWLINE} Recoil: {ALT}90{ALT} - Attached Bipod"
       STR_BOLTER_HEAVY_SOLAR_CODEX: "{NEWLINE} An ancient design produced in select manufactorums, the Solar-pattern heavy bolter is as hotly sought after as it is temperamental. The additional litanies required to calm its machine spirit, as well as the lack of a handle, mean only the strongest soldiers can fire it without first bracing it. {NEWLINE} Recoil: {ALT}90{ALT} - Attached Bipod"
       STR_VOLKITE_RIFLE_UFOPEDIA: "{NEWLINE} Volkite weapons deflagrate organic matter, explosively burning flesh into ash and jetting fire. They penetrate through armor, causing horrific damage."
+      STR_HEAVY_BOLTRIFLE_UFOPEDIA: "{NEWLINE} An even larger variation of Boltrifle fitted with drum mags, the Heavy Bolt Rifle is able to sustain an incredible firing rate.{NEWLINE} It is typically used with Gravis armor, the extra weight and recoil being too much for regular Tacticus suits. {NEWLINE}{NEWLINE} Recoil: {ALT}80"
       ### CRAFT
       ### SOLDIERS
       STR_TERMINATOR_CROSS_DESCRIPTION: Space Marines awarded with the Crux Terminatus are recognized as elites, allowing promotion to the highest ranks and access to rare relics including Terminator Armor. {NEWLINE}{NEWLINE} For this honor the Space Marine needs to have achieved 30 enemy kills, 15 successful missions and serve for three months.

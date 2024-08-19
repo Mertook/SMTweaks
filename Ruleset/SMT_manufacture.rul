@@ -119,6 +119,60 @@ manufacture:
     producedItems:
       STR_RIFLE_CLIP_MC: 20
 
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_DRUM
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_AP_DRUM
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_EX_DRUM
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_MC_DRUM
+
+
+  - name: STR_BOLTRIFLE_DRUM                        # Boltrifle Drum
+    category: STR_AMMUNITION
+    requires:
+      - STR_PRIMARIS_BOLTERS_ADV
+    space: 0
+    time: 100
+    cost: 3000
+    producedItems:
+      STR_BOLTRIFLE_DRUM: 5
+
+  - name: STR_BOLTRIFLE_DRUM_AP                     # Boltrifle Drum (Krak)
+    category: STR_AMMUNITION
+    requires:
+      - STR_PRIMARIS_BOLTERS_ADV
+    space: 0
+    time: 100
+    cost: 500
+    requiredItems:
+      STR_ALIEN_ALLOYS: 2
+    producedItems:
+      STR_BOLTRIFLE_DRUM_AP: 10
+
+  - name: STR_BOLTRIFLE_DRUM_EX                     # Boltrifle Drum (Metal Storm)
+    category: STR_AMMUNITION
+    requires:
+      - STR_PRIMARIS_BOLTERS_ADV
+    space: 0
+    time: 100
+    cost: 500
+    requiredItems:
+      STR_ELERIUM_115: 2
+    producedItems:
+      STR_BOLTRIFLE_DRUM_EX: 10
+
+  - name: STR_BOLTRIFLE_DRUM_MC                     # Boltrifle Drum (Mastercrafted)
+    category: STR_AMMUNITION
+    requires:
+      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MASTER_CRAFTING_AMMO
+    space: 0
+    time: 200
+    cost: 10000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 4
+      STR_UFO_CONSTRUCTION: 4
+    producedItems:
+      STR_BOLTRIFLE_DRUM_MC: 10
+
   - name: STR_SARGENT_ARMOR                         # Sergeant
     category: STR_PERSONAL_ARMOR
     requires:

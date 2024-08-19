@@ -1,4 +1,6 @@
 items:
+  - delete: STR_FAKE_ITEM_TEST
+
   - &STR_CLAW_DMG                           # Lightning Claw (Terminator)
     update: STR_CLAWS
     weight: 20
@@ -687,14 +689,18 @@ items:
     tags:
       ITEM_AMMO_SKIP_BIGOBS: 1
 
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_DRUM
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_EX_DRUM
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_AP_DRUM
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_MC_DRUM
+
   - type: STR_BOLTRIFLE_DRUM                # Boltrifle Drum Ammo (Standard)
     refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
     bigSprite: 3186
     floorSprite: 3186
     costBuy: 3000
     requiresBuy:
-      - STR_MARINE_BOLTERS_ADV
-      - STR_PRIMARIS_AND_DEATHWATCH
+      - STR_PRIMARIS_BOLTERS_ADV
     tags:
       ITEM_AMMO_COLOR: 15
 
@@ -706,8 +712,7 @@ items:
     costBuy: 6000
     requiresBuyBaseFunc: [TRADE]
     requiresBuy:
-      - STR_MARINE_BOLTERS_ADV
-      - STR_PRIMARIS_AND_DEATHWATCH
+      - STR_PRIMARIS_BOLTERS_ADV
     power: 75
     damageAlter:
       RandomType: 7 # 50-200%
@@ -733,8 +738,7 @@ items:
     costBuy: 6000
     requiresBuyBaseFunc: [TRADE]
     requiresBuy:
-      - STR_MARINE_BOLTERS_ADV
-      - STR_PRIMARIS_AND_DEATHWATCH
+      - STR_PRIMARIS_BOLTERS_ADV
     power: 75
     damageAlter:
       RandomType: 7 # 50-200%
@@ -878,6 +882,8 @@ items:
     confSnap:
       shots: 2 # was 1
     autoShots: 4 # was 5
+    requiresBuy:
+      - STR_PRIMARIS_BOLTERS
     tags:
       ITEM_RECOIL: 70 # +5 over regular - larger battle rifle
 
@@ -895,6 +901,8 @@ items:
     tuAimed: 0
     autoShots: 6 # was 3
 
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE
+
   - type: STR_HEAVY_BOLTRIFLE               # Heavy Bolt Rifle
     battleType: 1
     weight: 40 # +6 over regular Cawl
@@ -910,7 +918,7 @@ items:
     costSell: 20000
     listOrder: 10450
     requiresBuy:
-      - STR_MARINE_BOLTERS_ADV
+      - STR_PRIMARIS_BOLTERS_ADV
       - STR_PRIMARIS_AND_DEATHWATCH
     clipSize: 0
     compatibleAmmo: # can only load heavy boltrifle drums

@@ -1,5 +1,4 @@
 items:
-  - delete: STR_FAKE_ITEM_TEST
 
   - &STR_CLAW_DMG                           # Lightning Claw (Terminator)
     update: STR_CLAWS
@@ -134,7 +133,7 @@ items:
       ToHealth: 0.9
     skillApplied: true
 
-  - type: STR_SM_OFFICER_FIST               # Custom SM Fist with Inspire for Sergeants/Captains
+  - type: STR_SM_OFFICER_FIST               # Officer SM Fist with Inspire
     refNode: *STR_FIST
     categories: [STR_CAT_SPELLS]
     specialIconSprite: 40
@@ -203,7 +202,7 @@ items:
     recover: false
     specialUseEmptyHand: true
 
-  - &STR_SKILL_BLESS                        # Custom Bless ability for Chaplain - Used with Soldier Skill
+  - &STR_SKILL_BLESS                        # Chaplain Bless ability
 #    type: STR_SM_CHAPLAIN_BLESS
     categories: [STR_CAT_SPELLS]
     explosionHitSound: [{mod: 40k, index: 758}, {mod: 40k, index: 759}, {mod: 40k, index: 760}, {mod: 40k, index: 761}, {mod: 40k, index: 762}, {mod: 40k, index: 766}]
@@ -258,7 +257,7 @@ items:
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
       ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
 
-  - type: INV_NULL_3X1_BACKPACK_BLESS       # Invisible Backpack item that enables Bless skill for chaplains - 3x1 Tact Armor Version
+  - type: INV_NULL_3X1_BACKPACK_BLESS       # Backpack Bless - 3x1 Tact Armor Version
     refNode: *STR_SKILL_BLESS
     bigSprite: {mod: 40k_ROSIGMA_edits, index: 251}
     invWidth: 3
@@ -267,7 +266,7 @@ items:
     defaultInvSlotX: 0
     defaultInvSlotY: 0
 
-  - type: INV_NULL_3X3_BACKPACK_BLESS       # Invisible Backpack item that enables Bless skill for chaplains - 3x3 Term/Assault Version
+  - type: INV_NULL_3X3_BACKPACK_BLESS       # Backpack Bless - 3x3 Term/Assault Version
     refNode: *STR_SKILL_BLESS
     bigSprite: {mod: 40k, index: 829}
     invWidth: 3
@@ -276,7 +275,7 @@ items:
     defaultInvSlotX: 0
     defaultInvSlotY: 0
 
-  - type: STR_SMT_SIGNUM                    # Custom Signum item for Honor Devs that boosts allied Firing Accuracy
+  - type: STR_SMT_SIGNUM                    # Signum for Devastators                        ## Signum
     refNode: *STR_FIST
     categories: [STR_CAT_SPELLS]
     specialIconSprite: 41
@@ -326,7 +325,7 @@ items:
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
       SMT_SIGNUM_DURATION: 1
 
-  - type: STR_STRIKE_VOX                    # Strike weapon (signum airstrike replacement)
+  - type: STR_STRIKE_VOX                    # Strike weapon
     categories: [STR_CAT_DEVASTATOR]
     size: 0.1
     weight: 20
@@ -558,7 +557,7 @@ items:
   - update: STR_LIGHT_BOLTER_AMMO_SHORT_PEN # Krak Light Bolter ShortMag
     refNode: *STR_BOLTER_AMMO_KRAK
 
-  - update: STR_PISTOL_CLIP_MC              # Mastercraft Boltpistol Ammo
+  - update: STR_PISTOL_CLIP_MC              # Mastercraft Boltpistol Ammo                   ## Custom ammo
     size: 0.05 # was 0.1
     damageAlter:
       RandomType: 7 # 50-200% instead of 0-200%
@@ -571,7 +570,7 @@ items:
     tags:
       ITEM_AMMO_SKIP_BIGOBS: 2
   
-  - update: STR_RIFLE_CLIP_MC               # Mastercraft Bolter Ammo
+  - update: STR_RIFLE_CLIP_MC               # Mastercraft Bolter Ammo                       ## Custom ammo
     size: 0.05 # was 0.1
     damageAlter:
       RandomType: 7 # 50-200% instead of 0-200%
@@ -584,7 +583,7 @@ items:
     tags:
       ITEM_AMMO_SKIP_BIGOBS: 1
 
-  - update: STR_LIGHT_BOLTPISTOL_AMMO_MC    # Mastercraft Light Boltpistol Ammo
+  - update: STR_LIGHT_BOLTPISTOL_AMMO_MC    # Mastercraft Light Boltpistol Ammo             ## Custom ammo
     armor: 200
     size: 0.05 # was 0.1
     bigSprite: 3119
@@ -594,7 +593,7 @@ items:
       RandomType: 7 # 50-200% instead of 0-200%
     armor: 200
 
-  - update: STR_LIGHT_BOLTER_AMMO_MC        # Mastercraft Light Bolter Ammo
+  - update: STR_LIGHT_BOLTER_AMMO_MC        # Mastercraft Light Bolter Ammo                 ## Custom ammo
     armor: 200
     size: 0.05 # was 0.1
     bigSprite: 3115
@@ -693,7 +692,6 @@ items:
   - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_EX_DRUM
   - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_AP_DRUM
   - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_MC_DRUM
-
   - type: STR_BOLTRIFLE_DRUM                # Boltrifle Drum Ammo (Standard)
     refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
     bigSprite: 3186
@@ -757,7 +755,7 @@ items:
     tags:
       ITEM_AMMO_COLOR: 2
 
-  - type: STR_BOLTRIFLE_DRUM_MC             # Boltrifle Drum Ammo (Mastercrafted)
+  - type: STR_BOLTRIFLE_DRUM_MC             # Boltrifle Drum Ammo (Mastercrafted)           ## Custom ammo
     refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
     bigSprite: 3183
     floorSprite: 3183
@@ -775,7 +773,7 @@ items:
     tags:
       ITEM_AMMO_COLOR: 1
 
-  - type: STR_BOLTRIFLE_DRUM_MC_DW          # Boltrifle Drum Ammo (Mastercrafted) - DW Captain version, no recovery
+  - type: STR_BOLTRIFLE_DRUM_MC_DW          # Boltrifle Drum Ammo (Mastercrafted - DW)      ## Custom ammo
     refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
     bigSprite: 3183
     floorSprite: 3183
@@ -867,6 +865,7 @@ items:
   - update: STR_RIFLED                      # Bolter (Cawl)
     refNode: *STR_BOLTER
     bigSprite: 3148
+    costBuy: 40000 # was 30000
     weight: 34 # +6 over regular - larger battle rifle
     dropoff: 7 # -1 over regular - larger battle rifle
     minRange: 3 #cumbersome, not suited to CQC
@@ -902,9 +901,9 @@ items:
     autoShots: 6 # was 3
 
   - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE
-
   - type: STR_HEAVY_BOLTRIFLE               # Heavy Bolt Rifle
     battleType: 1
+    armor: 200
     weight: 40 # +6 over regular Cawl
     bigSprite: 3179
     floorSprite: 3179
@@ -919,7 +918,6 @@ items:
     listOrder: 10450
     requiresBuy:
       - STR_PRIMARIS_BOLTERS_ADV
-      - STR_PRIMARIS_AND_DEATHWATCH
     clipSize: 0
     compatibleAmmo: # can only load heavy boltrifle drums
       - STR_BOLTRIFLE_DRUM
@@ -1489,7 +1487,7 @@ items:
     invHeight: 3
     listOrder: 12027
 
-  - type: STR_AC_MC_BELT                    # Heavy Bolter MC Ammo Beltfed
+  - type: STR_AC_MC_BELT                    # Heavy Bolter MC Ammo Beltfed                  ## Custom ammo
     categories: [STR_CAT_BOLTER, STR_CAT_DEVASTATOR]
     size: 0.1
     costSell: 8000
@@ -1552,7 +1550,7 @@ items:
       - STR_HBOLTER_AMMO_PREREQ
     listOrder: 12022
 
-  - update: STR_AC_MC_AMMO                  # Heavy Bolter MC Ammo
+  - update: STR_AC_MC_AMMO                  # Heavy Bolter MC Ammo                          ## Custom ammo
     armor: 200
     power: 90 # was 95
     clipSize: 50
@@ -1627,7 +1625,7 @@ items:
       ToArmor: 0.15
       ToHealth: 1.1
 
-  - update: STR_HB_CLIP_MC                  # MC Stormbolter Ammo
+  - update: STR_HB_CLIP_MC                  # MC Stormbolter Ammo                           ## Custom ammo
     armor: 200
     size: 0.1 # was 0.3
     power: 80 # was 95
@@ -1697,7 +1695,7 @@ items:
       ITEM_IS_PSYCHIC_POWER: 1
       ITEM_PSYCHIC_POWER_MODIFIER: 3 # was 5
 
-  - type: STR_LIB_SPEED_TOME                # Tome Speed
+  - type: STR_LIB_SPEED_TOME                # Tome Speed                                    ## Haste
     refNode: *STR_TOME_BASE
     defaultInventorySlot: STR_LEFT_LEG
     bigSprite: 3106
@@ -1721,7 +1719,7 @@ items:
       ITEM_IS_BUFF_WEAPON: 1
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
 
-  - type: STR_LIB_SPEED_TOME_DW                 # Tome Speed (Deathwatch White Scars)
+  - type: STR_LIB_SPEED_TOME_DW             # Tome Speed (Deathwatch White Scars)           ## Haste
     refNode: *STR_TOME_BASE
     defaultInventorySlot: STR_LEFT_LEG
     bigSprite: 3106
@@ -1892,7 +1890,7 @@ items:
     invHeight: 2 # was 2
     armor: 200
 
-  - update: AUX_CROZIUS                     # Crozius
+  - update: AUX_CROZIUS                     # Crozius                                       ## Restricted Item
     weight: 15
     recover: true
     dropoff: 4
@@ -2126,7 +2124,7 @@ items:
     tuAuto: 15
     tuSnap: 15
     tuAimed: 0
-    power: 75 # was 60
+    power: 80 # standard bolter ammo
     damageAlter: # standard bolter ammo
       ToArmorPre: 0.15
       ArmorEffectiveness: 0.9
@@ -2153,7 +2151,7 @@ items:
     tuAuto: 15
     tuSnap: 15
     tuAimed: 0
-    power: 75 # was 60
+    power: 80 # standard bolter ammo
     damageAlter: # standard bolter ammo
       ToArmorPre: 0.15
       ArmorEffectiveness: 0.9

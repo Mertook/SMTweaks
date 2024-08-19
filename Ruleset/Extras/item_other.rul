@@ -202,9 +202,58 @@ items:
     tags:
       ITEM_RECOIL: 90 # was 60, offset by bipod
 
-  - type: STR_LASGUN_CLIP_HOTSHOT
+  - update: STR_LASGUN_CLIP_HOTSHOT             # Hotshot Lasgun ammo
     requiresBuyBaseFunc: [IMPERIUM]
     requiresBuy:
       - STR_LASER_WEAPONS
       - STR_GUARD_AND_INQUISITION
+
+
+  - type: STR_VOLKITE_VAULT                     # Volkite Rifle (Ancient Vault)
+    bigSprite: 3178
+    floorSprite: 3178
+    handSprite: 3664
+    bulletSprite: { mod: 40k, index: 16 } # meltagun
+    fireSound: { mod: 40k, index: 847 }
+    explosionHitSound: {mod: 40k, index: 690} # heavy plasma blast
+    hitSound: { mod: 40k, index: 19 }
+    hitAnimation: { mod: 40k, index: 128 } # explosion
+    ufopediaType: STR_VOLKITE_DW
+    explosionSpeed: 1
+    powerForAnimation: 5
+    battleType: 1
+    armor: 200
+    invWidth: 2
+    invHeight: 3
+    weight: 22
+    clipSize: -1
+    twoHanded: true
+    accuracySnap: 80
+    accuracyAimed: 0
+    accuracyAuto: 0
+    snapRange: 20
+    aimRange: 0
+    autoRange: 0
+    tuAimed: 0
+    tuSnap: 30
+    tuAuto: 0
+    maxRange: 35
+    powerRangeReduction: 10 # higher than plasma
+    powerRangeThreshold: 25.0 #
+    shotgunPellets: 1 # instant beam rather than projectile
+    power: 100 #
+    damageType: 11 # Melta type - cross between Las & Melta gun
+    damageAlter:
+      RandomType: 2 # 50-150%
+      ToHealth: 0.50 # deals 110% total, 60% ignores armor
+      ArmorEffectiveness: 0.8 #
+      ToArmorPre: 0.25 #
+      ToArmor: 0.4 #
+      ToTile: 1.5 # destructive
+      FireThreshold: 0
+      FixRadius: 1
+      ToWound: 0.2 # vicious burns
+      RandomWound: false
+      RadiusReduction: 60 # high dropoff if not direct hit
+
 

@@ -4,7 +4,7 @@ manufacture:
     requires:
       - STR_DEATHWATCH
     space: 0
-    time: 5 # has 24 hour transfer time after manufacture
+    time: 1 # has 24 hour transfer time after manufacture
     cost: 100000
     requiredItems:
       STR_DW_TOKEN: 1
@@ -78,18 +78,18 @@ manufacture:
 
   - name: STR_DWCRIMSON_FB                  # Crimson Fist Firstborn
     refNode: *STR_DWRECRUIT_TEMPLATE
-    cost: 25000
+    cost: 20000
     requiredItems:
       STR_DW_TOKEN: 1
-      STR_KILLPOINT_TOKEN: 25
+      STR_KILLPOINT_TOKEN: 20
     spawnedPersonType: STR_CRISMONF
 
   - name: STR_DWCRIMSON_P                   # Crimson Fist Primaris
     refNode: *STR_DWRECRUIT_TEMPLATE
-    cost: 25000
+    cost: 20000
     requiredItems:
       STR_DW_TOKEN: 1
-      STR_KILLPOINT_TOKEN: 25
+      STR_KILLPOINT_TOKEN: 20
     spawnedPersonType: STR_CRISMONF_PRIMARIS
 
 
@@ -99,7 +99,7 @@ manufacture:
       - STR_DEATHWATCH
       - STR_COMMANDER_PLUS
     space: 0
-    time: 50
+    time: 1
     cost: 200000
     requiredItems:
       STR_DW_TOKEN_LEADER: 1
@@ -136,7 +136,7 @@ manufacture:
     cost: 50000
     requiredItems:
       STR_DW_TOKEN_LEADER: 1
-      STR_KILLPOINT_TOKEN: 200
+      STR_KILLPOINT_TOKEN: 100
     spawnedPersonType: STR_CRISMONF_LEADER
 
   - name: STR_RIFLE_CLIP_DEREV

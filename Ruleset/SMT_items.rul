@@ -604,7 +604,7 @@ items:
   - &STR_BOLTER_AMMO_METAL_STORM            # Metalstorm Ammo Defaults
     size: 0.05 # was 0.1
     armor: 200
-    powerForAnimation: 25 # was 1, bigger area
+    powerForAnimation: 1 #
     damageType: 1 # AP type, was HE - Shrapnel blast
     damageAlter:
       RandomType: 7 # 50-200%
@@ -728,7 +728,7 @@ items:
     hitAnimation:
       mod: 40k
       index: 0
-    powerForAnimation: 25
+    powerForAnimation: 1 #
     listOrder: 10457
     costBuy: 6000
     requiresBuyBaseFunc: [TRADE]
@@ -873,7 +873,7 @@ items:
     accuracySnap: 80 # was 80
     accuracyAimed: 0
     tuSnap: 26 # was 25
-    tuAuto: 30 # was 40
+    tuAuto: 32 # was 40
     tuAimed: 0
     confSnap:
       shots: 2 # was 1
@@ -2464,7 +2464,7 @@ items:
       ITEM_SNAP_ACCURACY_POWER_BONUS: 20 # was 0
       ITEM_POWER_BONUS_PERCENTILE: 1
 
-  - type: STR_BOLT_SNIPER_RIFLE             # SM Heavy Sniper - Given to Scout Strat
+  - type: STR_BOLT_SNIPER_RIFLE             # SM Bolt Sniper - Given to Scout Strat
     categories: [STR_CAT_SNIPER]
     dropoff: 3 #scoped sniper rifle
     weight: 50

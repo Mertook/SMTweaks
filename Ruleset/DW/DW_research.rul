@@ -96,8 +96,9 @@ research:
     cost: 5
     points: 0
     dependencies:
-      - STR_DEATHWATCH
+      - STR_DW_SQUAD2
       - STR_LEADER_PLUS
+      - STR_MT_DW # need midtier to progress further
     spawnedEvent: STR_DEATHWATCH_EXPANSION_1
     listOrder: 2 # push above corpses/etc
 
@@ -105,7 +106,7 @@ research:
     cost: 5
     points: 0
     dependencies:
-      - STR_DEATHWATCH
+      - STR_DW_SQUAD3
       - STR_THE_MARTIAN_SOLUTION
     spawnedEvent: STR_DEATHWATCH_EXPANSION_2
     listOrder: 2 # push above corpses/etc
@@ -114,7 +115,7 @@ research:
     cost: 5
     points: 0
     dependencies:
-      - STR_DEATHWATCH
+      - STR_DW_SQUAD4
       - STR_COMMANDER_PLUS
     spawnedEvent: STR_DEATHWATCH_EXPANSION_L
     listOrder: 2 # push above corpses/etc
@@ -123,7 +124,7 @@ research:
     cost: 0
     points: 0
     dependencies:
-      - STR_DEATHWATCH
+      - STR_DW_SQUAD5
       - STR_DEATHWATCH_BUST
     spawnedEvent: STR_DEATHWATCH_EXPANSION_2
     listOrder: 2 # push above corpses/etc

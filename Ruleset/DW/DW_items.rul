@@ -71,12 +71,12 @@ items:
     accuracyAuto: 70
     accuracySnap: 85
     accuracyAimed: 0
-    tuAuto: 35 # cawl 35
-    tuSnap: 25 # cawl 28
+    tuAuto: 30 # cawl 30
+    tuSnap: 25 # cawl 26
     tuAimed: 0
     confSnap:
-      shots: 2 # was 1
-    autoShots: 6 # was 5
+      shots: 2 # regular 2
+    autoShots: 5 # regular 4
     tags:
       ITEM_RECOIL: 75 #
 
@@ -615,7 +615,7 @@ items:
       RandomWound: false
       RadiusReduction: 60 # high dropoff if not direct hit
 
-  - type: STR_HEAVY_BOLTRIFLE_DW               # Heavy Bolt Rifle (Ultramarine Captain)
+  - type: STR_HEAVY_BOLTRIFLE_DW            # Heavy Bolt Rifle (Ultramarine Captain)
     battleType: 1
     ufopediaType: STR_HEAVY_BOLTRIFLE
     weight: 40 # +6 over regular Cawl
@@ -629,8 +629,6 @@ items:
     recover: false # generated item
     invWidth: 2
     invHeight: 3
-    costBuy: 80000
-    costSell: 20000
     clipSize: 0
     compatibleAmmo: # can only load heavy boltrifle drums
       - STR_BOLTRIFLE_DRUM

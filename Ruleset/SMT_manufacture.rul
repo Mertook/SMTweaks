@@ -391,7 +391,7 @@ manufacture:
     requiresBaseFunc: [ARMO]
     requiredItems:
       STR_ALIEN_ALLOYS: 50
-      STR_KILLPOINT_TOKEN: 200 # was 30
+      STR_KILLPOINT_TOKEN: 150 # was 30
 
   - name: STR_MKX_INC_ARMOR                         # Primaris Omnis/Interceptor
     category: STR_PERSONAL_ARMOR
@@ -639,7 +639,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 50 # was 300
       STR_STORMHAWK: 1
 
-  - name: STR_LASER_CANNON
+  - name: STR_LASER_CANNON                          # Craft Lascannon
     cost: 175000
     requiredItems:
       STR_ALIEN_ALLOYS: 30 # was 50

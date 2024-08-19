@@ -146,6 +146,12 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     getOneFree:
       - STR_NEW_FIGHTER_TRANSPORTER
 
+  - name: STR_STORMRAVEN_GK                 # Grey Knight Stormraven unlock
+    dependencies:
+      - STR_UFO_CONSTRUCTION
+      - STR_NOT_DEATHWATCH
+      - STR_CHAMBERMILITANT
+
   - name: STR_STORMEAGLE_INTERCEPTOR_GK     # Grey Knight Stormeagle unlock
     cost: 600
     points: 25

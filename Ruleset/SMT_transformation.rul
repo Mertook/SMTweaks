@@ -56,7 +56,7 @@ soldierTransformation:
       STR_BATTLE_TESTED: 0
     requiredMinStats:
       health: 60 # Neophyte base 40-55, Marine minimum 75
-      strength: 55 # Neophyte base 30-40, Marine minimum 55
+      strength: 50 # Neophyte base 25-40, Marine minimum 55
     listOrder: 30
 
   - name: STR_HARVEST_GENESEED          # Recover Geneseed from Corpses
@@ -130,7 +130,7 @@ soldierTransformation:
     requiresBaseFunc: [LIB] #needs library
     requiredMinStats:
       health: 60 # Neophyte base 40-55, training cap 60, Marine minimum 75
-      strength: 55 # Neophyte base 30-40, training cap 55, Marine minimum 55
+      strength: 50 # Neophyte base 25-40, training cap 55, Marine minimum 55
       psiStrength: 20 # Neophyte base 0-25
     listOrder: 40
 

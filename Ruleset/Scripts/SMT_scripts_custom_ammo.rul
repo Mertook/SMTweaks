@@ -130,17 +130,19 @@ items:
       SMT_AMMO_HP_PREDMG: 10
     scripts:
       damageUnitAmmo: |
-        var int hpPreDmg;
-        var int temp;
+        var int dmgMult;
+        var int damage;
+        var int type;
 
-        damaging_item.getTag hpPreDmg Tag.SMT_AMMO_HP_PREDMG;
-        #debug_log "to_healthPre ammo Ping OP/CP/hpPre/tohp " orig_power currPower hpPreDmg to_health;
-        if and gt orig_power 0 gt hpPreDmg 0;
-          set temp orig_power;
-          muldiv temp hpPreDmg 100;
-          add to_health temp;
+        damaging_item.getTag dmgMult Tag.SMT_AMMO_HP_PREDMG;
+        #debug_log "to_healthPre Ping OP/CP/hpPre/tohp/type " orig_power currPower dmgMult to_health damaging_type;
+        if and gt orig_power 0 gt dmgMult 0;
+          set damage orig_power;
+          muldiv damage dmgMult 100;
+          unit.reduceByResistance damage damaging_type;
+          add to_health damage;
         end;
-        #debug_log "to_healthPre ammo End OP/CP/hpPre/tohp " orig_power currPower hpPreDmg to_health;
+        #debug_log "to_healthPre End OP/CP/hpPre/tohp " orig_power currPower dmgMult to_health;
 
         return;
 

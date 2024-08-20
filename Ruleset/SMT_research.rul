@@ -141,7 +141,6 @@ research:
       - STR_CRATED_DROPPODS
       - STR_DEV_ARMOR
       - STR_GLAUNCHER_PREREQ
-      - STR_HBOLTER_AMMO_PREREQ
       - STR_NOT_PRIMARIS
     disables:
       - STR_PRIMARIS
@@ -310,6 +309,12 @@ research:
       - STR_LASER_WEAPONS
     spawnedItem: STR_HEAVY_LASER
 
+  - name: STR_BOLTER_AMMO_PREREQ    # Marine Bolter ammo
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
   - name: STR_MARINE_BOLTERS        # Astartes Bolters Unlock
     cost: 280
     points: 10
@@ -317,6 +322,8 @@ research:
       - STR_MARINES_STRATEGY
       - STR_NOT_PRIMARIS
       - STR_LASER_WEAPONS
+    unlocks:
+      - STR_BOLTER_AMMO_PREREQ
     listOrder: 9 # push above corpses/etc
     spawnedItem: STR_RIFLEB
 
@@ -338,6 +345,8 @@ research:
       - STR_MARINES_STRATEGY
       - STR_PRIMARIS
       - STR_LASER_WEAPONS
+    unlocks:
+      - STR_BOLTER_AMMO_PREREQ
     listOrder: 9 # push above corpses/etc
     spawnedItem: STR_RIFLED ###CHANGEME - should be higher quality Primaris bolter (when one is made)
 
@@ -364,7 +373,7 @@ research:
       - STR_MARINES_STRATEGY
       - STR_MIDTIER_PREREQ # Devastator strat still needs to wait for midtier
       - STR_DEV_ARMOR
-    getOneFree:
+    unlocks:
       - STR_HBOLTER_AMMO_PREREQ
     listOrder: 10 # push above corpses/etc
 

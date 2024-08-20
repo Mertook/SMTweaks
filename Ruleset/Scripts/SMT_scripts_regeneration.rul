@@ -104,7 +104,7 @@ soldiers:
     tags:
       SMT_UNIT_REGEN_HP: 10 # Vet level +2
       SMT_UNIT_REGEN_WOUND: 3 # Vet level +1
-      SMT_UNIT_REGEN_PENALTY_REDUCTION: 50 # DW bonus, ignore 50% of recovery time added by healing
+      SMT_UNIT_REGEN_PENALTY_REDUCTION: 60 # DW Captain bonus, ignore 60% of recovery time added by healing
 
   - type: STR_ULTRAMARINE_LEADER
     refNode: *STR_DEATHWATCH_LEADER
@@ -132,7 +132,7 @@ soldiers:
     tags:
       SMT_UNIT_REGEN_HP: 16 # +6 Spacewolf Bonus
       SMT_UNIT_REGEN_WOUND: 8 # +5 Spacewolf Bonus
-      SMT_UNIT_REGEN_PENALTY_REDUCTION: 80 # +30% Spacewolf Bonus
+      SMT_UNIT_REGEN_PENALTY_REDUCTION: 85 # +25% Spacewolf Bonus
 
   - type: STR_CRISMONF_LEADER
     refNode: *STR_DEATHWATCH_LEADER

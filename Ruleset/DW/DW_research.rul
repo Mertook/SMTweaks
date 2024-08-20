@@ -20,6 +20,7 @@ research:
       - STR_INQUISITION
       - STR_XENO_WEAPONS
       - STR_HARDER_MISSIONS
+      - STR_BOLTER_AMMO_PREREQ
     getOneFree:
       - STR_SHOTGUNS_ADV #replaces personal armor unlock - making Tac armor is useless for DW
     disables:
@@ -126,6 +127,7 @@ research:
     dependencies:
       - STR_DW_SQUAD5
       - STR_DEATHWATCH_BUST
+      - STR_HIGHTIER_PREREQ
     spawnedEvent: STR_DEATHWATCH_EXPANSION_2
     listOrder: 2 # push above corpses/etc
 

@@ -3448,6 +3448,7 @@ armors:
       - INV_NULL_3X1_BACKPACK
       - STR_HEAVY_BOLTRIFLE_DW
       - STR_BOLTRIFLE_DRUM_MC_DW
+      - STR_BOLTRIFLE_DRUM_MC_DW
 
   - type: STR_DW_LEADER_WS_UC
     refNode: *STR_DW_LEADER_ARMOR
@@ -3574,8 +3575,6 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
-    builtInWeapons:
-      - STR_VOLKITE_DW
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 

@@ -267,6 +267,20 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_ELDAR_INTERROGATION
     destroyItem: true
 
+  - name: STR_LIGHT_BOLTERS_MIDTIER_ADEPTAS         # Sisters Midtier Bolters
+    cost: 400
+    points: 15
+    dependencies:
+      - STR_ADEPTAS
+      - STR_FAITHFUL_ARMORY
+      - STR_NORMAL_STRATEGY_ADEPTAS
+      - STR_ELITE_STRATEGY_ADEPTAS
+      - STR_ADEPTAS_MIDTIER_NOVICE
+    unlocks:
+      - STR_BOLTER_HELLSPITE
+      - STR_BOLTER_MEPHISTO
+      - STR_ADEPTAS_BOLTGUN_JOVE
+      - STR_BOLTER_AMMO_PREREQ # Jove uses marine bolter ammo
 
 
 

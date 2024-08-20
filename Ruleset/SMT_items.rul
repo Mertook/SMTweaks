@@ -482,9 +482,12 @@ items:
 
   - update: STR_PISTOL_CLIP                 # Boltpistol Ammo
     refNode: *STR_BOLTER_AMMO_STD
-    costBuy: 200 # was 450, more expensive than bolter clips??
+    costBuy: 2000 # was 450, high quality ammo
+    costSell: 500
+    requiresBuy:
+      - STR_BOLTER_AMMO_PREREQ
     costSell: 100
-    power: 80 # was 60
+    power: 75 # was 60
     weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
     tags:
@@ -492,7 +495,11 @@ items:
 
   - update: STR_RIFLE_CLIP                  # Bolter Ammo
     refNode: *STR_BOLTER_AMMO_STD
-    power: 80 # was 65
+    costBuy: 5000 # was 300, high quality ammo
+    costSell: 750
+    requiresBuy:
+      - STR_BOLTER_AMMO_PREREQ
+    power: 75 # was 65
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
     armor: 200
@@ -521,13 +528,17 @@ items:
       ToArmorPre: 0.01 # was 0.02, basically nothing
       ToArmor: 0.15 # was 0.05, decent destruction if it manages to pen
       ToHealth: 0.9
-      ToStun: 0.2 # was 0.3; solid AP round rather than concussive
+      ToStun: 0.05 # was 0.3; solid AP round rather than concussive
       ToEnergy: 0.1
     armor: 200
 
   - update: STR_PISTOL_CLIP_AP              # Krak Boltpistol Ammo
     refNode: *STR_BOLTER_AMMO_KRAK
-    power: 75
+    costBuy: 2500
+    costSell: 500
+    requiresBuy:
+      - STR_BOLTER_AMMO_PREREQ
+    power: 70
     weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
     tags:
@@ -535,7 +546,11 @@ items:
 
   - update: STR_RIFLE_CLIP_AP               # Krak Bolter Ammo
     refNode: *STR_BOLTER_AMMO_KRAK
-    power: 75
+    costBuy: 6250
+    costSell: 750
+    requiresBuy:
+      - STR_BOLTER_AMMO_PREREQ
+    power: 70
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
     tags:
@@ -563,7 +578,7 @@ items:
       RandomType: 7 # 50-200% instead of 0-200%
       ToArmorPre: 0.20 # was 0.15
       ToArmor: 0.20 # was 0.15
-    power: 80 # now gets bonus power from high FA instead
+    power: 75 # now gets bonus power from high FA instead
     weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
     armor: 200
@@ -576,7 +591,7 @@ items:
       RandomType: 7 # 50-200% instead of 0-200%
       ToArmorPre: 0.20 # was 0.15
       ToArmor: 0.20 # was 0.15
-    power: 80 # now gets bonus power from high FA instead
+    power: 75 # now gets bonus power from high FA instead
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
     armor: 200
@@ -610,7 +625,7 @@ items:
     damageAlter:
       RandomType: 7 # 50-200%
       ToArmorPre: 0.05 # was 0.02
-      ArmorEffectiveness: 1.1 # was 1.2 (regular 0.9) - AP dmg less resisted than HE type by heavier armors
+      ArmorEffectiveness: 1.2 # was 1.2 (regular 0.9) - AP dmg less resisted than HE type by heavier armors
       ToArmor: 0.15 # was 0.1
       ToHealth: 1.5 # was 1.5 (regular 1.1)
       ToStun: 0.2 # was 0.6 (regular 0.5)
@@ -636,6 +651,10 @@ items:
 
   - update: STR_PISTOL_CLIP_EX              # Metalstorm BoltPistol Ammo
     refNode: *STR_BOLTER_AMMO_METAL_STORM
+    costBuy: 2500
+    costSell: 500
+    requiresBuy:
+      - STR_BOLTER_AMMO_PREREQ
     power: 75 # 
     weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
@@ -646,6 +665,10 @@ items:
 
   - update: STR_RIFLE_CLIP_EX               # Metalstorm Bolter Ammo
     refNode: *STR_BOLTER_AMMO_METAL_STORM
+    costBuy: 6250
+    costSell: 750
+    requiresBuy:
+      - STR_BOLTER_AMMO_PREREQ
     power: 75 # 
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
@@ -672,7 +695,7 @@ items:
     invWidth: 2
     invHeight: 1
     clipSize: 45
-    power: 80
+    power: 75
     damageType: 1
     damageAlter: # bolter defaults
       RandomType: 7 # 50-200%
@@ -696,7 +719,7 @@ items:
     refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
     bigSprite: 3186
     floorSprite: 3186
-    costBuy: 3000
+    costBuy: 6500
     requiresBuy:
       - STR_PRIMARIS_BOLTERS_ADV
     tags:
@@ -707,11 +730,11 @@ items:
     bigSprite: 3185
     floorSprite: 3185
     listOrder: 10456
-    costBuy: 6000
+    costBuy: 8000
     requiresBuyBaseFunc: [TRADE]
     requiresBuy:
       - STR_PRIMARIS_BOLTERS_ADV
-    power: 75
+    power: 70
     damageAlter:
       RandomType: 7 # 50-200%
       ArmorEffectiveness: 0.5 # was 0.5
@@ -733,7 +756,7 @@ items:
       index: 0
     powerForAnimation: 1 #
     listOrder: 10457
-    costBuy: 6000
+    costBuy: 8000
     requiresBuyBaseFunc: [TRADE]
     requiresBuy:
       - STR_PRIMARIS_BOLTERS_ADV
@@ -833,7 +856,7 @@ items:
     autoRange: 12 # v3.1 (14) was 9
     snapRange: 16 # was 16
     aimRange: 0
-    accuracyAuto: 75 # was 75
+    accuracyAuto: 70 # was 75
     accuracySnap: 90 # was 90
     accuracyAimed: 0
     tuAimed: 0
@@ -849,7 +872,7 @@ items:
     ufopediaType: STR_RIFLEC # was pointed at Godwyn for some reason
     costBuy: 200000 # was 200000 - Higher end gear
     dropoff: 6 # was 4
-    autoRange: 9 # was 7
+    autoRange: 8 # was 7
     snapRange: 18 # was 16
     aimRange: 24 # was 22 - starts falling behind original at 28 tiles
     accuracyAuto: 66 # was 66
@@ -869,8 +892,8 @@ items:
     weight: 34 # +6 over regular - larger battle rifle
     dropoff: 7 # -1 over regular - larger battle rifle
     minRange: 3 #cumbersome, not suited to CQC
-    autoRange: 12 # was 7
-    snapRange: 18 # was 16
+    autoRange: 11 # was 7
+    snapRange: 17 # was 16
     aimRange: 0
     accuracyAuto: 66 # was 66
     accuracySnap: 80 # was 80
@@ -892,13 +915,13 @@ items:
     autoRange: 12 # was 11
     snapRange: 16 # was 15
     aimRange: 0
-    accuracyAuto: 75 # was 86 - MC weapons should be stronger but not easier to use
+    accuracyAuto: 70 # was 86 - MC weapon should be stronger but not easier to use
     accuracySnap: 90 # was 100
     accuracyAimed: 0
     tuSnap: 18 # was 25
     tuAuto: 28 # was 40
     tuAimed: 0
-    autoShots: 6 # was 3
+    autoShots: 5 # was 3
 
   - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE
   - type: STR_HEAVY_BOLTRIFLE               # Heavy Bolt Rifle
@@ -1089,6 +1112,8 @@ items:
       - STR_LIGHT_BOLTPISTOL_AMMO_MC
       - STR_LIGHT_BOLTPISTOL_AMMO_AP
       - STR_LIGHT_BOLTPISTOL_AMMO_EX
+    tags:
+      ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
 
   - update: STR_BOLTPISTOL_LIGHT_ULTRA      # Light Boltpistol (Ultra)
     listOrder: 10091 # move to just under deaz
@@ -1109,6 +1134,8 @@ items:
       - STR_LIGHT_BOLTPISTOL_AMMO_MC
       - STR_LIGHT_BOLTPISTOL_AMMO_AP
       - STR_LIGHT_BOLTPISTOL_AMMO_EX
+    tags:
+      ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
 
   - update: STR_MC_BOLTPISTOL_DEAZ          # Light Boltpistol (MC)
     listOrder: 10092 # move to just under ultra
@@ -1128,6 +1155,8 @@ items:
       - STR_LIGHT_BOLTPISTOL_AMMO_MC
       - STR_LIGHT_BOLTPISTOL_AMMO_AP
       - STR_LIGHT_BOLTPISTOL_AMMO_EX
+    tags:
+      ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
 
   - update: STR_BOLTER_ENFORCER             # Light Bolter (Enforcer - Doublesnap)
     armor: 200
@@ -1152,7 +1181,7 @@ items:
       - STR_LIGHT_BOLTER_AMMO_AP
       - STR_LIGHT_BOLTER_AMMO_INF
     tags:
-      ITEM_RECOIL: 30 # was 25, now matches min Neophyte strength & requirement of pistol + offhand
+      ITEM_RECOIL: 25 # was 25, now matches min Neophyte strength & requirement of pistol + offhand
       REACTION_MULTIPLIER: 150 # carbine bonus - was 100 (default)
 
   - update: STR_BOLTER_LOCKE                # Light Bolter (Locke - Standard)
@@ -1176,7 +1205,7 @@ items:
       - STR_LIGHT_BOLTER_AMMO_AP
       - STR_LIGHT_BOLTER_AMMO_INF
     tags:
-      ITEM_RECOIL: 30 # was 25
+      ITEM_RECOIL: 25 # was 25
 
   - update: STR_BOLTER_LIGHT_ULTRA          # Light Bolter (Ultra)
     listOrder: 10293 # move to just under locke
@@ -1617,7 +1646,7 @@ items:
     armor: 200
     size: 0.1 # was 0.3
     damageType: 1
-    power: 80 # was 70
+    power: 75 # was 70
     damageAlter:
       RandomType: 7 # 50-200%
       ToArmorPre: 0.15
@@ -1628,7 +1657,7 @@ items:
   - update: STR_HB_CLIP_MC                  # MC Stormbolter Ammo                           ## Custom ammo
     armor: 200
     size: 0.1 # was 0.3
-    power: 80 # was 95
+    power: 75 # was 95
     damageAlter:
       RandomType: 7 # 50-200%
       ToArmorPre: 0.20
@@ -2124,7 +2153,7 @@ items:
     tuAuto: 15
     tuSnap: 15
     tuAimed: 0
-    power: 80 # standard bolter ammo
+    power: 75 # standard bolter ammo
     damageAlter: # standard bolter ammo
       ToArmorPre: 0.15
       ArmorEffectiveness: 0.9
@@ -2151,7 +2180,7 @@ items:
     tuAuto: 15
     tuSnap: 15
     tuAimed: 0
-    power: 80 # standard bolter ammo
+    power: 75 # standard bolter ammo
     damageAlter: # standard bolter ammo
       ToArmorPre: 0.15
       ArmorEffectiveness: 0.9
@@ -3152,6 +3181,10 @@ items:
     clipSize: 8 # was 8
     tags:
       ITEM_AMMO_SKIP_BIGOBS: 2
+
+  - update: STR_STUN_ROD                        # Shock Maul
+    armor: 200
+    tuMelee: 14 # was 
 
   - update: STR_CRATED_RHINO                # Boxed Razorback
     costSell: 400000 # was 0, set so that you don't have to unpack & then sell vehicle

@@ -88,8 +88,8 @@ items:
             sub itemVal 100;
             mul itemVal -1;
             set penalty itemVal; # set penalty according to melee value
-          else; # if no melee penalty
-            return power part side;
+          else;
+            return power part side; # ignore if no melee penalty
           end;
         end;
 
@@ -166,8 +166,9 @@ items:
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 3
-      SMT_RESTRICTED_DAMAGE_PEN: 25
-      SMT_RESTRICTED_ITEM_MELEE: 75
+      SMT_RESTRICTED_ACCURACY_PEN: 100 # no penalty for snap, is technically melee
+      SMT_RESTRICTED_DAMAGE_PEN: 15 # only 15% damage
+      SMT_RESTRICTED_ITEM_MELEE: 85 # only 15% damage
 
 
 

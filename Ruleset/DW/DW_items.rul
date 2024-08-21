@@ -658,4 +658,69 @@ items:
       REACTION_MULTIPLIER: 80 # bulky
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
+  - type: STR_FORCE_HALBERD_DW              # Force Halberd (White Scars Captain)       ## Restricted item
+    armor: 200
+    ufopediaType: STR_HALLEBARD
+    bigSprite: { mod: 40k, index: 461}
+    floorSprite: { mod: 40k, index: 360}
+    handSprite: { mod: 40k, index: 942}
+    meleeAnimation: { mod: 40k, index: 4}
+    meleeSound: { mod: 40k, index: 753}
+    meleeHitSound: { mod: 40k, index: 754}
+    fireSound: { mod: 40k, index: 753 }
+    explosionHitSound: { mod: 40k, index: 101} #stabhit
+    hitAnimation: { mod: 40k_ROSIGMA_edits, index: 2040} #Bloodgush sprite, X1.pck for ranged attacks, was 1070 #AOEMELEEGENE.png
+    hitAnimFrames: 8
+    powerForAnimation: 10
+    hitSound: { mod: 40k, index: 101} #stabhit
+    bulletSprite: 5
+    clipSize: -1
+    snapRange: 2
+    maxRange: 2
+    recover: false # fixed weapon
+    experienceTrainingMode: 25 # PsiStr
+    twoHanded: true
+    oneHandedPenalty: 100
+    invWidth: 2
+    invHeight: 3
+    powerRangeThreshold: 3
+    powerRangeReduction: 200
+    power: 100 #lower base damage; compensated for by stat scaling
+    meleePower: 100
+    battleType: 1
+    damageType: 11 #melta damage; more effective against daemons
+    meleeType: 11 #melta damage; more effective against daemons
+    confSnap:
+      name: STR_HALLEBARD_SNAPSHOT_LUNGE
+      shots: 1
+    costSnap:
+      time: 25 #lunge costs more TU and energy
+      energy: 12
+    accuracySnap: 90
+    accuracyMelee: 90
+    accuracyMultiplier:
+      firing: 0.0
+      melee: 0.8
+      strength: 0.2
+    meleeMultiplier:
+      firing: 0.0
+      melee: 0.8
+      strength: 0.2
+    skillApplied: false
+    damageBonus:
+      strength: 0.3 #strength matters more than skill given weapon size in terms of damage scaling
+      melee: 0.2
+      psi: 0.02 #infused by psychic power
+    meleeBonus:
+      strength: 0.3 #strength matters more than skill given weapon size in terms of damage scaling
+      melee: 0.2
+      psi: 0.02 #infused by psychic power
+    costMelee:
+      time: 22
+      energy: 8 #very heavy melee weapon; light 1 energy, medium 2, heavy 4, very heavy 8
+    flatRate: true
+    tags:
+      ITEM_STRENGTH_REQUIREMENT: 100
+      REACTION_MULTIPLIER: 200 #multiplies base reaction score by this amount divided by 100
+
 

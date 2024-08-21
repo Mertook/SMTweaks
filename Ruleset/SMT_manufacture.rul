@@ -233,7 +233,7 @@ manufacture:
     producedItems:
       STR_BOLTRIFLE_DRUM_MC: 10
 
-  - name: STR_HB_CLIP
+  - name: STR_HB_CLIP                               # Stormbolter Ammo
     requires:
       - STR_HB # Stormbolter tech
     requiredItems:
@@ -241,7 +241,7 @@ manufacture:
     producedItems:
       STR_HB_CLIP: 10
 
-  - name: STR_HB_CLIP_MC
+  - name: STR_HB_CLIP_MC                            # Stormbolter Ammo (Mastercrafted)
     requires:
       - STR_HB # Stormbolter tech
       - STR_MASTER_CRAFTING # was low tier mastercrafting

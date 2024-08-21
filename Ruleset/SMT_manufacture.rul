@@ -163,7 +163,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 3 # was 4
       STR_UFO_CONSTRUCTION: 3 # was 4
-      STR_KILLPOINT_TOKEN: 15
+      STR_KILLPOINT_TOKEN: 20
     producedItems:
       STR_PISTOL_CLIP_MC: 30 # was 20
 
@@ -179,7 +179,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 5
       STR_UFO_CONSTRUCTION: 5
-      STR_KILLPOINT_TOKEN: 25
+      STR_KILLPOINT_TOKEN: 30
     producedItems:
       STR_RIFLE_CLIP_MC: 20
 
@@ -249,7 +249,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 5 # was 10
       STR_UFO_CONSTRUCTION: 5 # was 10
-      STR_KILLPOINT_TOKEN: 15
+      STR_KILLPOINT_TOKEN: 20
     producedItems:
       STR_HB_CLIP_MC: 10
 
@@ -265,7 +265,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 5
       STR_UFO_CONSTRUCTION: 5
-      STR_KILLPOINT_TOKEN: 10
+      STR_KILLPOINT_TOKEN: 20
     producedItems:
       STR_AC_MC_AMMO: 5
 
@@ -309,15 +309,15 @@ manufacture:
     category: STR_AMMUNITION
     space: 0
     time: 240
-    cost: 20000
+    cost: 40000
     requires:
       - STR_HBOLTER_AMMO_BELTS
       - STR_MASTER_CRAFTING # was low tier mastercrafting
       - STR_HIGHTIER_PREREQ
     requiredItems:
-      STR_ALIEN_ALLOYS: 5
-      STR_UFO_CONSTRUCTION: 5
-      STR_KILLPOINT_TOKEN: 10
+      STR_ALIEN_ALLOYS: 6
+      STR_UFO_CONSTRUCTION: 6
+      STR_KILLPOINT_TOKEN: 20
     producedItems:
       STR_AC_MC_BELT: 5
 

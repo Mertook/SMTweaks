@@ -134,22 +134,22 @@ items:
     bigSprite: 3167
     listOrder: 10442
     hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2100}
-    power: 20
+    power: 15
     damageType: 1 # AP
     damageAlter: # Standard bolter ammo
-      ResistType: 0 # Blank - unresisted
+      ResistType: 12 # Grav - unresisted
       RandomType: 2 # 50-150%
       ToArmorPre: 1.0 # grav
       ArmorEffectiveness: 0.0
       ToArmor: 1.0 # grav
-      ToHealth: 1.0
-      ToStun: 0.5
+      ToHealth: 0.5 # most of the damage should come from grav bonus
+      ToStun: 0.3
       ToEnergy: 0.3
       ToWound: 0.1
       RandomWound: false
     tags:
       ITEM_AMMO_COLOR: 8 # blue
-      GravPercentage: 4
+      GravPercentage: 3
 
   - type: STR_RIFLE_CLIP_DRAGON             # Dragonfire Bolter ammo
     refNode: *STR_BOLTER_AMMO_DW
@@ -166,7 +166,7 @@ items:
       IgnoreDirection: false
       FireBlastCalc: false
       FireThreshold: 1
-      ArmorEffectiveness: 0.9
+      ArmorEffectiveness: 0.8
       ToArmorPre: 0.05
       ToArmor: 0.15
       ToMorale: 2.0
@@ -183,19 +183,19 @@ items:
   - type: STR_AUTO_CANNON_DW                # Heavy Bolter (Artifex DW)                 ## Restricted item
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
     costBuy: 125000
-    dropoff: 4 # larger HB shells have better propulsion and accuracy at range
+    dropoff: 4 #
     sprayWaypoints: 2
-    autoRange: 16 #
-    snapRange: 20 # regular 20
-    aimRange: 18 #
-    accuracyAuto: 50 #
-    accuracySnap: 70 # regular 66
-    accuracyAimed: 60 # regular 58
+    autoRange: 15 # regular 15
+    snapRange: 20 # regular 19
+    aimRange: 17 #
+    accuracyAuto: 40 # regular 40
+    accuracySnap: 60 # regular 60
+    accuracyAimed: 50 # regular 50
     tuAuto: 75 # Mars 80
-    tuSnap: 25 # Mars 25
-    tuAimed: 45 # Mars 50
+    tuSnap: 30 # Mars 25
+    tuAimed: 50 # Mars 50
     tuLoad: 25 #
-    minRange: 5 #heavy weapon; cumbersome, not suited to CQC
+    minRange: 6 #heavy weapon; cumbersome, not suited to CQC
     autoShots: 12 #
     followProjectiles: false
     requiresBuy:
@@ -223,7 +223,7 @@ items:
     kneelBonus: 125 # was 130, Astartes version meant to be hipfired by devastator marines
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
-      ITEM_IS_HEAVY_WEAPON: 1
+      ITEM_IS_HEAVY_WEAPON: 3 # 20% additional penalty when firing with lowered TUs
       REACTION_MULTIPLIER: 66 # bulky
 
   - type: STR_BOLT_SNIPER_RIFLE_DW          # Bolt Sniper Rifle - DW edition            ## Restricted item
@@ -262,7 +262,7 @@ items:
     accuracyAuto: 0
     accuracyAimed: 90
     tuAuto: 0
-    tuSnap: 65
+    tuSnap: 60
     tuAimed: 85
     listOrder: 11931
     tuLoad: 5 # single round shots
@@ -272,7 +272,8 @@ items:
     kneelBonus: 150
     minRange: 10
     tags:
-      ITEM_IS_HEAVY_WEAPON: 2 # Sniper Rifle
+      ITEM_IS_HEAVY_WEAPON: 4 # Sniper Rifle, -20% penalty on snap shots after moving
+      ITEM_HWP_IGNORES_ARMOR_BONUS: 1 # Sniper Rifle
       REACTION_MULTIPLIER: 10 # 10% of normal - Sniper rifle, bad at reactions
       ITEM_RECOIL: 75
       ITEM_AIMED_ACCURACY_POWER_BONUS: 50
@@ -593,21 +594,21 @@ items:
     aimRange: 0
     autoRange: 0
     tuAimed: 0
-    tuSnap: 30
+    tuSnap: 35
     tuAuto: 0
     maxRange: 35
-    powerRangeReduction: 10 # higher than plasma
+    powerRangeReduction: 10 # higher dropoff than plasma
     powerRangeThreshold: 25.0 #
     shotgunPellets: 1 # instant beam rather than projectile
     power: 100 #
     damageType: 11 # Melta type - cross between Las & Melta gun
     damageAlter:
       RandomType: 2 # 50-150%
-      ToHealth: 0.50 # deals 110% total, 60% ignores armor
-      ArmorEffectiveness: 0.8 #
-      ToArmorPre: 0.25 #
+      ToHealth: 0.45 # deals 100% total, 55% ignores armor
+      ArmorEffectiveness: 0.9 #
+      ToArmorPre: 0.20 #
       ToArmor: 0.4 #
-      ToTile: 1.5 # destructive
+      ToTile: 1.25 # destructive
       FireThreshold: 0
       FixRadius: 1
       ToWound: 0.2 # vicious burns
@@ -653,6 +654,7 @@ items:
     autoShots: 5 #
     tags:
       ITEM_RECOIL: 80 # +15 over regular - extra large battle rifle
+      ITEM_IS_HEAVY_WEAPON: 2 # 10% additional penalty when firing with lowered TUs
       REACTION_MULTIPLIER: 80 # bulky
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 

@@ -1,20 +1,4 @@
 events: 
-  - name: STR_DEATHWATCH_CARE_PACKAGE
-    description: STR_DEATHWATCH_REINFORCEMENTS
-    background: BACK13.SCR
-    spawnedCraftType: STR_CORVUS 
-    everyMultiItemList:
-      STR_CRATED_CORVUS: 1
-      STR_DW_TOKEN: 2
-      STR_RIFLEA: 2
-      STR_RIFLE_CLIP: 20
-      STR_RIFLE_CLIP_DRAGON: 15
-      STR_SHOTGUN_DW: 1
-      STR_SHOTGUN_SHELLS_WYRM: 10
-      STR_CHAINSWORD_LIGHTSM: 2
-      STR_KILLPOINT_TOKEN: 400 # used to buy your first two marines
-    spawnedPersons: 0
-    spawnedPersonType: STR_ULTRAMARINE
 
   - name: STR_DEATHWATCH_EXPANSION_1
     description: STR_DEATHWATCH_EXPANSION1
@@ -33,6 +17,7 @@ events:
     background: BACK13.SCR
     everyMultiItemList:
       STR_DW_TOKEN_LEADER: 1
+      STR_DW_TOKEN: 1
 
 eventScripts:
   - type: STR_DW_EVENT_SCRIPTIF

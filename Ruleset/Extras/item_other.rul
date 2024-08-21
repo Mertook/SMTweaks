@@ -208,7 +208,6 @@ items:
       - STR_LASER_WEAPONS
       - STR_GUARD_AND_INQUISITION
 
-
   - type: STR_VOLKITE_VAULT                     # Volkite Rifle (Ancient Vault)
     bigSprite: 3178
     floorSprite: 3178
@@ -236,7 +235,7 @@ items:
     aimRange: 0
     autoRange: 0
     tuAimed: 0
-    tuSnap: 30
+    tuSnap: 35
     tuAuto: 0
     maxRange: 35
     powerRangeReduction: 10 # higher than plasma
@@ -246,15 +245,48 @@ items:
     damageType: 11 # Melta type - cross between Las & Melta gun
     damageAlter:
       RandomType: 2 # 50-150%
-      ToHealth: 0.50 # deals 110% total, 60% ignores armor
-      ArmorEffectiveness: 0.8 #
-      ToArmorPre: 0.25 #
+      ToHealth: 0.45 # deals 100% total, 55% ignores armor
+      ArmorEffectiveness: 0.9 #
+      ToArmorPre: 0.20 #
       ToArmor: 0.4 #
-      ToTile: 1.5 # destructive
+      ToTile: 1.25 # destructive
       FireThreshold: 0
       FixRadius: 1
       ToWound: 0.2 # vicious burns
       RandomWound: false
       RadiusReduction: 60 # high dropoff if not direct hit
+
+
+  - type: STR_STUN_BOMB
+    damageAlter:
+      ResistType: 12 # Grav
+
+  - type: STR_GRAVGUN_MC
+    damageAlter:
+      ResistType: 12 # Grav
+
+  - type: AUX_CENTURION_GRAVGUN
+    damageAlter:
+      ResistType: 12 # Grav
+
+  - type: STR_GRAVGUN_AOE_AMMO
+    damageAlter:
+      ResistType: 12 # Grav
+
+  - type: STR_GRAVGUN_AOE_AMMO_SHOTGUN
+    damageAlter:
+      ResistType: 12 # Grav
+
+  - type: STR_GRAVPISTOL_AMMO
+    damageAlter:
+      ResistType: 12 # Grav
+
+  - type: STR_GRAVCANNON_AMMO
+    damageAlter:
+      ResistType: 12 # Grav
+
+
+
+
 
 

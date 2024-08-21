@@ -75,16 +75,7 @@ research:
       - STR_ELERIUM_115
       - STR_MIDTIER_PREREQ
 
-  - name: STR_DW_SQUAD1             # Deathwatch Squad Expansion +1 (Threat One)
-    cost: 5
-    points: 0
-    dependencies:
-      - STR_DEATHWATCH
-      - STR_THREAT_ONE
-    spawnedEvent: STR_DEATHWATCH_EXPANSION_1
-    listOrder: 2 # push above corpses/etc
-
-  - name: STR_DW_SQUAD2             # Deathwatch Squad Expansion +1 (Warp origins)
+  - name: STR_DW_SQUAD1             # Deathwatch Squad Expansion +1 (Warp origins)
     cost: 5
     points: 0
     dependencies:
@@ -93,41 +84,49 @@ research:
     spawnedEvent: STR_DEATHWATCH_EXPANSION_1
     listOrder: 2 # push above corpses/etc
 
-  - name: STR_DW_SQUAD3             # Deathwatch Squad Expansion +1 (Leader)
+  - name: STR_DW_SQUAD2             # Deathwatch Squad Expansion +1 (Leader)
+    cost: 5
+    points: 0
+    dependencies:
+      - STR_DEATHWATCH
+      - STR_LEADER_PLUS
+    spawnedEvent: STR_DEATHWATCH_EXPANSION_1
+    listOrder: 2 # push above corpses/etc
+
+  - name: STR_DW_SQUAD3             # Deathwatch Squad Expansion +1 (Final Solution)
     cost: 5
     points: 0
     dependencies:
       - STR_DW_SQUAD2
-      - STR_LEADER_PLUS
+      - STR_THE_MARTIAN_SOLUTION
       - STR_MT_DW # need midtier to progress further
     spawnedEvent: STR_DEATHWATCH_EXPANSION_1
     listOrder: 2 # push above corpses/etc
 
-  - name: STR_DW_SQUAD4             # Deathwatch Squad Expansion +2 (Final Solution)
+  - name: STR_DW_SQUAD4             # Deathwatch Squad Expansion +2 (Commander)
     cost: 5
     points: 0
     dependencies:
       - STR_DW_SQUAD3
-      - STR_THE_MARTIAN_SOLUTION
+      - STR_COMMANDER_PLUS
     spawnedEvent: STR_DEATHWATCH_EXPANSION_2
     listOrder: 2 # push above corpses/etc
 
-  - name: STR_DW_SQUAD5             # Deathwatch Squad Expansion +L (Commander)
+  - name: STR_DW_SQUAD5             # Deathwatch Squad Expansion +L (Deconstructing the Architect)
     cost: 5
     points: 0
     dependencies:
       - STR_DW_SQUAD4
-      - STR_COMMANDER_PLUS
+      - STR_DEATHWATCH_BUST
     spawnedEvent: STR_DEATHWATCH_EXPANSION_L
     listOrder: 2 # push above corpses/etc
 
-  - name: STR_DW_SQUAD6             # Deathwatch Squad Expansion +2 (Deconstructing the Architect)
-    cost: 0
+  - name: STR_DW_SQUAD6             # Deathwatch Squad Expansion +2 (High Tier)
+    cost: 5
     points: 0
     dependencies:
       - STR_DW_SQUAD5
-      - STR_DEATHWATCH_BUST
-      - STR_HIGHTIER_PREREQ
+      - STR_DW_HIGHTIER
     spawnedEvent: STR_DEATHWATCH_EXPANSION_2
     listOrder: 2 # push above corpses/etc
 

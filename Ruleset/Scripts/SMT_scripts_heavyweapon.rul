@@ -33,25 +33,25 @@ extended:
   tags:
     RuleItem:
       ITEM_HAS_BIPOD: int
-      ITEM_IS_HEAVY_WEAPON: int # infantry but not mounted/vehicle hwp - 1 = normal penalty, 2 = can't be reduced by armor bonus (see below) meant for snipers etc
+      ITEM_IS_HEAVY_WEAPON: int # does weapon have penalties for firing after moving/shooting previously this turn? 1 = standard, 2+ increases penalty 2 = 90%, 3 = 80% etc, snapshots count as one level lower for increased penalty
+      ITEM_HWP_IGNORES_ARMOR_BONUS: int # does weapon ignore armor hwp bonus (see below) meant for snipers etc
     RuleArmor:
-      SMT_ARMOR_HEAVY_WEAPON_USER: int # armor that counteracts the penalty for heavy weapons - 1 = no penalty, 2+ gives scaling reduction - 2 = 1/2, 3 = 2/3, 4 = 3/4 etc
+      SMT_ARMOR_HEAVY_WEAPON_USER: int # armor that counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 1/2, 3 = 2/3, 4 = 3/4 etc
 
   scripts:
     accuracyMultiplierBonusStats:
-      - override: ROSIGMA_aMBS_tu_accuracy_penalty # modified to add HWP specialist armor that reduces/ignores the penalty
+      - override: ROSIGMA_aMBS_tu_accuracy_penalty # modified to add increased HWP penalty intensity and armor that counteracts HWP penalties
         offset: 31
         code: |
           var ptr RuleArmor unitArmor;
-          var int temp;
           var int currentTU;
-          var int accuracyScore;
           var int weaponWithBipod;
           var int kneeling;
           var int hwpUser;
           var int hwpPenalty;
-
           var ptr RuleItem rItem;
+          var int accuracyBase;
+          var int temp;
 
           weapon.getRuleItem rItem;
           rItem.getTag hwpPenalty Tag.ITEM_IS_HEAVY_WEAPON;
@@ -65,8 +65,12 @@ extended:
           end;
 
           unit.getRuleArmor unitArmor;
-          unitArmor.getTag hwpUser Tag.SMT_ARMOR_HEAVY_WEAPON_USER; #ignore if user has appropriate armor
-          if and eq hwpUser 1 neq hwpPenalty 2; # HWP with value 2 can't be ignored by HWP specialist armor
+          unitArmor.getTag hwpUser Tag.SMT_ARMOR_HEAVY_WEAPON_USER; # armor bonus for reducing HWP penalty
+          rItem.getTag temp Tag.ITEM_HWP_IGNORES_ARMOR_BONUS;
+          if ge temp 1;
+            set hwpUser 0; # negate armor bonus if HWP ignores it
+          end;
+          if eq hwpUser 1; # skip if armor negates all penalty
             return bonus; # final accuracy
           end;
 
@@ -76,9 +80,13 @@ extended:
           unit.getTimeUnits currentTU; # absolute
           unit.getTimeUnitsMax temp;
           muldiv currentTU 100 temp; # relative
-          # debug_log "currenTU %" currentTU;
+          debug_log "currenTU %" currentTU;
 
-          set temp bonus; # starting bonus
+          if ge currentTU 80; # if the unit has >=80% TUs they don't get any penalties, so skip to the end
+            return bonus; # final accuracy
+          end;
+
+          set accuracyBase bonus; # starting bonus
 
           if and gt currentTU 20 le currentTU 80;
             add currentTU 20; # start with 100 (80 + 20) % bonus
@@ -93,25 +101,40 @@ extended:
             # debug_log "20 bonus" bonus;
           end;
 
-          if and ge hwpUser 2 neq hwpPenalty 2; # adjusted penalty if wearing appropriate armor
+          #debug_log "HWP base/penalty " accuracyBase bonus;
+
+          if ge hwpPenalty 2; # increase penalty to accuracy if HWP value >1 - 2 = -10%, 3 = -20%, 4 = -30%, etc
+            if eq battle_action BA_SNAPSHOT;
+              sub hwpPenalty 1; # snapshots get a smaller added penalty
+            end;
+            sub hwpPenalty 11; # starts at 2 -> 9
+            abs hwpPenalty;
+            limit hwpPenalty 1 10; # cap between 10%-100%
+            muldiv bonus hwpPenalty 10;
+            #debug_log "HWP bonus penalty " accuracyBase bonus hwpPenalty;
+          end;
+
+          if ge hwpUser 2; # adjusted penalty if wearing appropriate armor
             sub hwpUser 1;
             limit_lower hwpUser 1;
             mul bonus hwpUser;
-            add bonus temp;
+            add bonus accuracyBase;
             add hwpUser 1;
             div bonus hwpUser; # (reduced Acc * hwpBonus + starting Acc) / hwpBonus
+            #debug_log "HWP armor bonus " accuracyBase bonus hwpUser;
           end;
 
           if and eq kneeling 1 eq weaponWithBipod 1; # 1/3 penalty if kneeling with bipod
-            add bonus temp;
-            add bonus temp; # (current bonus + starting bonus * 2) / 3
+            add bonus accuracyBase;
+            add bonus accuracyBase; # (current bonus + starting bonus * 2) / 3
             div bonus 3; # 1/3 penalty
             # debug_log "kneel+bipod bonus";
           end;
 
-          if and eq kneeling 1 eq weaponWithBipod 0; # 1/2 penalty if kneeling without bipod
-            add bonus temp; # (current bonus + starting bonus) / 2
-            div bonus 2; # 1/2 penalty
+          if and eq kneeling 1 eq weaponWithBipod 0; # 2/3 penalty if kneeling without bipod
+            mul bonus 2;
+            add bonus accuracyBase; # ((current bonus * 2) + starting bonus) / 2
+            div bonus 3; # 2/3 penalty
           end;
           # debug_log "battle_action" battle_action;
           # debug_log "current bonus" bonus;

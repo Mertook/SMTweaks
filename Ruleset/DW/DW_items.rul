@@ -114,7 +114,7 @@ items:
     refNode: *STR_BOLTER_AMMO_DW
     bigSprite: 3165
     listOrder: 10443
-    damageType: 1
+    damageType: 11 # melta
     damageAlter:
       ResistType: 5 # plasma
       RandomType: 7 # 50-200%
@@ -122,8 +122,9 @@ items:
       ArmorEffectiveness: 0.9
       ToHealth: 1.0 # normal 1.1
       ToArmor: 0.15
-      ToStun: 0.6 # normal 0.5
-      ToEnergy: 0.3
+      ToStun: 0.5 # normal 0.5
+      RandomStun: false
+      ToEnergy: 0.0 # normal 0.3
       ToWound: 0.2
       RandomWound: false
     tags:
@@ -297,13 +298,14 @@ items:
     hitAnimation: {mod: 40k, index: 26}
     clipSize: 1
     power: 120
-    damageType: 1
+    damageType: 11 # melta
     damageAlter:
       ResistType: 5 # plasma
-      RandomType: 1
+      RandomType: 6
       ArmorEffectiveness: 0.7 #
-      ToHealth: 0.6 # normal 1.0
+      ToHealth: 0.8 # normal 1.0
       ToStun: 0.3
+      RandomStun: false
       ToArmorPre: 0.1
       ToArmor: 0.2
       ToWound: 0.02

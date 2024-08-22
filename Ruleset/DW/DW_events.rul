@@ -17,7 +17,15 @@ events:
     background: BACK13.SCR
     everyMultiItemList:
       STR_DW_TOKEN_LEADER: 1
-      STR_DW_TOKEN: 1
+
+  - name: STR_DEATHWATCH_EXPANSION_3
+    description: STR_DEATHWATCH_EXPANSION3
+    background: BACK13.SCR
+    everyMultiItemList:
+      STR_DW_TOKEN: 3
+
+
+
 
 eventScripts:
   - type: STR_DW_EVENT_SCRIPTIF

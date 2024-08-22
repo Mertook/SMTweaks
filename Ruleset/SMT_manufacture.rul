@@ -1,9 +1,16 @@
 manufacture:
-  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_DRUM
-  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_AP_DRUM
-  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_EX_DRUM
-  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_MC_DRUM
-
+  - name: STR_PRIMARIS_HEAVY_BOLT_RIFLE_DRUM
+    requires:
+      - STR_GENERALLOCK #disabled
+  - name: STR_PRIMARIS_HEAVY_BOLT_RIFLE_AP_DRUM
+    requires:
+      - STR_GENERALLOCK #disabled
+  - name: STR_PRIMARIS_HEAVY_BOLT_RIFLE_EX_DRUM
+    requires:
+      - STR_GENERALLOCK #disabled
+  - name: STR_PRIMARIS_HEAVY_BOLT_RIFLE_MC_DRUM
+    requires:
+      - STR_GENERALLOCK #disabled
 
   - name: STR_BANNER                                # Chapter Banner
     requires:

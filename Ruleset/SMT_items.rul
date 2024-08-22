@@ -30,6 +30,7 @@ items:
 
   - update: STR_CLAWS_DW                    # Lightning Claw (DW Terminator)
     refNode: *STR_CLAW_DMG
+    ufopediaType: STR_CLAWS
 
   - type: STR_CLAWS_ASS                     # Lightning Claw (Vanguard)
     refNode: *STR_CLAW_DMG
@@ -711,10 +712,18 @@ items:
     tags:
       ITEM_AMMO_SKIP_BIGOBS: 1
 
-  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_DRUM
-  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_EX_DRUM
-  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_AP_DRUM
-  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_MC_DRUM
+  - type: STR_PRIMARIS_HEAVY_BOLT_RIFLE_DRUM
+    requiresBuy:
+      - STR_GENERALLOCK # disabled
+  - type: STR_PRIMARIS_HEAVY_BOLT_RIFLE_EX_DRUM
+    requiresBuy:
+      - STR_GENERALLOCK # disabled
+  - type: STR_PRIMARIS_HEAVY_BOLT_RIFLE_AP_DRUM
+    requiresBuy:
+      - STR_GENERALLOCK # disabled
+  - type: STR_PRIMARIS_HEAVY_BOLT_RIFLE_MC_DRUM
+    requiresBuy:
+      - STR_GENERALLOCK # disabled
   - type: STR_BOLTRIFLE_DRUM                # Boltrifle Drum Ammo (Standard)
     refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
     bigSprite: 3186
@@ -923,7 +932,9 @@ items:
     tuAimed: 0
     autoShots: 5 # was 3
 
-  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE
+  - type: STR_PRIMARIS_HEAVY_BOLT_RIFLE
+    requiresBuy:
+      - STR_GENERALLOCK # disabled
   - type: STR_HEAVY_BOLTRIFLE               # Heavy Bolt Rifle
     battleType: 1
     armor: 200
@@ -948,15 +959,15 @@ items:
       - STR_BOLTRIFLE_DRUM_EX
       - STR_BOLTRIFLE_DRUM_MC
     dropoff: 7
-    minRange: 3 #cumbersome, not suited to CQC
-    autoRange: 14 # cawl 12
+    minRange: 4 #cumbersome, not suited to CQC
+    autoRange: 13 # cawl 12
     snapRange: 19 # cawl 18
     aimRange: 0
     accuracyAuto: 66 # cawl 66
     accuracySnap: 80 # cawl 80
     accuracyAimed: 0
     tuAuto: 30 # cawl 30 for 4
-    tuSnap: 26 # cawl 26 for 2
+    tuSnap: 28 # cawl 26 for 2
     tuAimed: 0
     tuLoad: 20 # +5, bulky drum mags
     confSnap:
@@ -3191,7 +3202,7 @@ items:
 
   - update: STR_STUN_ROD                    # Shock Maul
     armor: 200
-    tuMelee: 14 # was 
+    tuMelee: 16
 
   - update: STR_CRATED_RHINO                # Boxed Razorback
     costSell: 400000 # was 0, set so that you don't have to unpack & then sell vehicle

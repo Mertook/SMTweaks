@@ -114,9 +114,9 @@ items:
     refNode: *STR_BOLTER_AMMO_DW
     bigSprite: 3165
     listOrder: 10443
-    damageType: 11
+    damageType: 1
     damageAlter:
-      ResistType: 1
+      ResistType: 5 # plasma
       RandomType: 7 # 50-200%
       ToArmorPre: 0.15
       ArmorEffectiveness: 0.9
@@ -297,9 +297,9 @@ items:
     hitAnimation: {mod: 40k, index: 26}
     clipSize: 1
     power: 120
-    damageType: 11
+    damageType: 1
     damageAlter:
-      ResistType: 1
+      ResistType: 5 # plasma
       RandomType: 1
       ArmorEffectiveness: 0.7 #
       ToHealth: 0.6 # normal 1.0
@@ -638,15 +638,15 @@ items:
       - STR_BOLTRIFLE_DRUM_MC
       - STR_BOLTRIFLE_DRUM_MC_DW # free clip
     dropoff: 7
-    minRange: 3 #cumbersome, not suited to CQC
-    autoRange: 15 # regular 14
+    minRange: 4 #cumbersome, not suited to CQC
+    autoRange: 15 # regular 13
     snapRange: 20 # regular 20
     aimRange: 0
     accuracyAuto: 70 # cawl 66
     accuracySnap: 90 # cawl 80
     accuracyAimed: 0
     tuAuto: 33 # regular 35
-    tuSnap: 25 # regular 26
+    tuSnap: 26 # regular 28
     tuAimed: 0
     tuLoad: 20
     confSnap:

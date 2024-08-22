@@ -81,7 +81,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_PERSONAL_ARMOR
       - STR_DEATHWATCH
       - STR_RADICAL_INQUISITOR_STRATEGY
-      - STR_CHAOS_PATH
+      - STR_HERETICAL_INQUISITOR_STRATEGY # Radical Road Exclusive
       - STR_XENO_WEAPONS
     spawnedEvent: STR_REINFORCEMENTS_GK
 
@@ -182,6 +182,12 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     unlocks:
       - STR_RADICAL_INQUISITOR
     listOrder: 10
+
+  - name: STR_RADICAL_RECRUITMENT_INQ       # Radical recruitment for Chamber Militant
+    cost: 200
+    points: -100
+    dependencies:
+      - STR_RADICAL_INQUISITOR
 
   - name: STR_HERETICAL_INQUISITOR_STRATEGY #
     cost: 100

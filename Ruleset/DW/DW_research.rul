@@ -26,7 +26,7 @@ research:
     disables:
       - STR_GREYKNIGHTS
       - STR_RADICAL_INQUISITOR_STRATEGY
-      - STR_CHAOS_PATH
+      - STR_HERETICAL_INQUISITOR_STRATEGY # Radical Road Exclusive
       - STR_NOT_DEATHWATCH
       - STR_CYDONIA_OR_BUST # has their own version - STR_DEATHWATCH_BUST
     spawnedEvent: STR_DEATHWATCH_CARE_PACKAGE
@@ -121,13 +121,13 @@ research:
     spawnedEvent: STR_DEATHWATCH_EXPANSION_L
     listOrder: 2 # push above corpses/etc
 
-  - name: STR_DW_SQUAD6             # Deathwatch Squad Expansion +2 (High Tier)
+  - name: STR_DW_SQUAD6             # Deathwatch Squad Expansion +3 (High Tier)
     cost: 5
     points: 0
     dependencies:
       - STR_DW_SQUAD5
       - STR_DW_HIGHTIER
-    spawnedEvent: STR_DEATHWATCH_EXPANSION_2
+    spawnedEvent: STR_DEATHWATCH_EXPANSION_3
     listOrder: 2 # push above corpses/etc
 
   - name: STR_DW_HWP                # Deathwatch Gear Basic Tier (Devastator armor + Heavy Bolter)

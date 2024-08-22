@@ -92,7 +92,7 @@ items:
           #debug_log "DerevDmg pinged B/H " derevBonus to_health;
           targetArmor.getSize temp; # if unit is 2x2 deal extra damage directly (2x2 can't be stunned)
           if ge temp 2;
-            mul derevBonus 3;
+            mul derevBonus 2;
             add derevBonus 100;
             muldiv to_health derevBonus 100; # Derev value is added to damage as % bonus
             #debug_log "DerevDmg 2x2 B/H " derevBonus to_health;
@@ -104,9 +104,9 @@ items:
           muldiv derevBonus totalStun 100; # deal bonus damage based off unit stun
           add totalStun to_health;
           unit.getHealth temp;
-          if gt totalStun temp; # if unit is or will be knocked unconcious, multiply damage bonus
-            add derevBonus 5;
-            mul derevBonus 3;
+          if gt totalStun temp; # if unit is or will be knocked unconcious, massively increase damage bonus
+            add derevBonus 10;
+            mul derevBonus 5;
           end;
           add to_health derevBonus;
           #debug_log "DerevDmg S/B/H " totalStun derevBonus to_health;
@@ -117,12 +117,12 @@ items:
   - type: STR_RIFLE_CLIP_DEREV          # DW Bolter ammo
     refNode: *STR_DEREVENANT_AMMO
     tags:
-      SMT_DEREVENANT_AMMO: 45
+      SMT_DEREVENANT_AMMO: 75
 
   - type: STR_BOLT_SNIPER_AMMO_DEREV    # DW Bolt Sniper ammo
     refNode: *STR_DEREVENANT_AMMO
     tags:
-      SMT_DEREVENANT_AMMO: 45
+      SMT_DEREVENANT_AMMO: 75
 
 
   - &STR_ARMOR_IGNORING_AMMO            # Penetrating damage Template

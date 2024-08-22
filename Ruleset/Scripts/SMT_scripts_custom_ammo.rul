@@ -89,13 +89,13 @@ items:
         damaging_item.getTag derevBonus Tag.SMT_DEREVENANT_AMMO;
         if and gt temp 0 gt derevBonus 0;
 
-          debug_log "DerevDmg pinged B/H " derevBonus to_health;
+          #debug_log "DerevDmg pinged B/H " derevBonus to_health;
           targetArmor.getSize temp; # if unit is 2x2 deal extra damage directly (2x2 can't be stunned)
           if ge temp 2;
             mul derevBonus 2;
             add derevBonus 100;
             muldiv to_health derevBonus 100; # Derev value is added to damage as % bonus
-            debug_log "DerevDmg 2x2 B/H " derevBonus to_health;
+            #debug_log "DerevDmg 2x2 B/H " derevBonus to_health;
             return;
           end;
 
@@ -109,7 +109,7 @@ items:
             mul derevBonus 5;
           end;
           add to_health derevBonus;
-          debug_log "DerevDmg S/B/H " totalStun derevBonus to_health;
+          #debug_log "DerevDmg S/B/H " totalStun derevBonus to_health;
         end;
 
         return;

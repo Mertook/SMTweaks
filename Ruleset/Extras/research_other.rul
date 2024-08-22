@@ -74,7 +74,7 @@ research: # Research changes only made to maintain functionality for other facti
     points: 30
     dependencies:
       - STR_HIGHTIER_PREREQ
-    list
+    listOrder: 2
 
   - name: STR_BLASTER_LAUNCHER                      # Chaos Multimelta
     cost: 750 # was 900
@@ -160,6 +160,7 @@ research: # Research changes only made to maintain functionality for other facti
     dependencies:
       - STR_XENO_WEAPONS
       - STR_ELDAR_INTERROGATION
+    listOrder: 5
 
   - name: STR_ELDAR_ALLIES_IG                       # Eldar prereq for IG/Arbites
     cost: 0
@@ -177,6 +178,7 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_GENERALLOCK
       - STR_ELDAR_SEER
     spawnedEvent: STR_ELDAR_TREATY_FARSEER
+    listOrder: 5
 
   - name: STR_ELDAR_PATH #XENO ALLIANCE
     cost: 1000

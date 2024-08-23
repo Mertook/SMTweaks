@@ -1326,16 +1326,17 @@ items:
       index: 120
     explosionSpeed: 3
     power: 80 # +5 over regular bolter ammo
+    damageType: 1
     damageAlter: # bolter values as base
+      RandomType: 7
       ToArmorPre: 0.15
       ArmorEffectiveness: 0.6 # comparable AP to krak
       ToArmor: 0.15
-      ToHealth: 1.1
-      ToStun: 0.5
+      ToHealth: 1.0 # between regular and krak
+      ToStun: 0.4
       ToEnergy: 0.3
       ToWound: 0.2
       RandomWound: false
-    damageType: 1
     clipSize: 8
     invWidth: 1
     invHeight: 1
@@ -1624,7 +1625,7 @@ items:
   - update: STR_HB                          # Stormbolter
     armor: 200
     #twoHanded: false # was true (with 0 penalty) it's a terminator pistol
-    dropoff: 9 # was 4
+    dropoff: 7 # was 4
     autoRange: 0
     snapRange: 16 # was 15
     aimRange: 0
@@ -1637,12 +1638,12 @@ items:
     tags:
       ITEM_IS_HEAVY_WEAPON: 1 # terminator handgun
       ITEM_RECOIL: 80 # +5 - harsh requirement, terminator handgun
-      REACTION_MULTIPLIER: 175 # +75% reactions, pistol grip
+      REACTION_MULTIPLIER: 200 # +100% reactions, pistol grip
 
   - update: STR_HB_MC                       # MC Stormbolter
     armor: 200
     #twoHanded: false # was true (with 0 penalty) it's a terminator pistol
-    dropoff: 9 # was 4
+    dropoff: 7 # was 4
     autoRange: 0
     snapRange: 16 # was 15
     aimRange: 0
@@ -1650,12 +1651,12 @@ items:
     accuracySnap: 90
     accuracyAimed: 0
     tuAuto: 0
-    tuSnap: 20 # was 25
+    tuSnap: 18 # was 25
     tuAimed: 0
     tags:
       ITEM_IS_HEAVY_WEAPON: 1 # terminator handgun
       ITEM_RECOIL: 80 # +5 - harsh requirement, terminator handgun
-      REACTION_MULTIPLIER: 175 # +75% reactions, pistol grip
+      REACTION_MULTIPLIER: 200 # +100% reactions, pistol grip
 
   - update: STR_HB_CLIP                     # Stormbolter Ammo
     armor: 200

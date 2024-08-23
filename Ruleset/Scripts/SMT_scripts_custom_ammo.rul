@@ -2,7 +2,7 @@ extended:
   tags:
     RuleItem:
       SMT_AMMO_BONUSDMG_FIRINGACC: int # % bonus damage granted from units Firing Accuracy: (FA - 100) * Tag / 100
-      SMT_DEREVENANT_AMMO: int # % bonus health damage based on stun dealt to units with tenacious (Necrons)
+      SMT_DEREVENANT_AMMO: int # Instantly kills Necrons that are or will be knocked unconcious - value = % bonus damage added against 2x2 Necrons that can't be stunned
       SMT_AMMO_HP_PREDMG: int # % of power directly added to health damage ignoring armor
 
 items:
@@ -87,29 +87,38 @@ items:
         unit.getRuleArmor targetArmor;
         targetArmor.getTag temp Tag.ARMOR_TENACIOUS_HP_MOD; # enemy tag
         damaging_item.getTag derevBonus Tag.SMT_DEREVENANT_AMMO;
-        if and gt temp 0 gt derevBonus 0;
 
-          #debug_log "DerevDmg pinged B/H " derevBonus to_health;
+        # if and eq temp 1 gt derevBonus 0; # things with a tenacious value of 1 are instant-reviving Necrons
+            # unit.setSpawnUnitInstantRespawn 1; # force them to transform immediately
+        # end;
+
+        if and gt temp 0 gt derevBonus 0;
+          debug_log "DerevDmg pinged B/H " derevBonus to_health;
           targetArmor.getSize temp; # if unit is 2x2 deal extra damage directly (2x2 can't be stunned)
           if ge temp 2;
-            mul derevBonus 2;
+            mul derevBonus 2; # Destroyers are the only 2x2 with tenacious, their value is set at 6
             add derevBonus 100;
             muldiv to_health derevBonus 100; # Derev value is added to damage as % bonus
-            #debug_log "DerevDmg 2x2 B/H " derevBonus to_health;
+            debug_log "DerevDmg 2x2 B/H " derevBonus to_health;
             return;
           end;
 
-          unit.getStun totalStun;
-          add totalStun to_stun;
-          muldiv derevBonus totalStun 100; # deal bonus damage based off unit stun
-          add totalStun to_health;
           unit.getHealth temp;
-          if gt totalStun temp; # if unit is or will be knocked unconcious, massively increase damage bonus
-            add derevBonus 10;
-            mul derevBonus 5;
+          unit.getStun totalStun;
+          debug_log "DerevDmg Initial Stun OS/NS/TH/UH " totalStun to_stun to_health temp;
+          add totalStun to_stun;
+          add totalStun to_health;
+          if ge totalStun temp; # if unit is or will be knocked unconcious, kill it
+            unit.setSpawnUnit null; # prevent respawning via zombie effects
+            unit.setSpawnUnitInstantRespawn 0;
+            unit.setHealthWithOverkill -1;
+            set to_health 1; # prevent overkill melting
+            targetArmor.getTag temp Tag.ARMOR_TENACIOUS_HP_MOD;
+            add to_health temp; # add just enough damage to make sure it deals 1 damage through Necron resist (for red damage indicator flash)
+            debug_log "Derev Knockout bonus triggered " temp totalStun;
           end;
-          add to_health derevBonus;
-          #debug_log "DerevDmg S/B/H " totalStun derevBonus to_health;
+          unit.getHealth temp;
+          debug_log "DerevDmg H/D " temp to_health;
         end;
 
         return;
@@ -117,12 +126,12 @@ items:
   - type: STR_RIFLE_CLIP_DEREV          # DW Bolter ammo
     refNode: *STR_DEREVENANT_AMMO
     tags:
-      SMT_DEREVENANT_AMMO: 65
+      SMT_DEREVENANT_AMMO: 100
 
   - type: STR_BOLT_SNIPER_AMMO_DEREV    # DW Bolt Sniper ammo
     refNode: *STR_DEREVENANT_AMMO
     tags:
-      SMT_DEREVENANT_AMMO: 65
+      SMT_DEREVENANT_AMMO: 150
 
 
   - &STR_ARMOR_IGNORING_AMMO            # Penetrating damage Template

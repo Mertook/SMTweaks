@@ -95,7 +95,7 @@ items:
     invHeight: 2
     invWidth: 1
     explosionSpeed: 3
-    power: 80
+    power: 75
     damageType: 1 # AP
     damageAlter: # Standard bolter ammo
       RandomType: 7 # 50-200%
@@ -114,17 +114,15 @@ items:
     refNode: *STR_BOLTER_AMMO_DW
     bigSprite: 3165
     listOrder: 10443
-    damageType: 11 # melta
+    damageType: 1 # regular
     damageAlter:
-      ResistType: 5 # plasma
       RandomType: 7 # 50-200%
       ToArmorPre: 0.15
-      ArmorEffectiveness: 0.9
+      ArmorEffectiveness: 0.5 # penetrating
       ToHealth: 1.0 # normal 1.1
       ToArmor: 0.15
-      ToStun: 0.5 # normal 0.5
-      RandomStun: false
-      ToEnergy: 0.0 # normal 0.3
+      ToStun: 0.3 # normal 0.5
+      ToEnergy: 0.1 # normal 0.3
       ToWound: 0.2
       RandomWound: false
     tags:
@@ -160,7 +158,8 @@ items:
     hitAnimation:
       mod: 40k
       index: 88
-    explosionSpeed: 2
+    explosionSpeed: 3
+    power: 80
     damageType: 2 # Incin
     damageAlter:
       RandomType: 7 # 50-200%

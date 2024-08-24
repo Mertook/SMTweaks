@@ -35,7 +35,7 @@ soldierTransformation:
   - name: STR_RECYCLE_DW_LEADER            # Recover DW Token from dead captain
     requires:
       - STR_DEATHWATCH
-      - STR_COMMANDER_PLUS
+      - STR_DW_SQUAD5
     cost: 10000
     producedItem: STR_DW_TOKEN_LEADER
     allowsDeadSoldiers: true

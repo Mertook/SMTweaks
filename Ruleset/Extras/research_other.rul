@@ -20,6 +20,7 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_PILOT_GUARDSMEN
       - STR_IMPERIUM_RESEARCH
       - STR_NOT_STEEL_LEGION_STRATEGY
+      - STR_NOT_DEATHWATCH
     disables:
       - STR_CYDONIA_OR_BUST
       - STR_MARINES_STRATEGY
@@ -45,11 +46,14 @@ research: # Research changes only made to maintain functionality for other facti
       # - STR_GUARD_SUPORT
       - STR_IMPERIUM_RESEARCH
       - STR_GUARD_AND_INQUISITION #
+      - STR_NOT_DEATHWATCH
     disables:
       - STR_ARBITES
       - STR_ADEPTAS
       - STR_MARINES_STRATEGY
       - STR_PERSONAL_ARMOR
+
+
 
   - name: STR_OGRYN_REQUISITION                     # Keep IG ability to buy smokebombs intact
     getOneFree:

@@ -26,19 +26,55 @@ events:
 
 
 missionScripts:
-  - type: EARTHQUAKE_NECRON_BASE_DW # Deathwatch faces the unstoppable Necron Apocolypse, you can't permanently remove them from the globe
+  - type: EARTHQUAKE_NECRON_BASE_DW         # Deathwatch faces the unstoppable Necron Apocalypse, you can't permanently remove them from the globe
     missionWeights:
       0:
         STR_NECRON_BASE_EARTHQUAKE: 100
     useTable: false
-    firstMonth: 5 # 
+    firstMonth: 5 #
     executionOdds: 80
     startDelay: 2800
     randomDelay: 17280 # Up to 2 weeks random delay
     researchTriggers:
       STR_DEATHWATCH: true
 
+  - type: EARTHQUAKE_NECRON_BASE_REPEATING # Other factions experience a much slower and sedate Necron Apocalypse
+    missionWeights:
+      0:
+        STR_NECRON_BASE_EARTHQUAKE: 100
+    useTable: false
+    firstMonth: 9 #
+    executionOdds: 25
+    startDelay: 2800
+    randomDelay: 17280 # Up to 2 weeks random delay
+    researchTriggers:
+      STR_EARTHQUAKE_NECRONS: true
+      STR_NECRONS_SPAWNED: true
+      STR_DEATHWATCH: false
+
 eventScripts:
+  - type: STR_FIRST_EARTHQUAKE_NECRONS_DW   # Deathwatch Version, early start - main campaign focus
+    eventWeights:
+      0:
+        STR_EARTHQUAKE_DETECTED_NECRONS: 100
+    firstMonth: 4
+    executionOdds: 100
+    researchTriggers:
+      STR_EARTHQUAKE_NECRONS: false
+      STR_NECRONS_SPAWNED: false
+      STR_DEATHWATCH: true
+
+  - type: STR_SECOND_EARTHQUAKE_NECRONS_DW  # Deathwatch Version, early start
+    eventWeights:
+      0:
+        STR_NECRONS_SPAWNED: 100
+    firstMonth: 4
+    executionOdds: 100
+    researchTriggers:
+      STR_EARTHQUAKE_NECRONS: true
+      STR_NECRONS_SPAWNED: false
+      STR_DEATHWATCH: true
+
   - type: STR_FIRST_EARTHQUAKE_NECRONS      # Added Deathwatch restriction to regular Necron spawn
     eventWeights:
       0:
@@ -62,28 +98,6 @@ eventScripts:
       STR_NECRONS_SPAWNED: false
       STR_STEEL_LEGION_STRATEGY: false
       STR_DEATHWATCH: false
-
-  - type: STR_FIRST_EARTHQUAKE_NECRONS_DW   # Deathwatch Version, early start - main campaign focus
-    eventWeights:
-      0:
-        STR_EARTHQUAKE_DETECTED_NECRONS: 100
-    firstMonth: 4
-    executionOdds: 100
-    researchTriggers:
-      STR_EARTHQUAKE_NECRONS: false
-      STR_NECRONS_SPAWNED: false
-      STR_DEATHWATCH: true
-
-  - type: STR_SECOND_EARTHQUAKE_NECRONS_DW  # Deathwatch Version, early start
-    eventWeights:
-      0:
-        STR_NECRONS_SPAWNED: 100
-    firstMonth: 4
-    executionOdds: 100
-    researchTriggers:
-      STR_EARTHQUAKE_NECRONS: true
-      STR_NECRONS_SPAWNED: false
-      STR_DEATHWATCH: true
 
 
 

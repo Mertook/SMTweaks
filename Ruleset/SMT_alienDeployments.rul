@@ -184,7 +184,7 @@ alienDeployments:
     genMission:
       STR_MONOLITH_PATROL: 100 #
       STR_NECRON_TERROR: 66 # was 50 - more aggressive to force a response
-      STR_NECRON_BASE: 25 # was 30
+      STR_NECRON_BASE: 20 # was 30 - compensate for added monthly chance to spawn bases
       STR_NECRON_RETALIATION: 20 # was 20
     objectiveComplete: [STR_NECRON_BASE_DESTROYED, 1000]
     objectiveFailed: [STR_NECRON_BASE_NOT_DESTROYED, -500]
@@ -336,7 +336,7 @@ alienDeployments:
           showCraft: false
           showTarget: false
         minTurn: 20
-        executionOdds: 60
+        executionOdds: 66
         maxRuns: -1 # they just keep coming
         useSpawnNodes: true
         spawnNodeRanks: [4] # leader/commander nodes
@@ -512,7 +512,7 @@ alienDeployments:
           showCraft: false
           showTarget: false
         minTurn: 20
-        executionOdds: 60 # was 100
+        executionOdds: 66 # was 100
         maxRuns: -1 # they just keep coming
         useSpawnNodes: true
         spawnNodeRanks: [4] # leader/commander nodes

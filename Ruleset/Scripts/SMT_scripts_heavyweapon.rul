@@ -80,7 +80,7 @@ extended:
           unit.getTimeUnits currentTU; # absolute
           unit.getTimeUnitsMax temp;
           muldiv currentTU 100 temp; # relative
-          debug_log "currenTU %" currentTU;
+          #debug_log "currenTU %" currentTU;
 
           if ge currentTU 80; # if the unit has >=80% TUs they don't get any penalties, so skip to the end
             return bonus; # final accuracy

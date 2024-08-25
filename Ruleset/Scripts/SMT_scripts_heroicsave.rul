@@ -229,15 +229,14 @@ extended:
           battle_game.flashMessage "STR_SCRIPT_HEROIC_SAVE"; # 'Unit endured the hit'
 
           ### Handle wound protection to stop saved units from dying at the start of your turn
-          #debug_log "HeroSave Final (currHp|tohp|tostun|wound|saveHp|turn)- " currentHealth to_health to_stun temp saveHealth temp2;
+          #debug_log "HeroSave Final (currHp|tohp|tostun|wound|saveHp|turn)- " currentHealth to_health to_stun woundsTotal saveHealth temp2;
           if and ge woundsTotal saveHealth neq turnSide FACTION_PLAYER;
             add woundsTotal 10;
             unit.setHealth woundsTotal; # set health to current wounds +10 - corruption damage happens at the start of enemy turn, we don't need to account for it
             add to_stun to_health; # convert remaining incoming health damage to stun
-            limit_lower to_stun woundsTotal; # make sure to stun the unit in the case that they have excessive wounds and would die, but haven't taken enough raw damage to get stunned
+            limit_lower to_stun woundsTotal; # make sure to stun the unit in the case that they have excessive wounds and would die, but haven't taken enough raw damage to get stunned yet
             set to_health 0; # negate incoming damage
-            unit.getHealth currentHealth;
-            #debug_log "HeroSave Woundsave " temp currentHealth woundsTotal to_stun;
+            #debug_log "HeroSave Woundsave " woundsTotal to_stun;
           end;
 
           return;

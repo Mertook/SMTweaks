@@ -27,6 +27,7 @@ items:
     meleeMultiplier:
       melee: 0.9
       reactions: 0.1
+    experienceTrainingMode: 13
 
   - update: STR_CLAWS_DW                    # Lightning Claw (DW Terminator)
     refNode: *STR_CLAW_DMG
@@ -90,15 +91,15 @@ items:
     flatMelee:
       time: true
       energy: true
+    experienceTrainingMode: 13
 
   - update: STR_UNARMED_GAUNTLET_PLUS       # Regular Marine Armor Punch
     refNode: *STR_FIST
 
   - update: STR_JUMP_GAUNTLET_PLUS          # Jumpsuit Punch
-    #*** Melee punch
     meleePower: 20
     meleeBonus:
-      strength: 0.3 # was 0.25 - Jetpack punch is 0.3
+      strength: 0.3 #
       melee: 0.3 # was 0.25
     meleeAlter:
       RandomType: 1
@@ -110,6 +111,7 @@ items:
     meleeMultiplier:
       reactions: 0.25
       melee: 0.75
+    experienceTrainingMode: 13
 
   - &STR_POWERFIST_TEMPLATE                 # Powerfist Values
     weight: 0
@@ -1241,7 +1243,7 @@ items:
       - STR_LIGHT_BOLTER_AMMO_AP
       - STR_LIGHT_BOLTER_AMMO_INF
     tags:
-      ITEM_RECOIL: 30 # was 25
+      ITEM_RECOIL: 25 # was 25
 
   - update: STR_MC_BOLTER_DEAZ              # Light Bolter (MC)
     listOrder: 10294 # move to just under locke
@@ -1264,7 +1266,7 @@ items:
       - STR_LIGHT_BOLTER_AMMO_AP
       - STR_LIGHT_BOLTER_AMMO_INF
     tags:
-      ITEM_RECOIL: 30 # was 25
+      ITEM_RECOIL: 25 # was 25
 
   - type: STR_ABSOLVOR_PISTOL               # Absolvor Bolt Pistol
     categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
@@ -2302,13 +2304,50 @@ items:
       - STR_ASSC_CLIP
     dropoff: 3
     autoRange: 20
-    snapRange: 23
+    snapRange: 30
     aimRange: 0
     accuracySnap: 80 
     accuracyAuto: 70
     accuracyAimed: 0
-    tuAuto: 55
-    tuSnap: 28
+    tuAuto: 50
+    tuSnap: 25
+    tuAimed: 0
+    autoShots: 4
+    bulletSpeed: 10
+    explosionSpeed: 1
+    tags:
+      ITEM_RECOIL: 90 # heavy weapon
+      ITEM_IS_HEAVY_WEAPON: 1 # low fire rate relative to assault cannon
+
+  - type: STR_ACCEL_AUTOCANNON_FIXED_DW     # Accelerator Autocannon (Omnis Armor DW)
+    categories: [STR_CAT_AUTO]
+    battleType: 1
+    weight: 50
+    recover: false
+    fixedWeapon: true
+    fixedWeaponShow: true
+    twoHanded: true
+    blockBothHands: true
+    invWidth: 2
+    invHeight: 3
+    armor: 200
+    listOrder: 10775
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 1034} #Inq Autocannon
+    floorSprite: {mod: 40k_ROSIGMA_edits, index: 949} #Inq Autocannon
+    handSprite: {mod: 40k_ROSIGMA_edits, index: 864} #Inq Autocannon
+    bulletSprite: {mod: 40k, index: 6}
+    fireSound: {mod: 40k, index: 12}
+    compatibleAmmo:
+      - STR_ASSC_CLIP
+    dropoff: 3
+    autoRange: 20
+    snapRange: 30
+    aimRange: 0
+    accuracySnap: 80 
+    accuracyAuto: 70
+    accuracyAimed: 0
+    tuAuto: 50
+    tuSnap: 25
     tuAimed: 0
     autoShots: 4
     bulletSpeed: 10
@@ -2410,6 +2449,7 @@ items:
 
   - update: STR_SMALL_ROCKET                # Small Frag Missile
     size: 0.1 # was 0.2
+    weight: 4 # was 5
     costBuy: 3000
     costSell: 1500
     armor: 200
@@ -2431,17 +2471,20 @@ items:
 
   - update: STR_LARGE_ROCKET                # Small Krak Missile
     size: 0.1 # was 0.2
+    weight: 4 # was 6
     costBuy: 4000
     costSell: 2000
     armor: 200
 
   - update: STR_INCENDIARY_ROCKET           # Incendiary missile
     size: 0.1 # was 0.2
+    weight: 4 # was 5
     costBuy: 3000
     armor: 200
 
   - update: STR_HEAVY_ROCKET_HE             # Large Frag Missile
     size: 0.1 # was 0.3
+    weight: 10 # was 15
     costBuy: 6000 # was 20k
     costSell: 3000
     damageAlter:
@@ -2449,6 +2492,7 @@ items:
 
   - update: STR_HEAVY_ROCKET_KRAK           # Large Krak Missile
     size: 0.1 # was 0.3
+    weight: 10 # was 15
     costBuy: 8000 # was 40k!
     costSell: 4000
     power: 140 # was 140
@@ -2457,6 +2501,7 @@ items:
 
   - update: STR_HEAVY_ROCKET                # Melta Missile
     size: 0.1 # was 0.3
+    weight: 10 # was 15
     costBuy: 16000 # was 80k!!
     costSell: 8000
     damageAlter:

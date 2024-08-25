@@ -157,6 +157,7 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: -20        # base 10 -30 (ranged specialist & also to offset strength bonus)
+    builtInWeapons: [] # remove backpack blocker
 
   - update: STR_APOT_ARMOR_UC               #APOTH
     refNode: *STR_MARINE_ARMOR

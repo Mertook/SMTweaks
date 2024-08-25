@@ -1,3 +1,4 @@
+### Rosigma Plasma script, used here to implement new Plasma guns and fix Rosgima issue that causes red guns to pulse all over when overheating instead of just the heat core
 
 extended:
   tags:
@@ -22,7 +23,6 @@ extended:
 
 items:
   - &STR_OVERHEATING_PLASMA
-    bigSprite: 300
     tags:
       ITEM_HEAT_MAX_LEVEL: 7
       ITEM_HEAT_DISSIPATION_PER_TURN: 1
@@ -87,7 +87,6 @@ items:
         add sprite_index sprite_offset;
         return sprite_index;
 
-      # https://openxcom.org/forum/index.php/topic,6758.msg107896.html#msg107896
       recolorItemSprite: |
         var int color;
         var int temp;
@@ -124,7 +123,8 @@ items:
           get_color color new_pixel;
           item.isFuseEnabled temp;
           if or gt temp 0 gt currentHeat maxHeat; # todo refactor to max heat + 1 or fuse enabled
-            if eq color 2; # red
+            get_shade temp new_pixel;
+            if and eq color 2 le temp 4; # red heatsink parts only
               set temp anim_frame;
               wavegen_tri temp 16 16 15;
               mul temp -1;
@@ -273,10 +273,9 @@ items:
 
   - type: STR_PLASMA_GUN_TWINCORE_DW    # Deathwatch MC Twincore Plasma
     refNode: *STR_OVERHEATING_PLASMA
-    bigSprite: 350
     tags:
       ITEM_HEAT_MAX_LEVEL: 7
-      ITEM_HEAT_DISSIPATION_PER_TURN: 4 #improved dissipation
+      ITEM_HEAT_DISSIPATION_PER_TURN: 5 #improved dissipation
       ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 1
       ITEM_AIMED_FLAT_POWER_BONUS: 50 #Maximal Shot Bonus
       ITEM_POWER_BONUS_PERCENTILE: 1 #use %

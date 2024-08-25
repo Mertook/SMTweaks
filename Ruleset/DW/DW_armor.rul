@@ -59,8 +59,9 @@ armors:
   - type: STR_DW_TAC_ARMOR_BT_UC
     refNode: *STR_DW_TAC_MK7
     tags:
-      INFECTION_RESIST_TYPE: 0 # universal resist
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST_TYPE: 0 # universal resist
+      INFECTION_RESIST: 100 # immune to corruption
   - type: STR_DW_TAC_ARMOR_CF_UC
     refNode: *STR_DW_TAC_MK7
   - type: STR_DW_TAC_ARMOR_DA_UC
@@ -162,6 +163,7 @@ armors:
     refNode: *STR_DW_APOTH_MK7
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_APOT_ARMOR_CF_UC
     refNode: *STR_DW_APOTH_MK7
@@ -260,6 +262,7 @@ armors:
     refNode: *STR_DW_DEV_MK7
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_DEV_ARMOR_CF_UC
     refNode: *STR_DW_DEV_MK7
@@ -362,6 +365,7 @@ armors:
     refNode: *STR_DW_ASS_MK7
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_ASS_ARMOR_CF_UC
     refNode: *STR_DW_ASS_MK7
@@ -461,6 +465,7 @@ armors:
     refNode: *STR_DW_TECH_MK7
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_TECH_ARMOR_CF_UC
     refNode: *STR_DW_TECH_MK7
@@ -563,6 +568,7 @@ armors:
     refNode: *STR_DW_TERM_MK7
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_TER_ARMOR_CF_UC
     refNode: *STR_DW_TERM_MK7
@@ -599,7 +605,7 @@ armors:
     moveCost:
       basePercent: [100, 75] # was 100, 25
 
-  - &STR_DW_TERM_ASS_SHIELD_MK7
+  - &STR_DW_TERM_ASS_SHIELD_MK7             #Terminator Armor (Assault Shield)
     ufopediaType: STR_DW_TERM_ASS_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -667,6 +673,7 @@ armors:
     refNode: *STR_DW_TERM_ASS_SHIELD_MK7
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_TASS_ARMOR_CF_UC
     refNode: *STR_DW_TERM_ASS_SHIELD_MK7
@@ -703,7 +710,7 @@ armors:
     moveCost:
       basePercent: [100, 75] # was 100, 25
 
-  - &STR_DW_TERM_ASS_CLAWS_MK7
+  - &STR_DW_TERM_ASS_CLAWS_MK7              #Terminator Armor (Assault Claws)
     ufopediaType: STR_DW_TERM_ASS_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -814,6 +821,7 @@ armors:
       F5: ["0", "TERMCLWBT", "F5_FACE"]
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_TASS_ARMOR_CF_CLAWS_UC
     refNode: *STR_DW_TERM_ASS_CLAWS_MK7
@@ -976,7 +984,7 @@ armors:
     moveCost:
       basePercent: [100, 75] # was 100, 25
 
-  - &STR_DW_TERM_CYCLONE_MK7
+  - &STR_DW_TERM_CYCLONE_MK7                #Terminator Armor (Cyclone)
     ufopediaType: STR_DW_TERM_CYC_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -1085,6 +1093,7 @@ armors:
       F5: ["0", "TERMCYCBT", "F5_FACE"]
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_TSARGENT_ARMOR_CF_UC
     refNode: *STR_DW_TERM_CYCLONE_MK7
@@ -1309,6 +1318,7 @@ armors:
     refNode: *STR_DW_TAC_MKX
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_TAC_CF_UC
     refNode: *STR_DW_TAC_MKX
@@ -1411,6 +1421,7 @@ armors:
     refNode: *STR_DW_APOTH_MKX
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_APO_CF_UC
     refNode: *STR_DW_APOTH_MKX
@@ -1514,6 +1525,7 @@ armors:
     refNode: *STR_DW_TECH_MKX
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_TEC_CF_UC
     refNode: *STR_DW_TECH_MKX
@@ -1619,6 +1631,7 @@ armors:
     refNode: *STR_DW_PHB_MKX
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_PHB_CF_UC
     refNode: *STR_DW_PHB_MKX
@@ -1754,6 +1767,7 @@ armors:
       F5: ["0", "GRVBSBT", "F5_FACE", "GOLA"]
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_GRV_CF_UC
     refNode: *STR_DW_GRV_MKX_BS
@@ -2020,6 +2034,7 @@ armors:
       F5: ["0", "GRVACBT", "F5_FACE", "GOLA"]
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_GRVAC_CF_UC
     refNode: *STR_DW_GRV_MKX_AC
@@ -2306,6 +2321,7 @@ armors:
       F5: ["0", "GRVFSBT", "F5_FACE", "GOLA"]
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_GRVFS_CF_UC
     refNode: *STR_DW_GRV_MKX_FS
@@ -2553,6 +2569,7 @@ armors:
       - STR_BLACKT_PRIMARIS
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_INC_CF_UC
     refNode: *STR_DW_INC_MKX
@@ -2653,7 +2670,7 @@ armors:
       - 0.2 #IMPACT
       - 0.9 #MELTA
     builtInWeapons:
-      - STR_ACCEL_AUTOCANNON_FIXED
+      - STR_ACCEL_AUTOCANNON_FIXED_DW
       - INV_NULL_3X3
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     tags:
@@ -2718,6 +2735,7 @@ armors:
       F5: ["0", "INCDWBT", "M5_FACE", "GOLA"]
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_INCAC_CF_UC
     refNode: *STR_DW_INC_MKX_AC
@@ -3010,6 +3028,7 @@ armors:
       F5: ["0", "INCDWBT", "M5_FACE", "GOLA"]
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_MKX_DW_INCPE_CF_UC
     refNode: *STR_DW_INC_MKX_PE
@@ -3314,6 +3333,8 @@ armors:
       F3: ["CAPEP", "MKXCAPDW", "M3_FACE", ""]
       F4: ["CAPEP", "MKXCAPDW", "M4_FACE", ""]
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
+    builtInWeapons:
+      - STR_GRAV_AUTOC_DW
   - type: STR_DW_LEADER_DA_UC
     refNode: *STR_DW_LEADER_ARMOR
     units:
@@ -3337,11 +3358,10 @@ armors:
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
       - INV_NULL_3X1_BACKPACK
-      - STR_LIB_SPEED_TOME
-      - STR_LIB_SMOKE_TOME
-      - STR_LIB_LOCKDOWN_TOME
+      - STR_PLASMA_GUN_TWINCORE_DW
+      - STR_PLASMA_TWINCORE_CLIP
       - STR_LIB_SHIELD_TOME
-      - STR_SMITE_TOME
+      - STR_SMITE_TOME_DW
     tags:
       ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
 
@@ -3571,7 +3591,7 @@ armors:
       - STR_MKX_DW_TAC_CORPSE
     builtInWeapons:
       - STR_PLASMA_EXTERMINATOR_FIXED
-      - STR_ACCEL_AUTOCANNON_FIXED
+      - STR_ACCEL_AUTOCANNON_FIXED_DW
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
@@ -3581,6 +3601,14 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
+    builtInWeapons: # add main captain weapons to dropdown list
+      - STR_HEAVY_BOLTRIFLE_DW
+      - STR_VOLKITE_DW
+      - AUX_CROZIUS_DW
+      - STR_PLASMA_GUN_TWINCORE_DW
+      - STR_CLAWS_DW
+      - STR_GRAV_AUTOC_DW
+      - STR_FORCE_HALBERD_DW
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
@@ -3590,6 +3618,7 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
+    specialWeapon: AUX_MORTAR
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
@@ -3599,6 +3628,9 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
+    builtInWeapons:
+      - STR_CLAWS
+      - AUX_SHIELD
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 

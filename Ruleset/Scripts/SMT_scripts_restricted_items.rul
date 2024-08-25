@@ -170,6 +170,12 @@ items:
       SMT_RESTRICTED_DAMAGE_PEN: 15 # only 15% damage
       SMT_RESTRICTED_ITEM_MELEE: 85 # only 15% damage
 
+  - type: STR_PLASMA_GUN_TWINCORE_DW    # Twincore Plasma (DW Captain - 3)
+    refNode: *STR_RESTRICTED_ITEM
+    tags:
+      SMT_RESTRICTED_ITEM: 3
+      SMT_RESTRICTED_DAMAGE_PEN: 25
+
 
 
 

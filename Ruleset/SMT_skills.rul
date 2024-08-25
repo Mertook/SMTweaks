@@ -63,8 +63,8 @@ skills:
     compatibleWeapons: [STR_LIB_SPEED_TOME, STR_LIB_SPEED_TOME_DW]
     checkHandsOnly: false
     costUse:
-      time: 50 # was 75 - nerfed effect means it can have lower costs
-      energy: 20
+      time: 40 # was 75 - nerfed effect means it can have lower costs
+      energy: 15
       stun: 15
       morale: 20
     flatUse:
@@ -72,3 +72,18 @@ skills:
       energy: false #   20% energy
       stun: false #     15% stun
       morale: false #   20% morale
+
+  - type: STR_LIB_SMITE_SKILL       # Librarian Smite (DW Captain)
+    targetMode: 11
+    compatibleWeapons: [STR_SMITE_TOME_DW]
+    checkHandsOnly: false
+    costUse:
+      time: 20
+      energy: 10
+      stun: 5
+      morale: 5
+    flatUse:
+      time: false #     20% TU
+      energy: false #   10% energy
+      stun: false #      5% stun
+      morale: false #    5% morale

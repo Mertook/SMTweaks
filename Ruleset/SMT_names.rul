@@ -9,6 +9,12 @@ extraStrings:
       STR_STRIKE_AUTO_COUNT: "Barrage (x{0})"
       STR_CROZIUS_AIMED_COUNT: "Sanctify (x{0})"
       STR_DAMAGE_12: "GRAV"
+      STR_NECRON_REINFORCEMENTS_SHIP_DESC_LIGHT: "The Monolith's foul machinery is springing to life! Necrons are being awakened from stasis and teleported onto the field. We must quicken our pace or we will surely be overwhelmed."
+      STR_NECRON_REINFORCEMENTS_SHIP_DESC_MEDIUM: "The Monolith is calling more Necrons from their tombs, teleporting onto the field in greater numbers. We have little time left to eliminate their strikeforce before their numbers become too great!"
+      STR_NECRON_REINFORCEMENTS_SHIP_DESC_HEAVY: "Force Commander, the Necron tombs are at high alert and are actively teleporting in heavy reinforcements. We must destroy them all in one fell swoop or evacuate lest our forces be overcome!"
+      STR_NECRON_REINFORCEMENTS_TOMB_DESC_LIGHT: "Force Commander, the Necron Tomb is reacting to our presence and Necrons are being roused from stasis. While their numbers are low for now, we must make haste before they increase in intensity."
+      STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM: "Force Commander, the Tomb is awakening and more warriors are arriving to impede our progress. We need to be quick in reaching our objective or prepare to evacuate lest our forces be overwhelmed!"
+      STR_NECRON_REINFORCEMENTS_TOMB_DESC_HEAVY: "Force Commander, the Necron Tomb is on high alert and summoning all of its warriors to bear on us. We must destroy the heart of the base immediately or risk being overwhelemd!"
       ### ARMOR
       STR_ASS_ARMOR_HONOR_CLAW: MK7 Vanguard Armor (Claw)
       STR_CHAP_TERMINATOR_UC: Chaplain Terminator Armor
@@ -79,10 +85,11 @@ extraStrings:
       STR_PLASMA_EXTERMINATOR_FIXED: Plasma Exterminator
       STR_PLASMA_EXTERMINATOR_FIXED2: Dual Plasma Exterminators
       STR_ACCEL_AUTOCANNON_FIXED: Accelerator Autocannon
+      STR_ACCEL_AUTOCANNON_FIXED_DW: ¬ Accelerator Autocannon
       STR_GRAV_BOLTER_DW: Boltstorm Gauntlet
       STR_GRAV_AUTOC_DW: Autocannon Gauntlet
       STR_GRAV_FLAMER_DW: Flame Gauntlet
-      STR_CLAWS_DW: Lighting Claw
+      STR_CLAWS_DW: ¬ Lighting Claw
       STR_BOLTRIFLE_DRUM: Standard Boltrifle Drum
       STR_BOLTRIFLE_DRUM_AP: Kraken Penetrator Drum
       STR_BOLTRIFLE_DRUM_EX: Metal Storm Drum
@@ -141,6 +148,7 @@ extraStrings:
       STR_LIB_LOCKDOWN_SKILL: Lockdown
       STR_LIB_SHIELD_SKILL: Project Shield
       STR_LIB_HASTE_SKILL: Accelerate
+      STR_LIB_SMITE_SKILL: Smite
       ### TRANSFORMATIONS
       STR_PROMOTE_TERMINATOR: Promote Vet Marine
       STR_HARVEST_GENESEED: Recover Geneseed
@@ -348,11 +356,13 @@ extraStrings:
       STR_BOLT_SNIPER_AMMO_HELS: Helspear Bolt
       STR_SHOTGUN_DW: Deathwatch Shotgun
       STR_SHOTGUN_SHELLS_WYRM: Wyrmsbreath Shells
-      AUX_CROZIUS_DW: "Crozius Arcanum"
+      AUX_CROZIUS_DW: "¬ Crozius Arcanum"
       STR_DW_PLASMA_GRENADE: ¬ Plasma Grenade
       STR_VOLKITE_DW: ¬ Volkite Caliver
       STR_HEAVY_BOLTRIFLE_DW: ¬ Heavy Bolt Rifle
       STR_FORCE_HALBERD_DW: ¬ Force Halberd
+      STR_PLASMA_GUN_TWINCORE_DW: ¬ Twincore Plasma Rifle
+      STR_SMITE_TOME_DW: Tome of Fulmination
       ### DEATHWATCH RESEARCH
       STR_INQUISITION: Inquisition
       STR_DW_HWP: Deathwatch Heavy Weaponry
@@ -394,9 +404,9 @@ extraStrings:
       STR_DEATHWATCH_EXPANSION_2: "Deathwatch Reinforcements"
       STR_DEATHWATCH_EXPANSION2: "After our newest reports about the threats plaguing this planet we have been granted greater authority by the Ordo Xenos.{NEWLINE} We can now requisition two additional Deathwatch Marines to support our investigations."
       STR_DEATHWATCH_EXPANSION_L: "Deathwatch Captain"
-      STR_DEATHWATCH_EXPANSIONL: "With the true nature of the Warp Storm uncovered an elite Deathwatch Captain has agreed to lead the Kill-Team in our command.{NEWLINE} Be sure to consult the Codex to learn the strengths of each squad leader and choose appropriately. (NOT YET COMPLETE)"
+      STR_DEATHWATCH_EXPANSIONL: "With the true nature of the Warp Storm uncovered an elite Deathwatch Captain has agreed to lead the Kill-Team in our command.{NEWLINE} Be sure to consult the Codex to learn the strengths of each squad leader and choose appropriately."
       STR_DEATHWATCH_EXPANSION_3: "Deathwatch Reinforcements"
-      STR_DEATHWATCH_EXPANSION3: "Preparing for our counteroffensive against the Architect despoiling this planet, we have been granted authority to deploy a full Deathwatch Kill-Team to spearhead the mission.{NEWLINE} We can now requisition threee additional Deathwatch Marines for our final assault on the Necron Tomb."
+      STR_DEATHWATCH_EXPANSION3: "Preparing for our counteroffensive against the Architect despoiling this planet, we have been granted authority to deploy a full Deathwatch Kill-Team to spearhead the mission.{NEWLINE} We can now requisition two additional Deathwatch Marines for our final assault on the Necron Tomb."
       STR_REINFORCEMENTS_GUARD_REGULAR_INQ: "Guardsmen Recruits Arrive"
       STR_REINFORCEMENTS_GUARD_LARGE_INQ: "Guardsmen Recruits Arrive"
       STR_REINFORCEMENTS_GUARD_MEDIC_INQ: "Guardsmen Medics Arrive"

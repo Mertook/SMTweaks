@@ -22,12 +22,71 @@ events:
     description: STR_DEATHWATCH_EXPANSION3
     background: BACK13.SCR
     everyMultiItemList:
-      STR_DW_TOKEN: 3
+      STR_DW_TOKEN: 2
 
 
-
+missionScripts:
+  - type: EARTHQUAKE_NECRON_BASE_DW # Deathwatch faces the unstoppable Necron Apocolypse, you can't permanently remove them from the globe
+    missionWeights:
+      0:
+        STR_NECRON_BASE_EARTHQUAKE: 100
+    useTable: false
+    firstMonth: 5 # 
+    executionOdds: 80
+    startDelay: 2800
+    randomDelay: 17280 # Up to 2 weeks random delay
+    researchTriggers:
+      STR_DEATHWATCH: true
 
 eventScripts:
+  - type: STR_FIRST_EARTHQUAKE_NECRONS      # Added Deathwatch restriction to regular Necron spawn
+    eventWeights:
+      0:
+        STR_EARTHQUAKE_DETECTED_NECRONS: 100
+    firstMonth: 6
+    executionOdds: 80
+    researchTriggers:
+      STR_EARTHQUAKE_NECRONS: false
+      STR_NECRONS_SPAWNED: false
+      STR_STEEL_LEGION_STRATEGY: false
+      STR_DEATHWATCH: false
+
+  - type: STR_SECOND_EARTHQUAKE_NECRONS     # Added Deathwatch restriction to regular Necron spawn
+    eventWeights:
+      0:
+        STR_NECRONS_SPAWNED: 100
+    firstMonth: 6
+    executionOdds: 80
+    researchTriggers:
+      STR_EARTHQUAKE_NECRONS: true
+      STR_NECRONS_SPAWNED: false
+      STR_STEEL_LEGION_STRATEGY: false
+      STR_DEATHWATCH: false
+
+  - type: STR_FIRST_EARTHQUAKE_NECRONS_DW   # Deathwatch Version, early start - main campaign focus
+    eventWeights:
+      0:
+        STR_EARTHQUAKE_DETECTED_NECRONS: 100
+    firstMonth: 4
+    executionOdds: 100
+    researchTriggers:
+      STR_EARTHQUAKE_NECRONS: false
+      STR_NECRONS_SPAWNED: false
+      STR_DEATHWATCH: true
+
+  - type: STR_SECOND_EARTHQUAKE_NECRONS_DW  # Deathwatch Version, early start
+    eventWeights:
+      0:
+        STR_NECRONS_SPAWNED: 100
+    firstMonth: 4
+    executionOdds: 100
+    researchTriggers:
+      STR_EARTHQUAKE_NECRONS: true
+      STR_NECRONS_SPAWNED: false
+      STR_DEATHWATCH: true
+
+
+
   - type: STR_DW_EVENT_SCRIPTIF
     executionOdds: 0
     researchTriggers:

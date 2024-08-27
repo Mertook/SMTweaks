@@ -1,14 +1,23 @@
 manufacture:
-  - name: STR_PRIMARIS_HEAVY_BOLT_RIFLE_DRUM
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_DRUM
+    space: 0
+    time: 100
+    cost: 10000
     requires:
       - STR_GENERALLOCK #disabled
-  - name: STR_PRIMARIS_HEAVY_BOLT_RIFLE_AP_DRUM
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_AP_DRUM
+    space: 0
+    time: 100
     requires:
       - STR_GENERALLOCK #disabled
-  - name: STR_PRIMARIS_HEAVY_BOLT_RIFLE_EX_DRUM
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_EX_DRUM
+    space: 0
+    time: 100
     requires:
       - STR_GENERALLOCK #disabled
-  - name: STR_PRIMARIS_HEAVY_BOLT_RIFLE_MC_DRUM
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_MC_DRUM
+    space: 0
+    time: 100
     requires:
       - STR_GENERALLOCK #disabled
 

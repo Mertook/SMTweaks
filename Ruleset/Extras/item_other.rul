@@ -55,7 +55,7 @@ items:
     requires:
       - STR_ELDAR_WEAPONRY
     armor: 200
-    experienceTrainingMode: 13
+    experienceTrainingMode: 13 # melee & reactions
 
   - update: STR_ELDAR_MGRENADE                  # Eldar Melta Grenade
     requires:
@@ -66,6 +66,18 @@ items:
     requires:
       - STR_ELDAR_WEAPONRY
     armor: 200
+    damageType: 5 # Plasma
+    damageAlter:
+      RandomType: 6
+      ToHealth: 1.0
+      ToArmorPre: 0.2
+      ArmorEffectiveness: 0.75 #
+      FireThreshold: 70 #
+      ToArmor: 0.1
+      FixRadius: 1
+
+  - update: STR_HYPERPHASESWORD
+    experienceTrainingMode: 13 # melee & reactions
 
   - update: STR_NECRON_SCARAB_SPAWNER_GRENADE   # Scarab spawner
     requires:
@@ -222,7 +234,7 @@ items:
     explosionSpeed: 1
     powerForAnimation: 5
     battleType: 1
-    armor: 200
+    armor: 300
     costSell: 100000
     invWidth: 2
     invHeight: 3

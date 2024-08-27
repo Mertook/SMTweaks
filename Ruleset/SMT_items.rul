@@ -69,10 +69,10 @@ items:
     meleeSound: {mod: 40k, index: 100}
     meleeAnimation: {mod: 40k, index: 0}
     meleeType: 7
-    meleePower: 20 #
+    meleePower: 10 #
     meleeBonus:
-      strength: 0.3 #
-      melee: 0.3 #
+      strength: 0.25 #
+      melee: 0.25 #
     meleeAlter:
       RandomType: 2
       IgnoreDirection: false
@@ -204,6 +204,60 @@ items:
     fixedWeapon: true
     recover: false
     specialUseEmptyHand: true
+
+  - type: STR_SM_APOTH_FIST                 # Inbuilt Apothecary medkit + Marine fist
+    refNode: *STR_FIST
+    specialIconSprite: {mod: 40k, index: 100} # medkit icon
+    battleType: 6
+    painKiller: 40 #
+    heal: 40 #
+    stimulant: 40 #
+    woundRecovery: 1
+    healthRecovery: 5 #
+    stunRecovery: 6 #
+    energyRecovery: 15 #
+    tuUse: 10
+    experienceTrainingMode: 19
+    medikitTargetSelf: true
+    flatRate: true
+    recover: false
+    fixedWeapon: true
+
+  - type: STR_SM_APOTH_FIST_DW               # Inbuilt Apothecary medkit + Marine fist (Deathwatch Captain)
+    refNode: *STR_FIST
+    specialIconSprite: {mod: 40k, index: 100} # medkit icon
+    battleType: 6
+    painKiller: 60 # +20
+    heal: 60 # +20
+    stimulant: 60 # +20
+    woundRecovery: 1
+    healthRecovery: 6 # +1
+    stunRecovery: 8 # +2
+    energyRecovery: 15 #
+    tuUse: 8 # -2
+    experienceTrainingMode: 19
+    medikitTargetSelf: true
+    flatRate: true
+    recover: false
+    fixedWeapon: true
+
+  - update: AUX_MEDI_KIT_ADVANCED           # Advanced Apoth Medkit
+    defaultInventorySlot: STR_LEFT_HAND
+    painKiller: 40 #
+    heal: 40 #
+    stimulant: 40 #
+    woundRecovery: 1
+    healthRecovery: 5 #
+    stunRecovery: 6 #
+    energyRecovery: 15 #
+    tuUse: 10
+    flatRate: true
+    medikitTargetSelf: true
+    accuracyMelee: 80 # was missing (default regular is 70)
+    meleePower: 60 # was missing (default regular is 50)
+    meleeMultiplier: # was missing (default is flat 0.5 + melee 0.5)
+      melee: 0.9
+      reactions: 0.1
 
   - &STR_SKILL_BLESS                        # Chaplain Bless ability
 #    type: STR_SM_CHAPLAIN_BLESS
@@ -627,7 +681,7 @@ items:
     damageType: 1 # AP type, was HE - Shrapnel blast
     damageAlter:
       RandomType: 7 # 50-200%
-      ToArmorPre: 0.05 # was 0.02
+      ToArmorPre: 0.04 # was 0.02
       ArmorEffectiveness: 1.1 # was 1.2 (regular 0.9) - AP dmg less resisted than HE type by heavier armors
       ToArmor: 0.15 # was 0.1
       ToHealth: 1.5 # was 1.5 (regular 1.1)
@@ -2934,18 +2988,6 @@ items:
   - update: STR_PHOTON_GRENADE_DRUM         # GL Photon Rounds
     requiresBuy:
       - STR_GLAUNCHER_PREREQ
-
-  - update: AUX_MEDI_KIT_ADVANCED           # Advanced Apoth Medkit
-    defaultInventorySlot: STR_LEFT_HAND
-    tuUse: 10
-    flatRate: true
-    medikitTargetSelf: true
-    woundRecovery: 1 # was missing
-    accuracyMelee: 80 # was missing (default regular is 70)
-    meleePower: 50 # was missing (default regular is 50)
-    meleeMultiplier: # was missing (default is flat 0.5 + melee 0.5)
-      melee: 0.9
-      reactions: 0.1
 
   - update: STR_TELEPORT                    # Terminator Teleport tool (Shield)
     refNode: *STR_FIST # add punch

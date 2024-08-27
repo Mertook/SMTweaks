@@ -1,16 +1,12 @@
 extended:
-  tags:
-    RuleItem:
-      SMT_AMMO_BONUSDMG_FIRINGACC: int # % bonus damage granted from units Firing Accuracy: (FA - 100) * Tag / 100
-      SMT_DEREVENANT_AMMO: int # % bonus health damage based on stun dealt to units with tenacious (Necrons)
-      SMT_AMMO_HP_PREDMG: int # % of power directly added to health damage ignoring armor
+
 
 items:
   - &STR_VOLKITE_BEAM                 # Script for Volkite weapon beam (thin, low spread, short lifetime)
     vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 8} # 40k 1 orange, 2 blue, 3 green rosigma 1 yellow, 2 green 3 purple 4 red 5 sucks 6 orange 7 blue 8 orange 9 lightblue 10 white 11 white 12 green 13 blue
     vaporDensitySurface: 5
     vaporProbabilitySurface: 85
-    scripts: # give it a tight beam that disappates quickly without spreading
+    scripts: # give it a tighter beam that disappates quickly without spreading
       vaporParticleAmmo: |
         var int temp;
         var int randMax;

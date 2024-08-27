@@ -3426,7 +3426,7 @@ armors:
       - INV_NULL_3X1_BACKPACK
       - STR_VOLKITE_DW
   - type: STR_DW_LEADER_SW_UC
-    refNode: *STR_DW_INC_MKX_AC
+    refNode: *STR_DW_LEADER_ARMOR
     units:
       - STR_SPACEW_LEADER
     layersDefaultPrefix: 0
@@ -3446,8 +3446,9 @@ armors:
       F4: ["CAPEP", "MKXCAPDW", "M4_FACE", ""]
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     builtInWeapons:
-      - INV_NULL_3X1_BACKPACK
-      - STR_CLAWS_DW
+      - INV_NULL_3X3_BACKPACK_BLESS
+      - STR_POWER_AXE_DW
+    specialWeapon: STR_SM_APOTH_FIST_DW # Medikit
 
   - type: STR_DW_LEADER_ULTRA_UC
     refNode: *STR_DW_LEADER_ARMOR

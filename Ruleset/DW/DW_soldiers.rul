@@ -376,8 +376,8 @@ soldiers:
       - MarineName/
     deathMale: [{mod: 40k, index: 713}, {mod: 40k, index: 714}, {mod: 40k, index: 715}, {mod: 40k, index: 716}, {mod: 40k, index: 717}, {mod: 40k, index: 718}, {mod: 40k, index: 719}, {mod: 40k, index: 720}, {mod: 40k, index: 721}, {mod: 40k, index: 722}]
     deathFemale: [{mod: 40k, index: 744}, {mod: 40k, index: 745}, {mod: 40k, index: 746}, {mod: 40k, index: 747}, {mod: 40k, index: 748}, {mod: 40k, index: 749}, {mod: 40k, index: 750}, {mod: 40k, index: 751}, {mod: 40k, index: 752}]
-    value: 50
-    moraleLossWhenKilled: 150 # Seeing an elite marine die is shocking for regular troops
+    value: 75
+    moraleLossWhenKilled: 200 # Seeing an elite marine die is shocking for regular troops
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 15 # -5 over DW regulars
       SMT_ALPHA_ATTACKER_MODIFIER: -1 # can't turn traitor
@@ -393,6 +393,42 @@ soldiers:
       - STR_DW_U_RANK_3
       - STR_DW_U_RANK_4
       - STR_DW_U_RANK_5
+    minStats: # extremely high starting stats, lategame elites
+      tu: 105
+      stamina: 130
+      health: 135
+      bravery: 100
+      reactions: 105
+      firing: 145 # +10, UM bonus
+      throwing: 125
+      strength: 100
+      psiStrength: 0
+      psiSkill: 90
+      melee: 135
+    maxStats:
+      tu: 115
+      stamina: 135
+      health: 145
+      bravery: 110
+      reactions: 110
+      firing: 155 # +10, UM bonus
+      throwing: 135
+      strength: 105
+      psiStrength: 100
+      psiSkill: 95
+      melee: 145
+    statCaps:
+      tu: 120
+      stamina: 140
+      health: 150 # +10 over DW
+      bravery: 110
+      reactions: 120
+      firing: 160 # +10, UM bonus
+      throwing: 140
+      strength: 110
+      psiStrength: 100
+      psiSkill: 100
+      melee: 160 # +10, UM bonus
 
   - type: STR_IMPERIALF_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
@@ -430,6 +466,30 @@ soldiers:
   - type: STR_BLACKT_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_BT_UC
+    minStats: # extremely high starting stats, lategame elites
+      tu: 105
+      stamina: 130
+      health: 135
+      bravery: 100
+      reactions: 105
+      firing: 135
+      throwing: 125
+      strength: 100
+      psiStrength: 0
+      psiSkill: 130 # bonus devotion cap
+      melee: 135
+    maxStats:
+      tu: 115
+      stamina: 135
+      health: 145
+      bravery: 110
+      reactions: 110
+      firing: 145
+      throwing: 135
+      strength: 105
+      psiStrength: 100
+      psiSkill: 140 # bonus devotion cap
+      melee: 145
     statCaps:
       tu: 120
       stamina: 140
@@ -567,6 +627,45 @@ soldiers:
       - STR_DW_SW_RANK_3
       - STR_DW_SW_RANK_4
       - STR_DW_SW_RANK_5
+    minStats: # extremely high starting stats, lategame elites
+      tu: 105
+      stamina: 130
+      health: 145 # +10, SW bonus
+      bravery: 100
+      reactions: 105
+      firing: 135
+      throwing: 125
+      strength: 100
+      psiStrength: 0
+      psiSkill: 90
+      melee: 135
+    maxStats:
+      tu: 115
+      stamina: 135
+      health: 155 # +10, SW bonus
+      bravery: 110
+      reactions: 110
+      firing: 145
+      throwing: 135
+      strength: 105
+      psiStrength: 100
+      psiSkill: 95
+      melee: 145
+    statCaps:
+      tu: 120
+      stamina: 140
+      health: 165 # +15, SW bonus
+      bravery: 110
+      reactions: 120
+      firing: 150
+      throwing: 140
+      strength: 110
+      psiStrength: 100
+      psiSkill: 100
+      melee: 150
+    skillIconSprite:  {mod: 40k, index: 8}
+    skills: # Gives bless ability when combined with backpack item
+      - STR_BLESS_SKILL
 
   - type: STR_CRISMONF_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER

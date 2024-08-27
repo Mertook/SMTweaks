@@ -579,7 +579,7 @@ items:
     explosionSpeed: 1
     powerForAnimation: 5
     battleType: 1
-    armor: 200
+    armor: 300
     invWidth: 2
     invHeight: 3
     weight: 22
@@ -616,7 +616,7 @@ items:
 
   - type: STR_HEAVY_BOLTRIFLE_DW            # Heavy Bolt Rifle (Ultramarine Captain)    ## Restricted item
     battleType: 1
-    armor: 200
+    armor: 300
     ufopediaType: STR_HEAVY_BOLTRIFLE
     weight: 40 # +6 over regular Cawl
     bigSprite: 3181
@@ -658,7 +658,7 @@ items:
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - type: STR_FORCE_HALBERD_DW              # Force Halberd (White Scars Captain)       ## Restricted item
-    armor: 200
+    armor: 300
     ufopediaType: STR_HALLEBARD
     bigSprite: { mod: 40k, index: 461}
     floorSprite: { mod: 40k, index: 360}
@@ -740,7 +740,7 @@ items:
     recover: false
     invWidth: 2
     invHeight: 3
-    armor: 200
+    armor: 300
     listOrder: 11500
     dropoff: 4
     snapRange: 21 # base 21
@@ -808,7 +808,46 @@ items:
       ITEM_PSYCHIC_POWER_MODIFIER: 1 # was 5 - don't punish lightning tickle spam that harshly
       ITEM_IS_PSYCHIC_POWER: 1
 
-
-
+  - type: STR_POWER_AXE_DW                  # Power Axe (Space Wolves Captain)          ## Restricted item
+    clipSize: -1
+    battleType: 3
+    invWidth: 2
+    invHeight: 3
+    flatRate: true
+    twoHanded: false
+    blockBothHands: false
+    recover: false
+    size: 0.2
+    weight: 30
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 2092}
+    floorSprite: {mod: 40k_ROSIGMA_edits, index: 2072}
+    handSprite: {mod: 40k_ROSIGMA_edits, index: 2140}
+    meleeAnimation: {mod: 40k, index: 4}
+    meleeSound: {mod: 40k, index:  753}
+    meleeHitSound: {mod: 40k, index:  754}
+    power: 100 # melee
+    damageBonus:
+      strength: 0.3
+      melee: 0.3
+    damageType: 5 # plasma
+    damageAlter:
+      RandomType: 2 #TFTD [50% - 150%]
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.5 # axe bonus
+      ToHealth: 0.9
+      IgnoreSelfDestruct: false
+    accuracyMelee: 100
+    costMelee:
+      time: 12 # mastercrafted
+      energy: 4 #heavy melee weapon
+    flatMelee:
+      time: true
+      energy: true
+    armor: 300
+    skillApplied: true
+    meleeMultiplier:
+      melee: 0.9
+      strength: 0.1
+    strengthApplied: false
 
 

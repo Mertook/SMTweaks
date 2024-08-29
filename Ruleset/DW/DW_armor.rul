@@ -20,7 +20,7 @@ armors:
       stamina: 20       # base 20 
       health: 10        # base 10 
       bravery: 10       # base 0  +10
-      reactions: 20     # base 10 +10
+      reactions: 15     # base 10 +5
       firing: 10        # base 0  +10
       throwing: 15      # base 5  +10
       strength: 15      # base 10 +5
@@ -1279,7 +1279,7 @@ armors:
       stamina: 20       # base 20 
       health: 10        # base 10 
       bravery: 10       # base 0  +10
-      reactions: 20     # base 10 +10
+      reactions: 15     # base 10 +5
       firing: 10        # base 0  +10
       throwing: 15      # base 5  +10
       strength: 15      # base 10 +5
@@ -1402,7 +1402,7 @@ armors:
       - 0.9 #MELTA
     builtInWeapons:
       - INV_NULL_3X3
-      - AUX_MEDI_KIT_ADVANCED
+    specialWeapon: STR_SM_APOTH_FIST
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
@@ -1609,7 +1609,7 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.9 #MELTA
-    builtInWeapons: [] # gets a full backpack (was completely blocked)
+    builtInWeapons: [] # remove backpack blocker
     moveCost:
       basePercent: [100, 75] # Phobos bonus
     tags:
@@ -2553,7 +2553,7 @@ armors:
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
-      MaxFlight: 3
+      MaxFlight: 4
       MaxCoolDown: 2
       FLIGHT_DODGE_CHANCE: 15
       ARMOR_MAX_SUCCESSFUL_DODGES: 1
@@ -2683,7 +2683,7 @@ armors:
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
-      MaxFlight: 3
+      MaxFlight: 4
       MaxCoolDown: 2
       FLIGHT_DODGE_CHANCE: 15
       ARMOR_MAX_SUCCESSFUL_DODGES: 1
@@ -2976,7 +2976,7 @@ armors:
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
-      MaxFlight: 3
+      MaxFlight: 4
       MaxCoolDown: 2
       FLIGHT_DODGE_CHANCE: 15
       ARMOR_MAX_SUCCESSFUL_DODGES: 1
@@ -3364,6 +3364,7 @@ armors:
       - STR_SMITE_TOME_DW
     tags:
       ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_PERILS_EFFECTS_RESISTANCE: 100 # immune to perils attacks
 
   - type: STR_DW_LEADER_IF_UC
     refNode: *STR_DW_LEADER_ARMOR
@@ -3504,6 +3505,8 @@ armors:
       - STR_LIB_SMOKE_TOME
     moveCost:
       basePercent: [100, 75] # was 100, 25
+    tags:
+      ARMOR_PERILS_EFFECTS_RESISTANCE: 100 # immune to perils attacks
 
   - type: STR_DW_TAC_CODEX_UC               # Tactical Codex Dummy
     refNode: *STR_DW_TAC_MK7

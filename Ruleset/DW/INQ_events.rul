@@ -19,9 +19,9 @@ events:
     randomDelay: 17280
     funds: -75000
     everyMultiItemList:
-      STR_LASER_RIFLEG: 5
       STR_LASER_RIFLE_G_HIGH_GRADE: 5
-      STR_LASGUN_CLIP: 20
+      STR_LASGUN_CLIP: 10
+      STR_LASGUN_CLIP_HOTSHOT: 10
     spawnedPersons: 10
     spawnedPersonType: STR_GUARDSM
 
@@ -170,7 +170,7 @@ eventScripts:
     firstMonth: 0
     executionOdds: 100
     minScore: -2000 #
-    maxScore: 20000
+    maxScore: 30000
     researchTriggers:
       STR_ELDAR_WEAPON_REQ: true
 
@@ -221,8 +221,8 @@ eventScripts:
        STR_REINFORCEMENTS_GUARD_SCION_INQ: 20
     firstMonth: 0
     executionOdds: 80 # high success rate
-    minScore: 50 #
-    maxScore: 20000
+    minScore: -1000 #
+    maxScore: 30000
     researchTriggers:
       STR_REQUEST_GUARD_RESEARCH: true
 

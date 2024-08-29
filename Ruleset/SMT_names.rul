@@ -8,10 +8,11 @@ extraStrings:
       STR_FULL_AUTO_COUNT: "Full Auto (x{0})"
       STR_STRIKE_AUTO_COUNT: "Barrage (x{0})"
       STR_CROZIUS_AIMED_COUNT: "Sanctify (x{0})"
+      STR_THROW_KNIFE: "Throw Knife"
       STR_DAMAGE_12: "GRAV"
       STR_NECRON_REINFORCEMENTS_SHIP_DESC_LIGHT: "The Monolith's foul machinery is springing to life! Necrons are being awakened from stasis and teleported onto the field. We must quicken our pace or we will surely be overwhelmed."
-      STR_NECRON_REINFORCEMENTS_SHIP_DESC_MEDIUM: "The Monolith is calling more Necrons from their tombs, teleporting onto the field in greater numbers. We have little time left to eliminate their strikeforce before their numbers become too great!"
-      STR_NECRON_REINFORCEMENTS_SHIP_DESC_HEAVY: "Force Commander, the Necron tombs are at high alert and are actively teleporting in heavy reinforcements. We must destroy them all in one fell swoop or evacuate lest our forces be overcome!"
+      STR_NECRON_REINFORCEMENTS_SHIP_DESC_MEDIUM: "The Monolith is calling more Necrons from their tombs, teleporting them onto the field in greater numbers. We have little time left to eliminate their strikeforce before their numbers become too great!"
+      STR_NECRON_REINFORCEMENTS_SHIP_DESC_HEAVY: "Force Commander, the Necron Tombs are at high alert and are actively teleporting in heavy reinforcements. We must destroy them all in one fell swoop or evacuate lest our forces be overcome!"
       STR_NECRON_REINFORCEMENTS_TOMB_DESC_LIGHT: "Force Commander, the Necron Tomb is reacting to our presence and Necrons are being roused from stasis. While their numbers are low for now, we must make haste before they increase in intensity."
       STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM: "Force Commander, the Tomb is awakening and more warriors are arriving to impede our progress. We need to be quick in reaching our objective or prepare to evacuate lest our forces be overwhelmed!"
       STR_NECRON_REINFORCEMENTS_TOMB_DESC_HEAVY: "Force Commander, the Necron Tomb is on high alert and summoning all of its warriors to bear on us. We must destroy the heart of the base immediately or risk being overwhelemd!"
@@ -29,6 +30,7 @@ extraStrings:
       DREAD_ARMOR2_UC: "Mortis Dreadnought Armor"
       DREAD_ARMOR3_UC: "Hellfire Dreadnought Armor"
       DREAD_ARMOR4_UC: "Castraferrum Dreadnought Armor"
+      STR_MKX_INC_ARMOR: MKX Omnis Armor
       ### ITEMS
       STR_TELEPORT_CLAWS: Teleporter
       AUX_RAM_SMT: Chainsword
@@ -254,51 +256,60 @@ extraStrings:
       STR_RECYCLE_DW: Report Fallen Marine
       STR_RECYCLE_DW_LEADER: Report Fallen Captain
       ### DEATHWATCH ARMOR
-      STR_MKX_DW_INCAC_BA_UC: Omnis Armor Autocannon
-      STR_MKX_DW_INCAC_BT_UC: Omnis Armor Autocannon
-      STR_MKX_DW_INCAC_CF_UC: Omnis Armor Autocannon
-      STR_MKX_DW_INCAC_DA_UC: Omnis Armor Autocannon
-      STR_MKX_DW_INCAC_IF_UC: Omnis Armor Autocannon
-      STR_MKX_DW_INCAC_SALA_UC: Omnis Armor Autocannon
-      STR_MKX_DW_INCAC_SW_UC: Omnis Armor Autocannon
-      STR_MKX_DW_INCAC_ULTRA_UC: Omnis Armor Autocannon
-      STR_MKX_DW_INCAC_WS_UC: Omnis Armor Autocannon
-      STR_MKX_DW_INCPE_BA_UC: Omnis Armor Plasma
-      STR_MKX_DW_INCPE_BT_UC: Omnis Armor Plasma
-      STR_MKX_DW_INCPE_CF_UC: Omnis Armor Plasma
-      STR_MKX_DW_INCPE_DA_UC: Omnis Armor Plasma
-      STR_MKX_DW_INCPE_IF_UC: Omnis Armor Plasma
-      STR_MKX_DW_INCPE_SALA_UC: Omnis Armor Plasma
-      STR_MKX_DW_INCPE_SW_UC: Omnis Armor Plasma
-      STR_MKX_DW_INCPE_ULTRA_UC: Omnis Armor Plasma
-      STR_MKX_DW_INCPE_WS_UC: Omnis Armor Plasma
-      STR_MKX_DW_GRV_BA_UC: Gravis Armor Boltstorm
-      STR_MKX_DW_GRV_BT_UC: Gravis Armor Boltstorm
-      STR_MKX_DW_GRV_CF_UC: Gravis Armor Boltstorm
-      STR_MKX_DW_GRV_DA_UC: Gravis Armor Boltstorm
-      STR_MKX_DW_GRV_IF_UC: Gravis Armor Boltstorm
-      STR_MKX_DW_GRV_SALA_UC: Gravis Armor Boltstorm
-      STR_MKX_DW_GRV_SW_UC: Gravis Armor Boltstorm
-      STR_MKX_DW_GRV_ULTRA_UC: Gravis Armor Boltstorm
-      STR_MKX_DW_GRV_WS_UC: Gravis Armor Boltstorm
-      STR_MKX_DW_GRVAC_BA_UC: Gravis Armor Autocannons
-      STR_MKX_DW_GRVAC_BT_UC: Gravis Armor Autocannons
-      STR_MKX_DW_GRVAC_CF_UC: Gravis Armor Autocannons
-      STR_MKX_DW_GRVAC_DA_UC: Gravis Armor Autocannons
-      STR_MKX_DW_GRVAC_IF_UC: Gravis Armor Autocannons
-      STR_MKX_DW_GRVAC_SALA_UC: Gravis Armor Autocannons
-      STR_MKX_DW_GRVAC_SW_UC: Gravis Armor Autocannons
-      STR_MKX_DW_GRVAC_ULTRA_UC: Gravis Armor Autocannons
-      STR_MKX_DW_GRVAC_WS_UC: Gravis Armor Autocannons
-      STR_MKX_DW_GRVFS_BA_UC: Gravis Armor Flamestorm
-      STR_MKX_DW_GRVFS_BT_UC: Gravis Armor Flamestorm
-      STR_MKX_DW_GRVFS_CF_UC: Gravis Armor Flamestorm
-      STR_MKX_DW_GRVFS_DA_UC: Gravis Armor Flamestorm
-      STR_MKX_DW_GRVFS_IF_UC: Gravis Armor Flamestorm
-      STR_MKX_DW_GRVFS_SALA_UC: Gravis Armor Flamestorm
-      STR_MKX_DW_GRVFS_SW_UC: Gravis Armor Flamestorm
-      STR_MKX_DW_GRVFS_ULTRA_UC: Gravis Armor Flamestorm
-      STR_MKX_DW_GRVFS_WS_UC: Gravis Armor Flamestorm
+      STR_MKX_DW_INC_BA_UC: MKX Omnis Armor
+      STR_MKX_DW_INC_BT_UC: MKX Omnis Armor
+      STR_MKX_DW_INC_CF_UC: MKX Omnis Armor
+      STR_MKX_DW_INC_DA_UC: MKX Omnis Armor
+      STR_MKX_DW_INC_IF_UC: MKX Omnis Armor
+      STR_MKX_DW_INC_SALA_UC: MKX Omnis Armor
+      STR_MKX_DW_INC_SW_UC: MKX Omnis Armor
+      STR_MKX_DW_INC_ULTRA_UC: MKX Omnis Armor
+      STR_MKX_DW_INC_WS_UC: MKX Omnis Armor
+      STR_MKX_DW_INCAC_BA_UC: MKX Omnis (Autocannon)
+      STR_MKX_DW_INCAC_BT_UC: MKX Omnis (Autocannon)
+      STR_MKX_DW_INCAC_CF_UC: MKX Omnis (Autocannon)
+      STR_MKX_DW_INCAC_DA_UC: MKX Omnis (Autocannon)
+      STR_MKX_DW_INCAC_IF_UC: MKX Omnis (Autocannon)
+      STR_MKX_DW_INCAC_SALA_UC: MKX Omnis (Autocannon)
+      STR_MKX_DW_INCAC_SW_UC: MKX Omnis (Autocannon)
+      STR_MKX_DW_INCAC_ULTRA_UC: MKX Omnis (Autocannon)
+      STR_MKX_DW_INCAC_WS_UC: MKX Omnis (Autocannon)
+      STR_MKX_DW_INCPE_BA_UC: MKX Omnis (Twin Plasma)
+      STR_MKX_DW_INCPE_BT_UC: MKX Omnis (Twin Plasma)
+      STR_MKX_DW_INCPE_CF_UC: MKX Omnis (Twin Plasma)
+      STR_MKX_DW_INCPE_DA_UC: MKX Omnis (Twin Plasma)
+      STR_MKX_DW_INCPE_IF_UC: MKX Omnis (Twin Plasma)
+      STR_MKX_DW_INCPE_SALA_UC: MKX Omnis (Twin Plasma)
+      STR_MKX_DW_INCPE_SW_UC: MKX Omnis (Twin Plasma)
+      STR_MKX_DW_INCPE_ULTRA_UC: MKX Omnis (Twin Plasma)
+      STR_MKX_DW_INCPE_WS_UC: MKX Omnis (Twin Plasma)
+      STR_MKX_DW_GRV_BA_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRV_BT_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRV_CF_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRV_DA_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRV_IF_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRV_SALA_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRV_SW_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRV_ULTRA_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRV_WS_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRVAC_BA_UC: MKX Gravis (Autocannons)
+      STR_MKX_DW_GRVAC_BT_UC: MKX Gravis (Autocannons)
+      STR_MKX_DW_GRVAC_CF_UC: MKX Gravis (Autocannons)
+      STR_MKX_DW_GRVAC_DA_UC: MKX Gravis (Autocannons)
+      STR_MKX_DW_GRVAC_IF_UC: MKX Gravis (Autocannons)
+      STR_MKX_DW_GRVAC_SALA_UC: MKX Gravis (Autocannons)
+      STR_MKX_DW_GRVAC_SW_UC: MKX Gravis (Autocannons)
+      STR_MKX_DW_GRVAC_ULTRA_UC: MKX Gravis (Autocannons)
+      STR_MKX_DW_GRVAC_WS_UC: MKX Gravis (Autocannons)
+      STR_MKX_DW_GRVFS_BA_UC: MKX Gravis (Flamestorm)
+      STR_MKX_DW_GRVFS_BT_UC: MKX Gravis (Flamestorm)
+      STR_MKX_DW_GRVFS_CF_UC: MKX Gravis (Flamestorm)
+      STR_MKX_DW_GRVFS_DA_UC: MKX Gravis (Flamestorm)
+      STR_MKX_DW_GRVFS_IF_UC: MKX Gravis (Flamestorm)
+      STR_MKX_DW_GRVFS_SALA_UC: MKX Gravis (Flamestorm)
+      STR_MKX_DW_GRVFS_SW_UC: MKX Gravis (Flamestorm)
+      STR_MKX_DW_GRVFS_ULTRA_UC: MKX Gravis (Flamestorm)
+      STR_MKX_DW_GRVFS_WS_UC: MKX Gravis (Flamestorm)
       STR_DW_TASS_ARMOR_BA_UC: Terminator Assault (Shield)
       STR_DW_TASS_ARMOR_BT_UC: Terminator Assault (Shield)
       STR_DW_TASS_ARMOR_CF_UC: Terminator Assault (Shield)
@@ -400,7 +411,7 @@ extraStrings:
       STR_DW_PRIMARIS: "Primaris Craft Requisition"
       STR_RADICAL_RECRUITMENT_INQ: "Radical Recruitment"
       ### DEATHWATCH EVENTS
-      STR_FINAL_TOMB: "TOMB OF THE ARCHITECT"
+      STR_FINAL_TOMB_: "TOMB OF THE ARCHITECT"
       STR_DEATHWATCH_REINFORCEMENTS: "Contact with Deathwatch forces has been established. Requisition authorization for a Deathwatch Kill-Marine has been granted, they will arrive once our Servitors complete the formal requests.{NEWLINE}{NEWLINE} Learning more about the severity of the threat on this planet should allow us to request additional Marines."
       STR_DEATHWATCH_EXPANSION_1: "Deathwatch Reinforcements"
       STR_DEATHWATCH_EXPANSION1: "After our newest reports about the threats plaguing this planet we have been granted greater authority by the Ordo Xenos.{NEWLINE} We can now requisition an additional Deathwatch Marine to support our investigations."
@@ -417,7 +428,7 @@ extraStrings:
       STR_REINFORCEMENTS_GUARD_SCION_INQ: "Scion Stormtroopers Arrive"
       STR_REINFORCEMENTS_GUARD_REGULAR_INQ_DESCRIPTION: "Responding to our request (and for a modest fee) the local planetary forces have supplied us with fresh recruits to aid our investigations"
       STR_REINFORCEMENTS_GUARD_MEDIC_INQ_DESCRIPTION: "Responding to our request (and for a modest fee) the local planetary forces have supplied us with a group of field medics to aid our investigations"
-      STR_REINFORCEMENTS_GUARD_SLVET_INQ_DESCRIPTION: "Personally responding to our request for aid, Steel Legion Officers have joined our investigation forces."
+      STR_REINFORCEMENTS_GUARD_SLVET_INQ_DESCRIPTION: "Personally responding to our request for aid, Steel Legion Veterans have joined our investigation forces."
       STR_REINFORCEMENTS_GUARD_SCION_INQ_DESCRIPTION: "Impressed by our status and eager to earn favor, a Noble House has ordered that a team of Scions be placed under our command"
       STR_ELDAR_TREATY_FARSEER: "Eldar Envoy arrives"
       STR_ELDAR_TREATY_FARSEER_DESC: "With Chaos machinations threatening to seize control of this planet, an Eldar Farseer has agreed to support our efforts in uncovering and eliminating the daemonic threat"

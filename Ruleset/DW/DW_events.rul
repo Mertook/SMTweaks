@@ -31,14 +31,14 @@ missionScripts:
       0:
         STR_NECRON_BASE_EARTHQUAKE: 100
     useTable: false
-    firstMonth: 5 #
+    firstMonth: 6 #
     executionOdds: 75
     startDelay: 2800
     randomDelay: 17280 # Up to 2 weeks random delay
     researchTriggers:
       STR_DEATHWATCH: true
 
-  - type: EARTHQUAKE_NECRON_BASE_REPEATING # Other factions experience a much slower and sedate Necron Apocalypse
+  - type: EARTHQUAKE_NECRON_BASE_REPEATING  # Other factions experience a much slower and sedate Necron Apocalypse
     missionWeights:
       0:
         STR_NECRON_BASE_EARTHQUAKE: 100

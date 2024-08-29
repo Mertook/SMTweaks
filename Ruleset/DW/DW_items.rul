@@ -299,9 +299,10 @@ items:
     power: 120
     damageType: 1 # standard
     damageAlter:
+      ResistType: 11 #melta
       RandomType: 6
-      ArmorEffectiveness: 0.5 # normal .7
-      ToHealth: 0.8 # normal 1.0
+      ArmorEffectiveness: 0.7 # normal .7
+      ToHealth: 1.0 # normal 1.0
       ToStun: 0.3
       ToArmorPre: 0.1
       ToArmor: 0.2
@@ -626,6 +627,7 @@ items:
     bulletSprite: {mod: 40k, index: 6}
     listOrder: 10450
     twoHanded: true
+    blockBothHands: true
     recover: false # generated item
     invWidth: 2
     invHeight: 3
@@ -653,7 +655,6 @@ items:
     autoShots: 5 #
     tags:
       ITEM_RECOIL: 80 # +15 over regular - extra large battle rifle
-      ITEM_IS_HEAVY_WEAPON: 2 # 10% additional penalty when firing with lowered TUs
       REACTION_MULTIPLIER: 80 # bulky
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
@@ -817,6 +818,7 @@ items:
     twoHanded: false
     blockBothHands: false
     recover: false
+    defaultInventorySlot: STR_LEFT_HAND
     size: 0.2
     weight: 30
     bigSprite: {mod: 40k_ROSIGMA_edits, index: 2092}

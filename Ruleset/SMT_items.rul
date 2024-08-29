@@ -209,9 +209,9 @@ items:
     refNode: *STR_FIST
     specialIconSprite: {mod: 40k, index: 100} # medkit icon
     battleType: 6
-    painKiller: 40 #
-    heal: 40 #
-    stimulant: 40 #
+    painKiller: 30 # -10 supplies compared to mk7 medkit - doesn't take up hand slot
+    heal: 30 # -10 supplies compared to mk7 medkit - doesn't take up hand slot
+    stimulant: 30 # -10 supplies compared to mk7 medkit - doesn't take up hand slot
     woundRecovery: 1
     healthRecovery: 5 #
     stunRecovery: 6 #
@@ -223,7 +223,7 @@ items:
     recover: false
     fixedWeapon: true
 
-  - type: STR_SM_APOTH_FIST_DW               # Inbuilt Apothecary medkit + Marine fist (Deathwatch Captain)
+  - type: STR_SM_APOTH_FIST_DW              # Inbuilt Apothecary medkit + Marine fist (Deathwatch Captain)
     refNode: *STR_FIST
     specialIconSprite: {mod: 40k, index: 100} # medkit icon
     battleType: 6
@@ -1001,6 +1001,7 @@ items:
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     bulletSprite: {mod: 40k, index: 6}
     twoHanded: true
+    blockBothHands: true
     invWidth: 2
     invHeight: 3
     costBuy: 80000
@@ -2560,9 +2561,10 @@ items:
     costSell: 8000
     damageAlter:
       ArmorEffectiveness: 1.0 # was 0.9
-      ToArmorPre: 0.75 # was 0.5
+      ToArmorPre: 0.8 # was 0.5, Melta
       FireThreshold: 1 # was missing, melta explosions should set everything on fire
       ToTile: 1.5 # was 1.0, Melta
+      FixRadius: 2 # was 3, concentrated blast
     requiresBuy:
       - STR_HEAVY_LASER # Melta tech - was Midtier
 
@@ -2818,7 +2820,7 @@ items:
 
   - update: STR_SHOTGUN_SHELLS              # Shotgun Ammo
     powerRangeThreshold: 18
-    powerRangeReduction: 3
+    powerRangeReduction: 2
 
   - update: STR_SHOTGUN_DRUM                # Shotgun Drum Ammo
     powerRangeThreshold: 18
@@ -2829,7 +2831,7 @@ items:
     requiresBuy:
       - STR_SHOTGUNS_ADV
     powerRangeThreshold: 18
-    powerRangeReduction: 3
+    powerRangeReduction: 2
     damageAlter: # Bolter Krak values
       RandomType: 1 # 0-200%
       ArmorEffectiveness: 0.5 # was 0.5
@@ -2845,7 +2847,7 @@ items:
       mod: 40k
       index: 88
     powerRangeThreshold: 18
-    powerRangeReduction: 3
+    powerRangeReduction: 2
     power: 75 # doesn't get multiple pellets because of AoE splash
     damageAlter:
       ToHealth: 1.3 # was 1.1
@@ -2856,12 +2858,12 @@ items:
   - update: STR_SHOTGUN_SHELLS_MC           # Shotgun MC Ammo
     bigSprite: 3162
     powerRangeThreshold: 18
-    powerRangeReduction: 3
-    power: 50 # was 60
+    powerRangeReduction: 2
+    power: 55 # was 60
     damageAlter: # MC Bolt values - was blank
       RandomType: 7 # 50-200%
       ToArmorPre: 0.04 # bolter is .2, too good with 6 pellets
-      ArmorEffectiveness: 0.9 # bolter is 0.8
+      ArmorEffectiveness: 0.8
       ToArmor: 0.15
       ToHealth: 1.0 # bolter is 1.15
       ToStun: 0.5
@@ -3028,10 +3030,17 @@ items:
     costBuy: 6000 # was 5000
     costSell: 3000 # was 2500
     weight: 15
-    power: 65 # was 60
+    power: 70 # was 60
     damageBonus:
       melee: 0.3 # was 0.2 - 0.3 is standard for regular melee
       strength: 0.2 #
+    damageAlter:
+      ToArmorPre: 0.3
+      ToHealth: 1.0
+      RandomType: 2
+      ToWound: 0.3
+      ToEnergy: 0.5
+      RandomWound: false
     accuracyMelee: 90
     tuMelee: 15 # was 15
     armor: 200
@@ -3040,12 +3049,18 @@ items:
     armor: 200
     power: 70 # was 70
     accuracyMelee: 90 # was 110 - make it stronger for experts instead of easier for novices
-    tuMelee: 14 # was 14
+    tuMelee: 13 # was 14
     damageBonus:
-      melee: 0.4 # was 0.2 - +0.1 over standard as quality bonus
+      melee: 0.35 # was 0.2 - +0.05 over standard as quality bonus
       strength: 0.2 #
     damageAlter:
       ArmorEffectiveness: 0.85 # improved quality
+      ToArmorPre: 0.3
+      ToHealth: 1.0
+      RandomType: 2
+      ToWound: 0.3
+      ToEnergy: 0.5
+      RandomWound: false
 
   - type: STR_CHAINSWORD_LIGHTSM            # SM Light Chainsword
     requiresBuy:
@@ -3063,7 +3078,7 @@ items:
     meleeAnimation: {mod: 40k, index: 44}
     power: 45 # stats from Guard Light Chainsword
     damageBonus:
-      melee: 0.2 # light weapon
+      melee: 0.3 #
       strength: 0.1 # light weapon
     damageAlter:
       ToArmorPre: 0.3
@@ -3089,6 +3104,15 @@ items:
       reactions: 0.1
     experienceTrainingMode: 13
     listOrder: 12399 # just above regular chainswords
+
+  - update: STR_KNIF                        # Combat Knife
+    power: 30 # was 20 - pathetic, worse than SM/IG built in melee attacks - made enemy cultists especially sad
+
+  - update: STR_EVISCERATOR                 # Eviscerator
+    costMelee:
+      time: 20 # was 20%
+      energy: 6 # was 8
+    flatRate: true
 
   - update: STR_MOTION_SCANNER              # Motion Scanner
     bigSprite: 3134

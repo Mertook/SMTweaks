@@ -85,7 +85,7 @@ items:
         var int temp;
 
         unit.getRuleArmor targetArmor;
-        targetArmor.getTag temp Tag.ARMOR_TENACIOUS_HP_MOD; # enemy tag
+        targetArmor.getTag temp Tag.ARMOR_TENACIOUS_HP_MOD; # Necron tag
         damaging_item.getTag derevBonus Tag.SMT_DEREVENANT_AMMO;
 
         # if and eq temp 1 gt derevBonus 0; # things with a tenacious value of 1 are instant-reviving Necrons
@@ -93,13 +93,12 @@ items:
         # end;
 
         if and gt temp 0 gt derevBonus 0;
-          debug_log "DerevDmg pinged B/H " derevBonus to_health;
+          #debug_log "DerevDmg pinged B/H " derevBonus to_health;
           targetArmor.getSize temp; # if unit is 2x2 deal extra damage directly (2x2 can't be stunned)
           if ge temp 2;
-            mul derevBonus 2; # Destroyers are the only 2x2 with tenacious, their value is set at 6
             add derevBonus 100;
             muldiv to_health derevBonus 100; # Derev value is added to damage as % bonus
-            debug_log "DerevDmg 2x2 B/H " derevBonus to_health;
+            #debug_log "DerevDmg 2x2 B/H " derevBonus to_health;
             return;
           end;
 
@@ -112,13 +111,13 @@ items:
             unit.setSpawnUnit null; # prevent respawning via zombie effects
             unit.setSpawnUnitInstantRespawn 0;
             unit.setHealthWithOverkill -1;
-            set to_health 1; # prevent overkill melting
+            set to_health 0; # prevent overkill melting
             targetArmor.getTag temp Tag.ARMOR_TENACIOUS_HP_MOD;
             add to_health temp; # add just enough damage to make sure it deals 1 damage through Necron resist (for red damage indicator flash)
-            debug_log "Derev Knockout bonus triggered " temp totalStun;
+            #debug_log "Derev Knockout bonus triggered " temp totalStun;
           end;
           unit.getHealth temp;
-          debug_log "DerevDmg H/D " temp to_health;
+          #debug_log "DerevDmg H/D " temp to_health;
         end;
 
         return;
@@ -126,12 +125,12 @@ items:
   - type: STR_RIFLE_CLIP_DEREV          # DW Bolter ammo
     refNode: *STR_DEREVENANT_AMMO
     tags:
-      SMT_DEREVENANT_AMMO: 100
+      SMT_DEREVENANT_AMMO: 50
 
   - type: STR_BOLT_SNIPER_AMMO_DEREV    # DW Bolt Sniper ammo
     refNode: *STR_DEREVENANT_AMMO
     tags:
-      SMT_DEREVENANT_AMMO: 150
+      SMT_DEREVENANT_AMMO: 300
 
 
   - &STR_ARMOR_IGNORING_AMMO            # Penetrating damage Template

@@ -21,6 +21,12 @@ manufacture:
       - STR_BLASTER_BOMB
       - STR_HEAVY_SENTINEL
 
+  - name: STR_COMMISSAR_REQUISITION
+    producedItems:
+      STR_CHAINSWORD: 1
+      STR_BOLTPISTOL_LIGHT_ULTRA: 1 # was godwyn, way too much recoil for a starting commissar
+      STR_LIGHT_BOLTPISTOL_AMMO: 2
+
   - name: STR_EXITUS_AMMO                           # Vindicare Sniper Ammo
     requires:
       - STR_VINDICARE_AMMO_REQ

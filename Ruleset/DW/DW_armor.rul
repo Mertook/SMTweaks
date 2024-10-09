@@ -3274,7 +3274,7 @@ armors:
     instantWoundRecovery: true
     layersDefaultPrefix: 0
     layersSpecificPrefix:
-      0: DWCAPTAIN
+      1: DWCAPTAIN
     layersDefinition:
       M0: ["CAPEP", "CAPBAMF", "M0_FACE", ""]
       M1: ["CAPEP", "CAPBAMF", "M1_FACE", ""]
@@ -3295,8 +3295,8 @@ armors:
     tags:
       MaxFlight: 3
       MaxCoolDown: 1
-      FLIGHT_DODGE_CHANCE: 35
-      ARMOR_MAX_SUCCESSFUL_DODGES: 1
+      FLIGHT_DODGE_CHANCE: 45
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
   - type: STR_DW_LEADER_BT_UC
     refNode: *STR_DW_LEADER_ARMOR
     units:
@@ -3403,7 +3403,7 @@ armors:
       - STR_ABSOLVOR_AMMO_MC
       - STR_ABSOLVOR_AMMO_MC
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_TU_RESTORED: 60
       ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_DW_LEADER_SALA_UC
     refNode: *STR_DW_LEADER_ARMOR

@@ -827,6 +827,7 @@ items:
     meleeAnimation: {mod: 40k, index: 4}
     meleeSound: {mod: 40k, index:  753}
     meleeHitSound: {mod: 40k, index:  754}
+    experienceTrainingMode: 13 # melee & reactions
     power: 100 # melee
     damageBonus:
       strength: 0.3
@@ -852,7 +853,7 @@ items:
       strength: 0.1
     strengthApplied: false
 
-  - type: STR_ABSOLVOR_PISTOL_DW             # Absolvor Pistol (Imperial Fists Captain) ## Restricted item
+  - type: STR_ABSOLVOR_PISTOL_DW            # Absolvor Pistol (Imperial Fists Captain)  ## Restricted item
     categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
     battleType: 1
     size: 0.2
@@ -873,9 +874,9 @@ items:
     invHeight: 3
     bulletSpeed: 30
     attraction: 1
-    dropoff: 6 #
+    dropoff: 7 #
     autoRange: 0 #
-    snapRange: 22 # regular 14
+    snapRange: 20 # regular 14
     aimRange: 0 #
     accuracyAuto: 0 #
     accuracySnap: 100 #
@@ -890,7 +891,7 @@ items:
       ITEM_RECOIL: 60 #
       REACTION_MULTIPLIER: 200 # pistol
 
-  - type: STR_ABSOLVOR_AMMO_MC               # Absolvor Pistol Mastercrafted Ammo       ## Custom ammo
+  - type: STR_ABSOLVOR_AMMO_MC              # Absolvor Pistol Mastercrafted Ammo        ## Custom ammo
     categories: [STR_CAT_BOLTER]
     battleType: 2
     size: 0.05
@@ -922,21 +923,25 @@ items:
     invWidth: 1
     invHeight: 1
 
-  - type: STR_CAPTAIN_SWORD_DW              # Power Sword (Blood Angels Captain)
+  - type: STR_CAPTAIN_SWORD_DW              # Power Sword (Blood Angels Captain)        ## Restricted item
     battleType: 3
+    clipSize: -1
     size: 0.2
     weight: 12
     bigSprite: {mod: 40k, index: 1040}
     floorSprite: {mod: 40k, index: 1040}
     handSprite: {mod: 40k, index: 1320}
+    meleeAnimation: {mod: 40k, index: 4}
+    meleeSound: {mod: 40k, index:  753}
+    meleeHitSound: {mod: 40k, index:  754}
     hitAnimation: 96
-    clipSize: -1
-    armor: 200
+    experienceTrainingMode: 13 # melee & reactions
+    armor: 300
     twoHanded: false
+    blockBothHands: false
     recover: false
     invWidth: 1
     invHeight: 3
-    listOrder: 12950
     damageType: 5 # plasma
     damageAlter:
       ArmorEffectiveness: 0.7
@@ -946,15 +951,22 @@ items:
     costMelee:
       time: 12
       energy: 2 #light melee weapon; light 1 energy, medium 2, heavy 4, very heavy 8
-    flatMelee: true
+    flatMelee:
+      time: true
+      energy: true
     power: 100
     damageBonus:
       strength: 0.2
       melee: 0.4
+    accuracyMelee: 100
     meleeMultiplier:
       melee: 0.9
       reactions: 0.1
-    experienceTrainingMode: 13 # melee & reactions
+    skillApplied: true
+    meleeMultiplier:
+      melee: 0.9
+      strength: 0.1
+    strengthApplied: false
 
 
 

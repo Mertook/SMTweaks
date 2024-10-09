@@ -118,7 +118,8 @@ items:
     fireSound: {mod: 40k, index: 707} # light bolter gets light bolter sound
     requiresBuy:
       - STR_LIGHT_BOLTERS_MIDTIER
-      - STR_MIDTIER_PREREQ # was IG exclusive
+      - STR_MIDTIER_PREREQ
+      - STR_GUARD_AND_INQUISITION # was IG exclusive
       - STR_UFO_CONSTRUCTION #ceramite tier
     dropoff: 8 # was 5
     autoRange: 14 # was 10, autofire focus
@@ -149,6 +150,7 @@ items:
       ITEM_RECOIL: 30 # was 25, light bolter with high RoF
 
   - update: STR_BOLTER_LIGHT_SOLO               # IG Light Bolter Single
+    weight: 12 # was 15
     dropoff: 8 # was 5
     autoRange: 0
     snapRange: 15 # was 14
@@ -159,11 +161,15 @@ items:
     tuAuto: 0
     tuSnap: 25
     tuAimed: 50
+    tags:
+      ITEM_RECOIL: 16 # was 20, single shot light bolter
 
   - update: STR_BOLTER_LIGHT_SOLO_DMR           # IG Light Bolter Single
+    weight: 14 # was 16
     requiresBuy:
       - STR_LIGHT_BOLTERS_MIDTIER
-      - STR_MIDTIER_PREREQ # was IG exclusive
+      - STR_MIDTIER_PREREQ
+      - STR_GUARD_AND_INQUISITION # was IG exclusive
     dropoff: 7 # was 5
     autoRange: 0
     snapRange: 20
@@ -174,8 +180,11 @@ items:
     tuAuto: 0
     tuSnap: 30
     tuAimed: 45
+    tags:
+      ITEM_RECOIL: 16 # was 20, single shot light bolter
 
   - update: STR_BOLTER_LIGHT_SOLO_SHORT         # IG Light Bolter Single
+    weight: 10 # was 12
     dropoff: 8 # was 6
     autoRange: 0
     snapRange: 12 # was 11
@@ -186,6 +195,8 @@ items:
     tuAuto: 0
     tuSnap: 20 # was 21
     tuAimed: 40 # was 45
+    tags:
+      ITEM_RECOIL: 16 # was 20, single shot light bolter
 
   - update: STR_BOLTER_LIGHT_LMG                # IG Accatran LMG Bolter
     size: 0.3
@@ -194,8 +205,8 @@ items:
     autoRange: 12 # was 12
     snapRange: 16 # was 15
     aimRange: 0
-    accuracyAuto: 66
-    accuracySnap: 80
+    accuracyAuto: 76
+    accuracySnap: 90
     accuracyAimed: 0
     tuAuto: 35 # was 60
     tuSnap: 20 # was 35
@@ -204,6 +215,26 @@ items:
     kneelBonus: 110
     tags:
       ITEM_RECOIL: 60 # light version of heavy bolter, needs bipod setup for most IG forces
+
+  - type: STR_BOLTER_LIGHT_SOLO_COMBIMELTA
+    requiresBuy:
+      - STR_LIGHT_BOLTERS_MIDTIER
+      - STR_MIDTIER_PREREQ
+      - STR_GUARD_AND_INQUISITION # was IG exclusive
+      - STR_HEAVY_LASER #meltagun
+    weight: 24 # was 30, light melta + light bolter shouldn't be such a brick
+    dropoff: 8 # was 5
+    autoRange: 0
+    snapRange: 16 # was 14
+    aimRange: 8 #melta
+    accuracyAuto: 0
+    accuracySnap: 85
+    accuracyAimed: 75 #melta
+    tuAuto: 0
+    tuSnap: 25
+    tuAimed: 40 #melta
+    tags:
+      ITEM_RECOIL: 16 # was 20, single shot light bolter
 
   - update: STR_HEAVY_BOLTER_GUARD              # IG Heavy Bolter (Bipod)
     autoShots: 8 # was 7

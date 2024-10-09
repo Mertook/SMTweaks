@@ -17,12 +17,13 @@ research:
       - STR_ADEPTAS_MARINES_AND_INQUISITION
       - STR_IMPERIUM_RESEARCH
       - STR_NOT_STEEL_LEGION_STRATEGY # needed to buy guard lasguns
-      - STR_NOT_DEATHWATCH
+      #- STR_NOT_DEATHWATCH # currently just relevant for GK/RR Chamber Militant
     disables:
       - STR_ARBITES
       - STR_IMPERIAL_GUARD_OPERATIONS
       - STR_ADEPTAS
       - STR_DEFENSE_CORRIDORBR
+      - STR_PSI_AMP # replaced by chapter teachings
 
   - name: STR_POWER_SUIT            # Terminator Suit
     cost: 205
@@ -96,6 +97,8 @@ research:
       - STR_SCOUT
       - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
     spawnedEvent: STR_TACTICAL_CARE_PACKAGE
+    getOneFree:
+      - STR_NEOPHYTE_REQUEST
 
   - name: STR_ASSAULT               # Assault Strat Chosen
     cost: 5
@@ -123,6 +126,8 @@ research:
       - STR_SCOUT
       - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
     spawnedEvent: STR_ASSAULT_CARE_PACKAGE
+    getOneFree:
+      - STR_NEOPHYTE_REQUEST
 
   - name: STR_DEVASTATOR            # Devastator Strat Chosen
     cost: 5
@@ -150,6 +155,8 @@ research:
       - STR_SCOUT
       - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
     spawnedEvent: STR_DEVASTATOR_CARE_PACKAGE
+    getOneFree:
+      - STR_NEOPHYTE_REQUEST
 
   - name: STR_SCOUT                 # Scout Strat Chosen
     cost: 5
@@ -177,22 +184,26 @@ research:
       - STR_TATICAL
       - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
     spawnedEvent: STR_SCOUT_CARE_PACKAGE
+    getOneFree:
+      - STR_NEOPHYTE_REQUEST
 
   - name: STR_PRIMARIS              # Primaris Strat Chosen
     cost: 5
     points: 0
     dependencies:
       - STR_MARINES_STRATEGY
-      - STR_GENERALLOCK # Disable for now, probably just breaks stuff
     lookup: STR_CHOSEN_PRIMARIS
     unlocks:
       - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
       - STR_MOTION_SCANNER
       - STR_LASER_WEAPONS
-      - STR_SPELLSR
+      #- STR_SPELLSR
+      - STR_MARINE_CHAPEL
       - STR_HOLOGRAM_GRENADE_REQUISITION
       - STR_SMOKE
       - STR_APOTHECARY
+      - STR_TRAINFACILITYR
+      - STR_GLAUNCHER_PREREQ
       - STR_PRIMARIS_AND_DEATHWATCH
       - STR_PRIMARIS_AND_ADEPTAS
     disables:
@@ -202,33 +213,16 @@ research:
       - STR_DEVASTATOR
       - STR_SCOUT
     spawnedEvent: STR_PRIMARIS_CARE_PACKAGE
+    getOneFree:
+      - STR_NEOPHYTE_REQUEST
 
-  - name: STR_ARBITES               # Arbites chosen
-    cost: 0
+  - name: STR_NEOPHYTE_REQUEST
+    cost: 5
     points: 0
-    lookup: STR_IMPERIUM_RESEARCH
     dependencies:
-      - STR_GENERALLOCK
-    unlocks:
-      - STR_MOTION_SCANNER
-      - STR_LASER_WEAPONS
-      - STR_SMOKE
-      - STR_GUARD_AND_ARBITES
-      - STR_LIGHT_BOLTERS
-      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
-      - STR_GUARD_BARRACKS
-      - STR_HEAVY_WEAPONS_IG
-      - STR_BASIC_SENTINEL_MISSILE
-      - STR_SHOTGUNS_ADV
-      - STR_PILOT_GUARDSMEN
-      - STR_IMPERIUM_RESEARCH
-      - STR_NOT_STEEL_LEGION_STRATEGY
-    disables:
-      - STR_CYDONIA_OR_BUST
       - STR_MARINES_STRATEGY
-      - STR_IMPERIAL_GUARD_OPERATIONS
-      - STR_ADEPTAS
-      - STR_GUARD_SUPORT
+      - STR_GENERALLOCK
+    spawnedEvent: STR_NEOPHYTE_STARTING_PACKAGE
 
   - name: STR_SPEEDR                # Landspeeder
     cost: 0
@@ -317,7 +311,7 @@ research:
       - STR_GENERALLOCK
 
   - name: STR_MARINE_BOLTERS        # Astartes Bolters Unlock
-    cost: 280
+    cost: 320
     points: 10
     dependencies:
       - STR_MARINES_STRATEGY
@@ -340,7 +334,7 @@ research:
     listOrder: 9 # push above corpses/etc
 
   - name: STR_PRIMARIS_BOLTERS      # Primaris Bolters Unlock
-    cost: 280
+    cost: 320
     points: 10
     dependencies:
       - STR_MARINES_STRATEGY
@@ -351,13 +345,15 @@ research:
     listOrder: 9 # push above corpses/etc
     spawnedItem: STR_RIFLED ###CHANGEME - should be higher quality Primaris bolter (when one is made)
 
-  - name: STR_PRIMARIS_BOLTERS_ADV    # Special Primaris Bolters Unlock
+  - name: STR_PRIMARIS_BOLTERS_ADV  # Special Primaris Bolters Unlock
     cost: 400
     points: 20
     dependencies:
       - STR_UFO_CONSTRUCTION # ceramite
       - STR_PRIMARIS_BOLTERS
       - STR_THREAT_ONE
+    unlocks:
+      - STR_SCOUT_BOLT_RIFLE
     listOrder: 9 # push above corpses/etc
 
   - name: STR_GLAUNCHER_PREREQ      # Grenade Launcher + Ammo Unlock
@@ -367,11 +363,11 @@ research:
       - STR_GENERALLOCK
     listOrder: 10 # push above corpses/etc
 
-  - name: STR_HBOLTER_PREREQ        # Heavy Bolter unlock
+  - name: STR_HBOLTER_PREREQ        # MK4 Heavy Bolter unlock
     cost: 100
     points: 20
     dependencies:
-      - STR_MARINES_STRATEGY
+      - STR_MARINE_BOLTERS
       - STR_MIDTIER_PREREQ # Devastator strat still needs to wait for midtier
       - STR_DEV_ARMOR
     unlocks:
@@ -389,6 +385,7 @@ research:
     points: 0
     dependencies:
       - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
       - STR_LASER_WEAPONS
     listOrder: 10 # push above corpses/etc
 
@@ -434,8 +431,6 @@ research:
       - STR_GENERALLOCK
     getOneFree:
       - STR_PSI_LAB
-    disables:
-      - STR_PSI_AMP
     listOrder: 10 # push above corpses/etc
 
   - name: STR_SPELLSR               # Old Chapter Teachings - Disabled
@@ -478,7 +473,7 @@ research:
     cost: 200
     points: 200
     dependencies:
-      - STR_MARINE_BOLTERS # was melta
+      - STR_BOLTER_AMMO_PREREQ # unlocked via Astartes or Primaris Bolters - was melta
       - STR_ALIEN_ALLOYS
       - STR_MOTION_SCANNER
       - STR_MEDI_KIT_PREREQ

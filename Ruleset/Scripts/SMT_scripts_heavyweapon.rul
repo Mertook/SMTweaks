@@ -60,7 +60,7 @@ extended:
           end;
 
           unit.getFaction temp;
-          if eq temp FACTION_HOSTILE; #don't bother for AI
+          if neq temp FACTION_PLAYER; #don't bother for AI
             return bonus; # final accuracy
           end;
 

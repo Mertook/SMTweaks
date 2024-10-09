@@ -170,7 +170,8 @@ extended:
           ### Work out if the unit needs saving
           unit.getHealth currentHealth;
           battle_game.getTurnSide turnSide;
-          if eq turnSide FACTION_PLAYER;
+          unit.getFaction temp;
+          if eq turnSide temp;
             if gt currentHealth to_health; # on player turn only consider direct damage
               return; # skip if damage isn't fatal
             end;

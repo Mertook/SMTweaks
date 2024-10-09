@@ -37,3 +37,45 @@ armors:
       ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
 
 
+  - type: STR_PERSONAL_ARMOR_CIVILIAN # NPC Marine Tactical
+    visibilityAtDay: 40
+    visibilityAtDark: 40
+    heatVision: 20
+    antiCamouflageAtDay: 6
+    antiCamouflageAtDark: 6
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.5 #discipline and resolve reinforces their faith
+    frontArmor: 125 # base 125
+    sideArmor: 125 # base 120
+    rearArmor: 125 # base 100
+    underArmor: 125 # base 125
+    painImmune: true # make them almost impossible to stun
+    zombiImmune: true # give them immunity to instantkill zombifying - no Heroic Save
+    recovery:
+      health:
+        flatOne: 12 # bonus since they don't get heroic save
+      energy:
+        stamina: 0.4
+      stun:
+        health: 1
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.6 #FLAMES - was 0.8
+      - 0.7 #HE
+      - 0.8 #LASCANON
+      - 1.0 #PLASMA
+      - 0.1 #STUN
+      - 1.0 #MELEE
+      - 0.8 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+    loftempsSet: [ 3 ]
+    builtInWeapons:
+      - INV_NULL_3X1_BACKPACK
+    tags:
+      ARMOR_REGENERATES_WOUNDS: 5
+      INFECTION_RESIST: 100 # immune to all corruption

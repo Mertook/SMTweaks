@@ -717,13 +717,27 @@ manufacture:
 
   - name: STR_MCRIFLE                               # MC Bolter
     category: STR_WEAPON
+    space: 0
+    cost: 150000 # was 100k
     requires:
       - STR_CHAPTER_PURITY
       - STR_TATICAL # Now Tactical Strat exclusive
       - STR_MASTER_CRAFTING
       - STR_MARINE_BOLTERS_ADV
+    requiredItems:
+      STR_ALIEN_ALLOYS: 4 # was 1
+      STR_KILLPOINT_TOKEN: 200 # was 180
+
+  - name: STR_BOLTRIFLE_MC                          # MC Boltrifle
+    category: STR_WEAPON
     space: 0
+    time: 480
     cost: 150000 # was 100k
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_PRIMARIS
+      - STR_MASTER_CRAFTING
+      - STR_PRIMARIS_BOLTERS_ADV
     requiredItems:
       STR_ALIEN_ALLOYS: 4 # was 1
       STR_KILLPOINT_TOKEN: 200 # was 180
@@ -744,7 +758,6 @@ manufacture:
     requires:
       - STR_MASTER_CRAFTING_AMMO
       - STR_SHOTGUNS_ADV
-      #- STR_SCOUT # Scout Strat exclusive
     requiredItems:
       STR_ALIEN_ALLOYS: 2 # was 1
       STR_KILLPOINT_TOKEN: 120 # was 180
@@ -829,6 +842,7 @@ manufacture:
     requires:
       - STR_CHAPTER_PURITY
       - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
     space: 0
     time: 50
     cost: 1000
@@ -843,6 +857,7 @@ manufacture:
     requires:
       - STR_CHAPTER_PURITY
       - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
     space: 0
     time: 50
     cost: 1000

@@ -682,7 +682,7 @@ items:
     damageAlter:
       RandomType: 7 # 50-200%
       ToArmorPre: 0.04 # was 0.02
-      ArmorEffectiveness: 1.1 # was 1.2 (regular 0.9) - AP dmg less resisted than HE type by heavier armors
+      ArmorEffectiveness: 1.1 # was 1.2 (regular 0.9)
       ToArmor: 0.15 # was 0.1
       ToHealth: 1.5 # was 1.5 (regular 1.1)
       ToStun: 0.2 # was 0.6 (regular 0.5)
@@ -884,6 +884,7 @@ items:
     dropoff: 8 # standard was 5 - Bolts are short range projectiles that fall off quickly outside of their standard range
     weight: 28 # +8 weight, not meant for regular humans
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
+    oneHandedPenalty: 75 # was 50, let marines use them one-handed if they can handle the recoil and penalty
     compatibleAmmo: # bolters can use boltpistol ammo
       - STR_RIFLE_CLIP
       - STR_RIFLE_CLIP_AP
@@ -917,11 +918,12 @@ items:
   - update: STR_RIFLEB                      # Bolter (Ultra)
     refNode: *STR_BOLTER
     bigSprite: 3142
-    costBuy: 200000 # was 200000 - Higher end gear
+    costBuy: 120000 # was 200000 - Higher end gear but not ridiculously costed
+    costSell: 30000
     autoRange: 12 # v3.1 (14) was 9
     snapRange: 16 # was 16
     aimRange: 0
-    accuracyAuto: 70 # was 75
+    accuracyAuto: 75 # was 75
     accuracySnap: 90 # was 90
     accuracyAimed: 0
     tuAimed: 0
@@ -947,14 +949,178 @@ items:
     tuSnap: 25 # was 25
     tuAimed: 60 # was 60
     autoShots: 2
+    oneHandedPenalty: 35 # was 50, scoped rifle penalty
     requiresBuy:
       - STR_MARINE_BOLTERS_ADV
+    tags:
+      ITEM_SNAP_ACCURACY_POWER_BONUS: 10
+      ITEM_AIMED_ACCURACY_POWER_BONUS: 30
+      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
 
-  - update: STR_RIFLED                      # Bolter (Cawl)
+  - update: STR_MCRIFLE                     # Bolter (MC) - Now TactStrat exclusive
+    refNode: *STR_BOLTER
+    bigSprite: 3154
+    autoRange: 12 # was 11
+    snapRange: 16 # was 15
+    aimRange: 0
+    accuracyAuto: 75 # was 86 - MC weapon should be stronger but not easier to use
+    accuracySnap: 90 # was 100
+    accuracyAimed: 0
+    tuSnap: 18 # was 25
+    tuAuto: 28 # was 40
+    tuAimed: 0
+    autoShots: 5 # was 3
+
+  - type: STR_PRIMARIS_CARBINE
+    requires:
+      - STR_GENERALLOCK # disabled
+    requiresBuy:
+      - STR_GENERALLOCK # disabled
+
+  - type: STR_PRIMARIS_OCCULUS_CARBINE
+    requires:
+      - STR_GENERALLOCK # disabled
+    requiresBuy:
+      - STR_GENERALLOCK # disabled
+
+  - type: STR_PRIMARIS_STALKER_BOLTER
+    requires:
+      - STR_GENERALLOCK # disabled
+    requiresBuy:
+      - STR_GENERALLOCK # disabled
+
+  - type: STR_PRIMARIS_CAWL_UNDERSLUNG
+    requires:
+      - STR_GENERALLOCK # disabled
+    requiresBuy:
+      - STR_GENERALLOCK # disabled
+
+  - type: STR_PRIMARIS_HEAVY_BOLT_RIFLE
+    requires:
+      - STR_GENERALLOCK # disabled
+    requiresBuy:
+      - STR_GENERALLOCK # disabled
+
+  - type: STR_PRIMARIS_HEAVY_BOLT_PISTOL
+    requires:
+      - STR_GENERALLOCK # disabled
+    requiresBuy:
+      - STR_GENERALLOCK # disabled
+
+  - type: STR_PRIMARIS_ABSOLVER_PISTOL
+    requires:
+      - STR_GENERALLOCK # disabled
+    requiresBuy:
+      - STR_GENERALLOCK # disabled
+
+  - type: STR_BOLTER_CARBINE                    # Bolter Carbine
+    categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
+    requiresBuyBaseFunc: [IMPERIUM]
+    requiresBuy:
+      - STR_PRIMARIS_BOLTERS
+    battleType: 1
+    size: 0.3
+    costBuy: 40000
+    costSell: 10000
+    weight: 20
+    bigSprite: 3205
+    floorSprite: 3205
+    handSprite: 3720
+    bulletSprite: 6
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
+    compatibleAmmo:
+      - STR_RIFLE_CLIP
+      - STR_RIFLE_CLIP_MC
+      - STR_RIFLE_CLIP_AP
+      - STR_RIFLE_CLIP_EX
+      - STR_PISTOL_CLIP
+      - STR_PISTOL_CLIP_AP
+      - STR_PISTOL_CLIP_EX
+      - STR_PISTOL_CLIP_MC
+    dropoff: 8
+    autoRange: 10 # godwyn 11
+    snapRange: 16 # godwyn 15
+    aimRange: 0
+    accuracyAuto: 60 # godwyn 66
+    accuracySnap: 70 # godwyn 80
+    accuracyAimed: 0
+    tuAuto: 30 # godwyn 30
+    tuSnap: 18 # godwyn 20
+    tuAimed: 0
+    twoHanded: true
+    oneHandedPenalty: 85 # +10 over regular bolters, lighter
+    invWidth: 2
+    invHeight: 3
+    armor: 200
+    autoShots: 4
+    bulletSpeed: 30
+    attraction: 1
+    listOrder: 10330
+    tags:
+      REACTION_MULTIPLIER: 150 #multiplies base reaction score by this amount divided by 100
+      ITEM_RECOIL: 60 # -5 over regular bolter, lighter
+      ITEM_COLOR_CHANGES_WITH_AMMO: 15
+
+  - type: STR_BOLTER_CARBINE_SCOPE                  # Bolter Carbine (Scoped)
+    categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
+    requiresBuyBaseFunc: [IMPERIUM]
+    requiresBuy:
+      - STR_PRIMARIS_BOLTERS_ADV
+    battleType: 1
+    size: 0.3
+    costBuy: 80000
+    costSell: 20000
+    weight: 20
+    bigSprite: 3208
+    floorSprite: 3208
+    handSprite: 3728
+    bulletSprite: 6
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
+    compatibleAmmo:
+      - STR_RIFLE_CLIP
+      - STR_RIFLE_CLIP_MC
+      - STR_RIFLE_CLIP_AP
+      - STR_RIFLE_CLIP_EX
+      - STR_PISTOL_CLIP
+      - STR_PISTOL_CLIP_AP
+      - STR_PISTOL_CLIP_EX
+      - STR_PISTOL_CLIP_MC
+    dropoff: 7 # -1, scoped
+    autoRange: 10 #
+    snapRange: 17 # regular 16
+    aimRange: 22
+    accuracyAuto: 60 # godwyn 66
+    accuracySnap: 70 # godwyn 80
+    accuracyAimed: 100
+    tuAuto: 30 # godwyn 30
+    tuSnap: 18 # godwyn 20
+    tuAimed: 40
+    twoHanded: true
+    oneHandedPenalty: 60 # -25 compared to regular, scope penalty
+    invWidth: 2
+    invHeight: 3
+    armor: 200
+    autoShots: 4
+    bulletSpeed: 30
+    attraction: 1
+    listOrder: 10330
+    tags:
+      REACTION_MULTIPLIER: 150 #multiplies base reaction score by this amount divided by 100
+      ITEM_AIMED_ACCURACY_POWER_BONUS: 15 # minor scoped weapon aimed shot bonus
+      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_RECOIL: 60 # -5 over regular bolter, lighter
+      ITEM_COLOR_CHANGES_WITH_AMMO: 15
+
+  - update: STR_RIFLED                      # Bolt Rifle (Standard/Cawl)
     refNode: *STR_BOLTER
     bigSprite: 3148
+    floorSprite: 3148
+    handSprite: 3688
+    requiresBuy:
+      - STR_PRIMARIS_BOLTERS
     costBuy: 40000 # was 30000
     weight: 34 # +6 over regular - larger battle rifle
+    oneHandedPenalty: 50 #
     dropoff: 7 # -1 over regular - larger battle rifle
     minRange: 3 #cumbersome, not suited to CQC
     autoRange: 11 # was 7
@@ -969,32 +1135,127 @@ items:
     confSnap:
       shots: 2 # was 1
     autoShots: 4 # was 5
-    requiresBuy:
-      - STR_PRIMARIS_BOLTERS
     tags:
       ITEM_RECOIL: 70 # +5 over regular - larger battle rifle
 
-  - update: STR_MCRIFLE                     # Bolter (MC) - Now TactStrat exclusive
+  - type: STR_BOLTRIFLE_STERNGUARD               # Bolt Rifle (Sternguard)
     refNode: *STR_BOLTER
-    bigSprite: 3154
-    autoRange: 12 # was 11
-    snapRange: 16 # was 15
-    aimRange: 0
-    accuracyAuto: 70 # was 86 - MC weapon should be stronger but not easier to use
-    accuracySnap: 90 # was 100
-    accuracyAimed: 0
-    tuSnap: 18 # was 25
-    tuAuto: 28 # was 40
-    tuAimed: 0
-    autoShots: 5 # was 3
-
-  - type: STR_PRIMARIS_HEAVY_BOLT_RIFLE
+    battleType: 1
+    armor: 200
+    bigSprite: 3196
+    floorSprite: {mod: 40k, index: 204}
+    handSprite: {mod: 40k, index: 1576}
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    bulletSprite: {mod: 40k, index: 6}
+    invWidth: 2
+    invHeight: 3
     requiresBuy:
-      - STR_GENERALLOCK # disabled
+      - STR_PRIMARIS_BOLTERS_ADV
+    costBuy: 120000
+    costSell: 30000
+    listOrder: 10450
+    twoHanded: true
+    blockBothHands: false
+    oneHandedPenalty: 50
+    weight: 34 # +6 over regular - larger battle rifle
+    clipSize: 0
+    dropoff: 7
+    minRange: 3 #cumbersome, not suited to CQC
+    autoRange: 12 # cawl 11
+    snapRange: 18 # cawl 17
+    aimRange: 0
+    accuracyAuto: 75 # cawl 66
+    accuracySnap: 90 # cawl 80
+    accuracyAimed: 0
+    tuAuto: 30 # cawl 30 for 4
+    tuSnap: 26 # cawl 26 for 2
+    tuAimed: 0
+    confSnap:
+      shots: 2 # cawl 2
+    autoShots: 4 # cawl 4
+    tags:
+      ITEM_RECOIL: 70 # +5 over regular - larger battle rifle
+      ITEM_COLOR_CHANGES_WITH_AMMO: 15
+
+  - type: STR_BOLTRIFLE_SCOPE               # Bolt Rifle (Stalker)
+    refNode: *STR_BOLTER
+    battleType: 1
+    armor: 200
+    bigSprite: 3199
+    floorSprite: 3199
+    handSprite: 3704
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    bulletSprite: {mod: 40k, index: 6}
+    invWidth: 2
+    invHeight: 3
+    requiresBuy:
+      - STR_PRIMARIS_BOLTERS_ADV
+    costBuy: 120000
+    costSell: 30000
+    listOrder: 10450
+    twoHanded: true
+    blockBothHands: false
+    oneHandedPenalty: 50
+    weight: 34 # +6 over regular - larger battle rifle
+    clipSize: 0
+    dropoff: 7
+    minRange: 3 #cumbersome, not suited to CQC
+    autoRange: 12 # cawl 11
+    snapRange: 18 # cawl 17
+    aimRange: 23
+    accuracyAuto: 75 # cawl 66
+    accuracySnap: 90 # cawl 80
+    accuracyAimed: 100
+    tuAuto: 30 # cawl 30 for 4
+    tuSnap: 20 # cawl 26 for 2
+    tuAimed: 60
+    autoShots: 4 # cawl 4
+    tags:
+      ITEM_AIMED_ACCURACY_POWER_BONUS: 30 # scoped weapon aimed shot bonus
+      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_RECOIL: 70 # +5 over regular - larger battle rifle
+      ITEM_COLOR_CHANGES_WITH_AMMO: 15
+
+  - type: STR_BOLTRIFLE_MC               # Bolt Rifle (Mastercrafted)
+    refNode: *STR_BOLTER
+    battleType: 1
+    armor: 200
+    bigSprite: 3202
+    floorSprite: 3202
+    handSprite: 3712
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    bulletSprite: {mod: 40k, index: 6}
+    invWidth: 2
+    invHeight: 3
+    costSell: 30000
+    listOrder: 10450
+    twoHanded: true
+    blockBothHands: false
+    oneHandedPenalty: 50
+    weight: 34 # +6 over regular - larger battle rifle
+    clipSize: 0
+    dropoff: 7
+    minRange: 3 #cumbersome, not suited to CQC
+    autoRange: 12 # cawl 11
+    snapRange: 18 # cawl 17
+    aimRange: 0
+    accuracyAuto: 75 # cawl 66
+    accuracySnap: 90 # cawl 80
+    accuracyAimed: 0
+    tuAuto: 30 # cawl 30 for 4
+    tuSnap: 22 # cawl 26 for 2
+    tuAimed: 0
+    confSnap:
+      shots: 2 # cawl 2
+    autoShots: 6 # cawl 4
+    tags:
+      ITEM_RECOIL: 70 # +5 over regular - larger battle rifle
+      ITEM_COLOR_CHANGES_WITH_AMMO: 15
+
   - type: STR_HEAVY_BOLTRIFLE               # Heavy Bolt Rifle
     battleType: 1
     armor: 200
-    weight: 40 # +6 over regular Cawl
+    weight: 44 # +10 over regular Cawl
     bigSprite: 3179
     floorSprite: 3179
     handSprite: 3672
@@ -1016,22 +1277,22 @@ items:
       - STR_BOLTRIFLE_DRUM_EX
       - STR_BOLTRIFLE_DRUM_MC
     dropoff: 7
-    minRange: 4 #cumbersome, not suited to CQC
-    autoRange: 13 # cawl 12
-    snapRange: 19 # cawl 18
+    minRange: 5 #cumbersome, not suited to CQC
+    autoRange: 13 # cawl 11
+    snapRange: 19 # cawl 17
     aimRange: 0
     accuracyAuto: 66 # cawl 66
     accuracySnap: 80 # cawl 80
     accuracyAimed: 0
-    tuAuto: 30 # cawl 30 for 4
+    tuAuto: 33 # cawl 30 for 4
     tuSnap: 28 # cawl 26 for 2
     tuAimed: 0
     tuLoad: 20 # +5, bulky drum mags
     confSnap:
       shots: 3 # cawl 2
-    autoShots: 5 # cawl 4
+    autoShots: 6 # cawl 4
     tags:
-      ITEM_RECOIL: 80 # +15 over regular - extra large battle rifle
+      ITEM_RECOIL: 90 # +20 over cawl - extra large battle rifle
       ITEM_IS_HEAVY_WEAPON: 2 # 10% additional penalty when firing with lowered TUs
       REACTION_MULTIPLIER: 80 # bulky
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
@@ -1328,7 +1589,7 @@ items:
     battleType: 1
     size: 0.2
     requiresBuy:
-      - STR_PRIMARIS_AND_DEATHWATCH
+      - STR_PRIMARIS_BOLTERS_ADV
     costBuy: 150000
     costSell: 1000
     armor: 200
@@ -1364,17 +1625,17 @@ items:
       REACTION_MULTIPLIER: 200 # pistol
 
   - type: STR_ABSOLVOR_AMMO                 # Absolvor Pistol Ammo
-    categories: [STR_CAT_BOLTER, STR_CAT_DEVASTATOR]
+    categories: [STR_CAT_BOLTER]
     battleType: 2
     size: 0.05
     costBuy: 1000
     costSell: 500
     requiresBuy:
-      - STR_PRIMARIS_AND_DEATHWATCH
+      - STR_PRIMARIS_BOLTERS_ADV
     weight: 3
     armor: 200
     listOrder: 10101
-    bigSprite: {mod: 40k_ROSIGMA_edits, index: 1022}
+    bigSprite: 3172
     floorSprite: {mod: 40k, index: 12}
     handSprite: {mod: 40k, index: 464}
     hitSound: {mod: 40k, index: 708}
@@ -1387,7 +1648,7 @@ items:
     damageAlter: # bolter values as base
       RandomType: 7
       ToArmorPre: 0.15
-      ArmorEffectiveness: 0.6 # comparable AP to krak
+      ArmorEffectiveness: 0.5 # comparable AP to krak
       ToArmor: 0.15
       ToHealth: 1.0 # between regular and krak
       ToStun: 0.4
@@ -2618,7 +2879,7 @@ items:
       ITEM_SNAP_ACCURACY_POWER_BONUS: 20 # was 0
       ITEM_POWER_BONUS_PERCENTILE: 1
 
-  - type: STR_BOLT_SNIPER_RIFLE             # SM Bolt Sniper - Given to Scout Strat
+  - type: STR_BOLT_SNIPER_RIFLE             # SM Bolt Sniper
     categories: [STR_CAT_SNIPER]
     dropoff: 3 #scoped sniper rifle
     weight: 50
@@ -2668,8 +2929,8 @@ items:
       ITEM_HWP_IGNORES_ARMOR_BONUS: 1 # Sniper Rifle
       REACTION_MULTIPLIER: 10 # 10% of normal - Sniper rifle, bad at reactions
       ITEM_RECOIL: 75
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 50
-      ITEM_SNAP_ACCURACY_POWER_BONUS: 20
+      ITEM_AIMED_ACCURACY_POWER_BONUS: 75
+      ITEM_SNAP_ACCURACY_POWER_BONUS: 30
       ITEM_POWER_BONUS_PERCENTILE: 1
 
   - &STR_SNIPER_BOLT_AMMO                   # Bolt Sniper Ammo Base
@@ -2684,7 +2945,7 @@ items:
     clipSize: 1
     floorSprite: 3130
     handSprite: {mod: 40k, index: 464}
-    power: 120
+    power: 100 # reduced, moved to aimed shot bonus
     damageType: 1
 
   - type: STR_BOLT_SNIPER_AMMO_AP           # Bolt Sniper AP Ammo
@@ -2710,7 +2971,7 @@ items:
     refNode: *STR_SNIPER_BOLT_AMMO
     bigSprite: 3131
     listOrder: 11933
-    power: 100 # -20 from base, meant for killing 2x2 enemies not as general purpose anti armor
+    power: 80 # -20 from base, meant for killing 2x2 enemies not as general purpose anti armor
     damageType: 3 # HE
     damageAlter: # krak grenade base
       ResistType: 1 # AP resist
@@ -3110,7 +3371,7 @@ items:
 
   - update: STR_EVISCERATOR                 # Eviscerator
     costMelee:
-      time: 20 # was 20%
+      time: 18 # was 20%
       energy: 6 # was 8
     flatRate: true
 

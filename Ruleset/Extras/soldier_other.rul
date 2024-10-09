@@ -4,3 +4,46 @@ soldiers:
     requires:
       - STR_ELDAR_ALLIANCE # "Eldar Negotiations", the tech called Eldar Alliance is STR_ELDAR_PATH - was Xeno Embrace
       - STR_ELDAR_SEER
+      
+
+
+units: # Civ units
+  - type: STR_MARINE # NPC Marines from IG mission
+    race: STR_CIVILIAN
+    stats: # give them real Marine stats (armour bonuses included here)
+      tu: 120 # was 75
+      stamina: 120 # was 80
+      health: 160 # was 70
+      bravery: 110 # was 90
+      reactions: 90 # was 40
+      firing: 150 # was 90
+      throwing: 90 # was 60
+      strength: 120 # was 70
+      psiStrength: 80
+      psiSkill: 100 # was 0
+      melee: 150 # was 80
+    armor: STR_PERSONAL_ARMOR_CIVILIAN
+    standHeight: 21
+    kneelHeight: 14
+    value: 50
+    intelligence: 5
+    aggression: 7
+    energyRecovery: 40
+    deathSound: [744, 745, 746, 747, 748, 749, 750, 751, 752]
+    builtInWeaponSets:
+      - - STR_PISTOLH_SM
+        - STR_PISTOL_CLIP_MC
+        - STR_PISTOL_CLIP_MC
+        - STR_POWERFIST
+      - - STR_RIFLEB
+        - STR_RIFLE_CLIP_MC
+        - STR_RIFLE_CLIP_MC
+        - STR_MGRENADE
+      - - STR_BOLTRIFLE_STERNGUARD
+        - STR_RIFLE_CLIP_MC
+        - STR_RIFLE_CLIP_MC
+        - STR_MGRENADE
+      - - STR_HEAVY_LASER #meltagun
+        - STR_MELTA_AMMO
+        - STR_MELTA_AMMO
+        - STR_MGRENADE

@@ -319,12 +319,20 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
 
-  - type: STR_BLOODRAVENS_TACTICAL_ARMOR
+  - type: STR_BLOODRAVENS_TACTICAL_ARMOR # Tactical
     refNode: *STR_SHREDRESIST_ARMOR
     tags: # gets standard values
       SMT_ARMOR_SHRED_RESISTANCE: 35
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
+
+  - type: STR_PERSONAL_ARMOR_CIVILIAN # NPC helper Marines for IG mission
+    refNode: *STR_SHREDRESIST_ARMOR
+    tags: # NPC bonus because AI is dumb
+      SMT_ARMOR_SHRED_RESISTANCE: 60
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 45
+
 
 ### Deathwatch (shred values defined in DW_armor.rul)
   - type: STR_DW_TAC_ARMOR_BA_UC

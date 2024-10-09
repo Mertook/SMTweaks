@@ -11,6 +11,7 @@ events:
       AUX_CROZIUS: 1
     timer: 60
     timerRandom: 60
+    researchList: [STR_BOLTER_AMMO_PREREQ] # allow player to make more ammo for their marine even if they can't get it normally
 
 
   - name: STR_ELDAR_TREATY_FARSEER
@@ -21,7 +22,79 @@ events:
     everyMultiItemList:
       STR_EPOWER_SWORD: 1
       STR_CATAPULT_PISTOL: 1
-      STR_SHURIKEN_CLIP: 3
+      STR_SHURIKEN_CLIP: 12
       STR_ELDAR_GRENADE: 2
     timer: 60
     timerRandom: 60
+
+  - name: STR_LONESOME_VINDICARE_EVENT      # Rare event that gifts a Vindicare Assassin
+    researchList: [STR_VINDICARE_AMMO_REQ] # allow player to make more ammo for their assassin even if they can't get it normally
+
+  - name: STR_BASIC_SPAWN_TACTICAL_MARINES
+    spawnedPersons: 2 # was 4
+    spawnedPersonType: STR_SOLDIER
+    everyMultiItemList:
+      STR_TATICAL_ARMOR: 2 #storeItem
+      STR_RIFLE: 2
+      STR_RIFLE_CLIP: 12
+      STR_RIFLE_CLIP_EX: 6
+      STR_RIFLE_CLIP_AP: 6
+      STR_GRENADE: 2
+      STR_KRAK_GRENADE: 2
+      STR_CHAINSWORD_LIGHTSM: 2
+    researchList: [STR_BOLTER_AMMO_PREREQ] # allow player to make more ammo for their marines even if they can't get it normally
+
+  - name: STR_BASIC_SPAWN_DEVASTATOR_MARINES
+    spawnedPersons: 2 # was 4
+    spawnedPersonType: STR_SOLDIER
+    everyMultiItemList:
+      STR_DEV_ARMOR: 2 #StoreItem
+      STR_AUTO_CANNON: 1
+      STR_AC_AP_AMMO: 6
+      STR_LASCAN: 1
+      STR_LASCAN_CLIP: 4
+    timer: 60
+    timerRandom: 60
+
+  - name: STR_BASIC_SPAWN_ASSAULT_MARINES
+    spawnedPersons: 2 # was 4
+    spawnedPersonType: STR_SOLDIER
+    everyMultiItemList:
+      STR_ASS_ARMOR: 2 #StoreItem
+      STR_PISTOLB: 2
+      STR_PISTOL_CLIP: 12
+      STR_PISTOL_CLIP_EX: 6
+      STR_PISTOL_CLIP_AP: 6
+      STR_KRAK_GRENADE: 4
+      STR_CHAINSWORD: 2
+    timer: 60
+    timerRandom: 60
+    researchList: [STR_BOLTER_AMMO_PREREQ] # allow player to make more ammo for their marines even if they can't get it normally
+
+  - name: STR_BASIC_SPAWN_BLOODRAVENS_TACTICAL_MARINES
+    everyMultiItemList:
+      STR_RIFLE: 2
+      STR_RIFLEB: 2
+      STR_RIFLE_CLIP: 16
+      STR_RIFLE_CLIP_AP: 8
+      STR_RIFLE_CLIP_EX: 8
+      STR_GRENADE: 4
+      STR_KRAK_GRENADE: 4
+      STR_CHAINSWORD_LIGHTSM: 4
+    researchList: [STR_BOLTER_AMMO_PREREQ] # allow player to make more ammo for their marines even if they can't get it normally
+
+  - name: STR_BASIC_SPAWN_BLOODRAVENS_TACTICAL_MARINE_LONE
+    everyMultiItemList:
+      STR_RIFLEB: 1
+      STR_RIFLE_CLIP: 8
+      STR_RIFLE_CLIP_AP: 4
+      STR_RIFLE_CLIP_EX: 4
+      STR_GRENADE: 2
+      STR_KRAK_GRENADE: 2
+      STR_CHAINSWORD_LIGHTSM: 1
+    researchList: [STR_BOLTER_AMMO_PREREQ] # allow player to make more ammo for their marines even if they can't get it normally
+
+
+
+
+

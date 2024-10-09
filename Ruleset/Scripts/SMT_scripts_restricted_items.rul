@@ -1,9 +1,9 @@
 extended:
   tags:
     RuleSoldier:
-      SMT_RESTRICTED_ITEM_USER: int # Soldier is allowed to used restricted item (1 = Chaplain, 2 = DW Marine, 3 = DW Captain) - Allows two values eg; 21 & 12 count as being both Chaplain and Deathwatch Marine
+      SMT_RESTRICTED_ITEM_USER: int # Soldier is allowed to used restricted item (1 = Chaplain, 2 = DW Marine, 3 = DW Captain) - Allows two values eg; 21 & 12 both count as being a Chaplain and a Deathwatch Marine
     RuleItem:
-      SMT_RESTRICTED_ITEM: int # Item should only be usable by certain units (1 = Crozius, 2 = Deathwatch Weapons)
+      SMT_RESTRICTED_ITEM: int # Item should only be usable by certain units (1 = Crozius, 2 = Deathwatch Weapons, 3 = DW Captain Gear)
       SMT_RESTRICTED_ACCURACY_PEN: int # Percentage of weapon accuracy when used by incorrect units
       SMT_RESTRICTED_DAMAGE_PEN: int # Percentage of weapon power when used by incorrect units
       SMT_RESTRICTED_ITEM_MELEE: int # if !0, reduce melee power % to this much when used by incorrect units
@@ -181,6 +181,12 @@ items:
     tags:
       SMT_RESTRICTED_ITEM: 3
       SMT_RESTRICTED_ITEM_MELEE: 85 # only 15% damage
+
+  - type: STR_ABSOLVOR_PISTOL_DW        # Absolvor Pistol (DW Captain - 3)
+    refNode: *STR_RESTRICTED_ITEM
+    tags:
+      SMT_RESTRICTED_ITEM: 3
+      SMT_RESTRICTED_DAMAGE_PEN: 25
 
 
 

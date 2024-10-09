@@ -3213,7 +3213,7 @@ armors:
     antiCamouflageAtDay: 10 # +3 over regular Officers - DW bonus + leader bonus
     antiCamouflageAtDark: 10 # +3 over regular Officers - DW bonus + leader bonus
     loftempsSet: [ 3 ]
-    spriteSheet: MKXCAPDW.PCK
+    spriteSheet: DWCAPTAIN.PCK
     customArmorPreviewIndex: {mod: 40k, index: 507}
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
@@ -3268,25 +3268,35 @@ armors:
 
   - type: STR_DW_LEADER_BA_UC
     refNode: *STR_DW_LEADER_ARMOR
+    spriteSheet: DWCAPTAINBA.PCK
     units:
       - STR_BLOODANGELS_LEADER
     instantWoundRecovery: true
     layersDefaultPrefix: 0
     layersSpecificPrefix:
-      0: 0
+      0: DWCAPTAIN
     layersDefinition:
-      M0: ["CAPEP", "MKXCAPDW", "M0_FACE", ""]
-      M1: ["CAPEP", "MKXCAPDW", "M1_FACE", ""]
-      M2: ["CAPEP", "MKXCAPDW", "M2_FACE", ""]
-      M3: ["CAPEP", "MKXCAPDW", "M3_FACE", ""]
-      M4: ["CAPEP", "MKXCAPDW", "M4_FACE", ""]
-      M5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
-      F0: ["CAPEP", "MKXCAPDW", "M0_FACE", ""]
-      F1: ["CAPEP", "MKXCAPDW", "M1_FACE", ""]
-      F2: ["CAPEP", "MKXCAPDW", "M2_FACE", ""]
-      F3: ["CAPEP", "MKXCAPDW", "M3_FACE", ""]
-      F4: ["CAPEP", "MKXCAPDW", "M4_FACE", ""]
-      F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
+      M0: ["CAPEP", "CAPBAMF", "M0_FACE", ""]
+      M1: ["CAPEP", "CAPBAMF", "M1_FACE", ""]
+      M2: ["CAPEP", "CAPBAMF", "M2_FACE", ""]
+      M3: ["CAPEP", "CAPBAMF", "M3_FACE", ""]
+      M4: ["CAPEP", "CAPBAMF", "M4_FACE", ""]
+      M5: ["CAPEP", "CAPBAMF", "M5_FACE", ""]
+      F0: ["CAPEP", "CAPBAMF", "M0_FACE", ""]
+      F1: ["CAPEP", "CAPBAMF", "M1_FACE", ""]
+      F2: ["CAPEP", "CAPBAMF", "M2_FACE", ""]
+      F3: ["CAPEP", "CAPBAMF", "M3_FACE", ""]
+      F4: ["CAPEP", "CAPBAMF", "M4_FACE", ""]
+      F5: ["CAPEP", "CAPBAMF", "M5_FACE", ""]
+    specialWeapon: STR_JUMP_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_3X3
+      - STR_CAPTAIN_SWORD_DW
+    tags:
+      MaxFlight: 3
+      MaxCoolDown: 1
+      FLIGHT_DODGE_CHANCE: 35
+      ARMOR_MAX_SUCCESSFUL_DODGES: 1
   - type: STR_DW_LEADER_BT_UC
     refNode: *STR_DW_LEADER_ARMOR
     units:
@@ -3386,8 +3396,14 @@ armors:
       F3: ["CAPEP", "MKXCAPDW", "M3_FACE", ""]
       F4: ["CAPEP", "MKXCAPDW", "M4_FACE", ""]
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
+    builtInWeapons:
+      - INV_NULL_3X1_BACKPACK
+      - STR_ABSOLVOR_PISTOL_DW
+      - STR_ABSOLVOR_AMMO_MC
+      - STR_ABSOLVOR_AMMO_MC
+      - STR_ABSOLVOR_AMMO_MC
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_TU_RESTORED: 50
       ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_DW_LEADER_SALA_UC
     refNode: *STR_DW_LEADER_ARMOR
@@ -3610,7 +3626,8 @@ armors:
       - STR_VOLKITE_DW
       - AUX_CROZIUS_DW
       - STR_PLASMA_GUN_TWINCORE_DW
-      - STR_CLAWS_DW
+      - STR_ABSOLVOR_PISTOL_DW
+      - STR_POWER_AXE_DW
       - STR_GRAV_AUTOC_DW
       - STR_FORCE_HALBERD_DW
     tags:

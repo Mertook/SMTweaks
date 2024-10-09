@@ -103,8 +103,7 @@ manufacture:
     requiredItems:
       STR_DW_TOKEN_LEADER: 1
       STR_KILLPOINT_TOKEN: 1200
-    producedItems:
-      STR_RIFLE_CLIP_MC: 5 # need something because otherwise game assumes you're trying to make an item with the name of the manufacture
+    producedItems: {}
 
   - name: STR_DWULTRA_L                     # Ultramarine Leader
     refNode: *STR_DWLEADER_TEMPLATE

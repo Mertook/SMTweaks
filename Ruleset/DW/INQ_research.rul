@@ -77,6 +77,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_INQUISITION
       - STR_HARDER_MISSIONS
       - STR_NOT_DEATHWATCH
+      - STR_BOLTER_AMMO_PREREQ
     disables:
       - STR_PERSONAL_ARMOR
       - STR_DEATHWATCH
@@ -454,11 +455,11 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_RADICAL_INQUISITOR
     spawnedEvent: STR_REINFORCEMENTS_DCA
 
-  - name: STR_MARINE_BOLTERS_INQ # Radical path unlock for marine bolters
+  - name: STR_MARINE_BOLTERS_INQ    # Radical path unlock for marine bolters
     cost: 150
     points: -250
     dependencies:
-      - STR_RADICAL_INQUISITOR
+      - STR_RADICAL_INQUISITOR_STRATEGY # RR strat only - Grey Knights forbid radical options, DW has these unlocked by default
     unlocks:
       - STR_MARINE_BOLTERS
       - STR_PRIMARIS_BOLTERS
@@ -490,20 +491,19 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     cost: 0
     points: 0
     dependencies:
-      - STR_CHAMBERMILITANT
-      - STR_RADICAL_INQUISITOR
+      - STR_RADICAL_INQUISITOR_STRATEGY
       - STR_ELDAR_SEER
     unlocks:
       - STR_ELDAR_ALLIANCE
     listOrder: 15 # push above corpses/etc
 
-  - name: STR_ELDAR_WEAPON_REQ      # Activates monthly events that delivers Eldar weapons/ammo
-    cost: 1000
-    points: -1000
-    dependencies:
-      - STR_CHAMBERMILITANT
-      - STR_RADICAL_INQUISITOR
-      - STR_ELDAR_ALLIANCE
-    spawnedEvent: STR_ELDAR_WEAPON_SUPPLY_RECCUR
-    listOrder: 15 # push above corpses/etc
+  # - name: STR_ELDAR_WEAPON_REQ      # Activates monthly events that delivers Eldar weapons/ammo
+    # cost: 1000
+    # points: -1000
+    # dependencies:
+      # - STR_CHAMBERMILITANT
+      # - STR_RADICAL_INQUISITOR
+      # - STR_ELDAR_ALLIANCE
+    # spawnedEvent: STR_ELDAR_WEAPON_SUPPLY_RECCUR
+    # listOrder: 15 # push above corpses/etc
 

@@ -19,8 +19,9 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_SHOTGUNS_ADV # added
       - STR_PILOT_GUARDSMEN
       - STR_IMPERIUM_RESEARCH
-      - STR_NOT_STEEL_LEGION_STRATEGY
-      - STR_NOT_DEATHWATCH
+      - STR_NOT_STEEL_LEGION_STRATEGY # allows basic lasguns
+      - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
+      #- STR_NOT_DEATHWATCH # currently just relevant for GK/RR Chamber Militant
     disables:
       - STR_CYDONIA_OR_BUST
       - STR_MARINES_STRATEGY
@@ -45,13 +46,39 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_GUARD_AND_ARBITES
       # - STR_GUARD_SUPORT
       - STR_IMPERIUM_RESEARCH
-      - STR_GUARD_AND_INQUISITION #
-      - STR_NOT_DEATHWATCH
+      - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
+      #- STR_NOT_DEATHWATCH # currently just relevant for GK/RR Chamber Militant
     disables:
       - STR_ARBITES
       - STR_ADEPTAS
       - STR_MARINES_STRATEGY
       - STR_PERSONAL_ARMOR
+
+  - name: STR_ADEPTAS                               # Sisters of Battle Selected
+    cost: 0
+    points: 0
+    lookup: STR_IMPERIUM_RESEARCH
+    dependencies:
+      - STR_GENERALLOCK
+    unlocks:
+      - STR_DEATHWATCH_AND_ADEPTAS
+      - STR_PRIMARIS_AND_ADEPTAS
+      - STR_NOT_PRIMARIS
+      # - STR_MOTION_SCANNER
+      # - STR_HOSPITALLER
+      # - STR_LASER_WEAPONS
+      - STR_MARINES_AND_ADEPTAS
+      # - STR_LIGHT_BOLTERS
+      - STR_GUARD_SUPORT
+      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      - STR_ADEPTAS_AND_INQUISITION
+      - STR_ADEPTAS_MARINES_AND_INQUISITION
+      - STR_IMPERIUM_RESEARCH
+      #- STR_NOT_DEATHWATCH # currently just relevant for GK/RR Chamber Militant
+    disables:
+      - STR_ARBITES
+      - STR_IMPERIAL_GUARD_OPERATIONS
+      - STR_MARINES_STRATEGY
 
 
 
@@ -188,7 +215,7 @@ research: # Research changes only made to maintain functionality for other facti
     cost: 1000
     points: -1500 # was -500
     dependencies:
-      - STR_GUARD_AND_ARBITES
+      #- STR_GUARD_AND_ARBITES
       - STR_ELDAR_ALLIANCE
     getOneFree:
       - STR_ELDAR_WEAPONRY # was Eldar Platform ???
@@ -202,7 +229,6 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_ELDAR_WAVESERPENT_UFO_DATA
       - STR_ELDAR_COBRA_UFO_DATA
       - STR_ELDAR_HORNET_UFO_DATA
-      - STR_WRAITHGUARD_CORPSE
       - STR_CATAPULT_PISTOL
       - STR_CATAPULT
       - STR_SHURIKEN_CLIP
@@ -210,6 +236,7 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_ELDAR_MGRENADE
       - STR_ELDAR_GRENADE
       - STR_ELDAR_CHAINSWORD
+      - STR_WRAITHGUARD_CORPSE  # why?
       - STR_PLAT_CORPSE         # why?
       - STR_DAVENGER_CORPSE     # why?
       - STR_SCORPION_CORPSE     # why?

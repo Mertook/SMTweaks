@@ -109,6 +109,7 @@ items:
     tuAimed: 0
     confSnap:
       shots: 1 # was 2
+      name: STR_SNAP_SHOT
     autoShots: 4
     tags:
       ITEM_RECOIL: 30 # was 25, light bolter with high RoF
@@ -131,6 +132,7 @@ items:
     tuAimed: 40
     confSnap: #Bolter
       shots: 1 # was 2
+      name: STR_SNAP_SHOT
       ammoSlot: 0
       arcing: false
     confAuto: #Bolter
@@ -298,7 +300,9 @@ items:
     damageAlter:
       ResistType: 12 # Grav
 
-
+  - type: STR_DISPOSABLE_LAUNCHER_KRAK
+    requires: # removed HWP IG requirement, added to CM
+     - STR_GUARD_AND_INQUISITION
 
 
 

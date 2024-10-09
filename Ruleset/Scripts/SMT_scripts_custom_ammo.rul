@@ -71,6 +71,11 @@ items:
     tags:
       SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 80
 
+  - type: STR_ABSOLVOR_AMMO_MC          # Absolvor (DW)
+    refNode: *STR_PRECISION_AMMO
+    tags:
+      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 80
+
 
 
 
@@ -125,7 +130,7 @@ items:
   - type: STR_RIFLE_CLIP_DEREV          # DW Bolter ammo
     refNode: *STR_DEREVENANT_AMMO
     tags:
-      SMT_DEREVENANT_AMMO: 50
+      SMT_DEREVENANT_AMMO: 20
 
   - type: STR_BOLT_SNIPER_AMMO_DEREV    # DW Bolt Sniper ammo
     refNode: *STR_DEREVENANT_AMMO

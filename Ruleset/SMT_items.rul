@@ -574,6 +574,9 @@ items:
 
   - update: STR_LIGHT_BOLTER_AMMO_BELT      # Light Bolter AmmoBelt
     refNode: *STR_BOLTER_AMMO_STD
+    requiresBuy:
+      - STR_LIGHT_BOLTERS_MIDTIER # was low tier, only gun with this ammo requires midtier???
+    costBuy: 4000 # was 10k
 
   - update: STR_LIGHT_BOLTER_AMMO_SHORT     # Light Bolter ShortMag
     refNode: *STR_BOLTER_AMMO_STD
@@ -627,9 +630,18 @@ items:
 
   - update: STR_LIGHT_BOLTER_AMMO_BELT_PEN  # Krak Light Bolter AmmoBelt
     refNode: *STR_BOLTER_AMMO_KRAK
+    requiresBuy:
+      - STR_LIGHT_BOLTERS_MIDTIER
+      - STR_MIDTIER_PREREQ
+    costBuy: 10000 # was 30k
+
 
   - update: STR_LIGHT_BOLTER_AMMO_SHORT_PEN # Krak Light Bolter ShortMag
     refNode: *STR_BOLTER_AMMO_KRAK
+    requiresBuy:
+      - STR_LIGHT_BOLTERS_LOWTIER # was mid tier, used by low tier bolters
+      - STR_MIDTIER_PREREQ
+    costBuy: 6000 # was 7k
 
   - update: STR_PISTOL_CLIP_MC              # Mastercraft Boltpistol Ammo                   ## Custom ammo
     size: 0.05 # was 0.1

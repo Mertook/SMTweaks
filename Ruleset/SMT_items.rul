@@ -2467,13 +2467,13 @@ items:
   - update: STR_GRAV_AUTOC                  # Gravis Autocannon Gauntlet
     refNode: *STR_POWERFIST_TEMPLATE
     dropoff: 4
-    autoRange: 14
+    autoRange: 13
     snapRange: 21
     aimRange: 0
     accuracyAuto: 60 # was 50
-    accuracySnap: 90 # was 75
+    accuracySnap: 80 # was 75
     accuracyAimed: 0
-    tuAuto: 20 # was 30
+    tuAuto: 25 # was 30
     tuSnap: 20
     tuAimed: 0
     autoShots: 3
@@ -2491,13 +2491,13 @@ items:
     fixedWeaponShow: true
     handSprite: 3744
     dropoff: 4
-    autoRange: 14
+    autoRange: 13
     snapRange: 21
     aimRange: 0
     accuracyAuto: 60 # was 50
-    accuracySnap: 90 # was 75
+    accuracySnap: 80 # was 75
     accuracyAimed: 0
-    tuAuto: 20 # was 30
+    tuAuto: 25 # was 30
     tuSnap: 20
     tuAimed: 0
     autoShots: 3
@@ -2574,7 +2574,7 @@ items:
     accuracyAuto: 30 # 40k 20
     accuracySnap: 30
     accuracyAimed: 0
-    tuAuto: 15
+    tuAuto: 20
     tuSnap: 15
     tuAimed: 0
     maxRange: 16 # was 9
@@ -2612,7 +2612,7 @@ items:
     accuracyAuto: 30 # 40k 20
     accuracySnap: 30
     accuracyAimed: 0
-    tuAuto: 15
+    tuAuto: 20
     tuSnap: 15
     tuAimed: 0
     maxRange: 16 # was 9
@@ -2666,13 +2666,16 @@ items:
     accuracySnap: 80
     accuracyAuto: 70
     accuracyAimed: 0
-    tuAuto: 45
-    tuSnap: 25
+    tuAuto: 50
+    tuSnap: 30
     tuAimed: 0
     confSnap:
       shots: 3 # was 1
       name: STR_BURST_SNAP_SHOT
-    autoShots: 8
+      followProjectiles: false
+    confAuto:
+      shots: 6
+      followProjectiles: false
     bulletSpeed: 10
     explosionSpeed: 1
     tags:
@@ -2714,7 +2717,7 @@ items:
       name: STR_BURST_SNAP_SHOT
       followProjectiles: false
     confAuto:
-      shots: 8
+      shots: 6
       followProjectiles: false
     bulletSpeed: 10
     explosionSpeed: 1

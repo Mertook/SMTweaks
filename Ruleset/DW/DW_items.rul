@@ -21,6 +21,17 @@ items:
     recover: true
     recoveryPoints: 20
 
+  - type: STR_ASSASSIN_TOKEN                # Token used to buy Temple Assassins
+    battleType: 0
+    size: 0.01
+    weight: 3
+    bigSprite: 100
+    armor: 200
+    invWidth: 1
+    invHeight: 1
+    recover: true
+    recoveryPoints: 20
+
   - &STR_BOLTER_DW                          # Generic DW Bolter Reference
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
     requiresBuy:
@@ -41,6 +52,7 @@ items:
   - update: STR_RIFLEA                      # Bolter (Artifex DW)                       ## Restricted item
     refNode: *STR_BOLTER_DW
     bigSprite: 3139
+    floorSprite: 3139
     costBuy: 50000
     weight: 28 # was 20
     dropoff: 8 # standard
@@ -197,7 +209,6 @@ items:
     tuLoad: 25 #
     minRange: 6 #heavy weapon; cumbersome, not suited to CQC
     autoShots: 12 #
-    followProjectiles: false
     requiresBuy:
       - STR_DW_HWP
     compatibleAmmo: #Heavy Bolter Ammo
@@ -212,14 +223,17 @@ items:
     confSnap:
       name: STR_BURST_SNAP_SHOT
       shots: 3
+      followProjectiles: false
     confAimed:
       name: STR_AUTO_SHOT
       shortName: STR_AUTO_SHOT_COUNT
       shots: 6
+      followProjectiles: false
     confAuto:
       name: STR_FULL_AUTO
       shortName: STR_FULL_AUTO_COUNT
       shots: 12
+      followProjectiles: false
     kneelBonus: 125 # was 130, Astartes version meant to be hipfired by devastator marines
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines

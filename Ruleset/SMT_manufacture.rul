@@ -72,7 +72,7 @@ manufacture:
   - name: STR_RIFLE_CLIP_AP
     category: STR_AMMUNITION
     requires:
-      - STR_BOLTER_AMMO_PREREQ
+      - STR_BOLTER_ADV_AMMO
     space: 0
     time: 150 # was 100
     cost: 17500
@@ -84,7 +84,7 @@ manufacture:
   - name: STR_PISTOL_CLIP_AP
     category: STR_AMMUNITION
     requires:
-      - STR_BOLTER_AMMO_PREREQ
+      - STR_BOLTER_ADV_AMMO
     space: 0
     time: 150 # was 100
     cost: 14000
@@ -96,7 +96,7 @@ manufacture:
   - name: STR_RIFLE_CLIP_EX                         # MetalStorm ammo - Bolter
     category: STR_AMMUNITION
     requires:
-      - STR_BOLTER_AMMO_PREREQ
+      - STR_BOLTER_ADV_AMMO
     space: 0
     time: 150 # was 100
     cost: 17500
@@ -108,7 +108,7 @@ manufacture:
   - name: STR_PISTOL_CLIP_EX                        # MetalStorm ammo - Boltpistol
     category: STR_AMMUNITION
     requires:
-      - STR_BOLTER_AMMO_PREREQ
+      - STR_BOLTER_ADV_AMMO
     space: 0
     time: 150 # was 100
     cost: 14000
@@ -170,7 +170,7 @@ manufacture:
   - name: STR_PISTOL_CLIP_MC                        # MC ammo - Boltpistol
     category: STR_AMMUNITION
     requires:
-      - STR_BOLTER_AMMO_PREREQ
+      - STR_BOLTER_ADV_AMMO
       - STR_MASTER_CRAFTING # was low tier mastercrafting
       - STR_HIGHTIER_PREREQ
     space: 0
@@ -186,7 +186,7 @@ manufacture:
   - name: STR_RIFLE_CLIP_MC                         # MC ammo - Bolter
     category: STR_AMMUNITION
     requires:
-      - STR_BOLTER_AMMO_PREREQ
+      - STR_BOLTER_ADV_AMMO
       - STR_MASTER_CRAFTING # was low tier mastercrafting
       - STR_HIGHTIER_PREREQ
     space: 0

@@ -48,7 +48,12 @@ items:
     requires:
       - STR_ELDAR_WEAPONRY
     armor: 200
-    power: 50
+    power: 60 # was 50 - similar raw hp damage but better at piercing armor
+    damageAlter:
+      ToArmorPre: 0.05 # was 0.1
+      ToHealth: 0.4 # was 0.5
+      ToStun: 0.05 # was 0.2
+      ArmorEffectiveness: 0.3
     clipSize: 60 # was 20
 
   - update: STR_EPOWER_SWORD                    # Eldar sword
@@ -235,6 +240,22 @@ items:
     tuAimed: 40 #melta
     tags:
       ITEM_RECOIL: 16 # was 20, single shot light bolter
+
+  - type: STR_BOLTER_DOMINION
+    weight: 30
+    dropoff: 8 # was 4
+    autoRange: 12 # was 9
+    snapRange: 17 # was 15
+    aimRange: 0
+    accuracyAuto: 75 # was 65
+    accuracySnap: 95 # was 85
+    accuracyAimed: 0
+    tuAuto: 30 # was 40
+    tuSnap: 20 # was 30
+    tuAimed: 0
+    autoShots: 3 # was 4
+    tags:
+      ITEM_RECOIL: 60 # slightly easier than regular Marine Bolter - Sister weapon
 
   - update: STR_HEAVY_BOLTER_GUARD              # IG Heavy Bolter (Bipod)
     autoShots: 8 # was 7

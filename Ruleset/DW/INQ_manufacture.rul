@@ -1,4 +1,44 @@
 manufacture:
+
+  - name: STR_INQ_RECRUIT_TEMPLE_ASSASSIN
+    category: STR_CAT_ASSASSIN
+    requires:
+      - STR_INQ_ASSASSIN_RECRUITMENT
+    space: 0
+    time: 1 # has 24 hour transfer time after manufacture
+    cost: 200000
+    requiredItems:
+      STR_ASSASSIN_TOKEN: 4
+      STR_KILLPOINT_TOKEN: 200
+    producedItems: {}
+    spawnedPersonType: STR_IMPERIAL_ASSASSINFEM
+
+  - name: STR_INQ_RECRUIT_VINDICARE_ASSASSIN
+    category: STR_CAT_ASSASSIN
+    requires:
+      - STR_INQ_ASSASSIN_RECRUITMENT_T2
+    space: 0
+    time: 1 # has 24 hour transfer time after manufacture
+    cost: 400000
+    requiredItems:
+      STR_ASSASSIN_TOKEN: 10
+      STR_KILLPOINT_TOKEN: 800
+    producedItems: {}
+    spawnedPersonType: STR_GUARD_IMPERIAL_ASSASSIN
+
+  - name: STR_INQ_RECRUIT_CALLIDUS_ASSASSIN
+    category: STR_CAT_ASSASSIN
+    requires:
+      - STR_INQ_ASSASSIN_RECRUITMENT_T2
+    space: 0
+    time: 1 # has 24 hour transfer time after manufacture
+    cost: 400000
+    requiredItems:
+      STR_ASSASSIN_TOKEN: 10
+      STR_KILLPOINT_TOKEN: 800
+    producedItems: {}
+    spawnedPersonType: STR_ADEPTAS_CALLIDUS
+
   - name: STR_RECRUIT_CAPTIVE_HERETICAL_ADEPTAS
     category: STR_CAT_RADICAL
     requires:

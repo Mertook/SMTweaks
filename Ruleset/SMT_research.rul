@@ -17,6 +17,7 @@ research:
       - STR_ADEPTAS_MARINES_AND_INQUISITION
       - STR_IMPERIUM_RESEARCH
       - STR_NOT_STEEL_LEGION_STRATEGY # needed to buy guard lasguns
+      - STR_BOLTER_AMMO_PREREQ
       #- STR_NOT_DEATHWATCH # currently just relevant for GK/RR Chamber Militant
     disables:
       - STR_ARBITES
@@ -208,16 +209,17 @@ research:
       - STR_PRIMARIS_AND_DEATHWATCH
       - STR_PRIMARIS_AND_ADEPTAS
     disables:
-      - STR_PERSONAL_ARMOR
+      #- STR_PERSONAL_ARMOR # handled by armor tech instead
       - STR_TATICAL
       - STR_ASSAULT
       - STR_DEVASTATOR
       - STR_SCOUT
+      - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
     spawnedEvent: STR_PRIMARIS_CARE_PACKAGE
     getOneFree:
       - STR_NEOPHYTE_REQUEST
 
-  - name: STR_NEOPHYTE_REQUEST
+  - name: STR_NEOPHYTE_REQUEST      # Unlock Neophytes
     cost: 5
     points: 0
     dependencies:
@@ -240,6 +242,7 @@ research:
       - STR_ALIEN_ALLOYS
       - STR_MIDTIER_PREREQ # All basic armor types unlocked at Midtier
       - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
     unlocks:
       - STR_APOTHECARY_PREREQ # Unlock for Apoth so all strats can get it in early tier
 
@@ -299,13 +302,19 @@ research:
       - STR_MARINES_STRATEGY
 
   - name: STR_HEAVY_LASER           # Meltagun
-    cost: 260 # was 460 - split with Marine Bolters
+    cost: 320 # was 460
     points: 10
     dependencies:
       - STR_LASER_WEAPONS
     spawnedItem: STR_HEAVY_LASER
 
   - name: STR_BOLTER_AMMO_PREREQ    # Marine Bolter ammo
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_BOLTER_ADV_AMMO       # Non-standard Bolter ammo
     cost: 0
     points: 0
     dependencies:
@@ -320,6 +329,7 @@ research:
       - STR_LASER_WEAPONS
     unlocks:
       - STR_BOLTER_AMMO_PREREQ
+      - STR_BOLTER_ADV_AMMO
     listOrder: 9 # push above corpses/etc
     spawnedItem: STR_RIFLEB
 
@@ -343,6 +353,7 @@ research:
       - STR_LASER_WEAPONS
     unlocks:
       - STR_BOLTER_AMMO_PREREQ
+      - STR_BOLTER_ADV_AMMO
     listOrder: 9 # push above corpses/etc
     spawnedItem: STR_BOLTRIFLE_STERNGUARD
 
@@ -474,7 +485,7 @@ research:
     cost: 200
     points: 200
     dependencies:
-      - STR_BOLTER_AMMO_PREREQ # unlocked via Astartes or Primaris Bolters - was melta
+      - STR_BOLTER_ADV_AMMO # unlocked via Astartes or Primaris Bolters - was melta
       - STR_ALIEN_ALLOYS
       - STR_MOTION_SCANNER
       - STR_MEDI_KIT_PREREQ
@@ -486,7 +497,7 @@ research:
       - STR_SIDEOPERATIONS
     cutscene: c2
 
-  - name: STR_DREAD_R # unused, replaced by STR_DREADNOUGHT_MARINE in rosigma for some reason
+  - name: STR_DREAD_R               # unused, replaced by STR_DREADNOUGHT_MARINE in rosigma for some reason
     cost: 180
     points: 20
     dependencies:

@@ -36,7 +36,7 @@ extended:
       ITEM_IS_HEAVY_WEAPON: int # does weapon have penalties for firing after moving/shooting previously this turn? 1 = standard, 2+ increases penalty 2 = 90%, 3 = 80% etc, snapshots count as one level lower for increased penalty
       ITEM_HWP_IGNORES_ARMOR_BONUS: int # does weapon ignore armor hwp bonus (see below) meant for snipers etc
     RuleArmor:
-      SMT_ARMOR_HEAVY_WEAPON_USER: int # armor that counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 1/2, 3 = 2/3, 4 = 3/4 etc
+      SMT_ARMOR_HEAVY_WEAPON_USER: int # armor that counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 2/3, 3 = 2/4, 4 = 2/5 etc
 
   scripts:
     accuracyMultiplierBonusStats:
@@ -88,8 +88,8 @@ extended:
 
           set accuracyBase bonus; # starting bonus
 
-          if and gt currentTU 20 le currentTU 80;
-            add currentTU 20; # start with 100 (80 + 20) % bonus
+          if and gt currentTU 20 le currentTU 90;
+            add currentTU 10; # start with 100 (90 + 10) % bonus
             muldiv bonus currentTU 100;
             # debug_log "Altered currenTU %" currentTU;
             # debug_log "20-80 bonus" bonus;
@@ -97,7 +97,7 @@ extended:
           end;
 
           if le currentTU 20;
-            muldiv bonus 40 100; # lower range is 40 (20 + 20)
+            muldiv bonus 30 100; # lower range is 30 (20 + 10)
             # debug_log "20 bonus" bonus;
           end;
 
@@ -119,8 +119,9 @@ extended:
             limit_lower hwpUser 1;
             mul bonus hwpUser;
             add bonus accuracyBase;
-            add hwpUser 1;
-            div bonus hwpUser; # (reduced Acc * hwpBonus + starting Acc) / hwpBonus
+            add bonus accuracyBase;
+            add hwpUser 2;
+            div bonus hwpUser; # (reduced Acc * hwpBonus + starting Acc *2) / hwpBonus +2
             #debug_log "HWP armor bonus " accuracyBase bonus hwpUser;
           end;
 

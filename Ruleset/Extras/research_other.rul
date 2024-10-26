@@ -80,8 +80,6 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_IMPERIAL_GUARD_OPERATIONS
       - STR_MARINES_STRATEGY
 
-
-
   - name: STR_OGRYN_REQUISITION                     # Keep IG ability to buy smokebombs intact
     getOneFree:
       - STR_SMOKE_BOMB_UNLOCK
@@ -202,7 +200,7 @@ research: # Research changes only made to maintain functionality for other facti
     unlocks:
       - STR_ELDAR_ALLIANCE
 
-  - name: STR_ELDAR_ALLIANCE                        # Allow Seer recruitment + prereq to Eldar outposts for IG/Arbites
+  - name: STR_ELDAR_ALLIANCE                        # Allow Seer recruitment + prereq to Eldar outposts
     cost: 750
     points: -500 # was -500
     dependencies:
@@ -314,6 +312,7 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_BOLTER_MEPHISTO
       - STR_ADEPTAS_BOLTGUN_JOVE
       - STR_BOLTER_AMMO_PREREQ # Jove uses marine bolter ammo
+      - STR_BOLTER_ADV_AMMO
 
 
 

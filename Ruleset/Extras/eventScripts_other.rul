@@ -18,6 +18,30 @@ eventScripts:
     facilityTriggers:
       STR_PSIONIC_LABORATORY: true # chapel building
 
+  - type: STR_REWARD_INQUISITION_STORMTROOPERS_SCRIPT
+    eventWeights:
+      0:
+       STR_REWARD_INQUISITION_STORMTROOPERS: 20
+       STR_REINFORCEMENTS_DCA_LONE: 20
+    firstMonth: 1
+    executionOdds: 100
+    minScore: 4000 # Big Success
+    maxScore: 20000
+    researchTriggers:
+      STR_CHAOS_PATH: false
+
+  - type: STR_REINFORCEMENTS_DCA_SCRIPT_GENERAL
+    eventWeights:
+      0:
+       STR_REINFORCEMENTS_DCA_LONE: 100
+    firstMonth: 1
+    executionOdds: 66
+    minScore: 3500 # Really Hard
+    maxScore: 20000
+    researchTriggers:
+      STR_MIDTIER_PREREQ: true
+      STR_GENERALLOCK: true
+
 
   - type: STR_STEELLEGION_RECURRING_RANDOMIZED_SCRIPT # removed DW marines from pool
     eventWeights:

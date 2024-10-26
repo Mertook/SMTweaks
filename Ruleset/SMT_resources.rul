@@ -248,6 +248,7 @@ extraSprites:
       3107: Resources/ITEMS/SHOTGUN/shotgun_FloorOb.png         # Astartes Shotgun
       3128: Resources/ITEMS/BSNIPER/HeavySniper_FloorOb.png     # Bolt Sniper Rifle
       3130: Resources/ITEMS/BSNIPER/SniperBolt_FloorOb.png      # Bolt Sniper Ammo
+      3139: Resources/ITEMS/BOLTER/rifleA_FloorOb.png           # Bolter Artifex
       3148: Resources/ITEMS/BOLTER/rifleD_FloorOb.png           # Bolt Rifle
       3161: Resources/UNITS/DREAD/DREADMISSILE_FloorOb.png      # Dreadnought Missile (regular ammo)
       3163: Resources/ITEMS/SHOTGUN/shotgunDW_FloorOb.png       # DW Shotgun 
@@ -293,6 +294,15 @@ extraSprites:
       3720: Resources/ITEMS/BOLTER/carbineA_HandOb.png          # Bolt Carbine
       3728: Resources/ITEMS/BOLTER/carbineB_HandOb.png          # Bolt Carbine Stalker
       3736: Resources/ITEMS/PRIMARIS/AbsolvorMC_HandOb.png      # Absolvor Bolt Pistol (MC)
+      3744: Resources/ITEMS/PRIMARIS/GravACDW_HandOb.png        # Gravis Autocannon (DW)
+      3752: Resources/ITEMS/PRIMARIS/GravAC1_HandOb.png         # Gravis Autocannon (Left)
+      #3760: Resources/ITEMS/PRIMARIS/GravAC2_HandOb.png         # Gravis Autocannon (Right)
+      3768: Resources/ITEMS/PRIMARIS/GravBSDW_HandOb.png        # Gravis Boltstorm  (DW)
+      3776: Resources/ITEMS/PRIMARIS/GravBS1_HandOb.png         # Gravis Boltstorm  (Left)
+      #3784: Resources/ITEMS/PRIMARIS/GravBS2_HandOb.png         # Gravis Boltstorm  (Right)
+      3792: Resources/ITEMS/PRIMARIS/GravFSDW_HandOb.png        # Gravis Flamestorm (DW)
+      3800: Resources/ITEMS/PRIMARIS/GravFS1_HandOb.png         # Gravis Flamestorm (Left)
+      #3808: Resources/ITEMS/PRIMARIS/GravFS2_HandOb.png         # Gravis Flamestorm (Right)
 
 
 ###Assault Vanguard
@@ -568,278 +578,213 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/TERM/TERMCLW_S_WS.png
 
-###DW Gravis Armor (Autocannon)
+###DW Gravis Armor
   - typeSingle: DWGRAVIS__1__GRVACBA
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_BA.png
-  - type: DWGRVACBA.PCK
+  - typeSingle: DWGRAVIS__1__GRVBSBA
+    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_BA.png
+  - typeSingle: DWGRAVIS__1__GRVFSBA
+    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_BA.png
+  - typeSingle: DWGRAVIS__1__GRVNWBA
+    fileSingle: Resources/UNITS/DW/GRAV/GRVNW_I_BA.png
+  - type: DWGRVARMBA.PCK
     width: 512
     height: 720
     subX: 32
     subY: 40
     files:
-      0: Resources/UNITS/DW/GRAV/GRVAC_S_BA.png
+      0: Resources/UNITS/DW/GRAV/GRVA_S_BA.png
+  - type: DWGRVHANDBA.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/GRAV/GRVE_S_BA.png
 
   - typeSingle: DWGRAVIS__1__GRVACBT
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_BT.png
-  - type: DWGRVACBT.PCK
+  - typeSingle: DWGRAVIS__1__GRVBSBT
+    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_BT.png
+  - typeSingle: DWGRAVIS__1__GRVFSBT
+    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_BT.png
+  - typeSingle: DWGRAVIS__1__GRVNWBT
+    fileSingle: Resources/UNITS/DW/GRAV/GRVNW_I_BT.png
+  - type: DWGRVARMBT.PCK
     width: 512
     height: 720
     subX: 32
     subY: 40
     files:
-      0: Resources/UNITS/DW/GRAV/GRVAC_S_BT.png
+      0: Resources/UNITS/DW/GRAV/GRVA_S_BT.png
+  - type: DWGRVHANDBT.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/GRAV/GRVE_S_BT.png
 
   - typeSingle: DWGRAVIS__1__GRVACCF
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_CF.png
-  - type: DWGRVACCF.PCK
+  - typeSingle: DWGRAVIS__1__GRVBSCF
+    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_CF.png
+  - typeSingle: DWGRAVIS__1__GRVFSCF
+    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_CF.png
+  - typeSingle: DWGRAVIS__1__GRVNWCF
+    fileSingle: Resources/UNITS/DW/GRAV/GRVNW_I_CF.png
+  - type: DWGRVARMCF.PCK
     width: 512
     height: 720
     subX: 32
     subY: 40
     files:
-      0: Resources/UNITS/DW/GRAV/GRVAC_S_CF.png
+      0: Resources/UNITS/DW/GRAV/GRVA_S_CF.png
+  - type: DWGRVHANDCF.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/GRAV/GRVE_S_CF.png
 
   - typeSingle: DWGRAVIS__1__GRVACDA
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_DA.png
-  - type: DWGRVACDA.PCK
+  - typeSingle: DWGRAVIS__1__GRVBSDA
+    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_DA.png
+  - typeSingle: DWGRAVIS__1__GRVFSDA
+    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_DA.png
+  - typeSingle: DWGRAVIS__1__GRVNWDA
+    fileSingle: Resources/UNITS/DW/GRAV/GRVNW_I_DA.png
+  - type: DWGRVARMDA.PCK
     width: 512
     height: 720
     subX: 32
     subY: 40
     files:
-      0: Resources/UNITS/DW/GRAV/GRVAC_S_DA.png
+      0: Resources/UNITS/DW/GRAV/GRVA_S_DA.png
+  - type: DWGRVHANDDA.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/GRAV/GRVE_S_DA.png
 
   - typeSingle: DWGRAVIS__1__GRVACIF
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_IF.png
-  - type: DWGRVACIF.PCK
+  - typeSingle: DWGRAVIS__1__GRVBSIF
+    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_IF.png
+  - typeSingle: DWGRAVIS__1__GRVFSIF
+    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_IF.png
+  - typeSingle: DWGRAVIS__1__GRVNWIF
+    fileSingle: Resources/UNITS/DW/GRAV/GRVNW_I_IF.png
+  - type: DWGRVARMIF.PCK
     width: 512
     height: 720
     subX: 32
     subY: 40
     files:
-      0: Resources/UNITS/DW/GRAV/GRVAC_S_IF.png
+      0: Resources/UNITS/DW/GRAV/GRVA_S_IF.png
+  - type: DWGRVHANDIF.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/GRAV/GRVE_S_IF.png
 
   - typeSingle: DWGRAVIS__1__GRVACSA
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_SA.png
-  - type: DWGRVACSA.PCK
+  - typeSingle: DWGRAVIS__1__GRVBSSA
+    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_SA.png
+  - typeSingle: DWGRAVIS__1__GRVFSSA
+    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_SA.png
+  - typeSingle: DWGRAVIS__1__GRVNWSA
+    fileSingle: Resources/UNITS/DW/GRAV/GRVNW_I_SA.png
+  - type: DWGRVARMSA.PCK
     width: 512
     height: 720
     subX: 32
     subY: 40
     files:
-      0: Resources/UNITS/DW/GRAV/GRVAC_S_SA.png
+      0: Resources/UNITS/DW/GRAV/GRVA_S_SA.png
+  - type: DWGRVHANDSA.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/GRAV/GRVE_S_SA.png
 
   - typeSingle: DWGRAVIS__1__GRVACSW
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_SW.png
-  - type: DWGRVACSW.PCK
+  - typeSingle: DWGRAVIS__1__GRVBSSW
+    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_SW.png
+  - typeSingle: DWGRAVIS__1__GRVFSSW
+    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_SW.png
+  - typeSingle: DWGRAVIS__1__GRVNWSW
+    fileSingle: Resources/UNITS/DW/GRAV/GRVNW_I_SW.png
+  - type: DWGRVARMSW.PCK
     width: 512
     height: 720
     subX: 32
     subY: 40
     files:
-      0: Resources/UNITS/DW/GRAV/GRVAC_S_SW.png
+      0: Resources/UNITS/DW/GRAV/GRVA_S_SW.png
+  - type: DWGRVHANDSW.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/GRAV/GRVE_S_SW.png
 
   - typeSingle: DWGRAVIS__1__GRVACUM
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_UM.png
-  - type: DWGRVACUM.PCK
+  - typeSingle: DWGRAVIS__1__GRVBSUM
+    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_UM.png
+  - typeSingle: DWGRAVIS__1__GRVFSUM
+    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_UM.png
+  - typeSingle: DWGRAVIS__1__GRVNWUM
+    fileSingle: Resources/UNITS/DW/GRAV/GRVNW_I_UM.png
+  - type: DWGRVARMUM.PCK
     width: 512
     height: 720
     subX: 32
     subY: 40
     files:
-      0: Resources/UNITS/DW/GRAV/GRVAC_S_UM.png
+      0: Resources/UNITS/DW/GRAV/GRVA_S_UM.png
+  - type: DWGRVHANDUM.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/GRAV/GRVE_S_UM.png
 
   - typeSingle: DWGRAVIS__1__GRVACWS
     fileSingle: Resources/UNITS/DW/GRAV/GRVAC_I_WS.png
-  - type: DWGRVACWS.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVAC_S_WS.png
-
-###DW Gravis Armor (Boltstorm)
-  - typeSingle: DWGRAVIS__1__GRVBSBA
-    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_BA.png
-  - type: DWGRVBSBA.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVBS_S_BA.png
-
-  - typeSingle: DWGRAVIS__1__GRVBSBT
-    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_BT.png
-  - type: DWGRVBSBT.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVBS_S_BT.png
-
-  - typeSingle: DWGRAVIS__1__GRVBSCF
-    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_CF.png
-  - type: DWGRVBSCF.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVBS_S_CF.png
-
-  - typeSingle: DWGRAVIS__1__GRVBSDA
-    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_DA.png
-  - type: DWGRVBSDA.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVBS_S_DA.png
-
-  - typeSingle: DWGRAVIS__1__GRVBSIF
-    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_IF.png
-  - type: DWGRVBSIF.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVBS_S_IF.png
-
-  - typeSingle: DWGRAVIS__1__GRVBSSA
-    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_SA.png
-  - type: DWGRVBSSA.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVBS_S_SA.png
-
-  - typeSingle: DWGRAVIS__1__GRVBSSW
-    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_SW.png
-  - type: DWGRVBSSW.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVBS_S_SW.png
-
-  - typeSingle: DWGRAVIS__1__GRVBSUM
-    fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_UM.png
-  - type: DWGRVBSUM.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVBS_S_UM.png
-
   - typeSingle: DWGRAVIS__1__GRVBSWS
     fileSingle: Resources/UNITS/DW/GRAV/GRVBS_I_WS.png
-  - type: DWGRVBSWS.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVBS_S_WS.png
-
-###DW Gravis Armor (Flamestorm)
-  - typeSingle: DWGRAVIS__1__GRVFSBA
-    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_BA.png
-  - type: DWGRVFSBA.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVFS_S_BA.png
-
-  - typeSingle: DWGRAVIS__1__GRVFSBT
-    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_BT.png
-  - type: DWGRVFSBT.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVFS_S_BT.png
-
-  - typeSingle: DWGRAVIS__1__GRVFSCF
-    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_CF.png
-  - type: DWGRVFSCF.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVFS_S_CF.png
-
-  - typeSingle: DWGRAVIS__1__GRVFSDA
-    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_DA.png
-  - type: DWGRVFSDA.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVFS_S_DA.png
-
-  - typeSingle: DWGRAVIS__1__GRVFSIF
-    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_IF.png
-  - type: DWGRVFSIF.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVFS_S_IF.png
-
-  - typeSingle: DWGRAVIS__1__GRVFSSA
-    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_SA.png
-  - type: DWGRVFSSA.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVFS_S_SA.png
-
-  - typeSingle: DWGRAVIS__1__GRVFSSW
-    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_SW.png
-  - type: DWGRVFSSW.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVFS_S_SW.png
-
-  - typeSingle: DWGRAVIS__1__GRVFSUM
-    fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_UM.png
-  - type: DWGRVFSUM.PCK
-    width: 512
-    height: 720
-    subX: 32
-    subY: 40
-    files:
-      0: Resources/UNITS/DW/GRAV/GRVFS_S_UM.png
-
   - typeSingle: DWGRAVIS__1__GRVFSWS
     fileSingle: Resources/UNITS/DW/GRAV/GRVFS_I_WS.png
-  - type: DWGRVFSWS.PCK
+  - typeSingle: DWGRAVIS__1__GRVNWWS
+    fileSingle: Resources/UNITS/DW/GRAV/GRVNW_I_WS.png
+  - type: DWGRVARMWS.PCK
     width: 512
     height: 720
     subX: 32
     subY: 40
     files:
-      0: Resources/UNITS/DW/GRAV/GRVFS_S_WS.png
+      0: Resources/UNITS/DW/GRAV/GRVA_S_WS.png
+  - type: DWGRVHANDWS.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/GRAV/GRVE_S_WS.png
 
 ###Dreadnought3 - Las+Missiles (Hellfire)
   - type: DREADINVHF.SPK

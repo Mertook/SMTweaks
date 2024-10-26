@@ -114,7 +114,6 @@ items:
     experienceTrainingMode: 13
 
   - &STR_POWERFIST_TEMPLATE                 # Powerfist Values
-    weight: 0
     meleeSound: {mod: 40k, index: 710}
     meleeHitSound: {mod: 40k, index: 772}
     meleeAnimation: {mod: 40k, index: 28}
@@ -126,7 +125,7 @@ items:
       strength: 0.3
     flatMelee: true
     accuracyMelee: 70
-    power: 40
+    meleePower: 40
     meleeBonus:
       strength: 1.5
     damageType: 7
@@ -583,6 +582,9 @@ items:
 
   - &STR_BOLTER_AMMO_KRAK                   # Krak Ammo defaults
     size: 0.05 # was 0.1
+    armor: 200
+    requiresBuy:
+      - STR_BOLTER_ADV_AMMO
     damageAlter:
       RandomType: 7 # 50-200%
       ArmorEffectiveness: 0.5 # was 0.5
@@ -591,7 +593,6 @@ items:
       ToHealth: 0.9
       ToStun: 0.05 # was 0.3; solid AP round rather than concussive
       ToEnergy: 0.1
-    armor: 200
 
   - update: STR_PISTOL_CLIP_AP              # Krak Boltpistol Ammo
     refNode: *STR_BOLTER_AMMO_KRAK
@@ -691,6 +692,8 @@ items:
   - &STR_BOLTER_AMMO_METAL_STORM            # Metalstorm Ammo Defaults
     size: 0.05 # was 0.1
     armor: 200
+    requiresBuy:
+      - STR_BOLTER_ADV_AMMO
     powerForAnimation: 1 #
     damageType: 1 # AP type, was HE - Shrapnel blast
     damageAlter:
@@ -1694,10 +1697,13 @@ items:
     tuLoad: 30 # was 40
     minRange: 6 #heavy weapon; cumbersome, not suited to CQC
     autoShots: 9 # was 7
-    followProjectiles: false
+    confAuto:
+      shots: 9 # was 7
+      followProjectiles: false
     confSnap:
       name: STR_BURST_SNAP_SHOT
       shots: 3
+      followProjectiles: false
     kneelBonus: 125 # was 130, Astartes version meant to be hipfired by devastator marines
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
@@ -1744,18 +1750,20 @@ items:
     minRange: 6
     autoShots: 12 # +4
     sprayWaypoints: 2
-    followProjectiles: false
     confSnap:
       name: STR_BURST_SNAP_SHOT
       shots: 3
+      followProjectiles: false
     confAimed:
       name: STR_AUTO_SHOT
       shortName: STR_AUTO_SHOT_COUNT
       shots: 6
+      followProjectiles: false
     confAuto:
       name: STR_FULL_AUTO
       shortName: STR_FULL_AUTO_COUNT
       shots: 12
+      followProjectiles: false
     kneelBonus: 125 # was 130, Astartes version meant to be hipfired by devastator marines
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
@@ -2013,17 +2021,22 @@ items:
       ArmorEffectiveness: 0.8
 
   - update: STR_ASSC                        # Assault Cannon
-    weight: 90 # was 100 - +15 when loaded - now exactly enough to duel wield an assault cannon & heavy flamer at max str <- very important
+    weight: 90 # was 100 - +15 when loaded
     sprayWaypoints: 2 # was 2
     dropoff: 6 # was 4
     autoRange: 12 # was 15
     snapRange: 0
     aimRange: 15 #
-    tuAuto: 70 # was 60
-    autoShots: 16 # was 10
-    followProjectiles: false
+    tuAimed: 35 # was 40
+    tuAuto: 60 # was 60
+    confAimed:
+      shots: 4 # was 4
+      followProjectiles: false
+    confAuto:
+      shots: 12 # was 10
+      followProjectiles: false
     tags:
-      ITEM_IS_HEAVY_WEAPON: 5 # harsh penalty, meant for Terminators
+      ITEM_IS_HEAVY_WEAPON: 5 # harsh penalty, meant for terminators
       ITEM_RECOIL: 130 # harsh requirement, meant for terminators
 
   - update: STR_ASSC_CLIP                   # Assault Cannon Ammo
@@ -2452,17 +2465,18 @@ items:
 
 
   - update: STR_GRAV_AUTOC                  # Gravis Autocannon Gauntlet
+    refNode: *STR_POWERFIST_TEMPLATE
     dropoff: 4
-    autoRange: 12
+    autoRange: 14
     snapRange: 21
     aimRange: 0
-    accuracyAuto: 50
-    accuracySnap: 75
+    accuracyAuto: 60 # was 50
+    accuracySnap: 90 # was 75
     accuracyAimed: 0
     tuAuto: 20 # was 30
     tuSnap: 20
     tuAimed: 0
-    autoShots: 2
+    autoShots: 3
     power: 110
     damageAlter:
       ToArmorPre: 0.05
@@ -2472,17 +2486,21 @@ items:
       ToStun: 0.5
 
   - update: STR_GRAV_AUTOC_DW               # Gravis Autocannon Gauntlet (DW)
+    refNode: *STR_POWERFIST_TEMPLATE
+    defaultInventorySlot: STR_LEFT_HAND
+    fixedWeaponShow: true
+    handSprite: 3744
     dropoff: 4
-    autoRange: 12
+    autoRange: 14
     snapRange: 21
     aimRange: 0
-    accuracyAuto: 50
-    accuracySnap: 75
+    accuracyAuto: 60 # was 50
+    accuracySnap: 90 # was 75
     accuracyAimed: 0
     tuAuto: 20 # was 30
     tuSnap: 20
     tuAimed: 0
-    autoShots: 2
+    autoShots: 3
     power: 110
     damageAlter:
       ToArmorPre: 0.05
@@ -2492,14 +2510,15 @@ items:
       ToStun: 0.5
 
   - update: STR_GRAV_BOLTER                 # Gravis Boltstorm Gauntlet 
+    refNode: *STR_POWERFIST_TEMPLATE
     dropoff: 8 # was 4
-    autoRange: 13 # was 12
-    snapRange: 21
+    autoRange: 12 # was 12
+    snapRange: 17 # was 21
     aimRange: 0
     accuracyAuto: 50 # was 50
     accuracySnap: 80
     accuracyAimed: 0
-    tuAuto: 25 # was 15
+    tuAuto: 20 # was 15
     tuSnap: 15
     tuAimed: 0
     power: 75 # standard bolter ammo
@@ -2514,19 +2533,21 @@ items:
       RandomWound: false
     confSnap:
       shots: 2 # was 1
-      name: STR_DUAL_SNAP
-    autoShots: 5 # was 5
+      name: STR_BURST_SNAP_SHOT
+    autoShots: 6 # was 5
 
   - update: STR_GRAV_BOLTER_DW              # Gravis Boltstorm Gauntlet (DW)
+    refNode: *STR_POWERFIST_TEMPLATE
     defaultInventorySlot: STR_LEFT_HAND
+    handSprite: 3768
     dropoff: 8 # was 4
-    autoRange: 14 # was 12
-    snapRange: 21
+    autoRange: 12 # was 12
+    snapRange: 17 # was 21
     aimRange: 0
-    accuracyAuto: 50 # was 50
+    accuracyAuto: 60 # was 50
     accuracySnap: 80
     accuracyAimed: 0
-    tuAuto: 25 # was 15
+    tuAuto: 20 # was 15
     tuSnap: 15
     tuAimed: 0
     power: 75 # standard bolter ammo
@@ -2539,17 +2560,21 @@ items:
       ToEnergy: 0.3
       ToWound: 0.2
       RandomWound: false
-    autoShots: 5 # was 5
+    confSnap:
+      shots: 2 # was 1
+      name: STR_BURST_SNAP_SHOT
+    autoShots: 6 # was 5
 
   - update: STR_GRAV_FLAMER                 # Gravis Flamestorm Gauntlet
+    refNode: *STR_POWERFIST_TEMPLATE
     dropoff: 5
-    autoRange: 8
-    snapRange: 8
+    autoRange: 12 # was 8
+    snapRange: 12 # was 8
     aimRange: 0
     accuracyAuto: 30 # 40k 20
     accuracySnap: 30
     accuracyAimed: 0
-    tuAuto: 20
+    tuAuto: 15
     tuSnap: 15
     tuAimed: 0
     maxRange: 16 # was 9
@@ -2577,15 +2602,17 @@ items:
       RandomType: 6 #Gaussian
 
   - update: STR_GRAV_FLAMER_DW              # Gravis Flamestorm Gauntlet (DW)
+    refNode: *STR_POWERFIST_TEMPLATE
     defaultInventorySlot: STR_LEFT_HAND
+    handSprite: 3792
     dropoff: 5
-    autoRange: 8
-    snapRange: 8
+    autoRange: 12 # was 8
+    snapRange: 12 # was 8
     aimRange: 0
     accuracyAuto: 30 # 40k 20
     accuracySnap: 30
     accuracyAimed: 0
-    tuAuto: 20
+    tuAuto: 15
     tuSnap: 15
     tuAimed: 0
     maxRange: 16 # was 9
@@ -2633,20 +2660,23 @@ items:
     compatibleAmmo:
       - STR_ASSC_CLIP
     dropoff: 3
-    autoRange: 20
-    snapRange: 30
+    autoRange: 16
+    snapRange: 28
     aimRange: 0
-    accuracySnap: 80 
+    accuracySnap: 80
     accuracyAuto: 70
     accuracyAimed: 0
-    tuAuto: 50
+    tuAuto: 45
     tuSnap: 25
     tuAimed: 0
-    autoShots: 4
+    confSnap:
+      shots: 3 # was 1
+      name: STR_BURST_SNAP_SHOT
+    autoShots: 8
     bulletSpeed: 10
     explosionSpeed: 1
     tags:
-      ITEM_RECOIL: 90 # heavy weapon
+      ITEM_RECOIL: 110 # heavy weapon
       ITEM_IS_HEAVY_WEAPON: 1 # low fire rate relative to assault cannon
 
   - type: STR_ACCEL_AUTOCANNON_FIXED_DW     # Accelerator Autocannon (Omnis Armor DW)
@@ -2670,20 +2700,26 @@ items:
     compatibleAmmo:
       - STR_ASSC_CLIP
     dropoff: 3
-    autoRange: 20
-    snapRange: 30
+    autoRange: 16
+    snapRange: 28
     aimRange: 0
-    accuracySnap: 80 
+    accuracySnap: 80
     accuracyAuto: 70
     accuracyAimed: 0
     tuAuto: 50
-    tuSnap: 25
+    tuSnap: 30
     tuAimed: 0
-    autoShots: 4
+    confSnap:
+      shots: 3 # was 1
+      name: STR_BURST_SNAP_SHOT
+      followProjectiles: false
+    confAuto:
+      shots: 8
+      followProjectiles: false
     bulletSpeed: 10
     explosionSpeed: 1
     tags:
-      ITEM_RECOIL: 90 # heavy weapon
+      ITEM_RECOIL: 110 # heavy weapon
       ITEM_IS_HEAVY_WEAPON: 1 # low fire rate relative to assault cannon
 
   - type: STR_PLASMA_EXTERMINATOR_FIXED     # Plasma Exterminator (Omnis Armor - single)
@@ -3388,6 +3424,71 @@ items:
       time: 18 # was 20%
       energy: 6 # was 8
     flatRate: true
+
+  - type: STR_EXECUTIONER_BLADE             # Judicar Executioner Relic Blade
+    categories: [STR_CAT_MELEE]
+    size: 0.3
+    clipSize: -1
+    battleType: 3
+    invWidth: 2
+    invHeight: 3
+    attraction: 6
+    armor: 200
+    recover: false
+    fixedWeapon: true
+    fixedWeaponShow: true
+    defaultInventorySlot: STR_LEFT_HAND
+    twoHanded: true
+    blockBothHands: true
+    weight: 55
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 2217}
+    floorSprite: {mod: 40k_ROSIGMA_edits, index: 2092}
+    handSprite: {mod: 40k_ROSIGMA_edits, index: 2800}
+    meleeAnimation: {mod: 40k, index: 4 }
+    meleeSound: {mod: 40k, index:  753 }
+    meleeHitSound: {mod: 40k, index:  754 }
+    scripts:
+     selectItemSprite: |
+
+        var int temp;
+        var int numOfFrames;
+        set numOfFrames 4;
+
+        if or eq blit_part blit_item_lefthand eq blit_part blit_item_righthand;
+
+            add temp anim_frame;
+            mod temp numOfFrames;
+            mul temp 8;
+            add sprite_index temp;
+        end;
+
+        add sprite_index sprite_offset; # add direction
+        return sprite_index;
+    power: 120 # melee
+    damageBonus:
+      strength: 0.6
+      melee: 0.2
+    meleeMultiplier:
+      melee: 0.8
+      strength: 0.2
+    damageAlter:
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.4
+      ToHealth: 0.9
+      RandomType: 7 #TFTD [50% - 200%]
+      IgnoreSelfDestruct: false
+    damageType: 5
+    accuracyMelee: 80
+    flatRate: true
+    costMelee:
+      time: 22
+      energy: 8 #very heavy melee weapon
+    flatMelee:
+      time: true
+      energy: true
+    skillApplied: true
+    strengthApplied: false
+    listOrder: 13400
 
   - update: STR_MOTION_SCANNER              # Motion Scanner
     bigSprite: 3134

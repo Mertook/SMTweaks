@@ -250,7 +250,7 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
-      SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/2 HWP penalties
+      SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/3 HWP penalties
       INFECTION_RESIST: 75 #Resistant to GSC infection
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
@@ -1668,7 +1668,7 @@ armors:
     moveCost:
       basePercent: [100, 25] # Whitescar + Phobos bonus
 
-  - &STR_DW_GRV_MKX_BS                      #Gravis Armor (Primaris) - Boltstorm Gauntlet
+  - &STR_DW_GRV_MKX_EH                      #Gravis Armor (Primaris) - Empty Hands
     ufopediaType: STR_DW_GRV_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -1676,6 +1676,10 @@ armors:
     antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
     antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
+    corpseBattle:
+      - STR_MKX_GRV_CORPSE
+    storeItem: STR_MKX_GRV_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -1712,6 +1716,284 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.9 #MELTA
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_3X3
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
+      INFECTION_RESIST: 75 #Resistant to GSC infection
+      INFECTION_RESIST_TYPE: 2
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - type: STR_MKX_DW_GRV_BA_UC
+    refNode: *STR_DW_GRV_MKX_EH
+    units:
+      - STR_BLOODANGELS_PRIMARIS
+    instantWoundRecovery: true
+    spriteSheet: DWGRVHANDBA.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVNWBA", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVNWBA", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVNWBA", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVNWBA", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVNWBA", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVNWBA", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVNWBA", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVNWBA", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVNWBA", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVNWBA", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVNWBA", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVNWBA", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRV_BT_UC
+    refNode: *STR_DW_GRV_MKX_EH
+    units:
+      - STR_BLACKT_PRIMARIS
+    spriteSheet: DWGRVHANDBT.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVNWBT", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVNWBT", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVNWBT", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVNWBT", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVNWBT", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVNWBT", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVNWBT", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVNWBT", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVNWBT", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVNWBT", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVNWBT", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVNWBT", "F5_FACE", "GOLA"]
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
+      INFECTION_RESIST_TYPE: 0 # universal resist
+  - type: STR_MKX_DW_GRV_CF_UC
+    refNode: *STR_DW_GRV_MKX_EH
+    units:
+      - STR_CRISMONF_PRIMARIS
+    spriteSheet: DWGRVHANDCF.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVNWCF", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVNWCF", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVNWCF", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVNWCF", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVNWCF", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVNWCF", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVNWCF", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVNWCF", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVNWCF", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVNWCF", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVNWCF", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVNWCF", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRV_DA_UC
+    refNode: *STR_DW_GRV_MKX_EH
+    units:
+      - STR_DARKANGELS_PRIMARIS
+    spriteSheet: DWGRVHANDDA.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVNWDA", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVNWDA", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVNWDA", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVNWDA", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVNWDA", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVNWDA", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVNWDA", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVNWDA", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVNWDA", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVNWDA", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVNWDA", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVNWDA", "F5_FACE", "GOLA"]
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+  - type: STR_MKX_DW_GRV_IF_UC
+    refNode: *STR_DW_GRV_MKX_EH
+    units:
+      - STR_IMPERIALF_PRIMARIS
+    spriteSheet: DWGRVHANDIF.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVNWIF", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVNWIF", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVNWIF", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVNWIF", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVNWIF", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVNWIF", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVNWIF", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVNWIF", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVNWIF", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVNWIF", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVNWIF", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVNWIF", "F5_FACE", "GOLA"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 33
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+  - type: STR_MKX_DW_GRV_SALA_UC
+    refNode: *STR_DW_GRV_MKX_EH
+    units:
+      - STR_SALAMANDAR_PRIMARIS
+    spriteSheet: DWGRVHANDSA.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVNWSA", "M0_FACES", "GOLA"]
+      M1: ["0", "GRVNWSA", "M1_FACES", "GOLA"]
+      M2: ["0", "GRVNWSA", "M2_FACES", "GOLA"]
+      M3: ["0", "GRVNWSA", "M3_FACES", "GOLA"]
+      M4: ["0", "GRVNWSA", "M4_FACES", "GOLA"]
+      M5: ["0", "GRVNWSA", "M5_FACES", "GOLA"]
+      F0: ["0", "GRVNWSA", "F0_FACES", "GOLA"]
+      F1: ["0", "GRVNWSA", "F1_FACES", "GOLA"]
+      F2: ["0", "GRVNWSA", "F2_FACES", "GOLA"]
+      F3: ["0", "GRVNWSA", "F3_FACES", "GOLA"]
+      F4: ["0", "GRVNWSA", "F4_FACES", "GOLA"]
+      F5: ["0", "GRVNWSA", "F5_FACES", "GOLA"]
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+  - type: STR_MKX_DW_GRV_SW_UC
+    refNode: *STR_DW_GRV_MKX_EH
+    units:
+      - STR_SPACEW_PRIMARIS
+    spriteSheet: DWGRVHANDSW.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVNWSW", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVNWSW", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVNWSW", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVNWSW", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVNWSW", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVNWSW", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVNWSW", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVNWSW", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVNWSW", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVNWSW", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVNWSW", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVNWSW", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRV_ULTRA_UC
+    refNode: *STR_DW_GRV_MKX_EH
+    units:
+      - STR_ULTRAMARINE_PRIMARIS
+    spriteSheet: DWGRVHANDUM.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVNWUM", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVNWUM", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVNWUM", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVNWUM", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVNWUM", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVNWUM", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVNWUM", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVNWUM", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVNWUM", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVNWUM", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVNWUM", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVNWUM", "F5_FACE", "GOLA"]
+  - type: STR_MKX_DW_GRV_WS_UC
+    refNode: *STR_DW_GRV_MKX_EH
+    units:
+      - STR_WHITES_PRIMARIS
+    spriteSheet: DWGRVHANDWS.PCK
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: DWGRAVIS
+    layersDefinition:
+      M0: ["0", "GRVNWWS", "M0_FACE", "GOLA"]
+      M1: ["0", "GRVNWWS", "M1_FACE", "GOLA"]
+      M2: ["0", "GRVNWWS", "M2_FACE", "GOLA"]
+      M3: ["0", "GRVNWWS", "M3_FACE", "GOLA"]
+      M4: ["0", "GRVNWWS", "M4_FACE", "GOLA"]
+      M5: ["0", "GRVNWWS", "M5_FACE", "GOLA"]
+      F0: ["0", "GRVNWWS", "F0_FACE", "GOLA"]
+      F1: ["0", "GRVNWWS", "F1_FACE", "GOLA"]
+      F2: ["0", "GRVNWWS", "F2_FACE", "GOLA"]
+      F3: ["0", "GRVNWWS", "F3_FACE", "GOLA"]
+      F4: ["0", "GRVNWWS", "F4_FACE", "GOLA"]
+      F5: ["0", "GRVNWWS", "F5_FACE", "GOLA"]
+    moveCost:
+      basePercent: [100, 75] # was 100, 25
+
+  - &STR_DW_GRV_MKX_BS                      #Gravis Armor (Primaris) - Boltstorm Gauntlet
+    ufopediaType: STR_DW_GRV_CODEX_UC
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 25 # +5 - DW bonus
+    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    loftempsSet: [ 4 ]
+    corpseBattle:
+      - STR_MKX_GRV_CORPSE
+    storeItem: STR_MKX_GRV_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 140
+    sideArmor: 135
+    rearArmor: 115
+    underArmor: 140
+    stats:
+      tu: 5             # base 10 -5
+      stamina: 20       # base 20
+      health: 20        # base 20
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 15        # base 20
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
       - STR_GRAV_BOLTER_DW
       - INV_NULL_3X3
@@ -1720,16 +2002,18 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
-      SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/2 HWP penalties
+      SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
       INFECTION_RESIST: 75 #Resistant to GSC infection
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
-  - type: STR_MKX_DW_GRV_BA_UC
+  - type: STR_MKX_DW_GRVBS_BA_UC
     refNode: *STR_DW_GRV_MKX_BS
+    units:
+      - STR_BLOODANGELS_PRIMARIS
     instantWoundRecovery: true
-    spriteSheet: DWGRVBSBA.PCK
+    spriteSheet: DWGRVARMBA.PCK
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -1746,9 +2030,11 @@ armors:
       F3: ["0", "GRVBSBA", "F3_FACE", "GOLA"]
       F4: ["0", "GRVBSBA", "F4_FACE", "GOLA"]
       F5: ["0", "GRVBSBA", "F5_FACE", "GOLA"]
-  - type: STR_MKX_DW_GRV_BT_UC
+  - type: STR_MKX_DW_GRVBS_BT_UC
     refNode: *STR_DW_GRV_MKX_BS
-    spriteSheet: DWGRVBSBT.PCK
+    units:
+      - STR_BLACKT_PRIMARIS
+    spriteSheet: DWGRVARMBT.PCK
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -1769,9 +2055,11 @@ armors:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
       INFECTION_RESIST_TYPE: 0 # universal resist
-  - type: STR_MKX_DW_GRV_CF_UC
+  - type: STR_MKX_DW_GRVBS_CF_UC
     refNode: *STR_DW_GRV_MKX_BS
-    spriteSheet: DWGRVBSCF.PCK
+    units:
+      - STR_CRISMONF_PRIMARIS
+    spriteSheet: DWGRVARMCF.PCK
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -1788,9 +2076,11 @@ armors:
       F3: ["0", "GRVBSCF", "F3_FACE", "GOLA"]
       F4: ["0", "GRVBSCF", "F4_FACE", "GOLA"]
       F5: ["0", "GRVBSCF", "F5_FACE", "GOLA"]
-  - type: STR_MKX_DW_GRV_DA_UC
+  - type: STR_MKX_DW_GRVBS_DA_UC
     refNode: *STR_DW_GRV_MKX_BS
-    spriteSheet: DWGRVBSDA.PCK
+    units:
+      - STR_DARKANGELS_PRIMARIS
+    spriteSheet: DWGRVARMDA.PCK
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -1809,9 +2099,11 @@ armors:
       F5: ["0", "GRVBSDA", "F5_FACE", "GOLA"]
     tags:
       ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
-  - type: STR_MKX_DW_GRV_IF_UC
+  - type: STR_MKX_DW_GRVBS_IF_UC
     refNode: *STR_DW_GRV_MKX_BS
-    spriteSheet: DWGRVBSIF.PCK
+    units:
+      - STR_IMPERIALF_PRIMARIS
+    spriteSheet: DWGRVARMIF.PCK
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -1831,9 +2123,11 @@ armors:
     tags:
       ARMOR_OVERWATCH_TU_RESTORED: 33
       ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
-  - type: STR_MKX_DW_GRV_SALA_UC
+  - type: STR_MKX_DW_GRVBS_SALA_UC
     refNode: *STR_DW_GRV_MKX_BS
-    spriteSheet: DWGRVBSSA.PCK
+    units:
+      - STR_SALAMANDAR_PRIMARIS
+    spriteSheet: DWGRVARMSA.PCK
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -1863,9 +2157,11 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
-  - type: STR_MKX_DW_GRV_SW_UC
+  - type: STR_MKX_DW_GRVBS_SW_UC
     refNode: *STR_DW_GRV_MKX_BS
-    spriteSheet: DWGRVBSSW.PCK
+    units:
+      - STR_SPACEW_PRIMARIS
+    spriteSheet: DWGRVARMSW.PCK
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -1882,9 +2178,11 @@ armors:
       F3: ["0", "GRVBSSW", "F3_FACE", "GOLA"]
       F4: ["0", "GRVBSSW", "F4_FACE", "GOLA"]
       F5: ["0", "GRVBSSW", "F5_FACE", "GOLA"]
-  - type: STR_MKX_DW_GRV_ULTRA_UC
+  - type: STR_MKX_DW_GRVBS_ULTRA_UC
     refNode: *STR_DW_GRV_MKX_BS
-    spriteSheet: DWGRVBSUM.PCK
+    units:
+      - STR_ULTRAMARINE_PRIMARIS
+    spriteSheet: DWGRVARMUM.PCK
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -1901,9 +2199,11 @@ armors:
       F3: ["0", "GRVBSUM", "F3_FACE", "GOLA"]
       F4: ["0", "GRVBSUM", "F4_FACE", "GOLA"]
       F5: ["0", "GRVBSUM", "F5_FACE", "GOLA"]
-  - type: STR_MKX_DW_GRV_WS_UC
+  - type: STR_MKX_DW_GRVBS_WS_UC
     refNode: *STR_DW_GRV_MKX_BS
-    spriteSheet: DWGRVBSWS.PCK
+    units:
+      - STR_WHITES_PRIMARIS
+    spriteSheet: DWGRVARMWS.PCK
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -1923,7 +2223,7 @@ armors:
     moveCost:
       basePercent: [100, 75] # was 100, 25
 
-  - &STR_DW_GRV_MKX_AC                      #Gravis Armor (Primaris) - Autocannon Gauntlet x2
+  - &STR_DW_GRV_MKX_AC                      #Gravis Armor (Primaris) - Autocannon Gauntlet
     ufopediaType: STR_DW_GRV_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -1974,14 +2274,13 @@ armors:
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
       - STR_GRAV_AUTOC_DW
-      - STR_GRAV_AUTOC_DW
       - INV_NULL_3X3
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
-      SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/2 HWP penalties
+      SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
       INFECTION_RESIST: 75 #Resistant to GSC infection
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
@@ -1992,7 +2291,7 @@ armors:
     units:
       - STR_BLOODANGELS_PRIMARIS
     instantWoundRecovery: true
-    spriteSheet: DWGRVACBA.PCK
+    spriteSheet: DWGRVARMBA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 440}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2014,7 +2313,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_AC
     units:
       - STR_BLACKT_PRIMARIS
-    spriteSheet: DWGRVACBT.PCK
+    spriteSheet: DWGRVARMBT.PCK
     customArmorPreviewIndex: {mod: 40k, index: 442}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2040,7 +2339,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_AC
     units:
       - STR_CRISMONF_PRIMARIS
-    spriteSheet: DWGRVACCF.PCK
+    spriteSheet: DWGRVARMCF.PCK
     customArmorPreviewIndex: {mod: 40k, index: 438}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2062,7 +2361,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_AC
     units:
       - STR_DARKANGELS_PRIMARIS
-    spriteSheet: DWGRVACDA.PCK
+    spriteSheet: DWGRVARMDA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 441}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2086,7 +2385,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_AC
     units:
       - STR_IMPERIALF_PRIMARIS
-    spriteSheet: DWGRVACIF.PCK
+    spriteSheet: DWGRVARMIF.PCK
     customArmorPreviewIndex: {mod: 40k, index: 439}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2111,7 +2410,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_AC
     units:
       - STR_SALAMANDAR_PRIMARIS
-    spriteSheet: DWGRVACSA.PCK
+    spriteSheet: DWGRVARMSA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 441}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2146,7 +2445,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_AC
     units:
       - STR_SPACEW_PRIMARIS
-    spriteSheet: DWGRVACSW.PCK
+    spriteSheet: DWGRVARMSW.PCK
     customArmorPreviewIndex: {mod: 40k, index: 439}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2168,7 +2467,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_AC
     units:
       - STR_ULTRAMARINE_PRIMARIS
-    spriteSheet: DWGRVACUM.PCK
+    spriteSheet: DWGRVARMUM.PCK
     customArmorPreviewIndex: {mod: 40k, index: 438}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2190,7 +2489,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_AC
     units:
       - STR_WHITES_PRIMARIS
-    spriteSheet: DWGRVACWS.PCK
+    spriteSheet: DWGRVARMWS.PCK
     customArmorPreviewIndex: {mod: 40k, index: 443}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2268,7 +2567,7 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
-      SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/2 HWP penalties
+      SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
       INFECTION_RESIST: 75 #Resistant to GSC infection
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
@@ -2279,7 +2578,7 @@ armors:
     units:
       - STR_BLOODANGELS_PRIMARIS
     instantWoundRecovery: true
-    spriteSheet: DWGRVFSBA.PCK
+    spriteSheet: DWGRVARMBA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 440}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2301,7 +2600,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_FS
     units:
       - STR_BLACKT_PRIMARIS
-    spriteSheet: DWGRVFSBT.PCK
+    spriteSheet: DWGRVARMBT.PCK
     customArmorPreviewIndex: {mod: 40k, index: 442}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2327,7 +2626,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_FS
     units:
       - STR_CRISMONF_PRIMARIS
-    spriteSheet: DWGRVFSCF.PCK
+    spriteSheet: DWGRVARMCF.PCK
     customArmorPreviewIndex: {mod: 40k, index: 438}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2349,7 +2648,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_FS
     units:
       - STR_DARKANGELS_PRIMARIS
-    spriteSheet: DWGRVFSDA.PCK
+    spriteSheet: DWGRVARMDA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 441}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2373,7 +2672,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_FS
     units:
       - STR_IMPERIALF_PRIMARIS
-    spriteSheet: DWGRVFSIF.PCK
+    spriteSheet: DWGRVARMIF.PCK
     customArmorPreviewIndex: {mod: 40k, index: 439}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2398,7 +2697,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_FS
     units:
       - STR_SALAMANDAR_PRIMARIS
-    spriteSheet: DWGRVFSSA.PCK
+    spriteSheet: DWGRVARMSA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 441}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2433,7 +2732,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_FS
     units:
       - STR_SPACEW_PRIMARIS
-    spriteSheet: DWGRVFSSW.PCK
+    spriteSheet: DWGRVARMSW.PCK
     customArmorPreviewIndex: {mod: 40k, index: 439}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2455,7 +2754,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_FS
     units:
       - STR_ULTRAMARINE_PRIMARIS
-    spriteSheet: DWGRVFSUM.PCK
+    spriteSheet: DWGRVARMUM.PCK
     customArmorPreviewIndex: {mod: 40k, index: 438}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2477,7 +2776,7 @@ armors:
     refNode: *STR_DW_GRV_MKX_FS
     units:
       - STR_WHITES_PRIMARIS
-    spriteSheet: DWGRVFSWS.PCK
+    spriteSheet: DWGRVARMWS.PCK
     customArmorPreviewIndex: {mod: 40k, index: 443}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2548,7 +2847,7 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
-      SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 2/3 HWP penalties
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
       INFECTION_RESIST: 75 #Resistant to GSC infection
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
@@ -2678,7 +2977,7 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
-      SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 2/3 HWP penalties
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
       INFECTION_RESIST: 75 #Resistant to GSC infection
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1
@@ -2971,7 +3270,7 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
-      SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 2/3 HWP penalties
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
       INFECTION_RESIST: 75 #Resistant to GSC infection
       INFECTION_RESIST_TYPE: 2
       UNIT_TYPE_IMPERIUM: 1

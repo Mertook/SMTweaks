@@ -21,7 +21,8 @@ extended:
 
           rule.getTag temp Tag.SMT_ARMOR_HEAVY_WEAPON_USER;         # HWP User
           if gt temp 0;
-            set temp2 100;
+            set temp2 200;
+            add temp 1;
             div temp2 temp;
             stats_state.addIntRow "SMT_ARMOR_HEAVY_WEAPON_USER" temp2;
           end;

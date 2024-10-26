@@ -246,16 +246,35 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_GREYKNIGHTS
       - STR_APOC_BAY
 
-  - name: STR_INQ_TROOP_REQS                # Tech to lock the various Inquisition teams
+  - name: STR_INQ_TROOP_REQS                # Tech to start Inquisition troop recruitment events
     cost: 150
     points: 15
     dependencies:
       - STR_INQUISITION
     unlocks:
       - STR_INQ_STORMTROOPER_REQUISITION
-    getOneFree:
-      - STR_SUMMON_IMPERIAL_AGENTS_RESEARCH
     listOrder: 2 # push above corpses/etc
+    spawnedEvent: STR_REINFORCEMENTS_FRATERIS_INQ
+
+  - name: STR_INQ_ASSASSIN_RECRUITMENT      # Unlock Monthly Assassin Requisitions
+    cost: 150
+    points: 15
+    dependencies:
+      - STR_INQUISITION
+      - STR_INQ_TROOP_REQS
+    listOrder: 10 # push above corpses/etc
+    spawnedEvent: STR_INQ_ASSASSIN_TOKEN_EVENT
+
+  - name: STR_INQ_ASSASSIN_RECRUITMENT_T2   # Unlock Callidus & Vindicare Assassins for purchase
+    cost: 260
+    points: 20
+    dependencies:
+      - STR_INQUISITION
+      - STR_MIDTIER_PREREQ
+      - STR_INQ_ASSASSIN_RECRUITMENT
+    listOrder: 10 # push above corpses/etc
+    getOneFree:
+      - STR_VINDICARE_AMMO_REQ
 
   - name: STR_SUMMON_IMPERIAL_AGENTS_RESEARCH #also triggers a eventscript that sends monthly random agents
     cost: 150 # was 500
@@ -268,7 +287,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     cost: 150
     points: -50
     dependencies:
-      - STR_INQ_TROOP_REQS
+      - STR_GENERALLOCK
     spawnedEvent: STR_REINFORCEMENTS_GUARD_REGULAR_INQ
     listOrder: 15
 
@@ -276,21 +295,21 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     cost: 1000
     points: -100
     dependencies:
-      - STR_INQ_TROOP_REQS
+      - STR_GENERALLOCK
     spawnedEvent: STR_REINFORCEMENTS_IMPERIAL_ASSASSINS_INQ
 
   - name: STR_REQUEST_ARBITES_RESEARCH
     cost: 150 # was 250
     points: -100
     dependencies:
-      - STR_INQ_TROOP_REQS
+      - STR_GENERALLOCK
     spawnedEvent: STR_REINFORCEMENTS_ENFORCERS_INQ
 
   - name: STR_REQUEST_JUDGES_RESEARCH
     cost: 250 # was 500
     points: -250
     dependencies:
-      - STR_INQ_TROOP_REQS
+      - STR_GENERALLOCK
       - STR_MIDTIER_PREREQ
     unlocks:
       - STR_HWP_CANNON_SHELLS
@@ -338,14 +357,14 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     cost: 250 # was 750
     points: -250
     dependencies:
-      - STR_INQ_TROOP_REQS
+      - STR_GENERALLOCK
     spawnedEvent: STR_REINFORCEMENTS_ADEPTAS_INQ
 
   - name: STR_REQUEST_ADEPTAS_AID_RESEARCH_2
     cost: 500 # was 1000
     points: -500
     dependencies:
-      - STR_INQ_TROOP_REQS
+      - STR_GENERALLOCK
       - STR_MIDTIER_PREREQ
     spawnedEvent: STR_REINFORCEMENTS_ADEPTAS_INQ_2
 
@@ -353,13 +372,13 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     cost: 300 # was 500
     points: -100
     dependencies:
-      - STR_INQ_TROOP_REQS
+      - STR_GENERALLOCK
     spawnedEvent: STR_REINFORCEMENTS_OGRYN_INQ
   - name: STR_REQUEST_OGRYN_AID_RESEARCH_2
     cost: 500 # was 750
     points: -250
     dependencies:
-      - STR_INQ_TROOP_REQS
+      - STR_GENERALLOCK
       - STR_MIDTIER_PREREQ # was GK exclusive
     spawnedEvent: STR_REINFORCEMENTS_OGRYN_INQ_2
 
@@ -367,14 +386,14 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     cost: 500
     points: -100
     dependencies:
-      - STR_INQ_TROOP_REQS
+      - STR_GENERALLOCK
     spawnedEvent: STR_REINFORCEMENTS_VETERAN_GUARD_INQ
 
   - name: STR_REQUEST_POWER_GUARD_AID_RESEARCH
     cost: 1000 # was 1500
     points: -500
     dependencies:
-      - STR_INQ_TROOP_REQS
+      - STR_GENERALLOCK
       - STR_MIDTIER_PREREQ # was GK exclusive
     spawnedEvent: STR_REINFORCEMENTS_VETERAN_GUARD_INQ_POWERED
 
@@ -383,7 +402,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     points: -250
     dependencies:
       - STR_RADICAL_INQUISITOR
-      - STR_INQ_TROOP_REQS
+      - STR_GENERALLOCK
     spawnedEvent: STR_REINFORCEMENTS_BEASTMEN_INQ
 
   - name: STR_RECRUIT_OGRYN_RESEARCH
@@ -394,6 +413,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_INQ_TROOP_REQS
       - STR_CONTACT_THE_ABHUMANS_RESEARCH
     spawnedEvent: STR_REINFORCEMENTS_UNARMORED_OGRYN_INQ
+
   - name: STR_A_DEAL_WITH_THE_SQUATS_RESEARCH
     cost: 300 # was 500
     points: -250
@@ -497,13 +517,11 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_ELDAR_ALLIANCE
     listOrder: 15 # push above corpses/etc
 
-  # - name: STR_ELDAR_WEAPON_REQ      # Activates monthly events that delivers Eldar weapons/ammo
-    # cost: 1000
-    # points: -1000
-    # dependencies:
-      # - STR_CHAMBERMILITANT
-      # - STR_RADICAL_INQUISITOR
-      # - STR_ELDAR_ALLIANCE
-    # spawnedEvent: STR_ELDAR_WEAPON_SUPPLY_RECCUR
-    # listOrder: 15 # push above corpses/etc
+  - name: STR_ELDAR_WEAPON_REQ      # Activates monthly events that delivers Eldar weapons/ammo
+    cost: 1000
+    points: -1000
+    dependencies:
+      - STR_GENERALLOCK
+    spawnedEvent: STR_ELDAR_WEAPON_SUPPLY_RECCUR
+    listOrder: 15 # push above corpses/etc
 

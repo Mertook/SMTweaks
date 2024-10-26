@@ -31,10 +31,6 @@ units: # Civ units
     energyRecovery: 40
     deathSound: [744, 745, 746, 747, 748, 749, 750, 751, 752]
     builtInWeaponSets:
-      - - STR_PISTOLH_SM
-        - STR_PISTOL_CLIP_MC
-        - STR_PISTOL_CLIP_MC
-        - STR_POWERFIST
       - - STR_RIFLEB
         - STR_RIFLE_CLIP_MC
         - STR_RIFLE_CLIP_MC
@@ -43,7 +39,15 @@ units: # Civ units
         - STR_RIFLE_CLIP_MC
         - STR_RIFLE_CLIP_MC
         - STR_MGRENADE
+      - - STR_PISTOLH_SM
+        - STR_PISTOL_CLIP_MC
+        - STR_PISTOL_CLIP_MC
+        - STR_POWERFIST
       - - STR_HEAVY_LASER #meltagun
         - STR_MELTA_AMMO
         - STR_MELTA_AMMO
+        - STR_MGRENADE
+      - - STR_RIFLEB
+        - STR_RIFLE_CLIP_MC
+        - STR_RIFLE_CLIP_MC
         - STR_MGRENADE

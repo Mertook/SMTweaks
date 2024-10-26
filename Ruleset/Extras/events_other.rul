@@ -13,7 +13,6 @@ events:
     timerRandom: 60
     researchList: [STR_BOLTER_AMMO_PREREQ] # allow player to make more ammo for their marine even if they can't get it normally
 
-
   - name: STR_ELDAR_TREATY_FARSEER
     description: STR_ELDAR_TREATY_FARSEER_DESC
     background: BACK160.SCR #Eldar Banshees
@@ -26,6 +25,14 @@ events:
       STR_ELDAR_GRENADE: 2
     timer: 60
     timerRandom: 60
+
+  - name: STR_REWARD_INQUISITION_STORMTROOPERS
+    description: STR_REWARD_INQUISITION_STORMTROOPERS_DESCRIPTION #"The Inquisition have taken note of your great progress and activated an available fireteam of Inquisition Storm Troopers to assist you."
+    background: StormtroopersBG.SCR
+    timer: 1440 # between 1-3 days
+    timerRandom: 2880
+    spawnedPersons: 2 # was 4
+    spawnedPersonType: STR_INQ_STORMTROOPER
 
   - name: STR_LONESOME_VINDICARE_EVENT      # Rare event that gifts a Vindicare Assassin
     researchList: [STR_VINDICARE_AMMO_REQ] # allow player to make more ammo for their assassin even if they can't get it normally

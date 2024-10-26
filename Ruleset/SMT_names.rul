@@ -12,7 +12,11 @@ extraStrings:
       STR_STRIKE_AUTO_COUNT: "Barrage (x{0})"
       STR_CROZIUS_AIMED_COUNT: "Sanctify (x{0})"
       STR_THROW_KNIFE: "Throw Knife"
+      STR_LAUNCH_SALVO_AUTO: Bombardment
+      STR_LAUNCH_FRAGS: Launch Grenade
+      STR_DUAL_SNAP: Dual Snap
       STR_DAMAGE_12: "GRAV"
+      STR_CAT_ASSASSIN: Assassin
       STR_NECRON_REINFORCEMENTS_SHIP_DESC_LIGHT: "The Monolith's foul machinery is springing to life! Necrons are being awakened from stasis and teleported onto the field. We must quicken our pace or we will surely be overwhelmed."
       STR_NECRON_REINFORCEMENTS_SHIP_DESC_MEDIUM: "The Monolith is calling more Necrons from their tombs, teleporting them onto the field in greater numbers. We have little time left to eliminate their strikeforce before their numbers become too great!"
       STR_NECRON_REINFORCEMENTS_SHIP_DESC_HEAVY: "Force Commander, the Necron Tombs are at high alert and are actively teleporting in heavy reinforcements. We must destroy them all in one fell swoop or evacuate lest our forces be overcome!"
@@ -61,9 +65,6 @@ extraStrings:
       STR_LIB_SPEED_TOME: Tome of the Mind
       STR_LIB_SMOKE_TOME: Tome of the Mind
       STR_SMITE_TOME: Tome of Fulmination
-      STR_LAUNCH_SALVO_AUTO: Bombardment
-      STR_LAUNCH_FRAGS: Launch Grenade
-      STR_DUAL_SNAP: Dual Snap
       STR_RIFLE_CLIP: Bolter Magazine
       STR_RIFLE_CLIP_AP: Bolter Kraken Penetrator Mag.
       STR_RIFLE_CLIP_EX: Bolter Metal Storm Mag.
@@ -193,7 +194,8 @@ extraStrings:
       STR_BOLT_RIFLE_AMMO: Bolt Sniper Ammo
       STR_APOTHECARY_PREREQ: (Apothecary Unlock)
       STR_TSARGENT: Terminator Cyclone Launcher
-      STR_BOLTER_AMMO_PREREQ: (Marine Bolters Unlocked)
+      STR_BOLTER_AMMO_PREREQ: (Bolter Ammo Unlocked)
+      STR_BOLTER_ADV_AMMO: (Advanced Bolter Ammo Unlocked)
       STR_NEOPHYTE_REQUEST: (Neophytes Unlocked)
       ### MANUFACTURE
       STR_GENESEED: Geneseed
@@ -272,6 +274,9 @@ extraStrings:
       STR_DWCRIMSON_L: Recruit ¼ Leader
       STR_RECYCLE_DW: Report Fallen Marine
       STR_RECYCLE_DW_LEADER: Report Fallen Captain
+      STR_INQ_RECRUIT_TEMPLE_ASSASSIN: Request Imperial Assassin
+      STR_INQ_RECRUIT_VINDICARE_ASSASSIN: Request Vindicare Assassin
+      STR_INQ_RECRUIT_CALLIDUS_ASSASSIN: Request Callidus Assassin
       ### DEATHWATCH ARMOR
       STR_MKX_DW_INC_BA_UC: MKX Omnis Armor
       STR_MKX_DW_INC_BT_UC: MKX Omnis Armor
@@ -300,24 +305,33 @@ extraStrings:
       STR_MKX_DW_INCPE_SW_UC: MKX Omnis (Twin Plasma)
       STR_MKX_DW_INCPE_ULTRA_UC: MKX Omnis (Twin Plasma)
       STR_MKX_DW_INCPE_WS_UC: MKX Omnis (Twin Plasma)
-      STR_MKX_DW_GRV_BA_UC: MKX Gravis (Boltstorm)
-      STR_MKX_DW_GRV_BT_UC: MKX Gravis (Boltstorm)
-      STR_MKX_DW_GRV_CF_UC: MKX Gravis (Boltstorm)
-      STR_MKX_DW_GRV_DA_UC: MKX Gravis (Boltstorm)
-      STR_MKX_DW_GRV_IF_UC: MKX Gravis (Boltstorm)
-      STR_MKX_DW_GRV_SALA_UC: MKX Gravis (Boltstorm)
-      STR_MKX_DW_GRV_SW_UC: MKX Gravis (Boltstorm)
-      STR_MKX_DW_GRV_ULTRA_UC: MKX Gravis (Boltstorm)
-      STR_MKX_DW_GRV_WS_UC: MKX Gravis (Boltstorm)
-      STR_MKX_DW_GRVAC_BA_UC: MKX Gravis (Autocannons)
-      STR_MKX_DW_GRVAC_BT_UC: MKX Gravis (Autocannons)
-      STR_MKX_DW_GRVAC_CF_UC: MKX Gravis (Autocannons)
-      STR_MKX_DW_GRVAC_DA_UC: MKX Gravis (Autocannons)
-      STR_MKX_DW_GRVAC_IF_UC: MKX Gravis (Autocannons)
-      STR_MKX_DW_GRVAC_SALA_UC: MKX Gravis (Autocannons)
-      STR_MKX_DW_GRVAC_SW_UC: MKX Gravis (Autocannons)
-      STR_MKX_DW_GRVAC_ULTRA_UC: MKX Gravis (Autocannons)
-      STR_MKX_DW_GRVAC_WS_UC: MKX Gravis (Autocannons)
+      STR_MKX_DW_GRV_BA_UC: MKX Gravis Armor
+      STR_MKX_DW_GRV_BT_UC: MKX Gravis Armor
+      STR_MKX_DW_GRV_CF_UC: MKX Gravis Armor
+      STR_MKX_DW_GRV_DA_UC: MKX Gravis Armor
+      STR_MKX_DW_GRV_IF_UC: MKX Gravis Armor
+      STR_MKX_DW_GRV_SALA_UC: MKX Gravis Armor
+      STR_MKX_DW_GRV_SW_UC: MKX Gravis Armor
+      STR_MKX_DW_GRV_ULTRA_UC: MKX Gravis Armor
+      STR_MKX_DW_GRV_WS_UC: MKX Gravis Armor
+      STR_MKX_DW_GRVBS_BA_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRVBS_BT_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRVBS_CF_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRVBS_DA_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRVBS_IF_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRVBS_SALA_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRVBS_SW_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRVBS_ULTRA_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRVBS_WS_UC: MKX Gravis (Boltstorm)
+      STR_MKX_DW_GRVAC_BA_UC: MKX Gravis (Autocannon)
+      STR_MKX_DW_GRVAC_BT_UC: MKX Gravis (Autocannon)
+      STR_MKX_DW_GRVAC_CF_UC: MKX Gravis (Autocannon)
+      STR_MKX_DW_GRVAC_DA_UC: MKX Gravis (Autocannon)
+      STR_MKX_DW_GRVAC_IF_UC: MKX Gravis (Autocannon)
+      STR_MKX_DW_GRVAC_SALA_UC: MKX Gravis (Autocannon)
+      STR_MKX_DW_GRVAC_SW_UC: MKX Gravis (Autocannon)
+      STR_MKX_DW_GRVAC_ULTRA_UC: MKX Gravis (Autocannon)
+      STR_MKX_DW_GRVAC_WS_UC: MKX Gravis (Autocannon)
       STR_MKX_DW_GRVFS_BA_UC: MKX Gravis (Flamestorm)
       STR_MKX_DW_GRVFS_BT_UC: MKX Gravis (Flamestorm)
       STR_MKX_DW_GRVFS_CF_UC: MKX Gravis (Flamestorm)
@@ -378,6 +392,7 @@ extraStrings:
       ### DEATHWATCH ITEMS - ¬ = DW Inquisition symbol
       STR_DW_TOKEN: Deathwatch Requisition
       STR_DW_TOKEN_LEADER: Deathwatch Captain Requisition
+      STR_ASSASSIN_TOKEN: Temple Assassin Requisition
       STR_RIFLE_CLIP_DEREV: Bolter Derevenant Mag.
       STR_RIFLE_CLIP_FUSION: Bolter Inertial Fusion Mag.
       STR_RIFLE_CLIP_DRAGON: Bolter Dragonfire Mag.
@@ -430,6 +445,8 @@ extraStrings:
       STR_GUARD_AND_INQUISITION: "(Guard or Inquisition)"
       STR_DW_PRIMARIS: "Primaris Craft Requisition"
       STR_RADICAL_RECRUITMENT_INQ: "Radical Recruitment"
+      STR_INQ_ASSASSIN_RECRUITMENT: Contact Temple Assassins
+      STR_INQ_ASSASSIN_RECRUITMENT_T2: Advanced Assassin Requisitions
       ### DEATHWATCH EVENTS
       STR_FINAL_TOMB_: "TOMB OF THE ARCHITECT"
       STR_DEATHWATCH_REINFORCEMENTS: "Contact with Deathwatch forces has been established. Requisition authorization for a Deathwatch Kill-Marine has been granted, they will arrive once our Servitors complete the formal requests.{NEWLINE}{NEWLINE} Learning more about the severity of the threat on this planet should allow us to request additional Marines."
@@ -454,5 +471,63 @@ extraStrings:
       STR_ELDAR_TREATY_FARSEER_DESC: "With Chaos machinations threatening to seize control of this planet, an Eldar Farseer has agreed to support our efforts in uncovering and eliminating the daemonic threat"
       STR_ELDAR_WEAPON_SUPPLY_RECCUR: "Eldar Armaments Arrive"
       STR_ELDAR_WEAPON_SUPPLY_RECCUR_DESC: "As part of our agreement with the Eldar we have received a new shipment of their exotic weapons and ammunition."
-
-
+      STR_REINFORCEMENT_INQ_BASIC_PENITENT: "Penitent Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_PENITENT_DESCRIPTION: "Thanks to the work of our recruiters a Penitent has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_DOGS: "Arbites Mastifs Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_DOGS_DESCRIPTION: "Thanks to the work of our recruiters a pair of Cyber-Mastifs have joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_REPENTIA: "Repentia Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_REPENTIA_DESCRIPTION: "Thanks to the work of our recruiters a Repentia Sister has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_GUARD: "Guardsman Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_GUARD_DESCRIPTION: "Thanks to the work of our recruiters a Guardsman has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_GUARDMEDIC: "Guard Medic Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_GUARDMEDIC_DESCRIPTION: "Thanks to the work of our recruiters an Imperial Guard Medic has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_KRIEG: "Kriegsman Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_KRIEG_DESCRIPTION: "Thanks to the work of our recruiters a Krieg trooper has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_MILITIA: "Inquisition Militia Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_MILITIA_DESCRIPTION: "Thanks to the work of our recruiters a Fraternis Milita has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_SISTERNOVICE: "Novice Sister Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_SISTERNOVICE_DESCRIPTION: "Thanks to the work of our recruiters a Novice Sister has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_SISTER: "Sister of Battle Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_SISTER_DESCRIPTION: "Thanks to the work of our recruiters a Sister has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_JUDGE: "Arbites Judge Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_JUDGE_DESCRIPTION: "Thanks to the work of our recruiters an Arbites Judge has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_CATACHAN: "Catachan Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_CATACHAN_DESCRIPTION: "Thanks to the work of our recruiters a Catachan soldier has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_PSYKER: "Psyker Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_PSYKER_DESCRIPTION: "Thanks to the work of our recruiters a sanctioned Psyker has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_PRIEST: "Priest Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_PRIEST_DESCRIPTION: "Thanks to the work of our recruiters a zealous Priest has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_OGYRN: "Ogyrn Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_OGYRN_DESCRIPTION: "Thanks to the work of our recruiters an Ogyrn has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_SQUAT: "Squat Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_SQUAT_DESCRIPTION: "Thanks to the work of our recruiters an Imperial Guard Squat has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_BEASTMAN: "Beastman Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_BEASTMAN_DESCRIPTION: "Thanks to the work of our recruiters an Imperial Guard Beastman has joined our service."
+      STR_REINFORCEMENT_INQ_BASIC_VETGUARD: "Veteran Guardsman Recruited"
+      STR_REINFORCEMENT_INQ_BASIC_VETGUARD_DESCRIPTION: "Thanks to the work of our recruiters a Veteran Guardsman has joined our service."
+      STR_REINFORCEMENT_INQ_ADV_SISTERRETRIBUTOR: "Sister Retributor Recruited"
+      STR_REINFORCEMENT_INQ_ADV_SISTERRETRIBUTOR_DESCRIPTION: "Thanks to the work of our recruiters a Sister Retributor has joined our service."
+      STR_REINFORCEMENT_INQ_ADV_SISTERMEDICAE: "Sister Hospitalier Recruited"
+      STR_REINFORCEMENT_INQ_ADV_SISTERMEDICAE_DESCRIPTION: "Thanks to the work of our recruiters a Sister Hospitalier has joined our service."
+      STR_REINFORCEMENT_INQ_ADV_CATACHANVET: "Catachan Veteran Recruited"
+      STR_REINFORCEMENT_INQ_ADV_CATACHANVET_DESCRIPTION: "Thanks to the work of our recruiters a Catachan Veteran has joined our service."
+      STR_REINFORCEMENT_INQ_ADV_GUARDSCANNER: "Guardsman Wayfinder Recruited"
+      STR_REINFORCEMENT_INQ_ADV_GUARDSCANNER_DESCRIPTION: "Thanks to the work of our recruiters a Guard Wayfinder has joined our service."
+      STR_REINFORCEMENT_INQ_ADV_SISTERDOM: "Dominion Sister Recruited"
+      STR_REINFORCEMENT_INQ_ADV_SISTERDOM_DESCRIPTION: "Thanks to the work of our recruiters a Veteran Sister has joined our service."
+      STR_REINFORCEMENT_INQ_ADV_SCION: "Scion Recruited"
+      STR_REINFORCEMENT_INQ_ADV_SCION_DESCRIPTION: "Thanks to the work of our recruiters a Scion Stormtrooper has joined our service."
+      STR_REINFORCEMENT_INQ_ADV_TANITH: "Tanith Recruited"
+      STR_REINFORCEMENT_INQ_ADV_TANITH_DESCRIPTION: "Thanks to the work of our recruiters a Tanith Scout has joined our service."
+      STR_REINFORCEMENT_INQ_ELITE_STORMTROOPER: "Inquisition Stormtrooper Recruited"
+      STR_REINFORCEMENT_INQ_ELITE_STORMTROOPER_DESCRIPTION: "Thanks to the work of our recruiters an Inquisition Stormtrooper has joined our service."
+      STR_REINFORCEMENT_INQ_ELITE_SCIONOFFICER: "Scion Officer Recruited"
+      STR_REINFORCEMENT_INQ_ELITE_SCIONOFFICER_DESCRIPTION: "Thanks to the work of our recruiters a Scion Officer has joined our service."
+      STR_REINFORCEMENT_INQ_ELITE_OFFICER: "Veteran Guard Officer Recruited"
+      STR_REINFORCEMENT_INQ_ELITE_OFFICER_DESCRIPTION: "Thanks to the work of our recruiters an Veteran Guard Officer has joined our service."
+      STR_REINFORCEMENT_INQ_ELITE_SISTERGEMINAE: "Sister Geminae Recruited"
+      STR_REINFORCEMENT_INQ_ELITE_SISTERGEMINAE_DESCRIPTION: "Thanks to the work of our recruiters an Elite Sister Geminae has joined our service."
+      STR_REINFORCEMENT_INQ_ELITE_MARINE: "Space Marine Recruited"
+      STR_REINFORCEMENT_INQ_ELITE_MARINE_DESCRIPTION: "Thanks to the work of our recruiters a Blood Ravens Marine has joined our service."
+      STR_INQ_ASSASSIN_TOKEN_EVENT: "Assassin Contacts"
+      STR_INQ_ASSASSIN_TOKEN_EVENT_DESCRIPTION: "The Officio Assassinorum has contacted us, offering limited access to enlist an Assassin for our cause."

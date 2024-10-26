@@ -323,9 +323,18 @@ events:
     background: InquisitionBG2.SCR
     timer: 2880
     timerRandom: 2140
-    funds: -75000
+    funds: -50000
     everyMultiItemList:
       STR_ASSASSIN_TOKEN: 4
+
+  - name: STR_INQ_ASSASSIN_TOKEN_EVENT_RARE
+    description: STR_INQ_ASSASSIN_TOKEN_EVENT_DESCRIPTION
+    background: InquisitionBG2.SCR
+    timer: 2880
+    timerRandom: 2140
+    funds: -75000
+    everyMultiItemList:
+      STR_ASSASSIN_TOKEN: 6
 
   - name: STR_REINFORCEMENTS_GUARD_REGULAR_INQ
     description: STR_REINFORCEMENTS_GUARD_REGULAR_INQ_DESCRIPTION
@@ -475,6 +484,18 @@ events:
       STR_ELDAR_MGRENADE: 8
 
 eventScripts:
+  - type: STR_INQ_ASSASSIN_TOKEN_RECCURING
+    eventWeights:
+      0:
+       STR_INQ_ASSASSIN_TOKEN_EVENT: 95
+       STR_INQ_ASSASSIN_TOKEN_EVENT_RARE: 5
+    firstMonth: 0
+    executionOdds: 100
+    minScore: -5000 #always trigger
+    maxScore: 50000
+    researchTriggers:
+      STR_INQ_ASSASSIN_RECRUITMENT: true
+
 
   - type: STR_INQ_REINFORCEMENTS_BASIC_1 # T0 - Lowest tier of unit reinforcements: basic only, high chance of low quality generic soldiers
     eventWeights:

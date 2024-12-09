@@ -39,6 +39,36 @@ soldiers:
       SMT_HEROICSAVE_CHANCE: 30
       SMT_HEROICSAVE_HP: 30
 
+  - type: STR_PRIMARISLV1               # Primaris Lv1
+    tags:
+      SMT_HEROICSAVE_CHANCE: 30
+      SMT_HEROICSAVE_HP: 30
+
+  - type: STR_PRIMARISLV2               # Primaris Lv2
+    tags:
+      SMT_HEROICSAVE_CHANCE: 35
+      SMT_HEROICSAVE_HP: 30
+
+  - type: STR_PRIMARISLV3               # Primaris Lv3
+    tags:
+      SMT_HEROICSAVE_CHANCE: 55
+      SMT_HEROICSAVE_HP: 40
+
+  - type: STR_PRIMARISLV4               # Primaris Lv4
+    tags:
+      SMT_HEROICSAVE_CHANCE: 60
+      SMT_HEROICSAVE_HP: 45
+
+  - type: STR_PRIMARISLV5               # Primaris Lv5
+    tags:
+      SMT_HEROICSAVE_CHANCE: 70
+      SMT_HEROICSAVE_HP: 50
+
+  - type: STR_PRIMARIS_JUDICAR          # Primaris Judicar
+    tags:
+      SMT_HEROICSAVE_CHANCE: 30
+      SMT_HEROICSAVE_HP: 30
+
   - &STR_DEATHWATCH_MARINE              # Deathwatch Marines
     tags:
       SMT_HEROICSAVE_CHANCE: 65 # vet level
@@ -88,9 +118,13 @@ soldiers:
 
   - type: STR_SPACEW
     refNode: *STR_DEATHWATCH_MARINE
+    tags:
+      SMT_HEROICSAVE_HP: 60 # +10 SW bonus
 
   - type: STR_SPACEW_PRIMARIS
     refNode: *STR_DEATHWATCH_MARINE
+    tags:
+      SMT_HEROICSAVE_HP: 60 # +10 SW bonus
 
   - type: STR_CRISMONF
     refNode: *STR_DEATHWATCH_MARINE
@@ -125,6 +159,8 @@ soldiers:
 
   - type: STR_SPACEW_LEADER
     refNode: *STR_DEATHWATCH_LEADER
+    tags:
+      SMT_HEROICSAVE_HP: 65 # +15 SW bonus
 
   - type: STR_CRISMONF_LEADER
     refNode: *STR_DEATHWATCH_LEADER

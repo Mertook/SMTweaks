@@ -4,7 +4,7 @@ extraStrings:
       ### MISC
       STR_TERMINATOR_CROSS_DESCRIPTION: Space Marines awarded with the Crux Terminatus are recognized as elites, allowing promotion to the highest ranks and access to rare relics including Terminator Armor. {NEWLINE}{NEWLINE} For this honor the Space Marine needs to have achieved 30 enemy kills, 15 successful missions and serve for three months.
       STR_HONOR_MEDAL: "Mark of Honor"
-      STR_HONOR_MEDAL_DESCRIPTION: "Soldiers who participate in successful operations are awarded Marks of Honor, with more distinguished Marks given to those with a long record of contributions to the Imperium.{NEWLINE}{NEWLINE} Marks of Honor are granted when a Soldiers total Score earned from missions reaches a certain level:{NEWLINE}{NEWLINE} Rank 1 - {ALT}1200{ALT}{NEWLINE} Rank 2 - {ALT}6000{ALT}{NEWLINE} Rank 3 - {ALT}24000{ALT}{NEWLINE} Rank 4 - {ALT}48000{ALT}"
+      STR_HONOR_MEDAL_DESCRIPTION: "Soldiers who participate in successful operations are awarded Marks of Honor, with more distinguished marks given to those with a long record of contributions to the Imperium.{NEWLINE}{NEWLINE} Marks of Honor are granted when a Soldiers total Score earned from missions reaches a certain level:{NEWLINE}{NEWLINE} Rank 1 - {ALT}1600{ALT}{NEWLINE} Rank 2 - {ALT}6000{ALT}{NEWLINE} Rank 3 - {ALT}24000{ALT}{NEWLINE} Rank 4 - {ALT}48000{ALT}"
       STR_AUTO_SHOT_COUNT: "Auto (x{0})"
       STR_SNAP_SHOT_COUNT: "Snap (x{0})"
       STR_FULL_AUTO: Full Auto
@@ -38,6 +38,10 @@ extraStrings:
       DREAD_ARMOR3_UC: "Hellfire Dreadnought Armor"
       DREAD_ARMOR4_UC: "Castraferrum Dreadnought Armor"
       STR_MKX_INC_ARMOR: MKX Omnis Armor
+      STR_MKX_APO_ARMOR: MKX Helix Adept Armor
+      STR_MKX_APO_UC_LV1: MKX Helix Adept Armor
+      STR_MKX_APO_UC_LV2: MKX Apothecary Armor
+      STR_MKX_APO_UC: MKX Apothecary Armor
       ### ITEMS
       STR_TELEPORT_CLAWS: Teleporter
       AUX_RAM_SMT: Chainsword
@@ -147,7 +151,7 @@ extraStrings:
       STR_TERMINATOR_RANK_4: Honor Guard
       STR_TERMINATOR_RANK_5: Chapter Master
       STR_CHAPLAIN_RANK_0: Judiciar
-      STR_CHAPLAIN_RANK_1: Judiciar
+      STR_CHAPLAIN_RANK_1: Chaplain
       STR_CHAPLAIN_RANK_2: Chaplain
       STR_CHAPLAIN_RANK_3: Reclusiarch
       STR_CHAPLAIN_RANK_4: High Chaplain
@@ -157,6 +161,8 @@ extraStrings:
       STR_LIBRARIAN_RANK_3: Epistolary
       STR_LIBRARIAN_RANK_4: Chief Librarian
       STR_DREAD_RANK_0: Dreadnought
+      STR_PRIM_APOTH_RANK_0: Apothecary
+      STR_PRIM_APOTH_RANK_0: Biologis
       ### SKILLS
       STR_BLESS_SKILL: Bless
       STR_LIB_SMOKE_SKILL: Shroud
@@ -168,10 +174,15 @@ extraStrings:
       STR_PROMOTE_TERMINATOR: Promote Vet Marine
       STR_HARVEST_GENESEED: Recover Geneseed
       STR_PROMOTE_NEOPHYTE: Induct Neophyte
+      STR_PROMOTE_NEOPHYTE_PRIMARIS: Induct Neophyte
       STR_PROMOTE_CHAPLAIN: Anoint Chaplain
       STR_PROMOTE_LIBRARIAN: Train Librarian
       STR_PROMOTE_LIB_TERMINATOR: Promote Vet Librarian
       STR_CHAPLAIN_ROSARY: Award Rosary
+      STR_LV2_TO_APOTH: Train Apothecary
+      STR_APOTH_LV3_TO_LV4: Promote Apothecary Biologis
+      STR_LV1_TO_JUDICAR: Induct Judicar
+      
       ### RESEARCH
       STR_PERSONAL_ARMOR: Tactical Armor
       STR_SMOKE_BOMB_UNLOCK: Smoke Bomb Requisition
@@ -194,8 +205,11 @@ extraStrings:
       STR_BOLT_RIFLE_AMMO: Bolt Sniper Ammo
       STR_APOTHECARY_PREREQ: (Apothecary Unlock)
       STR_TSARGENT: Terminator Cyclone Launcher
-      STR_BOLTER_AMMO_PREREQ: (Bolter Ammo Unlocked)
-      STR_BOLTER_ADV_AMMO: (Advanced Bolter Ammo Unlocked)
+      STR_BOLTPISTOL_REQ: (Boltpistols Unlocked)
+      STR_BOLTPISTOL_ADV_REQ: (Advanced Boltpistols)
+      STR_LIGHTBOLTER_ADV_AMMO: (Adv Light Bolter Ammo)
+      STR_BOLTER_AMMO_PREREQ: (Bolter Ammo)
+      STR_BOLTER_ADV_AMMO: (Advanced Bolter Ammo)
       STR_NEOPHYTE_REQUEST: (Neophytes Unlocked)
       ### MANUFACTURE
       STR_GENESEED: Geneseed
@@ -208,7 +222,7 @@ extraStrings:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: "Shred Resist (Plasma)"
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: "Shred Resist (Melta)"
       STR_ARMOR_WOUNDHEAL: "Wound Healing"
-      SMT_AMMO_HP_PREDMG: "Armor-Ignoring HP Damage"
+      SMT_AMMO_HP_PREDMG: "Armor-Ignoring HP Dmg%"
       SMT_ARMOR_REGEN_HP: "Health Regeneration"
       SMT_ARMOR_HEAVY_WEAPON_USER: "HWP Penalty Reduction%"
       ### FACILITIES
@@ -220,7 +234,7 @@ extraStrings:
       STR_GENESEED_PACKAGE_MID: Geneseed Harvest
       STR_GENESEED_PACKAGE_LATE: Geneseed Harvest
       STR_GENESEED_PACKAGE_EXLATE: Geneseed Harvest
-      STR_GENESEED_PACKAGE_DESCRIPTION_FIRST: "Our Apothecaries have begun the slow process of creating more Geneseed to expand our forces. This initial harvest is small, but together with our existing reserves it will be enough to complete the transformation of a Neophyte into an honored Battle Brother.{NEWLINE}{NEWLINE}Our yield of Geneseed is expected to increase over time, but each one is precious and should be treated with reverence.{NEWLINE}{NEWLINE}Check 'Promoting Marines' in the Space Marine Tweaks section of the Codex for more details."
+      STR_GENESEED_PACKAGE_DESCRIPTION_FIRST: "Our Apothecaries have begun the slow process of creating more Geneseed to expand our forces. This initial harvest is small, but with our existing reserves it will be enough to complete the transformation of a Neophyte into an honored Battle Brother.{NEWLINE}{NEWLINE}Our yield of Geneseed is expected to increase over time, but each one is precious and should be treated with reverence.{NEWLINE}{NEWLINE}Check 'Promoting Marines' in the Space Marine Tweaks section of the Codex for more details."
       STR_GENESEED_PACKAGE_DESCRIPTION: "Our Apothecaries have collected newly matured geneseed, ready to implant into promising recuits and induct them into the Chapter as honored Battle Brothers."
       STR_NEOPHYTE_STARTING_PACKAGE: Neophyte Recruits
       STR_NEOPHYTE_STARTING_PACKAGE_DESCRIPTION: "A group of fresh Neophytes is en route and will arrive in one day, ready to learn the craft of battle. With experience they will be able to complete their transformation and join the Chapter as Battle Brothers.{NEWLINE}{NEWLINE}Some wargear appropriate for our Neophytes has also arrived."
@@ -239,8 +253,8 @@ extraStrings:
       STR_SALAMANDAR_LEADER: Deathwatch Captain ¦
       STR_BLACKT_LEADER: Deathwatch Captain £
       STR_WHITES_LEADER: Deathwatch Captain ©
-      STR_DARKANGELS_LEADER: Deathwatch Captain ²
-      STR_SPACEW_LEADER: Deathwatch Captain ¾
+      STR_DARKANGELS_LEADER: Deathwatch Captain ¾
+      STR_SPACEW_LEADER: Deathwatch Captain ²
       STR_CRISMONF_LEADER: Deathwatch Captain ¼
       STR_DW_ARMOR_DUMMY: Deathwatch Marine
       ### DEATHWATCH RECRUITMENT
@@ -532,4 +546,5 @@ extraStrings:
       STR_REINFORCEMENT_INQ_ELITE_MARINE: "Space Marine Recruited"
       STR_REINFORCEMENT_INQ_ELITE_MARINE_DESCRIPTION: "Thanks to the work of our recruiters a Blood Ravens Marine has joined our service."
       STR_INQ_ASSASSIN_TOKEN_EVENT: "Assassin Contacts"
+      STR_INQ_ASSASSIN_TOKEN_EVENT_RARE: "Assassin Contacts"
       STR_INQ_ASSASSIN_TOKEN_EVENT_DESCRIPTION: "The Officio Assassinorum has contacted us, giving us authorization to enlist an Assassin for our cause."

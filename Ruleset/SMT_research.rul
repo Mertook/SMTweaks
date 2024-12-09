@@ -61,16 +61,10 @@ research:
       - STR_COMMANDER_PLUS
 
   - name: STR_SMOKE_BOMB_UNLOCK     # SmokeBomb requirement - Added to give SM access
-    cost: 100
-    points: 25
+    cost: 0
+    points: 0
     dependencies:
-      - STR_MARINES_STRATEGY
-      - STR_TATICAL # Tactical Strategy
-      - STR_SMOKE
-
-  - name: STR_OGRYN_REQUISITION     # Keep IG ability to buy smokebombs intact
-    getOneFree:
-      - STR_SMOKE_BOMB_UNLOCK
+      - STR_GENERALLOCK
 
   - name: STR_TATICAL               # Tactical Strat Chosen
     cost: 5
@@ -85,10 +79,11 @@ research:
       - STR_MARINE_CHAPEL
       - STR_HOLOGRAM_GRENADE_REQUISITION
       - STR_THUNDERHAWKTYPE1
-      - STR_STORMHAWKR
+      #- STR_STORMHAWKR
       - STR_PERSONAL_ARMOR
       - STR_MELTABOMB
       - STR_SMOKE
+      - STR_SMOKE_BOMB_UNLOCK
       - STR_CRATED_DROPPODS
       - STR_NOT_PRIMARIS
     disables:
@@ -114,7 +109,7 @@ research:
       - STR_MARINE_CHAPEL
       - STR_HOLOGRAM_GRENADE_REQUISITION
       - STR_THUNDERHAWKTYPE2
-      - STR_STORMHAWKR
+      #- STR_STORMHAWKR
       - STR_ASS_ARMOR
       - STR_HAND_FLAMETHROWER_REQUISITION
       - STR_SMOKE
@@ -143,7 +138,7 @@ research:
       - STR_MARINE_CHAPEL
       - STR_HOLOGRAM_GRENADE_REQUISITION
       - STR_THUNDERHAWKTYPE1
-      - STR_STORMHAWKR
+      #- STR_STORMHAWKR
       - STR_SMOKE
       - STR_CRATED_DROPPODS
       - STR_DEV_ARMOR
@@ -173,7 +168,7 @@ research:
       - STR_THUNDERHAWKTYPE2
       - STR_MARINE_CHAPEL
       - STR_SMOKE
-      - STR_STORMHAWKR
+      #- STR_STORMHAWKR
       - STR_CRATED_DROPPODS
       - STR_TRAINFACILITYR
       - STR_GLAUNCHER_PREREQ
@@ -193,7 +188,7 @@ research:
     points: 0
     dependencies:
       - STR_MARINES_STRATEGY
-      - STR_GENERALLOCK # temporarily disabled, incomplete
+      #- STR_GENERALLOCK # temporarily disabled, incomplete
     lookup: STR_CHOSEN_PRIMARIS
     unlocks:
       - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
@@ -203,13 +198,15 @@ research:
       - STR_MARINE_CHAPEL
       - STR_HOLOGRAM_GRENADE_REQUISITION
       - STR_SMOKE
+      - STR_SMOKE_BOMB_UNLOCK
       - STR_APOTHECARY
       - STR_TRAINFACILITYR
       - STR_GLAUNCHER_PREREQ
+      #- STR_STORMHAWKR
       - STR_PRIMARIS_AND_DEATHWATCH
       - STR_PRIMARIS_AND_ADEPTAS
     disables:
-      #- STR_PERSONAL_ARMOR # handled by armor tech instead
+      - STR_NOT_PRIMARIS
       - STR_TATICAL
       - STR_ASSAULT
       - STR_DEVASTATOR
@@ -226,6 +223,29 @@ research:
       - STR_MARINES_STRATEGY
       - STR_GENERALLOCK
     spawnedEvent: STR_NEOPHYTE_STARTING_PACKAGE
+
+  - name: STR_MT                    # Marine Midtier
+    cost: 200
+    points: 200
+    dependencies:
+      - STR_BOLTER_ADV_AMMO # unlocked via Astartes or Primaris Bolters - was melta
+      - STR_ALIEN_ALLOYS
+      - STR_MOTION_SCANNER
+      - STR_MEDI_KIT_PREREQ
+      - STR_MARINES_STRATEGY
+    unlocks:
+      - STR_MIDTIER_PREREQ
+      - STR_CASS_R
+      #- STR_HB_DEP1 # moved to High Quality Bolters research
+      - STR_SIDEOPERATIONS
+    cutscene: c2
+
+  - name: STR_STORMHAWKR            # Stormhawks
+    cost: 100 # was 150
+    points: 10
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_MOTION_SCANNER
 
   - name: STR_SPEEDR                # Landspeeder
     cost: 0
@@ -282,7 +302,7 @@ research:
     dependencies:
       - STR_GENERALLOCK
 
-  - name: STR_MEDI_KIT              # Apothecary Armor
+  - name: STR_MEDI_KIT              # Apothecary Armor (Firstborn)
     cost: 210
     points: 20
     dependencies:
@@ -291,7 +311,19 @@ research:
       - STR_APOTHECARY_PREREQ
     unlocks:
       - STR_MEDI_KIT_PREREQ
+      - STR_APOC_BAY # unlocks Apoth bay immediately
     lookup: STR_MEDI_KIT_PREREQ
+
+  - name: STR_APOTHECARY            # Apothecary Armor (Primaris)
+    cost: 210
+    points: 20
+    dependencies:
+      - STR_GENERALLOCK
+      - STR_PRIMARIS
+    unlocks:
+      - STR_MEDI_KIT_PREREQ
+      - STR_APOC_BAY # unlocks Apoth bay immediately
+
 
   - name: STR_CHAINSWORD_MC         # MC Chainswords (Assault)
     cost: 60
@@ -320,6 +352,24 @@ research:
     dependencies:
       - STR_GENERALLOCK
 
+  - name: STR_LIGHTBOLTER_ADV_AMMO  # Non-standard Light Bolter ammo (Can be unlocked by IG as well)
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_BOLTPISTOL_REQ        # Boltpistol Unlock (for Boltpistols used by both Firstborn and Primaris)
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_BOLTPISTOL_ADV_REQ    # Advanced Boltpistol Unlock
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
   - name: STR_MARINE_BOLTERS        # Astartes Bolters Unlock
     cost: 320
     points: 10
@@ -328,8 +378,10 @@ research:
       - STR_NOT_PRIMARIS
       - STR_LASER_WEAPONS
     unlocks:
+      - STR_BOLTPISTOL_REQ
       - STR_BOLTER_AMMO_PREREQ
       - STR_BOLTER_ADV_AMMO
+      - STR_LIGHTBOLTER_ADV_AMMO
     listOrder: 9 # push above corpses/etc
     spawnedItem: STR_RIFLEB
 
@@ -341,6 +393,7 @@ research:
       - STR_MARINE_BOLTERS
       - STR_THREAT_ONE
     unlocks:
+      - STR_BOLTPISTOL_ADV_REQ
       - STR_HB # storm bolters
     listOrder: 9 # push above corpses/etc
 
@@ -352,8 +405,10 @@ research:
       - STR_PRIMARIS
       - STR_LASER_WEAPONS
     unlocks:
+      - STR_BOLTPISTOL_REQ
       - STR_BOLTER_AMMO_PREREQ
       - STR_BOLTER_ADV_AMMO
+      - STR_LIGHTBOLTER_ADV_AMMO
     listOrder: 9 # push above corpses/etc
     spawnedItem: STR_BOLTRIFLE_STERNGUARD
 
@@ -365,7 +420,10 @@ research:
       - STR_PRIMARIS_BOLTERS
       - STR_THREAT_ONE
     unlocks:
+      - STR_BOLTPISTOL_ADV_REQ
       - STR_SCOUT_BOLT_RIFLE
+      - STR_HBOLTER_PREREQ
+      - STR_HBOLTER_AMMO_PREREQ # for Assault Bolters
     listOrder: 9 # push above corpses/etc
 
   - name: STR_GLAUNCHER_PREREQ      # Grenade Launcher + Ammo Unlock
@@ -481,21 +539,11 @@ research:
       - STR_PSI_LAB
       - STR_MIDTIER_PREREQ
 
-  - name: STR_MT                    # Marine Midtier
-    cost: 200
-    points: 200
+  - name: STR_CASS_R                # Assault Cannon Technology
+    cost: 0 # was 300
+    points: 0 # was 30
     dependencies:
-      - STR_BOLTER_ADV_AMMO # unlocked via Astartes or Primaris Bolters - was melta
-      - STR_ALIEN_ALLOYS
-      - STR_MOTION_SCANNER
-      - STR_MEDI_KIT_PREREQ
-      - STR_MARINES_STRATEGY
-    unlocks:
-      - STR_MIDTIER_PREREQ
-      - STR_ASSC # Assault Cannon, was Assault Cannon Tech
-      #- STR_HB_DEP1 # moved to High Quality Bolters research
-      - STR_SIDEOPERATIONS
-    cutscene: c2
+      - STR_GENERALLOCK
 
   - name: STR_DREAD_R               # unused, replaced by STR_DREADNOUGHT_MARINE in rosigma for some reason
     cost: 180
@@ -511,14 +559,9 @@ research:
       - STR_HIGHTIER_PREREQ
     listOrder: 1 # push above corpses/etc
 
-  - name: STR_PRIMARIS_ARMOR        # Primaris Armor
-    cost: 180
-    points: 20
+  - name: STR_PRIMARIS_ARMOR        # Primaris Armor (disabled)
     dependencies:
-      - STR_PRIMARIS
-      - STR_ALIEN_ALLOYS
-      - STR_THREAT_ONE
-      - STR_MARINES_STRATEGY
+      - STR_GENERALLOCK # disabled - only exists as bridging tech for other armour types
 
   - name: STR_MKX_PHB_ARMOR         # Primaris Phobos Armor
     cost: 180
@@ -526,7 +569,7 @@ research:
     dependencies:
       - STR_PRIMARIS
       - STR_ALIEN_ALLOYS
-      - STR_PRIMARIS_ARMOR
+      #- STR_PRIMARIS_ARMOR
 
   - name: STR_MKX_INC_ARMOR         # Primaris Interceptor/Omnis Armor
     cost: 180
@@ -534,7 +577,6 @@ research:
     dependencies:
       - STR_PRIMARIS
       - STR_MKX_GRV_ARMOR
-      - STR_PRIMARIS_ARMOR
       - STR_MKX_PHB_ARMOR
 
   - name: STR_MKX_GRV_ARMOR         # Primaris Gravis Armor
@@ -542,10 +584,8 @@ research:
     points: 20
     dependencies:
       - STR_PRIMARIS
-      - STR_ELERIUM_115
-      - STR_UFO_POWER_SOURCE
+      - STR_UFO_CONSTRUCTION # ceramite
       - STR_MIDTIER_PREREQ
-      - STR_PRIMARIS_ARMOR
 
   - name: STR_MKX_CHP_ARMOR         # Primaris Chaplain Armor
     cost: 205
@@ -553,4 +593,4 @@ research:
     dependencies:
       - STR_PRIMARIS
       - STR_HIGHTIER_PREREQ
-      - STR_PRIMARIS_ARMOR
+      #- STR_PRIMARIS_ARMOR

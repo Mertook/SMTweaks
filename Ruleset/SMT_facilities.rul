@@ -8,7 +8,7 @@ facilities:
 
   - type: STR_TRAINFACILITY
     trainingRooms: 50 # was 20 - 2x2 space for 20 is pretty awful compared to other training options
-    storage: 100 # provides additional storage
+    storage: 150 # provides additional storage
     rightClickActionType: 4 # training menu
 
   - type: STR_TEC_BAY
@@ -16,15 +16,12 @@ facilities:
     provideBaseFunc: [TEC, MANU] # counts as a workshop
 
   - type: STR_ARMORY
-    storage: 50 # was 25 - general stores is 100
+    storage: 75 # was 25 - general stores is 100
 
   - &DW_QUARTERS
     type: STR_DW_QUARTERS_ULTRA
     requires:
-      - STR_GENERALLOCK
-    refundValue: 100000
-    canBeBuiltOver: true
-    destroyedFacility: STR_CORRIDOR
+      - STR_GENERALLOCK #disabled
   - type: STR_DW_QUARTERS_IF
     refNode: *DW_QUARTERS
   - type: STR_DW_QUARTERS_BA
@@ -44,9 +41,32 @@ facilities:
   - type: STR_DW_QUARTERS
     refNode: *DW_QUARTERS
 
-  - type: STR_OUTPOST_GK
-    requires:
-      - STR_CHAMBERMILITANT
+  - type: STR_OUTPOST_MARINES
+    trainingRooms: 20
+
+  - type: STR_OUTPOST_MARINES_HYPER
+    trainingRooms: 20
+
+  - type: STR_OUTPOST # Arbites
+    trainingRooms: 20
+
+  - type: STR_OUTPOST_ARBITES_HYPER
+    trainingRooms: 20
+
+  - type: STR_OUTPOST_ADEPTAS
+    trainingRooms: 20
+
+  - type: STR_OUTPOST_ADEPTAS_HYPER
+    trainingRooms: 20
+
+  - type: STR_OUTPOST_GUARD
+    trainingRooms: 20
+    
+  - type: STR_OUTPOST_GUARD_HYPER
+    trainingRooms: 20
+
+  - type: STR_OUTPOST_GK # Chamber Militant
+    trainingRooms: 20
 
   - type: STR_OUTPOST_INQ_HYPER
     requires:
@@ -63,6 +83,7 @@ facilities:
     buildTime: 15
     monthlyCost: 650000
     personnel: 50
+    trainingRooms: 20
     storage: 100
     mapName: XBASE_60
     storageTiles:

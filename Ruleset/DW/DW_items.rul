@@ -130,7 +130,7 @@ items:
     damageAlter:
       RandomType: 7 # 50-200%
       ToArmorPre: 0.15
-      ArmorEffectiveness: 0.7 # between Krak (0.5) and regular (0.9)
+      ArmorEffectiveness: 0.8 # regular (0.9)
       ToHealth: 1.0 # normal 1.1
       ToArmor: 0.15
       ToStun: 0.3 # normal 0.5
@@ -194,6 +194,7 @@ items:
 
   - type: STR_AUTO_CANNON_DW                # Heavy Bolter (Artifex DW)                 ## Restricted item
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
+    bulletSpeed: 50
     costBuy: 125000
     dropoff: 4 #
     sprayWaypoints: 2
@@ -253,6 +254,7 @@ items:
     floorSprite: 3164
     handSprite: 3624
     bulletSprite: {mod: 40k, index: 6}
+    bulletSpeed: 50
     fireSound: {mod: 40k, index: 12}
     compatibleAmmo:
       - STR_BOLT_SNIPER_AMMO_AP
@@ -267,7 +269,6 @@ items:
     invWidth: 2
     invHeight: 3
     armor: 200
-    bulletSpeed: 50
     autoRange: 0
     snapRange: 25 # +5 DW
     aimRange: 38 # +5 DW
@@ -313,7 +314,6 @@ items:
     power: 100
     damageType: 1 # standard
     damageAlter:
-      ResistType: 11 #melta
       RandomType: 6
       ArmorEffectiveness: 0.7 # normal .7
       ToHealth: 1.0 # normal 1.0
@@ -618,7 +618,7 @@ items:
     damageType: 11 # Melta type - cross between Las & Melta gun
     damageAlter:
       RandomType: 2 # 50-150%
-      ToHealth: 0.45 # deals 100% total, 55% ignores armor
+      ToHealth: 0.50 # deals 100% total, 50% ignores armor
       ArmorEffectiveness: 0.9 #
       ToArmorPre: 0.20 #
       ToArmor: 0.4 #
@@ -639,6 +639,7 @@ items:
     handSprite: 3680
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     bulletSprite: {mod: 40k, index: 6}
+    bulletSpeed: 50
     listOrder: 10450
     twoHanded: true
     blockBothHands: true

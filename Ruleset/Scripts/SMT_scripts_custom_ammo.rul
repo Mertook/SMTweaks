@@ -8,7 +8,7 @@ extended:
 items:
   - &STR_PRECISION_AMMO                 # Precision Template
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 45
+      SMT_AMMO_BONUSDMG_FIRINGACC: 10
     scripts:
       hitUnitAmmo: |
         var int attackerFA;
@@ -29,17 +29,17 @@ items:
   - type: STR_PISTOL_CLIP_MC            # Boltpistol
     refNode: *STR_PRECISION_AMMO
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 80
+      SMT_AMMO_BONUSDMG_FIRINGACC: 33 # base power 80
 
   - type: STR_RIFLE_CLIP_MC             # Bolter
     refNode: *STR_PRECISION_AMMO
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 80
+      SMT_AMMO_BONUSDMG_FIRINGACC: 33 # base power 80
 
   - type: STR_LIGHT_BOLTPISTOL_AMMO_MC  # Light Boltpistol
     refNode: *STR_PRECISION_AMMO
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 15 # base power 65 (+10 over regular)
+      SMT_AMMO_BONUSDMG_FIRINGACC: 15 # base power 70 (+10 over regular)
 
   - type: STR_LIGHT_BOLTER_AMMO_MC      # Light Bolter
     refNode: *STR_PRECISION_AMMO
@@ -49,39 +49,39 @@ items:
   - type: STR_AC_MC_AMMO                # Heavy Bolter
     refNode: *STR_PRECISION_AMMO
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 90
+      SMT_AMMO_BONUSDMG_FIRINGACC: 33 # base power 90
 
   - type: STR_AC_MC_BELT                # Heavy Bolter Belt
     refNode: *STR_PRECISION_AMMO
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 90
+      SMT_AMMO_BONUSDMG_FIRINGACC: 33 # base power 90
 
   - type: STR_HB_CLIP_MC                # Stormbolter
     refNode: *STR_PRECISION_AMMO
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 80
+      SMT_AMMO_BONUSDMG_FIRINGACC: 33 # base power 80
 
   - type: STR_BOLTRIFLE_DRUM_MC         # Boltrifle Drum
     refNode: *STR_PRECISION_AMMO
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 80
+      SMT_AMMO_BONUSDMG_FIRINGACC: 33 # base power 80
 
   - type: STR_BOLTRIFLE_DRUM_MC_DW      # Boltrifle Drum (DW)
     refNode: *STR_PRECISION_AMMO
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 80
+      SMT_AMMO_BONUSDMG_FIRINGACC: 33 # base power 80
 
   - type: STR_ABSOLVOR_AMMO_MC          # Absolvor (DW)
     refNode: *STR_PRECISION_AMMO
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 45 # base power 80
+      SMT_AMMO_BONUSDMG_FIRINGACC: 33 # base power 80
 
 
 
 
   - &STR_DEREVENANT_AMMO                # Derevenant Template
     tags:
-      SMT_DEREVENANT_AMMO: 25
+      SMT_DEREVENANT_AMMO: 1
     scripts:
       damageUnitAmmo: |
         var ptr RuleArmor targetArmor;
@@ -130,12 +130,12 @@ items:
   - type: STR_RIFLE_CLIP_DEREV          # DW Bolter ammo
     refNode: *STR_DEREVENANT_AMMO
     tags:
-      SMT_DEREVENANT_AMMO: 20
+      SMT_DEREVENANT_AMMO: 10
 
   - type: STR_BOLT_SNIPER_AMMO_DEREV    # DW Bolt Sniper ammo
     refNode: *STR_DEREVENANT_AMMO
     tags:
-      SMT_DEREVENANT_AMMO: 300
+      SMT_DEREVENANT_AMMO: 200
 
 
   - &STR_ARMOR_IGNORING_AMMO            # Penetrating damage Template
@@ -162,12 +162,12 @@ items:
   - type: STR_VOLKITE_DW                # DW Volkite Rifle
     refNode: *STR_ARMOR_IGNORING_AMMO
     tags:
-      SMT_AMMO_HP_PREDMG: 55
+      SMT_AMMO_HP_PREDMG: 50
 
   - type: STR_VOLKITE_VAULT             # Volkite Rifle (Ancient Vault Reward)
     refNode: *STR_ARMOR_IGNORING_AMMO
     tags:
-      SMT_AMMO_HP_PREDMG: 55
+      SMT_AMMO_HP_PREDMG: 50
 
 
 

@@ -24,7 +24,7 @@ events:
     timer: 1440
     timerRandom: 11520
     funds: -5000
-    spawnedPersons: 2
+    spawnedPersons: 1
     spawnedPersonType: STR_ADEPTAS_REPENTIA
 
   - name: STR_REINFORCEMENT_INQ_BASIC_GUARD
@@ -489,6 +489,9 @@ eventScripts:
       0:
        STR_INQ_ASSASSIN_TOKEN_EVENT: 95
        STR_INQ_ASSASSIN_TOKEN_EVENT_RARE: 5
+      5:
+       STR_INQ_ASSASSIN_TOKEN_EVENT: 85
+       STR_INQ_ASSASSIN_TOKEN_EVENT_RARE: 15
     firstMonth: 0
     executionOdds: 100
     minScore: -5000 #always trigger

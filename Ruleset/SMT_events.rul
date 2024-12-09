@@ -20,7 +20,7 @@ startingBase:
     #STR_ROCKET_LAUNCHER: 1
     #STR_SMALL_ROCKET: 8
     #STR_FLAMETHROWER: 1
-    #STR_FLAMETHROWER_CLIP: 3
+    #STR_FLAMETHROWER_CLIP: 4
     #STR_CHAINSWORD_LIGHTSM: 4
     #STR_GRENADE: 8
     #STR_SMOKE_GRENADE: 8 # was 5
@@ -41,7 +41,7 @@ events:
       STR_HEAVY_CANNON: 1 #sniper
       STR_HC_AP_AMMO: 4 #sniper ammo
       STR_FLAMETHROWER: 1
-      STR_FLAMETHROWER_CLIP: 3
+      STR_FLAMETHROWER_CLIP: 4
       STR_CHAINSWORD_LIGHTSM: 4
       STR_GRENADE: 12
       STR_SMOKE_GRENADE: 12 # was 5
@@ -120,12 +120,14 @@ events:
     description: STR_PRIMARIS_CARE_PACKAGE_DESCRIPTION
     spawnedCraftType: STR_IMPULSOR
     everyMultiItemList:
-      STR_SMT_GENESEED_IMPURE: 6
+      STR_SMT_GENESEED_IMPURE: 8
       STR_RIFLED: 2
-      STR_RIFLE_CLIP: 20
-      STR_GRENADE_LAUNCHER_ASTARTES: 2
-      STR_FRAG_GRENADE_DRUM: 8
-    spawnedPersons: 4
+      STR_BOLTER_CARBINE: 2
+      STR_RIFLE_CLIP: 30
+      STR_MKX_APO_ARMOR: 2
+      STR_PRIMARIS_HEAVY_BOLT_PISTOL: 1
+      STR_PISTOL_CLIP: 20
+    spawnedPersons: 5
     spawnedPersonType: STR_PRIMARISLV1
 
   - name: STR_GENESEED_PACKAGE_STARTER      # First Geneseed Monthly Package - Avg 0+8 
@@ -240,5 +242,6 @@ eventScripts:
     firstMonth: 0
     executionOdds: 100
     researchTriggers:
-       STR_NOT_PRIMARIS: true
        STR_MARINES_STRATEGY: true
+       STR_NEOPHYTE_REQUEST: true
+

@@ -1,91 +1,47 @@
 research: # Research changes only made to maintain functionality for other factions
 
   - name: STR_ARBITES                               # Arbites selected
-    cost: 0
-    points: 0
-    lookup: STR_IMPERIUM_RESEARCH
-    dependencies:
-      - STR_GENERALLOCK
-    unlocks:
-      - STR_MOTION_SCANNER
-      - STR_LASER_WEAPONS
-      - STR_SMOKE
-      - STR_GUARD_AND_ARBITES
-      - STR_LIGHT_BOLTERS
-      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
-      - STR_GUARD_BARRACKS
-      - STR_HEAVY_WEAPONS_IG
-      - STR_BASIC_SENTINEL_MISSILE
+    unlocks: !add
       - STR_SHOTGUNS_ADV # added
-      - STR_PILOT_GUARDSMEN
-      - STR_IMPERIUM_RESEARCH
       - STR_NOT_STEEL_LEGION_STRATEGY # allows basic lasguns
       - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
-      #- STR_NOT_DEATHWATCH # currently just relevant for GK/RR Chamber Militant
-    disables:
-      - STR_CYDONIA_OR_BUST
-      - STR_MARINES_STRATEGY
-      - STR_IMPERIAL_GUARD_OPERATIONS
-      - STR_ADEPTAS
-      - STR_GUARD_SUPORT
 
   - name: STR_IMPERIAL_GUARD_OPERATIONS             # Imperial Guard Selected
-    points: 0
-    dependencies:
-      - STR_GENERALLOCK
-    lookup: STR_IMPERIUM_RESEARCH
-    unlocks:
-      - STR_NORMAL_STRATEGY_IG
-      - STR_ELITE_STRATEGY_IG
-      - STR_ABHUMAN_STRATEGY_IG
-      - STR_STEEL_LEGION_STRATEGY
-      # - STR_MOTION_SCANNER
-      # - STR_LASER_WEAPONS
-      # - STR_SMOKE
-      - STR_RADICAL_RECRUITMENT_IG
-      - STR_GUARD_AND_ARBITES
-      # - STR_GUARD_SUPORT
-      - STR_IMPERIUM_RESEARCH
+    unlocks: !add
       - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
-      #- STR_NOT_DEATHWATCH # currently just relevant for GK/RR Chamber Militant
-    disables:
-      - STR_ARBITES
-      - STR_ADEPTAS
-      - STR_MARINES_STRATEGY
-      - STR_PERSONAL_ARMOR
 
-  - name: STR_ADEPTAS                               # Sisters of Battle Selected
-    cost: 0
-    points: 0
-    lookup: STR_IMPERIUM_RESEARCH
-    dependencies:
-      - STR_GENERALLOCK
-    unlocks:
-      - STR_DEATHWATCH_AND_ADEPTAS
-      - STR_PRIMARIS_AND_ADEPTAS
-      - STR_NOT_PRIMARIS
-      # - STR_MOTION_SCANNER
-      # - STR_HOSPITALLER
-      # - STR_LASER_WEAPONS
-      - STR_MARINES_AND_ADEPTAS
-      # - STR_LIGHT_BOLTERS
-      - STR_GUARD_SUPORT
-      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
-      - STR_ADEPTAS_AND_INQUISITION
-      - STR_ADEPTAS_MARINES_AND_INQUISITION
-      - STR_IMPERIUM_RESEARCH
-      #- STR_NOT_DEATHWATCH # currently just relevant for GK/RR Chamber Militant
-    disables:
-      - STR_ARBITES
-      - STR_IMPERIAL_GUARD_OPERATIONS
-      - STR_MARINES_STRATEGY
+  # - name: STR_ADEPTAS                               # Sisters of Battle Selected
+    # cost: 0
+    # points: 0
+    # lookup: STR_IMPERIUM_RESEARCH
+    # dependencies:
+      # - STR_GENERALLOCK
+    # unlocks:
+      # - STR_DEATHWATCH_AND_ADEPTAS
+      # - STR_PRIMARIS_AND_ADEPTAS
+      # - STR_NOT_PRIMARIS
+      # # - STR_MOTION_SCANNER
+      # # - STR_HOSPITALLER
+      # # - STR_LASER_WEAPONS
+      # - STR_MARINES_AND_ADEPTAS
+      # # - STR_LIGHT_BOLTERS
+      # - STR_GUARD_SUPORT
+      # - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      # - STR_ADEPTAS_AND_INQUISITION
+      # - STR_ADEPTAS_MARINES_AND_INQUISITION
+      # - STR_IMPERIUM_RESEARCH
+      # #- STR_NOT_DEATHWATCH # currently just relevant for GK/RR Chamber Militant
+    # disables:
+      # - STR_ARBITES
+      # - STR_IMPERIAL_GUARD_OPERATIONS
+      # - STR_MARINES_STRATEGY
 
   - name: STR_OGRYN_REQUISITION                     # Keep IG ability to buy smokebombs intact
-    getOneFree:
+    unlocks: !add
       - STR_SMOKE_BOMB_UNLOCK
 
   - name: STR_GUARD_IMPERIAL_ASSASSIN_REQUISITION   # Vindicare Assassin tech
-    getOneFree:
+    unlocks: !add
       - STR_VINDICARE_AMMO_REQ
 
   - name: STR_VINDICARE_AMMO_REQ                    # Exitus Rifle/Pistol ammo unlock (given by Vindicare event)
@@ -95,7 +51,7 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_GENERALLOCK
 
   - name: STR_HEAVY_WEAPONS_IG                      # Let IG/Arbites buy Heavy Bolter ammo
-    unlocks:
+    unlocks: !add
       - STR_HBOLTER_AMMO_PREREQ
 
   - name: STR_MULTIMELTA_PREREQ                     # Let you research Multimeltas even if you don't find a chaos multimelta (only a couple of enemy factions even have the chance to carry multimeltas)
@@ -299,21 +255,13 @@ research: # Research changes only made to maintain functionality for other facti
     destroyItem: true
 
   - name: STR_LIGHT_BOLTERS_MIDTIER_ADEPTAS         # Sisters Midtier Bolters
-    cost: 400
-    points: 15
-    dependencies:
-      - STR_ADEPTAS
-      - STR_FAITHFUL_ARMORY
-      - STR_NORMAL_STRATEGY_ADEPTAS
-      - STR_ELITE_STRATEGY_ADEPTAS
-      - STR_ADEPTAS_MIDTIER_NOVICE
-    unlocks:
-      - STR_BOLTER_HELLSPITE
-      - STR_BOLTER_MEPHISTO
-      - STR_ADEPTAS_BOLTGUN_JOVE
+    unlocks: !add
       - STR_BOLTER_AMMO_PREREQ # Jove uses marine bolter ammo
       - STR_BOLTER_ADV_AMMO
+      - STR_LIGHTBOLTER_ADV_AMMO
 
 
-
+  - name: STR_LIGHT_BOLTERS_MIDTIER
+    unlocks: !add
+      - STR_LIGHTBOLTER_ADV_AMMO
 

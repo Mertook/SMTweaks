@@ -1,26 +1,5 @@
 manufacture:
-  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_DRUM
-    space: 0
-    time: 100
-    cost: 10000
-    requires:
-      - STR_GENERALLOCK #disabled
-  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_AP_DRUM
-    space: 0
-    time: 100
-    requires:
-      - STR_GENERALLOCK #disabled
-  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_EX_DRUM
-    space: 0
-    time: 100
-    requires:
-      - STR_GENERALLOCK #disabled
-  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_MC_DRUM
-    space: 0
-    time: 100
-    requires:
-      - STR_GENERALLOCK #disabled
-
+### WEAPONS
   - name: STR_BANNER                                # Chapter Banner
     requires:
       - STR_GENERALLOCK #disabled
@@ -29,13 +8,12 @@ manufacture:
     requires:
       - STR_CHAPTER_PURITY
       - STR_NAVY_COMUNICATIONS
-#      - STR_DEVASTATOR # too fun to restrict to just Devastator - they have enough special stuff anyway
     space: 0
     time: 400
-    cost: 100000 #
+    cost: 200000 #
     requiresBaseFunc: [COMU]
     requiredItems:
-      STR_KILLPOINT_TOKEN: 80 #
+      STR_KILLPOINT_TOKEN: 100 #
   - name: AUX_CROZIUS                               # Crozius
     category: STR_WEAPON
     space: 0
@@ -49,7 +27,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 4
       STR_KILLPOINT_TOKEN: 200
 
-  - name: STR_PISTOL_CLIP
+  - name: STR_PISTOL_CLIP                           # Boltpistol ammo
     category: STR_AMMUNITION
     requires:
       - STR_BOLTER_AMMO_PREREQ
@@ -59,7 +37,7 @@ manufacture:
     producedItems:
       STR_PISTOL_CLIP: 10
 
-  - name: STR_RIFLE_CLIP
+  - name: STR_RIFLE_CLIP                            # Bolter ammo
     category: STR_AMMUNITION
     requires:
       - STR_BOLTER_AMMO_PREREQ
@@ -69,7 +47,7 @@ manufacture:
     producedItems:
       STR_RIFLE_CLIP: 5
 
-  - name: STR_RIFLE_CLIP_AP
+  - name: STR_RIFLE_CLIP_AP                         # Kraken ammo - Bolter
     category: STR_AMMUNITION
     requires:
       - STR_BOLTER_ADV_AMMO
@@ -81,7 +59,7 @@ manufacture:
     producedItems:
       STR_RIFLE_CLIP_AP: 5
 
-  - name: STR_PISTOL_CLIP_AP
+  - name: STR_PISTOL_CLIP_AP                        # Kraken ammo - Boltpistol
     category: STR_AMMUNITION
     requires:
       - STR_BOLTER_ADV_AMMO
@@ -92,6 +70,32 @@ manufacture:
       STR_ALIEN_ALLOYS: 1
     producedItems:
       STR_PISTOL_CLIP_AP: 10
+
+  - name: STR_LIGHT_BOLTER_AMMO_PEN                 # Kraken ammo - Light Bolter
+    category: STR_AMMUNITION
+    requires:
+      - STR_LIGHT_BOLTERS
+      - STR_LIGHTBOLTER_ADV_AMMO
+    space: 0
+    time: 100
+    cost: 500
+    requiredItems:
+      STR_ALIEN_ALLOYS: 1
+    producedItems:
+      STR_LIGHT_BOLTER_AMMO_PEN: 7
+
+  - name: STR_LIGHT_BOLTPISTOL_AMMO_AP              # Kraken ammo - Light Boltpistol
+    category: STR_AMMUNITION
+    requires:
+      - STR_LIGHT_BOLTERS
+      - STR_LIGHTBOLTER_ADV_AMMO
+    space: 0
+    time: 100
+    cost: 500
+    requiredItems:
+      STR_ALIEN_ALLOYS: 1
+    producedItems:
+      STR_LIGHT_BOLTPISTOL_AMMO_AP: 15
 
   - name: STR_RIFLE_CLIP_EX                         # MetalStorm ammo - Bolter
     category: STR_AMMUNITION
@@ -116,33 +120,38 @@ manufacture:
       STR_ELERIUM_115: 1
     producedItems:
       STR_PISTOL_CLIP_EX: 20
+
   - name: STR_LIGHT_BOLTER_AMMO_EX                  # MetalStorm ammo - Light Bolter
     category: STR_AMMUNITION
     requires:
       - STR_LIGHT_BOLTERS
+      - STR_LIGHTBOLTER_ADV_AMMO
     space: 0
     time: 100
     cost: 500
     requiredItems:
       STR_ELERIUM_115: 1
     producedItems:
-      STR_LIGHT_BOLTER_AMMO_EX: 15
+      STR_LIGHT_BOLTER_AMMO_EX: 10
+
   - name: STR_LIGHT_BOLTPISTOL_AMMO_EX              # MetalStorm ammo - Light Boltpistol
     category: STR_AMMUNITION
     requires:
       - STR_LIGHT_BOLTERS
+      - STR_LIGHTBOLTER_ADV_AMMO
     space: 0
     time: 100
     cost: 500
     requiredItems:
       STR_ELERIUM_115: 1
     producedItems:
-      STR_LIGHT_BOLTPISTOL_AMMO_EX: 30
+      STR_LIGHT_BOLTPISTOL_AMMO_EX: 20
 
   - name: STR_LIGHT_BOLTPISTOL_AMMO_MC              # MC ammo - Light Boltpistol
     category: STR_AMMUNITION
     requires:
       - STR_MASTER_CRAFTING # was low tier mastercrafting
+      - STR_LIGHTBOLTER_ADV_AMMO
     space: 0
     time: 200
     cost: 20000
@@ -157,6 +166,7 @@ manufacture:
     category: STR_AMMUNITION
     requires:
       - STR_MASTER_CRAFTING # was low tier mastercrafting
+      - STR_LIGHTBOLTER_ADV_AMMO
     space: 0
     time: 200
     cost: 20000
@@ -337,322 +347,6 @@ manufacture:
     producedItems:
       STR_AC_MC_BELT: 5
 
-  - name: STR_SARGENT_ARMOR                         # Sergeant
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_CHAPTER_PURITY
-      - STR_SARGENT_ARMOR
-    space: 0
-    time: 800
-    cost: 60000 #was 30k
-    requiredItems:
-      STR_ALIEN_ALLOYS: 30
-      STR_KILLPOINT_TOKEN: 240
-  - name: STR_HONOR_ARMOR                           # Tact Honor
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_CHAPTER_PURITY
-      - STR_HONOR_ARMOR
-    space: 0
-    time: 800
-    cost: 40000
-    requiredItems:
-      STR_KILLPOINT_TOKEN: 250
-      STR_ALIEN_ALLOYS: 30
-      STR_UFO_CONSTRUCTION: 4
-  - name: STR_SCOUTH                                # Scout Honor
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_CHAPTER_PURITY
-      - STR_SCOUTH_RESEARCH
-    space: 0
-    time: 800
-    cost: 40000
-    requiredItems:
-      STR_KILLPOINT_TOKEN: 60
-      STR_ALIEN_ALLOYS: 15
-  - name: STR_SIGNAL_ARMOR                          # Dev Honor
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_CHAPTER_PURITY #was missing
-      - STR_SIGNAL_ARMOR_RESEARCH
-    space: 0
-    time: 800
-    cost: 40000
-    requiredItems:
-      STR_KILLPOINT_TOKEN: 250
-      STR_ALIEN_ALLOYS: 30
-      STR_UFO_CONSTRUCTION: 4
-  - name: STR_ASS_ARMOR_HONOR                       # Assault Honor
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_CHAPTER_PURITY
-      - STR_HONOR_ARMOR_RESEARCH
-    space: 0
-    time: 800
-    cost: 40000
-    requiredItems:
-      STR_KILLPOINT_TOKEN: 250
-      STR_ALIEN_ALLOYS: 30
-      STR_UFO_CONSTRUCTION: 4
-  - name: STR_POWER_SUIT                            # Terminator
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_CHAPTER_PURITY
-      - STR_POWER_SUIT
-    space: 0
-    time: 4800 #was 800
-    cost: 80000 #was 20k
-    requiresBaseFunc: [ARMO]
-    requiredItems:
-      STR_ALIEN_ALLOYS: 80 #was 75
-      STR_UFO_CONSTRUCTION: 10
-      STR_ELERIUM_115: 20
-      STR_KILLPOINT_TOKEN: 800 #was 60
-  - name: STR_FLYING_SUIT                           # Terminator Assault
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_GENERALLOCK # Now an alt of regular Terminator armor, this shouldn't be used
-      #- STR_CHAPTER_PURITY
-      #- STR_PERSONAL_ARMOR
-      #- STR_FLYING_SUIT
-    space: 0
-    time: 4800
-    cost: 80000 #was 20k
-    requiresBaseFunc: [ARMO]
-    requiredItems:
-      STR_ALIEN_ALLOYS: 80 #was 150
-      STR_UFO_CONSTRUCTION: 10
-      STR_ELERIUM_115: 20
-      STR_KILLPOINT_TOKEN: 800 #was 60
-
-  - name: STR_TSARGENT                              # Terminator Sergeant
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_GENERALLOCK # Now an alt of regular Terminator armor, this shouldn't be used
-
-  - name: STR_CAPTAIN_SUIT                          # Terminator Captain
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_CHAPTER_PURITY
-      - STR_CAPTAIN_SUIT
-    space: 0
-    time: 4800 #was 5000
-    cost: 100000 #was 200k
-    requiresBaseFunc: [ARMO]
-    requiredItems:
-      STR_ALIEN_ALLOYS: 80
-      STR_UFO_CONSTRUCTION: 10
-      STR_ELERIUM_115: 20
-      STR_KILLPOINT_TOKEN: 1000 #was 200
-
-  - name: STR_TATICAL_ARMOR                         # Tactical
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_CHAPTER_PURITY
-      - STR_PERSONAL_ARMOR
-    space: 0
-    time: 800
-    cost: 60000
-    requiredItems:
-      STR_ALIEN_ALLOYS: 30
-
-  - name: STR_DEV_ARMOR                             # Devastator
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_MARINES_AND_DEATHWATCH
-      - STR_DEV_ARMOR
-    space: 0
-    time: 800
-    cost: 60000
-    requiredItems:
-      STR_ALIEN_ALLOYS: 30
-
-  - name: STR_ASS_ARMOR                             # Assault
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_MARINES_AND_DEATHWATCH
-      - STR_ASS_ARMOR
-    space: 0
-    time: 800
-    cost: 60000
-    requiredItems:
-      STR_ALIEN_ALLOYS: 30
-
-  - name: STR_APOT_ARMOR                            # Apothecary
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_MARINES_AND_DEATHWATCH
-      - STR_MEDI_KIT_PREREQ
-    space: 0
-    time: 800
-    cost: 60000
-    requiredItems:
-      STR_ALIEN_ALLOYS: 30 # was 25
-      STR_KILLPOINT_TOKEN: 60
-
-  - name: STR_TECH_ARMOR                            # Techmarine
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_TEC_BAYR
-      - STR_MARINES_AND_DEATHWATCH
-    space: 0
-    time: 800
-    cost: 60000 # was 30k
-    requiresBaseFunc: [TEC]
-    requiredItems:
-      STR_ALIEN_ALLOYS: 35 # was 60
-      STR_KILLPOINT_TOKEN: 60
-
-  - name: STR_CHAP_ARMOR                            # Chaplain
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_GENERALLOCK # Now default gear of Chaplain soldiers, this shouldn't be used
-
-  - name: STR_LIB_ARMOR                             # Librarian
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_GENERALLOCK # Now default gear of Librarian soldiers, this shouldn't be used
-
-  - name: STR_DREAD2_ARMOR                          # Dread Plasma
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_MARINES_STRATEGY
-      - STR_PLASMA_CANNON # craft Plasma cannon
-      - STR_DREADNOUGHT_MARINE
-      - STR_NOT_PRIMARIS
-    space: 0
-    time: 1200
-    cost: 600000
-    requiredItems:
-      STR_ALIEN_ALLOYS: 40
-      STR_ELERIUM_115: 10
-      STR_KILLPOINT_TOKEN: 60
-
-  - name: STR_DREAD3_ARMOR                          # Dread Lascannon + Missile (Formerly Missile)
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_MARINES_STRATEGY
-      - STR_LASER_CANNON # craft Lascannon
-      - STR_DREADNOUGHT_MARINE
-      - STR_NOT_PRIMARIS
-    space: 0
-    time: 1200
-    cost: 600000
-    requiredItems:
-      STR_ALIEN_ALLOYS: 40
-      STR_ELERIUM_115: 10
-      STR_KILLPOINT_TOKEN: 60
-
-  - name: STR_DREAD4_ARMOR                          # Dread Assault Cannon (Formerly Lascannon)
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_MARINES_STRATEGY
-      - STR_ASSC
-      - STR_DREADNOUGHT_MARINE
-      - STR_NOT_PRIMARIS
-    space: 0
-    time: 1200
-    cost: 600000
-    requiredItems:
-      STR_ALIEN_ALLOYS: 40
-      STR_ELERIUM_115: 10
-      STR_KILLPOINT_TOKEN: 60
-
-  - name: STR_MKX_APO_ARMOR                         # Primaris Apothecary
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_CHAPTER_PURITY
-      - STR_MEDI_KIT_PREREQ
-      - STR_PRIMARIS_AND_DEATHWATCH
-    space: 0
-    time: 800
-    cost: 22000
-    requiredItems:
-      STR_ALIEN_ALLOYS: 30
-      STR_KILLPOINT_TOKEN: 60
-
-  - name: STR_MKX_TEC_ARMOR                         # Primaris Techmarine
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_TEC_BAYR
-      - STR_PRIMARIS_AND_DEATHWATCH
-    space: 0
-    time: 800
-    cost: 50000
-    requiresBaseFunc: [TEC]
-    requiredItems:
-      STR_ALIEN_ALLOYS: 35 # was 30
-      STR_KILLPOINT_TOKEN: 60
-
-  - name: STR_MKX_PHB_ARMOR                         # Primaris Phobos
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_CHAPTER_PURITY
-      - STR_MKX_PHB_ARMOR
-      - STR_PRIMARIS_AND_DEATHWATCH
-    space: 0
-    time: 800
-    cost: 22000
-    requiredItems:
-      STR_ALIEN_ALLOYS: 15
-
-  - name: STR_MKX_GRV_ARMOR                         # Primaris Gravis
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_CHAPTER_PURITY
-      - STR_MKX_GRV_ARMOR
-      - STR_PRIMARIS_AND_DEATHWATCH
-    space: 0
-    time: 800
-    cost: 28000
-    requiresBaseFunc: [ARMO]
-    requiredItems:
-      STR_ALIEN_ALLOYS: 50
-      STR_KILLPOINT_TOKEN: 150 # was 30
-
-  - name: STR_MKX_INC_ARMOR                         # Primaris Omnis/Interceptor
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_CHAPTER_PURITY
-      - STR_MKX_INC_ARMOR
-      - STR_PRIMARIS_AND_DEATHWATCH
-    space: 0
-    time: 800
-    cost: 28000
-    requiresBaseFunc: [ARMO]
-    requiredItems:
-      STR_ALIEN_ALLOYS: 50
-      STR_KILLPOINT_TOKEN: 200 # was 30
-
-  - name: STR_MKX_LIB_ARMOR                         # Primaris Librarian
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_CHAPTER_PURITY
-      - STR_PRIMARIS
-      - STR_PRIMARIS_ARMOR
-      - STR_PSI_AMP
-    space: 0
-    time: 800
-    cost: 22000
-    requiresBaseFunc: [LIB]
-    requiredItems:
-      STR_ALIEN_ALLOYS: 120
-      STR_KILLPOINT_TOKEN: 60
-
-  - name: STR_MKX_CHP_ARMOR                         # Primaris Chaplain
-    category: STR_PERSONAL_ARMOR
-    requires:
-      - STR_CHAPTER_PURITY
-      - STR_PRIMARIS
-      - STR_MKX_CHP_ARMOR
-    space: 0
-    time: 800
-    cost: 22000
-    requiredItems:
-      STR_ALIEN_ALLOYS: 120
-      STR_KILLPOINT_TOKEN: 60
-
   - name: STR_HEAVY_BOLTER_MARS                     # Mars Heavy Bolter
     category: STR_WEAPON
     space: 0
@@ -767,6 +461,299 @@ manufacture:
       STR_ALIEN_ALLOYS: 2 # was 1
       STR_KILLPOINT_TOKEN: 80 # was 180
 
+  - name: STR_HWP_FUSION_BOMB                       # Dreadnought Hellfire Missiles
+    requires: !add
+      - STR_DREADNOUGHT_MARINE
+### ARMOR
+  - name: STR_SARGENT_ARMOR                         # Sergeant
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_SARGENT_ARMOR
+    space: 0
+    time: 800
+    cost: 60000 #was 30k
+    requiredItems:
+      STR_ALIEN_ALLOYS: 30
+      STR_KILLPOINT_TOKEN: 240
+  - name: STR_HONOR_ARMOR                           # Tact Honor
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_HONOR_ARMOR
+    space: 0
+    time: 800
+    cost: 40000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 250
+      STR_ALIEN_ALLOYS: 30
+      STR_UFO_CONSTRUCTION: 4
+  - name: STR_SCOUTH                                # Scout Honor
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_SCOUTH_RESEARCH
+    space: 0
+    time: 800
+    cost: 40000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 60
+      STR_ALIEN_ALLOYS: 15
+  - name: STR_SIGNAL_ARMOR                          # Dev Honor
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY #was missing
+      - STR_SIGNAL_ARMOR_RESEARCH
+    space: 0
+    time: 800
+    cost: 40000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 250
+      STR_ALIEN_ALLOYS: 30
+      STR_UFO_CONSTRUCTION: 4
+  - name: STR_ASS_ARMOR_HONOR                       # Assault Honor
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_HONOR_ARMOR_RESEARCH
+    space: 0
+    time: 800
+    cost: 40000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 250
+      STR_ALIEN_ALLOYS: 30
+      STR_UFO_CONSTRUCTION: 4
+  - name: STR_POWER_SUIT                            # Terminator
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_POWER_SUIT
+    space: 0
+    time: 4800 #was 800
+    cost: 80000 #was 20k
+    requiresBaseFunc: [ARMO]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 80 #was 75
+      STR_UFO_CONSTRUCTION: 10
+      STR_ELERIUM_115: 20
+      STR_KILLPOINT_TOKEN: 800 #was 60
+
+  - name: STR_CAPTAIN_SUIT                          # Terminator Captain
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_CAPTAIN_SUIT
+    space: 0
+    time: 4800 #was 5000
+    cost: 100000 #was 200k
+    requiresBaseFunc: [ARMO]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 80
+      STR_UFO_CONSTRUCTION: 10
+      STR_ELERIUM_115: 20
+      STR_KILLPOINT_TOKEN: 1000 #was 200
+
+  - name: STR_TATICAL_ARMOR                         # Tactical
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_PERSONAL_ARMOR
+    space: 0
+    time: 800
+    cost: 60000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 30
+
+  - name: STR_DEV_ARMOR                             # Devastator
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+      - STR_DEV_ARMOR
+    space: 0
+    time: 800
+    cost: 60000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 30
+
+  - name: STR_ASS_ARMOR                             # Assault
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+      - STR_ASS_ARMOR
+    space: 0
+    time: 800
+    cost: 60000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 30
+
+  - name: STR_APOT_ARMOR                            # Apothecary
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+      - STR_MEDI_KIT_PREREQ
+      - STR_NOT_PRIMARIS # SM Primaris don't get any regular marines anymore, this is useless for them
+    space: 0
+    time: 800
+    cost: 60000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 30 # was 25
+      STR_KILLPOINT_TOKEN: 60
+
+  - name: STR_TECH_ARMOR                            # Techmarine
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_TEC_BAYR
+      - STR_MARINES_AND_DEATHWATCH
+    space: 0
+    time: 800
+    cost: 60000 # was 30k
+    requiresBaseFunc: [TEC]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 35 # was 60
+      STR_KILLPOINT_TOKEN: 60
+
+  - name: STR_DREAD2_ARMOR                          # Dread Plasma
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_PLASMA_CANNON # craft Plasma cannon
+      - STR_DREADNOUGHT_MARINE
+      - STR_NOT_PRIMARIS
+    space: 0
+    time: 1200
+    cost: 600000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 40
+      STR_ELERIUM_115: 10
+      STR_KILLPOINT_TOKEN: 60
+
+  - name: STR_DREAD3_ARMOR                          # Dread Lascannon + Missile (Formerly Missile)
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_LASER_CANNON # craft Lascannon
+      - STR_DREADNOUGHT_MARINE
+      - STR_NOT_PRIMARIS
+    space: 0
+    time: 1200
+    cost: 600000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 40
+      STR_ELERIUM_115: 10
+      STR_KILLPOINT_TOKEN: 60
+
+  - name: STR_DREAD4_ARMOR                          # Dread Assault Cannon (Formerly Lascannon)
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_ASSC
+      - STR_DREADNOUGHT_MARINE
+      - STR_NOT_PRIMARIS
+    space: 0
+    time: 1200
+    cost: 600000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 40
+      STR_ELERIUM_115: 10
+      STR_KILLPOINT_TOKEN: 60
+
+  - name: STR_MKX_APO_ARMOR                         # Primaris Helix Adept
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_MEDI_KIT_PREREQ
+      - STR_PRIMARIS_AND_DEATHWATCH
+    space: 0
+    time: 800
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+      STR_ELERIUM_115: 10
+
+  - name: STR_MKX_TEC_ARMOR                         # Primaris Techmarine
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_TEC_BAYR
+      - STR_PRIMARIS_AND_DEATHWATCH
+    space: 0
+    time: 800
+    cost: 50000
+    requiresBaseFunc: [TEC]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 25 # was 30
+      STR_KILLPOINT_TOKEN: 60
+
+  - name: STR_MKX_PHB_ARMOR                         # Primaris Phobos
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_MKX_PHB_ARMOR
+      - STR_PRIMARIS_AND_DEATHWATCH
+    space: 0
+    time: 800
+    cost: 22000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 15
+
+  - name: STR_MKX_GRV_ARMOR                         # Primaris Gravis
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_MKX_GRV_ARMOR
+      - STR_PRIMARIS_AND_DEATHWATCH
+    space: 0
+    time: 800
+    cost: 28000
+    requiresBaseFunc: [ARMO]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 50
+      STR_KILLPOINT_TOKEN: 150 # was 30
+
+  - name: STR_MKX_INC_ARMOR                         # Primaris Omnis/Interceptor
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_MKX_INC_ARMOR
+      - STR_PRIMARIS_AND_DEATHWATCH
+    space: 0
+    time: 800
+    cost: 28000
+    requiresBaseFunc: [ARMO]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 50
+      STR_KILLPOINT_TOKEN: 200 # was 30
+
+  - name: STR_MKX_LIB_ARMOR                         # Primaris Librarian
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_PRIMARIS
+      - STR_PRIMARIS_ARMOR
+      - STR_PSI_AMP
+      - STR_GENERALLOCK
+    space: 0
+    time: 800
+    cost: 22000
+    requiresBaseFunc: [LIB]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 120
+      STR_KILLPOINT_TOKEN: 60
+
+  - name: STR_MKX_CHP_ARMOR                         # Primaris Chaplain
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_PRIMARIS
+      - STR_MKX_CHP_ARMOR
+      - STR_GENERALLOCK
+    space: 0
+    time: 800
+    cost: 22000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 120
+      STR_KILLPOINT_TOKEN: 60
+
+### OTHER
   - name: STR_SMT_GENESEED_REFINE                   # Geneseed refining recipe
     category: STR_GENESEED
     requires:
@@ -795,35 +782,6 @@ manufacture:
     producedItems:
       STR_SMT_GENESEED_IMPURE: 3
     listOrder: 4
-
-  - name: STR_PATCHMORAL                            # Tome of Morale
-    requires: # Tomes are Librarian exclusive now
-      - STR_GENERALLOCK
-
-  - name: STR_PATCHSMOKE                            # Tome of Smoke
-    requires: # Tomes are Librarian exclusive now
-      - STR_GENERALLOCK
-
-  - name: STR_PATCHSPEED                            # Tome of Speed
-    requires: # Tomes are Librarian exclusive now
-      - STR_GENERALLOCK
-
-  - name: STR_STORMHAWKS                            # Improved Stormhawk
-    requires:
-      - STR_STORMHAWKR
-    category: STR_CRAFT
-    space: 0
-    time: 800 # was 500
-    cost: 100
-    requiredItems:
-      STR_ALIEN_ALLOYS: 40 # was 20
-      STR_KILLPOINT_TOKEN: 50 # was 300
-      STR_STORMHAWK: 1
-
-  - name: STR_LASER_CANNON                          # Craft Lascannon
-    cost: 175000
-    requiredItems:
-      STR_ALIEN_ALLOYS: 30 # was 50
 
   # - name: STR_CRATED_DROPPODS                      # Unpackage Starter Droppods (not used)
     # category: STR_CRAFT
@@ -866,4 +824,100 @@ manufacture:
     producedItems:
       STR_SPEEDC: 1
     listOrder: 2 # Push it to the top
+  - name: STR_LASER_CANNON                          # Craft Lascannon
+    cost: 175000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 30 # was 50
+
+  - name: STR_STORMHAWKS                            # Improved Stormhawk
+    requires:
+      - STR_STORMHAWKR
+    category: STR_CRAFT
+    space: 0
+    time: 800 # was 500
+    cost: 100
+    requiredItems:
+      STR_ALIEN_ALLOYS: 40 # was 20
+      STR_KILLPOINT_TOKEN: 50 # was 300
+      STR_STORMHAWK: 1
+
+### REMOVAL
+  - name: STR_FLYING_SUIT                           # Terminator Assault
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_GENERALLOCK # Now an alt of regular Terminator armor, this shouldn't be used
+      #- STR_CHAPTER_PURITY
+      #- STR_PERSONAL_ARMOR
+      #- STR_FLYING_SUIT
+    space: 0
+    time: 4800
+    cost: 80000 #was 20k
+    requiresBaseFunc: [ARMO]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 80 #was 150
+      STR_UFO_CONSTRUCTION: 10
+      STR_ELERIUM_115: 20
+      STR_KILLPOINT_TOKEN: 800 #was 60
+
+  - name: STR_TSARGENT                              # Terminator Sergeant
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_GENERALLOCK # Now an alt of regular Terminator armor, this shouldn't be used
+
+  - name: STR_CHAP_ARMOR                            # Chaplain Armor
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_GENERALLOCK # Now default gear of Chaplain soldiers, this shouldn't be used
+
+  - name: STR_LIB_ARMOR                             # Librarian Armor
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_GENERALLOCK # Now default gear of Librarian soldiers, this shouldn't be used
+
+  - name: STR_PATCHMORAL                            # Tome of Morale
+    requires: # Tomes are Librarian exclusive now
+      - STR_GENERALLOCK
+
+  - name: STR_PATCHSMOKE                            # Tome of Smoke
+    requires: # Tomes are Librarian exclusive now
+      - STR_GENERALLOCK
+
+  - name: STR_PATCHSPEED                            # Tome of Speed
+    requires: # Tomes are Librarian exclusive now
+      - STR_GENERALLOCK
+
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_DRUM
+    space: 0
+    time: 100
+    cost: 10000
+    requires:
+      - STR_GENERALLOCK #disabled
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_AP_DRUM
+    space: 0
+    time: 100
+    requires:
+      - STR_GENERALLOCK #disabled
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_EX_DRUM
+    space: 0
+    time: 100
+    requires:
+      - STR_GENERALLOCK #disabled
+  - delete: STR_PRIMARIS_HEAVY_BOLT_RIFLE_MC_DRUM
+    space: 0
+    time: 100
+    requires:
+      - STR_GENERALLOCK #disabled
+
+  - delete: STR_PRIMARIS_VOLKITE_CHARGER
+    space: 0
+    time: 100
+    requires:
+      - STR_GENERALLOCK #disabled
+
+  - delete: STR_PRIMARIS_VOLKITE_CALIVER
+    space: 0
+    time: 100
+    requires:
+      - STR_GENERALLOCK #disabled
+
 

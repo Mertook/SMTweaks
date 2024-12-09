@@ -125,9 +125,67 @@ armors:
       F4: ["0", "TERMCYCMF", "F4_FACE"]
       F5: ["0", "TERMCYCMF", "F5_FACE"]
 
+  - type: STR_MKX_APO_UC_LV1        #PRIMARIS APOTHECARY LV1-2
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: APOTH
+    layersDefinition:
+      M0: ["0", "APOT1MF", "M0_FACE"]
+      M1: ["0", "APOT1MF", "M1_FACE"]
+      M2: ["0", "APOT1MF", "M2_FACE"]
+      M3: ["0", "APOT1MF", "M3_FACE"]
+      M4: ["0", "APOT1MF", "M4_FACE"]
+      M5: ["0", "APOT1MF", "M5_FACE"]
+      M6: ["0", "APOT1MF", "M6_FACE"]
+      F0: ["0", "APOT1MF", "M7_FACE"]
+      F1: ["0", "APOT1MF", "M8_FACE"]
+      F2: ["0", "APOT1MF", "M9_FACE"]
+      F3: ["0", "APOT1MF", "M10_FACE"]
+      F4: ["0", "APOT1MF", "M11_FACE"]
+      F5: ["0", "APOT1MF", "M12_FACE"]
+      F6: ["0", "APOT1MF", "M12_FACE"]
+
+  - type: STR_MKX_APO_UC_LV2        #PRIMARIS APOTHECARY LV3
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: APOTH
+    layersDefinition:
+      M0: ["0", "APOT2MF", "M0_FACE"]
+      M1: ["0", "APOT2MF", "M1_FACE"]
+      M2: ["0", "APOT2MF", "M2_FACE"]
+      M3: ["0", "APOT2MF", "M3_FACE"]
+      M4: ["0", "APOT2MF", "M4_FACE"]
+      M5: ["0", "APOT2MF", "M5_FACE"]
+      M6: ["0", "APOT2MF", "M6_FACE"]
+      F0: ["0", "APOT2MF", "M7_FACE"]
+      F1: ["0", "APOT2MF", "M8_FACE"]
+      F2: ["0", "APOT2MF", "M9_FACE"]
+      F3: ["0", "APOT2MF", "M10_FACE"]
+      F4: ["0", "APOT2MF", "M11_FACE"]
+      F5: ["0", "APOT2MF", "M12_FACE"]
+      F6: ["0", "APOT2MF", "M12_FACE"]
+
+  - type: STR_MKX_JUDICAR_UC        #PRIMARIS JUDICAR LV2
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: CHAP
+    layersDefinition:
+      M0: ["0", "JUDICARMF", "M0_FACE"]
+      M1: ["0", "JUDICARMF", "M1_FACE"]
+      M2: ["0", "JUDICARMF", "M2_FACE"]
+      M3: ["0", "JUDICARMF", "M3_FACE"]
+      M4: ["0", "JUDICARMF", "M4_FACE"]
+      M5: ["0", "JUDICARMF", "M5_FACE"]
+      M6: ["0", "JUDICARMF", "M6_FACE"]
+      F0: ["0", "JUDICARMF", "M7_FACE"]
+      F1: ["0", "JUDICARMF", "M8_FACE"]
+      F2: ["0", "JUDICARMF", "M9_FACE"]
+      F3: ["0", "JUDICARMF", "M10_FACE"]
+      F4: ["0", "JUDICARMF", "M11_FACE"]
+      F5: ["0", "JUDICARMF", "M12_FACE"]
+      F6: ["0", "JUDICARMF", "M12_FACE"]
 
 extraSprites:
-
 ###Item BigOBs
   - type: BIGOBS.PCK
     files:
@@ -375,6 +433,39 @@ extraSprites:
     subY: 40
     files:
       0: Resources/UNITS/CYCLONE/TERMCYCLONE-SPRITE.png
+
+###Primaris Apothecary
+  - typeSingle: APOTH__1__APOT1MF
+    fileSingle: Resources/UNITS/PRIMA/APOTH/APOTH_I_LV1.png
+  - type: APOTHLV1.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/PRIMA/APOTH/APOTH_S_LV1.png
+
+  - typeSingle: APOTH__1__APOT2MF
+    fileSingle: Resources/UNITS/PRIMA/APOTH/APOTH_I_LV2.png
+  - type: APOTHLV2.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/PRIMA/APOTH/APOTH_S_LV2.png
+
+###Primaris Judicar
+  - typeSingle: CHAP__1__JUDICARMF
+    fileSingle: Resources/UNITS/PRIMA/CHAP/MKXCHP_I_LV1.png
+  - type: JUDICAR.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/PRIMA/CHAP/MKXCHP_S_LV1.png
+
 
 ###DW Captain (regular)
   - type: DWCAPTAIN.PCK

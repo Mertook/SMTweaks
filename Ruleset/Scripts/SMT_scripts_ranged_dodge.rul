@@ -21,7 +21,7 @@ armors:
   - &STR_DODGE_ARMOR # Template
     tags:
       DODGE_CHANCE: 0
-      FLIGHT_DODGE_CHANCE: 25 #Same as other copy of Vanguard Armor
+      FLIGHT_DODGE_CHANCE: 25
       ARMOR_MAX_SUCCESSFUL_DODGES: 2
     scripts:
       newTurnUnit: |
@@ -218,6 +218,22 @@ armors:
     tags:
       FLIGHT_DODGE_CHANCE: 25 #Same as other copy of Vanguard Armor
       ARMOR_MAX_SUCCESSFUL_DODGES: 2
+
+###PRIMARIS (tags defined in SMT_armor.rul)
+  - type: STR_MKX_PHB_LV1_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_PHB_LV2_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_PHB_LV3_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_PHB_LV4_UC
+    refNode: *STR_DODGE_ARMOR
+
+  - type: STR_MKX_PHB_LV5_UC
+    refNode: *STR_DODGE_ARMOR
 
 ###DEATHWATCH (tags defined in DW_armor.rul)
   - type: STR_MKX_DW_PHB_BA_UC

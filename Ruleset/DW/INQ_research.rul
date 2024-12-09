@@ -22,7 +22,6 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_MARINES_STRATEGY
       - STR_IMPERIAL_GUARD_OPERATIONS
       - STR_ADEPTAS
-      - STR_DEFENSE_CORRIDORBR
       - STR_GUARD_SUPORT
 
   - name: STR_INQUISITION                   # lock generic Chamber Militant things behind picking a strategy
@@ -46,15 +45,12 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
 
   - name: STR_RADICAL_INQUISITOR_STRATEGY
     cost: 5 # was 100 - is now starting strategy
-    points: 0 # was -1000 - bonus for picking as starting strat
+    points: 0 # was -1000
     dependencies:
       - STR_CHAMBERMILITANT
     lookup: STR_CHOSEN_DEATHWATCH ###CHANGEME
     unlocks:
       - STR_CORVUS_RESEARCH
-      - STR_LASER_WEAPONS
-      - STR_MOTION_SCANNER
-      - STR_MEDI_KIT_PREREQ
       - STR_RADICAL_INQUISITOR
       - STR_INQUISITION
       - STR_NOT_DEATHWATCH
@@ -84,6 +80,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_RADICAL_INQUISITOR_STRATEGY
       - STR_HERETICAL_INQUISITOR_STRATEGY # Radical Road Exclusive
       - STR_XENO_WEAPONS
+      - STR_DEFENSE_CORRIDORBR
     spawnedEvent: STR_REINFORCEMENTS_GK
 
   - name: STR_MT_GK                         # GK and RR Midtier
@@ -246,6 +243,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_GREYKNIGHTS
       - STR_APOC_BAY
 
+
   - name: STR_INQ_TROOP_REQS                # Tech to start Inquisition troop recruitment events
     cost: 150
     points: 15
@@ -272,9 +270,9 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_INQUISITION
       - STR_MIDTIER_PREREQ
       - STR_INQ_ASSASSIN_RECRUITMENT
-    listOrder: 10 # push above corpses/etc
-    getOneFree:
+    unlocks:
       - STR_VINDICARE_AMMO_REQ
+    listOrder: 10 # push above corpses/etc
 
   - name: STR_SUMMON_IMPERIAL_AGENTS_RESEARCH #also triggers a eventscript that sends monthly random agents
     cost: 150 # was 500

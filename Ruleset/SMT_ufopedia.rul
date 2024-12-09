@@ -434,7 +434,7 @@ ufopaedia:
 
   - id: STR_BOLT_SNIPER_RIFLE               # Bolt Rifle Sniper (Scout Strat)
     requires:
-      - STR_SCOUT
+      - STR_SCOUT_BOLT_RIFLE
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: orksnipercodex.SPK
@@ -983,7 +983,7 @@ extraStrings:
       STR_GRENADE_LAUNCHER_ASTARTES_UFOPEDIA: "{NEWLINE} The Astartes Grenade Launcher serves the role of a launcher weapon that can be used and carried by Scouts-in-training. They are fired in arcing shots designed to clear obstructions and strike farther into an enemy formation as well as simply being fired directly at foes. This Grenade Launcher holds a magazine of six grenades and is burst fire capable."
       STR_LIGHT_BOLTPISTOL_UFOPEDIA: "{NEWLINE} Light Boltpistols are often used by Neophytes, Sisters of Battle and Guardsmen Officers, providing a powerful one-handed option without the boneshattering recoil of Astartes Boltpistols.{NEWLINE}{NEWLINE} Recoil: {ALT}16"
       STR_LIGHT_BOLTERS_UFOPEDIA: "{NEWLINE} 'Light' Bolters are designed for Scouts-in-training who can't yet handle standard Space Marine bolters. They fire smaller rounds and have a lower rate of fire, reducing the fearsome recoil down to a more manageable level.{NEWLINE}{NEWLINE} Recoil: {ALT}25"
-      STR_ROCKET_LAUNCHER_UFOPEDIA: "{NEWLINE} The Soundstrike-pattern Missile Launcher used by Adeptus Astartes features an autoloader and can be quickly readied to fire on the move by Devastator Marines, though its weight makes this impractical for regular soldiers.{NEWLINE}{NEWLINE} Recoil: {ALT}50{ALT} - {ALT}Heavy Weapon"
+      STR_ROCKET_LAUNCHER_UFOPEDIA: "{NEWLINE} The Soundstrike-pattern Missile Launcher used by Adeptus Astartes features an autoloader and can be quickly readied to fire on the move by Devastator Marines, though its weight makes this impractical for regular soldiers.{NEWLINE}{NEWLINE} Recoil: {ALT}40{ALT} - {ALT}Heavy Weapon"
       STR_BOLTER_DOMINION_UFOPEDIA: "{NEWLINE} The Dominion Pattern Bolter is a Adeptas Sororitas requested design for their elite forces, capable of using Astartes calibre ammunition it is a heavier Bolter Rifle design, which only the strongest Sisters are chosen to wield. {NEWLINE}{NEWLINE}Recoil: {ALT}60"
       STR_MC_BOLTPISTOL_DEAZ_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}16"
       STR_MCPISTOL_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}40"
@@ -1029,6 +1029,7 @@ extraStrings:
       STR_BOLTER_HEAVY_SOLAR_CODEX: "{NEWLINE} An ancient design produced in select manufactorums, the Solar-pattern heavy bolter is as hotly sought after as it is temperamental. The additional litanies required to calm its machine spirit, as well as the lack of a handle, mean only the strongest soldiers can fire it without first bracing it. {NEWLINE} Recoil: {ALT}90{ALT} - Attached Bipod"
       STR_VOLKITE_RIFLE_UFOPEDIA: "{NEWLINE} Volkite weapons deflagrate organic matter, explosively burning flesh into ash and jetting fire. They penetrate through armor, causing horrific damage."
       ### CRAFT
+      STR_SPEED_UFOPEDIA: "{NEWLINE} The Land Speeder is a light anti-gravity vehicle which serves as the primary reconnaissance and fast attack vehicle of the Adeptus Astartes.{NEWLINE}{NEWLINE} Capacity: 12 Soldiers plus 8 Vehicle slots"
       ### SOLDIERS
       ### SKILLS
       ### TRANSFORMATIONS

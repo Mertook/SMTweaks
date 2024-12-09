@@ -511,6 +511,7 @@ armors:
     antiCamouflageAtDay: 9 # +1 over regular Terminators - DW bonus
     antiCamouflageAtDark: 9 # +1 over regular Terminators - DW bonus
     loftempsSet: [ 4 ]
+    forcedTorso: 1
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -614,6 +615,7 @@ armors:
     antiCamouflageAtDay: 9 # +1 over regular Terminators - DW bonus
     antiCamouflageAtDark: 9 # +1 over regular Terminators - DW bonus
     loftempsSet: [ 4 ]
+    forcedTorso: 1
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
     requires: STR_FLYING_SUIT
     psiDefence:
@@ -719,6 +721,7 @@ armors:
     antiCamouflageAtDay: 9 # +1 over regular Terminators - DW bonus
     antiCamouflageAtDark: 9 # +1 over regular Terminators - DW bonus
     loftempsSet: [ 4 ]
+    forcedTorso: 1
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
     requires: STR_FLYING_SUIT
     psiDefence:
@@ -993,6 +996,7 @@ armors:
     antiCamouflageAtDay: 9 # +1 over regular Terminators - DW bonus
     antiCamouflageAtDark: 9 # +1 over regular Terminators - DW bonus
     loftempsSet: [ 4 ]
+    forcedTorso: 1
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
     requires: STR_TSARGENT
     psiDefence:
@@ -1577,9 +1581,9 @@ armors:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
       moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
-    frontArmor: 110 # base 125
-    sideArmor: 100 # base 120
-    rearArmor: 95 # base 100
+    frontArmor: 100 # base 125
+    sideArmor: 95 # base 120
+    rearArmor: 90 # base 100
     underArmor: 100 # base 125
     stats: # Scout/Tac hybrid gear
       tu: 30            # base 10 +20
@@ -1611,7 +1615,7 @@ armors:
       - 0.9 #MELTA
     builtInWeapons: [] # remove backpack blocker
     moveCost:
-      basePercent: [100, 75] # Phobos bonus
+      basePercent: [100, 75] # Reduced energy cost - Phobos bonus
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
@@ -1623,6 +1627,7 @@ armors:
       UNIT_TYPE_LIVING: 1
       DODGE_CHANCE: 20
       ARMOR_MAX_SUCCESSFUL_DODGES: 1
+      ARMOR_IS_INFILTRATOR: 2 #2 turns to infiltrate
 
   - type: STR_MKX_DW_PHB_BA_UC
     refNode: *STR_DW_PHB_MKX
@@ -1676,8 +1681,9 @@ armors:
     antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
     antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
+    forcedTorso: 1
     corpseBattle:
-      - STR_MKX_GRV_CORPSE
+      - STR_MKX_DW_GRV_CORPSE
     storeItem: STR_MKX_GRV_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
@@ -1690,7 +1696,7 @@ armors:
     underArmor: 140
     stats:
       tu: 5             # base 10 -5
-      stamina: 20       # base 20
+      stamina: 10       # base 20
       health: 20        # base 20
       bravery: 10       # base 10
       reactions: -10    # base -10
@@ -1953,8 +1959,9 @@ armors:
     antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
     antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
+    forcedTorso: 1
     corpseBattle:
-      - STR_MKX_GRV_CORPSE
+      - STR_MKX_DW_GRV_CORPSE
     storeItem: STR_MKX_GRV_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
@@ -1967,7 +1974,7 @@ armors:
     underArmor: 140
     stats:
       tu: 5             # base 10 -5
-      stamina: 20       # base 20
+      stamina: 10       # base 20
       health: 20        # base 20
       bravery: 10       # base 10
       reactions: -10    # base -10
@@ -2231,8 +2238,9 @@ armors:
     antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
     antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
+    forcedTorso: 1
     corpseBattle:
-      - STR_MKX_GRV_CORPSE
+      - STR_MKX_DW_GRV_CORPSE
     storeItem: STR_MKX_GRV_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
@@ -2245,7 +2253,7 @@ armors:
     underArmor: 140
     stats:
       tu: 5             # base 10 -5
-      stamina: 20       # base 20
+      stamina: 10       # base 20
       health: 20        # base 20
       bravery: 10       # base 10
       reactions: -10    # base -10
@@ -2518,8 +2526,9 @@ armors:
     antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
     antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
+    forcedTorso: 1
     corpseBattle:
-      - STR_MKX_GRV_CORPSE
+      - STR_MKX_DW_GRV_CORPSE
     storeItem: STR_MKX_GRV_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
@@ -2532,7 +2541,7 @@ armors:
     underArmor: 140
     stats:
       tu: 5             # base 10 -5
-      stamina: 20       # base 20
+      stamina: 10       # base 20
       health: 20        # base 20
       bravery: 10       # base 10
       reactions: -10    # base -10
@@ -2805,6 +2814,9 @@ armors:
     antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
     antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
+    forcedTorso: 1
+    corpseBattle:
+      - STR_MKX_DW_INC_CORPSE
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -2927,8 +2939,9 @@ armors:
     antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
     antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
+    forcedTorso: 1
     corpseBattle:
-      - STR_MKX_INC_CORPSE
+      - STR_MKX_DW_INC_CORPSE
     storeItem: STR_MKX_INC_ARMOR
     requires: STR_ASSC # uses assault cannon ammo
     corpseGeo: STR_FALLEN_CORPSE
@@ -3219,9 +3232,10 @@ armors:
     antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
     antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
+    forcedTorso: 1
     ufopediaType: STR_MKX_INC_LV1_UC
     corpseBattle:
-      - STR_MKX_INC_CORPSE
+      - STR_MKX_DW_INC_CORPSE
     storeItem: STR_MKX_INC_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
@@ -3512,6 +3526,7 @@ armors:
     antiCamouflageAtDay: 10 # +3 over regular Officers - DW bonus + leader bonus
     antiCamouflageAtDark: 10 # +3 over regular Officers - DW bonus + leader bonus
     loftempsSet: [ 3 ]
+    forcedTorso: 1
     spriteSheet: DWCAPTAIN.PCK
     customArmorPreviewIndex: {mod: 40k, index: 507}
     corpseBattle:

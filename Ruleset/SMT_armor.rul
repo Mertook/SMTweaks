@@ -1,10 +1,11 @@
 armors:
+### FIRSTBORN
   - &STR_MARINE_ARMOR                       #ARMOR TEMPLATE
     visibilityAtDay: 40
     visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
     heatVision: 20 #Add anti-smoke vision to all marine armour
-    antiCamouflageAtDay: 6
-    antiCamouflageAtDark: 6
+    antiCamouflageAtDay: 8
+    antiCamouflageAtDark: 8
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -41,14 +42,16 @@ armors:
       - 1.0 #MELTA
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
 
   - &STR_MARINE_OFFICER_ARMOR               #SPECIALIST TEMPLATE
     update: STR_SIGNALFALSE_ARMOR_UC
     visibilityAtDay: 40
     visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
     heatVision: 20 #Add anti-smoke vision to all marine armour
-    antiCamouflageAtDay: 7 # slight officer bonus
-    antiCamouflageAtDark: 7
+    antiCamouflageAtDay: 9 # slight officer bonus
+    antiCamouflageAtDark: 9
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -73,6 +76,8 @@ armors:
       - 0.9 #MELTA
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
 
   - update: STR_SCOUT_UC                    #SCOUT
     visibilityAtDay: 40
@@ -188,8 +193,8 @@ armors:
     refNode: *STR_MARINE_OFFICER_ARMOR
     visibilityAtDark: 40 # signum equipment provides advanced vision
     heatVision: 50 # techmarines get advanced sensors
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10 # techmarines get advanced sensors
+    antiCamouflageAtDay: 16
+    antiCamouflageAtDark: 16 # techmarines get advanced sensors
     frontArmor: 125 # base 125
     sideArmor: 120 # base 120
     rearArmor: 100 # base 100
@@ -318,9 +323,9 @@ armors:
   - update: STR_SIGNAL_ARMOR_UC             #DEVASTATOR HONOR (Signum)
     refNode: *STR_MARINE_OFFICER_ARMOR
     visibilityAtDark: 40 # signum equipment provides advanced vision
-    heatVision: 40 # signum equipment provides advanced vision
-    antiCamouflageAtDay: 12 # signum equipment provides strong detection
-    antiCamouflageAtDark: 12
+    heatVision: 30 # signum equipment provides advanced vision
+    antiCamouflageAtDay: 14 # signum equipment provides strong detection
+    antiCamouflageAtDark: 14
     spriteSheet: DEVH.PCK
     frontArmor: 125 # base 125
     sideArmor: 120 # base 120
@@ -345,9 +350,9 @@ armors:
   - update: STR_SIGNALFALSE_ARMOR_UC        #DEVASTATOR HONOR (Signum - 2nd copy used in base missions)
     refNode: *STR_MARINE_OFFICER_ARMOR
     visibilityAtDark: 40 # signum equipment provides advanced vision
-    heatVision: 40 # signum equipment provides advanced vision
-    antiCamouflageAtDay: 12 # signum equipment provides strong detection
-    antiCamouflageAtDark: 12
+    heatVision: 30 # signum equipment provides advanced vision
+    antiCamouflageAtDay: 14 # signum equipment provides strong detection
+    antiCamouflageAtDark: 14
     spriteSheet: DEVH.PCK
     frontArmor: 125 # base 125
     sideArmor: 120 # base 120
@@ -407,6 +412,8 @@ armors:
       - STR_SOLDIER_TERMINATOR
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
 
 
   - update: STR_SCOUTHW_UC                  #SCOUT HONOR WHITE
@@ -428,8 +435,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Terminators get full nightvision
     heatVision: 30 # Terminators get better sensors
-    antiCamouflageAtDay: 8
-    antiCamouflageAtDark: 8
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -470,7 +477,8 @@ armors:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
       ARMOR_ENERGY_SHIELD_DECAY: 50
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 75
+      INFECTION_RESIST: 75
       SMT_ARMOR_REGEN_HP: 4
       ARMOR_REGENERATES_WOUNDS: 1
 
@@ -698,8 +706,8 @@ armors:
     storeItem: STR_NONE # Default to Librarians
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS # doesn't get confuse anymore, just regular punch
     heatVision: 33 # psyker powers aid detection
-    antiCamouflageAtDay: 10 # psyker powers aid detection
-    antiCamouflageAtDark: 10
+    antiCamouflageAtDay: 12 # psyker powers aid detection
+    antiCamouflageAtDark: 12
     frontArmor: 125 # base 125
     sideArmor: 120 # base 120
     rearArmor: 100 # base 100
@@ -747,8 +755,8 @@ armors:
       - STR_LIB_CORPSE
     storeItem: STR_POWER_SUIT
     corpseGeo: STR_FALLEN_CORPSE
-    antiCamouflageAtDay: 10 # psyker powers aid detection
-    antiCamouflageAtDark: 10
+    antiCamouflageAtDay: 12 # psyker powers aid detection
+    antiCamouflageAtDark: 12
     heatVision: 40 # psyker powers + terminator bonus
     stats:
       tu: 10            # base 10
@@ -790,8 +798,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
     heatVision: 20 #Add anti-smoke vision to all marine armour
-    antiCamouflageAtDay: 6 # advanced senses and inbuilt armor sensors
-    antiCamouflageAtDark: 6
+    antiCamouflageAtDay: 8 # advanced senses and inbuilt armor sensors
+    antiCamouflageAtDark: 8
     frontArmor: 150 # base 125 +25 Bike     - was 160
     sideArmor: 140  # base 125 +15 Bike     - was 150
     rearArmor: 100  # base 100              - was 85
@@ -837,13 +845,15 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       UNIT_TYPE_LIVING: 1 # allow Inspire
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
 
   - &STR_DREADNOUGHT_ARMOR                  #DREAD ARMOR TEMPLATE
     visibilityAtDay: 40
     visibilityAtDark: 40
     heatVision: 40 # Vehicle sensors
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
     frontArmor: 200 # was 240
     sideArmor: 190 # was 230
     rearArmor: 180 # was 180
@@ -932,6 +942,690 @@ armors:
   - update: DREAD_ARMOR5_UC                 #DREAD ARMOR VENERABLE
     refNode: *STR_DREADNOUGHT_ARMOR
 
+### PRIMARIS
+  - &STR_MKX_TAC_UC                         #TACTICAL
+    visibilityAtDay: 40
+    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
+    heatVision: 20 #Add anti-smoke vision to all marine armour
+    antiCamouflageAtDay: 8
+    antiCamouflageAtDark: 8
+    frontArmor: 125
+    sideArmor: 120
+    rearArmor: 100
+    underArmor: 125
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.6 #FLAMES
+      - 0.7 #HE
+      - 0.8 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.8 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.5 #discipline and resolve reinforces their faith
+    stats:
+      tu: 20            # base 20 
+      stamina: 15       # base 15 
+      health: 10        # base 10 
+      bravery: 10       # base 10 
+      reactions: 10     # base 10 
+      firing: 10        # base 10 
+      throwing: 10      # base 10 
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
+    builtInWeapons:
+      - INV_NULL_3X1_BACKPACK
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 35
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+
+  - type: STR_MKX_TAC_LV1_UC
+    refNode: *STR_MKX_TAC_UC
+
+  - type: STR_MKX_TAC_LV2_UC
+    refNode: *STR_MKX_TAC_UC
+
+  - type: STR_MKX_TAC_LV3_UC
+    refNode: *STR_MKX_TAC_UC
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+
+  - type: STR_MKX_TAC_LV4_UC
+    refNode: *STR_MKX_TAC_UC
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    stats:
+      tu: 20            # base 20 
+      stamina: 20       # base 15 
+      health: 15        # base 10 
+      bravery: 10       # base 10 
+      reactions: 15     # base 10 
+      firing: 15        # base 10 
+      throwing: 15      # base 10 
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 15         # base 10 
+
+  - type: STR_MKX_TAC_LV5_UC
+    refNode: *STR_MKX_TAC_UC
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    frontArmor: 130
+    sideArmor: 125
+    rearArmor: 105
+    underArmor: 130
+    stats:
+      tu: 25            # base 20 
+      stamina: 25       # base 15 
+      health: 25        # base 10 
+      bravery: 10       # base 10 
+      reactions: 20     # base 10 
+      firing: 20        # base 10 
+      throwing: 20      # base 10 
+      strength: 15      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 20         # base 10 
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 45
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 30
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+
+  - &STR_MKX_PHB_UC
+    visibilityAtDay: 40
+    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
+    heatVision: 20 #Add anti-smoke vision to all marine armour
+    antiCamouflageAtDay: 10 # recon bonus
+    antiCamouflageAtDark: 10 # recon bonus
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 100 # base 125
+    sideArmor: 95 # base 120
+    rearArmor: 90 # base 100
+    underArmor: 100 # base 125
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.6 #FLAMES
+      - 0.8 #HE ( -0.1, light armor)
+      - 0.8 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.8 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+    loftempsSet: [ 3 ]
+    builtInWeapons: [] # remove backpack blocker
+    moveCost:
+      basePercent: [100, 75] # Reduced energy cost - Phobos bonus
+    stats:
+      tu: 25            # base 25 
+      stamina: 20       # base 20 
+      health: 5         # base 5  
+      bravery: 10       # base 10 
+      reactions: 20     # base 20 
+      firing: 5         # base 5  
+      throwing: 10      # base 10 
+      strength: 5       # base 5  
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 20         # base 20 
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 30
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 15
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
+      DODGE_CHANCE: 20
+      ARMOR_MAX_SUCCESSFUL_DODGES: 1
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+
+  - type: STR_MKX_PHB_LV1_UC
+    refNode: *STR_MKX_PHB_UC
+
+  - type: STR_MKX_PHB_LV2_UC
+    refNode: *STR_MKX_PHB_UC
+    spriteSheet: PRIMPHBLV2.PCK # was mistakenly set to lv1 in 40k mod
+
+  - type: STR_MKX_PHB_LV3_UC
+    refNode: *STR_MKX_PHB_UC
+
+  - type: STR_MKX_PHB_LV4_UC
+    refNode: *STR_MKX_PHB_UC
+    stats:
+      tu: 25            # base 25 
+      stamina: 25       # base 20 
+      health: 10        # base 5  
+      bravery: 10       # base 10 
+      reactions: 25     # base 20 
+      firing: 5         # base 5  
+      throwing: 10      # base 10 
+      strength: 5       # base 5  
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 30         # base 20 
+
+  - type: STR_MKX_PHB_LV5_UC
+    refNode: *STR_MKX_PHB_UC
+    stats:
+      tu: 35            # base 25 
+      stamina: 25       # base 20 
+      health: 20        # base 5  
+      bravery: 10       # base 10 
+      reactions: 30     # base 20 
+      firing: 5         # base 5  
+      throwing: 10      # base 10 
+      strength: 5       # base 5  
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 35         # base 20 
+    tags:
+      DODGE_CHANCE: 30
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      ARMOR_IS_INFILTRATOR: 2 #2 turns to infiltrate
+
+  - &STR_MKX_GRV_UC
+    # selectUnitMale:     [511, 512, 513, 514, 515]
+    # selectUnitFemale:   [511, 512, 513, 514, 515]
+    # startMovingMale:    [506, 507, 508, 509, 510]
+    # startMovingFemale:  [506, 507, 508, 509, 510]
+    # selectWeaponMale:   [501, 502, 503, 504, 505]
+    # selectWeaponFemale: [501, 502, 503, 504, 505]
+    # annoyedMale:        [516, 517, 518, 519, 520]
+    # annoyedFemale:      [516, 517, 518, 519, 520]
+    # deathMale:     [380, 381, 382, 383, 384]
+    # deathFemale:   [380, 381, 382, 383, 384]
+    ufopediaType: STR_MKX_GRV_LV1_UC
+    visibilityAtDay: 40
+    visibilityAtDark: 30
+    corpseBattle:
+      - STR_MKX_GRV_CORPSE
+    storeItem: STR_MKX_GRV_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    loftempsSet: [ 3 ]
+    forcedTorso: 1
+    frontArmor: 140
+    sideArmor: 135
+    rearArmor: 115
+    underArmor: 140
+    damageModifier:
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.6 #FLAMES
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    stats:
+      tu: 0             # base 0
+      stamina: -10      # base -10
+      health: 20        # base 20
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 15        # base 15
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - type: STR_MKX_GRV_LV1_UC
+    spriteSheet: PRIMGRVLV1.PCK
+    units:
+      - STR_PRIMARISLV1
+    specialWeapon: STR_MFIST
+    builtInWeapons:
+      - STR_GRAV_BOLTER
+      - STR_GRAV_BOLTER
+      - INV_NULL_3X3
+
+  - type: STR_MKX_GRV_LV2_UC
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: PRIMGRVLV2.PCK
+    units:
+      - STR_PRIMARISLV2
+    builtInWeapons:
+      - STR_GRAV_FLAMER
+      - STR_GRAV_FLAMER
+      - INV_NULL_3X3
+    specialWeapon: STR_MFIST
+
+  - type: STR_MKX_GRV_LV3_UC
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: PRIMGRVLV3.PCK
+    units:
+      - STR_PRIMARISLV3
+    stats:
+      tu: 5             # base 0
+      stamina: -5       # base -10
+      health: 20        # base 20
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 15        # base 15
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    specialWeapon: STR_MFIST
+    builtInWeapons:
+      - STR_GRAV_AUTOC
+      - STR_GRAV_AUTOC
+      - INV_NULL_3X3
+
+  - type: STR_MKX_GRV_LV4_UC
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: PRIMGRVLV4.PCK
+    units:
+      - STR_PRIMARISLV4
+    stats:
+      tu: 10            # base 0
+      stamina: 5        # base -10
+      health: 25        # base 20
+      bravery: 10       # base 10
+      reactions: -5     # base -10
+      firing: 15        # base 15
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    specialWeapon: AUX_MORTAR
+    builtInWeapons:
+      - STR_GRAV_AUTOC
+      - STR_GRAV_AUTOC
+      - INV_NULL_3X3
+
+  - type: STR_MKX_GRV_LV5_UC
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: PRIMGRVLV5.PCK
+    units:
+      - STR_PRIMARISLV5
+    stats:
+      tu: 15            # base 0
+      stamina: 10       # base -10
+      health: 30        # base 20
+      bravery: 10       # base 10
+      reactions: 5      # base -10
+      firing: 20        # base 15
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 20         # base 10
+    specialWeapon: STR_MFIST
+    builtInWeapons:
+      - STR_GRAV_BOLTER
+      - INV_NULL_3X3
+
+  - &STR_MKX_APO
+    selectUnitMale:     [{mod: 40k, index: 1276}, {mod: 40k, index: 1277}, {mod: 40k, index: 1278}, {mod: 40k, index: 1279}, {mod: 40k, index: 1280}]
+    selectUnitFemale:   [{mod: 40k, index: 1276}, {mod: 40k, index: 1277}, {mod: 40k, index: 1278}, {mod: 40k, index: 1279}, {mod: 40k, index: 1280}]
+    startMovingMale:    [{mod: 40k, index: 1271}, {mod: 40k, index: 1272}, {mod: 40k, index: 1273}, {mod: 40k, index: 1274}, {mod: 40k, index: 1275}]
+    startMovingFemale:  [{mod: 40k, index: 1271}, {mod: 40k, index: 1272}, {mod: 40k, index: 1273}, {mod: 40k, index: 1274}, {mod: 40k, index: 1275}]
+    selectWeaponMale:   [{mod: 40k, index: 1266}, {mod: 40k, index: 1267}, {mod: 40k, index: 1268}, {mod: 40k, index: 1269}, {mod: 40k, index: 1270}]
+    selectWeaponFemale: [{mod: 40k, index: 1266}, {mod: 40k, index: 1267}, {mod: 40k, index: 1268}, {mod: 40k, index: 1269}, {mod: 40k, index: 1270}]
+    annoyedMale:        [{mod: 40k, index: 1281}, {mod: 40k, index: 1282}, {mod: 40k, index: 1283}, {mod: 40k, index: 1284}, {mod: 40k, index: 1285}]
+    annoyedFemale:      [{mod: 40k, index: 1281}, {mod: 40k, index: 1282}, {mod: 40k, index: 1283}, {mod: 40k, index: 1284}, {mod: 40k, index: 1285}]
+    deathMale:     [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
+    deathFemale:   [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
+    spriteSheet: PRIMAPO.PCK
+    ufopediaType: STR_MKX_APO_UC
+    visibilityAtDay: 40
+    visibilityAtDark: 30
+    corpseBattle:
+      - STR_MKX_APO_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 290}
+    loftempsSet: [ 3 ]
+    forcedTorso: 1
+    visibilityAtDay: 40
+    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
+    heatVision: 20 #Add anti-smoke vision to all marine armour
+    antiCamouflageAtDay: 8
+    antiCamouflageAtDark: 8
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.5 #discipline and resolve reinforces their faith
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats: # No values inherited from this, defined in each armor
+      tu: 0             # base 10 
+      stamina: 0        # base 20 
+      health: 0         # base 10 
+      bravery: 0        # base 0  
+      reactions: 0      # base 10 
+      firing: 0         # base 0  
+      throwing: 0       # base 5  
+      strength: 0       # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 0          # base 10 
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.6 #FLAMES - was 0.8
+      - 0.7 #HE
+      - 0.8 #LASCANON
+      - 1.0 #PLASMA - was 1.1
+      - 1.0 #STUN - was 1.1
+      - 1.0 #MELEE - was 1.1
+      - 0.8 #ACID - was 1.0
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+    units:
+      - STR_PRIMARISLV1
+      - STR_PRIMARISLV2
+    specialWeapon: STR_SM_APOTH_FIST
+    builtInWeapons:
+      - INV_NULL_3X3
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_REGEN_HP: 2
+      ARMOR_REGENERATES_WOUNDS: 1
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - type: STR_MKX_APO_UC_LV1
+    refNode: *STR_MKX_APO
+    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 270}
+    spriteSheet: APOTHLV1.PCK
+    storeItem: STR_MKX_APO_ARMOR
+    stats:
+      tu: 0             # base 10 
+      stamina: 10       # base 20 
+      health: 20        # base 10 
+      bravery: 0        # base 0  
+      reactions: 0      # base 10 
+      firing: -10       # base 0  
+      throwing: 0       # base 5  
+      strength: 0       # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
+    units:
+      - STR_PRIMARISLV1
+      - STR_PRIMARISLV2
+    specialWeapon: STR_SM_APOTH_FIST
+
+  - type: STR_MKX_APO_UC_LV2
+    refNode: *STR_MKX_APO
+    spriteSheet: APOTHLV2.PCK
+    stats:
+      tu: 5             # base 10 
+      stamina: 10       # base 20 
+      health: 30        # base 10 
+      bravery: 0        # base 0  
+      reactions: 0      # base 10 
+      firing: -5        # base 0  
+      throwing: 0       # base 5  
+      strength: 0       # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 15         # base 10 
+    units:
+      - STR_PRIMARIS_APOTH
+    specialWeapon: STR_SM_APOTH_FIST_LV2
+    tags:
+      SMT_ARMOR_REGEN_HP: 3
+      ARMOR_REGENERATES_WOUNDS: 1
+      INFECTION_RESIST: 66
+
+  - type: STR_MKX_APO_UC
+    refNode: *STR_MKX_APO
+    storeItem: STR_NONE
+    stats:
+      tu: 10            # base 10 
+      stamina: 10       # base 20 
+      health: 40        # base 10 
+      bravery: 0        # base 0  
+      reactions: 0      # base 10 
+      firing: 5         # base 0  
+      throwing: 0       # base 5  
+      strength: 0       # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 20         # base 10 
+    units:
+      - STR_PRIMARIS_APOTH_BIO
+    specialWeapon: STR_SM_APOTH_FIST_LV3
+    tags:
+      SMT_ARMOR_REGEN_HP: 4
+      ARMOR_REGENERATES_WOUNDS: 2
+      INFECTION_RESIST: 75
+
+  - &STR_MKX_TEC_UC
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # signum equipment provides advanced vision
+    heatVision: 50 # techmarines get advanced sensors
+    antiCamouflageAtDay: 16
+    antiCamouflageAtDark: 16 # techmarines get advanced sensors
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    damageModifier: #2.7 values for officers
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    stats:
+      tu: 10            # base 10 
+      stamina: 10       # base 20 -10
+      health: 20        # base 10 +10
+      bravery: 0        # base 0  (overridden by 40k to +10)
+      reactions: 10     # base 10 
+      firing: 0         # base 0  
+      throwing: -10     # base 5  -15
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 15         # base 10 +5
+    specialWeapon: AUX_PROBE
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+
+  - type: STR_MKX_TEC_LV1_UC
+    refNode: *STR_MKX_TEC_UC
+    builtInWeapons:
+      - INV_NULL_3X3
+    units:
+      - STR_PRIMARISLV2
+
+  - type: STR_MKX_TEC_LV2_UC
+    refNode: *STR_MKX_TEC_UC
+    builtInWeapons:
+      - STR_TT_SPAWNER
+    units:
+      - STR_PRIMARISLV3
+
+  - type: STR_MKX_TEC_LV3_UC
+    refNode: *STR_MKX_TEC_UC
+    builtInWeapons:
+      - STR_TF_SPAWNER
+      - STR_THUNDERFIRE_SHELL
+      - STR_THUNDERFIRE_SHELL
+    units:
+      - STR_PRIMARISLV4
+
+  - type: STR_MKX_JUDICAR_UC
+    # selectUnitMale:     [{mod: 40k, index: 1256}, {mod: 40k, index: 1257}, {mod: 40k, index: 1258}, {mod: 40k, index: 1259}, {mod: 40k, index: 1260}]
+    # selectUnitFemale:   [{mod: 40k, index: 1256}, {mod: 40k, index: 1257}, {mod: 40k, index: 1258}, {mod: 40k, index: 1259}, {mod: 40k, index: 1260}]
+    # startMovingMale:    [{mod: 40k, index: 1251}, {mod: 40k, index: 1252}, {mod: 40k, index: 1253}, {mod: 40k, index: 1254}, {mod: 40k, index: 1255}]
+    # startMovingFemale:  [{mod: 40k, index: 1251}, {mod: 40k, index: 1252}, {mod: 40k, index: 1253}, {mod: 40k, index: 1254}, {mod: 40k, index: 1255}]
+    # selectWeaponMale:   [{mod: 40k, index: 1246}, {mod: 40k, index: 1247}, {mod: 40k, index: 1248}, {mod: 40k, index: 1249}, {mod: 40k, index: 1250}]
+    # selectWeaponFemale: [{mod: 40k, index: 1246}, {mod: 40k, index: 1247}, {mod: 40k, index: 1248}, {mod: 40k, index: 1249}, {mod: 40k, index: 1250}]
+    # annoyedMale:        [{mod: 40k, index: 1261}, {mod: 40k, index: 1262}, {mod: 40k, index: 1263}, {mod: 40k, index: 1264}, {mod: 40k, index: 1265}]
+    # annoyedFemale:      [{mod: 40k, index: 1261}, {mod: 40k, index: 1262}, {mod: 40k, index: 1263}, {mod: 40k, index: 1264}, {mod: 40k, index: 1265}]
+    deathMale:     [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
+    deathFemale:   [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
+    spriteSheet: JUDICAR.PCK
+    ufopediaType: STR_MKX_CHP_UC ###CHANGEME
+    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 292}
+    visibilityAtDay: 40
+    visibilityAtDark: 35
+    zombiImmune: true
+    loftempsSet: [ 3 ]
+    forcedTorso: 1
+    corpseBattle:
+      - STR_MKX_CHP_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    stats:
+       tu: 10
+       stamina: 10
+       health: 10
+       bravery: 0 #always multiples of 10
+       reactions: 0
+       firing: 0
+       throwing: 0
+       strength: 0
+       melee: 0
+    frontArmor: 120
+    sideArmor: 100
+    rearArmor: 80
+    underArmor: 70
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.8 #FLAMES
+      - 1.0 #HE
+      - 0.8 #LASCANON
+      - 1.1 #PLASMA
+      - 1.1 #STUN
+      - 1.1 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+    units:
+      - STR_PRIMARIS_JUDICAR
+    builtInWeapons:
+      - STR_EXECUTIONER_BLADE
+      - INV_NULL_3X1_BACKPACK
+    specialWeapon: STR_JUDICAR_BLESS
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 100
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - type: STR_MKX_CHP_UC
+    # selectUnitMale:     [1256, 1257, 1258, 1259, 1260]
+    # selectUnitFemale:   [1256, 1257, 1258, 1259, 1260]
+    # startMovingMale:    [1251, 1252, 1253, 1254, 1255]
+    # startMovingFemale:  [1251, 1252, 1253, 1254, 1255]
+    # selectWeaponMale:   [1246, 1247, 1248, 1249, 1250]
+    # selectWeaponFemale: [1246, 1247, 1248, 1249, 1250]
+    # annoyedMale:        [1261, 1262, 1263, 1264, 1265]
+    # annoyedFemale:      [1261, 1262, 1263, 1264, 1265]
+    # deathMale:     [380, 381, 382, 383, 384]
+    # deathFemale:   [380, 381, 382, 383, 384]
+    spriteSheet: PRIMCHP.PCK
+    ufopediaType: STR_MKX_CHP_UC
+    visibilityAtDay: 40
+    visibilityAtDark: 30
+    zombiImmune: true
+    corpseBattle:
+      - STR_MKX_CHP_CORPSE
+    storeItem: STR_NONE
+    corpseGeo: STR_FALLEN_CORPSE
+    stats:
+       tu: 10
+       stamina: 10
+       health: 10
+       bravery: 0 #always multiples of 10
+       reactions: 0
+       firing: 0
+       throwing: 0
+       strength: 0
+       melee: 0
+    frontArmor: 110
+    sideArmor: 90
+    rearArmor: 80
+    underArmor: 70
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.8 #FLAMES
+      - 1.0 #HE
+      - 0.8 #LASCANON
+      - 1.1 #PLASMA
+      - 1.1 #STUN
+      - 1.1 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+    loftempsSet: [ 3 ]
+    forcedTorso: 1
+    units:
+      - STR_PRIMARIS_CHAPLAIN
+    builtInWeapons:
+      - AUX_CROZIUS_PRIMARIS
+      - INV_NULL_3X1_BACKPACK
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 100
+
+### EXTRA
   - update: STR_SIGNAL_ARMOR_UC_HULK        #SUPERHULK REWARD ARMOR
     visibilityAtDay: 40
     visibilityAtDark: 40 # was 30
@@ -980,6 +1674,8 @@ armors:
       SMT_ARMOR_REGEN_HP: 4
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20 # double shield regen to account for new shield mechanics
       ARMOR_ENERGY_SHIELD_DECAY: 20
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
 
   - update: STR_BLOODRAVENS_TACTICAL_ARMOR  #BLOODRAVEN TACTICAL
     refNode: *STR_MARINE_ARMOR
@@ -995,5 +1691,9 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
 
 

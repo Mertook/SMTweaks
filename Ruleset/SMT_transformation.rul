@@ -14,7 +14,7 @@ commendations:
     description: STR_HONOR_MEDAL_DESCRIPTION
     sprite: 5
     criteria:
-      totalScore: [1200,6000,24000,48000]
+      totalScore: [1600,6000,24000,48000]
 
 soldierTransformation:
   - name: STR_PROMOTE_TERMINATOR        # Marine -> Vet Marine
@@ -74,7 +74,7 @@ soldierTransformation:
     cost: 100000
     requiredItems:
       STR_SMT_GENESEED: 1
-      STR_ALIEN_ALLOYS: 30
+      STR_ALIEN_ALLOYS: 25
       STR_KILLPOINT_TOKEN: 40
     keepSoldierArmor: false
     allowsDeadSoldiers: false
@@ -125,7 +125,7 @@ soldierTransformation:
     cost: 40000
     requiredItems:
       STR_ALIEN_ALLOYS: 30
-      STR_KILLPOINT_TOKEN: 260 # was 200
+      STR_KILLPOINT_TOKEN: 400
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -203,7 +203,7 @@ soldierTransformation:
       - STR_CHAP_ARMOR
     cost: 60000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 200
+      STR_KILLPOINT_TOKEN: 100
     keepSoldierArmor: true
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -211,7 +211,8 @@ soldierTransformation:
     transferTime: 0
     allowedSoldierTypes:
       - STR_SOLDIER_CHAPLAIN
-    soldierBonusType: STR_BONUS_PERSONAL_SHIELD
+      - STR_PRIMARIS_CHAPLAIN
+    soldierBonusType: STR_BONUS_INQ_ROSARIUS
     listOrder: 80
 
   - name: STR_RESURRECT_MARINE          # Create Dreadnought
@@ -256,10 +257,9 @@ soldierTransformation:
       - STR_PRIMARIS
     cost: 10000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 60
+      STR_KILLPOINT_TOKEN: 40
     producedSoldierType: STR_PRIMARISLV2
-    minRank: 1
-    keepSoldierArmor: true
+    keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
     needsCorpseRecovered: false
@@ -267,7 +267,7 @@ soldierTransformation:
       - STR_PRIMARISLV1
     requiredCommendations:
       STR_HONOR_MEDAL: 0
-    transferTime: 1
+    transferTime: 0
     recoveryTime: 0
     flatOverallStatChange:
       tu: 5
@@ -280,23 +280,24 @@ soldierTransformation:
       melee: 5
     lowerBoundAtMinStats: true
     upperBoundAtStatCaps: true
+    listOrder: 40
 
   - name: STR_LV2_TO_LV3                # Primaris Lv2 -> Lv3
     requires:
       - STR_PRIMARIS
     cost: 50000 # was 100k
     requiredItems:
-      STR_KILLPOINT_TOKEN: 300
+      STR_KILLPOINT_TOKEN: 260
     producedSoldierType: STR_PRIMARISLV3
-    keepSoldierArmor: true
+    keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
     needsCorpseRecovered: false
     allowedSoldierTypes:
       - STR_PRIMARISLV2
-    # requiredCommendations:
-      # STR_HONOR_MEDAL: 1
-    transferTime: 1
+    requiredCommendations:
+      STR_HONOR_MEDAL: 1
+    transferTime: 0
     recoveryTime: 0
     flatOverallStatChange:
       tu: 5
@@ -309,6 +310,7 @@ soldierTransformation:
       melee: 5
     lowerBoundAtMinStats: true
     upperBoundAtStatCaps: true
+    listOrder: 45
 
   - name: STR_LV3_TO_LV4                # Primaris Lv3 -> Lv4
     requires:
@@ -317,7 +319,7 @@ soldierTransformation:
     requiredItems:
       STR_KILLPOINT_TOKEN: 900
     producedSoldierType: STR_PRIMARISLV4
-    keepSoldierArmor: true
+    keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
     needsCorpseRecovered: false
@@ -325,9 +327,10 @@ soldierTransformation:
       - STR_PRIMARISLV3
     requiredCommendations:
       STR_HONOR_MEDAL: 2
-    transferTime: 1
+    transferTime: 0
     recoveryTime: 0
     lowerBoundAtMinStats: true
+    listOrder: 50
 
   - name: STR_LV4_TO_LV5                # Primaris Lv4 -> Lv5
     requires:
@@ -336,7 +339,7 @@ soldierTransformation:
     requiredItems:
       STR_KILLPOINT_TOKEN: 1800
     producedSoldierType: STR_PRIMARISLV5
-    keepSoldierArmor: true
+    keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
     needsCorpseRecovered: false
@@ -344,7 +347,130 @@ soldierTransformation:
       - STR_PRIMARISLV4
     requiredCommendations:
       STR_HONOR_MEDAL: 3
-    transferTime: 1
+    transferTime: 0
     recoveryTime: 0
     lowerBoundAtMinStats: true
+    listOrder: 55
+
+  - name: STR_LV2_TO_APOTH              # Primaris Lv2 -> Apothecary (Lv3)
+    requires:
+      - STR_PRIMARIS
+      - STR_MEDI_KIT_PREREQ
+    cost: 50000 # was 100k
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 300
+    producedSoldierType: STR_PRIMARIS_APOTH
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    needsCorpseRecovered: false
+    allowedSoldierTypes:
+      - STR_PRIMARISLV2
+    requiredCommendations:
+      STR_HONOR_MEDAL: 1
+    transferTime: 0
+    recoveryTime: 0
+    flatOverallStatChange:
+      tu: 5
+      stamina: 5
+      health: 5
+      reactions: 5
+      firing: 5
+      throwing: 5
+      strength: 5
+      melee: 5
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 60
+
+  - name: STR_APOTH_LV3_TO_LV4          # Apothecary (Lv3) -> Biologis (Lv4)
+    requires:
+      - STR_PRIMARIS
+      - STR_APOC_BAY
+    cost: 50000 # was 100k
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 900
+    producedSoldierType: STR_PRIMARIS_APOTH_BIO
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    needsCorpseRecovered: false
+    allowedSoldierTypes:
+      - STR_PRIMARIS_APOTH
+    requiredCommendations:
+      STR_HONOR_MEDAL: 2
+    transferTime: 0
+    recoveryTime: 0
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 65
+
+  - name: STR_LV1_TO_JUDICAR            # Primaris Lv1 -> Judicar (Lv2)
+    requires:
+      - STR_PRIMARIS
+      - STR_PSI_LAB
+    cost: 10000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 80
+    producedSoldierType: STR_PRIMARIS_JUDICAR
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    needsCorpseRecovered: false
+    allowedSoldierTypes:
+      - STR_PRIMARISLV1
+    requiredCommendations:
+      STR_HONOR_MEDAL: 0
+    requiresBaseFunc: [PSI] #needs chapel
+    transferTime: 0
+    recoveryTime: 0
+    flatOverallStatChange:
+      tu: 5
+      stamina: 5
+      health: 5
+      reactions: 5
+      firing: 5
+      throwing: 5
+      strength: 5
+      melee: 5
+    requiredMinStats:
+      psiSkill: 60 # devotion
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 70
+
+  - name: STR_JUDICAR_TO_CHAPLAIN       # Primaris Judicar (Lv2) -> Chaplain (Lv4)
+    requires:
+      - STR_PRIMARIS
+      - STR_PSI_LAB
+    cost: 75000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 800
+    producedSoldierType: STR_PRIMARIS_CHAPLAIN
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    needsCorpseRecovered: false
+    allowedSoldierTypes:
+      - STR_PRIMARIS_JUDICAR
+    requiredCommendations:
+      STR_HONOR_MEDAL: 2
+    requiresBaseFunc: [PSI] #needs chapel
+    transferTime: 0
+    recoveryTime: 0
+    flatOverallStatChange:
+      tu: 5
+      stamina: 5
+      health: 5
+      reactions: 5
+      firing: 5
+      throwing: 5
+      strength: 5
+      melee: 5
+    requiredMinStats:
+      psiSkill: 100 # devotion
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 75
+
 

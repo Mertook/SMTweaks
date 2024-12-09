@@ -587,10 +587,10 @@ research:
       - STR_UFO_CONSTRUCTION # ceramite
       - STR_MIDTIER_PREREQ
 
-  - name: STR_MKX_CHP_ARMOR         # Primaris Chaplain Armor
+  - name: STR_MKX_CHP_ARMOR         # Primaris Chaplain Armor (disabled)
     cost: 205
     points: 20
     dependencies:
-      - STR_PRIMARIS
-      - STR_HIGHTIER_PREREQ
-      #- STR_PRIMARIS_ARMOR
+      #- STR_PRIMARIS
+      #- STR_HIGHTIER_PREREQ
+      - STR_GENERALLOCK

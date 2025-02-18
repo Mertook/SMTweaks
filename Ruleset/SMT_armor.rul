@@ -43,6 +43,7 @@ armors:
       - 1.0 #MELTA
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 50
 
@@ -77,6 +78,7 @@ armors:
       - 0.9 #MELTA
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 50
 
@@ -164,6 +166,8 @@ armors:
       psiSkill: 0       # base 0  
       melee: -20        # base 10 -30 (ranged specialist & also to offset strength bonus)
     builtInWeapons: [] # remove backpack blocker
+    tags:
+      SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/3 HWP penalties
 
   - update: STR_APOT_ARMOR_UC               #APOTHECARY
     refNode: *STR_MARINE_ARMOR
@@ -477,6 +481,7 @@ armors:
       melee: 10         # base 10
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalty
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
       ARMOR_ENERGY_SHIELD_DECAY: 50
       INTIMIDATION_RESISTANCE: 75
@@ -997,6 +1002,7 @@ armors:
       - INV_NULL_3X1_BACKPACK
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       SMT_ARMOR_SHRED_RESISTANCE: 35
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
@@ -1286,6 +1292,7 @@ armors:
       melee: 20         # base 20 
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       SMT_ARMOR_SHRED_RESISTANCE: 30
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 15
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
@@ -1832,6 +1839,7 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 35
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_REGEN_HP: 2
       ARMOR_REGENERATES_WOUNDS: 1
@@ -1962,6 +1970,7 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 60
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalty
       INFECTION_RESIST: 66
 
   - type: STR_MKX_APO_UC
@@ -2011,6 +2020,7 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 75
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalty
       INFECTION_RESIST: 75
 
   - &STR_MKX_TEC_UC                         #PRIMARIS TECHMARINE
@@ -2056,10 +2066,11 @@ armors:
       melee: 15         # base 10 +5
     specialWeapon: AUX_PROBE
     tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 50
 
@@ -2143,6 +2154,7 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 35
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 100
       UNIT_TYPE_IMPERIUM: 1
@@ -2194,6 +2206,7 @@ armors:
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 100
 
@@ -2243,6 +2256,7 @@ armors:
       - STR_PRIMARISLV5
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
       SMT_ARMOR_REGEN_HP: 4
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20 # double shield regen to account for new shield mechanics
       ARMOR_ENERGY_SHIELD_DECAY: 20
@@ -2265,7 +2279,4 @@ armors:
       melee: 10         # base 10 
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
-      INTIMIDATION_RESISTANCE: 50
-      INFECTION_RESIST: 50
-
 

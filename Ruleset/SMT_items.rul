@@ -2422,7 +2422,7 @@ items:
       ToArmor: 0.1
     powerRangeReduction: 5
     powerRangeThreshold: 20.0
-    clipSize: 200
+    clipSize: 600
     twoHanded: true
     oneHandedPenalty: 25
     invWidth: 2
@@ -2797,7 +2797,7 @@ items:
 
   - update: STR_SMOKE_GRENADE               # Smoke Grenade
     costThrow:
-      time: 35 # was 55
+      time: 25 # was 55
       energy: 5
 
   - update: STR_SMOKE_BOMB                  # Smokebomb

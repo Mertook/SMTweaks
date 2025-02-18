@@ -1,7 +1,13 @@
+extended:
+  tags:
+    RuleItem:
+      ITEM_AMMO_SKIP_BIGOBS: int
+
 items:
-  - &STR_WEAPON_SPRITE_SWAP_TEMPLATE        # Script Template
+  - &STR_WEAPON_SPRITE_SWAP_TEMPLATE
+    type: STR_RIFLE                 # Bolter (Godwyn)
     scripts:
-      selectItemSprite: # handle sprite changes for loading different ammo types
+      selectItemSprite: |
         var ptr BattleItem ammoItem;
         var ptr RuleItem ammoRuleset;
         var int skipBigobs;
@@ -56,6 +62,9 @@ items:
   - type: STR_BOLTRIFLE_SCOPE       # Bolt Rifle (Stalker)
     refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
 
+  - type: STR_BOLTRIFLE_GL          # Bolt Rifle (Combi GL)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+
   - type: STR_BOLTRIFLE_MC          # Bolt Rifle (Mastercrafted)
     refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
 
@@ -64,10 +73,3 @@ items:
 
   - type: STR_BOLTER_CARBINE_SCOPE  # Bolt Carbine (Occulus)
     refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
-
-
-
-
-
-
-

@@ -1,6 +1,7 @@
 armors:
 ### FIRSTBORN
   - &STR_MARINE_ARMOR                       #ARMOR TEMPLATE
+    update: STR_PERSONAL_ARMOR_UC           #TACTICAL
     visibilityAtDay: 40
     visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
     heatVision: 20 #Add anti-smoke vision to all marine armour
@@ -164,7 +165,7 @@ armors:
       melee: -20        # base 10 -30 (ranged specialist & also to offset strength bonus)
     builtInWeapons: [] # remove backpack blocker
 
-  - update: STR_APOT_ARMOR_UC               #APOTH
+  - update: STR_APOT_ARMOR_UC               #APOTHECARY
     refNode: *STR_MARINE_ARMOR
     frontArmor: 125 # base 125
     sideArmor: 120 # base 120
@@ -432,6 +433,7 @@ armors:
     refNode: *STR_ADVANCED_SCOUT_ARMOR
 
   - &STR_TERMINATOR_ARMOR                   #TERMINATOR TEMPLATE
+    update: STR_POWER_SUIT_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Terminators get full nightvision
     heatVision: 30 # Terminators get better sensors
@@ -482,6 +484,9 @@ armors:
       SMT_ARMOR_REGEN_HP: 4
       ARMOR_REGENERATES_WOUNDS: 1
 
+  - update: STR_POWER_SUIT_UC               #TERMINATOR
+    refNode: *STR_TERMINATOR_ARMOR
+
   - update: STR_CAPTAIN_UC                  #TERMINATOR CAPTAIN
     refNode: *STR_TERMINATOR_ARMOR
     specialWeapon: STR_SM_OFFICER_FIST #Officer Fist with Inspire ability
@@ -510,9 +515,6 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.7 #MELTA (was 1.0)
-
-  - update: STR_POWER_SUIT_UC               #TERMINATOR
-    refNode: *STR_TERMINATOR_ARMOR
 
   - update: STR_TSARGENT_UC                 #TERMINATOR CYCLONE
     refNode: *STR_TERMINATOR_ARMOR
@@ -849,6 +851,7 @@ armors:
       INFECTION_RESIST: 50
 
   - &STR_DREADNOUGHT_ARMOR                  #DREAD ARMOR TEMPLATE
+    update: DREAD_ARMOR_UC
     visibilityAtDay: 40
     visibilityAtDark: 40
     heatVision: 40 # Vehicle sensors
@@ -943,12 +946,24 @@ armors:
     refNode: *STR_DREADNOUGHT_ARMOR
 
 ### PRIMARIS
-  - &STR_MKX_TAC_UC                         #TACTICAL
+  - &STR_MKX_TAC_UC                         #PRIMARIS TACTICAL
+    type: STR_MKX_TAC_LV1_UC
+    ufopediaType: STR_MKX_TAC_LV1_UC
+    corpseBattle:
+      - STR_MKX_TAC_CORPSE
+    storeItem: STR_NONE
+    corpseGeo: STR_FALLEN_CORPSE
+    loftempsSet: [ 3 ]
+    forcedTorso: 1
     visibilityAtDay: 40
     visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
     heatVision: 20 #Add anti-smoke vision to all marine armour
     antiCamouflageAtDay: 8
     antiCamouflageAtDark: 8
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.5 #discipline and resolve reinforces their faith
     frontArmor: 125
     sideArmor: 120
     rearArmor: 100
@@ -966,23 +981,18 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
-    loftempsSet: [ 3 ]
-    psiDefence:
-      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
-      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
-      moraleCurrent: 1.5 #discipline and resolve reinforces their faith
     stats:
-      tu: 20            # base 20 
-      stamina: 15       # base 15 
-      health: 10        # base 10 
-      bravery: 10       # base 10 
-      reactions: 10     # base 10 
-      firing: 10        # base 10 
-      throwing: 10      # base 10 
-      strength: 10      # base 10 
-      psiStrength: 0    # base 0  
-      psiSkill: 0       # base 0  
-      melee: 10         # base 10 
+      tu: 20            # base 20
+      stamina: 15       # base 15
+      health: 10        # base 10
+      bravery: 10       # base 10
+      reactions: 10     # base 10
+      firing: 10        # base 10
+      throwing: 10      # base 10
+      strength: 10      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
     builtInWeapons:
       - INV_NULL_3X1_BACKPACK
     tags:
@@ -1009,17 +1019,17 @@ armors:
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
     stats:
-      tu: 20            # base 20 
-      stamina: 20       # base 15 
-      health: 15        # base 10 
-      bravery: 10       # base 10 
-      reactions: 15     # base 10 
-      firing: 15        # base 10 
-      throwing: 15      # base 10 
-      strength: 10      # base 10 
-      psiStrength: 0    # base 0  
-      psiSkill: 0       # base 0  
-      melee: 15         # base 10 
+      tu: 20            # base 20
+      stamina: 20       # base 15
+      health: 15        # base 10
+      bravery: 10       # base 10
+      reactions: 15     # base 10
+      firing: 15        # base 10
+      throwing: 15      # base 10
+      strength: 10      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 15         # base 10
 
   - type: STR_MKX_TAC_LV5_UC
     refNode: *STR_MKX_TAC_UC
@@ -1030,23 +1040,207 @@ armors:
     rearArmor: 105
     underArmor: 130
     stats:
-      tu: 25            # base 20 
-      stamina: 25       # base 15 
-      health: 25        # base 10 
-      bravery: 10       # base 10 
-      reactions: 20     # base 10 
-      firing: 20        # base 10 
-      throwing: 20      # base 10 
-      strength: 15      # base 10 
-      psiStrength: 0    # base 0  
-      psiSkill: 0       # base 0  
-      melee: 20         # base 10 
+      tu: 25            # base 20
+      stamina: 25       # base 15
+      health: 25        # base 10
+      bravery: 10       # base 10
+      reactions: 20     # base 10
+      firing: 20        # base 10
+      throwing: 20      # base 10
+      strength: 15      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 20         # base 10
     tags:
-      SMT_ARMOR_SHRED_RESISTANCE: 45
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 30
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_SHRED_RESISTANCE: 60
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 40
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 66
 
-  - &STR_MKX_PHB_UC
+  - type: STR_MKX_TAC_MELT_LV1_UC
+    refNode: *STR_MKX_TAC_UC
+    spriteSheet: PRIMTACLV1.PCK
+    storeItem: STR_PRIMARIS_MELTAPACK
+    units:
+      - STR_PRIMARISLV1
+    builtInWeapons:
+      - INV_NULL_3X3
+      - STR_PRIMARIS_MELTA_RIFLE
+
+  - type: STR_MKX_TAC_MELT_LV2_UC
+    refNode: *STR_MKX_TAC_UC
+    spriteSheet: PRIMTACLV2.PCK
+    storeItem: STR_PRIMARIS_MELTAPACK
+    units:
+      - STR_PRIMARISLV2
+    builtInWeapons:
+      - INV_NULL_3X3
+      - STR_PRIMARIS_MELTA_RIFLE
+
+  - type: STR_MKX_TAC_MELT_LV3_UC
+    refNode: *STR_MKX_TAC_UC
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    spriteSheet: PRIMTACLV3.PCK
+    storeItem: STR_PRIMARIS_MELTAPACK
+    units:
+      - STR_PRIMARISLV3
+    builtInWeapons:
+      - INV_NULL_3X3
+      - STR_PRIMARIS_MELTA_RIFLE
+
+  - type: STR_MKX_TAC_MELT_LV4_UC
+    refNode: *STR_MKX_TAC_UC
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    stats:
+      tu: 20            # base 20
+      stamina: 20       # base 15
+      health: 15        # base 10
+      bravery: 10       # base 10
+      reactions: 15     # base 10
+      firing: 15        # base 10
+      throwing: 15      # base 10
+      strength: 10      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 15         # base 10
+    spriteSheet: PRIMTACLV4.PCK
+    storeItem: STR_PRIMARIS_MELTAPACK
+    units:
+      - STR_PRIMARISLV4
+    builtInWeapons:
+      - INV_NULL_3X3
+      - STR_PRIMARIS_MELTA_RIFLE
+
+  - type: STR_MKX_TAC_MELT_LV5_UC
+    refNode: *STR_MKX_TAC_UC
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    frontArmor: 130
+    sideArmor: 125
+    rearArmor: 105
+    underArmor: 130
+    stats:
+      tu: 25            # base 20
+      stamina: 25       # base 15
+      health: 25        # base 10
+      bravery: 10       # base 10
+      reactions: 20     # base 10
+      firing: 20        # base 10
+      throwing: 20      # base 10
+      strength: 15      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 20         # base 10
+    spriteSheet: PRIMTACLV5.PCK
+    storeItem: STR_PRIMARIS_MELTAPACK
+    units:
+      - STR_PRIMARISLV5
+    builtInWeapons:
+      - INV_NULL_3X3
+      - STR_PRIMARIS_MELTA_RIFLE
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 60
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 40
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 66
+
+  - type: STR_MKX_TAC_PLAS_LV1_UC
+    refNode: *STR_MKX_TAC_UC
+    spriteSheet: PRIMTACLV1.PCK
+    storeItem: STR_PRIMARIS_PLASMAPACK
+    units:
+      - STR_PRIMARISLV1
+    builtInWeapons:
+      - INV_NULL_3X3
+      - STR_PRIMARIS_INCINERATOR_POWER_PACK
+
+  - type: STR_MKX_TAC_PLAS_LV2_UC
+    refNode: *STR_MKX_TAC_UC
+    spriteSheet: PRIMTACLV2.PCK
+    storeItem: STR_PRIMARIS_PLASMAPACK
+    units:
+      - STR_PRIMARISLV2
+    builtInWeapons:
+      - INV_NULL_3X3
+      - STR_PRIMARIS_INCINERATOR_POWER_PACK
+
+  - type: STR_MKX_TAC_PLAS_LV3_UC
+    refNode: *STR_MKX_TAC_UC
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    spriteSheet: PRIMTACLV3.PCK
+    storeItem: STR_PRIMARIS_PLASMAPACK
+    units:
+      - STR_PRIMARISLV3
+    builtInWeapons:
+      - INV_NULL_3X3
+      - STR_PRIMARIS_INCINERATOR_POWER_PACK
+
+  - type: STR_MKX_TAC_PLAS_LV4_UC
+    refNode: *STR_MKX_TAC_UC
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    stats:
+      tu: 20            # base 20
+      stamina: 20       # base 15
+      health: 15        # base 10
+      bravery: 10       # base 10
+      reactions: 15     # base 10
+      firing: 15        # base 10
+      throwing: 15      # base 10
+      strength: 10      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 15         # base 10
+    spriteSheet: PRIMTACLV4.PCK
+    storeItem: STR_PRIMARIS_PLASMAPACK
+    units:
+      - STR_PRIMARISLV4
+    builtInWeapons:
+      - INV_NULL_3X3
+      - STR_PRIMARIS_INCINERATOR_POWER_PACK
+
+  - type: STR_MKX_TAC_PLAS_LV5_UC
+    refNode: *STR_MKX_TAC_UC
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    frontArmor: 130
+    sideArmor: 125
+    rearArmor: 105
+    underArmor: 130
+    stats:
+      tu: 25            # base 20
+      stamina: 25       # base 15
+      health: 25        # base 10
+      bravery: 10       # base 10
+      reactions: 20     # base 10
+      firing: 20        # base 10
+      throwing: 20      # base 10
+      strength: 15      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 20         # base 10
+    spriteSheet: PRIMTACLV5.PCK
+    storeItem: STR_PRIMARIS_PLASMAPACK
+    units:
+      - STR_PRIMARISLV5
+    builtInWeapons:
+      - INV_NULL_3X3
+      - STR_PRIMARIS_INCINERATOR_POWER_PACK
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 60
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 40
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 66
+
+
+  - &STR_MKX_PHB_UC                         #PRIMARIS PHOBOS
+    type: STR_MKX_PHB_LV1_UC
     visibilityAtDay: 40
     visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
     heatVision: 20 #Add anti-smoke vision to all marine armour
@@ -1075,6 +1269,7 @@ armors:
       - 1.0 #MELTA
     loftempsSet: [ 3 ]
     builtInWeapons: [] # remove backpack blocker
+    specialWeapon: STR_SM_PHOBOS_SCANNER #gets motion scanner
     moveCost:
       basePercent: [100, 75] # Reduced energy cost - Phobos bonus
     stats:
@@ -1112,51 +1307,57 @@ armors:
   - type: STR_MKX_PHB_LV4_UC
     refNode: *STR_MKX_PHB_UC
     stats:
-      tu: 25            # base 25 
-      stamina: 25       # base 20 
-      health: 10        # base 5  
-      bravery: 10       # base 10 
-      reactions: 25     # base 20 
-      firing: 5         # base 5  
-      throwing: 10      # base 10 
-      strength: 5       # base 5  
-      psiStrength: 0    # base 0  
-      psiSkill: 0       # base 0  
-      melee: 30         # base 20 
+      tu: 25            # base 25
+      stamina: 25       # base 20
+      health: 10        # base 5
+      bravery: 10       # base 10
+      reactions: 25     # base 20
+      firing: 5         # base 5
+      throwing: 10      # base 10
+      strength: 5       # base 5
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 30         # base 20
+    tags:
+      DODGE_CHANCE: 25
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
 
   - type: STR_MKX_PHB_LV5_UC
     refNode: *STR_MKX_PHB_UC
     stats:
-      tu: 35            # base 25 
-      stamina: 25       # base 20 
-      health: 20        # base 5  
-      bravery: 10       # base 10 
-      reactions: 30     # base 20 
-      firing: 5         # base 5  
-      throwing: 10      # base 10 
-      strength: 5       # base 5  
-      psiStrength: 0    # base 0  
-      psiSkill: 0       # base 0  
-      melee: 35         # base 20 
+      tu: 35            # base 25
+      stamina: 25       # base 20
+      health: 20        # base 5
+      bravery: 10       # base 10
+      reactions: 30     # base 20
+      firing: 5         # base 5
+      throwing: 10      # base 10
+      strength: 5       # base 5
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 35         # base 20
     tags:
-      DODGE_CHANCE: 30
+      SMT_ARMOR_SHRED_RESISTANCE: 45
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 30
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      DODGE_CHANCE: 35
       ARMOR_MAX_SUCCESSFUL_DODGES: 2
-      ARMOR_IS_INFILTRATOR: 2 #2 turns to infiltrate
+      ARMOR_IS_INFILTRATOR: 3 #3 turns to infiltrate
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 66
 
-  - &STR_MKX_GRV_UC
-    # selectUnitMale:     [511, 512, 513, 514, 515]
-    # selectUnitFemale:   [511, 512, 513, 514, 515]
-    # startMovingMale:    [506, 507, 508, 509, 510]
-    # startMovingFemale:  [506, 507, 508, 509, 510]
-    # selectWeaponMale:   [501, 502, 503, 504, 505]
-    # selectWeaponFemale: [501, 502, 503, 504, 505]
-    # annoyedMale:        [516, 517, 518, 519, 520]
-    # annoyedFemale:      [516, 517, 518, 519, 520]
-    # deathMale:     [380, 381, 382, 383, 384]
-    # deathFemale:   [380, 381, 382, 383, 384]
+  - &STR_MKX_GRV_UC                         #PRIMARIS GRAVIS
+    type: STR_MKX_GRV_LV1_UC
     ufopediaType: STR_MKX_GRV_LV1_UC
     visibilityAtDay: 40
-    visibilityAtDark: 30
+    visibilityAtDark: 35
+    heatVision: 20 #Add anti-smoke vision to all marine armour
+    antiCamouflageAtDay: 8
+    antiCamouflageAtDark: 8
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.5 #discipline and resolve reinforces their faith
     corpseBattle:
       - STR_MKX_GRV_CORPSE
     storeItem: STR_MKX_GRV_ARMOR
@@ -1203,8 +1404,9 @@ armors:
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
-  - type: STR_MKX_GRV_LV1_UC
-    spriteSheet: PRIMGRVLV1.PCK
+  - type: STR_MKX_GRV_LV1_UC                #GRAVIS LV1 BOLTER
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: GRAV1BOLT.PCK
     units:
       - STR_PRIMARISLV1
     specialWeapon: STR_MFIST
@@ -1213,9 +1415,20 @@ armors:
       - STR_GRAV_BOLTER
       - INV_NULL_3X3
 
-  - type: STR_MKX_GRV_LV2_UC
+  - type: STR_MKX_GRV_LV1F_UC               #GRAVIS LV1 FLAMER
     refNode: *STR_MKX_GRV_UC
-    spriteSheet: PRIMGRVLV2.PCK
+    spriteSheet: GRAV1FLAME.PCK
+    units:
+      - STR_PRIMARISLV1
+    specialWeapon: STR_MFIST
+    builtInWeapons:
+      - STR_GRAV_FLAMER
+      - STR_GRAV_FLAMER
+      - INV_NULL_3X3
+
+  - type: STR_MKX_GRV_LV2_UC                #GRAVIS LV2 FLAMER
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: GRAV2FLAME.PCK
     units:
       - STR_PRIMARISLV2
     builtInWeapons:
@@ -1224,9 +1437,33 @@ armors:
       - INV_NULL_3X3
     specialWeapon: STR_MFIST
 
-  - type: STR_MKX_GRV_LV3_UC
+  - type: STR_MKX_GRV_LV2A_UC               #GRAVIS LV2 AUTOCANNON
     refNode: *STR_MKX_GRV_UC
-    spriteSheet: PRIMGRVLV3.PCK
+    spriteSheet: GRAV2AUTO.PCK
+    units:
+      - STR_PRIMARISLV2
+    builtInWeapons:
+      - STR_GRAV_AUTOC
+      - STR_GRAV_AUTOC
+      - INV_NULL_3X3
+    specialWeapon: STR_MFIST
+
+  - type: STR_MKX_GRV_LV2B_UC               #GRAVIS LV2 BOLTER
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: GRAV2BOLT.PCK
+    units:
+      - STR_PRIMARISLV2
+    builtInWeapons:
+      - STR_GRAV_BOLTER
+      - STR_GRAV_BOLTER
+      - INV_NULL_3X3
+    specialWeapon: STR_MFIST
+
+  - type: STR_MKX_GRV_LV3_UC                #GRAVIS LV3 AUTOCANNON
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: GRAV3AUTO.PCK
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV3
     stats:
@@ -1247,9 +1484,84 @@ armors:
       - STR_GRAV_AUTOC
       - INV_NULL_3X3
 
-  - type: STR_MKX_GRV_LV4_UC
+  - type: STR_MKX_GRV_LV3B_UC               #GRAVIS LV3 BOLTER
     refNode: *STR_MKX_GRV_UC
-    spriteSheet: PRIMGRVLV4.PCK
+    spriteSheet: GRAV3BOLT.PCK
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    units:
+      - STR_PRIMARISLV3
+    stats:
+      tu: 5             # base 0
+      stamina: -5       # base -10
+      health: 20        # base 20
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 15        # base 15
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    specialWeapon: STR_MFIST
+    builtInWeapons:
+      - STR_GRAV_BOLTER
+      - STR_GRAV_BOLTER
+      - INV_NULL_3X3
+
+  - type: STR_MKX_GRV_LV3F_UC               #GRAVIS LV3 FLAMER
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: GRAV3FLAME.PCK
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    units:
+      - STR_PRIMARISLV3
+    stats:
+      tu: 5             # base 0
+      stamina: -5       # base -10
+      health: 20        # base 20
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 15        # base 15
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    specialWeapon: STR_MFIST
+    builtInWeapons:
+      - STR_GRAV_FLAMER
+      - STR_GRAV_FLAMER
+      - INV_NULL_3X3
+
+  - type: STR_MKX_GRV_LV3H_UC               #GRAVIS LV3 REGULAR
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: GRAV3HAND.PCK
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    units:
+      - STR_PRIMARISLV3
+    stats:
+      tu: 5             # base 0
+      stamina: -5       # base -10
+      health: 20        # base 20
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 15        # base 15
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_3X3
+
+  - type: STR_MKX_GRV_LV4_UC                #GRAVIS LV4 AUTOCANNON
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: GRAV4AUTO.PCK
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV4
     stats:
@@ -1264,15 +1576,90 @@ armors:
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 10         # base 10
-    specialWeapon: AUX_MORTAR
+    specialWeapon: STR_GRAV_MORTAR
     builtInWeapons:
       - STR_GRAV_AUTOC
       - STR_GRAV_AUTOC
       - INV_NULL_3X3
 
-  - type: STR_MKX_GRV_LV5_UC
+  - type: STR_MKX_GRV_LV4B_UC               #GRAVIS LV4 BOLTER
     refNode: *STR_MKX_GRV_UC
-    spriteSheet: PRIMGRVLV5.PCK
+    spriteSheet: GRAV4BOLT.PCK
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    units:
+      - STR_PRIMARISLV4
+    stats:
+      tu: 10            # base 0
+      stamina: 5        # base -10
+      health: 25        # base 20
+      bravery: 10       # base 10
+      reactions: -5     # base -10
+      firing: 15        # base 15
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    specialWeapon: STR_GRAV_MORTAR
+    builtInWeapons:
+      - STR_GRAV_BOLTER
+      - STR_GRAV_BOLTER
+      - INV_NULL_3X3
+
+  - type: STR_MKX_GRV_LV4F_UC               #GRAVIS LV4 FLAMER
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: GRAV4FLAME.PCK
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    units:
+      - STR_PRIMARISLV4
+    stats:
+      tu: 10            # base 0
+      stamina: 5        # base -10
+      health: 25        # base 20
+      bravery: 10       # base 10
+      reactions: -5     # base -10
+      firing: 15        # base 15
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    specialWeapon: STR_GRAV_MORTAR
+    builtInWeapons:
+      - STR_GRAV_FLAMER
+      - STR_GRAV_FLAMER
+      - INV_NULL_3X3
+
+  - type: STR_MKX_GRV_LV4H_UC               #GRAVIS LV4 REGULAR
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: GRAV4HAND.PCK
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    units:
+      - STR_PRIMARISLV4
+    stats:
+      tu: 10            # base 0
+      stamina: 5        # base -10
+      health: 25        # base 20
+      bravery: 10       # base 10
+      reactions: -5     # base -10
+      firing: 15        # base 15
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_3X3
+
+  - type: STR_MKX_GRV_LV5_UC                #GRAVIS LV5 BOLTER
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: GRAV5BOLT.PCK
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
     units:
       - STR_PRIMARISLV5
     stats:
@@ -1287,23 +1674,107 @@ armors:
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 20         # base 10
-    specialWeapon: STR_MFIST
+    specialWeapon: STR_GRAV_MORTAR
     builtInWeapons:
       - STR_GRAV_BOLTER
-      - INV_NULL_3X3
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 75 # High level armor values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 66
 
-  - &STR_MKX_APO
-    selectUnitMale:     [{mod: 40k, index: 1276}, {mod: 40k, index: 1277}, {mod: 40k, index: 1278}, {mod: 40k, index: 1279}, {mod: 40k, index: 1280}]
-    selectUnitFemale:   [{mod: 40k, index: 1276}, {mod: 40k, index: 1277}, {mod: 40k, index: 1278}, {mod: 40k, index: 1279}, {mod: 40k, index: 1280}]
-    startMovingMale:    [{mod: 40k, index: 1271}, {mod: 40k, index: 1272}, {mod: 40k, index: 1273}, {mod: 40k, index: 1274}, {mod: 40k, index: 1275}]
-    startMovingFemale:  [{mod: 40k, index: 1271}, {mod: 40k, index: 1272}, {mod: 40k, index: 1273}, {mod: 40k, index: 1274}, {mod: 40k, index: 1275}]
-    selectWeaponMale:   [{mod: 40k, index: 1266}, {mod: 40k, index: 1267}, {mod: 40k, index: 1268}, {mod: 40k, index: 1269}, {mod: 40k, index: 1270}]
-    selectWeaponFemale: [{mod: 40k, index: 1266}, {mod: 40k, index: 1267}, {mod: 40k, index: 1268}, {mod: 40k, index: 1269}, {mod: 40k, index: 1270}]
-    annoyedMale:        [{mod: 40k, index: 1281}, {mod: 40k, index: 1282}, {mod: 40k, index: 1283}, {mod: 40k, index: 1284}, {mod: 40k, index: 1285}]
-    annoyedFemale:      [{mod: 40k, index: 1281}, {mod: 40k, index: 1282}, {mod: 40k, index: 1283}, {mod: 40k, index: 1284}, {mod: 40k, index: 1285}]
-    deathMale:     [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
-    deathFemale:   [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
-    spriteSheet: PRIMAPO.PCK
+  - type: STR_MKX_GRV_LV5A_UC               #GRAVIS LV5 AUTOCANNON
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: GRAV5AUTO.PCK
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    units:
+      - STR_PRIMARISLV5
+    stats:
+      tu: 15            # base 0
+      stamina: 10       # base -10
+      health: 30        # base 20
+      bravery: 10       # base 10
+      reactions: 5      # base -10
+      firing: 20        # base 15
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 20         # base 10
+    specialWeapon: STR_GRAV_MORTAR
+    builtInWeapons:
+      - STR_GRAV_AUTOC
+      - INV_NULL_3X3
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 75 # High level armor values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 66
+
+  - type: STR_MKX_GRV_LV5F_UC               #GRAVIS LV5 FLAMER
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: GRAV5FLAME.PCK
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    units:
+      - STR_PRIMARISLV5
+    stats:
+      tu: 15            # base 0
+      stamina: 10       # base -10
+      health: 30        # base 20
+      bravery: 10       # base 10
+      reactions: 5      # base -10
+      firing: 20        # base 15
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 20         # base 10
+    specialWeapon: STR_GRAV_MORTAR
+    builtInWeapons:
+      - STR_GRAV_FLAMER
+      - INV_NULL_3X3
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 75 # High level armor values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 66
+
+  - type: STR_MKX_GRV_LV5H_UC               #GRAVIS LV5 REGULAR
+    refNode: *STR_MKX_GRV_UC
+    spriteSheet: GRAV5HAND.PCK
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    units:
+      - STR_PRIMARISLV5
+    stats:
+      tu: 15            # base 0
+      stamina: 10       # base -10
+      health: 30        # base 20
+      bravery: 10       # base 10
+      reactions: 5      # base -10
+      firing: 20        # base 15
+      throwing: 5       # base 5
+      strength: 30      # base 30
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 20         # base 10
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_3X3
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 75 # High level armor values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 66
+
+  - &STR_MKX_APO                            #PRIMARIS APOTHECARY
+    type: STR_MKX_HELIX_UC_LV1
     ufopediaType: STR_MKX_APO_UC
     visibilityAtDay: 40
     visibilityAtDark: 30
@@ -1358,6 +1829,9 @@ armors:
     builtInWeapons:
       - INV_NULL_3X3
     tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 35
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_REGEN_HP: 2
       ARMOR_REGENERATES_WOUNDS: 1
@@ -1366,10 +1840,10 @@ armors:
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
-  - type: STR_MKX_APO_UC_LV1
+  - type: STR_MKX_HELIX_UC_LV1
     refNode: *STR_MKX_APO
     customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 270}
-    spriteSheet: APOTHLV1.PCK
+    spriteSheet: HELIXLV1.PCK
     storeItem: STR_MKX_APO_ARMOR
     stats:
       tu: 0             # base 10 
@@ -1379,62 +1853,168 @@ armors:
       reactions: 0      # base 10 
       firing: -10       # base 0  
       throwing: 0       # base 5  
-      strength: 0       # base 10 
+      strength: 5       # base 10 
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
     units:
       - STR_PRIMARISLV1
+    specialWeapon: STR_SM_APOTH_FIST
+    tags:
+      SMT_ARMOR_REGEN_HP: 2
+      ARMOR_REGENERATES_WOUNDS: 1
+
+  - type: STR_MKX_HELIX_UC_LV2
+    refNode: *STR_MKX_APO
+    spriteSheet: HELIXLV2.PCK
+    storeItem: STR_MKX_APO_ARMOR
+    stats:
+      tu: 0             # base 10 
+      stamina: 10       # base 20 
+      health: 20        # base 10 
+      bravery: 0        # base 0  
+      reactions: 0      # base 10 
+      firing: -10       # base 0  
+      throwing: 0       # base 5  
+      strength: 5       # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
+    units:
       - STR_PRIMARISLV2
     specialWeapon: STR_SM_APOTH_FIST
     tags:
       SMT_ARMOR_REGEN_HP: 2
       ARMOR_REGENERATES_WOUNDS: 1
 
-  - type: STR_MKX_APO_UC_LV2
+  - type: STR_MKX_HELIX_UC_LV3
     refNode: *STR_MKX_APO
-    spriteSheet: APOTHLV2.PCK
-    storeItem: STR_NONE
+    spriteSheet: HELIXLV3.PCK
+    storeItem: STR_MKX_APO_ARMOR
     stats:
-      tu: 5             # base 10 
+      tu: 0             # base 10 
       stamina: 10       # base 20 
-      health: 30        # base 10 
+      health: 20        # base 10 
       bravery: 0        # base 0  
       reactions: 0      # base 10 
-      firing: -5        # base 0  
+      firing: -10       # base 0  
       throwing: 0       # base 5  
-      strength: 0       # base 10 
+      strength: 5       # base 10 
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
-      melee: 15         # base 10 
+      melee: 10         # base 10 
+    units:
+      - STR_PRIMARISLV3
+    specialWeapon: STR_SM_APOTH_FIST
+    tags:
+      SMT_ARMOR_REGEN_HP: 2
+      ARMOR_REGENERATES_WOUNDS: 1
+
+  - type: STR_MKX_APO_UC_LV1
+    refNode: *STR_MKX_APO
+    spriteSheet: APOTACLV1.PCK
+    storeItem: STR_NONE
+    stats:
+      tu: 0
+      stamina: 10
+      health: 30
+      bravery: 0
+      reactions: 0
+      firing: 0
+      throwing: 0
+      strength: 10
+      psiStrength: 0
+      psiSkill: 0
+      melee: 15
     units:
       - STR_PRIMARIS_APOTH
     specialWeapon: STR_SM_APOTH_FIST_LV2
     tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 50
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 30
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      INFECTION_RESIST: 66
+
+  - type: STR_MKX_APOGRV_UC_LV1
+    refNode: *STR_MKX_APO
+    spriteSheet: APOGRVLV1.PCK
+    storeItem: STR_MKX_GRV_ARMOR
+    frontArmor: 140
+    sideArmor: 135
+    rearArmor: 115
+    underArmor: 140
+    stats:
+      tu: 0
+      stamina: 10
+      health: 40 #+10
+      bravery: 0
+      reactions: 0
+      firing: 0
+      throwing: 0
+      strength: 30 #+20
+      psiStrength: 0
+      psiSkill: 0
+      melee: 15
+    units:
+      - STR_PRIMARIS_APOTH
+    specialWeapon: STR_SM_APOTH_FIST_LV2
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 60
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INFECTION_RESIST: 66
 
   - type: STR_MKX_APO_UC
     refNode: *STR_MKX_APO
     storeItem: STR_NONE
     stats:
-      tu: 10            # base 10 
-      stamina: 10       # base 20 
-      health: 40        # base 10 
-      bravery: 0        # base 0  
-      reactions: 0      # base 10 
-      firing: 5         # base 0  
-      throwing: 0       # base 5  
-      strength: 0       # base 10 
-      psiStrength: 0    # base 0  
-      psiSkill: 0       # base 0  
-      melee: 20         # base 10 
+      tu: 10
+      stamina: 10
+      health: 40
+      bravery: 0
+      reactions: 0
+      firing: 5
+      throwing: 0
+      strength: 10
+      psiStrength: 0
+      psiSkill: 0
+      melee: 20
     units:
       - STR_PRIMARIS_APOTH_BIO
     specialWeapon: STR_SM_APOTH_FIST_LV3
     tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 50
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       INFECTION_RESIST: 75
 
-  - &STR_MKX_TEC_UC
+  - type: STR_MKX_APOGRV_UC_LV2
+    refNode: *STR_MKX_APO
+    spriteSheet: APOGRVLV2.PCK
+    storeItem: STR_MKX_GRV_ARMOR
+    stats:
+      tu: 10
+      stamina: 10
+      health: 50 #+10
+      bravery: 0
+      reactions: 0
+      firing: 5
+      throwing: 0
+      strength: 30 #+20
+      psiStrength: 0
+      psiSkill: 0
+      melee: 20
+    units:
+      - STR_PRIMARIS_APOTH_BIO
+    specialWeapon: STR_SM_APOTH_FIST_LV3
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 75
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      INFECTION_RESIST: 75
+
+  - &STR_MKX_TEC_UC                         #PRIMARIS TECHMARINE
+    type: STR_MKX_TEC_LV1_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # signum equipment provides advanced vision
     heatVision: 50 # techmarines get advanced sensors
@@ -1476,6 +2056,9 @@ armors:
       melee: 15         # base 10 +5
     specialWeapon: AUX_PROBE
     tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 60
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 50
@@ -1502,18 +2085,12 @@ armors:
       - STR_THUNDERFIRE_SHELL
     units:
       - STR_PRIMARISLV4
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 70
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
 
-  - type: STR_MKX_JUDICAR_UC
-    # selectUnitMale:     [{mod: 40k, index: 1256}, {mod: 40k, index: 1257}, {mod: 40k, index: 1258}, {mod: 40k, index: 1259}, {mod: 40k, index: 1260}]
-    # selectUnitFemale:   [{mod: 40k, index: 1256}, {mod: 40k, index: 1257}, {mod: 40k, index: 1258}, {mod: 40k, index: 1259}, {mod: 40k, index: 1260}]
-    # startMovingMale:    [{mod: 40k, index: 1251}, {mod: 40k, index: 1252}, {mod: 40k, index: 1253}, {mod: 40k, index: 1254}, {mod: 40k, index: 1255}]
-    # startMovingFemale:  [{mod: 40k, index: 1251}, {mod: 40k, index: 1252}, {mod: 40k, index: 1253}, {mod: 40k, index: 1254}, {mod: 40k, index: 1255}]
-    # selectWeaponMale:   [{mod: 40k, index: 1246}, {mod: 40k, index: 1247}, {mod: 40k, index: 1248}, {mod: 40k, index: 1249}, {mod: 40k, index: 1250}]
-    # selectWeaponFemale: [{mod: 40k, index: 1246}, {mod: 40k, index: 1247}, {mod: 40k, index: 1248}, {mod: 40k, index: 1249}, {mod: 40k, index: 1250}]
-    # annoyedMale:        [{mod: 40k, index: 1261}, {mod: 40k, index: 1262}, {mod: 40k, index: 1263}, {mod: 40k, index: 1264}, {mod: 40k, index: 1265}]
-    # annoyedFemale:      [{mod: 40k, index: 1261}, {mod: 40k, index: 1262}, {mod: 40k, index: 1263}, {mod: 40k, index: 1264}, {mod: 40k, index: 1265}]
-    deathMale:     [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
-    deathFemale:   [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
+  - type: STR_MKX_JUDICAR_UC                #PRIMARIS JUDICAR
     spriteSheet: JUDICAR.PCK
     ufopediaType: STR_MKX_CHP_UC ###CHANGEME
     customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 292}
@@ -1524,21 +2101,24 @@ armors:
     forcedTorso: 1
     corpseBattle:
       - STR_MKX_CHP_CORPSE
+    storeItem: STR_NONE
     corpseGeo: STR_FALLEN_CORPSE
     stats:
-       tu: 10
-       stamina: 10
-       health: 10
-       bravery: 0 #always multiples of 10
-       reactions: 0
-       firing: 0
-       throwing: 0
-       strength: 0
-       melee: 0
-    frontArmor: 120
-    sideArmor: 100
-    rearArmor: 80
-    underArmor: 70
+      tu: 10            # base 20 
+      stamina: 10       # base 15 
+      health: 10        # base 10 
+      bravery: 10       # base 10 
+      reactions: 0      # base 10 
+      firing: 0         # base 10 
+      throwing: 0       # base 10 
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
+    frontArmor: 125
+    sideArmor: 120
+    rearArmor: 100
+    underArmor: 125
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 1.0 #AP
@@ -1560,23 +2140,15 @@ armors:
     specialWeapon: STR_JUDICAR_BLESS
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 35
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 100
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
-  - type: STR_MKX_CHP_UC
-    # selectUnitMale:     [1256, 1257, 1258, 1259, 1260]
-    # selectUnitFemale:   [1256, 1257, 1258, 1259, 1260]
-    # startMovingMale:    [1251, 1252, 1253, 1254, 1255]
-    # startMovingFemale:  [1251, 1252, 1253, 1254, 1255]
-    # selectWeaponMale:   [1246, 1247, 1248, 1249, 1250]
-    # selectWeaponFemale: [1246, 1247, 1248, 1249, 1250]
-    # annoyedMale:        [1261, 1262, 1263, 1264, 1265]
-    # annoyedFemale:      [1261, 1262, 1263, 1264, 1265]
-    # deathMale:     [380, 381, 382, 383, 384]
-    # deathFemale:   [380, 381, 382, 383, 384]
-    spriteSheet: PRIMCHP.PCK
+  - type: STR_MKX_CHP_UC                    #PRIMARIS CHAPLAIN
     ufopediaType: STR_MKX_CHP_UC
     visibilityAtDay: 40
     visibilityAtDark: 30
@@ -1595,10 +2167,10 @@ armors:
        throwing: 0
        strength: 0
        melee: 0
-    frontArmor: 110
-    sideArmor: 90
-    rearArmor: 80
-    underArmor: 70
+    frontArmor: 125
+    sideArmor: 120
+    rearArmor: 100
+    underArmor: 125
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 1.0 #AP

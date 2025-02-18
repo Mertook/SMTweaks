@@ -421,7 +421,7 @@ manufacture:
       - STR_MARINE_BOLTERS_ADV
     requiredItems:
       STR_ALIEN_ALLOYS: 4 # was 1
-      STR_KILLPOINT_TOKEN: 200 # was 180
+      STR_KILLPOINT_TOKEN: 160
 
   - name: STR_BOLTRIFLE_MC                          # MC Boltrifle
     category: STR_WEAPON
@@ -435,7 +435,7 @@ manufacture:
       - STR_PRIMARIS_BOLTERS_ADV
     requiredItems:
       STR_ALIEN_ALLOYS: 4 # was 1
-      STR_KILLPOINT_TOKEN: 200 # was 180
+      STR_KILLPOINT_TOKEN: 160
 
   - name: STR_MCPISTOL                              # MC Boltpistol
     category: STR_WEAPON
@@ -465,6 +465,21 @@ manufacture:
   - name: STR_HWP_FUSION_BOMB                       # Dreadnought Hellfire Missiles
     requires: !add
       - STR_DREADNOUGHT_MARINE
+
+  - name: STR_NEOVOLKITE_PISTOL
+    category: STR_WEAPON
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_PRIMARIS
+      - STR_VOLKITE
+    space: 0
+    time: 550
+    cost: 100000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 4
+      STR_UFO_CONSTRUCTION: 6
+      STR_KILLPOINT_TOKEN: 40
+  
 ### ARMOR
   - name: STR_SARGENT_ARMOR                         # Sergeant
     category: STR_PERSONAL_ARMOR
@@ -605,6 +620,7 @@ manufacture:
     requires:
       - STR_TEC_BAYR
       - STR_MARINES_AND_DEATHWATCH
+      - STR_NOT_PRIMARIS
     space: 0
     time: 800
     cost: 60000 # was 30k
@@ -681,7 +697,7 @@ manufacture:
     cost: 50000
     requiresBaseFunc: [TEC]
     requiredItems:
-      STR_ALIEN_ALLOYS: 25 # was 30
+      STR_ALIEN_ALLOYS: 15 # was 30
       STR_KILLPOINT_TOKEN: 60
 
   - name: STR_MKX_PHB_ARMOR                         # Primaris Phobos
@@ -692,9 +708,9 @@ manufacture:
       - STR_PRIMARIS_AND_DEATHWATCH
     space: 0
     time: 800
-    cost: 22000
+    cost: 20000
     requiredItems:
-      STR_ALIEN_ALLOYS: 15
+      STR_ALIEN_ALLOYS: 5 # primaris already start in tactical and costed appropiately, should be cheap
 
   - name: STR_MKX_GRV_ARMOR                         # Primaris Gravis
     category: STR_PERSONAL_ARMOR
@@ -753,6 +769,47 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 120
       STR_KILLPOINT_TOKEN: 60
+
+  - name: STR_PRIMARIS_ROCKETPACK                    # Primaris Vengor Armor
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_PRIMARIS
+      - STR_PRIMARIS_ROCKETPACK
+      - STR_GENERALLOCK #not implemented
+    space: 0
+    time: 600
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 2
+
+  - name: STR_PRIMARIS_MELTAPACK                    # Primaris Meltarifle Armor
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_PRIMARIS
+      - STR_PRIMARIS_MELTAPACK
+    space: 0
+    time: 600
+    cost: 30000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 8
+      STR_UFO_CONSTRUCTION: 1
+      STR_KILLPOINT_TOKEN: 20
+
+  - name: STR_PRIMARIS_PLASMAPACK                   # Primaris Plasma Incinerator Armor
+    category: STR_PERSONAL_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_PRIMARIS
+      - STR_PRIMARIS_PLASMAPACK
+    space: 0
+    time: 600
+    cost: 60000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 12
+      STR_UFO_CONSTRUCTION: 2
+      STR_KILLPOINT_TOKEN: 50
 
 ### OTHER
   - name: STR_SMT_GENESEED_REFINE                   # Geneseed refining recipe
@@ -921,4 +978,27 @@ manufacture:
     requires:
       - STR_GENERALLOCK #disabled
 
+  - delete: STR_PRIMARIS_MELTA_RIFLE
+    space: 0
+    time: 100
+    requires:
+      - STR_GENERALLOCK #disabled
+
+  - delete: STR_PRIMARIS_EXTERMINATOR
+    space: 0
+    time: 100
+    requires:
+      - STR_GENERALLOCK #disabled
+
+  - delete: STR_PLASMA_INC_TERRAN
+    space: 0
+    time: 100
+    requires:
+      - STR_GENERALLOCK #disabled
+
+  - delete: STR_PLASMA_INC_CLIP
+    space: 0
+    time: 100
+    requires:
+      - STR_GENERALLOCK #disabled
 

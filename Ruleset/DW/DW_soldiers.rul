@@ -1,5 +1,6 @@
 soldiers:
   - &STR_SOLDIER_DEATHWATCH             # DW Marine Reference
+    update: STR_ULTRAMARINE
     costSalary: 100000
     requires:
       - STR_DEATHWATCH
@@ -308,6 +309,7 @@ soldiers:
     refNode: *STR_SOLDIER_DEATHWATCH
 
   - &STR_SOLDIER_DEATHWATCH_LEADER      # DW Captain Reference
+    type: STR_ULTRAMARINE_LEADER
     costSalary: 200000
     requires:
       - STR_DEATHWATCH

@@ -451,11 +451,10 @@ research:
       - STR_GENERALLOCK
 
   - name: STR_SHOTGUNS_ADV          # Shotgun research for SM/Arbites - unlocks krak/incin ammo
-    cost: 25
+    cost: 35
     points: 0
     dependencies:
       - STR_MARINES_STRATEGY
-      - STR_NOT_PRIMARIS
       - STR_LASER_WEAPONS
     listOrder: 10 # push above corpses/etc
 
@@ -493,6 +492,44 @@ research:
     points: 0
     dependencies:
       - STR_GENERALLOCK
+
+  - name: STR_VOLKITE               # Volkite Weaponry
+    cost: 220
+    points: 10
+    dependencies:
+      - STR_LASER_WEAPONS
+      - STR_MIDTIER_PREREQ
+      - STR_PRIMARIS
+
+  - name: STR_PRIMARIS_BACKPACKS    # Primaris Backpack Weaponry
+    cost: 60
+    points: 10
+    dependencies:
+      - STR_PRIMARIS
+    getOneFree:
+      - STR_PRIMARIS_ROCKETPACK
+
+  - name: STR_PRIMARIS_ROCKETPACK   # Primaris Vengor Launcher
+    cost: 20
+    points: 5
+    dependencies:
+      - STR_PRIMARIS
+      - STR_PRIMARIS_BACKPACKS
+
+  - name: STR_PRIMARIS_MELTAPACK    # Primaris Meltarifle
+    cost: 90
+    points: 10
+    dependencies:
+      - STR_PRIMARIS_BACKPACKS
+      - STR_HEAVY_LASER
+
+  - name: STR_PRIMARIS_PLASMAPACK   # Primaris Plasma Incinerator
+    cost: 120
+    points: 10
+    dependencies:
+      - STR_PRIMARIS_BACKPACKS
+      - STR_PLASMA_RIFLE_DEP1
+      - STR_MASTER_CRAFTING
 
   - name: STR_MARINE_CHAPEL         # Early unlock for Chapel
     cost: 100
@@ -593,4 +630,10 @@ research:
     dependencies:
       #- STR_PRIMARIS
       #- STR_HIGHTIER_PREREQ
+      - STR_GENERALLOCK
+
+  - name: STR_PLASMA_INC_R  # NEW
+    cost: 860
+    points: 20
+    dependencies: !add
       - STR_GENERALLOCK

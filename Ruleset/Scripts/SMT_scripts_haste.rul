@@ -43,6 +43,7 @@ extended:
 
 items:
   - &STR_HASTE_TOME                 # Haste Template
+    type: STR_LIB_SPEED_TOME
     scripts:
       damageUnitAmmo: |
         var ptr RuleItem itemRuleset;

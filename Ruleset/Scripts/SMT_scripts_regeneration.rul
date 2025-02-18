@@ -1,189 +1,3 @@
-soldiers:
-  - type: STR_SOLDIER
-    tags:
-      SMT_UNIT_REGEN_HP: 5
-      SMT_UNIT_REGEN_WOUND: 1
-
-  - type: STR_SOLDIER_NEOPHYTE
-    tags:
-      SMT_UNIT_REGEN_HP: 2 # Neophytes get only minor healing
-      SMT_UNIT_REGEN_WOUND: 0
-
-  - type: STR_SOLDIER_TERMINATOR
-    tags:
-      SMT_UNIT_REGEN_HP: 8
-      SMT_UNIT_REGEN_WOUND: 2
-
-  - type: STR_SOLDIER_CHAPLAIN
-    tags:
-      SMT_UNIT_REGEN_HP: 8
-      SMT_UNIT_REGEN_WOUND: 2
-
-  - type: STR_SOLDIER_LIBRARIAN
-    tags:
-      SMT_UNIT_REGEN_HP: 5
-      SMT_UNIT_REGEN_WOUND: 1
-
-  - type: STR_SOLDIER_LIBRARIAN_TERM
-    tags:
-      SMT_UNIT_REGEN_HP: 8
-      SMT_UNIT_REGEN_WOUND: 2
-
-  - type: STR_PRIMARISLV1
-    tags:
-      SMT_UNIT_REGEN_HP: 5
-      SMT_UNIT_REGEN_WOUND: 1
-
-  - type: STR_PRIMARISLV2
-    tags:
-      SMT_UNIT_REGEN_HP: 6
-      SMT_UNIT_REGEN_WOUND: 1
-
-  - type: STR_PRIMARISLV3
-    tags:
-      SMT_UNIT_REGEN_HP: 7
-      SMT_UNIT_REGEN_WOUND: 2
-
-  - type: STR_PRIMARISLV4
-    tags:
-      SMT_UNIT_REGEN_HP: 8
-      SMT_UNIT_REGEN_WOUND: 2
-
-  - type: STR_PRIMARISLV5
-    tags:
-      SMT_UNIT_REGEN_HP: 10
-      SMT_UNIT_REGEN_WOUND: 3
-
-  - type: STR_PRIMARIS_APOTH
-    tags: # Apoth armor bonus builtin
-      SMT_UNIT_REGEN_HP: 10
-      SMT_UNIT_REGEN_WOUND: 3
-
-  - type: STR_PRIMARIS_APOTH_BIO
-    tags: # Apoth armor bonus builtin
-      SMT_UNIT_REGEN_HP: 12
-      SMT_UNIT_REGEN_WOUND: 4
-
-  - type: STR_PRIMARIS_JUDICAR
-    tags:
-      SMT_UNIT_REGEN_HP: 6
-      SMT_UNIT_REGEN_WOUND: 1
-
-  - type: STR_PRIMARIS_CHAPLAIN
-    tags:
-      SMT_UNIT_REGEN_HP: 8
-      SMT_UNIT_REGEN_WOUND: 2
-
-  - type: STR_BLOODRAVENS_MARINE
-    tags:
-      SMT_UNIT_REGEN_HP: 5
-      SMT_UNIT_REGEN_WOUND: 1
-
-  - &STR_DEATHWATCH_MARINE              # Deathwatch Marines
-    tags:
-      SMT_UNIT_REGEN_HP: 8 # Vet level
-      SMT_UNIT_REGEN_WOUND: 2 # Vet level
-      SMT_UNIT_REGEN_PENALTY_REDUCTION: 50 # DW bonus, ignore 50% of recovery time added by healing
-
-  - type: STR_ULTRAMARINE
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_ULTRAMARINE_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_IMPERIALF
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_IMPERIALF_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_BLOODANGELS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_BLOODANGELS_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_SALAMANDAR
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_SALAMANDAR_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_BLACKT
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_BLACKT_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_WHITES
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_WHITES_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_DARKANGELS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_DARKANGELS_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_SPACEW
-    tags:
-      SMT_UNIT_REGEN_HP: 12 # +4 Spacewolf Bonus
-      SMT_UNIT_REGEN_WOUND: 5 # +3 Spacewolf Bonus
-      SMT_UNIT_REGEN_PENALTY_REDUCTION: 80 # +30% Spacewolf Bonus
-
-  - type: STR_SPACEW_PRIMARIS
-    tags:
-      SMT_UNIT_REGEN_HP: 12 # +4 Spacewolf Bonus
-      SMT_UNIT_REGEN_WOUND: 5 # +3 Spacewolf Bonus
-      SMT_UNIT_REGEN_PENALTY_REDUCTION: 80 # +30% Spacewolf Bonus
-
-  - type: STR_CRISMONF
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_CRISMONF_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - &STR_DEATHWATCH_LEADER              # Deathwatch Captains
-    tags:
-      SMT_UNIT_REGEN_HP: 10 # Vet level +2
-      SMT_UNIT_REGEN_WOUND: 3 # Vet level +1
-      SMT_UNIT_REGEN_PENALTY_REDUCTION: 60 # DW Captain bonus, ignore 60% of recovery time added by healing
-
-  - type: STR_ULTRAMARINE_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_BLOODANGELS_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_IMPERIALF_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_SALAMANDAR_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_BLACKT_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_DARKANGELS_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_WHITES_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_SPACEW_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-    tags:
-      SMT_UNIT_REGEN_HP: 16 # +6 Spacewolf Bonus
-      SMT_UNIT_REGEN_WOUND: 8 # +5 Spacewolf Bonus
-      SMT_UNIT_REGEN_PENALTY_REDUCTION: 85 # +25% Spacewolf Bonus
-
-  - type: STR_CRISMONF_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-
-
 extended:
   tags:
     RuleArmor:
@@ -324,3 +138,190 @@ extended:
 
           return;
 
+
+
+soldiers:
+  - type: STR_SOLDIER
+    tags:
+      SMT_UNIT_REGEN_HP: 5
+      SMT_UNIT_REGEN_WOUND: 1
+
+  - type: STR_SOLDIER_NEOPHYTE
+    tags:
+      SMT_UNIT_REGEN_HP: 2 # Neophytes get only minor healing
+      SMT_UNIT_REGEN_WOUND: 0
+
+  - type: STR_SOLDIER_TERMINATOR
+    tags:
+      SMT_UNIT_REGEN_HP: 8
+      SMT_UNIT_REGEN_WOUND: 2
+
+  - type: STR_SOLDIER_CHAPLAIN
+    tags:
+      SMT_UNIT_REGEN_HP: 8
+      SMT_UNIT_REGEN_WOUND: 2
+
+  - type: STR_SOLDIER_LIBRARIAN
+    tags:
+      SMT_UNIT_REGEN_HP: 5
+      SMT_UNIT_REGEN_WOUND: 1
+
+  - type: STR_SOLDIER_LIBRARIAN_TERM
+    tags:
+      SMT_UNIT_REGEN_HP: 8
+      SMT_UNIT_REGEN_WOUND: 2
+
+  - type: STR_PRIMARISLV1
+    tags:
+      SMT_UNIT_REGEN_HP: 5
+      SMT_UNIT_REGEN_WOUND: 1
+
+  - type: STR_PRIMARISLV2
+    tags:
+      SMT_UNIT_REGEN_HP: 6
+      SMT_UNIT_REGEN_WOUND: 1
+
+  - type: STR_PRIMARISLV3
+    tags:
+      SMT_UNIT_REGEN_HP: 7
+      SMT_UNIT_REGEN_WOUND: 2
+
+  - type: STR_PRIMARISLV4
+    tags:
+      SMT_UNIT_REGEN_HP: 8
+      SMT_UNIT_REGEN_WOUND: 2
+
+  - type: STR_PRIMARISLV5
+    tags:
+      SMT_UNIT_REGEN_HP: 10
+      SMT_UNIT_REGEN_WOUND: 3
+
+  - type: STR_PRIMARIS_APOTH
+    tags: # Apoth armor bonus builtin
+      SMT_UNIT_REGEN_HP: 10
+      SMT_UNIT_REGEN_WOUND: 3
+
+  - type: STR_PRIMARIS_APOTH_BIO
+    tags: # Apoth armor bonus builtin
+      SMT_UNIT_REGEN_HP: 12
+      SMT_UNIT_REGEN_WOUND: 4
+
+  - type: STR_PRIMARIS_JUDICAR
+    tags:
+      SMT_UNIT_REGEN_HP: 6
+      SMT_UNIT_REGEN_WOUND: 1
+
+  - type: STR_PRIMARIS_CHAPLAIN
+    tags:
+      SMT_UNIT_REGEN_HP: 8
+      SMT_UNIT_REGEN_WOUND: 2
+
+  - type: STR_BLOODRAVENS_MARINE
+    tags:
+      SMT_UNIT_REGEN_HP: 5
+      SMT_UNIT_REGEN_WOUND: 1
+
+  - &STR_DEATHWATCH_MARINE              # Deathwatch Marines
+    type: STR_ULTRAMARINE
+    tags:
+      SMT_UNIT_REGEN_HP: 8 # Vet level
+      SMT_UNIT_REGEN_WOUND: 2 # Vet level
+      SMT_UNIT_REGEN_PENALTY_REDUCTION: 50 # DW bonus, ignore 50% of recovery time added by healing
+
+  - type: STR_ULTRAMARINE
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_ULTRAMARINE_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_IMPERIALF
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_IMPERIALF_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_BLOODANGELS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_BLOODANGELS_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_SALAMANDAR
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_SALAMANDAR_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_BLACKT
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_BLACKT_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_WHITES
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_WHITES_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_DARKANGELS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_DARKANGELS_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_SPACEW
+    tags:
+      SMT_UNIT_REGEN_HP: 12 # +4 Spacewolf Bonus
+      SMT_UNIT_REGEN_WOUND: 5 # +3 Spacewolf Bonus
+      SMT_UNIT_REGEN_PENALTY_REDUCTION: 80 # +30% Spacewolf Bonus
+
+  - type: STR_SPACEW_PRIMARIS
+    tags:
+      SMT_UNIT_REGEN_HP: 12 # +4 Spacewolf Bonus
+      SMT_UNIT_REGEN_WOUND: 5 # +3 Spacewolf Bonus
+      SMT_UNIT_REGEN_PENALTY_REDUCTION: 80 # +30% Spacewolf Bonus
+
+  - type: STR_CRISMONF
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - type: STR_CRISMONF_PRIMARIS
+    refNode: *STR_DEATHWATCH_MARINE
+
+  - &STR_DEATHWATCH_LEADER              # Deathwatch Captains
+    type: STR_ULTRAMARINE_LEADER
+    tags:
+      SMT_UNIT_REGEN_HP: 10 # Vet level +2
+      SMT_UNIT_REGEN_WOUND: 3 # Vet level +1
+      SMT_UNIT_REGEN_PENALTY_REDUCTION: 60 # DW Captain bonus, ignore 60% of recovery time added by healing
+
+  - type: STR_ULTRAMARINE_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_BLOODANGELS_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_IMPERIALF_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_SALAMANDAR_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_BLACKT_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_DARKANGELS_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_WHITES_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+
+  - type: STR_SPACEW_LEADER
+    refNode: *STR_DEATHWATCH_LEADER
+    tags:
+      SMT_UNIT_REGEN_HP: 16 # +6 Spacewolf Bonus
+      SMT_UNIT_REGEN_WOUND: 8 # +5 Spacewolf Bonus
+      SMT_UNIT_REGEN_PENALTY_REDUCTION: 85 # +25% Spacewolf Bonus
+
+  - type: STR_CRISMONF_LEADER
+    refNode: *STR_DEATHWATCH_LEADER

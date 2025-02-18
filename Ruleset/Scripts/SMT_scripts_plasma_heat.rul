@@ -23,6 +23,7 @@ extended:
 
 items:
   - &STR_OVERHEATING_PLASMA
+    type: STR_PLASMA_GUN_TWINCORE_DW
     tags:
       ITEM_HEAT_MAX_LEVEL: 7
       ITEM_HEAT_DISSIPATION_PER_TURN: 1
@@ -275,8 +276,8 @@ items:
     refNode: *STR_OVERHEATING_PLASMA
     tags:
       ITEM_HEAT_MAX_LEVEL: 7
-      ITEM_HEAT_DISSIPATION_PER_TURN: 5 #improved dissipation
-      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 1
+      ITEM_HEAT_DISSIPATION_PER_TURN: 4 #improved dissipation
+      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2 #improved cooling
       ITEM_AIMED_FLAT_POWER_BONUS: 50 #Maximal Shot Bonus
       ITEM_POWER_BONUS_PERCENTILE: 1 #use %
 

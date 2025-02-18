@@ -4,7 +4,7 @@ extraStrings:
       ### MISC
       STR_TERMINATOR_CROSS_DESCRIPTION: Space Marines awarded with the Crux Terminatus are recognized as elites, allowing promotion to the highest ranks and access to rare relics including Terminator Armor. {NEWLINE}{NEWLINE} For this honor the Space Marine needs to have achieved 30 enemy kills, 15 successful missions and serve for three months.
       STR_HONOR_MEDAL: "Mark of Honor"
-      STR_HONOR_MEDAL_DESCRIPTION: "Soldiers who participate in successful operations are awarded Marks of Honor, with more distinguished marks given to those with a long record of contributions to the Imperium.{NEWLINE}{NEWLINE} Marks of Honor are granted when a Soldiers total Score earned from missions reaches a certain level:{NEWLINE}{NEWLINE} Rank 1 - {ALT}1600{ALT}{NEWLINE} Rank 2 - {ALT}6000{ALT}{NEWLINE} Rank 3 - {ALT}24000{ALT}{NEWLINE} Rank 4 - {ALT}48000{ALT}"
+      STR_HONOR_MEDAL_DESCRIPTION: "Soldiers who participate in successful operations are awarded Marks of Honor, with more distinguished marks given to those with a long record of contributions to the Imperium.{NEWLINE}{NEWLINE} Marks of Honor are granted when a Soldiers total Score earned from missions reaches a certain level:{NEWLINE}{NEWLINE} Rank 1 - {ALT}1600{ALT}{NEWLINE} Rank 2 - {ALT}6000{ALT}{NEWLINE} Rank 3 - {ALT}18000{ALT}{NEWLINE} Rank 4 - {ALT}42000{ALT}"
       STR_AUTO_SHOT_COUNT: "Auto (x{0})"
       STR_SNAP_SHOT_COUNT: "Snap (x{0})"
       STR_FULL_AUTO: Full Auto
@@ -39,9 +39,41 @@ extraStrings:
       DREAD_ARMOR4_UC: "Castraferrum Dreadnought Armor"
       STR_MKX_INC_ARMOR: MKX Omnis Armor
       STR_MKX_APO_ARMOR: MKX Helix Adept Armor
-      STR_MKX_APO_UC_LV1: MKX Helix Adept Armor
-      STR_MKX_APO_UC_LV2: MKX Apothecary Armor
+      STR_MKX_TAC_MELT_LV1_UC: MKX Tacticus (Melta)
+      STR_MKX_TAC_MELT_LV2_UC: MKX Tacticus (Melta)
+      STR_MKX_TAC_MELT_LV3_UC: MKX Tacticus (Melta)
+      STR_MKX_TAC_MELT_LV4_UC: MKX Tacticus (Melta)
+      STR_MKX_TAC_MELT_LV5_UC: MKX Tacticus (Melta)
+      STR_MKX_TAC_PLAS_LV1_UC: MKX Tacticus (Plasma)
+      STR_MKX_TAC_PLAS_LV2_UC: MKX Tacticus (Plasma)
+      STR_MKX_TAC_PLAS_LV3_UC: MKX Tacticus (Plasma)
+      STR_MKX_TAC_PLAS_LV4_UC: MKX Tacticus (Plasma)
+      STR_MKX_TAC_PLAS_LV5_UC: MKX Tacticus (Plasma)
+      STR_MKX_HELIX_UC_LV1: MKX Helix Adept Armor
+      STR_MKX_HELIX_UC_LV2: MKX Helix Adept Armor
+      STR_MKX_HELIX_UC_LV3: MKX Helix Adept Armor
+      STR_MKX_APO_UC_LV1: MKX Apothecary Armor
       STR_MKX_APO_UC: MKX Apothecary Armor
+      STR_MKX_APOGRV_UC_LV1: MKX Gravis Armor
+      STR_MKX_APOGRV_UC_LV2: MKX Gravis Armor
+      STR_MKX_JUDICAR_UC: MKX Tacticus Armor
+      STR_MKX_GRV_LV1_UC: MKX Gravis (Boltstorm)
+      STR_MKX_GRV_LV1F_UC: MKX Gravis (Flamestorm)
+      STR_MKX_GRV_LV2_UC: MKX Gravis (Flamestorm)
+      STR_MKX_GRV_LV2A_UC: MKX Gravis (Autocannon)
+      STR_MKX_GRV_LV2B_UC: MKX Gravis (Boltstorm)
+      STR_MKX_GRV_LV3_UC: MKX Gravis (Autocannon)
+      STR_MKX_GRV_LV3B_UC: MKX Gravis (Boltstorm)
+      STR_MKX_GRV_LV3F_UC: MKX Gravis (Flamestorm)
+      STR_MKX_GRV_LV3H_UC: MKX Gravis Armor
+      STR_MKX_GRV_LV4_UC: MKX Gravis (Autocannon)
+      STR_MKX_GRV_LV4B_UC: MKX Gravis (Boltstorm)
+      STR_MKX_GRV_LV4F_UC: MKX Gravis (Flamestorm)
+      STR_MKX_GRV_LV4H_UC: MKX Gravis Armor
+      STR_MKX_GRV_LV5_UC: MKX Gravis (Boltstorm)
+      STR_MKX_GRV_LV5A_UC: MKX Gravis (Autocannon)
+      STR_MKX_GRV_LV5F_UC: MKX Gravis (Flamestorm)
+      STR_MKX_GRV_LV5H_UC: MKX Gravis Armor
       ### ITEMS
       STR_TELEPORT_CLAWS: Teleporter
       AUX_RAM_SMT: Chainsword
@@ -54,6 +86,7 @@ extraStrings:
       STR_SM_OFFICER_FIST_UFOPEDIA: Officer's Fist
       STR_SM_CHAPLAIN_FIST: Chaplain's Fist
       STR_SM_CHAPLAIN_FIST_UFOPEDIA: Chaplain's Fist
+      STR_JUDICAR_BLESS: Fanaticism
       STR_SMT_SIGNUM: Signum Sensor Pack
       STR_SIGNUM_ACTION: Squad Link
       STR_STRIKE_VOX: Strike Vox-caster
@@ -88,6 +121,7 @@ extraStrings:
       STR_HONOR_CORPSE: Veteran Corpse
       STR_CROZIUS_AIMED: Sanctify
       STR_CHAINSWORD_LIGHTSM: Scout Chainsword
+      STR_EXECUTIONER_BLADE: Executioner Blade
       STR_PISTOLH: Chaos Tigrus Boltpistol
       STR_PISTOLH_SM: Boltpistol Tigrus Pattern
       STR_ABSOLVOR_PISTOL: Absolvor Bolt Pistol
@@ -100,16 +134,20 @@ extraStrings:
       STR_GRAV_AUTOC_DW: Autocannon Gauntlet
       STR_GRAV_FLAMER_DW: Flame Gauntlet
       STR_CLAWS_DW: ¬ Lighting Claw
-      STR_BOLTRIFLE_DRUM: Standard Boltrifle Drum
-      STR_BOLTRIFLE_DRUM_AP: Kraken Penetrator Drum
-      STR_BOLTRIFLE_DRUM_EX: Metal Storm Drum
-      STR_BOLTRIFLE_DRUM_MC: Mastercrafted Boltrifle Drum
+      STR_BOLTRIFLE_DRUM: Heavy Boltrifle Drum Mag
+      STR_BOLTRIFLE_DRUM_AP: Kraken Penetrator Drum Mag
+      STR_BOLTRIFLE_DRUM_EX: Metal Storm Drum Mag
+      STR_BOLTRIFLE_DRUM_MC: Mastercrafted Bolt Drum Mag
       STR_BOLTRIFLE_DRUM_MC_DW: Mastercrafted Boltrifle Drum
       STR_HEAVY_BOLTRIFLE: Heavy Boltrifle
       STR_VOLKITE_VAULT: Volkite Caliver
+      STR_NEOVOLKITE_PISTOL: Neo-Volkite Pistol
       STR_SM_APOTH_FIST: Apothecary Gear
+      STR_SM_APOTH_FIST_LV2: Apothecary Gear
+      STR_SM_APOTH_FIST_LV3: Apothecary Gear
       STR_SM_APOTH_FIST_DW: Apothecary Gear
       STR_RIFLED: Cawl Boltrifle
+      STR_BOLTRIFLE_GL: Combi Boltrifle
       STR_BOLTRIFLE_STERNGUARD: Sternguard Boltrifle
       STR_BOLTRIFLE_SCOPE: Stalker Boltrifle
       STR_BOLTRIFLE_MC: Master Crafted Boltrifle
@@ -161,6 +199,12 @@ extraStrings:
       STR_LIBRARIAN_RANK_3: Epistolary
       STR_LIBRARIAN_RANK_4: Chief Librarian
       STR_DREAD_RANK_0: Dreadnought
+      STR_PRIMARIS_RANK_0: "Marine"
+      STR_PRIMARIS_RANK_1: "Brother Marine"
+      STR_PRIMARIS_RANK_2: "Sergeant"
+      STR_PRIMARIS_RANK_3: "Veteran"
+      STR_PRIMARIS_RANK_4: "Lieutenant"
+      STR_PRIMARIS_RANK_5: "Captain"
       STR_PRIM_APOTH_RANK_0: Apothecary
       STR_PRIM_APOTH_RANK_1: Apoth. Biologis
       ### SKILLS
@@ -203,6 +247,11 @@ extraStrings:
       STR_VINDICARE_AMMO_REQ: Exitus Ammo
       STR_MULTIMELTA_PREREQ: Multimelta Technology
       STR_BOLT_RIFLE_AMMO: Bolt Sniper Ammo
+      STR_VOLKITE: Volkite Weaponry
+      STR_PRIMARIS_BACKPACKS: Backpack Integrated Weaponry
+      STR_PRIMARIS_ROCKETPACK: Vengor Launcher
+      STR_PRIMARIS_MELTAPACK: Primaris Meltarifle
+      STR_PRIMARIS_PLASMAPACK: Plasma Incinerator
       STR_APOTHECARY_PREREQ: (Apothecary Unlock)
       STR_TSARGENT: Terminator Cyclone Launcher
       STR_BOLTPISTOL_REQ: (Boltpistols Unlocked)

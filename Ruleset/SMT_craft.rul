@@ -31,6 +31,7 @@ units:
         - STR_SMT_CRAFT_SMOKE
 
   - &STR_SMT_RAZORBACK_DEFAULT              # Generic Razorback Turret
+    type: STR_SMT_RAZORBACK_BLANK
     race: STR_SMT_RAZORBACK
     stats:
       tu: 30 # +10, allow more spinning
@@ -148,6 +149,7 @@ armors:
       UNIT_TYPE_IMPERIUM: 1
 
   - &STR_SMT_RB_TURRET_BASE                 # Razorback Turret defaults
+    type: STR_SMT_RAZOR_DEFAULT_ARMOR
     visibilityAtDay: 40
     visibilityAtDark: 35 # marine standard
     antiCamouflageAtDay: 10
@@ -246,6 +248,7 @@ armors:
 
 items:
   - &STR_TURRET_SPAWNER_BASE                # Turret Spawner Base
+    type: STR_SMOKELAUNCHER_TURRET_SPAWNER
     spawnUnitFaction: 0
     invWidth: 0
     invHeight: 0
@@ -262,16 +265,17 @@ items:
     spawnUnit: STR_SMT_RAZORBACK_BLANK
 
   - &STR_TURRET_SHOP_BASE                   # Turret Shop Token
+    type: STR_RAZOR_HBOLTER
     weight: 999
     power: 1
-    hitAnimation: 2100
+    hitAnimation: -1
     damageType: 3
     battleType: 4
     recover: true
     armor: 255
     fuseType: 0
     isExplodingInHands: true
-    bigSprite: 3106
+    bigSprite: 106
     floorSprite: -1
     supportedInventorySections:
       - STR_GROUND #shouldn't be able to pick this up
@@ -318,6 +322,7 @@ items:
       SMT_RAZOR_LAS: 1
 
   - &STR_SMT_TURRET_GUN_DEFAULT             # Craft Turret Gun Defaults
+    type: STR_SMT_CRAFT_SMOKE
     weight: 0
     size: 0
     invWidth: 2
@@ -332,7 +337,7 @@ items:
 
   - type: STR_SMT_CRAFT_SMOKE               # Craft Smokelauncher weapon
     refNode: *STR_SMT_TURRET_GUN_DEFAULT
-    bigSprite: 3129
+    bigSprite: 129
     bulletSprite: {mod: 40k, index: 0}
     explosionHitSound: {mod: 40k, index: 792} #792 Smoke
     hitAnimation: {mod: 40k, index: 104} #XSmoke
@@ -583,14 +588,14 @@ crafts:
           length: 20
           items:
             STR_RAZORBACK_TURRET_SPAWNER:
-              - [1, 15, 1] 
-              - [7, 14, 1] 
+              - [1, 15, 1]
+              - [7, 14, 1]
             STR_SMOKELAUNCHER_TURRET_SPAWNER:
-              - [8, 8, 2] 
+              - [8, 8, 2]
             STR_LEFT_THUNDERHAWK_SPAWNER:
-              - [0, 3, 0] 
+              - [0, 3, 0]
             STR_RIGHT_THUNDERHAWK_SPAWNER:
-              - [5, 3, 0] 
+              - [5, 3, 0]
             STR_SKULL_SPAWNER:
               - [7, 5, 1]
               - [8, 5, 1]
@@ -622,13 +627,13 @@ crafts:
       - [8, 15, 0, 0]
       - [7, 16, 0, 0]
       - [8, 16, 0, 0] #rhino 2
-      - [7, 9, 1, 4] #speeder 
+      - [7, 9, 1, 4] #speeder
       - [8, 9, 1, 4]
       - [6, 8, 1, 6]
       - [7, 8, 1, 6]
       - [8, 8, 1, 2]
       - [9, 8, 1, 2] #speeder
-      - [7, 5, 0, 0]  #4-tile hwp deployment block     
+      - [7, 5, 0, 0]  #4-tile hwp deployment block
       - [7, 6, 0, 0]
       - [8, 5, 0, 0]
       - [8, 6, 0, 0]  #4-tile hwp deployment block
@@ -694,6 +699,11 @@ crafts:
         - name: IMPULSOR
           width: 10
           length: 20
+          items:
+            STR_SMOKELAUNCHER_TURRET_SPAWNER:
+              - [4, 9, 2]
+          fuseTimers:
+            STR_SMOKELAUNCHER_TURRET_SPAWNER: [0, 0]
     deployment:
       - [4, 5, 0, 0]
       - [5, 5, 0, 0]
@@ -719,14 +729,14 @@ terrains: # Handle P2 First Company
         length: 20
         items:
           STR_RAZORBACK_TURRET_SPAWNER:
-            - [1, 12, 1] 
-            - [7, 16, 1] 
+            - [1, 12, 1]
+            - [7, 16, 1]
           STR_SMOKELAUNCHER_TURRET_SPAWNER:
-            - [8, 10, 2] 
+            - [8, 10, 2]
           STR_LEFT_THUNDERHAWK_SPAWNER:
-            - [2, 4, 0] 
+            - [2, 4, 0]
           STR_RIGHT_THUNDERHAWK_SPAWNER:
-            - [7, 4, 0] 
+            - [7, 4, 0]
           STR_SKULL_SPAWNER:
             - [7, 7, 1]
             - [8, 7, 1]

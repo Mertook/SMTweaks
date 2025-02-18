@@ -14,7 +14,7 @@ commendations:
     description: STR_HONOR_MEDAL_DESCRIPTION
     sprite: 5
     criteria:
-      totalScore: [1600,6000,24000,48000]
+      totalScore: [1600,6000,18000,42000]
 
 soldierTransformation:
   - name: STR_PROMOTE_TERMINATOR        # Marine -> Vet Marine
@@ -113,6 +113,10 @@ soldierTransformation:
       - STR_PRIMARISLV3
       - STR_PRIMARISLV4
       - STR_PRIMARISLV5
+      - STR_PRIMARIS_APOTH
+      - STR_PRIMARIS_APOTH_BIO
+      - STR_PRIMARIS_JUDICAR
+      - STR_PRIMARIS_CHAPLAIN
     listOrder: 10
 
   - name: STR_PROMOTE_CHAPLAIN          # Marine -> Chaplain
@@ -278,6 +282,7 @@ soldierTransformation:
       throwing: 5
       strength: 5
       melee: 5
+      bravery: 10
     lowerBoundAtMinStats: true
     upperBoundAtStatCaps: true
     listOrder: 40
@@ -308,6 +313,7 @@ soldierTransformation:
       throwing: 5
       strength: 5
       melee: 5
+      bravery: 10
     lowerBoundAtMinStats: true
     upperBoundAtStatCaps: true
     listOrder: 45
@@ -317,7 +323,7 @@ soldierTransformation:
       - STR_PRIMARIS
     cost: 50000 # was 100k
     requiredItems:
-      STR_KILLPOINT_TOKEN: 900
+      STR_KILLPOINT_TOKEN: 600
     producedSoldierType: STR_PRIMARISLV4
     keepSoldierArmor: false
     allowsDeadSoldiers: false
@@ -327,9 +333,20 @@ soldierTransformation:
       - STR_PRIMARISLV3
     requiredCommendations:
       STR_HONOR_MEDAL: 2
+    flatOverallStatChange:
+      tu: 5
+      stamina: 5
+      health: 5
+      reactions: 5
+      firing: 5
+      throwing: 5
+      strength: 5
+      melee: 5
+      bravery: 10
     transferTime: 0
     recoveryTime: 0
     lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
     listOrder: 50
 
   - name: STR_LV4_TO_LV5                # Primaris Lv4 -> Lv5
@@ -379,6 +396,7 @@ soldierTransformation:
       throwing: 5
       strength: 5
       melee: 5
+      bravery: 10
     lowerBoundAtMinStats: true
     upperBoundAtStatCaps: true
     listOrder: 60
@@ -389,7 +407,7 @@ soldierTransformation:
       - STR_APOC_BAY
     cost: 50000 # was 100k
     requiredItems:
-      STR_KILLPOINT_TOKEN: 900
+      STR_KILLPOINT_TOKEN: 700
     producedSoldierType: STR_PRIMARIS_APOTH_BIO
     keepSoldierArmor: false
     allowsDeadSoldiers: false
@@ -399,6 +417,16 @@ soldierTransformation:
       - STR_PRIMARIS_APOTH
     requiredCommendations:
       STR_HONOR_MEDAL: 2
+    flatOverallStatChange:
+      tu: 5
+      stamina: 5
+      health: 5
+      reactions: 5
+      firing: 5
+      throwing: 5
+      strength: 5
+      melee: 5
+      bravery: 10
     transferTime: 0
     recoveryTime: 0
     lowerBoundAtMinStats: true
@@ -433,8 +461,9 @@ soldierTransformation:
       throwing: 5
       strength: 5
       melee: 5
+      bravery: 10
     requiredMinStats:
-      psiSkill: 60 # devotion
+      psiSkill: 50 # devotion
     lowerBoundAtMinStats: true
     upperBoundAtStatCaps: true
     listOrder: 70
@@ -467,6 +496,7 @@ soldierTransformation:
       throwing: 5
       strength: 5
       melee: 5
+      bravery: 10
     requiredMinStats:
       psiSkill: 100 # devotion
     lowerBoundAtMinStats: true

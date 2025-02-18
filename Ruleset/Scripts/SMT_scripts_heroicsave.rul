@@ -70,6 +70,7 @@ soldiers:
       SMT_HEROICSAVE_HP: 30
 
   - &STR_DEATHWATCH_MARINE              # Deathwatch Marines
+    type: STR_ULTRAMARINE
     tags:
       SMT_HEROICSAVE_CHANCE: 65 # vet level
       SMT_HEROICSAVE_HP: 50 # +5 over vets
@@ -133,6 +134,7 @@ soldiers:
     refNode: *STR_DEATHWATCH_MARINE
 
   - &STR_DEATHWATCH_LEADER              # Deathwatch Leaders
+    type: STR_ULTRAMARINE_LEADER
     tags:
       SMT_HEROICSAVE_CHANCE: 75 # +10 over vets
       SMT_HEROICSAVE_HP: 55 # +10 over vets

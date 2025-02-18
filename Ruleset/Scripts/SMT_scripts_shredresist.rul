@@ -7,7 +7,7 @@ extended:
 
 armors:
   - &STR_SHREDRESIST_ARMOR          #BASE
-    #type: STR_SARGENT_ARMOR_UC #SERGEANT
+    type: STR_PERSONAL_ARMOR_UC
     personalLight: 6 # adjust all new armors to the rosigma standard
     psiCamouflage: -30 # fuck psi vision
     recovery:
@@ -335,144 +335,108 @@ armors:
 ### Primaris
   - type: STR_MKX_TAC_LV1_UC        # Tacticus Lv1
     refNode: *STR_SHREDRESIST_ARMOR
-    tags:
-      SMT_ARMOR_SHRED_RESISTANCE: 35
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
-
   - type: STR_MKX_TAC_LV2_UC        # Tacticus Lv2
     refNode: *STR_SHREDRESIST_ARMOR
-    tags:
-      SMT_ARMOR_SHRED_RESISTANCE: 35
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
-
   - type: STR_MKX_TAC_LV3_UC        # Tacticus Lv3
     refNode: *STR_SHREDRESIST_ARMOR
-    tags:
-      SMT_ARMOR_SHRED_RESISTANCE: 35
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
-
   - type: STR_MKX_TAC_LV4_UC        # Tacticus Lv4
     refNode: *STR_SHREDRESIST_ARMOR
-    tags: # gets boosted values
-      SMT_ARMOR_SHRED_RESISTANCE: 45
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
-
   - type: STR_MKX_TAC_LV5_UC        # Tacticus Lv5
     refNode: *STR_SHREDRESIST_ARMOR
-    tags: # gets elite values
-      SMT_ARMOR_SHRED_RESISTANCE: 65
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 40
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+  - type: STR_MKX_TAC_MELT_LV1_UC   # Tacticus Lv1
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_TAC_MELT_LV2_UC   # Tacticus Lv2
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_TAC_MELT_LV3_UC   # Tacticus Lv3
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_TAC_MELT_LV4_UC   # Tacticus Lv4
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_TAC_MELT_LV5_UC   # Tacticus Lv5
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_TAC_PLAS_LV1_UC   # Tacticus Lv1
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_TAC_PLAS_LV2_UC   # Tacticus Lv2
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_TAC_PLAS_LV3_UC   # Tacticus Lv3
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_TAC_PLAS_LV4_UC   # Tacticus Lv4
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_TAC_PLAS_LV5_UC   # Tacticus Lv5
+    refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_MKX_PHB_LV1_UC        # Phobos Lv1
     refNode: *STR_SHREDRESIST_ARMOR
-    tags: # gets light values
-      SMT_ARMOR_SHRED_RESISTANCE: 25
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 10
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 5
-
   - type: STR_MKX_PHB_LV2_UC        # Phobos Lv2
     refNode: *STR_SHREDRESIST_ARMOR
-    tags: # gets light values
-      SMT_ARMOR_SHRED_RESISTANCE: 25
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 10
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 5
-
   - type: STR_MKX_PHB_LV3_UC        # Phobos Lv3
     refNode: *STR_SHREDRESIST_ARMOR
-    tags: # gets light values
-      SMT_ARMOR_SHRED_RESISTANCE: 25
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 10
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 5
-
   - type: STR_MKX_PHB_LV4_UC        # Phobos Lv4
     refNode: *STR_SHREDRESIST_ARMOR
-    tags: # gets light values
-      SMT_ARMOR_SHRED_RESISTANCE: 30
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 15
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
-
   - type: STR_MKX_PHB_LV5_UC        # Phobos Lv5
     refNode: *STR_SHREDRESIST_ARMOR
-    tags: # gets light values
-      SMT_ARMOR_SHRED_RESISTANCE: 40
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
 
-  - type: STR_MKX_APO_UC_LV1        # Helix Adept
+  - type: STR_MKX_HELIX_UC_LV1      # Helix Adept
     refNode: *STR_SHREDRESIST_ARMOR
-    tags:
-      SMT_ARMOR_SHRED_RESISTANCE: 35
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
-
-  - type: STR_MKX_APO_UC_LV2        # Apothecary
+  - type: STR_MKX_HELIX_UC_LV2      # Helix Adept
     refNode: *STR_SHREDRESIST_ARMOR
-    tags:
-      SMT_ARMOR_SHRED_RESISTANCE: 35
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
+  - type: STR_MKX_HELIX_UC_LV3      # Helix Adept
+    refNode: *STR_SHREDRESIST_ARMOR
 
+  - type: STR_MKX_APO_UC_LV1        # Apothecary
+    refNode: *STR_SHREDRESIST_ARMOR
   - type: STR_MKX_APO_UC            # Apothecary Biologist
     refNode: *STR_SHREDRESIST_ARMOR
-    tags:
-      SMT_ARMOR_SHRED_RESISTANCE: 40
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+  - type: STR_MKX_APOGRV_UC_LV1     # Apothecary Grav
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_APOGRV_UC_LV2     # Apothecary Grav
+    refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_MKX_JUDICAR_UC        # Judicar
     refNode: *STR_SHREDRESIST_ARMOR
-    tags:
-      SMT_ARMOR_SHRED_RESISTANCE: 35
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
 
   - type: STR_MKX_CHP_UC            # Chaplain
     refNode: *STR_SHREDRESIST_ARMOR
-    tags:
-      SMT_ARMOR_SHRED_RESISTANCE: 40
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
 
   - type: STR_MKX_TEC_LV1_UC        # Techmarine Lv1
     refNode: *STR_SHREDRESIST_ARMOR
-    tags:
-      SMT_ARMOR_SHRED_RESISTANCE: 60
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
-
   - type: STR_MKX_TEC_LV2_UC        # Techmarine Lv2
     refNode: *STR_SHREDRESIST_ARMOR
-    tags:
-      SMT_ARMOR_SHRED_RESISTANCE: 60
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
-
   - type: STR_MKX_TEC_LV3_UC        # Techmarine Lv3
     refNode: *STR_SHREDRESIST_ARMOR
-    tags:
-      SMT_ARMOR_SHRED_RESISTANCE: 40
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
 
-### Primaris Gravis (shred values defined in SMT_armor.rul)
   - type: STR_MKX_GRV_LV1_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
+  - type: STR_MKX_GRV_LV1F_UC
+    refNode: *STR_SHREDRESIST_ARMOR
   - type: STR_MKX_GRV_LV2_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
+  - type: STR_MKX_GRV_LV2A_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_GRV_LV2B_UC
+    refNode: *STR_SHREDRESIST_ARMOR
   - type: STR_MKX_GRV_LV3_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
+  - type: STR_MKX_GRV_LV3B_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_GRV_LV3F_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_GRV_LV3H_UC
+    refNode: *STR_SHREDRESIST_ARMOR
   - type: STR_MKX_GRV_LV4_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
+  - type: STR_MKX_GRV_LV4B_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_GRV_LV4F_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_GRV_LV4H_UC
+    refNode: *STR_SHREDRESIST_ARMOR
   - type: STR_MKX_GRV_LV5_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_GRV_LV5A_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_GRV_LV5F_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_GRV_LV5H_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
 ### Deathwatch (shred values defined in DW_armor.rul)

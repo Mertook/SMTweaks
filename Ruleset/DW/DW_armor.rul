@@ -1,5 +1,6 @@
 armors:
   - &STR_DW_TAC_MK7                         #Tactical Armor (Firstborn)
+    type: STR_DW_TAC_ARMOR_BA_UC
     ufopediaType: STR_DW_TAC_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -48,8 +49,9 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -60,8 +62,8 @@ armors:
     refNode: *STR_DW_TAC_MK7
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
-      INFECTION_RESIST_TYPE: 0 # universal resist
       INFECTION_RESIST: 100 # immune to corruption
+
   - type: STR_DW_TAC_ARMOR_CF_UC
     refNode: *STR_DW_TAC_MK7
   - type: STR_DW_TAC_ARMOR_DA_UC
@@ -98,6 +100,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_APOTH_MK7                       #Apothecary Armor (Firstborn)
+    type: STR_DW_APOT_ARMOR_BA_UC
     ufopediaType: STR_DW_APOTH_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -151,8 +154,9 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_REGEN_HP: 3
       ARMOR_REGENERATES_WOUNDS: 1
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -164,7 +168,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_DW_APOT_ARMOR_CF_UC
     refNode: *STR_DW_APOTH_MK7
   - type: STR_DW_APOT_ARMOR_DA_UC
@@ -201,6 +205,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_DEV_MK7                         #Devastator Armor (Firstborn)
+    type: STR_DW_DEV_ARMOR_BA_UC
     ufopediaType: STR_DW_DEV_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -251,8 +256,9 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/3 HWP penalties
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -264,7 +270,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_DW_DEV_ARMOR_CF_UC
     refNode: *STR_DW_DEV_MK7
   - type: STR_DW_DEV_ARMOR_DA_UC
@@ -301,6 +307,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_ASS_MK7                         #Assault Armor (Firstborn)
+    type: STR_DW_ASS_ARMOR_BA_UC
     ufopediaType: STR_DW_ASS_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -350,8 +357,9 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
       MaxFlight: 2
@@ -367,7 +375,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_DW_ASS_ARMOR_CF_UC
     refNode: *STR_DW_ASS_MK7
   - type: STR_DW_ASS_ARMOR_DA_UC
@@ -404,6 +412,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_TECH_MK7                        #Techmarine Armor (Firstborn)
+    type: STR_DW_TECH_ARMOR_BA_UC
     ufopediaType: STR_DW_TECH_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40
@@ -454,8 +463,9 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 60 # Techmarine maintenance bonus
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -467,7 +477,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_DW_TECH_ARMOR_CF_UC
     refNode: *STR_DW_TECH_MK7
   - type: STR_DW_TECH_ARMOR_DA_UC
@@ -504,6 +514,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_TERM_MK7                        #Terminator Armor (Firstborn)
+    type: STR_DW_TER_ARMOR_BA_UC
     ufopediaType: STR_DW_TERM_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -558,8 +569,9 @@ armors:
       ARMOR_REGENERATES_WOUNDS: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
       ARMOR_ENERGY_SHIELD_DECAY: 50
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -571,7 +583,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_DW_TER_ARMOR_CF_UC
     refNode: *STR_DW_TERM_MK7
   - type: STR_DW_TER_ARMOR_DA_UC
@@ -608,6 +620,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_TERM_ASS_SHIELD_MK7             #Terminator Armor (Assault Shield)
+    type: STR_DW_TASS_ARMOR_BA_UC
     ufopediaType: STR_DW_TERM_ASS_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -664,8 +677,9 @@ armors:
       ARMOR_REGENERATES_WOUNDS: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 50
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -677,7 +691,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_DW_TASS_ARMOR_CF_UC
     refNode: *STR_DW_TERM_ASS_SHIELD_MK7
   - type: STR_DW_TASS_ARMOR_DA_UC
@@ -714,6 +728,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_TERM_ASS_CLAWS_MK7              #Terminator Armor (Assault Claws)
+    type: STR_DW_TASS_ARMOR_BA_CLAWS_UC
     ufopediaType: STR_DW_TERM_ASS_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -777,8 +792,9 @@ armors:
       ARMOR_REGENERATES_WOUNDS: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 50
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -826,7 +842,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_DW_TASS_ARMOR_CF_CLAWS_UC
     refNode: *STR_DW_TERM_ASS_CLAWS_MK7
     spriteSheet: TERMCLWDWCF.PCK
@@ -989,6 +1005,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_TERM_CYCLONE_MK7                #Terminator Armor (Cyclone)
+    type: STR_DW_TSARGENT_ARMOR_BA_UC
     ufopediaType: STR_DW_TERM_CYC_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -1050,8 +1067,9 @@ armors:
       ARMOR_REGENERATES_WOUNDS: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
       ARMOR_ENERGY_SHIELD_DECAY: 50
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -1099,7 +1117,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_DW_TSARGENT_ARMOR_CF_UC
     refNode: *STR_DW_TERM_CYCLONE_MK7
     spriteSheet: TERMCYCDWCF.PCK
@@ -1263,6 +1281,7 @@ armors:
 
 
   - &STR_DW_TAC_MKX                         #Tactical Armor (Primaris)
+    type: STR_MKX_DW_TAC_BA_UC
     ufopediaType: STR_DW_TAC_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -1311,8 +1330,9 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -1324,7 +1344,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_MKX_DW_TAC_CF_UC
     refNode: *STR_DW_TAC_MKX
   - type: STR_MKX_DW_TAC_DA_UC
@@ -1361,6 +1381,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_APOTH_MKX                       #Apothecary Armor (Primaris)
+    type: STR_MKX_DW_APO_BA_UC
     ufopediaType: STR_DW_APOTH_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -1414,8 +1435,9 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_REGEN_HP: 3
       ARMOR_REGENERATES_WOUNDS: 1
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -1427,7 +1449,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_MKX_DW_APO_CF_UC
     refNode: *STR_DW_APOTH_MKX
   - type: STR_MKX_DW_APO_DA_UC
@@ -1466,6 +1488,7 @@ armors:
 
 
   - &STR_DW_TECH_MKX                       #Techmarine Armor (Primaris)
+    type: STR_MKX_DW_TEC_BA_UC
     ufopediaType: STR_DW_TECH_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40
@@ -1518,8 +1541,9 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 60
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -1531,7 +1555,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_MKX_DW_TEC_CF_UC
     refNode: *STR_DW_TECH_MKX
   - type: STR_MKX_DW_TEC_DA_UC
@@ -1568,6 +1592,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_PHB_MKX                         #Phobos Armor (Primaris)
+    type: STR_MKX_DW_PHB_BA_UC
     ufopediaType: STR_DW_PHB_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -1614,6 +1639,7 @@ armors:
       - 0.2 #IMPACT
       - 0.9 #MELTA
     builtInWeapons: [] # remove backpack blocker
+    specialWeapon: STR_SM_PHOBOS_SCANNER #gets motion scanner
     moveCost:
       basePercent: [100, 75] # Reduced energy cost - Phobos bonus
     tags:
@@ -1621,8 +1647,9 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
       DODGE_CHANCE: 20
@@ -1637,7 +1664,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_MKX_DW_PHB_CF_UC
     refNode: *STR_DW_PHB_MKX
   - type: STR_MKX_DW_PHB_DA_UC
@@ -1674,6 +1701,7 @@ armors:
       basePercent: [100, 25] # Whitescar + Phobos bonus
 
   - &STR_DW_GRV_MKX_EH                      #Gravis Armor (Primaris) - Empty Hands
+    type: STR_MKX_DW_GRV_BA_UC
     ufopediaType: STR_DW_GRV_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -1731,8 +1759,9 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -1782,7 +1811,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_MKX_DW_GRV_CF_UC
     refNode: *STR_DW_GRV_MKX_EH
     units:
@@ -1952,6 +1981,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_GRV_MKX_BS                      #Gravis Armor (Primaris) - Boltstorm Gauntlet
+    type: STR_MKX_DW_GRVBS_BA_UC
     ufopediaType: STR_DW_GRV_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -2010,8 +2040,9 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -2061,7 +2092,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_MKX_DW_GRVBS_CF_UC
     refNode: *STR_DW_GRV_MKX_BS
     units:
@@ -2231,6 +2262,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_GRV_MKX_AC                      #Gravis Armor (Primaris) - Autocannon Gauntlet
+    type: STR_MKX_DW_GRVAC_BA_UC
     ufopediaType: STR_DW_GRV_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -2289,8 +2321,9 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -2342,7 +2375,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_MKX_DW_GRVAC_CF_UC
     refNode: *STR_DW_GRV_MKX_AC
     units:
@@ -2519,6 +2552,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_GRV_MKX_FS                      #Gravis Armor (Primaris) - Flamestorm Gauntlet
+    type: STR_MKX_DW_GRVFS_BA_UC
     ufopediaType: STR_DW_GRV_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -2577,8 +2611,9 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -2630,7 +2665,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_MKX_DW_GRVFS_CF_UC
     refNode: *STR_DW_GRV_MKX_FS
     units:
@@ -2807,6 +2842,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_INC_MKX                         #Omnis Armor (Primaris)
+    type: STR_MKX_DW_INC_BA_UC
     ufopediaType: STR_DW_INC_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -2860,8 +2896,9 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
       MaxFlight: 4
@@ -2881,7 +2918,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_MKX_DW_INC_CF_UC
     refNode: *STR_DW_INC_MKX
     units:
@@ -2932,6 +2969,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_INC_MKX_AC                      #Omnis Armor (Primaris) - Accelerator Autocannon
+    type: STR_MKX_DW_INCAC_BA_UC
     ufopediaType: STR_DW_INC_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -2991,8 +3029,9 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
       MaxFlight: 4
@@ -3048,7 +3087,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_MKX_DW_INCAC_CF_UC
     refNode: *STR_DW_INC_MKX_AC
     units:
@@ -3225,6 +3264,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_INC_MKX_PE                      #Omnis Armor (Primaris) - Plasma Exterminators x2
+    type: STR_MKX_DW_INCPE_BA_UC
     ufopediaType: STR_DW_INC_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -3285,8 +3325,9 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
       MaxFlight: 4
@@ -3342,7 +3383,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
-      INFECTION_RESIST_TYPE: 0 # universal resist
+
   - type: STR_MKX_DW_INCPE_CF_UC
     refNode: *STR_DW_INC_MKX_PE
     units:
@@ -3519,6 +3560,7 @@ armors:
       basePercent: [100, 75] # was 100, 25
 
   - &STR_DW_LEADER_ARMOR                    #DW Captain Armor template
+    type: STR_DW_LEADER_BA_UC
     ufopediaType: STR_DW_CAP_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
@@ -3575,8 +3617,9 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # gravis armor base
-      INFECTION_RESIST: 75 #Resistant to GSC infection
-      INFECTION_RESIST_TYPE: 2
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 66
+      INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -3638,7 +3681,6 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 8 # Gain 1-8 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to all corruption - chaplain
-      INFECTION_RESIST_TYPE: 0 # universal resist
   - type: STR_DW_LEADER_CF_UC
     refNode: *STR_DW_LEADER_ARMOR
     layersDefaultPrefix: 0

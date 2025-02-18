@@ -33,6 +33,7 @@ items:
     recoveryPoints: 20
 
   - &STR_BOLTER_DW                          # Generic DW Bolter Reference
+    update: STR_RIFLEA
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
     requiresBuy:
       - STR_DEATHWATCH
@@ -51,8 +52,8 @@ items:
 
   - update: STR_RIFLEA                      # Bolter (Artifex DW)                       ## Restricted item
     refNode: *STR_BOLTER_DW
-    bigSprite: 3139
-    floorSprite: 3139
+    bigSprite: 139
+    floorSprite: 139
     costBuy: 50000
     weight: 28 # was 20
     dropoff: 8 # standard
@@ -73,7 +74,7 @@ items:
 
   - update: STR_RIFLEDW                     # Bolter (Cawl Deathwatch)                  ## Restricted item
     refNode: *STR_BOLTER_DW
-    bigSprite: 3151
+    bigSprite: 151
     costBuy: 50000
     weight: 34 # was 20
     dropoff: 7 # cawl
@@ -93,6 +94,7 @@ items:
       ITEM_RECOIL: 75 # +10 over regular - larger battle rifle
 
   - &STR_BOLTER_AMMO_DW                     # DW Bolter ammo reference
+    type: STR_RIFLE_CLIP_DEREV
     categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
     floorSprite: {mod: 40k, index: 2}
     handSprite: {mod: 40k, index: 464}
@@ -124,7 +126,7 @@ items:
 
   - type: STR_RIFLE_CLIP_DEREV              # Derevenant Bolter ammo                    ## Custom ammo
     refNode: *STR_BOLTER_AMMO_DW
-    bigSprite: 3165
+    bigSprite: 165
     listOrder: 10443
     damageType: 1 # regular
     damageAlter:
@@ -142,7 +144,7 @@ items:
 
   - type: STR_RIFLE_CLIP_FUSION             # Inertial Fusion Bolter ammo
     refNode: *STR_BOLTER_AMMO_DW
-    bigSprite: 3167
+    bigSprite: 167
     listOrder: 10442
     hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2100}
     power: 15
@@ -164,7 +166,7 @@ items:
 
   - type: STR_RIFLE_CLIP_DRAGON             # Dragonfire Bolter ammo
     refNode: *STR_BOLTER_AMMO_DW
-    bigSprite: 3168
+    bigSprite: 168
     listOrder: 10441
     hitSound: {mod: 40k, index: 708}
     hitAnimation:
@@ -250,9 +252,9 @@ items:
       - STR_DW_SNIPER
     costBuy: 125000
     costSell: 50000
-    bigSprite: 3164
-    floorSprite: 3164
-    handSprite: 3624
+    bigSprite: 164
+    floorSprite: 164
+    handSprite: 224
     bulletSprite: {mod: 40k, index: 6}
     bulletSpeed: 50
     fireSound: {mod: 40k, index: 12}
@@ -297,8 +299,8 @@ items:
 
   - type: STR_BOLT_SNIPER_AMMO_DEREV        # Bolt Sniper Derevenant Ammo               ## Custom ammo
     categories: [STR_CAT_SNIPER]
-    bigSprite: 3169
-    floorSprite: 3130
+    bigSprite: 169
+    floorSprite: 130
     handSprite: {mod: 40k, index: 464}
     battleType: 2
     size: 0.02
@@ -326,8 +328,8 @@ items:
 
   - type: STR_BOLT_SNIPER_AMMO_HELS         # Bolt Sniper Helspear Ammo
     categories: [STR_CAT_SNIPER]
-    bigSprite: 3170
-    floorSprite: 3130
+    bigSprite: 170
+    floorSprite: 130
     handSprite: {mod: 40k, index: 464}
     size: 0.02
     costSell: 200
@@ -364,9 +366,9 @@ items:
       - STR_SHOTGUNS_ADV
     armor: 200
     listOrder: 10601
-    bigSprite: 3163
-    floorSprite: 3163
-    handSprite: 3632
+    bigSprite: 163
+    floorSprite: 163
+    handSprite: 232
     bulletSprite: {mod: 40k, index: 2}
     fireSound: {mod: 40k, index: 755}
     compatibleAmmo:
@@ -440,9 +442,9 @@ items:
 
   - type: STR_DW_PLASMA_GRENADE             # Plasma Grenade
     categories: [ STR_CAT_GRENADES, STR_CAT_TACTICAL]
-    bigSprite: 3176
-    floorSprite: 3176
-    handSprite: 3656
+    bigSprite: 176
+    floorSprite: 176
+    handSprite: 256
     explosionHitSound: {mod: 40k, index: 690}
     hitAnimation: {mod: 40k, index: 112}
     powerForAnimation: 5
@@ -583,9 +585,9 @@ items:
       ITEM_DOESNT_HURT_USER: 1
 
   - type: STR_VOLKITE_DW                    # Volkite Rifle (Salamander Captain)        ## Restricted item, Custom ammo, Volkite beam
-    bigSprite: 3178
-    floorSprite: 3178
-    handSprite: 3664
+    bigSprite: 178
+    floorSprite: 178
+    handSprite: 264
     bulletSprite: { mod: 40k, index: 16 } # meltagun
     fireSound: { mod: 40k, index: 847 }
     explosionHitSound: {mod: 40k, index: 690} # heavy plasma blast
@@ -614,29 +616,29 @@ items:
     powerRangeReduction: 10 # higher dropoff than plasma
     powerRangeThreshold: 25.0 #
     shotgunPellets: 1 # instant beam rather than projectile
-    power: 100 #
+    power: 120 #
     damageType: 11 # Melta type - cross between Las & Melta gun
     damageAlter:
       RandomType: 2 # 50-150%
       ToHealth: 0.50 # deals 100% total, 50% ignores armor
-      ArmorEffectiveness: 0.9 #
-      ToArmorPre: 0.20 #
-      ToArmor: 0.4 #
+      ArmorEffectiveness: 1.1
+      ToArmorPre: 0.1
+      ToArmor: 0.3
       ToTile: 1.25 # destructive
       FireThreshold: 0
       FixRadius: 1
       ToWound: 0.2 # vicious burns
       RandomWound: false
-      RadiusReduction: 60 # high dropoff if not direct hit
+      RadiusReduction: 75 # high dropoff if not direct hit
 
   - type: STR_HEAVY_BOLTRIFLE_DW            # Heavy Bolt Rifle (Ultramarine Captain)    ## Restricted item
     battleType: 1
     armor: 300
     ufopediaType: STR_HEAVY_BOLTRIFLE
     weight: 40 # +6 over regular Cawl
-    bigSprite: 3181
-    floorSprite: 3181
-    handSprite: 3680
+    bigSprite: 181
+    floorSprite: 181
+    handSprite: 280
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     bulletSprite: {mod: 40k, index: 6}
     bulletSpeed: 50
@@ -743,7 +745,7 @@ items:
     categories: [STR_CAT_PLASMA, STR_CAT_DEVASTATOR]
     size: 0.3
     weight: 26
-    bigSprite: 3187
+    bigSprite: 187
     floorSprite: { mod: 40k, index: 30 }
     handSprite:  { mod: 40k, index: 48 }
     bulletSprite: { mod: 40k, index: 11 }
@@ -786,7 +788,7 @@ items:
     invHeight: 1
     defaultInvSlotX: 3
     defaultInvSlotY: 1
-    bigSprite: 3106
+    bigSprite: 106
     hitAnimation: {mod: 40k, index: 1110}
     fireSound: {mod: 40k, index: 787}
     hitSound: {mod: 40k, index: 864}
@@ -875,9 +877,9 @@ items:
     armor: 200
     listOrder: 10100
     weight: 20
-    bigSprite: 3211
-    floorSprite: 3211
-    handSprite: 3736
+    bigSprite: 211
+    floorSprite: 211
+    handSprite: 336
     bulletSprite: {mod: 40k, index: 6}
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     compatibleAmmo: # doesn't use regular pistol ammo
@@ -914,7 +916,7 @@ items:
     recover: false
     armor: 200
     listOrder: 10102
-    bigSprite: 3212
+    bigSprite: 212
     floorSprite: {mod: 40k, index: 12}
     handSprite: {mod: 40k, index: 464}
     hitSound: {mod: 40k, index: 708}

@@ -54,6 +54,7 @@ extended:
 
 items:
   - &STR_RESTRICTED_ITEM    # Template
+    type: AUX_CROZIUS
     scripts:
       hitUnitAmmo: |
         var ptr RuleSoldier unitSoldier;
@@ -199,9 +200,3 @@ items:
     tags:
       SMT_RESTRICTED_ITEM: 3
       SMT_RESTRICTED_DAMAGE_PEN: 25
-
-
-
-
-
-

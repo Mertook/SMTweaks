@@ -7,8 +7,9 @@ extended:
 
 items:
   - &STR_PRECISION_AMMO                 # Precision Template
+    type: STR_PISTOL_CLIP_MC
     tags:
-      SMT_AMMO_BONUSDMG_FIRINGACC: 10
+      SMT_AMMO_BONUSDMG_FIRINGACC: 33
     scripts:
       hitUnitAmmo: |
         var int attackerFA;
@@ -80,8 +81,9 @@ items:
 
 
   - &STR_DEREVENANT_AMMO                # Derevenant Template
+    type: STR_RIFLE_CLIP_DEREV
     tags:
-      SMT_DEREVENANT_AMMO: 1
+      SMT_DEREVENANT_AMMO: 10
     scripts:
       damageUnitAmmo: |
         var ptr RuleArmor targetArmor;
@@ -139,8 +141,9 @@ items:
 
 
   - &STR_ARMOR_IGNORING_AMMO            # Penetrating damage Template
+    type: STR_VOLKITE_VAULT
     tags:
-      SMT_AMMO_HP_PREDMG: 10
+      SMT_AMMO_HP_PREDMG: 50
     scripts:
       damageUnitAmmo: |
         var int dmgMult;
@@ -165,6 +168,11 @@ items:
       SMT_AMMO_HP_PREDMG: 50
 
   - type: STR_VOLKITE_VAULT             # Volkite Rifle (Ancient Vault Reward)
+    refNode: *STR_ARMOR_IGNORING_AMMO
+    tags:
+      SMT_AMMO_HP_PREDMG: 50
+
+  - type: STR_NEOVOLKITE_PISTOL         # NeoVolkite Pistol
     refNode: *STR_ARMOR_IGNORING_AMMO
     tags:
       SMT_AMMO_HP_PREDMG: 50

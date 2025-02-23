@@ -998,6 +998,7 @@ armors:
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 10         # base 10
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
       - INV_NULL_3X1_BACKPACK
     tags:
@@ -1369,7 +1370,7 @@ armors:
       - STR_MKX_GRV_CORPSE
     storeItem: STR_MKX_GRV_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
-    loftempsSet: [ 3 ]
+    loftempsSet: [ 4 ]
     forcedTorso: 1
     frontArmor: 140
     sideArmor: 135
@@ -1780,6 +1781,225 @@ armors:
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 66
 
+
+
+  - &STR_MKX_INC_UC                         #OMNIS
+    type: STR_MKX_INC_LV1_UC
+    ufopediaType: STR_MKX_INC_LV1_UC
+    corpseBattle:
+      - STR_MKX_INC_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    loftempsSet: [ 4 ]
+    forcedTorso: 1
+    storeItem: STR_MKX_INC_ARMOR
+    visibilityAtDay: 40
+    visibilityAtDark: 35
+    heatVision: 20 #Add anti-smoke vision to all marine armour
+    antiCamouflageAtDay: 8
+    antiCamouflageAtDark: 8
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.50 #discipline and resolve reinforces their faith
+    frontArmor: 130
+    sideArmor: 125
+    rearArmor: 100
+    underArmor: 120
+    stats:
+      tu: -5
+      stamina: 5
+      health: 20
+      bravery: 10
+      reactions: 15
+      firing: 15
+      throwing: 0
+      strength: 10
+      psiStrength: 0
+      psiSkill: 0
+      melee: -10
+    specialWeapon: STR_JUMP_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_3X3
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 50
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+      MaxFlight: 3
+      MaxCoolDown: 1
+      FLIGHT_DODGE_CHANCE: 15
+      ARMOR_MAX_SUCCESSFUL_DODGES: 1
+
+  - type: STR_MKX_INC_LV1_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV1.PCK
+    units:
+      - STR_PRIMARISLV1
+
+  - type: STR_MKX_INC_LV2_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV2.PCK
+    units:
+      - STR_PRIMARISLV2
+
+  - type: STR_MKX_INC_LV3_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV3.PCK
+    units:
+      - STR_PRIMARISLV3
+
+  - type: STR_MKX_INC_LV4_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV4.PCK
+    units:
+      - STR_PRIMARISLV4
+    stats:
+      tu: 5
+      stamina: 10
+      reactions: 20
+      firing: 20
+
+  - type: STR_MKX_INC_LV5_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV5.PCK
+    units:
+      - STR_PRIMARISLV5
+    stats:
+      tu: 15
+      stamina: 20
+      reactions: 20
+      firing: 20
+
+  - type: STR_MKX_INCPE_LV1_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV1.PCK
+    units:
+      - STR_PRIMARISLV1
+    requires: STR_OMNIS_PLASMAPACK
+    builtInWeapons:
+      - STR_PLASMA_EXTERMINATOR_FIXED
+      - STR_PLASMA_EXTERMINATOR_FIXED2
+      - INV_NULL_3X3
+
+  - type: STR_MKX_INCPE_LV2_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV2.PCK
+    units:
+      - STR_PRIMARISLV2
+    requires: STR_OMNIS_PLASMAPACK
+    builtInWeapons:
+      - STR_PLASMA_EXTERMINATOR_FIXED
+      - STR_PLASMA_EXTERMINATOR_FIXED2
+      - INV_NULL_3X3
+
+  - type: STR_MKX_INCPE_LV3_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV3.PCK
+    units:
+      - STR_PRIMARISLV3
+    requires: STR_OMNIS_PLASMAPACK
+    builtInWeapons:
+      - STR_PLASMA_EXTERMINATOR_FIXED
+      - STR_PLASMA_EXTERMINATOR_FIXED2
+      - INV_NULL_3X3
+
+  - type: STR_MKX_INCPE_LV4_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV4.PCK
+    units:
+      - STR_PRIMARISLV4
+    requires: STR_OMNIS_PLASMAPACK
+    builtInWeapons:
+      - STR_PLASMA_EXTERMINATOR_FIXED
+      - STR_PLASMA_EXTERMINATOR_FIXED2
+      - INV_NULL_3X3
+    stats:
+      tu: 5
+      stamina: 10
+      reactions: 20
+      firing: 20
+
+  - type: STR_MKX_INCPE_LV5_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV5.PCK
+    units:
+      - STR_PRIMARISLV5
+    requires: STR_OMNIS_PLASMAPACK
+    builtInWeapons:
+      - STR_PLASMA_EXTERMINATOR_FIXED
+      - STR_PLASMA_EXTERMINATOR_FIXED2
+      - INV_NULL_3X3
+    stats:
+      tu: 15
+      stamina: 20
+      reactions: 20
+      firing: 20
+
+  - type: STR_MKX_INCAC_LV1_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV1.PCK
+    units:
+      - STR_PRIMARISLV1
+    requires: STR_OMNIS_AUTOCPACK
+    builtInWeapons:
+      - STR_ACCEL_AUTOCANNON_FIXED
+      - INV_NULL_3X3
+
+  - type: STR_MKX_INCAC_LV2_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV2.PCK
+    units:
+      - STR_PRIMARISLV2
+    requires: STR_OMNIS_AUTOCPACK
+    builtInWeapons:
+      - STR_ACCEL_AUTOCANNON_FIXED
+      - INV_NULL_3X3
+
+  - type: STR_MKX_INCAC_LV3_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV3.PCK
+    units:
+      - STR_PRIMARISLV3
+    requires: STR_OMNIS_AUTOCPACK
+    builtInWeapons:
+      - STR_ACCEL_AUTOCANNON_FIXED
+      - INV_NULL_3X3
+
+  - type: STR_MKX_INCAC_LV4_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV4.PCK
+    units:
+      - STR_PRIMARISLV4
+    requires: STR_OMNIS_AUTOCPACK
+    builtInWeapons:
+      - STR_ACCEL_AUTOCANNON_FIXED
+      - INV_NULL_3X3
+    stats:
+      tu: 5
+      stamina: 10
+      reactions: 20
+      firing: 20
+
+  - type: STR_MKX_INCAC_LV5_UC
+    refNode: *STR_MKX_INC_UC
+    spriteSheet: PRIMINCLV5.PCK
+    units:
+      - STR_PRIMARISLV5
+    requires: STR_OMNIS_AUTOCPACK
+    builtInWeapons:
+      - STR_ACCEL_AUTOCANNON_FIXED
+      - INV_NULL_3X3
+    stats:
+      tu: 15
+      stamina: 20
+      reactions: 20
+      firing: 20
+
   - &STR_MKX_APO                            #PRIMARIS APOTHECARY
     type: STR_MKX_HELIX_UC_LV1
     ufopediaType: STR_MKX_APO_UC
@@ -1947,6 +2167,7 @@ armors:
     refNode: *STR_MKX_APO
     spriteSheet: APOGRVLV1.PCK
     storeItem: STR_MKX_GRV_ARMOR
+    loftempsSet: [ 4 ]
     frontArmor: 140
     sideArmor: 135
     rearArmor: 115
@@ -2001,6 +2222,7 @@ armors:
     refNode: *STR_MKX_APO
     spriteSheet: APOGRVLV2.PCK
     storeItem: STR_MKX_GRV_ARMOR
+    loftempsSet: [ 4 ]
     stats:
       tu: 10
       stamina: 10
@@ -2101,7 +2323,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
 
-  - type: STR_MKX_JUDICAR_UC                #PRIMARIS JUDICAR
+  - type: STR_MKX_JUDICAR_UC                #PRIMARIS JUDICIAR
     spriteSheet: JUDICAR.PCK
     ufopediaType: STR_MKX_CHP_UC ###CHANGEME
     customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 292}

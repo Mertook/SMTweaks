@@ -1216,6 +1216,8 @@ items:
     autoShots: 4 # was 5
     tags:
       ITEM_RECOIL: 75 # +10 over regular - larger battle rifle
+      REACTION_MULTIPLIER: 80
+      REACTION_PENALTY_KNEELING_BYPASS: 1
 
   - type: STR_BOLTRIFLE_GL                  # Bolt Rifle (Combi-GL)
     refNode: *STR_BOLTER
@@ -1266,6 +1268,8 @@ items:
       arcing: true
     tags:
       ITEM_RECOIL: 75 # +10 over regular - larger battle rifle
+      REACTION_MULTIPLIER: 70 # bulky
+      REACTION_PENALTY_KNEELING_BYPASS: 1
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - type: STR_BOLTRIFLE_STERNGUARD          # Bolt Rifle (Sternguard)
@@ -1306,6 +1310,8 @@ items:
     autoShots: 4 # cawl 4
     tags:
       ITEM_RECOIL: 75 # +10 over regular - larger battle rifle
+      REACTION_MULTIPLIER: 80
+      REACTION_PENALTY_KNEELING_BYPASS: 1
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - type: STR_BOLTRIFLE_SCOPE               # Bolt Rifle (Stalker)
@@ -1346,6 +1352,8 @@ items:
       ITEM_AIMED_ACCURACY_POWER_BONUS: 33 # scoped weapon aimed shot bonus
       ITEM_POWER_BONUS_PERCENTILE: 1 #use %
       ITEM_RECOIL: 75 # +10 over regular - larger battle rifle
+      REACTION_MULTIPLIER: 70 # scope penalty
+      REACTION_PENALTY_KNEELING_BYPASS: 1
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - type: STR_BOLTRIFLE_MC                  # Bolt Rifle (Mastercrafted)
@@ -1428,7 +1436,8 @@ items:
     tags:
       ITEM_RECOIL: 85 # +10 over cawl - extra large battle rifle
       ITEM_IS_HEAVY_WEAPON: 2 # 10% additional penalty when firing with lowered TUs
-      REACTION_MULTIPLIER: 80 # bulky
+      REACTION_MULTIPLIER: 66 # bulky
+      REACTION_PENALTY_KNEELING_BYPASS: 1
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - update: STR_PISTOL                      # BoltPistol (Ceres)
@@ -2357,8 +2366,8 @@ items:
     dropoff: 6
     snapRange: 14
     aimRange: 18
-    tuSnap: 40
-    tuAimed: 60
+    tuSnap: 33
+    tuAimed: 50
     maxRange: 25
     power: 18 #+20% over regular melta ammo
     damageType: 11
@@ -2368,6 +2377,7 @@ items:
       ToHealth: 1.6
       ToTile: 6.0
       ToWound: 0.05
+      FireThreshold: 10
       RandomWound: false
       TileDamageMethod: 2
     shotgunBehavior: 1
@@ -2389,6 +2399,7 @@ items:
     fixedWeapon: true
     fixedWeaponShow: true
     recover: false
+    isConsumable: false
     bigSprite: 218
     bulletSprite: { mod: 40k, index: 11 }
     fireSound: { mod: 40k, index: 18 }
@@ -2431,6 +2442,7 @@ items:
     tags:
       ITEM_AIMED_FLAT_POWER_BONUS: 50
       ITEM_POWER_BONUS_PERCENTILE: 1
+      ITEM_HEAT_MAX_LEVEL: 7
 
   - type: STR_PRIMARIS_ROCKETPACK           # Primaris Vengor Armor
     size: 0.3
@@ -2551,10 +2563,10 @@ items:
       RandomType: 2 # 50-150%
       ToHealth: 0.50 # deals 100% total, 50% ignores armor
       ArmorEffectiveness: 1.1
-      ToArmorPre: 0.1 #
-      ToArmor: 0.3 #
-      ToTile: 1.25 # destructive
-      FireThreshold: 0
+      ToArmorPre: 0.1
+      ToArmor: 0.3
+      ToTile: 1.0
+      FireThreshold: 10
       FixRadius: 1
       ToWound: 0.2 # vicious burns
       RandomWound: false
@@ -3258,9 +3270,9 @@ items:
     invHeight: 3
     armor: 200
     listOrder: 10775
-    bigSprite: {mod: 40k_ROSIGMA_edits, index: 1034} #Inq Autocannon
+    bigSprite: 226
     floorSprite: {mod: 40k_ROSIGMA_edits, index: 949} #Inq Autocannon
-    handSprite: {mod: 40k_ROSIGMA_edits, index: 864} #Inq Autocannon
+    handSprite: 432
     bulletSprite: {mod: 40k, index: 6}
     fireSound: {mod: 40k, index: 12}
     compatibleAmmo:
@@ -3272,7 +3284,7 @@ items:
     accuracySnap: 80
     accuracyAuto: 70
     accuracyAimed: 0
-    tuAuto: 50
+    tuAuto: 45
     tuSnap: 30
     tuAimed: 0
     confSnap:
@@ -3315,7 +3327,7 @@ items:
     accuracySnap: 80
     accuracyAuto: 70
     accuracyAimed: 0
-    tuAuto: 50
+    tuAuto: 45
     tuSnap: 30
     tuAimed: 0
     confSnap:

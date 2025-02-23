@@ -64,10 +64,25 @@ soldiers:
       SMT_HEROICSAVE_CHANCE: 70
       SMT_HEROICSAVE_HP: 50
 
+  - type: STR_PRIMARIS_APOTH            # Primaris Apothecary
+    tags:
+      SMT_HEROICSAVE_CHANCE: 55
+      SMT_HEROICSAVE_HP: 40
+
+  - type: STR_PRIMARIS_APOTH_BIO        # Primaris Apothecary Biologis
+    tags:
+      SMT_HEROICSAVE_CHANCE: 60
+      SMT_HEROICSAVE_HP: 45
+
   - type: STR_PRIMARIS_JUDICAR          # Primaris Judicar
     tags:
-      SMT_HEROICSAVE_CHANCE: 30
+      SMT_HEROICSAVE_CHANCE: 35
       SMT_HEROICSAVE_HP: 30
+
+  - type: STR_PRIMARIS_CHAPLAIN         # Primaris Chaplain
+    tags:
+      SMT_HEROICSAVE_CHANCE: 60
+      SMT_HEROICSAVE_HP: 45
 
   - &STR_DEATHWATCH_MARINE              # Deathwatch Marines
     type: STR_ULTRAMARINE

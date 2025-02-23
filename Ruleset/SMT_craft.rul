@@ -1,5 +1,6 @@
 units:
-  - type: STR_SMT_SMOKEL                    # Craft Smokelauncher Unit
+  - &STR_SMT_SMOKEL_DEFAULT                 # Craft Smokelauncher Unit
+    type: STR_SMT_SMOKEL
     race: STR_SMT_SMOKEL
     stats:
       tu: 100
@@ -30,6 +31,10 @@ units:
       - - STR_SMT_CRAFT_SMOKE
         - STR_SMT_CRAFT_SMOKE
 
+  - type: STR_SMT_SMOKEL_SPEEDER            # Landspeeder Smokelauncher Unit
+    refNode: *STR_SMT_SMOKEL_DEFAULT
+    armor: STR_SMT_SMOKEL_ARMOR_SPEEDER
+
   - &STR_SMT_RAZORBACK_DEFAULT              # Generic Razorback Turret
     type: STR_SMT_RAZORBACK_BLANK
     race: STR_SMT_RAZORBACK
@@ -46,6 +51,7 @@ units:
       psiSkill: 0
       melee: 0
       mana: 60
+    livingWeapon: true
     moraleLossWhenKilled: 0
     standHeight: 16
     kneelHeight: 16
@@ -60,14 +66,12 @@ units:
 
   - type: STR_SMT_RAZORBACK_BLANK           # Razorback Blank to be replaced by (Default)
     refNode: *STR_SMT_RAZORBACK_DEFAULT
-    livingWeapon: true
     armor: STR_SMT_RAZOR_DEFAULT_ARMOR
 
   - type: STR_SMT_RAZORBACK_STORMBOLT       # Razorback with Stormbolter
     refNode: *STR_SMT_RAZORBACK_DEFAULT
     stats:
       stamina: 8 # -4, default weapon penalty
-    livingWeapon: true
     armor: STR_SMT_RAZOR_SB_ARMOR
     builtInWeaponSets:
       - - STR_STORMBOLTER_TURRET_DROPPOD
@@ -85,7 +89,6 @@ units:
     refNode: *STR_SMT_RAZORBACK_DEFAULT
     stats:
       mana: 50 # -10 - lascannon penalty
-    livingWeapon: true
     armor: STR_SMT_RAZOR_LAS_ARMOR
     builtInWeaponSets:
       - - STR_SMT_CRAFT_LASCANNON
@@ -95,14 +98,14 @@ units:
     refNode: *STR_SMT_RAZORBACK_DEFAULT
     stats:
       mana: 80 # +20 - flamer bonus
-    livingWeapon: true
     armor: STR_SMT_RAZOR_HF_ARMOR
     builtInWeaponSets:
       - - STR_GORGON_HEAVY_FLAMER
         - STR_SMT_CRAFT_SMOKE
 
 armors:
-  - type: STR_SMT_SMOKEL_ARMOR              # Smokelauncher Armor
+  - &STR_SMT_SMOKEL                         # Smoke Launcher (No baseplate)
+    type: STR_SMT_SMOKEL_ARMOR
     spriteSheet: SLT.PCK
     spriteInv: NOTDONEIMP
     visibilityAtDay: 40
@@ -147,6 +150,10 @@ armors:
       INTIMIDATION_RESISTANCE: 100 #intimidation immune
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_IMPERIUM: 1
+
+  - type: STR_SMT_SMOKEL_ARMOR_SPEEDER            # Smoke Launcher (Landspeeder)
+    refNode: *STR_SMT_SMOKEL
+    spriteSheet: SLTB.PCK
 
   - &STR_SMT_RB_TURRET_BASE                 # Razorback Turret defaults
     type: STR_SMT_RAZOR_DEFAULT_ARMOR
@@ -258,6 +265,10 @@ items:
   - type: STR_SMOKELAUNCHER_TURRET_SPAWNER  # SmokeLauncher Spawner
     refNode: *STR_TURRET_SPAWNER_BASE
     spawnUnit: STR_SMT_SMOKEL
+
+  - type: STR_SMOKELAUNCHER_SPEEDER_SPAWNER # SmokeLauncher Spawner (Landspeeder)
+    refNode: *STR_TURRET_SPAWNER_BASE
+    spawnUnit: STR_SMT_SMOKEL_SPEEDER
 
   - type: STR_RAZORBACK_TURRET_SPAWNER      # Razorback Spawner
     refNode: *STR_TURRET_SPAWNER_BASE
@@ -499,11 +510,11 @@ crafts:
           width: 10
           length: 20
           items:
-            STR_SMOKELAUNCHER_TURRET_SPAWNER:
+            STR_SMOKELAUNCHER_SPEEDER_SPAWNER:
               - [3, 3, 2] # roof 1
               - [7, 11, 2] # roof 2
           fuseTimers:
-            STR_SMOKELAUNCHER_TURRET_SPAWNER: [0, 0]
+            STR_SMOKELAUNCHER_SPEEDER_SPAWNER: [0, 0]
     craftInventoryTile: [3, 3, 1] # placed in middle of top landspeeder - was missing
     deployment:
       - [3, 3, 1, 2] #landspeeder 1
@@ -590,7 +601,7 @@ crafts:
             STR_RAZORBACK_TURRET_SPAWNER:
               - [1, 15, 1]
               - [7, 14, 1]
-            STR_SMOKELAUNCHER_TURRET_SPAWNER:
+            STR_SMOKELAUNCHER_SPEEDER_SPAWNER:
               - [8, 8, 2]
             STR_LEFT_THUNDERHAWK_SPAWNER:
               - [0, 3, 0]
@@ -601,7 +612,7 @@ crafts:
               - [8, 5, 1]
           fuseTimers:
             STR_RAZORBACK_TURRET_SPAWNER: [0, 0]
-            STR_SMOKELAUNCHER_TURRET_SPAWNER: [0, 0]
+            STR_SMOKELAUNCHER_SPEEDER_SPAWNER: [0, 0]
             STR_LEFT_THUNDERHAWK_SPAWNER: [0, 0]
             STR_RIGHT_THUNDERHAWK_SPAWNER: [0, 0]
             STR_SKULL_SPAWNER: [0, 0]
@@ -687,9 +698,9 @@ crafts:
     costSell: 300000
     fuelMax: 2000 # was 1800
     refuelRate: 900
-    damageMax: 2000 # was 1000
+    damageMax: 1600 # was 1000
     speedMax: 600 # was 400
-    soldiers: 12
+    soldiers: 12 # was 10
     battlescapeTerrainData:
       name: IMPULSOR
       mapDataSets:
@@ -717,6 +728,193 @@ crafts:
       - [5, 8, 1, 0]
       - [4, 9, 1, 0]
       - [5, 9, 1, 0]
+
+  - type: STR_REPULSOR_T                    # Primaris Repulsor Transport
+    costRent: 600000          #TIER II
+    costSell: 600000
+    fuelMax: 2000 # was 1800
+    damageMax: 2000 # was 1000
+    speedMax: 500 # was 400
+    battlescapeTerrainData:
+      name: REPULSOR_SMT
+      mapDataSets:
+        - BLANKS
+        - REPULSOR
+        - IMPULSOR
+      mapBlocks:
+        - name: REPULSOR_SMT
+          width: 10
+          length: 20
+          items:
+            STR_SMOKELAUNCHER_TURRET_SPAWNER:
+              - [3, 8, 2]
+              - [5, 8, 2]
+          fuseTimers:
+            STR_SMOKELAUNCHER_TURRET_SPAWNER: [0, 0]
+    deployment:
+      - [3, 5, 1, 0]
+      - [4, 5, 1, 0]
+      - [5, 5, 1, 0]
+      - [3, 6, 1, 0]
+      - [4, 6, 1, 0]
+      - [5, 6, 1, 0]
+      - [3, 7, 1, 0]
+      - [4, 7, 1, 0]
+      - [5, 7, 1, 0]
+      - [3, 8, 1, 0]
+      - [4, 8, 1, 0]
+      - [5, 8, 1, 0]
+      - [2, 7, 1, 0]
+      - [6, 7, 1, 0]
+    craftInventoryTile: [4, 8, 1] #center back tile ( was in front row)
+
+  - type: STR_ARMY_P                        # Primaris Final Craft (Impulsor + Repulsor)
+    fuelMax: 12000
+    damageMax: 2000
+    speedMax: 400
+    soldiers: 26 # was 22
+    refuelRate: 600
+    score: 800
+    listOrder: 700
+    battlescapeTerrainData:
+      name: PARMY_SMT
+      mapDataSets:
+        - BLANKS
+        - IMPULSOR
+        - REPULSOR
+        - TURRET
+      mapBlocks:
+        - name: PARMY_SMT
+          width: 10
+          length: 20
+          items:
+            STR_SMOKELAUNCHER_TURRET_SPAWNER:
+              - [3, 16, 2] # Impulsor
+              - [3, 5, 2] # Repulsor
+              - [5, 5, 2] # Repulsor
+          fuseTimers:
+            STR_SMOKELAUNCHER_TURRET_SPAWNER: [0, 0]
+    deployment:
+      - [3, 2, 1, 0] #Repulsor start
+      - [4, 2, 1, 0]
+      - [5, 2, 1, 0]
+      - [3, 3, 1, 0]
+      - [4, 3, 1, 0]
+      - [5, 3, 1, 0]
+      - [3, 4, 1, 0]
+      - [4, 4, 1, 0]
+      - [5, 4, 1, 0]
+      - [3, 5, 1, 0]
+      - [4, 5, 1, 0]
+      - [5, 5, 1, 0]
+      - [2, 4, 1, 0]
+      - [6, 4, 1, 0] #Repulsor end
+      - [3, 13, 1, 0] #Impulsor Start
+      - [4, 13, 1, 0]
+      - [3, 14, 1, 0]
+      - [4, 14, 1, 0]
+      - [3, 15, 1, 0]
+      - [4, 15, 1, 0]
+      - [3, 16, 1, 0]
+      - [4, 16, 1, 0]
+      - [3, 12, 1, 0]
+      - [4, 12, 1, 0]
+      - [3, 12, 0, 0]
+      - [4, 12, 0, 0] #Impulsor end
+    craftInventoryTile: [4, 5, 1] #center back tile of repulsor ( was in front row)
+
+  - type: STR_REPULSOR_T_DW                 # Deathwatch Repulsor Transport
+    fuelMax: 2000
+    damageMax: 2000
+    speedMax: 500
+    battlescapeTerrainData:
+      name: REPULSOR_SMT
+      mapDataSets:
+        - BLANKS
+        - REPULSORDW
+        - IMPULSORDW
+      mapBlocks:
+        - name: REPULSOR_SMT
+          width: 10
+          length: 20
+      mapBlocks:
+        - name: PARMY_SMT
+          width: 10
+          length: 20
+          items:
+            STR_SKULL_SPAWNER:
+              - [3, 8, 2]
+              - [5, 8, 2]
+          fuseTimers:
+            STR_SKULL_SPAWNER: [0, 0]
+    deployment:
+      - [3, 5, 1, 0]
+      - [4, 5, 1, 0]
+      - [5, 5, 1, 0]
+      - [3, 6, 1, 0]
+      - [4, 6, 1, 0]
+      - [5, 6, 1, 0]
+      - [3, 7, 1, 0]
+      - [4, 7, 1, 0]
+      - [5, 7, 1, 0]
+      - [3, 8, 1, 0]
+      - [4, 8, 1, 0]
+      - [5, 8, 1, 0]
+      - [2, 7, 1, 0]
+      - [6, 7, 1, 0]
+    craftInventoryTile: [4, 8, 1] #center back tile ( was in front row)
+
+  - type: STR_DW_LANDRAIDER                 # Deathwatch Final Craft (Impulsor + Repulsor)
+    fuelMax: 12000
+    damageMax: 2000
+    speedMax: 400
+    soldiers: 26 # was 22
+    refuelRate: 1200 # was 1000
+    battlescapeTerrainData:
+      name: PARMY_SMT
+      mapDataSets:
+        - BLANKS
+        - IMPULSORDW
+        - REPULSORDW
+        - TURRET
+      mapBlocks:
+        - name: PARMY_SMT
+          width: 10
+          length: 20
+          items:
+            STR_SKULL_SPAWNER:
+              - [3, 5, 2] # Repulsor
+              - [5, 5, 2] # Repulsor
+          fuseTimers:
+            STR_SKULL_SPAWNER: [0, 0]
+    deployment:
+      - [3, 2, 1, 0] #Repulsor start
+      - [4, 2, 1, 0]
+      - [5, 2, 1, 0]
+      - [3, 3, 1, 0]
+      - [4, 3, 1, 0]
+      - [5, 3, 1, 0]
+      - [3, 4, 1, 0]
+      - [4, 4, 1, 0]
+      - [5, 4, 1, 0]
+      - [3, 5, 1, 0]
+      - [4, 5, 1, 0]
+      - [5, 5, 1, 0]
+      - [2, 4, 1, 0]
+      - [6, 4, 1, 0] #Repulsor end
+      - [3, 13, 1, 0] #Impulsor Start
+      - [4, 13, 1, 0]
+      - [3, 14, 1, 0]
+      - [4, 14, 1, 0]
+      - [3, 15, 1, 0]
+      - [4, 15, 1, 0]
+      - [3, 16, 1, 0]
+      - [4, 16, 1, 0]
+      - [3, 12, 1, 0]
+      - [4, 12, 1, 0]
+      - [3, 12, 0, 0]
+      - [4, 12, 0, 0] #Impulsor end
+    craftInventoryTile: [4, 5, 1] #center back tile of repulsor ( was in front row)
 
 terrains: # Handle P2 First Company
   - name: ARMYUFO

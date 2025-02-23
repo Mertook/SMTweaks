@@ -517,18 +517,39 @@ research:
       - STR_PRIMARIS_BACKPACKS
 
   - name: STR_PRIMARIS_MELTAPACK    # Primaris Meltarifle
-    cost: 90
+    cost: 80
     points: 10
     dependencies:
       - STR_PRIMARIS_BACKPACKS
       - STR_HEAVY_LASER
 
   - name: STR_PRIMARIS_PLASMAPACK   # Primaris Plasma Incinerator
-    cost: 120
+    cost: 110
     points: 10
     dependencies:
       - STR_PRIMARIS_BACKPACKS
       - STR_PLASMA_RIFLE_DEP1
+      - STR_PLASMA_RIFLE_DEP2
+      - STR_MASTER_CRAFTING
+
+  - name: STR_OMNIS_AUTOCPACK       # Primaris Accelerator Autocannon
+    cost: 120
+    points: 10
+    dependencies:
+      - STR_PRIMARIS_BACKPACKS
+      - STR_MKX_INC_ARMOR
+      - STR_MASTER_CRAFTING
+    unlocks:
+      - STR_ASSC_CLIP
+
+  - name: STR_OMNIS_PLASMAPACK      # Primaris Plasma Exterminators
+    cost: 120
+    points: 10
+    dependencies:
+      - STR_PRIMARIS_BACKPACKS
+      - STR_MKX_INC_ARMOR
+      - STR_PLASMA_PISTOL_DEP1
+      - STR_PLASMA_PISTOL_DEP2
       - STR_MASTER_CRAFTING
 
   - name: STR_MARINE_CHAPEL         # Early unlock for Chapel
@@ -581,6 +602,10 @@ research:
     points: 0 # was 30
     dependencies:
       - STR_GENERALLOCK
+
+  - name: STR_NEW_FIGHTER_CRAFT     # Stormraven
+    unlocks: !add
+      - STR_ASSC_CLIP
 
   - name: STR_DREAD_R               # unused, replaced by STR_DREADNOUGHT_MARINE in rosigma for some reason
     cost: 180

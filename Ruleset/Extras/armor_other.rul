@@ -2,7 +2,7 @@ armors:
 
   - &STR_PERSONAL_LIGHT_AND_RECOVERY_STAMINA
     type: STR_ASSASSINNEUTRAL_FEMSUIT_NPC
-    personalLight: 6
+    personalLight: 5
     recovery:
       energy:
         stamina: 0.33
@@ -12,6 +12,9 @@ armors:
 
   - type: THUNDERFIRE_ARMOR_DW
     refNode: *STR_PERSONAL_LIGHT_AND_RECOVERY_STAMINA
+    recovery:
+      energy:
+        stamina: 1.0
 
   - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_MULTIMELTA
     requires: STR_MULTIMELTA_PREREQ
@@ -75,8 +78,7 @@ armors:
       - 0.2 #IMPACT
       - 1.0 #MELTA
     loftempsSet: [ 3 ]
-    builtInWeapons:
-      - INV_NULL_3X1_BACKPACK
+    builtInWeapons: []
     tags:
       ARMOR_REGENERATES_WOUNDS: 5
       INFECTION_RESIST: 100 # immune to all corruption

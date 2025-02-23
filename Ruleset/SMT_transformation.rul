@@ -75,7 +75,7 @@ soldierTransformation:
     requiredItems:
       STR_SMT_GENESEED: 1
       STR_ALIEN_ALLOYS: 25
-      STR_KILLPOINT_TOKEN: 40
+      STR_KILLPOINT_TOKEN: 20
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -352,7 +352,7 @@ soldierTransformation:
   - name: STR_LV4_TO_LV5                # Primaris Lv4 -> Lv5
     requires:
       - STR_PRIMARIS
-    cost: 50000 # was 100k
+    cost: 100000
     requiredItems:
       STR_KILLPOINT_TOKEN: 1800
     producedSoldierType: STR_PRIMARISLV5

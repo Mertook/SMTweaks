@@ -8,7 +8,7 @@ extended:
 armors:
   - &STR_SHREDRESIST_ARMOR          #BASE
     type: STR_PERSONAL_ARMOR_UC
-    personalLight: 6 # adjust all new armors to the rosigma standard
+    personalLight: 5 # adjust all new armors to the rosigma standard
     psiCamouflage: -30 # fuck psi vision
     recovery:
       energy:
@@ -333,53 +333,53 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 45
 
 ### Primaris
-  - type: STR_MKX_TAC_LV1_UC        # Tacticus Lv1
+  - type: STR_MKX_TAC_LV1_UC        # Tacticus Armor
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TAC_LV2_UC        # Tacticus Lv2
+  - type: STR_MKX_TAC_LV2_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TAC_LV3_UC        # Tacticus Lv3
+  - type: STR_MKX_TAC_LV3_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TAC_LV4_UC        # Tacticus Lv4
+  - type: STR_MKX_TAC_LV4_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TAC_LV5_UC        # Tacticus Lv5
+  - type: STR_MKX_TAC_LV5_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TAC_MELT_LV1_UC   # Tacticus Lv1
+  - type: STR_MKX_TAC_MELT_LV1_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TAC_MELT_LV2_UC   # Tacticus Lv2
+  - type: STR_MKX_TAC_MELT_LV2_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TAC_MELT_LV3_UC   # Tacticus Lv3
+  - type: STR_MKX_TAC_MELT_LV3_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TAC_MELT_LV4_UC   # Tacticus Lv4
+  - type: STR_MKX_TAC_MELT_LV4_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TAC_MELT_LV5_UC   # Tacticus Lv5
+  - type: STR_MKX_TAC_MELT_LV5_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TAC_PLAS_LV1_UC   # Tacticus Lv1
+  - type: STR_MKX_TAC_PLAS_LV1_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TAC_PLAS_LV2_UC   # Tacticus Lv2
+  - type: STR_MKX_TAC_PLAS_LV2_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TAC_PLAS_LV3_UC   # Tacticus Lv3
+  - type: STR_MKX_TAC_PLAS_LV3_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TAC_PLAS_LV4_UC   # Tacticus Lv4
+  - type: STR_MKX_TAC_PLAS_LV4_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TAC_PLAS_LV5_UC   # Tacticus Lv5
+  - type: STR_MKX_TAC_PLAS_LV5_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
-  - type: STR_MKX_PHB_LV1_UC        # Phobos Lv1
+  - type: STR_MKX_PHB_LV1_UC        # Phobos Armor
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_PHB_LV2_UC        # Phobos Lv2
+  - type: STR_MKX_PHB_LV2_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_PHB_LV3_UC        # Phobos Lv3
+  - type: STR_MKX_PHB_LV3_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_PHB_LV4_UC        # Phobos Lv4
+  - type: STR_MKX_PHB_LV4_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_PHB_LV5_UC        # Phobos Lv5
+  - type: STR_MKX_PHB_LV5_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_MKX_HELIX_UC_LV1      # Helix Adept
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_HELIX_UC_LV2      # Helix Adept
+  - type: STR_MKX_HELIX_UC_LV2
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_HELIX_UC_LV3      # Helix Adept
+  - type: STR_MKX_HELIX_UC_LV3
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_MKX_APO_UC_LV1        # Apothecary
@@ -397,14 +397,14 @@ armors:
   - type: STR_MKX_CHP_UC            # Chaplain
     refNode: *STR_SHREDRESIST_ARMOR
 
-  - type: STR_MKX_TEC_LV1_UC        # Techmarine Lv1
+  - type: STR_MKX_TEC_LV1_UC        # Techmarine
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TEC_LV2_UC        # Techmarine Lv2
+  - type: STR_MKX_TEC_LV2_UC
     refNode: *STR_SHREDRESIST_ARMOR
-  - type: STR_MKX_TEC_LV3_UC        # Techmarine Lv3
+  - type: STR_MKX_TEC_LV3_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
-  - type: STR_MKX_GRV_LV1_UC
+  - type: STR_MKX_GRV_LV1_UC        # Gravis Armor
     refNode: *STR_SHREDRESIST_ARMOR
   - type: STR_MKX_GRV_LV1F_UC
     refNode: *STR_SHREDRESIST_ARMOR
@@ -439,491 +439,425 @@ armors:
   - type: STR_MKX_GRV_LV5H_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
+  - type: STR_MKX_INC_LV1_UC        # Omnis Armor
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_INC_LV2_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_INC_LV3_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_INC_LV4_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_INC_LV5_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_INCPE_LV1_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_INCPE_LV2_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_INCPE_LV3_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_INCPE_LV4_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_INCPE_LV5_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_INCAC_LV1_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_INCAC_LV2_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_INCAC_LV3_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_INCAC_LV4_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_INCAC_LV5_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+
 ### Deathwatch (shred values defined in DW_armor.rul)
   - type: STR_DW_TAC_ARMOR_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TAC_ARMOR_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TAC_ARMOR_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TAC_ARMOR_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TAC_ARMOR_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TAC_ARMOR_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TAC_ARMOR_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TAC_ARMOR_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TAC_ARMOR_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_APOT_ARMOR_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_DW_APOT_ARMOR_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_APOT_ARMOR_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_APOT_ARMOR_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_APOT_ARMOR_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_APOT_ARMOR_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_APOT_ARMOR_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_APOT_ARMOR_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_APOT_ARMOR_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_DW_DEV_ARMOR_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_DEV_ARMOR_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_DEV_ARMOR_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_DEV_ARMOR_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_DEV_ARMOR_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_DEV_ARMOR_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_DEV_ARMOR_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_DEV_ARMOR_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_DEV_ARMOR_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_DW_ASS_ARMOR_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_ASS_ARMOR_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_ASS_ARMOR_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_ASS_ARMOR_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_ASS_ARMOR_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_ASS_ARMOR_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_ASS_ARMOR_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_ASS_ARMOR_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_ASS_ARMOR_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_DW_TECH_ARMOR_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TECH_ARMOR_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TECH_ARMOR_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TECH_ARMOR_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TECH_ARMOR_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TECH_ARMOR_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TECH_ARMOR_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TECH_ARMOR_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TECH_ARMOR_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_DW_TER_ARMOR_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TER_ARMOR_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TER_ARMOR_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TER_ARMOR_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TER_ARMOR_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TER_ARMOR_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TER_ARMOR_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TER_ARMOR_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_TER_ARMOR_WS_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_BA_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_BT_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_CF_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_DA_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_IF_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_SALA_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_SW_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_ULTRA_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_WS_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_BA_CLAWS_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_BT_CLAWS_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_CF_CLAWS_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_DA_CLAWS_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_IF_CLAWS_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_SALA_CLAWS_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_SW_CLAWS_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_ULTRA_CLAWS_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TASS_ARMOR_WS_CLAWS_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TSARGENT_ARMOR_BA_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TSARGENT_ARMOR_BT_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TSARGENT_ARMOR_CF_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TSARGENT_ARMOR_DA_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TSARGENT_ARMOR_IF_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TSARGENT_ARMOR_SALA_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TSARGENT_ARMOR_SW_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TSARGENT_ARMOR_ULTRA_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_DW_TSARGENT_ARMOR_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_MKX_DW_TAC_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TAC_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TAC_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TAC_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
-    refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TAC_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TAC_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TAC_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TAC_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TAC_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_MKX_DW_APO_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_APO_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_APO_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_APO_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_APO_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_APO_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_APO_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_APO_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_APO_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_MKX_DW_TEC_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TEC_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TEC_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TEC_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TEC_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TEC_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TEC_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TEC_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_TEC_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_MKX_DW_PHB_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_PHB_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_PHB_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_PHB_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_PHB_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_PHB_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_PHB_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_PHB_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_PHB_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_MKX_DW_GRV_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRV_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRV_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRV_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRV_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRV_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRV_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRV_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRV_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVAC_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVAC_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVAC_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVAC_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVAC_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVAC_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVAC_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVAC_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVAC_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVBS_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVBS_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVBS_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVBS_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVBS_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVBS_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVBS_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVBS_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVBS_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVFS_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVFS_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVFS_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVFS_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVFS_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVFS_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVFS_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVFS_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_GRVFS_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_MKX_DW_INC_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INC_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INC_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INC_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INC_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INC_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INC_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INC_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INC_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCAC_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCAC_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCAC_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCAC_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCAC_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCAC_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCAC_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCAC_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCAC_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCPE_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCPE_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCPE_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCPE_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCPE_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCPE_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCPE_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCPE_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_MKX_DW_INCPE_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_DW_LEADER_BA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_LEADER_BT_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_LEADER_CF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_LEADER_DA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_LEADER_IF_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_LEADER_SALA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_LEADER_SW_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_LEADER_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
-
   - type: STR_DW_LEADER_WS_UC
     refNode: *STR_SHREDRESIST_ARMOR

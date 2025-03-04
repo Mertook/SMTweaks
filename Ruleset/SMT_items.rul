@@ -575,6 +575,8 @@ items:
       ToTime: 10.0
     damageBonus:
       psiStrength: 0.8 # 40 Str = 47 power; 140 psiStr gives 127 power
+    damageAlter:
+      RandomType: 2 # 50-150%
     costUse:
       energy: 25
       stun: 10
@@ -741,6 +743,8 @@ items:
     power: 20
     damageBonus:
       psiStrength: 0.5
+    damageAlter:
+      RandomType: 2 # 50-150%
     tuUse: 25
     tuPanic: 0
     tuMindControl: 0
@@ -3105,27 +3109,27 @@ items:
       name: STR_LAUNCH_SALVO
       shots: 2
     costAimed:
-      time: 35
+      time: 30
     accuracyAuto: 33
     accuracyAimed: 66
     accuracyMultiplier:
-      firing: 0.6 # was 0.8
-      throwing: 0.6 # was 0.8
+      firing: 0.8 # was 0.8
+      throwing: 0.8 # was 0.8
     power: 120 # was 100
     damageType: 3
     damageAlter: #high explosive
-      RandomType: 6
-      ArmorEffectiveness: 0.9 # was 0.9
+      RandomType: 2 # 50-150
+      ArmorEffectiveness: 0.8 # was 0.9
       ToHealth: 1.0 # was 1.0
-      ToArmorPre: 0.2 # was 0.1
+      ToArmorPre: 0.15 # was 0.1
       ToArmor: 0.2
       ToStun: 0.3 # was 0.6
       ToEnergy: 0.2 # was 0.4
       ToTime: 0.0 # was 0.3
       ToTile: 0.75
-      ToItem: 0.75
+      ToItem: 0.25
       RadiusReduction: 3.0 # minor power dropoff from center
-      FixRadius: 10 # was 10
+      FixRadius: 8 # was 10
     arcingShot: true
     minRange: 5
     specialUseEmptyHand: true

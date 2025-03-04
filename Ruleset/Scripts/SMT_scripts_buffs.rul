@@ -147,7 +147,7 @@ extended:
           mul enemyReactionScore temp;
           reaction_unit.getTimeUnitsMax temp;
           div enemyReactionScore temp;
-          debug_log "HasteReaction Ping - " friendyReactionScore reactionBonus enemyReactionScore reaction_chance;
+          #debug_log "HasteReaction Ping - " friendyReactionScore reactionBonus enemyReactionScore reaction_chance;
 
           if gt friendyReactionScore enemyReactionScore;
             return 0;
@@ -250,7 +250,7 @@ extended:
             if gt temp currentReactBonus; # only change if new bonus would be an improvement
               unit.setTag Tag.SMT_HASTE_REACTION_BONUS temp;
             end;
-            debug_log "HasteBuff Reaction Bonus N/O" temp currentReactBonus;
+            #debug_log "HasteBuff Reaction Bonus N/O" temp currentReactBonus;
           end;
 
           battle_game.getTurn temp;
@@ -272,10 +272,11 @@ extended:
           if gt temp 0; # skip if doesn't inflict vuln
             set debuffVal currPower;
             muldiv debuffVal temp 100;
+            limit debuffVal 0 150; # cap at 250%
             unit.getTag temp Tag.SMT_VULN_INTENSITY;
             if gt debuffVal temp; #only change if it would be higher
               unit.setTag Tag.SMT_VULN_INTENSITY debuffVal;
-              #debug_log "VulnDebuff Ping 1" debuffVal;
+              debug_log "VulnDebuff Ping 1" debuffVal;
               itemRuleset.getTag debuffVal Tag.SMT_VULN_DURATION;
               battle_game.getTurn temp;
               add temp debuffVal; #define end turn for buff

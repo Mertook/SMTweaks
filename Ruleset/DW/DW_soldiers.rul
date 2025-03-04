@@ -564,8 +564,10 @@ soldiers:
       - STR_DW_WS_RANK_4
       - STR_DW_WS_RANK_5
     skills:
+      - STR_LIB_SMITE_SKILL
       - STR_LIB_SMOKE_SKILL
       - STR_LIB_HASTE_SKILL
+      - STR_LIB_OVERWATCH_SKILL
     skillIconSprite:  {mod: 40k, index: 11}
 
   - type: STR_DARKANGELS_LEADER
@@ -615,8 +617,10 @@ soldiers:
       - STR_DW_DA_RANK_4
       - STR_DW_DA_RANK_5
     skills:
-      - STR_LIB_SHIELD_SKILL
       - STR_LIB_SMITE_SKILL
+      - STR_LIB_LOCKDOWN_SKILL
+      - STR_LIB_SHIELD_SKILL
+      - STR_LIB_VULNERABILITY_SKILL
     skillIconSprite:  {mod: 40k, index: 11}
 
   - type: STR_SPACEW_LEADER

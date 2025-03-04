@@ -281,6 +281,7 @@ armors:
       ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
   - type: STR_DW_DEV_ARMOR_IF_UC
     refNode: *STR_DW_DEV_MK7
+    customArmorPreviewIndex: {mod: 40k, index: 556} #incorrectly set to 456 in 40k
     tags:
       ARMOR_OVERWATCH_TU_RESTORED: 33
       ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
@@ -3683,7 +3684,8 @@ armors:
       F4: ["CAPEP", "MKXCAPDW", "M4_FACE", ""]
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     builtInWeapons:
-      - INV_NULL_3X1_BACKPACK_BLESS #custom backpack blocker that enables bless ability
+      - INV_BLESS_TOKEN
+      - INV_NULL_3X1_BACKPACK
       - AUX_CROZIUS_DW
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     tags:
@@ -3731,11 +3733,13 @@ armors:
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
-      - INV_NULL_3X1_BACKPACK
+      - STR_SMITE_TOKEN
+      - STR_LIB_LOCKDOWN_TOME
+      - STR_LIB_SHIELD_TOME
+      - INV_LIB_VULN_TOKEN
       - STR_PLASMA_GUN_TWINCORE_DW
       - STR_PLASMA_TWINCORE_CLIP
-      - STR_LIB_SHIELD_TOME
-      - STR_SMITE_TOME_DW
+      - INV_NULL_3X1_BACKPACK
     tags:
       ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
       ARMOR_PERILS_EFFECTS_RESISTANCE: 100 # immune to perils attacks
@@ -3827,7 +3831,8 @@ armors:
       F4: ["CAPEP", "MKXCAPDW", "M4_FACE", ""]
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     builtInWeapons:
-      - INV_NULL_3X3_BACKPACK_BLESS
+      - INV_BLESS_TOKEN
+      - INV_NULL_3X3
       - STR_POWER_AXE_DW
     specialWeapon: STR_SM_APOTH_FIST_DW # Medikit
 
@@ -3879,10 +3884,12 @@ armors:
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
-      - INV_NULL_3X1_BACKPACK
-      - STR_FORCE_HALBERD_DW
+      - STR_SMITE_TOKEN
       - STR_LIB_SPEED_TOME_DW
       - STR_LIB_SMOKE_TOME
+      - INV_LIB_OVERWATCH_TOKEN
+      - STR_FORCE_HALBERD_DW
+      - INV_NULL_3X1_BACKPACK
     moveCost:
       basePercent: [100, 75] # was 100, 25
     tags:

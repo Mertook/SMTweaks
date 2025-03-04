@@ -1,0 +1,50 @@
+extended:
+  tags:
+    RuleArmor:
+      ARMOR_OVERWATCH_TU_RESTORED: int  # 0 to 100; what % of the unit's maximum TUs is restored at the start of each enemy/neutral turn?
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: int  # 1 or 0, True or False; Do we add the % of max TUs restored, or go with the highest value?
+    BattleUnit:
+      SMT_OVERWATCH_BONUS: int #stores units bonus to Overwatch
+
+  scripts:
+    newTurnUnit:
+      - override: ROSIGMA_nTU_Overwatch #override to add the ability to increase Overwatch value through Unit tags
+        offset: 1  # restores a % of the unit's max TUs on enemy/neutral turns.
+        code: |
+          var int currentTU;
+          var int maxTU;
+          var int percentTU;
+          var int overwatchTU;
+          var ptr RuleArmor armorRule;
+          var int temp;
+          var int temp2;
+
+          battle_game.getTurnSide temp;
+          unit.getFaction temp2;
+          if or eq temp temp2; # cancel if it's our turn
+            return;
+          end;
+
+          unit.getRuleArmor armorRule;
+          armorRule.getTag percentTU Tag.ARMOR_OVERWATCH_TU_RESTORED;
+          unit.getTag temp Tag.SMT_OVERWATCH_BONUS;
+          add percentTU temp;
+          if lt percentTU 1;
+            return;
+          end;
+
+          unit.getTimeUnitsMax maxTU;
+          set overwatchTU maxTU;
+          muldiv overwatchTU percentTU 100; # calculate the TUs granted by Overwatch
+
+          unit.getTimeUnits currentTU;
+          armorRule.getTag temp2 Tag.ARMOR_OVERWATCH_RESTORATION_CUMULATIVE;
+          if eq temp2 1; # check if our Overwatch TU stacks with our existing TU
+            add overwatchTU currentTU; #stacks, add current TUs on top
+          else;
+            limit_lower overwatchTU currentTU; #doesn't stack, pick higher of two values
+          end;
+          limit_upper overwatchTU maxTU;
+          unit.setTimeUnits overwatchTU;
+
+          return;

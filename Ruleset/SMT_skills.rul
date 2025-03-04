@@ -1,19 +1,31 @@
 skills:
-  - type: STR_BLESS_SKILL           # Chaplain Bless
+  - type: STR_BLESS_SKILL               # Chaplain Bless
     targetMode: 9
-    compatibleWeapons: [INV_NULL_3X1_BACKPACK_BLESS, INV_NULL_3X3_BACKPACK_BLESS]
-    battleType: 1
+    compatibleWeapons: [INV_BLESS_TOKEN]
     checkHandsOnly: false
     costUse:
       time: 20
       energy: 15
       stun: 5
     flatUse:
-      time: false #     20% TU
-      energy: false #   15% energy
-      stun: false #      5% stun
+      time: false
+      energy: false
+      stun: false
 
-  - type: STR_LIB_SMOKE_SKILL       # Librarian Smoke
+  - type: STR_INSPIRE_PRIMARIS_SKILL    # Primaris Lv5 Inspire
+    targetMode: 9
+    compatibleWeapons: [INV_INSPIRE_TOKEN]
+    checkHandsOnly: false
+    costUse:
+      time: 20
+      energy: 60
+      stun: 10
+    flatUse:
+      time: false
+      energy: false
+      stun: false
+
+  - type: STR_LIB_SMOKE_SKILL           # Librarian Smoke
     targetMode: 9
     compatibleWeapons: [STR_LIB_SMOKE_TOME]
     checkHandsOnly: false
@@ -23,12 +35,12 @@ skills:
       stun: 5
       morale: 10
     flatUse:
-      time: false #     20% TU
-      energy: false #   15% energy
-      stun: false #      5% stun
-      morale: false #   10% morale
+      time: false
+      energy: false
+      stun: false
+      morale: false
 
-  - type: STR_LIB_LOCKDOWN_SKILL    # Librarian Lockdown
+  - type: STR_LIB_LOCKDOWN_SKILL        # Librarian Lockdown
     targetMode: 11
     compatibleWeapons: [STR_LIB_LOCKDOWN_TOME]
     checkHandsOnly: false
@@ -36,14 +48,14 @@ skills:
       time: 35 # was 25
       energy: 25
       stun: 15 # was 5
-      morale: 15 # was 10
+      morale: 10 # was 10
     flatUse:
-      time: false #     35% TU
-      energy: false #   25% energy
-      stun: false #     15% stun
-      morale: false #   15% morale
+      time: false
+      energy: false
+      stun: false
+      morale: false
 
-  - type: STR_LIB_SHIELD_SKILL      # Librarian Shield
+  - type: STR_LIB_SHIELD_SKILL          # Librarian Shield
     targetMode: 11
     compatibleWeapons: [STR_LIB_SHIELD_TOME]
     checkHandsOnly: false
@@ -53,29 +65,29 @@ skills:
       stun: 15
       morale: 15
     flatUse:
-      time: false #     30% TU
-      energy: false #   15% energy
-      stun: false #     15% stun
-      morale: false #   15% morale
+      time: false
+      energy: false
+      stun: false
+      morale: false
 
-  - type: STR_LIB_HASTE_SKILL       # Librarian Haste
+  - type: STR_LIB_HASTE_SKILL           # Librarian Haste
     targetMode: 11
     compatibleWeapons: [STR_LIB_SPEED_TOME, STR_LIB_SPEED_TOME_DW]
     checkHandsOnly: false
     costUse:
-      time: 40
-      energy: 15
+      time: 35
+      energy: 45
       stun: 15
       morale: 20
     flatUse:
-      time: false #     40% TU
-      energy: false #   15% energy
-      stun: false #     15% stun
-      morale: false #   20% morale
+      time: false
+      energy: false
+      stun: false
+      morale: false
 
-  - type: STR_LIB_SMITE_SKILL       # Librarian Smite (DW Captain)
+  - type: STR_LIB_SMITE_SKILL           # Librarian Smite
     targetMode: 11
-    compatibleWeapons: [STR_SMITE_TOME_DW]
+    compatibleWeapons: [STR_SMITE_TOKEN]
     checkHandsOnly: false
     costUse:
       time: 20
@@ -83,7 +95,38 @@ skills:
       stun: 5
       morale: 5
     flatUse:
-      time: false #     20% TU
-      energy: false #   10% energy
-      stun: false #      5% stun
-      morale: false #    5% morale
+      time: false
+      energy: false
+      stun: false
+      morale: false
+
+  - type: STR_LIB_VULNERABILITY_SKILL   # Librarian Vulnerability
+    targetMode: 11
+    compatibleWeapons: [INV_LIB_VULN_TOKEN]
+    checkHandsOnly: false
+    costUse:
+      time: 40
+      energy: 40
+      stun: 15
+      morale: 10
+    flatUse:
+      time: false
+      energy: false
+      stun: false
+      morale: false
+
+  - type: STR_LIB_OVERWATCH_SKILL       # Librarian Overwatch
+    targetMode: 11
+    compatibleWeapons: [INV_LIB_OVERWATCH_TOKEN]
+    checkHandsOnly: false
+    costUse:
+      time: 30
+      energy: 30
+      stun: 15
+      morale: 10
+    flatUse:
+      time: false
+      energy: false
+      stun: false
+      morale: false
+

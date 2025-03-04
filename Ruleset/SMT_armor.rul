@@ -82,10 +82,10 @@ armors:
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 50
 
-  - update: STR_SCOUT_UC                    #SCOUT
+  - update: STR_SCOUT_UC                    #SCOUT (Neophytes)
     visibilityAtDay: 40
-    visibilityAtDark: 20 # nerfed scout nightvision, armor meant for novices rather than expert rangers
-    antiCamouflageAtDay: 2 # reduced anticamo, lacks optics of proper power armor
+    visibilityAtDark: 25 # nerfed scout nightvision, armor meant for novices rather than expert rangers
+    antiCamouflageAtDay: 2
     antiCamouflageAtDark: 2
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -105,9 +105,60 @@ armors:
       psiSkill: 0       # base 0  
       melee: 0          # base 10 -10
     units:
+      - STR_SOLDIER_NEOPHYTE
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+
+  - type: STR_SCOUT_SMT_UC                  #SCOUT (Marines)
+    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 0}
+    spriteSheet: XCOM_0.PCK
+    storeItem: STR_NONE
+    corpseGeo: STR_FALLEN_CORPSE
+    ufopediaType: STR_SCOUT_UC
+    corpseBattle:
+      - STR_SCOUT_CORPSE
+    visibilityAtDay: 40
+    visibilityAtDark: 30
+    antiCamouflageAtDay: 5 # reduced anticamo, lacks optics of proper power armor
+    antiCamouflageAtDark: 5
+    camouflageAtDay: -7
+    camouflageAtDark: -5
+    frontArmor: 80
+    sideArmor: 60
+    rearArmor: 40
+    underArmor: 60
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD
+      moraleCurrent: 1.5 #discipline and resolve reinforces their faith
+    loftempsSet: [ 3 ]
+    stats:
+      tu: 20            # base 10 +10
+      stamina: 20       # base 20
+      health: 0         # base 10 -10
+      bravery: 0        # base 0  
+      reactions: 25     # base 10 +10
+      firing: 0         # base 0  
+      throwing: 10      # base 5  +5
+      strength: 0       # base 10 -10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 0          # base 10 -10
+    damageModifier:
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 0.2 #IMPACT
+    units:
       - STR_SOLDIER
       - STR_SOLDIER_TERMINATOR
-      - STR_SOLDIER_NEOPHYTE
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
 
@@ -384,8 +435,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # infiltrator equipment
     heatVision: 30 # improved smoke vision
-    camouflageAtDay: -15 # was 15
-    camouflageAtDark: -10 # was 10
+    camouflageAtDay: -15
+    camouflageAtDark: -15
     antiCamouflageAtDay: 16 # advanced detection
     antiCamouflageAtDark: 16
     psiDefence:
@@ -614,7 +665,8 @@ armors:
       - STR_SOLDIER_CHAPLAIN
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
-      - INV_NULL_3X1_BACKPACK_BLESS #custom backpack blocker that enables bless ability
+      - INV_BLESS_TOKEN
+      - INV_NULL_3X1_BACKPACK
     tags:
       INFECTION_RESIST: 100 #infection immune - Chaplains bonus
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
@@ -623,7 +675,7 @@ armors:
     refNode: *STR_TERMINATOR_ARMOR
     ufopediaType: STR_POWER_SUIT_UC
     spriteSheet: CHAPTERM.PCK
-    customArmorPreviewIndex: {mod: 40k, index: 13}
+    customArmorPreviewIndex: 39
     corpseBattle:
       - STR_CHAP_CORPSE
     storeItem: STR_POWER_SUIT
@@ -643,7 +695,6 @@ armors:
       melee: 15         # base 10 +5
     units:
       - STR_SOLDIER_CHAPLAIN
-    loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 2.0 #Chaplains are supremely resistant to warp influence
@@ -651,7 +702,8 @@ armors:
     forcedTorso: 1
     specialWeapon: STR_MFIST # Term Powerfist
     builtInWeapons:
-      - INV_NULL_3X3_BACKPACK_BLESS #custom backpack blocker that enables bless ability
+      - INV_BLESS_TOKEN
+      - INV_NULL_3X3
       - INV_NULL_2X1_RL
       - INV_NULL_2X1_LL
     tags:
@@ -664,7 +716,7 @@ armors:
     refNode: *STR_MARINE_OFFICER_ARMOR
     ufopediaType: STR_ASS_ARMOR_HONOR_UC
     spriteSheet: CHAPASS.PCK
-    customArmorPreviewIndex: {mod: 40k, index: 13}
+    customArmorPreviewIndex: 38
     corpseBattle:
       - STR_CHAP_CORPSE
     corpseGeo: STR_FALLEN_CORPSE
@@ -692,7 +744,8 @@ armors:
       psiSkill: 2.0 #Chaplains are supremely resistant to warp influence
       moraleCurrent: 2.0
     builtInWeapons:
-      - INV_NULL_3X3_BACKPACK_BLESS #custom backpack blocker that enables bless ability
+      - INV_BLESS_TOKEN
+      - INV_NULL_3X3
     units:
       - STR_SOLDIER_CHAPLAIN
     tags:
@@ -731,19 +784,19 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
-    builtInWeapons: # Smite tome sits in hand, other tomes occupy leg slots and are used via skills
-      - INV_NULL_3X1_BACKPACK
+    builtInWeapons:
+      - STR_SMITE_TOKEN
       - STR_LIB_SPEED_TOME
       - STR_LIB_SMOKE_TOME
       - STR_LIB_LOCKDOWN_TOME
       - STR_LIB_SHIELD_TOME
-      - STR_SMITE_TOME
+      - INV_NULL_3X1_BACKPACK
     units:
       - STR_SOLDIER_LIBRARIAN
       - STR_SOLDIER_LIBRARIAN_TERM
     psiDefence:
       psiStrength: 1.0 # psyker
-      psiSkill: 0.1 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
+      psiSkill: 0.2 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
       moraleCurrent: 0.7 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
@@ -757,7 +810,7 @@ armors:
     refNode: *STR_TERMINATOR_ARMOR
     ufopediaType: STR_POWER_SUIT_UC
     spriteSheet: LIBTERM.PCK
-    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 12}
+    customArmorPreviewIndex: 42
     corpseBattle:
       - STR_LIB_CORPSE
     storeItem: STR_POWER_SUIT
@@ -779,20 +832,21 @@ armors:
       melee: 10         # base 10
     units:
       - STR_SOLDIER_LIBRARIAN_TERM
-    loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 1.0 # psyker
-      psiSkill: 0.1 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
+      psiSkill: 0.2 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
       moraleCurrent: 0.7 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
     forcedTorso: 1
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS # no power fist, just regular punching
-    builtInWeapons: # Smite tome sits in hand, other tomes occupy leg slots and are used via skills
-      - INV_NULL_3X3
+    builtInWeapons:
       - STR_LIB_SPEED_TOME
       - STR_LIB_SMOKE_TOME
       - STR_LIB_LOCKDOWN_TOME
       - STR_LIB_SHIELD_TOME
-      - STR_SMITE_TOME
+      - STR_SMITE_TOKEN
+      - INV_NULL_3X3
+      - INV_NULL_2X1_RL
+      - INV_NULL_2X1_LL
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30 # improved shield
@@ -925,6 +979,7 @@ armors:
 
   - update: DREAD_ARMOR3_UC                 #DREAD ARMOR LAS+MISSILE (Formerly Missile)
     refNode: *STR_DREADNOUGHT_ARMOR
+    customArmorPreviewIndex: [34, 35, 36]
     spriteInv: DREADINVHF
     spriteSheet: DREADSHF.PCK
     builtInWeapons:
@@ -1058,6 +1113,9 @@ armors:
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 20         # base 10
+    builtInWeapons:
+      - INV_INSPIRE_TOKEN
+      - INV_NULL_3X1_BACKPACK
     tags:
       SMT_ARMOR_SHRED_RESISTANCE: 60
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 40
@@ -1067,6 +1125,7 @@ armors:
 
   - type: STR_MKX_TAC_MELT_LV1_UC
     refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 270}
     spriteSheet: PRIMTACLV1.PCK
     storeItem: STR_PRIMARIS_MELTAPACK
     units:
@@ -1077,6 +1136,7 @@ armors:
 
   - type: STR_MKX_TAC_MELT_LV2_UC
     refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 271}
     spriteSheet: PRIMTACLV2.PCK
     storeItem: STR_PRIMARIS_MELTAPACK
     units:
@@ -1087,6 +1147,7 @@ armors:
 
   - type: STR_MKX_TAC_MELT_LV3_UC
     refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 272}
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
     spriteSheet: PRIMTACLV3.PCK
@@ -1099,6 +1160,7 @@ armors:
 
   - type: STR_MKX_TAC_MELT_LV4_UC
     refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 273}
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
     stats:
@@ -1123,6 +1185,7 @@ armors:
 
   - type: STR_MKX_TAC_MELT_LV5_UC
     refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 274}
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
     frontArmor: 130
@@ -1146,6 +1209,7 @@ armors:
     units:
       - STR_PRIMARISLV5
     builtInWeapons:
+      - INV_INSPIRE_TOKEN
       - INV_NULL_3X3
       - STR_PRIMARIS_MELTA_RIFLE
     tags:
@@ -1157,6 +1221,7 @@ armors:
 
   - type: STR_MKX_TAC_PLAS_LV1_UC
     refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 270}
     spriteSheet: PRIMTACLV1.PCK
     storeItem: STR_PRIMARIS_PLASMAPACK
     units:
@@ -1167,6 +1232,7 @@ armors:
 
   - type: STR_MKX_TAC_PLAS_LV2_UC
     refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 271}
     spriteSheet: PRIMTACLV2.PCK
     storeItem: STR_PRIMARIS_PLASMAPACK
     units:
@@ -1177,6 +1243,7 @@ armors:
 
   - type: STR_MKX_TAC_PLAS_LV3_UC
     refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 272}
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
     spriteSheet: PRIMTACLV3.PCK
@@ -1189,6 +1256,7 @@ armors:
 
   - type: STR_MKX_TAC_PLAS_LV4_UC
     refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 273}
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
     stats:
@@ -1213,6 +1281,7 @@ armors:
 
   - type: STR_MKX_TAC_PLAS_LV5_UC
     refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 274}
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
     frontArmor: 130
@@ -1236,6 +1305,7 @@ armors:
     units:
       - STR_PRIMARISLV5
     builtInWeapons:
+      - INV_INSPIRE_TOKEN
       - INV_NULL_3X3
       - STR_PRIMARIS_INCINERATOR_POWER_PACK
     tags:
@@ -1261,7 +1331,7 @@ armors:
     sideArmor: 95 # base 120
     rearArmor: 90 # base 100
     underArmor: 100 # base 125
-    damageModifier: #MARINE ARMOR
+    damageModifier:
       - 1.0 #none
       - 1.0 #AP
       - 0.6 #FLAMES
@@ -1311,9 +1381,15 @@ armors:
 
   - type: STR_MKX_PHB_LV3_UC
     refNode: *STR_MKX_PHB_UC
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
 
   - type: STR_MKX_PHB_LV4_UC
     refNode: *STR_MKX_PHB_UC
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    camouflageAtDay: -15
+    camouflageAtDark: -15
     stats:
       tu: 25            # base 25
       stamina: 25       # base 20
@@ -1332,6 +1408,10 @@ armors:
 
   - type: STR_MKX_PHB_LV5_UC
     refNode: *STR_MKX_PHB_UC
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    camouflageAtDay: -15
+    camouflageAtDark: -15
     stats:
       tu: 35            # base 25
       stamina: 25       # base 20
@@ -1344,6 +1424,8 @@ armors:
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 35         # base 20
+    builtInWeapons:
+      - INV_INSPIRE_TOKEN
     tags:
       SMT_ARMOR_SHRED_RESISTANCE: 45
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 30
@@ -1357,6 +1439,7 @@ armors:
   - &STR_MKX_GRV_UC                         #PRIMARIS GRAVIS
     type: STR_MKX_GRV_LV1_UC
     ufopediaType: STR_MKX_GRV_LV1_UC
+    customArmorPreviewIndex: {mod: 40k, index: 280}
     visibilityAtDay: 40
     visibilityAtDark: 35
     heatVision: 20 #Add anti-smoke vision to all marine armour
@@ -1414,6 +1497,7 @@ armors:
 
   - type: STR_MKX_GRV_LV1_UC                #GRAVIS LV1 BOLTER
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 280}
     spriteSheet: GRAV1BOLT.PCK
     units:
       - STR_PRIMARISLV1
@@ -1425,6 +1509,7 @@ armors:
 
   - type: STR_MKX_GRV_LV1F_UC               #GRAVIS LV1 FLAMER
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 280}
     spriteSheet: GRAV1FLAME.PCK
     units:
       - STR_PRIMARISLV1
@@ -1436,6 +1521,7 @@ armors:
 
   - type: STR_MKX_GRV_LV2_UC                #GRAVIS LV2 FLAMER
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 281}
     spriteSheet: GRAV2FLAME.PCK
     units:
       - STR_PRIMARISLV2
@@ -1447,6 +1533,7 @@ armors:
 
   - type: STR_MKX_GRV_LV2A_UC               #GRAVIS LV2 AUTOCANNON
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 281}
     spriteSheet: GRAV2AUTO.PCK
     units:
       - STR_PRIMARISLV2
@@ -1458,6 +1545,7 @@ armors:
 
   - type: STR_MKX_GRV_LV2B_UC               #GRAVIS LV2 BOLTER
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 281}
     spriteSheet: GRAV2BOLT.PCK
     units:
       - STR_PRIMARISLV2
@@ -1469,6 +1557,7 @@ armors:
 
   - type: STR_MKX_GRV_LV3_UC                #GRAVIS LV3 AUTOCANNON
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 282}
     spriteSheet: GRAV3AUTO.PCK
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
@@ -1494,6 +1583,7 @@ armors:
 
   - type: STR_MKX_GRV_LV3B_UC               #GRAVIS LV3 BOLTER
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 282}
     spriteSheet: GRAV3BOLT.PCK
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
@@ -1519,6 +1609,7 @@ armors:
 
   - type: STR_MKX_GRV_LV3F_UC               #GRAVIS LV3 FLAMER
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 282}
     spriteSheet: GRAV3FLAME.PCK
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
@@ -1544,6 +1635,7 @@ armors:
 
   - type: STR_MKX_GRV_LV3H_UC               #GRAVIS LV3 REGULAR
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 282}
     spriteSheet: GRAV3HAND.PCK
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
@@ -1567,6 +1659,7 @@ armors:
 
   - type: STR_MKX_GRV_LV4_UC                #GRAVIS LV4 AUTOCANNON
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 283}
     spriteSheet: GRAV4AUTO.PCK
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
@@ -1592,6 +1685,7 @@ armors:
 
   - type: STR_MKX_GRV_LV4B_UC               #GRAVIS LV4 BOLTER
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 283}
     spriteSheet: GRAV4BOLT.PCK
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
@@ -1617,6 +1711,7 @@ armors:
 
   - type: STR_MKX_GRV_LV4F_UC               #GRAVIS LV4 FLAMER
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 283}
     spriteSheet: GRAV4FLAME.PCK
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
@@ -1642,6 +1737,7 @@ armors:
 
   - type: STR_MKX_GRV_LV4H_UC               #GRAVIS LV4 REGULAR
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 283}
     spriteSheet: GRAV4HAND.PCK
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
@@ -1665,6 +1761,7 @@ armors:
 
   - type: STR_MKX_GRV_LV5_UC                #GRAVIS LV5 BOLTER
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 284}
     spriteSheet: GRAV5BOLT.PCK
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
@@ -1684,6 +1781,8 @@ armors:
       melee: 20         # base 10
     specialWeapon: STR_GRAV_MORTAR
     builtInWeapons:
+      - INV_INSPIRE_TOKEN
+      - INV_NULL_3X3
       - STR_GRAV_BOLTER
     tags:
       SMT_ARMOR_SHRED_RESISTANCE: 75 # High level armor values
@@ -1694,6 +1793,7 @@ armors:
 
   - type: STR_MKX_GRV_LV5A_UC               #GRAVIS LV5 AUTOCANNON
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 284}
     spriteSheet: GRAV5AUTO.PCK
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
@@ -1713,8 +1813,9 @@ armors:
       melee: 20         # base 10
     specialWeapon: STR_GRAV_MORTAR
     builtInWeapons:
-      - STR_GRAV_AUTOC
+      - INV_INSPIRE_TOKEN
       - INV_NULL_3X3
+      - STR_GRAV_AUTOC
     tags:
       SMT_ARMOR_SHRED_RESISTANCE: 75 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
@@ -1724,6 +1825,7 @@ armors:
 
   - type: STR_MKX_GRV_LV5F_UC               #GRAVIS LV5 FLAMER
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 284}
     spriteSheet: GRAV5FLAME.PCK
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
@@ -1743,6 +1845,7 @@ armors:
       melee: 20         # base 10
     specialWeapon: STR_GRAV_MORTAR
     builtInWeapons:
+      - INV_INSPIRE_TOKEN
       - STR_GRAV_FLAMER
       - INV_NULL_3X3
     tags:
@@ -1754,6 +1857,7 @@ armors:
 
   - type: STR_MKX_GRV_LV5H_UC               #GRAVIS LV5 REGULAR
     refNode: *STR_MKX_GRV_UC
+    customArmorPreviewIndex: {mod: 40k, index: 284}
     spriteSheet: GRAV5HAND.PCK
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
@@ -1773,6 +1877,7 @@ armors:
       melee: 20         # base 10
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
+      - INV_INSPIRE_TOKEN
       - INV_NULL_3X3
     tags:
       SMT_ARMOR_SHRED_RESISTANCE: 75 # High level armor values
@@ -1840,12 +1945,18 @@ armors:
     spriteSheet: PRIMINCLV1.PCK
     units:
       - STR_PRIMARISLV1
+    tags:
+      MaxFlight: 2
+      MaxCoolDown: 2
 
   - type: STR_MKX_INC_LV2_UC
     refNode: *STR_MKX_INC_UC
     spriteSheet: PRIMINCLV2.PCK
     units:
       - STR_PRIMARISLV2
+    tags:
+      MaxFlight: 2
+      MaxCoolDown: 1
 
   - type: STR_MKX_INC_LV3_UC
     refNode: *STR_MKX_INC_UC
@@ -1874,9 +1985,16 @@ armors:
       stamina: 20
       reactions: 20
       firing: 20
+    builtInWeapons:
+      - INV_INSPIRE_TOKEN
+      - INV_NULL_3X3
+    tags:
+      MaxFlight: 4
+      MaxCoolDown: 1
 
   - type: STR_MKX_INCPE_LV1_UC
     refNode: *STR_MKX_INC_UC
+    customArmorPreviewIndex:  {mod: 40k, index: 285}
     spriteSheet: PRIMINCLV1.PCK
     units:
       - STR_PRIMARISLV1
@@ -1885,9 +2003,13 @@ armors:
       - STR_PLASMA_EXTERMINATOR_FIXED
       - STR_PLASMA_EXTERMINATOR_FIXED2
       - INV_NULL_3X3
+    tags:
+      MaxFlight: 2
+      MaxCoolDown: 2
 
   - type: STR_MKX_INCPE_LV2_UC
     refNode: *STR_MKX_INC_UC
+    customArmorPreviewIndex:  {mod: 40k, index: 286}
     spriteSheet: PRIMINCLV2.PCK
     units:
       - STR_PRIMARISLV2
@@ -1896,9 +2018,13 @@ armors:
       - STR_PLASMA_EXTERMINATOR_FIXED
       - STR_PLASMA_EXTERMINATOR_FIXED2
       - INV_NULL_3X3
+    tags:
+      MaxFlight: 2
+      MaxCoolDown: 1
 
   - type: STR_MKX_INCPE_LV3_UC
     refNode: *STR_MKX_INC_UC
+    customArmorPreviewIndex:  {mod: 40k, index: 287}
     spriteSheet: PRIMINCLV3.PCK
     units:
       - STR_PRIMARISLV3
@@ -1910,6 +2036,7 @@ armors:
 
   - type: STR_MKX_INCPE_LV4_UC
     refNode: *STR_MKX_INC_UC
+    customArmorPreviewIndex:  {mod: 40k, index: 288}
     spriteSheet: PRIMINCLV4.PCK
     units:
       - STR_PRIMARISLV4
@@ -1926,11 +2053,13 @@ armors:
 
   - type: STR_MKX_INCPE_LV5_UC
     refNode: *STR_MKX_INC_UC
+    customArmorPreviewIndex:  {mod: 40k, index: 289}
     spriteSheet: PRIMINCLV5.PCK
     units:
       - STR_PRIMARISLV5
     requires: STR_OMNIS_PLASMAPACK
     builtInWeapons:
+      - INV_INSPIRE_TOKEN
       - STR_PLASMA_EXTERMINATOR_FIXED
       - STR_PLASMA_EXTERMINATOR_FIXED2
       - INV_NULL_3X3
@@ -1939,9 +2068,13 @@ armors:
       stamina: 20
       reactions: 20
       firing: 20
+    tags:
+      MaxFlight: 4
+      MaxCoolDown: 1
 
   - type: STR_MKX_INCAC_LV1_UC
     refNode: *STR_MKX_INC_UC
+    customArmorPreviewIndex:  {mod: 40k, index: 285}
     spriteSheet: PRIMINCLV1.PCK
     units:
       - STR_PRIMARISLV1
@@ -1949,9 +2082,13 @@ armors:
     builtInWeapons:
       - STR_ACCEL_AUTOCANNON_FIXED
       - INV_NULL_3X3
+    tags:
+      MaxFlight: 2
+      MaxCoolDown: 2
 
   - type: STR_MKX_INCAC_LV2_UC
     refNode: *STR_MKX_INC_UC
+    customArmorPreviewIndex:  {mod: 40k, index: 286}
     spriteSheet: PRIMINCLV2.PCK
     units:
       - STR_PRIMARISLV2
@@ -1959,9 +2096,13 @@ armors:
     builtInWeapons:
       - STR_ACCEL_AUTOCANNON_FIXED
       - INV_NULL_3X3
+    tags:
+      MaxFlight: 2
+      MaxCoolDown: 1
 
   - type: STR_MKX_INCAC_LV3_UC
     refNode: *STR_MKX_INC_UC
+    customArmorPreviewIndex:  {mod: 40k, index: 287}
     spriteSheet: PRIMINCLV3.PCK
     units:
       - STR_PRIMARISLV3
@@ -1972,6 +2113,7 @@ armors:
 
   - type: STR_MKX_INCAC_LV4_UC
     refNode: *STR_MKX_INC_UC
+    customArmorPreviewIndex:  {mod: 40k, index: 288}
     spriteSheet: PRIMINCLV4.PCK
     units:
       - STR_PRIMARISLV4
@@ -1987,11 +2129,13 @@ armors:
 
   - type: STR_MKX_INCAC_LV5_UC
     refNode: *STR_MKX_INC_UC
+    customArmorPreviewIndex:  {mod: 40k, index: 289}
     spriteSheet: PRIMINCLV5.PCK
     units:
       - STR_PRIMARISLV5
     requires: STR_OMNIS_AUTOCPACK
     builtInWeapons:
+      - INV_INSPIRE_TOKEN
       - STR_ACCEL_AUTOCANNON_FIXED
       - INV_NULL_3X3
     stats:
@@ -1999,6 +2143,9 @@ armors:
       stamina: 20
       reactions: 20
       firing: 20
+    tags:
+      MaxFlight: 4
+      MaxCoolDown: 1
 
   - &STR_MKX_APO                            #PRIMARIS APOTHECARY
     type: STR_MKX_HELIX_UC_LV1
@@ -2039,13 +2186,13 @@ armors:
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 1.0 #AP
-      - 0.6 #FLAMES - was 0.8
+      - 0.6 #FLAMES
       - 0.7 #HE
       - 0.8 #LASCANON
-      - 1.0 #PLASMA - was 1.1
-      - 1.0 #STUN - was 1.1
-      - 1.0 #MELEE - was 1.1
-      - 0.8 #ACID - was 1.0
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.8 #ACID
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
@@ -2070,7 +2217,7 @@ armors:
 
   - type: STR_MKX_HELIX_UC_LV1
     refNode: *STR_MKX_APO
-    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 270}
+    customArmorPreviewIndex: 1
     spriteSheet: HELIXLV1.PCK
     storeItem: STR_MKX_APO_ARMOR
     stats:
@@ -2094,6 +2241,7 @@ armors:
 
   - type: STR_MKX_HELIX_UC_LV2
     refNode: *STR_MKX_APO
+    customArmorPreviewIndex: 2
     spriteSheet: HELIXLV2.PCK
     storeItem: STR_MKX_APO_ARMOR
     stats:
@@ -2117,8 +2265,11 @@ armors:
 
   - type: STR_MKX_HELIX_UC_LV3
     refNode: *STR_MKX_APO
+    customArmorPreviewIndex: 3
     spriteSheet: HELIXLV3.PCK
     storeItem: STR_MKX_APO_ARMOR
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
     stats:
       tu: 0             # base 10 
       stamina: 10       # base 20 
@@ -2140,8 +2291,11 @@ armors:
 
   - type: STR_MKX_APO_UC_LV1
     refNode: *STR_MKX_APO
+    customArmorPreviewIndex: 6
     spriteSheet: APOTACLV1.PCK
     storeItem: STR_NONE
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
     stats:
       tu: 0
       stamina: 10
@@ -2165,9 +2319,12 @@ armors:
 
   - type: STR_MKX_APOGRV_UC_LV1
     refNode: *STR_MKX_APO
+    customArmorPreviewIndex: 7
     spriteSheet: APOGRVLV1.PCK
     storeItem: STR_MKX_GRV_ARMOR
     loftempsSet: [ 4 ]
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
     frontArmor: 140
     sideArmor: 135
     rearArmor: 115
@@ -2196,7 +2353,10 @@ armors:
 
   - type: STR_MKX_APO_UC
     refNode: *STR_MKX_APO
+    customArmorPreviewIndex: 8
     storeItem: STR_NONE
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
     stats:
       tu: 10
       stamina: 10
@@ -2220,18 +2380,25 @@ armors:
 
   - type: STR_MKX_APOGRV_UC_LV2
     refNode: *STR_MKX_APO
+    customArmorPreviewIndex: 9
     spriteSheet: APOGRVLV2.PCK
     storeItem: STR_MKX_GRV_ARMOR
     loftempsSet: [ 4 ]
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    frontArmor: 140
+    sideArmor: 135
+    rearArmor: 115
+    underArmor: 140
     stats:
       tu: 10
       stamina: 10
-      health: 50 #+10
+      health: 50
       bravery: 0
       reactions: 0
       firing: 5
       throwing: 0
-      strength: 30 #+20
+      strength: 30
       psiStrength: 0
       psiSkill: 0
       melee: 20
@@ -2325,10 +2492,14 @@ armors:
 
   - type: STR_MKX_JUDICAR_UC                #PRIMARIS JUDICIAR
     spriteSheet: JUDICAR.PCK
+    customArmorPreviewIndex: 10
     ufopediaType: STR_MKX_CHP_UC ###CHANGEME
     customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 292}
     visibilityAtDay: 40
     visibilityAtDark: 35
+    heatVision: 20
+    antiCamouflageAtDay: 8
+    antiCamouflageAtDark: 8
     zombiImmune: true
     loftempsSet: [ 3 ]
     forcedTorso: 1
@@ -2355,13 +2526,13 @@ armors:
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 1.0 #AP
-      - 0.8 #FLAMES
-      - 1.0 #HE
+      - 0.6 #FLAMES
+      - 0.7 #HE
       - 0.8 #LASCANON
-      - 1.1 #PLASMA
-      - 1.1 #STUN
-      - 1.1 #MELEE
-      - 1.0 #ACID
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.8 #ACID
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
@@ -2385,22 +2556,27 @@ armors:
   - type: STR_MKX_CHP_UC                    #PRIMARIS CHAPLAIN
     ufopediaType: STR_MKX_CHP_UC
     visibilityAtDay: 40
-    visibilityAtDark: 30
+    visibilityAtDark: 35
+    heatVision: 20
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
     zombiImmune: true
     corpseBattle:
       - STR_MKX_CHP_CORPSE
     storeItem: STR_NONE
     corpseGeo: STR_FALLEN_CORPSE
     stats:
-       tu: 10
-       stamina: 10
-       health: 10
-       bravery: 0 #always multiples of 10
-       reactions: 0
-       firing: 0
-       throwing: 0
-       strength: 0
-       melee: 0
+      tu: 10
+      stamina: 10
+      health: 20
+      bravery: 10
+      reactions: 10
+      firing: 5
+      throwing: 5
+      strength: 10
+      psiStrength: 0
+      psiSkill: 0
+      melee: 10
     frontArmor: 125
     sideArmor: 120
     rearArmor: 100
@@ -2408,13 +2584,13 @@ armors:
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 1.0 #AP
-      - 0.8 #FLAMES
-      - 1.0 #HE
+      - 0.6 #FLAMES
+      - 0.7 #HE
       - 0.8 #LASCANON
-      - 1.1 #PLASMA
-      - 1.1 #STUN
-      - 1.1 #MELEE
-      - 1.0 #ACID
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.8 #ACID
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
@@ -2423,8 +2599,9 @@ armors:
     units:
       - STR_PRIMARIS_CHAPLAIN
     builtInWeapons:
+      - INV_BLESS_TOKEN # has to be first in list otherwise item breaks
       - AUX_CROZIUS_PRIMARIS
-      - INV_NULL_3X1_BACKPACK_BLESS
+      - INV_NULL_3X1_BACKPACK
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
@@ -2432,12 +2609,143 @@ armors:
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 100
 
+  - &STR_MKX_LIB_UC
+    type: STR_MKX_LIB_LV1_UC
+    ufopediaType: STR_MKX_LIB_LV1_UC
+    corpseBattle:
+      - STR_MKX_LIB_CORPSE
+    storeItem: STR_NONE
+    corpseGeo: STR_FALLEN_CORPSE
+    visibilityAtDay: 40
+    visibilityAtDark: 35
+    heatVision: 33
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    psiDefence:
+      psiStrength: 1.0 # psyker
+      psiSkill: 0.2 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
+      moraleCurrent: 0.7 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
+    frontArmor: 125
+    sideArmor: 120
+    rearArmor: 100
+    underArmor: 125
+    stats:
+      tu: 5
+      stamina: 5
+      health: 10
+      bravery: 0
+      reactions: 5
+      firing: 5
+      throwing: 0
+      strength: 10
+      psiStrength: 0
+      psiSkill: 0
+      melee: 0
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.6 #FLAMES
+      - 0.7 #HE
+      - 0.8 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.8 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+    loftempsSet: [ 3 ]
+    forcedTorso: 1
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - STR_SMITE_TOKEN
+      - STR_LIB_SMOKE_TOME
+      - STR_LIB_LOCKDOWN_TOME
+      - INV_LIB_OVERWATCH_TOKEN
+      - INV_LIB_VULN_TOKEN
+      - INV_NULL_3X1_BACKPACK
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 15
+      ARMOR_ENERGY_SHIELD_DECAY: 50
+      UNIT_TYPE_PSYKER: 1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+
+  - type: STR_MKX_LIB_LV1_UC
+    units:
+      - STR_PRIMARIS_LIBRARIANLV1
+    builtInWeapons:
+      - STR_SMITE_TOKEN
+      - STR_LIB_SMOKE_TOME
+      - STR_LIB_LOCKDOWN_TOME
+      - INV_NULL_3X1_BACKPACK
+
+  - type: STR_MKX_LIB_LV2_UC
+    refNode: *STR_MKX_LIB_UC
+    spriteSheet: PRIMLIBLV2.PCK
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    units:
+      - STR_PRIMARIS_LIBRARIANLV2
+    builtInWeapons:
+      - STR_SMITE_TOKEN
+      - STR_LIB_SMOKE_TOME
+      - STR_LIB_LOCKDOWN_TOME
+      - INV_LIB_OVERWATCH_TOKEN
+      - INV_NULL_3X1_BACKPACK
+    stats:
+      tu: 5
+      stamina: 5
+      health: 10
+      bravery: 0
+      reactions: 5
+      firing: 5
+      throwing: 0
+      strength: 10
+      psiStrength: 0
+      psiSkill: 0
+      melee: 0
+    tags:
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
+      ARMOR_ENERGY_SHIELD_DECAY: 50
+
+  - type: STR_MKX_LIB_LV3_UC
+    refNode: *STR_MKX_LIB_UC
+    spriteSheet: PRIMLIBLV3.PCK
+    antiCamouflageAtDay: 14
+    antiCamouflageAtDark: 14
+    units:
+      - STR_PRIMARIS_LIBRARIANLV3
+    stats:
+      tu: 5
+      stamina: 5
+      health: 10
+      bravery: 0
+      reactions: 5
+      firing: 5
+      throwing: 0
+      strength: 10
+      psiStrength: 0
+      psiSkill: 0
+      melee: 0
+    builtInWeapons:
+      - STR_SMITE_TOKEN
+      - STR_LIB_SMOKE_TOME
+      - STR_LIB_LOCKDOWN_TOME
+      - INV_LIB_OVERWATCH_TOKEN
+      - INV_LIB_VULN_TOKEN
+      - INV_NULL_3X1_BACKPACK
+    tags:
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 40
+      ARMOR_ENERGY_SHIELD_DECAY: 50
+
 ### EXTRA
   - update: STR_SIGNAL_ARMOR_UC_HULK        #SUPERHULK REWARD ARMOR
     visibilityAtDay: 40
     visibilityAtDark: 40 # was 30
-    antiCamouflageAtDay: 7 # was 5
-    antiCamouflageAtDark: 7 # was 5
+    antiCamouflageAtDay: 9 # was 5
+    antiCamouflageAtDark: 9 # was 5
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)

@@ -426,6 +426,9 @@ research:
       - STR_HBOLTER_AMMO_PREREQ # for Assault Bolters
     listOrder: 9 # push above corpses/etc
 
+  - name: STR_HB_CLIP               # Stormbolter Clip (does nothing)
+    cost: 0 # make it instant so players don't waste time on it
+
   - name: STR_GLAUNCHER_PREREQ      # Grenade Launcher + Ammo Unlock
     cost: 40
     points: 10

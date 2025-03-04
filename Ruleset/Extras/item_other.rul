@@ -9,7 +9,7 @@ items:
     requires:
       - STR_MULTIMELTA_PREREQ
 
-  - update: STR_CATAPULT_PISTOL                 # Eldar pistol
+  - update: STR_CATAPULT_PISTOL                 # Eldar Shuriken Pistol
     requires:
       - STR_ELDAR_WEAPONRY
     armor: 200
@@ -26,7 +26,7 @@ items:
     confSnap:
       shots: 3 # was 1
 
-  - update: STR_CATAPULT                        # Eldar rifle
+  - update: STR_CATAPULT                        # Eldar Shuriken Rfle
     requires:
       - STR_ELDAR_WEAPONRY
     armor: 200
@@ -44,7 +44,7 @@ items:
       shots: 4 # was 1
     autoShots: 8 # was 3
 
-  - update: STR_SHURIKEN_CLIP                   # Eldar ammo
+  - update: STR_SHURIKEN_CLIP                   # Eldar Shuriken Ammo
     requires:
       - STR_ELDAR_WEAPONRY
     armor: 200
@@ -56,7 +56,7 @@ items:
       ArmorEffectiveness: 0.3
     clipSize: 60 # was 20
 
-  - update: STR_EPOWER_SWORD                    # Eldar sword
+  - update: STR_EPOWER_SWORD                    # Eldar Sword
     requires:
       - STR_ELDAR_WEAPONRY
     armor: 200
@@ -81,7 +81,7 @@ items:
       ToArmor: 0.1
       FixRadius: 1
 
-  - update: STR_HYPERPHASESWORD
+  - update: STR_HYPERPHASESWORD                 # Necron Sword
     experienceTrainingMode: 13 # melee & reactions
 
   - update: STR_NECRON_SCARAB_SPAWNER_GRENADE   # Scarab spawner
@@ -97,6 +97,7 @@ items:
       - STR_ALIENS_ONLY # was xenotech
 
   - update: STR_BOLTER_LIGHT_UMBRA              # IG Light Bolter Umbra
+    bigSprite: 242
     fireSound: {mod: 40k, index: 707} # light bolter gets light bolter sound
     requiresBuy:
       - STR_LIGHT_BOLTERS_MIDTIER
@@ -104,13 +105,13 @@ items:
       - STR_UFO_CONSTRUCTION #ceramite tier
     dropoff: 8 # was 5
     autoRange: 15 # was 10, autofire focus +1 for no attachment
-    snapRange: 17 # was 13, +1 for no attachment
+    snapRange: 18 # was 13, +1 for no attachment
     aimRange: 0
     accuracyAuto: 72 # was 66, +6 for no attachment
     accuracySnap: 80
     accuracyAimed: 0
     tuAuto: 32 # was 32
-    tuSnap: 20 # was 25
+    tuSnap: 18 # was 25
     tuAimed: 0
     confSnap:
       shots: 1 # was 2
@@ -120,6 +121,7 @@ items:
       ITEM_RECOIL: 30 # was 25, light bolter with high RoF
 
   - update: STR_BOLTER_LIGHT_UMBRA_UNDERSLUNG   # IG Light Bolter Umbra (GL)
+    bigSprite: 245
     fireSound: {mod: 40k, index: 707} # light bolter gets light bolter sound
     requiresBuy:
       - STR_LIGHT_BOLTERS_MIDTIER
@@ -128,12 +130,12 @@ items:
       - STR_UFO_CONSTRUCTION #ceramite tier
     dropoff: 8 # was 5
     autoRange: 14 # was 10, autofire focus
-    snapRange: 16 # was 13
+    snapRange: 17 # was 13
     aimRange: 25 #underslung
     accuracyAuto: 66 #
     accuracySnap: 80 #
     accuracyAimed: 50 #
-    tuSnap: 20 # was 25
+    tuSnap: 18 # was 25
     tuAuto: 32 # was 33
     tuAimed: 40
     confSnap: #Bolter
@@ -221,7 +223,7 @@ items:
     tags:
       ITEM_RECOIL: 60 # light version of heavy bolter, needs bipod setup for most IG forces
 
-  - type: STR_BOLTER_LIGHT_SOLO_COMBIMELTA
+  - type: STR_BOLTER_LIGHT_SOLO_COMBIMELTA      # IG Light Bolter Single (Melta)
     requiresBuy:
       - STR_LIGHT_BOLTERS_MIDTIER
       - STR_MIDTIER_PREREQ
@@ -241,7 +243,11 @@ items:
     tags:
       ITEM_RECOIL: 16 # was 20, single shot light bolter
 
-  - type: STR_BOLTER_DOMINION
+  # - type: STR_ADEPTAS_BOLTGUN_JOVE
+    # bigSprite: 245
+
+  - type: STR_BOLTER_DOMINION                   # SoB Bolter Dominion
+    bigSprite: 227
     weight: 30
     dropoff: 8 # was 4
     autoRange: 12 # was 9
@@ -250,12 +256,33 @@ items:
     accuracyAuto: 75 # was 65
     accuracySnap: 95 # was 85
     accuracyAimed: 0
-    tuAuto: 30 # was 40
+    tuAuto: 35 # was 40
     tuSnap: 20 # was 30
     tuAimed: 0
-    autoShots: 3 # was 4
+    autoShots: 4
     tags:
       ITEM_RECOIL: 60 # slightly easier than regular Marine Bolter - Sister weapon
+
+  - type: STR_BOLTER_CANTUS                     # SoB Light Bolter Deaz
+    bigSprite: 248
+
+  - type: STR_BOLTER_DEAZ                       # SoB Light Bolter Deaz
+    bigSprite: 251
+
+  - type: STR_BOLTER_ELOHIM                     # SoB Light Bolter Deaz
+    bigSprite: 254
+
+  - type: STR_BOLTER_HELLSPITE                  # SoB Light Bolter Deaz
+    bigSprite: 257
+
+  - type: STR_BOLTER_MEPHISTO                   # SoB Light Bolter Deaz
+    bigSprite: 260
+
+  - type: STR_BOLTPISTOL_SCOURGE                # SoB Light Boltpistol Scourge
+    bigSprite: 269
+
+  - type: STR_BOLTPISTOL_SERAPHIM               # SoB Light Boltpistol Seraphim
+    bigSprite: 271
 
   - update: STR_HEAVY_BOLTER_GUARD              # IG Heavy Bolter (Bipod)
     autoShots: 8 # was 7

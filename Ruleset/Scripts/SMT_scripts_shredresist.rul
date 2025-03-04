@@ -52,7 +52,14 @@ armors:
         return;
 
 
-  - type: STR_SCOUT_UC              #SCOUT
+  - type: STR_SCOUT_UC              #SCOUT (Neophyte)
+    refNode: *STR_SHREDRESIST_ARMOR
+    tags: # Scout armor
+      SMT_ARMOR_SHRED_RESISTANCE: 10
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 5
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 0
+
+  - type: STR_SCOUT_SMT_UC          #SCOUT (Marine)
     refNode: *STR_SHREDRESIST_ARMOR
     tags: # Scout armor
       SMT_ARMOR_SHRED_RESISTANCE: 10

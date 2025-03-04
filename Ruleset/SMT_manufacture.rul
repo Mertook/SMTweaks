@@ -813,7 +813,7 @@ manufacture:
 
 ### OTHER
   - name: STR_SMT_GENESEED_REFINE                   # Geneseed refining recipe
-    category: STR_GENESEED
+    category: STR_SMT_GENESEED
     requires:
       - STR_CHAPTER_PURITY
       - STR_MARINES_STRATEGY
@@ -827,7 +827,7 @@ manufacture:
     listOrder: 3
 
   - name: STR_SMT_GENESEED_REQ                      # Geneseed requisition
-    category: STR_GENESEED
+    category: STR_SMT_GENESEED
     requires:
       - STR_MARINES_STRATEGY
       - STR_SMT_GENESEED_REQ

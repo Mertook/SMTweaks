@@ -158,7 +158,7 @@ soldierTransformation:
     requiredItems:
       STR_SMT_GENESEED: 1
       STR_ALIEN_ALLOYS: 30
-      STR_KILLPOINT_TOKEN: 200 # was 100
+      STR_KILLPOINT_TOKEN: 200
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -173,7 +173,7 @@ soldierTransformation:
     requiredMinStats:
       health: 60 # Neophyte base 40-55, training cap 60, Marine minimum 75
       strength: 50 # Neophyte base 25-40, training cap 55, Marine minimum 55
-      psiStrength: 20 # Neophyte base 0-25
+      psiStrength: 20 # Neophyte base 0-20
     listOrder: 40
 
   - name: STR_PROMOTE_LIB_TERMINATOR    # Librarian -> Vet Librarian
@@ -503,4 +503,121 @@ soldierTransformation:
     upperBoundAtStatCaps: true
     listOrder: 75
 
+  - name: STR_LIBRARIAN_PRIMARISLV1     # Neophyte -> LibrarianL1 (Primaris)
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_PRIMARIS
+      - STR_LIBRARY
+    producedSoldierType: STR_PRIMARIS_LIBRARIANLV1
+    cost: 125000
+    requiredItems:
+      STR_SMT_GENESEED: 1
+      STR_ALIEN_ALLOYS: 25
+      STR_KILLPOINT_TOKEN: 100
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_SOLDIER_NEOPHYTE
+    transferTime: 0
+    recoveryTime: 5
+    requiredCommendations:
+      STR_BATTLE_TESTED: 0
+    requiresBaseFunc: [LIB] #needs library
+    requiredMinStats:
+      health: 60 # Neophyte base 40-55, training cap 60, Primaris minimum 75
+      strength: 50 # Neophyte base 25-40, training cap 55, Primaris minimum 65
+      psiStrength: 20 # Neophyte base 0-20
+    flatOverallStatChange:
+      tu: 5
+      stamina: 5
+      health: 5
+      reactions: 5
+      firing: 5
+      throwing: 5
+      strength: 5
+      melee: 5
+      bravery: 10
+      psiStrength: 15
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 80
+
+  - name: STR_LIBRARIAN_PRIMARISLV2     # Librarian L1 -> L2 (Primaris)
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_PRIMARIS
+      - STR_LIBRARY
+    producedSoldierType: STR_PRIMARIS_LIBRARIANLV2
+    cost: 60000
+    requiredItems:
+      STR_SMT_GENESEED: 1
+      STR_KILLPOINT_TOKEN: 400
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_PRIMARIS_LIBRARIANLV1
+    transferTime: 0
+    recoveryTime: 0
+    requiredCommendations:
+      STR_HONOR_MEDAL: 1
+    requiresBaseFunc: [LIB] #needs library
+    requiredMinStats:
+      psiStrength: 70
+    flatOverallStatChange:
+      tu: 5
+      stamina: 5
+      health: 5
+      reactions: 5
+      firing: 5
+      throwing: 5
+      strength: 5
+      melee: 5
+      bravery: 10
+      psiStrength: 5
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 85
+
+  - name: STR_LIBRARIAN_PRIMARISLV3     # Librarian L2 -> L3 (Primaris)
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_PRIMARIS
+      - STR_LIBRARY
+      - STR_MIDTIER_PREREQ
+    producedSoldierType: STR_PRIMARIS_LIBRARIANLV3
+    cost: 100000
+    requiredItems:
+      STR_SMT_GENESEED: 1
+      STR_KILLPOINT_TOKEN: 1200
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_PRIMARIS_LIBRARIANLV2
+    transferTime: 0
+    recoveryTime: 0
+    requiredCommendations:
+      STR_HONOR_MEDAL: 2
+    requiresBaseFunc: [LIB] #needs library
+    requiredMinStats:
+      psiStrength: 100
+    flatOverallStatChange:
+      tu: 5
+      stamina: 5
+      health: 5
+      reactions: 5
+      firing: 5
+      throwing: 5
+      strength: 5
+      melee: 5
+      bravery: 10
+      psiStrength: 5
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 90
 

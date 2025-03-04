@@ -5,7 +5,7 @@ extended:
 
 items:
   - &STR_WEAPON_SPRITE_SWAP_TEMPLATE
-    type: STR_RIFLE                 # Bolter (Godwyn)
+    type: STR_RIFLE
     scripts:
       selectItemSprite: |
         var ptr BattleItem ammoItem;
@@ -25,51 +25,150 @@ items:
         return sprite_index;
 
 ### Relevant ammo needs the tag ITEM_AMMO_SKIP_BIGOBS
+  - &STR_AMMO_SKIP_ONE
+    type: STR_LIGHT_BOLTPISTOL_AMMO
+    tags:
+      ITEM_AMMO_SKIP_BIGOBS: 1
+  - &STR_AMMO_SKIP_TWO
+    type: STR_LIGHT_BOLTER_AMMO
+    tags:
+      ITEM_AMMO_SKIP_BIGOBS: 2
 
+### Boltpistol Ammo
+  - update: STR_PISTOL_CLIP
+    refNode: *STR_AMMO_SKIP_ONE
+  - type: STR_LIGHT_BOLTPISTOL_AMMO
+    refNode: *STR_AMMO_SKIP_ONE
+  - update: STR_PISTOL_CLIP_AP
+    refNode: *STR_AMMO_SKIP_ONE
+  - type: STR_LIGHT_BOLTPISTOL_AMMO_AP
+    refNode: *STR_AMMO_SKIP_ONE
+  - update: STR_PISTOL_CLIP_MC
+    refNode: *STR_AMMO_SKIP_ONE
+  - type: STR_LIGHT_BOLTPISTOL_AMMO_MC
+    refNode: *STR_AMMO_SKIP_ONE
+  - update: STR_PISTOL_CLIP_EX
+    refNode: *STR_AMMO_SKIP_ONE
+  - type: STR_LIGHT_BOLTPISTOL_AMMO_EX
+    refNode: *STR_AMMO_SKIP_ONE
+### Bolter Ammo
+  - type: STR_RIFLE_CLIP
+    refNode: *STR_AMMO_SKIP_TWO
+  - type: STR_LIGHT_BOLTER_AMMO
+    refNode: *STR_AMMO_SKIP_TWO
+  - type: STR_RIFLE_CLIP_AP
+    refNode: *STR_AMMO_SKIP_TWO
+  - type: STR_LIGHT_BOLTER_AMMO_PEN
+    refNode: *STR_AMMO_SKIP_TWO
+  - type: STR_RIFLE_CLIP_MC
+    refNode: *STR_AMMO_SKIP_TWO
+  - type: STR_LIGHT_BOLTER_AMMO_MC
+    refNode: *STR_AMMO_SKIP_TWO
+  - type: STR_RIFLE_CLIP_EX
+    refNode: *STR_AMMO_SKIP_TWO
+  - type: STR_LIGHT_BOLTER_AMMO_EX
+    refNode: *STR_AMMO_SKIP_TWO
+  - type: STR_LIGHT_BOLTER_AMMO_AP
+    refNode: *STR_AMMO_SKIP_TWO
+  - type: STR_LIGHT_BOLTER_AMMO_INF
+    refNode: *STR_AMMO_SKIP_TWO
+### Heavy Boltrifle Ammo
+  - type: STR_BOLTRIFLE_DRUM
+    refNode: *STR_AMMO_SKIP_ONE
+  - type: STR_BOLTRIFLE_DRUM_AP
+    refNode: *STR_AMMO_SKIP_ONE
+  - type: STR_BOLTRIFLE_DRUM_EX
+    refNode: *STR_AMMO_SKIP_ONE
+  - type: STR_BOLTRIFLE_DRUM_MC
+    refNode: *STR_AMMO_SKIP_ONE
+  - type: STR_BOLTRIFLE_DRUM_MC_DW
+    refNode: *STR_AMMO_SKIP_ONE
+### Dreadnought Missiles
+  - type: STR_DREAD_MISSILES
+    refNode: *STR_AMMO_SKIP_ONE
+  - type: STR_HWP_FUSION_BOMB
+    refNode: *STR_AMMO_SKIP_ONE
+
+### Weapons ###
+### Bolters
   - type: STR_RIFLE                 # Bolter (Godwyn)
     refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
-
   - type: STR_RIFLEA                # Bolter (Artifex)
     refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
-
   - type: STR_RIFLEB                # Bolter (Ultra)
     refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
-
   - type: STR_RIFLEC                # Bolter (Stalker)
     refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
-
-  - type: STR_RIFLED                # Bolter (Cawl)
+  - type: STR_RIFLED                # Bolt Rifle (Cawl)
     refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
-
-  - type: STR_RIFLEDW               # Bolter (Cawl DW)
+  - type: STR_RIFLEDW               # Bolt Rifle (Cawl DW)
     refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
-
   - type: STR_MCRIFLE               # Bolter (Mastercrafted)
     refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTRIFLE_STERNGUARD  # Bolt Rifle (Sternguard)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTRIFLE_SCOPE       # Bolt Rifle (Stalker)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTRIFLE_GL          # Bolt Rifle (Combi GL)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTRIFLE_MC          # Bolt Rifle (Mastercrafted)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTER_CARBINE        # Bolt Carbine
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTER_CARBINE_SCOPE  # Bolt Carbine (Occulus)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_HEAVY_BOLTRIFLE       # Heavy Bolt Rifle
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_HEAVY_BOLTRIFLE_DW    # Heavy Bolt Rifle (DW Captain)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTER_DOMINION       # Bolter (Dominion)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTER_ENFORCER       # Light Bolter (Enforcer)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTER_LOCKE          # Light Bolter (Locke)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTER_LIGHT_ULTRA    # Light Bolter (Ultra)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_MC_BOLTER_DEAZ        # Light Bolter (Mastercrafted)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTER_LIGHT_UMBRA    # Light Bolter (Umbra)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTER_LIGHT_UMBRA_UNDERSLUNG # Light Bolter (Umbra GL)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTER_CANTUS         # Light Bolter (Cantus)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTER_DEAZ           # Light Bolter (Deaz)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTER_ELOHIM         # Light Bolter (Elohim)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTER_HELLSPITE      # Light Bolter (Hellspite)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTER_MEPHISTO       # Light Bolter (Mephisto)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+
+### Boltpistols
+  - type: STR_PISTOL                # Boltpistol (Ceres)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_PISTOLB               # Boltpistol (Ultra)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_MCPISTOL              # Boltpistol (Mastercrafted)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_PISTOLS               # Boltpistol (Spectris)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_PISTOLH_SM            # Boltpistol (Tigrus)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTPISTOL_DEAZ       # Light Boltpistol (Deaz)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTPISTOL_LIGHT_ULTRA    # Light Boltpistol (Ultra)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_MC_BOLTPISTOL_DEAZ    # Light Boltpistol (Mastercrafted)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTPISTOL_SCOURGE    # Light Boltpistol (Scourge)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+  - type: STR_BOLTPISTOL_SERAPHIM   # Light Boltpistol (Seraphim)
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+
 
   - type: AUX_HOVERTANK_LAUNCHER    # Dreadnought Missile Launcher
     refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
 
-  - type: STR_HEAVY_BOLTRIFLE       # Heavy Bolt Rifle
-    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
-
-  - type: STR_HEAVY_BOLTRIFLE_DW    # Heavy Bolt Rifle (DW Captain)
-    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
-
-  - type: STR_BOLTRIFLE_STERNGUARD  # Bolt Rifle (Sternguard)
-    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
-
-  - type: STR_BOLTRIFLE_SCOPE       # Bolt Rifle (Stalker)
-    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
-
-  - type: STR_BOLTRIFLE_GL          # Bolt Rifle (Combi GL)
-    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
-
-  - type: STR_BOLTRIFLE_MC          # Bolt Rifle (Mastercrafted)
-    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
-
-  - type: STR_BOLTER_CARBINE        # Bolt Carbine
-    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
-
-  - type: STR_BOLTER_CARBINE_SCOPE  # Bolt Carbine (Occulus)
-    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE

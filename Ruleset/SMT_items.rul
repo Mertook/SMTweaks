@@ -334,7 +334,7 @@ items:
       ToItem: 0.0
       RadiusReduction: 0.0 # no power dropoff from center
       FixRadius: -1 # make higher power more valuable
-      RadiusEffectiveness: 0.06 # 6% of power as radius
+      RadiusEffectiveness: 0.04 # 4% of power as radius
     confAimed:
       name: STR_GUARD_PRIEST_BLESS
     costAimed:
@@ -362,16 +362,26 @@ items:
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
       ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
 
+  - &STR_SKILL_TOKEN                        # Inventory item for Skills
+    type: INV_BLESS_TOKEN
+    bigSprite: -1
+    weight: 0
+    invWidth: 0
+    invHeight: 0
+    clipSize: -1
+    fixedWeapon: true
+    recover: false
+    defaultInventorySlot: STR_BACK_PACK
+    supportedInventorySections:
+      - STR_BACK_PACK
 
-  - &STR_SKILL_BLESS                        # Chaplain Bless ability
-    type: INV_NULL_3X1_BACKPACK_BLESS
+  - type: INV_BLESS_TOKEN                   # Chaplain Bless Token
+    refNode: *STR_SKILL_TOKEN
     categories: [STR_CAT_SPELLS]
     explosionHitSound: [{mod: 40k, index: 758}, {mod: 40k, index: 759}, {mod: 40k, index: 760}, {mod: 40k, index: 761}, {mod: 40k, index: 762}, {mod: 40k, index: 766}]
     hitAnimation: {mod: 40k, index: 96}
-    weight: 0
-    fixedWeapon: true
-    recover: false
-    power: 0 # bless
+    battleType: 1
+    power: 0
     damageBonus:
       bravery: 0.5
       psiSkill: 0.5
@@ -408,9 +418,6 @@ items:
       psiSkill: 2.0
     maxRange: 8
     bulletSpeed: 80
-    battleType: 1
-    flatRate: true
-    clipSize: -1
     experienceTrainingMode: 32 # don't give xp for blessing enemies
     tags:
       ITEM_BLESS_MELEE_ACCURACY: 1
@@ -418,23 +425,334 @@ items:
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
       ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
 
-  - type: INV_NULL_3X1_BACKPACK_BLESS       # Backpack Bless - 3x1 Tact Armor Version
-    refNode: *STR_SKILL_BLESS
-    bigSprite: {mod: 40k_ROSIGMA_edits, index: 251}
-    invWidth: 3
-    invHeight: 1
-    defaultInventorySlot: STR_BACK_PACK
-    defaultInvSlotX: 0
-    defaultInvSlotY: 0
+  - type: INV_INSPIRE_TOKEN                 # Primaris Inspire Token
+    refNode: *STR_SKILL_TOKEN
+    categories: [STR_CAT_SPELLS]
+    fireSound: {mod: 40k, index: 787}
+    hitSound: [100, 101]
+    hitAnimation: {mod: 40k, index: 1100}
+    battleType: 1
+    power: 0
+    damageType: 0
+    bulletSpeed: 30
+    damageBonus:
+      tu: 0.5
+      bravery: 0.1
+      psiSkill: 0.1
+    damageAlter:
+      RandomType: 3 #fixed
+      ArmorEffectiveness: 0.0
+      ToStun: 0.2
+      ToMorale: -1.00
+      ToTime: -1.20
+      ToEnergy: -0.4
+      ToHealth: 0.0
+      ToWound: 0.0
+      ToArmor: 0.0
+      ToTile: 0.00
+      ToItem: 0.00
+    confAimed:
+      name: STR_INSPIRE
+    costAimed:
+      time: 60
+      energy: 30
+      stun: 15
+    flatAimed:
+      time: false # 60% TU
+      energy: false # 30% energy
+      stun: false # 15% Stun
+    costAuto:
+      time: 0
+      energy: 0
+      stun: 0
+    costSnap:
+      time: 0
+      energy: 0
+      stun: 0
+    accuracyAimed: 100
+    accuracyMultiplier:
+      bravery: 2.5
+    maxRange: 12
+    powerRangeThreshold: 8
+    powerRangeReduction: 4.0
+    aimRange: 8 #just to give an indication of power falloff
+    dropoff: 4
+    experienceTrainingMode: 19 #bravery
+    tags:
+      ITEM_IS_BUFF_WEAPON: 1
+      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
+      ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
 
-  - type: INV_NULL_3X3_BACKPACK_BLESS       # Backpack Bless - 3x3 Term/Assault Version
-    refNode: *STR_SKILL_BLESS
-    bigSprite: {mod: 40k, index: 829}
-    invWidth: 3
-    invHeight: 3
+  - &STR_PSI_TOKEN                          # Inventory item for Psi Skills
+    type: STR_LIB_SPEED_TOME
+    categories: [ STR_CAT_SPELLS]
+    bigSprite: -1
+    weight: 0
+    invWidth: 0
+    invHeight: 0
+    clipSize: -1
+    fixedWeapon: true
+    recover: false
+    battleType: 9
     defaultInventorySlot: STR_BACK_PACK
-    defaultInvSlotX: 0
-    defaultInvSlotY: 0
+    supportedInventorySections:
+      - STR_BACK_PACK
+    tuPanic: 0
+    tuMindControl: 0
+    targetMatrix: 1
+    power: 0
+    dropoff: 0
+    damageType: 0 # none/support
+    damageBonus:
+      psiStrength: 1
+    damageAlter:
+      RandomType: 3
+      ArmorEffectiveness: 0.0
+      ToHealth: 0.0
+      ToStun: 0.0
+      ToWound: 0.0
+      ToArmor: 0.0
+    experienceTrainingMode: 25
+    tags:
+      ITEM_IS_PSYCHIC_POWER: 1
+      ITEM_PSYCHIC_POWER_MODIFIER: 3
+
+  - type: STR_LIB_SPEED_TOME                # Librarian Speed                                    ## Haste
+    refNode: *STR_PSI_TOKEN
+    fireSound: {mod: 40k, index: 787} #787 page turn BOOK
+    hitSound: {mod: 40k, index: 778} # Lockdown sound
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2170} # could do with something better/unique
+    clipSize: -1
+    targetMatrix: 1
+    LOSRequired: true
+    maxRange: 10
+    power: 0
+    damageBonus:
+      psiStrength: 0.5 # <100 PsiStr = no movespeed bonus, >= 100 PsiStr = 75% movespeed cost
+    accuracyUse: 500
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
+    tuUse: 25
+    costUse:
+      energy: 25
+      stun: 10
+      morale: 10
+    flatRate: true
+    experienceTrainingMode: 25
+    tags:
+      ITEM_IS_BUFF_WEAPON: 1
+      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
+
+  - type: STR_LIB_SPEED_TOME_DW             # Librarian Speed (Deathwatch White Scars)           ## Haste
+    refNode: *STR_PSI_TOKEN
+    fireSound: {mod: 40k, index: 787} #787 page turn BOOK
+    hitSound: {mod: 40k, index: 778} # Lockdown sound
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2170} # could do with something better/unique
+    power: 0
+    maxRange: 10
+    LOSRequired: true
+    damageBonus:
+      psiStrength: 0.75 # 67 psiStr = 75% movespeed, 134 psiStr = 50% movespeed
+    accuracyUse: 100
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
+    dropoff: 0
+    tags: # effect tag defined in haste script
+      ITEM_IS_BUFF_WEAPON: 1
+      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
+
+  - type: STR_LIB_LOCKDOWN_TOME             # Librarian Lockdown
+    refNode: *STR_PSI_TOKEN
+    hitSound: {mod: 40k, index: 778}
+    hitAnimation: {mod: 40k, index: 160}
+    targetMatrix: 6
+    power: 15 # was 100
+    maxRange: 15
+    LOSRequired: true
+    damageAlter:
+      ToTime: 10.0
+    damageBonus:
+      psiStrength: 0.8 # 40 Str = 47 power; 140 psiStr gives 127 power
+    costUse:
+      energy: 25
+      stun: 10
+      morale: 10
+    accuracyUse: 25 # was 25
+    psiAttackName: STR_LOCKDOWN_SPELL
+    tags:
+      ITEM_CAUSES_LOCKDOWN: 100
+
+  - type: STR_LIB_SHIELD_TOME               # Librarian Shield
+    refNode: *STR_PSI_TOKEN
+    hitSound: {mod: 40k, index: 778}
+    hitAnimation: {mod: 40k, index: 100}
+    psiAttackName: STR_SHIELD_SPELL
+    targetMatrix: 5 #ally + civ
+    accuracyUse: 100
+    LOSRequired: false
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
+    power: 0 # was 50 + 0.01 psi
+    maxRange: 10
+    damageBonus:
+      psiStrength: 1.0 # 40 psiStr gives 100 power 140 psiStr gives 350 power
+    isFireExtinguisher: true
+    tags:
+      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 250 # done to stop the '200 power hits knocks flyers out of the air' quirk of rosigma
+      ITEM_SETS_ENERGY_SHIELD_DECAY: 0 # not used, is removed entirely when duration ends
+      SMT_ITEM_SHIELD_DURATION: 1
+      ITEM_IS_BUFF_WEAPON: 1
+      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 100
+      ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
+
+  - type: STR_LIB_SMOKE_TOME                # Librarian Smoke
+    refNode: *STR_PSI_TOKEN
+    explosionHitSound: {mod: 40k, index: 792} #792 Smoke
+    hitAnimation: {mod: 40k, index: 104} #XSmoke
+    battleType: 1
+    power: 40
+    maxRange: 40
+    aimRange: 20
+    dropoff: 5
+    noLOSAccuracyPenalty: 75
+    damageType: 9
+    damageBonus:
+      psiStrength: 1.0
+    damageAlter:
+      RandomType: 2 # 50-150%
+      ToHealth: 0.0
+      ToStun: 0.00
+      ToItem: 0.00
+      ToTile: 0.00
+      ToArmor: 0.00
+      ToWound: 0.00
+      RandomWound: false
+    arcingShot: true
+    accuracyAimed: 90
+    accuracyMultiplier:
+      psiStrength: 1.0
+    bulletSpeed: 80
+    costAimed:
+      time: 50
+      stun: 25
+      morale: 10
+      energy: 50
+    flatRate: true
+    experienceTrainingMode: 32 # Don't give XP for smoking enemies
+    tags:
+      ITEM_PSYCHIC_POWER_MODIFIER: 5
+      ITEM_PSYCHIC_POWER_FLAT_CHECK: 1 # only check for perils once per turn
+
+  - type: STR_SMITE_TOKEN                   # Librarian Smite
+    refNode: *STR_PSI_TOKEN
+    hitAnimation: {mod: 40k, index: 1110}
+    fireSound: {mod: 40k, index: 787}
+    hitSound: {mod: 40k, index: 864}
+    psiAttackName: STR_SMITE_SPELL
+    LOSRequired: true
+    battleType: 9
+    tuUse: 20
+    flatRate: false
+    accuracyUse: 20
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 0.5
+    damageType: 1
+    power: 5
+    damageBonus:
+      psiStrength: 0.3 # was 0.002 psi
+    damageAlter:
+      RandomType: 6 # 0-100 x2 - was 2 (50-150)
+      ArmorEffectiveness: 0.0
+      ToArmor: 0.0
+      ToWound: 0 # brain blast, doesn't inflict flesh wounds
+      RandomWound: false
+    costUse:
+      energy: 10
+      stun: 5
+      morale: 5
+    tags:
+      ITEM_PSYCHIC_POWER_MODIFIER: 1 # was 5 - don't punish lightning tickle spam that harshly
+      ITEM_IS_PSYCHIC_POWER: 1
+
+  - update: STR_SMITE_TOME                  # Tome Smite
+    defaultInventorySlot: STR_LEFT_HAND
+    experienceTrainingMode: 25 # PsiStr
+    tuUse: 20 # was 25 flat
+    flatRate: false
+    power: 5 # was 10
+    accuracyUse: 20 # was 20
+    accuracyMultiplier: # was 1.0 psiStr + 0.02 devotion
+      psiStrength: 1.0
+      flatHundred: 0.5
+    damageBonus:
+      psiStrength: 0.3 # was 0.002 psi
+    damageAlter:
+      RandomType: 6 # 0-100 x2 - was 2 (50-150)
+      ToWound: 0 # brain blast, doesn't inflict flesh wounds
+      RandomWound: false
+    costUse:
+      energy: 10
+      stun: 5
+      morale: 5 # was 10, nerf morale drain to reduce the severe perils chance ramp when using smite repeatedly
+    tags:
+      ITEM_PSYCHIC_POWER_MODIFIER: 1 # was 5 - don't punish lightning tickle spam that harshly
+
+  - type: INV_LIB_OVERWATCH_TOKEN           # Librarian Vigilance Token                         ## Vigilance
+    refNode: *STR_PSI_TOKEN
+    categories: [ STR_CAT_SPELLS]
+    weight: 0
+    fireSound: {mod: 40k, index: 787} #787 page turn BOOK
+    hitSound: {mod: 40k, index: 778} # Lockdown sound
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2080} # could do with something better/unique
+    clipSize: -1
+    targetMatrix: 1
+    maxRange: 10
+    power: 5
+    damageBonus: # 50% at 90 psiStr, 80% at 150 psiStr
+      psiStrength: 0.5
+    tuUse: 25
+    tuPanic: 0
+    tuMindControl: 0
+    costUse:
+      energy: 25
+      stun: 10
+      morale: 10
+    flatRate: true
+    accuracyUse: 100
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
+    tags:
+      ITEM_IS_BUFF_WEAPON: 1
+
+  - type: INV_LIB_VULN_TOKEN                # Librarian Vulnerability Token
+    refNode: *STR_PSI_TOKEN
+    categories: [ STR_CAT_SPELLS]
+    weight: 0
+    fireSound: {mod: 40k, index: 787} #787 page turn BOOK
+    hitSound: {mod: 40k, index: 778} # Lockdown sound
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2150} # could do with something better/unique
+    clipSize: -1
+    targetMatrix: 6
+    power: 20
+    damageBonus:
+      psiStrength: 0.5
+    tuUse: 25
+    tuPanic: 0
+    tuMindControl: 0
+    costUse:
+      energy: 25
+      stun: 10
+      morale: 10
+    flatRate: true
+    accuracyUse: 100
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
 
   - type: STR_SMT_SIGNUM                    # Signum for Devastators                        ## Signum
     refNode: *STR_FIST
@@ -544,26 +862,25 @@ items:
     bigSprite: {mod: 40k_ROSIGMA_edits, index: 100}
     floorSprite: {mod: 40k_ROSIGMA_edits, index: 959}
     throwRange: 1
-    weight: 2 #
+    weight: 2
     fuseType: -1
-    #inventoryMoveCost: 5000
     supportedInventorySections:
       - STR_GROUND #shouldn't be able to pick this up
     armor: 500 #shouldn't be destroyed by explosions
     power: 250
     damageType: 3 #HE
     damageAlter:
-      RandomType: 6
-      FixRadius: 9 # was 7
+      RandomType: 2 # 50-150%
+      FixRadius: 8
       RadiusReduction: 5 #better damage spread
       ToArmorPre: 0.4 #heavy ablation
-      ArmorEffectiveness: 1.0 #
-      ToHealth: 1.0 #
+      ArmorEffectiveness: 0.8
+      ToHealth: 1.0
       ToTime: 0.2 #concussive
       ToStun: 0.4 #concussive
       ToWound: 0.1
       RandomWound: false
-      ToTile: 1 #
+      ToTile: 0.6
       ToItem: 0.2 #only destroy weak items
     recover: false
     tags:
@@ -571,7 +888,7 @@ items:
 
   - type: STR_STRIKE_VOX_FALSE              # fake version of Strike Vox for ufopedia stats
     battleType: 1
-    clipSize: 4
+    clipSize: 5
     maxRange: 60
     accuracyAuto: 30
     dropoff: 0
@@ -582,21 +899,21 @@ items:
     damageType: 3 #HE
     confAuto:
       name: STR_STRIKE_AUTO
-      shots: 4
+      shots: 5
     costAuto:
-      time: 80
+      time: 60
     damageAlter:
-      RandomType: 6
-      FixRadius: 7
+      RandomType: 2 # 50-150%
+      FixRadius: 8
       RadiusReduction: 5 #better damage spread
       ToArmorPre: 0.4 #heavy ablation
-      ArmorEffectiveness: 1.1 #
-      ToHealth: 0.7 #
+      ArmorEffectiveness: 0.8
+      ToHealth: 1.0
       ToTime: 0.2 #concussive
       ToStun: 0.4 #concussive
       ToWound: 0.1
       RandomWound: false
-      ToTile: 1 #
+      ToTile: 0.6
       ToItem: 0.2 #only destroy weak items
 
   - type: STR_SMT_GENESEED                  # geoscape item used for neophyte promotion
@@ -628,11 +945,12 @@ items:
   - &STR_BOLTER_AMMO_STD                    # Bolter Ammo defaults
     type: STR_PISTOL_CLIP                 # Boltpistol Ammo
     size: 0.05 # was 0.1
+    damageType: 1
     damageAlter:
       RandomType: 7 # 50-200%
-      ToArmorPre: 0.15 # was 0.1
+      ToArmorPre: 0.13 # was 0.1
       ArmorEffectiveness: 0.9
-      ToArmor: 0.15
+      ToArmor: 0.12
       ToHealth: 1.1
       ToStun: 0.5
       ToEnergy: 0.3
@@ -642,6 +960,19 @@ items:
 
   - update: STR_PISTOL_CLIP                 # Boltpistol Ammo
     refNode: *STR_BOLTER_AMMO_STD
+    # categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
+    # battleType: 2
+    # requiresBuyBaseFunc: [IMPERIUM]
+    # bigSprite: {mod: 40k, index: 4}
+    # floorSprite: {mod: 40k, index: 4}
+    # handSprite: {mod: 40k, index: 464}
+    # hitSound: {mod: 40k, index: 708}
+    # hitAnimation: {mod: 40k, index: 26}
+    # explosionSpeed: 5
+    # attraction: 1
+    # invWidth: 1
+    # invHeight: 1
+    # listOrder: 10220
     costBuy: 2000 # was 450, high quality ammo
     costSell: 500
     requiresBuy:
@@ -650,11 +981,10 @@ items:
     power: 75 # was 60
     weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
-    tags:
-      ITEM_AMMO_SKIP_BIGOBS: 2
 
   - update: STR_RIFLE_CLIP                  # Bolter Ammo
     refNode: *STR_BOLTER_AMMO_STD
+    listOrder: 10410 #10410
     costBuy: 5000 # was 300, high quality ammo
     costSell: 750
     requiresBuy:
@@ -662,16 +992,16 @@ items:
     power: 75 # was 65
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
-    armor: 200
-    tags:
-      ITEM_AMMO_SKIP_BIGOBS: 1
 
   - update: STR_LIGHT_BOLTER_AMMO           # Light Bolter Ammo
     refNode: *STR_BOLTER_AMMO_STD
+    listOrder: 10295
     bigSprite: 112
+    power: 60
 
   - update: STR_LIGHT_BOLTPISTOL_AMMO       # Light BoltPistol Ammo
     refNode: *STR_BOLTER_AMMO_STD
+    listOrder: 10095
     bigSprite: 116
     power: 60 # was 55
 
@@ -690,17 +1020,30 @@ items:
     armor: 200
     requiresBuy:
       - STR_BOLTER_ADV_AMMO
+    damageType: 1
     damageAlter:
       RandomType: 7 # 50-200%
-      ArmorEffectiveness: 0.5 # was 0.5
-      ToArmorPre: 0.01 # was 0.02, basically nothing
-      ToArmor: 0.15 # was 0.05, decent destruction if it manages to pen
-      ToHealth: 0.9
+      ArmorEffectiveness: 0.4 # was 0.5
+      ToArmorPre: 0.02 # basically nothing
+      ToArmor: 0.3 # was 0.05, good destruction if it manages to pen
+      ToHealth: 1.0
       ToStun: 0.05 # was 0.3; solid AP round rather than concussive
       ToEnergy: 0.1
 
   - update: STR_PISTOL_CLIP_AP              # Krak Boltpistol Ammo
     refNode: *STR_BOLTER_AMMO_KRAK
+    # categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
+    # battleType: 2
+    # bigSprite: {mod: 40k, index: 353}
+    # floorSprite: {mod: 40k, index: 4}
+    # handSprite: {mod: 40k, index: 464}
+    # hitSound: {mod: 40k, index: 708}
+    # hitAnimation: {mod: 40k, index: 26}
+    # explosionSpeed: 5
+    # invWidth: 1
+    # invHeight: 1
+    # attraction: 1
+    # listOrder: 10240
     costBuy: 2500
     costSell: 500
     requiresBuy:
@@ -708,11 +1051,10 @@ items:
     power: 70
     weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
-    tags:
-      ITEM_AMMO_SKIP_BIGOBS: 2
 
   - update: STR_RIFLE_CLIP_AP               # Krak Bolter Ammo
     refNode: *STR_BOLTER_AMMO_KRAK
+    listOrder: 10440
     costBuy: 6250
     costSell: 750
     requiresBuy:
@@ -720,8 +1062,6 @@ items:
     power: 70
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
-    tags:
-      ITEM_AMMO_SKIP_BIGOBS: 1
 
   - update: STR_LIGHT_BOLTER_AMMO_PEN       # Krak Light Bolter Ammo
     refNode: *STR_BOLTER_AMMO_KRAK
@@ -753,49 +1093,59 @@ items:
       - STR_MIDTIER_PREREQ
     costBuy: 6000 # was 7k
 
-  - update: STR_PISTOL_CLIP_MC              # Mastercraft Boltpistol Ammo                   ## Custom ammo
+  - &STR_BOLTER_AMMO_MASTER                 # Bolter MC Ammo defaults
+    type: STR_PISTOL_CLIP_MC
     size: 0.05 # was 0.1
+    armor: 200
+    damageType: 1
     damageAlter:
       RandomType: 7 # 50-200% instead of 0-200%
-      ToArmorPre: 0.20 # was 0.15
-      ToArmor: 0.20 # was 0.15
+      ToArmorPre: 0.18 # was 0.15
+      ArmorEffectiveness: 0.8
+      ToArmor: 0.12
+      ToHealth: 1.15
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    armor: 200
+
+  - update: STR_PISTOL_CLIP_MC              # Mastercraft Boltpistol Ammo                   ## Custom ammo
+    refNode: *STR_BOLTER_AMMO_MASTER
+    # battleType: 2
+    # categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
+    # bigSprite: {mod: 40k, index: 265}
+    # floorSprite: {mod: 40k, index: 4}
+    # handSprite: {mod: 40k, index: 464}
+    # hitSound: {mod: 40k, index: 708}
+    # hitAnimation: {mod: 40k, index: 26}
+    # explosionSpeed: 5
+    # attraction: 1
+    # listOrder: 10225
     power: 75 # now gets bonus power from high FA instead
     weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
-    armor: 200
-    tags:
-      ITEM_AMMO_SKIP_BIGOBS: 2
-  
+
   - update: STR_RIFLE_CLIP_MC               # Mastercraft Bolter Ammo                       ## Custom ammo
+    refNode: *STR_BOLTER_AMMO_MASTER
+    listOrder: 10420
     size: 0.05 # was 0.1
-    damageAlter:
-      RandomType: 7 # 50-200% instead of 0-200%
-      ToArmorPre: 0.20 # was 0.15
-      ToArmor: 0.20 # was 0.15
     power: 75 # now gets bonus power from high FA instead
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
-    armor: 200
-    tags:
-      ITEM_AMMO_SKIP_BIGOBS: 1
 
   - update: STR_LIGHT_BOLTPISTOL_AMMO_MC    # Mastercraft Light Boltpistol Ammo             ## Custom ammo
-    armor: 200
+    refNode: *STR_BOLTER_AMMO_MASTER
     size: 0.05 # was 0.1
     bigSprite: 119
     listOrder: 10098 # group with other light boltpistol ammo
     power: 70 # gets part of its bonus damage from precision bonus
-    damageAlter:
-      RandomType: 7 # 50-200% instead of 0-200%
-    armor: 200
 
   - update: STR_LIGHT_BOLTER_AMMO_MC        # Mastercraft Light Bolter Ammo                 ## Custom ammo
-    armor: 200
+    refNode: *STR_BOLTER_AMMO_MASTER
     size: 0.05 # was 0.1
     bigSprite: 115
     power: 70 # gets part of its bonus damage from precision bonus
-    damageAlter:
-      RandomType: 7 # 50-200% instead of 0-200%
     armor: 200
 
   - &STR_BOLTER_AMMO_METAL_STORM            # Metalstorm Ammo Defaults
@@ -839,20 +1189,29 @@ items:
 
   - update: STR_PISTOL_CLIP_EX              # Metalstorm BoltPistol Ammo
     refNode: *STR_BOLTER_AMMO_METAL_STORM
+    # battleType: 2
+    # categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
+    # bigSprite: {mod: 40k, index: 354}
+    # floorSprite: {mod: 40k, index: 4}
+    # handSprite: {mod: 40k, index: 464}
+    # hitSound: {mod: 40k, index: 708}
+    # invWidth: 1
+    # invHeight: 1
+    # attraction: 1
+    # listOrder: 10230
     costBuy: 2500
     costSell: 500
     requiresBuy:
       - STR_BOLTER_AMMO_PREREQ
-    power: 70 # 
-    weight: 3 # 1.5x weight
-    clipSize: 12 # +20% clip size
+    power: 70
+    weight: 3
+    clipSize: 12
     damageAlter:
       FixRadius: 3 # give it a larger area effect
-    tags:
-      ITEM_AMMO_SKIP_BIGOBS: 2
 
   - update: STR_RIFLE_CLIP_EX               # Metalstorm Bolter Ammo
     refNode: *STR_BOLTER_AMMO_METAL_STORM
+    listOrder: 10430
     costBuy: 6250
     costSell: 750
     requiresBuy:
@@ -862,14 +1221,12 @@ items:
     clipSize: 30 # +50% clip size
     damageAlter:
       FixRadius: 3
-    tags:
-      ITEM_AMMO_SKIP_BIGOBS: 1
 
   - &STR_BOLTRIFLE_DRUM_TEMPLATE            # Boltrifle Drum Defaults
     type: STR_BOLTRIFLE_DRUM
     categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
     size: 0.1
-    costSell: 1500
+    costSell: 2000
     weight: 8 # +2 over regular
     battleType: 2
     bigSprite: 186
@@ -885,22 +1242,11 @@ items:
     invHeight: 1
     clipSize: 45
     power: 75
-    damageType: 1
-    damageAlter: # bolter defaults
-      RandomType: 7 # 50-200%
-      ToArmorPre: 0.15 # was 0.1
-      ArmorEffectiveness: 0.9
-      ToArmor: 0.15
-      ToHealth: 1.1
-      ToStun: 0.5
-      ToEnergy: 0.3
-      ToWound: 0.2
-      RandomWound: false
     listOrder: 10455
-    tags:
-      ITEM_AMMO_SKIP_BIGOBS: 1
 
   - type: STR_BOLTRIFLE_DRUM                # Boltrifle Drum Ammo (Standard)
+    refNode: *STR_BOLTER_AMMO_STD
+  - type: STR_BOLTRIFLE_DRUM
     refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
     bigSprite: 186
     floorSprite: 186
@@ -911,6 +1257,8 @@ items:
       ITEM_AMMO_COLOR: 15
 
   - type: STR_BOLTRIFLE_DRUM_AP             # Boltrifle Drum Ammo (Krak)
+    refNode: *STR_BOLTER_AMMO_KRAK
+  - type: STR_BOLTRIFLE_DRUM_AP
     refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
     bigSprite: 185
     floorSprite: 185
@@ -920,18 +1268,12 @@ items:
     requiresBuy:
       - STR_PRIMARIS_BOLTERS_ADV
     power: 70
-    damageAlter:
-      RandomType: 7 # 50-200%
-      ArmorEffectiveness: 0.5 # was 0.5
-      ToArmorPre: 0.01 # was 0.02, basically nothing
-      ToArmor: 0.15 # was 0.05, decent destruction if it manages to pen
-      ToHealth: 0.9
-      ToStun: 0.2 # was 0.3; solid AP round rather than concussive
-      ToEnergy: 0.1
     tags:
       ITEM_AMMO_COLOR: 8
 
   - type: STR_BOLTRIFLE_DRUM_EX             # Boltrifle Drum Ammo (Metalstorm)
+    refNode: *STR_BOLTER_AMMO_METAL_STORM
+  - type: STR_BOLTRIFLE_DRUM_EX
     refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
     bigSprite: 184
     floorSprite: 184
@@ -945,58 +1287,28 @@ items:
     requiresBuyBaseFunc: [TRADE]
     requiresBuy:
       - STR_PRIMARIS_BOLTERS_ADV
-    power: 75
-    damageAlter:
-      RandomType: 7 # 50-200%
-      ToArmorPre: 0.05 # was 0.02
-      ArmorEffectiveness: 1.1 # was 1.2 (regular 0.9) - AP dmg less resisted than HE type by heavier armors
-      ToArmor: 0.15 # was 0.1
-      ToHealth: 1.5 # was 1.5 (regular 1.1)
-      ToStun: 0.2 # was 0.6 (regular 0.5)
-      ToEnergy: 0.4 # (regular 0.3)
-      ToWound: 0.4 # (regular 0.2)
-      ToTile: 0.0 #shrapnel, not explosive
-      ToItem: 0.0 #shrapnel, not explosive
-      IgnoreOverKill: true #shrapnel, not explosive
-      IgnoreSelfDestruct: false #shrapnel, not explosive
-      FixRadius: 3
+    power: 70
     tags:
       ITEM_AMMO_COLOR: 2
 
   - type: STR_BOLTRIFLE_DRUM_MC             # Boltrifle Drum Ammo (Mastercrafted)           ## Custom ammo
+    refNode: *STR_BOLTER_AMMO_MASTER
+  - type: STR_BOLTRIFLE_DRUM_MC
     refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
     bigSprite: 183
     floorSprite: 183
     listOrder: 10458
-    damageAlter:
-      RandomType: 7 # 50-200% instead of 0-200%
-      ToArmorPre: 0.25 # was 0.15
-      ArmorEffectiveness: 0.8
-      ToArmor: 0.20 # was 0.15
-      ToHealth: 1.15
-      ToStun: 0.5
-      ToEnergy: 0.3
-      ToWound: 0.2
-      RandomWound: false
     tags:
       ITEM_AMMO_COLOR: 1
 
-  - type: STR_BOLTRIFLE_DRUM_MC_DW          # Boltrifle Drum Ammo (Mastercrafted - DW)      ## Custom ammo
+  - type: STR_BOLTRIFLE_DRUM_MC_DW          # Boltrifle Drum Ammo (Mastercrafted)           ## Custom ammo
+    refNode: *STR_BOLTER_AMMO_MASTER
+  - type: STR_BOLTRIFLE_DRUM_MC_DW
     refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
     bigSprite: 183
     floorSprite: 183
     listOrder: 10458
     recover: false # part of armor loadout
-    damageAlter:
-      RandomType: 7 # 50-200% instead of 0-200%
-      ToArmorPre: 0.25 # was 0.15
-      ArmorEffectiveness: 0.8
-      ToArmor: 0.20 # was 0.15
-      ToHealth: 1.15
-      ToStun: 0.5
-      ToEnergy: 0.3
-      ToWound: 0.2
-      RandomWound: false
     tags:
       ITEM_AMMO_COLOR: 1
 
@@ -1107,37 +1419,41 @@ items:
     handSprite: 320
     bulletSprite: {mod: 40k, index: 6}
     bulletSpeed: 30
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
-    compatibleAmmo:
-      - STR_RIFLE_CLIP
-      - STR_RIFLE_CLIP_MC
-      - STR_RIFLE_CLIP_AP
-      - STR_RIFLE_CLIP_EX
-      - STR_PISTOL_CLIP
-      - STR_PISTOL_CLIP_AP
-      - STR_PISTOL_CLIP_EX
-      - STR_PISTOL_CLIP_MC
+    fireSound: {mod: 40k, index: 707} # light bolter ammo
+    compatibleAmmo: # uses light bolter ammo
+      - STR_LIGHT_BOLTER_AMMO
+      - STR_LIGHT_BOLTER_AMMO_MC
+      - STR_LIGHT_BOLTER_AMMO_PEN
+      - STR_LIGHT_BOLTER_AMMO_EX
+      - STR_LIGHT_BOLTPISTOL_AMMO
+      - STR_LIGHT_BOLTPISTOL_AMMO_MC
+      - STR_LIGHT_BOLTPISTOL_AMMO_AP
+      - STR_LIGHT_BOLTPISTOL_AMMO_EX
     dropoff: 8
     autoRange: 10 # godwyn 11
     snapRange: 16 # godwyn 15
     aimRange: 0
-    accuracyAuto: 60 # godwyn 66
-    accuracySnap: 70 # godwyn 80
+    accuracyAuto: 66 # godwyn 66
+    accuracySnap: 75 # godwyn 80
     accuracyAimed: 0
-    tuAuto: 30 # godwyn 30
-    tuSnap: 18 # godwyn 20
+    tuAuto: 35
+    tuSnap: 22
     tuAimed: 0
+    confSnap:
+      shots: 2
+    autoShots: 6
     twoHanded: true
     oneHandedPenalty: 85 # +10 over regular bolters, lighter
+    tuLoad: 8 # Carbine bonus
+    tuUnload: 4 # Carbine bonus
     invWidth: 2
     invHeight: 3
     armor: 200
-    autoShots: 4
     attraction: 1
-    listOrder: 10330
+    listOrder: 10294
     tags:
-      REACTION_MULTIPLIER: 150 #multiplies base reaction score by this amount divided by 100
-      ITEM_RECOIL: 60 # -5 over regular bolter, lighter
+      REACTION_MULTIPLIER: 166 #multiplies base reaction score by this amount divided by 100
+      ITEM_RECOIL: 45 # Light bolter ammo, but built for Marines
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - type: STR_BOLTER_CARBINE_SCOPE          # Bolter Carbine (Scoped)
@@ -1146,48 +1462,50 @@ items:
     requiresBuy:
       - STR_PRIMARIS_BOLTERS_ADV
     battleType: 1
-    size: 0.3
-    costBuy: 80000
-    costSell: 20000
-    weight: 20
     bigSprite: 208
     floorSprite: 208
     handSprite: 328
     bulletSprite: {mod: 40k, index: 6}
     bulletSpeed: 30
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
-    compatibleAmmo:
-      - STR_RIFLE_CLIP
-      - STR_RIFLE_CLIP_MC
-      - STR_RIFLE_CLIP_AP
-      - STR_RIFLE_CLIP_EX
-      - STR_PISTOL_CLIP
-      - STR_PISTOL_CLIP_AP
-      - STR_PISTOL_CLIP_EX
-      - STR_PISTOL_CLIP_MC
-    dropoff: 7 # -1, scoped
-    autoRange: 10 #
-    snapRange: 17 # regular 16
-    aimRange: 22
-    accuracyAuto: 60 # godwyn 66
-    accuracySnap: 70 # godwyn 80
-    accuracyAimed: 100
-    tuAuto: 30 # godwyn 30
-    tuSnap: 18 # godwyn 20
-    tuAimed: 40
-    twoHanded: true
-    oneHandedPenalty: 60 # -25 compared to regular, scope penalty
+    fireSound: {mod: 40k, index: 707} # light bolter ammo
+    size: 0.3
+    costBuy: 80000
+    costSell: 20000
+    weight: 20
     invWidth: 2
     invHeight: 3
-    armor: 200
-    autoShots: 4
     attraction: 1
-    listOrder: 10330
+    armor: 200
+    compatibleAmmo: # uses light bolter ammo
+      - STR_LIGHT_BOLTER_AMMO
+      - STR_LIGHT_BOLTER_AMMO_MC
+      - STR_LIGHT_BOLTER_AMMO_PEN
+      - STR_LIGHT_BOLTER_AMMO_EX
+      - STR_LIGHT_BOLTPISTOL_AMMO
+      - STR_LIGHT_BOLTPISTOL_AMMO_MC
+      - STR_LIGHT_BOLTPISTOL_AMMO_AP
+      - STR_LIGHT_BOLTPISTOL_AMMO_EX
+    dropoff: 7 # -1, scoped
+    autoRange: 10 #
+    snapRange: 17
+    aimRange: 22
+    accuracyAuto: 66 # godwyn 66
+    accuracySnap: 75 # godwyn 80
+    accuracyAimed: 100
+    tuAuto: 30
+    tuSnap: 18
+    tuAimed: 22
+    autoShots: 4
+    twoHanded: true
+    oneHandedPenalty: 60 # -25 compared to regular, scope penalty
+    tuLoad: 8 # Carbine bonus
+    tuUnload: 4 # Carbine bonus
+    listOrder: 10294
     tags:
-      REACTION_MULTIPLIER: 150 #multiplies base reaction score by this amount divided by 100
+      REACTION_MULTIPLIER: 133 #multiplies base reaction score by this amount divided by 100 - scope penalty
       ITEM_AIMED_ACCURACY_POWER_BONUS: 15 # minor scoped weapon aimed shot bonus
       ITEM_POWER_BONUS_PERCENTILE: 1 #use %
-      ITEM_RECOIL: 60 # -5 over regular bolter, lighter
+      ITEM_RECOIL: 45 # Light bolter ammo, but built for Marines
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - update: STR_RIFLED                      # Bolt Rifle (Standard/Cawl)
@@ -1435,12 +1753,13 @@ items:
     autoShots: 6 # cawl 4
     tags:
       ITEM_RECOIL: 85 # +10 over cawl - extra large battle rifle
-      ITEM_IS_HEAVY_WEAPON: 2 # 10% additional penalty when firing with lowered TUs
+      ITEM_IS_HEAVY_WEAPON: 1
       REACTION_MULTIPLIER: 66 # bulky
       REACTION_PENALTY_KNEELING_BYPASS: 1
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - update: STR_PISTOL                      # BoltPistol (Ceres)
+    bigSprite: 273
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     dropoff: 9 # was 6
     autoRange: 0
@@ -1452,12 +1771,13 @@ items:
     tuAuto: 0
     tuSnap: 18 # was 21
     tuAimed: 0
-    tuLoad: 10 # pistol bonus
+    tuLoad: 8 # pistol bonus
     tuUnload: 4 # pistol bonus
     requiresBuy:
       - STR_BOLTPISTOL_REQ
 
   - update: STR_PISTOLB                     # BoltPistol (Ultra)
+    bigSprite: 275
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     costBuy: 75000 # was 150k
     dropoff: 9 # was 6
@@ -1471,12 +1791,13 @@ items:
     tuSnap: 18 # was 21
     tuAimed: 0
     autoShots: 2
-    tuLoad: 10 # pistol bonus
+    tuLoad: 8 # pistol bonus
     tuUnload: 4 # pistol bonus
     requiresBuy:
       - STR_BOLTPISTOL_ADV_REQ
 
   - update: STR_MCPISTOL                    # BoltPistol (MC) - Now AssStrat exclusive
+    bigSprite: 281
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     dropoff: 9 # was 6
     autoRange: 8 # add 3shot autofire
@@ -1495,6 +1816,7 @@ items:
       REACTION_MULTIPLIER: 250 # was 200 - MCpistol bonus
 
   - update: STR_PISTOLS                     # BoltPistol (Spectris)
+    bigSprite: 277
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     costBuy: 75000 # was 150k
     dropoff: 8 # -1 for scope - was 5
@@ -1507,7 +1829,7 @@ items:
     tuAuto: 0
     tuSnap: 20 # was 22
     tuAimed: 35 # was 35
-    tuLoad: 10 # pistol bonus
+    tuLoad: 8 # pistol bonus
     tuUnload: 4 # pistol bonus
     requiresBuy:
       - STR_MARINE_BOLTERS_ADV
@@ -1532,7 +1854,7 @@ items:
     armor: 200 #to avoid item pile destruction
     listOrder: 10130
     weight: 20
-    bigSprite: {mod: 40k, index: 356}
+    bigSprite: 279
     floorSprite: {mod: 40k, index: 207}
     handSprite: {mod: 40k, index: 704}
     bulletSprite: {mod: 40k, index: 6}
@@ -1560,7 +1882,7 @@ items:
     tuAimed: 35 # was 35
     tuAuto: 33 # was 33
     autoShots: 3
-    tuLoad: 10 # pistol bonus
+    tuLoad: 8 # pistol bonus
     tuUnload: 4 # pistol bonus
     tags:
       ITEM_RECOIL: 55 # harder requirement, hybrid weapon
@@ -1669,6 +1991,7 @@ items:
     invHeight: 1
 
   - update: STR_BOLTPISTOL_DEAZ             # Light Boltpistol (Deaz)
+    bigSprite: 263
     dropoff: 9 # was 6
     autoRange: 0
     snapRange: 11 # was 11
@@ -1677,9 +2000,10 @@ items:
     accuracySnap: 75
     accuracyAimed: 0
     tuAuto: 0
-    tuSnap: 21
+    tuSnap: 20
     tuAimed: 0
-    tuLoad: 10 # pistol bonus
+    tuLoad: 8 # pistol bonus
+    tuUnload: 4 # pistol bonus
     compatibleAmmo: # make sure they can use all the appropriate ammo
       - STR_LIGHT_BOLTPISTOL_AMMO
       - STR_LIGHT_BOLTPISTOL_AMMO_MC
@@ -1689,19 +2013,21 @@ items:
       ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
 
   - update: STR_BOLTPISTOL_LIGHT_ULTRA      # Light Boltpistol (Ultra)
+    bigSprite: 265
     listOrder: 10091 # move to just under deaz
     costBuy: 50000 # was 75k - trainee weapon
     dropoff: 9 # was 6
     autoRange: 0
-    snapRange: 11 # was 11
+    snapRange: 12 # was 11
     aimRange: 0
     accuracyAuto: 0
     accuracySnap: 90 # (105 MC + 75 normal) / 2
     accuracyAimed: 0
     tuAuto: 0
-    tuSnap: 21
+    tuSnap: 20
     tuAimed: 0
-    tuLoad: 10 # pistol bonus
+    tuLoad: 8 # pistol bonus
+    tuUnload: 4 # pistol bonus
     compatibleAmmo: # make sure they can use all the appropriate ammo
       - STR_LIGHT_BOLTPISTOL_AMMO
       - STR_LIGHT_BOLTPISTOL_AMMO_MC
@@ -1711,6 +2037,7 @@ items:
       ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
 
   - update: STR_MC_BOLTPISTOL_DEAZ          # Light Boltpistol (MC)
+    bigSprite: 267
     listOrder: 10092 # move to just under ultra
     dropoff: 8 # was 6
     autoRange: 0
@@ -1720,9 +2047,10 @@ items:
     accuracySnap: 105
     accuracyAimed: 0
     tuAuto: 0
-    tuSnap: 21
+    tuSnap: 20
     tuAimed: 0
-    tuLoad: 10 # pistol bonus
+    tuLoad: 2 # MC pistol bonus
+    tuUnload: 2 # pistol bonus
     compatibleAmmo: # make sure they can use all the appropriate ammo
       - STR_LIGHT_BOLTPISTOL_AMMO
       - STR_LIGHT_BOLTPISTOL_AMMO_MC
@@ -1732,13 +2060,14 @@ items:
       ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
 
   - update: STR_BOLTER_ENFORCER             # Light Bolter (Enforcer - Doublesnap)
+    bigSprite: 230
     armor: 200
     dropoff: 8 # was 6
     autoRange: 0
     snapRange: 17 # was 14 - hybrid snap/auto
     aimRange: 0
     accuracyAuto: 0
-    accuracySnap: 75 # was 80
+    accuracySnap: 72 # was 80
     accuracyAimed: 0
     tuAuto: 0
     tuSnap: 30 # was 40 - make Enforcer a little more exciting over the Locke
@@ -1762,15 +2091,16 @@ items:
       REACTION_MULTIPLIER: 150 # carbine bonus - was 100 (default)
 
   - update: STR_BOLTER_LOCKE                # Light Bolter (Locke - Standard)
+    bigSprite: 233
     armor: 200
     dropoff: 8 # was 6
     autoRange: 11 # was 7
-    snapRange: 16 # was 14
+    snapRange: 17 # was 14
     aimRange: 0
     accuracyAuto: 66 # was 66
     accuracySnap: 80
     accuracyAimed: 0
-    tuSnap: 25
+    tuSnap: 24 # was 25
     tuAuto: 35 # was 40
     tuAimed: 0
     autoShots: 3
@@ -1789,17 +2119,18 @@ items:
       ITEM_RECOIL: 25 # was 25
 
   - update: STR_BOLTER_LIGHT_ULTRA          # Light Bolter (Ultra)
+    bigSprite: 236
     listOrder: 10293 # move to just under locke
     costBuy: 50000 # was 100k - trainee weapon
     dropoff: 8 # was 6
     autoRange: 11 # was 7
-    snapRange: 16 # was 14
+    snapRange: 17 # was 14
     aimRange: 0
     accuracyAuto: 75
     accuracySnap: 90
     accuracyAimed: 0
-    tuSnap: 25
-    tuAuto: 35 # was 40
+    tuSnap: 22 # was 25
+    tuAuto: 33 # was 40
     tuAimed: 0
     autoShots: 3
     compatibleAmmo: # make sure they can use all the appropriate ammo
@@ -1817,6 +2148,7 @@ items:
       ITEM_RECOIL: 25 # was 25
 
   - update: STR_MC_BOLTER_DEAZ              # Light Bolter (MC)
+    bigSprite: 239
     listOrder: 10294 # move to just under locke
     dropoff: 8 # was 6
     autoRange: 12 # was 10
@@ -2573,215 +2905,6 @@ items:
       RadiusReduction: 60 # high dropoff if not direct hit
     tags:
       REACTION_MULTIPLIER: 200 # pistol
-
-  - &STR_TOME_BASE                          # Tome default values
-    type: STR_LIB_SPEED_TOME
-    categories: [ STR_CAT_SPELLS]
-    weight: 0
-    #invWidth: 1
-    #invHeight: 1
-    fireSound: {mod: 40k, index: 787} #787 page turn BOOK
-    hitSound: {mod: 40k, index: 778} # Lockdown sound
-    clipSize: -1
-    twoHanded: false
-    fixedWeapon: true
-    recover: false
-    battleType: 9
-    damageType: 0 # none/support
-    damageBonus:
-      psiStrength: 0.5
-    damageAlter:
-      RandomType: 3
-      ArmorEffectiveness: 0.0
-      ToHealth: 0.0
-      ToStun: 0.0
-      ToWound: 0.0
-      ToArmor: 0.0
-    tuUse: 25
-    tuPanic: 0
-    tuMindControl: 0
-    costUse:
-      energy: 25
-      stun: 10
-      morale: 10
-    flatRate: true
-    accuracyUse: 100
-    experienceTrainingMode: 25
-    tags:
-      ITEM_IS_PSYCHIC_POWER: 1
-      ITEM_PSYCHIC_POWER_MODIFIER: 3 # was 5
-
-  - type: STR_LIB_SPEED_TOME                # Tome Speed                                    ## Haste
-    refNode: *STR_TOME_BASE
-    defaultInventorySlot: STR_LEFT_LEG
-    bigSprite: 106
-    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2080} # could do with something better/unique
-    invWidth: 1
-    invHeight: 1
-    defaultInvSlotX: 3
-    defaultInvSlotY: 1
-    targetMatrix: 1
-    power: 0
-    maxRange: 10
-    LOSRequired: true # gets ignored?
-    damageBonus:
-      psiStrength: 0.5 # <100 PsiStr = no movespeed bonus, >= 100 PsiStr = 75% movespeed cost
-    accuracyUse: 100
-    accuracyMultiplier:
-      psiStrength: 1.0
-      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
-    dropoff: 0
-    tags: # effect tag defined in haste script
-      ITEM_IS_BUFF_WEAPON: 1
-      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
-
-  - type: STR_LIB_SPEED_TOME_DW             # Tome Speed (Deathwatch White Scars)           ## Haste
-    refNode: *STR_TOME_BASE
-    defaultInventorySlot: STR_LEFT_LEG
-    bigSprite: 106
-    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2080} # could do with something better/unique
-    invWidth: 1
-    invHeight: 1
-    defaultInvSlotX: 3
-    defaultInvSlotY: 1
-    targetMatrix: 1
-    power: 0
-    maxRange: 10
-    LOSRequired: true # gets ignored?
-    damageBonus:
-      psiStrength: 0.75 # 67 psiStr = 75% movespeed, 134 psiStr = 50% movespeed
-    accuracyUse: 100
-    accuracyMultiplier:
-      psiStrength: 1.0
-      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
-    dropoff: 0
-    tags: # effect tag defined in haste script
-      ITEM_IS_BUFF_WEAPON: 1
-      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
-
-  - type: STR_LIB_LOCKDOWN_TOME             # Tome Lockdown
-    refNode: *STR_TOME_BASE
-    defaultInventorySlot: STR_RIGHT_LEG
-    bigSprite: 106
-    hitSound: {mod: 40k, index: 778}
-    hitAnimation: {mod: 40k, index: 160}
-    defaultInvSlotX: 3
-    defaultInvSlotY: 1
-    invWidth: 1
-    invHeight: 1
-    targetMatrix: 6
-    power: 15 # was 100
-    maxRange: 15
-    LOSRequired: true
-    damageAlter:
-      ToTime: 10.0
-    damageBonus:
-      psiStrength: 0.8 # 40 Str = 47 power; 140 psiStr gives 127 power
-    costUse:
-      energy: 25
-      stun: 10
-      morale: 10
-    accuracyUse: 25 # was 25
-    psiAttackName: STR_LOCKDOWN_SPELL
-    tags:
-      ITEM_CAUSES_LOCKDOWN: 100
-
-  - type: STR_LIB_SHIELD_TOME               # Tome Shield
-    refNode: *STR_TOME_BASE
-    defaultInventorySlot: STR_RIGHT_LEG
-    bigSprite: 105
-    hitSound: {mod: 40k, index: 778}
-    hitAnimation: {mod: 40k, index: 100}
-    defaultInvSlotX: 0
-    defaultInvSlotY: 0
-    invWidth: 2
-    invHeight: 1
-    psiAttackName: STR_SHIELD_SPELL
-    targetMatrix: 5 #ally + civ
-    accuracyUse: 100
-    LOSRequired: false
-    accuracyMultiplier:
-      psiStrength: 1.0
-      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
-    power: 0 # was 50 + 0.01 psi
-    maxRange: 10
-    damageBonus:
-      psiStrength: 1.0 # 40 psiStr gives 100 power 140 psiStr gives 350 power
-    isFireExtinguisher: true
-    tags:
-      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 250 # done to stop the dumb '200 power hits knocks flyers out of the air' quirk of rosigma
-      ITEM_SETS_ENERGY_SHIELD_DECAY: 0 # not used, is removed entirely when duration ends
-      SMT_ITEM_SHIELD_DURATION: 1
-      ITEM_IS_BUFF_WEAPON: 1
-      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 100
-      ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
-
-  - type: STR_LIB_SMOKE_TOME                # Tome Smoke
-    refNode: *STR_TOME_BASE
-    defaultInventorySlot: STR_LEFT_LEG
-    bigSprite: 104
-    explosionHitSound: {mod: 40k, index: 792} #792 Smoke
-    hitAnimation: {mod: 40k, index: 104} #XSmoke
-    defaultInvSlotX: 0
-    defaultInvSlotY: 0
-    invWidth: 2
-    invHeight: 1
-    battleType: 1
-    damageType: 9
-    power: 30
-    maxRange: 40
-    aimRange: 20
-    dropoff: 5
-    accuracyAimed: 90
-    accuracyMultiplier:
-      psiStrength: 1.2
-    noLOSAccuracyPenalty: 75
-    damageBonus:
-      psiStrength: 1.0
-    damageAlter:
-      RandomType: 2 # 50-150%
-      ToHealth: 0.0
-      ToStun: 0.00
-      ToItem: 0.00
-      ToTile: 0.00
-      ToArmor: 0.00
-      ToWound: 0.00
-      RandomWound: false
-    arcingShot: true
-    bulletSpeed: 80
-    costAimed:
-      time: 50
-      stun: 25
-      morale: 10
-      energy: 50
-    flatRate: true
-    experienceTrainingMode: 32 # Don't give XP for smoking enemies
-    tags:
-      ITEM_PSYCHIC_POWER_MODIFIER: 5 # was 5
-      ITEM_PSYCHIC_POWER_FLAT_CHECK: 1 # only check for perils once per turn
-
-  - update: STR_SMITE_TOME                  # Tome Smite
-    defaultInventorySlot: STR_LEFT_HAND
-    experienceTrainingMode: 25 # PsiStr
-    tuUse: 20 # was 25 flat
-    flatRate: false
-    power: 5 # was 10
-    accuracyUse: 20 # was 20
-    accuracyMultiplier: # was 1.0 psiStr + 0.02 devotion
-      psiStrength: 1.0
-      flatHundred: 0.5
-    damageBonus:
-      psiStrength: 0.3 # was 0.002 psi
-    damageAlter:
-      RandomType: 6 # 0-100 x2 - was 2 (50-150)
-      ToWound: 0 # brain blast, doesn't inflict flesh wounds
-      RandomWound: false
-    costUse:
-      energy: 10
-      stun: 5
-      morale: 5 # was 10, nerf morale drain to reduce the severe perils chance ramp when using smite repeatedly
-    tags:
-      ITEM_PSYCHIC_POWER_MODIFIER: 1 # was 5 - don't punish lightning tickle spam that harshly
 
   - update: STR_ELECTRO_FLARE               # Electroflare
     costPrime:
@@ -4119,6 +4242,16 @@ items:
     flatRate: true # was false
     listOrder: 14200
 
+  - type: STR_TURRET_RELOAD                 # Vehicle turret reload tool
+    costUse:
+      energy: 0 # was 100 (lmao) - doesn't accelerate reload time at all, just makes you start reloading NEXT turn
+      mana: 1  # need at least one mana to try
+
+  - type: STR_RELOAD_WEAPONS                # Soldier backpack weapon reload tool
+    costUse:
+      time: 5 # was 100 (lol, lmao) - doesn't accelerate reload time at all, just makes you start reloading NEXT turn
+      mana: 1  # need at least one mana to try
+
   - type: STR_DREAD_STORMBOLTER             # Dread Stormbolter Fist
     bigSprite: 157
     bulletSprite: {mod: 40k, index: 6}
@@ -4262,6 +4395,8 @@ items:
       - STR_HWP_FUSION_BOMB
     confAuto:
       shots: 2
+    tags:
+      ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - type: STR_DREAD_MISSILES                # Dread Regular Missile ammo
     bigSprite: 161
@@ -4291,7 +4426,7 @@ items:
       ArmorEffectiveness: 0.75
       FixRadius: 8
     tags:
-      ITEM_AMMO_SKIP_BIGOBS: 1
+      ITEM_AMMO_COLOR: 1
 
   - update: STR_HWP_FUSION_BOMB             # Dread Hellfire Missile ammo
     size: 0.1
@@ -4306,7 +4441,7 @@ items:
       FixRadius: 11
     clipSize: 8 # was 8
     tags:
-      ITEM_AMMO_SKIP_BIGOBS: 2
+      ITEM_AMMO_COLOR: 2
 
   - update: STR_STUN_ROD                    # Shock Maul
     armor: 200

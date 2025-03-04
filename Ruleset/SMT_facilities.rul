@@ -14,9 +14,13 @@ facilities:
   - type: STR_TEC_BAY
     workshops: 25 # was 10
     provideBaseFunc: [TEC, MANU] # counts as a workshop
+    rightClickActionType: 2 # manufacturing menu
 
   - type: STR_ARMORY
     storage: 75 # was 25 - general stores is 100
+
+  - type: STR_STEELMILL
+    rightClickActionType: 2 # manufacturing menu
 
   - &DW_QUARTERS
     type: STR_DW_QUARTERS_ULTRA

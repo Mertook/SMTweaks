@@ -24,6 +24,7 @@ extraStrings:
       STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM: "Force Commander, the Tomb is awakening and more warriors are arriving to impede our progress. We need to be quick in reaching our objective or prepare to evacuate lest our forces be overwhelmed!"
       STR_NECRON_REINFORCEMENTS_TOMB_DESC_HEAVY: "Force Commander, the Necron Tomb is on high alert and summoning all of its warriors to bear on us. We must destroy the heart of the base immediately or risk being overwhelemd!"
       ### ARMOR
+      STR_SCOUT_SMT_UC: "Scout Armor"
       STR_ASS_ARMOR_HONOR_CLAW: MK7 Vanguard Armor (Claw)
       STR_CHAP_TERMINATOR_UC: Chaplain Terminator Armor
       STR_CHAP_ASSAULT_UC: Chaplain Assault Armor
@@ -110,17 +111,17 @@ extraStrings:
       STR_STRIKE_BEACON: Strike Beacon
       STR_SMT_GENESEED: Geneseed
       STR_SMT_GENESEED_IMPURE: Immature Geneseed
-      INV_NULL_3X1_BACKPACK_BLESS: ""
-      INV_NULL_3X3_BACKPACK_BLESS: ""
-      STR_LIB_LOCKDOWN_TOME: Tome of the Empyrean
-      STR_LIB_SHIELD_TOME: Tome of the Empyrean
-      STR_LIB_SPEED_TOME: Tome of the Mind
-      STR_LIB_SMOKE_TOME: Tome of the Mind
       STR_SMITE_TOME: Tome of Fulmination
       STR_RIFLE_CLIP: Bolter Magazine
       STR_RIFLE_CLIP_AP: Bolter Kraken Penetrator Mag.
       STR_RIFLE_CLIP_EX: Bolter Metal Storm Mag.
       STR_RIFLE_CLIP_MC: Master Crafted Bolter Mag.
+      STR_LIGHT_BOLTER_AMMO: Light Bolter Magazine
+      STR_LIGHT_BOLTER_AMMO_PEN: Light Kraken Penetrator Mag.
+      STR_LIGHT_BOLTER_AMMO_EX: Light Metal Storm Mag.
+      STR_LIGHT_BOLTER_AMMO_MC: Master Crafted Light Bolter Mag.
+      STR_LIGHT_BOLTER_AMMO_AP: Light Bolter Elohim AP Mag.
+      STR_LIGHT_BOLTER_AMMO_INF: Light Bolter Inferno Mag.
       STR_BOLT_SNIPER_RIFLE: Bolt Sniper Rifle
       STR_BOLT_SNIPER_AMMO_AP: AP Bolt
       STR_BOLT_SNIPER_AMMO_FRAG: Frag Bolt
@@ -197,6 +198,9 @@ extraStrings:
       STR_PRIMARIS_APOTH_BIO: Apothecary Biologis
       STR_PRIMARIS_JUDICAR: Judiciar
       STR_PRIMARIS_CHAPLAIN: Chaplain
+      STR_PRIMARIS_LIBRARIANLV1: Librarian
+      STR_PRIMARIS_LIBRARIANLV2: Codicier
+      STR_PRIMARIS_LIBRARIANLV3: Chief Librarian
       STR_NEOPHYTE_RANK_0: Neophyte
       STR_NEOPHYTE_RANK_1: Scout
       STR_ROOKIE: Marine
@@ -231,12 +235,24 @@ extraStrings:
       STR_PRIM_APOTH_RANK_0: Apothecary
       STR_PRIM_APOTH_RANK_1: Apoth. Biologis
       ### SKILLS
-      STR_BLESS_SKILL: Bless
+      STR_BLESS_SKILL: Litany of Faith
+      INV_BLESS_TOKEN: Litany of Faith
+      STR_INSPIRE_PRIMARIS_SKILL: Inspire
+      INV_INSPIRE_TOKEN: Inspire
       STR_LIB_SMOKE_SKILL: Shroud
+      STR_LIB_SMOKE_TOME: Shroud
       STR_LIB_LOCKDOWN_SKILL: Lockdown
+      STR_LIB_LOCKDOWN_TOME: Lockdown
       STR_LIB_SHIELD_SKILL: Project Shield
+      STR_LIB_SHIELD_TOME: Project Shield
       STR_LIB_HASTE_SKILL: Accelerate
+      STR_LIB_SPEED_TOME: Accelerate
       STR_LIB_SMITE_SKILL: Smite
+      STR_SMITE_TOKEN: Smite
+      STR_LIB_VULNERABILITY_SKILL: Agonize
+      INV_LIB_VULN_TOKEN: Agonize
+      STR_LIB_OVERWATCH_SKILL: Vigilance
+      INV_LIB_OVERWATCH_TOKEN: Vigilance
       ### TRANSFORMATIONS
       STR_PROMOTE_TERMINATOR: Promote Vet Marine
       STR_HARVEST_GENESEED: Recover Geneseed
@@ -250,6 +266,9 @@ extraStrings:
       STR_APOTH_LV3_TO_LV4: Promote Apothecary Biologis
       STR_LV1_TO_JUDICAR: Induct Judicar
       STR_JUDICAR_TO_CHAPLAIN: Anoint Chaplain
+      STR_LIBRARIAN_PRIMARISLV1: Train Librarian
+      STR_LIBRARIAN_PRIMARISLV2: Promote to Lexicanium
+      STR_LIBRARIAN_PRIMARISLV3: Promote to Codicier
       ### RESEARCH
       STR_PERSONAL_ARMOR: Tactical Armor
       STR_SMOKE_BOMB_UNLOCK: Smoke Bomb Requisition
@@ -495,7 +514,6 @@ extraStrings:
       STR_HEAVY_BOLTRIFLE_DW: ¬ Heavy Bolt Rifle
       STR_FORCE_HALBERD_DW: ¬ Force Halberd
       STR_PLASMA_GUN_TWINCORE_DW: ¬ Twincore Plasma Rifle
-      STR_SMITE_TOME_DW: Tome of Fulmination
       STR_POWER_AXE_DW: ¬ Power Axe
       STR_ABSOLVOR_PISTOL_DW: ¬ Absolvor Boltpistol
       STR_ABSOLVOR_AMMO_MC: Mastercrafted Absolvor Ammo

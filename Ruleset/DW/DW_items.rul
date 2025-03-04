@@ -780,52 +780,6 @@ items:
       spendPerShot: 3 # base 4
       name: STR_MAXIMAL_SHOT
 
-  - type: STR_SMITE_TOME_DW                 # Librarian Smite (Dark Angels Captain)     ## Skills
-    categories: [ STR_CAT_SPELLS]
-    weight: 0
-    defaultInventorySlot: STR_LEFT_LEG
-    invWidth: 1
-    invHeight: 1
-    defaultInvSlotX: 3
-    defaultInvSlotY: 1
-    bigSprite: 106
-    hitAnimation: {mod: 40k, index: 1110}
-    fireSound: {mod: 40k, index: 787}
-    hitSound: {mod: 40k, index: 864}
-    clipSize: -1
-    twoHanded: false
-    fixedWeapon: true
-    recover: false
-    psiAttackName: STR_SMITE_SPELL
-    LOSRequired: true
-    battleType: 9
-    tuPanic: 0
-    tuMindControl: 0
-    experienceTrainingMode: 25 # PsiStr
-    tuUse: 20 # was 25 flat
-    flatRate: false
-    accuracyUse: 20 # was 20
-    accuracyMultiplier: # was 1.0 psiStr + 0.02 devotion
-      psiStrength: 1.0
-      flatHundred: 0.5
-    damageType: 0
-    power: 5
-    damageBonus:
-      psiStrength: 0.3 # was 0.002 psi
-    damageAlter:
-      RandomType: 6 # 0-100 x2 - was 2 (50-150)
-      ArmorEffectiveness: 0.0
-      ToArmor: 0.0
-      ToWound: 0 # brain blast, doesn't inflict flesh wounds
-      RandomWound: false
-    costUse:
-      energy: 10
-      stun: 5
-      morale: 5 # was 10, nerf morale drain to reduce the severe perils chance ramp when using smite repeatedly
-    tags:
-      ITEM_PSYCHIC_POWER_MODIFIER: 1 # was 5 - don't punish lightning tickle spam that harshly
-      ITEM_IS_PSYCHIC_POWER: 1
-
   - type: STR_POWER_AXE_DW                  # Power Axe (Space Wolves Captain)          ## Restricted item
     clipSize: -1
     battleType: 3

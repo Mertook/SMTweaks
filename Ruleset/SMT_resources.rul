@@ -1,4 +1,23 @@
 armors:
+  - type: STR_SCOUT_SMT_UC          #SCOUT
+    layersDefaultPrefix: "0"
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["0", "ASCOUTM", "M0_FACE", "GOGGLES"]
+      M1: ["0", "ASCOUTM", "M1_FACE", "GOGGLES"]
+      M2: ["0", "ASCOUTMC", "M2_FACE", "GOGGLES"]
+      M3: ["0", "ASCOUTMB", "M3_FACE", "GOGGLES"]
+      M4: ["0", "ASCOUTM", "M4_FACE", "GOGGLES"]
+      M5: ["0", "ASCOUTM", "M5_FACE", "GOGGLES"]
+      F0: ["0", "ASCOUTF", "F0_FACE", "GOGGLES"]
+      F1: ["0", "ASCOUTF", "F1_FACE", "GOGGLES"]
+      F2: ["0", "ASCOUTFC", "F2_FACE", "GOGGLES"]
+      F3: ["0", "ASCOUTFB", "F3_FACE", "GOGGLES"]
+      F4: ["0", "ASCOUTF", "F4_FACE", "GOGGLES"]
+      F5: ["0", "ASCOUTF", "F5_FACE", "GOGGLES"]
+
   - type: STR_ASS_ARMOR_HONOR_CLAW  #HONOR ASSAULT CLAW
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -75,37 +94,39 @@ armors:
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: LIBRARIAN
+      3: LIBRARIAN
     layersDefinition:
-      M0: ["0", "LIBTACTM", "M0_FACE"]
-      M1: ["0", "LIBTACTM", "M1_FACE"]
-      M2: ["0", "LIBTACTM", "M2_FACE"]
-      M3: ["0", "LIBTACTM", "M3_FACE"]
-      M4: ["0", "LIBTACTM", "M4_FACE"]
-      M5: ["0", "LIBTACTM", "M5_FACE"]
-      F0: ["0", "LIBTACTF", "F0_FACE"]
-      F1: ["0", "LIBTACTF", "F1_FACE"]
-      F2: ["0", "LIBTACTF", "F2_FACE"]
-      F3: ["0", "LIBTACTF", "F3_FACE"]
-      F4: ["0", "LIBTACTF", "F4_FACE"]
-      F5: ["0", "LIBTACTF", "F5_FACE"]
+      M0: ["0", "LIBTACTM", "M0_FACE", "EYES"]
+      M1: ["0", "LIBTACTM", "M1_FACE", "EYES"]
+      M2: ["0", "LIBTACTM", "M2_FACE", "EYES"]
+      M3: ["0", "LIBTACTM", "M3_FACE", "EYES"]
+      M4: ["0", "LIBTACTM", "M4_FACE", "EYES"]
+      M5: ["0", "LIBTACTM", "M5_FACE", "EYES"]
+      F0: ["0", "LIBTACTF", "F0_FACE", "EYES"]
+      F1: ["0", "LIBTACTF", "F1_FACE", "EYES"]
+      F2: ["0", "LIBTACTF", "F2_FACE", "EYES"]
+      F3: ["0", "LIBTACTF", "F3_FACE", "EYES"]
+      F4: ["0", "LIBTACTF", "F4_FACE", "EYES"]
+      F5: ["0", "LIBTACTF", "F5_FACE", "EYES"]
 
   - type: STR_LIB_TERMINATOR_UC     #LIBRARIAN TERMINATOR
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: LIBRARIAN
+      3: LIBRARIAN
     layersDefinition:
-      M0: ["0", "LIBTERMMF", "M0_FACE"]
-      M1: ["0", "LIBTERMMF", "M1_FACE"]
-      M2: ["0", "LIBTERMMF", "M2_FACE"]
-      M3: ["0", "LIBTERMMF", "M3_FACE"]
-      M4: ["0", "LIBTERMMF", "M4_FACE"]
-      M5: ["0", "LIBTERMMF", "M5_FACE"]
-      F0: ["0", "LIBTERMMF", "F0_FACE"]
-      F1: ["0", "LIBTERMMF", "F1_FACE"]
-      F2: ["0", "LIBTERMMF", "F2_FACE"]
-      F3: ["0", "LIBTERMMF", "F3_FACE"]
-      F4: ["0", "LIBTERMMF", "F4_FACE"]
-      F5: ["0", "LIBTERMMF", "F5_FACE"]
+      M0: ["0", "LIBTERMMF", "M0_FACE", "EYES"]
+      M1: ["0", "LIBTERMMF", "M1_FACE", "EYES"]
+      M2: ["0", "LIBTERMMF", "M2_FACE", "EYES"]
+      M3: ["0", "LIBTERMMF", "M3_FACE", "EYES"]
+      M4: ["0", "LIBTERMMF", "M4_FACE", "EYES"]
+      M5: ["0", "LIBTERMMF", "M5_FACE", "EYES"]
+      F0: ["0", "LIBTERMMF", "F0_FACE", "EYES"]
+      F1: ["0", "LIBTERMMF", "F1_FACE", "EYES"]
+      F2: ["0", "LIBTERMMF", "F2_FACE", "EYES"]
+      F3: ["0", "LIBTERMMF", "F3_FACE", "EYES"]
+      F4: ["0", "LIBTERMMF", "F4_FACE", "EYES"]
+      F5: ["0", "LIBTERMMF", "F5_FACE", "EYES"]
 
   - type: STR_TSARGENT_UC           #TERMINATOR CYCLONE
     layersDefaultPrefix: 0
@@ -1021,7 +1042,7 @@ armors:
       F6: ["0", "INCLV5", "M13_FACE", "MEDAL3"]
 
 
-  - type: STR_MKX_JUDICAR_UC        #PRIMARIS JUDICAR LV2
+  - type: STR_MKX_JUDICAR_UC        #PRIMARIS JUDICAR
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: CHAP
@@ -1041,6 +1062,64 @@ armors:
       F5: ["0", "JUDICARMF", "M12_FACE"]
       F6: ["0", "JUDICARMF", "M12_FACE"]
 
+  - type: STR_MKX_LIB_LV1_UC        #PRIMARIS LIBRARIAN
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      3: LIBRARIAN
+    layersDefinition:
+      M0: ["0", "LIBLV1", "M0_FACE", "EYES"]
+      M1: ["0", "LIBLV1", "M1_FACE", "EYES"]
+      M2: ["0", "LIBLV1", "M2_FACE", "EYES"]
+      M3: ["0", "LIBLV1", "M3_FACE", "EYES"]
+      M4: ["0", "LIBLV1", "M4_FACE", "EYES"]
+      M5: ["0", "LIBLV1", "M5_FACE", "EYES"]
+      M6: ["0", "LIBLV1", "M6_FACE", "EYES"]
+      F0: ["0", "LIBLV1", "M7_FACE", "EYES"]
+      F1: ["0", "LIBLV1", "M8_FACE", "EYES"]
+      F2: ["0", "LIBLV1", "M9_FACE", "EYES"]
+      F3: ["0", "LIBLV1", "M10_FACE", "EYES"]
+      F4: ["0", "LIBLV1", "M11_FACE", "EYES"]
+      F5: ["0", "LIBLV1", "M12_FACE", "EYES"]
+      F6: ["0", "LIBLV1", "M13_FACE", "EYES"]
+  - type: STR_MKX_LIB_LV2_UC
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      3: LIBRARIAN
+    layersDefinition:
+      M0: ["0", "LIBLV2", "M0_FACE", "EYES"]
+      M1: ["0", "LIBLV2", "M1_FACE", "EYES"]
+      M2: ["0", "LIBLV2", "M2_FACE", "EYES"]
+      M3: ["0", "LIBLV2", "M3_FACE", "EYES"]
+      M4: ["0", "LIBLV2", "M4_FACE", "EYES"]
+      M5: ["0", "LIBLV2", "M5_FACE", "EYES"]
+      M6: ["0", "LIBLV2", "M6_FACE", "EYES"]
+      F0: ["0", "LIBLV2", "M7_FACE", "EYES"]
+      F1: ["0", "LIBLV2", "M8_FACE", "EYES"]
+      F2: ["0", "LIBLV2", "M9_FACE", "EYES"]
+      F3: ["0", "LIBLV2", "M10_FACE", "EYES"]
+      F4: ["0", "LIBLV2", "M11_FACE", "EYES"]
+      F5: ["0", "LIBLV2", "M12_FACE", "EYES"]
+      F6: ["0", "LIBLV2", "M13_FACE", "EYES"]
+  - type: STR_MKX_LIB_LV3_UC
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      3: LIBRARIAN
+    layersDefinition:
+      M0: ["CAPEP", "LIBLV3", "M0_FACE", "EYES"]
+      M1: ["CAPEP", "LIBLV3", "M1_FACE", "EYES"]
+      M2: ["CAPEP", "LIBLV3", "M2_FACE", "EYES"]
+      M3: ["CAPEP", "LIBLV3", "M3_FACE", "EYES"]
+      M4: ["CAPEP", "LIBLV3", "M4_FACE", "EYES"]
+      M5: ["CAPEP", "LIBLV3", "M5_FACE", "EYES"]
+      M6: ["CAPEP", "LIBLV3", "M6_FACE", "EYES"]
+      F0: ["CAPEP", "LIBLV3", "M7_FACE", "EYES"]
+      F1: ["CAPEP", "LIBLV3", "M8_FACE", "EYES"]
+      F2: ["CAPEP", "LIBLV3", "M9_FACE", "EYES"]
+      F3: ["CAPEP", "LIBLV3", "M10_FACE", "EYES"]
+      F4: ["CAPEP", "LIBLV3", "M11_FACE", "EYES"]
+      F5: ["CAPEP", "LIBLV3", "M12_FACE", "EYES"]
+      F6: ["CAPEP", "LIBLV3", "M13_FACE", "EYES"]
+
 extraSprites:
 ###Item BigOBs
   - type: BIGOBS.PCK
@@ -1057,14 +1136,14 @@ extraSprites:
       109: Resources/ITEMS/HBOLTER/hbolterHE.png                # Mars HBolter Ammo HE
       110: Resources/ITEMS/HBOLTER/hbolterI.png                 # Mars HBolter Ammo I
       111: Resources/ITEMS/HBOLTER/hbolterMC.png                # Mars HBolter Ammo MC
-      112: Resources/ITEMS/LBOLTER/LBoltN.png                   # Light Bolter Ammo
-      113: Resources/ITEMS/LBOLTER/LBoltAP.png                  # Light Bolter Krak
-      114: Resources/ITEMS/LBOLTER/LBoltEX.png                  # Light Bolter Metalstorm
-      115: Resources/ITEMS/LBOLTER/LBoltMC.png                  # Light Bolter Mastercrafted
-      116: Resources/ITEMS/LBOLTER/LBoltpN.png                  # Light BoltPistol Ammo
-      117: Resources/ITEMS/LBOLTER/LBoltpAP.png                 # Light BoltPistol Krak
-      118: Resources/ITEMS/LBOLTER/LBoltpEX.png                 # Light BoltPistol Metalstorm
-      119: Resources/ITEMS/LBOLTER/LBoltpMC.png                 # Light BoltPistol Mastercrafted
+      112: Resources/ITEMS/BOLTER/ammoLN.png                    # Light Bolter Ammo
+      113: Resources/ITEMS/BOLTER/ammoLAP.png                   # Light Bolter Krak
+      114: Resources/ITEMS/BOLTER/ammoLEX.png                   # Light Bolter Metalstorm
+      115: Resources/ITEMS/BOLTER/ammoLMC.png                   # Light Bolter Mastercrafted
+      116: Resources/ITEMS/BOLTPISTOL/LBoltpN.png               # Light BoltPistol Ammo
+      117: Resources/ITEMS/BOLTPISTOL/LBoltpAP.png              # Light BoltPistol Krak
+      118: Resources/ITEMS/BOLTPISTOL/LBoltpEX.png              # Light BoltPistol Metalstorm
+      119: Resources/ITEMS/BOLTPISTOL/LBoltpMC.png              # Light BoltPistol Mastercrafted
       #20-27 potential full size bolter ammo
       128: Resources/ITEMS/BSNIPER/HeavySniper_BigOb.png        # Bolt Sniper Rifle
       129: Resources/ITEMS/SLT_BigOb.png                        # Smoke Launcher Turret
@@ -1075,31 +1154,31 @@ extraSprites:
       134: Resources/ITEMS/motion.png                           # Motion Scanner
       135: Resources/ITEMS/MELEE/LChainSM_BigOb.png             # Light Chainsword
       136: Resources/ITEMS/BOLTER/rifle_0.png                   # Bolter Godwyn (unloaded)
-      137: Resources/ITEMS/BOLTER/rifle_1.png                   # Bolter Godwyn (regular)
-      138: Resources/ITEMS/BOLTER/rifle_2.png                   # Bolter Godwyn (pistol)
+      137: Resources/ITEMS/BOLTER/rifle_1.png                   # Bolter Godwyn (boltpistol)
+      138: Resources/ITEMS/BOLTER/rifle_2.png                   # Bolter Godwyn (bolter)
       139: Resources/ITEMS/BOLTER/rifleA_0.png                  # Bolter Artifex (unloaded)
-      140: Resources/ITEMS/BOLTER/rifleA_1.png                  # Bolter Artifex (regular)
-      141: Resources/ITEMS/BOLTER/rifleA_2.png                  # Bolter Artifex (pistol)
+      140: Resources/ITEMS/BOLTER/rifleA_1.png                  # Bolter Artifex (boltpistol)
+      141: Resources/ITEMS/BOLTER/rifleA_2.png                  # Bolter Artifex (bolter)
       142: Resources/ITEMS/BOLTER/rifleB_0.png                  # Bolter Ultra (unloaded)
-      143: Resources/ITEMS/BOLTER/rifleB_1.png                  # Bolter Ultra (regular)
-      144: Resources/ITEMS/BOLTER/rifleB_2.png                  # Bolter Ultra (pistol)
+      143: Resources/ITEMS/BOLTER/rifleB_1.png                  # Bolter Ultra (boltpistol)
+      144: Resources/ITEMS/BOLTER/rifleB_2.png                  # Bolter Ultra (bolter)
       145: Resources/ITEMS/BOLTER/rifleC_0.png                  # Bolter Stalker (unloaded)
-      146: Resources/ITEMS/BOLTER/rifleC_1.png                  # Bolter Stalker (regular)
-      147: Resources/ITEMS/BOLTER/rifleC_2.png                  # Bolter Stalker (pistol)
+      146: Resources/ITEMS/BOLTER/rifleC_1.png                  # Bolter Stalker (boltpistol)
+      147: Resources/ITEMS/BOLTER/rifleC_2.png                  # Bolter Stalker (bolter)
       148: Resources/ITEMS/BOLTER/rifleD_0.png                  # Bolt Rifle (unloaded)
-      149: Resources/ITEMS/BOLTER/rifleD_1.png                  # Bolt Rifle (regular)
-      150: Resources/ITEMS/BOLTER/rifleD_2.png                  # Bolt Rifle (pistol)
+      149: Resources/ITEMS/BOLTER/rifleD_1.png                  # Bolt Rifle (boltpistol)
+      150: Resources/ITEMS/BOLTER/rifleD_2.png                  # Bolt Rifle (bolter)
       151: Resources/ITEMS/BOLTER/rifleDW_0.png                 # Bolt Rifle DW (unloaded)
-      152: Resources/ITEMS/BOLTER/rifleDW_1.png                 # Bolt Rifle DW (regular)
-      153: Resources/ITEMS/BOLTER/rifleDW_2.png                 # Bolt Rifle DW (pistol)
+      152: Resources/ITEMS/BOLTER/rifleDW_1.png                 # Bolt Rifle DW (boltpistol)
+      153: Resources/ITEMS/BOLTER/rifleDW_2.png                 # Bolt Rifle DW (bolter)
       154: Resources/ITEMS/BOLTER/rifleMC_0.png                 # Bolter MC (unloaded)
-      155: Resources/ITEMS/BOLTER/rifleMC_1.png                 # Bolter MC (regular)
-      156: Resources/ITEMS/BOLTER/rifleMC_2.png                 # Bolter MC (pistol)
-      157: Resources/UNITS/DREAD/WDREAD_FIST1.png               # Dreadnought Bolter Fist
-      158: Resources/UNITS/DREAD/WDREAD_MISSILE0.png            # Dreadnought Hellfire Launcher (unloaded)
-      159: Resources/UNITS/DREAD/WDREAD_MISSILE1.png            # Dreadnought Hellfire Launcher (regular)
-      160: Resources/UNITS/DREAD/WDREAD_MISSILE2.png            # Dreadnought Hellfire Launcher (hellfire)
-      161: Resources/UNITS/DREAD/DREADMISSILE_BigOb.png         # Dreadnought Missile (regular ammo)
+      155: Resources/ITEMS/BOLTER/rifleMC_1.png                 # Bolter MC (boltpistol)
+      156: Resources/ITEMS/BOLTER/rifleMC_2.png                 # Bolter MC (bolter)
+      157: Resources/ITEMS/DREAD/WDREAD_FIST1.png               # Dreadnought Bolter Fist
+      158: Resources/ITEMS/DREAD/WDREAD_MISSILE0.png            # Dreadnought Hellfire Launcher (unloaded)
+      159: Resources/ITEMS/DREAD/WDREAD_MISSILE1.png            # Dreadnought Hellfire Launcher (loaded)
+      #160: Resources/UNITS/DREAD/WDREAD_MISSILE2.png            # Dreadnought Hellfire Launcher (hellfire)
+      161: Resources/ITEMS/DREAD/DREADMISSILE_BigOb.png         # Dreadnought Missile (regular ammo)
       162: Resources/ITEMS/SHOTGUN/shells_MC.png                # MC Shotgun Shells
       163: Resources/ITEMS/SHOTGUN/shotgunDW_BigOb.png          # DW Shotgun 
       164: Resources/ITEMS/BSNIPER/HeavySniperDW_BigOb.png      # DW Bolt Sniper
@@ -1135,38 +1214,92 @@ extraSprites:
       194: Resources/ITEMS/PLASMA/twincoreDW_7.png              # Twincore Plasma DW (Heat 7)
       #195: Resources/ITEMS/MELEE/PhobosKnife_BigOb.png          # Phobos Combat Knife
       196: Resources/ITEMS/BOLTER/rifleDB_0.png                 # Bolt Rifle Ultra (unloaded)
-      197: Resources/ITEMS/BOLTER/rifleDB_1.png                 # Bolt Rifle Ultra (regular)
-      198: Resources/ITEMS/BOLTER/rifleDB_2.png                 # Bolt Rifle Ultra (pistol)
+      197: Resources/ITEMS/BOLTER/rifleDB_1.png                 # Bolt Rifle Ultra (boltpistol)
+      198: Resources/ITEMS/BOLTER/rifleDB_2.png                 # Bolt Rifle Ultra (bolter)
       199: Resources/ITEMS/BOLTER/rifleDC_0.png                 # Bolt Rifle Stalker (unloaded)
-      200: Resources/ITEMS/BOLTER/rifleDC_1.png                 # Bolt Rifle Stalker (regular)
-      201: Resources/ITEMS/BOLTER/rifleDC_2.png                 # Bolt Rifle Stalker (pistol)
+      200: Resources/ITEMS/BOLTER/rifleDC_1.png                 # Bolt Rifle Stalker (boltpistol)
+      201: Resources/ITEMS/BOLTER/rifleDC_2.png                 # Bolt Rifle Stalker (bolter)
       202: Resources/ITEMS/BOLTER/rifleDMC_0.png                # Bolt Rifle MC (unloaded)
-      203: Resources/ITEMS/BOLTER/rifleDMC_1.png                # Bolt Rifle MC (regular)
-      204: Resources/ITEMS/BOLTER/rifleDMC_2.png                # Bolt Rifle MC (pistol)
+      203: Resources/ITEMS/BOLTER/rifleDMC_1.png                # Bolt Rifle MC (boltpistol)
+      204: Resources/ITEMS/BOLTER/rifleDMC_2.png                # Bolt Rifle MC (bolter)
       205: Resources/ITEMS/BOLTER/carbineA_0.png                # Bolt Carbine (unloaded)
-      206: Resources/ITEMS/BOLTER/carbineA_1.png                # Bolt Carbine (regular)
-      207: Resources/ITEMS/BOLTER/carbineA_2.png                # Bolt Carbine (pistol)
+      206: Resources/ITEMS/BOLTER/carbineA_1.png                # Bolt Carbine (boltpistol)
+      207: Resources/ITEMS/BOLTER/carbineA_2.png                # Bolt Carbine (bolter)
       208: Resources/ITEMS/BOLTER/carbineB_0.png                # Bolt Carbine Stalker (unloaded)
-      209: Resources/ITEMS/BOLTER/carbineB_1.png                # Bolt Carbine Stalker (regular)
-      210: Resources/ITEMS/BOLTER/carbineB_2.png                # Bolt Carbine Stalker (pistol)
+      209: Resources/ITEMS/BOLTER/carbineB_1.png                # Bolt Carbine Stalker (boltpistol)
+      210: Resources/ITEMS/BOLTER/carbineB_2.png                # Bolt Carbine Stalker (bolter)
       211: Resources/ITEMS/PRIMARIS/AbsolvorMC_BigOb.png        # Absolvor Bolt Pistol (MC)
       212: Resources/ITEMS/PRIMARIS/AbsolvorClipMC_BigOb.png    # Absolvor Bolt Pistol Ammo (MC)
       213: Resources/ITEMS/BOLTER/rifleDD_0.png                 # Bolt Rifle Combi (unloaded)
-      214: Resources/ITEMS/BOLTER/rifleDD_1.png                 # Bolt Rifle Combi (regular)
-      215: Resources/ITEMS/BOLTER/rifleDD_2.png                 # Bolt Rifle Combi (pistol)
+      214: Resources/ITEMS/BOLTER/rifleDD_1.png                 # Bolt Rifle Combi (boltpistol)
+      215: Resources/ITEMS/BOLTER/rifleDD_2.png                 # Bolt Rifle Combi (bolter)
       216: Resources/ITEMS/VOLKITE/NEOVOLKITE_BIGOB.png         # Neovolkite Pistol
       217: Resources/ITEMS/PRIMARIS/MELTARIFLE_BIGOB.png        # Primaris Meltarifle
       218: Resources/ITEMS/PLASMA/PIncinerator_0.png            # Plasma Incinerator (Heat 0)
-      219: Resources/ITEMS/PLASMA/PIncinerator_1.png            # Twincore Plasma DW (Heat 1)
-      220: Resources/ITEMS/PLASMA/PIncinerator_2.png            # Twincore Plasma DW (Heat 2)
-      221: Resources/ITEMS/PLASMA/PIncinerator_3.png            # Twincore Plasma DW (Heat 3)
-      222: Resources/ITEMS/PLASMA/PIncinerator_4.png            # Twincore Plasma DW (Heat 4)
-      223: Resources/ITEMS/PLASMA/PIncinerator_5.png            # Twincore Plasma DW (Heat 5)
-      224: Resources/ITEMS/PLASMA/PIncinerator_6.png            # Twincore Plasma DW (Heat 6)
-      225: Resources/ITEMS/PLASMA/PIncinerator_7.png            # Twincore Plasma DW (Heat 7)
+      219: Resources/ITEMS/PLASMA/PIncinerator_1.png            # Plasma Incinerator (Heat 1)
+      220: Resources/ITEMS/PLASMA/PIncinerator_2.png            # Plasma Incinerator (Heat 2)
+      221: Resources/ITEMS/PLASMA/PIncinerator_3.png            # Plasma Incinerator (Heat 3)
+      222: Resources/ITEMS/PLASMA/PIncinerator_4.png            # Plasma Incinerator (Heat 4)
+      223: Resources/ITEMS/PLASMA/PIncinerator_5.png            # Plasma Incinerator (Heat 5)
+      224: Resources/ITEMS/PLASMA/PIncinerator_6.png            # Plasma Incinerator (Heat 6)
+      225: Resources/ITEMS/PLASMA/PIncinerator_7.png            # Plasma Incinerator (Heat 7)
       226: Resources/ITEMS/PRIMARIS/AccelAutocannon_BigOb.png   # Accelerator Autocannon
-
-
+      227: Resources/ITEMS/BOLTER/SbolterD_0.png                # Bolter Dominion (unloaded)
+      228: Resources/ITEMS/BOLTER/SbolterD_1.png                # Bolter Dominion (boltpistol)
+      229: Resources/ITEMS/BOLTER/SbolterD_2.png                # Bolter Dominion (bolter)
+      230: Resources/ITEMS/BOLTER/LbolterE_0.png                # Light Bolter Enforcer (unloaded)
+      231: Resources/ITEMS/BOLTER/LbolterE_1.png                # Light Bolter Enforcer (boltpistol)
+      232: Resources/ITEMS/BOLTER/LbolterE_2.png                # Light Bolter Enforcer (bolter)
+      233: Resources/ITEMS/BOLTER/LbolterL_0.png                # Light Bolter Locke (unloaded)
+      234: Resources/ITEMS/BOLTER/LbolterL_1.png                # Light Bolter Locke (boltpistol)
+      235: Resources/ITEMS/BOLTER/LbolterL_2.png                # Light Bolter Locke (bolter)
+      236: Resources/ITEMS/BOLTER/LbolterU_0.png                # Light Bolter Ultra (unloaded)
+      237: Resources/ITEMS/BOLTER/LbolterU_1.png                # Light Bolter Ultra (boltpistol)
+      238: Resources/ITEMS/BOLTER/LbolterU_2.png                # Light Bolter Ultra (bolter)
+      239: Resources/ITEMS/BOLTER/LbolterMC_0.png               # Light Bolter Mastercrafted (unloaded)
+      240: Resources/ITEMS/BOLTER/LbolterMC_1.png               # Light Bolter Mastercrafted (boltpistol)
+      241: Resources/ITEMS/BOLTER/LbolterMC_2.png               # Light Bolter Mastercrafted (bolter)
+      242: Resources/ITEMS/BOLTER/LBolterG_0.png                # Light Bolter Umbra (unloaded)
+      243: Resources/ITEMS/BOLTER/LBolterG_1.png                # Light Bolter Umbra (boltpistol)
+      244: Resources/ITEMS/BOLTER/LBolterG_2.png                # Light Bolter Umbra (bolter)
+      245: Resources/ITEMS/BOLTER/LBolterGL_0.png               # Light Bolter Umbra GL (unloaded)
+      246: Resources/ITEMS/BOLTER/LBolterGL_1.png               # Light Bolter Umbra GL (boltpistol)
+      247: Resources/ITEMS/BOLTER/LBolterGL_2.png               # Light Bolter Umbra GL (bolter)
+      248: Resources/ITEMS/BOLTER/LbolterSC_0.png               # Light Bolter Cantus (unloaded)
+      249: Resources/ITEMS/BOLTER/LbolterSC_1.png               # Light Bolter Cantus (boltpistol)
+      250: Resources/ITEMS/BOLTER/LbolterSC_2.png               # Light Bolter Cantus (bolter)
+      251: Resources/ITEMS/BOLTER/LbolterSD_0.png               # Light Bolter Deaz (unloaded)
+      252: Resources/ITEMS/BOLTER/LbolterSD_1.png               # Light Bolter Deaz (boltpistol)
+      253: Resources/ITEMS/BOLTER/LbolterSD_2.png               # Light Bolter Deaz (bolter)
+      254: Resources/ITEMS/BOLTER/LbolterSE_0.png               # Light Bolter Elohim (unloaded)
+      255: Resources/ITEMS/BOLTER/LbolterSE_1.png               # Light Bolter Elohim (boltpistol)
+      256: Resources/ITEMS/BOLTER/LbolterSE_2.png               # Light Bolter Elohim (bolter)
+      257: Resources/ITEMS/BOLTER/LbolterSH_0.png               # Light Bolter Hellspite (unloaded)
+      258: Resources/ITEMS/BOLTER/LbolterSH_1.png               # Light Bolter Hellspite (boltpistol)
+      259: Resources/ITEMS/BOLTER/LbolterSH_2.png               # Light Bolter Hellspite (bolter)
+      260: Resources/ITEMS/BOLTER/LbolterSM_0.png               # Light Bolter Mephisto (unloaded)
+      261: Resources/ITEMS/BOLTER/LbolterSM_1.png               # Light Bolter Mephisto (boltpistol)
+      262: Resources/ITEMS/BOLTER/LbolterSM_2.png               # Light Bolter Mephisto (bolter)
+      263: Resources/ITEMS/BOLTPISTOL/LpistolA_0.png            # Light Boltpistol Deaz (unloaded)
+      264: Resources/ITEMS/BOLTPISTOL/LpistolA_1.png            # Light Boltpistol Deaz (boltpistol)
+      265: Resources/ITEMS/BOLTPISTOL/LpistolB_0.png            # Light Boltpistol Ultra (unloaded)
+      266: Resources/ITEMS/BOLTPISTOL/LpistolB_1.png            # Light Boltpistol Ultra (boltpistol)
+      267: Resources/ITEMS/BOLTPISTOL/LpistolMC_0.png           # Light Boltpistol Mastercrafted (unloaded)
+      268: Resources/ITEMS/BOLTPISTOL/LpistolMC_1.png           # Light Boltpistol Mastercrafted (boltpistol)
+      269: Resources/ITEMS/BOLTPISTOL/LpistolS_0.png            # Light Boltpistol Scourge (unloaded)
+      270: Resources/ITEMS/BOLTPISTOL/LpistolS_1.png            # Light Boltpistol Scourge (boltpistol)
+      271: Resources/ITEMS/BOLTPISTOL/LpistolSA_0.png           # Light Boltpistol Seraphim (unloaded)
+      272: Resources/ITEMS/BOLTPISTOL/LpistolSA_1.png           # Light Boltpistol Seraphim (boltpistol)
+      273: Resources/ITEMS/BOLTPISTOL/pistolA_0.png             # Boltpistol Ceres (unloaded)
+      274: Resources/ITEMS/BOLTPISTOL/pistolA_1.png             # Boltpistol Ceres (boltpistol)
+      275: Resources/ITEMS/BOLTPISTOL/pistolB_0.png             # Boltpistol Ultra (unloaded)
+      276: Resources/ITEMS/BOLTPISTOL/pistolB_1.png             # Boltpistol Ultra (boltpistol)
+      277: Resources/ITEMS/BOLTPISTOL/pistolC_0.png             # Boltpistol Spectris (unloaded)
+      278: Resources/ITEMS/BOLTPISTOL/pistolC_1.png             # Boltpistol Spectris (boltpistol)
+      279: Resources/ITEMS/BOLTPISTOL/pistolH_0.png             # Boltpistol Tigrus (unloaded)
+      280: Resources/ITEMS/BOLTPISTOL/pistolH_1.png             # Boltpistol Tigrus (boltpistol)
+      281: Resources/ITEMS/BOLTPISTOL/pistolMC_0.png            # Boltpistol Mastercrafted (unloaded)
+      282: Resources/ITEMS/BOLTPISTOL/pistolMC_1.png            # Boltpistol Mastercrafted (boltpistol)
 
 ###Item FloorOBs
   - type: FLOOROB.PCK
@@ -1178,7 +1311,7 @@ extraSprites:
       130: Resources/ITEMS/BSNIPER/SniperBolt_FloorOb.png       # Bolt Sniper Ammo
       139: Resources/ITEMS/BOLTER/rifleA_FloorOb.png            # Bolter Artifex
       148: Resources/ITEMS/BOLTER/rifleD_FloorOb.png            # Bolt Rifle
-      161: Resources/UNITS/DREAD/DREADMISSILE_FloorOb.png       # Dreadnought Missile (regular ammo)
+      161: Resources/ITEMS/DREAD/DREADMISSILE_FloorOb.png       # Dreadnought Missile (regular ammo)
       163: Resources/ITEMS/SHOTGUN/shotgunDW_FloorOb.png        # DW Shotgun 
       164: Resources/ITEMS/BSNIPER/HeavySniperDW_FloorOb.png    # DW Bolt Sniper
       171: Resources/ITEMS/PRIMARIS/Absolvor_FloorOb.png        # Absolvor Bolt Pistol
@@ -1208,7 +1341,7 @@ extraSprites:
     files:
       200: Resources/ITEMS/BSNIPER/HeavySniper_HandOb.png       # Bolt Sniper Rifle
       208: Resources/ITEMS/SHOTGUN/shotgun_HandOb.png           # Astartes Shotgun
-      216: Resources/UNITS/DREAD/DREADMISSILE_HandOb.png        # Dreadnought Missile (regular ammo)
+      216: Resources/ITEMS/DREAD/DREADMISSILE_HandOb.png        # Dreadnought Missile (regular ammo)
       224: Resources/ITEMS/BSNIPER/HeavySniperDW_HandOb.png     # DW Bolt Sniper
       232: Resources/ITEMS/SHOTGUN/shotgunDW_HandOb.png         # DW Shotgun
       240: Resources/ITEMS/PRIMARIS/Absolvor_HandOb.png         # Absolvor Bolt Pistol
@@ -1237,6 +1370,14 @@ extraSprites:
       424: Resources/ITEMS/VOLKITE/NEOVOLKITE_HANDOB.png        # Neovolkite Pistol
       432: Resources/ITEMS/PRIMARIS/AccelAutocannon_HandOb.png  # Accelerator Autocannon
 
+
+  - type: CustomArmorPreviews
+    width: 360
+    height: 280
+    subX: 12
+    subY: 20
+    files:
+      0: Resources/UNITS/unit_preview.png
 
 ###Assault Vanguard
   - typeSingle: HONORASSC__1__ASSAULTCMH
@@ -1282,6 +1423,8 @@ extraSprites:
       0: Resources/UNITS/CHAP/CHAPASS-ARMOR.png
 
 ###Librarian Tactical
+  - typeSingle: LIBRARIAN__3__EYES
+    fileSingle: Resources/UNITS/LIB/blueeyes.png
   - typeSingle: LIBRARIAN__1__LIBTACTM
     fileSingle: Resources/UNITS/LIB/LIBM.gif
   - typeSingle: LIBRARIAN__1__LIBTACTF

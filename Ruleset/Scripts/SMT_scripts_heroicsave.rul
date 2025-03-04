@@ -198,7 +198,7 @@ extended:
     damageUnit:
       #*** Script for protecting units from fatal damage ***
       - new: SMTS_heroic_save
-        offset: 22.1 # run after corruption damage is applied but before the unit gets instakilled for having too much corruption
+        offset: 22.1 # run after corruption is applied but before the unit gets instakilled for having too much corruption
         code: |
           var ptr RuleSoldier unitSoldier;
           var int saveChance;
@@ -280,7 +280,7 @@ extended:
           add temp 15; # divided by unit woundRecovery modifier
           unit.setTag Tag.SMT_RECOVERY_TIME temp; # increase post-mission recovery time
           unit.setTag Tag.SMT_HEROICSAVE_TRIGGERS saveCount; # increment save counter;
-          battle_game.flashMessage "STR_SCRIPT_HEROIC_SAVE"; # 'Unit endured the hit'
+          battle_game.flashLongMessage "STR_SCRIPT_HEROIC_SAVE"; # 'Unit endured the hit'
 
           ### Handle wound protection to stop saved units from dying at the start of your turn
           #debug_log "HeroSave Final (currHp|tohp|tostun|wound|saveHp|turn)- " currentHealth to_health to_stun woundsTotal saveHealth temp2;

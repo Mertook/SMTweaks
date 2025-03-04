@@ -752,7 +752,6 @@ items:
     accuracyUse: 100
     accuracyMultiplier:
       psiStrength: 1.0
-      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
 
   - type: STR_SMT_SIGNUM                    # Signum for Devastators                        ## Signum
     refNode: *STR_FIST
@@ -1453,7 +1452,7 @@ items:
     listOrder: 10294
     tags:
       REACTION_MULTIPLIER: 166 #multiplies base reaction score by this amount divided by 100
-      ITEM_RECOIL: 45 # Light bolter ammo, but built for Marines
+      ITEM_RECOIL: 50 # Light bolter ammo, but built for Marines
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - type: STR_BOLTER_CARBINE_SCOPE          # Bolter Carbine (Scoped)
@@ -1505,7 +1504,7 @@ items:
       REACTION_MULTIPLIER: 133 #multiplies base reaction score by this amount divided by 100 - scope penalty
       ITEM_AIMED_ACCURACY_POWER_BONUS: 15 # minor scoped weapon aimed shot bonus
       ITEM_POWER_BONUS_PERCENTILE: 1 #use %
-      ITEM_RECOIL: 45 # Light bolter ammo, but built for Marines
+      ITEM_RECOIL: 50 # Light bolter ammo, but built for Marines
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - update: STR_RIFLED                      # Bolt Rifle (Standard/Cawl)

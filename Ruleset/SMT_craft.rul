@@ -127,7 +127,7 @@ armors:
     fearImmune: true
     painImmune: true
     corpseBattle:
-      - STR_RTT_CORPSE
+      - STR_BLANK_CORPSE
     drawingRoutine: 19
     constantAnimation: false
     damageModifier:
@@ -158,7 +158,7 @@ armors:
   - &STR_SMT_RB_TURRET_BASE                 # Razorback Turret defaults
     type: STR_SMT_RAZOR_DEFAULT_ARMOR
     visibilityAtDay: 40
-    visibilityAtDark: 35 # marine standard
+    visibilityAtDark: 40
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
     heatVision: 30 # vehicle standard
@@ -233,7 +233,7 @@ armors:
   - type: STR_SMT_RAZOR_SB_ARMOR            # Razorback Stormbolter
     refNode: *STR_SMT_RB_TURRET_BASE
     tags:
-      SMT_RAZOR_SBOLTER_TURRET: 1 # marks unit as a Razorback default turret that can be replaced
+      SMT_RAZOR_SBOLTER_TURRET: 1
 
   - type: STR_SMT_RAZOR_HB_ARMOR            # Razorback HeavyBolter
     refNode: *STR_SMT_RB_TURRET_BASE
@@ -486,6 +486,344 @@ items:
     # autoShots: 10
 
 crafts:
+  - type: STR_SKYRANGER                     # Droppods
+    requires:
+      - STR_NOT_PRIMARIS
+      - STR_MARINES_STRATEGY
+    battlescapeTerrainData:
+      name: DROPPODS
+      mapDataSets:
+        - BLANKS
+        - DROPPOD
+        - SMTBOMBARD
+      mapBlocks:
+        - name: DROPPODS
+          width: 10
+          length: 20
+          items:
+            STR_DROPPOD_DEPLOY_CHARGE:
+              - [2, 2, 0]
+              - [5, 8, 0]
+              - [2, 15, 0]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_DROPPOD_DEPLOY_CHARGE: [1, 1]
+
+  - type: STR_DROPPODS                      # Firestorm Droppods
+    requires:
+      - STR_NOT_PRIMARIS
+      - STR_ADV_DROPPODS
+      - STR_MARINES_STRATEGY
+    battlescapeTerrainData:
+      name: DROPPODS
+      mapDataSets:
+        - BLANKS
+        - DROPPOD
+        - SMTBOMBARD
+      mapBlocks:
+        - name: DROPPODS
+          width: 10
+          length: 20
+          items:
+            STR_DROPPOD_DEPLOY_CHARGE:
+              - [2, 2, 0]
+              - [5, 8, 0]
+              - [2, 15, 0]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_DROPPOD_DEPLOY_CHARGE: [1, 1]
+
+  - type: STR_DROP                          # Droppod
+    requires:
+      - STR_NOT_PRIMARIS
+      - STR_MARINES_STRATEGY
+    battlescapeTerrainData:
+      name: DROPPOD
+      mapDataSets:
+        - BLANKS
+        - DROPPOD
+        - SMTBOMBARD
+      mapBlocks:
+        - name: DROPPOD
+          width: 10
+          length: 20
+          items:
+            STR_DROPPOD_DEPLOY_CHARGE:
+              - [5, 8, 0]
+            STR_BOMBARD_SPAWNER: # 8 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_DROPPOD_DEPLOY_CHARGE: [1, 1]
+
+  - type: STR_STORMEAGLE                    # Stormeagle
+    soldiers: 15 #could fit more
+    battlescapeTerrainData:
+      name: STORMEAGLE
+      mapDataSets:
+        - BLANKS
+        - STORMEAGLE
+        - SMTBOMBARD
+      mapBlocks:
+        - name: STORMEAGLE
+          width: 10
+          length: 20
+          items:
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+    deployment:
+      - [4, 11, 0, 0]
+      - [5, 11, 0, 0]
+      - [4, 10, 0, 0]
+      - [5, 10, 0, 0]
+      - [4, 9, 0, 0]
+      - [4, 8, 0, 0]
+      - [4, 7, 0, 0]
+      - [4, 6, 0, 0]
+      - [4, 5, 0, 0]
+      - [4, 4, 0, 0]
+      - [4, 7, 1, 0]
+      - [5, 7, 1, 0]
+      - [4, 8, 1, 0]
+      - [5, 8, 1, 0]
+      - [4, 9, 1, 0]
+      - [4, 9, 1, 0]
+    spacecraft: true
+
+  - type: STR_FIRESTORM                     # Stormraven
+    battlescapeTerrainData:
+      name: STORMRAVEN
+      mapDataSets:
+        - BLANKS
+        - STORMRAVEN
+        - SMTBOMBARD
+      mapBlocks:
+        - name: STORMRAVEN
+          width: 10
+          length: 20
+          items:
+            STR_STORMTURRET_SPAWNER:
+              - [4, 6, 2]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_STORMTURRET_SPAWNER: [0, 0]
+
+  - type: STR_THUNDERHAWNK                  # Thunderhawnk Type 1
+    requires:
+      - STR_NEW_FIGHTER_TRANSPORTER
+      - STR_THUNDERHAWKTYPE1
+    soldiers: 16
+    pilots: 4
+    battlescapeTerrainData:
+      name: THUNDERHAWK2
+      mapDataSets:
+        - BLANKS
+        - THUNDERHAWK
+        - SMTBOMBARD
+      mapBlocks:
+        - name: THUNDERHAWK2
+          width: 10
+          length: 20
+          items:
+            STR_THUNDERHAWK_DEPLOY_CHARGE:
+              - [5, 13, 0]
+            STR_LEFT_THUNDERHAWK_SPAWNER:
+              - [3, 12, 1]
+            STR_RIGHT_THUNDERHAWK_SPAWNER:
+              - [6, 12, 1]
+            STR_BOMBARD_THUNDERHAWK_SPAWNER:
+              - [0, 0, 5]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_LEFT_THUNDERHAWK_SPAWNER: [0, 0]
+            STR_RIGHT_THUNDERHAWK_SPAWNER: [0, 0]
+            STR_THUNDERHAWK_DEPLOY_CHARGE: [1, 1]
+            STR_BOMBARD_THUNDERHAWK_SPAWNER: [0, 0]
+    deployment:
+      - [4, 13, 1, 4]
+      - [5, 13, 1, 4]
+      - [4, 12, 1, 4]
+      - [5, 12, 1, 4]
+      - [4, 11, 1, 4]
+      - [5, 11, 1, 4]
+      - [4, 10, 1, 4]
+      - [5, 10, 1, 4]
+      - [4, 9, 1, 4]
+      - [5, 9, 1, 4]
+      - [4, 8, 1, 4]
+      - [5, 8, 1, 4]
+      - [4, 7, 1, 4]
+      - [5, 7, 1, 4]
+      - [4, 6, 1, 4]
+      - [5, 6, 1, 4]
+      - [4, 5, 2, 4]
+      - [5, 5, 2, 4]
+      - [4, 4, 2, 4]
+      - [5, 4, 2, 4]
+    spacecraft: true
+
+  - type: STR_AVENGER                       # Thunderhawk Transport (Tactical)
+    soldiers: 20
+    battlescapeTerrainData:
+      name: RHINO
+      mapDataSets:
+        - BLANKS
+        - THUNDERHAWKTEX
+        - RHINO
+        - SMTBOMBARD
+      mapBlocks:
+        - name: RHINO
+          width: 10
+          length: 20
+          items:
+            STR_THUNDER_CHARGE:
+              - [5, 9, 3]
+            STR_THUNDER_CHARGE2:
+              - [4, 2, 3]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_THUNDER_CHARGE: [1, 1]
+            STR_THUNDER_CHARGE2: [1, 1]
+    deployment:
+      - [6, 12, 0, 0]
+      - [7, 12, 0, 0]
+      - [6, 11, 0, 0]
+      - [7, 11, 0, 0]
+      - [6, 10, 0, 0]
+      - [7, 10, 0, 0]
+      - [6, 9, 0, 0]
+      - [7, 9, 0, 0]
+      - [3, 5, 0, 0]
+      - [4, 5, 0, 0]
+      - [3, 4, 0, 0]
+      - [4, 4, 0, 0]
+      - [3, 3, 0, 0]
+      - [4, 3, 0, 0]
+      - [3, 2, 0, 0]
+      - [4, 2, 0, 0]
+      - [4, 15, 2, 4]
+      - [5, 15, 2, 4]
+      - [4, 14, 2, 4]
+      - [5, 14, 2, 4]
+
+  - type: STR_TTASS                         # Thunderhawk Transport (Assault)
+    requires:
+      - STR_HIGHTIER_PREREQ
+      - STR_MARINES_STRATEGY
+      - STR_GENERALLOCK
+    battlescapeTerrainData: # Added custom Razorback Turrets
+      name: RHINOASS
+      mapDataSets:
+        - BLANKS
+        - THUNDERHAWKTEX
+        - RHINO
+      mapBlocks:
+        - name: RHINOASS
+          width: 10
+          length: 20
+          items:
+            STR_RAZORBACK_TURRET_SPAWNER:
+              - [6, 11, 1]
+              - [6, 2, 1]
+            STR_THUNDER_CHARGE:
+              - [5, 10, 3]
+            STR_THUNDER_CHARGE2:
+              - [4, 3, 3]
+          fuseTimers:
+            STR_THUNDER_CHARGE: [1, 1]
+            STR_THUNDER_CHARGE2: [1, 1]
+            STR_RAZORBACK_TURRET_SPAWNER: [0, 0]
+
+
+  - type: STR_TTDEV                         # Thunderhawk Transport (Devastator)
+    requires:
+      - STR_HIGHTIER_PREREQ
+      - STR_MARINES_STRATEGY
+      - STR_GENERALLOCK
+
+  - type: STR_TTSCT                         # Thunderhawk Transport (Scout)
+    requires:
+      - STR_HIGHTIER_PREREQ
+      - STR_MARINES_STRATEGY
+      - STR_GENERALLOCK
+
   - type: STR_SPEEDC                        # Landspeeder
     fixedWeapons: ["STR_CANNON_UC"]
     requires: # remove dedicated tech unlock
@@ -505,6 +843,7 @@ crafts:
         - BLANKS
         - SPEED
         - VULTUREPD
+        - SMTBOMBARD
       mapBlocks:
         - name: SPEED_SMT
           width: 10
@@ -513,6 +852,19 @@ crafts:
             STR_SMOKELAUNCHER_SPEEDER_SPAWNER:
               - [3, 3, 2] # roof 1
               - [7, 11, 2] # roof 2
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
           fuseTimers:
             STR_SMOKELAUNCHER_SPEEDER_SPAWNER: [0, 0]
     craftInventoryTile: [3, 3, 1] # placed in middle of top landspeeder - was missing
@@ -557,6 +909,7 @@ crafts:
         - BLANKS
         - THUNDERHAWKTEX
         - RHINO
+        - SMTBOMBARD
       mapBlocks:
         - name: RAZOR_SMT
           width: 10
@@ -565,6 +918,19 @@ crafts:
             STR_RAZORBACK_TURRET_SPAWNER:
               - [5, 4, 1] #[5, 6, 1]
               - [3, 14, 1] #[3, 15, 1]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
           fuseTimers:
             STR_RAZORBACK_TURRET_SPAWNER: [0, 0]
     craftInventoryTile: [5, 6, 0]
@@ -593,6 +959,7 @@ crafts:
         - BLANKS
         - SPEED
         - VULTUREPD
+        - SMTBOMBARD
       mapBlocks:
         - name: ARMY
           width: 10
@@ -610,6 +977,23 @@ crafts:
             STR_SKULL_SPAWNER:
               - [7, 5, 1]
               - [8, 5, 1]
+            STR_BOMBARD_SPAWNER: # 16 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
           fuseTimers:
             STR_RAZORBACK_TURRET_SPAWNER: [0, 0]
             STR_SMOKELAUNCHER_SPEEDER_SPAWNER: [0, 0]
@@ -650,30 +1034,6 @@ crafts:
       - [8, 6, 0, 0]  #4-tile hwp deployment block
 
 
-  - type: STR_TTASS                         # Thunderhawk Transport (Assault)
-    battlescapeTerrainData: # Added custom Razorback Turrets
-      name: RHINOASS
-      mapDataSets:
-        - BLANKS
-        - THUNDERHAWKTEX
-        - RHINO
-      mapBlocks:
-        - name: RHINOASS
-          width: 10
-          length: 20
-          items:
-            STR_RAZORBACK_TURRET_SPAWNER:
-              - [6, 11, 1]
-              - [6, 2, 1]
-            STR_THUNDER_CHARGE:
-              - [5, 10, 3]
-            STR_THUNDER_CHARGE2:
-              - [4, 3, 3]
-          fuseTimers:
-            STR_THUNDER_CHARGE: [1, 1]
-            STR_THUNDER_CHARGE2: [1, 1]
-            STR_RAZORBACK_TURRET_SPAWNER: [0, 0]
-
   - type: STR_INTERCEPTOR                   # Stormtalon
     repairRate: 5 # was 1
 
@@ -706,6 +1066,7 @@ crafts:
       mapDataSets:
         - BLANKS
         - IMPULSOR
+        - SMTBOMBARD
       mapBlocks:
         - name: IMPULSOR
           width: 10
@@ -713,6 +1074,19 @@ crafts:
           items:
             STR_SMOKELAUNCHER_TURRET_SPAWNER:
               - [4, 9, 2]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
           fuseTimers:
             STR_SMOKELAUNCHER_TURRET_SPAWNER: [0, 0]
     deployment:
@@ -741,6 +1115,7 @@ crafts:
         - BLANKS
         - REPULSOR
         - IMPULSOR
+        - SMTBOMBARD
       mapBlocks:
         - name: REPULSOR_SMT
           width: 10
@@ -749,6 +1124,19 @@ crafts:
             STR_SMOKELAUNCHER_TURRET_SPAWNER:
               - [3, 8, 2]
               - [5, 8, 2]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
           fuseTimers:
             STR_SMOKELAUNCHER_TURRET_SPAWNER: [0, 0]
     deployment:
@@ -783,6 +1171,7 @@ crafts:
         - IMPULSOR
         - REPULSOR
         - TURRET
+        - SMTBOMBARD
       mapBlocks:
         - name: PARMY_SMT
           width: 10
@@ -792,6 +1181,23 @@ crafts:
               - [3, 16, 2] # Impulsor
               - [3, 5, 2] # Repulsor
               - [5, 5, 2] # Repulsor
+            STR_BOMBARD_SPAWNER: # 16 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
           fuseTimers:
             STR_SMOKELAUNCHER_TURRET_SPAWNER: [0, 0]
     deployment:
@@ -833,18 +1239,28 @@ crafts:
         - BLANKS
         - REPULSORDW
         - IMPULSORDW
+        - SMTBOMBARD
       mapBlocks:
         - name: REPULSOR_SMT
-          width: 10
-          length: 20
-      mapBlocks:
-        - name: PARMY_SMT
           width: 10
           length: 20
           items:
             STR_SKULL_SPAWNER:
               - [3, 8, 2]
               - [5, 8, 2]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
           fuseTimers:
             STR_SKULL_SPAWNER: [0, 0]
     deployment:
@@ -877,6 +1293,7 @@ crafts:
         - IMPULSORDW
         - REPULSORDW
         - TURRET
+        - SMTBOMBARD
       mapBlocks:
         - name: PARMY_SMT
           width: 10
@@ -885,6 +1302,19 @@ crafts:
             STR_SKULL_SPAWNER:
               - [3, 5, 2] # Repulsor
               - [5, 5, 2] # Repulsor
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
           fuseTimers:
             STR_SKULL_SPAWNER: [0, 0]
     deployment:
@@ -916,6 +1346,13 @@ crafts:
       - [4, 12, 0, 0] #Impulsor end
     craftInventoryTile: [4, 5, 1] #center back tile of repulsor ( was in front row)
 
+
+
+
+STORMHAWK.MCD
+STORMRAVEN.MCD
+THUNDERHAWK.MCD
+
 terrains: # Handle P2 First Company
   - name: ARMYUFO
     mapDataSets:
@@ -938,6 +1375,23 @@ terrains: # Handle P2 First Company
           STR_SKULL_SPAWNER:
             - [7, 7, 1]
             - [8, 7, 1]
+          STR_BOMBARD_SPAWNER: # 16 strikes
+            - [9, 19, 5] # Bombard Platform
+            - [9, 19, 5]
+            - [9, 19, 5]
+            - [9, 19, 5]
+            - [9, 19, 5]
+            - [9, 19, 5]
+            - [9, 19, 5]
+            - [9, 19, 5]
+            - [9, 19, 5]
+            - [9, 19, 5]
+            - [9, 19, 5]
+            - [9, 19, 5]
+            - [9, 19, 5]
+            - [9, 19, 5]
+            - [9, 19, 5]
+            - [9, 19, 5]
         fuseTimers:
           STR_RAZORBACK_TURRET_SPAWNER: [0, 0]
           STR_SMOKELAUNCHER_TURRET_SPAWNER: [0, 0]

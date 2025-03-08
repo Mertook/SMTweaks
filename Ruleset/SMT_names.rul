@@ -1,6 +1,15 @@
 extraStrings:
   - type: en-US
     strings:
+      ### Units
+      STR_BOMBARD_TARGETER: Target Designator
+      STR_ORBITAL_STRIKE_TARGETER: Orbital Strike Designator
+      STR_ORBITAL_LANCE_TARGETER: Orbital Lance Designatorv
+      STR_DUMMY_TARGETER: Blank Target Designator
+      STR_CAS_BOLTER_TARGETER: CAS-B Target Designator
+      STR_CAS_ROCKET_TARGETER: CAS-R Target Designator
+      STR_CAS_NAPALM_TARGETER: CAS-N Target Designator
+      STR_STORMTALON_TARGETER: Stormhawk Target Designator
       ### MISC
       STR_TERMINATOR_CROSS_DESCRIPTION: Space Marines awarded with the Crux Terminatus are recognized as elites, allowing promotion to the highest ranks and access to rare relics including Terminator Armor. {NEWLINE}{NEWLINE} For this honor the Space Marine needs to have achieved 30 enemy kills, 15 successful missions and serve for three months.
       STR_HONOR_MEDAL: "Mark of Honor"
@@ -16,7 +25,17 @@ extraStrings:
       STR_LAUNCH_FRAGS: Launch Grenade
       STR_DUAL_SNAP: Dual Snap
       STR_DAMAGE_12: "GRAV"
+      STR_STRIKE_ORBITAL: Orbital Strike
+      STR_BOMBARD_SET_POSITION: Set Firing Position
+      STR_CALL_ORBITAL: Orbital Bombardment
+      STR_CALL_LASER: Orbital Lance
+      STR_STRIKE_CASBOLTER: Strafing Run
+      STR_STRIKE_CASROCKET: Rocket Strike
+      STR_STRIKE_CASNAPALM: Napalm Strike
+      STR_CALL_STORMHAWK: Stormtalon Support
+      STR_CAT_FIRESUPPORT: Fire Support
       STR_CAT_ASSASSIN: Assassin
+      STR_CAT_ARMOR: Armor
       STR_NECRON_REINFORCEMENTS_SHIP_DESC_LIGHT: "The Monolith's foul machinery is springing to life! Necrons are being awakened from stasis and teleported onto the field. We must quicken our pace or we will surely be overwhelmed."
       STR_NECRON_REINFORCEMENTS_SHIP_DESC_MEDIUM: "The Monolith is calling more Necrons from their tombs, teleporting them onto the field in greater numbers. We have little time left to eliminate their strikeforce before their numbers become too great!"
       STR_NECRON_REINFORCEMENTS_SHIP_DESC_HEAVY: "Force Commander, the Necron Tombs are at high alert and are actively teleporting in heavy reinforcements. We must destroy them all in one fell swoop or evacuate lest our forces be overcome!"
@@ -38,6 +57,10 @@ extraStrings:
       DREAD_ARMOR2_UC: "Mortis Dreadnought Armor"
       DREAD_ARMOR3_UC: "Hellfire Dreadnought Armor"
       DREAD_ARMOR4_UC: "Castraferrum Dreadnought Armor"
+      STR_DUMMY_TARGETER_UC: Target Designator
+      STR_BOMBARD_ORBITAL_ARMOR: Target Designator
+      STR_BOMBARD_PLANE_ARMOR: Target Designator
+      STR_BOMBARD_NUKE_ARMOR: Target Designator
       STR_MKX_INC_ARMOR: MKX Omnis Armor
       STR_MKX_APO_ARMOR: MKX Helix Adept Armor
       STR_MKX_TAC_MELT_LV1_UC: MKX Tacticus (Melta)
@@ -173,6 +196,23 @@ extraStrings:
       STR_BOLTER_CARBINE_SCOPE: Occulus Bolt Carbine
       STR_RIFLEDW: Artifex Boltrifle
       STR_PRIMARIS_INCINERATOR_POWER_PACK: Plasma Incinerator
+      STR_STRIKE_AMMOLOADER: Load Munitions
+      STR_ORBITAL_CALLIN: Orbital Strike Vox
+      STR_ORBITAL_STRIKE_WEAPON: Orbital Strike
+      STR_ORBITAL_TARGET_SPAWNER: ""
+      STR_CAS_CALLIN: CAS Vox-Caster
+      STR_CAS_STRIKE_BOLTER_WEAPON: CAS Heavy Bolter
+      STR_CAS_STRIKE_ROCKET_WEAPON: CAS Rocket Strike
+      STR_CAS_STRIKE_NAPALM_WEAPON: CAS Napalm
+      STR_STORMTALON_CALLIN: Stormtalon Vox-Caster
+      STR_STRM_STRIKE_ASSC: Assault Cannon
+      STR_STRM_STRIKE_ROCKET: Typhoon Rockets
+      STR_ORBITAL_LANCE_WEAPON: Orbital Lance Designator
+      STR_ORBITAL_LANCE_BLAST: Orbital Lance Target
+      STR_ORBITAL_STRIKE_AMMO: Orbital Bombardment Requisition
+      STR_ORBITAL_LANCE_AMMO: Orbital Lance Requisition
+      STR_STORMTALON_AMMO: Stormtalon CAS Requisiton
+      STR_AIRSTRIKE_AMMO: Lightning CAS Requisition
       ### CRAFT
       AUX_BOLTER: Mounted Heavy Bolter
       STR_SMT_CRAFT_SMOKE: Smoke Launcher
@@ -270,7 +310,7 @@ extraStrings:
       STR_LIBRARIAN_PRIMARISLV2: Promote to Lexicanium
       STR_LIBRARIAN_PRIMARISLV3: Promote to Codicier
       ### RESEARCH
-      STR_PERSONAL_ARMOR: Tactical Armor
+      STR_PERSONAL_ARMOR: MK7 Tactical Armor
       STR_SMOKE_BOMB_UNLOCK: Smoke Bomb Requisition
       STR_MARINE_BOLTERS: Astartes Bolters
       STR_MARINE_BOLTERS_ADV: Advanced Astartes Bolters
@@ -318,6 +358,14 @@ extraStrings:
       SMT_AMMO_HP_PREDMG: "Armor-Ignoring HP Dmg%"
       SMT_ARMOR_REGEN_HP: "Health Regeneration"
       SMT_ARMOR_HEAVY_WEAPON_USER: "HWP Penalty Reduction%"
+      STR_STRIKE_OVERLAP: "Fire support has already been requested this turn"
+      STR_STRIKE_EMPTY: "Fire support is unavailable!"
+      STR_STRIKE_NOAMMO: "You don't have permission for this strike!"
+      STR_STRIKE_COOLDOWN: "This Strike is on cooldown. Turns remaining: {0}"
+      STR_STRIKE_ACTIVE: "Strike request confirmed"
+      STR_STRIKE_ARRIVED: "Strike Targeting Designator active. Calldowns remaining: {0}"
+      STR_STRIKE_LOWTUS: "Support Unit doesn't have enough TUs! Required: {0}"
+      STR_STRIKE_FRIENDLY: "You must target a friendly unit!"
       ### FACILITIES
       STR_OUTPOST_GK: "Outpost"
       STR_OUTPOST_INQ_HYPER: "Outpost w/ Decoder"

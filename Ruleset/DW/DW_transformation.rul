@@ -1,5 +1,5 @@
 soldierTransformation:
-  - name: STR_RECYCLE_DW            # Recover DW Token from dead
+  - name: STR_RECYCLE_DW                # Recover DW Token from dead
     requires:
       - STR_DEATHWATCH
     cost: 5000
@@ -32,7 +32,7 @@ soldierTransformation:
     listOrder: 10
 
 
-  - name: STR_RECYCLE_DW_LEADER            # Recover DW Token from dead captain
+  - name: STR_RECYCLE_DW_LEADER         # Recover DW Token from dead captain
     requires:
       - STR_DEATHWATCH
       - STR_DW_SQUAD5
@@ -61,7 +61,7 @@ soldierTransformation:
     requires:
       - STR_GENERALLOCK # disable Dreadnoughts
 
-  - name: STR_AWARD_PERSONAL_SHIELD # allow CM to give their various recruits shields
+  - name: STR_AWARD_PERSONAL_SHIELD     # allow CM to give their various recruits shields
     forbiddenPreviousTransformations:
       - STR_AWARD_PERSONAL_SHIELD
     transferTime: 0
@@ -69,5 +69,13 @@ soldierTransformation:
       - STR_GUARD_AND_INQUISITION
 
 
+soldierBonuses:
+  - name: STR_BONUS_PERSONAL_SHIELD
+    tags:
+      BONUS_ENERGY_SHIELD_HP_PER_TURN: 60 # was 40/50, adjusted for SMT shield regeneration changes
+      BONUS_ENERGY_SHIELD_DECAY: 75
 
-
+  - name: STR_BONUS_INQ_ROSARIUS
+    tags:
+      BONUS_ENERGY_SHIELD_HP_PER_TURN: 75 # was 50/50, adjusted for SMT shield regeneration changes
+      BONUS_ENERGY_SHIELD_DECAY: 75

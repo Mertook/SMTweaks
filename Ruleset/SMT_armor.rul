@@ -2740,6 +2740,90 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 40
       ARMOR_ENERGY_SHIELD_DECAY: 50
 
+### BOMBARD
+  - type: STR_DUMMY_TARGETER_UC                 # Target Designator (Dummy base)
+    spriteSheet: BOMBARDSHELL.PCK
+    drawingRoutine: 16
+    spriteInv: NOTDONEIMP
+    visibilityAtDay: 1 # can't see
+    visibilityAtDark: 1
+    camouflageAtDay: -50 # should be invisible to enemies
+    camouflageAtDark: -50
+    personalLight: 1
+    frontArmor: 200
+    sideArmor: 200
+    rearArmor: 200
+    underArmor: 200
+    movementType: 1 # flying
+    loftempsSet: [ 1 ]
+    corpseBattle:
+      - STR_BLANK_CORPSE
+    tags:
+      BOMBARD_DUMMY: 1
+
+  - &STR_BOMBARD_ARMOR                          # Target Designator (Shells)
+    type: STR_BOMBARD_ORBITAL_ARMOR
+    spriteSheet: BOMBARDSHELL.PCK
+    drawingRoutine: 16
+    spriteInv: NOTDONEIMP
+    visibilityAtDay: 1 # can't see
+    visibilityAtDark: 1
+    camouflageAtDay: -50 # should be invisible to enemies
+    camouflageAtDark: -50
+    personalLight: 1
+    frontArmor: 200
+    sideArmor: 200
+    rearArmor: 200
+    underArmor: 200
+    movementType: 1 # flying
+    moveCost: #stop it from being able to drop down
+      basePercent: [100, 100] #overall move cost
+      baseNormalPercent: [100, 100] #move cost for ground
+      baseFlyPercent: [100, 100] #move cost for flying
+      walkPercent: [25, 25] #cost of normal move type
+      runPercent: [25, 25] #cost of run aka with `ctrl`
+      flyWalkPercent: [25, 25] #cost of normal move type in air
+      flyRunPercent: [25, 25] #cost of run aka with `ctrl` in air
+      flyUpPercent: [50, 0] #cost of flying up
+      flyDownPercent: [9999, 0] #cost of flying down
+      gravLiftPercent: [9999, 0] #cost for using gravLift
+    damageModifier: #immune to damage
+      - 0.0 #none
+      - 0.0 #AP
+      - 0.0 #FLAMES
+      - 0.0 #HE
+      - 0.0 #LASCANON
+      - 0.0 #PLASMA
+      - 0.0 #STUN
+      - 0.0 #MELEE 
+      - 0.0 #ACID
+      - 0.0 #SMOKE
+      - 0.0 #IMPACT
+      - 0.0 #MELTA
+      - 0.0 #GRAV
+    allowInv: false
+    zombiImmune: true
+    bleedImmune: true
+    fearImmune: true
+    painImmune: true
+    corpseBattle:
+      - STR_BLANK_CORPSE
+    loftempsSet: [ 1 ]
+    specialWeapon: STR_STRIKE_AMMOLOADER
+    tags:
+      BOMBARD_TARGETER: 1 # adjusts starting mana and kills it at the end of turn
+      INFECTION_RESIST: 100 #infection immune
+      INTIMIDATION_RESISTANCE: 100 #intimidation immune
+      UNIT_TYPE_MECHANICAL: 1
+
+  - type: STR_BOMBARD_PLANE_ARMOR               # Target Designator (Plane)
+    refNode: *STR_BOMBARD_ARMOR
+    spriteSheet: BOMBARDPLANE.PCK
+
+  - type: STR_BOMBARD_NUKE_ARMOR                # Target Designator (Nuke)
+    refNode: *STR_BOMBARD_ARMOR
+    spriteSheet: BOMBARDNUKE.PCK
+
 ### EXTRA
   - update: STR_SIGNAL_ARMOR_UC_HULK        #SUPERHULK REWARD ARMOR
     visibilityAtDay: 40
@@ -2809,4 +2893,47 @@ armors:
       melee: 10         # base 10 
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+
+  - type: STR_STORMTALON_ARMOR
+    allowsMoving: false
+    specialWeapon: STR_TURRET_RELOAD
+  - type: LTS_ARMOR                         #STORMTALON TURRET LEFT
+    frontArmor: 80 # was 50 all over
+    sideArmor: 80
+    rearArmor: 80
+    underArmor: 80
+    damageModifier:
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.5 #FLAMES
+      - 1.0 #HE
+      - 1.4 #LASCANON
+      - 1.0 #PLASMA
+      - 0.0 #STUN
+      - 0.8 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 3.0 #IMPACT
+      - 1.2 #MELTA
+    specialWeapon: STR_TURRET_RELOAD
+  - type: RTS_ARMOR                         #STORMTALON TURRET RIGHT
+    frontArmor: 80 # was 50 all over
+    sideArmor: 80
+    rearArmor: 80
+    underArmor: 80
+    damageModifier:
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.5 #FLAMES
+      - 1.0 #HE
+      - 1.4 #LASCANON
+      - 1.0 #PLASMA
+      - 0.0 #STUN
+      - 0.8 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 3.0 #IMPACT
+      - 1.2 #MELTA
+    specialWeapon: STR_TURRET_RELOAD
+
 

@@ -41,7 +41,7 @@ extended:
               battle_game.setTag Tag.SMT_RAZOR_HBOLTER_COUNT temp2;
               #debug_log "TurretCounter (HeavyBolter) " temp2;
             end;
-            
+
             item.getTag temp Tag.SMT_RAZOR_LAS; ## Count Razorback Lascannon Tokens
             if eq temp 1;
               battle_game.getTag temp2 Tag.SMT_RAZOR_LAS_COUNT;
@@ -66,7 +66,6 @@ extended:
       - new: SMTS_turret_replace
         offset: 81
         code: |
-          var ptr RuleArmor unitArmor;
           var ptr RuleUnit turretUnit;
           var int isTurret;
           var int temp;

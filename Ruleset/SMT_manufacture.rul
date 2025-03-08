@@ -1,8 +1,5 @@
 manufacture:
 ### WEAPONS
-  - name: STR_BANNER                                # Chapter Banner
-    requires:
-      - STR_GENERALLOCK #disabled
   - name: STR_STRIKE_VOX                            # Strike Vox caster
     category: STR_WEAPON
     requires:
@@ -479,10 +476,66 @@ manufacture:
       STR_ALIEN_ALLOYS: 4
       STR_UFO_CONSTRUCTION: 6
       STR_KILLPOINT_TOKEN: 40
-  
+
+### BOMBARD
+  - name: STR_ORBITAL_STRIKE_AMMO                   # Orbital Strike ammo
+    category: STR_FIRESUPPORT
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_NAVY_COMUNICATIONS
+    space: 0
+    time: 400
+    cost: 200000
+    requiresBaseFunc: [COMU]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 10
+      STR_ELERIUM_115: 30
+      STR_KILLPOINT_TOKEN: 80
+
+  - name: STR_ORBITAL_LANCE_AMMO                    # Orbital Lance ammo
+    category: STR_FIRESUPPORT
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_NAVY_COMUNICATIONS
+    space: 0
+    time: 1200
+    cost: 1000000
+    requiresBaseFunc: [COMU]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 50
+      STR_ELERIUM_115: 200
+      STR_KILLPOINT_TOKEN: 400
+
+  - name: STR_STORMTALON_AMMO                       # Stormtalon Strike ammo
+    category: STR_FIRESUPPORT
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_MIDTIER_PREREQ ###CHANGEME - should be dedicated tech
+    space: 0
+    time: 240
+    cost: 100000
+    requiresBaseFunc: [COMU]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+      STR_ELERIUM_115: 15
+      STR_KILLPOINT_TOKEN: 20
+
+  - name: STR_AIRSTRIKE_AMMO                        # CAS Strike ammo
+    category: STR_FIRESUPPORT
+    requires:
+      - STR_AIRSTRIKE_REQUISITION
+    space: 0
+    time: 240
+    cost: 100000
+    requiresBaseFunc: [COMU]
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+      STR_ELERIUM_115: 15
+      STR_KILLPOINT_TOKEN: 20
+
 ### ARMOR
   - name: STR_SARGENT_ARMOR                         # Sergeant
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_SARGENT_ARMOR
@@ -493,7 +546,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 30
       STR_KILLPOINT_TOKEN: 240
   - name: STR_HONOR_ARMOR                           # Tact Honor
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_HONOR_ARMOR
@@ -505,7 +558,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 30
       STR_UFO_CONSTRUCTION: 4
   - name: STR_SCOUTH                                # Scout Honor
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_SCOUTH_RESEARCH
@@ -516,7 +569,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 60
       STR_ALIEN_ALLOYS: 15
   - name: STR_SIGNAL_ARMOR                          # Dev Honor
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY #was missing
       - STR_SIGNAL_ARMOR_RESEARCH
@@ -528,7 +581,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 30
       STR_UFO_CONSTRUCTION: 4
   - name: STR_ASS_ARMOR_HONOR                       # Assault Honor
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_HONOR_ARMOR_RESEARCH
@@ -540,7 +593,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 30
       STR_UFO_CONSTRUCTION: 4
   - name: STR_POWER_SUIT                            # Terminator
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_POWER_SUIT
@@ -555,7 +608,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 800 #was 60
 
   - name: STR_CAPTAIN_SUIT                          # Terminator Captain
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_CAPTAIN_SUIT
@@ -570,7 +623,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 1000 #was 200
 
   - name: STR_TATICAL_ARMOR                         # Tactical
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_PERSONAL_ARMOR
@@ -581,7 +634,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 30
 
   - name: STR_DEV_ARMOR                             # Devastator
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_MARINES_AND_DEATHWATCH
       - STR_DEV_ARMOR
@@ -592,7 +645,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 30
 
   - name: STR_ASS_ARMOR                             # Assault
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_MARINES_AND_DEATHWATCH
       - STR_ASS_ARMOR
@@ -603,7 +656,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 30
 
   - name: STR_APOT_ARMOR                            # Apothecary
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_MARINES_AND_DEATHWATCH
       - STR_MEDI_KIT_PREREQ
@@ -616,7 +669,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 60
 
   - name: STR_TECH_ARMOR                            # Techmarine
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_TEC_BAYR
       - STR_MARINES_AND_DEATHWATCH
@@ -630,7 +683,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 60
 
   - name: STR_DREAD2_ARMOR                          # Dread Plasma
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_MARINES_STRATEGY
       - STR_PLASMA_CANNON # craft Plasma cannon
@@ -645,7 +698,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 60
 
   - name: STR_DREAD3_ARMOR                          # Dread Lascannon + Missile (Formerly Missile)
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_MARINES_STRATEGY
       - STR_LASER_CANNON # craft Lascannon
@@ -660,7 +713,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 60
 
   - name: STR_DREAD4_ARMOR                          # Dread Assault Cannon (Formerly Lascannon)
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_MARINES_STRATEGY
       - STR_ASSC
@@ -675,7 +728,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 60
 
   - name: STR_MKX_APO_ARMOR                         # Primaris Helix Adept
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_MEDI_KIT_PREREQ
@@ -688,7 +741,7 @@ manufacture:
       STR_ELERIUM_115: 10
 
   - name: STR_MKX_TEC_ARMOR                         # Primaris Techmarine
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_TEC_BAYR
       - STR_PRIMARIS_AND_DEATHWATCH
@@ -701,7 +754,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 60
 
   - name: STR_MKX_PHB_ARMOR                         # Primaris Phobos
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_MKX_PHB_ARMOR
@@ -713,7 +766,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 5 # primaris already start in tactical and costed appropiately, should be cheap
 
   - name: STR_MKX_GRV_ARMOR                         # Primaris Gravis
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_MKX_GRV_ARMOR
@@ -727,7 +780,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 50 # was 30
 
   - name: STR_MKX_INC_ARMOR                         # Primaris Omnis/Interceptor
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_MKX_INC_ARMOR
@@ -741,7 +794,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 50 # was 30
 
   - name: STR_MKX_LIB_ARMOR                         # Primaris Librarian
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_PRIMARIS
@@ -757,7 +810,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 60
 
   - name: STR_MKX_CHP_ARMOR                         # Primaris Chaplain
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_PRIMARIS
@@ -771,7 +824,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 60
 
   - name: STR_PRIMARIS_ROCKETPACK                    # Primaris Vengor Armor
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_PRIMARIS
@@ -784,7 +837,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 2
 
   - name: STR_PRIMARIS_MELTAPACK                    # Primaris Meltarifle Armor
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_PRIMARIS
@@ -798,7 +851,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 20
 
   - name: STR_PRIMARIS_PLASMAPACK                   # Primaris Plasma Incinerator Armor
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_CHAPTER_PURITY
       - STR_PRIMARIS
@@ -899,9 +952,36 @@ manufacture:
       STR_KILLPOINT_TOKEN: 50 # was 300
       STR_STORMHAWK: 1
 
+  - name: STR_AVENGER                               # Thunderhawnk Transport
+    category: STR_CRAFT
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_HIGHTIER_PREREQ ###CHANGEME
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
+
+  - name: STR_TTASS #thunderhawnk Transport ASS
+    category: STR_CRAFT
+    requires:
+      - STR_GENERALLOCK
+
+  - name: STR_TTDEV  #thunderhawnk Transport Dev
+    category: STR_CRAFT
+    requires:
+      - STR_GENERALLOCK
+
+  - name: STR_TTSCT  #thunderhawnk Transport Sct
+    category: STR_CRAFT
+    requires:
+      - STR_GENERALLOCK
+
 ### REMOVAL
+  - name: STR_BANNER                                # Chapter Banner
+    requires:
+      - STR_GENERALLOCK #disabled
+
   - name: STR_FLYING_SUIT                           # Terminator Assault
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_GENERALLOCK # Now an alt of regular Terminator armor, this shouldn't be used
       #- STR_CHAPTER_PURITY
@@ -918,17 +998,17 @@ manufacture:
       STR_KILLPOINT_TOKEN: 800 #was 60
 
   - name: STR_TSARGENT                              # Terminator Sergeant
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_GENERALLOCK # Now an alt of regular Terminator armor, this shouldn't be used
 
   - name: STR_CHAP_ARMOR                            # Chaplain Armor
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_GENERALLOCK # Now default gear of Chaplain soldiers, this shouldn't be used
 
   - name: STR_LIB_ARMOR                             # Librarian Armor
-    category: STR_PERSONAL_ARMOR
+    category: STR_CAT_ARMOR
     requires:
       - STR_GENERALLOCK # Now default gear of Librarian soldiers, this shouldn't be used
 

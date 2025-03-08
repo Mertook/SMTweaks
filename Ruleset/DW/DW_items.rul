@@ -605,13 +605,13 @@ items:
     recover: false # generated item
     accuracySnap: 80
     accuracyAimed: 0
-    accuracyAuto: 0
+    accuracyAuto: 66
     snapRange: 20
     aimRange: 0
-    autoRange: 0
+    autoRange: 15
     tuAimed: 0
-    tuSnap: 35
-    tuAuto: 0
+    tuSnap: 33
+    tuAuto: 66
     maxRange: 35
     powerRangeReduction: 10 # higher dropoff than plasma
     powerRangeThreshold: 25.0 #
@@ -655,16 +655,15 @@ items:
       - STR_BOLTRIFLE_DRUM_EX
       - STR_BOLTRIFLE_DRUM_MC
       - STR_BOLTRIFLE_DRUM_MC_DW # free clip
-    dropoff: 7
-    minRange: 5 #cumbersome, not suited to CQC
-    autoRange: 15 # regular 13
-    snapRange: 20 # regular 20
+    dropoff: 6
+    autoRange: 15 # regular 14
+    snapRange: 20 # regular 19
     aimRange: 0
-    accuracyAuto: 70 # cawl 66
-    accuracySnap: 90 # cawl 80
+    accuracyAuto: 70
+    accuracySnap: 90
     accuracyAimed: 0
-    tuAuto: 33 # regular 35
-    tuSnap: 24 # regular 28
+    tuAuto: 30 # regular 33
+    tuSnap: 22 # regular 26
     tuAimed: 0
     tuLoad: 20
     confSnap:
@@ -672,7 +671,6 @@ items:
     autoShots: 6 # regular 5
     tags:
       ITEM_RECOIL: 85 # +20 over regular - extra large battle rifle
-      REACTION_MULTIPLIER: 80 # bulky
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - type: STR_FORCE_HALBERD_DW              # Force Halberd (White Scars Captain)       ## Restricted item

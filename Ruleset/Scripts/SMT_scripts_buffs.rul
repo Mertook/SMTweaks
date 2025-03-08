@@ -161,6 +161,7 @@ extended:
         code: |
           var ptr RuleItem itemRuleset;
           var int temp;
+          var int temp2;
 
           damaging_item.getRuleItem itemRuleset;
           itemRuleset.getTag temp Tag.ITEM_IS_BUFF_WEAPON;
@@ -215,20 +216,20 @@ extended:
           var int temp2;
 
           damaging_item.getTag temp Tag.SMT_ITEM_MOVESPEED_BOOST;
-          debug_log "HasteBuff Ping " temp;
+          #debug_log "HasteBuff Ping " temp;
 
           if gt temp 0; # skip if doesn't boost movement
           # Power <50 = no change, >=50 = 75% cost, >=100 50% cost (move bonus capped by item tag)
             set temp2 orig_power;
             div temp2 50;
-            debug_log "HasteBuff Power - " temp orig_power currPower temp2;
+            #debug_log "HasteBuff Power - " temp orig_power currPower temp2;
             limit temp2 0 temp; # eliminate negatives and cap power
             if gt temp2 0; # only continue if move cost would change
               mul temp2 25;
               set temp 100;
               sub temp temp2;
               unit.MoveCost.getBaseTimePercent currentSpeed; # get current speed
-              debug_log "HasteBuff Speed N/C " temp currentSpeed;
+              #debug_log "HasteBuff Speed N/C " temp currentSpeed;
               if lt temp currentSpeed; # only change if new speed is faster than current
                 unit.MoveCost.setBaseTimePercent temp;
               end;
@@ -236,7 +237,7 @@ extended:
               if eq originalSpeed 0; # only set with units original speed if it wasn't already set
                 unit.setTag Tag.SMT_HASTE_ORIGINAL_SPEED currentSpeed;
               end;
-              debug_log "HasteBuff Speed Final N/C/O - " temp currentSpeed originalSpeed;
+              #debug_log "HasteBuff Speed Final N/C/O - " temp currentSpeed originalSpeed;
             end;
           end;
 
@@ -276,7 +277,7 @@ extended:
             unit.getTag temp Tag.SMT_VULN_INTENSITY;
             if gt debuffVal temp; #only change if it would be higher
               unit.setTag Tag.SMT_VULN_INTENSITY debuffVal;
-              debug_log "VulnDebuff Ping 1" debuffVal;
+              #debug_log "VulnDebuff Ping 1" debuffVal;
               itemRuleset.getTag debuffVal Tag.SMT_VULN_DURATION;
               battle_game.getTurn temp;
               add temp debuffVal; #define end turn for buff
@@ -289,7 +290,7 @@ extended:
 
     recolorUnitSprite:
       - new: SMTS_vuln_recolor
-        offset: 70  # doesn't really matter
+        offset: 80
         code: |
           var int frame;
           var int frameLength;
@@ -321,6 +322,7 @@ extended:
           set frameLength 8; #4
 
           unit.getTag desync Tag.UNIT_RECOLOR_DESYNC;
+          add desync 3;
           set frame anim_frame;
           add frame desync;
           mod frame recolorPeriod;

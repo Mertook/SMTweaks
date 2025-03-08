@@ -811,7 +811,7 @@ items:
     categories: [STR_CAT_DEVASTATOR]
     size: 0.1
     weight: 20
-    costSell: 10000
+    costSell: 100000
     bigSprite: 100
     floorSprite: 100
     fireSound: {mod: 40k, index: 699}
@@ -887,7 +887,7 @@ items:
       ToItem: 0.2 #only destroy weak items
     recover: false
     tags:
-      ITEM_PRIMED_AT_BATTLE_START: 2
+      ITEM_PRIMED_AT_BATTLE_START: 1
 
   - type: STR_STRIKE_VOX_FALSE              # fake version of Strike Vox for ufopedia stats
     battleType: 1
@@ -1026,12 +1026,14 @@ items:
     damageType: 1
     damageAlter:
       RandomType: 7 # 50-200%
-      ArmorEffectiveness: 0.4 # was 0.5
+      ArmorEffectiveness: 0.45 # was 0.5
       ToArmorPre: 0.02 # basically nothing
-      ToArmor: 0.3 # was 0.05, good destruction if it manages to pen
+      ToArmor: 0.25 # was 0.05, good destruction if it manages to pen
       ToHealth: 1.0
       ToStun: 0.05 # was 0.3; solid AP round rather than concussive
       ToEnergy: 0.1
+      ToWound: 0.2 # (regular 0.2)
+      RandomWound: false
 
   - update: STR_PISTOL_CLIP_AP              # Krak Boltpistol Ammo
     refNode: *STR_BOLTER_AMMO_KRAK
@@ -1168,6 +1170,7 @@ items:
       ToStun: 0.2 # was 0.6 (regular 0.5)
       ToEnergy: 0.4 # (regular 0.3)
       ToWound: 0.4 # (regular 0.2)
+      RandomWound: false
       ToTile: 0.0 #shrapnel, not explosive
       ToItem: 0.0 #shrapnel, not explosive
       IgnoreOverKill: true #shrapnel, not explosive
@@ -1285,6 +1288,8 @@ items:
       mod: 40k
       index: 0
     powerForAnimation: 1 #
+    damageAlter:
+      FixRadius: 3 # give it a larger area effect
     listOrder: 10457
     costBuy: 8000
     requiresBuyBaseFunc: [TRADE]
@@ -1739,7 +1744,7 @@ items:
       - STR_BOLTRIFLE_DRUM_AP
       - STR_BOLTRIFLE_DRUM_EX
       - STR_BOLTRIFLE_DRUM_MC
-    dropoff: 6
+    dropoff: 7
     minRange: 6 #cumbersome, not suited to CQC
     autoRange: 14 # cawl 11
     snapRange: 19 # cawl 17
@@ -2273,6 +2278,7 @@ items:
       REACTION_MULTIPLIER: 66 # bulky
 
   - type: STR_AC_AP_BELT                    # Heavy Bolter AP Ammo Beltfed
+    refNode: *STR_BOLTER_AMMO_STD
     categories: [STR_CAT_BOLTER, STR_CAT_DEVASTATOR]
     size: 0.1
     costSell: 2000
@@ -2286,14 +2292,7 @@ items:
       index: 120
     damageAlter:
       RandomType: 7 # 50-200%
-      ToArmorPre: 0.1
-      ArmorEffectiveness: 0.85
-      ToArmor: 0.15
-      ToHealth: 1.1
-      ToStun: 0.5
-      ToEnergy: 0.3
-      ToWound: 0.2
-      RandomWound: false
+      ArmorEffectiveness: 0.85 #improved pen
     explosionSpeed: 3
     power: 90
     damageType: 1
@@ -2347,6 +2346,8 @@ items:
       mod: 40k
       index: 88
     powerForAnimation: 40
+    power: 90
+    damageType: 2
     damageAlter:
       RandomType: 7 # 50-200%
       IgnoreDirection: false
@@ -2364,8 +2365,6 @@ items:
       ToWound: 0.2
       RandomWound: false
     explosionSpeed: 3
-    power: 90
-    damageType: 2
     clipSize: 90
     armor: 200
     invWidth: 2
@@ -2373,6 +2372,7 @@ items:
     listOrder: 12027
 
   - type: STR_AC_MC_BELT                    # Heavy Bolter MC Ammo Beltfed                  ## Custom ammo
+    refNode: *STR_BOLTER_AMMO_MASTER
     categories: [STR_CAT_BOLTER, STR_CAT_DEVASTATOR]
     size: 0.1
     costSell: 8000
@@ -2384,16 +2384,6 @@ items:
     hitAnimation:
       mod: 40k
       index: 120
-    damageAlter:
-      RandomType: 7 # 50-200%
-      ToArmorPre: 0.25 # +0.05 over regular MC bolts
-      ToArmor: 0.20
-      ArmorEffectiveness: 0.8
-      ToHealth: 1.15
-      ToStun: 0.5
-      ToEnergy: 0.3
-      ToWound: 0.2
-      RandomWound: false
     explosionSpeed: 3
     power: 90
     damageType: 1
@@ -2404,7 +2394,8 @@ items:
     listOrder: 12028
 
   - update: STR_AC_AP_AMMO                  # Heavy Bolter AP Ammo
-    armor: 200
+    refNode: *STR_BOLTER_AMMO_STD
+    size: 0.1
     power: 90 # was 80
     clipSize: 60
     costBuy: 6000 # was 1200
@@ -2412,8 +2403,7 @@ items:
       - STR_HBOLTER_AMMO_PREREQ
     damageAlter:
       RandomType: 7 # 50-200%
-      ArmorEffectiveness: 0.85 # was 0.9
-      ToArmorPre: 0.15 # was 0.1
+      ArmorEffectiveness: 0.85 #improved pen
     listOrder: 12021
 
   - update: STR_AC_I_AMMO                   # Heavy Bolter Incin Ammo
@@ -2436,14 +2426,10 @@ items:
     listOrder: 12022
 
   - update: STR_AC_MC_AMMO                  # Heavy Bolter MC Ammo                          ## Custom ammo
-    armor: 200
+    refNode: *STR_BOLTER_AMMO_MASTER
+    size: 0.1
     power: 90 # was 95
     clipSize: 60
-    damageAlter:
-      RandomType: 7 # 50-200%
-      ToArmorPre: 0.25 # +0.05 over regular MC bolts
-      ToArmor: 0.20
-      ArmorEffectiveness: 0.8
     listOrder: 12024
 
   - update: STR_AC_HE_AMMO                  # Heavy Bolter HE Ammo
@@ -4450,8 +4436,708 @@ items:
     armor: 200
     tuMelee: 16
 
+  - type: STR_STORMTALON_ASSC               # Stormtalon Assault Cannon
+    battleType: 1
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 267}
+    hitSound: {mod: 40k, index: 0}
+    hitAnimation: {mod: 40k, index: 26}
+    bulletSprite: {mod: 40k, index: 6}
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
+    bulletSpeed: 80
+    explosionSpeed: 5
+    invWidth: 2
+    invHeight: 3
+    fixedWeapon: true
+    fixedWeaponShow: false
+    recover: false
+    clipSize: -1
+    sprayWaypoints: 2
+    dropoff: 6
+    autoRange: 18
+    snapRange: 0
+    aimRange: 22
+    accuracyAuto: 55
+    accuracySnap: 0
+    accuracyAimed: 75
+    tuSnap: 0
+    costAimed:
+      energy: 5
+      time: 1
+      mana: 6
+    costAuto:
+      energy: 5
+      time: 1
+      mana: 6
+    flatRate: true
+    confAimed:
+      shots: 5
+      followProjectiles: false
+    confAuto:
+      shots: 10
+      followProjectiles: false
+    power: 100
+    damageType: 1
+    damageAlter: 
+      ToArmorPre: 0.15 # was 0.1
+      ArmorEffectiveness: 0.85
+      ToArmor: 0.15 # was 0.1
+      ToHealth: 1.0
+      ToStun: 0.2 # was 0.5
+      ToHealth: 1.0
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    tags:
+      TURRET_RELOAD_TURNS: 2
+
+  - update: STR_STORMTALON_WEAPON           # Stormtalon Rockets
+    power: 190 # was 130
+    damageType: 3
+    damageAlter:
+      RandomType: 2  # 50-150%
+      ToArmorPre: 0.50
+      ArmorEffectiveness: 0.75
+      FixRadius: 11
+    clipSize: -1
+    accuracyAimed: 100
+    tuAimed: 1
+    confAimed:
+    costAimed:
+      time: 1
+      energy: 5
+      mana: 10
+    flatAimed:
+      time: true
+      energy: true
+      mana: true
+    tags:
+      TURRET_RELOAD_TURNS: 2
+
   - update: STR_CRATED_RHINO                # Boxed Razorback
     costSell: 400000 # was 0, set so that you don't have to unpack & then sell vehicle
 
   - update: STR_CRATED_LANDSPEEDER          # Boxed Landspeeder
     costSell: 400000 # was 0, set so that you don't have to unpack & then sell vehicle
+
+  - type: STR_BOMBARD_SPAWNER               # Dummy Targeter spawner
+    armor: 999
+    invWidth: 0
+    invHeight: 0
+    battleType: 4
+    recover: false
+    floorSprite: -1
+    hitAnimation: -1
+    supportedInventorySections:
+      - STR_GROUND
+    spawnUnitFaction: 2 # neutral unit replaced by allied custom unit - avoids 'death' message
+    spawnUnit: STR_DUMMY_TARGETER
+    tags:
+      BOMBARD_SPAWNER_ITEM: 1
+
+  - type: STR_BOMBARD_THUNDERHAWK_SPAWNER   #Thunderhawk Bombard spawner
+    armor: 999
+    invWidth: 0
+    invHeight: 0
+    battleType: 4
+    recover: false
+    floorSprite: -1
+    hitAnimation: -1
+    supportedInventorySections:
+      - STR_GROUND
+    spawnUnitFaction: 0
+    spawnUnit: STR_THUNDERHAWK_TARGETER
+
+  - &STR_BOMBARD_AMMO                       # Bombard Ammo Template
+    type: STR_AIRSTRIKE_AMMO
+    size: 0.05
+    costSell: 100000
+    armor: 999
+    spawnUnitFaction: 0
+    invWidth: 0
+    invHeight: 0
+    battleType: 4
+    recover: true
+    floorSprite: -1
+    hitAnimation: -1
+    supportedInventorySections:
+      - STR_GROUND
+    power: 0
+    damageAlter:
+      RandomType: 3
+      ArmorEffectiveness: 0.0
+      ToStun: 0.0
+      ToMorale: 0.0
+      ToTime: 0.0
+      ToEnergy: 0.0
+      ToHealth: 0.0
+      ToWound: 0.0
+      ToArmor: 0.0
+      ToTile: 0.0
+      ToItem: 1.0
+    tags:
+      BOMBARD_AMMO_ITEM: 0 # 1: Orbital Strike 2: CAS Run 3: Stormhawk 4: Orbital Lance
+
+  - type: STR_ORBITAL_STRIKE_AMMO           # Orbital Strike ammo
+    refNode: *STR_BOMBARD_AMMO
+    tags:
+      BOMBARD_AMMO_ITEM: 1 # 1 - Orbital Strike
+
+  - type: STR_AIRSTRIKE_AMMO                # CAS Airstrike ammo
+    refNode: *STR_BOMBARD_AMMO
+    tags:
+      BOMBARD_AMMO_ITEM: 2 # 2 - CAS
+
+  - type: STR_STORMTALON_AMMO               # Stormhawk ammo
+    refNode: *STR_BOMBARD_AMMO
+    tags:
+      BOMBARD_AMMO_ITEM: 3 # 3 - Stormhawk
+
+  - type: STR_ORBITAL_LANCE_AMMO            # Orbital Lance ammo
+    refNode: *STR_BOMBARD_AMMO
+    tags:
+      BOMBARD_AMMO_ITEM: 4 # 4 - Orbital Laser
+
+  - &STR_STRIKE_CALLIN_MED                  # Callin Remote Template (Medkit)
+    type: STR_ORBITAL_CALLIN
+    armor: 300
+    battleType: 6 # not used as medikit
+    medikitTargetMatrix: 0
+    woundRecovery: 0
+    healthRecovery: 0
+    medikitType: 1
+    medikitTargetSelf: true
+    heal: 10
+    tuUse: 10
+    flatUse: true
+    invWidth: 2
+    invHeight: 3
+    tags:
+      BOMBARD_CALLIN_REMOTE: 0 # 1: Orbital Strike 2: CAS Run
+      BOMBARD_COOLDOWN: 0 # turns before this bombard type can be reused
+      BOMBARD_AMMO_REQUIRED: 0 # does this strike need ammo to be used?
+
+  - type: STR_ORBITAL_CALLIN                # Orbital Barrage Remote
+    refNode: *STR_STRIKE_CALLIN_MED
+    size: 0.05
+    bigSprite: 120
+    floorSprite: 120
+    handSprite: 440
+    medikitActionName: STR_CALL_ORBITAL
+    tuUse: 60
+    flatUse: false
+    hitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
+    listOrder: 14002
+    tags:
+      BOMBARD_CALLIN_REMOTE: 1 # 1 - Orbital Strike
+      BOMBARD_COOLDOWN: 5 # turns before this bombard type can be reused
+      BOMBARD_AMMO_REQUIRED: 1 # Orbital Strike ammo
+
+  - type: STR_LASER_CALLIN                  # Orbital Lance Remote
+    refNode: *STR_STRIKE_CALLIN_MED
+    size: 0.05
+    bigSprite: 122
+    floorSprite: 122
+    handSprite: 464
+    medikitActionName: STR_CALL_ORBITAL
+    tuUse: 60
+    flatUse: false
+    hitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
+    listOrder: 14002
+    tags:
+      BOMBARD_CALLIN_REMOTE: 6 # 6 - Orbital Lance
+      BOMBARD_COOLDOWN: 20 # turns before this bombard type can be reused
+      BOMBARD_AMMO_REQUIRED: 4 # Orbital Lance ammo
+
+  - type: STR_STORMTALON_CALLIN             # Stormhawk Remote
+    refNode: *STR_STRIKE_CALLIN_MED
+    size: 0.05
+    bigSprite: 100
+    floorSprite: 100
+    handSprite: 456
+    invWidth: 2
+    invHeight: 2
+    medikitActionName: STR_CALL_STORMHAWK
+    tuUse: 60
+    flatUse: false
+    hitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
+    listOrder: 14002
+    tags:
+      BOMBARD_CALLIN_REMOTE: 5 # 5 - Stormhawk
+      BOMBARD_COOLDOWN: 4 # turns before this bombard type can be reused
+      BOMBARD_AMMO_REQUIRED: 3 # Stormhawk airstrike Ammo
+
+  - &STR_STRIKE_CALLIN_GUN                  # Callin Remote Template (Gun)
+    type: STR_CAS_CALLIN
+    armor: 300
+    battleType: 1 # multichoice Gun
+    fireSound: {mod: 40k, index: 787} ###CHANGEME
+    hitSound: {mod: 40k, index: 778} ###CHANGEME
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2170} ###CHANGEME
+    invWidth: 2
+    invHeight: 3
+    clipSize: -1
+    maxRange: 1
+    dropoff: 0
+    autoRange: 2
+    snapRange: 2
+    aimRange: 2
+    accuracyAuto: 200
+    accuracySnap: 200
+    accuracyAimed: 200
+    accuracyMultiplier:
+      flatHundred: 1.00
+    dropoff: 0
+    powerForAnimation: 1
+    power: 20
+    damageType: 0 # none/support
+    damageAlter:
+      RandomType: 3
+      ArmorEffectiveness: 0.0
+      RadiusReduction: 20
+      ArmorEffectiveness: 0.0
+      ToHealth: 0.0
+      ToStun: 0.0
+      ToWound: 0.0
+      ToArmor: 0.0
+      ToTile: 0.0
+      FixRadius: 1
+    experienceTrainingMode: 32
+    tags:
+      BOMBARD_CALLIN_REMOTE: 0 # 1: Orbital Strike 2: CAS Run
+      BOMBARD_COOLDOWN: 0 # turns before this bombard type can be reused
+      BOMBARD_AMMO_REQUIRED: 0 # does this strike need ammo to be used?
+
+  - type: STR_CAS_CALLIN                    # CAS Strike Remote
+    refNode: *STR_STRIKE_CALLIN_GUN
+    bigSprite: 121
+    floorSprite: 121
+    handSprite: 448
+    tuAuto: 35
+    tuSnap: 35
+    tuAimed: 35
+    flatUse: false
+    confAimed:
+      shots: 1
+      name: STR_STRIKE_CASBOLTER
+    confSnap: # snap +1
+      shots: 1
+      name: STR_STRIKE_CASROCKET
+    confAuto: # auto +2
+      shots: 1
+      name: STR_STRIKE_CASNAPALM
+    tags:
+      BOMBARD_CALLIN_REMOTE: 2 # 2/3/4 - CAS Bolter/Rocket/Napalm
+      BOMBARD_COOLDOWN: 3 # requires expensive ammo
+      BOMBARD_AMMO_REQUIRED: 2 # CAS Airstrike ammo
+
+  - type: STR_STRIKE_AMMOLOADER             # Strike Designator Ammo loader
+    medikitTargetMatrix: 0
+    woundRecovery: 0
+    healthRecovery: 0
+    medikitType: 1
+    medikitActionName: STR_BOMBARD_SET_POSITION
+    medikitTargetSelf: true
+    heal: 999
+    battleType: 6  # not used as medikit
+    tuUse: 1
+    costUse:
+      energy: 1
+    flatUse: true
+    fixedWeapon: true
+    specialIconSprite: 205 ###CHANGEME
+    tags:
+      BOMBARD_AMMO_LOADER: 1
+
+  - &STR_STRIKE_WEAPON_DEFAULTS             # Defaults for Designator weapon
+    type: STR_ORBITAL_STRIKE_WEAPON
+    battleType: 1
+    weight: 0
+    size: 0
+    invWidth: 2
+    invHeight: 3
+    clipSize: -1
+    noLOSAccuracyPenalty: 100 #can't see
+    fixedWeapon: true
+    recover: false
+    flatRate: true
+
+  - type: STR_ORBITAL_STRIKE_WEAPON         # Orbital Strike
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: 106
+    bulletSprite: {mod: 40k, index: 22}
+    #fireSound: {mod: 40k, index: 704}
+    bulletSpeed: 50
+    explosionHitSound: {mod: 40k, index: 704}
+    hitSound: {mod: 40k, index: 704}
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2210}
+    vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 4}  # red laser
+    vaporDensitySurface: 6
+    vaporProbabilitySurface: 100
+    scripts:
+      vaporParticleAmmo: |
+        # noting
+        set particle_lifetime 1;
+        set subvoxel_drift 0;
+        return;
+    autoRange: 0
+    snapRange: 0
+    aimRange: 60
+    accuracyAuto: 0
+    accuracySnap: 0
+    accuracyAimed: 200
+    accuracyMultiplier:
+      flatHundred: 1.0
+    tuSnap: 0
+    tuAimed: 1
+    tuAuto: 0
+    costAimed:
+      time: 1
+      mana: 5
+    flatAimed:
+      time: true
+      mana: true
+    confAimed:
+      name: STR_STRIKE_ORBITAL
+    autoShots: 1
+    clipSize: 5 # 5 shots
+    power: 1
+    damageAlter:
+      ArmorEffectiveness: 0
+      ToHealth: 0
+      ToEnergy: 0
+      ToStun: 0
+      ToWound: 0
+      ToArmor: 0
+      ToTile: 0
+      ToItem: 0
+      ToArmorPre: 0
+    spawnItem: STR_STRIKE_BEACON
+    spawnItemChance: 100
+
+  - type: STR_CAS_STRIKE_BOLTER_WEAPON      # CAS Heavy Bolter
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 266}
+    hitSound: {mod: 40k, index: 0}
+    hitAnimation: {mod: 40k, index: 26}
+    bulletSprite: {mod: 40k, index: 6}
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
+    bulletSpeed: 60
+    explosionSpeed: 5
+    dropoff: 4
+    sprayWaypoints: 2
+    autoRange: 20
+    snapRange: 0
+    aimRange: 20
+    accuracyAuto: 55
+    accuracySnap: 0
+    accuracyAimed: 95
+    tuSnap: 0
+    costAuto:
+      time: 1
+      mana: 5
+    confAuto:
+      shots: 10
+      followProjectiles: false
+    costAimed:
+      time: 1
+      mana: 5
+    confAimed:
+      shots: 5
+      spendPerShot: 2
+      followProjectiles: false
+    power: 80
+    damageType: 1
+    damageAlter:
+      ToArmorPre: 0.12
+      ArmorEffectiveness: 0.9
+      ToArmor: 0.15
+      ToHealth: 1.1
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    clipSize: 30
+
+  - type: STR_CAS_STRIKE_ROCKET_WEAPON      # CAS HE Rockets
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 265}
+    bulletSprite: {mod: 40k, index: 0}
+    fireSound: {mod: 40k, index: 52}
+    battleType: 1
+    hitSound: {mod: 40k, index: 0}
+    hitAnimation: {mod: 40k, index: 0}
+    dropoff: 5
+    autoRange: 0
+    snapRange: 0
+    aimRange: 8
+    accuracyAuto: 0
+    accuracySnap: 0
+    accuracyAimed: 80
+    tuAuto: 0
+    tuSnap: 0
+    costAimed:
+      time: 1
+      mana: 5
+    power: 160
+    damageType: 3
+    damageAlter:
+      RandomType: 2 # 50-150%
+      RadiusReduction: 5
+      ToHealth: 0.8
+      ToArmorPre: 0.3
+      ToArmor: 0.3
+      ToTile: 1.0
+      ToItem: 0.5
+      ArmorEffectiveness: 0.5
+      FireThreshold: 180
+      FixRadius: 2
+    clipSize: 2
+
+  - type: STR_CAS_STRIKE_NAPALM_WEAPON      # CAS Napalm Rockets
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 265}
+    bulletSprite: {mod: 40k, index: 0}
+    fireSound: {mod: 40k, index: 52}
+    battleType: 1
+    hitSound: {mod: 40k, index: 0}
+    hitAnimation: {mod: 40k, index: 0}
+    dropoff: 5
+    autoRange: 0
+    snapRange: 0
+    aimRange: 8
+    accuracyAuto: 0
+    accuracySnap: 0
+    accuracyAimed: 80
+    tuAuto: 0
+    tuSnap: 0
+    costAimed:
+      time: 1
+      mana: 5
+    power: 150
+    damageType: 2
+    damageAlter:
+      RandomType: 2 # 50-150%
+      IgnoreDirection: false
+      FireBlastCalc: false
+      FireThreshold: 1
+      RadiusReduction: 3 #minor
+      FixRadius: 8
+      ArmorEffectiveness: 1.0
+      ToArmorPre: 0.1
+      ToArmor: 0.1
+      ToTile: 0.25
+      ToMorale: 2.0
+      ToHealth: 1.1
+      ToStun: 0.2
+      ToEnergy: 0.3
+      ToWound: 0.3
+      RandomWound: false
+    clipSize: 2
+
+  - type: STR_STRM_STRIKE_ASSC              # Stormtalon Assault Cannon
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 267}
+    hitSound: {mod: 40k, index: 0}
+    hitAnimation: {mod: 40k, index: 26}
+    bulletSprite: {mod: 40k, index: 6}
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
+    bulletSpeed: 80
+    explosionSpeed: 5
+    sprayWaypoints: 2
+    dropoff: 6
+    autoRange: 10
+    snapRange: 0
+    aimRange: 10
+    accuracyAuto: 55
+    accuracySnap: 0
+    accuracyAimed: 95
+    tuSnap: 0
+    costAimed:
+      time: 1
+      mana: 5
+    costAuto:
+      time: 1
+      mana: 5
+    confAimed:
+      shots: 5
+      spendPerShot: 3
+      followProjectiles: false
+    confAuto:
+      shots: 15
+      followProjectiles: false
+    power: 100
+    damageType: 1
+    damageAlter: 
+      ToArmorPre: 0.15 # was 0.1
+      ArmorEffectiveness: 0.85
+      ToArmor: 0.15 # was 0.1
+      ToHealth: 1.0
+      ToStun: 0.2 # was 0.5
+      ToHealth: 1.0
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    clipSize: 45
+
+  - type: STR_STRM_STRIKE_ROCKET            # Stormtalon Rockets
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k, index: 451}
+    bulletSprite: {mod: 40k, index: 0}
+    fireSound: {mod: 40k, index: 702}
+    hitSound: {mod: 40k, index: 0}
+    hitAnimation: {mod: 40k, index: 0}
+    dropoff: 4
+    autoRange: 0
+    snapRange: 0
+    aimRange: 8
+    accuracyAuto: 0
+    accuracySnap: 0
+    accuracyAimed: 80
+    costAimed:
+      time: 1
+      mana: 5
+    power: 160
+    damageType: 3
+    damageAlter:
+      RandomType: 2  # 50-150%
+      RadiusReduction: 5
+      FixRadius: 9
+      FireThreshold: 180
+      ToArmorPre: 0.30
+      ArmorEffectiveness: 0.75
+      ToTile: 1.0
+      ToItem: 0.5
+    clipSize: 2
+
+  - type: STR_BOMBARD_BATTLECANNON          # Craft Battlecanon
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k, index: 92}
+    explosionHitSound: {mod: 40k, index: 792}
+    hitAnimation: {mod: 40k, index: 104}
+    bulletSprite: {mod: 40k, index: 4}
+    fireSound: {mod: 40k, index: 12}
+    bulletSpeed: 50
+    autoRange: 0
+    snapRange: 0
+    aimRange: 40
+    accuracyAuto: 0
+    accuracySnap: 0
+    accuracyAimed: 90
+    costAimed:
+      time: 1
+      mana: 5
+    clipSize: -1
+    damageType: 1
+    power: 180
+    powerForAnimation: 50
+    damageAlter:
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.9
+      ToHealth: 0.9
+      FixRadius: 8
+
+  - type: STR_ORBITAL_LANCE_WEAPON          # Orbital Lance Designator
+    bigSprite: 106
+    bulletSprite: {mod: 40k, index: 22}
+    bulletSpeed: 50
+    explosionHitSound: {mod: 40k, index: 704}
+    hitSound: {mod: 40k, index: 704}
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2210}
+    vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 4}  # red laser
+    vaporDensitySurface: 6
+    vaporProbabilitySurface: 100
+    scripts:
+      vaporParticleAmmo: |
+        # noting
+        set particle_lifetime 1;
+        set subvoxel_drift 0;
+        return;
+    autoRange: 0
+    snapRange: 0
+    aimRange: 60
+    accuracyAuto: 0
+    accuracySnap: 0
+    accuracyAimed: 200
+    accuracyMultiplier:
+      flatHundred: 1.0
+    tuSnap: 0
+    tuAimed: 1
+    tuAuto: 0
+    costAimed:
+      time: 1
+      mana: 5
+    flatAimed:
+      time: true
+      mana: true
+    confAimed:
+      name: STR_STRIKE_ORBITAL
+    autoShots: 1
+    clipSize: 1
+    power: 1
+    damageAlter:
+      ArmorEffectiveness: 0
+      ToHealth: 0
+      ToEnergy: 0
+      ToStun: 0
+      ToWound: 0
+      ToArmor: 0
+      ToTile: 0
+      ToItem: 0
+      ToArmorPre: 0
+    spawnItem: STR_ORBITAL_LANCE_BLAST
+    spawnItemChance: 100
+
+  - type: STR_ORBITAL_LANCE_BLAST           # Orbital Lance Blast
+    battleType: 4
+    weight: 1
+    floorSprite: 101
+    handSprite: 0
+    bulletSprite: -1
+    fireSound: {mod: 40k, index: 703}
+    fixedWeapon: true
+    invWidth: 1
+    invHeight: 1
+    maxRange: 1
+    twoHanded: false
+    listOrder: 2500
+    power: 1000
+    damageType: 3
+    damageAlter:
+      RandomType: 3
+      ToTile: 2  # obliterate the earth
+      ToArmorPre: 1  # annihilate the armor
+      FireThreshold: 1  # incinerate the sea
+      FixRadius: 200  # melt the map
+      ToMorale: 5  # mash the mind
+      RadiusReduction: 4.5
+      IgnoreOverKill: false  # leave no trace; this is the end of days
+    clipSize: 1
+    recover: false
+    tags:
+      ITEM_PRIMED_AT_BATTLE_START: 1
+
+  - type: STR_BLANK_CORPSE
+    size: 0.0
+    weight: 0
+    bigSprite: 99
+    floorSprite: 99
+    armor: 1
+    power: 2
+    blastRadius: 1
+    damageAlter:
+      RandomType: 3
+      ArmorEffectiveness: 0.0
+      ToStun: 0.0
+      ToMorale: 0.0
+      ToTime: 0.0
+      ToEnergy: 0.0
+      ToHealth: 0.0
+      ToWound: 0.0
+      ToArmor: 0.0
+      ToTile: 0.0
+      ToItem: 1.0
+    invWidth: 1
+    invHeight: 1
+    battleType: 11
+    recover: false
+

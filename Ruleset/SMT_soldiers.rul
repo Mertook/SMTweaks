@@ -328,7 +328,7 @@ soldiers:
       throwing: 60
       strength: 45
       psiStrength: 40
-      psiSkill: 0
+      psiSkill: 40
       melee: 60
     maxStats:
       tu: 80
@@ -1160,7 +1160,7 @@ soldiers:
       firing: 60
       throwing: 50
       strength: 65
-      psiStrength: 0
+      psiStrength: 40
       psiSkill: 40
       melee: 50
     maxStats:
@@ -1464,6 +1464,137 @@ soldiers:
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 30
       SMT_ALPHA_ATTACKER_MODIFIER: 5 # max 4% chance to be Alpharius
+
+units:
+  - update: STR_STORMTALON              # Stormtalon Cockpit
+    stats:
+      tu: 20
+      stamina: 10
+      health: 300
+      bravery: 200
+      reactions: 200
+      firing: 120
+      throwing: 0
+      strength: 90
+      psiStrength: 200
+      psiSkill: 0
+      melee: 0
+      mana: 60
+    livingWeapon: true
+    builtInWeaponSets:
+      - - STR_STORMTALON_ASSC
+  - update: STR_LTS                     # Stormtalon Turret (Left)
+    stats: # less stamina, mana for turret system
+      tu: 20
+      stamina: 5
+      health: 60
+      bravery: 100
+      reactions: 120
+      firing: 120
+      throwing: 0
+      strength: 90
+      psiStrength: 250
+      psiSkill: 0
+      melee: 0
+      mana: 60
+    energyRecovery: 10
+  - update: STR_RTS                     # Stormtalon Turret (Left)
+    stats: # less stamina, mana for turret system
+      tu: 20
+      stamina: 5
+      health: 60
+      bravery: 100
+      reactions: 120
+      firing: 120
+      throwing: 0
+      strength: 90
+      psiStrength: 250
+      psiSkill: 0
+      melee: 0
+      mana: 60
+    energyRecovery: 10
+
+  - &STR_BOMBARD_TARGETER_DEFAULT                   # Dummy targeter
+    type: STR_DUMMY_TARGETER
+    race: STR_BOMBARD_TARGETER
+    stats:
+      tu: 100
+      stamina: 200
+      health: 50
+      bravery: 110
+      reactions: 200
+      firing: 100
+      throwing: 0
+      strength: 100
+      psiStrength: 250
+      psiSkill: 0
+      melee: 0
+      mana: 50
+    armor: STR_DUMMY_TARGETER_UC
+    moraleLossWhenKilled: 0
+    standHeight: 4 # short
+    kneelHeight: 4
+    deathSound: 23
+    value: 0
+    intelligence: 4
+    aggression: 5
+    sniper: 50
+    spotter: 1
+    energyRecovery: 34
+    livingWeapon: true
+    builtInWeaponSets:
+      - - STR_ORBITAL_STRIKE_WEAPON
+
+  - type: STR_ORBITAL_STRIKE_TARGETER               # Orbital Strike
+    refNode: *STR_BOMBARD_TARGETER_DEFAULT
+    livingWeapon: true
+    armor: STR_BOMBARD_ORBITAL_ARMOR
+    builtInWeaponSets:
+      - - STR_ORBITAL_STRIKE_WEAPON
+
+  - type: STR_CAS_BOLTER_TARGETER                   # CAS-Bolter
+    refNode: *STR_BOMBARD_TARGETER_DEFAULT
+    livingWeapon: true
+    armor: STR_BOMBARD_PLANE_ARMOR
+    builtInWeaponSets:
+      - - STR_CAS_STRIKE_BOLTER_WEAPON
+
+  - type: STR_CAS_ROCKET_TARGETER                   # CAS-Rockets
+    refNode: *STR_BOMBARD_TARGETER_DEFAULT
+    livingWeapon: true
+    armor: STR_BOMBARD_PLANE_ARMOR
+    builtInWeaponSets:
+      - - STR_CAS_STRIKE_ROCKET_WEAPON
+
+  - type: STR_CAS_NAPALM_TARGETER                   # CAS-Napalm
+    refNode: *STR_BOMBARD_TARGETER_DEFAULT
+    livingWeapon: true
+    armor: STR_BOMBARD_PLANE_ARMOR
+    builtInWeaponSets:
+      - - STR_CAS_STRIKE_NAPALM_WEAPON
+
+  - type: STR_STORMTALON_TARGETER                   # Stormtalon strike
+    refNode: *STR_BOMBARD_TARGETER_DEFAULT
+    livingWeapon: true
+    armor: STR_BOMBARD_PLANE_ARMOR
+    builtInWeaponSets:
+      - - STR_STRM_STRIKE_ASSC
+        - STR_STRM_STRIKE_ROCKET
+
+  - type: STR_THUNDERHAWK_TARGETER                  # Thunderhawk Bombard
+    refNode: *STR_BOMBARD_TARGETER_DEFAULT
+    livingWeapon: true
+    armor: STR_BOMBARD_PLANE_ARMOR
+    builtInWeaponSets:
+      - - STR_BOMBARD_BATTLECANNON
+
+  - type: STR_ORBITAL_LANCE_TARGETER                # Orbital Lance
+    refNode: *STR_BOMBARD_TARGETER_DEFAULT
+    livingWeapon: true
+    armor: STR_BOMBARD_NUKE_ARMOR
+    builtInWeaponSets:
+      - - STR_ORBITAL_LANCE_WEAPON
+
 
   # minStats: #Scout Marine Terminator Chaplain Librarian LibTerm
       # tu: 60            #s40 m60 t75 c75 l60 lt75

@@ -1124,13 +1124,14 @@ extraSprites:
 ###Item BigOBs
   - type: BIGOBS.PCK
     files:
-      100: Resources/ITEMS/VoxB01.png                           # Vox Strike
+      99: Resources/ITEMS/blank.png                             # Blank
+      100: Resources/ITEMS/BOMBARD/VoxB01.png                   # Stormhawk Strike Vox
       101: Resources/ITEMS/BeaconB01.png                        # Target Marker
       102: Resources/ITEMS/MBOMB.png                            # 2x2 version
       103: Resources/ITEMS/smoke_bomb.png                       # 2x2 version
       104: Resources/ITEMS/book1.png                            # Lib Book sprites
       105: Resources/ITEMS/book2.png                            # Lib Book sprites
-      106: Resources/ITEMS/blank.png                            # Lib Book sprites
+      106: Resources/ITEMS/BOMBARD/OrbitalShell.png             # Orbital Strike Weapon
       107: Resources/ITEMS/SHOTGUN/shotgun_BigOb.png            # Astartes Shotgun
       108: Resources/ITEMS/HBOLTER/hbolterAP.png                # Mars HBolter Ammo AP
       109: Resources/ITEMS/HBOLTER/hbolterHE.png                # Mars HBolter Ammo HE
@@ -1144,7 +1145,9 @@ extraSprites:
       117: Resources/ITEMS/BOLTPISTOL/LBoltpAP.png              # Light BoltPistol Krak
       118: Resources/ITEMS/BOLTPISTOL/LBoltpEX.png              # Light BoltPistol Metalstorm
       119: Resources/ITEMS/BOLTPISTOL/LBoltpMC.png              # Light BoltPistol Mastercrafted
-      #20-27 potential full size bolter ammo
+      120: Resources/ITEMS/BOMBARD/StrikeVox_BigOb.png          # Orbital Strike Vox
+      121: Resources/ITEMS/BOMBARD/StrikeVox_IG_BigOb.png       # CAS Strike Vox
+      122: Resources/ITEMS/BOMBARD/StrikeVox_I_BigOb.png        # Orbital Lance Vox
       128: Resources/ITEMS/BSNIPER/HeavySniper_BigOb.png        # Bolt Sniper Rifle
       129: Resources/ITEMS/SLT_BigOb.png                        # Smoke Launcher Turret
       130: Resources/ITEMS/BSNIPER/SniperBolt.png               # Bolt Sniper Ammo
@@ -1304,9 +1307,13 @@ extraSprites:
 ###Item FloorOBs
   - type: FLOOROB.PCK
     files:
-      100: Resources/ITEMS/VoxF01.png
-      101: Resources/ITEMS/BeaconF01.png
+      99: Resources/ITEMS/blank.png                             # Blank
+      100: Resources/ITEMS/BOMBARD/VoxF01.png                   # Stormhawk Strike Vox
+      101: Resources/ITEMS/BOMBARD/LaserMarker_FloorOb.png      # Orbital Lance Marker
       107: Resources/ITEMS/SHOTGUN/shotgun_FloorOb.png          # Astartes Shotgun
+      120: Resources/ITEMS/BOMBARD/StrikeVox_FloorOb.png        # Orbital Strike Vox
+      121: Resources/ITEMS/BOMBARD/StrikeVox_IG_FloorOb.png     # CAS Strike Vox
+      122: Resources/ITEMS/BOMBARD/StrikeVox_I_FloorOb.png      # Orbital Lance Vox
       128: Resources/ITEMS/BSNIPER/HeavySniper_FloorOb.png      # Bolt Sniper Rifle
       130: Resources/ITEMS/BSNIPER/SniperBolt_FloorOb.png       # Bolt Sniper Ammo
       139: Resources/ITEMS/BOLTER/rifleA_FloorOb.png            # Bolter Artifex
@@ -1369,6 +1376,10 @@ extraSprites:
       416: Resources/ITEMS/BOLTER/rifleDD_HandOb.png            # Bolt Rifle Combi
       424: Resources/ITEMS/VOLKITE/NEOVOLKITE_HANDOB.png        # Neovolkite Pistol
       432: Resources/ITEMS/PRIMARIS/AccelAutocannon_HandOb.png  # Accelerator Autocannon
+      440: Resources/ITEMS/BOMBARD/StrikeVox_HandOb.png         # Orbital Strike Vox
+      448: Resources/ITEMS/BOMBARD/StrikeVox_IG_HandOb.png      # CAS Strike Vox
+      456: Resources/ITEMS/BOMBARD/VoxH01.png                   # Stormhawk Vox
+      464: Resources/ITEMS/BOMBARD/StrikeVox_I_HandOb.png       # Orbital Lance Vox
 
 
   - type: CustomArmorPreviews
@@ -2168,6 +2179,29 @@ extraSprites:
     subY: 40
     files:
       0: Resources/CRAFT/RAZOR/RB_Las.png
+
+###Bombard Units
+  - type: BOMBARDSHELL.PCK
+    subX: 32
+    subY: 40
+    width: 352
+    height: 40
+    files:
+      0: Resources/UNITS/BOMBARD/BombardShell.png
+  - type: BOMBARDPLANE.PCK
+    subX: 32
+    subY: 40
+    width: 352
+    height: 40
+    files:
+      0: Resources/UNITS/BOMBARD/BombardPlane.png
+  - type: BOMBARDNUKE.PCK
+    subX: 32
+    subY: 40
+    width: 352
+    height: 40
+    files:
+      0: Resources/UNITS/BOMBARD/BombardNuke.png
 
 ###Ability Icons
   - type: SPICONS.DAT

@@ -282,7 +282,7 @@ items:
     tuSnap: 60
     tuAimed: 85
     listOrder: 11931
-    tuLoad: 5 # single round shots
+    tuLoad: 4 # single round shots
     tuUnload: 2
     accuracyMultiplier: #sniper rifle accuracy
       firing: [0.5, 0.005]
@@ -419,11 +419,11 @@ items:
     explosionSpeed: 10
     powerRangeThreshold: 18
     powerRangeReduction: 3
-    power: 80 # doesn't get multiple pellets because of AoE splash
+    power: 90 # doesn't get multiple pellets because of AoE splash
     shotgunPellets: 1 #
     damageType: 2 # Incin
     damageAlter:
-      RandomType: 6
+      RandomType: 2 # 50-150
       FireBlastCalc: false
       IgnoreDirection: false
       FireThreshold: 1
@@ -903,7 +903,6 @@ items:
     meleeAnimation: {mod: 40k, index: 4}
     meleeSound: {mod: 40k, index:  753}
     meleeHitSound: {mod: 40k, index:  754}
-    hitAnimation: 96
     experienceTrainingMode: 13 # melee & reactions
     armor: 300
     twoHanded: false

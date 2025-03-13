@@ -73,8 +73,10 @@ extended:
             debug_log "StrikeAmmo (Orbital Laser) " temp;
           end;
 
-          battle_game.setTag Tag.SMT_STRIKE_ORBITAL_COOLDOWN 0; # reset any cooldowns
+          battle_game.setTag Tag.SMT_STRIKE_ORBITAL_COOLDOWN 0; # reset any cooldowns in case of multi-stage missions
           battle_game.setTag Tag.SMT_STRIKE_CAS_COOLDOWN 0;
+          battle_game.setTag Tag.SMT_STRIKE_STORM_COOLDOWN 0;
+          battle_game.setTag Tag.SMT_STRIKE_LANCE_COOLDOWN 0;
           return;
 
     healUnit:
@@ -158,6 +160,10 @@ extended:
               battle_game.flashMessage "STR_STRIKE_COOLDOWN" temp; # 'This strike is on cooldown. Turns remaining: {0}'
               debug_log "StrikeCallin (Stormhawk) Cooldown " temp;
               return;
+            end;
+            item.getTag temp Tag.BOMBARD_COOLDOWN; # set cooldown for this strike type
+            add temp turn;
+            battle_game.setTag Tag.SMT_STRIKE_STORM_COOLDOWN temp;
           else eq strikeType 6; # Orbital Lance
             battle_game.getTag temp Tag.SMT_STRIKE_LANCE_AMMO; # check we have this strike available
             if and gt ammoCheck 0 le temp 0;
@@ -202,6 +208,7 @@ extended:
           debug_log "StrikeAmmoload Ping " temp;
           actor.getManaMax temp;
           actor.setMana temp;
+          actor.setTimeUnits 100;
           actor.setEnergy 0;
           return;
 
@@ -299,7 +306,7 @@ extended:
               debug_log "StrikeCallin (Stormhawk) Cooldown " temp;
               return;
             end;
-            item.getTag temp Tag.BOMBARD_COOLDOWN; # set cooldown for this strike type
+            damaging_item.getTag temp Tag.BOMBARD_COOLDOWN; # set cooldown for this strike type
             add temp turn;
             battle_game.setTag Tag.SMT_STRIKE_STORM_COOLDOWN temp;
           else eq strikeType 6; # Orbital Lance
@@ -316,7 +323,7 @@ extended:
               debug_log "StrikeCallin (Stormhawk) Cooldown " temp;
               return;
             end;
-            item.getTag temp Tag.BOMBARD_COOLDOWN; # set cooldown for this strike type
+            damaging_item.getTag temp Tag.BOMBARD_COOLDOWN; # set cooldown for this strike type
             add temp turn;
             battle_game.setTag Tag.SMT_STRIKE_LANCE_COOLDOWN temp;
           end;
@@ -405,7 +412,9 @@ extended:
           debug_log "StrikeTransform Ping: " strikeType;
           if eq strikeType 1; # Orbital Strike
             rules.getRuleUnit strikeUnit "STR_ORBITAL_STRIKE_TARGETER";
-            battle_game.getTag temp Tag.SMT_STRIKE_COUNT; # ammo count - unrestricted
+            battle_game.getTag temp Tag.SMT_STRIKE_ORBITAL_AMMO; # ammo count - Orbital Strike
+            sub temp 1;
+            battle_game.setTag Tag.SMT_STRIKE_ORBITAL_AMMO temp;
           else eq strikeType 2; # CAS Bolter
             rules.getRuleUnit strikeUnit "STR_CAS_BOLTER_TARGETER";
             battle_game.getTag temp Tag.SMT_STRIKE_CAS_AMMO; # ammo count - CAS
@@ -423,14 +432,14 @@ extended:
             battle_game.setTag Tag.SMT_STRIKE_CAS_AMMO temp;
           else eq strikeType 5; # Stormhawk
             rules.getRuleUnit strikeUnit "STR_STORMTALON_TARGETER";
-            battle_game.getTag temp Tag.SMT_STRIKE_STORM_AMMO; # ammo count - CAS
+            battle_game.getTag temp Tag.SMT_STRIKE_STORM_AMMO; # ammo count - Stormtalon
             sub temp 1;
             battle_game.setTag Tag.SMT_STRIKE_STORM_AMMO temp;
           else eq strikeType 6; # Orbital Lance
             rules.getRuleUnit strikeUnit "STR_ORBITAL_LANCE_TARGETER";
-            battle_game.getTag temp Tag.SMT_STRIKE_STORM_AMMO; # ammo count - CAS
+            battle_game.getTag temp Tag.SMT_STRIKE_LANCE_AMMO; # ammo count - Orbital Lance
             sub temp 1;
-            battle_game.setTag Tag.SMT_STRIKE_STORM_AMMO temp;
+            battle_game.setTag Tag.SMT_STRIKE_LANCE_AMMO temp;
           else; #emergency fallback
             rules.getRuleUnit strikeUnit "STR_CAS_BOLTER_TARGETER";
             set temp 0;
@@ -442,7 +451,7 @@ extended:
           unit.setSpawnUnitFaction FACTION_PLAYER;
           unit.setSpawnUnitInstantRespawn 1;
           battle_game.setTag Tag.SMT_STRIKE_ACTIVE 0;
-          battle_game.flashMessage "STR_STRIKE_ARRIVED" temp; # 'Targeting Designator available'
+          battle_game.flashLongMessage "STR_STRIKE_ARRIVED" temp; # 'Targeting Designator available'
           return;
 
       - new: SMTS_strike_targeter_init # Handles the spawning of new strike targeter units

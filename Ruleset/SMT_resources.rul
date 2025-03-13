@@ -1043,7 +1043,7 @@ armors:
 
 
   - type: STR_MKX_JUDICAR_UC        #PRIMARIS JUDICAR
-    layersDefaultPrefix: 0
+    layersDefaultPrefix: 23
     layersSpecificPrefix:
       1: CHAP
     layersDefinition:
@@ -1389,6 +1389,15 @@ extraSprites:
     subY: 20
     files:
       0: Resources/UNITS/unit_preview.png
+
+###Hit Animations
+  - type: X1.PCK  # small
+    width: 320
+    height: 40
+    subX: 32
+    subY: 40
+    files:
+      100: Resources/ITEMS/blankEx.png
 
 ###Assault Vanguard
   - typeSingle: HONORASSC__1__ASSAULTCMH
@@ -2154,14 +2163,21 @@ extraSprites:
     subX: 32
     subY: 40
     files:
-      0: Resources/CRAFT/SMOKE/SLT.png
+      0: Resources/CRAFT/SLT.png
+  - type: SLTDW.PCK #Smokelauncher (No base Deathwatch)
+    width: 256
+    height: 120
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/CRAFT/SLT_DW.png
   - type: SLTB.PCK #Landspeeder Smokelauncher
     width: 256
     height: 120
     subX: 32
     subY: 40
     files:
-      0: Resources/CRAFT/SMOKE/SLTB.png
+      0: Resources/CRAFT/SLTB.png
 ###Razorback HeavyFlamer
   - type: RB_HF.PCK
     width: 256
@@ -2169,7 +2185,7 @@ extraSprites:
     subX: 32
     subY: 40
     files:
-      0: Resources/CRAFT/RAZOR/RB_Flame.png
+      0: Resources/CRAFT/RB_Flame.png
 
 ###Razorback Lascannon
   - type: RB_LAS.PCK
@@ -2178,7 +2194,37 @@ extraSprites:
     subX: 32
     subY: 40
     files:
-      0: Resources/CRAFT/RAZOR/RB_Las.png
+      0: Resources/CRAFT/RB_Las.png
+
+###Thunderhawk Turrets
+  - type: LTT_DW.PCK #Left DW
+    width: 256
+    height: 120
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/CRAFT/DWLTT.png
+  - type: RTT_DW.PCK #Right DW
+    width: 256
+    height: 120
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/CRAFT/DWRTT.png
+  - type: LTT_GK.PCK #Left GK
+    width: 256
+    height: 120
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/CRAFT/GKLTT.png
+  - type: RTT_GK.PCK #Right GK
+    width: 256
+    height: 120
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/CRAFT/GKRTT.png
 
 ###Bombard Units
   - type: BOMBARDSHELL.PCK
@@ -2202,6 +2248,14 @@ extraSprites:
     height: 40
     files:
       0: Resources/UNITS/BOMBARD/BombardNuke.png
+  - type: BOMBARDROCKET.PCK
+    subX: 32
+    subY: 40
+    width: 352
+    height: 40
+    files:
+      0: Resources/UNITS/BOMBARD/BombardRocket.png
+
 
 ###Ability Icons
   - type: SPICONS.DAT

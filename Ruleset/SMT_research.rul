@@ -518,6 +518,7 @@ research:
     dependencies:
       - STR_PRIMARIS
       - STR_PRIMARIS_BACKPACKS
+      - STR_GENERALLOCK
 
   - name: STR_PRIMARIS_MELTAPACK    # Primaris Meltarifle
     cost: 80
@@ -665,3 +666,30 @@ research:
     points: 20
     dependencies: !add
       - STR_GENERALLOCK
+
+### CODEX ENTRY RESEARCH GATES
+
+  - name: STR_MARINE_CODEX          # General Marine topics
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_FIRSTBORN_CODEX       # Firstborn specific topics
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_PRIMARIS_CODEX        # Primaris specific topics
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_NEOPHYTE_CODEX        # Neophyte and Geneseed topics
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+

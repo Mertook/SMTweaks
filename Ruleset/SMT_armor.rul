@@ -44,8 +44,8 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
-      INFECTION_RESIST: 50
+      INTIMIDATION_RESISTANCE: 33
+      INFECTION_RESIST: 33
 
   - &STR_MARINE_OFFICER_ARMOR               #SPECIALIST TEMPLATE
     update: STR_SIGNALFALSE_ARMOR_UC
@@ -79,8 +79,8 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
-      INFECTION_RESIST: 50
+      INTIMIDATION_RESISTANCE: 33
+      INFECTION_RESIST: 33
 
   - update: STR_SCOUT_UC                    #SCOUT (Neophytes)
     visibilityAtDay: 40
@@ -161,6 +161,8 @@ armors:
       - STR_SOLDIER_TERMINATOR
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      INTIMIDATION_RESISTANCE: 33
+      INFECTION_RESIST: 33
 
   - update: STR_PERSONAL_ARMOR_UC           #TACTICAL
     refNode: *STR_MARINE_ARMOR
@@ -244,6 +246,7 @@ armors:
     tags: #Apoth gets better regeneration
       SMT_ARMOR_REGEN_HP: 3
       ARMOR_REGENERATES_WOUNDS: 1
+      INFECTION_RESIST: 50
 
   - update: STR_TECH_ARMOR_UC               #TECHMARINE
     refNode: *STR_MARINE_OFFICER_ARMOR
@@ -468,8 +471,8 @@ armors:
       - STR_SOLDIER_TERMINATOR
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
-      INTIMIDATION_RESISTANCE: 50
-      INFECTION_RESIST: 50
+      INTIMIDATION_RESISTANCE: 33
+      INFECTION_RESIST: 33
 
 
   - update: STR_SCOUTHW_UC                  #SCOUT HONOR WHITE
@@ -535,8 +538,8 @@ armors:
       SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalty
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
       ARMOR_ENERGY_SHIELD_DECAY: 50
-      INTIMIDATION_RESISTANCE: 75
-      INFECTION_RESIST: 75
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 66
       SMT_ARMOR_REGEN_HP: 4
       ARMOR_REGENERATES_WOUNDS: 1
 
@@ -922,8 +925,8 @@ armors:
     underArmor: 240 # was 240
     psiDefence: # does this matter for 2x2 units?
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
-      psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
-      moraleCurrent: 1.5 #discipline and resolve reinforces their faith (+50% dread bonus)
+      psiSkill: 2.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 2.5 #discipline and resolve reinforces their faith (dread bonus)
     stats: #
       tu: 30            # base 30 
       stamina: 20       # base 20 
@@ -1062,8 +1065,8 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 35
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
-      INTIMIDATION_RESISTANCE: 50
-      INFECTION_RESIST: 50
+      INTIMIDATION_RESISTANCE: 33
+      INFECTION_RESIST: 33
 
   - type: STR_MKX_TAC_LV1_UC
     refNode: *STR_MKX_TAC_UC
@@ -1369,8 +1372,8 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
       DODGE_CHANCE: 20
       ARMOR_MAX_SUCCESSFUL_DODGES: 1
-      INTIMIDATION_RESISTANCE: 50
-      INFECTION_RESIST: 50
+      INTIMIDATION_RESISTANCE: 33
+      INFECTION_RESIST: 33
 
   - type: STR_MKX_PHB_LV1_UC
     refNode: *STR_MKX_PHB_UC
@@ -1491,7 +1494,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
       INTIMIDATION_RESISTANCE: 50
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -1931,8 +1934,8 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
-      INFECTION_RESIST: 50
+      INTIMIDATION_RESISTANCE: 33
+      INFECTION_RESIST: 33
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
       MaxFlight: 3
@@ -2210,7 +2213,7 @@ armors:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_REGEN_HP: 2
       ARMOR_REGENERATES_WOUNDS: 1
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 33
       INFECTION_RESIST: 50
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -2460,8 +2463,8 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
-      INFECTION_RESIST: 50
+      INTIMIDATION_RESISTANCE: 33
+      INFECTION_RESIST: 33
 
   - type: STR_MKX_TEC_LV1_UC
     refNode: *STR_MKX_TEC_UC
@@ -2770,7 +2773,7 @@ armors:
     visibilityAtDark: 1
     camouflageAtDay: -50 # should be invisible to enemies
     camouflageAtDark: -50
-    personalLight: 1
+    personalLight: 12
     frontArmor: 200
     sideArmor: 200
     rearArmor: 200
@@ -2823,6 +2826,11 @@ armors:
   - type: STR_BOMBARD_NUKE_ARMOR                # Target Designator (Nuke)
     refNode: *STR_BOMBARD_ARMOR
     spriteSheet: BOMBARDNUKE.PCK
+
+  - type: STR_BOMBARD_ROCKET_ARMOR              # Target Designator (Rocket)
+    refNode: *STR_BOMBARD_ARMOR
+    spriteSheet: BOMBARDROCKET.PCK
+
 
 ### EXTRA
   - update: STR_SIGNAL_ARMOR_UC_HULK        #SUPERHULK REWARD ARMOR

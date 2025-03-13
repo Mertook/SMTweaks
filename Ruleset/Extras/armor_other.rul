@@ -49,8 +49,8 @@ armors:
     antiCamouflageAtDark: 10
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
-      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
-      moraleCurrent: 1.5 #discipline and resolve reinforces their faith
+      psiSkill: 2.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 2.0 #discipline and resolve reinforces their faith
     frontArmor: 125 # base 125
     sideArmor: 125 # base 120
     rearArmor: 125 # base 100
@@ -67,7 +67,7 @@ armors:
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 1.0 #AP
-      - 0.6 #FLAMES - was 0.8
+      - 0.6 #FLAMES
       - 0.7 #HE
       - 0.8 #LASCANON
       - 1.0 #PLASMA

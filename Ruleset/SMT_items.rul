@@ -924,10 +924,10 @@ items:
     battleType: 0
     size: 0.1
     weight: 3
-    bigSprite: 99
     armor: 8
-    invWidth: 1
-    invHeight: 1
+    bigSprite: 99
+    invWidth: 0
+    invHeight: 0
     recover: true
     recoveryPoints: 20
     ufopediaType: STR_GENESEED_DETAILS
@@ -939,8 +939,8 @@ items:
     weight: 3
     bigSprite: 99
     armor: 8
-    invWidth: 1
-    invHeight: 1
+    invWidth: 0
+    invHeight: 0
     recover: true
     recoveryPoints: 2
     ufopediaType: STR_GENESEED_DETAILS
@@ -3548,7 +3548,7 @@ items:
 
   - update: STR_SMALL_ROCKET                # Small Frag Missile
     size: 0.1 # was 0.2
-    weight: 4 # was 5
+    weight: 3 # was 5
     costBuy: 3000
     costSell: 1500
     armor: 200
@@ -3557,7 +3557,7 @@ items:
     damageAlter:
       FixRadius: 7 # +2 over grenades, was 6
       ToArmorPre: 0.05 #small ablation
-      ArmorEffectiveness: 1.1 #concussive + shrapnel everywhere
+      ArmorEffectiveness: 1.0 #concussive + shrapnel everywhere
       ToHealth: 0.9 #
       ToTime: 0.2 #
       ToStun: 0.4 #
@@ -3570,20 +3570,20 @@ items:
 
   - update: STR_LARGE_ROCKET                # Small Krak Missile
     size: 0.1 # was 0.2
-    weight: 4 # was 6
+    weight: 3 # was 6
     costBuy: 4000
     costSell: 2000
     armor: 200
 
   - update: STR_INCENDIARY_ROCKET           # Incendiary missile
     size: 0.1 # was 0.2
-    weight: 4 # was 5
+    weight: 3 # was 5
     costBuy: 3000
     armor: 200
 
   - update: STR_HEAVY_ROCKET_HE             # Large Frag Missile
     size: 0.1 # was 0.3
-    weight: 10 # was 15
+    weight: 8 # was 15
     costBuy: 6000 # was 20k
     costSell: 3000
     damageAlter:
@@ -3591,7 +3591,7 @@ items:
 
   - update: STR_HEAVY_ROCKET_KRAK           # Large Krak Missile
     size: 0.1 # was 0.3
-    weight: 10 # was 15
+    weight: 8 # was 15
     costBuy: 8000 # was 40k!
     costSell: 4000
     power: 140 # was 140
@@ -3600,12 +3600,12 @@ items:
 
   - update: STR_HEAVY_ROCKET                # Melta Missile
     size: 0.1 # was 0.3
-    weight: 10 # was 15
+    weight: 8 # was 15
     costBuy: 16000 # was 80k!!
     costSell: 8000
     damageAlter:
       ArmorEffectiveness: 1.0 # was 0.9
-      ToArmorPre: 0.8 # was 0.5, Melta
+      ToArmorPre: 0.75 # was 0.5, Melta
       FireThreshold: 1 # was missing, melta explosions should set everything on fire
       ToTile: 1.5 # was 1.0, Melta
       FixRadius: 2 # was 3, concentrated blast
@@ -3617,10 +3617,10 @@ items:
     costSell: 5000 # was 3000
     weight: 40 # was 50
     dropoff: 4
-    autoRange: 21
+    autoRange: 14
     snapRange: 0
     aimRange: 30
-    accuracyAuto: 50
+    accuracyAuto: 60
     accuracySnap: 0
     accuracyAimed: 100 #
     tuAuto: 45 # was 55
@@ -3632,12 +3632,12 @@ items:
       shortName: STR_SNAP_SHOT_COUNT
       shots: 1
     minRange: 5
-    kneelBonus: 130 # was 130
+    kneelBonus: 150 # was 130
     tags:
       ITEM_RECOIL: 40 # was 0, Spacemarine designed portable missile launcher - even steadying it is difficult without enough Str
 
   - update: STR_LASCAN                      # SM Lascannon
-    tuAimed: 88 # was 90 - slightly easier to sidestep and fire without needing max TUs
+    tuAimed: 85 # was 90 - slightly easier to sidestep and fire without needing max TUs
 
   - update: STR_HEAVY_CANNON                # SM Sniper
     dropoff: 2 #proper scoped sniper rifle
@@ -3701,7 +3701,7 @@ items:
     tuSnap: 60
     tuAimed: 85
     listOrder: 11931
-    tuLoad: 5 # single round shots
+    tuLoad: 4 # single round shots
     tuUnload: 2
     accuracyMultiplier: #sniper rifle accuracy
       firing: [0.5, 0.005]
@@ -3877,13 +3877,14 @@ items:
       - STR_SHOTGUNS_ADV
     powerRangeThreshold: 18
     powerRangeReduction: 2
-    damageAlter: # Bolter Krak values
+    damageAlter:
       RandomType: 1 # 0-200%
       ArmorEffectiveness: 0.5 # was 0.5
-      ToArmorPre: 0.01 # was 0
+      ToArmorPre: 0.02 # was 0
       ToArmor: 0.15 # was 0, decent destruction if it manages to pen
-      ToHealth: 0.8 # was 1.0
+      ToHealth: 1.0
       ToStun: 0.1 # was 0.5; AP round rather than concussive
+    shotgunPellets: 5 # was 6
 
   - update: STR_SHOTGUN_SHELLS_INC          # Shotgun Incin Ammo
     weight: 3 # was 5?
@@ -3893,8 +3894,9 @@ items:
       index: 88
     powerRangeThreshold: 18
     powerRangeReduction: 2
-    power: 75 # doesn't get multiple pellets because of AoE splash
+    power: 80 # doesn't get multiple pellets because of AoE splash
     damageAlter:
+      RandomType: 2 # 50-150%
       ToHealth: 1.3 # was 1.1
     shotgunPellets: 1 # was 6, doesn't work with projectiles that have explosion radius
     requiresBuy:
@@ -4378,7 +4380,7 @@ items:
     accuracyAimed: 100
     tuAuto: 66 # was 0
     tuSnap: 0
-    tuAimed: 66
+    tuAimed: 60
     compatibleAmmo:
       - STR_DREAD_MISSILES
       - STR_HWP_FUSION_BOMB
@@ -4388,6 +4390,7 @@ items:
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - type: STR_DREAD_MISSILES                # Dread Regular Missile ammo
+    categories: [STR_CAT_DEVASTATOR]
     bigSprite: 161
     floorSprite: 161
     handSprite: 216
@@ -4519,14 +4522,13 @@ items:
   - update: STR_CRATED_LANDSPEEDER          # Boxed Landspeeder
     costSell: 400000 # was 0, set so that you don't have to unpack & then sell vehicle
 
-  - type: STR_BOMBARD_SPAWNER               # Dummy Targeter spawner
+  - &STR_BOMBARD_SPAWNER_TEMPLATE           # Bombard Spawner Template
+    type: STR_BOMBARD_SPAWNER               # Dummy Targeter spawner
     armor: 999
     invWidth: 0
     invHeight: 0
     battleType: 4
     recover: false
-    floorSprite: -1
-    hitAnimation: -1
     supportedInventorySections:
       - STR_GROUND
     spawnUnitFaction: 2 # neutral unit replaced by allied custom unit - avoids 'death' message
@@ -4534,31 +4536,30 @@ items:
     tags:
       BOMBARD_SPAWNER_ITEM: 1
 
-  - type: STR_BOMBARD_THUNDERHAWK_SPAWNER   #Thunderhawk Bombard spawner
-    armor: 999
-    invWidth: 0
-    invHeight: 0
-    battleType: 4
-    recover: false
-    floorSprite: -1
-    hitAnimation: -1
-    supportedInventorySections:
-      - STR_GROUND
+  - type: STR_BOMBARD_CANNON_SPAWNER        # Craft Bombard Cannon spawner
+    refNode: *STR_BOMBARD_SPAWNER_TEMPLATE
     spawnUnitFaction: 0
-    spawnUnit: STR_THUNDERHAWK_TARGETER
+    spawnUnit: STR_BOMBARD_CANNON_TARGETER
+
+  - type: STR_BOMBARD_ROCKET_SPAWNER        # Craft Bombard Rocket spawner
+    refNode: *STR_BOMBARD_SPAWNER_TEMPLATE
+    spawnUnitFaction: 0
+    spawnUnit: STR_BOMBARD_ROCKET_TARGETER
 
   - &STR_BOMBARD_AMMO                       # Bombard Ammo Template
     type: STR_AIRSTRIKE_AMMO
-    size: 0.05
-    costSell: 100000
+    categories: [STR_CAT_FIRESUPPORT, STR_CAT_TERMINATOR]
+    size: 0.01
+    costSell: 50000
     armor: 999
-    spawnUnitFaction: 0
     invWidth: 0
     invHeight: 0
     battleType: 4
     recover: true
+    bigSprite: 99
     floorSprite: -1
     hitAnimation: -1
+    ignoreInCraftEquip: false
     supportedInventorySections:
       - STR_GROUND
     power: 0
@@ -4579,26 +4580,38 @@ items:
 
   - type: STR_ORBITAL_STRIKE_AMMO           # Orbital Strike ammo
     refNode: *STR_BOMBARD_AMMO
+    listOrder: 15145
     tags:
       BOMBARD_AMMO_ITEM: 1 # 1 - Orbital Strike
 
   - type: STR_AIRSTRIKE_AMMO                # CAS Airstrike ammo
     refNode: *STR_BOMBARD_AMMO
+    listOrder: 15105
+    tags:
+      BOMBARD_AMMO_ITEM: 2 # 2 - CAS
+
+  - type: STR_AIRSTRIKE_AMMO_FREE           # CAS Airstrike ammo (no recover)
+    refNode: *STR_BOMBARD_AMMO
+    recover: false
+    listOrder: 15105
     tags:
       BOMBARD_AMMO_ITEM: 2 # 2 - CAS
 
   - type: STR_STORMTALON_AMMO               # Stormhawk ammo
     refNode: *STR_BOMBARD_AMMO
+    listOrder: 15115
     tags:
       BOMBARD_AMMO_ITEM: 3 # 3 - Stormhawk
 
   - type: STR_ORBITAL_LANCE_AMMO            # Orbital Lance ammo
     refNode: *STR_BOMBARD_AMMO
+    listOrder: 15155
     tags:
       BOMBARD_AMMO_ITEM: 4 # 4 - Orbital Laser
 
   - &STR_STRIKE_CALLIN_MED                  # Callin Remote Template (Medkit)
     type: STR_ORBITAL_CALLIN
+    categories: [STR_CAT_FIRESUPPORT]
     armor: 300
     battleType: 6 # not used as medikit
     medikitTargetMatrix: 0
@@ -4622,27 +4635,39 @@ items:
     bigSprite: 120
     floorSprite: 120
     handSprite: 440
+    size: 0.1
+    costBuy: 80000
+    costSell: 40000
+    requiresBuy:
+      - STR_CHAPTER_PURITY
+      - STR_NAVY_COMUNICATIONS
     medikitActionName: STR_CALL_ORBITAL
     tuUse: 60
     flatUse: false
     hitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
-    listOrder: 14002
+    listOrder: 15140
     tags:
       BOMBARD_CALLIN_REMOTE: 1 # 1 - Orbital Strike
       BOMBARD_COOLDOWN: 5 # turns before this bombard type can be reused
       BOMBARD_AMMO_REQUIRED: 1 # Orbital Strike ammo
 
-  - type: STR_LASER_CALLIN                  # Orbital Lance Remote
+  - type: STR_LANCE_CALLIN                  # Orbital Lance Remote
     refNode: *STR_STRIKE_CALLIN_MED
     size: 0.05
     bigSprite: 122
     floorSprite: 122
     handSprite: 464
-    medikitActionName: STR_CALL_ORBITAL
+    size: 0.1
+    costBuy: 100000
+    costSell: 50000
+    requiresBuy:
+      - STR_CHAPTER_PURITY
+      - STR_NAVY_COMUNICATIONS
+    medikitActionName: STR_CALL_LANCE
     tuUse: 60
     flatUse: false
     hitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
-    listOrder: 14002
+    listOrder: 15150
     tags:
       BOMBARD_CALLIN_REMOTE: 6 # 6 - Orbital Lance
       BOMBARD_COOLDOWN: 20 # turns before this bombard type can be reused
@@ -4654,13 +4679,19 @@ items:
     bigSprite: 100
     floorSprite: 100
     handSprite: 456
+    size: 0.1
+    costBuy: 60000
+    costSell: 30000
+    requiresBuy:
+      - STR_MARINES_STRATEGY
+      - STR_MIDTIER_PREREQ ###CHANGEME - should be dedicated tech
     invWidth: 2
     invHeight: 2
     medikitActionName: STR_CALL_STORMHAWK
     tuUse: 60
     flatUse: false
     hitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
-    listOrder: 14002
+    listOrder: 15110
     tags:
       BOMBARD_CALLIN_REMOTE: 5 # 5 - Stormhawk
       BOMBARD_COOLDOWN: 4 # turns before this bombard type can be reused
@@ -4668,11 +4699,14 @@ items:
 
   - &STR_STRIKE_CALLIN_GUN                  # Callin Remote Template (Gun)
     type: STR_CAS_CALLIN
+    categories: [STR_CAT_FIRESUPPORT]
     armor: 300
     battleType: 1 # multichoice Gun
-    fireSound: {mod: 40k, index: 787} ###CHANGEME
-    hitSound: {mod: 40k, index: 778} ###CHANGEME
-    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2170} ###CHANGEME
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2425}
+    explosionHitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
+    hitAnimation: 100
+    powerForAnimation: 0
+    explosionSpeed: 100
     invWidth: 2
     invHeight: 3
     clipSize: -1
@@ -4687,7 +4721,6 @@ items:
     accuracyMultiplier:
       flatHundred: 1.00
     dropoff: 0
-    powerForAnimation: 1
     power: 20
     damageType: 0 # none/support
     damageAlter:
@@ -4709,9 +4742,15 @@ items:
 
   - type: STR_CAS_CALLIN                    # CAS Strike Remote
     refNode: *STR_STRIKE_CALLIN_GUN
+    listOrder: 15100
     bigSprite: 121
     floorSprite: 121
     handSprite: 448
+    size: 0.1
+    costBuy: 60000
+    costSell: 30000
+    requiresBuy:
+      - STR_AIRSTRIKE_REQUISITION
     tuAuto: 35
     tuSnap: 35
     tuAimed: 35
@@ -4744,7 +4783,7 @@ items:
       energy: 1
     flatUse: true
     fixedWeapon: true
-    specialIconSprite: 205 ###CHANGEME
+    specialIconSprite: {mod: 40k_ROSIGMA_edits, index: 209}
     tags:
       BOMBARD_AMMO_LOADER: 1
 
@@ -4814,230 +4853,9 @@ items:
     spawnItem: STR_STRIKE_BEACON
     spawnItemChance: 100
 
-  - type: STR_CAS_STRIKE_BOLTER_WEAPON      # CAS Heavy Bolter
-    refNode: *STR_STRIKE_WEAPON_DEFAULTS
-    bigSprite: {mod: 40k_ROSIGMA_edits, index: 266}
-    hitSound: {mod: 40k, index: 0}
-    hitAnimation: {mod: 40k, index: 26}
-    bulletSprite: {mod: 40k, index: 6}
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
-    bulletSpeed: 60
-    explosionSpeed: 5
-    dropoff: 4
-    sprayWaypoints: 2
-    autoRange: 20
-    snapRange: 0
-    aimRange: 20
-    accuracyAuto: 55
-    accuracySnap: 0
-    accuracyAimed: 95
-    tuSnap: 0
-    costAuto:
-      time: 1
-      mana: 5
-    confAuto:
-      shots: 10
-      followProjectiles: false
-    costAimed:
-      time: 1
-      mana: 5
-    confAimed:
-      shots: 5
-      spendPerShot: 2
-      followProjectiles: false
-    power: 80
-    damageType: 1
-    damageAlter:
-      ToArmorPre: 0.12
-      ArmorEffectiveness: 0.9
-      ToArmor: 0.15
-      ToHealth: 1.1
-      ToStun: 0.5
-      ToEnergy: 0.3
-      ToWound: 0.2
-      RandomWound: false
-    clipSize: 30
-
-  - type: STR_CAS_STRIKE_ROCKET_WEAPON      # CAS HE Rockets
-    refNode: *STR_STRIKE_WEAPON_DEFAULTS
-    bigSprite: {mod: 40k_ROSIGMA_edits, index: 265}
-    bulletSprite: {mod: 40k, index: 0}
-    fireSound: {mod: 40k, index: 52}
-    battleType: 1
-    hitSound: {mod: 40k, index: 0}
-    hitAnimation: {mod: 40k, index: 0}
-    dropoff: 5
-    autoRange: 0
-    snapRange: 0
-    aimRange: 8
-    accuracyAuto: 0
-    accuracySnap: 0
-    accuracyAimed: 80
-    tuAuto: 0
-    tuSnap: 0
-    costAimed:
-      time: 1
-      mana: 5
-    power: 160
-    damageType: 3
-    damageAlter:
-      RandomType: 2 # 50-150%
-      RadiusReduction: 5
-      ToHealth: 0.8
-      ToArmorPre: 0.3
-      ToArmor: 0.3
-      ToTile: 1.0
-      ToItem: 0.5
-      ArmorEffectiveness: 0.5
-      FireThreshold: 180
-      FixRadius: 2
-    clipSize: 2
-
-  - type: STR_CAS_STRIKE_NAPALM_WEAPON      # CAS Napalm Rockets
-    refNode: *STR_STRIKE_WEAPON_DEFAULTS
-    bigSprite: {mod: 40k_ROSIGMA_edits, index: 265}
-    bulletSprite: {mod: 40k, index: 0}
-    fireSound: {mod: 40k, index: 52}
-    battleType: 1
-    hitSound: {mod: 40k, index: 0}
-    hitAnimation: {mod: 40k, index: 0}
-    dropoff: 5
-    autoRange: 0
-    snapRange: 0
-    aimRange: 8
-    accuracyAuto: 0
-    accuracySnap: 0
-    accuracyAimed: 80
-    tuAuto: 0
-    tuSnap: 0
-    costAimed:
-      time: 1
-      mana: 5
-    power: 150
-    damageType: 2
-    damageAlter:
-      RandomType: 2 # 50-150%
-      IgnoreDirection: false
-      FireBlastCalc: false
-      FireThreshold: 1
-      RadiusReduction: 3 #minor
-      FixRadius: 8
-      ArmorEffectiveness: 1.0
-      ToArmorPre: 0.1
-      ToArmor: 0.1
-      ToTile: 0.25
-      ToMorale: 2.0
-      ToHealth: 1.1
-      ToStun: 0.2
-      ToEnergy: 0.3
-      ToWound: 0.3
-      RandomWound: false
-    clipSize: 2
-
-  - type: STR_STRM_STRIKE_ASSC              # Stormtalon Assault Cannon
-    refNode: *STR_STRIKE_WEAPON_DEFAULTS
-    bigSprite: {mod: 40k_ROSIGMA_edits, index: 267}
-    hitSound: {mod: 40k, index: 0}
-    hitAnimation: {mod: 40k, index: 26}
-    bulletSprite: {mod: 40k, index: 6}
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
-    bulletSpeed: 80
-    explosionSpeed: 5
-    sprayWaypoints: 2
-    dropoff: 6
-    autoRange: 10
-    snapRange: 0
-    aimRange: 10
-    accuracyAuto: 55
-    accuracySnap: 0
-    accuracyAimed: 95
-    tuSnap: 0
-    costAimed:
-      time: 1
-      mana: 5
-    costAuto:
-      time: 1
-      mana: 5
-    confAimed:
-      shots: 5
-      spendPerShot: 3
-      followProjectiles: false
-    confAuto:
-      shots: 15
-      followProjectiles: false
-    power: 100
-    damageType: 1
-    damageAlter: 
-      ToArmorPre: 0.15 # was 0.1
-      ArmorEffectiveness: 0.85
-      ToArmor: 0.15 # was 0.1
-      ToHealth: 1.0
-      ToStun: 0.2 # was 0.5
-      ToHealth: 1.0
-      ToEnergy: 0.3
-      ToWound: 0.2
-      RandomWound: false
-    clipSize: 45
-
-  - type: STR_STRM_STRIKE_ROCKET            # Stormtalon Rockets
-    refNode: *STR_STRIKE_WEAPON_DEFAULTS
-    bigSprite: {mod: 40k, index: 451}
-    bulletSprite: {mod: 40k, index: 0}
-    fireSound: {mod: 40k, index: 702}
-    hitSound: {mod: 40k, index: 0}
-    hitAnimation: {mod: 40k, index: 0}
-    dropoff: 4
-    autoRange: 0
-    snapRange: 0
-    aimRange: 8
-    accuracyAuto: 0
-    accuracySnap: 0
-    accuracyAimed: 80
-    costAimed:
-      time: 1
-      mana: 5
-    power: 160
-    damageType: 3
-    damageAlter:
-      RandomType: 2  # 50-150%
-      RadiusReduction: 5
-      FixRadius: 9
-      FireThreshold: 180
-      ToArmorPre: 0.30
-      ArmorEffectiveness: 0.75
-      ToTile: 1.0
-      ToItem: 0.5
-    clipSize: 2
-
-  - type: STR_BOMBARD_BATTLECANNON          # Craft Battlecanon
-    refNode: *STR_STRIKE_WEAPON_DEFAULTS
-    bigSprite: {mod: 40k, index: 92}
-    explosionHitSound: {mod: 40k, index: 792}
-    hitAnimation: {mod: 40k, index: 104}
-    bulletSprite: {mod: 40k, index: 4}
-    fireSound: {mod: 40k, index: 12}
-    bulletSpeed: 50
-    autoRange: 0
-    snapRange: 0
-    aimRange: 40
-    accuracyAuto: 0
-    accuracySnap: 0
-    accuracyAimed: 90
-    costAimed:
-      time: 1
-      mana: 5
-    clipSize: -1
-    damageType: 1
-    power: 180
-    powerForAnimation: 50
-    damageAlter:
-      ArmorEffectiveness: 0.7
-      ToArmorPre: 0.9
-      ToHealth: 0.9
-      FixRadius: 8
-
   - type: STR_ORBITAL_LANCE_WEAPON          # Orbital Lance Designator
-    bigSprite: 106
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k, index: 206}
     bulletSprite: {mod: 40k, index: 22}
     bulletSpeed: 50
     explosionHitSound: {mod: 40k, index: 704}
@@ -5116,7 +4934,261 @@ items:
     tags:
       ITEM_PRIMED_AT_BATTLE_START: 1
 
-  - type: STR_BLANK_CORPSE
+  - type: STR_CAS_STRIKE_BOLTER_WEAPON      # CAS Heavy Bolter
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 266}
+    hitSound: {mod: 40k, index: 0}
+    hitAnimation: {mod: 40k, index: 26}
+    bulletSprite: {mod: 40k, index: 6}
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
+    bulletSpeed: 60
+    explosionSpeed: 5
+    dropoff: 4
+    sprayWaypoints: 2
+    autoRange: 20
+    snapRange: 0
+    aimRange: 20
+    accuracyAuto: 55
+    accuracySnap: 0
+    accuracyAimed: 95
+    tuSnap: 0
+    costAuto:
+      time: 1
+      mana: 5
+    confAuto:
+      shots: 10
+      followProjectiles: false
+    costAimed:
+      time: 1
+      mana: 5
+    confAimed:
+      shots: 5
+      spendPerShot: 2
+      followProjectiles: false
+    power: 80
+    damageType: 1
+    damageAlter:
+      ToArmorPre: 0.12
+      ArmorEffectiveness: 0.9
+      ToArmor: 0.15
+      ToHealth: 1.1
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    clipSize: 30
+
+  - type: STR_CAS_STRIKE_ROCKET_WEAPON      # CAS HE Rockets
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 265}
+    bulletSprite: {mod: 40k, index: 0}
+    fireSound: {mod: 40k, index: 52}
+    battleType: 1
+    hitSound: {mod: 40k, index: 0}
+    hitAnimation: {mod: 40k, index: 0}
+    dropoff: 5
+    autoRange: 0
+    snapRange: 0
+    aimRange: 8
+    accuracyAuto: 0
+    accuracySnap: 0
+    accuracyAimed: 80
+    tuAuto: 0
+    tuSnap: 0
+    costAimed:
+      time: 1
+      mana: 5
+    power: 150
+    damageType: 3
+    damageAlter:
+      RandomType: 2 # 50-150%
+      RadiusReduction: 5
+      ToHealth: 0.8
+      ToArmorPre: 0.3
+      ToArmor: 0.3
+      ToTile: 1.0
+      ToItem: 0.5
+      ArmorEffectiveness: 0.5
+      FireThreshold: 180
+      FixRadius: 2
+    clipSize: 2
+
+  - type: STR_CAS_STRIKE_NAPALM_WEAPON      # CAS Napalm Rockets
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 265}
+    bulletSprite: {mod: 40k, index: 0}
+    fireSound: {mod: 40k, index: 52}
+    battleType: 1
+    hitSound: {mod: 40k, index: 0}
+    hitAnimation: {mod: 40k, index: 0}
+    dropoff: 5
+    autoRange: 0
+    snapRange: 0
+    aimRange: 8
+    accuracyAuto: 0
+    accuracySnap: 0
+    accuracyAimed: 80
+    tuAuto: 0
+    tuSnap: 0
+    costAimed:
+      time: 1
+      mana: 5
+    power: 150
+    damageType: 2
+    damageAlter:
+      RandomType: 2 # 50-150%
+      IgnoreDirection: false
+      FireBlastCalc: false
+      FireThreshold: 1
+      RadiusReduction: 3 #minor
+      FixRadius: 8
+      ArmorEffectiveness: 1.0
+      ToArmorPre: 0.1
+      ToArmor: 0.1
+      ToTile: 0.25
+      ToMorale: 2.0
+      ToHealth: 1.1
+      ToStun: 0.2
+      ToEnergy: 0.3
+      ToWound: 0.3
+      RandomWound: false
+    clipSize: 2
+
+  - type: STR_STRM_STRIKE_ASSC              # Stormtalon Assault Cannon
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 267}
+    hitSound: {mod: 40k, index: 0}
+    hitAnimation: {mod: 40k, index: 26}
+    bulletSprite: {mod: 40k, index: 6}
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
+    bulletSpeed: 80
+    explosionSpeed: 5
+    sprayWaypoints: 2
+    dropoff: 6
+    autoRange: 12
+    snapRange: 0
+    aimRange: 12
+    accuracyAuto: 50
+    accuracySnap: 0
+    accuracyAimed: 100
+    tuSnap: 0
+    costAimed:
+      time: 1
+      mana: 5
+    costAuto:
+      time: 1
+      mana: 5
+    confAimed:
+      shots: 5
+      spendPerShot: 4
+      followProjectiles: false
+    confAuto:
+      shots: 20
+      followProjectiles: false
+    power: 100
+    damageType: 1
+    damageAlter: 
+      ToArmorPre: 0.15 # was 0.1
+      ArmorEffectiveness: 0.85
+      ToArmor: 0.15 # was 0.1
+      ToHealth: 1.0
+      ToStun: 0.2 # was 0.5
+      ToHealth: 1.0
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    clipSize: 60
+
+  - type: STR_STRM_STRIKE_ROCKET            # Stormtalon Rockets
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k, index: 451}
+    bulletSprite: {mod: 40k, index: 0}
+    fireSound: {mod: 40k, index: 702}
+    hitSound: {mod: 40k, index: 0}
+    hitAnimation: {mod: 40k, index: 0}
+    dropoff: 4
+    autoRange: 0
+    snapRange: 0
+    aimRange: 8
+    accuracyAuto: 0
+    accuracySnap: 0
+    accuracyAimed: 80
+    costAimed:
+      time: 1
+      mana: 5
+    power: 160
+    damageType: 3
+    damageAlter:
+      RandomType: 2  # 50-150%
+      RadiusReduction: 5
+      FixRadius: 9
+      FireThreshold: 180
+      ToArmorPre: 0.30
+      ArmorEffectiveness: 0.75
+      ToTile: 1.0
+      ToItem: 0.5
+    clipSize: 2
+
+  - type: STR_BOMBARD_BATTLECANNON          # Craft Battlecanon
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k, index: 92}
+    explosionHitSound: {mod: 40k, index: 792}
+    hitAnimation: {mod: 40k, index: 104}
+    bulletSprite: {mod: 40k, index: 4}
+    fireSound: {mod: 40k, index: 12}
+    bulletSpeed: 50
+    autoRange: 0
+    snapRange: 0
+    aimRange: 40
+    accuracyAuto: 0
+    accuracySnap: 0
+    accuracyAimed: 90
+    costAimed:
+      time: 1
+      mana: 5
+    clipSize: 1
+    damageType: 1
+    power: 180
+    powerForAnimation: 50
+    damageAlter:
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.9
+      ToHealth: 0.9
+      FixRadius: 8
+
+  - type: STR_BOMBARD_ROCKET                # Preator Rockets
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k, index: 451} ###CHANGEME
+    bulletSprite: {mod: 40k, index: 0}
+    fireSound: {mod: 40k, index: 702}
+    hitSound: {mod: 40k, index: 0}
+    hitAnimation: {mod: 40k, index: 0}
+    dropoff: 4
+    autoRange: 0
+    snapRange: 0
+    aimRange: 12
+    accuracyAuto: 0
+    accuracySnap: 0
+    accuracyAimed: 80
+    costAimed:
+      time: 1
+      mana: 5
+    power: 160
+    damageType: 3
+    damageAlter:
+      RandomType: 2  # 50-150%
+      RadiusReduction: 5
+      FixRadius: 9
+      FireThreshold: 180
+      ToArmorPre: 0.30
+      ArmorEffectiveness: 0.75
+      ToTile: 1.0
+      ToItem: 0.5
+    clipSize: 4
+
+
+
+  - type: STR_BLANK_CORPSE                  # Blank Corpse Object
     size: 0.0
     weight: 0
     bigSprite: 99
@@ -5136,8 +5208,8 @@ items:
       ToArmor: 0.0
       ToTile: 0.0
       ToItem: 1.0
-    invWidth: 1
-    invHeight: 1
+    invWidth: 0
+    invHeight: 0
     battleType: 11
     recover: false
 

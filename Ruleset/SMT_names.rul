@@ -1,10 +1,18 @@
+itemCategories:
+  - type: STR_CAT_FIRESUPPORT
+    listOrder: 8
+  - type: STR_CAT_ASSASSIN
+    listOrder: 200
+
 extraStrings:
   - type: en-US
     strings:
       ### Units
       STR_BOMBARD_TARGETER: Target Designator
       STR_ORBITAL_STRIKE_TARGETER: Orbital Strike Designator
-      STR_ORBITAL_LANCE_TARGETER: Orbital Lance Designatorv
+      STR_ORBITAL_LANCE_TARGETER: Orbital Lance Designator
+      STR_BOMBARD_CANNON_TARGETER: Cannon Bombardment
+      STR_BOMBARD_ROCKET_TARGETER: Rocket Bombardment
       STR_DUMMY_TARGETER: Blank Target Designator
       STR_CAS_BOLTER_TARGETER: CAS-B Target Designator
       STR_CAS_ROCKET_TARGETER: CAS-R Target Designator
@@ -28,7 +36,7 @@ extraStrings:
       STR_STRIKE_ORBITAL: Orbital Strike
       STR_BOMBARD_SET_POSITION: Set Firing Position
       STR_CALL_ORBITAL: Orbital Bombardment
-      STR_CALL_LASER: Orbital Lance
+      STR_CALL_LANCE: Orbital Lance
       STR_STRIKE_CASBOLTER: Strafing Run
       STR_STRIKE_CASROCKET: Rocket Strike
       STR_STRIKE_CASNAPALM: Napalm Strike
@@ -197,7 +205,7 @@ extraStrings:
       STR_RIFLEDW: Artifex Boltrifle
       STR_PRIMARIS_INCINERATOR_POWER_PACK: Plasma Incinerator
       STR_STRIKE_AMMOLOADER: Load Munitions
-      STR_ORBITAL_CALLIN: Orbital Strike Vox
+      STR_ORBITAL_CALLIN: Orbital Strike Vox-Caster
       STR_ORBITAL_STRIKE_WEAPON: Orbital Strike
       STR_ORBITAL_TARGET_SPAWNER: ""
       STR_CAS_CALLIN: CAS Vox-Caster
@@ -207,11 +215,12 @@ extraStrings:
       STR_STORMTALON_CALLIN: Stormtalon Vox-Caster
       STR_STRM_STRIKE_ASSC: Assault Cannon
       STR_STRM_STRIKE_ROCKET: Typhoon Rockets
+      STR_LANCE_CALLIN: Orbital Lance Vox-Caster
       STR_ORBITAL_LANCE_WEAPON: Orbital Lance Designator
       STR_ORBITAL_LANCE_BLAST: Orbital Lance Target
-      STR_ORBITAL_STRIKE_AMMO: Orbital Bombardment Requisition
+      STR_ORBITAL_STRIKE_AMMO: Orbital Bombardment Request
       STR_ORBITAL_LANCE_AMMO: Orbital Lance Requisition
-      STR_STORMTALON_AMMO: Stormtalon CAS Requisiton
+      STR_STORMTALON_AMMO: Stormtalon CAS Requisition
       STR_AIRSTRIKE_AMMO: Lightning CAS Requisition
       ### CRAFT
       AUX_BOLTER: Mounted Heavy Bolter
@@ -227,6 +236,14 @@ extraStrings:
       STR_SMT_SMOKEL_SPEEDER: Smoke Launcher
       STR_SMT_RAZORBACK: Razorback Turret
       STR_SMT_CRAFT_LASCANNON: Lascannon Turret
+      STR_RTT_DW: "Twin Linked Bolter"
+      STR_LTT_DW: "Twin Linked Bolter"
+      STR_RTT_GK: "Twin Linked Bolter"
+      STR_LTT_GK: "Twin Linked Bolter"
+      RTT_DW_ARMOR: "Twin Linked Bolter"
+      LTT_DW_ARMOR: "Twin Linked Bolter"
+      RTT_GK_ARMOR: "Twin Linked Bolter"
+      LTT_GK_ARMOR: "Twin Linked Bolter"
       ### SOLDIERS
       STR_SOLDIER_NEOPHYTE: Neophyte
       STR_SOLDIER_TERMINATOR: Veteran Marine
@@ -344,6 +361,10 @@ extraStrings:
       STR_BOLTER_AMMO_PREREQ: (Bolter Ammo)
       STR_BOLTER_ADV_AMMO: (Advanced Bolter Ammo)
       STR_NEOPHYTE_REQUEST: (Neophytes Unlocked)
+      STR_MARINE_CODEX: (Codex Update)
+      STR_FIRSTBORN_CODEX: (Codex Update)
+      STR_PRIMARIS_CODEX: (Codex Update)
+      STR_NEOPHYTE_CODEX: (Codex Update)
       ### MANUFACTURE
       STR_GENESEED: Geneseed
       STR_SMT_GENESEED_REQ: Requisition Geneseed
@@ -362,7 +383,7 @@ extraStrings:
       STR_STRIKE_EMPTY: "Fire support is unavailable!"
       STR_STRIKE_NOAMMO: "You don't have permission for this strike!"
       STR_STRIKE_COOLDOWN: "This Strike is on cooldown. Turns remaining: {0}"
-      STR_STRIKE_ACTIVE: "Strike request confirmed"
+      STR_STRIKE_ACTIVE: "Fire support request confirmed"
       STR_STRIKE_ARRIVED: "Strike Targeting Designator active. Calldowns remaining: {0}"
       STR_STRIKE_LOWTUS: "Support Unit doesn't have enough TUs! Required: {0}"
       STR_STRIKE_FRIENDLY: "You must target a friendly unit!"

@@ -63,6 +63,7 @@ units:
     spotter: 1
     energyRecovery: 34
     armor: RAZORBACK_ARMOR
+    liveAlien: ""
 
   - type: STR_SMT_RAZORBACK_BLANK           # Razorback Blank to be replaced by (Default)
     refNode: *STR_SMT_RAZORBACK_DEFAULT
@@ -103,6 +104,57 @@ units:
       - - STR_GORGON_HEAVY_FLAMER
         - STR_SMT_CRAFT_SMOKE
 
+  - &STR_THUNDERHAWK_TURRET                 # Thunderhawk Turrets
+    type: STR_RTT                           # Thunderhawk Turret (Left)
+    race: STR_RTT
+    stats:
+      tu: 20
+      stamina: 10
+      health: 150
+      bravery: 110
+      reactions: 20
+      firing: 120
+      throwing: 0
+      strength: 90
+      psiStrength: 250
+      psiSkill: 0
+      melee: 0
+      mana: 100
+    standHeight: 16
+    kneelHeight: 16
+    value: 10 # was 25
+    deathSound: 23
+    intelligence: 4
+    aggression: 5
+    sniper: 50
+    spotter: 1
+    energyRecovery: 34
+    moraleLossWhenKilled: 1 # was 25
+    livingWeapon: true
+    builtInWeaponSets:
+      - - AUX_BOLTER
+        - STR_SMT_CRAFT_SMOKE
+    liveAlien: ""
+
+  - type: STR_LTT                           # Thunderhawk Turret (Left)
+    refNode: *STR_SMT_RAZORBACK_DEFAULT
+
+  - type: STR_RTT_DW                        # Thunderhawk Turret Deathwatch (Right)
+    refNode: *STR_SMT_RAZORBACK_DEFAULT
+    armor: RTT_DW_ARMOR
+
+  - type: STR_LTT_DW                        # Thunderhawk Turret Deathwatch (Right)
+    refNode: *STR_SMT_RAZORBACK_DEFAULT
+    armor: LTT_DW_ARMOR
+
+  - type: STR_RTT_GK                        # Thunderhawk Turret Grey Knight (Right)
+    refNode: *STR_SMT_RAZORBACK_DEFAULT
+    armor: RTT_GK_ARMOR
+
+  - type: STR_LTT_GK                        # Thunderhawk Turret Grey Knight (Right)
+    refNode: *STR_SMT_RAZORBACK_DEFAULT
+    armor: LTT_GK_ARMOR
+
 armors:
   - &STR_SMT_SMOKEL                         # Smoke Launcher (No baseplate)
     type: STR_SMT_SMOKEL_ARMOR
@@ -113,7 +165,7 @@ armors:
     antiCamouflageAtDay: 5
     antiCamouflageAtDark: 5
     heatVision: 30 # vehicle standard
-    personalLight: 6
+    personalLight: 5
     frontArmor: 150
     sideArmor: 150
     rearArmor: 150
@@ -162,8 +214,7 @@ armors:
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
     heatVision: 30 # vehicle standard
-    personalLight: 6
-    corpseGeo:  STR_DREAD_CORPSE
+    personalLight: 5
     frontArmor: 150
     sideArmor: 150
     rearArmor: 150
@@ -252,6 +303,94 @@ armors:
     tags:
       SMT_RAZOR_HFLAME_TURRET: 1
 
+  - &STR_THUNDERHAWK_TURRET_ARMOR           # Thunderhawk Turret Base
+    type: RTT_ARMOR
+    spriteSheet: RTT.PCK
+    spriteInv: NOTDONEIMP
+    scripts:
+      selectUnitSprite:
+        var int temp;
+
+        unit.isCollapsing temp;
+
+        if eq temp 0;
+
+          unit.getDirection sprite_offset;
+          set sprite_index 0;
+
+          unit.isAiming temp;
+
+          if neq temp 0;
+
+            set sprite_index 8;
+
+          end;
+
+        end;
+
+        add sprite_index sprite_offset;
+
+        return sprite_index;
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # was 30
+    heatVision: 30 # vehicle
+    antiCamouflageAtDay: 5
+    antiCamouflageAtDark: 5
+    personalLight: 5
+    frontArmor: 150
+    sideArmor: 150
+    rearArmor: 150
+    underArmor: 150
+    movementType: 1 # flying - keep it from falling through the vehicle
+    allowsMoving: false
+    allowsKneeling: false
+    allowInv: false
+    zombiImmune: true
+    bleedImmune: true
+    fearImmune: true
+    painImmune: true
+    corpseBattle:
+      - STR_BLANK_CORPSE
+    damageModifier:
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.8 #FLAMES
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 0.0 #STUN
+      - 0.8 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 1.0 #IMPACT
+      - 1.0 #MELTA
+    loftempsSet: [ 4 ]
+    specialWeapon: STR_TURRET_RELOAD
+    tags:
+      INFECTION_RESIST: 100  # infection immune
+      INTIMIDATION_RESISTANCE: 100  # intimidation immune
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_IMPERIUM: 1
+
+  - type: LTT_ARMOR
+    refNode: *STR_THUNDERHAWK_TURRET_ARMOR
+    spriteSheet: LTT.PCK
+
+  - type: RTT_DW_ARMOR
+    refNode: *STR_THUNDERHAWK_TURRET_ARMOR
+    spriteSheet: RTTDW.PCK
+
+  - type: LTT_DW_ARMOR
+    refNode: *STR_THUNDERHAWK_TURRET_ARMOR
+    spriteSheet: LTTDW.PCK
+
+  - type: RTT_GK_ARMOR
+    refNode: *STR_THUNDERHAWK_TURRET_ARMOR
+    spriteSheet: RTTGK.PCK
+
+  - type: LTT_GK_ARMOR
+    refNode: *STR_THUNDERHAWK_TURRET_ARMOR
+    spriteSheet: LTTGK.PCK
 
 items:
   - &STR_TURRET_SPAWNER_BASE                # Turret Spawner Base
@@ -270,6 +409,22 @@ items:
     refNode: *STR_TURRET_SPAWNER_BASE
     spawnUnit: STR_SMT_SMOKEL_SPEEDER
 
+  - type: STR_LEFT_THUNDERHAWKDW_SPAWNER    # Thunderhawk DW Left
+    refNode: *STR_TURRET_SPAWNER_BASE
+    spawnUnit: STR_LTT_DW
+
+  - type: STR_RIGHT_THUNDERHAWKDW_SPAWNER   # Thunderhawk DW Right
+    refNode: *STR_TURRET_SPAWNER_BASE
+    spawnUnit: STR_RTT_DW
+
+  - type: STR_LEFT_THUNDERHAWKGK_SPAWNER    # Thunderhawk GK Left
+    refNode: *STR_TURRET_SPAWNER_BASE
+    spawnUnit: STR_LTT_GK
+
+  - type: STR_RIGHT_THUNDERHAWKGK_SPAWNER   # Thunderhawk GK Right
+    refNode: *STR_TURRET_SPAWNER_BASE
+    spawnUnit: STR_RTT_GK
+
   - type: STR_RAZORBACK_TURRET_SPAWNER      # Razorback Spawner
     refNode: *STR_TURRET_SPAWNER_BASE
     spawnUnitFaction: 2 # neutral unit replaced by allied custom turret - avoids 'death' message at game start
@@ -286,8 +441,10 @@ items:
     armor: 255
     fuseType: 0
     isExplodingInHands: true
-    bigSprite: 106
+    bigSprite: 99
     floorSprite: -1
+    invWidth: 0
+    invHeight: 0
     supportedInventorySections:
       - STR_GROUND #shouldn't be able to pick this up
     costPrime:
@@ -382,11 +539,21 @@ items:
     refNode: *STR_SMT_TURRET_GUN_DEFAULT
     ufopediaType: STR_HULL_LASCANNON
     bigSprite: {mod: 40k, index: 244}
-    bulletSprite: {mod: 40k, index: 12}
     bulletSpeed: 100
-    fireSound: {mod: 40k, index: 742}
     dropoff: 3
-    hitAnimation: {mod: 40k, index: 36}
+    hitSound: [{mod: 40k_ROSIGMA_edits, index: 3986}]
+    fireSound: [{mod: 40k_ROSIGMA_edits, index: 3984}]
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2230}
+    bulletSprite: {mod: 40k, index: 22}
+    vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 4}  # red laser
+    vaporDensitySurface: 6
+    vaporProbabilitySurface: 100
+    scripts:
+      vaporParticleAmmo: |
+        # noting
+        set particle_lifetime 1;
+        set subvoxel_drift 0;
+        return;
     power: 220
     damageType: 4
     damageAlter:
@@ -486,6 +653,7 @@ items:
     # autoShots: 10
 
 crafts:
+### SPACE MARINE CRAFT
   - type: STR_SKYRANGER                     # Droppods
     requires:
       - STR_NOT_PRIMARIS
@@ -505,6 +673,13 @@ crafts:
               - [2, 2, 0]
               - [5, 8, 0]
               - [2, 15, 0]
+              - [1, 1, 1]
+              - [5, 8, 1]
+              - [2, 15, 1]
+            STR_STORMBOLTER_TURRET_SPAWNER:
+              - [1, 14, 1]
+              - [4, 7, 1]
+              - [1, 1, 1]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -520,6 +695,7 @@ crafts:
               - [0, 0, 5]
           fuseTimers:
             STR_DROPPOD_DEPLOY_CHARGE: [1, 1]
+            STR_STORMBOLTER_TURRET_SPAWNER: [1, 1]
 
   - type: STR_DROPPODS                      # Firestorm Droppods
     requires:
@@ -541,6 +717,13 @@ crafts:
               - [2, 2, 0]
               - [5, 8, 0]
               - [2, 15, 0]
+              - [1, 1, 1]
+              - [5, 8, 1]
+              - [2, 15, 1]
+            STR_STORMBOLTER_TURRET_SPAWNER:
+              - [1, 14, 1]
+              - [4, 7, 1]
+              - [1, 1, 1]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -556,6 +739,7 @@ crafts:
               - [0, 0, 5]
           fuseTimers:
             STR_DROPPOD_DEPLOY_CHARGE: [1, 1]
+            STR_STORMBOLTER_TURRET_SPAWNER: [1, 1]
 
   - type: STR_DROP                          # Droppod
     requires:
@@ -574,6 +758,9 @@ crafts:
           items:
             STR_DROPPOD_DEPLOY_CHARGE:
               - [5, 8, 0]
+              - [5, 8, 1]
+            STR_STORMBOLTER_TURRET_SPAWNER:
+              - [4, 7, 1]
             STR_BOMBARD_SPAWNER: # 8 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -585,9 +772,10 @@ crafts:
               - [0, 0, 5]
           fuseTimers:
             STR_DROPPOD_DEPLOY_CHARGE: [1, 1]
+            STR_STORMBOLTER_TURRET_SPAWNER: [1, 1]
 
   - type: STR_STORMEAGLE                    # Stormeagle
-    soldiers: 15 #could fit more
+    soldiers: 16 #could fit more
     battlescapeTerrainData:
       name: STORMEAGLE
       mapDataSets:
@@ -599,6 +787,8 @@ crafts:
           width: 10
           length: 20
           items:
+            STR_BOMBARD_ROCKET_SPAWNER:
+              - [0, 0, 5]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -612,6 +802,8 @@ crafts:
               - [0, 0, 5]
               - [0, 0, 5]
               - [0, 0, 5]
+          fuseTimers:
+            STR_BOMBARD_ROCKET_SPAWNER: [0, 0]
     deployment:
       - [4, 11, 0, 0]
       - [5, 11, 0, 0]
@@ -628,8 +820,7 @@ crafts:
       - [4, 8, 1, 0]
       - [5, 8, 1, 0]
       - [4, 9, 1, 0]
-      - [4, 9, 1, 0]
-    spacecraft: true
+      - [5, 9, 1, 0]
 
   - type: STR_FIRESTORM                     # Stormraven
     battlescapeTerrainData:
@@ -661,11 +852,11 @@ crafts:
           fuseTimers:
             STR_STORMTURRET_SPAWNER: [0, 0]
 
-  - type: STR_THUNDERHAWNK                  # Thunderhawnk Type 1
+  - type: STR_THUNDERHAWNK                  # Thunderhawk
     requires:
       - STR_NEW_FIGHTER_TRANSPORTER
       - STR_THUNDERHAWKTYPE1
-    soldiers: 16
+    soldiers: 20
     pilots: 4
     battlescapeTerrainData:
       name: THUNDERHAWK2
@@ -674,7 +865,7 @@ crafts:
         - THUNDERHAWK
         - SMTBOMBARD
       mapBlocks:
-        - name: THUNDERHAWK2
+        - name: THUNDERHAWK2 # map version with gun slots
           width: 10
           length: 20
           items:
@@ -684,7 +875,7 @@ crafts:
               - [3, 12, 1]
             STR_RIGHT_THUNDERHAWK_SPAWNER:
               - [6, 12, 1]
-            STR_BOMBARD_THUNDERHAWK_SPAWNER:
+            STR_BOMBARD_CANNON_SPAWNER:
               - [0, 0, 5]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
@@ -703,7 +894,7 @@ crafts:
             STR_LEFT_THUNDERHAWK_SPAWNER: [0, 0]
             STR_RIGHT_THUNDERHAWK_SPAWNER: [0, 0]
             STR_THUNDERHAWK_DEPLOY_CHARGE: [1, 1]
-            STR_BOMBARD_THUNDERHAWK_SPAWNER: [0, 0]
+            STR_BOMBARD_CANNON_SPAWNER: [0, 0]
     deployment:
       - [4, 13, 1, 4]
       - [5, 13, 1, 4]
@@ -730,14 +921,14 @@ crafts:
   - type: STR_AVENGER                       # Thunderhawk Transport (Tactical)
     soldiers: 20
     battlescapeTerrainData:
-      name: RHINO
+      name: RHINOASS
       mapDataSets:
         - BLANKS
         - THUNDERHAWKTEX
         - RHINO
         - SMTBOMBARD
       mapBlocks:
-        - name: RHINO
+        - name: RHINOASS
           width: 10
           length: 20
           items:
@@ -745,6 +936,9 @@ crafts:
               - [5, 9, 3]
             STR_THUNDER_CHARGE2:
               - [4, 2, 3]
+            STR_RAZORBACK_TURRET_SPAWNER:
+              - [6, 11, 1]
+              - [6, 3, 1]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -761,16 +955,17 @@ crafts:
           fuseTimers:
             STR_THUNDER_CHARGE: [1, 1]
             STR_THUNDER_CHARGE2: [1, 1]
+            STR_RAZORBACK_TURRET_SPAWNER: [0, 0]
     deployment:
+      - [6, 13, 0, 0] #razor 1
+      - [7, 13, 0, 0]
       - [6, 12, 0, 0]
       - [7, 12, 0, 0]
       - [6, 11, 0, 0]
       - [7, 11, 0, 0]
       - [6, 10, 0, 0]
       - [7, 10, 0, 0]
-      - [6, 9, 0, 0]
-      - [7, 9, 0, 0]
-      - [3, 5, 0, 0]
+      - [3, 5, 0, 0] #razor 2
       - [4, 5, 0, 0]
       - [3, 4, 0, 0]
       - [4, 4, 0, 0]
@@ -778,7 +973,7 @@ crafts:
       - [4, 3, 0, 0]
       - [3, 2, 0, 0]
       - [4, 2, 0, 0]
-      - [4, 15, 2, 4]
+      - [4, 15, 2, 4] #thunderhawk
       - [5, 15, 2, 4]
       - [4, 14, 2, 4]
       - [5, 14, 2, 4]
@@ -1048,7 +1243,9 @@ crafts:
     fuelMax: 1500 # was 1200
     refuelRate: 250 # was 200
     repairRate: 10 # was 1
-    
+
+
+### PRIMARIS CRAFT
   - type: STR_IMPULSOR                      # Primaris Impulsor
     requires:
       - STR_PRIMARIS
@@ -1102,6 +1299,10 @@ crafts:
       - [5, 8, 1, 0]
       - [4, 9, 1, 0]
       - [5, 9, 1, 0]
+
+  - type: STR_IMPULSORS                     # Primaris Impulsor (Shielded)
+    requires:
+      - STR_GENERALLOCK # disabled
 
   - type: STR_REPULSOR_T                    # Primaris Repulsor Transport
     costRent: 600000          #TIER II
@@ -1229,6 +1430,136 @@ crafts:
       - [4, 12, 0, 0] #Impulsor end
     craftInventoryTile: [4, 5, 1] #center back tile of repulsor ( was in front row)
 
+
+### DEATHWATCH CRAFT
+  - type: STR_VALKYRIE_INQ                  # Inqusition Valkyrie Variant
+    battlescapeTerrainData:
+      name: VALKINQ
+      mapDataSets:
+        - BLANKS
+        - VHINQ
+        - SMTBOMBARD
+      mapBlocks:
+        - name: VALK
+          width: 10
+          length: 20
+          items:
+            STR_VALK_CANNON_SPAWNER:
+              - [4, 15, 0]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_VALK_CANNON_SPAWNER: [0, 0]
+
+  - type: STR_CORVUS                        # Corvus Blackstar
+    battlescapeTerrainData:
+      name: CORVUS
+      mapDataSets:
+        - BLANKS
+        - CORVUS
+        - SMTBOMBARD
+      mapBlocks:
+        - name: CORVUS
+          width: 10
+          length: 20
+          items:
+            STR_SKULL_SPAWNER:
+              - [1, 5, 0]
+              - [7, 5, 0]
+            STR_CORVUS_LEFT_ASSC_SPAWNER:
+              - [4, 12, 0]
+            STR_CORVUS_RIGHT_ASSC_SPAWNER:
+              - [5, 12, 0]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_SKULL_SPAWNER: [0, 0]
+            STR_CORVUS_LEFT_ASSC_SPAWNER: [0, 0]
+            STR_CORVUS_RIGHT_ASSC_SPAWNER: [0, 0]
+
+  - type: STR_DW_THUNDERHAWNK               # Thunderhawk (Deathwatch)
+    soldiers: 20
+    battlescapeTerrainData:
+      name: THUNDERHAWK2
+      mapDataSets:
+        - BLANKS
+        - THUNDERHAWKDW
+        - SMTBOMBARD
+      mapBlocks:
+        - name: THUNDERHAWK2
+          width: 10
+          length: 20
+          items:
+            STR_THUNDERHAWK_DEPLOY_CHARGE:
+              - [5, 13, 0]
+            STR_LEFT_THUNDERHAWKDW_SPAWNER:
+              - [3, 12, 1]
+            STR_RIGHT_THUNDERHAWKDW_SPAWNER:
+              - [6, 12, 1]
+            STR_BOMBARD_CANNON_SPAWNER:
+              - [0, 0, 5]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_THUNDERHAWK_DEPLOY_CHARGE: [1, 1]
+            STR_LEFT_THUNDERHAWKDW_SPAWNER: [0, 0]
+            STR_RIGHT_THUNDERHAWKDW_SPAWNER: [0, 0]
+            STR_BOMBARD_CANNON_SPAWNER: [0, 0]
+    deployment:
+      - [4, 13, 1, 4]
+      - [5, 13, 1, 4]
+      - [4, 12, 1, 4]
+      - [5, 12, 1, 4]
+      - [4, 11, 1, 4]
+      - [5, 11, 1, 4]
+      - [4, 10, 1, 4]
+      - [5, 10, 1, 4]
+      - [4, 9, 1, 4]
+      - [5, 9, 1, 4]
+      - [4, 8, 1, 4]
+      - [5, 8, 1, 4]
+      - [4, 7, 1, 4]
+      - [5, 7, 1, 4]
+      - [4, 6, 1, 4]
+      - [5, 6, 1, 4]
+      - [4, 5, 2, 4]
+      - [5, 5, 2, 4]
+      - [4, 4, 2, 4]
+      - [5, 4, 2, 4]
+
   - type: STR_REPULSOR_T_DW                 # Deathwatch Repulsor Transport
     fuelMax: 2000
     damageMax: 2000
@@ -1346,18 +1677,1207 @@ crafts:
       - [4, 12, 0, 0] #Impulsor end
     craftInventoryTile: [4, 5, 1] #center back tile of repulsor ( was in front row)
 
+  - type: STR_STORMRAVEN_ADEPTAS            # DW/SoB Stormraven
+    battlescapeTerrainData:
+      name: STORMRAVEN
+      mapDataSets:
+        - BLANKS
+        - 0A0STORMRAVEN
+        - SMTBOMBARD
+      mapBlocks:
+        - name: STORMRAVEN
+          width: 10
+          length: 20
+          items:
+            STR_STORMTURRET_ADEPTAS_SPAWNER:
+              - [4, 6, 2]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_STORMTURRET_ADEPTAS_SPAWNER: [0, 0]
 
+  - type: STR_STORMEAGLE_ADEPTAS            # DW/SoB StormEagle
+    soldiers: 16 #could fit more
+    battlescapeTerrainData:
+      name: STORMEAGLE
+      mapDataSets:
+        - BLANKS
+        - 0A0STORMEAGLE
+        - SMTBOMBARD
+      mapBlocks:
+        - name: STORMEAGLE
+          width: 10
+          length: 20
+          items:
+            STR_BOMBARD_ROCKET_SPAWNER:
+              - [0, 0, 5]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_BOMBARD_ROCKET_SPAWNER: [0, 0]
+    deployment:
+      - [4, 11, 0, 0]
+      - [5, 11, 0, 0]
+      - [4, 10, 0, 0]
+      - [5, 10, 0, 0]
+      - [4, 9, 0, 0]
+      - [4, 8, 0, 0]
+      - [4, 7, 0, 0]
+      - [4, 6, 0, 0]
+      - [4, 5, 0, 0]
+      - [4, 4, 0, 0]
+      - [4, 7, 1, 0]
+      - [5, 7, 1, 0]
+      - [4, 8, 1, 0]
+      - [5, 8, 1, 0]
+      - [4, 9, 1, 0]
+      - [5, 9, 1, 0]
 
+### GK CRAFT
+  - type: STR_THUNDERHAWNK_GK               # Thunderhawk (Grey Knight)
+    soldiers: 20
+    battlescapeTerrainData:
+      name: THUNDERHAWK
+      mapDataSets:
+        - BLANKS
+        - THUNDERHAWKGK
+        - SMTBOMBARD
+      mapBlocks:
+        - name: THUNDERHAWK2 # map version with gun slots
+          width: 10
+          length: 20
+          items:
+            STR_THUNDERHAWK_DEPLOY_CHARGE:
+              - [5, 13, 0]
+            STR_LEFT_THUNDERHAWKGK_SPAWNER:
+              - [3, 12, 1]
+            STR_RIGHT_THUNDERHAWKGK_SPAWNER:
+              - [6, 12, 1]
+            STR_BOMBARD_CANNON_SPAWNER:
+              - [0, 0, 5]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_LEFT_THUNDERHAWKGK_SPAWNER: [0, 0]
+            STR_RIGHT_THUNDERHAWKGK_SPAWNER: [0, 0]
+            STR_THUNDERHAWK_DEPLOY_CHARGE: [1, 1]
+            STR_BOMBARD_CANNON_SPAWNER: [0, 0]
+    deployment:
+      - [4, 13, 1, 4]
+      - [5, 13, 1, 4]
+      - [4, 12, 1, 4]
+      - [5, 12, 1, 4]
+      - [4, 11, 1, 4]
+      - [5, 11, 1, 4]
+      - [4, 10, 1, 4]
+      - [5, 10, 1, 4]
+      - [4, 9, 1, 4]
+      - [5, 9, 1, 4]
+      - [4, 8, 1, 4]
+      - [5, 8, 1, 4]
+      - [4, 7, 1, 4]
+      - [5, 7, 1, 4]
+      - [4, 6, 1, 4]
+      - [5, 6, 1, 4]
+      - [4, 5, 2, 4]
+      - [5, 5, 2, 4]
+      - [4, 4, 2, 4]
+      - [5, 4, 2, 4]
 
-STORMHAWK.MCD
-STORMRAVEN.MCD
-THUNDERHAWK.MCD
+  - type: STR_ARVUS_GK                      # Arvus (Grey Knight)
+    battlescapeTerrainData:
+      name: ARVUSGK
+      mapDataSets:
+        - BLANKS
+        - ARVUSGK
+        - SMTBOMBARD
+      mapBlocks:
+        - name: ARVUSGK
+          width: 10
+          length: 20
 
-terrains: # Handle P2 First Company
-  - name: ARMYUFO
+  - type: STR_STORMRAVEN_GK                 # GK Stormraven
+    battlescapeTerrainData:
+      name: STORMRAVENGK
+      mapDataSets:
+        - BLANKS
+        - 0W0STORMRAVEN
+        - SMTBOMBARD
+      mapBlocks:
+        - name: STORMRAVEN
+          width: 10
+          length: 20
+          items:
+            STR_STORMTURRET_GK_SPAWNER:
+              - [4, 9, 2]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_STORMTURRET_GK_SPAWNER: [0, 0]
+
+  - type: STR_STORMEAGLE_GK                 # GK Stormeagle
+    soldiers: 16 #could fit more
+    battlescapeTerrainData:
+      name: STORMEAGLEGK
+      mapDataSets:
+        - BLANKS
+        - 0W0STORMEAGLE
+        - SMTBOMBARD
+      mapBlocks:
+        - name: STORMEAGLE
+          width: 10
+          length: 20
+          items:
+            STR_BOMBARD_ROCKET_SPAWNER:
+              - [0, 0, 5]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_BOMBARD_ROCKET_SPAWNER: [0, 0]
+    deployment:
+      - [4, 11, 0, 0]
+      - [5, 11, 0, 0]
+      - [4, 10, 0, 0]
+      - [5, 10, 0, 0]
+      - [4, 9, 0, 0]
+      - [4, 8, 0, 0]
+      - [4, 7, 0, 0]
+      - [4, 6, 0, 0]
+      - [4, 5, 0, 0]
+      - [4, 4, 0, 0]
+      - [4, 7, 1, 0]
+      - [5, 7, 1, 0]
+      - [4, 8, 1, 0]
+      - [5, 8, 1, 0]
+      - [4, 9, 1, 0]
+      - [5, 9, 1, 0]
+
+### IG CRAFT
+  - type: STR_VALKYRIE                      # Valkyrie
+    battlescapeTerrainData:
+      name: VALK
+      mapDataSets:
+        - BLANKS
+        - VH
+        - SMTBOMBARD
+      mapBlocks:
+        - name: VALK
+          width: 10
+          length: 20
+          items:
+            STR_VALK_CANNON_SPAWNER:
+              - [4, 15, 0]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_VALK_CANNON_SPAWNER: [0, 0]
+
+  - type: STR_TAUROS                        # Drop Tauros
+    battlescapeTerrainData:
+      name: TAUROS_DROP_PLUS_FOUR
+      mapDataSets:
+        - BLANKS
+        - TAUROS_036
+        - GUARD_GRAV_DROP
+        - VH_SINGLETURN
+        - SMTBOMBARD
+      mapBlocks:
+        - name: TAUROS_DROP_PLUS_FOUR
+          width: 10
+          length: 20
+          height: 8
+          items:
+            STR_TAUROS_DEPLOY_CHARGE:
+              - [6, 6, 0]
+              - [2, 14, 0]
+            STR_GRAVDROP_DEPLOY_CHARGE:
+              - [2, 2, 6]
+              - [7, 3, 6]
+              - [1, 5, 6]
+              - [3, 6, 6]
+              - [6, 6, 6]
+              - [7, 6, 6]
+              - [2, 9, 6]
+              - [7, 9, 6]
+              - [5, 11, 6]
+              - [8, 13, 6]
+              - [2, 14, 6]
+              - [3, 14, 6]
+              - [6, 15, 6]
+              - [1, 17, 6]
+              - [4, 17, 6]
+              - [8, 17, 6]
+            STR_CAS_MISSILE_POD_SPAWNER:
+              - [1, 10, 4]
+              - [7, 10, 4]
+            STR_CAS_CANNON_SPAWNER:
+              - [4, 14, 4]
+            STR_CAS_LEAVE_CHARGE:
+              - [4, 7, 4]
+            STR_TAUROS_SMALL_TURRET_SPAWNER:
+              - [2, 13, 0]
+            STR_TAUROS_TURRET_SPAWNER:
+              - [6, 4, 0]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_TAUROS_SMALL_TURRET_SPAWNER: [1, 1]
+            STR_TAUROS_TURRET_SPAWNER: [1, 1]
+            STR_TAUROS_DEPLOY_CHARGE: [1, 1]
+            STR_CAS_LEAVE_CHARGE: [1, 1]
+            STR_GRAVDROP_DEPLOY_CHARGE: [1, 1]
+            STR_CAS_MISSILE_POD_SPAWNER: [0, 0]
+            STR_CAS_CANNON_SPAWNER: [0, 0]
+
+  - type: STR_VALKYRIE_GRAV_DROP            # Drop Valk
+    battlescapeTerrainData:
+      name: GUARD_GRAV_DROP_HWP
+      mapDataSets:
+        - BLANKS
+        - GUARD_GRAV_DROP
+        - VH_SINGLETURN
+        - 02SHIPFLOOR
+        - 02SHIPWALL
+        - 02SHIPDOOR
+        - SMTBOMBARD
+      mapBlocks:
+        - name: GUARD_GRAV_DROP_HWP
+          revealedFloors: [5, 6]
+          width: 10
+          length: 20
+          height: 8
+          items:
+            STR_CAS_AIRSTRIKE_DESIGNATOR_2:
+              - [1, 1, 0]
+            STR_GRAVDROP_DEPLOY_CHARGE:
+              - [1, 1, 6]
+              - [5, 2, 6]
+              - [8, 3, 6]
+              - [3, 4, 6]
+              - [6, 5, 6]
+              - [4, 6, 6]
+              - [2, 7, 6]
+              - [7, 8, 6]
+              - [1, 9, 6]
+              - [4, 9, 6]
+              - [8, 10, 6]
+              - [2, 12, 6]
+              - [6, 12, 6]
+              - [4, 13, 6]
+              - [1, 14, 6]
+              - [7, 14, 6]
+              - [4, 15, 6]
+              - [8, 16, 6]
+              - [3, 17, 6]
+              - [6, 17, 6]
+              - [4, 11, 6] # this is for the CAS Strike Unit
+            STR_CAS_MISSILE_POD_SPAWNER:
+              - [1, 10, 4]
+              - [7, 10, 4]
+            STR_CAS_CANNON_SPAWNER:
+              - [4, 14, 4]
+            STR_CAS_DROP_VALKYRIE_STRIKE_SPAWNER: # CAS Strike Unit
+              - [4, 11, 6]
+            STR_CAS_LEAVE_CHARGE:
+              - [4, 7, 4]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 19, 5] # Bombard Platform
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+          fuseTimers:
+            STR_CAS_LEAVE_CHARGE: [1, 1]
+            STR_GRAVDROP_DEPLOY_CHARGE: [1, 1]
+            STR_CAS_DROP_VALKYRIE_STRIKE_SPAWNER: [1, 1]
+            STR_CAS_MISSILE_POD_SPAWNER: [0, 0]
+            STR_CAS_CANNON_SPAWNER: [0, 0]
+
+  - type: STR_CHIMERA                       # Chimera
+    battlescapeTerrainData:
+      name: CHIMERA
+      mapDataSets:
+        - BLANKS
+        - CHIMERA
+        - HIDRA
+        - LEMON
+        - REPULSOR
+        - SMTBOMBARD
+      mapBlocks:
+        - name: CHIMERA_SMALL_NON_HYDRA  # CHIMERA
+          width: 10
+          length: 20
+          items:
+            STR_CHIMERA_COMMAND_TURRET_SPAWNER:
+              - [1, 4, 1]
+              - [7, 9, 1]
+              - [2, 16, 1]
+            STR_CHIMERA_HULL_SPAWNER:
+              - [8, 11, 0]
+              - [2, 6, 0]
+              - [3, 18, 0]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_CHIMERA_COMMAND_TURRET_SPAWNER: [0, 0]
+            STR_CHIMERA_HULL_SPAWNER: [0, 0]
+
+  - type: STR_CHIMERASL                     # Chimera (Steel Legion)
+    battlescapeTerrainData:
+      name: CHIMERA
+      mapDataSets:
+        - BLANKS
+        - CHIMERASL
+        - HIDRA
+        - LEMONSL
+        - REPULSOR
+        - SMTBOMBARD
+      mapBlocks:
+        - name: CHIMERA_SMALL_NON_HYDRA  # CHIMERA
+          width: 10
+          length: 20
+          items:
+            STR_CHIMERASL_COMMAND_TURRET_SPAWNER:
+              - [1, 4, 1]
+              - [7, 9, 1]
+              - [2, 16, 1]
+            STR_CHIMERASL_HULL_SPAWNER:
+              - [8, 11, 0]
+              - [2, 6, 0]
+              - [3, 18, 0]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_CHIMERASL_COMMAND_TURRET_SPAWNER: [0, 0]
+            STR_CHIMERASL_HULL_SPAWNER: [0, 0]
+
+  - type: STR_CASSIUM                       # Crassus
+    battlescapeTerrainData:
+      name: CASSIUM
+      mapDataSets:
+        - BLANKS
+        - CASSIUM
+        - SMTBOMBARD
+      mapBlocks:
+        - name: CASSIUM
+          width: 10
+          length: 20
+          items:
+            STR_CASSIUM_BOLTER_LEFT1_SPAWNER:
+              - [1, 14, 1]
+            STR_CASSIUM_BOLTER_LEFT2_SPAWNER:
+              - [3, 17, 1]
+            STR_CASSIUM_BOLTER_RIGHT1_SPAWNER:
+              - [8, 14, 1]
+            STR_CASSIUM_BOLTER_RIGHT2_SPAWNER:
+              - [6, 17, 1]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_CASSIUM_BOLTER_LEFT1_SPAWNER: [0, 0]
+            STR_CASSIUM_BOLTER_LEFT2_SPAWNER: [0, 0]
+            STR_CASSIUM_BOLTER_RIGHT1_SPAWNER: [0, 0]
+            STR_CASSIUM_BOLTER_RIGHT2_SPAWNER: [0, 0]
+
+  - type: STR_CASSIUMSL                     # Crassus (Steel Legion)
+    battlescapeTerrainData:
+      name: CASSIUM
+      mapDataSets:
+        - BLANKS
+        - CASSIUM_SL
+        - SMTBOMBARD
+      mapBlocks:
+        - name: CASSIUM
+          width: 10
+          length: 20
+          items:
+            STR_CASSIUM_BOLTER_LEFT1_SPAWNER:
+              - [1, 14, 1]
+            STR_CASSIUM_BOLTER_LEFT2_SPAWNER:
+              - [3, 17, 1]
+            STR_CASSIUM_BOLTER_RIGHT1_SPAWNER:
+              - [8, 14, 1]
+            STR_CASSIUM_BOLTER_RIGHT2_SPAWNER:
+              - [6, 17, 1]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_CASSIUM_BOLTER_LEFT1_SPAWNER: [0, 0]
+            STR_CASSIUM_BOLTER_LEFT2_SPAWNER: [0, 0]
+            STR_CASSIUM_BOLTER_RIGHT1_SPAWNER: [0, 0]
+            STR_CASSIUM_BOLTER_RIGHT2_SPAWNER: [0, 0]
+
+  - type: STR_PREATOR                       # Preator
+    battlescapeTerrainData:
+      name: CASSIUMBOMB
+      mapDataSets:
+        - BLANKS
+        - CASSIUMBOMB
+        - CASSIUMTURRET
+        - SMTBOMBARD
+      mapBlocks:
+        - name: CASSIUMBOMB
+          width: 10
+          length: 20
+          items:
+            STR_CASSIUM_BOLTER_LEFT2_SPAWNER:
+              - [3, 17, 1]
+            STR_CASSIUM_BOLTER_RIGHT2_SPAWNER:
+              - [6, 17, 1]
+            STR_BOMBARD_ROCKET_SPAWNER:
+              - [0, 0, 5]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_CASSIUM_BOLTER_LEFT2_SPAWNER: [0, 0]
+            STR_CASSIUM_BOLTER_RIGHT2_SPAWNER: [0, 0]
+            STR_BOMBARD_ROCKET_SPAWNER: [0, 0]
+
+  - type: STR_TAUROX                        # Tauros
+    battlescapeTerrainData:
+      name: TAUROX
+      mapDataSets:
+        - BLANKS
+        - TAUROX
+        - SMTBOMBARD
+      mapBlocks:
+        - name: TAUROX
+          width: 10
+          length: 20
+          items:
+            STR_TAUROX_TURRET_SPAWNER:
+              - [6, 5, 2]
+              - [4, 15, 2]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_TAUROX_TURRET_SPAWNER: [0, 0]
+
+  - type: STR_GORGON                        # Gorgon
+    battlescapeTerrainData:
+      name: GORGON
+      mapDataSets:
+        - BLANKS
+        - GORGON_40k
+        - SMTBOMBARD
+      mapBlocks:
+        - name: GORGON
+          width: 10
+          length: 20
+          items:
+            STR_GORGON_HEAVY_FLAMER_FRONT_LEFT_SPAWNER:
+              - [8, 13, 1]
+            STR_GORGON_HEAVY_FLAMER_BACK_LEFT_SPAWNER:
+              - [8, 10, 1]
+            STR_GORGON_HEAVY_FLAMER_FRONT_RIGHT_SPAWNER:
+              - [0, 13, 1]
+            STR_GORGON_HEAVY_FLAMER_BACK_RIGHT_SPAWNER:
+              - [0, 10, 1]
+            STR_GORGON_HEAVY_STUBBER_LEFT_SPAWNER:
+              - [6, 6, 2]
+            STR_GORGON_HEAVY_STUBBER_RIGHT_SPAWNER:
+              - [2, 6, 2]
+            STR_BOMBARD_SPAWNER: # 16 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_GORGON_HEAVY_FLAMER_FRONT_LEFT_SPAWNER: [0, 0]
+            STR_GORGON_HEAVY_FLAMER_BACK_LEFT_SPAWNER: [0, 0]
+            STR_GORGON_HEAVY_FLAMER_FRONT_RIGHT_SPAWNER: [0, 0]
+            STR_GORGON_HEAVY_FLAMER_BACK_RIGHT_SPAWNER: [0, 0]
+            STR_GORGON_HEAVY_STUBBER_LEFT_SPAWNER: [0, 0]
+            STR_GORGON_HEAVY_STUBBER_RIGHT_SPAWNER: [0, 0]
+
+  - type: STR_GORGONSL                      # Gorgon (Steel Legion)
+    battlescapeTerrainData:
+      name: GORGON
+      mapDataSets:
+        - BLANKS
+        - GORGONSL
+        - SMTBOMBARD
+      mapBlocks:
+        - name: GORGON
+          width: 10
+          length: 20
+          items:
+            STR_GORGONSL_HEAVY_FLAMER_FRONT_LEFT_SPAWNER:
+              - [8, 13, 1]
+            STR_GORGONSL_HEAVY_FLAMER_BACK_LEFT_SPAWNER:
+              - [8, 10, 1]
+            STR_GORGONSL_HEAVY_FLAMER_FRONT_RIGHT_SPAWNER:
+              - [0, 13, 1]
+            STR_GORGONSL_HEAVY_FLAMER_BACK_RIGHT_SPAWNER:
+              - [0, 10, 1]
+            STR_GORGONSL_HEAVY_STUBBER_LEFT_SPAWNER:
+              - [6, 6, 2]
+            STR_GORGONSL_HEAVY_STUBBER_RIGHT_SPAWNER:
+              - [2, 6, 2]
+            STR_BOMBARD_SPAWNER: # 16 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_GORGONSL_HEAVY_FLAMER_FRONT_LEFT_SPAWNER: [0, 0]
+            STR_GORGONSL_HEAVY_FLAMER_BACK_LEFT_SPAWNER: [0, 0]
+            STR_GORGONSL_HEAVY_FLAMER_FRONT_RIGHT_SPAWNER: [0, 0]
+            STR_GORGONSL_HEAVY_FLAMER_BACK_RIGHT_SPAWNER: [0, 0]
+            STR_GORGONSL_HEAVY_STUBBER_LEFT_SPAWNER: [0, 0]
+            STR_GORGONSL_HEAVY_STUBBER_RIGHT_SPAWNER: [0, 0]
+
+  - type: STR_ARMOR_COLUMN                  # Leman Russ
+    battlescapeTerrainData:
+      name: CHIMERA
+      mapDataSets:
+        - BLANKS
+        - CHIMERA
+        - HIDRA
+        - LEMON
+        - REPULSOR
+        - SMTBOMBARD
+      mapBlocks:
+        - name: CHIMERA_LEMAN_NON_HYDRA
+          width: 10
+          length: 20
+          items:
+            STR_CHIMERA_COMMAND_TURRET_SPAWNER:
+              - [1, 4, 1]
+            STR_CHIMEDON_SPAWNER:
+              - [7, 9, 1]
+            STR_LEMONRUSS_SPAWNER:
+              - [2, 16, 1]
+            STR_LEMONRUSS_SPONSON_SPAWNER:
+              - [0, 16, 0]
+              - [5, 16, 0]
+            STR_LEMONRUSS_HULL_SPAWNER:
+              - [3, 18, 0]
+            STR_CHIMERA_HULL_SPAWNER:
+              - [8, 11, 0]
+              - [2, 6, 0]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_CHIMERA_COMMAND_TURRET_SPAWNER: [0, 0]
+            STR_CHIMEDON_SPAWNER: [0, 0]
+            STR_LEMONRUSS_SPAWNER: [0, 0]
+            STR_LEMONRUSS_SPONSON_SPAWNER: [0, 0]
+            STR_LEMONRUSS_HULL_SPAWNER: [0, 0]
+            STR_CHIMERA_HULL_SPAWNER: [0, 0]
+
+  - type: STR_ARMOR_COLUMNSL_NORIDERS       # Leman Russ (Steel Legion)
+    battlescapeTerrainData:
+      name: CHIMERA
+      mapDataSets:
+        - BLANKS
+        - CHIMERASL
+        - HIDRA
+        - LEMONSL
+        - REPULSOR
+        - SMTBOMBARD
+      mapBlocks:
+        - name: CHIMERA_LEMAN_NON_HYDRA  # advanced turrets
+          width: 10
+          length: 20
+          items:
+            STR_CHIMERASL_COMMAND_TURRET_SPAWNER:
+              - [1, 4, 1]
+              - [7, 9, 1]
+            STR_LEMANSL_COMMAND_TURRET_SPAWNER:
+              - [2, 16, 1]
+            STR_LEMANSL_SPONSON_SPAWNER:
+              - [0, 16, 0]
+              - [5, 16, 0]
+            STR_LEMANSL_HULL_SPAWNER:
+              - [3, 18, 0]
+            STR_CHIMERASL_HULL_SPAWNER:
+              - [8, 11, 0]
+              - [2, 6, 0]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_CHIMERASL_COMMAND_TURRET_SPAWNER: [0, 0]
+            STR_LEMANSL_COMMAND_TURRET_SPAWNER: [0, 0]
+            STR_LEMANSL_SPONSON_SPAWNER: [0, 0]
+            STR_LEMANSL_HULL_SPAWNER: [0, 0]
+            STR_CHIMERASL_HULL_SPAWNER: [0, 0]
+
+  - type: STR_ARMOR_COLUMNSL                # Leman Russ (Steel Legion)
+    battlescapeTerrainData:
+      name: CHIMERA
+      mapDataSets:
+        - BLANKS
+        - CHIMERASL
+        - HIDRA
+        - LEMONSL
+        - REPULSOR
+        - SMTBOMBARD
+      mapBlocks:
+        - name: CHIMERA_LEMAN_NON_HYDRA  # advanced turrets
+          width: 10
+          length: 20
+          items:
+            STR_CHIMERASL_COMMAND_TURRET_SPAWNER:
+              - [1, 4, 1]
+              - [7, 9, 1]
+            STR_LEMANSL_COMMAND_TURRET_SPAWNER:
+              - [2, 16, 1]
+            STR_LEMANSL_SPONSON_SPAWNER:
+              - [0, 16, 0]
+              - [5, 16, 0]
+            STR_LEMANSL_HULL_SPAWNER:
+              - [3, 18, 0]
+            STR_CHIMERASL_HULL_SPAWNER:
+              - [8, 11, 0]
+              - [2, 6, 0]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_CHIMERASL_COMMAND_TURRET_SPAWNER: [0, 0]
+            STR_LEMANSL_COMMAND_TURRET_SPAWNER: [0, 0]
+            STR_LEMANSL_SPONSON_SPAWNER: [0, 0]
+            STR_LEMANSL_HULL_SPAWNER: [0, 0]
+            STR_CHIMERASL_HULL_SPAWNER: [0, 0]
+
+  - type: STR_BANEBLADE                     # Baneblade
+    battlescapeTerrainData:
+      name: BANEBLADE
+      mapDataSets:
+        - BLANKS
+        - BANEBLADE
+        - BANEBLADEI
+        - SMTBOMBARD
+      mapBlocks:
+        - name: BANEBLADE
+          width: 10
+          length: 20
+          items:
+            STR_4X4_TURRET_SPAWNER:
+              - [3, 9, 2] #[5, 6, 1]
+            STR_4X4_SURROUND_SPAWNER:
+              - [2, 8, 2]
+              - [3, 8, 2]
+              - [4, 8, 2]
+              - [5, 8, 2]
+              - [2, 9, 2]
+              - [5, 9, 2]
+              - [2, 10, 2]
+              - [5, 10, 2]
+              - [2, 11, 2]
+              - [3, 11, 2]
+              - [4, 11, 2]
+              - [5, 11, 2]
+            STR_BANE_LAS_TURRET_SPAWNER:
+              - [0, 10, 2]
+              - [7, 10, 2]
+            STR_BANE_BOLTER_TURRET_SPAWNER:
+              - [3, 12, 1]
+            STR_BANEBLADE_BOLTER_LEFT_SPAWNER:
+              - [0, 11, 1]
+            STR_BANEBLADE_BOLTER_RIGHT_SPAWNER:
+              - [8, 11, 1]
+            STR_BOMBARD_SPAWNER: # 16 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_4X4_TURRET_SPAWNER: [0, 0]
+            STR_4X4_SURROUND_SPAWNER: [0, 0]
+            STR_BANE_LAS_TURRET_SPAWNER: [0, 0]
+            STR_BANE_BOLTER_TURRET_SPAWNER: [0, 0]
+            STR_BANEBLADE_BOLTER_LEFT_SPAWNER: [0, 0]
+            STR_BANEBLADE_BOLTER_RIGHT_SPAWNER: [0, 0]
+### SOB CRAFT
+  - type: STR_DROPPODS_ADEPTAS              # Droppods
+    battlescapeTerrainData:
+      name: DROPPOD_ADEPTAS
+      mapDataSets:
+        - BLANKS
+        - DROPPOD_ADEPTAS
+        - SMTBOMBARD
+      mapBlocks:
+        - name: DROPPOD_ADEPTAS
+          width: 10
+          length: 20
+          items:
+            STR_DROPPOD_DEPLOY_CHARGE:
+              - [2, 2, 0]
+              - [5, 8, 0]
+              - [2, 15, 0]
+              - [1, 1, 1]
+              - [5, 8, 1]
+              - [2, 15, 1]
+            STR_STORMBOLTER_TURRET_SPAWNER:
+              - [1, 14, 1]
+              - [4, 7, 1]
+              - [1, 1, 1]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_DROPPOD_DEPLOY_CHARGE: [1, 1]
+            STR_STORMBOLTER_TURRET_SPAWNER: [1, 1]
+
+  - type: STR_ADEPTAS_RHINO_CRAFT           # Rhinos SoB
+    battlescapeTerrainData:
+      name: LANDRAIDER
+      mapDataSets:
+        - BLANKS
+        - ADEPTASRHINOCONVOY
+        - SMTBOMBARD
+      mapBlocks:
+        - name: ADEPTASRHINOCONVOY
+          width: 10
+          length: 20
+          items:
+            STR_IMMOLATOR_SPAWNER:
+              - [1, 12, 1]
+              - [6, 15, 1]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_IMMOLATOR_SPAWNER: [0, 0]
+
+  - type: STR_LANDRAIDER                    # Sister Final
+    battlescapeTerrainData:
+      name: LANDRAIDER
+      mapDataSets:
+        - BLANKS
+        - LANDRAIDER
+        - SMTBOMBARD
+      mapBlocks:
+        - name: LANDRAIDER
+          width: 10
+          length: 20
+          items:
+            STR_IMMOLATOR_SPAWNER:
+              - [1, 15, 1]
+            STR_EXORCIST_SPAWNER:
+              - [7, 7, 1]
+            STR_CASTIGATOR_AC_SPAWNER:
+              - [7, 15, 1]
+            STR_BOMBARD_SPAWNER: # 16 strikes
+              - [0, 19, 5] # Bombard Platform
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+          fuseTimers:
+            STR_IMMOLATOR_SPAWNER: [0, 0]
+            STR_CASTIGATOR_AC_SPAWNER: [0, 0]
+            STR_EXORCIST_SPAWNER: [0, 0]
+
+  - type: STR_ARVUS_ADEPTAS                 # Arvus SoB
+    battlescapeTerrainData:
+      name: ARVUS_ADEPTAS
+      mapDataSets:
+        - BLANKS
+        - ARVUS
+        - ARVUS_DOORS
+        - SMTBOMBARD
+      mapBlocks:
+        - name: ARVUS_ADEPTAS
+          width: 10
+          length: 20
+          items:
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+
+  - type: STR_ADEPTAS_THUNDERHAWNK          # Thunderhawk SoB
+    soldiers: 20
+    battlescapeTerrainData:
+      name: THUNDERHAWK2
+      mapDataSets:
+        - BLANKS
+        - THUNDERHAWKA
+        - SMTBOMBARD
+      mapBlocks:
+        - name: THUNDERHAWK2
+          width: 10
+          length: 20
+          items:
+            STR_THUNDERHAWK_DEPLOY_CHARGE:
+              - [5, 13, 0]
+            STR_LEFT_THUNDERHAWKDW_SPAWNER:
+              - [3, 12, 1]
+            STR_RIGHT_THUNDERHAWKDW_SPAWNER:
+              - [6, 12, 1]
+            STR_BOMBARD_CANNON_SPAWNER:
+              - [0, 0, 5]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_THUNDERHAWK_DEPLOY_CHARGE: [1, 1]
+            STR_LEFT_THUNDERHAWKDW_SPAWNER: [0, 0]
+            STR_RIGHT_THUNDERHAWKDW_SPAWNER: [0, 0]
+            STR_BOMBARD_CANNON_SPAWNER: [0, 0]
+    deployment:
+      - [4, 13, 1, 4]
+      - [5, 13, 1, 4]
+      - [4, 12, 1, 4]
+      - [5, 12, 1, 4]
+      - [4, 11, 1, 4]
+      - [5, 11, 1, 4]
+      - [4, 10, 1, 4]
+      - [5, 10, 1, 4]
+      - [4, 9, 1, 4]
+      - [5, 9, 1, 4]
+      - [4, 8, 1, 4]
+      - [5, 8, 1, 4]
+      - [4, 7, 1, 4]
+      - [5, 7, 1, 4]
+      - [4, 6, 1, 4]
+      - [5, 6, 1, 4]
+      - [4, 5, 2, 4]
+      - [5, 5, 2, 4]
+      - [4, 4, 2, 4]
+      - [5, 4, 2, 4]
+
+  - type: STR_TTA                           # Thunderhawk Transport SoB
+    soldiers: 20
+    battlescapeTerrainData:
+      name: RHINOA
+      mapDataSets:
+        - BLANKS
+        - 0A0THUNDERHAWKTEX
+        - 0A0RHINO
+        - SMTBOMBARD
+      mapBlocks:
+        - name: RHINOA
+          width: 10
+          length: 20
+          items:
+            STR_IMMOLATOR_SPAWNER:
+              - [6, 12, 1]
+              - [6, 4, 1]
+            STR_THUNDER_CHARGE:
+              - [5, 10, 3]
+            STR_THUNDER_CHARGE2:
+              - [4, 3, 3]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_THUNDER_CHARGE: [1, 1]
+            STR_THUNDER_CHARGE2: [1, 1]
+            STR_IMMOLATOR_SPAWNER: [0, 0]
+    deployment:
+      - [6, 13, 0, 0]
+      - [7, 13, 0, 0]
+      - [6, 12, 0, 0]
+      - [7, 12, 0, 0]
+      - [6, 11, 0, 0]
+      - [7, 11, 0, 0]
+      - [6, 10, 0, 0]
+      - [7, 10, 0, 0]
+      - [6, 5, 0, 0]
+      - [7, 5, 0, 0]
+      - [6, 4, 0, 0]
+      - [7, 4, 0, 0]
+      - [6, 3, 0, 0]
+      - [7, 3, 0, 0]
+      - [6, 2, 0, 0]
+      - [7, 2, 0, 0]
+      - [4, 16, 2, 4]
+      - [5, 16, 2, 4]
+      - [4, 15, 2, 4]
+      - [5, 15, 2, 4]
+
+### ARBITES CRAFT
+
+### FINAL MISSION CRAFT
+
+terrains:
+  - name: ARMYUFO                           # Space Marine Final Mission P2
     mapDataSets:
       - BLANKS
       - SPEED
+      - SMTBOMBARD
     mapBlocks:
       - name: ARMYUFO
         width: 10
@@ -1398,3 +2918,79 @@ terrains: # Handle P2 First Company
           STR_LEFT_THUNDERHAWK_SPAWNER: [0, 0]
           STR_RIGHT_THUNDERHAWK_SPAWNER: [0, 0]
           STR_SKULL_SPAWNER: [0, 0]
+
+  - name: GORGONUFO                         # IG Final Mission Part 2
+    mapDataSets:
+      - BLANKS
+      - GORGON
+      - SMTBOMBARD
+    mapBlocks:
+      - name: GORGON_BLOCK
+        width: 10
+        length: 20
+        revealedFloors: [0, 1, 2, 3]
+        items:
+          STR_GORGON_HEAVY_FLAMER_FRONT_LEFT_SPAWNER:
+            - [8, 15, 1]
+          STR_GORGON_HEAVY_FLAMER_BACK_LEFT_SPAWNER:
+            - [8, 12, 1]
+          STR_GORGON_HEAVY_FLAMER_FRONT_RIGHT_SPAWNER:
+            - [0, 15, 1]
+          STR_GORGON_HEAVY_FLAMER_BACK_RIGHT_SPAWNER:
+            - [0, 12, 1]
+          STR_GORGON_HEAVY_STUBBER_LEFT_SPAWNER:
+            - [6, 8, 2]
+          STR_GORGON_HEAVY_STUBBER_RIGHT_SPAWNER:
+            - [2, 8, 2]
+          STR_BOMBARD_SPAWNER: # 16 strikes
+            - [0, 19, 5] # Bombard Platform
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+        fuseTimers:
+          STR_GORGON_HEAVY_FLAMER_FRONT_LEFT_SPAWNER: [0, 0]
+          STR_GORGON_HEAVY_FLAMER_BACK_LEFT_SPAWNER: [0, 0]
+          STR_GORGON_HEAVY_FLAMER_FRONT_RIGHT_SPAWNER: [0, 0]
+          STR_GORGON_HEAVY_FLAMER_BACK_RIGHT_SPAWNER: [0, 0]
+          STR_GORGON_HEAVY_STUBBER_LEFT_SPAWNER: [0, 0]
+          STR_GORGON_HEAVY_STUBBER_RIGHT_SPAWNER: [0, 0]
+
+  - name: LANDRAIDERUFO
+    mapDataSets:
+      - BLANKS
+      - LANDRAIDER
+    mapBlocks:
+      - name: LANDRAIDER
+        width: 10
+        length: 20
+        items:
+          STR_BOMBARD_SPAWNER: # 16 strikes
+            - [0, 19, 5] # Bombard Platform
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+

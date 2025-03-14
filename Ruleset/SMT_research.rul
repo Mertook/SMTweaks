@@ -247,6 +247,47 @@ research:
       - STR_MARINES_STRATEGY
       - STR_MOTION_SCANNER
 
+  - name: STR_NEW_FIGHTER_CRAFT     # StormRaven
+    cost: 500 # was 600
+    points: 30
+    dependencies: # give it a slightly bigger window before the Stormeagle obsoletes it
+      - STR_ALIEN_ALLOYS # adamantium
+      - STR_ELERIUM_115 # promethium
+      #- STR_UFO_CONSTRUCTION
+      - STR_MARINES_AND_ADEPTAS
+
+  - name: STR_STORMEAGLE_INTERCEPTOR    # Stormeagle
+    cost: 600
+    points: 25
+    listOrder: 5050
+    dependencies:
+      - STR_MARINES_AND_ADEPTAS
+      - STR_MIDTIER_PREREQ
+      - STR_UFO_POWER_SOURCE
+      - STR_UFO_NAVIGATION
+      - STR_UFO_CONSTRUCTION
+      #- STR_BATTLESHIP
+      #- STR_ABDUCTOR
+      #- STR_TERROR_SHIP
+      #- STR_HARVESTER
+      #- STR_SUPPLY_SHIP
+
+  - name: STR_NEW_FIGHTER_TRANSPORTER   # Thunderhawk
+    cost: 700
+    points: 30
+    dependencies:
+      - STR_MIDTIER_PREREQ
+      - STR_NEW_FIGHTER_CRAFT
+
+  - name: STR_CHAPTERARMYR          # Landraider 1st Company
+    cost: 900
+    points: 30
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_STORMEAGLE_INTERCEPTOR
+      - STR_MIDTIER_PREREQ
+      - STR_COMMANDER_PLUS # added to give some space between thunderhawk & first company
+
   - name: STR_SPEEDR                # Landspeeder
     cost: 0
     points: 0
@@ -509,16 +550,6 @@ research:
     points: 10
     dependencies:
       - STR_PRIMARIS
-    getOneFree:
-      - STR_PRIMARIS_ROCKETPACK
-
-  - name: STR_PRIMARIS_ROCKETPACK   # Primaris Vengor Launcher
-    cost: 20
-    points: 5
-    dependencies:
-      - STR_PRIMARIS
-      - STR_PRIMARIS_BACKPACKS
-      - STR_GENERALLOCK
 
   - name: STR_PRIMARIS_MELTAPACK    # Primaris Meltarifle
     cost: 80
@@ -555,6 +586,14 @@ research:
       - STR_PLASMA_PISTOL_DEP1
       - STR_PLASMA_PISTOL_DEP2
       - STR_MASTER_CRAFTING
+
+  - name: STR_STORMTALON_CASR       # Stormtalon CAS Firesupport
+    cost: 400
+    points: 20
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_MIDTIER_PREREQ
+      - STR_LEADER_PLUS
 
   - name: STR_MARINE_CHAPEL         # Early unlock for Chapel
     cost: 100
@@ -593,6 +632,7 @@ research:
     points: 20
     dependencies:
       - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
       - STR_HIGHTIER_PREREQ
       - STR_PSI_LAB
 
@@ -673,23 +713,26 @@ research:
     cost: 0
     points: 0
     dependencies:
-      - STR_GENERALLOCK
+      - STR_MARINES_STRATEGY
 
   - name: STR_FIRSTBORN_CODEX       # Firstborn specific topics
     cost: 0
     points: 0
     dependencies:
-      - STR_GENERALLOCK
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
 
   - name: STR_PRIMARIS_CODEX        # Primaris specific topics
     cost: 0
     points: 0
     dependencies:
-      - STR_GENERALLOCK
+      - STR_MARINES_STRATEGY
+      - STR_PRIMARIS
 
   - name: STR_NEOPHYTE_CODEX        # Neophyte and Geneseed topics
     cost: 0
     points: 0
     dependencies:
-      - STR_GENERALLOCK
+      - STR_MARINES_STRATEGY
+      - STR_NEOPHYTE_REQUEST
 

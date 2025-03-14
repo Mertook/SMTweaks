@@ -4,85 +4,92 @@ ufopaedia:
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
-    text: STR_SMT_PROMOTION_TREE_UFOPEDIA
+    text: STR_SMT_PROMOTION_TREE_CODEX
     listOrder: 21010
 
   - id: STR_GENESEED_DETAILS                # Geneseed
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
-    text: STR_GENESEED_DETAILS_UFOPEDIA
+    text: STR_GENESEED_DETAILS_CODEX
     listOrder: 21011
 
   - id: STR_SMT_PROMOTION_CHAPLAINS         # Chaplain Promotion
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
-    text: STR_SMT_PROMOTION_CHAPLAINS_UFOPEDIA
+    text: STR_SMT_PROMOTION_CHAPLAINS_CODEX
     listOrder: 21019
 
   - id: STR_SMT_PROMOTION_LIBRARIANS        # Librarian Promotion
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
-    text: STR_SMT_PROMOTION_LIBRARIANS_UFOPEDIA
+    text: STR_SMT_PROMOTION_LIBRARIANS_CODEX
     listOrder: 21020
 
   - id: STR_SMT_LIBRARIAN_SPELLS            # Librarian Abilities
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
-    text: STR_SMT_LIBRARIAN_SPELLS_UFOPEDIA
+    text: STR_SMT_LIBRARIAN_SPELLS_CODEX
     listOrder: 21030
 
   - id: STR_SMT_REGENERATION                # Regen
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
-    text: STR_SMT_REGENERATION_UFOPEDIA
+    text: STR_SMT_REGENERATION_CODEX
     listOrder: 21040
 
   - id: STR_SMT_HEROICSAVE                  # Heroic Save
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
-    text: STR_SMT_HEROICSAVE_UFOPEDIA
+    text: STR_SMT_HEROICSAVE_CODEX
     listOrder: 21050
 
   - id: STR_SMT_ARMOR_SHRED                 # Armor Shred Resistance
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
-    text: STR_SMT_ARMOR_SHRED_UFOPEDIA
+    text: STR_SMT_ARMOR_SHRED_CODEX
     listOrder: 21060
 
   - id: STR_SMT_RECOIL                      # Recoil changes
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
-    text: STR_SMT_RECOIL_UFOPEDIA
+    text: STR_SMT_RECOIL_CODEX
     listOrder: 21070
 
   - id: STR_SMT_HWP                         # Heavy Weapon changes
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
-    text: STR_SMT_HWP_UFOPEDIA
+    text: STR_SMT_HWP_CODEX
     listOrder: 21080
 
   - id: STR_SMT_BOLTER_CHANGES              # Bolter Changes
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
-    text: STR_SMT_BOLTER_CHANGES_UFOPEDIA
+    text: STR_SMT_BOLTER_CHANGES_CODEX
     listOrder: 21090
 
   - id: STR_SMT_MASTERCRAFTED_AMMO          # MC Ammo Bonus
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
-    text: STR_SMT_MASTERCRAFTED_AMMO_UFOPEDIA
+    text: STR_SMT_MASTERCRAFTED_AMMO_CODEX
     listOrder: 21091
+
+  - id: STR_SMT_FIRESUPPORT                 # Fire Support
+    type_id: 10
+    section: STR_SMT_INFO
+    image_id: TODO.SPK
+    text: STR_SMT_FIRESUPPORT_CODEX
+    listOrder: 21092
 
   - id: STR_SMT_DW_RECRUITMENT              # DW Recruitment
     type_id: 10
@@ -91,9 +98,9 @@ ufopaedia:
     listOrder: 21101
     pages:
       - title: STR_SMT_DW_RECRUITMENT
-        text: STR_SMT_DW_RECRUITMENT_UFOPEDIA_1
+        text: STR_SMT_DW_RECRUITMENT_CODEX_1
       - title: STR_SMT_DW_RECRUITMENT
-        text: STR_SMT_DW_RECRUITMENT_UFOPEDIA_2
+        text: STR_SMT_DW_RECRUITMENT_CODEX_2
 
   - id: STR_SMT_DW_MARINES                  # DW FB/Primaris differences
     type_id: 10
@@ -102,24 +109,24 @@ ufopaedia:
     listOrder: 21102
     pages:
       - title: STR_SMT_DW_MARINES
-        text: STR_SMT_DW_MARINES_UFOPEDIA_1
+        text: STR_SMT_DW_MARINES_CODEX_1
       - title: STR_SMT_DW_MARINES
-        text: STR_SMT_DW_MARINES_UFOPEDIA_2
+        text: STR_SMT_DW_MARINES_CODEX_2
       - title: STR_SMT_DW_MARINES
-        text: STR_SMT_DW_MARINES_UFOPEDIA_3
+        text: STR_SMT_DW_MARINES_CODEX_3
 
   - id: STR_SMT_DW_GENELOCK                 # DW Item Restrictions
     type_id: 10
     section: STR_SMT_DW_INFO
     image_id: C12.SPK
-    text: STR_SMT_DW_GENELOCK_UFOPEDIA
+    text: STR_SMT_DW_GENELOCK_CODEX
     listOrder: 21103
 
   - id: STR_SMT_DW_DEREVENANT               # DW Derevenant Ammo
     type_id: 10
     section: STR_SMT_DW_INFO
     image_id: C12.SPK
-    text: STR_SMT_DW_DEREVENANT_UFOPEDIA
+    text: STR_SMT_DW_DEREVENANT_CODEX
     listOrder: 21104
 
   - id: STR_ULTRAMARINES                    # DW Heraldry (UM)
@@ -423,14 +430,45 @@ ufopaedia:
 
 
 ### WEAPONS
-  - id: STR_STRIKE_VOX_FALSE                # Strike Vox
+  - id: STR_STRIKE_VOX_FALSE                # Orbital Barrage Vox
     requires:
       - STR_NAVY_COMUNICATIONS
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
-    image_id: 1VOX.SPK
-    text: STR_STRIKE_VOX_UFOPEDIA
-    listOrder: 21100
+    image_id: HEAVY_WEAPON_TOOLS.SPK
+    text: STR_STRIKE_VOX_CODEX
+    listOrder: 21402
+
+  - id: STR_ORBITAL_LANCE_DUMMY             # Orbital Lance Vox
+    requires:
+      - STR_NAVY_COMUNICATIONS
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: HEAVY_WEAPON_TOOLS.SPK
+    text: STR_ORBITAL_LANCE_DUMMY_CODEX
+    listOrder: 21400
+
+  - id: STR_STRM_STRIKE_DUMMY               # Stormtalon CAS Vox
+    requires:
+      - STR_STORMTALON_CASR
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: HEAVY_WEAPON_TOOLS.SPK
+    text: STR_STRM_STRIKE_DUMMY_CODEX
+    listOrder: 21404
+
+  - id: STR_CAS_STRIKE_DUMMY                # Lightning CAS Vox
+    requires:
+      - STR_AIRSTRIKE_REQUISITION
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: HEAVY_WEAPON_TOOLS.SPK
+    text: STR_CAS_STRIKE_DUMMY_CODEX
+    listOrder: 21406
+
+  - id: INV_NULL_AIRSTRIKE_VOX_DUMMY        # STR_AIRSTRIKE_VOX
+    requires:
+      - STR_GENERALLOCK #disabled
 
   - id: STR_BOLT_SNIPER_RIFLE               # Bolt Rifle Sniper (Scout Strat)
     requires:
@@ -942,11 +980,26 @@ ufopaedia:
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_ABSOLVOR_AMMO_MC
-
-
-
-
-
+  - id: STR_CAS_BOLTER_DUMMY                # CAS Lightning Bolter
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_CAS_BOLTER_DUMMY
+  - id: STR_CAS_ROCKET_DUMMY                # CAS Hellstrike Rockets
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_CAS_ROCKET_DUMMY
+  - id: STR_CAS_NAPALM_DUMMY                # CAS Hellfury Rockets
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_CAS_NAPALM_DUMMY
+  - id: STR_STRM_ASSC_DUMMY                 # CAS Stormtalon Assault Cannon
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_STRM_ASSC_DUMMY
+  - id: STR_STRM_ROCKET_DUMMY               # CAS Stormtalon Typhoon Missiles
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_STRM_ROCKET_DUMMY
 
 
 extraStrings:
@@ -955,15 +1008,21 @@ extraStrings:
       ### STRATEGY
       STR_STRATEGY_TEXT_INTRO: "{NEWLINE} This section of the Codex displays and details the different doctrines your faction can follow, as well as general strategies for your chosen faction.{NEWLINE} Once a doctrine has been chosen no others can be researched."
       STR_TATICAL: "Tactical Doctrine"
-      STR_TATICAL_TEXT: "{NEWLINE} Firstborn Marines{NEWLINE} Being prepared for all situations, Tactical Doctrine favours a well-balanced flexible force.{NEWLINE}{NEWLINE} Unique Wargear:{NEWLINE}{ALT} - Tactical Artificer Armor{NEWLINE}{ALT} - Master Crafted Bolter"
+      STR_TATICAL_TEXT: "{NEWLINE} Firstborn Marines{NEWLINE}{NEWLINE} Prepared for all situations, Tactical Doctrine favours a well-balanced flexible force.{NEWLINE}{NEWLINE} Unique Wargear:{NEWLINE}{ALT} - Tactical Artificer Armor{NEWLINE} - Master Crafted Bolter"
       STR_ASSAULT: "Assault Doctrine"
-      STR_ASSAULT_TEXT: "{NEWLINE} Firstborn Marines{NEWLINE} Overwhelming the enemy with decisive charges, Assault Doctrine focuses on close combat with high mobility armor.{NEWLINE}{NEWLINE} Unique Wargear:{NEWLINE}{ALT} - Vanguard Assault Armor{NEWLINE}{ALT} - Master Crafted Boltpistol{NEWLINE}{ALT} - Master Crafted Chainsword"
+      STR_ASSAULT_TEXT: "{NEWLINE} Firstborn Marines{NEWLINE}{NEWLINE} Overwhelming the enemy with decisive charges, Assault Doctrine focuses on close combat with high mobility armor.{NEWLINE}{NEWLINE} Unique Wargear:{NEWLINE}{ALT} - Vanguard Assault Armor{NEWLINE} - Master Crafted Boltpistol{NEWLINE} - Master Crafted Chainsword"
       STR_DEVASTATOR: "Devastator Doctrine"
-      STR_DEVASTATOR_TEXT: "{NEWLINE} Firstborn Marines{NEWLINE} Shattering the enemy with a hail of fire, Devastator Doctrine focuses on long-range combat with heavy weapons.{NEWLINE}{NEWLINE} Unique Wargear:{NEWLINE}{ALT} - Squadlink Signum Armor{NEWLINE}{ALT} - Mars-Pattern Heavy Bolter"
+      STR_DEVASTATOR_TEXT: "{NEWLINE} Firstborn Marines{NEWLINE}{NEWLINE} Shattering the enemy with a hail of fire, Devastator Doctrine focuses on long-range combat with heavy weapons.{NEWLINE}{NEWLINE} Unique Wargear:{NEWLINE}{ALT} - Squadlink Signum Armor{NEWLINE} - Mars-Pattern Heavy Bolter"
       STR_SCOUT: "Scout Doctrine"
-      STR_SCOUT_TEXT: "{NEWLINE} Firstborn Marines{NEWLINE} Using stealth and superior intel to pick off foes, Scout Doctrine focuses on camoflague and detection.{NEWLINE}{NEWLINE} Unique Wargear:{NEWLINE}{ALT} - Elite Scout Armor{NEWLINE}{ALT} - Bolt Sniper Rifle"
+      STR_SCOUT_TEXT: "{NEWLINE} Firstborn Marines{NEWLINE}{NEWLINE} Using stealth and superior intel to pick off foes, Scout Doctrine focuses on camoflague and detection.{NEWLINE}{NEWLINE} Unique Wargear:{NEWLINE}{ALT} - Elite Scout Armor{NEWLINE} - Bolt Sniper Rifle"
       STR_PRIMARIS: "Primaris Doctrine"
-      STR_PRIMARIS_TEXT: "{NEWLINE} Primaris Marines{NEWLINE} A new breed of Marine developed by Archmagos Dominus Belisarius Cawl, Primaris Marines have access to a wide variety of weapons and armor not used by Firstborn Marines."
+      STR_PRIMARIS_TEXT: "{NEWLINE} Primaris Marines{NEWLINE}{NEWLINE} A new breed of Marine developed by Archmagos Dominus Belisarius Cawl, Primaris Marines have access to a wide variety of weapons and armor not available to Firstborn Marines.{NEWLINE}"
+      STR_GENESEED_DETAILS: "Geneseed"
+      STR_GENESEED_DETAILS_CODEX: "{NEWLINE} Gene-seed is the unique genetic material used to transform humans into the super-human Space Marines. It is essential to the survival of a Chapter and must be carefully preserved.{NEWLINE} A small amount is accrued monthly by our Apothecaries, though some of it will need to be refined into the matured Geneseed required to create new Marines. Fallen Battle Brothers whose bodies have been not been lost or corrupted can have their progenoid glands extracted, recovering their Geneseed."
+      STR_SMT_PROMOTION_TREE: Training Marines
+      STR_SMT_PROMOTION_TREE_CODEX: "{NEWLINE} Neophytes who have earned the Battle Tested medal with {ALT}60+ HP and 50+ Strength{ALT} can undergo the final transformation into true Marines using matured Geneseed, dramatically improving their combat abilities.{NEWLINE}{NEWLINE} Marines who have earned the Crux Terminatus with {ALT}100+ Health, 100+ Firing, 80+ Melee, and 80+ Strength{ALT} can be further promoted to Veterans, increasing their stat limits and allowing use of rare relic armors."
+      STR_SMT_FIRESUPPORT: Using Fire Support Weapons
+      STR_SMT_FIRESUPPORT_CODEX: "{NEWLINE} Fire Support can be requested on the battlefield by using a Vox-Caster if you have the appropriate strike requisition onboard. A target designator will appear above your landing site on the following turn, allowing you to choose the position and targets for the strike. Only one kind of Fire Support can be requested each turn.{NEWLINE}{NEWLINE} Craft with {ALT}Bombard{ALT} will start with an active target designator on turn 1 for you to direct the bombardment."
       ### MISC
       ### ARMOR
       STR_TSARGENT_UFOPEDIA: "{NEWLINE} The immense strength of Terminator armor allows it to support heavy weaponry with ease, unleashing devastating missile barrages while leaving hands free to carry other weapons to fit any situation."
@@ -989,8 +1048,10 @@ extraStrings:
       STR_DW_TERM_CYC_CODEX_UC_UFOPEDIA: "{NEWLINE} The immense strength provided by Terminator armor makes it a powerful heavy weapons platform, raining destruction down on hordes of Xenos."
       STR_DW_TERM_ASS_CODEX_UC_UFOPEDIA: "{NEWLINE} Utilizing Teleport Beacons to strike deep into enemy formations, Assault Terminators are able to tear apart fearsome Xenos beasts.{NEWLINE}{NEWLINE} Weapon Options:{NEWLINE}{ALT}   Storm Shield{NEWLINE}   Lighting Claws"
       ### ITEMS
-      STR_STRIKE_VOX_UFOPEDIA: "{NEWLINE} Vox-Casters can contact Imperial ships in low orbit to direct precision strikes on the battlefield. This Vox requests a small-caliber shell barrage, dealing heavy damage to everything in a wide area."
-      STR_ORBITAL_LASER_VOX_UFOPEDIA: "{NEWLINE} Vox-Casters can contact Imperial ships in low orbit to direct precision strikes on the battlefield. This Vox requests a devastating lance strike, obliterating everything in the area."
+      STR_STRIKE_VOX_CODEX: "{NEWLINE} Vox-Casters can contact Imperial ships in low orbit to direct precision strikes on the battlefield. This Vox requests a small-caliber shell barrage, dealing heavy damage to everything in a wide area.{NEWLINE} An Orbital Barrage Requisition must be present on the craft to call in a strike."
+      STR_ORBITAL_LANCE_DUMMY_CODEX: "{NEWLINE} Vox-Casters can contact Imperial ships in low orbit to direct precision strikes on the battlefield. This Vox requests a devastating lance strike, obliterating everything in the area.{NEWLINE} An Orbital Lance Requisition must be present on the craft to call in a strike."
+      STR_CAS_STRIKE_DUMMY_CODEX: "{NEWLINE} This Vox-Caster can be used to request Close Air Support from a Lightning fighter craft. A soldier can request CAS by targeting a nearby friendly soldier to share the TU cost, or by targeting themselves with doubled TU cost.{NEWLINE} Lightning CAS requisitions must be present on the craft to call in a strike."
+      STR_STRM_STRIKE_DUMMY_CODEX: "{NEWLINE} This Vox-Caster can be used to request Close Air Support from a Stormtalon Gunship equipped with Assault Cannons and Typhoon Missiles.{NEWLINE} Stormtalon CAS requisitions must be present on the craft to call in a strike"
       STR_BOLT_SNIPER_RIFLE_UFOPEDIA: "{NEWLINE} A long range Bolt-Sniper used by experienced Marine sharpshooters to eliminate distant targets. It can be loaded with a variety of specialist rounds to deal with any foe.{NEWLINE}{NEWLINE} RECOIL: {ALT}75{ALT} - {ALT}Heavy Weapon{ALT}"
       STR_BOLT_SNIPER_RIFLE_DW_UFOPEDIA: "{NEWLINE} The Deathwatch Bolt-Sniper is used to eliminate key Xenos leaders from a distance. It can be loaded with a wide variety of specialist ammo, including some rounds only available to the Deathwatch.{NEWLINE}{NEWLINE} RECOIL: {ALT} 75{ALT} - {ALT}Heavy Weapon{ALT}{NEWLINE} Genelocked - {ALT}Deathwatch Only"
       STR_GRENADE_LAUNCHER_ASTARTES_UFOPEDIA: "{NEWLINE} The Astartes Grenade Launcher serves the role of a launcher weapon that can be used and carried by Scouts-in-training. They are fired in arcing shots designed to clear obstructions and strike farther into an enemy formation as well as simply being fired directly at foes. This Grenade Launcher holds a magazine of six grenades and is burst fire capable."
@@ -1088,40 +1149,36 @@ extraStrings:
       ### UFOPAEDIA DW
       STR_SMT_DW_INFO: DEATHWATCH TWEAKS
       STR_SMT_DW_RECRUITMENT: Recruiting Deathwatch
-      STR_SMT_DW_RECRUITMENT_UFOPEDIA_1: "{NEWLINE} Deathwatch Marines are elite soldiers, hand picked from their chapters to support the Ordos Xenos. They typically operate in small Kill-Teams, conducting surgical strikes to eliminate threats to the Imperium.{NEWLINE}{NEWLINE} Use Deathwatch Tokens in manufacturing to hire a new Kill-Team member. Note: Some Chapter bonuses have been updated, be sure to check the Heraldry section in the Codex.{NEWLINE}{NEWLINE}{ALT}   >>> Getting new Tokens >>>"
-      STR_SMT_DW_RECRUITMENT_UFOPEDIA_2: "{NEWLINE} Should a Marine die, you can request a replacement token by reporting their death in the Soldier Transformation menu.{NEWLINE}{NEWLINE} Additional tokens to expand the size of your Kill-Team can be earned by interrogating live captives and discovering more about the Warp Storm engulfing this planet."
+      STR_SMT_DW_RECRUITMENT_CODEX_1: "{NEWLINE} Deathwatch Marines are elite soldiers, hand picked from their chapters to support the Ordos Xenos. They typically operate in small Kill-Teams, conducting surgical strikes to eliminate threats to the Imperium.{NEWLINE}{NEWLINE} Use Deathwatch Tokens in manufacturing to hire a new Kill-Team member. Note: Some Chapter bonuses have been updated, be sure to check the Heraldry section in the Codex.{NEWLINE}{NEWLINE}{ALT}   >>> Getting new Tokens >>>"
+      STR_SMT_DW_RECRUITMENT_CODEX_2: "{NEWLINE} Should a Marine die, you can request a replacement token by reporting their death in the Soldier Transformation menu.{NEWLINE}{NEWLINE} Additional tokens to expand the size of your Kill-Team can be earned by interrogating live captives and discovering more about the Warp Storm engulfing this planet."
       STR_SMT_DW_MARINES: "Firstborn and Primaris"
-      STR_SMT_DW_MARINES_UFOPEDIA_1: "{NEWLINE} Deathwatch Firstborn and Primaris Marines from the same chapter are mostly the same, with the major difference being the types of armor available to them: MK7 for Firstborn and MKX for Primaris.{NEWLINE}{NEWLINE}Both types can use these armors:{NEWLINE} {ALT}Tactical{ALT} > Allpurpose Armor{NEWLINE}{NEWLINE} {ALT}Apothecary{ALT} > Combat Medic{NEWLINE}{NEWLINE} {ALT}Techmarine{ALT} > Armor repairs and deployable sentry{NEWLINE}{NEWLINE}          {ALT}Differences{ALT} >>>"
-      STR_SMT_DW_MARINES_UFOPEDIA_2: "{NEWLINE} Deathwatch Firstborn can use the following armor types:{NEWLINE}{NEWLINE} {ALT}Devastator{ALT} > Long range heavy weapon specialist{NEWLINE}{NEWLINE} {ALT}Assault{ALT} > Close combat flight suit{NEWLINE}{NEWLINE} {ALT}Terminator{ALT} > Superheavy elite combat armor{NEWLINE}{NEWLINE}           {ALT}Primaris{ALT} >>> "
-      STR_SMT_DW_MARINES_UFOPEDIA_3: "{NEWLINE} Deathwatch Primaris can use the following armor types:{NEWLINE}{NEWLINE} {ALT}Phobos{ALT} > Light-weight tactical scout armor{NEWLINE}{NEWLINE} {ALT}Gravis{ALT} > Heavy tactical suit with inbuilt weaponry{NEWLINE}{NEWLINE} {ALT}Omnis{ALT} > Heavy weapons flight suit{NEWLINE}{NEWLINE}       <<< {ALT}Firstborn"
+      STR_SMT_DW_MARINES_CODEX_1: "{NEWLINE} Deathwatch Firstborn and Primaris Marines from the same chapter are mostly the same, with the major difference being the types of armor available to them: MK7 for Firstborn and MKX for Primaris.{NEWLINE}{NEWLINE}Both types can use these armors:{NEWLINE} {ALT}Tactical{ALT} > Allpurpose Armor{NEWLINE}{NEWLINE} {ALT}Apothecary{ALT} > Combat Medic{NEWLINE}{NEWLINE} {ALT}Techmarine{ALT} > Armor repairs and deployable sentry{NEWLINE}{NEWLINE}          {ALT}Differences{ALT} >>>"
+      STR_SMT_DW_MARINES_CODEX_2: "{NEWLINE} Deathwatch Firstborn can use the following armor types:{NEWLINE}{NEWLINE} {ALT}Devastator{ALT} > Long range heavy weapon specialist{NEWLINE}{NEWLINE} {ALT}Assault{ALT} > Close combat flight suit{NEWLINE}{NEWLINE} {ALT}Terminator{ALT} > Superheavy elite combat armor{NEWLINE}{NEWLINE}           {ALT}Primaris{ALT} >>> "
+      STR_SMT_DW_MARINES_CODEX_3: "{NEWLINE} Deathwatch Primaris can use the following armor types:{NEWLINE}{NEWLINE} {ALT}Phobos{ALT} > Light-weight tactical scout armor{NEWLINE}{NEWLINE} {ALT}Gravis{ALT} > Heavy tactical suit with inbuilt weaponry{NEWLINE}{NEWLINE} {ALT}Omnis{ALT} > Heavy weapons flight suit{NEWLINE}{NEWLINE}       <<< {ALT}Firstborn"
       STR_SMT_DW_GENELOCK: Deathwatch Genelocks
-      STR_SMT_DW_GENELOCK_UFOPEDIA: "{NEWLINE} Deathwatch equipment is extremely advanced, making use of the best of Imperium technology and even sometimes utilizing Xenotech. Deathwatch weaponry is produced only by specially vetted Techpriests and is protected from capture or misuse by bioverification that locks the weapon if the users genetic pattern does not match. {NEWLINE}{NEWLINE}{ALT} All 'Genelocked' equipment can only be properly used by Deathwatch Marines, and will lose accuracy/power if wielded by someone else."
+      STR_SMT_DW_GENELOCK_CODEX: "{NEWLINE} Deathwatch equipment is extremely advanced, making use of the best of Imperium technology and even sometimes utilizing Xenotech. Deathwatch weaponry is produced only by specially vetted Techpriests and is protected from capture or misuse by bioverification that locks the weapon if the users genetic pattern does not match. {NEWLINE}{NEWLINE}{ALT} All 'Genelocked' equipment can only be properly used by Deathwatch Marines, and will lose accuracy/power if wielded by someone else."
       STR_SMT_DW_DEREVENANT: Derevenant Ammo
-      STR_SMT_DW_DEREVENANT_UFOPEDIA: "{NEWLINE} Derevenant ammo is a custom ammo type unique to Deathwatch, available for both Artifex Bolters and the Deathwatch Bolt Sniper. It is specifically crafted to disrupt the reanimation protocol of Necrons.{NEWLINE}{NEWLINE} Derevenant Ammo prevents Necrons from reviving if it lands a killing blow, and can instantly kill unconcious Necrons trying to revive."
+      STR_SMT_DW_DEREVENANT_CODEX: "{NEWLINE} Derevenant ammo is a custom ammo type unique to Deathwatch, available for both Artifex Bolters and the Deathwatch Bolt Sniper. It is specifically crafted to disrupt the reanimation protocol of Necrons.{NEWLINE}{NEWLINE} Derevenant Ammo prevents Necrons from reviving if it lands a killing blow, and can instantly kill unconcious Necrons trying to revive."
       ### UFOPAEDIA EXTRA
       STR_SMT_INFO: SPACE MARINE TWEAKS
       STR_SMT_UFOPAEDIA_UNFINISHED: "{NEWLINE}{NEWLINE} Codex Unfinished"
-      STR_GENESEED_DETAILS: "Geneseed"
-      STR_GENESEED_DETAILS_UFOPEDIA: "{NEWLINE} Gene-seed is the unique genetic material used to transform humans into the super-human Space Marines. It is essential to the survival of a Chapter and must be carefully preserved.{NEWLINE} A small amount is accrued monthly by our Apothecaries, though some of it will need to be refined into the matured Geneseed required to create new Marines. Fallen Battle Brothers whose bodies have been not been lost or corrupted can have their progenoid glands extracted, recovering their Geneseed."
       STR_SMT_RECOIL: Recoil Changes
-      STR_SMT_RECOIL_UFOPEDIA: "{NEWLINE} Recoil has been slightly changed. Using a weapon without a free hand increases the recoil of that weapon by {ALT}+50%{ALT}, increasing the strength required to fire it without penalty.{NEWLINE}{NEWLINE} Melee weapons are unaffected by this and do not get any additional strength penalty."
+      STR_SMT_RECOIL_CODEX: "{NEWLINE} Recoil has been slightly changed. Using a weapon without a free hand increases the recoil of that weapon by {ALT}+50%{ALT}, increasing the strength required to fire it without penalty.{NEWLINE}{NEWLINE} Melee weapons are unaffected by this and do not get any additional strength penalty."
       STR_SMT_HWP: Weapon Stabilizers
-      STR_SMT_HWP_UFOPEDIA: "{NEWLINE} Devastators and Terminators have weapon stablizers built into their armor, reducing the aim penalty that comes from using heavy weapons after moving.{NEWLINE}{NEWLINE}Wearing Devastator armor reduces the penalty by 50%{NEWLINE}{NEWLINE}Wearing Terminator armor removes the penalty entirely{NEWLINE}{NEWLINE}This bonus doesn't reduce the penalty when using Sniper Rifles."
+      STR_SMT_HWP_CODEX: "{NEWLINE} Devastators and Terminators have weapon stablizers built into their armor, reducing the aim penalty that comes from using heavy weapons after moving.{NEWLINE}{NEWLINE}Wearing Devastator armor reduces the penalty by 50%{NEWLINE}{NEWLINE}Wearing Terminator armor removes the penalty entirely{NEWLINE}{NEWLINE}This bonus doesn't reduce the penalty when using Sniper Rifles."
       STR_SMT_HEROICSAVE: Heroic Save
-      STR_SMT_HEROICSAVE_UFOPEDIA: "{NEWLINE} When taking lethal damage Space Marines have a chance to heroically endure. Instead of dying they will be knocked unconcious and can be revived to fight on.{NEWLINE} This effect may also protect them from instant-death attacks, but can't prevent death from untreated fatal wounds, corruption or burning.{NEWLINE}{NEWLINE} The chance to endure increases with Health, Devotion, and Veterancy. Units blessed by a Chaplain have their bonus from Devotion doubled."
+      STR_SMT_HEROICSAVE_CODEX: "{NEWLINE} When taking lethal damage Space Marines have a chance to heroically endure. Instead of dying they will be knocked unconcious and can be revived to fight on.{NEWLINE} This effect may also protect them from instant-death attacks, but can't prevent death from untreated fatal wounds, corruption or burning.{NEWLINE}{NEWLINE} The chance to endure increases with Health, Devotion, and Veterancy. Units blessed by a Chaplain have their bonus from Devotion doubled."
       STR_SMT_REGENERATION: Marine Healing
-      STR_SMT_REGENERATION_UFOPEDIA: "{NEWLINE} Marines undergo extensive genetic modification, improving their ability to recover from injury far above that of regular humans. This allows them to recover from fatal wounds and restore health even on the battlefield. Units can heal up to 80% of their max health, but lost health restored this way still incurs post-mission recovery time.{NEWLINE}{NEWLINE}Each Turn:{NEWLINE} {ALT}Neophytes heal 2 HP{NEWLINE} Marines heal 5 HP/1 Wound{NEWLINE} Vet Marines heal 8 HP/2 Wounds"
-      STR_SMT_PROMOTION_TREE: Promoting Marines
-      STR_SMT_PROMOTION_TREE_UFOPEDIA: "{NEWLINE} Neophytes who have earned the Battle Tested medal with {ALT}60+ HP and 50+ Strength{ALT} can undergo the final transformation into true Marines using matured Geneseed, dramatically improving their stats and allowing use of MK7 armor.{NEWLINE}{NEWLINE} Marines who have earned the Crux Terminatus with {ALT}100+ Health, 100+ Firing, 80+ Melee, and 80+ Strength{ALT} can be further promoted to Veterans, increasing their stat limits and allowing use of rare relic armors."
+      STR_SMT_REGENERATION_CODEX: "{NEWLINE} Marines undergo extensive genetic modification, improving their ability to recover from injury far above that of regular humans. This allows them to recover from fatal wounds and restore health even on the battlefield. Units can heal up to 80% of their max health, but lost health restored this way still incurs post-mission recovery time.{NEWLINE}{NEWLINE}Each Turn:{NEWLINE} {ALT}Neophytes heal 2 HP{NEWLINE} Marines heal 5 HP/1 Wound{NEWLINE} Vet Marines heal 8 HP/2 Wounds"
       STR_SMT_PROMOTION_CHAPLAINS: Chaplains
-      STR_SMT_PROMOTION_CHAPLAINS_UFOPEDIA: "{NEWLINE} Marines who have earned the right to become a Veteran with {ALT}80+ Devotion{ALT} can be promoted into Chaplains instead.{NEWLINE}{NEWLINE} Chaplains have the Bless ability which restores morale and purges chaos corruption from nearby units. It also applies a slow-decaying buff that grants resistance to corrupting attacks, improves melee skill, and increases the chances of Heroic Save protecting a unit from death."
+      STR_SMT_PROMOTION_CHAPLAINS_CODEX: "{NEWLINE} Marines who have earned the right to become a Veteran with {ALT}80+ Devotion{ALT} can be promoted into Chaplains instead.{NEWLINE}{NEWLINE} Chaplains have the Bless ability which restores morale and purges chaos corruption from nearby units. It also applies a slow-decaying buff that grants resistance to corrupting attacks, improves melee skill, and increases the chances of Heroic Save protecting a unit from death."
       STR_SMT_PROMOTION_LIBRARIANS: Librarians
-      STR_SMT_PROMOTION_LIBRARIANS_UFOPEDIA: "{NEWLINE} Neophytes with {ALT}20+ PsiStr{ALT} can be trained into Librarians instead of becoming regular Marines.{NEWLINE}Librarians can use powerful psychic abilities that depend on Psi Strength, which is improved through use in battle.{NEWLINE}{NEWLINE} Librarians with Crux Terminatus and {ALT}90+ PsiStr{ALT} can be further promoted to Veterans, increasing their maximum potential and allowing the use of Terminator Armor."
+      STR_SMT_PROMOTION_LIBRARIANS_CODEX: "{NEWLINE} Neophytes with {ALT}20+ PsiStr{ALT} can be trained into Librarians instead of becoming regular Marines.{NEWLINE}Librarians can use powerful psychic abilities that depend on Psi Strength, which is improved through use in battle.{NEWLINE}{NEWLINE} Librarians with Crux Terminatus and {ALT}90+ PsiStr{ALT} can be further promoted to Veterans, increasing their maximum potential and allowing the use of Terminator Armor."
       STR_SMT_LIBRARIAN_SPELLS: Librarian Abilities
-      STR_SMT_LIBRARIAN_SPELLS_UFOPEDIA: "{NEWLINE} Librarians have 5 different psyker abilities.{NEWLINE}{NEWLINE}{ALT}>Smite{ALT} - Deals armor-ignoring damage to an enemy{NEWLINE}{ALT}>Lockdown{ALT} - Drains enemy time units, paralysing them{NEWLINE}{ALT}>Shroud{ALT} - Creates a blast of smoke to obscure vision{NEWLINE}{ALT}>Shield{ALT} - Grants a temporary energy shield to an ally{NEWLINE}{ALT}>Accelerate{ALT} - Increases reactions and at high levels even increases movespeed{NEWLINE}{NEWLINE} All abilities scale with PsiStr only"
+      STR_SMT_LIBRARIAN_SPELLS_CODEX: "{NEWLINE} Librarians have 5 different psyker abilities.{NEWLINE}{NEWLINE}{ALT}>Smite{ALT} - Deals armor-ignoring damage to an enemy{NEWLINE}{ALT}>Lockdown{ALT} - Drains enemy time units, paralysing them{NEWLINE}{ALT}>Shroud{ALT} - Creates a blast of smoke to obscure vision{NEWLINE}{ALT}>Shield{ALT} - Grants a temporary energy shield to an ally{NEWLINE}{ALT}>Accelerate{ALT} - Increases reactions and at high levels even increases movespeed{NEWLINE}{NEWLINE} All abilities scale with PsiStr only"
       STR_SMT_BOLTER_CHANGES: Bolter Changes
-      STR_SMT_BOLTER_CHANGES_UFOPEDIA: "{NEWLINE} Bolters fire powerful high-caliber self-propelled explosive rounds. They have limited propulsion and lack accuracy at range, instead optimizing for devastating close range firepower.{NEWLINE} Compared to Rosigma SMT Bolters have greater accuracy falloff outside of optimal range but deal more damage and fire faster, specializing in autofire bursts.{NEWLINE}{NEWLINE} Heavy Bolter rounds are larger with more propulsion and aren't given any additonal falloff penalties."
+      STR_SMT_BOLTER_CHANGES_CODEX: "{NEWLINE} Bolters fire powerful high-caliber self-propelled explosive rounds. They have limited propulsion and lack accuracy at range, instead optimizing for devastating close range firepower.{NEWLINE} Compared to Rosigma SMT Bolters have greater accuracy falloff outside of optimal range but deal more damage and fire faster, specializing in autofire bursts.{NEWLINE}{NEWLINE} Heavy Bolter rounds are larger with more propulsion and aren't given any additonal falloff penalties."
       STR_SMT_MASTERCRAFTED_AMMO: Mastercrafted Bolts
-      STR_SMT_MASTERCRAFTED_AMMO_UFOPEDIA: "{NEWLINE} Mastercrafted Bolts do not get a flat power boost, instead the damage comes from a precision bonus when used by elite troops.{NEWLINE}{NEWLINE} Units with more than 100 firing accuracy gain power equal to {NEWLINE} {ALT}(FA - 100) x Precision%{ALT} when firing Mastercrafted ammo."
+      STR_SMT_MASTERCRAFTED_AMMO_CODEX: "{NEWLINE} Mastercrafted Bolts do not get a flat power boost, instead the damage comes from a precision bonus when used by elite troops.{NEWLINE}{NEWLINE} Units with more than 100 firing accuracy gain power equal to {NEWLINE} {ALT}(FA - 100) x Precision%{ALT} when firing Mastercrafted ammo."
       STR_SMT_ARMOR_SHRED: Armor Shredding
-      STR_SMT_ARMOR_SHRED_UFOPEDIA: "{NEWLINE} Space Marine armor is finely crafted and well maintained to a standard far above that of regular Imperial equipment. It stands immovable against the enemies of the Emperor, reducing the durability it loses from enemy attacks.{NEWLINE}{NEWLINE} Terminator Armor is especially effective, reducing durability lost from attacks by 80%"
+      STR_SMT_ARMOR_SHRED_CODEX: "{NEWLINE} Space Marine armor is finely crafted and well maintained to a standard far above that of regular Imperial equipment. It stands immovable against the enemies of the Emperor, reducing the durability it loses from enemy attacks.{NEWLINE}{NEWLINE} Terminator Armor is especially effective, reducing durability lost from attacks by 80%"

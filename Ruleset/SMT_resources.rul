@@ -1391,6 +1391,14 @@ extraSprites:
       0: Resources/UNITS/unit_preview.png
 
 ###Hit Animations
+  - type: SMOKE.PCK  # small
+    width: 320
+    height: 40
+    subX: 32
+    subY: 40
+    files:
+      100: Resources/ITEMS/blankEx.png
+
   - type: X1.PCK  # small
     width: 320
     height: 40
@@ -2197,28 +2205,28 @@ extraSprites:
       0: Resources/CRAFT/RB_Las.png
 
 ###Thunderhawk Turrets
-  - type: LTT_DW.PCK #Left DW
+  - type: LTTDW.PCK #Left DW
     width: 256
     height: 120
     subX: 32
     subY: 40
     files:
       0: Resources/CRAFT/DWLTT.png
-  - type: RTT_DW.PCK #Right DW
+  - type: RTTDW.PCK #Right DW
     width: 256
     height: 120
     subX: 32
     subY: 40
     files:
       0: Resources/CRAFT/DWRTT.png
-  - type: LTT_GK.PCK #Left GK
+  - type: LTTGK.PCK #Left GK
     width: 256
     height: 120
     subX: 32
     subY: 40
     files:
       0: Resources/CRAFT/GKLTT.png
-  - type: RTT_GK.PCK #Right GK
+  - type: RTTGK.PCK #Right GK
     width: 256
     height: 120
     subX: 32

@@ -807,118 +807,6 @@ items:
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
       SMT_SIGNUM_DURATION: 1
 
-  - type: STR_STRIKE_VOX                    # Strike weapon
-    categories: [STR_CAT_DEVASTATOR]
-    size: 0.1
-    weight: 20
-    costSell: 100000
-    bigSprite: 100
-    floorSprite: 100
-    fireSound: {mod: 40k, index: 699}
-    hitAnimation: {mod: 40k, index: 150}
-    hitSound: 0 # consider changing
-    ufopediaType: STR_STRIKE_VOX_FALSE
-    armor: 200
-    battleType: 1
-    invWidth: 2
-    invHeight: 2
-    power: 0
-    damageType: 0
-    maxRange: 60
-    accuracyAuto: 30
-    dropoff: 0
-    noLOSAccuracyPenalty: 100
-    arcingShot: true
-    bulletSpeed: 30
-    followProjectiles: false
-    spawnItem: STR_STRIKE_BEACON
-    spawnItemChance: 100
-    damageAlter:
-      RandomType: 3 #fixed value
-      ArmorEffectiveness: 0.0
-      ToStun: 0.0
-      ToMorale: 0.00
-      ToTime: 0.00
-      ToHealth: 0.0
-      ToWound: 0.0
-      ToArmor: 0.0
-      ToTile: 0.00
-      ToItem: 0.00
-    confAuto:
-      name: STR_STRIKE_AUTO
-      shortName: STR_STRIKE_AUTO_COUNT
-      shots: 4
-    costAuto:
-      time: 80
-    flatAuto:
-      time: false # 80% TU
-    twoHanded: false
-    accuracyMultiplier:
-      firing: 0.2
-      throwing: 0.3
-    experienceTrainingMode: 32
-    clipSize: 4
-    recover: true
-
-  - type: STR_STRIKE_BEACON                 # Strike beacon explosive
-    battleType: 4
-    bigSprite: {mod: 40k_ROSIGMA_edits, index: 100}
-    floorSprite: {mod: 40k_ROSIGMA_edits, index: 959}
-    throwRange: 1
-    weight: 2
-    fuseType: -1
-    supportedInventorySections:
-      - STR_GROUND #shouldn't be able to pick this up
-    armor: 500 #shouldn't be destroyed by explosions
-    power: 250
-    damageType: 3 #HE
-    damageAlter:
-      RandomType: 2 # 50-150%
-      FixRadius: 8
-      RadiusReduction: 5 #better damage spread
-      ToArmorPre: 0.4 #heavy ablation
-      ArmorEffectiveness: 0.8
-      ToHealth: 1.0
-      ToTime: 0.2 #concussive
-      ToStun: 0.4 #concussive
-      ToWound: 0.1
-      RandomWound: false
-      ToTile: 0.6
-      ToItem: 0.2 #only destroy weak items
-    recover: false
-    tags:
-      ITEM_PRIMED_AT_BATTLE_START: 1
-
-  - type: STR_STRIKE_VOX_FALSE              # fake version of Strike Vox for ufopedia stats
-    battleType: 1
-    clipSize: 5
-    maxRange: 60
-    accuracyAuto: 30
-    dropoff: 0
-    noLOSAccuracyPenalty: 100
-    arcingShot: true
-    armor: 200
-    power: 250
-    damageType: 3 #HE
-    confAuto:
-      name: STR_STRIKE_AUTO
-      shots: 5
-    costAuto:
-      time: 60
-    damageAlter:
-      RandomType: 2 # 50-150%
-      FixRadius: 8
-      RadiusReduction: 5 #better damage spread
-      ToArmorPre: 0.4 #heavy ablation
-      ArmorEffectiveness: 0.8
-      ToHealth: 1.0
-      ToTime: 0.2 #concussive
-      ToStun: 0.4 #concussive
-      ToWound: 0.1
-      RandomWound: false
-      ToTile: 0.6
-      ToItem: 0.2 #only destroy weak items
-
   - type: STR_SMT_GENESEED                  # geoscape item used for neophyte promotion
     costSell: 500000 # make excess geneseed useful (also for other factions if they ever manage to get it) - not worth manufacturing for money
     battleType: 0
@@ -2294,7 +2182,7 @@ items:
       RandomType: 7 # 50-200%
       ArmorEffectiveness: 0.85 #improved pen
     explosionSpeed: 3
-    power: 90
+    power: 85
     damageType: 1
     clipSize: 90
     armor: 200
@@ -2346,7 +2234,7 @@ items:
       mod: 40k
       index: 88
     powerForAnimation: 40
-    power: 90
+    power: 85
     damageType: 2
     damageAlter:
       RandomType: 7 # 50-200%
@@ -2385,7 +2273,7 @@ items:
       mod: 40k
       index: 120
     explosionSpeed: 3
-    power: 90
+    power: 85
     damageType: 1
     clipSize: 90
     armor: 200
@@ -2396,7 +2284,7 @@ items:
   - update: STR_AC_AP_AMMO                  # Heavy Bolter AP Ammo
     refNode: *STR_BOLTER_AMMO_STD
     size: 0.1
-    power: 90 # was 80
+    power: 85 # was 80
     clipSize: 60
     costBuy: 6000 # was 1200
     requiresBuy:
@@ -2408,7 +2296,7 @@ items:
 
   - update: STR_AC_I_AMMO                   # Heavy Bolter Incin Ammo
     armor: 200
-    power: 90 # was 60
+    power: 85 # was 60
     clipSize: 60
     costBuy: 5000 # was 1400
     hitSound: {mod: 40k, index: 708}
@@ -2428,7 +2316,7 @@ items:
   - update: STR_AC_MC_AMMO                  # Heavy Bolter MC Ammo                          ## Custom ammo
     refNode: *STR_BOLTER_AMMO_MASTER
     size: 0.1
-    power: 90 # was 95
+    power: 85 # was 95
     clipSize: 60
     listOrder: 12024
 
@@ -2764,86 +2652,6 @@ items:
       ITEM_AIMED_FLAT_POWER_BONUS: 50
       ITEM_POWER_BONUS_PERCENTILE: 1
       ITEM_HEAT_MAX_LEVEL: 7
-
-  - type: STR_PRIMARIS_ROCKETPACK           # Primaris Vengor Armor
-    size: 0.3
-    costSell: 10000
-    listOrder: 5455
-
-  - type: STR_VENGOR_LAUNCHER               # Primaris Vengor Launcher
-    bigSprite: 216 ###CHANGEME
-    floorSprite: 216 ###CHANGEME
-    handSprite: 424 ###CHANGEME
-    bulletSprite: { mod: 40k, index: 16 } ###CHANGEME
-    fireSound: { mod: 40k, index: 847 } ###CHANGEME
-    explosionHitSound: {mod: 40k, index: 690} ###CHANGEME
-    hitSound: { mod: 40k, index: 19 } ###CHANGEME
-    hitAnimation: { mod: 40k, index: 128 } ###CHANGEME
-    ufopediaType: STR_VOLKITE_DW ###CHANGEME
-    explosionSpeed: 1
-    powerForAnimation: 5
-    battleType: 1
-    armor: 300
-    costSell: 100000
-    invWidth: 2
-    invHeight: 3
-    weight: 22
-    clipSize: -1
-    twoHanded: true
-    accuracySnap: 80
-    accuracyAimed: 0
-    accuracyAuto: 0
-    snapRange: 15
-    aimRange: 0
-    autoRange: 0
-    tuAimed: 0
-    tuSnap: 25
-    tuAuto: 0
-    maxRange: 25
-
-  - type: STR_VENGOR_MISSILES               # Vengor Missiles
-    bigSprite: 161
-    floorSprite: 161
-    handSprite: 216
-    size: 0.1
-    costSell: 30000
-    transferTime: 48
-    listOrder: 6634
-    weight: 20
-    battleType: 2
-    invWidth: 2
-    invHeight: 3
-    armor: 200
-    power: 150
-    clipSize: 3
-    damageType: 3 # HE
-    damageAlter:
-      RandomType: 6
-      ToArmorPre: 0.4
-      ArmorEffectiveness: 0.8
-      FixRadius: 8
-
-  - type: STR_CASTELLAN_MISSILES            # Vengor Launcher Castellans
-    bigSprite: 161
-    floorSprite: 161
-    handSprite: 216
-    size: 0.1
-    costSell: 30000
-    transferTime: 48
-    listOrder: 6634
-    weight: 20
-    battleType: 2
-    invWidth: 2
-    invHeight: 3
-    armor: 200
-    power: 90
-    clipSize: 60
-    damageType: 3 # HE
-    damageAlter:
-      RandomType: 6
-      ToArmorPre: 0.2
-      ArmorEffectiveness: 0.8
-      FixRadius: 4
 
   - type: STR_NEOVOLKITE_PISTOL             # Neo-Volkite Pistol
     bigSprite: 216
@@ -4528,7 +4336,10 @@ items:
     invWidth: 0
     invHeight: 0
     battleType: 4
+    hitAnimation: 100
+    explosionSpeed: 100
     recover: false
+    hiddenOnMinimap: true
     supportedInventorySections:
       - STR_GROUND
     spawnUnitFaction: 2 # neutral unit replaced by allied custom unit - avoids 'death' message
@@ -4560,6 +4371,7 @@ items:
     floorSprite: -1
     hitAnimation: -1
     ignoreInCraftEquip: false
+    hiddenOnMinimap: true
     supportedInventorySections:
       - STR_GROUND
     power: 0
@@ -4609,7 +4421,7 @@ items:
     tags:
       BOMBARD_AMMO_ITEM: 4 # 4 - Orbital Laser
 
-  - &STR_STRIKE_CALLIN_MED                  # Callin Remote Template (Medkit)
+  - &STR_STRIKE_CALLIN_MED                  # Firesupport Vox Template (Medkit)
     type: STR_ORBITAL_CALLIN
     categories: [STR_CAT_FIRESUPPORT]
     armor: 300
@@ -4629,8 +4441,9 @@ items:
       BOMBARD_COOLDOWN: 0 # turns before this bombard type can be reused
       BOMBARD_AMMO_REQUIRED: 0 # does this strike need ammo to be used?
 
-  - type: STR_ORBITAL_CALLIN                # Orbital Barrage Remote
+  - type: STR_ORBITAL_CALLIN                # Orbital Barrage Vox
     refNode: *STR_STRIKE_CALLIN_MED
+    ufopediaType: STR_STRIKE_VOX_FALSE
     size: 0.05
     bigSprite: 120
     floorSprite: 120
@@ -4651,15 +4464,16 @@ items:
       BOMBARD_COOLDOWN: 5 # turns before this bombard type can be reused
       BOMBARD_AMMO_REQUIRED: 1 # Orbital Strike ammo
 
-  - type: STR_LANCE_CALLIN                  # Orbital Lance Remote
+  - type: STR_LANCE_CALLIN                  # Orbital Lance Vox
     refNode: *STR_STRIKE_CALLIN_MED
+    ufopediaType: STR_ORBITAL_LANCE_DUMMY
     size: 0.05
     bigSprite: 122
     floorSprite: 122
     handSprite: 464
     size: 0.1
-    costBuy: 100000
-    costSell: 50000
+    costBuy: 80000
+    costSell: 40000
     requiresBuy:
       - STR_CHAPTER_PURITY
       - STR_NAVY_COMUNICATIONS
@@ -4673,8 +4487,9 @@ items:
       BOMBARD_COOLDOWN: 20 # turns before this bombard type can be reused
       BOMBARD_AMMO_REQUIRED: 4 # Orbital Lance ammo
 
-  - type: STR_STORMTALON_CALLIN             # Stormhawk Remote
+  - type: STR_STORMTALON_CALLIN             # Stormhawk CAS Vox
     refNode: *STR_STRIKE_CALLIN_MED
+    ufopediaType: STR_STRM_STRIKE_DUMMY
     size: 0.05
     bigSprite: 100
     floorSprite: 100
@@ -4683,8 +4498,7 @@ items:
     costBuy: 60000
     costSell: 30000
     requiresBuy:
-      - STR_MARINES_STRATEGY
-      - STR_MIDTIER_PREREQ ###CHANGEME - should be dedicated tech
+      - STR_STORMTALON_CASR
     invWidth: 2
     invHeight: 2
     medikitActionName: STR_CALL_STORMHAWK
@@ -4695,9 +4509,9 @@ items:
     tags:
       BOMBARD_CALLIN_REMOTE: 5 # 5 - Stormhawk
       BOMBARD_COOLDOWN: 4 # turns before this bombard type can be reused
-      BOMBARD_AMMO_REQUIRED: 3 # Stormhawk airstrike Ammo
+      BOMBARD_AMMO_REQUIRED: 3 # Stormhawk airstrike ammo
 
-  - &STR_STRIKE_CALLIN_GUN                  # Callin Remote Template (Gun)
+  - &STR_STRIKE_CALLIN_GUN                  # Firesupport Vox Template (Gun)
     type: STR_CAS_CALLIN
     categories: [STR_CAT_FIRESUPPORT]
     armor: 300
@@ -4740,8 +4554,9 @@ items:
       BOMBARD_COOLDOWN: 0 # turns before this bombard type can be reused
       BOMBARD_AMMO_REQUIRED: 0 # does this strike need ammo to be used?
 
-  - type: STR_CAS_CALLIN                    # CAS Strike Remote
+  - type: STR_CAS_CALLIN                    # Lightning CAS Vox
     refNode: *STR_STRIKE_CALLIN_GUN
+    ufopediaType: STR_CAS_STRIKE_DUMMY
     listOrder: 15100
     bigSprite: 121
     floorSprite: 121
@@ -4758,16 +4573,19 @@ items:
     confAimed:
       shots: 1
       name: STR_STRIKE_CASBOLTER
+      followProjectiles: false
     confSnap: # snap +1
       shots: 1
       name: STR_STRIKE_CASROCKET
+      followProjectiles: false
     confAuto: # auto +2
       shots: 1
       name: STR_STRIKE_CASNAPALM
+      followProjectiles: false
     tags:
-      BOMBARD_CALLIN_REMOTE: 2 # 2/3/4 - CAS Bolter/Rocket/Napalm
-      BOMBARD_COOLDOWN: 3 # requires expensive ammo
-      BOMBARD_AMMO_REQUIRED: 2 # CAS Airstrike ammo
+      BOMBARD_CALLIN_REMOTE: 2 # 2/3/4 - Bolter/Rocket/Napalm
+      BOMBARD_COOLDOWN: 3
+      BOMBARD_AMMO_REQUIRED: 2 # Lightning CAS ammo
 
   - type: STR_STRIKE_AMMOLOADER             # Strike Designator Ammo loader
     medikitTargetMatrix: 0
@@ -4924,6 +4742,7 @@ items:
       RandomType: 3
       ToTile: 2  # obliterate the earth
       ToArmorPre: 1  # annihilate the armor
+      ArmorEffectiveness: 0.0 # there is no defense
       FireThreshold: 1  # incinerate the sea
       FixRadius: 200  # melt the map
       ToMorale: 5  # mash the mind
@@ -4965,7 +4784,7 @@ items:
       shots: 5
       spendPerShot: 2
       followProjectiles: false
-    power: 80
+    power: 85
     damageType: 1
     damageAlter:
       ToArmorPre: 0.12
@@ -4989,10 +4808,10 @@ items:
     dropoff: 5
     autoRange: 0
     snapRange: 0
-    aimRange: 8
+    aimRange: 12
     accuracyAuto: 0
     accuracySnap: 0
-    accuracyAimed: 80
+    accuracyAimed: 90
     tuAuto: 0
     tuSnap: 0
     costAimed:
@@ -5003,7 +4822,7 @@ items:
     damageAlter:
       RandomType: 2 # 50-150%
       RadiusReduction: 5
-      ToHealth: 0.8
+      ToHealth: 1.0
       ToArmorPre: 0.3
       ToArmor: 0.3
       ToTile: 1.0
@@ -5024,10 +4843,10 @@ items:
     dropoff: 5
     autoRange: 0
     snapRange: 0
-    aimRange: 8
+    aimRange: 12
     accuracyAuto: 0
     accuracySnap: 0
-    accuracyAimed: 80
+    accuracyAimed: 90
     tuAuto: 0
     tuSnap: 0
     costAimed:
@@ -5041,14 +4860,13 @@ items:
       FireBlastCalc: false
       FireThreshold: 1
       RadiusReduction: 3 #minor
-      FixRadius: 8
-      ArmorEffectiveness: 1.0
-      ToArmorPre: 0.1
+      FixRadius: 9
+      ArmorEffectiveness: 1.1
+      ToArmorPre: 0.05
       ToArmor: 0.1
       ToTile: 0.25
       ToMorale: 2.0
-      ToHealth: 1.1
-      ToStun: 0.2
+      ToHealth: 1.3
       ToEnergy: 0.3
       ToWound: 0.3
       RandomWound: false
@@ -5064,10 +4882,10 @@ items:
     bulletSpeed: 80
     explosionSpeed: 5
     sprayWaypoints: 2
-    dropoff: 6
-    autoRange: 12
+    dropoff: 4
+    autoRange: 14
     snapRange: 0
-    aimRange: 12
+    aimRange: 14
     accuracyAuto: 50
     accuracySnap: 0
     accuracyAimed: 100
@@ -5080,14 +4898,14 @@ items:
       mana: 5
     confAimed:
       shots: 5
-      spendPerShot: 4
+      spendPerShot: 3
       followProjectiles: false
     confAuto:
-      shots: 20
+      shots: 15
       followProjectiles: false
     power: 100
     damageType: 1
-    damageAlter: 
+    damageAlter: # Assault Cannon values
       ToArmorPre: 0.15 # was 0.1
       ArmorEffectiveness: 0.85
       ToArmor: 0.15 # was 0.1
@@ -5097,7 +4915,7 @@ items:
       ToEnergy: 0.3
       ToWound: 0.2
       RandomWound: false
-    clipSize: 60
+    clipSize: 45
 
   - type: STR_STRM_STRIKE_ROCKET            # Stormtalon Rockets
     refNode: *STR_STRIKE_WEAPON_DEFAULTS
@@ -5109,13 +4927,271 @@ items:
     dropoff: 4
     autoRange: 0
     snapRange: 0
-    aimRange: 8
+    aimRange: 12
     accuracyAuto: 0
     accuracySnap: 0
-    accuracyAimed: 80
+    accuracyAimed: 90
     costAimed:
       time: 1
       mana: 5
+    power: 160
+    damageType: 3
+    damageAlter:
+      RandomType: 2  # 50-150%
+      RadiusReduction: 5
+      FixRadius: 9
+      FireThreshold: 180
+      ToArmorPre: 0.30
+      ArmorEffectiveness: 0.75
+      ToTile: 1.0
+      ToItem: 0.5
+    clipSize: 2
+
+  - type: STR_STRIKE_VOX                    # Strike weapon (Old)
+    categories: [STR_CAT_DEVASTATOR]
+    size: 0.1
+    weight: 20
+    costSell: 100000
+    bigSprite: 100
+    floorSprite: 100
+    fireSound: {mod: 40k, index: 699}
+    hitAnimation: {mod: 40k, index: 150}
+    hitSound: 0 # consider changing
+    ufopediaType: STR_STRIKE_VOX_FALSE
+    armor: 200
+    battleType: 1
+    invWidth: 2
+    invHeight: 2
+    power: 0
+    damageType: 0
+    maxRange: 60
+    accuracyAuto: 30
+    dropoff: 0
+    noLOSAccuracyPenalty: 100
+    arcingShot: true
+    bulletSpeed: 30
+    followProjectiles: false
+    spawnItem: STR_STRIKE_BEACON
+    spawnItemChance: 100
+    damageAlter:
+      RandomType: 3 #fixed value
+      ArmorEffectiveness: 0.0
+      ToStun: 0.0
+      ToMorale: 0.00
+      ToTime: 0.00
+      ToHealth: 0.0
+      ToWound: 0.0
+      ToArmor: 0.0
+      ToTile: 0.00
+      ToItem: 0.00
+    confAuto:
+      name: STR_STRIKE_AUTO
+      shots: 4
+    costAuto:
+      time: 80
+    flatAuto:
+      time: false # 80% TU
+    twoHanded: false
+    accuracyMultiplier:
+      firing: 0.2
+      throwing: 0.3
+    experienceTrainingMode: 32
+    clipSize: 4
+    recover: true
+
+  - type: STR_STRIKE_BEACON                 # Strike beacon explosive
+    battleType: 4
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 100}
+    floorSprite: {mod: 40k_ROSIGMA_edits, index: 959}
+    throwRange: 1
+    weight: 2
+    fuseType: -1
+    supportedInventorySections:
+      - STR_GROUND #shouldn't be able to pick this up
+    armor: 500 #shouldn't be destroyed by explosions
+    power: 250
+    damageType: 3 #HE
+    damageAlter:
+      RandomType: 2 # 50-150%
+      FixRadius: 8
+      RadiusReduction: 5 #better damage spread
+      ToArmorPre: 0.4 #heavy ablation
+      ArmorEffectiveness: 0.8
+      ToHealth: 1.0
+      ToTime: 0.2 #concussive
+      ToStun: 0.4 #concussive
+      ToWound: 0.1
+      RandomWound: false
+      ToTile: 0.6
+      ToItem: 0.2 #only destroy weak items
+    recover: false
+    tags:
+      ITEM_PRIMED_AT_BATTLE_START: 1
+
+  - type: STR_STRIKE_VOX_FALSE              # Orbital Strike Codex
+    battleType: 1
+    clipSize: 5
+    accuracyAuto: 100
+    confAuto:
+      name: STR_STRIKE_AUTO
+      shortName: STR_FIRESUPPORT_STRIKE_COUNT
+      shots: 5
+    costAuto:
+      time: 60
+    power: 250
+    damageType: 3 #HE
+    damageAlter:
+      RandomType: 2 # 50-150%
+      FixRadius: 8
+      RadiusReduction: 5 #better damage spread
+      ToArmorPre: 0.4 #heavy ablation
+      ArmorEffectiveness: 0.8
+      ToHealth: 1.0
+      ToTime: 0.2 #concussive
+      ToStun: 0.4 #concussive
+      ToWound: 0.1
+      RandomWound: false
+      ToTile: 0.6
+      ToItem: 0.2 #only destroy weak items
+
+  - type: STR_ORBITAL_LANCE_DUMMY           # Orbital Lance Codex
+    battleType: 1
+    accuracyAuto: 100
+    confAuto:
+      shortName: STR_FIRESUPPORT_LANCE_COUNT
+      shots: 1
+    tuAimed: 0
+    tuSnap: 0
+    tuAuto: 60
+    power: 1000
+    damageType: 3
+    damageAlter:
+      RandomType: 3
+      ToTile: 2  # obliterate the earth
+      ToArmorPre: 1  # annihilate the armor
+      ArmorEffectiveness: 0.0 # there is no defense
+      FireThreshold: 1  # incinerate the sea
+      FixRadius: 200  # melt the map
+      ToMorale: 5  # mash the mind
+      RadiusReduction: 4.5
+      IgnoreOverKill: false  # leave no trace; this is the end of days
+    clipSize: 1
+
+  - type: STR_CAS_STRIKE_DUMMY              # Lightning CAS Codex weapon
+    battleType: 1
+    accuracyAimed: 80
+    accuracySnap: 80
+    accuracyAuto: 55
+    damageType: 3 #HE
+    confAuto:
+      shortName: STR_FIRESUPPORT_BOLTER_COUNT
+      shots: 30
+    confSnap:
+      shortName: STR_FIRESUPPORT_ROCKET_COUNT
+      shots: 2
+    confAimed:
+      shortName: STR_FIRESUPPORT_NAPALM_COUNT
+      shots: 2
+    compatibleAmmo:
+      - STR_CAS_BOLTER_DUMMY
+      - STR_CAS_ROCKET_DUMMY
+      - STR_CAS_NAPALM_DUMMY
+    tuAimed: 35
+    tuSnap: 35
+    tuAuto: 35
+    clipSize: -1
+
+  - type: STR_CAS_BOLTER_DUMMY              # Lighting CAS Bolter Codex
+    battleType: 2
+    power: 85
+    damageType: 1
+    damageAlter:
+      ToArmorPre: 0.12
+      ArmorEffectiveness: 0.9
+      ToArmor: 0.15
+      ToHealth: 1.1
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    clipSize: 30
+
+  - type: STR_CAS_ROCKET_DUMMY              # Lighting CAS Rocket Codex
+    battleType: 2
+    power: 150
+    damageType: 3
+    damageAlter:
+      RandomType: 2 # 50-150%
+      RadiusReduction: 5
+      ToHealth: 1.0
+      ToArmorPre: 0.3
+      ToArmor: 0.3
+      ToTile: 1.0
+      ToItem: 0.5
+      ArmorEffectiveness: 0.5
+      FireThreshold: 180
+      FixRadius: 2
+    clipSize: 2
+
+  - type: STR_CAS_NAPALM_DUMMY              # Lighting CAS Napalm Codex
+    battleType: 2
+    power: 150
+    damageType: 2
+    damageAlter:
+      RandomType: 2 # 50-150%
+      IgnoreDirection: false
+      FireBlastCalc: false
+      FireThreshold: 1
+      RadiusReduction: 3 #minor
+      FixRadius: 9
+      ArmorEffectiveness: 1.1
+      ToArmorPre: 0.05
+      ToArmor: 0.1
+      ToTile: 0.25
+      ToMorale: 2.0
+      ToHealth: 1.3
+      ToEnergy: 0.3
+      ToWound: 0.3
+      RandomWound: false
+    clipSize: 2
+
+  - type: STR_STRM_STRIKE_DUMMY             # Stormtalon CAS Codex weapon
+    battleType: 1
+    accuracyAimed: 80
+    accuracySnap: 0
+    accuracyAuto: 50
+    confAuto:
+      shortName: STR_FIRESUPPORT_ASSC_COUNT
+      shots: 45
+    confAimed:
+      shortName: STR_FIRESUPPORT_ROCKET_COUNT
+      shots: 2
+    compatibleAmmo:
+      - STR_STRM_ASSC_DUMMY
+      - STR_STRM_ROCKET_DUMMY
+    tuAimed: 60
+    tuSnap: 0
+    tuAuto: 60
+    clipSize: -1
+
+  - type: STR_STRM_ASSC_DUMMY               # Stormtalon CAS Assault Cannon Codex
+    battleType: 2
+    power: 100
+    damageType: 1
+    damageAlter: # Assault Cannon values
+      ToArmorPre: 0.15 # was 0.1
+      ArmorEffectiveness: 0.85
+      ToArmor: 0.15 # was 0.1
+      ToHealth: 1.0
+      ToStun: 0.2 # was 0.5
+      ToHealth: 1.0
+      ToEnergy: 0.3
+      ToWound: 0.2
+      RandomWound: false
+    clipSize: 45
+
+  - type: STR_STRM_ROCKET_DUMMY             # Stormtalon CAS Rocket Codex
+    battleType: 2
     power: 160
     damageType: 3
     damageAlter:
@@ -5158,7 +5234,7 @@ items:
 
   - type: STR_BOMBARD_ROCKET                # Preator Rockets
     refNode: *STR_STRIKE_WEAPON_DEFAULTS
-    bigSprite: {mod: 40k, index: 451} ###CHANGEME
+    bigSprite: {mod: 40k, index: 874}
     bulletSprite: {mod: 40k, index: 0}
     fireSound: {mod: 40k, index: 702}
     hitSound: {mod: 40k, index: 0}

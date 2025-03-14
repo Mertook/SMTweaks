@@ -8,7 +8,8 @@ New Features:
 - New armors and significant reworks to existing armor
 - New weapons added and several existing weapons rebalanced and made more appropriate for the Emperors elite forces
 - New scripted abilities to keep your Marines alive and bring destruction to the Forces of Chaos
-- Smoke Launchers for Landspeeders
+- A new Fire Support system that allows you to call airstrikes and orbital bombardments on the battlefield
+- Smoke Launchers for Craft
 - Customizable Turrets for Razorbacks; Heavy Bolters, Heavy Flamers & Lascannons
 - A complete rework of how Deathwatch Marines are hired, build a small super-elite Kill-Team
 - 6 new custom ammo types just for Deathwatch

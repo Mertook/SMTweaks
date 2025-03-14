@@ -9,7 +9,7 @@ extraStrings:
     strings:
       ### Units
       STR_BOMBARD_TARGETER: Target Designator
-      STR_ORBITAL_STRIKE_TARGETER: Orbital Strike Designator
+      STR_ORBITAL_STRIKE_TARGETER: Orbital Barrage Designator
       STR_ORBITAL_LANCE_TARGETER: Orbital Lance Designator
       STR_BOMBARD_CANNON_TARGETER: Cannon Bombardment
       STR_BOMBARD_ROCKET_TARGETER: Rocket Bombardment
@@ -17,7 +17,7 @@ extraStrings:
       STR_CAS_BOLTER_TARGETER: CAS-B Target Designator
       STR_CAS_ROCKET_TARGETER: CAS-R Target Designator
       STR_CAS_NAPALM_TARGETER: CAS-N Target Designator
-      STR_STORMTALON_TARGETER: Stormhawk Target Designator
+      STR_STORMTALON_TARGETER: Stormhawk CAS Designator
       ### MISC
       STR_TERMINATOR_CROSS_DESCRIPTION: Space Marines awarded with the Crux Terminatus are recognized as elites, allowing promotion to the highest ranks and access to rare relics including Terminator Armor. {NEWLINE}{NEWLINE} For this honor the Space Marine needs to have achieved 30 enemy kills, 15 successful missions and serve for three months.
       STR_HONOR_MEDAL: "Mark of Honor"
@@ -26,16 +26,21 @@ extraStrings:
       STR_SNAP_SHOT_COUNT: "Snap (x{0})"
       STR_FULL_AUTO: Full Auto
       STR_FULL_AUTO_COUNT: "Full Auto (x{0})"
-      STR_STRIKE_AUTO_COUNT: "Barrage (x{0})"
+      STR_FIRESUPPORT_STRIKE_COUNT: "Orb. Strike (x{0})"
+      STR_FIRESUPPORT_LANCE_COUNT: "Orb. Lance (x{0})"
+      STR_FIRESUPPORT_BOLTER_COUNT: "CAS Bolter (x{0})"
+      STR_FIRESUPPORT_ROCKET_COUNT: "CAS Rocket (x{0})"
+      STR_FIRESUPPORT_NAPALM_COUNT: "CAS Napalm (x{0})"
+      STR_FIRESUPPORT_ASSC_COUNT: "CAS Cannon (x{0})"
       STR_CROZIUS_AIMED_COUNT: "Sanctify (x{0})"
       STR_THROW_KNIFE: "Throw Knife"
       STR_LAUNCH_SALVO_AUTO: Bombardment
       STR_LAUNCH_FRAGS: Launch Grenade
       STR_DUAL_SNAP: Dual Snap
       STR_DAMAGE_12: "GRAV"
-      STR_STRIKE_ORBITAL: Orbital Strike
+      STR_STRIKE_ORBITAL: Orbital Barrage
       STR_BOMBARD_SET_POSITION: Set Firing Position
-      STR_CALL_ORBITAL: Orbital Bombardment
+      STR_CALL_ORBITAL: Orbital Barrage
       STR_CALL_LANCE: Orbital Lance
       STR_STRIKE_CASBOLTER: Strafing Run
       STR_STRIKE_CASROCKET: Rocket Strike
@@ -136,10 +141,18 @@ extraStrings:
       STR_JUDICAR_BLESS: Fanaticism
       STR_SMT_SIGNUM: Signum Sensor Pack
       STR_SIGNUM_ACTION: Squad Link
-      STR_STRIKE_VOX: Strike Vox-caster
-      STR_STRIKE_VOX_FALSE: Strike Vox-caster
+      STR_STRIKE_VOX: Strike Vox-Caster
+      STR_STRIKE_VOX_FALSE: Orbital Barrage Vox-Caster
       STR_STRIKE_AUTO: Call Strike
       STR_STRIKE_BEACON: Strike Beacon
+      STR_ORBITAL_LANCE_DUMMY: Orbital Lance Vox-Caster
+      STR_CAS_STRIKE_DUMMY: Lightning CAS Vox-Caster
+      STR_CAS_BOLTER_DUMMY: Heavy Bolter
+      STR_CAS_ROCKET_DUMMY: Hellstrike Rocket
+      STR_CAS_NAPALM_DUMMY: Hellfury Rocket
+      STR_STRM_STRIKE_DUMMY: Stormtalon CAS Vox-Caster
+      STR_STRM_ASSC_DUMMY: Assault Cannon
+      STR_STRM_ROCKET_DUMMY: Typhoon Missile
       STR_SMT_GENESEED: Geneseed
       STR_SMT_GENESEED_IMPURE: Immature Geneseed
       STR_SMITE_TOME: Tome of Fulmination
@@ -182,7 +195,7 @@ extraStrings:
       STR_GRAV_AUTOC_DW: Autocannon Gauntlet
       STR_GRAV_AUTOC: Autocannon Gauntlet
       STR_GRAV_FLAMER_DW: Flame Gauntlet
-      STR_CLAWS_DW: ¬ Lighting Claw
+      STR_CLAWS_DW: ¬ Lightning Claw
       STR_BOLTRIFLE_DRUM: Heavy Boltrifle Drum Mag
       STR_BOLTRIFLE_DRUM_AP: Kraken Penetrator Drum Mag
       STR_BOLTRIFLE_DRUM_EX: Metal Storm Drum Mag
@@ -205,20 +218,20 @@ extraStrings:
       STR_RIFLEDW: Artifex Boltrifle
       STR_PRIMARIS_INCINERATOR_POWER_PACK: Plasma Incinerator
       STR_STRIKE_AMMOLOADER: Load Munitions
-      STR_ORBITAL_CALLIN: Orbital Strike Vox-Caster
-      STR_ORBITAL_STRIKE_WEAPON: Orbital Strike
+      STR_ORBITAL_CALLIN: Orbital Barrage Vox
+      STR_ORBITAL_STRIKE_WEAPON: Orbital Barrage
       STR_ORBITAL_TARGET_SPAWNER: ""
-      STR_CAS_CALLIN: CAS Vox-Caster
+      STR_CAS_CALLIN: Lightning CAS Vox
       STR_CAS_STRIKE_BOLTER_WEAPON: CAS Heavy Bolter
       STR_CAS_STRIKE_ROCKET_WEAPON: CAS Rocket Strike
-      STR_CAS_STRIKE_NAPALM_WEAPON: CAS Napalm
-      STR_STORMTALON_CALLIN: Stormtalon Vox-Caster
+      STR_CAS_STRIKE_NAPALM_WEAPON: CAS Napalm Strike
+      STR_STORMTALON_CALLIN: Stormtalon CAS Vox
       STR_STRM_STRIKE_ASSC: Assault Cannon
-      STR_STRM_STRIKE_ROCKET: Typhoon Rockets
-      STR_LANCE_CALLIN: Orbital Lance Vox-Caster
+      STR_STRM_STRIKE_ROCKET: Typhoon Missile
+      STR_LANCE_CALLIN: Orbital Lance Vox
       STR_ORBITAL_LANCE_WEAPON: Orbital Lance Designator
       STR_ORBITAL_LANCE_BLAST: Orbital Lance Target
-      STR_ORBITAL_STRIKE_AMMO: Orbital Bombardment Request
+      STR_ORBITAL_STRIKE_AMMO: Orbital Barrage Requisition
       STR_ORBITAL_LANCE_AMMO: Orbital Lance Requisition
       STR_STORMTALON_AMMO: Stormtalon CAS Requisition
       STR_AIRSTRIKE_AMMO: Lightning CAS Requisition
@@ -234,6 +247,7 @@ extraStrings:
       STR_RAZOR_HFLAME: Razorback Heavy Flamer
       STR_SMT_SMOKEL: Smoke Launcher
       STR_SMT_SMOKEL_SPEEDER: Smoke Launcher
+      STR_SMT_SMOKEL_DW: Smoke Launcher
       STR_SMT_RAZORBACK: Razorback Turret
       STR_SMT_CRAFT_LASCANNON: Lascannon Turret
       STR_RTT_DW: "Twin Linked Bolter"
@@ -347,12 +361,12 @@ extraStrings:
       STR_MULTIMELTA_PREREQ: Multimelta Technology
       STR_BOLT_RIFLE_AMMO: Bolt Sniper Ammo
       STR_VOLKITE: Volkite Weaponry
-      STR_PRIMARIS_BACKPACKS: Backpack Integrated Weaponry
-      STR_PRIMARIS_ROCKETPACK: Vengor Launcher
+      STR_PRIMARIS_BACKPACKS: Primaris Integrated Weaponry
       STR_PRIMARIS_MELTAPACK: MKX Tacticus Meltarifle
       STR_PRIMARIS_PLASMAPACK: MKX Tacticus Plasma Incinerator
       STR_OMNIS_AUTOCPACK: MKX Omnis Accelerator Autocannon
       STR_OMNIS_PLASMAPACK: MKX Omnis Plasma Exterminators
+      STR_STORMTALON_CASR: Stormtalon Firesupport
       STR_APOTHECARY_PREREQ: (Apothecary Unlock)
       STR_TSARGENT: Terminator Cyclone Launcher
       STR_BOLTPISTOL_REQ: (Boltpistols Unlocked)
@@ -385,7 +399,7 @@ extraStrings:
       STR_STRIKE_COOLDOWN: "This Strike is on cooldown. Turns remaining: {0}"
       STR_STRIKE_ACTIVE: "Fire support request confirmed"
       STR_STRIKE_ARRIVED: "Strike Targeting Designator active. Calldowns remaining: {0}"
-      STR_STRIKE_LOWTUS: "Support Unit doesn't have enough TUs! Required: {0}"
+      STR_STRIKE_LOWTUS: "Target Unit doesn't have enough TUs! Required: {0}"
       STR_STRIKE_FRIENDLY: "You must target a friendly unit!"
       ### FACILITIES
       STR_OUTPOST_GK: "Outpost"

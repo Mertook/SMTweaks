@@ -60,14 +60,14 @@ extended:
           if and gt currentTU 20 le currentTU 90;
             add currentTU 10; # start with 100 (90 + 10) % bonus
             muldiv bonus currentTU 100;
-            # debug_log "Altered currenTU %" currentTU;
-            # debug_log "20-80 bonus" bonus;
+            #debug_log "Altered currenTU %" currentTU;
+            #debug_log "20-80 bonus" bonus;
             sub currentTU 20;
           end;
 
           if le currentTU 20;
             muldiv bonus 30 100; # lower range is 30 (20 + 10)
-            # debug_log "20 bonus" bonus;
+            #debug_log "20 bonus" bonus;
           end;
 
           #debug_log "HWP base/penalty " accuracyBase bonus;
@@ -98,7 +98,7 @@ extended:
             add bonus accuracyBase;
             add bonus accuracyBase; # (current bonus + starting bonus * 2) / 3
             div bonus 3; # 1/3 penalty
-            # debug_log "kneel+bipod bonus";
+            #debug_log "kneel+bipod bonus";
           end;
 
           if and eq kneeling 1 eq weaponWithBipod 0; # 2/3 penalty if kneeling without bipod
@@ -106,8 +106,8 @@ extended:
             add bonus accuracyBase; # ((current bonus * 2) + starting bonus) / 2
             div bonus 3; # 2/3 penalty
           end;
-          # debug_log "battle_action" battle_action;
-          # debug_log "current bonus" bonus;
+          #debug_log "battle_action" battle_action;
+          #debug_log "current bonus" bonus;
 
 
           return bonus; # final accuracy

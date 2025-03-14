@@ -54,7 +54,7 @@ armors:
 
         # don't dodge on melee and psi
         if or eq battle_action BA_HIT eq battle_action BA_PANIC eq battle_action BA_MINDCONTROL eq battle_action BA_USE;
-          # debug_log "hitUnit | dodge scripts | battle_action undodgeable. Aborting:";
+          #debug_log "hitUnit | dodge scripts | battle_action undodgeable. Aborting:";
           return power part side;
         end;
 
@@ -65,13 +65,13 @@ armors:
         # don't dodge support skills
         # terrain artillery shell (terror city map) do damageType 0
         if or eq temp 0 eq temp 10; # Support or Impact (IG Support, non-IG drop deploy) damage type
-          # debug_log "hitUnit | dodge scripts | damage type undodgeable. Aborting:" temp;
+          #debug_log "hitUnit | dodge scripts | damage type undodgeable. Aborting:" temp;
           return power part side;
         end;
 
         damageType.isAreaOfEffect temp;
         if gt temp 0;
-          # debug_log "hitUnit | dodge scripts | Attack is an aoe and undodgeable. Aborting:";
+          #debug_log "hitUnit | dodge scripts | Attack is an aoe and undodgeable. Aborting:";
           return power part side;
         end;
 
@@ -86,7 +86,7 @@ armors:
         add temp dodgeChance;
         add temp flightDodgeChance;
         if le temp 0;
-          # debug_log "hitUnit | dodge scripts | no dodge or dodge mitigation chance detected. Aborting:" temp;
+          #debug_log "hitUnit | dodge scripts | no dodge or dodge mitigation chance detected. Aborting:" temp;
           return power part side;
         end;
 
@@ -95,7 +95,7 @@ armors:
         unit.getStun temp2;
 
         if ge temp2 temp;
-          # debug_log "hitUnit | dodge scripts | target is stunned and cannot dodge. Aborting:";
+          #debug_log "hitUnit | dodge scripts | target is stunned and cannot dodge. Aborting:";
           return power part side;
         end;
 
@@ -114,10 +114,10 @@ armors:
           set dodgeFlatReduction temp;
         end;
 
-        # debug_log "hitUnit | dodge scripts | dodgePercentReduction:" dodgePercentReduction;
-        # debug_log "hitUnit | dodge scripts | dodgeFlatReduction:" dodgeFlatReduction;
+        #debug_log "hitUnit | dodge scripts | dodgePercentReduction:" dodgePercentReduction;
+        #debug_log "hitUnit | dodge scripts | dodgeFlatReduction:" dodgeFlatReduction;
         if or ge dodgeFlatReduction 100 ge dodgePercentReduction 100; #these weapons are undodgable
-          # debug_log "hitUnit | dodgeFlatReduction or dodgePercentReduction 100 or greater, Aborting." dodgePercentReduction;
+          #debug_log "hitUnit | dodgeFlatReduction or dodgePercentReduction 100 or greater, Aborting." dodgePercentReduction;
           return power part side;
         end;
 
@@ -132,7 +132,7 @@ armors:
         end;
 
         if ge counterSuccessfulDodges maxSuccessfulDodges;
-          # debug_log "hitUnit | dodge scripts | Max successful dodges exceeded. Aborting:" counterSuccessfulDodges;
+          #debug_log "hitUnit | dodge scripts | Max successful dodges exceeded. Aborting:" counterSuccessfulDodges;
           return power part side;
         end;
 
@@ -148,7 +148,7 @@ armors:
         mul dodgeDeclines counterSuccessfulDodges; #reduce dodge chance by ARMOR_DODGE_CHANCE_DECLINE_PER_SUCCESS times number of successful dodges.
         sub dodgeChance dodgeDeclines;
         if le dodgeChance 0;
-          # debug_log "Dodge chance reduced to 0 by dodgeFlatReduction property.";
+          #debug_log "Dodge chance reduced to 0 by dodgeFlatReduction property.";
           return power part side;
         end;
 
@@ -171,15 +171,15 @@ armors:
         end;
 
         battle_game.randomRange temp 1 100;
-        # debug_log "randomNumber" temp;
-        # debug_log "dodgeChance" dodgeChance;
+        #debug_log "randomNumber" temp;
+        #debug_log "dodgeChance" dodgeChance;
 
         if gt temp dodgeChance;
-          # debug_log "hitUnit | dodge scripts | Target failed to dodge. Aborting.";
+          #debug_log "hitUnit | dodge scripts | Target failed to dodge. Aborting.";
           return power part side;
         end;
 
-        # debug_log "miss";
+        #debug_log "miss";
         battle_game.getAnimFrame temp;
         unit.setTag Tag.LAST_DODGE_FRAME temp;
         unit.setTag Tag.DODGED 1;

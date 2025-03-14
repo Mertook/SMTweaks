@@ -111,7 +111,7 @@ items:
 
           unit.getHealth temp;
           unit.getStun totalStun;
-          debug_log "DerevDmg Initial Stun OS/NS/TH/UH " totalStun to_stun to_health temp;
+          #debug_log "DerevDmg Initial Stun OS/NS/TH/UH " totalStun to_stun to_health temp;
           add totalStun to_stun;
           add totalStun to_health;
           if ge totalStun temp; # if unit is or will be knocked unconcious, kill it

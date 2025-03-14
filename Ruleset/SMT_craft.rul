@@ -35,6 +35,10 @@ units:
     refNode: *STR_SMT_SMOKEL_DEFAULT
     armor: STR_SMT_SMOKEL_ARMOR_SPEEDER
 
+  - type: STR_SMT_SMOKEL_DW                 # Craft Smokelauncher Unit (DW)
+    refNode: *STR_SMT_SMOKEL_DEFAULT
+    armor: STR_SMT_SMOKEL_ARMOR_DW
+
   - &STR_SMT_RAZORBACK_DEFAULT              # Generic Razorback Turret
     type: STR_SMT_RAZORBACK_BLANK
     race: STR_SMT_RAZORBACK
@@ -109,7 +113,7 @@ units:
     race: STR_RTT
     stats:
       tu: 20
-      stamina: 10
+      stamina: 12
       health: 150
       bravery: 110
       reactions: 20
@@ -131,28 +135,28 @@ units:
     energyRecovery: 34
     moraleLossWhenKilled: 1 # was 25
     livingWeapon: true
+    liveAlien: ""
     builtInWeaponSets:
       - - AUX_BOLTER
         - STR_SMT_CRAFT_SMOKE
-    liveAlien: ""
 
   - type: STR_LTT                           # Thunderhawk Turret (Left)
-    refNode: *STR_SMT_RAZORBACK_DEFAULT
+    refNode: *STR_THUNDERHAWK_TURRET
 
   - type: STR_RTT_DW                        # Thunderhawk Turret Deathwatch (Right)
-    refNode: *STR_SMT_RAZORBACK_DEFAULT
+    refNode: *STR_THUNDERHAWK_TURRET
     armor: RTT_DW_ARMOR
 
   - type: STR_LTT_DW                        # Thunderhawk Turret Deathwatch (Right)
-    refNode: *STR_SMT_RAZORBACK_DEFAULT
+    refNode: *STR_THUNDERHAWK_TURRET
     armor: LTT_DW_ARMOR
 
   - type: STR_RTT_GK                        # Thunderhawk Turret Grey Knight (Right)
-    refNode: *STR_SMT_RAZORBACK_DEFAULT
+    refNode: *STR_THUNDERHAWK_TURRET
     armor: RTT_GK_ARMOR
 
   - type: STR_LTT_GK                        # Thunderhawk Turret Grey Knight (Right)
-    refNode: *STR_SMT_RAZORBACK_DEFAULT
+    refNode: *STR_THUNDERHAWK_TURRET
     armor: LTT_GK_ARMOR
 
 armors:
@@ -206,6 +210,10 @@ armors:
   - type: STR_SMT_SMOKEL_ARMOR_SPEEDER            # Smoke Launcher (Landspeeder)
     refNode: *STR_SMT_SMOKEL
     spriteSheet: SLTB.PCK
+
+  - type: STR_SMT_SMOKEL_ARMOR_DW                   # Smoke Launcher (Deathwatch)
+    refNode: *STR_SMT_SMOKEL
+    spriteSheet: SLTDW.PCK
 
   - &STR_SMT_RB_TURRET_BASE                 # Razorback Turret defaults
     type: STR_SMT_RAZOR_DEFAULT_ARMOR
@@ -306,6 +314,7 @@ armors:
   - &STR_THUNDERHAWK_TURRET_ARMOR           # Thunderhawk Turret Base
     type: RTT_ARMOR
     spriteSheet: RTT.PCK
+    drawingRoutine: 19
     spriteInv: NOTDONEIMP
     scripts:
       selectUnitSprite:
@@ -333,9 +342,9 @@ armors:
         return sprite_index;
     visibilityAtDay: 40
     visibilityAtDark: 40 # was 30
-    heatVision: 30 # vehicle
-    antiCamouflageAtDay: 5
-    antiCamouflageAtDark: 5
+    heatVision: 50 # vehicle
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
     personalLight: 5
     frontArmor: 150
     sideArmor: 150
@@ -408,6 +417,10 @@ items:
   - type: STR_SMOKELAUNCHER_SPEEDER_SPAWNER # SmokeLauncher Spawner (Landspeeder)
     refNode: *STR_TURRET_SPAWNER_BASE
     spawnUnit: STR_SMT_SMOKEL_SPEEDER
+
+  - type: STR_SMOKELAUNCHER_DW_SPAWNER      # SmokeLauncher Spawner (DW)
+    refNode: *STR_TURRET_SPAWNER_BASE
+    spawnUnit: STR_SMT_SMOKEL_DW
 
   - type: STR_LEFT_THUNDERHAWKDW_SPAWNER    # Thunderhawk DW Left
     refNode: *STR_TURRET_SPAWNER_BASE
@@ -603,6 +616,16 @@ items:
     powerRangeThreshold: 22
     maxRange: 20 # was 15 - not especially useful for extra distance thanks to the hard powerRangeThreshold but makes targeting a bit better and allows more floor coverage
 
+  - update: STR_THUNDER_CHARGE              # Thunderhawk Transport Removal Items
+    damageAlter:
+      FireThreshold: 1000 # was 250
+      SmokeThreshold: 9000 # was 500
+    hiddenOnMinimap: true
+  - update: STR_THUNDER_CHARGE2             # Thunderhawk Transport Removal Items
+    damageAlter:
+      FireThreshold: 1000 # was 250
+      SmokeThreshold: 9000 # was 500
+
   # - type: STR_SMT_CRAFT_HBOLTER             # Craft Heavy Bolter weapon
     # refNode: *STR_SMT_TURRET_GUN_DEFAULT
     # bigSprite: {mod: 40k, index:  640}
@@ -659,13 +682,13 @@ crafts:
       - STR_NOT_PRIMARIS
       - STR_MARINES_STRATEGY
     battlescapeTerrainData:
-      name: DROPPODS
+      name: DROPPOD_GUARD
       mapDataSets:
         - BLANKS
-        - DROPPOD
+        - DROPPOD_GUARD
         - SMTBOMBARD
       mapBlocks:
-        - name: DROPPODS
+        - name: DROPPOD_GUARD
           width: 10
           length: 20
           items:
@@ -703,27 +726,16 @@ crafts:
       - STR_ADV_DROPPODS
       - STR_MARINES_STRATEGY
     battlescapeTerrainData:
-      name: DROPPODS
+      name: DROPPOD_GUARD
       mapDataSets:
         - BLANKS
-        - DROPPOD
+        - DROPPOD_GUARD
         - SMTBOMBARD
       mapBlocks:
-        - name: DROPPODS
+        - name: DROPPOD_GUARD
           width: 10
           length: 20
           items:
-            STR_DROPPOD_DEPLOY_CHARGE:
-              - [2, 2, 0]
-              - [5, 8, 0]
-              - [2, 15, 0]
-              - [1, 1, 1]
-              - [5, 8, 1]
-              - [2, 15, 1]
-            STR_STORMBOLTER_TURRET_SPAWNER:
-              - [1, 14, 1]
-              - [4, 7, 1]
-              - [1, 1, 1]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -737,6 +749,17 @@ crafts:
               - [0, 0, 5]
               - [0, 0, 5]
               - [0, 0, 5]
+            STR_DROPPOD_DEPLOY_CHARGE:
+              - [2, 2, 0]
+              - [5, 8, 0]
+              - [2, 15, 0]
+              - [1, 1, 1]
+              - [5, 8, 1]
+              - [2, 15, 1]
+            STR_STORMBOLTER_TURRET_SPAWNER:
+              - [1, 14, 1]
+              - [4, 7, 1]
+              - [1, 1, 1]
           fuseTimers:
             STR_DROPPOD_DEPLOY_CHARGE: [1, 1]
             STR_STORMBOLTER_TURRET_SPAWNER: [1, 1]
@@ -746,13 +769,13 @@ crafts:
       - STR_NOT_PRIMARIS
       - STR_MARINES_STRATEGY
     battlescapeTerrainData:
-      name: DROPPOD
+      name: DROP_GUARD
       mapDataSets:
         - BLANKS
-        - DROPPOD
+        - DROPPOD_GUARD
         - SMTBOMBARD
       mapBlocks:
-        - name: DROPPOD
+        - name: DROP_GUARD
           width: 10
           length: 20
           items:
@@ -761,15 +784,6 @@ crafts:
               - [5, 8, 1]
             STR_STORMBOLTER_TURRET_SPAWNER:
               - [4, 7, 1]
-            STR_BOMBARD_SPAWNER: # 8 strikes
-              - [0, 0, 5] # Bombard Platform
-              - [0, 0, 5]
-              - [0, 0, 5]
-              - [0, 0, 5]
-              - [0, 0, 5]
-              - [0, 0, 5]
-              - [0, 0, 5]
-              - [0, 0, 5]
           fuseTimers:
             STR_DROPPOD_DEPLOY_CHARGE: [1, 1]
             STR_STORMBOLTER_TURRET_SPAWNER: [1, 1]
@@ -856,7 +870,6 @@ crafts:
     requires:
       - STR_NEW_FIGHTER_TRANSPORTER
       - STR_THUNDERHAWKTYPE1
-    soldiers: 20
     pilots: 4
     battlescapeTerrainData:
       name: THUNDERHAWK2
@@ -895,9 +908,8 @@ crafts:
             STR_RIGHT_THUNDERHAWK_SPAWNER: [0, 0]
             STR_THUNDERHAWK_DEPLOY_CHARGE: [1, 1]
             STR_BOMBARD_CANNON_SPAWNER: [0, 0]
+    soldiers: 18
     deployment:
-      - [4, 13, 1, 4]
-      - [5, 13, 1, 4]
       - [4, 12, 1, 4]
       - [5, 12, 1, 4]
       - [4, 11, 1, 4]
@@ -919,7 +931,7 @@ crafts:
     spacecraft: true
 
   - type: STR_AVENGER                       # Thunderhawk Transport (Tactical)
-    soldiers: 20
+    soldiers: 22
     battlescapeTerrainData:
       name: RHINOASS
       mapDataSets:
@@ -933,9 +945,9 @@ crafts:
           length: 20
           items:
             STR_THUNDER_CHARGE:
-              - [5, 9, 3]
+              - [5, 10, 3]
             STR_THUNDER_CHARGE2:
-              - [4, 2, 3]
+              - [4, 3, 3]
             STR_RAZORBACK_TURRET_SPAWNER:
               - [6, 11, 1]
               - [6, 3, 1]
@@ -965,15 +977,17 @@ crafts:
       - [7, 11, 0, 0]
       - [6, 10, 0, 0]
       - [7, 10, 0, 0]
-      - [3, 5, 0, 0] #razor 2
-      - [4, 5, 0, 0]
-      - [3, 4, 0, 0]
-      - [4, 4, 0, 0]
-      - [3, 3, 0, 0]
-      - [4, 3, 0, 0]
-      - [3, 2, 0, 0]
-      - [4, 2, 0, 0]
-      - [4, 15, 2, 4] #thunderhawk
+      - [6, 5, 0, 0] #razor 2
+      - [7, 5, 0, 0]
+      - [6, 4, 0, 0]
+      - [7, 4, 0, 0]
+      - [6, 3, 0, 0]
+      - [7, 3, 0, 0]
+      - [6, 2, 0, 0]
+      - [7, 2, 0, 0]
+      - [4, 16, 2, 4] #thunderhawk
+      - [5, 16, 2, 4]
+      - [4, 15, 2, 4]
       - [5, 15, 2, 4]
       - [4, 14, 2, 4]
       - [5, 14, 2, 4]
@@ -1500,7 +1514,6 @@ crafts:
             STR_CORVUS_RIGHT_ASSC_SPAWNER: [0, 0]
 
   - type: STR_DW_THUNDERHAWNK               # Thunderhawk (Deathwatch)
-    soldiers: 20
     battlescapeTerrainData:
       name: THUNDERHAWK2
       mapDataSets:
@@ -1538,9 +1551,8 @@ crafts:
             STR_LEFT_THUNDERHAWKDW_SPAWNER: [0, 0]
             STR_RIGHT_THUNDERHAWKDW_SPAWNER: [0, 0]
             STR_BOMBARD_CANNON_SPAWNER: [0, 0]
+    soldiers: 18
     deployment:
-      - [4, 13, 1, 4]
-      - [5, 13, 1, 4]
       - [4, 12, 1, 4]
       - [5, 12, 1, 4]
       - [4, 11, 1, 4]
@@ -1576,9 +1588,12 @@ crafts:
           width: 10
           length: 20
           items:
-            STR_SKULL_SPAWNER:
+            STR_SMOKELAUNCHER_DW_SPAWNER:
               - [3, 8, 2]
               - [5, 8, 2]
+            STR_SKULL_SPAWNER:
+              - [3, 6, 2]
+              - [5, 6, 2]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -1593,6 +1608,7 @@ crafts:
               - [0, 0, 5]
               - [0, 0, 5]
           fuseTimers:
+            STR_SMOKELAUNCHER_DW_SPAWNER: [0, 0]
             STR_SKULL_SPAWNER: [0, 0]
     deployment:
       - [3, 5, 1, 0]
@@ -1630,9 +1646,13 @@ crafts:
           width: 10
           length: 20
           items:
+            STR_SMOKELAUNCHER_DW_SPAWNER:
+              - [3, 5, 2]
+              - [5, 5, 2]
+              - [3, 16, 2]
             STR_SKULL_SPAWNER:
-              - [3, 5, 2] # Repulsor
-              - [5, 5, 2] # Repulsor
+              - [3, 3, 2]
+              - [5, 3, 2]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -1647,6 +1667,7 @@ crafts:
               - [0, 0, 5]
               - [0, 0, 5]
           fuseTimers:
+            STR_SMOKELAUNCHER_DW_SPAWNER: [0, 0]
             STR_SKULL_SPAWNER: [0, 0]
     deployment:
       - [3, 2, 1, 0] #Repulsor start
@@ -1757,7 +1778,6 @@ crafts:
 
 ### GK CRAFT
   - type: STR_THUNDERHAWNK_GK               # Thunderhawk (Grey Knight)
-    soldiers: 20
     battlescapeTerrainData:
       name: THUNDERHAWK
       mapDataSets:
@@ -1795,9 +1815,8 @@ crafts:
             STR_RIGHT_THUNDERHAWKGK_SPAWNER: [0, 0]
             STR_THUNDERHAWK_DEPLOY_CHARGE: [1, 1]
             STR_BOMBARD_CANNON_SPAWNER: [0, 0]
+    soldiers: 18
     deployment:
-      - [4, 13, 1, 4]
-      - [5, 13, 1, 4]
       - [4, 12, 1, 4]
       - [5, 12, 1, 4]
       - [4, 11, 1, 4]
@@ -2024,8 +2043,8 @@ crafts:
           length: 20
           height: 8
           items:
-            STR_CAS_AIRSTRIKE_DESIGNATOR_2:
-              - [1, 1, 0]
+            # STR_CAS_AIRSTRIKE_DESIGNATOR_2:
+              # - [1, 1, 0]
             STR_GRAVDROP_DEPLOY_CHARGE:
               - [1, 1, 6]
               - [5, 2, 6]
@@ -2047,14 +2066,14 @@ crafts:
               - [8, 16, 6]
               - [3, 17, 6]
               - [6, 17, 6]
-              - [4, 11, 6] # this is for the CAS Strike Unit
+              # - [4, 11, 6] # this is for the CAS Strike Unit
             STR_CAS_MISSILE_POD_SPAWNER:
               - [1, 10, 4]
               - [7, 10, 4]
             STR_CAS_CANNON_SPAWNER:
               - [4, 14, 4]
-            STR_CAS_DROP_VALKYRIE_STRIKE_SPAWNER: # CAS Strike Unit
-              - [4, 11, 6]
+            # STR_CAS_DROP_VALKYRIE_STRIKE_SPAWNER: # CAS Strike Unit
+              # - [4, 11, 6]
             STR_CAS_LEAVE_CHARGE:
               - [4, 7, 4]
             STR_BOMBARD_SPAWNER: # 12 strikes
@@ -2073,7 +2092,7 @@ crafts:
           fuseTimers:
             STR_CAS_LEAVE_CHARGE: [1, 1]
             STR_GRAVDROP_DEPLOY_CHARGE: [1, 1]
-            STR_CAS_DROP_VALKYRIE_STRIKE_SPAWNER: [1, 1]
+            # STR_CAS_DROP_VALKYRIE_STRIKE_SPAWNER: [1, 1]
             STR_CAS_MISSILE_POD_SPAWNER: [0, 0]
             STR_CAS_CANNON_SPAWNER: [0, 0]
 
@@ -2748,7 +2767,6 @@ crafts:
               - [0, 0, 5]
 
   - type: STR_ADEPTAS_THUNDERHAWNK          # Thunderhawk SoB
-    soldiers: 20
     battlescapeTerrainData:
       name: THUNDERHAWK2
       mapDataSets:
@@ -2786,9 +2804,8 @@ crafts:
             STR_LEFT_THUNDERHAWKDW_SPAWNER: [0, 0]
             STR_RIGHT_THUNDERHAWKDW_SPAWNER: [0, 0]
             STR_BOMBARD_CANNON_SPAWNER: [0, 0]
+    soldiers: 18
     deployment:
-      - [4, 13, 1, 4]
-      - [5, 13, 1, 4]
       - [4, 12, 1, 4]
       - [5, 12, 1, 4]
       - [4, 11, 1, 4]

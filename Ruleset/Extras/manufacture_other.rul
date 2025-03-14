@@ -27,20 +27,30 @@ manufacture:
       STR_BOLTPISTOL_LIGHT_ULTRA: 1 # was godwyn, way too much recoil for a starting commissar
       STR_LIGHT_BOLTPISTOL_AMMO: 2
 
-  - name: STR_AIRSTRIKE_AMMO                        # CAS Strike ammo
-    category: STR_FIRESUPPORT
+  - name: STR_AIRSTRIKE_AMMO                        # Lightning CAS ammo
+    category: STR_CAT_FIRESUPPORT
     requires:
       - STR_AIRSTRIKE_REQUISITION
     space: 0
     time: 240
     cost: 100000
-    requiresBaseFunc: [COMU]
     requiredItems:
-      STR_ALIEN_ALLOYS: 4
-      STR_ELERIUM_115: 10
-      STR_KILLPOINT_TOKEN: 20
+      STR_ELERIUM_115: 15
+      STR_KILLPOINT_TOKEN: 30
     producedItems:
       STR_AIRSTRIKE_AMMO: 2
+
+  - name: STR_AIRSTRIKE_MANUFACTURE
+    category: STR_WEAPON
+    requires:
+      - STR_GENERALLOCK
+    space: 0
+    time: 500
+    cost: 200000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 120
+    producedItems:
+      STR_AIRSTRIKE_VOX: 1
 
   - name: STR_AIRSTRIKE_MANUFACTURE
     category: STR_WEAPON
@@ -63,7 +73,6 @@ manufacture:
     cost: 50000
     producedItems:
       STR_AIRSTRIKE_AMMO: 1
-
 
   - name: STR_EXITUS_AMMO                           # Vindicare Sniper Ammo
     requires:

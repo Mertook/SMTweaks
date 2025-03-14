@@ -255,6 +255,8 @@ research:
       - STR_ELERIUM_115 # promethium
       #- STR_UFO_CONSTRUCTION
       - STR_MARINES_AND_ADEPTAS
+    unlocks: !add
+      - STR_ASSC_CLIP
 
   - name: STR_STORMEAGLE_INTERCEPTOR    # Stormeagle
     cost: 600
@@ -266,14 +268,14 @@ research:
       - STR_UFO_POWER_SOURCE
       - STR_UFO_NAVIGATION
       - STR_UFO_CONSTRUCTION
-      #- STR_BATTLESHIP
+      - STR_BATTLESHIP
       #- STR_ABDUCTOR
       #- STR_TERROR_SHIP
       #- STR_HARVESTER
       #- STR_SUPPLY_SHIP
 
   - name: STR_NEW_FIGHTER_TRANSPORTER   # Thunderhawk
-    cost: 700
+    cost: 650 # was 700
     points: 30
     dependencies:
       - STR_MIDTIER_PREREQ
@@ -646,10 +648,6 @@ research:
     points: 0 # was 30
     dependencies:
       - STR_GENERALLOCK
-
-  - name: STR_NEW_FIGHTER_CRAFT     # Stormraven
-    unlocks: !add
-      - STR_ASSC_CLIP
 
   - name: STR_DREAD_R               # unused, replaced by STR_DREADNOUGHT_MARINE in rosigma for some reason
     cost: 180

@@ -3360,21 +3360,7 @@ items:
     costBuy: 3000
     costSell: 1500
     armor: 200
-    power: 90 # +20 over grenade, was 80
-    damageType: 1 # For some reason small frag missiles lack all of the standard frag explosion damage traits
-    damageAlter:
-      FixRadius: 7 # +2 over grenades, was 6
-      ToArmorPre: 0.05 #small ablation
-      ArmorEffectiveness: 1.0 #concussive + shrapnel everywhere
-      ToHealth: 0.9 #
-      ToTime: 0.2 #
-      ToStun: 0.4 #
-      ToMorale: 0.5 #
-      ToEnergy: 0.4 #
-      ToWound: 0.4 #
-      RandomWound: false
-      ToTile: 0.25 #
-      ToItem: 0.25
+    power: 95
 
   - update: STR_LARGE_ROCKET                # Small Krak Missile
     size: 0.1 # was 0.2
@@ -3402,7 +3388,6 @@ items:
     weight: 8 # was 15
     costBuy: 8000 # was 40k!
     costSell: 4000
-    power: 140 # was 140
     requiresBuy:
       - STR_LASER_WEAPONS #Weapon Req - was Midtier
 
@@ -3412,10 +3397,15 @@ items:
     costBuy: 16000 # was 80k!!
     costSell: 8000
     damageAlter:
-      ArmorEffectiveness: 1.0 # was 0.9
-      ToArmorPre: 0.75 # was 0.5, Melta
-      FireThreshold: 1 # was missing, melta explosions should set everything on fire
-      ToTile: 1.5 # was 1.0, Melta
+      RandomType: 6
+      ToArmorPre: 1.0
+      ToTile: 1.0
+      ToItem: 1.0
+      ToArmor: 0.0
+      ToHealth: 0.7
+      ToWound: 0.05
+      RandomWound: false
+      FireThreshold: 0
       FixRadius: 2 # was 3, concentrated blast
     requiresBuy:
       - STR_HEAVY_LASER # Melta tech - was Midtier
@@ -4315,7 +4305,7 @@ items:
     confAimed:
     costAimed:
       time: 1
-      energy: 5
+      energy: 10 # two shots a turn
       mana: 10
     flatAimed:
       time: true
@@ -4425,6 +4415,7 @@ items:
     type: STR_ORBITAL_CALLIN
     categories: [STR_CAT_FIRESUPPORT]
     armor: 300
+    weight: 25
     battleType: 6 # not used as medikit
     medikitTargetMatrix: 0
     woundRecovery: 0
@@ -4455,6 +4446,7 @@ items:
       - STR_CHAPTER_PURITY
       - STR_NAVY_COMUNICATIONS
     medikitActionName: STR_CALL_ORBITAL
+    weight: 40
     tuUse: 60
     flatUse: false
     hitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
@@ -4478,6 +4470,7 @@ items:
       - STR_CHAPTER_PURITY
       - STR_NAVY_COMUNICATIONS
     medikitActionName: STR_CALL_LANCE
+    weight: 40
     tuUse: 60
     flatUse: false
     hitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
@@ -4523,6 +4516,7 @@ items:
     explosionSpeed: 100
     invWidth: 2
     invHeight: 3
+    weight: 20
     clipSize: -1
     maxRange: 1
     dropoff: 0
@@ -4566,6 +4560,7 @@ items:
     costSell: 30000
     requiresBuy:
       - STR_AIRSTRIKE_REQUISITION
+    weight: 30
     tuAuto: 35
     tuSnap: 35
     tuAimed: 35

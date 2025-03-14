@@ -2903,13 +2903,26 @@ armors:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
 
   - type: STR_STORMTALON_ARMOR
+    visibilityAtDay: 40
+    visibilityAtDark: 40
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    heatVision: 60
     allowsMoving: false
     specialWeapon: STR_TURRET_RELOAD
   - type: LTS_ARMOR                         #STORMTALON TURRET LEFT
+    visibilityAtDay: 40
+    visibilityAtDark: 40
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    heatVision: 60
     frontArmor: 80 # was 50 all over
     sideArmor: 80
     rearArmor: 80
     underArmor: 80
+    stats:
+      stamina: -10
+      mana: 40
     damageModifier:
       - 1.0 #none
       - 1.0 #AP
@@ -2925,10 +2938,18 @@ armors:
       - 1.2 #MELTA
     specialWeapon: STR_TURRET_RELOAD
   - type: RTS_ARMOR                         #STORMTALON TURRET RIGHT
+    visibilityAtDay: 40
+    visibilityAtDark: 40
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    heatVision: 60
     frontArmor: 80 # was 50 all over
     sideArmor: 80
     rearArmor: 80
     underArmor: 80
+    stats:
+      stamina: -10
+      mana: 40
     damageModifier:
       - 1.0 #none
       - 1.0 #AP

@@ -932,6 +932,10 @@ crafts:
 
   - type: STR_AVENGER                       # Thunderhawk Transport (Tactical)
     soldiers: 22
+    requires:
+      - STR_NOT_PRIMARIS
+      - STR_NEW_FIGHTER_TRANSPORTER
+      - STR_MARINES_STRATEGY
     battlescapeTerrainData:
       name: RHINOASS
       mapDataSets:

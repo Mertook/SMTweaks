@@ -217,7 +217,7 @@ soldierTransformation:
       - STR_SOLDIER_CHAPLAIN
       - STR_PRIMARIS_CHAPLAIN
     soldierBonusType: STR_BONUS_INQ_ROSARIUS
-    listOrder: 80
+    listOrder: 79
 
   - name: STR_RESURRECT_MARINE          # Create Dreadnought
     upperBoundAtStatCaps: true
@@ -474,7 +474,7 @@ soldierTransformation:
       - STR_PSI_LAB
     cost: 75000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 800
+      STR_KILLPOINT_TOKEN: 700
     producedSoldierType: STR_PRIMARIS_CHAPLAIN
     keepSoldierArmor: false
     allowsDeadSoldiers: false
@@ -590,7 +590,7 @@ soldierTransformation:
     producedSoldierType: STR_PRIMARIS_LIBRARIANLV3
     cost: 100000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 1200
+      STR_KILLPOINT_TOKEN: 900
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true

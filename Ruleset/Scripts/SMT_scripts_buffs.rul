@@ -1,24 +1,26 @@
 extended:
   tags:
     RuleItem:
-      SMT_VIGILIANCE_BUFF: int # % of power added as overwatch bonus
-      SMT_ITEM_MOVESPEED_BOOST: int # limit on movespeed bonus provided by haste
-      SMT_ITEM_REACTION_MOD: int # % of power added as reaction bonus
-      SMT_VULN_DEBUFF: int # % of power added as vulnerability bonus
-      SMT_VULN_DURATION: int # length of debuff
-      SMT_SIGNUM_DURATION: int #Length of Signum FA buff in turns
+      SMT_VIGILIANCE_BUFF: int          # % of power added as overwatch bonus
+      SMT_ITEM_MOVESPEED_BOOST: int     # limit on movespeed bonus provided by haste
+      SMT_ITEM_REACTION_MOD: int        # % of power added as reaction bonus
+      SMT_VULN_DEBUFF: int              # % of power added as vulnerability bonus
+      SMT_VULN_DURATION: int            # length of debuff
+      SMT_SIGNUM_DURATION: int          # length of Signum FA buff in turns
     RuleArmor:
-      SMT_SIGNUM_ARMOR: int #Check for if is unit wearing a signum
+      SMT_SIGNUM_ARMOR: int             # check for if is unit wearing a signum
     BattleUnit:
-      SMT_VIGILIANCE_ENDTURN: int #store buff duration
-      SMT_OVERWATCH_BONUS: int #stores units bonus to Overwatch
-      SMT_HASTE_ENDTURN: int #store buff duration
-      SMT_HASTE_ORIGINAL_SPEED: int #stores units original speed
-      SMT_HASTE_REACTION_BONUS: int #stores units reaction bonus
-      SMT_VULN_ENDTURN: int #store debuff duration
-      SMT_VULN_INTENSITY: int #store debuff strength
-      SMT_SIGNUM_ORIGINAL_FA: int #store original firing accuracy
-      SMT_SIGNUM_ENDTURN: int #store buff duration
+      SMT_VIGILIANCE_ENDTURN: int       # store buff duration
+      SMT_OVERWATCH_BONUS: int          # stores units bonus to Overwatch
+      SMT_VIGILIANCE_OVERFLOW: int      # overflow TUs from >100% vigilance buff that gets added as the unit reacts
+      SMT_HASTE_ENDTURN: int            # store buff duration
+      SMT_HASTE_SPEED_BONUS: int        # stores movement modifier from haste
+      SMT_HASTE_REACTION_BONUS: int     # stores units reaction bonus
+      SMT_VULN_ENDTURN: int             # store debuff duration
+      SMT_VULN_INTENSITY: int           # store debuff strength
+      SMT_SIGNUM_ORIGINAL_FA: int       # store original firing accuracy
+      SMT_SIGNUM_ENDTURN: int           # store buff duration
+      UNIT_MOVESPEED_MODIFIERS: int     # combined movespeed modifiers for a unit
 
   scripts:
     newTurnUnit:
@@ -27,7 +29,8 @@ extended:
         code: |
           var int currTurn;
           var int endTurn;
-          var int temp;
+          var int baseMove;
+          var int hasteMove;
 
           if neq side 0; # only run at the start of the players turn
             return;
@@ -38,11 +41,13 @@ extended:
             return;
           end;
           if or le currTurn 1 ge currTurn endTurn; # if buff expires or it's turn 1 (entering a new stage of multi-part mission)
-            unit.getTag temp Tag.SMT_HASTE_ORIGINAL_SPEED;
-            if neq temp 0;
-              unit.MoveCost.setBaseTimePercent temp; 
-              unit.setTag Tag.SMT_HASTE_ORIGINAL_SPEED 0; #cancel tag
-              #debug_log "HasteBuff Speed removed - " currTurn endTurn temp;
+            unit.getTag hasteMove Tag.SMT_HASTE_SPEED_BONUS;
+            if neq hasteMove 0;
+              unit.getTag baseMove Tag.UNIT_MOVESPEED_MODIFIERS;
+              sub baseMove hasteMove;
+              unit.MoveCost.setBaseTimePercent baseMove;
+              unit.setTag Tag.UNIT_MOVESPEED_MODIFIERS baseMove;
+              unit.setTag Tag.SMT_HASTE_SPEED_BONUS 0; #cancel tag
             end;
             unit.setTag Tag.SMT_HASTE_REACTION_BONUS 0; #cancel tag
           end;
@@ -67,6 +72,7 @@ extended:
 
           if or le currTurn 1 ge currTurn endTurn; # if buff expires or it's turn 1 (entering a new stage of multi-part mission)
             unit.setTag Tag.SMT_OVERWATCH_BONUS 0;
+            unit.setTag Tag.SMT_VIGILIANCE_OVERFLOW 0;
             unit.setTag Tag.SMT_VIGILIANCE_ENDTURN 0; #cancel tags
             #debug_log "VigilanceEnd Ping" currTurn endTurn;
           end;
@@ -159,13 +165,12 @@ extended:
       - new: SMTS_vulnerable_target #*** Script that amplifies incoming attacks based on vulnerability ***
         offset: 2
         code: |
-          var ptr RuleItem itemRuleset;
           var int temp;
           var int temp2;
 
-          damaging_item.getRuleItem itemRuleset;
-          itemRuleset.getTag temp Tag.ITEM_IS_BUFF_WEAPON;
-          if neq temp 0; # don't amplify buff effects
+          attacker.getFaction temp;
+          unit.getFaction temp2;
+          if eq temp temp2; # don't amplify friendly effects
             return power part side;
           end;
 
@@ -179,11 +184,54 @@ extended:
 
           return power part side;
 
+      - new: SMTS_vigilance_reactionRefund #*** Script that grants bonus TUs when landing reaction shots if unit has been buffed with >100% Overwatch
+        offset: 2.1
+        code: |
+          var int bonusTUs;
+          var int spentTUs;
+          var int maxTUs;
+          var int temp;
+          var int temp2;
+
+          attacker.getFaction temp;
+          battle_game.getTurnSide temp2;
+          if eq temp temp2; # only trigger on reaction fire
+            return power part side;
+          end;
+
+          attacker.getTag bonusTUs Tag.SMT_VIGILIANCE_OVERFLOW;
+          if gt bonusTUs 0;
+            attacker.getTimeUnits spentTUs;
+            attacker.getTimeUnitsMax maxTUs;
+            if lt spentTUs maxTUs;
+              muldiv spentTUs 100 maxTUs; # get missing TUs as % of max
+              set temp spentTUs;
+              sub spentTUs 100;
+              mul spentTUs -1;
+              debug_log "Vigilance Reaction: " bonusTUs spentTUs temp maxTUs;
+              if lt bonusTUs spentTUs; #if there's not enough stored TUs for 100%
+                add temp bonusTUs;
+                muldiv temp maxTUs 100; # get absolute TU value
+                attacker.setTimeUnits temp;
+                set bonusTUs 0;
+              else;
+                sub bonusTUs spentTUs;
+                attacker.setTimeUnits maxTUs;
+              end;
+              attacker.setTag Tag.SMT_VIGILIANCE_OVERFLOW bonusTUs;
+            end;
+          end;
+
+          return power part side;
+
+
     damageUnit:
       - new: SMTS_vigilance_buff
         offset: 3.1
         code: |
+          var ptr RuleArmor armorRule;
           var int vigilBonus;
+          var int vigilOverflow;
           var int temp;
 
           damaging_item.getTag temp Tag.SMT_VIGILIANCE_BUFF;
@@ -191,20 +239,30 @@ extended:
           if gt temp 0; # skip if doesn't boost overwatch
             set vigilBonus orig_power;
             muldiv vigilBonus temp 100;
-            if gt vigilBonus 0;
-              unit.getTag temp Tag.SMT_OVERWATCH_BONUS;
-              add vigilBonus temp;
-              limit vigilBonus 0 100;
-              unit.setTag Tag.SMT_OVERWATCH_BONUS vigilBonus;
-              #debug_log "Vigilance Ping" vigilBonus temp;
-
-              battle_game.getTurn temp;
-              add temp 1; #define end turn for buff
-              unit.setTag Tag.SMT_VIGILIANCE_ENDTURN temp;
+            unit.getRuleArmor armorRule;
+            armorRule.getTag temp Tag.ARMOR_OVERWATCH_TU_RESTORED; # add innate Overwatch from armor
+            add vigilBonus temp;
+            unit.getTag temp Tag.SMT_OVERWATCH_BONUS; # add any previous Overwatch buffs
+            add vigilBonus temp;
+            unit.getTag temp Tag.SMT_VIGILIANCE_OVERFLOW; # add any overflow from previous Overwatch buffs
+            add vigilBonus temp;
+            if gt vigilBonus 100; # if total >100, add overflow TUs
+              set temp vigilBonus;
+              sub temp 100;
+              unit.getTimeUnitsMax vigilOverflow;
+              muldiv vigilOverflow temp 100;
+              unit.setTag Tag.SMT_VIGILIANCE_OVERFLOW vigilOverflow;
             end;
-          end;
-          return;
+            limit vigilBonus 0 100;
+            unit.setTag Tag.SMT_OVERWATCH_BONUS vigilBonus;
+            #debug_log "Vigilance Ping" vigilBonus temp;
 
+            battle_game.getTurn temp;
+            add temp 1; #define end turn for buff
+            unit.setTag Tag.SMT_VIGILIANCE_ENDTURN temp;
+          end;
+
+          return;
 
       - new: SMTS_haste_buff
         offset: 3.2
@@ -212,37 +270,36 @@ extended:
           var int currentSpeed;
           var int originalSpeed;
           var int currentReactBonus;
+          var int baseMove;
           var int temp;
           var int temp2;
 
-          damaging_item.getTag temp Tag.SMT_ITEM_MOVESPEED_BOOST;
+          damaging_item.getTag temp Tag.SMT_ITEM_MOVESPEED_BOOST; # movespeed bonus
           #debug_log "HasteBuff Ping " temp;
-
-          if gt temp 0; # skip if doesn't boost movement
+          if gt temp 0;
           # Power <50 = no change, >=50 = 75% cost, >=100 50% cost (move bonus capped by item tag)
             set temp2 orig_power;
             div temp2 50;
             #debug_log "HasteBuff Power - " temp orig_power currPower temp2;
             limit temp2 0 temp; # eliminate negatives and cap power
             if gt temp2 0; # only continue if move cost would change
-              mul temp2 25;
-              set temp 100;
-              sub temp temp2;
-              unit.MoveCost.getBaseTimePercent currentSpeed; # get current speed
-              #debug_log "HasteBuff Speed N/C " temp currentSpeed;
-              if lt temp currentSpeed; # only change if new speed is faster than current
-                unit.MoveCost.setBaseTimePercent temp;
+              mul temp2 -25;
+              unit.getTag temp Tag.SMT_HASTE_SPEED_BONUS;
+              if lt temp2 temp; # if new value is faster
+                unit.getTag baseMove Tag.UNIT_MOVESPEED_MODIFIERS;
+                sub baseMove temp; # remove old modifier
+                add baseMove temp2; # add new modifier
+                unit.setTag Tag.UNIT_STEALTH_MOVEPENALTY temp2;
+                unit.setTag Tag.UNIT_MOVESPEED_MODIFIERS baseMove; # apply movement modifier
+                add baseMove 100;
+                limit_lower temp2 25;
+                unit.MoveCost.setBaseTimePercent baseMove;
               end;
-              unit.getTag originalSpeed Tag.SMT_HASTE_ORIGINAL_SPEED; #
-              if eq originalSpeed 0; # only set with units original speed if it wasn't already set
-                unit.setTag Tag.SMT_HASTE_ORIGINAL_SPEED currentSpeed;
-              end;
-              #debug_log "HasteBuff Speed Final N/C/O - " temp currentSpeed originalSpeed;
             end;
           end;
 
-          damaging_item.getTag temp2 Tag.SMT_ITEM_REACTION_MOD;
-          if gt temp2 0; # skip if doesn't boost defensive reactions
+          damaging_item.getTag temp2 Tag.SMT_ITEM_REACTION_MOD; # reactions bonus
+          if gt temp2 0;
             unit.getTag currentReactBonus Tag.SMT_HASTE_REACTION_BONUS;
             set temp orig_power;
             add temp 25; # make low power more effective and high power slightly less effective
@@ -263,25 +320,27 @@ extended:
       - new: SMTS_vulnerability_buff
         offset: 3.3
         code: |
-          var ptr RuleItem itemRuleset;
           var int debuffVal;
+          var int endTurn;
           var int temp;
 
-          damaging_item.getRuleItem itemRuleset;
-          itemRuleset.getTag temp Tag.SMT_VULN_DEBUFF;
+          damaging_item.getTag temp Tag.SMT_VULN_DEBUFF;
 
           if gt temp 0; # skip if doesn't inflict vuln
             set debuffVal currPower;
             muldiv debuffVal temp 100;
-            limit debuffVal 0 150; # cap at 250%
+            limit debuffVal 0 200; # cap at 300%
             unit.getTag temp Tag.SMT_VULN_INTENSITY;
             if gt debuffVal temp; #only change if it would be higher
               unit.setTag Tag.SMT_VULN_INTENSITY debuffVal;
-              #debug_log "VulnDebuff Ping 1" debuffVal;
-              itemRuleset.getTag debuffVal Tag.SMT_VULN_DURATION;
+              debug_log "VulnDebuff Ping 1" debuffVal;
+              damaging_item.getTag debuffVal Tag.SMT_VULN_DURATION;
               battle_game.getTurn temp;
               add temp debuffVal; #define end turn for buff
-              unit.setTag Tag.SMT_VULN_ENDTURN temp;
+              unit.getTag endTurn Tag.SMT_VULN_ENDTURN;
+              if gt temp endTurn; # only set new endturn if incoming debuff duration is longer
+                unit.setTag Tag.SMT_VULN_ENDTURN temp;
+              end;
               #debug_log "VulnDebuff Ping 2" temp;
             end;
           end;
@@ -353,6 +412,7 @@ extended:
           return new_pixel;
 
 
+
 items:
   - type: STR_LIB_SPEED_TOME
     tags:
@@ -363,15 +423,6 @@ items:
     tags:
       SMT_ITEM_MOVESPEED_BOOST: 2
       SMT_ITEM_REACTION_MOD: 75
-
-  - type: INV_LIB_OVERWATCH_TOKEN
-    tags:
-      SMT_VIGILIANCE_BUFF: 100
-
-  - type: INV_LIB_VULN_TOKEN
-    tags:
-      SMT_VULN_DEBUFF: 100
-      SMT_VULN_DURATION: 2
 
   - type: STR_SMT_SIGNUM
     tags:
@@ -393,7 +444,6 @@ items:
           return;
         end;
 
-
         unit.Stats.getFiring statValue; #remember original Firing stat
         #debug_log "Signum values: " currPower statValue;
         if gt currPower statValue; # only boost if signum user FA is greater than the target FA
@@ -411,5 +461,6 @@ items:
           unit.setTag Tag.SMT_SIGNUM_ENDTURN temp;
         end;
 
-
         return;
+
+

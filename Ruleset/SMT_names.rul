@@ -39,6 +39,9 @@ extraStrings:
       STR_LAUNCH_SALVO_AUTO: Bombardment
       STR_LAUNCH_FRAGS: Launch Grenade
       STR_DUAL_SNAP: Dual Snap
+      STR_SIGNUM_ACTION: Squad Link
+      STR_SIGNUM_ENEMY: Mark Target
+      STR_TOGGLE_STEALTH: "Toggle Stealth Camo"
       STR_DAMAGE_12: "GRAV"
       STR_STRIKE_ORBITAL: Orbital Barrage
       STR_BOMBARD_SET_POSITION: Set Firing Position
@@ -59,6 +62,7 @@ extraStrings:
       STR_NECRON_REINFORCEMENTS_TOMB_DESC_HEAVY: "Force Commander, the Necron Tomb is on high alert and summoning all of its warriors to bear on us. We must destroy the heart of the base immediately or risk being overwhelemd!"
       ### ARMOR
       STR_SCOUT_SMT_UC: "Scout Armor"
+      STR_SCOUT_SGT_UC: "Scout Sergeant Armor"
       STR_ASS_ARMOR_HONOR_CLAW: MK7 Vanguard Armor (Claw)
       STR_CHAP_TERMINATOR_UC: Chaplain Terminator Armor
       STR_CHAP_ASSAULT_UC: Chaplain Assault Armor
@@ -142,7 +146,7 @@ extraStrings:
       STR_SM_CHAPLAIN_FIST_UFOPEDIA: Chaplain's Fist
       STR_JUDICAR_BLESS: Fanaticism
       STR_SMT_SIGNUM: Signum Sensor Pack
-      STR_SIGNUM_ACTION: Squad Link
+      STR_SMT_SIGNUM_VUL: Signum Target Marker
       STR_STRIKE_VOX: Strike Vox-Caster
       STR_STRIKE_VOX_FALSE: Orbital Barrage Vox-Caster
       STR_STRIKE_AUTO: Call Strike
@@ -189,6 +193,8 @@ extraStrings:
       STR_PISTOLH_SM: Boltpistol Tigrus Pattern
       STR_ABSOLVOR_PISTOL: Absolvor Bolt Pistol
       STR_ABSOLVOR_AMMO: Absolvor Rounds
+      STR_ABSOLVOR_AMMO_MC: Master Crafted Absolvor Ammo
+      STR_ABSOLVOR_AMMO_MC_DW: Master Crafted Absolvor Ammo
       STR_PLASMA_EXTERMINATOR_FIXED: Plasma Exterminator
       STR_PLASMA_EXTERMINATOR_FIXED2: Dual Plasma Exterminators
       STR_ACCEL_AUTOCANNON_FIXED: Accelerator Autocannon
@@ -201,8 +207,8 @@ extraStrings:
       STR_BOLTRIFLE_DRUM: Heavy Boltrifle Drum Mag
       STR_BOLTRIFLE_DRUM_AP: Kraken Penetrator Drum Mag
       STR_BOLTRIFLE_DRUM_EX: Metal Storm Drum Mag
-      STR_BOLTRIFLE_DRUM_MC: Mastercrafted Bolt Drum Mag
-      STR_BOLTRIFLE_DRUM_MC_DW: Mastercrafted Boltrifle Drum
+      STR_BOLTRIFLE_DRUM_MC: Master Crafted Bolt Drum Mag
+      STR_BOLTRIFLE_DRUM_MC_DW: Master Crafted Boltrifle Drum
       STR_HEAVY_BOLTRIFLE: Heavy Boltrifle
       STR_VOLKITE_VAULT: Volkite Caliver
       STR_NEOVOLKITE_PISTOL: Neo-Volkite Pistol
@@ -329,6 +335,7 @@ extraStrings:
       INV_LIB_VULN_TOKEN: Torment
       STR_LIB_OVERWATCH_SKILL: Vigilance
       INV_LIB_OVERWATCH_TOKEN: Vigilance
+      STR_GRAV_MORTAR: Fragstorm Grenades
       ### TRANSFORMATIONS
       STR_PROMOTE_TERMINATOR: Promote Vet Marine
       STR_HARVEST_GENESEED: Recover Geneseed
@@ -365,6 +372,7 @@ extraStrings:
       STR_VINDICARE_AMMO_REQ: Exitus Ammo
       STR_MULTIMELTA_PREREQ: Multimelta Technology
       STR_BOLT_RIFLE_AMMO: Bolt Sniper Ammo
+      STR_SCOUT_SGT_R: Scout Sergeant Armor
       STR_VOLKITE: Volkite Weaponry
       STR_PRIMARIS_BACKPACKS: Primaris Integrated Weaponry
       STR_PRIMARIS_MELTAPACK: MKX Tacticus Meltarifle
@@ -372,6 +380,8 @@ extraStrings:
       STR_OMNIS_AUTOCPACK: MKX Omnis Accelerator Autocannon
       STR_OMNIS_PLASMAPACK: MKX Omnis Plasma Exterminators
       STR_STORMTALON_CASR: Stormtalon Firesupport
+      STR_ORBITAL_STRIKE_R: Orbital Barrage
+      STR_ORBITAL_LANCE_R: Orbital Lance
       STR_APOTHECARY_PREREQ: (Apothecary Unlock)
       STR_TSARGENT: Terminator Cyclone Launcher
       STR_BOLTPISTOL_REQ: (Boltpistols Unlocked)
@@ -379,6 +389,7 @@ extraStrings:
       STR_LIGHTBOLTER_ADV_AMMO: (Adv Light Bolter Ammo)
       STR_BOLTER_AMMO_PREREQ: (Bolter Ammo)
       STR_BOLTER_ADV_AMMO: (Advanced Bolter Ammo)
+      STR_MC_BOLTER_AMMO: Master Crafted Bolter Ammo
       STR_NEOPHYTE_REQUEST: (Neophytes Unlocked)
       STR_MARINE_CODEX: (Codex Update)
       STR_FIRSTBORN_CODEX: (Codex Update)
@@ -406,6 +417,12 @@ extraStrings:
       STR_STRIKE_ARRIVED: "Strike Targeting Designator active. Calldowns remaining: {0}"
       STR_STRIKE_LOWTUS: "Target Unit doesn't have enough TUs! Required: {0}"
       STR_STRIKE_FRIENDLY: "You must target a friendly unit!"
+      STR_SCRIPT_INFILTRATION_RECHARGING: "Your Unit's Stealth Will Recharge In {0} Turns!"
+      STR_SCRIPT_STEALTH_DEACTIVATE: "Stealth Deactivated!"
+      STR_SCRIPT_STEALTH_KILLTURN_REQ: "{0} Kills and {1} Turns Before This Unit Can Restealth!"
+      STR_SCRIPT_STEALTH_KILL_REQ: "{0} Kills Needed Before This Unit Can Restealth!"
+      STR_SCRIPT_STEALTH_TURN_REQ: "{0} Turns Needed Before This Unit Can Restealth!"
+      STR_SCRIPT_STEALTH_NO_REQ: "This Unit Can Re-Enter Stealth!"
       ### FACILITIES
       STR_OUTPOST_GK: "Outpost"
       STR_OUTPOST_INQ_HYPER: "Outpost w/ Decoder"
@@ -604,7 +621,6 @@ extraStrings:
       STR_PLASMA_GUN_TWINCORE_DW: ¬ Twincore Plasma Rifle
       STR_POWER_AXE_DW: ¬ Power Axe
       STR_ABSOLVOR_PISTOL_DW: ¬ Absolvor Boltpistol
-      STR_ABSOLVOR_AMMO_MC: Mastercrafted Absolvor Ammo
       STR_CAPTAIN_SWORD_DW: ¬ Power Sword
       ### DEATHWATCH RESEARCH
       STR_INQUISITION: Inquisition

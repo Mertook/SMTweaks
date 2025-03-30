@@ -50,7 +50,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -156,7 +156,7 @@ armors:
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       SMT_ARMOR_REGEN_HP: 3
       ARMOR_REGENERATES_WOUNDS: 1
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -258,7 +258,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/3 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -361,7 +361,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -468,7 +468,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -574,7 +574,7 @@ armors:
       ARMOR_REGENERATES_WOUNDS: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
       ARMOR_ENERGY_SHIELD_DECAY: 50
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -682,7 +682,7 @@ armors:
       ARMOR_REGENERATES_WOUNDS: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 50
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -797,7 +797,7 @@ armors:
       ARMOR_REGENERATES_WOUNDS: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 50
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -1072,7 +1072,7 @@ armors:
       ARMOR_REGENERATES_WOUNDS: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
       ARMOR_ENERGY_SHIELD_DECAY: 50
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -1336,7 +1336,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -1442,7 +1442,7 @@ armors:
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       SMT_ARMOR_REGEN_HP: 3
       ARMOR_REGENERATES_WOUNDS: 1
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -1549,7 +1549,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -1656,7 +1656,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -1727,10 +1727,10 @@ armors:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
       moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
-    frontArmor: 140
-    sideArmor: 135
-    rearArmor: 115
-    underArmor: 140
+    frontArmor: 145
+    sideArmor: 140
+    rearArmor: 120
+    underArmor: 145
     stats:
       tu: 5             # base 10 -5
       stamina: 10       # base 20
@@ -1768,7 +1768,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -2007,10 +2007,10 @@ armors:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
       moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
-    frontArmor: 140
-    sideArmor: 135
-    rearArmor: 115
-    underArmor: 140
+    frontArmor: 145
+    sideArmor: 140
+    rearArmor: 120
+    underArmor: 145
     stats:
       tu: 5             # base 10 -5
       stamina: 10       # base 20
@@ -2049,7 +2049,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -2288,10 +2288,10 @@ armors:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
       moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
-    frontArmor: 140
-    sideArmor: 135
-    rearArmor: 115
-    underArmor: 140
+    frontArmor: 145
+    sideArmor: 140
+    rearArmor: 120
+    underArmor: 145
     stats:
       tu: 5             # base 10 -5
       stamina: 10       # base 20
@@ -2330,7 +2330,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -2578,10 +2578,10 @@ armors:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
       moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
-    frontArmor: 140
-    sideArmor: 135
-    rearArmor: 115
-    underArmor: 140
+    frontArmor: 145
+    sideArmor: 140
+    rearArmor: 120
+    underArmor: 145
     stats:
       tu: 5             # base 10 -5
       stamina: 10       # base 20
@@ -2620,7 +2620,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -2905,7 +2905,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -3038,7 +3038,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -3334,7 +3334,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 50
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
@@ -3767,9 +3767,9 @@ armors:
     builtInWeapons:
       - INV_NULL_3X1_BACKPACK
       - STR_ABSOLVOR_PISTOL_DW
-      - STR_ABSOLVOR_AMMO_MC
-      - STR_ABSOLVOR_AMMO_MC
-      - STR_ABSOLVOR_AMMO_MC
+      - STR_ABSOLVOR_AMMO_MC_DW
+      - STR_ABSOLVOR_AMMO_MC_DW
+      - STR_ABSOLVOR_AMMO_MC_DW
     tags:
       ARMOR_OVERWATCH_TU_RESTORED: 60
       ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1

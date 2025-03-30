@@ -383,7 +383,7 @@ soldiers:
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 15 # -5 over DW regulars
       SMT_ALPHA_ATTACKER_MODIFIER: -1 # can't turn traitor
-      SMT_RESTRICTED_ITEM_USER: 23 # can use DW gear and DW captain gear
+      SMT_RESTRICTED_ITEM_USER: 6 # can use DW gear and DW captain gear
 
   - type: STR_ULTRAMARINE_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
@@ -515,7 +515,7 @@ soldiers:
     skills: # Gives bless ability when combined with backpack item
       - STR_BLESS_SKILL
     tags:
-      SMT_RESTRICTED_ITEM_USER: 12 # can use Crozius and DW gear
+      SMT_RESTRICTED_ITEM_USER: 7 # can use Crozius and DW gear
 
   - type: STR_WHITES_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER

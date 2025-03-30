@@ -44,8 +44,8 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 33
-      INFECTION_RESIST: 33
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 25
 
   - &STR_MARINE_OFFICER_ARMOR               #SPECIALIST TEMPLATE
     update: STR_SIGNALFALSE_ARMOR_UC
@@ -79,8 +79,8 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 33
-      INFECTION_RESIST: 33
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 25
 
   - update: STR_SCOUT_UC                    #SCOUT (Neophytes)
     visibilityAtDay: 40
@@ -143,7 +143,7 @@ armors:
       strength: 0       # base 10 -10
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
-      melee: 0          # base 10 -10
+      melee: 5          # base 10 -5
     damageModifier:
       - 1.0
       - 1.0
@@ -161,8 +161,8 @@ armors:
       - STR_SOLDIER_TERMINATOR
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
-      INTIMIDATION_RESISTANCE: 33
-      INFECTION_RESIST: 33
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 25
 
   - update: STR_PERSONAL_ARMOR_UC           #TACTICAL
     refNode: *STR_MARINE_ARMOR
@@ -379,6 +379,38 @@ armors:
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
 
+  - type: STR_SIGNUM_DEV_UC                 #DEVASTATOR HONOR (Signum)
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    visibilityAtDark: 40 # signum equipment provides advanced vision
+    heatVision: 30 # signum equipment provides advanced vision
+    antiCamouflageAtDay: 14 # signum equipment provides strong detection
+    antiCamouflageAtDark: 14
+    spriteSheet: DEVH.PCK
+    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 16}
+    corpseBattle:
+      - STR_SIGNAL_CORPSE
+    storeItem: STR_SIGNALFALSE_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+    stats:
+      tu: 10            # base 10 
+      stamina: 20       # base 20 
+      health: 20        # base 10 +10 elite
+      bravery: 0        # base 0  
+      reactions: 10     # base 10 
+      firing: 25        # base 0  +25 signum
+      throwing: 5       # base 5  
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
+    specialWeapon: STR_SMT_SIGNUM_VUL # changed from Airstrike
+    units: # exclusive to terminator promoted troops
+      - STR_SOLDIER_TERMINATOR
+
   - update: STR_SIGNAL_ARMOR_UC             #DEVASTATOR HONOR (Signum)
     refNode: *STR_MARINE_OFFICER_ARMOR
     visibilityAtDark: 40 # signum equipment provides advanced vision
@@ -402,7 +434,7 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
-    specialWeapon: STR_SMT_SIGNUM # changed from Airstrike
+    specialWeapon: STR_SMT_SIGNUM_VUL # changed from Airstrike
     units: # exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
 
@@ -433,15 +465,75 @@ armors:
     units: # exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
 
+  - type: STR_SCOUT_SGT_UC                  #SCOUT SERGEANT
+    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 0}
+    spriteSheet: SCOUTSGT.PCK
+    storeItem: STR_SCOUT_SGT
+    corpseGeo: STR_FALLEN_CORPSE
+    ufopediaType: STR_SCOUT_SGT_UC
+    corpseBattle:
+      - STR_SCOUT_CORPSE
+    visibilityAtDay: 40
+    visibilityAtDark: 35
+    heatVision: 20
+    antiCamouflageAtDay: 8
+    antiCamouflageAtDark: 8
+    camouflageAtDay: -8
+    camouflageAtDark: -8
+    frontArmor: 90
+    sideArmor: 80
+    rearArmor: 50
+    underArmor: 80
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD
+      moraleCurrent: 1.5 #discipline and resolve reinforces their faith
+    loftempsSet: [ 3 ]
+    specialWeapon: STR_SM_SCOUT_SCANNER # motion scanner
+    moveCost:
+      basePercent: [100, 75] # Reduced energy cost - Scout bonus
+    stats:
+      tu: 25            # base 10 +15
+      stamina: 30       # base 20
+      health: 5         # base 10 -5
+      bravery: 0        # base 0  
+      reactions: 25     # base 10 +15
+      firing: 5         # base 5  
+      throwing: 10      # base 5  +5
+      strength: 0       # base 10 -10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 15         # base 10 +5
+    damageModifier:
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 0.2 #IMPACT
+    units:
+      - STR_SOLDIER
+      - STR_SOLDIER_TERMINATOR
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 25
+
   - &STR_ADVANCED_SCOUT_ARMOR               #SCOUT HONOR BROWN (Advanced Scout)
     update: STR_SCOUTH_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # infiltrator equipment
     heatVision: 40 # improved smoke vision
-    camouflageAtDay: -15
-    camouflageAtDark: -15
-    antiCamouflageAtDay: 16 # advanced detection
-    antiCamouflageAtDark: 16
+    camouflageAtDay: -18
+    camouflageAtDark: -18
+    antiCamouflageAtDay: 18 # advanced detection
+    antiCamouflageAtDark: 18
+    ufopediaType: STR_SCOUTH_UC
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -451,29 +543,35 @@ armors:
     rearArmor: 50
     underArmor: 80
     specialWeapon: STR_SM_SCOUT_SCANNER # motion scanner
+    moveCost:
+      basePercent: [100, 75] # Reduced energy cost - Scout bonus
     stats:
-      tu: 30            # base 10 +10 scout +10  elite
-      stamina: 30       # base 20 -10 scout +20 elite
+      tu: 40            # base 10 +10 scout +20 elite
+      stamina: 40       # base 20 -10 scout +30 elite
       health: 10        # base 10 -10 scout +10 elite
       bravery: 10       # base 0  +10 elite
       reactions: 30     # base 10 +5  scout +15  elite
-      firing: 10        # base 0  +10 elite
+      firing: 20        # base 0  +20 elite
       throwing: 10      # base 5  +5  scout
       strength: 5       # base 10 -10 scout +5  elite
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
-      melee: 10         # base 10 -10 scout +10 elite
+      melee: 25         # base 10 -10 scout +25 elite
     recovery:
       energy:
         stamina: 0.5 # +10% AdvScout bonus
-    units: #
+    units:
       - STR_SOLDIER
       - STR_SOLDIER_TERMINATOR
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
-      INTIMIDATION_RESISTANCE: 33
-      INFECTION_RESIST: 33
-
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 25
+      ARMOR_RESTEALTH_KILL_REQUIREMENT: 4 # 4 kills
+      ARMOR_RESTEALTH_TURN_REQUIREMENT: 2 # 2 turns since decloaked
+      ARMOR_IMMEDIATE_KILL_CREDIT: 0 # needs kills to cloak
+      ARMOR_IMMEDIATE_TURN_CREDIT: 2
+      ARMOR_CLOAKED_ASSASSIN: 8 # 8 tiles of range when entering assassin cloak
 
   - update: STR_SCOUTHW_UC                  #SCOUT HONOR WHITE
     refNode: *STR_ADVANCED_SCOUT_ARMOR
@@ -539,7 +637,7 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
       ARMOR_ENERGY_SHIELD_DECAY: 50
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 66
+      INFECTION_RESIST: 33
       SMT_ARMOR_REGEN_HP: 4
       ARMOR_REGENERATES_WOUNDS: 1
 
@@ -882,15 +980,16 @@ armors:
       bravery: 0
       reactions: 0
       throwing: 0
-      strength: 20 # was 0
+      strength: 40 # was 0, bike bonus
       psiStrength: 0
       psiSkill: 0
-      melee: 15 # was 0
+      melee: 40 # was 0, bike ramming bonus
     builtInWeapons:
       - AUX_TANK_CANNON
-      - AUX_RAM_SMT
+      #- AUX_RAM_SMT # moved to innate, allow Bikes to pick their offhand weapon
       - INV_NULL_3X3
       - INV_NULL_4X2
+    specialWeapon: AUX_RAM_SMT
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 1.0 #AP
@@ -952,6 +1051,7 @@ armors:
       - 0.0 #SMOKE
       - 0.0 #IMPACT
       - 1.1 #MELTA - was 1.2
+    specialWeapon: AUX_STOMP_SMT
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 4 # Gain 1-4 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100
@@ -1065,8 +1165,8 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 35
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
-      INTIMIDATION_RESISTANCE: 33
-      INFECTION_RESIST: 33
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 25
 
   - type: STR_MKX_TAC_LV1_UC
     refNode: *STR_MKX_TAC_UC
@@ -1124,7 +1224,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 40
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 66
+      INFECTION_RESIST: 33
 
   - type: STR_MKX_TAC_MELT_LV1_UC
     refNode: *STR_MKX_TAC_UC
@@ -1220,7 +1320,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 40
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 66
+      INFECTION_RESIST: 33
 
   - type: STR_MKX_TAC_PLAS_LV1_UC
     refNode: *STR_MKX_TAC_UC
@@ -1316,7 +1416,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 40
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 66
+      INFECTION_RESIST: 33
 
 
   - &STR_MKX_PHB_UC                         #PRIMARIS PHOBOS
@@ -1326,6 +1426,8 @@ armors:
     heatVision: 20 #Add anti-smoke vision to all marine armour
     antiCamouflageAtDay: 10 # recon bonus
     antiCamouflageAtDark: 10 # recon bonus
+    camouflageAtDay: -5
+    camouflageAtDark: -5
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -1372,8 +1474,8 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
       DODGE_CHANCE: 20
       ARMOR_MAX_SUCCESSFUL_DODGES: 1
-      INTIMIDATION_RESISTANCE: 33
-      INFECTION_RESIST: 33
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 25
 
   - type: STR_MKX_PHB_LV1_UC
     refNode: *STR_MKX_PHB_UC
@@ -1394,7 +1496,7 @@ armors:
     camouflageAtDay: -15
     camouflageAtDark: -15
     stats:
-      tu: 25            # base 25
+      tu: 30            # base 25
       stamina: 25       # base 20
       health: 10        # base 5
       bravery: 10       # base 10
@@ -1416,7 +1518,7 @@ armors:
     camouflageAtDay: -15
     camouflageAtDark: -15
     stats:
-      tu: 35            # base 25
+      tu: 40            # base 25
       stamina: 25       # base 20
       health: 20        # base 5
       bravery: 10       # base 10
@@ -1437,7 +1539,7 @@ armors:
       ARMOR_MAX_SUCCESSFUL_DODGES: 2
       ARMOR_IS_INFILTRATOR: 2 #2 turns of infiltration
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 66
+      INFECTION_RESIST: 33
 
   - &STR_MKX_GRV_UC                         #PRIMARIS GRAVIS
     type: STR_MKX_GRV_LV1_UC
@@ -1458,10 +1560,10 @@ armors:
     corpseGeo: STR_FALLEN_CORPSE
     loftempsSet: [ 4 ]
     forcedTorso: 1
-    frontArmor: 140
-    sideArmor: 135
-    rearArmor: 115
-    underArmor: 140
+    frontArmor: 145
+    sideArmor: 140
+    rearArmor: 120
+    underArmor: 145
     damageModifier:
       - 1.0 #none
       - 0.9 #AP
@@ -1494,7 +1596,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
       INTIMIDATION_RESISTANCE: 50
-      INFECTION_RESIST: 33
+      INFECTION_RESIST: 25
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
@@ -1792,7 +1894,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 66
+      INFECTION_RESIST: 33
 
   - type: STR_MKX_GRV_LV5A_UC               #GRAVIS LV5 AUTOCANNON
     refNode: *STR_MKX_GRV_UC
@@ -1824,7 +1926,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 66
+      INFECTION_RESIST: 33
 
   - type: STR_MKX_GRV_LV5F_UC               #GRAVIS LV5 FLAMER
     refNode: *STR_MKX_GRV_UC
@@ -1856,7 +1958,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 66
+      INFECTION_RESIST: 33
 
   - type: STR_MKX_GRV_LV5H_UC               #GRAVIS LV5 REGULAR
     refNode: *STR_MKX_GRV_UC
@@ -1887,7 +1989,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 66
+      INFECTION_RESIST: 33
 
 
 
@@ -1934,8 +2036,8 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 33
-      INFECTION_RESIST: 33
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 25
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
       MaxFlight: 3
@@ -2204,7 +2306,7 @@ armors:
       - STR_PRIMARISLV2
     specialWeapon: STR_SM_APOTH_FIST
     builtInWeapons:
-      - INV_NULL_3X3
+      - INV_NULL_3X1_BACKPACK
     tags:
       SMT_ARMOR_SHRED_RESISTANCE: 35
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
@@ -2213,7 +2315,7 @@ armors:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_REGEN_HP: 2
       ARMOR_REGENERATES_WOUNDS: 1
-      INTIMIDATION_RESISTANCE: 33
+      INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 50
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -2222,6 +2324,7 @@ armors:
     refNode: *STR_MKX_APO
     customArmorPreviewIndex: 1
     spriteSheet: HELIXLV1.PCK
+    ufopediaType: STR_MKX_HELIX_UC_LV1
     storeItem: STR_MKX_APO_ARMOR
     stats:
       tu: 0             # base 10 
@@ -2246,6 +2349,7 @@ armors:
     refNode: *STR_MKX_APO
     customArmorPreviewIndex: 2
     spriteSheet: HELIXLV2.PCK
+    ufopediaType: STR_MKX_HELIX_UC_LV1
     storeItem: STR_MKX_APO_ARMOR
     stats:
       tu: 0             # base 10 
@@ -2270,6 +2374,7 @@ armors:
     refNode: *STR_MKX_APO
     customArmorPreviewIndex: 3
     spriteSheet: HELIXLV3.PCK
+    ufopediaType: STR_MKX_HELIX_UC_LV1
     storeItem: STR_MKX_APO_ARMOR
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
@@ -2318,7 +2423,7 @@ armors:
       SMT_ARMOR_SHRED_RESISTANCE: 50
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 30
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
-      INFECTION_RESIST: 66
+      INFECTION_RESIST: 50
 
   - type: STR_MKX_APOGRV_UC_LV1
     refNode: *STR_MKX_APO
@@ -2346,13 +2451,15 @@ armors:
       melee: 15
     units:
       - STR_PRIMARIS_APOTH
+    builtInWeapons:
+      - INV_NULL_3X3
     specialWeapon: STR_SM_APOTH_FIST_LV2
     tags:
       SMT_ARMOR_SHRED_RESISTANCE: 60
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalty
-      INFECTION_RESIST: 66
+      INFECTION_RESIST: 50
 
   - type: STR_MKX_APO_UC
     refNode: *STR_MKX_APO
@@ -2408,6 +2515,8 @@ armors:
     units:
       - STR_PRIMARIS_APOTH_BIO
     specialWeapon: STR_SM_APOTH_FIST_LV3
+    builtInWeapons:
+      - INV_NULL_3X3
     tags:
       SMT_ARMOR_SHRED_RESISTANCE: 75
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
@@ -2463,8 +2572,8 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 33
-      INFECTION_RESIST: 33
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 25
 
   - type: STR_MKX_TEC_LV1_UC
     refNode: *STR_MKX_TEC_UC
@@ -2603,7 +2712,6 @@ armors:
       - STR_PRIMARIS_CHAPLAIN
     builtInWeapons:
       - INV_BLESS_TOKEN # has to be first in list otherwise item breaks
-      - AUX_CROZIUS_PRIMARIS
       - INV_NULL_3X1_BACKPACK
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     tags:
@@ -2771,8 +2879,8 @@ armors:
     spriteInv: NOTDONEIMP
     visibilityAtDay: 1 # can't see
     visibilityAtDark: 1
-    camouflageAtDay: -50 # should be invisible to enemies
-    camouflageAtDark: -50
+    camouflageAtDay: -80 # should be invisible to enemies
+    camouflageAtDark: -80
     personalLight: 12
     frontArmor: 200
     sideArmor: 200

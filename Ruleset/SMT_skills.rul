@@ -19,13 +19,13 @@ skills:
     costUse:
       time: 20
       energy: 60
-      stun: 10
+      stun: 15
     flatUse:
       time: false
       energy: false
       stun: false
 
-  - type: STR_LIB_SMOKE_SKILL           # Librarian Smoke
+  - type: STR_LIB_SMOKE_SKILL           # Librarian Shroud
     targetMode: 9
     compatibleWeapons: [STR_LIB_SMOKE_TOME]
     checkHandsOnly: false
@@ -45,10 +45,10 @@ skills:
     compatibleWeapons: [STR_LIB_LOCKDOWN_TOME]
     checkHandsOnly: false
     costUse:
-      time: 35 # was 25
+      time: 45 # was 25
       energy: 25
       stun: 15 # was 5
-      morale: 10 # was 10
+      morale: 15 # was 10
     flatUse:
       time: false
       energy: false
@@ -60,7 +60,7 @@ skills:
     compatibleWeapons: [STR_LIB_SHIELD_TOME]
     checkHandsOnly: false
     costUse:
-      time: 30
+      time: 35
       energy: 15
       stun: 15
       morale: 15
@@ -70,7 +70,7 @@ skills:
       stun: false
       morale: false
 
-  - type: STR_LIB_HASTE_SKILL           # Librarian Haste
+  - type: STR_LIB_HASTE_SKILL           # Librarian Accelerate
     targetMode: 11
     compatibleWeapons: [STR_LIB_SPEED_TOME, STR_LIB_SPEED_TOME_DW]
     checkHandsOnly: false
@@ -100,13 +100,13 @@ skills:
       stun: false
       morale: false
 
-  - type: STR_LIB_VULNERABILITY_SKILL   # Librarian Vulnerability
-    targetMode: 11
+  - type: STR_LIB_VULNERABILITY_SKILL   # Librarian Torment
+    targetMode: 9
     compatibleWeapons: [INV_LIB_VULN_TOKEN]
     checkHandsOnly: false
     costUse:
-      time: 55
-      energy: 40
+      time: 45
+      energy: 25
       stun: 15
       morale: 10
     flatUse:
@@ -115,14 +115,14 @@ skills:
       stun: false
       morale: false
 
-  - type: STR_LIB_OVERWATCH_SKILL       # Librarian Overwatch
+  - type: STR_LIB_OVERWATCH_SKILL       # Librarian Vigilance
     targetMode: 11
     compatibleWeapons: [INV_LIB_OVERWATCH_TOKEN]
     checkHandsOnly: false
     costUse:
-      time: 30
-      energy: 25
-      stun: 15
+      time: 25
+      energy: 20
+      stun: 10
       morale: 5
     flatUse:
       time: false

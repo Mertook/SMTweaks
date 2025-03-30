@@ -19,6 +19,9 @@ armors:
       morale:
         flatOne: 5
         psiSkill: 0.3 # 30% of devotion as additional morale recovery
+    tags:
+      ARMOR_ALPHA_ATTACKER_BONUS_MODIFIER: -1 # fuck Alpharius all my homies hate Alpharius
+      UNIT_IS_ASTARTES: 1 #
     scripts:
       damageUnit: |
         var ptr RuleArmor unitArmor;

@@ -21,7 +21,6 @@ manufacture:
     requires:
       - STR_CHAPTER_PURITY
       - STR_CHAP_ARMOR
-      - STR_NOT_PRIMARIS
     requiredItems:
       STR_ALIEN_ALLOYS: 4
       STR_KILLPOINT_TOKEN: 200
@@ -46,6 +45,16 @@ manufacture:
     producedItems:
       STR_RIFLE_CLIP: 5
 
+  - name: STR_BOLTRIFLE_DRUM                        # Boltrifle Drum
+    category: STR_AMMUNITION
+    requires:
+      - STR_PRIMARIS_BOLTERS_ADV
+    space: 0
+    time: 100
+    cost: 15000
+    producedItems:
+      STR_BOLTRIFLE_DRUM: 5
+
   - name: STR_RIFLE_CLIP_AP                         # Kraken ammo - Bolter
     category: STR_AMMUNITION
     requires:
@@ -69,6 +78,18 @@ manufacture:
       STR_ALIEN_ALLOYS: 1
     producedItems:
       STR_PISTOL_CLIP_AP: 10
+
+  - name: STR_BOLTRIFLE_DRUM_AP                     # Boltrifle Drum (Krak)
+    category: STR_AMMUNITION
+    requires:
+      - STR_PRIMARIS_BOLTERS_ADV
+    space: 0
+    time: 150 # was 100
+    cost: 25000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 2
+    producedItems:
+      STR_BOLTRIFLE_DRUM_AP: 10
 
   - name: STR_LIGHT_BOLTER_AMMO_PEN                 # Kraken ammo - Light Bolter
     category: STR_AMMUNITION
@@ -120,6 +141,18 @@ manufacture:
     producedItems:
       STR_PISTOL_CLIP_EX: 20
 
+  - name: STR_BOLTRIFLE_DRUM_EX                     # Boltrifle Drum (Metal Storm)
+    category: STR_AMMUNITION
+    requires:
+      - STR_PRIMARIS_BOLTERS_ADV
+    space: 0
+    time: 150 # was 100
+    cost: 25000
+    requiredItems:
+      STR_ELERIUM_115: 2
+    producedItems:
+      STR_BOLTRIFLE_DRUM_EX: 10
+
   - name: STR_LIGHT_BOLTER_AMMO_EX                  # MetalStorm ammo - Light Bolter
     category: STR_AMMUNITION
     requires:
@@ -155,11 +188,11 @@ manufacture:
     time: 200
     cost: 20000
     requiredItems:
-      STR_ALIEN_ALLOYS: 3 # was 4
-      STR_UFO_CONSTRUCTION: 3 # was 4
-      STR_KILLPOINT_TOKEN: 5
+      STR_ALIEN_ALLOYS: 3
+      STR_UFO_CONSTRUCTION: 3
+      STR_KILLPOINT_TOKEN: 15
     producedItems:
-      STR_LIGHT_BOLTPISTOL_AMMO_MC: 30 # was 20
+      STR_LIGHT_BOLTPISTOL_AMMO_MC: 30
 
   - name: STR_LIGHT_BOLTER_AMMO_MC                  # MC ammo - Light Bolter
     category: STR_AMMUNITION
@@ -172,16 +205,15 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 4
       STR_UFO_CONSTRUCTION: 4
-      STR_KILLPOINT_TOKEN: 10
+      STR_KILLPOINT_TOKEN: 20
     producedItems:
-      STR_LIGHT_BOLTER_AMMO_MC: 20
+      STR_LIGHT_BOLTER_AMMO_MC: 15
 
   - name: STR_PISTOL_CLIP_MC                        # MC ammo - Boltpistol
     category: STR_AMMUNITION
     requires:
       - STR_BOLTER_ADV_AMMO
-      - STR_MASTER_CRAFTING # was low tier mastercrafting
-      - STR_HIGHTIER_PREREQ
+      - STR_MC_BOLTER_AMMO
     space: 0
     time: 200
     cost: 30000
@@ -190,14 +222,13 @@ manufacture:
       STR_UFO_CONSTRUCTION: 3 # was 4
       STR_KILLPOINT_TOKEN: 20
     producedItems:
-      STR_PISTOL_CLIP_MC: 30 # was 20
+      STR_PISTOL_CLIP_MC: 20
 
   - name: STR_RIFLE_CLIP_MC                         # MC ammo - Bolter
     category: STR_AMMUNITION
     requires:
       - STR_BOLTER_ADV_AMMO
-      - STR_MASTER_CRAFTING # was low tier mastercrafting
-      - STR_HIGHTIER_PREREQ
+      - STR_MC_BOLTER_AMMO
     space: 0
     time: 200
     cost: 50000
@@ -206,48 +237,13 @@ manufacture:
       STR_UFO_CONSTRUCTION: 5
       STR_KILLPOINT_TOKEN: 30
     producedItems:
-      STR_RIFLE_CLIP_MC: 20
-
-  - name: STR_BOLTRIFLE_DRUM                        # Boltrifle Drum
-    category: STR_AMMUNITION
-    requires:
-      - STR_PRIMARIS_BOLTERS_ADV
-    space: 0
-    time: 100
-    cost: 15000
-    producedItems:
-      STR_BOLTRIFLE_DRUM: 5
-
-  - name: STR_BOLTRIFLE_DRUM_AP                     # Boltrifle Drum (Krak)
-    category: STR_AMMUNITION
-    requires:
-      - STR_PRIMARIS_BOLTERS_ADV
-    space: 0
-    time: 150 # was 100
-    cost: 25000
-    requiredItems:
-      STR_ALIEN_ALLOYS: 2
-    producedItems:
-      STR_BOLTRIFLE_DRUM_AP: 10
-
-  - name: STR_BOLTRIFLE_DRUM_EX                     # Boltrifle Drum (Metal Storm)
-    category: STR_AMMUNITION
-    requires:
-      - STR_PRIMARIS_BOLTERS_ADV
-    space: 0
-    time: 150 # was 100
-    cost: 25000
-    requiredItems:
-      STR_ELERIUM_115: 2
-    producedItems:
-      STR_BOLTRIFLE_DRUM_EX: 10
+      STR_RIFLE_CLIP_MC: 10
 
   - name: STR_BOLTRIFLE_DRUM_MC                     # Boltrifle Drum (Mastercrafted)
     category: STR_AMMUNITION
     requires:
       - STR_PRIMARIS_BOLTERS_ADV
-      - STR_MASTER_CRAFTING # was low tier mastercrafting
-      - STR_HIGHTIER_PREREQ
+      - STR_MC_BOLTER_AMMO
     space: 0
     time: 200
     cost: 50000
@@ -256,7 +252,22 @@ manufacture:
       STR_UFO_CONSTRUCTION: 4
       STR_KILLPOINT_TOKEN: 20
     producedItems:
-      STR_BOLTRIFLE_DRUM_MC: 10
+      STR_BOLTRIFLE_DRUM_MC: 5
+
+  - name: STR_ABSOLVOR_AMMO_MC                      # Absolvor MC Ammo
+    category: STR_AMMUNITION
+    space: 0
+    time: 240
+    cost: 40000
+    requires:
+      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MC_BOLTER_AMMO
+    requiredItems:
+      STR_ALIEN_ALLOYS: 6
+      STR_UFO_CONSTRUCTION: 6
+      STR_KILLPOINT_TOKEN: 10
+    producedItems:
+      STR_ABSOLVOR_AMMO_MC: 10
 
   - name: STR_HB_CLIP                               # Stormbolter Ammo
     requires:
@@ -269,8 +280,7 @@ manufacture:
   - name: STR_HB_CLIP_MC                            # Stormbolter Ammo (Mastercrafted)
     requires:
       - STR_HB # Stormbolter tech
-      - STR_MASTER_CRAFTING # was low tier mastercrafting
-      - STR_HIGHTIER_PREREQ
+      - STR_MC_BOLTER_AMMO
     requiredItems:
       STR_ALIEN_ALLOYS: 5 # was 10
       STR_UFO_CONSTRUCTION: 5 # was 10
@@ -282,15 +292,14 @@ manufacture:
     category: STR_AMMUNITION
     requires:
       - STR_HBOLTER_AMMO_PREREQ
-      - STR_MASTER_CRAFTING # was low tier mastercrafting
-      - STR_HIGHTIER_PREREQ
+      - STR_MC_BOLTER_AMMO
     space: 0
     time: 200
     cost: 20000
     requiredItems:
       STR_ALIEN_ALLOYS: 5
       STR_UFO_CONSTRUCTION: 5
-      STR_KILLPOINT_TOKEN: 20
+      STR_KILLPOINT_TOKEN: 30
     producedItems:
       STR_AC_MC_AMMO: 5
 
@@ -337,12 +346,11 @@ manufacture:
     cost: 40000
     requires:
       - STR_HBOLTER_AMMO_BELTS
-      - STR_MASTER_CRAFTING # was low tier mastercrafting
-      - STR_HIGHTIER_PREREQ
+      - STR_MC_BOLTER_AMMO
     requiredItems:
       STR_ALIEN_ALLOYS: 6
       STR_UFO_CONSTRUCTION: 6
-      STR_KILLPOINT_TOKEN: 20
+      STR_KILLPOINT_TOKEN: 40
     producedItems:
       STR_AC_MC_BELT: 5
 
@@ -404,9 +412,25 @@ manufacture:
     requires:
       - STR_BOLT_RIFLE_AMMO
     requiredItems:
-      STR_UFO_CONSTRUCTION: 1
+      STR_UFO_CONSTRUCTION: 2
+      STR_ELERIUM_115: 1
     producedItems:
       STR_BOLT_SNIPER_AMMO_SHRED: 10
+
+  - name: STR_BOLT_SNIPER_AMMO_MC                   # Bolt Sniper Ammo MC
+    category: STR_AMMUNITION
+    space: 0
+    time: 120
+    cost: 2000
+    requires:
+      - STR_BOLT_RIFLE_AMMO
+      - STR_MC_BOLTER_AMMO
+    requiredItems:
+      STR_ALIEN_ALLOYS: 3
+      STR_UFO_CONSTRUCTION: 3
+      STR_KILLPOINT_TOKEN: 30
+    producedItems:
+      STR_BOLT_SNIPER_AMMO_MC: 10
 
   - name: STR_MCRIFLE                               # MC Bolter
     category: STR_WEAPON
@@ -418,22 +442,22 @@ manufacture:
       - STR_MASTER_CRAFTING
       - STR_MARINE_BOLTERS_ADV
     requiredItems:
-      STR_ALIEN_ALLOYS: 4 # was 1
-      STR_KILLPOINT_TOKEN: 160
+      STR_UFO_CONSTRUCTION: 4
+      STR_KILLPOINT_TOKEN: 120
 
   - name: STR_BOLTRIFLE_MC                          # MC Boltrifle
     category: STR_WEAPON
     space: 0
     time: 480
-    cost: 150000 # was 100k
+    cost: 150000
     requires:
       - STR_CHAPTER_PURITY
       - STR_PRIMARIS
       - STR_MASTER_CRAFTING
       - STR_PRIMARIS_BOLTERS_ADV
     requiredItems:
-      STR_ALIEN_ALLOYS: 4 # was 1
-      STR_KILLPOINT_TOKEN: 160
+      STR_UFO_CONSTRUCTION: 4
+      STR_KILLPOINT_TOKEN: 80
 
   - name: STR_MCPISTOL                              # MC Boltpistol
     category: STR_WEAPON
@@ -483,7 +507,7 @@ manufacture:
     category: STR_CAT_FIRESUPPORT
     requires:
       - STR_CHAPTER_PURITY
-      - STR_NAVY_COMUNICATIONS
+      - STR_ORBITAL_STRIKE_R
     space: 0
     time: 360
     cost: 200000
@@ -497,7 +521,7 @@ manufacture:
     category: STR_CAT_FIRESUPPORT
     requires:
       - STR_CHAPTER_PURITY
-      - STR_NAVY_COMUNICATIONS
+      - STR_ORBITAL_LANCE_R
     space: 0
     time: 1200
     cost: 1000000
@@ -557,6 +581,18 @@ manufacture:
       STR_KILLPOINT_TOKEN: 250
       STR_ALIEN_ALLOYS: 30
       STR_UFO_CONSTRUCTION: 4
+
+  - name: STR_SCOUT_SGT                             # Scout Sergeant Armor
+    category: STR_CAT_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_SCOUT_SGT_R
+    space: 0
+    time: 320
+    cost: 30000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+
   - name: STR_SCOUTH                                # Scout Honor
     category: STR_CAT_ARMOR
     requires:
@@ -564,10 +600,12 @@ manufacture:
       - STR_SCOUTH_RESEARCH
     space: 0
     time: 800
-    cost: 40000
+    cost: 60000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 60
-      STR_ALIEN_ALLOYS: 15
+      STR_KILLPOINT_TOKEN: 250
+      STR_ALIEN_ALLOYS: 10
+      STR_UFO_CONSTRUCTION: 3
+
   - name: STR_SIGNAL_ARMOR                          # Dev Honor
     category: STR_CAT_ARMOR
     requires:
@@ -833,9 +871,8 @@ manufacture:
     time: 600
     cost: 30000
     requiredItems:
-      STR_ALIEN_ALLOYS: 8
-      STR_UFO_CONSTRUCTION: 1
-      STR_KILLPOINT_TOKEN: 20
+      STR_ALIEN_ALLOYS: 20
+      STR_UFO_CONSTRUCTION: 2
 
   - name: STR_PRIMARIS_PLASMAPACK                   # Primaris Plasma Incinerator Armor
     category: STR_CAT_ARMOR
@@ -847,9 +884,8 @@ manufacture:
     time: 600
     cost: 60000
     requiredItems:
-      STR_ALIEN_ALLOYS: 12
+      STR_ALIEN_ALLOYS: 20
       STR_UFO_CONSTRUCTION: 2
-      STR_KILLPOINT_TOKEN: 50
 
 ### OTHER
   - name: STR_SMT_GENESEED_REFINE                   # Geneseed refining recipe

@@ -288,7 +288,7 @@ extended:
           sub temp saveHealth;
           set to_health temp; # only damage unit up to the saveHealth limit
           sub temp2 temp; # get overflow damage
-          muldiv temp2 3 2; # multiply overflow by 1.5
+          mul temp2 2; # multiply overflow by 2
           add to_stun temp2; # add overflow to stun damage
           unit.setFire 0; # extinguish fire
           set to_transform 0; # prevent any chance of transforming

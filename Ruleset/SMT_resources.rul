@@ -1,5 +1,9 @@
 armors:
   - type: STR_SCOUT_SMT_UC          #SCOUT
+    spriteFaceGroup: 6
+    spriteFaceColor: [96, 96, 96, 96, 160, 160, 163, 163, 96, 96, 96, 96] #M0 F0 M1 F1 M2 F2 M3 F3 M4 F4 M5 F5
+    spriteHairGroup: 9
+    spriteHairColor: [144, 144, 164, 164, 245, 245, 166, 166, 96, 164, 96, 96] #M0 F0 M1 F1 M2 F2 M3 F3 M4 F4 M5 F5
     layersDefaultPrefix: "0"
     layersSpecificPrefix:
       1: SCOUT
@@ -17,6 +21,143 @@ armors:
       F3: ["0", "ASCOUTFB", "F3_FACE", "GOGGLES"]
       F4: ["0", "ASCOUTF", "F4_FACE", "GOGGLES"]
       F5: ["0", "ASCOUTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_SCOUT_SGT_UC          #SCOUT SERGEANT
+    spriteFaceGroup: 6
+    spriteFaceColor: [96, 96, 96, 96, 160, 160, 163, 163, 96, 96, 96, 96] #M0 F0 M1 F1 M2 F2 M3 F3 M4 F4 M5 F5
+    spriteHairGroup: 9
+    spriteHairColor: [144, 144, 164, 164, 245, 245, 166, 166, 96, 164, 96, 96] #M0 F0 M1 F1 M2 F2 M3 F3 M4 F4 M5 F5
+    layersDefaultPrefix: "0"
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["0", "SCOUTSGTM", "M0_FACE", "GOGGLES"]
+      M1: ["0", "SCOUTSGTM", "M1_FACE", "GOGGLES"]
+      M2: ["0", "SCOUTSGTM", "M2_FACE", "GOGGLES"]
+      M3: ["0", "SCOUTSGTM", "M3_FACE", "GOGGLES"]
+      M4: ["0", "SCOUTSGTM", "M4_FACE", "GOGGLES"]
+      M5: ["0", "SCOUTSGTM", "M5_FACE", "GOGGLES"]
+      F0: ["0", "SCOUTSGTF", "F0_FACE", "GOGGLES"]
+      F1: ["0", "SCOUTSGTF", "F1_FACE", "GOGGLES"]
+      F2: ["0", "SCOUTSGTF", "F2_FACE", "GOGGLES"]
+      F3: ["0", "SCOUTSGTF", "F3_FACE", "GOGGLES"]
+      F4: ["0", "SCOUTSGTF", "F4_FACE", "GOGGLES"]
+      F5: ["0", "SCOUTSGTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_SCOUTH_UC             #SCOUT ELITE (Brown)
+    layersDefaultPrefix: CAPE
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["CAPE", "SCOUTELTM", "M0_FACE", "GOGGLES"]
+      M1: ["CAPE", "SCOUTELTM", "M1_FACE", "GOGGLES"]
+      M2: ["CAPE", "SCOUTELTM", "M2_FACE", "GOGGLES"]
+      M3: ["CAPE", "SCOUTELTM", "M3_FACE", "GOGGLES"]
+      M4: ["CAPE", "SCOUTELTM", "M4_FACE", "GOGGLES"]
+      M5: ["CAPE", "SCOUTELTM", "M5_FACE", "GOGGLES"]
+      F0: ["CAPE", "SCOUTELTF", "F0_FACE", "GOGGLES"]
+      F1: ["CAPE", "SCOUTELTF", "F1_FACE", "GOGGLES"]
+      F2: ["CAPE", "SCOUTELTF", "F2_FACE", "GOGGLES"]
+      F3: ["CAPE", "SCOUTELTF", "F3_FACE", "GOGGLES"]
+      F4: ["CAPE", "SCOUTELTF", "F4_FACE", "GOGGLES"]
+      F5: ["CAPE", "SCOUTELTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_SCOUTHG_UC            #SCOUT ELITE (Green)
+    layersDefaultPrefix: CAPE
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["CAPEG", "SCOUTELTM", "M0_FACE", "GOGGLES"]
+      M1: ["CAPEG", "SCOUTELTM", "M1_FACE", "GOGGLES"]
+      M2: ["CAPEG", "SCOUTELTM", "M2_FACE", "GOGGLES"]
+      M3: ["CAPEG", "SCOUTELTM", "M3_FACE", "GOGGLES"]
+      M4: ["CAPEG", "SCOUTELTM", "M4_FACE", "GOGGLES"]
+      M5: ["CAPEG", "SCOUTELTM", "M5_FACE", "GOGGLES"]
+      F0: ["CAPEG", "SCOUTELTF", "F0_FACE", "GOGGLES"]
+      F1: ["CAPEG", "SCOUTELTF", "F1_FACE", "GOGGLES"]
+      F2: ["CAPEG", "SCOUTELTF", "F2_FACE", "GOGGLES"]
+      F3: ["CAPEG", "SCOUTELTF", "F3_FACE", "GOGGLES"]
+      F4: ["CAPEG", "SCOUTELTF", "F4_FACE", "GOGGLES"]
+      F5: ["CAPEG", "SCOUTELTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_SCOUTHR_UC            #SCOUT ELITE (Red)
+    layersDefaultPrefix: CAPE
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["CAPER", "SCOUTELTM", "M0_FACE", "GOGGLES"]
+      M1: ["CAPER", "SCOUTELTM", "M1_FACE", "GOGGLES"]
+      M2: ["CAPER", "SCOUTELTM", "M2_FACE", "GOGGLES"]
+      M3: ["CAPER", "SCOUTELTM", "M3_FACE", "GOGGLES"]
+      M4: ["CAPER", "SCOUTELTM", "M4_FACE", "GOGGLES"]
+      M5: ["CAPER", "SCOUTELTM", "M5_FACE", "GOGGLES"]
+      F0: ["CAPER", "SCOUTELTF", "F0_FACE", "GOGGLES"]
+      F1: ["CAPER", "SCOUTELTF", "F1_FACE", "GOGGLES"]
+      F2: ["CAPER", "SCOUTELTF", "F2_FACE", "GOGGLES"]
+      F3: ["CAPER", "SCOUTELTF", "F3_FACE", "GOGGLES"]
+      F4: ["CAPER", "SCOUTELTF", "F4_FACE", "GOGGLES"]
+      F5: ["CAPER", "SCOUTELTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_SCOUTHY_UC            #SCOUT ELITE (Yellow)
+    layersDefaultPrefix: CAPE
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["CAPEY", "SCOUTELTM", "M0_FACE", "GOGGLES"]
+      M1: ["CAPEY", "SCOUTELTM", "M1_FACE", "GOGGLES"]
+      M2: ["CAPEY", "SCOUTELTM", "M2_FACE", "GOGGLES"]
+      M3: ["CAPEY", "SCOUTELTM", "M3_FACE", "GOGGLES"]
+      M4: ["CAPEY", "SCOUTELTM", "M4_FACE", "GOGGLES"]
+      M5: ["CAPEY", "SCOUTELTM", "M5_FACE", "GOGGLES"]
+      F0: ["CAPEY", "SCOUTELTF", "F0_FACE", "GOGGLES"]
+      F1: ["CAPEY", "SCOUTELTF", "F1_FACE", "GOGGLES"]
+      F2: ["CAPEY", "SCOUTELTF", "F2_FACE", "GOGGLES"]
+      F3: ["CAPEY", "SCOUTELTF", "F3_FACE", "GOGGLES"]
+      F4: ["CAPEY", "SCOUTELTF", "F4_FACE", "GOGGLES"]
+      F5: ["CAPEY", "SCOUTELTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_SCOUTHB_UC            #SCOUT ELITE (Black)
+    layersDefaultPrefix: CAPE
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["CAPEB", "SCOUTELTM", "M0_FACE", "GOGGLES"]
+      M1: ["CAPEB", "SCOUTELTM", "M1_FACE", "GOGGLES"]
+      M2: ["CAPEB", "SCOUTELTM", "M2_FACE", "GOGGLES"]
+      M3: ["CAPEB", "SCOUTELTM", "M3_FACE", "GOGGLES"]
+      M4: ["CAPEB", "SCOUTELTM", "M4_FACE", "GOGGLES"]
+      M5: ["CAPEB", "SCOUTELTM", "M5_FACE", "GOGGLES"]
+      F0: ["CAPEB", "SCOUTELTF", "F0_FACE", "GOGGLES"]
+      F1: ["CAPEB", "SCOUTELTF", "F1_FACE", "GOGGLES"]
+      F2: ["CAPEB", "SCOUTELTF", "F2_FACE", "GOGGLES"]
+      F3: ["CAPEB", "SCOUTELTF", "F3_FACE", "GOGGLES"]
+      F4: ["CAPEB", "SCOUTELTF", "F4_FACE", "GOGGLES"]
+      F5: ["CAPEB", "SCOUTELTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_SCOUTHW_UC            #SCOUT ELITE (White)
+    layersDefaultPrefix: CAPE
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["CAPEW", "SCOUTELTM", "M0_FACE", "GOGGLES"]
+      M1: ["CAPEW", "SCOUTELTM", "M1_FACE", "GOGGLES"]
+      M2: ["CAPEW", "SCOUTELTM", "M2_FACE", "GOGGLES"]
+      M3: ["CAPEW", "SCOUTELTM", "M3_FACE", "GOGGLES"]
+      M4: ["CAPEW", "SCOUTELTM", "M4_FACE", "GOGGLES"]
+      M5: ["CAPEW", "SCOUTELTM", "M5_FACE", "GOGGLES"]
+      F0: ["CAPEW", "SCOUTELTF", "F0_FACE", "GOGGLES"]
+      F1: ["CAPEW", "SCOUTELTF", "F1_FACE", "GOGGLES"]
+      F2: ["CAPEW", "SCOUTELTF", "F2_FACE", "GOGGLES"]
+      F3: ["CAPEW", "SCOUTELTF", "F3_FACE", "GOGGLES"]
+      F4: ["CAPEW", "SCOUTELTF", "F4_FACE", "GOGGLES"]
+      F5: ["CAPEW", "SCOUTELTF", "F5_FACE", "GOGGLES"]
 
   - type: STR_ASS_ARMOR_HONOR_CLAW  #HONOR ASSAULT CLAW
     layersDefaultPrefix: 0
@@ -1150,7 +1291,7 @@ extraSprites:
       122: Resources/ITEMS/BOMBARD/StrikeVox_I_BigOb.png        # Orbital Lance Vox
       128: Resources/ITEMS/BSNIPER/HeavySniper_BigOb.png        # Bolt Sniper Rifle
       129: Resources/ITEMS/SLT_BigOb.png                        # Smoke Launcher Turret
-      130: Resources/ITEMS/BSNIPER/SniperBolt.png               # Bolt Sniper Ammo
+      130: Resources/ITEMS/BSNIPER/SniperBoltAP.png             # Bolt Sniper AP Ammo
       131: Resources/ITEMS/BSNIPER/SniperBoltKrak.png           # Bolt Sniper Krak Ammo
       132: Resources/ITEMS/BSNIPER/SniperBoltFrag.png           # Bolt Sniper Frag Ammo
       133: Resources/ITEMS/BSNIPER/SniperBoltShred.png          # Bolt Sniper Shredder Ammo
@@ -1303,6 +1444,7 @@ extraSprites:
       280: Resources/ITEMS/BOLTPISTOL/pistolH_1.png             # Boltpistol Tigrus (boltpistol)
       281: Resources/ITEMS/BOLTPISTOL/pistolMC_0.png            # Boltpistol Mastercrafted (unloaded)
       282: Resources/ITEMS/BOLTPISTOL/pistolMC_1.png            # Boltpistol Mastercrafted (boltpistol)
+      283: Resources/ITEMS/BSNIPER/SniperBoltAP.png             # Bolt Sniper MC Ammo
 
 ###Item FloorOBs
   - type: FLOOROB.PCK
@@ -1397,7 +1539,8 @@ extraSprites:
     subX: 32
     subY: 40
     files:
-      100: Resources/ITEMS/blankEx.png
+      100: Resources/SPRITES/blankEx.png
+      110: Resources/SPRITES/lock.png
 
   - type: X1.PCK  # small
     width: 320
@@ -1405,7 +1548,37 @@ extraSprites:
     subX: 32
     subY: 40
     files:
-      100: Resources/ITEMS/blankEx.png
+      100: Resources/SPRITES/blankEx.png
+
+###Ability Icons
+  - type: SPICONS.DAT
+    width: 32
+    height: 24
+    files:
+      40: Resources/DECALS/SPICONINSPIRE.png
+      41: Resources/DECALS/SPICONSIGNUM.png
+      42: Resources/DECALS/SPICONARM.png
+      43: Resources/DECALS/SPICONRAM.png
+      44: Resources/DECALS/SPICONSTOMP.png
+
+###Scout Sergeant
+  - typeSingle: SCOUT__1__SCOUTSGTM
+    fileSingle: Resources/UNITS/SCOUT/SCOUTSM_I.png
+  - typeSingle: SCOUT__1__SCOUTSGTF
+    fileSingle: Resources/UNITS/SCOUT/SCOUTSF_I.png
+  - type: SCOUTSGT.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/SCOUT/SCOUTS_S.png
+
+###Scout Elite
+  - typeSingle: SCOUT__1__SCOUTELTM
+    fileSingle: Resources/UNITS/SCOUT/SCOUTEM_I.png
+  - typeSingle: SCOUT__1__SCOUTELTF
+    fileSingle: Resources/UNITS/SCOUT/SCOUTEF_I.png
 
 ###Assault Vanguard
   - typeSingle: HONORASSC__1__ASSAULTCMH
@@ -2264,15 +2437,6 @@ extraSprites:
     files:
       0: Resources/UNITS/BOMBARD/BombardRocket.png
 
-
-###Ability Icons
-  - type: SPICONS.DAT
-    width: 32
-    height: 24
-    files:
-      40: Resources/DECALS/SPICONINSPIRE.png
-      41: Resources/DECALS/SPICONSIGNUM.png
-      42: Resources/DECALS/SPICONARM.png
 ###Backgrounds
   - type: GuardBG.SCR
     singleImage: true

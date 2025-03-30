@@ -27,7 +27,7 @@ research:
       - STR_PSI_AMP # replaced by chapter teachings
 
   - name: STR_POWER_SUIT            # Terminator Suit
-    cost: 205
+    cost: 500 # was 205
     points: 20
     dependencies:
       - STR_ELERIUM_115
@@ -39,14 +39,14 @@ research:
       - STR_TERMINATOR_ARMOR_SM_CODEX
 
   - name: STR_FLYING_SUIT           # Terminator Assault
-    cost: 330
+    cost: 150 # was 330
     points: 20
     dependencies:
       - STR_MARINES_AND_DEATHWATCH
       - STR_POWER_SUIT
 
   - name: STR_TSARGENT              # Terminator Cyclone
-    cost: 330
+    cost: 150 # was 330
     points: 20
     dependencies:
       - STR_MARINES_AND_DEATHWATCH
@@ -56,9 +56,7 @@ research:
     cost: 205
     points: 20
     dependencies:
-      - STR_MARINES_STRATEGY
-      - STR_POWER_SUIT
-      - STR_COMMANDER_PLUS
+      - STR_GENERALLOCK
 
   - name: STR_SMOKE_BOMB_UNLOCK     # SmokeBomb requirement - Added to give SM access
     cost: 0
@@ -331,13 +329,21 @@ research:
     unlocks:
       - STR_APOTHECARY_PREREQ # Unlock for Apoth so all strats can get it in early tier
 
+  - name: STR_SCOUT_SGT_R           # Scout Sergeant Armor
+    cost: 180
+    points: 20
+    dependencies:
+      - STR_SCOUT
+    unlocks:
+      - STR_APOTHECARY_PREREQ # Unlock for Apoth so all strats can get it in early tier
+
   - name: STR_SCOUTH_RESEARCH       # Advanced Scout Armor
     cost: 180
     points: 20
     dependencies:
-      - STR_SCOUT # Removed midtier prereqs, now scout strat starting armor
-    unlocks:
-      - STR_APOTHECARY_PREREQ # Unlock for Apoth so all strats can get it in early tier
+      - STR_MIDTIER_PREREQ
+      - STR_SCOUT
+      - STR_SARGENT_ARMOR
 
   - name: STR_APOTHECARY_PREREQ     # Prereq for Apothecary armor (to stop not-SM factions from getting Apothecary Armor research)
     cost: 0
@@ -400,6 +406,25 @@ research:
     points: 0
     dependencies:
       - STR_GENERALLOCK
+
+  - name: STR_MC_BOLTER_AMMO        # Mastercrafted Bolter Ammo
+    cost: 350
+    points: 20
+    dependencies:
+      - STR_HIGHTIER_PREREQ
+      - STR_MASTER_CRAFTING
+      - STR_BOLTER_ADV_AMMO
+    getOneFree:
+      - STR_MC_LIGHTBOLTER_AMMO
+
+  - name: STR_MC_LIGHTBOLTER_AMMO   # Mastercrafted Light Bolter Ammo
+    cost: 350
+    points: 20
+    dependencies:
+      - STR_HIGHTIER_PREREQ
+      - STR_MASTER_CRAFTING
+      - STR_LIGHTBOLTER_ADV_AMMO
+      - STR_GUARD_AND_ARBITES
 
   - name: STR_BOLTPISTOL_REQ        # Boltpistol Unlock (for Boltpistols used by both Firstborn and Primaris)
     cost: 0
@@ -597,6 +622,28 @@ research:
       - STR_MIDTIER_PREREQ
       - STR_LEADER_PLUS
 
+  - name: STR_NAVY_COMUNICATIONS    # Orbital Communications
+    cost: 100
+    points: 15
+    dependencies:
+      - STR_CHAPTER_PURITY
+      - STR_MIDTIER_PREREQ
+
+  - name: STR_ORBITAL_STRIKE_R      # Orbital Barrage
+    cost: 150
+    points: 10
+    dependencies:
+      - STR_CHAPTER_PURITY
+      - STR_NAVY_COMUNICATIONS
+
+  - name: STR_ORBITAL_LANCE_R       # Orbital Lance
+    cost: 200
+    points: 20
+    dependencies:
+      - STR_CHAPTER_PURITY
+      - STR_NAVY_COMUNICATIONS
+      - STR_HIGHTIER_PREREQ
+
   - name: STR_MARINE_CHAPEL         # Early unlock for Chapel
     cost: 100
     points: 10
@@ -634,7 +681,6 @@ research:
     points: 20
     dependencies:
       - STR_MARINES_STRATEGY
-      - STR_NOT_PRIMARIS
       - STR_HIGHTIER_PREREQ
       - STR_PSI_LAB
 

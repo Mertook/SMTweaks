@@ -4,6 +4,8 @@ ufopaedia:
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
+    requires:
+      - STR_MARINE_CODEX
     text: STR_SMT_PROMOTION_TREE_CODEX
     listOrder: 21010
 
@@ -11,6 +13,8 @@ ufopaedia:
     type_id: 10
     section: STR_SMT_INFO
     image_id: TODO.SPK
+    requires:
+      - STR_NEOPHYTE_CODEX
     text: STR_GENESEED_DETAILS_CODEX
     listOrder: 21011
 
@@ -237,13 +241,21 @@ ufopaedia:
   - id: STR_APOT_ARMOR_UC                   #5700
     requires:
       - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
       - STR_MEDI_KIT_PREREQ
     listOrder: 5700
-  - id: STR_MKX_APO_UC                      #5701
+  - id: STR_MKX_HELIX_UC_LV1                #5701
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0MXC.SPK ###CHANGEME
     requires:
       - STR_PRIMARIS
-      - STR_MEDI_KIT_PREREQ
+    text: STR_MKX_HELIX_UC_LV1_UFOPEDIA
     listOrder: 5701
+  - id: STR_MKX_APO_UC                      #5702
+    requires:
+      - STR_PRIMARIS
+    listOrder: 5702
   - id: STR_MKX_TEC_LV1_UC                  #5801
     requires:
       - STR_PRIMARIS
@@ -264,6 +276,7 @@ ufopaedia:
     requires: # unlock when Chaplains are unlocked
       - STR_MARINE_CHAPEL
       - STR_MIDTIER_PREREQ
+      - STR_NOT_PRIMARIS
     listOrder: 5900
 
   - id: STR_SMT_LIB_ARMOR_UC                # Librarian Armor
@@ -432,7 +445,7 @@ ufopaedia:
 ### WEAPONS
   - id: STR_STRIKE_VOX_FALSE                # Orbital Barrage Vox
     requires:
-      - STR_NAVY_COMUNICATIONS
+      - STR_ORBITAL_STRIKE_R
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: HEAVY_WEAPON_TOOLS.SPK
@@ -441,7 +454,7 @@ ufopaedia:
 
   - id: STR_ORBITAL_LANCE_DUMMY             # Orbital Lance Vox
     requires:
-      - STR_NAVY_COMUNICATIONS
+      - STR_ORBITAL_LANCE_R
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: HEAVY_WEAPON_TOOLS.SPK
@@ -1026,6 +1039,8 @@ extraStrings:
       ### MISC
       ### ARMOR
       STR_TSARGENT_UFOPEDIA: "{NEWLINE} The immense strength of Terminator armor allows it to support heavy weaponry with ease, unleashing devastating missile barrages while leaving hands free to carry other weapons to fit any situation."
+      STR_SCOUT_SGT_UC_UFOPEDIA: "{NEWLINE} Scout Sergeants are veteran marines who don scout armor in order to lead and train scout recruits. They pass down knowledge and skills off the battlefield and lead scout squads on infiltration missions to gather intelligence or sabotage strategic targets."
+      STR_SCOUTH_UC_UFOPEDIA: "{NEWLINE} Experts in stealth and infiltration, these veteran marines are peerless operatives capable of acting independently for long periods to carry out their missions."
       STR_SIGNAL_ARMOR_UFOPEDIA: "{NEWLINE} MK7 Armor given to Sergeants of Devasator squads. Equipped with a Signum that allows the user to share battlefield data with squadmates, enhancing their accuracy."
       STR_SARGENT_ARMOR_UFOPEDIA: "{NEWLINE} A Sergeant is an Astartes non-commissioned officer who commands a squad of Space Marines. They can direct their Battle Brothers in combat and bolster morale."
       STR_HONOR_ARMOR_UFOPEDIA: "{NEWLINE} Artificer Armors are ancient and ornate Power Suits that have been carefully maintained by Techmarines for generations and used only by the Chapters greatest heroes. The protection it offers is far above that of regular power armor."
@@ -1034,6 +1049,7 @@ extraStrings:
       STR_DREAD_ARMOR2_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Plasma and Stormbolter"
       STR_DREAD_ARMOR3_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Lascannon and Missiles"
       STR_DREAD_ARMOR4_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Assault Cannon and Flamer"
+      STR_MKX_HELIX_UC_LV1_UFOPEDIA: "{NEWLINE} Helix Adepts are not fully fledged Apothecaries, but are able to act as medics and maintain the health of their fellow battle brothers when operating behind enemy lines."
       ### ARMOR DEATHWATCH
       STR_DW_TAC_CODEX_UC_UFOPEDIA: "{NEWLINE} Tactical Armor is the most common type of armor worn by Space Marines, adaptable to any battlefield situation."
       STR_DW_APOTH_CODEX_UC_UFOPEDIA: "{NEWLINE} Deathwatch Apothecaries act as field medics for the Kill-Team and preserve the geneseed of any fallen Brother."
@@ -1165,17 +1181,17 @@ extraStrings:
       STR_SMT_RECOIL: Recoil Changes
       STR_SMT_RECOIL_CODEX: "{NEWLINE} Recoil has been slightly changed. Using a weapon without a free hand increases the recoil of that weapon by {ALT}+50%{ALT}, increasing the strength required to fire it without penalty.{NEWLINE}{NEWLINE} Melee weapons are unaffected by this and do not get any additional strength penalty."
       STR_SMT_HWP: Weapon Stabilizers
-      STR_SMT_HWP_CODEX: "{NEWLINE} Devastators and Terminators have weapon stablizers built into their armor, reducing the aim penalty that comes from using heavy weapons after moving.{NEWLINE}{NEWLINE}Wearing Devastator armor reduces the penalty by 50%{NEWLINE}{NEWLINE}Wearing Terminator armor removes the penalty entirely{NEWLINE}{NEWLINE}This bonus doesn't reduce the penalty when using Sniper Rifles."
+      STR_SMT_HWP_CODEX: "{NEWLINE} Some powered suits have weapon stablizers built into the armor, reducing the aim penalty that comes from using heavy weapons with low TUs. Specialized armor meant for handling heavy weapons like Devastator armor are more effective, reducing the penalty by up to 66%. {NEWLINE}{NEWLINE} Terminator armor removes the penalty entirely{NEWLINE}{NEWLINE} Some weapons like Sniper Rifles cannot have their penalty reduced by armor."
       STR_SMT_HEROICSAVE: Heroic Save
       STR_SMT_HEROICSAVE_CODEX: "{NEWLINE} When taking lethal damage Space Marines have a chance to heroically endure. Instead of dying they will be knocked unconcious and can be revived to fight on.{NEWLINE} This effect may also protect them from instant-death attacks, but can't prevent death from untreated fatal wounds, corruption or burning.{NEWLINE}{NEWLINE} The chance to endure increases with Health, Devotion, and Veterancy. Units blessed by a Chaplain have their bonus from Devotion doubled."
       STR_SMT_REGENERATION: Marine Healing
-      STR_SMT_REGENERATION_CODEX: "{NEWLINE} Marines undergo extensive genetic modification, improving their ability to recover from injury far above that of regular humans. This allows them to recover from fatal wounds and restore health even on the battlefield. Units can heal up to 80% of their max health, but lost health restored this way still incurs post-mission recovery time.{NEWLINE}{NEWLINE}Each Turn:{NEWLINE} {ALT}Neophytes heal 2 HP{NEWLINE} Marines heal 5 HP/1 Wound{NEWLINE} Vet Marines heal 8 HP/2 Wounds"
+      STR_SMT_REGENERATION_CODEX: "{NEWLINE} Marines undergo extensive genetic modification, improving their ability to recover from injury far above that of regular humans. This allows them to recover from fatal wounds and restore health even on the battlefield. Units can heal up to 80% of their max health, but lost health restored this way still incurs some post-mission recovery time.{NEWLINE}{NEWLINE}Each Turn:{NEWLINE} {ALT}Neophytes heal 2 HP{NEWLINE} Marines heal 5 HP/1 Wound{NEWLINE} Vet Marines heal 8 HP/2 Wounds"
       STR_SMT_PROMOTION_CHAPLAINS: Chaplains
-      STR_SMT_PROMOTION_CHAPLAINS_CODEX: "{NEWLINE} Marines who have earned the right to become a Veteran with {ALT}80+ Devotion{ALT} can be promoted into Chaplains instead.{NEWLINE}{NEWLINE} Chaplains have the Bless ability which restores morale and purges chaos corruption from nearby units. It also applies a slow-decaying buff that grants resistance to corrupting attacks, improves melee skill, and increases the chances of Heroic Save protecting a unit from death."
+      STR_SMT_PROMOTION_CHAPLAINS_CODEX: "{NEWLINE} Marines who have earned the right to become a Veteran with {ALT}80+ Devotion{ALT} can be promoted into Chaplains instead.{NEWLINE}{NEWLINE} Chaplains have the Bless ability which restores morale and purges chaos corruption from nearby units. It also applies a slowly-decaying buff that grants resistance to corrupting attacks, improves melee skill, and increases the chances of Heroic Save protecting a unit from death."
       STR_SMT_PROMOTION_LIBRARIANS: Librarians
       STR_SMT_PROMOTION_LIBRARIANS_CODEX: "{NEWLINE} Neophytes with {ALT}20+ PsiStr{ALT} can be trained into Librarians instead of becoming regular Marines.{NEWLINE}Librarians can use powerful psychic abilities that depend on Psi Strength, which is improved through use in battle.{NEWLINE}{NEWLINE} Librarians with Crux Terminatus and {ALT}90+ PsiStr{ALT} can be further promoted to Veterans, increasing their maximum potential and allowing the use of Terminator Armor."
       STR_SMT_LIBRARIAN_SPELLS: Librarian Abilities
-      STR_SMT_LIBRARIAN_SPELLS_CODEX: "{NEWLINE} Librarians have 5 different psyker abilities.{NEWLINE}{NEWLINE}{ALT}>Smite{ALT} - Deals armor-ignoring damage to an enemy{NEWLINE}{ALT}>Lockdown{ALT} - Drains enemy time units, paralysing them{NEWLINE}{ALT}>Shroud{ALT} - Creates a blast of smoke to obscure vision{NEWLINE}{ALT}>Shield{ALT} - Grants a temporary energy shield to an ally{NEWLINE}{ALT}>Accelerate{ALT} - Increases reactions and at high levels even increases movespeed{NEWLINE}{NEWLINE} All abilities scale with PsiStr only"
+      STR_SMT_LIBRARIAN_SPELLS_CODEX: "{NEWLINE} Librarians have 5 different psyker abilities.{NEWLINE}{NEWLINE}{ALT}>Smite{ALT} - Deals armor-ignoring damage to an enemy{NEWLINE}{ALT}>Lockdown{ALT} - Drains enemy time units, paralysing them{NEWLINE}{ALT}>Shroud{ALT} - Creates a blast of smoke to obscure vision{NEWLINE}{ALT}>Shield{ALT} - Grants a temporary energy shield to an ally{NEWLINE}{ALT}>Accelerate{ALT} - Reduces reaction fire and at high levels increases movespeed{NEWLINE}{NEWLINE} All abilities scale with PsiStr only"
       STR_SMT_BOLTER_CHANGES: Bolter Changes
       STR_SMT_BOLTER_CHANGES_CODEX: "{NEWLINE} Bolters fire powerful high-caliber self-propelled explosive rounds. They have limited propulsion and lack accuracy at range, instead optimizing for devastating close range firepower.{NEWLINE} Compared to Rosigma SMT Bolters have greater accuracy falloff outside of optimal range but deal more damage and fire faster, specializing in autofire bursts.{NEWLINE}{NEWLINE} Heavy Bolter rounds are larger with more propulsion and aren't given any additonal falloff penalties."
       STR_SMT_MASTERCRAFTED_AMMO: Mastercrafted Bolts

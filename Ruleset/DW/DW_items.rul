@@ -3,8 +3,8 @@ items:
     battleType: 0
     size: 0.01
     weight: 3
-    bigSprite: 100
-    armor: 200
+    bigSprite: 99
+    armor: 300
     invWidth: 1
     invHeight: 1
     recover: true
@@ -14,8 +14,8 @@ items:
     battleType: 0
     size: 0.01
     weight: 3
-    bigSprite: 100
-    armor: 200
+    bigSprite: 99
+    armor: 300
     invWidth: 1
     invHeight: 1
     recover: true
@@ -25,8 +25,8 @@ items:
     battleType: 0
     size: 0.01
     weight: 3
-    bigSprite: 100
-    armor: 200
+    bigSprite: 99
+    armor: 300
     invWidth: 1
     invHeight: 1
     recover: true
@@ -105,7 +105,7 @@ items:
     weight: 6
     costSell: 400
     clipSize: 30
-    armor: 200
+    armor: 300
     invHeight: 2
     invWidth: 1
     explosionSpeed: 3
@@ -147,15 +147,15 @@ items:
     bigSprite: 167
     listOrder: 10442
     hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2100}
-    power: 15
+    power: 65
     damageType: 1 # AP
     damageAlter: # Standard bolter ammo
       ResistType: 12 # Grav - unresisted
       RandomType: 2 # 50-150%
-      ToArmorPre: 1.25 # grav
+      ToArmorPre: 0.75 # grav
       ArmorEffectiveness: 0.0
-      ToArmor: 1.25 # grav
-      ToHealth: 0.5 # most of the damage should come from grav bonus
+      ToArmor: 0.0
+      ToHealth: 0.25 # most of the damage should come from grav bonus
       ToStun: 0.3
       ToEnergy: 0.3
       ToWound: 0.1
@@ -243,119 +243,6 @@ items:
       ITEM_IS_HEAVY_WEAPON: 3 # 20% additional penalty when firing with lowered TUs
       REACTION_MULTIPLIER: 66 # bulky
 
-  - type: STR_BOLT_SNIPER_RIFLE_DW          # Bolt Sniper Rifle - DW edition            ## Restricted item
-    categories: [STR_CAT_SNIPER]
-    dropoff: 3 #scoped sniper rifle
-    weight: 50
-    size: 0.4
-    requiresBuy:
-      - STR_DW_SNIPER
-    costBuy: 125000
-    costSell: 50000
-    bigSprite: 164
-    floorSprite: 164
-    handSprite: 224
-    bulletSprite: {mod: 40k, index: 6}
-    bulletSpeed: 50
-    fireSound: {mod: 40k, index: 12}
-    compatibleAmmo:
-      - STR_BOLT_SNIPER_AMMO_AP
-      - STR_BOLT_SNIPER_AMMO_FRAG
-      - STR_BOLT_SNIPER_AMMO_KRAK
-      - STR_BOLT_SNIPER_AMMO_SHRED
-      - STR_BOLT_SNIPER_AMMO_DEREV
-      - STR_BOLT_SNIPER_AMMO_HELS
-    battleType: 1
-    twoHanded: true
-    blockBothHands: true
-    invWidth: 2
-    invHeight: 3
-    armor: 200
-    autoRange: 0
-    snapRange: 25 # +5 DW
-    aimRange: 38 # +5 DW
-    noLOSAccuracyPenalty: 75 # default 50, regular 66 - Sniper bonus + DW bonus
-    accuracySnap: 60
-    accuracyAuto: 0
-    accuracyAimed: 90
-    tuAuto: 0
-    tuSnap: 60
-    tuAimed: 85
-    listOrder: 11931
-    tuLoad: 4 # single round shots
-    tuUnload: 2
-    accuracyMultiplier: #sniper rifle accuracy
-      firing: [0.5, 0.005]
-    kneelBonus: 150
-    minRange: 10
-    tags:
-      ITEM_IS_HEAVY_WEAPON: 4 # Sniper Rifle, -20% penalty on snap shots after moving
-      ITEM_HWP_IGNORES_ARMOR_BONUS: 1 # Sniper Rifle
-      REACTION_MULTIPLIER: 10 # 10% of normal - Sniper rifle, bad at reactions
-      ITEM_RECOIL: 75
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 85
-      ITEM_SNAP_ACCURACY_POWER_BONUS: 30
-      ITEM_POWER_BONUS_PERCENTILE: 1
-
-  - type: STR_BOLT_SNIPER_AMMO_DEREV        # Bolt Sniper Derevenant Ammo               ## Custom ammo
-    categories: [STR_CAT_SNIPER]
-    bigSprite: 169
-    floorSprite: 130
-    handSprite: {mod: 40k, index: 464}
-    battleType: 2
-    size: 0.02
-    costSell: 200
-    armor: 200
-    weight: 2
-    invWidth: 1
-    invHeight: 1
-    listOrder: 11935
-    hitSound: {mod: 40k, index: 712}
-    hitAnimation: {mod: 40k, index: 26}
-    clipSize: 1
-    power: 100
-    damageType: 1 # standard
-    damageAlter:
-      RandomType: 6
-      ArmorEffectiveness: 0.7 # normal .7
-      ToHealth: 1.0 # normal 1.0
-      ToStun: 0.3
-      ToArmorPre: 0.1
-      ToArmor: 0.2
-      ToWound: 0.02
-      ToTile: 0.33
-      RandomWound: false
-
-  - type: STR_BOLT_SNIPER_AMMO_HELS         # Bolt Sniper Helspear Ammo
-    categories: [STR_CAT_SNIPER]
-    bigSprite: 170
-    floorSprite: 130
-    handSprite: {mod: 40k, index: 464}
-    size: 0.02
-    costSell: 200
-    armor: 200
-    weight: 2
-    battleType: 2
-    invWidth: 1
-    invHeight: 1
-    listOrder: 11935
-    hitSound: {mod: 40k, index: 712}
-    hitAnimation: {mod: 40k, index: 26}
-    clipSize: 1
-    power: 100
-    damageType: 1
-    damageAlter:
-      RandomType: 1
-      ArmorEffectiveness: 0.8 # normal 0.7
-      ToHealth: 1.0
-      ToArmorPre: 0.1
-      ToArmor: 0.2
-      ToWound: 0.02
-      ToTile: 0.33
-      RandomWound: false
-    tags:
-      ITEM_ENERGY_SHIELD_REDUCTION_PERCENT: 100 # shield buster ammo
-
   - type: STR_SHOTGUN_DW                    # Deathwatch Shotgun                        ## Restricted item
     categories: [ STR_CAT_SHOTGUN, STR_CAT_SCOUT]
     size: 0.2
@@ -364,7 +251,7 @@ items:
     requiresBuy:
       - STR_DEATHWATCH
       - STR_SHOTGUNS_ADV
-    armor: 200
+    armor: 300
     listOrder: 10601
     bigSprite: 163
     floorSprite: 163
@@ -404,7 +291,7 @@ items:
     handSprite: {mod: 40k, index: 464}
     size: 0.02
     costSell: 200
-    armor: 200
+    armor: 300
     weight: 2
     battleType: 2
     invWidth: 1
@@ -479,7 +366,7 @@ items:
       RandomType: 6
       ToHealth: 1.0
       ToArmorPre: 0.1 #
-      ArmorEffectiveness: 0.75 #
+      ArmorEffectiveness: 0.6 #
       FireThreshold: 70 #
       ToArmor: 0.1
       FixRadius: 1
@@ -569,10 +456,16 @@ items:
       bravery: 0.3 #
       psiSkill: 0.7 #
     meleePower: 100
+    meleeType: 5
     meleeBonus: #
-      strength: 0.0 #
-      melee: 0.3 #
-      psiSkill: 0.3 #
+      strength: 0.1
+      melee: 0.3
+      psiSkill: 0.3
+    meleeAlter:
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.2
+      ToHealth: 0.9
+      RandomType: 2
     accuracyMelee: 90
     meleeMultiplier:
       melee: 0.8
@@ -583,6 +476,7 @@ items:
     experienceTrainingMode: 19 #
     tags:
       ITEM_DOESNT_HURT_USER: 1
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
 
   - type: STR_VOLKITE_DW                    # Volkite Rifle (Salamander Captain)        ## Restricted item, Custom ammo, Volkite beam
     bigSprite: 178
@@ -826,7 +720,7 @@ items:
     categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
     battleType: 1
     size: 0.2
-    armor: 200
+    armor: 300
     listOrder: 10100
     weight: 20
     bigSprite: 211
@@ -837,6 +731,7 @@ items:
     compatibleAmmo: # doesn't use regular pistol ammo
       - STR_ABSOLVOR_AMMO
       - STR_ABSOLVOR_AMMO_MC
+      - STR_ABSOLVOR_AMMO_MC_DW
     twoHanded: false
     recover: false
     invWidth: 1
@@ -859,38 +754,6 @@ items:
     tags:
       ITEM_RECOIL: 60 #
       REACTION_MULTIPLIER: 200 # pistol
-
-  - type: STR_ABSOLVOR_AMMO_MC              # Absolvor Pistol Mastercrafted Ammo        ## Custom ammo
-    categories: [STR_CAT_BOLTER]
-    battleType: 2
-    size: 0.05
-    weight: 3
-    recover: false
-    armor: 200
-    listOrder: 10102
-    bigSprite: 212
-    floorSprite: {mod: 40k, index: 12}
-    handSprite: {mod: 40k, index: 464}
-    hitSound: {mod: 40k, index: 708}
-    hitAnimation:
-      mod: 40k
-      index: 120
-    explosionSpeed: 3
-    power: 80 # +5 over regular bolter ammo
-    damageType: 1
-    damageAlter: # bolter values as base
-      RandomType: 7
-      ToArmorPre: 0.20
-      ArmorEffectiveness: 0.5 # comparable AP to krak
-      ToArmor: 0.20
-      ToHealth: 1.1
-      ToStun: 0.4
-      ToEnergy: 0.3
-      ToWound: 0.2
-      RandomWound: false
-    clipSize: 8
-    invWidth: 1
-    invHeight: 1
 
   - type: STR_CAPTAIN_SWORD_DW              # Power Sword (Blood Angels Captain)        ## Restricted item
     battleType: 3

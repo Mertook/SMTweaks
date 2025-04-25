@@ -38,7 +38,7 @@ research:
     cost: 200
     points: 200
     dependencies:
-      - STR_DW_HWP
+      - STR_DW_ASSAULT
       - STR_DW_SNIPER
       - STR_ALIEN_ALLOYS
       - STR_MOTION_SCANNER
@@ -134,16 +134,13 @@ research:
     spawnedEvent: STR_DEATHWATCH_EXPANSION_3
     listOrder: 2 # push above corpses/etc
 
-  - name: STR_DW_HWP                # Deathwatch Gear Basic Tier (Devastator armor + Heavy Bolter)
-    cost: 160
+  - name: STR_DW_ASSAULT            # Deathwatch Gear Basic Tier (Assault armor)
+    cost: 180
     points: 20
     dependencies:
       - STR_DEATHWATCH
-    unlocks:
-      - STR_HBOLTER_AMMO_PREREQ
-      - STR_HBOLTER_AMMO_BELTS
     getOneFree:
-      - STR_DEV_ARMOR
+      - STR_ASS_ARMOR
     listOrder: 5 # push above corpses/etc
 
   - name: STR_DW_SNIPER             # Deathwatch Gear Basic Tier (Phobos armor + Sniper Boltrifle)
@@ -157,7 +154,7 @@ research:
       - STR_MKX_PHB_ARMOR
     listOrder: 6 # push above corpses/etc
 
-  - name: STR_DW_AMMO               # Deathwatch Gear MidTier (Special Ammo)
+  - name: STR_DW_AMMO               # Deathwatch Gear Mid Tier (Special Ammo)
     cost: 120
     points: 10
     dependencies:
@@ -165,13 +162,16 @@ research:
       - STR_THREAT_ONE
     listOrder: 7 # push above corpses/etc
 
-  - name: STR_DW_ASSAULT            # Deathwatch Gear MidTier (Assault armor)
-    cost: 180
+  - name: STR_DW_HWP                # Deathwatch Gear Mid Tier (Devastator armor + Heavy Bolter)
+    cost: 160
     points: 20
     dependencies:
       - STR_MT_DW
+    unlocks:
+      - STR_HBOLTER_AMMO_PREREQ
+      - STR_HBOLTER_AMMO_BELTS
     getOneFree:
-      - STR_ASS_ARMOR
+      - STR_DEV_ARMOR
     listOrder: 8 # push above corpses/etc
 
   - name: STR_DW_GRAVIS             # Deathwatch Gear Midtier+ (Gravis)

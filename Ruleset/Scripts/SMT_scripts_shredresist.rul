@@ -9,7 +9,7 @@ armors:
   - &STR_SHREDRESIST_ARMOR          #BASE
     type: STR_PERSONAL_ARMOR_UC
     personalLight: 5 # adjust all new armors to the rosigma standard
-    psiCamouflage: -30 # fuck psi vision
+    psiCamouflage: -30
     recovery:
       energy:
         stamina: 0.4 # was 0.33, marine bonus
@@ -20,8 +20,8 @@ armors:
         flatOne: 5
         psiSkill: 0.3 # 30% of devotion as additional morale recovery
     tags:
-      ARMOR_ALPHA_ATTACKER_BONUS_MODIFIER: -1 # fuck Alpharius all my homies hate Alpharius
-      UNIT_IS_ASTARTES: 1 #
+      ARMOR_ALPHA_ATTACKER_BONUS_MODIFIER: -1
+      UNIT_IS_ASTARTES: 1
     scripts:
       damageUnit: |
         var ptr RuleArmor unitArmor;
@@ -383,6 +383,12 @@ armors:
   - type: STR_MKX_PHB_LV4_UC
     refNode: *STR_SHREDRESIST_ARMOR
   - type: STR_MKX_PHB_LV5_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_ELIM_LV3_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_ELIM_LV4_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+  - type: STR_MKX_ELIM_LV5_UC
     refNode: *STR_SHREDRESIST_ARMOR
 
   - type: STR_MKX_HELIX_UC_LV1      # Helix Adept

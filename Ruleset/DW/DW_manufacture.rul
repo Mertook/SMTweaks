@@ -9,7 +9,7 @@ manufacture:
     cost: 100000
     requiredItems:
       STR_DW_TOKEN: 1
-      STR_KILLPOINT_TOKEN: 250
+      STR_KILLPOINT_TOKEN: 300
     producedItems: {}
 
   - &STR_DWRECRUITP_TEMPLATE
@@ -22,7 +22,7 @@ manufacture:
     cost: 150000
     requiredItems:
       STR_DW_TOKEN: 1
-      STR_KILLPOINT_TOKEN: 400
+      STR_KILLPOINT_TOKEN: 300
     producedItems: {}
 
 
@@ -92,7 +92,7 @@ manufacture:
 
   - name: STR_DWCRIMSON_FB                  # Crimson Fist Firstborn
     refNode: *STR_DWRECRUIT_TEMPLATE
-    cost: 10000
+    cost: 5000
     requiredItems:
       STR_DW_TOKEN: 1
       STR_KILLPOINT_TOKEN: 5
@@ -100,10 +100,10 @@ manufacture:
 
   - name: STR_DWCRIMSON_P                   # Crimson Fist Primaris
     refNode: *STR_DWRECRUITP_TEMPLATE
-    cost: 10000
+    cost: 5000
     requiredItems:
       STR_DW_TOKEN: 1
-      STR_KILLPOINT_TOKEN: 15
+      STR_KILLPOINT_TOKEN: 5
     spawnedPersonType: STR_CRISMONF_PRIMARIS
 
 
@@ -150,7 +150,7 @@ manufacture:
     cost: 50000
     requiredItems:
       STR_DW_TOKEN_LEADER: 1
-      STR_KILLPOINT_TOKEN: 100
+      STR_KILLPOINT_TOKEN: 50
     spawnedPersonType: STR_CRISMONF_LEADER
 
   - name: STR_RIFLE_CLIP_DEREV

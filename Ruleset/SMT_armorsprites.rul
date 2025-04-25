@@ -1,0 +1,1626 @@
+armors:
+### Marines Firstborn
+  - type: STR_SCOUT_SMT_UC              # Scout (Marine)
+    spriteFaceGroup: 6
+    spriteFaceColor: [96, 96, 96, 96, 160, 160, 163, 163, 96, 96, 96, 96] #M0 F0 M1 F1 M2 F2 M3 F3 M4 F4 M5 F5
+    spriteHairGroup: 9
+    spriteHairColor: [144, 144, 164, 164, 245, 245, 166, 166, 96, 164, 96, 96] #M0 F0 M1 F1 M2 F2 M3 F3 M4 F4 M5 F5
+    layersDefaultPrefix: "0"
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["0", "ASCOUTM", "M0_FACE", "GOGGLES"]
+      M1: ["0", "ASCOUTM", "M1_FACE", "GOGGLES"]
+      M2: ["0", "ASCOUTMC", "M2_FACE", "GOGGLES"]
+      M3: ["0", "ASCOUTMB", "M3_FACE", "GOGGLES"]
+      M4: ["0", "ASCOUTM", "M4_FACE", "GOGGLES"]
+      M5: ["0", "ASCOUTM", "M5_FACE", "GOGGLES"]
+      F0: ["0", "ASCOUTF", "F0_FACE", "GOGGLES"]
+      F1: ["0", "ASCOUTF", "F1_FACE", "GOGGLES"]
+      F2: ["0", "ASCOUTFC", "F2_FACE", "GOGGLES"]
+      F3: ["0", "ASCOUTFB", "F3_FACE", "GOGGLES"]
+      F4: ["0", "ASCOUTF", "F4_FACE", "GOGGLES"]
+      F5: ["0", "ASCOUTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_SCOUT_SGT_UC              # Scout Sergeant
+    spriteFaceGroup: 6
+    spriteFaceColor: [96, 96, 96, 96, 160, 160, 163, 163, 96, 96, 96, 96] #M0 F0 M1 F1 M2 F2 M3 F3 M4 F4 M5 F5
+    spriteHairGroup: 9
+    spriteHairColor: [144, 144, 164, 164, 245, 245, 166, 166, 96, 164, 96, 96] #M0 F0 M1 F1 M2 F2 M3 F3 M4 F4 M5 F5
+    layersDefaultPrefix: "0"
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["0", "SCOUTSGTM", "M0_FACE", "GOGGLES"]
+      M1: ["0", "SCOUTSGTM", "M1_FACE", "GOGGLES"]
+      M2: ["0", "SCOUTSGTM", "M2_FACE", "GOGGLES"]
+      M3: ["0", "SCOUTSGTM", "M3_FACE", "GOGGLES"]
+      M4: ["0", "SCOUTSGTM", "M4_FACE", "GOGGLES"]
+      M5: ["0", "SCOUTSGTM", "M5_FACE", "GOGGLES"]
+      F0: ["0", "SCOUTSGTF", "F0_FACE", "GOGGLES"]
+      F1: ["0", "SCOUTSGTF", "F1_FACE", "GOGGLES"]
+      F2: ["0", "SCOUTSGTF", "F2_FACE", "GOGGLES"]
+      F3: ["0", "SCOUTSGTF", "F3_FACE", "GOGGLES"]
+      F4: ["0", "SCOUTSGTF", "F4_FACE", "GOGGLES"]
+      F5: ["0", "SCOUTSGTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_SCOUTH_UC                 # Scout Elite (Brown)
+    layersDefaultPrefix: CAPE
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["CAPE", "SCOUTELTM", "M0_FACE", "GOGGLES"]
+      M1: ["CAPE", "SCOUTELTM", "M1_FACE", "GOGGLES"]
+      M2: ["CAPE", "SCOUTELTM", "M2_FACE", "GOGGLES"]
+      M3: ["CAPE", "SCOUTELTM", "M3_FACE", "GOGGLES"]
+      M4: ["CAPE", "SCOUTELTM", "M4_FACE", "GOGGLES"]
+      M5: ["CAPE", "SCOUTELTM", "M5_FACE", "GOGGLES"]
+      F0: ["CAPE", "SCOUTELTF", "F0_FACE", "GOGGLES"]
+      F1: ["CAPE", "SCOUTELTF", "F1_FACE", "GOGGLES"]
+      F2: ["CAPE", "SCOUTELTF", "F2_FACE", "GOGGLES"]
+      F3: ["CAPE", "SCOUTELTF", "F3_FACE", "GOGGLES"]
+      F4: ["CAPE", "SCOUTELTF", "F4_FACE", "GOGGLES"]
+      F5: ["CAPE", "SCOUTELTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_SCOUTHG_UC                # Scout Elite (Green)
+    layersDefaultPrefix: CAPE
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["CAPEG", "SCOUTELTM", "M0_FACE", "GOGGLES"]
+      M1: ["CAPEG", "SCOUTELTM", "M1_FACE", "GOGGLES"]
+      M2: ["CAPEG", "SCOUTELTM", "M2_FACE", "GOGGLES"]
+      M3: ["CAPEG", "SCOUTELTM", "M3_FACE", "GOGGLES"]
+      M4: ["CAPEG", "SCOUTELTM", "M4_FACE", "GOGGLES"]
+      M5: ["CAPEG", "SCOUTELTM", "M5_FACE", "GOGGLES"]
+      F0: ["CAPEG", "SCOUTELTF", "F0_FACE", "GOGGLES"]
+      F1: ["CAPEG", "SCOUTELTF", "F1_FACE", "GOGGLES"]
+      F2: ["CAPEG", "SCOUTELTF", "F2_FACE", "GOGGLES"]
+      F3: ["CAPEG", "SCOUTELTF", "F3_FACE", "GOGGLES"]
+      F4: ["CAPEG", "SCOUTELTF", "F4_FACE", "GOGGLES"]
+      F5: ["CAPEG", "SCOUTELTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_SCOUTHR_UC                # Scout Elite (Red)
+    layersDefaultPrefix: CAPE
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["CAPER", "SCOUTELTM", "M0_FACE", "GOGGLES"]
+      M1: ["CAPER", "SCOUTELTM", "M1_FACE", "GOGGLES"]
+      M2: ["CAPER", "SCOUTELTM", "M2_FACE", "GOGGLES"]
+      M3: ["CAPER", "SCOUTELTM", "M3_FACE", "GOGGLES"]
+      M4: ["CAPER", "SCOUTELTM", "M4_FACE", "GOGGLES"]
+      M5: ["CAPER", "SCOUTELTM", "M5_FACE", "GOGGLES"]
+      F0: ["CAPER", "SCOUTELTF", "F0_FACE", "GOGGLES"]
+      F1: ["CAPER", "SCOUTELTF", "F1_FACE", "GOGGLES"]
+      F2: ["CAPER", "SCOUTELTF", "F2_FACE", "GOGGLES"]
+      F3: ["CAPER", "SCOUTELTF", "F3_FACE", "GOGGLES"]
+      F4: ["CAPER", "SCOUTELTF", "F4_FACE", "GOGGLES"]
+      F5: ["CAPER", "SCOUTELTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_SCOUTHY_UC                # Scout Elite (Yellow)
+    layersDefaultPrefix: CAPE
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["CAPEY", "SCOUTELTM", "M0_FACE", "GOGGLES"]
+      M1: ["CAPEY", "SCOUTELTM", "M1_FACE", "GOGGLES"]
+      M2: ["CAPEY", "SCOUTELTM", "M2_FACE", "GOGGLES"]
+      M3: ["CAPEY", "SCOUTELTM", "M3_FACE", "GOGGLES"]
+      M4: ["CAPEY", "SCOUTELTM", "M4_FACE", "GOGGLES"]
+      M5: ["CAPEY", "SCOUTELTM", "M5_FACE", "GOGGLES"]
+      F0: ["CAPEY", "SCOUTELTF", "F0_FACE", "GOGGLES"]
+      F1: ["CAPEY", "SCOUTELTF", "F1_FACE", "GOGGLES"]
+      F2: ["CAPEY", "SCOUTELTF", "F2_FACE", "GOGGLES"]
+      F3: ["CAPEY", "SCOUTELTF", "F3_FACE", "GOGGLES"]
+      F4: ["CAPEY", "SCOUTELTF", "F4_FACE", "GOGGLES"]
+      F5: ["CAPEY", "SCOUTELTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_SCOUTHB_UC                # Scout Elite (Black)
+    layersDefaultPrefix: CAPE
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["CAPEB", "SCOUTELTM", "M0_FACE", "GOGGLES"]
+      M1: ["CAPEB", "SCOUTELTM", "M1_FACE", "GOGGLES"]
+      M2: ["CAPEB", "SCOUTELTM", "M2_FACE", "GOGGLES"]
+      M3: ["CAPEB", "SCOUTELTM", "M3_FACE", "GOGGLES"]
+      M4: ["CAPEB", "SCOUTELTM", "M4_FACE", "GOGGLES"]
+      M5: ["CAPEB", "SCOUTELTM", "M5_FACE", "GOGGLES"]
+      F0: ["CAPEB", "SCOUTELTF", "F0_FACE", "GOGGLES"]
+      F1: ["CAPEB", "SCOUTELTF", "F1_FACE", "GOGGLES"]
+      F2: ["CAPEB", "SCOUTELTF", "F2_FACE", "GOGGLES"]
+      F3: ["CAPEB", "SCOUTELTF", "F3_FACE", "GOGGLES"]
+      F4: ["CAPEB", "SCOUTELTF", "F4_FACE", "GOGGLES"]
+      F5: ["CAPEB", "SCOUTELTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_SCOUTHW_UC                # Scout Elite (White)
+    layersDefaultPrefix: CAPE
+    layersSpecificPrefix:
+      1: SCOUT
+      3: GOGGLES
+    layersDefinition:
+      M0: ["CAPEW", "SCOUTELTM", "M0_FACE", "GOGGLES"]
+      M1: ["CAPEW", "SCOUTELTM", "M1_FACE", "GOGGLES"]
+      M2: ["CAPEW", "SCOUTELTM", "M2_FACE", "GOGGLES"]
+      M3: ["CAPEW", "SCOUTELTM", "M3_FACE", "GOGGLES"]
+      M4: ["CAPEW", "SCOUTELTM", "M4_FACE", "GOGGLES"]
+      M5: ["CAPEW", "SCOUTELTM", "M5_FACE", "GOGGLES"]
+      F0: ["CAPEW", "SCOUTELTF", "F0_FACE", "GOGGLES"]
+      F1: ["CAPEW", "SCOUTELTF", "F1_FACE", "GOGGLES"]
+      F2: ["CAPEW", "SCOUTELTF", "F2_FACE", "GOGGLES"]
+      F3: ["CAPEW", "SCOUTELTF", "F3_FACE", "GOGGLES"]
+      F4: ["CAPEW", "SCOUTELTF", "F4_FACE", "GOGGLES"]
+      F5: ["CAPEW", "SCOUTELTF", "F5_FACE", "GOGGLES"]
+
+  - type: STR_ASS_ARMOR_HONOR_CLAW      # Honor Assault Claw
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: HONORASSC
+    layersDefinition:
+      M0: ["0", "ASSAULTCMH", "M0_FACE"]
+      M1: ["0", "ASSAULTCMH", "M1_FACE"]
+      M2: ["0", "ASSAULTCMH", "M2_FACE"]
+      M3: ["0", "ASSAULTCMH", "M3_FACE"]
+      M4: ["0", "ASSAULTCMH", "M4_FACE"]
+      M5: ["0", "ASSAULTCMH", "M5_FACE"]
+      F0: ["0", "ASSAULTCFH", "F0_FACE"]
+      F1: ["0", "ASSAULTCFH", "F1_FACE"]
+      F2: ["0", "ASSAULTCFH", "F2_FACE"]
+      F3: ["0", "ASSAULTCFH", "F3_FACE"]
+      F4: ["0", "ASSAULTCFH", "F4_FACE"]
+      F5: ["0", "ASSAULTCFH", "F5_FACE"]
+
+  - type: STR_ASS_ARMOR_HONOR_SHIELD    # Honor Assault Shield
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: HONORASS
+    layersDefinition:
+      M0: ["0", "ASSAULTMH", "M0_FACE"]
+      M1: ["0", "ASSAULTMH", "M1_FACE"]
+      M2: ["0", "ASSAULTMH", "M2_FACE"]
+      M3: ["0", "ASSAULTMH", "M3_FACE"]
+      M4: ["0", "ASSAULTMH", "M4_FACE"]
+      M5: ["0", "ASSAULTMH", "M5_FACE"]
+      F0: ["0", "ASSAULTFH", "F0_FACE"]
+      F1: ["0", "ASSAULTFH", "F1_FACE"]
+      F2: ["0", "ASSAULTFH", "F2_FACE"]
+      F3: ["0", "ASSAULTFH", "F3_FACE"]
+      F4: ["0", "ASSAULTFH", "F4_FACE"]
+      F5: ["0", "ASSAULTFH", "F5_FACE"]
+
+  - type: STR_SIGNUM_DEV_UC             # Honor Devastator
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: HONORDEVC
+    layersDefinition:
+      M0: ["0", "SIGNUMM", "M0_FACE"]
+      M1: ["0", "SIGNUMM", "M1_FACE"]
+      M2: ["0", "SIGNUMM", "M2_FACE"]
+      M3: ["0", "SIGNUMM", "M3_FACE"]
+      M4: ["0", "SIGNUMM", "M4_FACE"]
+      M5: ["0", "SIGNUMM", "M5_FACE"]
+      F0: ["0", "SIGNUMF", "F0_FACE"]
+      F1: ["0", "SIGNUMF", "F1_FACE"]
+      F2: ["0", "SIGNUMF", "F2_FACE"]
+      F3: ["0", "SIGNUMF", "F3_FACE"]
+      F4: ["0", "SIGNUMF", "F4_FACE"]
+      F5: ["0", "SIGNUMF", "F5_FACE"]
+
+  - type: STR_SIGNAL_ARMOR_UC           # Honor Devastator
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: HONORDEVC
+    layersDefinition:
+      M0: ["0", "SIGNUMM", "M0_FACE"]
+      M1: ["0", "SIGNUMM", "M1_FACE"]
+      M2: ["0", "SIGNUMM", "M2_FACE"]
+      M3: ["0", "SIGNUMM", "M3_FACE"]
+      M4: ["0", "SIGNUMM", "M4_FACE"]
+      M5: ["0", "SIGNUMM", "M5_FACE"]
+      F0: ["0", "SIGNUMF", "F0_FACE"]
+      F1: ["0", "SIGNUMF", "F1_FACE"]
+      F2: ["0", "SIGNUMF", "F2_FACE"]
+      F3: ["0", "SIGNUMF", "F3_FACE"]
+      F4: ["0", "SIGNUMF", "F4_FACE"]
+      F5: ["0", "SIGNUMF", "F5_FACE"]
+
+  - type: STR_CHAP_TERMINATOR_UC        # Chaplain Terminator
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: CHAPLAIN
+    layersDefinition:
+      M0: ["0", "CHAPTERM", "M0_FACE"]
+      M1: ["0", "CHAPTERM", "M1_FACE"]
+      M2: ["0", "CHAPTERM", "M2_FACE"]
+      M3: ["0", "CHAPTERM", "M3_FACE"]
+      M4: ["0", "CHAPTERM", "M4_FACE"]
+      M5: ["0", "CHAPTERM", "M5_FACE"]
+      F0: ["0", "CHAPTERM", "F0_FACE"]
+      F1: ["0", "CHAPTERM", "F1_FACE"]
+      F2: ["0", "CHAPTERM", "F2_FACE"]
+      F3: ["0", "CHAPTERM", "F3_FACE"]
+      F4: ["0", "CHAPTERM", "F4_FACE"]
+      F5: ["0", "CHAPTERM", "F5_FACE"]
+
+  - type: STR_CHAP_ASSAULT_UC           # Chaplain Assault
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: CHAPLAIN
+    layersDefinition:
+      M0: ["0", "CHAPASSM", "M0_FACE"]
+      M1: ["0", "CHAPASSM", "M1_FACE"]
+      M2: ["0", "CHAPASSM", "M2_FACE"]
+      M3: ["0", "CHAPASSM", "M3_FACE"]
+      M4: ["0", "CHAPASSM", "M4_FACE"]
+      M5: ["0", "CHAPASSM", "M5_FACE"]
+      F0: ["0", "CHAPASSF", "F0_FACE"]
+      F1: ["0", "CHAPASSF", "F1_FACE"]
+      F2: ["0", "CHAPASSF", "F2_FACE"]
+      F3: ["0", "CHAPASSF", "F3_FACE"]
+      F4: ["0", "CHAPASSF", "F4_FACE"]
+      F5: ["0", "CHAPASSF", "F5_FACE"]
+
+  - type: STR_SMT_LIB_ARMOR_UC          # Librarian Tact
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: LIBRARIAN
+      3: LIBRARIAN
+    layersDefinition:
+      M0: ["0", "LIBTACTM", "M0_FACE", "EYES"]
+      M1: ["0", "LIBTACTM", "M1_FACE", "EYES"]
+      M2: ["0", "LIBTACTM", "M2_FACE", "EYES"]
+      M3: ["0", "LIBTACTM", "M3_FACE", "EYES"]
+      M4: ["0", "LIBTACTM", "M4_FACE", "EYES"]
+      M5: ["0", "LIBTACTM", "M5_FACE", "EYES"]
+      F0: ["0", "LIBTACTF", "F0_FACE", "EYES"]
+      F1: ["0", "LIBTACTF", "F1_FACE", "EYES"]
+      F2: ["0", "LIBTACTF", "F2_FACE", "EYES"]
+      F3: ["0", "LIBTACTF", "F3_FACE", "EYES"]
+      F4: ["0", "LIBTACTF", "F4_FACE", "EYES"]
+      F5: ["0", "LIBTACTF", "F5_FACE", "EYES"]
+
+  - type: STR_LIB_TERMINATOR_UC         # Librarian Terminator
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: LIBRARIAN
+      3: LIBRARIAN
+    layersDefinition:
+      M0: ["0", "LIBTERMMF", "M0_FACE", "EYES"]
+      M1: ["0", "LIBTERMMF", "M1_FACE", "EYES"]
+      M2: ["0", "LIBTERMMF", "M2_FACE", "EYES"]
+      M3: ["0", "LIBTERMMF", "M3_FACE", "EYES"]
+      M4: ["0", "LIBTERMMF", "M4_FACE", "EYES"]
+      M5: ["0", "LIBTERMMF", "M5_FACE", "EYES"]
+      F0: ["0", "LIBTERMMF", "F0_FACE", "EYES"]
+      F1: ["0", "LIBTERMMF", "F1_FACE", "EYES"]
+      F2: ["0", "LIBTERMMF", "F2_FACE", "EYES"]
+      F3: ["0", "LIBTERMMF", "F3_FACE", "EYES"]
+      F4: ["0", "LIBTERMMF", "F4_FACE", "EYES"]
+      F5: ["0", "LIBTERMMF", "F5_FACE", "EYES"]
+
+  - type: STR_TSARGENT_UC               # Terminator Cyclone
+    layersDefaultPrefix: 0
+    layersSpecificPrefix:
+      1: CYCLONE
+    layersDefinition:
+      M0: ["0", "TERMCYCMF", "M0_FACE"]
+      M1: ["0", "TERMCYCMF", "M1_FACE"]
+      M2: ["0", "TERMCYCMF", "M2_FACE"]
+      M3: ["0", "TERMCYCMF", "M3_FACE"]
+      M4: ["0", "TERMCYCMF", "M4_FACE"]
+      M5: ["0", "TERMCYCMF", "M5_FACE"]
+      F0: ["0", "TERMCYCMF", "F0_FACE"]
+      F1: ["0", "TERMCYCMF", "F1_FACE"]
+      F2: ["0", "TERMCYCMF", "F2_FACE"]
+      F3: ["0", "TERMCYCMF", "F3_FACE"]
+      F4: ["0", "TERMCYCMF", "F4_FACE"]
+      F5: ["0", "TERMCYCMF", "F5_FACE"]
+
+### Marines Primaris
+  - type: STR_MKX_TAC_MELT_LV1_UC       # Tacticus Meltarifle L1
+    customArmorPreviewIndex: {mod: 40k, index: 270}
+    spriteSheet: PRIMTACLV1.PCK
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      21: MKX
+    layersDefinition:
+      M0: ["0", "MKXLV1", "M0_FACE"]
+      M1: ["0", "MKXLV1", "M1_FACE"]
+      M2: ["0", "MKXLV1", "M2_FACE"]
+      M3: ["0", "MKXLV1", "M3_FACE"]
+      M4: ["0", "MKXLV1", "M4_FACE"]
+      M5: ["0", "MKXLV1", "M5_FACE"]
+      M6: ["0", "MKXLV1", "M6_FACE"]
+      F0: ["0", "MKXLV1", "M7_FACE"]
+      F1: ["0", "MKXLV1", "M8_FACE"]
+      F2: ["0", "MKXLV1", "M9_FACE"]
+      F3: ["0", "MKXLV1", "M10_FACE"]
+      F4: ["0", "MKXLV1", "M11_FACE"]
+      F5: ["0", "MKXLV1", "M12_FACE"]
+      F6: ["0", "MKXLV1", "M13_FACE"]
+
+  - type: STR_MKX_TAC_MELT_LV2_UC       # Tacticus Meltarifle L2
+    customArmorPreviewIndex: {mod: 40k, index: 271}
+    spriteSheet: PRIMTACLV2.PCK
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      3: 23
+    layersDefinition:
+      M0: ["0", "MKXLV2", "M0_FACE", "MEDAL1"]
+      M1: ["0", "MKXLV2", "M1_FACE", "MEDAL1"]
+      M2: ["0", "MKXLV2", "M2_FACE", "MEDAL1"]
+      M3: ["0", "MKXLV2", "M3_FACE", "MEDAL1"]
+      M4: ["0", "MKXLV2", "M4_FACE", "MEDAL1"]
+      M5: ["0", "MKXLV2", "M5_FACE", "MEDAL1"]
+      M6: ["0", "MKXLV2", "M6_FACE", "MEDAL1"]
+      F0: ["0", "MKXLV2", "M7_FACE", "MEDAL1"]
+      F1: ["0", "MKXLV2", "M8_FACE", "MEDAL1"]
+      F2: ["0", "MKXLV2", "M9_FACE", "MEDAL1"]
+      F3: ["0", "MKXLV2", "M10_FACE", "MEDAL1"]
+      F4: ["0", "MKXLV2", "M11_FACE", "MEDAL1"]
+      F5: ["0", "MKXLV2", "M12_FACE", "MEDAL1"]
+      F6: ["0", "MKXLV2", "M13_FACE", "MEDAL1"]
+
+  - type: STR_MKX_TAC_MELT_LV3_UC       # Tacticus Meltarifle L3
+    customArmorPreviewIndex: {mod: 40k, index: 272}
+    spriteSheet: PRIMTACLV3.PCK
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      3: 23
+    layersDefinition:
+      M0: ["0", "MKXLV3", "M0_FACE", "MEDAL1"]
+      M1: ["0", "MKXLV3", "M1_FACE", "MEDAL1"]
+      M2: ["0", "MKXLV3", "M2_FACE", "MEDAL1"]
+      M3: ["0", "MKXLV3", "M3_FACE", "MEDAL1"]
+      M4: ["0", "MKXLV3", "M4_FACE", "MEDAL1"]
+      M5: ["0", "MKXLV3", "M5_FACE", "MEDAL2"]
+      M6: ["0", "MKXLV3", "M6_FACE", "MEDAL2"]
+      F0: ["0", "MKXLV3", "M7_FACE", "MEDAL2"]
+      F1: ["0", "MKXLV3", "M8_FACE", "MEDAL2"]
+      F2: ["0", "MKXLV3", "M9_FACE", "MEDAL2"]
+      F3: ["0", "MKXLV3", "M10_FACE", "MEDAL3"]
+      F4: ["0", "MKXLV3", "M11_FACE", "MEDAL3"]
+      F5: ["0", "MKXLV3", "M12_FACE", "MEDAL3"]
+      F6: ["0", "MKXLV3", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_TAC_MELT_LV4_UC       # Tacticus Meltarifle L4
+    customArmorPreviewIndex: {mod: 40k, index: 273}
+    spriteSheet: PRIMTACLV4.PCK
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      3: 23
+    layersDefinition:
+      M0: ["0", "MKXLV4", "M0_FACE", "MEDAL1"]
+      M1: ["0", "MKXLV4", "M1_FACE", "MEDAL1"]
+      M2: ["0", "MKXLV4", "M2_FACE", "MEDAL1"]
+      M3: ["0", "MKXLV4", "M3_FACE", "MEDAL1"]
+      M4: ["0", "MKXLV4", "M4_FACE", "MEDAL1"]
+      M5: ["0", "MKXLV4", "M5_FACE", "MEDAL2"]
+      M6: ["0", "MKXLV4", "M6_FACE", "MEDAL2"]
+      F0: ["0", "MKXLV4", "M7_FACE", "MEDAL2"]
+      F1: ["0", "MKXLV4", "M8_FACE", "MEDAL2"]
+      F2: ["0", "MKXLV4", "M9_FACE", "MEDAL2"]
+      F3: ["0", "MKXLV4", "M10_FACE", "MEDAL3"]
+      F4: ["0", "MKXLV4", "M11_FACE", "MEDAL3"]
+      F5: ["0", "MKXLV4", "M12_FACE", "MEDAL3"]
+      F6: ["0", "MKXLV4", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_TAC_MELT_LV5_UC       # Tacticus Meltarifle L5
+    customArmorPreviewIndex: {mod: 40k, index: 274}
+    spriteSheet: PRIMTACLV5.PCK
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      3: 23
+    layersDefinition:
+      M0: ["CAPEP", "MKXLV5", "M0_FACE", "MEDAL1"]
+      M1: ["CAPEP", "MKXLV5", "M1_FACE", "MEDAL1"]
+      M2: ["CAPEP", "MKXLV5", "M2_FACE", "MEDAL1"]
+      M3: ["CAPEP", "MKXLV5", "M3_FACE", "MEDAL1"]
+      M4: ["CAPEP", "MKXLV5", "M4_FACE", "MEDAL1"]
+      M5: ["CAPEP", "MKXLV5", "M5_FACE", "MEDAL2"]
+      M6: ["CAPEP", "MKXLV5", "M6_FACE", "MEDAL2"]
+      F0: ["CAPEP", "MKXLV5", "M7_FACE", "MEDAL2"]
+      F1: ["CAPEP", "MKXLV5", "M8_FACE", "MEDAL2"]
+      F2: ["CAPEP", "MKXLV5", "M9_FACE", "MEDAL2"]
+      F3: ["CAPEP", "MKXLV5", "M10_FACE", "MEDAL3"]
+      F4: ["CAPEP", "MKXLV5", "M11_FACE", "MEDAL3"]
+      F5: ["CAPEP", "MKXLV5", "M12_FACE", "MEDAL3"]
+      F6: ["CAPEP", "MKXLV5", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_TAC_PLAS_LV1_UC       # Tacticus Plasma L1
+    customArmorPreviewIndex: {mod: 40k, index: 270}
+    spriteSheet: PRIMTACLV1.PCK
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      21: MKX
+    layersDefinition:
+      M0: ["0", "MKXLV1", "M0_FACE"]
+      M1: ["0", "MKXLV1", "M1_FACE"]
+      M2: ["0", "MKXLV1", "M2_FACE"]
+      M3: ["0", "MKXLV1", "M3_FACE"]
+      M4: ["0", "MKXLV1", "M4_FACE"]
+      M5: ["0", "MKXLV1", "M5_FACE"]
+      M6: ["0", "MKXLV1", "M6_FACE"]
+      F0: ["0", "MKXLV1", "M7_FACE"]
+      F1: ["0", "MKXLV1", "M8_FACE"]
+      F2: ["0", "MKXLV1", "M9_FACE"]
+      F3: ["0", "MKXLV1", "M10_FACE"]
+      F4: ["0", "MKXLV1", "M11_FACE"]
+      F5: ["0", "MKXLV1", "M12_FACE"]
+      F6: ["0", "MKXLV1", "M13_FACE"]
+
+  - type: STR_MKX_TAC_PLAS_LV2_UC       # Tacticus Plasma L2
+    customArmorPreviewIndex: {mod: 40k, index: 271}
+    spriteSheet: PRIMTACLV2.PCK
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      3: 23
+    layersDefinition:
+      M0: ["0", "MKXLV2", "M0_FACE", "MEDAL1"]
+      M1: ["0", "MKXLV2", "M1_FACE", "MEDAL1"]
+      M2: ["0", "MKXLV2", "M2_FACE", "MEDAL1"]
+      M3: ["0", "MKXLV2", "M3_FACE", "MEDAL1"]
+      M4: ["0", "MKXLV2", "M4_FACE", "MEDAL1"]
+      M5: ["0", "MKXLV2", "M5_FACE", "MEDAL1"]
+      M6: ["0", "MKXLV2", "M6_FACE", "MEDAL1"]
+      F0: ["0", "MKXLV2", "M7_FACE", "MEDAL1"]
+      F1: ["0", "MKXLV2", "M8_FACE", "MEDAL1"]
+      F2: ["0", "MKXLV2", "M9_FACE", "MEDAL1"]
+      F3: ["0", "MKXLV2", "M10_FACE", "MEDAL1"]
+      F4: ["0", "MKXLV2", "M11_FACE", "MEDAL1"]
+      F5: ["0", "MKXLV2", "M12_FACE", "MEDAL1"]
+      F6: ["0", "MKXLV2", "M13_FACE", "MEDAL1"]
+
+  - type: STR_MKX_TAC_PLAS_LV3_UC       # Tacticus Plasma L3
+    customArmorPreviewIndex: {mod: 40k, index: 272}
+    spriteSheet: PRIMTACLV3.PCK
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      3: 23
+    layersDefinition:
+      M0: ["0", "MKXLV3", "M0_FACE", "MEDAL1"]
+      M1: ["0", "MKXLV3", "M1_FACE", "MEDAL1"]
+      M2: ["0", "MKXLV3", "M2_FACE", "MEDAL1"]
+      M3: ["0", "MKXLV3", "M3_FACE", "MEDAL1"]
+      M4: ["0", "MKXLV3", "M4_FACE", "MEDAL1"]
+      M5: ["0", "MKXLV3", "M5_FACE", "MEDAL2"]
+      M6: ["0", "MKXLV3", "M6_FACE", "MEDAL2"]
+      F0: ["0", "MKXLV3", "M7_FACE", "MEDAL2"]
+      F1: ["0", "MKXLV3", "M8_FACE", "MEDAL2"]
+      F2: ["0", "MKXLV3", "M9_FACE", "MEDAL2"]
+      F3: ["0", "MKXLV3", "M10_FACE", "MEDAL3"]
+      F4: ["0", "MKXLV3", "M11_FACE", "MEDAL3"]
+      F5: ["0", "MKXLV3", "M12_FACE", "MEDAL3"]
+      F6: ["0", "MKXLV3", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_TAC_PLAS_LV4_UC       # Tacticus Plasma L4
+    customArmorPreviewIndex: {mod: 40k, index: 273}
+    spriteSheet: PRIMTACLV4.PCK
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      3: 23
+    layersDefinition:
+      M0: ["0", "MKXLV4", "M0_FACE", "MEDAL1"]
+      M1: ["0", "MKXLV4", "M1_FACE", "MEDAL1"]
+      M2: ["0", "MKXLV4", "M2_FACE", "MEDAL1"]
+      M3: ["0", "MKXLV4", "M3_FACE", "MEDAL1"]
+      M4: ["0", "MKXLV4", "M4_FACE", "MEDAL1"]
+      M5: ["0", "MKXLV4", "M5_FACE", "MEDAL2"]
+      M6: ["0", "MKXLV4", "M6_FACE", "MEDAL2"]
+      F0: ["0", "MKXLV4", "M7_FACE", "MEDAL2"]
+      F1: ["0", "MKXLV4", "M8_FACE", "MEDAL2"]
+      F2: ["0", "MKXLV4", "M9_FACE", "MEDAL2"]
+      F3: ["0", "MKXLV4", "M10_FACE", "MEDAL3"]
+      F4: ["0", "MKXLV4", "M11_FACE", "MEDAL3"]
+      F5: ["0", "MKXLV4", "M12_FACE", "MEDAL3"]
+      F6: ["0", "MKXLV4", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_TAC_PLAS_LV5_UC       # Tacticus Plasma L5
+    customArmorPreviewIndex: {mod: 40k, index: 274}
+    spriteSheet: PRIMTACLV5.PCK
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      3: 23
+    layersDefinition:
+      M0: ["CAPEP", "MKXLV5", "M0_FACE", "MEDAL1"]
+      M1: ["CAPEP", "MKXLV5", "M1_FACE", "MEDAL1"]
+      M2: ["CAPEP", "MKXLV5", "M2_FACE", "MEDAL1"]
+      M3: ["CAPEP", "MKXLV5", "M3_FACE", "MEDAL1"]
+      M4: ["CAPEP", "MKXLV5", "M4_FACE", "MEDAL1"]
+      M5: ["CAPEP", "MKXLV5", "M5_FACE", "MEDAL2"]
+      M6: ["CAPEP", "MKXLV5", "M6_FACE", "MEDAL2"]
+      F0: ["CAPEP", "MKXLV5", "M7_FACE", "MEDAL2"]
+      F1: ["CAPEP", "MKXLV5", "M8_FACE", "MEDAL2"]
+      F2: ["CAPEP", "MKXLV5", "M9_FACE", "MEDAL2"]
+      F3: ["CAPEP", "MKXLV5", "M10_FACE", "MEDAL3"]
+      F4: ["CAPEP", "MKXLV5", "M11_FACE", "MEDAL3"]
+      F5: ["CAPEP", "MKXLV5", "M12_FACE", "MEDAL3"]
+      F6: ["CAPEP", "MKXLV5", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_ASS_LV1_UC            # Primaris Assault Intercessor L1
+    customArmorPreviewIndex: 23
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: ASS
+      21: MKX
+    layersDefinition:
+      M0: ["0", "MKXLV1", "M0_FACE"]
+      M1: ["0", "MKXLV1", "M1_FACE"]
+      M2: ["0", "MKXLV1", "M2_FACE"]
+      M3: ["0", "MKXLV1", "M3_FACE"]
+      M4: ["0", "MKXLV1", "M4_FACE"]
+      M5: ["0", "MKXLV1", "M5_FACE"]
+      M6: ["0", "MKXLV1", "M6_FACE"]
+      F0: ["0", "MKXLV1", "M7_FACE"]
+      F1: ["0", "MKXLV1", "M8_FACE"]
+      F2: ["0", "MKXLV1", "M9_FACE"]
+      F3: ["0", "MKXLV1", "M10_FACE"]
+      F4: ["0", "MKXLV1", "M11_FACE"]
+      F5: ["0", "MKXLV1", "M12_FACE"]
+      F6: ["0", "MKXLV1", "M13_FACE"]
+
+  - type: STR_MKX_ASS_LV2_UC            # Primaris Assault Intercessor L2
+    customArmorPreviewIndex: 24
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: ASS
+      3: 23
+    layersDefinition:
+      M0: ["0", "MKXLV2", "M0_FACE", "MEDAL1"]
+      M1: ["0", "MKXLV2", "M1_FACE", "MEDAL1"]
+      M2: ["0", "MKXLV2", "M2_FACE", "MEDAL1"]
+      M3: ["0", "MKXLV2", "M3_FACE", "MEDAL1"]
+      M4: ["0", "MKXLV2", "M4_FACE", "MEDAL1"]
+      M5: ["0", "MKXLV2", "M5_FACE", "MEDAL1"]
+      M6: ["0", "MKXLV2", "M6_FACE", "MEDAL1"]
+      F0: ["0", "MKXLV2", "M7_FACE", "MEDAL1"]
+      F1: ["0", "MKXLV2", "M8_FACE", "MEDAL1"]
+      F2: ["0", "MKXLV2", "M9_FACE", "MEDAL1"]
+      F3: ["0", "MKXLV2", "M10_FACE", "MEDAL1"]
+      F4: ["0", "MKXLV2", "M11_FACE", "MEDAL1"]
+      F5: ["0", "MKXLV2", "M12_FACE", "MEDAL1"]
+      F6: ["0", "MKXLV2", "M13_FACE", "MEDAL1"]
+
+  - type: STR_MKX_ASS_LV3_UC            # Primaris Assault Intercessor L3
+    customArmorPreviewIndex: 25
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: ASS
+      3: 23
+    layersDefinition:
+      M0: ["0", "MKXLV3", "M0_FACE", "MEDAL1"]
+      M1: ["0", "MKXLV3", "M1_FACE", "MEDAL1"]
+      M2: ["0", "MKXLV3", "M2_FACE", "MEDAL1"]
+      M3: ["0", "MKXLV3", "M3_FACE", "MEDAL1"]
+      M4: ["0", "MKXLV3", "M4_FACE", "MEDAL1"]
+      M5: ["0", "MKXLV3", "M5_FACE", "MEDAL2"]
+      M6: ["0", "MKXLV3", "M6_FACE", "MEDAL2"]
+      F0: ["0", "MKXLV3", "M7_FACE", "MEDAL2"]
+      F1: ["0", "MKXLV3", "M8_FACE", "MEDAL2"]
+      F2: ["0", "MKXLV3", "M9_FACE", "MEDAL2"]
+      F3: ["0", "MKXLV3", "M10_FACE", "MEDAL3"]
+      F4: ["0", "MKXLV3", "M11_FACE", "MEDAL3"]
+      F5: ["0", "MKXLV3", "M12_FACE", "MEDAL3"]
+      F6: ["0", "MKXLV3", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_ASS_LV4_UC            # Primaris Assault Intercessor L4
+    customArmorPreviewIndex: 26
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: ASS
+      3: 23
+    layersDefinition:
+      M0: ["0", "MKXLV4", "M0_FACE", "MEDAL1"]
+      M1: ["0", "MKXLV4", "M1_FACE", "MEDAL1"]
+      M2: ["0", "MKXLV4", "M2_FACE", "MEDAL1"]
+      M3: ["0", "MKXLV4", "M3_FACE", "MEDAL1"]
+      M4: ["0", "MKXLV4", "M4_FACE", "MEDAL1"]
+      M5: ["0", "MKXLV4", "M5_FACE", "MEDAL2"]
+      M6: ["0", "MKXLV4", "M6_FACE", "MEDAL2"]
+      F0: ["0", "MKXLV4", "M7_FACE", "MEDAL2"]
+      F1: ["0", "MKXLV4", "M8_FACE", "MEDAL2"]
+      F2: ["0", "MKXLV4", "M9_FACE", "MEDAL2"]
+      F3: ["0", "MKXLV4", "M10_FACE", "MEDAL3"]
+      F4: ["0", "MKXLV4", "M11_FACE", "MEDAL3"]
+      F5: ["0", "MKXLV4", "M12_FACE", "MEDAL3"]
+      F6: ["0", "MKXLV4", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_ASS_LV5_UC            # Primaris Assault Intercessor L5
+    customArmorPreviewIndex: 27
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: ASS
+      3: 23
+    layersDefinition:
+      M0: ["0", "MKXLV5", "M0_FACE", "MEDAL1"]
+      M1: ["0", "MKXLV5", "M1_FACE", "MEDAL1"]
+      M2: ["0", "MKXLV5", "M2_FACE", "MEDAL1"]
+      M3: ["0", "MKXLV5", "M3_FACE", "MEDAL1"]
+      M4: ["0", "MKXLV5", "M4_FACE", "MEDAL1"]
+      M5: ["0", "MKXLV5", "M5_FACE", "MEDAL2"]
+      M6: ["0", "MKXLV5", "M6_FACE", "MEDAL2"]
+      F0: ["0", "MKXLV5", "M7_FACE", "MEDAL2"]
+      F1: ["0", "MKXLV5", "M8_FACE", "MEDAL2"]
+      F2: ["0", "MKXLV5", "M9_FACE", "MEDAL2"]
+      F3: ["0", "MKXLV5", "M10_FACE", "MEDAL3"]
+      F4: ["0", "MKXLV5", "M11_FACE", "MEDAL3"]
+      F5: ["0", "MKXLV5", "M12_FACE", "MEDAL3"]
+      F6: ["0", "MKXLV5", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_ELIM_LV3_UC           # Primaris Phobos Eliminator L3
+    customArmorPreviewIndex: 20
+    spriteSheet: ELIML3.PCK
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: ELIML3
+      3: GOGGLES
+      4: MASK
+    layersDefinition:
+      M0: ["0", "MKXPHB", "M0_FACE", "GOGGLES", "MASK1"]
+      M1: ["0", "MKXPHB", "M1_FACE", "GOGGLES", "MASK2"]
+      M2: ["0", "MKXPHB", "M2_FACE", "GOGGLES", "MASK3"]
+      M3: ["0", "MKXPHB", "M3_FACE", "GOGGLES", "MASK4"]
+      M4: ["0", "MKXPHB", "M4_FACE", "GOGGLES", "MASK1"]
+      M5: ["0", "MKXPHB", "M5_FACE", "GOGGLES", "MASK2"]
+      M6: ["0", "MKXPHB", "M6_FACE", "GOGGLES", "MASK3"]
+      F0: ["0", "MKXPHB", "M7_FACE", "GOGGLES", "MASK4"]
+      F1: ["0", "MKXPHB", "M8_FACE", "GOGGLES", "MASK1"]
+      F2: ["0", "MKXPHB", "M9_FACE", "GOGGLES", "MASK2"]
+      F3: ["0", "MKXPHB", "M10_FACE", "GOGGLES", "MASK3"]
+      F4: ["0", "MKXPHB", "M11_FACE", "GOGGLES", "MASK4"]
+      F5: ["0", "MKXPHB", "M12_FACE", "GOGGLES", "MASK1"]
+      F5: ["0", "MKXPHB", "M13_FACE", "GOGGLES", "MASK2"]
+
+  - type: STR_MKX_ELIM_LV4_UC           # Primaris Phobos Eliminator L4
+    customArmorPreviewIndex: 21
+    spriteSheet: ELIML4.PCK
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: ELIML4
+      3: GOGGLES
+      4: MASK
+    layersDefinition:
+      M0: ["0", "MKXPHB", "M0_FACE", "GOGGLES", "MASK1"]
+      M1: ["0", "MKXPHB", "M1_FACE", "GOGGLES", "MASK2"]
+      M2: ["0", "MKXPHB", "M2_FACE", "GOGGLES", "MASK3"]
+      M3: ["0", "MKXPHB", "M3_FACE", "GOGGLES", "MASK4"]
+      M4: ["0", "MKXPHB", "M4_FACE", "GOGGLES", "MASK1"]
+      M5: ["0", "MKXPHB", "M5_FACE", "GOGGLES", "MASK2"]
+      M6: ["0", "MKXPHB", "M6_FACE", "GOGGLES", "MASK3"]
+      F0: ["0", "MKXPHB", "M7_FACE", "GOGGLES", "MASK4"]
+      F1: ["0", "MKXPHB", "M8_FACE", "GOGGLES", "MASK1"]
+      F2: ["0", "MKXPHB", "M9_FACE", "GOGGLES", "MASK2"]
+      F3: ["0", "MKXPHB", "M10_FACE", "GOGGLES", "MASK3"]
+      F4: ["0", "MKXPHB", "M11_FACE", "GOGGLES", "MASK4"]
+      F5: ["0", "MKXPHB", "M12_FACE", "GOGGLES", "MASK1"]
+      F5: ["0", "MKXPHB", "M13_FACE", "GOGGLES", "MASK2"]
+
+  - type: STR_MKX_ELIM_LV5_UC           # Primaris Phobos Eliminator L5
+    customArmorPreviewIndex: 22
+    spriteSheet: ELIML5.PCK
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: ELIML5
+      3: GOGGLES
+      4: MASK
+    layersDefinition:
+      M0: ["0", "MKXPHB", "M0_FACE", "GOGGLES", "MASK1"]
+      M1: ["0", "MKXPHB", "M1_FACE", "GOGGLES", "MASK2"]
+      M2: ["0", "MKXPHB", "M2_FACE", "GOGGLES", "MASK3"]
+      M3: ["0", "MKXPHB", "M3_FACE", "GOGGLES", "MASK4"]
+      M4: ["0", "MKXPHB", "M4_FACE", "GOGGLES", "MASK1"]
+      M5: ["0", "MKXPHB", "M5_FACE", "GOGGLES", "MASK2"]
+      M6: ["0", "MKXPHB", "M6_FACE", "GOGGLES", "MASK3"]
+      F0: ["0", "MKXPHB", "M7_FACE", "GOGGLES", "MASK4"]
+      F1: ["0", "MKXPHB", "M8_FACE", "GOGGLES", "MASK1"]
+      F2: ["0", "MKXPHB", "M9_FACE", "GOGGLES", "MASK2"]
+      F3: ["0", "MKXPHB", "M10_FACE", "GOGGLES", "MASK3"]
+      F4: ["0", "MKXPHB", "M11_FACE", "GOGGLES", "MASK4"]
+      F5: ["0", "MKXPHB", "M12_FACE", "GOGGLES", "MASK1"]
+      F5: ["0", "MKXPHB", "M13_FACE", "GOGGLES", "MASK2"]
+
+  - type: STR_MKX_VETS_LV3_UC           # Primaris Sternguard L3
+    customArmorPreviewIndex: 15
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: VET
+      3: 23
+    layersDefinition:
+      M0: ["0", "MKXLV3", "M0_FACE", "MEDAL1"]
+      M1: ["0", "MKXLV3", "M1_FACE", "MEDAL1"]
+      M2: ["0", "MKXLV3", "M2_FACE", "MEDAL1"]
+      M3: ["0", "MKXLV3", "M3_FACE", "MEDAL1"]
+      M4: ["0", "MKXLV3", "M4_FACE", "MEDAL1"]
+      M5: ["0", "MKXLV3", "M5_FACE", "MEDAL2"]
+      M6: ["0", "MKXLV3", "M6_FACE", "MEDAL2"]
+      F0: ["0", "MKXLV3", "M7_FACE", "MEDAL2"]
+      F1: ["0", "MKXLV3", "M8_FACE", "MEDAL2"]
+      F2: ["0", "MKXLV3", "M9_FACE", "MEDAL2"]
+      F3: ["0", "MKXLV3", "M10_FACE", "MEDAL3"]
+      F4: ["0", "MKXLV3", "M11_FACE", "MEDAL3"]
+      F5: ["0", "MKXLV3", "M12_FACE", "MEDAL3"]
+      F6: ["0", "MKXLV3", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_VETS_LV4_UC           # Primaris Sternguard L4
+    customArmorPreviewIndex: 16
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: VET
+      3: 23
+    layersDefinition:
+      M0: ["0", "MKXLV4", "M0_FACE", "MEDAL1"]
+      M1: ["0", "MKXLV4", "M1_FACE", "MEDAL1"]
+      M2: ["0", "MKXLV4", "M2_FACE", "MEDAL1"]
+      M3: ["0", "MKXLV4", "M3_FACE", "MEDAL1"]
+      M4: ["0", "MKXLV4", "M4_FACE", "MEDAL1"]
+      M5: ["0", "MKXLV4", "M5_FACE", "MEDAL2"]
+      M6: ["0", "MKXLV4", "M6_FACE", "MEDAL2"]
+      F0: ["0", "MKXLV4", "M7_FACE", "MEDAL2"]
+      F1: ["0", "MKXLV4", "M8_FACE", "MEDAL2"]
+      F2: ["0", "MKXLV4", "M9_FACE", "MEDAL2"]
+      F3: ["0", "MKXLV4", "M10_FACE", "MEDAL3"]
+      F4: ["0", "MKXLV4", "M11_FACE", "MEDAL3"]
+      F5: ["0", "MKXLV4", "M12_FACE", "MEDAL3"]
+      F6: ["0", "MKXLV4", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_VETS_LV5_UC           # Primaris Sternguard L5
+    customArmorPreviewIndex: 17
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: VET
+      3: 23
+    layersDefinition:
+      M0: ["CAPEP", "MKXLV5", "M0_FACE", "MEDAL1"]
+      M1: ["CAPEP", "MKXLV5", "M1_FACE", "MEDAL1"]
+      M2: ["CAPEP", "MKXLV5", "M2_FACE", "MEDAL1"]
+      M3: ["CAPEP", "MKXLV5", "M3_FACE", "MEDAL1"]
+      M4: ["CAPEP", "MKXLV5", "M4_FACE", "MEDAL1"]
+      M5: ["CAPEP", "MKXLV5", "M5_FACE", "MEDAL2"]
+      M6: ["CAPEP", "MKXLV5", "M6_FACE", "MEDAL2"]
+      F0: ["CAPEP", "MKXLV5", "M7_FACE", "MEDAL2"]
+      F1: ["CAPEP", "MKXLV5", "M8_FACE", "MEDAL2"]
+      F2: ["CAPEP", "MKXLV5", "M9_FACE", "MEDAL2"]
+      F3: ["CAPEP", "MKXLV5", "M10_FACE", "MEDAL3"]
+      F4: ["CAPEP", "MKXLV5", "M11_FACE", "MEDAL3"]
+      F5: ["CAPEP", "MKXLV5", "M12_FACE", "MEDAL3"]
+      F6: ["CAPEP", "MKXLV5", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_VETB_LV3_UC           # Primaris Bladeguard L3
+    customArmorPreviewIndex: 15
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: VET
+      3: 23
+    layersDefinition:
+      M0: ["0", "MKXLV3", "M0_FACE", "MEDAL1"]
+      M1: ["0", "MKXLV3", "M1_FACE", "MEDAL1"]
+      M2: ["0", "MKXLV3", "M2_FACE", "MEDAL1"]
+      M3: ["0", "MKXLV3", "M3_FACE", "MEDAL1"]
+      M4: ["0", "MKXLV3", "M4_FACE", "MEDAL1"]
+      M5: ["0", "MKXLV3", "M5_FACE", "MEDAL2"]
+      M6: ["0", "MKXLV3", "M6_FACE", "MEDAL2"]
+      F0: ["0", "MKXLV3", "M7_FACE", "MEDAL2"]
+      F1: ["0", "MKXLV3", "M8_FACE", "MEDAL2"]
+      F2: ["0", "MKXLV3", "M9_FACE", "MEDAL2"]
+      F3: ["0", "MKXLV3", "M10_FACE", "MEDAL3"]
+      F4: ["0", "MKXLV3", "M11_FACE", "MEDAL3"]
+      F5: ["0", "MKXLV3", "M12_FACE", "MEDAL3"]
+      F6: ["0", "MKXLV3", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_VETB_LV4_UC           # Primaris Bladeguard L4
+    customArmorPreviewIndex: 16
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: VET
+      3: 23
+    layersDefinition:
+      M0: ["0", "MKXLV4", "M0_FACE", "MEDAL1"]
+      M1: ["0", "MKXLV4", "M1_FACE", "MEDAL1"]
+      M2: ["0", "MKXLV4", "M2_FACE", "MEDAL1"]
+      M3: ["0", "MKXLV4", "M3_FACE", "MEDAL1"]
+      M4: ["0", "MKXLV4", "M4_FACE", "MEDAL1"]
+      M5: ["0", "MKXLV4", "M5_FACE", "MEDAL2"]
+      M6: ["0", "MKXLV4", "M6_FACE", "MEDAL2"]
+      F0: ["0", "MKXLV4", "M7_FACE", "MEDAL2"]
+      F1: ["0", "MKXLV4", "M8_FACE", "MEDAL2"]
+      F2: ["0", "MKXLV4", "M9_FACE", "MEDAL2"]
+      F3: ["0", "MKXLV4", "M10_FACE", "MEDAL3"]
+      F4: ["0", "MKXLV4", "M11_FACE", "MEDAL3"]
+      F5: ["0", "MKXLV4", "M12_FACE", "MEDAL3"]
+      F6: ["0", "MKXLV4", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_VETB_LV5_UC           # Primaris Bladeguard L5
+    customArmorPreviewIndex: 17
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: VET
+      3: 23
+    layersDefinition:
+      M0: ["CAPEP", "MKXLV5", "M0_FACE", "MEDAL1"]
+      M1: ["CAPEP", "MKXLV5", "M1_FACE", "MEDAL1"]
+      M2: ["CAPEP", "MKXLV5", "M2_FACE", "MEDAL1"]
+      M3: ["CAPEP", "MKXLV5", "M3_FACE", "MEDAL1"]
+      M4: ["CAPEP", "MKXLV5", "M4_FACE", "MEDAL1"]
+      M5: ["CAPEP", "MKXLV5", "M5_FACE", "MEDAL2"]
+      M6: ["CAPEP", "MKXLV5", "M6_FACE", "MEDAL2"]
+      F0: ["CAPEP", "MKXLV5", "M7_FACE", "MEDAL2"]
+      F1: ["CAPEP", "MKXLV5", "M8_FACE", "MEDAL2"]
+      F2: ["CAPEP", "MKXLV5", "M9_FACE", "MEDAL2"]
+      F3: ["CAPEP", "MKXLV5", "M10_FACE", "MEDAL3"]
+      F4: ["CAPEP", "MKXLV5", "M11_FACE", "MEDAL3"]
+      F5: ["CAPEP", "MKXLV5", "M12_FACE", "MEDAL3"]
+      F6: ["CAPEP", "MKXLV5", "M13_FACE", "MEDAL3"]
+
+  - type: STR_MKX_HELIX_UC_LV1          # Primaris Helix Adept L1
+    layersDefaultPrefix: 21
+    layersSpecificPrefix:
+      1: APOTH
+    layersDefinition:
+      M0: ["0", "HELIX1MF", "M0_FACE"]
+      M1: ["0", "HELIX1MF", "M1_FACE"]
+      M2: ["0", "HELIX1MF", "M2_FACE"]
+      M3: ["0", "HELIX1MF", "M3_FACE"]
+      M4: ["0", "HELIX1MF", "M4_FACE"]
+      M5: ["0", "HELIX1MF", "M5_FACE"]
+      M6: ["0", "HELIX1MF", "M6_FACE"]
+      F0: ["0", "HELIX1MF", "M7_FACE"]
+      F1: ["0", "HELIX1MF", "M8_FACE"]
+      F2: ["0", "HELIX1MF", "M9_FACE"]
+      F3: ["0", "HELIX1MF", "M10_FACE"]
+      F4: ["0", "HELIX1MF", "M11_FACE"]
+      F5: ["0", "HELIX1MF", "M12_FACE"]
+      F6: ["0", "HELIX1MF", "M12_FACE"]
+
+  - type: STR_MKX_HELIX_UC_LV2          # Primaris Helix Adept L2
+    layersDefaultPrefix: 21
+    layersSpecificPrefix:
+      1: APOTH
+      3: 23
+    layersDefinition:
+      M0: ["0", "HELIX2MF", "M0_FACE", "MEDAL1"]
+      M1: ["0", "HELIX2MF", "M1_FACE", "MEDAL1"]
+      M2: ["0", "HELIX2MF", "M2_FACE", "MEDAL1"]
+      M3: ["0", "HELIX2MF", "M3_FACE", "MEDAL1"]
+      M4: ["0", "HELIX2MF", "M4_FACE", "MEDAL1"]
+      M5: ["0", "HELIX2MF", "M5_FACE", "MEDAL1"]
+      M6: ["0", "HELIX2MF", "M6_FACE", "MEDAL1"]
+      F0: ["0", "HELIX2MF", "M7_FACE", "MEDAL1"]
+      F1: ["0", "HELIX2MF", "M8_FACE", "MEDAL1"]
+      F2: ["0", "HELIX2MF", "M9_FACE", "MEDAL1"]
+      F3: ["0", "HELIX2MF", "M10_FACE", "MEDAL1"]
+      F4: ["0", "HELIX2MF", "M11_FACE", "MEDAL1"]
+      F5: ["0", "HELIX2MF", "M12_FACE", "MEDAL1"]
+      F6: ["0", "HELIX2MF", "M12_FACE", "MEDAL1"]
+
+  - type: STR_MKX_HELIX_UC_LV3          # Primaris Helix Adept L3
+    layersDefaultPrefix: 21
+    layersSpecificPrefix:
+      1: APOTH
+      3: 23
+    layersDefinition:
+      M0: ["0", "HELIX3MF", "M0_FACE", "MEDAL1"]
+      M1: ["0", "HELIX3MF", "M1_FACE", "MEDAL1"]
+      M2: ["0", "HELIX3MF", "M2_FACE", "MEDAL1"]
+      M3: ["0", "HELIX3MF", "M3_FACE", "MEDAL1"]
+      M4: ["0", "HELIX3MF", "M4_FACE", "MEDAL1"]
+      M5: ["0", "HELIX3MF", "M5_FACE", "MEDAL2"]
+      M6: ["0", "HELIX3MF", "M6_FACE", "MEDAL2"]
+      F0: ["0", "HELIX3MF", "M7_FACE", "MEDAL2"]
+      F1: ["0", "HELIX3MF", "M8_FACE", "MEDAL2"]
+      F2: ["0", "HELIX3MF", "M9_FACE", "MEDAL2"]
+      F3: ["0", "HELIX3MF", "M10_FACE", "MEDAL3"]
+      F4: ["0", "HELIX3MF", "M11_FACE", "MEDAL3"]
+      F5: ["0", "HELIX3MF", "M12_FACE", "MEDAL3"]
+      F6: ["0", "HELIX3MF", "M12_FACE", "MEDAL3"]
+
+  - type: STR_MKX_APO_UC_LV1            # Primaris Apothecary Lv1
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: APOTH
+      3: 23
+    layersDefinition:
+      M0: ["0", "APOT1MF", "M0_FACE", "MEDAL1"]
+      M1: ["0", "APOT1MF", "M1_FACE", "MEDAL1"]
+      M2: ["0", "APOT1MF", "M2_FACE", "MEDAL1"]
+      M3: ["0", "APOT1MF", "M3_FACE", "MEDAL1"]
+      M4: ["0", "APOT1MF", "M4_FACE", "MEDAL1"]
+      M5: ["0", "APOT1MF", "M5_FACE", "MEDAL2"]
+      M6: ["0", "APOT1MF", "M6_FACE", "MEDAL2"]
+      F0: ["0", "APOT1MF", "M7_FACE", "MEDAL2"]
+      F1: ["0", "APOT1MF", "M8_FACE", "MEDAL2"]
+      F2: ["0", "APOT1MF", "M9_FACE", "MEDAL2"]
+      F3: ["0", "APOT1MF", "M10_FACE", "MEDAL3"]
+      F4: ["0", "APOT1MF", "M11_FACE", "MEDAL3"]
+      F5: ["0", "APOT1MF", "M12_FACE", "MEDAL3"]
+      F6: ["0", "APOT1MF", "M12_FACE", "MEDAL3"]
+
+  - type: STR_MKX_APOGRV_UC_LV1         # Primaris Apothecary Gravis L1
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: APOTH
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRAV1MF", "M0_FACE", "GRVA"]
+      M1: ["0", "GRAV1MF", "M1_FACE", "GRVA"]
+      M2: ["0", "GRAV1MF", "M2_FACE", "GRVA"]
+      M3: ["0", "GRAV1MF", "M3_FACE", "GRVA"]
+      M4: ["0", "GRAV1MF", "M4_FACE", "GRVA"]
+      M5: ["0", "GRAV1MF", "M5_FACE", "GRVA"]
+      M6: ["0", "GRAV1MF", "M6_FACE", "GRVA"]
+      F0: ["0", "GRAV1MF", "M7_FACE", "GRVA"]
+      F1: ["0", "GRAV1MF", "M8_FACE", "GRVA"]
+      F2: ["0", "GRAV1MF", "M9_FACE", "GRVA"]
+      F3: ["0", "GRAV1MF", "M10_FACE", "GRVA"]
+      F4: ["0", "GRAV1MF", "M11_FACE", "GRVA"]
+      F5: ["0", "GRAV1MF", "M12_FACE", "GRVA"]
+      F6: ["0", "GRAV1MF", "M12_FACE", "GRVA"]
+
+  - type: STR_MKX_APOGRV_UC_LV2         # Primaris Apothecary Gravis L2
+    layersDefaultPrefix: 21
+    layersSpecificPrefix:
+      1: APOTH
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRAV2MF", "M0_FACE", "GRVA"]
+      M1: ["0", "GRAV2MF", "M1_FACE", "GRVA"]
+      M2: ["0", "GRAV2MF", "M2_FACE", "GRVA"]
+      M3: ["0", "GRAV2MF", "M3_FACE", "GRVA"]
+      M4: ["0", "GRAV2MF", "M4_FACE", "GRVA"]
+      M5: ["0", "GRAV2MF", "M5_FACE", "GRVA"]
+      M6: ["0", "GRAV2MF", "M6_FACE", "GRVA"]
+      F0: ["0", "GRAV2MF", "M7_FACE", "GRVA"]
+      F1: ["0", "GRAV2MF", "M8_FACE", "GRVA"]
+      F2: ["0", "GRAV2MF", "M9_FACE", "GRVA"]
+      F3: ["0", "GRAV2MF", "M10_FACE", "GRVA"]
+      F4: ["0", "GRAV2MF", "M11_FACE", "GRVA"]
+      F5: ["0", "GRAV2MF", "M12_FACE", "GRVA"]
+      F6: ["0", "GRAV2MF", "M12_FACE", "GRVA"]
+
+  - type: STR_MKX_GRV_LV1_UC            # Primaris Gravis L1 Bolter
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRVB1MF", "M0_FACE", "GRVH"]
+      M1: ["0", "GRVB1MF", "M1_FACE", "GRVH"]
+      M2: ["0", "GRVB1MF", "M2_FACE", "GRVH"]
+      M3: ["0", "GRVB1MF", "M3_FACE", "GRVH"]
+      M4: ["0", "GRVB1MF", "M4_FACE", "GRVH"]
+      M5: ["0", "GRVB1MF", "M5_FACE", "GRVH"]
+      M6: ["0", "GRVB1MF", "M6_FACE", "GRVH"]
+      F0: ["0", "GRVB1MF", "M7_FACE", "GRVH"]
+      F1: ["0", "GRVB1MF", "M8_FACE", "GRVH"]
+      F2: ["0", "GRVB1MF", "M9_FACE", "GRVH"]
+      F3: ["0", "GRVB1MF", "M10_FACE", "GRVH"]
+      F4: ["0", "GRVB1MF", "M11_FACE", "GRVH"]
+      F5: ["0", "GRVB1MF", "M12_FACE", "GRVH"]
+      F6: ["0", "GRVB1MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV1F_UC           # Primaris Gravis L1 Flamer
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRVF1MF", "M0_FACE", "GRVH"]
+      M1: ["0", "GRVF1MF", "M1_FACE", "GRVH"]
+      M2: ["0", "GRVF1MF", "M2_FACE", "GRVH"]
+      M3: ["0", "GRVF1MF", "M3_FACE", "GRVH"]
+      M4: ["0", "GRVF1MF", "M4_FACE", "GRVH"]
+      M5: ["0", "GRVF1MF", "M5_FACE", "GRVH"]
+      M6: ["0", "GRVF1MF", "M6_FACE", "GRVH"]
+      F0: ["0", "GRVF1MF", "M7_FACE", "GRVH"]
+      F1: ["0", "GRVF1MF", "M8_FACE", "GRVH"]
+      F2: ["0", "GRVF1MF", "M9_FACE", "GRVH"]
+      F3: ["0", "GRVF1MF", "M10_FACE", "GRVH"]
+      F4: ["0", "GRVF1MF", "M11_FACE", "GRVH"]
+      F5: ["0", "GRVF1MF", "M12_FACE", "GRVH"]
+      F6: ["0", "GRVF1MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV2_UC            # Primaris Gravis L2 Flamer
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRVF2MF", "M0_FACE", "GRVH"]
+      M1: ["0", "GRVF2MF", "M1_FACE", "GRVH"]
+      M2: ["0", "GRVF2MF", "M2_FACE", "GRVH"]
+      M3: ["0", "GRVF2MF", "M3_FACE", "GRVH"]
+      M4: ["0", "GRVF2MF", "M4_FACE", "GRVH"]
+      M5: ["0", "GRVF2MF", "M5_FACE", "GRVH"]
+      M6: ["0", "GRVF2MF", "M6_FACE", "GRVH"]
+      F0: ["0", "GRVF2MF", "M7_FACE", "GRVH"]
+      F1: ["0", "GRVF2MF", "M8_FACE", "GRVH"]
+      F2: ["0", "GRVF2MF", "M9_FACE", "GRVH"]
+      F3: ["0", "GRVF2MF", "M10_FACE", "GRVH"]
+      F4: ["0", "GRVF2MF", "M11_FACE", "GRVH"]
+      F5: ["0", "GRVF2MF", "M12_FACE", "GRVH"]
+      F6: ["0", "GRVF2MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV2A_UC           # Primaris Gravis L2 Autocannon
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRVA2MF", "M0_FACE", "GRVH"]
+      M1: ["0", "GRVA2MF", "M1_FACE", "GRVH"]
+      M2: ["0", "GRVA2MF", "M2_FACE", "GRVH"]
+      M3: ["0", "GRVA2MF", "M3_FACE", "GRVH"]
+      M4: ["0", "GRVA2MF", "M4_FACE", "GRVH"]
+      M5: ["0", "GRVA2MF", "M5_FACE", "GRVH"]
+      M6: ["0", "GRVA2MF", "M6_FACE", "GRVH"]
+      F0: ["0", "GRVA2MF", "M7_FACE", "GRVH"]
+      F1: ["0", "GRVA2MF", "M8_FACE", "GRVH"]
+      F2: ["0", "GRVA2MF", "M9_FACE", "GRVH"]
+      F3: ["0", "GRVA2MF", "M10_FACE", "GRVH"]
+      F4: ["0", "GRVA2MF", "M11_FACE", "GRVH"]
+      F5: ["0", "GRVA2MF", "M12_FACE", "GRVH"]
+      F6: ["0", "GRVA2MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV2B_UC           # Primaris Gravis L2 Bolter
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRVB2MF", "M0_FACE", "GRVH"]
+      M1: ["0", "GRVB2MF", "M1_FACE", "GRVH"]
+      M2: ["0", "GRVB2MF", "M2_FACE", "GRVH"]
+      M3: ["0", "GRVB2MF", "M3_FACE", "GRVH"]
+      M4: ["0", "GRVB2MF", "M4_FACE", "GRVH"]
+      M5: ["0", "GRVB2MF", "M5_FACE", "GRVH"]
+      M6: ["0", "GRVB2MF", "M6_FACE", "GRVH"]
+      F0: ["0", "GRVB2MF", "M7_FACE", "GRVH"]
+      F1: ["0", "GRVB2MF", "M8_FACE", "GRVH"]
+      F2: ["0", "GRVB2MF", "M9_FACE", "GRVH"]
+      F3: ["0", "GRVB2MF", "M10_FACE", "GRVH"]
+      F4: ["0", "GRVB2MF", "M11_FACE", "GRVH"]
+      F5: ["0", "GRVB2MF", "M12_FACE", "GRVH"]
+      F6: ["0", "GRVB2MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV3_UC            # Primaris Gravis L3 Autocannon
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRVA3MF", "M0_FACE", "GRVH"]
+      M1: ["0", "GRVA3MF", "M1_FACE", "GRVH"]
+      M2: ["0", "GRVA3MF", "M2_FACE", "GRVH"]
+      M3: ["0", "GRVA3MF", "M3_FACE", "GRVH"]
+      M4: ["0", "GRVA3MF", "M4_FACE", "GRVH"]
+      M5: ["0", "GRVA3MF", "M5_FACE", "GRVH"]
+      M6: ["0", "GRVA3MF", "M6_FACE", "GRVH"]
+      F0: ["0", "GRVA3MF", "M7_FACE", "GRVH"]
+      F1: ["0", "GRVA3MF", "M8_FACE", "GRVH"]
+      F2: ["0", "GRVA3MF", "M9_FACE", "GRVH"]
+      F3: ["0", "GRVA3MF", "M10_FACE", "GRVH"]
+      F4: ["0", "GRVA3MF", "M11_FACE", "GRVH"]
+      F5: ["0", "GRVA3MF", "M12_FACE", "GRVH"]
+      F6: ["0", "GRVA3MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV3B_UC           # Primaris Gravis L3 Bolter
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRVB3MF", "M0_FACE", "GRVH"]
+      M1: ["0", "GRVB3MF", "M1_FACE", "GRVH"]
+      M2: ["0", "GRVB3MF", "M2_FACE", "GRVH"]
+      M3: ["0", "GRVB3MF", "M3_FACE", "GRVH"]
+      M4: ["0", "GRVB3MF", "M4_FACE", "GRVH"]
+      M5: ["0", "GRVB3MF", "M5_FACE", "GRVH"]
+      M6: ["0", "GRVB3MF", "M6_FACE", "GRVH"]
+      F0: ["0", "GRVB3MF", "M7_FACE", "GRVH"]
+      F1: ["0", "GRVB3MF", "M8_FACE", "GRVH"]
+      F2: ["0", "GRVB3MF", "M9_FACE", "GRVH"]
+      F3: ["0", "GRVB3MF", "M10_FACE", "GRVH"]
+      F4: ["0", "GRVB3MF", "M11_FACE", "GRVH"]
+      F5: ["0", "GRVB3MF", "M12_FACE", "GRVH"]
+      F6: ["0", "GRVB3MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV3F_UC           # Primaris Gravis L3 Flamer
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRVF3MF", "M0_FACE", "GRVH"]
+      M1: ["0", "GRVF3MF", "M1_FACE", "GRVH"]
+      M2: ["0", "GRVF3MF", "M2_FACE", "GRVH"]
+      M3: ["0", "GRVF3MF", "M3_FACE", "GRVH"]
+      M4: ["0", "GRVF3MF", "M4_FACE", "GRVH"]
+      M5: ["0", "GRVF3MF", "M5_FACE", "GRVH"]
+      M6: ["0", "GRVF3MF", "M6_FACE", "GRVH"]
+      F0: ["0", "GRVF3MF", "M7_FACE", "GRVH"]
+      F1: ["0", "GRVF3MF", "M8_FACE", "GRVH"]
+      F2: ["0", "GRVF3MF", "M9_FACE", "GRVH"]
+      F3: ["0", "GRVF3MF", "M10_FACE", "GRVH"]
+      F4: ["0", "GRVF3MF", "M11_FACE", "GRVH"]
+      F5: ["0", "GRVF3MF", "M12_FACE", "GRVH"]
+      F6: ["0", "GRVF3MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV3H_UC           # Primaris Gravis L3 Flamer
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRVH3MF", "M0_FACE", "GRVH"]
+      M1: ["0", "GRVH3MF", "M1_FACE", "GRVH"]
+      M2: ["0", "GRVH3MF", "M2_FACE", "GRVH"]
+      M3: ["0", "GRVH3MF", "M3_FACE", "GRVH"]
+      M4: ["0", "GRVH3MF", "M4_FACE", "GRVH"]
+      M5: ["0", "GRVH3MF", "M5_FACE", "GRVH"]
+      M6: ["0", "GRVH3MF", "M6_FACE", "GRVH"]
+      F0: ["0", "GRVH3MF", "M7_FACE", "GRVH"]
+      F1: ["0", "GRVH3MF", "M8_FACE", "GRVH"]
+      F2: ["0", "GRVH3MF", "M9_FACE", "GRVH"]
+      F3: ["0", "GRVH3MF", "M10_FACE", "GRVH"]
+      F4: ["0", "GRVH3MF", "M11_FACE", "GRVH"]
+      F5: ["0", "GRVH3MF", "M12_FACE", "GRVH"]
+      F6: ["0", "GRVH3MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV4_UC            # Primaris Gravis L4 Autocannon
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRVA4MF", "M0_FACE", "GRVH"]
+      M1: ["0", "GRVA4MF", "M1_FACE", "GRVH"]
+      M2: ["0", "GRVA4MF", "M2_FACE", "GRVH"]
+      M3: ["0", "GRVA4MF", "M3_FACE", "GRVH"]
+      M4: ["0", "GRVA4MF", "M4_FACE", "GRVH"]
+      M5: ["0", "GRVA4MF", "M5_FACE", "GRVH"]
+      M6: ["0", "GRVA4MF", "M6_FACE", "GRVH"]
+      F0: ["0", "GRVA4MF", "M7_FACE", "GRVH"]
+      F1: ["0", "GRVA4MF", "M8_FACE", "GRVH"]
+      F2: ["0", "GRVA4MF", "M9_FACE", "GRVH"]
+      F3: ["0", "GRVA4MF", "M10_FACE", "GRVH"]
+      F4: ["0", "GRVA4MF", "M11_FACE", "GRVH"]
+      F5: ["0", "GRVA4MF", "M12_FACE", "GRVH"]
+      F6: ["0", "GRVA4MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV4B_UC           # Primaris Gravis L4 Bolter
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRVB4MF", "M0_FACE", "GRVH"]
+      M1: ["0", "GRVB4MF", "M1_FACE", "GRVH"]
+      M2: ["0", "GRVB4MF", "M2_FACE", "GRVH"]
+      M3: ["0", "GRVB4MF", "M3_FACE", "GRVH"]
+      M4: ["0", "GRVB4MF", "M4_FACE", "GRVH"]
+      M5: ["0", "GRVB4MF", "M5_FACE", "GRVH"]
+      M6: ["0", "GRVB4MF", "M6_FACE", "GRVH"]
+      F0: ["0", "GRVB4MF", "M7_FACE", "GRVH"]
+      F1: ["0", "GRVB4MF", "M8_FACE", "GRVH"]
+      F2: ["0", "GRVB4MF", "M9_FACE", "GRVH"]
+      F3: ["0", "GRVB4MF", "M10_FACE", "GRVH"]
+      F4: ["0", "GRVB4MF", "M11_FACE", "GRVH"]
+      F5: ["0", "GRVB4MF", "M12_FACE", "GRVH"]
+      F6: ["0", "GRVB4MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV4F_UC           # Primaris Gravis L4 Flamer
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRVF4MF", "M0_FACE", "GRVH"]
+      M1: ["0", "GRVF4MF", "M1_FACE", "GRVH"]
+      M2: ["0", "GRVF4MF", "M2_FACE", "GRVH"]
+      M3: ["0", "GRVF4MF", "M3_FACE", "GRVH"]
+      M4: ["0", "GRVF4MF", "M4_FACE", "GRVH"]
+      M5: ["0", "GRVF4MF", "M5_FACE", "GRVH"]
+      M6: ["0", "GRVF4MF", "M6_FACE", "GRVH"]
+      F0: ["0", "GRVF4MF", "M7_FACE", "GRVH"]
+      F1: ["0", "GRVF4MF", "M8_FACE", "GRVH"]
+      F2: ["0", "GRVF4MF", "M9_FACE", "GRVH"]
+      F3: ["0", "GRVF4MF", "M10_FACE", "GRVH"]
+      F4: ["0", "GRVF4MF", "M11_FACE", "GRVH"]
+      F5: ["0", "GRVF4MF", "M12_FACE", "GRVH"]
+      F6: ["0", "GRVF4MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV4H_UC           # Primaris Gravis L4 Regular
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["0", "GRVH4MF", "M0_FACE", "GRVH"]
+      M1: ["0", "GRVH4MF", "M1_FACE", "GRVH"]
+      M2: ["0", "GRVH4MF", "M2_FACE", "GRVH"]
+      M3: ["0", "GRVH4MF", "M3_FACE", "GRVH"]
+      M4: ["0", "GRVH4MF", "M4_FACE", "GRVH"]
+      M5: ["0", "GRVH4MF", "M5_FACE", "GRVH"]
+      M6: ["0", "GRVH4MF", "M6_FACE", "GRVH"]
+      F0: ["0", "GRVH4MF", "M7_FACE", "GRVH"]
+      F1: ["0", "GRVH4MF", "M8_FACE", "GRVH"]
+      F2: ["0", "GRVH4MF", "M9_FACE", "GRVH"]
+      F3: ["0", "GRVH4MF", "M10_FACE", "GRVH"]
+      F4: ["0", "GRVH4MF", "M11_FACE", "GRVH"]
+      F5: ["0", "GRVH4MF", "M12_FACE", "GRVH"]
+      F6: ["0", "GRVH4MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV5_UC            # Primaris Gravis L5 Bolter
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["CAPEP", "GRVB5MF", "M0_FACE", "GRVH"]
+      M1: ["CAPEP", "GRVB5MF", "M1_FACE", "GRVH"]
+      M2: ["CAPEP", "GRVB5MF", "M2_FACE", "GRVH"]
+      M3: ["CAPEP", "GRVB5MF", "M3_FACE", "GRVH"]
+      M4: ["CAPEP", "GRVB5MF", "M4_FACE", "GRVH"]
+      M5: ["CAPEP", "GRVB5MF", "M5_FACE", "GRVH"]
+      M6: ["CAPEP", "GRVB5MF", "M6_FACE", "GRVH"]
+      F0: ["CAPEP", "GRVB5MF", "M7_FACE", "GRVH"]
+      F1: ["CAPEP", "GRVB5MF", "M8_FACE", "GRVH"]
+      F2: ["CAPEP", "GRVB5MF", "M9_FACE", "GRVH"]
+      F3: ["CAPEP", "GRVB5MF", "M10_FACE", "GRVH"]
+      F4: ["CAPEP", "GRVB5MF", "M11_FACE", "GRVH"]
+      F5: ["CAPEP", "GRVB5MF", "M12_FACE", "GRVH"]
+      F6: ["CAPEP", "GRVB5MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV5A_UC           # Primaris Gravis L5 Autocannon
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["CAPEP", "GRVA5MF", "M0_FACE", "GRVH"]
+      M1: ["CAPEP", "GRVA5MF", "M1_FACE", "GRVH"]
+      M2: ["CAPEP", "GRVA5MF", "M2_FACE", "GRVH"]
+      M3: ["CAPEP", "GRVA5MF", "M3_FACE", "GRVH"]
+      M4: ["CAPEP", "GRVA5MF", "M4_FACE", "GRVH"]
+      M5: ["CAPEP", "GRVA5MF", "M5_FACE", "GRVH"]
+      M6: ["CAPEP", "GRVA5MF", "M6_FACE", "GRVH"]
+      F0: ["CAPEP", "GRVA5MF", "M7_FACE", "GRVH"]
+      F1: ["CAPEP", "GRVA5MF", "M8_FACE", "GRVH"]
+      F2: ["CAPEP", "GRVA5MF", "M9_FACE", "GRVH"]
+      F3: ["CAPEP", "GRVA5MF", "M10_FACE", "GRVH"]
+      F4: ["CAPEP", "GRVA5MF", "M11_FACE", "GRVH"]
+      F5: ["CAPEP", "GRVA5MF", "M12_FACE", "GRVH"]
+      F6: ["CAPEP", "GRVA5MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV5F_UC           # Primaris Gravis L5 Flamer
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["CAPEP", "GRVF5MF", "M0_FACE", "GRVH"]
+      M1: ["CAPEP", "GRVF5MF", "M1_FACE", "GRVH"]
+      M2: ["CAPEP", "GRVF5MF", "M2_FACE", "GRVH"]
+      M3: ["CAPEP", "GRVF5MF", "M3_FACE", "GRVH"]
+      M4: ["CAPEP", "GRVF5MF", "M4_FACE", "GRVH"]
+      M5: ["CAPEP", "GRVF5MF", "M5_FACE", "GRVH"]
+      M6: ["CAPEP", "GRVF5MF", "M6_FACE", "GRVH"]
+      F0: ["CAPEP", "GRVF5MF", "M7_FACE", "GRVH"]
+      F1: ["CAPEP", "GRVF5MF", "M8_FACE", "GRVH"]
+      F2: ["CAPEP", "GRVF5MF", "M9_FACE", "GRVH"]
+      F3: ["CAPEP", "GRVF5MF", "M10_FACE", "GRVH"]
+      F4: ["CAPEP", "GRVF5MF", "M11_FACE", "GRVH"]
+      F5: ["CAPEP", "GRVF5MF", "M12_FACE", "GRVH"]
+      F6: ["CAPEP", "GRVF5MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_GRV_LV5H_UC           # Primaris Gravis L5 Regular
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: GRAV
+      3: GRAV
+    layersDefinition:
+      M0: ["CAPEP", "GRVH5MF", "M0_FACE", "GRVH"]
+      M1: ["CAPEP", "GRVH5MF", "M1_FACE", "GRVH"]
+      M2: ["CAPEP", "GRVH5MF", "M2_FACE", "GRVH"]
+      M3: ["CAPEP", "GRVH5MF", "M3_FACE", "GRVH"]
+      M4: ["CAPEP", "GRVH5MF", "M4_FACE", "GRVH"]
+      M5: ["CAPEP", "GRVH5MF", "M5_FACE", "GRVH"]
+      M6: ["CAPEP", "GRVH5MF", "M6_FACE", "GRVH"]
+      F0: ["CAPEP", "GRVH5MF", "M7_FACE", "GRVH"]
+      F1: ["CAPEP", "GRVH5MF", "M8_FACE", "GRVH"]
+      F2: ["CAPEP", "GRVH5MF", "M9_FACE", "GRVH"]
+      F3: ["CAPEP", "GRVH5MF", "M10_FACE", "GRVH"]
+      F4: ["CAPEP", "GRVH5MF", "M11_FACE", "GRVH"]
+      F5: ["CAPEP", "GRVH5MF", "M12_FACE", "GRVH"]
+      F6: ["CAPEP", "GRVH5MF", "M12_FACE", "GRVH"]
+
+  - type: STR_MKX_INCPE_LV1_UC          # Primaris Omnis Plasma L1
+    customArmorPreviewIndex: {mod: 40k, index: 285}
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      23: GRV
+    layersDefinition:
+      M0: ["0", "INCLV1", "M0_FACE"]
+      M1: ["0", "INCLV1", "M1_FACE"]
+      M2: ["0", "INCLV1", "M2_FACE"]
+      M3: ["0", "INCLV1", "M3_FACE"]
+      M4: ["0", "INCLV1", "M4_FACE"]
+      M5: ["0", "INCLV1", "M5_FACE"]
+      M6: ["0", "INCLV1", "M6_FACE"]
+      F0: ["0", "INCLV1", "M7_FACE"]
+      F1: ["0", "INCLV1", "M8_FACE"]
+      F2: ["0", "INCLV1", "M9_FACE"]
+      F3: ["0", "INCLV1", "M10_FACE"]
+      F4: ["0", "INCLV1", "M11_FACE"]
+      F5: ["0", "INCLV1", "M12_FACE"]
+      F6: ["0", "INCLV1", "M13_FACE"]
+  - type: STR_MKX_INCPE_LV2_UC          # Primaris Omnis Plasma L2
+    customArmorPreviewIndex: {mod: 40k, index: 286}
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      23: GRV
+    layersDefinition:
+      M0: ["0", "INCLV2", "M0_FACE", "MEDAL1"]
+      M1: ["0", "INCLV2", "M1_FACE", "MEDAL1"]
+      M2: ["0", "INCLV2", "M2_FACE", "MEDAL1"]
+      M3: ["0", "INCLV2", "M3_FACE", "MEDAL1"]
+      M4: ["0", "INCLV2", "M4_FACE", "MEDAL1"]
+      M5: ["0", "INCLV2", "M5_FACE", "MEDAL1"]
+      M6: ["0", "INCLV2", "M6_FACE", "MEDAL1"]
+      F0: ["0", "INCLV2", "M7_FACE", "MEDAL1"]
+      F1: ["0", "INCLV2", "M8_FACE", "MEDAL1"]
+      F2: ["0", "INCLV2", "M9_FACE", "MEDAL1"]
+      F3: ["0", "INCLV2", "M10_FACE", "MEDAL1"]
+      F4: ["0", "INCLV2", "M11_FACE", "MEDAL1"]
+      F5: ["0", "INCLV2", "M12_FACE", "MEDAL1"]
+      F6: ["0", "INCLV2", "M13_FACE", "MEDAL1"]
+  - type: STR_MKX_INCPE_LV3_UC          # Primaris Omnis Plasma L3
+    customArmorPreviewIndex: {mod: 40k, index: 287}
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      23: GRV
+    layersDefinition:
+      M0: ["0", "INCLV3", "M0_FACE", "MEDAL1"]
+      M1: ["0", "INCLV3", "M1_FACE", "MEDAL1"]
+      M2: ["0", "INCLV3", "M2_FACE", "MEDAL1"]
+      M3: ["0", "INCLV3", "M3_FACE", "MEDAL1"]
+      M4: ["0", "INCLV3", "M4_FACE", "MEDAL1"]
+      M5: ["0", "INCLV3", "M5_FACE", "MEDAL2"]
+      M6: ["0", "INCLV3", "M6_FACE", "MEDAL2"]
+      F0: ["0", "INCLV3", "M7_FACE", "MEDAL2"]
+      F1: ["0", "INCLV3", "M8_FACE", "MEDAL2"]
+      F2: ["0", "INCLV3", "M9_FACE", "MEDAL3"]
+      F3: ["0", "INCLV3", "M10_FACE", "MEDAL3"]
+      F4: ["0", "INCLV3", "M11_FACE", "MEDAL3"]
+      F5: ["0", "INCLV3", "M12_FACE", "MEDAL3"]
+      F6: ["0", "INCLV3", "M13_FACE", "MEDAL3"]
+  - type: STR_MKX_INCPE_LV4_UC          # Primaris Omnis Plasma L4
+    customArmorPreviewIndex: {mod: 40k, index: 288}
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      23: GRV
+    layersDefinition:
+      M0: ["0", "INCLV4", "M0_FACE", "MEDAL1"]
+      M1: ["0", "INCLV4", "M1_FACE", "MEDAL1"]
+      M2: ["0", "INCLV4", "M2_FACE", "MEDAL1"]
+      M3: ["0", "INCLV4", "M3_FACE", "MEDAL1"]
+      M4: ["0", "INCLV4", "M4_FACE", "MEDAL1"]
+      M5: ["0", "INCLV4", "M5_FACE", "MEDAL2"]
+      M6: ["0", "INCLV4", "M6_FACE", "MEDAL2"]
+      F0: ["0", "INCLV4", "M7_FACE", "MEDAL2"]
+      F1: ["0", "INCLV4", "M8_FACE", "MEDAL2"]
+      F2: ["0", "INCLV4", "M9_FACE", "MEDAL3"]
+      F3: ["0", "INCLV4", "M10_FACE", "MEDAL3"]
+      F4: ["0", "INCLV4", "M11_FACE", "MEDAL3"]
+      F5: ["0", "INCLV4", "M12_FACE", "MEDAL3"]
+      F6: ["0", "INCLV4", "M13_FACE", "MEDAL3"]
+  - type: STR_MKX_INCPE_LV5_UC          # Primaris Omnis Plasma L5
+    customArmorPreviewIndex: {mod: 40k, index: 289}
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      23: GRV
+    layersDefinition:
+      M0: ["0", "INCLV5", "M0_FACE", "MEDAL1"]
+      M1: ["0", "INCLV5", "M1_FACE", "MEDAL1"]
+      M2: ["0", "INCLV5", "M2_FACE", "MEDAL1"]
+      M3: ["0", "INCLV5", "M3_FACE", "MEDAL1"]
+      M4: ["0", "INCLV5", "M4_FACE", "MEDAL1"]
+      M5: ["0", "INCLV5", "M5_FACE", "MEDAL2"]
+      M6: ["0", "INCLV5", "M6_FACE", "MEDAL2"]
+      F0: ["0", "INCLV5", "M7_FACE", "MEDAL2"]
+      F1: ["0", "INCLV5", "M8_FACE", "MEDAL2"]
+      F2: ["0", "INCLV5", "M9_FACE", "MEDAL3"]
+      F3: ["0", "INCLV5", "M10_FACE", "MEDAL3"]
+      F4: ["0", "INCLV5", "M11_FACE", "MEDAL3"]
+      F5: ["0", "INCLV5", "M12_FACE", "MEDAL3"]
+      F6: ["0", "INCLV5", "M13_FACE", "MEDAL3"]
+
+
+  - type: STR_MKX_INCAC_LV1_UC          # Primaris Omnis Autocannon L1
+    customArmorPreviewIndex: {mod: 40k, index: 285}
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      23: GRV
+    layersDefinition:
+      M0: ["0", "INCLV1", "M0_FACE"]
+      M1: ["0", "INCLV1", "M1_FACE"]
+      M2: ["0", "INCLV1", "M2_FACE"]
+      M3: ["0", "INCLV1", "M3_FACE"]
+      M4: ["0", "INCLV1", "M4_FACE"]
+      M5: ["0", "INCLV1", "M5_FACE"]
+      M6: ["0", "INCLV1", "M6_FACE"]
+      F0: ["0", "INCLV1", "M7_FACE"]
+      F1: ["0", "INCLV1", "M8_FACE"]
+      F2: ["0", "INCLV1", "M9_FACE"]
+      F3: ["0", "INCLV1", "M10_FACE"]
+      F4: ["0", "INCLV1", "M11_FACE"]
+      F5: ["0", "INCLV1", "M12_FACE"]
+      F6: ["0", "INCLV1", "M13_FACE"]
+  - type: STR_MKX_INCAC_LV2_UC          # Primaris Omnis Autocannon L2
+    customArmorPreviewIndex: {mod: 40k, index: 286}
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      23: GRV
+    layersDefinition:
+      M0: ["0", "INCLV2", "M0_FACE", "MEDAL1"]
+      M1: ["0", "INCLV2", "M1_FACE", "MEDAL1"]
+      M2: ["0", "INCLV2", "M2_FACE", "MEDAL1"]
+      M3: ["0", "INCLV2", "M3_FACE", "MEDAL1"]
+      M4: ["0", "INCLV2", "M4_FACE", "MEDAL1"]
+      M5: ["0", "INCLV2", "M5_FACE", "MEDAL2"]
+      M6: ["0", "INCLV2", "M6_FACE", "MEDAL2"]
+      F0: ["0", "INCLV2", "M7_FACE", "MEDAL2"]
+      F1: ["0", "INCLV2", "M8_FACE", "MEDAL2"]
+      F2: ["0", "INCLV2", "M9_FACE", "MEDAL3"]
+      F3: ["0", "INCLV2", "M10_FACE", "MEDAL3"]
+      F4: ["0", "INCLV2", "M11_FACE", "MEDAL3"]
+      F5: ["0", "INCLV2", "M12_FACE", "MEDAL3"]
+      F6: ["0", "INCLV2", "M13_FACE", "MEDAL3"]
+  - type: STR_MKX_INCAC_LV3_UC          # Primaris Omnis Autocannon L3
+    customArmorPreviewIndex: {mod: 40k, index: 287}
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      23: GRV
+    layersDefinition:
+      M0: ["0", "INCLV3", "M0_FACE", "MEDAL1"]
+      M1: ["0", "INCLV3", "M1_FACE", "MEDAL1"]
+      M2: ["0", "INCLV3", "M2_FACE", "MEDAL1"]
+      M3: ["0", "INCLV3", "M3_FACE", "MEDAL1"]
+      M4: ["0", "INCLV3", "M4_FACE", "MEDAL1"]
+      M5: ["0", "INCLV3", "M5_FACE", "MEDAL2"]
+      M6: ["0", "INCLV3", "M6_FACE", "MEDAL2"]
+      F0: ["0", "INCLV3", "M7_FACE", "MEDAL2"]
+      F1: ["0", "INCLV3", "M8_FACE", "MEDAL2"]
+      F2: ["0", "INCLV3", "M9_FACE", "MEDAL3"]
+      F3: ["0", "INCLV3", "M10_FACE", "MEDAL3"]
+      F4: ["0", "INCLV3", "M11_FACE", "MEDAL3"]
+      F5: ["0", "INCLV3", "M12_FACE", "MEDAL3"]
+      F6: ["0", "INCLV3", "M13_FACE", "MEDAL3"]
+  - type: STR_MKX_INCAC_LV4_UC          # Primaris Omnis Autocannon L4
+    customArmorPreviewIndex: {mod: 40k, index: 288}
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      23: GRV
+    layersDefinition:
+      M0: ["0", "INCLV4", "M0_FACE", "MEDAL1"]
+      M1: ["0", "INCLV4", "M1_FACE", "MEDAL1"]
+      M2: ["0", "INCLV4", "M2_FACE", "MEDAL1"]
+      M3: ["0", "INCLV4", "M3_FACE", "MEDAL1"]
+      M4: ["0", "INCLV4", "M4_FACE", "MEDAL1"]
+      M5: ["0", "INCLV4", "M5_FACE", "MEDAL2"]
+      M6: ["0", "INCLV4", "M6_FACE", "MEDAL2"]
+      F0: ["0", "INCLV4", "M7_FACE", "MEDAL2"]
+      F1: ["0", "INCLV4", "M8_FACE", "MEDAL2"]
+      F2: ["0", "INCLV4", "M9_FACE", "MEDAL3"]
+      F3: ["0", "INCLV4", "M10_FACE", "MEDAL3"]
+      F4: ["0", "INCLV4", "M11_FACE", "MEDAL3"]
+      F5: ["0", "INCLV4", "M12_FACE", "MEDAL3"]
+      F6: ["0", "INCLV4", "M13_FACE", "MEDAL3"]
+  - type: STR_MKX_INCAC_LV5_UC          # Primaris Omnis Autocannon L5
+    customArmorPreviewIndex: {mod: 40k, index: 289}
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      23: GRV
+    layersDefinition:
+      M0: ["0", "INCLV5", "M0_FACE", "MEDAL1"]
+      M1: ["0", "INCLV5", "M1_FACE", "MEDAL1"]
+      M2: ["0", "INCLV5", "M2_FACE", "MEDAL1"]
+      M3: ["0", "INCLV5", "M3_FACE", "MEDAL1"]
+      M4: ["0", "INCLV5", "M4_FACE", "MEDAL1"]
+      M5: ["0", "INCLV5", "M5_FACE", "MEDAL2"]
+      M6: ["0", "INCLV5", "M6_FACE", "MEDAL2"]
+      F0: ["0", "INCLV5", "M7_FACE", "MEDAL2"]
+      F1: ["0", "INCLV5", "M8_FACE", "MEDAL2"]
+      F2: ["0", "INCLV5", "M9_FACE", "MEDAL3"]
+      F3: ["0", "INCLV5", "M10_FACE", "MEDAL3"]
+      F4: ["0", "INCLV5", "M11_FACE", "MEDAL3"]
+      F5: ["0", "INCLV5", "M12_FACE", "MEDAL3"]
+      F6: ["0", "INCLV5", "M13_FACE", "MEDAL3"]
+
+
+  - type: STR_MKX_JUDICAR_UC            # Primaris Judicar
+    layersDefaultPrefix: 23
+    layersSpecificPrefix:
+      1: CHAP
+    layersDefinition:
+      M0: ["0", "JUDICARMF", "M0_FACE"]
+      M1: ["0", "JUDICARMF", "M1_FACE"]
+      M2: ["0", "JUDICARMF", "M2_FACE"]
+      M3: ["0", "JUDICARMF", "M3_FACE"]
+      M4: ["0", "JUDICARMF", "M4_FACE"]
+      M5: ["0", "JUDICARMF", "M5_FACE"]
+      M6: ["0", "JUDICARMF", "M6_FACE"]
+      F0: ["0", "JUDICARMF", "M7_FACE"]
+      F1: ["0", "JUDICARMF", "M8_FACE"]
+      F2: ["0", "JUDICARMF", "M9_FACE"]
+      F3: ["0", "JUDICARMF", "M10_FACE"]
+      F4: ["0", "JUDICARMF", "M11_FACE"]
+      F5: ["0", "JUDICARMF", "M12_FACE"]
+      F6: ["0", "JUDICARMF", "M12_FACE"]
+
+  - type: STR_MKX_LIB_LV1_UC            # Primaris Librarian L1
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      3: LIBRARIAN
+    layersDefinition:
+      M0: ["0", "LIBLV1", "M0_FACE", "EYES"]
+      M1: ["0", "LIBLV1", "M1_FACE", "EYES"]
+      M2: ["0", "LIBLV1", "M2_FACE", "EYES"]
+      M3: ["0", "LIBLV1", "M3_FACE", "EYES"]
+      M4: ["0", "LIBLV1", "M4_FACE", "EYES"]
+      M5: ["0", "LIBLV1", "M5_FACE", "EYES"]
+      M6: ["0", "LIBLV1", "M6_FACE", "EYES"]
+      F0: ["0", "LIBLV1", "M7_FACE", "EYES"]
+      F1: ["0", "LIBLV1", "M8_FACE", "EYES"]
+      F2: ["0", "LIBLV1", "M9_FACE", "EYES"]
+      F3: ["0", "LIBLV1", "M10_FACE", "EYES"]
+      F4: ["0", "LIBLV1", "M11_FACE", "EYES"]
+      F5: ["0", "LIBLV1", "M12_FACE", "EYES"]
+      F6: ["0", "LIBLV1", "M13_FACE", "EYES"]
+  - type: STR_MKX_LIB_LV2_UC            # Primaris Librarian L2
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      3: LIBRARIAN
+    layersDefinition:
+      M0: ["0", "LIBLV2", "M0_FACE", "EYES"]
+      M1: ["0", "LIBLV2", "M1_FACE", "EYES"]
+      M2: ["0", "LIBLV2", "M2_FACE", "EYES"]
+      M3: ["0", "LIBLV2", "M3_FACE", "EYES"]
+      M4: ["0", "LIBLV2", "M4_FACE", "EYES"]
+      M5: ["0", "LIBLV2", "M5_FACE", "EYES"]
+      M6: ["0", "LIBLV2", "M6_FACE", "EYES"]
+      F0: ["0", "LIBLV2", "M7_FACE", "EYES"]
+      F1: ["0", "LIBLV2", "M8_FACE", "EYES"]
+      F2: ["0", "LIBLV2", "M9_FACE", "EYES"]
+      F3: ["0", "LIBLV2", "M10_FACE", "EYES"]
+      F4: ["0", "LIBLV2", "M11_FACE", "EYES"]
+      F5: ["0", "LIBLV2", "M12_FACE", "EYES"]
+      F6: ["0", "LIBLV2", "M13_FACE", "EYES"]
+  - type: STR_MKX_LIB_LV3_UC            # Primaris Librarian L3
+    layersDefaultPrefix: "23"
+    layersSpecificPrefix:
+      3: LIBRARIAN
+    layersDefinition:
+      M0: ["CAPEP", "LIBLV3", "M0_FACE", "EYES"]
+      M1: ["CAPEP", "LIBLV3", "M1_FACE", "EYES"]
+      M2: ["CAPEP", "LIBLV3", "M2_FACE", "EYES"]
+      M3: ["CAPEP", "LIBLV3", "M3_FACE", "EYES"]
+      M4: ["CAPEP", "LIBLV3", "M4_FACE", "EYES"]
+      M5: ["CAPEP", "LIBLV3", "M5_FACE", "EYES"]
+      M6: ["CAPEP", "LIBLV3", "M6_FACE", "EYES"]
+      F0: ["CAPEP", "LIBLV3", "M7_FACE", "EYES"]
+      F1: ["CAPEP", "LIBLV3", "M8_FACE", "EYES"]
+      F2: ["CAPEP", "LIBLV3", "M9_FACE", "EYES"]
+      F3: ["CAPEP", "LIBLV3", "M10_FACE", "EYES"]
+      F4: ["CAPEP", "LIBLV3", "M11_FACE", "EYES"]
+      F5: ["CAPEP", "LIBLV3", "M12_FACE", "EYES"]
+      F6: ["CAPEP", "LIBLV3", "M13_FACE", "EYES"]
+
+### Deathwatch

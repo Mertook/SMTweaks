@@ -38,7 +38,7 @@ soldiers:
       throwing: 140
       strength: 110 # was 100 - adjusted for lost str bonus from armor
       psiStrength: 100
-      psiSkill: 100
+      psiSkill: 120
       melee: 150
     trainingStatCaps:
       tu: 80
@@ -48,7 +48,7 @@ soldiers:
       throwing: 110
       strength: 90
       psiStrength: 20
-      psiSkill: 100
+      psiSkill: 120
       melee: 120
     dogfightExperience:
       bravery: 10
@@ -64,81 +64,9 @@ soldiers:
 
   - update: STR_ULTRAMARINE             # Ultramarine Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
-    minStats:
-      tu: 95
-      stamina: 100
-      health: 100
-      bravery: 80
-      reactions: 95
-      firing: 125 # +15 min - Ultramarine bonus
-      throwing: 90
-      strength: 90
-      psiStrength: 0
-      psiSkill: 60
-      melee: 125 # +15 min - Ultramarine bonus
-    maxStats:
-      tu: 110
-      stamina: 120
-      health: 130
-      bravery: 100
-      reactions: 110
-      firing: 140 # +10 max - Ultramarine bonus
-      throwing: 120
-      strength: 100
-      psiStrength: 100
-      psiSkill: 75
-      melee: 140 # +10 max - Ultramarine bonus
-    statCaps:
-      tu: 120
-      stamina: 140
-      health: 140 #
-      bravery: 110
-      reactions: 120
-      firing: 160 # +10 - Ultramarine bonus
-      throwing: 140
-      strength: 110
-      psiStrength: 100
-      psiSkill: 100
-      melee: 160 # +10 - Ultramarine bonus
 
   - update: STR_ULTRAMARINE_PRIMARIS    # Ultramarine Primaris
     refNode: *STR_SOLDIER_DEATHWATCH
-    minStats:
-      tu: 95
-      stamina: 100
-      health: 100
-      bravery: 80
-      reactions: 95
-      firing: 125 # +15 min - Ultramarine bonus
-      throwing: 90
-      strength: 90
-      psiStrength: 0
-      psiSkill: 60
-      melee: 125 # +15 min - Ultramarine bonus
-    maxStats:
-      tu: 110
-      stamina: 120
-      health: 130
-      bravery: 100
-      reactions: 110
-      firing: 140 # +10 max - Ultramarine bonus
-      throwing: 120
-      strength: 100
-      psiStrength: 100
-      psiSkill: 75
-      melee: 140 # +10 max - Ultramarine bonus
-    statCaps:
-      tu: 120
-      stamina: 140
-      health: 140 #
-      bravery: 110
-      reactions: 120
-      firing: 160 # +10 - Ultramarine bonus
-      throwing: 140
-      strength: 110
-      psiStrength: 100
-      psiSkill: 100
-      melee: 160 # +10 - Ultramarine bonus
 
   - update: STR_IMPERIALF               # Imperial Fists Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
@@ -182,7 +110,7 @@ soldiers:
       throwing: 140
       strength: 110
       psiStrength: 100
-      psiSkill: 140 # +40 - Black Templar bonus
+      psiSkill: 160 # +40 - Black Templar bonus
       melee: 150
 
   - update: STR_BLACKT_PRIMARIS         # Black Templar Primaris
@@ -209,7 +137,7 @@ soldiers:
       throwing: 140
       strength: 110
       psiStrength: 100
-      psiSkill: 140 # +40 - Black Templar bonus
+      psiSkill: 160 # +40 - Black Templar bonus
       melee: 150
 
   - update: STR_WHITES                  # White Scars Firstborn
@@ -344,12 +272,12 @@ soldiers:
       health: 150 # +10 over DW
       bravery: 110
       reactions: 120
-      firing: 150
+      firing: 175
       throwing: 140
       strength: 110
       psiStrength: 100
-      psiSkill: 100
-      melee: 150
+      psiSkill: 150
+      melee: 175
     trainingStatCaps:
       tu: 80
       stamina: 100
@@ -358,7 +286,7 @@ soldiers:
       throwing: 110
       strength: 90
       psiStrength: 20
-      psiSkill: 100
+      psiSkill: 150
       melee: 120
     dogfightExperience:
       bravery: 10
@@ -395,42 +323,6 @@ soldiers:
       - STR_DW_U_RANK_3
       - STR_DW_U_RANK_4
       - STR_DW_U_RANK_5
-    minStats: # extremely high starting stats, lategame elites
-      tu: 105
-      stamina: 130
-      health: 135
-      bravery: 100
-      reactions: 105
-      firing: 145 # +10, UM bonus
-      throwing: 125
-      strength: 100
-      psiStrength: 0
-      psiSkill: 90
-      melee: 135
-    maxStats:
-      tu: 115
-      stamina: 135
-      health: 145
-      bravery: 110
-      reactions: 110
-      firing: 155 # +10, UM bonus
-      throwing: 135
-      strength: 105
-      psiStrength: 100
-      psiSkill: 95
-      melee: 145
-    statCaps:
-      tu: 120
-      stamina: 140
-      health: 150 # +10 over DW
-      bravery: 110
-      reactions: 120
-      firing: 160 # +10, UM bonus
-      throwing: 140
-      strength: 110
-      psiStrength: 100
-      psiSkill: 100
-      melee: 160 # +10, UM bonus
 
   - type: STR_IMPERIALF_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
@@ -468,42 +360,12 @@ soldiers:
   - type: STR_BLACKT_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_BT_UC
-    minStats: # extremely high starting stats, lategame elites
-      tu: 105
-      stamina: 130
-      health: 135
-      bravery: 100
-      reactions: 105
-      firing: 135
-      throwing: 125
-      strength: 100
-      psiStrength: 0
+    minStats:
       psiSkill: 130 # bonus devotion cap
-      melee: 135
     maxStats:
-      tu: 115
-      stamina: 135
-      health: 145
-      bravery: 110
-      reactions: 110
-      firing: 145
-      throwing: 135
-      strength: 105
-      psiStrength: 100
       psiSkill: 140 # bonus devotion cap
-      melee: 145
     statCaps:
-      tu: 120
-      stamina: 140
-      health: 150
-      bravery: 110
-      reactions: 120
-      firing: 150
-      throwing: 140
-      strength: 110
-      psiStrength: 100
-      psiSkill: 150 # bonus devotion cap
-      melee: 150
+      psiSkill: 180 # bonus devotion cap
     rankStrings:
       - STR_DW_BT_RANK_0
       - STR_DW_BT_RANK_1
@@ -520,42 +382,12 @@ soldiers:
   - type: STR_WHITES_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_WS_UC
-    minStats: # extremely high starting stats, lategame elites
-      tu: 105
-      stamina: 130
-      health: 135
-      bravery: 100
-      reactions: 105
-      firing: 135
-      throwing: 125
-      strength: 100
+    minStats:
       psiStrength: 120 # Stormseer, psyker
-      psiSkill: 90
-      melee: 135
     maxStats:
-      tu: 115
-      stamina: 135
-      health: 145
-      bravery: 110
-      reactions: 110
-      firing: 145
-      throwing: 135
-      strength: 105
       psiStrength: 140
-      psiSkill: 95
-      melee: 145
     statCaps:
-      tu: 120
-      stamina: 140
-      health: 150
-      bravery: 110
-      reactions: 120
-      firing: 150
-      throwing: 140
-      strength: 110
-      psiStrength: 150
-      psiSkill: 100
-      melee: 150
+      psiStrength: 160
     rankStrings:
       - STR_DW_WS_RANK_0
       - STR_DW_WS_RANK_1
@@ -573,42 +405,12 @@ soldiers:
   - type: STR_DARKANGELS_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_DA_UC
-    minStats: # extremely high starting stats, lategame elites
-      tu: 105
-      stamina: 130
-      health: 135
-      bravery: 100
-      reactions: 105
-      firing: 135
-      throwing: 125
-      strength: 100
+    minStats:
       psiStrength: 120 # Librarian, psyker
-      psiSkill: 90
-      melee: 135
     maxStats:
-      tu: 115
-      stamina: 135
-      health: 145
-      bravery: 110
-      reactions: 110
-      firing: 145
-      throwing: 135
-      strength: 105
       psiStrength: 140
-      psiSkill: 95
-      melee: 145
     statCaps:
-      tu: 120
-      stamina: 140
-      health: 150
-      bravery: 110
-      reactions: 120
-      firing: 150
-      throwing: 140
-      strength: 110
-      psiStrength: 150
-      psiSkill: 100
-      melee: 150
+      psiStrength: 160
     rankStrings:
       - STR_DW_DA_RANK_0
       - STR_DW_DA_RANK_1
@@ -634,41 +436,11 @@ soldiers:
       - STR_DW_SW_RANK_4
       - STR_DW_SW_RANK_5
     minStats: # extremely high starting stats, lategame elites
-      tu: 105
-      stamina: 130
       health: 145 # +10, SW bonus
-      bravery: 100
-      reactions: 105
-      firing: 135
-      throwing: 125
-      strength: 100
-      psiStrength: 0
-      psiSkill: 90
-      melee: 135
     maxStats:
-      tu: 115
-      stamina: 135
       health: 155 # +10, SW bonus
-      bravery: 110
-      reactions: 110
-      firing: 145
-      throwing: 135
-      strength: 105
-      psiStrength: 100
-      psiSkill: 95
-      melee: 145
     statCaps:
-      tu: 120
-      stamina: 140
-      health: 165 # +15, SW bonus
-      bravery: 110
-      reactions: 120
-      firing: 150
-      throwing: 140
-      strength: 110
-      psiStrength: 100
-      psiSkill: 100
-      melee: 150
+      health: 175 # +25, SW bonus
     skillIconSprite:  {mod: 40k, index: 8}
     skills: # Gives bless ability when combined with backpack item
       - STR_BLESS_SKILL

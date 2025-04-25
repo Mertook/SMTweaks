@@ -26,961 +26,24 @@ items:
     recoveryPoints: 2
     ufopediaType: STR_GENESEED_DETAILS
 
-  - &STR_BOLTER                             # Generic Bolter Reference
-    type: STR_RIFLE
-    dropoff: 8 # standard was 5 - Bolts are short range projectiles that fall off quickly outside of their standard range
-    weight: 28 # +8 weight, not meant for regular humans
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
-    oneHandedPenalty: 75 # was 50, let marines use them one-handed if they can handle the recoil and penalty
-    compatibleAmmo: # bolters can use boltpistol ammo
-      - STR_RIFLE_CLIP
-      - STR_RIFLE_CLIP_AP
-      - STR_RIFLE_CLIP_EX
-      - STR_RIFLE_CLIP_MC
-      - STR_PISTOL_CLIP
-      - STR_PISTOL_CLIP_AP
-      - STR_PISTOL_CLIP_EX
-      - STR_PISTOL_CLIP_MC
-    tags:
-      ITEM_RECOIL: 65 # +25 - harder requirement, not meant for regular humans
-  
-  - update: STR_RIFLE                       # Bolter (Godwyn)
-    refNode: *STR_BOLTER
-    bigSprite: 136
-    costBuy: 40000 # was 10000 - Now mid-tier weapon instead of starter gear
-    costSell: 10000
-    autoRange: 11 # v3.1 (13) - was 9 - weapon focused on aggressive mid range engagements
-    snapRange: 15 # was 14
-    aimRange: 0
-    accuracyAuto: 66 # was 66
-    accuracySnap: 80
-    accuracyAimed: 0
-    tuAimed: 0
-    tuSnap: 20 # was 24
-    tuAuto: 30 # was 40 - higher strength of marines allows greater RPM on bolters than light variants meant for regular humans
-    autoShots: 4 # was 3
-    requiresBuy:
-      - STR_MARINE_BOLTERS
-
-  - update: STR_RIFLEB                      # Bolter (Ultra)
-    refNode: *STR_BOLTER
-    bigSprite: 142
-    costBuy: 120000 # was 200000 - Higher end gear but not ridiculously costed
-    costSell: 30000
-    autoRange: 12 # v3.1 (14) was 9
-    snapRange: 16 # was 16
-    aimRange: 0
-    accuracyAuto: 75 # was 75
-    accuracySnap: 90 # was 90
-    accuracyAimed: 0
-    tuAimed: 0
-    tuSnap: 20 # was 22
-    tuAuto: 30 # was 35
-    autoShots: 4 # was 3
-    requiresBuy:
-      - STR_MARINE_BOLTERS_ADV
-
-  - update: STR_RIFLEC                      # Bolter (Stalker)
-    refNode: *STR_BOLTER
-    bigSprite: 145
-    ufopediaType: STR_RIFLEC # was pointed at Godwyn for some reason
-    costBuy: 200000 # was 200000 - Higher end gear
-    dropoff: 6 # was 4
-    autoRange: 8 # was 7
-    snapRange: 18 # was 16
-    aimRange: 24 # was 22 - starts falling behind original at 28 tiles
-    accuracyAuto: 66 # was 66
-    accuracySnap: 90 # was 80
-    accuracyAimed: 100 # was 100
-    tuAuto: 30 # was 40
-    tuSnap: 25 # was 25
-    tuAimed: 60 # was 60
-    autoShots: 2
-    oneHandedPenalty: 35 # was 50, scoped rifle penalty
-    requiresBuy:
-      - STR_MARINE_BOLTERS_ADV
-    tags:
-      ITEM_SNAP_ACCURACY_POWER_BONUS: 10
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 30
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
-
-  - update: STR_MCRIFLE                     # Bolter (MC) - Now TactStrat exclusive
-    refNode: *STR_BOLTER
-    bigSprite: 154
-    autoRange: 12 # was 11
-    snapRange: 16 # was 15
-    aimRange: 0
-    accuracyAuto: 75 # was 86 - MC weapon should be stronger but not easier to use
-    accuracySnap: 90 # was 100
-    accuracyAimed: 0
-    tuSnap: 18 # was 25
-    tuAuto: 28 # was 40
-    tuAimed: 0
-    autoShots: 5 # was 3
-
-  - type: STR_BOLTER_CARBINE                # Bolter Carbine
-    categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
-    requiresBuyBaseFunc: [IMPERIUM]
-    requiresBuy:
-      - STR_PRIMARIS_BOLTERS
-    battleType: 1
-    size: 0.3
-    costBuy: 40000
-    costSell: 10000
-    weight: 20
-    bigSprite: 205
-    floorSprite: 205
-    handSprite: 320
-    bulletSprite: {mod: 40k, index: 6}
-    bulletSpeed: 30
-    fireSound: {mod: 40k, index: 707} # light bolter ammo
-    compatibleAmmo: # uses light bolter ammo
-      - STR_LIGHT_BOLTER_AMMO
-      - STR_LIGHT_BOLTER_AMMO_MC
-      - STR_LIGHT_BOLTER_AMMO_PEN
-      - STR_LIGHT_BOLTER_AMMO_EX
-      - STR_LIGHT_BOLTPISTOL_AMMO
-      - STR_LIGHT_BOLTPISTOL_AMMO_MC
-      - STR_LIGHT_BOLTPISTOL_AMMO_AP
-      - STR_LIGHT_BOLTPISTOL_AMMO_EX
-    dropoff: 8
-    autoRange: 10 # godwyn 11
-    snapRange: 16 # godwyn 15
-    aimRange: 0
-    accuracyAuto: 66 # godwyn 66
-    accuracySnap: 75 # godwyn 80
-    accuracyAimed: 0
-    tuAuto: 35
-    tuSnap: 22
-    tuAimed: 0
-    confSnap:
-      shots: 2
-    autoShots: 6
-    twoHanded: true
-    oneHandedPenalty: 85 # +10 over regular bolters, lighter
-    tuLoad: 8 # Carbine bonus
-    tuUnload: 4 # Carbine bonus
-    invWidth: 2
-    invHeight: 3
-    armor: 300
-    attraction: 1
-    listOrder: 10294
-    tags:
-      REACTION_MULTIPLIER: 166 #multiplies base reaction score by this amount divided by 100
-      ITEM_RECOIL: 50 # Light bolter ammo, but built for Marines
-      ITEM_COLOR_CHANGES_WITH_AMMO: 15
-
-  - type: STR_BOLTER_CARBINE_SCOPE          # Bolter Carbine (Scoped)
-    categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
-    requiresBuyBaseFunc: [IMPERIUM]
-    requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
-    battleType: 1
-    bigSprite: 208
-    floorSprite: 208
-    handSprite: 328
-    bulletSprite: {mod: 40k, index: 6}
-    bulletSpeed: 30
-    fireSound: {mod: 40k, index: 707} # light bolter ammo
-    size: 0.3
-    costBuy: 80000
-    costSell: 20000
-    weight: 20
-    invWidth: 2
-    invHeight: 3
-    attraction: 1
-    armor: 300
-    compatibleAmmo: # uses light bolter ammo
-      - STR_LIGHT_BOLTER_AMMO
-      - STR_LIGHT_BOLTER_AMMO_MC
-      - STR_LIGHT_BOLTER_AMMO_PEN
-      - STR_LIGHT_BOLTER_AMMO_EX
-      - STR_LIGHT_BOLTPISTOL_AMMO
-      - STR_LIGHT_BOLTPISTOL_AMMO_MC
-      - STR_LIGHT_BOLTPISTOL_AMMO_AP
-      - STR_LIGHT_BOLTPISTOL_AMMO_EX
-    dropoff: 7 # -1, scoped
-    autoRange: 10 #
-    snapRange: 17
-    aimRange: 22
-    accuracyAuto: 66 # godwyn 66
-    accuracySnap: 75 # godwyn 80
-    accuracyAimed: 100
-    tuAuto: 30
-    tuSnap: 18
-    tuAimed: 22
-    autoShots: 4
-    twoHanded: true
-    oneHandedPenalty: 60 # -25 compared to regular, scope penalty
-    tuLoad: 8 # Carbine bonus
-    tuUnload: 4 # Carbine bonus
-    listOrder: 10294
-    tags:
-      REACTION_MULTIPLIER: 133 #multiplies base reaction score by this amount divided by 100 - scope penalty
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 15 # minor scoped weapon aimed shot bonus
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
-      ITEM_RECOIL: 50 # Light bolter ammo, but built for Marines
-      ITEM_COLOR_CHANGES_WITH_AMMO: 15
-
-  - update: STR_RIFLED                      # Bolt Rifle (Standard/Cawl)
-    refNode: *STR_BOLTER
-    bigSprite: 148
-    floorSprite: 148
-    handSprite: 288
-    requiresBuy:
-      - STR_PRIMARIS_BOLTERS
-    costBuy: 40000 # was 30000
-    weight: 34 # +6 over regular - larger battle rifle
-    oneHandedPenalty: 50 #
-    dropoff: 7 # -1 over regular - larger battle rifle
-    minRange: 4 #cumbersome, not suited to CQC
-    autoRange: 10 # was 7
-    snapRange: 17 # was 16
-    aimRange: 0
-    accuracyAuto: 66 # was 66
-    accuracySnap: 80 # was 80
-    accuracyAimed: 0
-    tuSnap: 26 # was 25
-    tuAuto: 33 # was 40
-    tuAimed: 0
-    confSnap:
-      shots: 2 # was 1
-    autoShots: 4 # was 5
-    tags:
-      ITEM_RECOIL: 75 # +10 over regular - larger battle rifle
-      REACTION_MULTIPLIER: 80
-      REACTION_PENALTY_KNEELING_BYPASS: 1
-
-  - type: STR_BOLTRIFLE_GL                  # Bolt Rifle (Combi-GL)
-    refNode: *STR_BOLTER
-    battleType: 1
-    armor: 300
-    bigSprite: 213
-    floorSprite: 213
-    handSprite: 416
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
-    bulletSprite: {mod: 40k, index: 6}
-    bulletSpeed: 30
-    invWidth: 2
-    invHeight: 3
-    requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
-    costBuy: 120000
-    costSell: 30000
-    listOrder: 10450
-    twoHanded: true
-    blockBothHands: false
-    oneHandedPenalty: 50
-    weight: 40 # +4 - GL attachment
-    clipSize: 0
-    dropoff: 7
-    minRange: 5 #cumbersome, not suited to CQC
-    autoRange: 10 # cawl 10
-    snapRange: 16 # cawl 17
-    aimRange: 16
-    accuracyAuto: 66 # cawl 66
-    accuracySnap: 80 # cawl 80
-    accuracyAimed: 80
-    tuAuto: 35 # cawl 33 for 4
-    tuSnap: 26 # cawl 26 for 2
-    tuAimed: 35
-    confSnap:
-      shots: 2 # cawl 2
-    autoShots: 4 # cawl 4
-    tuAimed: 40
-    ammo:
-      0:
-        compatibleAmmo: [STR_RIFLE_CLIP, STR_RIFLE_CLIP_MC, STR_RIFLE_CLIP_AP, STR_RIFLE_CLIP_EX, STR_PISTOL_CLIP, STR_PISTOL_CLIP_AP, STR_PISTOL_CLIP_EX, STR_PISTOL_CLIP_MC]
-      1:
-        compatibleAmmo: [STR_INCENDIARY_GRENADE40, STR_PENITENCE_GRENADE40, STR_KRAK_GRENADE40, STR_MELTA_GRENADE40]
-    confAimed:  # Grenade launcher 40mm
-      ammoSlot: 1  # Grenades
-      name: STR_LAUNCH_GRENADE
-      shortName: STR_LAUNCH_GRENADE_SHORT
-      arcing: true
-    tags:
-      ITEM_RECOIL: 75 # +10 over regular - larger battle rifle
-      REACTION_MULTIPLIER: 70 # bulky
-      REACTION_PENALTY_KNEELING_BYPASS: 1
-      ITEM_COLOR_CHANGES_WITH_AMMO: 15
-
-  - type: STR_BOLTRIFLE_STERNGUARD          # Bolt Rifle (Sternguard)
-    refNode: *STR_BOLTER
-    battleType: 1
-    armor: 300
-    bigSprite: 196
-    floorSprite: {mod: 40k, index: 204}
-    handSprite: {mod: 40k, index: 1576}
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
-    bulletSprite: {mod: 40k, index: 6}
-    bulletSpeed: 30
-    invWidth: 2
-    invHeight: 3
-    requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
-    costBuy: 120000
-    costSell: 30000
-    listOrder: 10450
-    twoHanded: true
-    blockBothHands: false
-    oneHandedPenalty: 50
-    weight: 34 # +6 over regular - larger battle rifle
-    clipSize: 0
-    dropoff: 7
-    minRange: 4 #cumbersome, not suited to CQC
-    autoRange: 12 # cawl 10
-    snapRange: 18 # cawl 17
-    aimRange: 0
-    accuracyAuto: 75 # cawl 66
-    accuracySnap: 90 # cawl 80
-    accuracyAimed: 0
-    tuAuto: 30 # cawl 33 for 4
-    tuSnap: 24 # cawl 26 for 2
-    tuAimed: 0
-    confSnap:
-      shots: 2 # cawl 2
-    autoShots: 4 # cawl 4
-    tags:
-      ITEM_RECOIL: 75 # +10 over regular - larger battle rifle
-      REACTION_MULTIPLIER: 80
-      REACTION_PENALTY_KNEELING_BYPASS: 1
-      ITEM_COLOR_CHANGES_WITH_AMMO: 15
-
-  - type: STR_BOLTRIFLE_SCOPE               # Bolt Rifle (Stalker)
-    refNode: *STR_BOLTER
-    battleType: 1
-    armor: 300
-    bigSprite: 199
-    floorSprite: 199
-    handSprite: 304
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
-    bulletSprite: {mod: 40k, index: 6}
-    bulletSpeed: 30
-    invWidth: 2
-    invHeight: 3
-    requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
-    costBuy: 120000
-    costSell: 30000
-    listOrder: 10450
-    twoHanded: true
-    blockBothHands: false
-    oneHandedPenalty: 50
-    weight: 34 # +6 over regular - larger battle rifle
-    clipSize: 0
-    dropoff: 6
-    minRange: 5 #cumbersome, not suited to CQC
-    autoRange: 9 # cawl 11
-    snapRange: 20 # cawl 17
-    aimRange: 26
-    accuracyAuto: 66 # cawl 66
-    accuracySnap: 90 # cawl 80
-    accuracyAimed: 100
-    tuAuto: 35 # cawl 30 for 4
-    tuSnap: 20 # cawl 26 for 2
-    tuAimed: 40
-    autoShots: 4 # cawl 4
-    tags:
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 33 # scoped weapon aimed shot bonus
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
-      ITEM_RECOIL: 75 # +10 over regular - larger battle rifle
-      REACTION_MULTIPLIER: 70 # scope penalty
-      REACTION_PENALTY_KNEELING_BYPASS: 1
-      ITEM_COLOR_CHANGES_WITH_AMMO: 15
-
-  - type: STR_BOLTRIFLE_MC                  # Bolt Rifle (Mastercrafted)
-    refNode: *STR_BOLTER
-    battleType: 1
-    armor: 300
-    bigSprite: 202
-    floorSprite: 202
-    handSprite: 312
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
-    bulletSprite: {mod: 40k, index: 6}
-    bulletSpeed: 30
-    invWidth: 2
-    invHeight: 3
-    costSell: 30000
-    listOrder: 10450
-    twoHanded: true
-    blockBothHands: false
-    oneHandedPenalty: 50
-    weight: 34 # +6 over regular - larger battle rifle
-    clipSize: 0
-    dropoff: 7
-    minRange: 3 #cumbersome, not suited to CQC
-    autoRange: 14 # cawl 11
-    snapRange: 19 # cawl 17
-    aimRange: 0
-    accuracyAuto: 75 # cawl 66
-    accuracySnap: 90 # cawl 80
-    accuracyAimed: 0
-    tuAuto: 30 # cawl 30 for 4
-    tuSnap: 22 # cawl 26 for 2
-    tuAimed: 0
-    confSnap:
-      shots: 2 # cawl 2
-    autoShots: 5 # cawl 4
-    tags:
-      ITEM_RECOIL: 75 # +10 over regular - larger battle rifle
-      ITEM_COLOR_CHANGES_WITH_AMMO: 15
-
-  - type: STR_HEAVY_BOLTRIFLE               # Heavy Bolt Rifle
-    battleType: 1
-    armor: 300
-    weight: 44 # +10 over regular Cawl
-    bigSprite: 179
-    floorSprite: 179
-    handSprite: 272
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
-    bulletSprite: {mod: 40k, index: 6}
-    bulletSpeed: 30
-    twoHanded: true
-    blockBothHands: true
-    invWidth: 2
-    invHeight: 3
-    costBuy: 150000
-    costSell: 50000
-    listOrder: 10450
-    requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
-    clipSize: 0
-    compatibleAmmo: # can only load heavy boltrifle drums
-      - STR_BOLTRIFLE_DRUM
-      - STR_BOLTRIFLE_DRUM_AP
-      - STR_BOLTRIFLE_DRUM_EX
-      - STR_BOLTRIFLE_DRUM_MC
-    dropoff: 7
-    minRange: 6 #cumbersome, not suited to CQC
-    autoRange: 14 # cawl 11
-    snapRange: 19 # cawl 17
-    aimRange: 0
-    accuracyAuto: 66 # cawl 66
-    accuracySnap: 80 # cawl 80
-    accuracyAimed: 0
-    tuAuto: 33 # cawl 30 for 4
-    tuSnap: 26 # cawl 26 for 2
-    tuAimed: 0
-    tuLoad: 20 # +5, bulky drum mags
-    confSnap:
-      shots: 3 # cawl 2
-    autoShots: 6 # cawl 4
-    tags:
-      ITEM_RECOIL: 85 # +10 over cawl - extra large battle rifle
-      ITEM_IS_HEAVY_WEAPON: 1
-      REACTION_MULTIPLIER: 66 # bulky
-      REACTION_PENALTY_KNEELING_BYPASS: 1
-      ITEM_COLOR_CHANGES_WITH_AMMO: 15
-
-  - update: STR_PISTOL                      # BoltPistol (Ceres)
-    bigSprite: 273
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
-    dropoff: 9 # was 6
-    autoRange: 0
-    snapRange: 11 # was 11
-    aimRange: 0
-    accuracyAuto: 0
-    accuracySnap: 75 # was 75
-    accuracyAimed: 0
-    tuAuto: 0
-    tuSnap: 18 # was 21
-    tuAimed: 0
-    tuLoad: 8 # pistol bonus
-    tuUnload: 4 # pistol bonus
-    requiresBuy:
-      - STR_BOLTPISTOL_REQ
-
-  - update: STR_PISTOLB                     # BoltPistol (Ultra)
-    bigSprite: 275
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
-    costBuy: 75000 # was 150k
-    dropoff: 9 # was 6
-    autoRange: 7 # add 2shot autofire
-    snapRange: 11 # was 11
-    aimRange: 0
-    accuracyAuto: 66
-    accuracySnap: 90 # was 90
-    accuracyAimed: 0
-    tuAuto: 25
-    tuSnap: 18 # was 21
-    tuAimed: 0
-    autoShots: 2
-    tuLoad: 8 # pistol bonus
-    tuUnload: 4 # pistol bonus
-    requiresBuy:
-      - STR_BOLTPISTOL_ADV_REQ
-
-  - update: STR_MCPISTOL                    # BoltPistol (MC) - Now AssStrat exclusive
-    bigSprite: 281
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
-    dropoff: 9 # was 6
-    autoRange: 8 # add 3shot autofire
-    snapRange: 11 # was 12
-    aimRange: 0
-    accuracyAuto: 66
-    accuracySnap: 90 # was 105 - MC weapons should be stronger but not easier to use
-    accuracyAimed: 0
-    tuAuto: 22
-    tuSnap: 16 # was 21
-    tuAimed: 0
-    autoShots: 3
-    tuLoad: 2 # MCpistol bonus
-    tuUnload: 2 # MCpistol bonus
-    tags:
-      REACTION_MULTIPLIER: 250 # was 200 - MCpistol bonus
-
-  - update: STR_PISTOLS                     # BoltPistol (Spectris)
-    bigSprite: 277
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
-    costBuy: 75000 # was 150k
-    dropoff: 8 # -1 for scope - was 5
-    autoRange: 0
-    snapRange: 14
-    aimRange: 19 # was 17
-    accuracyAuto: 0
-    accuracySnap: 80 # was 75
-    accuracyAimed: 100
-    tuAuto: 0
-    tuSnap: 20 # was 22
-    tuAimed: 35 # was 35
-    tuLoad: 8 # pistol bonus
-    tuUnload: 4 # pistol bonus
-    requiresBuy:
-      - STR_MARINE_BOLTERS_ADV
-    tags:
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 15 # was 25
-
-  - update: STR_PISTOLH                     # BoltPistol (Tigrus Original)
+  - type: STR_PISTOLH                       # BoltPistol (Tigrus Original)
     ufopediaType: STR_PISTOLH_SM
     requires: # Only for Alpharius Infiltrators
       - STR_GENERALLOCK
     requiresBuy:
       - STR_GENERALLOCK
 
-  - type: STR_PISTOLH_SM                    # BoltPistol (Tigrus SM)
-    categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
-    size: 0.2
-    requiresBuy:
-      - STR_MARINE_BOLTERS_ADV
-    requiresBuyBaseFunc: [TRADE]
-    costBuy: 150000
-    costSell: 1000
-    armor: 300 #to avoid item pile destruction
-    listOrder: 10130
-    weight: 20
-    bigSprite: 279
-    floorSprite: {mod: 40k, index: 207}
-    handSprite: {mod: 40k, index: 704}
-    bulletSprite: {mod: 40k, index: 6}
-    bulletSpeed: 50
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
-    battleType: 1
-    compatibleAmmo: # doesn't get rifle ammo
-      - STR_PISTOL_CLIP
-      - STR_PISTOL_CLIP_AP
-      - STR_PISTOL_CLIP_EX
-      - STR_PISTOL_CLIP_MC
-    twoHanded: false
-    invWidth: 2
-    invHeight: 3
-    bulletSpeed: 30
-    attraction: 1
-    dropoff: 8 # was 5
-    autoRange: 10 # was 7
-    snapRange: 13 # was 11
-    aimRange: 17 # was 17
-    accuracyAuto: 60 # was 55
-    accuracySnap: 75
-    accuracyAimed: 90 # was 100
-    tuSnap: 20 # was 22
-    tuAimed: 35 # was 35
-    tuAuto: 33 # was 33
-    autoShots: 3
-    tuLoad: 8 # pistol bonus
-    tuUnload: 4 # pistol bonus
-    tags:
-      ITEM_RECOIL: 55 # harder requirement, hybrid weapon
-      REACTION_MULTIPLIER: 150 # was 200 - carbine rather than pure pistol
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 15 # was 25
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
-      ITEM_COLOR_CHANGES_WITH_AMMO: 15
+  - type: STR_PRIMARIS_VETARMOR             # Primaris Sternguard/Bladeguard Armor
+    ufopediaType: STR_MKX_VETS_LV3_UC
+    size: 0.3
+    costSell: 50000
+    listOrder: 5457
 
-  - type: STR_PRIMARIS_HEAVY_BOLT_PISTOL    # BoltPistol (Heavy)
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
-    requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
-    compatibleAmmo:
-      - STR_PISTOL_CLIP
-      - STR_PISTOL_CLIP_AP
-      - STR_PISTOL_CLIP_EX
-      - STR_PISTOL_CLIP_MC
-    dropoff: 9
-    autoRange: 0
-    snapRange: 14
-    aimRange: 0
-    autoShots: 0
-    accuracyAuto: 0
-    accuracyAimed: 0
-    accuracySnap: 80
-    tuAimed: 0
-    tuAuto: 0
-    tuSnap: 18
-    tuLoad: 10
-    invWidth: 2 # was 1 ???
-    invHeight: 2
-
-  - type: STR_ABSOLVOR_PISTOL               # Boltpistol (Absolvor)
-    categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
-    battleType: 1
-    size: 0.2
-    requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
-    costBuy: 90000
-    costSell: 30000
-    armor: 300
-    listOrder: 10100
-    weight: 20
-    bigSprite: 171
-    floorSprite: 171
-    handSprite: 240
-    bulletSprite: {mod: 40k, index: 6}
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
-    compatibleAmmo: # doesn't use regular pistol ammo
-      - STR_ABSOLVOR_AMMO
-    twoHanded: false
-    invWidth: 1
-    invHeight: 3
-    bulletSpeed: 30
-    attraction: 1
-    dropoff: 8 # regular pistols 10 - bigger rifle-size profile + larger bolts
-    autoRange: 0 #
-    snapRange: 14 # ultra 11
-    aimRange: 0 #
-    accuracyAuto: 0 #
-    accuracySnap: 80 #
-    accuracyAimed: 0 #
-    tuAuto: 0 #
-    tuSnap: 20 #
-    tuAimed: 0 #
-    autoShots: 0
-    tuLoad: 10 # pistol bonus
-    tuUnload: 4 # pistol bonus
-    tags:
-      ITEM_RECOIL: 60 # high requirement - Primaris + heavy pistol
-      REACTION_MULTIPLIER: 200 # pistol
-
-  - type: STR_ABSOLVOR_AMMO                 # Absolvor Ammo
-    categories: [STR_CAT_BOLTER]
-    battleType: 2
-    size: 0.05
-    costBuy: 1000
-    costSell: 500
-    requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
-    weight: 3
-    armor: 300
-    listOrder: 10101
-    bigSprite: 172
-    floorSprite: {mod: 40k, index: 12}
-    handSprite: {mod: 40k, index: 464}
-    hitSound: {mod: 40k, index: 708}
-    hitAnimation:
-      mod: 40k
-      index: 120
-    explosionSpeed: 3
-    power: 80 # +5 over regular bolter ammo
-    damageType: 1
-    damageAlter: # bolter values as base
-      RandomType: 7
-      ToArmorPre: 0.15
-      ArmorEffectiveness: 0.5 # comparable AP to krak
-      ToArmor: 0.15
-      ToHealth: 1.0 # between regular and krak
-      ToStun: 0.4
-      ToEnergy: 0.3
-      ToWound: 0.2
-      RandomWound: false
-    clipSize: 8
-    invWidth: 1
-    invHeight: 1
-
-  - type: STR_ABSOLVOR_AMMO_MC              # Absolvor Pistol Mastercrafted Ammo        ## Custom ammo
-    categories: [STR_CAT_BOLTER]
-    battleType: 2
-    size: 0.05
-    weight: 3
-    armor: 300
-    listOrder: 10102
-    bigSprite: 212
-    floorSprite: {mod: 40k, index: 12}
-    handSprite: {mod: 40k, index: 464}
-    hitSound: {mod: 40k, index: 708}
-    hitAnimation:
-      mod: 40k
-      index: 120
-    explosionSpeed: 3
-    power: 80 # +5 over regular bolter ammo
-    damageType: 1
-    damageAlter: # bolter values as base
-      RandomType: 7
-      ToArmorPre: 0.25
-      ArmorEffectiveness: 0.5 # comparable AP to krak
-      ToArmor: 0.20
-      ToHealth: 1.1
-      ToStun: 0.4
-      ToEnergy: 0.3
-      ToWound: 0.2
-      RandomWound: false
-    clipSize: 8
-    invWidth: 1
-    invHeight: 1
-
-  - type: STR_ABSOLVOR_AMMO_MC_DW           # Absolvor Pistol Mastercrafted Ammo (DW)   ## Custom ammo
-    categories: [STR_CAT_BOLTER]
-    battleType: 2
-    size: 0.05
-    weight: 3
-    recover: false
-    armor: 300
-    listOrder: 10102
-    bigSprite: 212
-    floorSprite: {mod: 40k, index: 12}
-    handSprite: {mod: 40k, index: 464}
-    hitSound: {mod: 40k, index: 708}
-    hitAnimation:
-      mod: 40k
-      index: 120
-    explosionSpeed: 3
-    power: 80 # +5 over regular bolter ammo
-    damageType: 1
-    damageAlter: # bolter values as base
-      RandomType: 7
-      ToArmorPre: 0.25
-      ArmorEffectiveness: 0.5 # comparable AP to krak
-      ToArmor: 0.20
-      ToHealth: 1.1
-      ToStun: 0.4
-      ToEnergy: 0.3
-      ToWound: 0.2
-      RandomWound: false
-    clipSize: 8
-    invWidth: 1
-    invHeight: 1
-
-  - update: STR_BOLTPISTOL_DEAZ             # Light Boltpistol (Deaz)
-    bigSprite: 263
-    dropoff: 9 # was 6
-    autoRange: 0
-    snapRange: 11 # was 11
-    aimRange: 0
-    accuracyAuto: 0
-    accuracySnap: 75
-    accuracyAimed: 0
-    tuAuto: 0
-    tuSnap: 20
-    tuAimed: 0
-    tuLoad: 8 # pistol bonus
-    tuUnload: 4 # pistol bonus
-    compatibleAmmo: # make sure they can use all the appropriate ammo
-      - STR_LIGHT_BOLTPISTOL_AMMO
-      - STR_LIGHT_BOLTPISTOL_AMMO_MC
-      - STR_LIGHT_BOLTPISTOL_AMMO_AP
-      - STR_LIGHT_BOLTPISTOL_AMMO_EX
-    tags:
-      ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
-
-  - update: STR_BOLTPISTOL_LIGHT_ULTRA      # Light Boltpistol (Ultra)
-    bigSprite: 265
-    listOrder: 10091 # move to just under deaz
-    costBuy: 50000 # was 75k - trainee weapon
-    dropoff: 9 # was 6
-    autoRange: 0
-    snapRange: 12 # was 11
-    aimRange: 0
-    accuracyAuto: 0
-    accuracySnap: 90 # (105 MC + 75 normal) / 2
-    accuracyAimed: 0
-    tuAuto: 0
-    tuSnap: 20
-    tuAimed: 0
-    tuLoad: 8 # pistol bonus
-    tuUnload: 4 # pistol bonus
-    compatibleAmmo: # make sure they can use all the appropriate ammo
-      - STR_LIGHT_BOLTPISTOL_AMMO
-      - STR_LIGHT_BOLTPISTOL_AMMO_MC
-      - STR_LIGHT_BOLTPISTOL_AMMO_AP
-      - STR_LIGHT_BOLTPISTOL_AMMO_EX
-    tags:
-      ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
-
-  - update: STR_MC_BOLTPISTOL_DEAZ          # Light Boltpistol (MC)
-    bigSprite: 267
-    listOrder: 10092 # move to just under ultra
-    dropoff: 8 # was 6
-    autoRange: 0
-    snapRange: 13 # was 12
-    aimRange: 0
-    accuracyAuto: 0
-    accuracySnap: 105
-    accuracyAimed: 0
-    tuAuto: 0
-    tuSnap: 20
-    tuAimed: 0
-    tuLoad: 2 # MC pistol bonus
-    tuUnload: 2 # pistol bonus
-    compatibleAmmo: # make sure they can use all the appropriate ammo
-      - STR_LIGHT_BOLTPISTOL_AMMO
-      - STR_LIGHT_BOLTPISTOL_AMMO_MC
-      - STR_LIGHT_BOLTPISTOL_AMMO_AP
-      - STR_LIGHT_BOLTPISTOL_AMMO_EX
-    tags:
-      ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
-
-  - update: STR_BOLTER_ENFORCER             # Light Bolter (Enforcer - Doublesnap)
-    bigSprite: 230
-    armor: 300
-    dropoff: 8 # was 6
-    autoRange: 0
-    snapRange: 17 # was 14 - hybrid snap/auto
-    aimRange: 0
-    accuracyAuto: 0
-    accuracySnap: 72 # was 80
-    accuracyAimed: 0
-    tuAuto: 0
-    tuSnap: 30 # was 40 - make Enforcer a little more exciting over the Locke
-    tuAimed: 0
-    autoShots: 0
-    confSnap:
-      shots: 2
-    compatibleAmmo: # make sure they can use all the appropriate ammo
-      - STR_LIGHT_BOLTER_AMMO
-      - STR_LIGHT_BOLTER_AMMO_MC
-      - STR_LIGHT_BOLTER_AMMO_PEN
-      - STR_LIGHT_BOLTER_AMMO_EX
-      - STR_LIGHT_BOLTER_AMMO_AP
-      - STR_LIGHT_BOLTER_AMMO_INF
-      - STR_LIGHT_BOLTPISTOL_AMMO
-      - STR_LIGHT_BOLTPISTOL_AMMO_MC
-      - STR_LIGHT_BOLTPISTOL_AMMO_AP
-      - STR_LIGHT_BOLTPISTOL_AMMO_EX
-    tags:
-      ITEM_RECOIL: 25 # was 25, now matches min Neophyte strength & requirement of pistol + offhand
-      REACTION_MULTIPLIER: 150 # carbine bonus - was 100 (default)
-
-  - update: STR_BOLTER_LOCKE                # Light Bolter (Locke - Standard)
-    bigSprite: 233
-    armor: 300
-    dropoff: 8 # was 6
-    autoRange: 11 # was 7
-    snapRange: 17 # was 14
-    aimRange: 0
-    accuracyAuto: 66 # was 66
-    accuracySnap: 80
-    accuracyAimed: 0
-    tuSnap: 24 # was 25
-    tuAuto: 35 # was 40
-    tuAimed: 0
-    autoShots: 3
-    compatibleAmmo: # make sure they can use all the appropriate ammo
-      - STR_LIGHT_BOLTER_AMMO
-      - STR_LIGHT_BOLTER_AMMO_MC
-      - STR_LIGHT_BOLTER_AMMO_PEN
-      - STR_LIGHT_BOLTER_AMMO_EX
-      - STR_LIGHT_BOLTER_AMMO_AP
-      - STR_LIGHT_BOLTER_AMMO_INF
-      - STR_LIGHT_BOLTPISTOL_AMMO
-      - STR_LIGHT_BOLTPISTOL_AMMO_MC
-      - STR_LIGHT_BOLTPISTOL_AMMO_AP
-      - STR_LIGHT_BOLTPISTOL_AMMO_EX
-    tags:
-      ITEM_RECOIL: 25 # was 25
-
-  - update: STR_BOLTER_LIGHT_ULTRA          # Light Bolter (Ultra)
-    bigSprite: 236
-    listOrder: 10293 # move to just under locke
-    costBuy: 50000 # was 100k - trainee weapon
-    dropoff: 8 # was 6
-    autoRange: 11 # was 7
-    snapRange: 17 # was 14
-    aimRange: 0
-    accuracyAuto: 75
-    accuracySnap: 90
-    accuracyAimed: 0
-    tuSnap: 22 # was 25
-    tuAuto: 33 # was 40
-    tuAimed: 0
-    autoShots: 3
-    compatibleAmmo: # make sure they can use all the appropriate ammo
-      - STR_LIGHT_BOLTER_AMMO
-      - STR_LIGHT_BOLTER_AMMO_MC
-      - STR_LIGHT_BOLTER_AMMO_PEN
-      - STR_LIGHT_BOLTER_AMMO_EX
-      - STR_LIGHT_BOLTER_AMMO_AP
-      - STR_LIGHT_BOLTER_AMMO_INF
-      - STR_LIGHT_BOLTPISTOL_AMMO
-      - STR_LIGHT_BOLTPISTOL_AMMO_MC
-      - STR_LIGHT_BOLTPISTOL_AMMO_AP
-      - STR_LIGHT_BOLTPISTOL_AMMO_EX
-    tags:
-      ITEM_RECOIL: 25 # was 25
-
-  - update: STR_MC_BOLTER_DEAZ              # Light Bolter (MC)
-    bigSprite: 239
-    listOrder: 10294 # move to just under locke
-    dropoff: 8 # was 6
-    autoRange: 12 # was 10
-    snapRange: 18 # was 15
-    aimRange: 0
-    accuracyAimed: 0
-    accuracySnap: 100
-    accuracyAuto: 86
-    tuAimed: 0
-    tuSnap: 25
-    tuAuto: 35 # was 40
-    autoShots: 3
-    compatibleAmmo: # make sure they can use all the appropriate ammo
-      - STR_LIGHT_BOLTER_AMMO
-      - STR_LIGHT_BOLTER_AMMO_MC
-      - STR_LIGHT_BOLTER_AMMO_PEN
-      - STR_LIGHT_BOLTER_AMMO_EX
-      - STR_LIGHT_BOLTER_AMMO_AP
-      - STR_LIGHT_BOLTER_AMMO_INF
-      - STR_LIGHT_BOLTPISTOL_AMMO
-      - STR_LIGHT_BOLTPISTOL_AMMO_MC
-      - STR_LIGHT_BOLTPISTOL_AMMO_AP
-      - STR_LIGHT_BOLTPISTOL_AMMO_EX
-    tags:
-      ITEM_RECOIL: 25 # was 25
-
-  - update: STR_ASSC                        # Assault Cannon
-    weight: 90 # was 100 - +15 when loaded
-    sprayWaypoints: 2 # was 2
-    dropoff: 6 # was 4
-    autoRange: 12 # was 15
-    snapRange: 0
-    aimRange: 15 #
-    tuAimed: 35 # was 40
-    tuAuto: 60 # was 60
-    confAimed:
-      shots: 4 # was 4
-      followProjectiles: false
-    confAuto:
-      shots: 12 # was 10
-      followProjectiles: false
-    tags:
-      ITEM_IS_HEAVY_WEAPON: 5 # harsh penalty, meant for terminators
-      ITEM_RECOIL: 130 # harsh requirement, meant for terminators
-
-  - update: STR_ASSC_CLIP                   # Assault Cannon Ammo
-    power: 100
-    damageType: 1
-    clipSize: 100
-    damageAlter: 
-      ToArmorPre: 0.15 # was 0.1
-      ArmorEffectiveness: 0.85
-      ToArmor: 0.15 # was 0.1
-      ToHealth: 1.0
-      ToStun: 0.2 # was 0.5
+  - type: STR_MKX_ASS_ARMOR                 # Assault Intercessor Armor
+    ufopediaType: STR_MKX_ASS_LV1_UC
+    size: 0.3
+    costSell: 40000
+    listOrder: 5465
 
   - type: STR_PRIMARIS_HEAVY_BOLT_RIFLE_DRUM
     requires:
@@ -1232,7 +295,7 @@ items:
     tags:
       REACTION_MULTIPLIER: 200 # pistol
 
-  - update: STR_ELECTRO_FLARE               # Electroflare
+  - type: STR_ELECTRO_FLARE                 # Electroflare
     costPrime:
       time: 3
     flatPrime:
@@ -1242,7 +305,7 @@ items:
     flatUnprime:
       time: true
 
-  - update: STR_HIGH_EXPLOSIVE              # Meltabomb
+  - type: STR_HIGH_EXPLOSIVE                # Meltabomb
     bigSprite: 102
     invWidth: 2
     invHeight: 2 # was 2
@@ -1256,12 +319,12 @@ items:
     costUnprime:
       time: 5
 
-  - update: STR_SMOKE_GRENADE               # Smoke Grenade
+  - type: STR_SMOKE_GRENADE                 # Smoke Grenade
     costThrow:
       time: 25 # was 55
       energy: 5
 
-  - update: STR_SMOKE_BOMB                  # Smokebomb
+  - type: STR_SMOKE_BOMB                    # Smokebomb
     requiresBuy: # allow TactStrat to buy smokebombs
       - STR_SMOKE
       - STR_SMOKE_BOMB_UNLOCK
@@ -1278,7 +341,7 @@ items:
     costUnprime:
       time: 5
 
-  - update: AUX_CROZIUS                     # Crozius                                       ## Restricted Item
+  - type: AUX_CROZIUS                       # Crozius                                       ## Restricted Item
     weight: 15
     recover: true
     dropoff: 4
@@ -1432,119 +495,68 @@ items:
       ITEM_DOESNT_HURT_USER: 1
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
 
-  - update: AUX_MORTAR                      # Terminator Cyclone Launcher
-    weight: 40 # fixed weapon ignores this?
-    clipSize: 12 # was 6
-    dropoff: 4
-    autoRange: 10
-    snapRange: 0
-    aimRange: 15
-    confAuto:
-      name: STR_LAUNCH_SALVO_AUTO
-      shots: 4
-    costAuto:
-      time: 55 # was 80 for 3
-    confAimed:
-      name: STR_LAUNCH_SALVO
-      shots: 2
-    costAimed:
-      time: 30
-    accuracyAuto: 33
-    accuracyAimed: 66
-    accuracyMultiplier:
-      firing: 0.8 # was 0.8
-      throwing: 0.8 # was 0.8
-    power: 120 # was 100
-    damageType: 3
-    damageAlter: #high explosive
-      RandomType: 2 # 50-150
-      ArmorEffectiveness: 0.8 # was 0.9
-      ToHealth: 1.0 # was 1.0
-      ToArmorPre: 0.15 # was 0.1
-      ToArmor: 0.2
-      ToStun: 0.3 # was 0.6
-      ToEnergy: 0.2 # was 0.4
-      ToTime: 0.0 # was 0.3
-      ToTile: 0.75
-      ToItem: 0.25
-      RadiusReduction: 3.0 # minor power dropoff from center
-      FixRadius: 8 # was 10
-    arcingShot: true
-    minRange: 5
-    specialUseEmptyHand: true
-    # Given power fist
-    meleeSound: {mod: 40k, index: 710}
-    meleeHitSound: {mod: 40k, index: 772}
-    meleeAnimation: {mod: 40k, index: 28}
-    meleeType: 5
-    power: 40
-    meleeBonus:
-      strength: 1.5
-    meleeAlter:
-      ArmorEffectiveness: 0.7
-      ToArmorPre: 0.2
-      ToHealth: 0.9
-    accuracyMelee: 70
-    meleeMultiplier:
-      melee: 0.7
-      strength: 0.3
-    costMelee:
-      time: 25
-      energy: 4
-    flatMelee:
-      time: true
-      energy: true
-
-  - type: STR_GRAV_MORTAR                   # Gravis Fragstorm Launcher
-    battleType: 1
-    weight: 0
-    bigSprite: {mod: 40k, index: 262}
-    bulletSprite: {mod: 40k, index: 4}
-    fireSound: {mod: 40k, index: 2}
-    twoHanded: false
-    invWidth: 2
-    invHeight: 3
-    recover: false
-    fixedWeapon: true
-    specialIconSprite: {mod: 40k, index: 2}
-    specialUseEmptyHand: false
-    confAuto:
-      name: STR_LAUNCH_SALVO_AUTO
-      shots: 3
-    costAuto:
-      time: 60
-    confAimed:
-      name: STR_LAUNCH_FRAGS
-      shots: 1
-    costAimed:
-      time: 30
-    autoRange: 15
-    snapRange: 0
-    aimRange: 20
-    accuracyAuto: 40
-    accuracyAimed: 66
-    accuracyMultiplier:
-      firing: 0.6 # was 0.8
-      throwing: 0.6 # was 0.8
-    dropoff: 4
-    arcingShot: true
-    minRange: 5
-    clipSize: 6
-    power: 100 # was 100
-    damageType: 3
-    damageAlter: #high explosive
-      ResistType: 1 # frags deal standard damage
-      ToArmorPre: 0.1 # was 0.1
-      RandomType: 6
-      ArmorEffectiveness: 0.9 # was 0.9
-      ToHealth: 1.0 # was 1.0
-      ToArmor: 0.2
-      ToStun: 0.6 # was 0.6
-      ToEnergy: 0.4 # was 0.4
-      ToTime: 0.3 # was 0.3
-      ToTile: 0.25
-      ToItem: 0.25
-      FixRadius: 10 # was 10
+  - type: AUX_MORTAR                        # Terminator Cyclone Launcher
+    # weight: 40 # fixed weapon ignores this?
+    # clipSize: 12 # was 6
+    # dropoff: 4
+    # autoRange: 10
+    # snapRange: 0
+    # aimRange: 15
+    # confAuto:
+      # name: STR_LAUNCH_SALVO_AUTO
+      # shots: 4
+    # costAuto:
+      # time: 55 # was 80 for 3
+    # confAimed:
+      # name: STR_LAUNCH_SALVO
+      # shots: 2
+    # costAimed:
+      # time: 30
+    # accuracyAuto: 33
+    # accuracyAimed: 66
+    # accuracyMultiplier:
+      # firing: 0.8 # was 0.8
+      # throwing: 0.8 # was 0.8
+    # power: 120 # was 100
+    # damageType: 3
+    # damageAlter: #high explosive
+      # RandomType: 2 # 50-150
+      # ArmorEffectiveness: 0.8 # was 0.9
+      # ToHealth: 1.0 # was 1.0
+      # ToArmorPre: 0.15 # was 0.1
+      # ToArmor: 0.2
+      # ToStun: 0.3 # was 0.6
+      # ToEnergy: 0.2 # was 0.4
+      # ToTime: 0.0 # was 0.3
+      # ToTile: 0.75
+      # ToItem: 0.25
+      # RadiusReduction: 3.0 # minor power dropoff from center
+      # FixRadius: 8 # was 10
+    # arcingShot: true
+    # minRange: 5
+    # specialUseEmptyHand: true
+    # # Given power fist
+    # meleeSound: {mod: 40k, index: 710}
+    # meleeHitSound: {mod: 40k, index: 772}
+    # meleeAnimation: {mod: 40k, index: 28}
+    # meleeType: 5
+    # power: 40
+    # meleeBonus:
+      # strength: 1.5
+    # meleeAlter:
+      # ArmorEffectiveness: 0.7
+      # ToArmorPre: 0.2
+      # ToHealth: 0.9
+    # accuracyMelee: 70
+    # meleeMultiplier:
+      # melee: 0.7
+      # strength: 0.3
+    # costMelee:
+      # time: 25
+      # energy: 4
+    # flatMelee:
+      # time: true
+      # energy: true
 
 
   - type: STR_ACCEL_AUTOCANNON_FIXED        # Accelerator Autocannon (Omnis Armor)
@@ -1724,7 +736,7 @@ items:
     powerRangeReduction: 5
     powerRangeThreshold: 25.0 #plasma range penalty
 
-  - update: STR_SMALL_ROCKET                # Small Frag Missile
+  - type: STR_SMALL_ROCKET                  # Small Frag Missile
     size: 0.1 # was 0.2
     weight: 3 # was 5
     costBuy: 3000
@@ -1732,20 +744,20 @@ items:
     armor: 300
     power: 95
 
-  - update: STR_LARGE_ROCKET                # Small Krak Missile
+  - type: STR_LARGE_ROCKET                  # Small Krak Missile
     size: 0.1 # was 0.2
     weight: 3 # was 6
     costBuy: 4000
     costSell: 2000
     armor: 300
 
-  - update: STR_INCENDIARY_ROCKET           # Incendiary missile
+  - type: STR_INCENDIARY_ROCKET             # Incendiary missile
     size: 0.1 # was 0.2
     weight: 3 # was 5
     costBuy: 3000
     armor: 300
 
-  - update: STR_HEAVY_ROCKET_HE             # Large Frag Missile
+  - type: STR_HEAVY_ROCKET_HE               # Large Frag Missile
     size: 0.1 # was 0.3
     weight: 8 # was 15
     costBuy: 6000 # was 20k
@@ -1753,7 +765,7 @@ items:
     damageAlter:
       ToItem: 0.25 # shrapnel
 
-  - update: STR_HEAVY_ROCKET_KRAK           # Large Krak Missile
+  - type: STR_HEAVY_ROCKET_KRAK             # Large Krak Missile
     size: 0.1 # was 0.3
     weight: 8 # was 15
     costBuy: 8000 # was 40k!
@@ -1761,7 +773,7 @@ items:
     requiresBuy:
       - STR_LASER_WEAPONS #Weapon Req - was Midtier
 
-  - update: STR_HEAVY_ROCKET                # Melta Missile
+  - type: STR_HEAVY_ROCKET                  # Melta Missile
     size: 0.1 # was 0.3
     weight: 8 # was 15
     costBuy: 16000 # was 80k!!
@@ -1780,7 +792,7 @@ items:
     requiresBuy:
       - STR_HEAVY_LASER # Melta tech - was Midtier
 
-  - update: STR_ROCKET_LAUNCHER             # SM Rocket Launcher
+  - type: STR_ROCKET_LAUNCHER               # SM Rocket Launcher
     costBuy: 30000 # was 100k!!
     costSell: 5000 # was 3000
     weight: 40 # was 50
@@ -1804,7 +816,7 @@ items:
     tags:
       ITEM_RECOIL: 40 # was 0, Spacemarine designed portable missile launcher - even steadying it is difficult without enough Str
 
-  - update: STR_LASCAN                      # SM Lascannon
+  - type: STR_LASCAN                        # SM Lascannon
     tuAimed: 85 # was 90 - slightly easier to sidestep and fire without needing max TUs
 
   - type: STR_SHOTGUN_MARINE                # Astartes Shotgun
@@ -1845,7 +857,7 @@ items:
       REACTION_MULTIPLIER: 175 # 175% of normal - shotgun bonus
       ITEM_RECOIL: 45 # High recoil, marines or strong scouts
 
-  - update: STR_MCSHOTGUN                   # Mastercrafted Shotgun
+  - type: STR_MCSHOTGUN                     # Mastercrafted Shotgun
     armor: 300
     weight: 22
     oneHandedPenalty: 80 # minor penalty for dual-wielding if you can handle recoil
@@ -1869,15 +881,15 @@ items:
       REACTION_MULTIPLIER: 200 # 200% of normal - MCshotgun bonus
       ITEM_RECOIL: 45 # High recoil, marines or strong scouts
 
-  - update: STR_SHOTGUN_SHELLS              # Shotgun Ammo
+  - type: STR_SHOTGUN_SHELLS                # Shotgun Ammo
     powerRangeThreshold: 18
     powerRangeReduction: 2
 
-  - update: STR_SHOTGUN_DRUM                # Shotgun Drum Ammo
+  - type: STR_SHOTGUN_DRUM                  # Shotgun Drum Ammo
     powerRangeThreshold: 18
     powerRangeReduction: 3
 
-  - update: STR_SHOTGUN_SHELLS_AP           # Shotgun Krak Ammo
+  - type: STR_SHOTGUN_SHELLS_AP             # Shotgun Krak Ammo
     bigSprite: 173
     requiresBuy:
       - STR_SHOTGUNS_ADV
@@ -1892,7 +904,7 @@ items:
       ToStun: 0.1 # was 0.5; AP round rather than concussive
     shotgunPellets: 5 # was 6
 
-  - update: STR_SHOTGUN_SHELLS_INC          # Shotgun Incin Ammo
+  - type: STR_SHOTGUN_SHELLS_INC            # Shotgun Incin Ammo
     weight: 3 # was 5?
     hitSound: {mod: 40k, index: 708}
     hitAnimation:
@@ -1908,7 +920,7 @@ items:
     requiresBuy:
       - STR_SHOTGUNS_ADV
 
-  - update: STR_SHOTGUN_SHELLS_MC           # Shotgun MC Ammo
+  - type: STR_SHOTGUN_SHELLS_MC             # Shotgun MC Ammo
     bigSprite: 162
     powerRangeThreshold: 18
     powerRangeReduction: 2
@@ -1925,13 +937,13 @@ items:
       RandomWound: false
     shotgunPellets: 8 # was 6
 
-  - update: STR_BIKE_ARMOR                  # Bike Armor (Item)
+  - type: STR_BIKE_ARMOR                    # Bike Armor (Item)
     costBuy: 280000 # was 360k
     costSell: 140000 # was 140k
     ufopediaType: BIKE_ARMOR_UC
 
   - type: STR_SCOUT_SGT                     # Scout Sergeant Armor (item)
-    size: 0.8
+    size: 0.3
     costSell: 10000
     listOrder: 6098
 
@@ -2021,21 +1033,6 @@ items:
     tags:
       ITEM_DOESNT_HURT_USER: 1
 
-  - update: AUX_TANK_CANNON                 # Bike Bolter
-    dropoff: 6 # was 4
-    autoRange: 0
-    snapRange: 18 # was 21
-    aimRange: 0
-    accuracyAuto: 0
-    accuracySnap: 75
-    accuracyAimed: 0
-    tuAuto: 0
-    tuSnap: 28
-    tuAimed: 0
-
-  - update: STR_HWP_CANNON_SHELLS           # Bike Ammo
-    power: 75 # was 65
-
   - type: STR_GRENADE_LAUNCHER_ASTARTES     # Grenade Launcher Astartes
     requiresBuy:
       - STR_MARINES_STRATEGY
@@ -2075,193 +1072,30 @@ items:
     minRange: 5
     noLOSAccuracyPenalty: 75
 
-  - update: STR_FRAG_GRENADE_DRUM           # GL Frag Rounds
+  - type: STR_FRAG_GRENADE_DRUM             # GL Frag Rounds
     requiresBuy:
       - STR_GLAUNCHER_PREREQ
 
-  - update: STR_KRAK_GRENADE_DRUM           # GL Krak Rounds
+  - type: STR_KRAK_GRENADE_DRUM             # GL Krak Rounds
     requiresBuy:
       - STR_GLAUNCHER_PREREQ
 
-  - update: STR_INCENDIARY_GRENADE_DRUM     # GL Incin Rounds
+  - type: STR_INCENDIARY_GRENADE_DRUM       # GL Incin Rounds
     requiresBuy:
       - STR_GLAUNCHER_PREREQ
 
-  - update: STR_SMOKE_GRENADE_DRUM          # GL Smoke Rounds
+  - type: STR_SMOKE_GRENADE_DRUM            # GL Smoke Rounds
     requiresBuy:
       - STR_GLAUNCHER_PREREQ
 
-  - update: STR_PHOTON_GRENADE_DRUM         # GL Photon Rounds
+  - type: STR_PHOTON_GRENADE_DRUM           # GL Photon Rounds
     requiresBuy:
       - STR_GLAUNCHER_PREREQ
 
-  - type: AUX_SHIELD                        # Storm Shield
-    clipSize: 61 # Shield HP + 1
-    tuMelee: 0
-    tags:
-      ITEM_SHIELD_BLOCKING_STRENGTH: 20
-      ITEM_SHIELD_RECHARGES: 1
-
-  - update: STR_CHAINSWORD                  # Chainsword
-    categories: [STR_CAT_MELEE, STR_CAT_ASSAULT]
-    requiresBuyBaseFunc: [IMPERIUM]
-    size: 0.2
-    costBuy: 6000 # was 5000
-    costSell: 3000 # was 2500
-    weight: 15
-    power: 70 # was 60
-    damageBonus:
-      melee: 0.3 # was 0.2 - 0.3 is standard for regular melee
-      strength: 0.2 #
-    damageAlter:
-      ToArmorPre: 0.3
-      ToHealth: 1.0
-      RandomType: 2
-      ToWound: 0.3
-      ToEnergy: 0.5
-      RandomWound: false
-    accuracyMelee: 90
-    tuMelee: 15 # was 15
-    armor: 300
-
-  - update: STR_CHAINSWORD_MC               # MC Chainsword
-    armor: 300
-    power: 70 # was 70
-    accuracyMelee: 90 # was 110 - make it stronger for experts instead of easier for novices
-    tuMelee: 13 # was 14
-    damageBonus:
-      melee: 0.35 # was 0.2 - +0.05 over standard as quality bonus
-      strength: 0.2 #
-    damageAlter:
-      ArmorEffectiveness: 0.85
-      ToArmorPre: 0.4
-      ToHealth: 1.0
-      RandomType: 2
-      ToWound: 0.3
-      ToEnergy: 0.5
-      RandomWound: false
-
-  - type: STR_CHAINSWORD_LIGHTSM            # SM Light Chainsword
-    requiresBuy:
-      - STR_MARINES_AND_DEATHWATCH
-    categories: [STR_CAT_MELEE]
-    size: 0.2
-    costBuy: 4000
-    costSell: 2000
-    weight: 10
-    bigSprite: 135
-    floorSprite: {mod: 40k, index: 110}
-    handSprite: {mod: 40k, index: 248}
-    meleeSound: {mod: 40k, index: 753}
-    meleeHitSound: {mod: 40k, index: 709}
-    meleeAnimation: {mod: 40k, index: 44}
-    power: 45 # stats from Guard Light Chainsword
-    damageBonus:
-      melee: 0.3 #
-      strength: 0.1 # light weapon
-    damageAlter:
-      ToArmorPre: 0.3
-      ToHealth: 0.9
-      RandomType: 2
-      ToWound: 0.3
-      ToEnergy: 0.5
-      RandomWound: false
-    damageType: 7
-    accuracyMelee: 100
-    costMelee:
-      time: 12
-      energy: 2
-    flatRate: true
-    clipSize: -1
-    battleType: 3
-    invWidth: 1
-    invHeight: 3
-    armor: 300
-    skillApplied: true
-    meleeMultiplier:
-      melee: 0.9
-      reactions: 0.1
-    experienceTrainingMode: 13
-    listOrder: 12399 # just above regular chainswords
-
-  - update: STR_KNIF                        # Combat Knife
-    power: 30 # was 20 - pathetic, worse than SM/IG built in melee attacks - made enemy cultists especially sad
-
-  - update: STR_EVISCERATOR                 # Eviscerator
-    costMelee:
-      time: 18 # was 20%
-      energy: 6 # was 8
-    flatRate: true
-
-  - type: STR_EXECUTIONER_BLADE             # Judicar Executioner Relic Blade
-    categories: [STR_CAT_MELEE]
-    size: 0.3
-    clipSize: -1
-    battleType: 3
-    invWidth: 2
-    invHeight: 3
-    attraction: 6
-    armor: 300
-    recover: false
-    fixedWeapon: true
-    fixedWeaponShow: true
-    defaultInventorySlot: STR_LEFT_HAND
-    twoHanded: true
-    blockBothHands: true
-    weight: 55
-    bigSprite: {mod: 40k_ROSIGMA_edits, index: 2217}
-    floorSprite: {mod: 40k_ROSIGMA_edits, index: 2092}
-    handSprite: {mod: 40k_ROSIGMA_edits, index: 2800}
-    meleeAnimation: {mod: 40k, index: 4 }
-    meleeSound: {mod: 40k, index:  753 }
-    meleeHitSound: {mod: 40k, index:  754 }
-    scripts:
-     selectItemSprite: |
-
-        var int temp;
-        var int numOfFrames;
-        set numOfFrames 4;
-
-        if or eq blit_part blit_item_lefthand eq blit_part blit_item_righthand;
-
-            add temp anim_frame;
-            mod temp numOfFrames;
-            mul temp 8;
-            add sprite_index temp;
-        end;
-
-        add sprite_index sprite_offset; # add direction
-        return sprite_index;
-    power: 120 # melee
-    damageBonus:
-      strength: 0.6
-      melee: 0.2
-    meleeMultiplier:
-      melee: 0.8
-      strength: 0.2
-    damageAlter:
-      ArmorEffectiveness: 0.7
-      ToArmorPre: 0.4
-      ToHealth: 0.9
-      RandomType: 7 #TFTD [50% - 200%]
-      IgnoreSelfDestruct: false
-    damageType: 5
-    accuracyMelee: 80
-    flatRate: true
-    costMelee:
-      time: 20
-      energy: 8 #very heavy melee weapon
-    flatMelee:
-      time: true
-      energy: true
-    skillApplied: true
-    strengthApplied: false
-    listOrder: 13400
-
-  - update: STR_MOTION_SCANNER              # Motion Scanner
+  - type: STR_MOTION_SCANNER                # Motion Scanner
     bigSprite: 134
     armor: 300
-    weight: 8 # was 3
+    weight: 6 # was 3
     invWidth: 2 # was 1x2
     invHeight: 1
     tuUse: 10 # was 25% - gets horribly outclassed by scanners built into armor
@@ -2334,7 +1168,7 @@ items:
       ToArmorPre: 0.2
       ToHealth: 0.9
 
-  - update: AUX_DREAD_FLAMER                # Dread Flamer Palm
+  - type: AUX_DREAD_FLAMER                  # Dread Flamer Palm
     power: 60 #
     powerRangeReduction: 15
     powerRangeThreshold: 22
@@ -2375,7 +1209,7 @@ items:
       ToHealth: 0.9
       RandomType: 6
 
-  - update: AUX_DREAD_ASSC                  # Dread Assault Cannon
+  - type: AUX_DREAD_ASSC                    # Dread Assault Cannon
     sprayWaypoints: 2
     dropoff: 6 #
     autoRange: 12 #
@@ -2404,7 +1238,7 @@ items:
       shortName: STR_FULL_AUTO_COUNT
       shots: 20 # regular 16 - dread bonus
 
-  - update: AUX_HOVERTANK_LAUNCHER          # Dread Missile Launcher
+  - type: AUX_HOVERTANK_LAUNCHER            # Dread Missile Launcher
     bigSprite: 158
     dropoff: 4
     autoRange: 25
@@ -2455,7 +1289,7 @@ items:
     tags:
       ITEM_AMMO_COLOR: 1
 
-  - update: STR_HWP_FUSION_BOMB             # Dread Hellfire Missile ammo
+  - type: STR_HWP_FUSION_BOMB               # Dread Hellfire Missile ammo
     size: 0.1
     armor: 300
     power: 130
@@ -2470,7 +1304,7 @@ items:
     tags:
       ITEM_AMMO_COLOR: 2
 
-  - update: STR_STUN_ROD                    # Shock Maul
+  - type: STR_STUN_ROD                      # Shock Maul
     armor: 300
     tuMelee: 16
 
@@ -2528,7 +1362,7 @@ items:
     tags:
       TURRET_RELOAD_TURNS: 2
 
-  - update: STR_STORMTALON_WEAPON           # Stormtalon Rockets
+  - type: STR_STORMTALON_WEAPON             # Stormtalon Rockets
     power: 190 # was 130
     damageType: 3
     damageAlter:
@@ -2551,49 +1385,11 @@ items:
     tags:
       TURRET_RELOAD_TURNS: 2
 
-  - update: STR_CRATED_RHINO                # Boxed Razorback
+  - type: STR_CRATED_RHINO                  # Boxed Razorback
     costSell: 400000 # was 0, set so that you don't have to unpack & then sell vehicle
 
-  - update: STR_CRATED_LANDSPEEDER          # Boxed Landspeeder
+  - type: STR_CRATED_LANDSPEEDER            # Boxed Landspeeder
     costSell: 400000 # was 0, set so that you don't have to unpack & then sell vehicle
-
-  - &STR_STEALTH_MED_TEMPLATE               # Stealth armor tool template
-    type: STR_STEALTH_ADVSCOUT
-    categories: [STR_SCOUT]
-    fixedWeapon: true
-    recover: false
-    armor: 300
-    battleType: 6 # not used as medikit
-    medikitTargetMatrix: 0
-    woundRecovery: 0
-    healthRecovery: 0
-    medikitType: 1
-    medikitTargetSelf: true
-    heal: 10
-    tuUse: 60
-    flatUse: false
-    medikitActionName: STR_TOGGLE_STEALTH
-
-  - type: STR_STEALTH_ADVSCOUT              # Advanced Scout Stealth
-    refNode: *STR_STEALTH_MED_TEMPLATE
-    tags:
-      ITEM_STEALTH_RANGE: 4
-      ITEM_STEALTH_DURATION: 3
-      ITEM_STEALTH_MOVEPENALTY: 50 # 150% base movespeed
-
-  - type: STR_STEALTH_REIVER                # Primaris Reiver Stealth
-    refNode: *STR_STEALTH_MED_TEMPLATE
-    tags:
-      ITEM_STEALTH_RANGE: 4
-      ITEM_STEALTH_DURATION: 2
-      ITEM_STEALTH_MOVEPENALTY: 50 # 150% base movespeed
-
-  - type: STR_STEALTH_ELIMINATOR            # Primaris Eliminator Stealth
-    refNode: *STR_STEALTH_MED_TEMPLATE
-    tags:
-      ITEM_STEALTH_RANGE: 8
-      ITEM_STEALTH_DURATION: 5
-      ITEM_STEALTH_MOVEPENALTY: 300 # 400% base movespeed
 
   - &STR_BOMBARD_SPAWNER_TEMPLATE           # Fire Support Spawner Template
     type: STR_BOMBARD_SPAWNER               # Dummy Targeter spawner

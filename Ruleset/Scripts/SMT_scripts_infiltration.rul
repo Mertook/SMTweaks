@@ -16,12 +16,13 @@ extended:
       ARMOR_RESTEALTH_TURN_REQUIREMENT: int     # turns before unit can restealth
       ARMOR_IMMEDIATE_KILL_CREDIT: int          # at start of battle unit gets this value added to required kills for stealth
       ARMOR_IMMEDIATE_TURN_CREDIT: int          # at start of battle unit gets this value added to required turns for stealth
-      ARMOR_CLOAKED_ASSASSIN: int               # unit immediately enters stealth after killing with an appropriate weapon: X = detection range
+      ARMOR_CLOAKED_ASSASSIN: int               # unit immediately enters stealth after killing with an appropriate weapon. X = Allowed weapon types
     RuleItem:
       ITEM_STEALTH_RANGE: int                   # item used to activate restealth - X = detection range
       ITEM_STEALTH_DURATION: int                # duration of stealth
       ITEM_STEALTH_MOVEPENALTY: int             # % modifier on movespeed while stealthed
-      ITEM_STEALTH_ASSASSIN_WEAPON: int         # weapon can activate cloaked assassin on kills: X = detection range (largest between armor & weapon is used)
+      ITEM_STEALTH_ASSASSIN_WEAPON: int         # weapon can activate cloaked assassin on kills: X = type (1- Melee, 2- Sniper)
+      ITEM_STEALTH_ASSASSIN_RANGE: int          # X = detection range when activating assassin cloak
     RuleSkill:
       SKILL_STEALTH_RANGE: int                  # skill used to activate restealth - X = detection range
       SKILL_STEALTH_DURATION: int               # duration of stealth
@@ -127,33 +128,43 @@ extended:
         code: |
           var int stealthRange;
           var int temp;
+          var int temp2;
 
           unit.getFaction temp;
           if neq temp FACTION_HOSTILE; # ignore friendly fire and civilians
             return;
           end;
 
+          battle_game.getTurnSide temp; # only during player turn
+          if neq temp 0;
+            return;
+          end;
+
+          if or eq battle_action battle_action_snapshot eq battle_action battle_action_autoshoot; # ignore snap or autoshots
+            return;
+          end;
+
           unit.getHealth temp;
-          sub temp to_health;
-          if gt temp 0; # only count kills
+          if and ge to_health temp gt temp 0; # only killing blows
             return;
           end;
 
-          damaging_item.getTag stealthRange Tag.ITEM_STEALTH_ASSASSIN_WEAPON; # only assassin weapons
-          if le stealthRange 0;
+          damaging_item.getTag stealthRange Tag.ITEM_STEALTH_ASSASSIN_RANGE; # only assassin weapons
+          if eq stealthRange 0;
             return;
           end;
 
-          attacker.getTag temp Tag.ARMOR_CLOAKED_ASSASSIN; # only assassin units
-          if le temp 0;
+          attacker.getTag temp Tag.ARMOR_CLOAKED_ASSASSIN; # only assassin units who match item type
+          damaging_item.getTag temp2 Tag.ITEM_STEALTH_ASSASSIN_WEAPON;
+          div temp temp2;
+          mod temp 2;
+          if eq temp 1;
             return;
           end;
 
-          if lt stealthRange temp; # pick biggest detection range between armor & weapon
-            set stealthRange temp;
-          end;
           attacker.setTag Tag.UNIT_STEALTH_IS_ACTIVE 1;
           attacker.setTag Tag.UNIT_STEALTH_RANGE stealthRange;
+
           return;
 
 
@@ -269,9 +280,9 @@ extended:
 
           if and gt killReq 0 gt turnReq 0; # need kills & turns
             battle_game.flashMessage "STR_SCRIPT_STEALTH_KILLTURN_REQ" killReq turnReq;
-          else if and gt killReq 0 eq turnReq 0; # need kills
+          else and gt killReq 0 eq turnReq 0; # need kills
             battle_game.flashMessage "STR_SCRIPT_STEALTH_KILL_REQ" killReq;
-          else if and eq killReq 0 gt turnReq 0; # need turns
+          else and eq killReq 0 gt turnReq 0; # need turns
             battle_game.flashMessage "STR_SCRIPT_STEALTH_TURN_REQ" killReq;
           else;
             battle_game.flashMessage "STR_SCRIPT_STEALTH_NO_REQ" killReq;
@@ -512,7 +523,9 @@ extended:
 
           unit.setTag Tag.UNIT_STEALTH_IS_ACTIVE temp2; # set our stealth counter to the Infiltrator value
           myRuleArmor.getTag temp Tag.ARMOR_INFILTRATOR_RANGE;
-          limit_lower temp 1; # if not set default to undetectable
+          if eq temp 0; # if not set make unit undetectable
+            set temp -1;
+          end;
           unit.setTag Tag.UNIT_STEALTH_RANGE temp; # set stealth range
           battle_game.flashMessage "STR_SCRIPT_INFILTRATION_UNIT_STEALTHED" temp2;
           # debug_log "newTurnUnit | ROSIGMA_nTU_infiltration_set_stealth | offset: 3 | Current Turn:" turn;
@@ -526,9 +539,7 @@ extended:
         offset: 5.1
         code: |
           var int temp;
-          var ptr RuleDamageType damageType;
-          var ptr RuleItem damagingItem;
-          var ptr RuleArmor myRuleArmor;
+          var int temp2;
 
           unit.getTag temp Tag.UNIT_STEALTH_IS_ACTIVE;
           if or lt temp 1 eq power 0; # ignore anything with power reduced to 0
@@ -564,7 +575,7 @@ extended:
         offset: 5.2
         code: |
           var int temp;
-          var ptr RuleArmor myRuleArmor;
+          var int temp2;
 
           attacker.getTag temp Tag.UNIT_STEALTH_IS_ACTIVE;
           if or lt temp 1 eq power 0; # ignore anything with power reduced to 0

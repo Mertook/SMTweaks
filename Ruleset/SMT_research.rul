@@ -373,6 +373,12 @@ research:
       - STR_MEDI_KIT_PREREQ
       - STR_APOC_BAY # unlocks Apoth bay immediately
 
+  - name: STR_CHAINSWORD_R          # Chainsword
+    cost: 30
+    points: 10
+    dependencies:
+      - STR_NEOPHYTE_REQUEST
+      - STR_MARINES_STRATEGY
 
   - name: STR_CHAINSWORD_MC         # MC Chainswords (Assault)
     cost: 60
@@ -380,7 +386,7 @@ research:
     dependencies:
       - STR_ASSAULT
       - STR_MIDTIER_PREREQ # midtier instead of needing mid or high tier mastercrafting - gets powercrept by vanguard/power weapons quickly
-      - STR_MARINES_STRATEGY
+      - STR_CHAINSWORD_R
 
   - name: STR_HEAVY_LASER           # Meltagun
     cost: 320 # was 460
@@ -491,7 +497,6 @@ research:
       - STR_BOLTPISTOL_ADV_REQ
       - STR_SCOUT_BOLT_RIFLE
       - STR_HBOLTER_PREREQ
-      - STR_HBOLTER_AMMO_PREREQ # for Assault Bolters
     listOrder: 9 # push above corpses/etc
 
   - name: STR_HB_CLIP               # Stormbolter Clip (does nothing)
@@ -714,6 +719,14 @@ research:
       - STR_GENERALLOCK # disabled - only exists as bridging tech for other armour types
 
   - name: STR_MKX_PHB_ARMOR         # Primaris Phobos Armor
+    cost: 180
+    points: 20
+    dependencies:
+      - STR_PRIMARIS
+      - STR_ALIEN_ALLOYS
+
+
+  - name: STR_MKX_ASS_ARMOR         # Primaris Assault Armor
     cost: 180
     points: 20
     dependencies:

@@ -1,6 +1,54 @@
 armors:
+### Templates
+  - &ARMOR_SCOUT                            #SCOUT ARMOR VALUES
+    update: STR_SCOUT_UC
+    frontArmor: 80
+    sideArmor: 60
+    rearArmor: 40
+    underArmor: 60
+
+  - &ARMOR_TACTICAL                         #TACTICAL ARMOR VALUES
+    update: STR_PERSONAL_ARMOR_UC
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.6 #FLAMES - was 0.8
+      - 0.7 #HE
+      - 0.8 #LASCANON
+      - 1.0 #PLASMA - was 1.1
+      - 1.0 #STUN - was 1.1
+      - 1.0 #MELEE - was 1.1
+      - 0.8 #ACID - was 1.0
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+    frontArmor: 125 # base 125
+    sideArmor: 120 # base 120
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 125
+
+  - &ARMOR_TERMINATOR                       #TERMINATOR ARMOR VALUES
+    update: STR_POWER_SUIT_UC
+    damageModifier: #TERMINATOR ARMOR 2.7 values
+      - 1.0 #none
+      - 0.7 #AP (was 0.6)
+      - 0.3 #FLAMES
+      - 0.6 #HE (was 0.4)
+      - 0.8 #LASCANON
+      - 0.8 #PLASMA
+      - 1.0 #STUN
+      - 0.8 #MELEE (was 0.9)
+      - 0.6 #ACID (was 0.8)
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (was 1.0)
+    frontArmor: 180 #was 150
+    sideArmor: 175 #was 130
+    rearArmor: 125 #was 100
+    underArmor: 175  #was 150
+
 ### FIRSTBORN
-  - &STR_MARINE_ARMOR                       #ARMOR TEMPLATE
+  - &STR_MARINE_ARMOR                       #TACTICAL TEMPLATE
     update: STR_PERSONAL_ARMOR_UC           #TACTICAL
     visibilityAtDay: 40
     visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
@@ -16,18 +64,19 @@ armors:
     sideArmor: 120 # base 120
     rearArmor: 100 # base 100
     underArmor: 125 # base 125
-    stats: # No values inherited from this, defined in each armor
-      tu: 0             # base 10 
-      stamina: 0        # base 20 
-      health: 0         # base 10 
-      bravery: 0        # base 0  
-      reactions: 0      # base 10 
-      firing: 0         # base 0  
-      throwing: 0       # base 5  
-      strength: 0       # base 10 
-      psiStrength: 0    # base 0  
-      psiSkill: 0       # base 0  
-      melee: 0          # base 10 
+    stats: {}
+    # stats: # No values inherited from this, defined in each armor
+      # tu: 0             # base 10 
+      # stamina: 0        # base 20 
+      # health: 0         # base 10 
+      # bravery: 0        # base 0  
+      # reactions: 0      # base 10 
+      # firing: 0         # base 0  
+      # throwing: 0       # base 5  
+      # strength: 0       # base 10 
+      # psiStrength: 0    # base 0  
+      # psiSkill: 0       # base 0  
+      # melee: 0          # base 10 
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 1.0 #AP
@@ -46,6 +95,9 @@ armors:
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 25
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_ASTARTES: 1
 
   - &STR_MARINE_OFFICER_ARMOR               #SPECIALIST TEMPLATE
     update: STR_SIGNALFALSE_ARMOR_UC
@@ -63,6 +115,7 @@ armors:
     sideArmor: 120 # base 120
     rearArmor: 100 # base 100
     underArmor: 125 # base 125
+    stats: {}
     damageModifier: #2.7 values for officers
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -81,6 +134,9 @@ armors:
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 25
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_ASTARTES: 1
 
   - update: STR_SCOUT_UC                    #SCOUT (Neophytes)
     visibilityAtDay: 40
@@ -108,6 +164,9 @@ armors:
       - STR_SOLDIER_NEOPHYTE
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_ASTARTES: 1
 
   - type: STR_SCOUT_SMT_UC                  #SCOUT (Marines)
     customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 0}
@@ -125,7 +184,7 @@ armors:
     camouflageAtDark: -5
     frontArmor: 80
     sideArmor: 60
-    rearArmor: 40
+    rearArmor: 50 # +10
     underArmor: 60
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -163,6 +222,9 @@ armors:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 25
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_ASTARTES: 1
 
   - update: STR_PERSONAL_ARMOR_UC           #TACTICAL
     refNode: *STR_MARINE_ARMOR
@@ -235,13 +297,13 @@ armors:
       bravery: 10       # base 0  +10
       reactions: 5      # base 10 -5
       firing: 0         # base 0
-      throwing: -10     # base 5 -15
+      throwing: 0       # base 5
       strength: 10      # base 10
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 15         # base 10 +5
     builtInWeapons: #improved medkit
-      - INV_NULL_3X3
+      - INV_NULL_3X1_BACKPACK
       - AUX_MEDI_KIT_ADVANCED
     tags: #Apoth gets better regeneration
       SMT_ARMOR_REGEN_HP: 3
@@ -262,10 +324,10 @@ armors:
       tu: 10            # base 10 
       stamina: 10       # base 20 -10
       health: 20        # base 10 +10
-      bravery: 0        # base 0  (overridden by 40k to +10)
+      bravery: 0        # base 0  
       reactions: 10     # base 10 
-      firing: 0         # base 0  
-      throwing: -10     # base 5  -15
+      firing: 5         # base 0  +5
+      throwing: 0       # base 5  -5
       strength: 10      # base 10 
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
@@ -316,9 +378,8 @@ armors:
     units: #now exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
     tags: #added small energy shield
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
-      ARMOR_ENERGY_SHIELD_DECAY: 50
-
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - update: STR_ASS_ARMOR_HONOR_UC          #ASSAULT HONOR (Vanguard)
     refNode: *STR_MARINE_OFFICER_ARMOR
@@ -328,7 +389,7 @@ armors:
       health: 30        # base 10 +10 ass +10 elite
       bravery: 10       # base 0  +10 ass
       reactions: 30     # base 10 +15 ass +5  elite
-      firing: 10        # base 0  -10 ass +20 elite
+      firing: 0         # base 0  -10 ass +10 elite
       throwing: 10      # base 5  -5  ass +10 elite
       strength: 10      # base 10
       psiStrength: 0    # base 0  
@@ -340,8 +401,13 @@ armors:
     underArmor: 125 # base 125
     units: #now exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
+    tags:
+      FLIGHT_DODGE_CHANCE: 25
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      MaxFlight: 2
+      MaxCoolDown: 1
 
-  - type: STR_ASS_ARMOR_HONOR_CLAW          #ASSAULT HONOR (Vanguard) WITH CLAW
+  - type: STR_ASS_ARMOR_HONOR_CLAW          #ASSAULT HONOR (Vanguard) with Claw
     refNode: *STR_MARINE_OFFICER_ARMOR
     ufopediaType: STR_ASS_ARMOR_HONOR_UC
     spriteSheet: XCOM_HASS.PCK
@@ -361,7 +427,7 @@ armors:
       health: 30        # base 10 +10 ass +10 elite
       bravery: 10       # base 0  +10 ass
       reactions: 30     # base 10 +15 ass +5  elite
-      firing: 10        # base 0  -10 ass +20 elite
+      firing: 0         # base 0  -10 ass +10 elite
       throwing: 10      # base 5  -5  ass +10 elite
       strength: 10      # base 10
       psiStrength: 0    # base 0  
@@ -369,15 +435,51 @@ armors:
       melee: 35         # base 10 +20 ass +5 elite
     units: #now exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
-    builtInWeapons: #given lightning claw, on par with MC power sword
+    builtInWeapons:
       - STR_CLAWS_ASS
       - INV_NULL_3X3
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      FLIGHT_DODGE_CHANCE: 25
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
       MaxFlight: 2
       MaxCoolDown: 1
-      UNIT_TYPE_LIVING: 1
-      UNIT_TYPE_IMPERIUM: 1
+
+  - type: STR_ASS_ARMOR_HONOR_SHIELD        #ASSAULT HONOR (Vanguard) with Stormshield
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    ufopediaType: STR_ASS_ARMOR_HONOR_UC
+    spriteSheet: XCOM_HASS.PCK
+    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 15}
+    corpseBattle:
+      - STR_HONOR_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_JUMP_GAUNTLET_PLUS
+    storeItem: STR_ASS_ARMOR_HONOR
+    frontArmor: 135 # base 125 +5 assault +5 elite
+    sideArmor: 130  # base 120 +5  assault +5 elite
+    rearArmor: 110  # base 100 +10 elite
+    underArmor: 125 # base 125
+    stats:
+      tu: 30            # base 10 +15 ass +5 elite
+      stamina: 30       # base 20 +10 elite
+      health: 30        # base 10 +10 ass +10 elite
+      bravery: 10       # base 0  +10 ass
+      reactions: 30     # base 10 +15 ass +5  elite
+      firing: 0         # base 0  -10 ass +10 elite
+      throwing: 10      # base 5  -5  ass +10 elite
+      strength: 10      # base 10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 35         # base 10 +20 ass +5 elite
+    units: #now exclusive to terminator promoted troops
+      - STR_SOLDIER_TERMINATOR
+    builtInWeapons:
+      - AUX_SHIELD
+      - INV_NULL_3X3
+    tags:
+      FLIGHT_DODGE_CHANCE: 25
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      MaxFlight: 2
+      MaxCoolDown: 1
 
   - type: STR_SIGNUM_DEV_UC                 #DEVASTATOR HONOR (Signum)
     refNode: *STR_MARINE_OFFICER_ARMOR
@@ -386,38 +488,43 @@ armors:
     antiCamouflageAtDay: 14 # signum equipment provides strong detection
     antiCamouflageAtDark: 14
     spriteSheet: DEVH.PCK
-    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 16}
+    customArmorPreviewIndex: 48
     corpseBattle:
       - STR_SIGNAL_CORPSE
     storeItem: STR_SIGNALFALSE_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
-    frontArmor: 125 # base 125
-    sideArmor: 120 # base 120
-    rearArmor: 100 # base 100
+    frontArmor: 135 # base 125 +5 devastator +5 elite
+    sideArmor: 125 # base 120 +5 elite
+    rearArmor: 100 # base 100 -5 devastator +5 elite
     underArmor: 125 # base 125
     stats:
-      tu: 10            # base 10 
-      stamina: 20       # base 20 
-      health: 20        # base 10 +10 elite
+      tu: 0             # base 10 -10
+      stamina: 10       # base 20 -10
+      health: 10        # base 10 
       bravery: 0        # base 0  
-      reactions: 10     # base 10 
-      firing: 25        # base 0  +25 signum
+      reactions: -5     # base 10 -15
+      firing: 25        # base 0  +25
       throwing: 5       # base 5  
-      strength: 10      # base 10 
+      strength: 40      # base 10 +30
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
-      melee: 10         # base 10 
-    specialWeapon: STR_SMT_SIGNUM_VUL # changed from Airstrike
+      melee: -20        # base 10 -30 (ranged specialist & also to offset strength bonus)
+    specialWeapon: STR_SMT_SIGNUM_VUL
     units: # exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
+    builtInWeapons: # reduced backpack compared to regular Dev
+      - INV_NULL_1X3
+    tags:
+      SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/3 HWP penalties
 
-  - update: STR_SIGNAL_ARMOR_UC             #DEVASTATOR HONOR (Signum)
+  - update: STR_SIGNAL_ARMOR_UC             #DEVASTATOR HONOR (Signum - Old)
     refNode: *STR_MARINE_OFFICER_ARMOR
     visibilityAtDark: 40 # signum equipment provides advanced vision
     heatVision: 30 # signum equipment provides advanced vision
     antiCamouflageAtDay: 14 # signum equipment provides strong detection
     antiCamouflageAtDark: 14
     spriteSheet: DEVH.PCK
+    requires: STR_GENERALLOCK
     frontArmor: 125 # base 125
     sideArmor: 120 # base 120
     rearArmor: 100 # base 100
@@ -438,7 +545,7 @@ armors:
     units: # exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
 
-  - update: STR_SIGNALFALSE_ARMOR_UC        #DEVASTATOR HONOR (Signum - 2nd copy used in base missions)
+  - update: STR_SIGNALFALSE_ARMOR_UC        #DEVASTATOR HONOR (Signum - Old)
     refNode: *STR_MARINE_OFFICER_ARMOR
     visibilityAtDark: 40 # signum equipment provides advanced vision
     heatVision: 30 # signum equipment provides advanced vision
@@ -466,7 +573,7 @@ armors:
       - STR_SOLDIER_TERMINATOR
 
   - type: STR_SCOUT_SGT_UC                  #SCOUT SERGEANT
-    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 0}
+    customArmorPreviewIndex: 45
     spriteSheet: SCOUTSGT.PCK
     storeItem: STR_SCOUT_SGT
     corpseGeo: STR_FALLEN_CORPSE
@@ -523,6 +630,9 @@ armors:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 25
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_ASTARTES: 1
 
   - &STR_ADVANCED_SCOUT_ARMOR               #SCOUT HONOR BROWN (Advanced Scout)
     update: STR_SCOUTH_UC
@@ -533,6 +643,7 @@ armors:
     camouflageAtDark: -18
     antiCamouflageAtDay: 18 # advanced detection
     antiCamouflageAtDark: 18
+    customArmorPreviewIndex: 46
     ufopediaType: STR_SCOUTH_UC
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -542,7 +653,7 @@ armors:
     sideArmor: 80
     rearArmor: 50
     underArmor: 80
-    specialWeapon: STR_SM_SCOUT_SCANNER # motion scanner
+    specialWeapon: STR_STEALTH_ADVSCOUT # motion scanner
     moveCost:
       basePercent: [100, 75] # Reduced energy cost - Scout bonus
     stats:
@@ -567,11 +678,14 @@ armors:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 25
-      ARMOR_RESTEALTH_KILL_REQUIREMENT: 4 # 4 kills
-      ARMOR_RESTEALTH_TURN_REQUIREMENT: 2 # 2 turns since decloaked
-      ARMOR_IMMEDIATE_KILL_CREDIT: 0 # needs kills to cloak
+      ARMOR_RESTEALTH_KILL_REQUIREMENT: 4
+      ARMOR_RESTEALTH_TURN_REQUIREMENT: 2
+      ARMOR_IMMEDIATE_KILL_CREDIT: 0 # needs kills to cloak first time
       ARMOR_IMMEDIATE_TURN_CREDIT: 2
-      ARMOR_CLOAKED_ASSASSIN: 8 # 8 tiles of range when entering assassin cloak
+      ARMOR_CLOAKED_ASSASSIN: 3 # melee or sniper
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_ASTARTES: 1
 
   - update: STR_SCOUTHW_UC                  #SCOUT HONOR WHITE
     refNode: *STR_ADVANCED_SCOUT_ARMOR
@@ -620,26 +734,29 @@ armors:
     allowsRunning: false
     allowsKneeling: false
     stats:
-      tu: 10            # base 10
+      tu: -5            # base -5
       stamina: 20       # base 20
       health: 30        # base 30
       bravery: 10       # base 10
       reactions: -10    # base -10
       firing: 20        # base 20
-      throwing: 10      # base 10
+      throwing: 20      # base 20
       strength: 90      # base 90
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
-      melee: 10         # base 10
+      melee: 20         # base 20
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalty
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
-      ARMOR_ENERGY_SHIELD_DECAY: 50
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
+      ARMOR_ENERGY_SHIELD_DECAY: 75
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
       SMT_ARMOR_REGEN_HP: 4
       ARMOR_REGENERATES_WOUNDS: 1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_ASTARTES: 1
 
   - update: STR_POWER_SUIT_UC               #TERMINATOR
     refNode: *STR_TERMINATOR_ARMOR
@@ -648,7 +765,7 @@ armors:
     refNode: *STR_TERMINATOR_ARMOR
     specialWeapon: STR_SM_OFFICER_FIST #Officer Fist with Inspire ability
     stats:
-      tu: 20            # base 10 +10
+      tu: 5             # base 10 +10
       stamina: 20       # base 20
       firing: 20        # base 20
       health: 40        # base 30 +10
@@ -679,39 +796,40 @@ armors:
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
     requires: STR_TSARGENT
     stats:
-      tu: 10            # base 10
+      tu: -20           # base 5 -15 Cyclone penalty
       stamina: 20       # base 20
       firing: 20        # base 20
       health: 30        # base 30
       bravery: 10       # base 10
       reactions: -10    # base -10
       throwing: 10      # base 10
-      strength: 55      # base 90 -35 Penalty for using Cyclone (Fixed weapons have no weight?)
+      strength: 90      # base 90
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 10         # base 10
+      mana: 60          # Cyclone Ammo
+    specialWeapon: STR_CYCLONE_LAUNCHER
     builtInWeapons: # removed lighting claw
       - INV_NULL_3X3
       - INV_NULL_2X1_RL
       - INV_NULL_2X1_LL
 
-  - update: STR_FLYING_SUIT_UC              #TERMINATOR ASSAULT (SHIELD)
+  - update: STR_FLYING_SUIT_UC              #TERMINATOR (SHIELD)
     refNode: *STR_TERMINATOR_ARMOR
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
     requires: STR_FLYING_SUIT
-    rearArmor: 130 # +10 assault
     stats:
-      tu: 30            # base 10  +20
-      stamina: 30       # base 20  +10
-      firing: -10       # base 20  -30
-      health: 30        # base 30  
-      bravery: 20       # base 10  +10
-      reactions: -10    # base -10 
-      throwing: 10      # base 30  -20
-      strength: 90      # base 90 
-      psiStrength: 0    # base 0   
-      psiSkill: 0       # base 0   
-      melee: 30         # base 10  +20
+      tu: -5            # base -5
+      stamina: 20       # base 20
+      health: 30        # base 30
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 20        # base 20
+      throwing: 20      # base 20
+      strength: 90      # base 90
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 20         # base 20
     tags:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30 # better shield for assault term
       ARMOR_ENERGY_SHIELD_DECAY: 50
@@ -720,23 +838,26 @@ armors:
     refNode: *STR_TERMINATOR_ARMOR
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
     requires: STR_FLYING_SUIT
-    rearArmor: 130 # +10 assault
+    rearArmor: 145 # +20 assault
     stats:
-      tu: 30            # base 10  +20
+      tu: 30            # base -5  +35
       stamina: 30       # base 20  +10
-      firing: -10       # base 20  -30
-      health: 30        # base 30  
+      health: 30        # base 30
       bravery: 20       # base 10  +10
-      reactions: -10    # base -10 
-      throwing: 10      # base 30  -20
-      strength: 90      # base 90 
-      psiStrength: 0    # base 0   
-      psiSkill: 0       # base 0   
-      melee: 30         # base 10  +20
+      reactions: 10     # base -10 +20
+      firing: 20        # base 20
+      throwing: 20      # base 20
+      strength: 90      # base 90
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 40         # base 20  +20
     specialWeapon: STR_TELEPORT_CLAWS # gets extra teleport distance
     tags:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30 # better shield for assault term
       ARMOR_ENERGY_SHIELD_DECAY: 50
+
+  - update: STR_CHAP_ARMOR_UC               #CHAPLAIN
+    stats: {}
 
   - update: STR_CHAP_ARMOR_UC               #CHAPLAIN
     refNode: *STR_MARINE_OFFICER_ARMOR
@@ -759,7 +880,7 @@ armors:
       firing: 5         # base 0  +10 tact -5 chap (would rather have 0 but base chaplain overrides)
       throwing: 5       # base 5  
       strength: 10      # base 10 
-      psiStrength: 5    # base 0  +5 (stat is irrelevant to Chaplains anyway - inherited from 40k - I wish values of 0 would override instead of being ignored)
+      psiStrength: 0    # base 0  +5 (stat is irrelevant to Chaplains anyway - inherited from 40k - I wish values of 0 would override instead of being ignored)
       psiSkill: 0       # base 0  
       melee: 15         # base 10 +5
     units:
@@ -783,17 +904,17 @@ armors:
     corpseGeo: STR_FALLEN_CORPSE
     zombiImmune: true
     stats:
-      tu: 10            # base 10
+      tu: -5            # base -5
       stamina: 20       # base 20
-      firing: 15        # base 20 -5
       health: 30        # base 30
       bravery: 10       # base 10
       reactions: -10    # base -10
-      throwing: 30      # base 30
+      firing: 20        # base 20
+      throwing: 20      # base 20
       strength: 90      # base 90
-      psiStrength: 5    # base 0  +5 (only done for consistency with regular Chap armor, stat should't matter)
+      psiStrength: 0    # base 0
       psiSkill: 0       # base 0
-      melee: 15         # base 10 +5
+      melee: 20         # base 20
     units:
       - STR_SOLDIER_CHAPLAIN
     psiDefence:
@@ -833,7 +954,7 @@ armors:
       firing: 0         # base 0  -10 ass +20 elite - 10 chaplain
       throwing: 10      # base 5  -5  ass +10 elite
       strength: 10      # base 10
-      psiStrength: 5    # base 0  +5 (only done for consistency with regular Chap armor, stat should't matter)
+      psiStrength: 0    # base 0
       psiSkill: 0       # base 0  
       melee: 35         # base 10 +20 ass +5 elite
     frontArmor: 135 # base 125 +5 assault +5 elite
@@ -854,6 +975,8 @@ armors:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
+      FLIGHT_DODGE_CHANCE:
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
       MaxFlight: 2
       MaxCoolDown: 1
 
@@ -901,8 +1024,8 @@ armors:
       moraleCurrent: 0.7 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 15 # buffed for new shield mechanics
-      ARMOR_ENERGY_SHIELD_DECAY: 50
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45 # buffed for new shield mechanics
+      ARMOR_ENERGY_SHIELD_DECAY: 75
       UNIT_TYPE_PSYKER: 1
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
@@ -920,17 +1043,17 @@ armors:
     antiCamouflageAtDark: 12
     heatVision: 40 # psyker powers + terminator bonus
     stats:
-      tu: 10            # base 10
+      tu: -5            # base -5
       stamina: 20       # base 20
-      firing: 10        # base 20  -10 Lib
       health: 30        # base 30
       bravery: 10       # base 10
       reactions: -10    # base -10
-      throwing: 10      # base 30  -20 Lib
+      firing: 20        # base 20
+      throwing: 20      # base 20
       strength: 90      # base 90
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
-      melee: 10         # base 10
+      melee: 20         # base 20
     units:
       - STR_SOLDIER_LIBRARIAN_TERM
     psiDefence:
@@ -950,12 +1073,370 @@ armors:
       - INV_NULL_2X1_LL
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30 # improved shield
-      ARMOR_ENERGY_SHIELD_DECAY: 50
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # improved shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
       UNIT_TYPE_PSYKER: 1
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
-  
+
+  - &REF_CAPTAIN_DEFAULTS
+    type: STR_CAPTAIN_TAC
+    visibilityAtDark: 40
+    heatVision: 25
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6
+      INTIMIDATION_RESISTANCE: 100
+      INFECTION_RESIST: 66
+
+  - type: STR_CAPTAIN_TAC                   # Captain (Tactical)
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    refNode: *REF_CAPTAIN_DEFAULTS
+    ufopediaType: STR_PERSONAL_ARMOR_UC
+    spriteSheet: CAPTTAC.PCK
+    customArmorPreviewIndex: 61
+    corpseBattle:
+      - STR_SIGNAL_CORPSE
+    storeItem: STR_SIGNALFALSE_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    frontArmor: 130 # base 125
+    sideArmor: 125 # base 120
+    rearArmor: 105 # base 100
+    underArmor: 130 # base 125
+    stats:
+      tu: 0             # base 10 -10
+      stamina: 10       # base 20 -10
+      health: 10        # base 10 
+      bravery: 0        # base 0  
+      reactions: -5     # base 10 -15
+      firing: 25        # base 0  +25
+      throwing: 5       # base 5  
+      strength: 40      # base 10 +30
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: -20        # base 10 -30 (ranged specialist & also to offset strength bonus)
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    units:
+      - STR_SOLDIER_CAPTAIN
+    builtInWeapons:
+      - INV_INSPIRE_TOKEN
+      - INV_NULL_3X1_BACKPACK
+    tags:
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+  - type: STR_CAPTAIN_ASS                   # Captain (Vanguard Basic)
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    refNode: *REF_CAPTAIN_DEFAULTS
+    ufopediaType: STR_ASS_ARMOR_HONOR_UC
+    spriteSheet: CAPTASS.PCK
+    customArmorPreviewIndex: 62
+    corpseBattle:
+      - STR_HONOR_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    storeItem: STR_ASS_ARMOR_HONOR
+    frontArmor: 140 # base 135 +5
+    sideArmor: 135  # base 130 +5
+    rearArmor: 115  # base 110 +5
+    underArmor: 130 # base 125 +5
+    stats:
+      tu: 30            # base 10 +15 ass +5 elite
+      stamina: 30       # base 20 +10 elite
+      health: 30        # base 10 +10 ass +10 elite
+      bravery: 10       # base 0  +10 ass
+      reactions: 30     # base 10 +15 ass +5  elite
+      firing: 0         # base 0  -10 ass +10 elite
+      throwing: 10      # base 5  -5  ass +10 elite
+      strength: 10      # base 10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 35         # base 10 +20 ass +5 elite
+    units:
+      - STR_SOLDIER_CAPTAIN
+    specialWeapon: STR_JUMP_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_INSPIRE_TOKEN
+      - INV_NULL_3X3
+    tags:
+      FLIGHT_DODGE_CHANCE: 25
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      MaxFlight: 2
+      MaxCoolDown: 1
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+  - type: STR_CAPTAIN_ASS_CLAW              # Captain (Vanguard Claw)
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    refNode: *REF_CAPTAIN_DEFAULTS
+    ufopediaType: STR_ASS_ARMOR_HONOR_UC
+    spriteSheet: CAPTASS.PCK
+    customArmorPreviewIndex: 62
+    corpseBattle:
+      - STR_HONOR_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    storeItem: STR_ASS_ARMOR_HONOR
+    frontArmor: 140 # base 135 +5
+    sideArmor: 135  # base 130 +5
+    rearArmor: 115  # base 110 +5
+    underArmor: 130 # base 125 +5
+    stats:
+      tu: 30            # base 10 +15 ass +5 elite
+      stamina: 30       # base 20 +10 elite
+      health: 30        # base 10 +10 ass +10 elite
+      bravery: 10       # base 0  +10 ass
+      reactions: 30     # base 10 +15 ass +5  elite
+      firing: 0         # base 0  -10 ass +10 elite
+      throwing: 10      # base 5  -5  ass +10 elite
+      strength: 10      # base 10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 35         # base 10 +20 ass +5 elite
+    units:
+      - STR_SOLDIER_CAPTAIN
+    specialWeapon: STR_JUMP_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_INSPIRE_TOKEN
+      - STR_CLAWS_ASS
+      - INV_NULL_3X3
+    tags:
+      FLIGHT_DODGE_CHANCE: 25
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      MaxFlight: 2
+      MaxCoolDown: 1
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+  - type: STR_CAPTAIN_ASS_SHIELD            # Captain (Vanguard Stormshield)
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    refNode: *REF_CAPTAIN_DEFAULTS
+    ufopediaType: STR_ASS_ARMOR_HONOR_UC
+    spriteSheet: CAPTASS.PCK
+    customArmorPreviewIndex: 62
+    corpseBattle:
+      - STR_HONOR_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    storeItem: STR_ASS_ARMOR_HONOR
+    frontArmor: 140 # base 135 +5
+    sideArmor: 135  # base 130 +5
+    rearArmor: 115  # base 110 +5
+    underArmor: 130 # base 125 +5
+    stats:
+      tu: 30            # base 10 +15 ass +5 elite
+      stamina: 30       # base 20 +10 elite
+      health: 30        # base 10 +10 ass +10 elite
+      bravery: 10       # base 0  +10 ass
+      reactions: 30     # base 10 +15 ass +5  elite
+      firing: 0         # base 0  -10 ass +10 elite
+      throwing: 10      # base 5  -5  ass +10 elite
+      strength: 10      # base 10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 35         # base 10 +20 ass +5 elite
+    units:
+      - STR_SOLDIER_CAPTAIN
+    specialWeapon: STR_JUMP_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_INSPIRE_TOKEN
+      - AUX_SHIELD
+      - INV_NULL_3X3
+    tags:
+      FLIGHT_DODGE_CHANCE: 25
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      MaxFlight: 2
+      MaxCoolDown: 1
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+  - type: STR_CAPTAIN_DEV                   # Captain (Devastator Signum)
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    refNode: *REF_CAPTAIN_DEFAULTS
+    ufopediaType: STR_SIGNUM_DEV_UC
+    spriteSheet: CAPTDEV.PCK
+    customArmorPreviewIndex: 63
+    corpseBattle:
+      - STR_SIGNAL_CORPSE
+    storeItem: STR_SIGNALFALSE_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    visibilityAtDark: 40
+    heatVision: 35 # +5 Captain bonus
+    antiCamouflageAtDay: 16
+    antiCamouflageAtDark: 16
+    frontArmor: 140 # base 135
+    sideArmor: 130 # base 125
+    rearArmor: 105 # base 100
+    underArmor: 130 # base 125
+    stats:
+      tu: 0             # base 10 -10
+      stamina: 10       # base 20 -10
+      health: 10        # base 10 
+      bravery: 0        # base 0  
+      reactions: -5     # base 10 -15
+      firing: 25        # base 0  +25
+      throwing: 5       # base 5  
+      strength: 40      # base 10 +30
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: -20        # base 10 -30 (ranged specialist & also to offset strength bonus)
+    specialWeapon: STR_SMT_SIGNUM_VUL
+    units:
+      - STR_SOLDIER_CAPTAIN
+    builtInWeapons:
+      - INV_NULL_1X3
+    tags:
+      SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/3 HWP penalties
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+  - type: STR_CAPTAIN_HONOR                 # Captain (Artificer)
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    refNode: *REF_CAPTAIN_DEFAULTS
+    ufopediaType: STR_HONOR_ARMOR_UC
+    spriteSheet: CAPTHNR.PCK
+    customArmorPreviewIndex: 64
+    corpseBattle:
+      - STR_HONOR_CORPSE
+    storeItem: STR_HONOR_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    frontArmor: 140
+    sideArmor: 135
+    rearArmor: 115
+    underArmor: 140
+    stats:
+      tu: 25            # base 10 +15 tac
+      stamina: 20       # base 20
+      health: 20        # base 10 +10 elite
+      bravery: 10       # base 0  +10 tac
+      reactions: 20     # base 10 +5  tac +5 elite
+      firing: 20        # base 0  +10 tac +10 elite
+      throwing: 25      # base 5  +10 tac +10 elite
+      strength: 15      # base 10 +5  tac
+      psiStrength: 0    # base 0  
+      psiSkill: 10      # base 0  +10 elite
+      melee: 25         # base 10 +5 tac +10 elite
+    specialWeapon: STR_SMT_SIGNUM_VUL
+    units:
+      - STR_SOLDIER_CAPTAIN
+    builtInWeapons:
+      - INV_NULL_3X1_BACKPACK
+    tags:
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 90 # captain shield + artificer bonus
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+  - type: STR_CAPTAIN_SCOUT                 # Captain (Elite Scout)
+    refNode: *STR_MARINE_OFFICER_ARMOR
+    refNode: *REF_CAPTAIN_DEFAULTS
+    ufopediaType: STR_SCOUTH_UC
+    spriteSheet: CAPTSCT.PCK
+    customArmorPreviewIndex: 65
+    corpseBattle:
+      - STR_SCOUTH_CORPSE
+    storeItem: STR_SCOUTH
+    corpseGeo: STR_FALLEN_CORPSE
+    heatVision: 45 # improved smoke vision
+    camouflageAtDay: -20
+    camouflageAtDark: -20
+    antiCamouflageAtDay: 20
+    antiCamouflageAtDark: 20
+    frontArmor: 100
+    sideArmor: 90
+    rearArmor: 60
+    underArmor: 90
+    damageModifier:
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.9 #FLAMES
+      - 0.9 #HE
+      - 0.9 #LASCANON
+      - 0.9 #PLASMA
+      - 0.9 #STUN
+      - 0.9 #MELEE
+      - 0.9 #ACID
+      - 0.9 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    moveCost:
+      basePercent: [100, 75] # Reduced energy cost - Scout bonus
+    stats:
+      tu: 40            # base 10 +10 scout +20 elite
+      stamina: 40       # base 20 -10 scout +30 elite
+      health: 10        # base 10 -10 scout +10 elite
+      bravery: 10       # base 0  +10 elite
+      reactions: 30     # base 10 +5  scout +15  elite
+      firing: 20        # base 0  +20 elite
+      throwing: 10      # base 5  +5  scout
+      strength: 5       # base 10 -10 scout +5  elite
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 25         # base 10 -10 scout +25 elite
+    specialWeapon: STR_STEALTH_ADVSCOUT
+    units:
+      - STR_SOLDIER_CAPTAIN
+    builtInWeapons:
+      - INV_NULL_3X1_BACKPACK
+    tags:
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+      ARMOR_RESTEALTH_KILL_REQUIREMENT: 4
+      ARMOR_RESTEALTH_TURN_REQUIREMENT: 0
+      ARMOR_IMMEDIATE_KILL_CREDIT: 4
+      ARMOR_IMMEDIATE_TURN_CREDIT: 0
+      ARMOR_CLOAKED_ASSASSIN: 3 # melee or sniper
+
+  - type: STR_CAPTAIN_TERM                  # Captain (Terminator)
+    refNode: *STR_TERMINATOR_ARMOR
+    refNode: *REF_CAPTAIN_DEFAULTS
+    ufopediaType: STR_SIGNUM_DEV_UC
+    spriteSheet: CAPTTER.PCK
+    customArmorPreviewIndex: 66
+    corpseBattle:
+      - STR_TERMINATOR_CORPSE
+    storeItem: STR_POWER_SUIT
+    corpseGeo: STR_FALLEN_CORPSE
+    visibilityAtDark: 40
+    heatVision: 35 # +5 Captain bonus
+    antiCamouflageAtDay: 16
+    antiCamouflageAtDark: 16
+    frontArmor: 185
+    sideArmor: 180
+    rearArmor: 130
+    underArmor: 180
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 0.6 #AP
+      - 0.3 #FLAMES
+      - 0.5 #HE
+      - 0.8 #LASCANON
+      - 0.7 #PLASMA
+      - 0.9 #STUN
+      - 0.8 #MELEE
+      - 0.5 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.7 #MELTA
+    stats:
+      tu: 5
+      stamina: 20
+      firing: 20
+      health: 40
+      bravery: 10
+      reactions: 10
+      throwing: 10
+      strength: 90
+      psiStrength: 0
+      psiSkill: 0
+      melee: 20
+    specialWeapon: STR_SMT_SIGNUM_VUL
+    units:
+      - STR_SOLDIER_CAPTAIN
+    builtInWeapons:
+      - INV_NULL_1X3
+    tags:
+      SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/3 HWP penalties
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 105 # captain shield + terminator
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+
   - update: BIKE_ARMOR_UC                   #BIKE
     visibilityAtDay: 40
     visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
@@ -973,8 +1454,8 @@ armors:
     allowsRunning: false
     allowsKneeling: false
     stats:
-      tu: 50
-      stamina: 50
+      tu: 30
+      stamina: 30
       firing: 0
       health: 20 # was 0
       bravery: 0
@@ -987,8 +1468,9 @@ armors:
     builtInWeapons:
       - AUX_TANK_CANNON
       #- AUX_RAM_SMT # moved to innate, allow Bikes to pick their offhand weapon
-      - INV_NULL_3X3
-      - INV_NULL_4X2
+      #- INV_NULL_3X3
+      - INV_NULL_1X3 # allow backpack
+      #- INV_NULL_4X2 #removed, allow belt items
     specialWeapon: AUX_RAM_SMT
     damageModifier: #MARINE ARMOR
       - 1.0 #none
@@ -1007,9 +1489,11 @@ armors:
       baseNormalPercent: [50,50] #halved movement costs
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
-      UNIT_TYPE_LIVING: 1 # allow Inspire
       INTIMIDATION_RESISTANCE: 50
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 100
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_ASTARTES: 1
 
   - &STR_DREADNOUGHT_ARMOR                  #DREAD ARMOR TEMPLATE
     update: DREAD_ARMOR_UC
@@ -1059,6 +1543,7 @@ armors:
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_LIVING: 1 # allow Inspire
+      UNIT_TYPE_ASTARTES: 1
 
   - update: DREAD_ARMOR_UC                  #DREAD ARMOR DOUBLE FIST
     refNode: *STR_DREADNOUGHT_ARMOR
@@ -1226,10 +1711,8 @@ armors:
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
 
-  - type: STR_MKX_TAC_MELT_LV1_UC
+  - type: STR_MKX_TAC_MELT_LV1_UC           #TACTICAL (MELTARIFLE)
     refNode: *STR_MKX_TAC_UC
-    customArmorPreviewIndex: {mod: 40k, index: 270}
-    spriteSheet: PRIMTACLV1.PCK
     storeItem: STR_PRIMARIS_MELTAPACK
     units:
       - STR_PRIMARISLV1
@@ -1322,7 +1805,7 @@ armors:
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
 
-  - type: STR_MKX_TAC_PLAS_LV1_UC
+  - type: STR_MKX_TAC_PLAS_LV1_UC           #TACTICAL (PLASMA INCINERATOR)
     refNode: *STR_MKX_TAC_UC
     customArmorPreviewIndex: {mod: 40k, index: 270}
     spriteSheet: PRIMTACLV1.PCK
@@ -1418,6 +1901,350 @@ armors:
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
 
+  - type: STR_MKX_VETS_LV3_UC               #STERNGUARD
+    refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 272}
+    spriteSheet: PRIMVETLV3.PCK
+    storeItem: STR_PRIMARIS_VETARMOR
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    units:
+      - STR_PRIMARISLV3
+    frontArmor: 130
+    sideArmor: 125
+    rearArmor: 110
+    underArmor: 130
+    stats:
+      tu: 20            # base 20
+      stamina: 20       # base 15
+      health: 25        # base 10
+      bravery: 10       # base 10
+      reactions: 20     # base 10
+      firing: 20        # base 10
+      throwing: 15      # base 10
+      strength: 15      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 10
+
+  - type: STR_MKX_VETS_LV4_UC
+    refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 273}
+    spriteSheet: PRIMVETLV4.PCK
+    storeItem: STR_PRIMARIS_VETARMOR
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    units:
+      - STR_PRIMARISLV4
+    frontArmor: 135
+    sideArmor: 125
+    rearArmor: 110
+    underArmor: 130
+    stats:
+      tu: 25            # base 20
+      stamina: 20       # base 15
+      health: 30        # base 10
+      bravery: 10       # base 10
+      reactions: 25     # base 10
+      firing: 25        # base 10
+      throwing: 15      # base 10
+      strength: 15      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 15         # base 10
+    builtInWeapons:
+      - INV_INSPIRE_TOKEN
+      - INV_NULL_3X1_BACKPACK
+
+  - type: STR_MKX_VETS_LV5_UC
+    refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 274}
+    spriteSheet: PRIMVETLV5.PCK
+    storeItem: STR_PRIMARIS_VETARMOR
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    units:
+      - STR_PRIMARISLV5
+    frontArmor: 135
+    sideArmor: 125
+    rearArmor: 110
+    underArmor: 130
+    stats:
+      tu: 30            # base 20
+      stamina: 20       # base 15
+      health: 35        # base 10
+      bravery: 10       # base 10
+      reactions: 20     # base 10
+      firing: 30        # base 10
+      throwing: 15      # base 10
+      strength: 15      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 15         # base 10
+    builtInWeapons:
+      - INV_INSPIRE_TOKEN
+      - INV_NULL_3X1_BACKPACK
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 60
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 40
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
+
+  - type: STR_MKX_VETB_LV3_UC               #BLADEGUARD
+    refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 272}
+    spriteSheet: PRIMVETLV3.PCK
+    storeItem: STR_PRIMARIS_VETARMOR
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    units:
+      - STR_PRIMARISLV3
+    frontArmor: 130
+    sideArmor: 125
+    rearArmor: 110
+    underArmor: 130
+    stats:
+      tu: 25            # base 20
+      stamina: 20       # base 15
+      health: 25        # base 10
+      bravery: 10       # base 10
+      reactions: 20     # base 10
+      firing: 15        # base 10
+      throwing: 15      # base 10
+      strength: 20      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 25         # base 10
+    builtInWeapons:
+      - INV_NULL_1X3
+      - AUX_SHIELD
+
+  - type: STR_MKX_VETB_LV4_UC
+    refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 273}
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    frontArmor: 135
+    sideArmor: 125
+    rearArmor: 110
+    underArmor: 130
+    stats:
+      tu: 25            # base 20
+      stamina: 20       # base 15
+      health: 30        # base 10
+      bravery: 10       # base 10
+      reactions: 25     # base 10
+      firing: 15        # base 10
+      throwing: 15      # base 10
+      strength: 25      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 30         # base 10
+    spriteSheet: PRIMVETLV4.PCK
+    storeItem: STR_PRIMARIS_VETARMOR
+    units:
+      - STR_PRIMARISLV4
+    builtInWeapons:
+      - INV_INSPIRE_TOKEN
+      - INV_NULL_1X3
+      - AUX_SHIELD
+
+  - type: STR_MKX_VETB_LV5_UC
+    refNode: *STR_MKX_TAC_UC
+    customArmorPreviewIndex: {mod: 40k, index: 274}
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    frontArmor: 135
+    sideArmor: 125
+    rearArmor: 110
+    underArmor: 130
+    stats:
+      tu: 30            # base 20
+      stamina: 20       # base 15
+      health: 35        # base 10
+      bravery: 10       # base 10
+      reactions: 25     # base 10
+      firing: 20        # base 10
+      throwing: 15      # base 10
+      strength: 25      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 30         # base 10
+    spriteSheet: PRIMVETLV5.PCK
+    storeItem: STR_PRIMARIS_VETARMOR
+    units:
+      - STR_PRIMARISLV5
+    builtInWeapons:
+      - INV_INSPIRE_TOKEN
+      - INV_NULL_1X3
+      - AUX_SHIELD
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 60
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 40
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
+
+  - &STR_MKX_ASS_UC                         #PRIMARIS ASSAULT INTERCESSOR
+    type: STR_MKX_ASS_LV1_UC
+    ufopediaType: STR_MKX_ASS_LV1_UC
+    corpseBattle:
+      - STR_MKX_TAC_CORPSE
+    storeItem: STR_MKX_ASS_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    loftempsSet: [ 3 ]
+    forcedTorso: 1
+    visibilityAtDay: 40
+    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
+    heatVision: 20 #Add anti-smoke vision to all marine armour
+    antiCamouflageAtDay: 8
+    antiCamouflageAtDark: 8
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.5 #discipline and resolve reinforces their faith
+    frontArmor: 125
+    sideArmor: 120
+    rearArmor: 100
+    underArmor: 125
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.6 #FLAMES
+      - 0.7 #HE
+      - 0.8 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.8 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+    stats:
+      tu: 20            # base 20
+      stamina: 20       # base 20
+      health: 10        # base 10
+      bravery: 10       # base 10
+      reactions: 15     # base 15
+      firing: 10        # base 10
+      throwing: 10      # base 10
+      strength: 10      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 15         # base 15
+    specialWeapon: STR_JUMP_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_3X3
+    tags:
+      FLIGHT_DODGE_CHANCE: 20
+      ARMOR_MAX_SUCCESSFUL_DODGES: 1
+      MaxFlight: 1
+      MaxCoolDown: 1
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
+      SMT_ARMOR_SHRED_RESISTANCE: 35
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
+      INTIMIDATION_RESISTANCE: 50
+      INFECTION_RESIST: 25
+
+  - type: STR_MKX_ASS_LV1_UC
+    refNode: *STR_MKX_ASS_UC
+    customArmorPreviewIndex: 23
+    spriteSheet: PRIMASSLV1.PCK
+    units:
+      - STR_PRIMARISLV1
+
+  - type: STR_MKX_ASS_LV2_UC
+    refNode: *STR_MKX_ASS_UC
+    customArmorPreviewIndex: 24
+    spriteSheet: PRIMASSLV2.PCK
+    units:
+      - STR_PRIMARISLV2
+
+  - type: STR_MKX_ASS_LV3_UC
+    refNode: *STR_MKX_ASS_UC
+    customArmorPreviewIndex: 25
+    spriteSheet: PRIMASSLV3.PCK
+    units:
+      - STR_PRIMARISLV3
+    stats:
+      tu: 25            # base 20
+      stamina: 20       # base 20
+      health: 20        # base 10
+      bravery: 10       # base 10
+      reactions: 20     # base 15
+      firing: 15        # base 10
+      throwing: 10      # base 10
+      strength: 10      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 20         # base 15
+    tags:
+      FLIGHT_DODGE_CHANCE: 25
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      MaxFlight: 2
+      MaxCoolDown: 1
+
+  - type: STR_MKX_ASS_LV4_UC
+    refNode: *STR_MKX_ASS_UC
+    customArmorPreviewIndex: 26
+    spriteSheet: PRIMASSLV4.PCK
+    units:
+      - STR_PRIMARISLV4
+    stats:
+      tu: 25            # base 20
+      stamina: 20       # base 20
+      health: 20        # base 10
+      bravery: 10       # base 10
+      reactions: 25     # base 15
+      firing: 15        # base 10
+      throwing: 10      # base 10
+      strength: 15      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 25         # base 15
+    builtInWeapons:
+      - INV_INSPIRE_TOKEN
+      - INV_NULL_3X3
+    tags:
+      FLIGHT_DODGE_CHANCE: 30
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      SMT_ARMOR_SHRED_RESISTANCE: 35
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+
+
+  - type: STR_MKX_ASS_LV5_UC
+    refNode: *STR_MKX_ASS_UC
+    customArmorPreviewIndex: 27
+    spriteSheet: PRIMASSLV5.PCK
+    units:
+      - STR_PRIMARISLV5
+    stats:
+      tu: 30            # base 20
+      stamina: 20       # base 20
+      health: 30        # base 10
+      bravery: 10       # base 10
+      reactions: 30     # base 15
+      firing: 15        # base 10
+      throwing: 10      # base 10
+      strength: 15      # base 10
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 30         # base 15
+    builtInWeapons:
+      - INV_INSPIRE_TOKEN
+      - INV_NULL_3X3
+    tags:
+      FLIGHT_DODGE_CHANCE: 35
+      ARMOR_MAX_SUCCESSFUL_DODGES: 3
+      SMT_ARMOR_SHRED_RESISTANCE: 40
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 30
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
 
   - &STR_MKX_PHB_UC                         #PRIMARIS PHOBOS
     type: STR_MKX_PHB_LV1_UC
@@ -1432,10 +2259,14 @@ armors:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
       moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
-    frontArmor: 100 # base 125
-    sideArmor: 95 # base 120
-    rearArmor: 90 # base 100
-    underArmor: 100 # base 125
+    frontArmor: 100
+    sideArmor: 95
+    rearArmor: 90
+    underArmor: 100
+    corpseBattle:
+      - STR_MKX_PHB_CORPSE
+    storeItem: STR_MKX_PHB_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
     damageModifier:
       - 1.0 #none
       - 1.0 #AP
@@ -1465,7 +2296,7 @@ armors:
       strength: 5       # base 5  
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
-      melee: 20         # base 20 
+      melee: 15         # base 20 
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
@@ -1477,58 +2308,85 @@ armors:
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 25
 
-  - type: STR_MKX_PHB_LV1_UC
+  - type: STR_MKX_PHB_LV1_UC                #PHOBOS LV1
     refNode: *STR_MKX_PHB_UC
 
-  - type: STR_MKX_PHB_LV2_UC
+  - type: STR_MKX_PHB_LV2_UC                #PHOBOS LV2
     refNode: *STR_MKX_PHB_UC
     spriteSheet: PRIMPHBLV2.PCK # was mistakenly set to lv1 in 40k mod
 
-  - type: STR_MKX_PHB_LV3_UC
+  - type: STR_MKX_PHB_LV3_UC                #PHOBOS REIVER LV3
     refNode: *STR_MKX_PHB_UC
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
-
-  - type: STR_MKX_PHB_LV4_UC
-    refNode: *STR_MKX_PHB_UC
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
-    camouflageAtDay: -15
-    camouflageAtDark: -15
+    camouflageAtDay: -8
+    camouflageAtDark: -8
     stats:
       tu: 30            # base 25
       stamina: 25       # base 20
       health: 10        # base 5
       bravery: 10       # base 10
-      reactions: 25     # base 20
+      reactions: 30     # base 20
       firing: 5         # base 5
       throwing: 10      # base 10
-      strength: 5       # base 5
+      strength: 10      # base 5
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
-      melee: 30         # base 20
+      melee: 30         # base 15
     tags:
       DODGE_CHANCE: 25
       ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      ARMOR_RESTEALTH_KILL_REQUIREMENT: 3
+      ARMOR_RESTEALTH_TURN_REQUIREMENT: 0
+      ARMOR_IMMEDIATE_KILL_CREDIT: 0
+      ARMOR_IMMEDIATE_TURN_CREDIT: 0
+      ARMOR_CLOAKED_ASSASSIN: 1 # melee only
 
-  - type: STR_MKX_PHB_LV5_UC
+  - type: STR_MKX_PHB_LV4_UC                #PHOBOS REIVER LV4
     refNode: *STR_MKX_PHB_UC
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
-    camouflageAtDay: -15
-    camouflageAtDark: -15
+    camouflageAtDay: -12
+    camouflageAtDark: -12
+    stats:
+      tu: 30            # base 25
+      stamina: 25       # base 20
+      health: 10        # base 5
+      bravery: 10       # base 10
+      reactions: 35     # base 20
+      firing: 5         # base 5
+      throwing: 10      # base 10
+      strength: 10      # base 5
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 35         # base 20
+    tags:
+      DODGE_CHANCE: 30
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      ARMOR_RESTEALTH_KILL_REQUIREMENT: 3
+      ARMOR_RESTEALTH_TURN_REQUIREMENT: 0
+      ARMOR_IMMEDIATE_KILL_CREDIT: 3
+      ARMOR_IMMEDIATE_TURN_CREDIT: 0
+      ARMOR_CLOAKED_ASSASSIN: 1 # melee only
+
+  - type: STR_MKX_PHB_LV5_UC                #PHOBOS REIVER LV5
+    refNode: *STR_MKX_PHB_UC
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    camouflageAtDay: -12
+    camouflageAtDark: -12
     stats:
       tu: 40            # base 25
       stamina: 25       # base 20
       health: 20        # base 5
       bravery: 10       # base 10
-      reactions: 30     # base 20
+      reactions: 40     # base 20
       firing: 5         # base 5
       throwing: 10      # base 10
-      strength: 5       # base 5
+      strength: 10      # base 5
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
-      melee: 35         # base 20
+      melee: 40         # base 20
     builtInWeapons:
       - INV_INSPIRE_TOKEN
     tags:
@@ -1536,10 +2394,113 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 30
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       DODGE_CHANCE: 35
-      ARMOR_MAX_SUCCESSFUL_DODGES: 2
-      ARMOR_IS_INFILTRATOR: 2 #2 turns of infiltration
+      ARMOR_MAX_SUCCESSFUL_DODGES: 3
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
+      ARMOR_RESTEALTH_KILL_REQUIREMENT: 2
+      ARMOR_RESTEALTH_TURN_REQUIREMENT: 0
+      ARMOR_IMMEDIATE_KILL_CREDIT: 2
+      ARMOR_IMMEDIATE_TURN_CREDIT: 0
+      ARMOR_CLOAKED_ASSASSIN: 1 # melee only
+
+  - type: STR_MKX_ELIM_LV3_UC               #PHOBOS ELIMINATOR LV3
+    refNode: *STR_MKX_PHB_UC
+    heatVision: 30 # Scout bonus
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    camouflageAtDay: -12
+    camouflageAtDark: -12
+    units:
+      - STR_PRIMARISLV3
+    stats:
+      tu: 25            # base 25
+      stamina: 25       # base 20
+      health: 10        # base 5
+      bravery: 10       # base 10
+      reactions: 25     # base 20
+      firing: 20        # base 5
+      throwing: 10      # base 10
+      strength: 5       # base 5
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 5          # base 20
+    tags:
+      ARMOR_RESTEALTH_KILL_REQUIREMENT: 0
+      ARMOR_RESTEALTH_TURN_REQUIREMENT: 3
+      ARMOR_IMMEDIATE_KILL_CREDIT: 0
+      ARMOR_IMMEDIATE_TURN_CREDIT: 3
+      ARMOR_CLOAKED_ASSASSIN: 2 # snipers only
+
+  - type: STR_MKX_ELIM_LV4_UC               #PHOBOS ELIMINATOR LV4
+    refNode: *STR_MKX_PHB_UC
+    customArmorPreviewIndex: 21
+    spriteSheet: ELIML4.PCK
+    heatVision: 30 # Scout bonus
+    antiCamouflageAtDay: 12
+    antiCamouflageAtDark: 12
+    camouflageAtDay: -16
+    camouflageAtDark: -16
+    units:
+      - STR_PRIMARISLV4
+    stats:
+      tu: 25            # base 25
+      stamina: 25       # base 20
+      health: 10        # base 5
+      bravery: 10       # base 10
+      reactions: 25     # base 20
+      firing: 20        # base 5
+      throwing: 10      # base 10
+      strength: 5       # base 5
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 5          # base 20
+    tags:
+      DODGE_CHANCE: 20
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      ARMOR_RESTEALTH_KILL_REQUIREMENT: 0
+      ARMOR_RESTEALTH_TURN_REQUIREMENT: 2
+      ARMOR_IMMEDIATE_KILL_CREDIT: 0
+      ARMOR_IMMEDIATE_TURN_CREDIT: 2
+      ARMOR_CLOAKED_ASSASSIN: 2 # snipers only
+
+  - type: STR_MKX_ELIM_LV5_UC               #PHOBOS ELIMINATOR LV5
+    refNode: *STR_MKX_PHB_UC
+    customArmorPreviewIndex: 22
+    spriteSheet: ELIML5.PCK
+    heatVision: 30 # Scout bonus
+    antiCamouflageAtDay: 14
+    antiCamouflageAtDark: 14
+    camouflageAtDay: -16
+    camouflageAtDark: -16
+    units:
+      - STR_PRIMARISLV5
+    stats:
+      tu: 25            # base 25
+      stamina: 25       # base 20
+      health: 20        # base 5
+      bravery: 10       # base 10
+      reactions: 30     # base 20
+      firing: 30        # base 5
+      throwing: 10      # base 10
+      strength: 5       # base 5
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 10         # base 20
+    builtInWeapons:
+      - INV_INSPIRE_TOKEN
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 45
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 30
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
+      DODGE_CHANCE: 25
+      ARMOR_MAX_SUCCESSFUL_DODGES: 3
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
+      ARMOR_RESTEALTH_KILL_REQUIREMENT: 0
+      ARMOR_RESTEALTH_TURN_REQUIREMENT: 2
+      ARMOR_IMMEDIATE_KILL_CREDIT: 0
+      ARMOR_IMMEDIATE_TURN_CREDIT: 2
+      ARMOR_CLOAKED_ASSASSIN: 2 # snipers only
 
   - &STR_MKX_GRV_UC                         #PRIMARIS GRAVIS
     type: STR_MKX_GRV_LV1_UC
@@ -1560,7 +2521,7 @@ armors:
     corpseGeo: STR_FALLEN_CORPSE
     loftempsSet: [ 4 ]
     forcedTorso: 1
-    frontArmor: 145
+    frontArmor: 150
     sideArmor: 140
     rearArmor: 120
     underArmor: 145
@@ -1578,7 +2539,7 @@ armors:
       - 0.2 #IMPACT
       - 0.9 #MELTA
     stats:
-      tu: 0             # base 0
+      tu: -10           # base 0
       stamina: -10      # base -10
       health: 20        # base 20
       bravery: 10       # base 10
@@ -1640,6 +2601,7 @@ armors:
     refNode: *STR_MKX_GRV_UC
     customArmorPreviewIndex: {mod: 40k, index: 281}
     spriteSheet: GRAV2AUTO.PCK
+    requires: STR_GENERALLOCK # disabled
     units:
       - STR_PRIMARISLV2
     builtInWeapons:
@@ -1669,7 +2631,7 @@ armors:
     units:
       - STR_PRIMARISLV3
     stats:
-      tu: 5             # base 0
+      tu: -5            # base 0
       stamina: -5       # base -10
       health: 20        # base 20
       bravery: 10       # base 10
@@ -1695,7 +2657,7 @@ armors:
     units:
       - STR_PRIMARISLV3
     stats:
-      tu: 5             # base 0
+      tu: -5            # base 0
       stamina: -5       # base -10
       health: 20        # base 20
       bravery: 10       # base 10
@@ -1721,7 +2683,7 @@ armors:
     units:
       - STR_PRIMARISLV3
     stats:
-      tu: 5             # base 0
+      tu: -5            # base 0
       stamina: -5       # base -10
       health: 20        # base 20
       bravery: 10       # base 10
@@ -1747,7 +2709,7 @@ armors:
     units:
       - STR_PRIMARISLV3
     stats:
-      tu: 5             # base 0
+      tu: -5            # base 0
       stamina: -5       # base -10
       health: 20        # base 20
       bravery: 10       # base 10
@@ -1771,7 +2733,7 @@ armors:
     units:
       - STR_PRIMARISLV4
     stats:
-      tu: 10            # base 0
+      tu: 5             # base 0
       stamina: 5        # base -10
       health: 25        # base 20
       bravery: 10       # base 10
@@ -1797,7 +2759,7 @@ armors:
     units:
       - STR_PRIMARISLV4
     stats:
-      tu: 10            # base 0
+      tu: 5             # base 0
       stamina: 5        # base -10
       health: 25        # base 20
       bravery: 10       # base 10
@@ -1823,7 +2785,7 @@ armors:
     units:
       - STR_PRIMARISLV4
     stats:
-      tu: 10            # base 0
+      tu: 5             # base 0
       stamina: 5        # base -10
       health: 25        # base 20
       bravery: 10       # base 10
@@ -1849,7 +2811,7 @@ armors:
     units:
       - STR_PRIMARISLV4
     stats:
-      tu: 10            # base 0
+      tu: 5             # base 0
       stamina: 5        # base -10
       health: 25        # base 20
       bravery: 10       # base 10
@@ -2320,7 +3282,7 @@ armors:
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
 
-  - type: STR_MKX_HELIX_UC_LV1
+  - type: STR_MKX_HELIX_UC_LV1              #HELIX ADEPT LV1
     refNode: *STR_MKX_APO
     customArmorPreviewIndex: 1
     spriteSheet: HELIXLV1.PCK
@@ -2345,7 +3307,7 @@ armors:
       SMT_ARMOR_REGEN_HP: 2
       ARMOR_REGENERATES_WOUNDS: 1
 
-  - type: STR_MKX_HELIX_UC_LV2
+  - type: STR_MKX_HELIX_UC_LV2              #HELIX ADEPT LV2
     refNode: *STR_MKX_APO
     customArmorPreviewIndex: 2
     spriteSheet: HELIXLV2.PCK
@@ -2370,7 +3332,7 @@ armors:
       SMT_ARMOR_REGEN_HP: 2
       ARMOR_REGENERATES_WOUNDS: 1
 
-  - type: STR_MKX_HELIX_UC_LV3
+  - type: STR_MKX_HELIX_UC_LV3              #HELIX ADEPT LV3
     refNode: *STR_MKX_APO
     customArmorPreviewIndex: 3
     spriteSheet: HELIXLV3.PCK
@@ -2397,7 +3359,7 @@ armors:
       SMT_ARMOR_REGEN_HP: 2
       ARMOR_REGENERATES_WOUNDS: 1
 
-  - type: STR_MKX_APO_UC_LV1
+  - type: STR_MKX_APO_UC_LV1                #APOTHECARY
     refNode: *STR_MKX_APO
     customArmorPreviewIndex: 6
     spriteSheet: APOTACLV1.PCK
@@ -2425,7 +3387,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       INFECTION_RESIST: 50
 
-  - type: STR_MKX_APOGRV_UC_LV1
+  - type: STR_MKX_APOGRV_UC_LV1             #APOTHECARY GRAVIS
     refNode: *STR_MKX_APO
     customArmorPreviewIndex: 7
     spriteSheet: APOGRVLV1.PCK
@@ -2433,10 +3395,10 @@ armors:
     loftempsSet: [ 4 ]
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
-    frontArmor: 140
+    frontArmor: 150
     sideArmor: 135
     rearArmor: 115
-    underArmor: 140
+    underArmor: 145
     stats:
       tu: 0
       stamina: 10
@@ -2461,7 +3423,7 @@ armors:
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalty
       INFECTION_RESIST: 50
 
-  - type: STR_MKX_APO_UC
+  - type: STR_MKX_APO_UC                    #APOTHECARY BIOLOGIS
     refNode: *STR_MKX_APO
     customArmorPreviewIndex: 8
     storeItem: STR_NONE
@@ -2488,7 +3450,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       INFECTION_RESIST: 75
 
-  - type: STR_MKX_APOGRV_UC_LV2
+  - type: STR_MKX_APOGRV_UC_LV2             #APOTHECARY BIOLOGIS GRAVIS
     refNode: *STR_MKX_APO
     customArmorPreviewIndex: 9
     spriteSheet: APOGRVLV2.PCK

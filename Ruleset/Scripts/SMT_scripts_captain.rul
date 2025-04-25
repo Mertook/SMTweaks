@@ -1,0 +1,427 @@
+extended:
+  tags:
+    RuleArmor:
+      UNIT_IS_ASTARTES: int             # is unit a Space Marine?
+    RuleSkill:
+      SKILL_SMT_COMMAND: int            # Command Type ( -1 - Check Commands, 1 - Armor of Contempt, 2 - Storm of Fire, 3 - Relentless Assault )
+    BattleUnit:
+      SMT_RAMPAGE_COUNT: int            # # of times unit has refunded TUs from kills
+    BattleGame:
+      SMT_COMMAND_TYPE: int             # Last used command
+      SMT_COMMAND_TURN: int             # Turn Command is active for
+      SMT_COMMAND_POINTS: int           # Command points earned this battle
+
+  scripts:
+    skillUseUnit:
+      - new: SMTS_command_activate      #*** Script that handles the activation of Marine Captain commands - 1.0 ***
+        offset: 1.0
+        code: |
+          var int cmdNew;       # incoming new command
+          var int cmdType;      # previous command
+          var int cmdTurn;      # command active turn
+          var int cmdPoints;    # number of command points
+          var int cmdCount;     # number of available commands
+          var int currentTurn;  # current turn
+
+          skill.getTag cmdNew Tag.SKILL_SMT_COMMAND;
+          if eq cmdNew 0;
+            return;
+          end;
+
+          set spend_tu 0;
+
+          battle_game.getTurn currentTurn;
+          battle_game.getTag cmdType Tag.SMT_COMMAND_TYPE;
+          battle_game.getTag cmdTurn Tag.SMT_COMMAND_TURN;
+          battle_game.getTag cmdPoints Tag.SMT_COMMAND_POINTS;
+          set cmdCount cmdPoints;
+          div cmdCount 150; # 150 points per command
+
+          if and eq currentTurn cmdTurn neq cmdType 0; # if a command is already active
+            if eq cmdType 1;
+              battle_game.flashLongMessage "STR_SCRIPT_CMD_ARMOR" cmdPoints cmdCount;
+              return;
+            else eq cmdType 2;
+              battle_game.flashLongMessage "STR_SCRIPT_CMD_FIRE" cmdPoints cmdCount;
+              return;
+            else eq cmdType 3;
+              battle_game.flashLongMessage "STR_SCRIPT_CMD_MELEE" cmdPoints cmdCount;
+              return;
+            end;
+          end;
+
+          if or eq cmdNew -1 le cmdCount 0; # if checking command count or not enough command points
+            battle_game.flashLongMessage "STR_SCRIPT_CMD_NONE" cmdPoints cmdCount;
+            return;
+          end;
+
+          battle_game.setTag Tag.SMT_COMMAND_TYPE cmdNew; # if all checks passed, activate new command
+          battle_game.setTag Tag.SMT_COMMAND_TURN currentTurn;
+          sub cmdPoints 150;
+          battle_game.setTag Tag.SMT_COMMAND_POINTS cmdPoints;
+          sub cmdCount 1;
+          if eq cmdNew 1;
+            battle_game.flashLongMessage "STR_SCRIPT_CMD_ARMOR" cmdPoints cmdCount;
+          else eq cmdNew 2;
+            battle_game.flashLongMessage "STR_SCRIPT_CMD_FIRE" cmdPoints cmdCount;
+          else eq cmdNew 3;
+            battle_game.flashLongMessage "STR_SCRIPT_CMD_MELEE" cmdPoints cmdCount;
+          end;
+
+          return;
+
+
+    hitUnit:
+      - new: SMTS_cmd_armor_hitunit     #*** Armor of Contempt damage reduction - 1.0 ***
+        offset: 1.0
+        code: |
+          var int temp;
+          var int temp2;
+
+          if eq damaging_type 0; # ignore support type damage
+            return power part side;
+          end;
+
+          unit.getTag temp Tag.UNIT_IS_ASTARTES; # only affects Space Marines
+          if le temp 0;
+            return power part side;
+          end;
+
+          battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Armor of Contempt
+          if neq temp 1;
+            return power part side;
+          end;
+
+          battle_game.getTurn temp; # only if command is still active
+          battle_game.getTag temp2 Tag.SMT_COMMAND_TURN;
+          if neq temp temp2;
+            return power part side;
+          end;
+
+          muldiv power 4 5; # reduce power to 80%
+
+          set temp2 0; # compare armor sides and pick most armored side
+          unit.getArmor temp SIDE_FRONT;
+          if gt temp temp2;
+            set side SIDE_FRONT;
+            set temp2 temp;
+          end;
+
+          unit.getArmor temp SIDE_LEFT;
+          if gt temp temp2;
+            set side SIDE_LEFT;
+            set temp2 temp;
+          end;
+
+          unit.getArmor temp SIDE_RIGHT;
+          if gt temp temp2;
+            set side SIDE_RIGHT;
+            set temp2 temp;
+          end;
+
+          unit.getArmor temp SIDE_REAR;
+          if gt temp temp2;
+            set side SIDE_REAR;
+            set temp2 temp;
+          end;
+
+          unit.getArmor temp SIDE_UNDER;
+          if gt temp temp2;
+            set side SIDE_UNDER;
+            set temp2 temp;
+          end;
+
+          return power part side;
+
+      - new: SMTS_cmd_firing_hitunit    #*** Storm of Fire damage boost - 40.0 ***
+        offset: 40.0
+        code: |
+          var int temp;
+          var int temp2;
+
+          if eq damaging_type 0; # ignore support type damage
+            return power part side;
+          end;
+
+          attacker.getTag temp Tag.UNIT_IS_ASTARTES; # only affects Space Marines
+          if le temp 0;
+            return power part side;
+          end;
+
+          attacker.getFaction temp; # ignore friendly fire
+          unit.getFaction temp2;
+          if eq temp temp2;
+            return power part side;
+          end;
+
+          battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Storm of Fire
+          if neq temp 2;
+            return power part side;
+          end;
+
+          battle_game.getTurn temp; # only if command is still active
+          battle_game.getTag temp2 Tag.SMT_COMMAND_TURN;
+          if neq temp temp2;
+            return power part side;
+          end;
+
+          if and ge battle_action battle_action_autoshoot le battle_action battle_action_aimshoot; # only if action is auto, snap or aimed shot (7/8/9)
+            unit.getArmor temp side;
+            if gt temp power;
+              muldiv power 6 5; # +20% power if armor > power
+              limit_upper power temp; # cap power boost at armor value
+            end;
+          end;
+
+          return power part side;
+
+    damageUnit:
+      - new: SMTS_cmd_firing_dmgunit    #*** Storm of Fire armor destruction boost - 1.0 ***
+        offset: 1.0
+        code: |
+          var int temp;
+          var int temp2;
+
+          if eq damaging_type 0; # ignore support type damage
+            return power part side;
+          end;
+
+          attacker.getTag temp Tag.UNIT_IS_ASTARTES; # only affects Space Marines
+          if le temp 0;
+            return;
+          end;
+
+          attacker.getFaction temp; # ignore friendly fire
+          unit.getFaction temp2;
+          if eq temp temp2;
+            return;
+          end;
+
+          battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Storm of Fire
+          if neq temp 2;
+            return;
+          end;
+
+          battle_game.getTurn temp; # only if command is still active
+          battle_game.getTag temp2 Tag.SMT_COMMAND_TURN;
+          if neq temp temp2;
+            return;
+          end;
+
+          if and ge battle_action battle_action_autoshoot le battle_action battle_action_aimshoot; # only if action is auto, snap or aimed shot (7/8/9)
+            set temp orig_power;
+            set temp2 currPower;
+            sub temp temp2; # work out base weapon armor penetration
+            unit.getArmor temp2 side;
+            muldiv temp2 3 5; # 60% armor penetration
+            if and gt temp temp2 gt currPower 0; # if base weapon penetration is worse than 60%
+              muldiv temp 100 temp2;
+              add to_armor 1; # flat +1 armor destruction
+            else; # if base weapon penetration better than 60%
+              set temp 100;
+              add to_armor 5; # flat +5 armor destruction
+            end;
+            limit_lower dmgMult 120; # minimum 20% boost
+
+            muldiv to_armor dmgMult 100;
+          end;
+
+          return;
+
+      - new: SMTS_cmd_melee_dmgunit     #*** Relentless Assault TU refund - 22.2 ***
+        offset: 22.2
+        code: |
+          var int temp;
+          var int temp2;
+
+          if neq battle_action battle_action_hit; # only melee hits
+            return;
+          end;
+
+          attacker.getFaction temp; # only affects player units
+          if neq temp FACTION_PLAYER;
+            return;
+          end;
+
+          unit.getHealth temp;
+          if and ge to_health temp gt temp 0; # only killing blows
+            return;
+          end;
+
+          unit.getTag temp Tag.UNIT_IS_ASTARTES; # only affects Space Marines
+          if le temp 0;
+            return;
+          end;
+
+          battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Relentless Assault
+          if neq temp 3;
+            return;
+          end;
+
+          battle_game.getTurn temp; # only if command is still active
+          battle_game.getTag temp2 Tag.SMT_COMMAND_TURN;
+          if neq temp temp2;
+            return;
+          end;
+
+          unit.getTag temp Tag.SMT_RAMPAGE_COUNT; # can only trigger up to 6 times
+          if ge temp 6;
+            return;
+          end;
+
+          add temp 1;
+          unit.setTag Tag.SMT_RAMPAGE_COUNT temp;
+          unit.getTimeUnitsMax temp;
+          unit.getTimeUnits temp2;
+          muldiv temp 33 100; # up to 33% of max TUs refunded
+          add temp2 temp;
+          unit.getTimeUnitsMax temp;
+          limit_upper temp2 temp;
+          unit.setTimeUnits temp2;
+
+          return;
+
+      - new: SMTS_cmd_points_dmgunit    #*** Captain Command Points - 22.3 ***
+        offset: 22.3
+        code: |
+          var int pointVal;
+          var int temp;
+          var int temp2;
+
+          unit.getFaction temp; # only enemy kills count
+          if neq temp FACTION_HOSTILE;
+            return;
+          end;
+
+          unit.getHealth temp;
+          if and ge to_health temp gt temp 0; # only killing blows
+            return;
+          end;
+
+          unit.getHealthMax pointVal;
+          loop var i 5; #cycle through the armor sides
+            unit.getArmorMax temp i;
+            add pointVal temp;
+            debug_log "Cmd Points Armor " i temp pointVal;
+          end;
+          set temp 100;
+          unit.getTag temp2 Tag.ARMOR_ENERGY_SHIELD_DECAY;
+          div temp temp2;
+          unit.getTag temp2 Tag.ARMOR_ENERGY_SHIELD_HP_PER_TURN;
+          mul temp temp2;
+          add pointVal temp;
+
+          div pointVal 18; # average of hp + shields & armor sides /3
+
+          battle_game.getTag temp Tag.SMT_COMMAND_POINTS;
+          add pointVal temp;
+          battle_game.setTag Tag.SMT_COMMAND_POINTS pointVal;
+
+          return;
+
+      - new: SMTS_cmd_armor_dmgunit     #*** Armor of Contempt armor safeguard - 90.0 ***
+        offset: 90.0
+        code: |
+          var int temp;
+          var int temp2;
+
+          unit.getTag temp Tag.UNIT_IS_ASTARTES; # only affects Space Marines
+          if le temp 0;
+            return;
+          end;
+
+          battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Armor of Contempt
+          if neq temp 1;
+            return;
+          end;
+
+          battle_game.getTurn temp; # only if command is still active
+          battle_game.getTag temp2 Tag.SMT_COMMAND_TURN;
+          if neq temp temp2;
+            return;
+          end;
+
+          limit_upper to_armor 2; # negate most armor destruction
+
+          return;
+
+    reactionUnitAction:
+      - new: SMTS_cmd_melee_reactions    #*** Relentless Assault reactions negation - 1.0 ***
+        offset: 1.0
+        code: |
+          var int temp;
+          var int temp2;
+
+          action_target.getFaction temp; # only affects player units
+          if neq temp FACTION_PLAYER;
+            return reaction_chance;
+          end;
+
+          action_target.getTag temp Tag.UNIT_IS_ASTARTES; # only affects Space Marines
+          if le temp 0;
+            return reaction_chance;
+          end;
+
+          battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Relentless Assault
+          if neq temp 3;
+            return reaction_chance;
+          end;
+
+          battle_game.getTurn temp; # only if command is still active
+          battle_game.getTag temp2 Tag.SMT_COMMAND_TURN;
+          if neq temp temp2;
+            return reaction_chance;
+          end;
+
+          if and ge battle_action battle_action_autoshoot le battle_action battle_action_aimshoot; # only if action is not auto, snap or aimed shot (7/8/9)
+            return reaction_chance;
+          end;
+
+          return 0;
+
+    tryMeleeAttackItem:
+      - new: SMTS_cmd_melee_accuracy    #*** Relentless Assault accuracy bonus - 10.0 ***
+        offset: 10
+        code: |
+          var int temp;
+          var int temp2;
+
+          attacker.getFaction temp; # only affects player units
+          if neq temp FACTION_PLAYER;
+            return melee_attack_success;
+          end;
+
+          attacker.getTag temp Tag.UNIT_IS_ASTARTES; # only affects Space Marines
+          if le temp 0;
+            return melee_attack_success;
+          end;
+
+          battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Relentless Assault
+          if neq temp 3;
+            return melee_attack_success;
+          end;
+
+          battle_game.getTurn temp; # only if command is still active
+          battle_game.getTag temp2 Tag.SMT_COMMAND_TURN;
+          if neq temp temp2;
+            return melee_attack_success;
+          end;
+
+          set temp attack_strength;
+          muldiv temp 6 5; # +20%
+          sub temp attack_strength;
+          set temp2 melee_attack_success;
+          add temp2 temp;
+
+          return temp2;
+
+    newTurnUnit:
+      - new: SMTS_rampage_reset         #*** Reset Rampage counter ***
+        offset: 10
+        code: |
+
+          unit.setTag Tag.SMT_RAMPAGE_COUNT 0;
+          return;
+
+
+

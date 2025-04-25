@@ -12,7 +12,7 @@ skills:
       energy: false
       stun: false
 
-  - type: STR_INSPIRE_PRIMARIS_SKILL    # Primaris Lv5 Inspire
+  - type: STR_INSPIRE_CAPTAIN_SKILL    # Marine Captain Inspire
     targetMode: 9
     compatibleWeapons: [INV_INSPIRE_TOKEN]
     checkHandsOnly: false
@@ -130,3 +130,38 @@ skills:
       stun: false
       morale: false
 
+  - type: STR_CMD_ARMOR_SKILL           # Armor of Contempt Command
+    targetMode: 0
+    costUse:
+      time: 1
+    flatUse:
+      time: true
+    tags:
+      SKILL_SMT_COMMAND: 1
+
+  - type: STR_CMD_FIRE_SKILL            # Storm of Fire Command
+    targetMode: 0
+    costUse:
+      time: 1
+    flatUse:
+      time: true
+    tags:
+      SKILL_SMT_COMMAND: 2
+
+  - type: STR_CMD_MELEE_SKILL           # Relentless Assault Command
+    targetMode: 0
+    costUse:
+      time: 1
+    flatUse:
+      time: true
+    tags:
+      SKILL_SMT_COMMAND: 3
+
+  - type: STR_CMD_CHECK_SKILL           # Check Commands
+    targetMode: 0
+    costUse:
+      time: 1
+    flatUse:
+      time: true
+    tags:
+      SKILL_SMT_COMMAND: -1

@@ -115,9 +115,6 @@ items:
 
   - type: STR_BOLT_SNIPER_AMMO_DEREV    # DW Bolt Sniper ammo
     refNode: *STR_DEREVENANT_AMMO
-    tags:
-      SMT_DEREVENANT_AMMO: 200
-
 
   - &STR_ARMOR_IGNORING_AMMO            # Penetrating damage Template
     type: STR_VOLKITE_VAULT
@@ -172,8 +169,6 @@ items:
 
   - type: STR_BOLT_SNIPER_AMMO_HELS     # Bolt Sniper Helspear ammo
     refNode: *STR_SHIELDBREAKER_AMMO
-    tags:
-      SMT_SHIELD_DAMAGE_AMP: 50
 
   - &STR_NOFRIENDLYFIRE_AMMO            # Friend-safe Template
     type: INV_LIB_VULN_TOKEN

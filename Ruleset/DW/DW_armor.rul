@@ -5,8 +5,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -51,7 +51,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -74,14 +74,16 @@ armors:
   - type: STR_DW_TAC_ARMOR_IF_UC
     refNode: *STR_DW_TAC_MK7
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
   - type: STR_DW_TAC_ARMOR_SALA_UC
     refNode: *STR_DW_TAC_MK7
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -91,14 +93,19 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25 # salamander bonus
   - type: STR_DW_TAC_ARMOR_SW_UC
     refNode: *STR_DW_TAC_MK7
   - type: STR_DW_TAC_ARMOR_ULTRA_UC
     refNode: *STR_DW_TAC_MK7
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_DW_TAC_ARMOR_WS_UC
     refNode: *STR_DW_TAC_MK7
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_APOTH_MK7                       #Apothecary Armor (Firstborn)
     type: STR_DW_APOT_ARMOR_BA_UC
@@ -106,8 +113,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -146,7 +153,7 @@ armors:
       - 0.2 #IMPACT
       - 0.9 #MELTA
     builtInWeapons:
-      - INV_NULL_3X3
+      - INV_NULL_3X1_BACKPACK
       - AUX_MEDI_KIT_ADVANCED
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
@@ -157,7 +164,7 @@ armors:
       SMT_ARMOR_REGEN_HP: 3
       ARMOR_REGENERATES_WOUNDS: 1
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -180,14 +187,16 @@ armors:
   - type: STR_DW_APOT_ARMOR_IF_UC
     refNode: *STR_DW_APOTH_MK7
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
   - type: STR_DW_APOT_ARMOR_SALA_UC
     refNode: *STR_DW_APOTH_MK7
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -197,14 +206,19 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
   - type: STR_DW_APOT_ARMOR_SW_UC
     refNode: *STR_DW_APOTH_MK7
   - type: STR_DW_APOT_ARMOR_ULTRA_UC
     refNode: *STR_DW_APOTH_MK7
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_DW_APOT_ARMOR_WS_UC
     refNode: *STR_DW_APOTH_MK7
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_DEV_MK7                         #Devastator Armor (Firstborn)
     type: STR_DW_DEV_ARMOR_BA_UC
@@ -212,8 +226,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -259,7 +273,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/3 HWP penalties
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -283,14 +297,16 @@ armors:
     refNode: *STR_DW_DEV_MK7
     customArmorPreviewIndex: {mod: 40k, index: 556} #incorrectly set to 456 in 40k
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1
   - type: STR_DW_DEV_ARMOR_SALA_UC
     refNode: *STR_DW_DEV_MK7
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -300,14 +316,19 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
   - type: STR_DW_DEV_ARMOR_SW_UC
     refNode: *STR_DW_DEV_MK7
   - type: STR_DW_DEV_ARMOR_ULTRA_UC
     refNode: *STR_DW_DEV_MK7
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_DW_DEV_ARMOR_WS_UC
     refNode: *STR_DW_DEV_MK7
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_ASS_MK7                         #Assault Armor (Firstborn)
     type: STR_DW_ASS_ARMOR_BA_UC
@@ -315,8 +336,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -362,7 +383,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -389,14 +410,16 @@ armors:
   - type: STR_DW_ASS_ARMOR_IF_UC
     refNode: *STR_DW_ASS_MK7
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
   - type: STR_DW_ASS_ARMOR_SALA_UC
     refNode: *STR_DW_ASS_MK7
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -406,14 +429,19 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
   - type: STR_DW_ASS_ARMOR_SW_UC
     refNode: *STR_DW_ASS_MK7
   - type: STR_DW_ASS_ARMOR_ULTRA_UC
     refNode: *STR_DW_ASS_MK7
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_DW_ASS_ARMOR_WS_UC
     refNode: *STR_DW_ASS_MK7
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_TECH_MK7                        #Techmarine Armor (Firstborn)
     type: STR_DW_TECH_ARMOR_BA_UC
@@ -421,8 +449,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40
     heatVision: 50 # Techmarine Standard
-    antiCamouflageAtDay: 12 # +2 over Techmarine Standard
-    antiCamouflageAtDark: 12 # +2 over Techmarine Standard
+    antiCamouflageAtDay: 14 # +2 over Techmarine Standard
+    antiCamouflageAtDark: 14 # +2 over Techmarine Standard
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -469,7 +497,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -492,14 +520,16 @@ armors:
   - type: STR_DW_TECH_ARMOR_IF_UC
     refNode: *STR_DW_TECH_MK7
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 70 # Techmarine maintenance bonus
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
   - type: STR_DW_TECH_ARMOR_SALA_UC
     refNode: *STR_DW_TECH_MK7
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -509,14 +539,19 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
   - type: STR_DW_TECH_ARMOR_SW_UC
     refNode: *STR_DW_TECH_MK7
   - type: STR_DW_TECH_ARMOR_ULTRA_UC
     refNode: *STR_DW_TECH_MK7
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_DW_TECH_ARMOR_WS_UC
     refNode: *STR_DW_TECH_MK7
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_TERM_MK7                        #Terminator Armor (Firstborn)
     type: STR_DW_TER_ARMOR_BA_UC
@@ -524,8 +559,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 35 # +5 - DW bonus
-    antiCamouflageAtDay: 9 # +1 over regular Terminators - DW bonus
-    antiCamouflageAtDark: 9 # +1 over regular Terminators - DW bonus
+    antiCamouflageAtDay: 11 # +1 over regular Terminators - DW bonus
+    antiCamouflageAtDark: 11 # +1 over regular Terminators - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     psiDefence:
@@ -537,17 +572,17 @@ armors:
     rearArmor: 125
     underArmor: 175
     stats:
-      tu: 10            # base 10
+      tu: -5            # base -5
       stamina: 20       # base 20
       health: 30        # base 30
       bravery: 10       # base 10
       reactions: -10    # base -10
       firing: 20        # base 20
-      throwing: 10      # base 10
+      throwing: 20      # base 20
       strength: 90      # base 90
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
-      melee: 10         # base 10
+      melee: 20         # base 20
     bleedImmune: false
     painImmune: false
     fearImmune: false
@@ -575,7 +610,7 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
       ARMOR_ENERGY_SHIELD_DECAY: 50
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -597,15 +632,18 @@ armors:
       ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
   - type: STR_DW_TER_ARMOR_IF_UC
     refNode: *STR_DW_TERM_MK7
+    stats:
+      tu: 15            # base -5
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 85
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 65
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 40
   - type: STR_DW_TER_ARMOR_SALA_UC
     refNode: *STR_DW_TERM_MK7
     damageModifier:
       - 1.0 #none
       - 0.7 #AP
-      - 0.05 #FLAMES (default 0.3, Salamander bonus)
+      - 0.0 #FLAMES (default 0.3, Salamander bonus)
       - 0.6 #HE
       - 0.8 #LASCANON
       - 0.8 #PLASMA
@@ -615,14 +653,19 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.7 #MELTA (default 0.8, Salamander bonus) 
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 40
   - type: STR_DW_TER_ARMOR_SW_UC
     refNode: *STR_DW_TERM_MK7
   - type: STR_DW_TER_ARMOR_ULTRA_UC
     refNode: *STR_DW_TERM_MK7
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_DW_TER_ARMOR_WS_UC
     refNode: *STR_DW_TERM_MK7
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_TERM_ASS_SHIELD_MK7             #Terminator Armor (Assault Shield)
     type: STR_DW_TASS_ARMOR_BA_UC
@@ -630,8 +673,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 35 # +5 - DW bonus
-    antiCamouflageAtDay: 9 # +1 over regular Terminators - DW bonus
-    antiCamouflageAtDark: 9 # +1 over regular Terminators - DW bonus
+    antiCamouflageAtDay: 11 # +1 over regular Terminators - DW bonus
+    antiCamouflageAtDark: 11 # +1 over regular Terminators - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
@@ -645,17 +688,17 @@ armors:
     rearArmor: 125
     underArmor: 175
     stats:
-      tu: 10            # base 10
+      tu: -5            # base -5
       stamina: 20       # base 20
       health: 30        # base 30
       bravery: 10       # base 10
       reactions: -10    # base -10
       firing: 20        # base 20
-      throwing: 10      # base 10
+      throwing: 20      # base 20
       strength: 90      # base 90
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
-      melee: 10         # base 10
+      melee: 20         # base 20
     bleedImmune: false
     painImmune: false
     fearImmune: false
@@ -683,7 +726,7 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 50
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -705,15 +748,18 @@ armors:
       ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
   - type: STR_DW_TASS_ARMOR_IF_UC
     refNode: *STR_DW_TERM_ASS_SHIELD_MK7
+    stats:
+      tu: 15            # base -5
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 85
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 65
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 40
   - type: STR_DW_TASS_ARMOR_SALA_UC
     refNode: *STR_DW_TERM_ASS_SHIELD_MK7
     damageModifier:
       - 1.0 #none
       - 0.7 #AP
-      - 0.05 #FLAMES (default 0.3, Salamander bonus)
+      - 0.0 #FLAMES (default 0.3, Salamander bonus)
       - 0.6 #HE
       - 0.8 #LASCANON
       - 0.8 #PLASMA
@@ -723,14 +769,19 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.7 #MELTA (default 0.8, Salamander bonus) 
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 40
   - type: STR_DW_TASS_ARMOR_SW_UC
     refNode: *STR_DW_TERM_ASS_SHIELD_MK7
   - type: STR_DW_TASS_ARMOR_ULTRA_UC
     refNode: *STR_DW_TERM_ASS_SHIELD_MK7
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_DW_TASS_ARMOR_WS_UC
     refNode: *STR_DW_TERM_ASS_SHIELD_MK7
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_TERM_ASS_CLAWS_MK7              #Terminator Armor (Assault Claws)
     type: STR_DW_TASS_ARMOR_BA_CLAWS_UC
@@ -738,8 +789,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 35 # +5 - DW bonus
-    antiCamouflageAtDay: 9 # +1 over regular Terminators - DW bonus
-    antiCamouflageAtDark: 9 # +1 over regular Terminators - DW bonus
+    antiCamouflageAtDay: 11 # +1 over regular Terminators - DW bonus
+    antiCamouflageAtDark: 11 # +1 over regular Terminators - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
@@ -750,20 +801,20 @@ armors:
       moraleCurrent: 2.0 #discipline and resolve reinforces their faith (+50% terminator bonus)
     frontArmor: 180
     sideArmor: 175
-    rearArmor: 125
+    rearArmor: 145
     underArmor: 175
     stats:
-      tu: 10            # base 10
-      stamina: 20       # base 20
+      tu: 30            # base -5  +35
+      stamina: 30       # base 20  +10
       health: 30        # base 30
-      bravery: 10       # base 10
-      reactions: -10    # base -10
+      bravery: 20       # base 10  +10
+      reactions: 10     # base -10 +20
       firing: 20        # base 20
-      throwing: 10      # base 10
+      throwing: 20      # base 20
       strength: 90      # base 90
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
-      melee: 10         # base 10
+      melee: 40         # base 20  +20
     bleedImmune: false
     painImmune: false
     fearImmune: false
@@ -798,7 +849,7 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 50
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -910,9 +961,12 @@ armors:
       F3: ["0", "TERMCLWIF", "F3_FACE"]
       F4: ["0", "TERMCLWIF", "F4_FACE"]
       F5: ["0", "TERMCLWIF", "F5_FACE"]
+    stats:
+      tu: 40            # base -5  +45
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 85
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 65
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 40
   - type: STR_DW_TASS_ARMOR_SALA_CLAWS_UC
     refNode: *STR_DW_TERM_ASS_CLAWS_MK7
     spriteSheet: TERMCLWDWSA.PCK
@@ -936,7 +990,7 @@ armors:
     damageModifier:
       - 1.0 #none
       - 0.7 #AP
-      - 0.05 #FLAMES (default 0.3, Salamander bonus)
+      - 0.0 #FLAMES (default 0.3, Salamander bonus)
       - 0.6 #HE
       - 0.8 #LASCANON
       - 0.8 #PLASMA
@@ -946,6 +1000,8 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.7 #MELTA (default 0.8, Salamander bonus) 
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 40
   - type: STR_DW_TASS_ARMOR_SW_CLAWS_UC
     refNode: *STR_DW_TERM_ASS_CLAWS_MK7
     spriteSheet: TERMCLWDWSW.PCK
@@ -986,6 +1042,9 @@ armors:
       F3: ["0", "TERMCLWUM", "F3_FACE"]
       F4: ["0", "TERMCLWUM", "F4_FACE"]
       F5: ["0", "TERMCLWUM", "F5_FACE"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_DW_TASS_ARMOR_WS_CLAWS_UC
     refNode: *STR_DW_TERM_ASS_CLAWS_MK7
     spriteSheet: TERMCLWDWWS.PCK
@@ -1007,7 +1066,7 @@ armors:
       F4: ["0", "TERMCLWWS", "F4_FACE"]
       F5: ["0", "TERMCLWWS", "F5_FACE"]
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_TERM_CYCLONE_MK7                #Terminator Armor (Cyclone)
     type: STR_DW_TSARGENT_ARMOR_BA_UC
@@ -1015,8 +1074,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 35 # +5 - DW bonus
-    antiCamouflageAtDay: 9 # +1 over regular Terminators - DW bonus
-    antiCamouflageAtDark: 9 # +1 over regular Terminators - DW bonus
+    antiCamouflageAtDay: 11 # +1 over regular Terminators - DW bonus
+    antiCamouflageAtDark: 11 # +1 over regular Terminators - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
@@ -1030,17 +1089,18 @@ armors:
     rearArmor: 125
     underArmor: 175
     stats:
-      tu: 10            # base 10
+      tu: -20           # base -5 -15 for Cyclone
       stamina: 20       # base 20
       health: 30        # base 30
       bravery: 10       # base 10
       reactions: -10    # base -10
       firing: 20        # base 20
-      throwing: 10      # base 10
-      strength: 55      # base 90 -35 for cyclone launcher
+      throwing: 20      # base 20
+      strength: 90      # base 90
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
-      melee: 10         # base 10
+      melee: 20         # base 20
+      mana: 60          # Cyclone Ammo
     bleedImmune: false
     painImmune: false
     fearImmune: false
@@ -1057,7 +1117,7 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (was 1.0)
-    specialWeapon: AUX_MORTAR
+    specialWeapon: STR_CYCLONE_LAUNCHER
     builtInWeapons: # no claws
       - INV_NULL_3X3
       - INV_NULL_2X1_RL
@@ -1073,7 +1133,7 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
       ARMOR_ENERGY_SHIELD_DECAY: 50
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -1185,9 +1245,12 @@ armors:
       F3: ["0", "TERMCYCIF", "F3_FACE"]
       F4: ["0", "TERMCYCIF", "F4_FACE"]
       F5: ["0", "TERMCYCIF", "F5_FACE"]
+    stats:
+      tu: 5           # base -5 -15 for Cyclone
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 85
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 65
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 40
   - type: STR_DW_TSARGENT_ARMOR_SALA_UC
     refNode: *STR_DW_TERM_CYCLONE_MK7
     spriteSheet: TERMCYCDWSA.PCK
@@ -1211,7 +1274,7 @@ armors:
     damageModifier:
       - 1.0 #none
       - 0.7 #AP
-      - 0.05 #FLAMES (default 0.3, Salamander bonus)
+      - 0.0 #FLAMES (default 0.3, Salamander bonus)
       - 0.6 #HE
       - 0.8 #LASCANON
       - 0.8 #PLASMA
@@ -1221,6 +1284,8 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.7 #MELTA (default 0.8, Salamander bonus) 
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 40
   - type: STR_DW_TSARGENT_ARMOR_SW_UC
     refNode: *STR_DW_TERM_CYCLONE_MK7
     spriteSheet: TERMCYCDWSW.PCK
@@ -1261,6 +1326,9 @@ armors:
       F3: ["0", "TERMCYCUM", "F3_FACE"]
       F4: ["0", "TERMCYCUM", "F4_FACE"]
       F5: ["0", "TERMCYCUM", "F5_FACE"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_DW_TSARGENT_ARMOR_WS_UC
     refNode: *STR_DW_TERM_CYCLONE_MK7
     spriteSheet: TERMCYCDWWS.PCK
@@ -1282,8 +1350,7 @@ armors:
       F4: ["0", "TERMCYCWS", "F4_FACE"]
       F5: ["0", "TERMCYCWS", "F5_FACE"]
     moveCost:
-      basePercent: [100, 75] # was 100, 25
-
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_TAC_MKX                         #Tactical Armor (Primaris)
     type: STR_MKX_DW_TAC_BA_UC
@@ -1291,8 +1358,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -1337,7 +1404,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -1360,14 +1427,16 @@ armors:
   - type: STR_MKX_DW_TAC_IF_UC
     refNode: *STR_DW_TAC_MKX
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
   - type: STR_MKX_DW_TAC_SALA_UC
     refNode: *STR_DW_TAC_MKX
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -1377,14 +1446,19 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
   - type: STR_MKX_DW_TAC_SW_UC
     refNode: *STR_DW_TAC_MKX
   - type: STR_MKX_DW_TAC_ULTRA_UC
     refNode: *STR_DW_TAC_MKX
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_MKX_DW_TAC_WS_UC
     refNode: *STR_DW_TAC_MKX
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_APOTH_MKX                       #Apothecary Armor (Primaris)
     type: STR_MKX_DW_APO_BA_UC
@@ -1392,8 +1466,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -1432,7 +1506,7 @@ armors:
       - 0.2 #IMPACT
       - 0.9 #MELTA
     builtInWeapons:
-      - INV_NULL_3X3
+      - INV_NULL_3X1_BACKPACK
     specialWeapon: STR_SM_APOTH_FIST
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
@@ -1443,7 +1517,7 @@ armors:
       SMT_ARMOR_REGEN_HP: 3
       ARMOR_REGENERATES_WOUNDS: 1
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -1466,14 +1540,16 @@ armors:
   - type: STR_MKX_DW_APO_IF_UC
     refNode: *STR_DW_APOTH_MKX
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
   - type: STR_MKX_DW_APO_SALA_UC
     refNode: *STR_DW_APOTH_MKX
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -1483,14 +1559,19 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
   - type: STR_MKX_DW_APO_SW_UC
     refNode: *STR_DW_APOTH_MKX
   - type: STR_MKX_DW_APO_ULTRA_UC
     refNode: *STR_DW_APOTH_MKX
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_MKX_DW_APO_WS_UC
     refNode: *STR_DW_APOTH_MKX
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
 
 
@@ -1500,8 +1581,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40
     heatVision: 50
-    antiCamouflageAtDay: 12 # +2 over regular - DW bonus
-    antiCamouflageAtDark: 12 # +2 over regular - DW bonus
+    antiCamouflageAtDay: 14 # +2 over regular - DW bonus
+    antiCamouflageAtDark: 14 # +2 over regular - DW bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -1550,7 +1631,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -1573,14 +1654,16 @@ armors:
   - type: STR_MKX_DW_TEC_IF_UC
     refNode: *STR_DW_TECH_MKX
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 70
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
   - type: STR_MKX_DW_TEC_SALA_UC
     refNode: *STR_DW_TECH_MKX
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -1590,25 +1673,30 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
   - type: STR_MKX_DW_TEC_SW_UC
     refNode: *STR_DW_TECH_MKX
   - type: STR_MKX_DW_TEC_ULTRA_UC
     refNode: *STR_DW_TECH_MKX
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_MKX_DW_TEC_WS_UC
     refNode: *STR_DW_TECH_MKX
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
-  - &STR_DW_PHB_MKX                         #Phobos Armor (Primaris)
+  - &STR_DW_PHB_MKX                         #Phobos Armor (Reiver)
     type: STR_MKX_DW_PHB_BA_UC
     ufopediaType: STR_DW_PHB_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 35 # +15 - DW bonus + Phobos bonus
-    antiCamouflageAtDay: 9 # +2 over regular Officers - DW bonus + Phobos bonus
-    antiCamouflageAtDark: 9 # +2 over regular Officers - DW bonus + Phobos bonus
-    camouflageAtDay: -6 # stealth bonus
-    camouflageAtDark: -12 # stealth bonus
+    antiCamouflageAtDay: 12 # +2 over regular Officers - DW bonus + Phobos bonus
+    antiCamouflageAtDark: 12 # +2 over regular Officers - DW bonus + Phobos bonus
+    camouflageAtDay: -12
+    camouflageAtDark: -12
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -1618,18 +1706,18 @@ armors:
     sideArmor: 95 # base 120
     rearArmor: 90 # base 100
     underArmor: 100 # base 125
-    stats: # Scout/Tac hybrid gear
-      tu: 30            # base 10 +20
-      stamina: 30       # base 20 +10
-      health: 10        # base 10 
-      bravery: 10       # base 0  +10
-      reactions: 40     # base 10 +30
-      firing: 5         # base 0  +5
-      throwing: 15      # base 5  +10
-      strength: 10      # base 10 
-      psiStrength: 0    # base 0  
-      psiSkill: 0       # base 0  
-      melee: 20         # base 10 +10
+    stats: # Reiver
+      tu: 30
+      stamina: 25
+      health: 10
+      bravery: 10
+      reactions: 35
+      firing: 5
+      throwing: 10
+      strength: 10
+      psiStrength: 0
+      psiSkill: 0
+      melee: 30
     bleedImmune: false
     painImmune: false
     fearImmune: false
@@ -1647,7 +1735,7 @@ armors:
       - 0.2 #IMPACT
       - 0.9 #MELTA
     builtInWeapons: [] # remove backpack blocker
-    specialWeapon: STR_SM_PHOBOS_SCANNER #gets motion scanner
+    specialWeapon: STR_STEALTH_REIVER # reiver knife + stealth
     moveCost:
       basePercent: [100, 75] # Reduced energy cost - Phobos bonus
     tags:
@@ -1657,13 +1745,17 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
-      DODGE_CHANCE: 20
-      ARMOR_MAX_SUCCESSFUL_DODGES: 1
-      ARMOR_IS_INFILTRATOR: 2 #2 turns to infiltrate
+      DODGE_CHANCE: 30
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      ARMOR_RESTEALTH_KILL_REQUIREMENT: 2
+      ARMOR_RESTEALTH_TURN_REQUIREMENT: 0
+      ARMOR_IMMEDIATE_KILL_CREDIT: 2
+      ARMOR_IMMEDIATE_TURN_CREDIT: 0
+      ARMOR_CLOAKED_ASSASSIN: 1 # melee
 
   - type: STR_MKX_DW_PHB_BA_UC
     refNode: *STR_DW_PHB_MKX
@@ -1683,14 +1775,16 @@ armors:
   - type: STR_MKX_DW_PHB_IF_UC
     refNode: *STR_DW_PHB_MKX
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
   - type: STR_MKX_DW_PHB_SALA_UC
     refNode: *STR_DW_PHB_MKX
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -1700,12 +1794,220 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
   - type: STR_MKX_DW_PHB_SW_UC
     refNode: *STR_DW_PHB_MKX
   - type: STR_MKX_DW_PHB_ULTRA_UC
     refNode: *STR_DW_PHB_MKX
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_MKX_DW_PHB_WS_UC
     refNode: *STR_DW_PHB_MKX
+    moveCost:
+      basePercent: [100, 25] # Whitescar + Phobos bonus
+
+  - &STR_DW_PHB_ELIM                        #Phobos Armor (Eliminator)
+    type: STR_MKX_DW_PHBELIM_BA_UC
+    ufopediaType: STR_DW_PHB_CODEX_UC
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: ELIMDWBA
+      3: GOGGLES
+      4: MASK
+    layersDefinition:
+      M0: ["0", "MKXPHB", "M0_FACE", "GOGGLES", "MASK1"]
+      M1: ["0", "MKXPHB", "M1_FACE", "GOGGLES", "MASK2"]
+      M2: ["0", "MKXPHB", "M2_FACE", "GOGGLES", "MASK3"]
+      M3: ["0", "MKXPHB", "M3_FACE", "GOGGLES", "MASK4"]
+      M4: ["0", "MKXPHB", "M4_FACE", "GOGGLES", "MASK1"]
+      M5: ["0", "MKXPHB", "M5_FACE", "GOGGLES", "MASK2"]
+      M6: ["0", "MKXPHB", "M6_FACE", "GOGGLES", "MASK3"]
+      F0: ["0", "MKXPHB", "M7_FACE", "GOGGLES", "MASK4"]
+      F1: ["0", "MKXPHB", "M8_FACE", "GOGGLES", "MASK1"]
+      F2: ["0", "MKXPHB", "M9_FACE", "GOGGLES", "MASK2"]
+      F3: ["0", "MKXPHB", "M10_FACE", "GOGGLES", "MASK3"]
+      F4: ["0", "MKXPHB", "M11_FACE", "GOGGLES", "MASK4"]
+      F5: ["0", "MKXPHB", "M12_FACE", "GOGGLES", "MASK1"]
+      F5: ["0", "MKXPHB", "M13_FACE", "GOGGLES", "MASK2"]
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 35 # +15 - DW bonus + Phobos bonus
+    antiCamouflageAtDay: 12 # +2 over regular Officers - DW bonus + Phobos bonus
+    antiCamouflageAtDark: 12 # +2 over regular Officers - DW bonus + Phobos bonus
+    camouflageAtDay: -15 # stealth bonus
+    camouflageAtDark: -15 # stealth bonus
+    forcedTorso: 1
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 100 # base 125
+    sideArmor: 95 # base 120
+    rearArmor: 90 # base 100
+    underArmor: 100 # base 125
+    stats: # Eliminator
+      tu: 25
+      stamina: 25
+      health: 10
+      bravery: 10
+      reactions: 25
+      firing: 25
+      throwing: 10
+      strength: 10
+      psiStrength: 0
+      psiSkill: 0
+      melee: 5
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    builtInWeapons: []
+    specialWeapon: STR_STEALTH_ELIMINATOR # camo cloak stealth
+    moveCost:
+      basePercent: [100, 75] # Reduced energy cost - Phobos bonus
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
+      INFECTION_RESIST_TYPE: 0
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+      DODGE_CHANCE: 20
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      ARMOR_RESTEALTH_KILL_REQUIREMENT: 0
+      ARMOR_RESTEALTH_TURN_REQUIREMENT: 2
+      ARMOR_IMMEDIATE_KILL_CREDIT: 0
+      ARMOR_IMMEDIATE_TURN_CREDIT: 2
+      ARMOR_CLOAKED_ASSASSIN: 2 # sniper
+
+  - type: STR_MKX_DW_PHBELIM_BA_UC
+    refNode: *STR_DW_PHB_ELIM
+    customArmorPreviewIndex: {mod: 40k, index: 428}
+    layersSpecificPrefix:
+      1: ELIMDWBA
+      3: GOGGLES
+      4: MASK
+    spriteSheet: ELIMDWBA.PCK
+    instantWoundRecovery: true
+
+  - type: STR_MKX_DW_PHBELIM_BT_UC
+    refNode: *STR_DW_PHB_ELIM
+    customArmorPreviewIndex: {mod: 40k, index: 430}
+    layersSpecificPrefix:
+      1: ELIMDWBT
+      3: GOGGLES
+      4: MASK
+    spriteSheet: ELIMDWBT.PCK
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
+
+  - type: STR_MKX_DW_PHBELIM_CF_UC
+    refNode: *STR_DW_PHB_ELIM
+    customArmorPreviewIndex: {mod: 40k, index: 426}
+    layersSpecificPrefix:
+      1: ELIMDWCF
+      3: GOGGLES
+      4: MASK
+    spriteSheet: ELIMDWCF.PCK
+
+  - type: STR_MKX_DW_PHBELIM_DA_UC
+    refNode: *STR_DW_PHB_ELIM
+    customArmorPreviewIndex: {mod: 40k, index: 429}
+    layersSpecificPrefix:
+      1: ELIMDWDA
+      3: GOGGLES
+      4: MASK
+    spriteSheet: ELIMDWDA.PCK
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+
+  - type: STR_MKX_DW_PHBELIM_IF_UC
+    refNode: *STR_DW_PHB_ELIM
+    customArmorPreviewIndex: {mod: 40k, index: 427}
+    layersSpecificPrefix:
+      1: ELIMDWIF
+      3: GOGGLES
+      4: MASK
+    spriteSheet: ELIMDWIF.PCK
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
+
+  - type: STR_MKX_DW_PHBELIM_SALA_UC
+    refNode: *STR_DW_PHB_ELIM
+    customArmorPreviewIndex: {mod: 40k, index: 429}
+    layersSpecificPrefix:
+      1: ELIMDWSA
+      3: GOGGLES
+      4: MASK
+    spriteSheet: ELIMDWSA.PCK
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+
+  - type: STR_MKX_DW_PHBELIM_SW_UC
+    refNode: *STR_DW_PHB_ELIM
+    customArmorPreviewIndex: {mod: 40k, index: 427}
+    layersSpecificPrefix:
+      1: ELIMDWSW
+      3: GOGGLES
+      4: MASK
+    spriteSheet: ELIMDWSW.PCK
+
+  - type: STR_MKX_DW_PHBELIM_ULTRA_UC
+    refNode: *STR_DW_PHB_ELIM
+    customArmorPreviewIndex: {mod: 40k, index: 426}
+    layersSpecificPrefix:
+      1: ELIMDWUM
+      3: GOGGLES
+      4: MASK
+    spriteSheet: ELIMDWUM.PCK
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+
+  - type: STR_MKX_DW_PHBELIM_WS_UC
+    refNode: *STR_DW_PHB_ELIM
+    customArmorPreviewIndex: {mod: 40k, index: 431}
+    layersSpecificPrefix:
+      1: ELIMDWWS
+      3: GOGGLES
+      4: MASK
+    spriteSheet: ELIMDWWS.PCK
     moveCost:
       basePercent: [100, 25] # Whitescar + Phobos bonus
 
@@ -1715,8 +2017,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     corpseBattle:
@@ -1769,7 +2071,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -1887,8 +2189,10 @@ armors:
       F4: ["0", "GRVNWIF", "F4_FACE", "GOLA"]
       F5: ["0", "GRVNWIF", "F5_FACE", "GOLA"]
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 70
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1
   - type: STR_MKX_DW_GRV_SALA_UC
     refNode: *STR_DW_GRV_MKX_EH
     units:
@@ -1913,7 +2217,7 @@ armors:
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -1923,6 +2227,8 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
   - type: STR_MKX_DW_GRV_SW_UC
     refNode: *STR_DW_GRV_MKX_EH
     units:
@@ -1965,6 +2271,9 @@ armors:
       F3: ["0", "GRVNWUM", "F3_FACE", "GOLA"]
       F4: ["0", "GRVNWUM", "F4_FACE", "GOLA"]
       F5: ["0", "GRVNWUM", "F5_FACE", "GOLA"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_MKX_DW_GRV_WS_UC
     refNode: *STR_DW_GRV_MKX_EH
     units:
@@ -1987,7 +2296,7 @@ armors:
       F4: ["0", "GRVNWWS", "F4_FACE", "GOLA"]
       F5: ["0", "GRVNWWS", "F5_FACE", "GOLA"]
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 25] # was 100, 25
 
   - &STR_DW_GRV_MKX_BS                      #Gravis Armor (Primaris) - Boltstorm Gauntlet
     type: STR_MKX_DW_GRVBS_BA_UC
@@ -1995,8 +2304,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     corpseBattle:
@@ -2050,7 +2359,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -2061,6 +2370,7 @@ armors:
       - STR_BLOODANGELS_PRIMARIS
     instantWoundRecovery: true
     spriteSheet: DWGRVARMBA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 440}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -2082,6 +2392,7 @@ armors:
     units:
       - STR_BLACKT_PRIMARIS
     spriteSheet: DWGRVARMBT.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 442}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -2107,6 +2418,7 @@ armors:
     units:
       - STR_CRISMONF_PRIMARIS
     spriteSheet: DWGRVARMCF.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 438}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -2128,6 +2440,7 @@ armors:
     units:
       - STR_DARKANGELS_PRIMARIS
     spriteSheet: DWGRVARMDA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 441}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -2151,6 +2464,7 @@ armors:
     units:
       - STR_IMPERIALF_PRIMARIS
     spriteSheet: DWGRVARMIF.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 439}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -2168,13 +2482,16 @@ armors:
       F4: ["0", "GRVBSIF", "F4_FACE", "GOLA"]
       F5: ["0", "GRVBSIF", "F5_FACE", "GOLA"]
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 70
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1
   - type: STR_MKX_DW_GRVBS_SALA_UC
     refNode: *STR_DW_GRV_MKX_BS
     units:
       - STR_SALAMANDAR_PRIMARIS
     spriteSheet: DWGRVARMSA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 441}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -2194,7 +2511,7 @@ armors:
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -2204,11 +2521,14 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
   - type: STR_MKX_DW_GRVBS_SW_UC
     refNode: *STR_DW_GRV_MKX_BS
     units:
       - STR_SPACEW_PRIMARIS
     spriteSheet: DWGRVARMSW.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 439}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -2230,6 +2550,7 @@ armors:
     units:
       - STR_ULTRAMARINE_PRIMARIS
     spriteSheet: DWGRVARMUM.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 438}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -2246,11 +2567,15 @@ armors:
       F3: ["0", "GRVBSUM", "F3_FACE", "GOLA"]
       F4: ["0", "GRVBSUM", "F4_FACE", "GOLA"]
       F5: ["0", "GRVBSUM", "F5_FACE", "GOLA"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_MKX_DW_GRVBS_WS_UC
     refNode: *STR_DW_GRV_MKX_BS
     units:
       - STR_WHITES_PRIMARIS
     spriteSheet: DWGRVARMWS.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 443}
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWGRAVIS
@@ -2268,7 +2593,7 @@ armors:
       F4: ["0", "GRVBSWS", "F4_FACE", "GOLA"]
       F5: ["0", "GRVBSWS", "F5_FACE", "GOLA"]
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_GRV_MKX_AC                      #Gravis Armor (Primaris) - Autocannon Gauntlet
     type: STR_MKX_DW_GRVAC_BA_UC
@@ -2276,8 +2601,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     corpseBattle:
@@ -2331,7 +2656,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -2454,8 +2779,10 @@ armors:
       F4: ["0", "GRVACIF", "F4_FACE", "GOLA"]
       F5: ["0", "GRVACIF", "F5_FACE", "GOLA"]
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 70
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1
   - type: STR_MKX_DW_GRVAC_SALA_UC
     refNode: *STR_DW_GRV_MKX_AC
     units:
@@ -2481,7 +2808,7 @@ armors:
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -2491,6 +2818,8 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
   - type: STR_MKX_DW_GRVAC_SW_UC
     refNode: *STR_DW_GRV_MKX_AC
     units:
@@ -2535,6 +2864,9 @@ armors:
       F3: ["0", "GRVACUM", "F3_FACE", "GOLA"]
       F4: ["0", "GRVACUM", "F4_FACE", "GOLA"]
       F5: ["0", "GRVACUM", "F5_FACE", "GOLA"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_MKX_DW_GRVAC_WS_UC
     refNode: *STR_DW_GRV_MKX_AC
     units:
@@ -2558,7 +2890,7 @@ armors:
       F4: ["0", "GRVACWS", "F4_FACE", "GOLA"]
       F5: ["0", "GRVACWS", "F5_FACE", "GOLA"]
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_GRV_MKX_FS                      #Gravis Armor (Primaris) - Flamestorm Gauntlet
     type: STR_MKX_DW_GRVFS_BA_UC
@@ -2566,8 +2898,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     corpseBattle:
@@ -2621,7 +2953,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -2744,8 +3076,10 @@ armors:
       F4: ["0", "GRVFSIF", "F4_FACE", "GOLA"]
       F5: ["0", "GRVFSIF", "F5_FACE", "GOLA"]
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 70
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1
   - type: STR_MKX_DW_GRVFS_SALA_UC
     refNode: *STR_DW_GRV_MKX_FS
     units:
@@ -2771,7 +3105,7 @@ armors:
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -2781,6 +3115,8 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
   - type: STR_MKX_DW_GRVFS_SW_UC
     refNode: *STR_DW_GRV_MKX_FS
     units:
@@ -2825,6 +3161,9 @@ armors:
       F3: ["0", "GRVFSUM", "F3_FACE", "GOLA"]
       F4: ["0", "GRVFSUM", "F4_FACE", "GOLA"]
       F5: ["0", "GRVFSUM", "F5_FACE", "GOLA"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_MKX_DW_GRVFS_WS_UC
     refNode: *STR_DW_GRV_MKX_FS
     units:
@@ -2848,7 +3187,7 @@ armors:
       F4: ["0", "GRVFSWS", "F4_FACE", "GOLA"]
       F5: ["0", "GRVFSWS", "F5_FACE", "GOLA"]
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_INC_MKX                         #Omnis Armor (Primaris)
     type: STR_MKX_DW_INC_BA_UC
@@ -2856,8 +3195,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     corpseBattle:
@@ -2906,7 +3245,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -2943,8 +3282,10 @@ armors:
     units:
       - STR_IMPERIALF_PRIMARIS
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 70
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 2
   - type: STR_MKX_DW_INC_SALA_UC
     refNode: *STR_DW_INC_MKX
     units:
@@ -2952,7 +3293,7 @@ armors:
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -2962,6 +3303,8 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
   - type: STR_MKX_DW_INC_SW_UC
     refNode: *STR_DW_INC_MKX
     units:
@@ -2970,12 +3313,15 @@ armors:
     refNode: *STR_DW_INC_MKX
     units:
       - STR_ULTRAMARINE_PRIMARIS
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_MKX_DW_INC_WS_UC
     refNode: *STR_DW_INC_MKX
     units:
       - STR_WHITES_PRIMARIS
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_INC_MKX_AC                      #Omnis Armor (Primaris) - Accelerator Autocannon
     type: STR_MKX_DW_INCAC_BA_UC
@@ -2983,8 +3329,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     corpseBattle:
@@ -3039,7 +3385,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -3166,8 +3512,10 @@ armors:
       F4: ["0", "INCDWIF", "M4_FACE", "GOLA"]
       F5: ["0", "INCDWIF", "M5_FACE", "GOLA"]
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 70
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 2
   - type: STR_MKX_DW_INCAC_SALA_UC
     refNode: *STR_DW_INC_MKX_AC
     units:
@@ -3193,7 +3541,7 @@ armors:
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -3203,6 +3551,8 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
   - type: STR_MKX_DW_INCAC_SW_UC
     refNode: *STR_DW_INC_MKX_AC
     units:
@@ -3247,6 +3597,9 @@ armors:
       F3: ["0", "INCDWULTRA", "M3_FACE", "GOLA"]
       F4: ["0", "INCDWULTRA", "M4_FACE", "GOLA"]
       F5: ["0", "INCDWULTRA", "M5_FACE", "GOLA"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_MKX_DW_INCAC_WS_UC
     refNode: *STR_DW_INC_MKX_AC
     units:
@@ -3270,7 +3623,7 @@ armors:
       F4: ["0", "INCDWWS", "M4_FACE", "GOLA"]
       F5: ["0", "INCDWWS", "M5_FACE", "GOLA"]
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_INC_MKX_PE                      #Omnis Armor (Primaris) - Plasma Exterminators x2
     type: STR_MKX_DW_INCPE_BA_UC
@@ -3278,8 +3631,8 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 8 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 8 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
+    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     ufopediaType: STR_MKX_INC_LV1_UC
@@ -3335,7 +3688,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 3/5 HWP penalties
       INTIMIDATION_RESISTANCE: 66
-      INFECTION_RESIST: 50
+      INFECTION_RESIST: 33
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
@@ -3462,8 +3815,10 @@ armors:
       F4: ["0", "INCDWIF", "M4_FACE", "GOLA"]
       F5: ["0", "INCDWIF", "M5_FACE", "GOLA"]
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 33
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 70
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 2
   - type: STR_MKX_DW_INCPE_SALA_UC
     refNode: *STR_DW_INC_MKX_PE
     units:
@@ -3489,7 +3844,7 @@ armors:
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -3499,6 +3854,8 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
   - type: STR_MKX_DW_INCPE_SW_UC
     refNode: *STR_DW_INC_MKX_AC
     units:
@@ -3543,6 +3900,9 @@ armors:
       F3: ["0", "INCDWULTRA", "M3_FACE", "GOLA"]
       F4: ["0", "INCDWULTRA", "M4_FACE", "GOLA"]
       F5: ["0", "INCDWULTRA", "M5_FACE", "GOLA"]
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
   - type: STR_MKX_DW_INCPE_WS_UC
     refNode: *STR_DW_INC_MKX_PE
     units:
@@ -3566,7 +3926,7 @@ armors:
       F4: ["0", "INCDWWS", "M4_FACE", "GOLA"]
       F5: ["0", "INCDWWS", "M5_FACE", "GOLA"]
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_LEADER_ARMOR                    #DW Captain Armor template
     type: STR_DW_LEADER_BA_UC
@@ -3587,10 +3947,10 @@ armors:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
       moraleCurrent: 2.00 #discipline and resolve reinforces their faith (+50% Captain bonus)
-    frontArmor: 135
-    sideArmor: 130
-    rearArmor: 110
-    underArmor: 130
+    frontArmor: 145
+    sideArmor: 135
+    rearArmor: 120
+    underArmor: 135
     zombiImmune: true
     stats: # tactical armor base
       tu: 25            # base 10 +15
@@ -3710,7 +4070,10 @@ armors:
       F4: ["CAPEP", "MKXCAPDW", "M4_FACE", ""]
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     builtInWeapons:
-      - STR_GRAV_AUTOC_DW
+      - INV_NULL_3X1_BACKPACK
+      - STR_HEAVY_BOLTRIFLE_DW
+      - STR_BOLTRIFLE_DRUM_MC_DW
+      - STR_BOLTRIFLE_DRUM_MC_DW
   - type: STR_DW_LEADER_DA_UC
     refNode: *STR_DW_LEADER_ARMOR
     units:
@@ -3766,13 +4129,12 @@ armors:
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     builtInWeapons:
       - INV_NULL_3X1_BACKPACK
-      - STR_ABSOLVOR_PISTOL_DW
-      - STR_ABSOLVOR_AMMO_MC_DW
-      - STR_ABSOLVOR_AMMO_MC_DW
-      - STR_ABSOLVOR_AMMO_MC_DW
+      - AUX_SHIELD_DW
     tags:
-      ARMOR_OVERWATCH_TU_RESTORED: 60
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 70
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1
   - type: STR_DW_LEADER_SALA_UC
     refNode: *STR_DW_LEADER_ARMOR
     units:
@@ -3796,7 +4158,7 @@ armors:
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
-      - 0.05 #FLAMES (default 0.6, Salamander bonus)
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
       - 0.7 #HE
       - 0.7 #LASCANON
       - 0.9 #PLASMA
@@ -3810,6 +4172,8 @@ armors:
     builtInWeapons:
       - INV_NULL_3X1_BACKPACK
       - STR_VOLKITE_DW
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
   - type: STR_DW_LEADER_SW_UC
     refNode: *STR_DW_LEADER_ARMOR
     units:
@@ -3832,7 +4196,7 @@ armors:
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     builtInWeapons:
       - INV_BLESS_TOKEN
-      - INV_NULL_3X3
+      - INV_NULL_3X1_BACKPACK
       - STR_POWER_AXE_DW
     specialWeapon: STR_SM_APOTH_FIST_DW # Medikit
 
@@ -3858,9 +4222,13 @@ armors:
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     builtInWeapons:
       - INV_NULL_3X1_BACKPACK
-      - STR_HEAVY_BOLTRIFLE_DW
-      - STR_BOLTRIFLE_DRUM_MC_DW
-      - STR_BOLTRIFLE_DRUM_MC_DW
+      - STR_ABSOLVOR_PISTOL_DW
+      - STR_ABSOLVOR_AMMO_MC_DW
+      - STR_ABSOLVOR_AMMO_MC_DW
+      - STR_ABSOLVOR_AMMO_MC_DW
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 75
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
 
   - type: STR_DW_LEADER_WS_UC
     refNode: *STR_DW_LEADER_ARMOR
@@ -3891,7 +4259,7 @@ armors:
       - STR_FORCE_HALBERD_DW
       - INV_NULL_3X1_BACKPACK
     moveCost:
-      basePercent: [100, 75] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
     tags:
       ARMOR_PERILS_EFFECTS_RESISTANCE: 100 # immune to perils attacks
 

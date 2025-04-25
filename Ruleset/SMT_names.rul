@@ -64,15 +64,17 @@ extraStrings:
       STR_SCOUT_SMT_UC: "Scout Armor"
       STR_SCOUT_SGT_UC: "Scout Sergeant Armor"
       STR_ASS_ARMOR_HONOR_CLAW: MK7 Vanguard Armor (Claw)
+      STR_ASS_ARMOR_HONOR_SHIELD: MK7 Vanguard Armor (Shield)
       STR_CHAP_TERMINATOR_UC: Chaplain Terminator Armor
       STR_CHAP_ASSAULT_UC: Chaplain Assault Armor
       STR_SMT_LIB_ARMOR_UC: MK7 Librarian Armor
       STR_LIB_TERMINATOR_UC: Terminator Librarian Armor
-      STR_TASS_ARMOR_CLAWS: Terminator Assault (Claws)
-      STR_FLYING_SUIT_UC: Terminator Assault (Shield)
-      STR_TSARGENT_UC: Terminator Cyclone Armor
+      STR_TASS_ARMOR_CLAWS: Terminator Assault Armor
+      STR_FLYING_SUIT_UC: Terminator (Storm Shield)
+      STR_TSARGENT_UC: Terminator (Cyclone Launcher)
       STR_HONOR_ARMOR_UC: "MK7 Artificer Armor"
       STR_HONOR_ARMOR: "MK7 Artificer Armor"
+      STR_SIGNUM_DEV_UC: "MK7 Sergeant Signum Armor"
       DREAD_ARMOR2_UC: "Mortis Dreadnought Armor"
       DREAD_ARMOR3_UC: "Hellfire Dreadnought Armor"
       DREAD_ARMOR4_UC: "Castraferrum Dreadnought Armor"
@@ -92,6 +94,19 @@ extraStrings:
       STR_MKX_TAC_PLAS_LV3_UC: MKX Tacticus (Plasma)
       STR_MKX_TAC_PLAS_LV4_UC: MKX Tacticus (Plasma)
       STR_MKX_TAC_PLAS_LV5_UC: MKX Tacticus (Plasma)
+      STR_MKX_ASS_ARMOR: MKX Assault Intercessor
+      STR_MKX_ASS_LV1_UC: MKX Assault Intercessor
+      STR_MKX_ASS_LV2_UC: MKX Assault Intercessor
+      STR_MKX_ASS_LV3_UC: MKX Assault Intercessor
+      STR_MKX_ASS_LV4_UC: MKX Assault Intercessor
+      STR_MKX_ASS_LV5_UC: MKX Assault Intercessor
+      STR_PRIMARIS_VETARMOR: MKX Sternguard Armor
+      STR_MKX_VETS_LV3_UC: MKX Sternguard Armor
+      STR_MKX_VETS_LV4_UC: MKX Sternguard Armor
+      STR_MKX_VETS_LV5_UC: MKX Sternguard Armor
+      STR_MKX_VETB_LV3_UC: MKX Bladeguard Armor
+      STR_MKX_VETB_LV4_UC: MKX Bladeguard Armor
+      STR_MKX_VETB_LV5_UC: MKX Bladeguard Armor
       STR_MKX_HELIX_UC_LV1: MKX Helix Adept Armor
       STR_MKX_HELIX_UC_LV2: MKX Helix Adept Armor
       STR_MKX_HELIX_UC_LV3: MKX Helix Adept Armor
@@ -132,6 +147,12 @@ extraStrings:
       STR_MKX_INCAC_LV3_UC: MKX Omnis (Autocannon)
       STR_MKX_INCAC_LV4_UC: MKX Omnis (Autocannon)
       STR_MKX_INCAC_LV5_UC: MKX Omnis (Autocannon)
+      STR_MKX_PHB_LV3_UC: MKX Phobos Reiver
+      STR_MKX_PHB_LV4_UC: MKX Phobos Reiver
+      STR_MKX_PHB_LV5_UC: MKX Phobos Reiver
+      STR_MKX_ELIM_LV3_UC: MKX Phobos Eliminator
+      STR_MKX_ELIM_LV4_UC: MKX Phobos Eliminator
+      STR_MKX_ELIM_LV5_UC: MKX Phobos Eliminator
       ### ITEMS
       STR_TELEPORT_CLAWS: Teleporter
       AUX_RAM_SMT: Chainsword
@@ -176,6 +197,7 @@ extraStrings:
       STR_BOLT_SNIPER_AMMO_AP: AP Bolt
       STR_BOLT_SNIPER_AMMO_FRAG: Frag Bolt
       STR_BOLT_SNIPER_AMMO_KRAK: Krak Bolt
+      STR_BOLT_SNIPER_AMMO_INCIN: Incin Bolt
       STR_BOLT_SNIPER_AMMO_SHRED: Shredder Bolt
       STR_HEAVY_BOLTER_MARS: Mars-Pattern Heavy Bolter
       STR_AC_AP_BELT: AP Heavy Bolter Belt
@@ -294,9 +316,9 @@ extraStrings:
       STR_TERMINATOR_RANK_0: Veteran Marine
       STR_TERMINATOR_RANK_1: Veteran Marine
       STR_TERMINATOR_RANK_2: Vet Sergeant
-      STR_TERMINATOR_RANK_3: Captain
+      STR_TERMINATOR_RANK_3: Terminator
       STR_TERMINATOR_RANK_4: Honor Guard
-      STR_TERMINATOR_RANK_5: Chapter Master
+      STR_TERMINATOR_RANK_5: Company Captain
       STR_CHAPLAIN_RANK_0: Judiciar
       STR_CHAPLAIN_RANK_1: Chaplain
       STR_CHAPLAIN_RANK_2: Chaplain
@@ -369,6 +391,7 @@ extraStrings:
       STR_HBOLTER_AMMO_BELTS: Heavy Bolter Ammobelts
       STR_HONOR_ARMOR_RESEARCH: "MK7 Vanguard Armor"
       STR_SCOUT_BOLT_RIFLE: Bolt Sniper Rifle
+      STR_CHAINSWORD_R: Astartes Chainswords
       STR_VINDICARE_AMMO_REQ: Exitus Ammo
       STR_MULTIMELTA_PREREQ: Multimelta Technology
       STR_BOLT_RIFLE_AMMO: Bolt Sniper Ammo
@@ -423,6 +446,10 @@ extraStrings:
       STR_SCRIPT_STEALTH_KILL_REQ: "{0} Kills Needed Before This Unit Can Restealth!"
       STR_SCRIPT_STEALTH_TURN_REQ: "{0} Turns Needed Before This Unit Can Restealth!"
       STR_SCRIPT_STEALTH_NO_REQ: "This Unit Can Re-Enter Stealth!"
+      STR_SCRIPT_CMD_NONE: "Kill Points: {0} Available Commands: {1}  No Active Command"
+      STR_SCRIPT_CMD_ARMOR: "Kill Points: {0} Available Commands: {1}  Active Command: Armor of Contempt"
+      STR_SCRIPT_CMD_FIRE: "Kill Points: {0} Available Commands: {1}  Active Command: Storm of Fire"
+      STR_SCRIPT_CMD_MELEE: "Kill Points: {0} Available Commands: {1}  Active Command: Relentless Assault"
       ### FACILITIES
       STR_OUTPOST_GK: "Outpost"
       STR_OUTPOST_INQ_HYPER: "Outpost w/ Decoder"

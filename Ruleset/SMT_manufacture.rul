@@ -391,6 +391,19 @@ manufacture:
     producedItems:
       STR_BOLT_SNIPER_AMMO_FRAG: 10
 
+  - name: STR_BOLT_SNIPER_AMMO_INCIN                # Bolt Sniper Ammo Incin
+    category: STR_AMMUNITION
+    space: 0
+    time: 120
+    cost: 2000
+    requires:
+      - STR_BOLT_RIFLE_AMMO
+    requiredItems:
+      STR_ALIEN_ALLOYS: 1
+      STR_ELERIUM_115: 1
+    producedItems:
+      STR_BOLT_SNIPER_AMMO_INCIN: 10
+
   - name: STR_BOLT_SNIPER_AMMO_KRAK                 # Bolt Sniper Ammo Krak
     category: STR_AMMUNITION
     space: 0
@@ -648,8 +661,9 @@ manufacture:
   - name: STR_CAPTAIN_SUIT                          # Terminator Captain
     category: STR_CAT_ARMOR
     requires:
-      - STR_CHAPTER_PURITY
-      - STR_CAPTAIN_SUIT
+      #- STR_CHAPTER_PURITY
+      #- STR_CAPTAIN_SUIT
+      - STR_GENERALLOCK # disabled
     space: 0
     time: 4800 #was 5000
     cost: 100000 #was 200k
@@ -802,6 +816,19 @@ manufacture:
     cost: 20000
     requiredItems:
       STR_ALIEN_ALLOYS: 5 # primaris already start in tactical and costed appropiately, should be cheap
+
+  - name: STR_MKX_ASS_ARMOR                         # Primaris Assault
+    category: STR_CAT_ARMOR
+    requires:
+      - STR_CHAPTER_PURITY
+      - STR_MKX_ASS_ARMOR
+      - STR_PRIMARIS_AND_DEATHWATCH
+    space: 0
+    time: 800
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5 # primaris already start in tactical and costed appropiately, should be cheap
+      STR_ELERIUM_115: 10
 
   - name: STR_MKX_GRV_ARMOR                         # Primaris Gravis
     category: STR_CAT_ARMOR

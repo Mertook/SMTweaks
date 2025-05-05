@@ -269,7 +269,7 @@ soldiers:
     statCaps:
       tu: 120
       stamina: 140
-      health: 150 # +10 over DW
+      health: 150
       bravery: 110
       reactions: 120
       firing: 175
@@ -308,6 +308,12 @@ soldiers:
     deathFemale: [{mod: 40k, index: 744}, {mod: 40k, index: 745}, {mod: 40k, index: 746}, {mod: 40k, index: 747}, {mod: 40k, index: 748}, {mod: 40k, index: 749}, {mod: 40k, index: 750}, {mod: 40k, index: 751}, {mod: 40k, index: 752}]
     value: 75
     moraleLossWhenKilled: 200 # Seeing an elite marine die is shocking for regular troops
+    skills:
+      - STR_INSPIRE_CAPTAIN_SKILL
+      - STR_CMD_ARMOR_SKILL
+      - STR_CMD_FIRE_SKILL
+      - STR_CMD_MELEE_SKILL
+      - STR_CMD_CHECK_SKILL
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 15 # -5 over DW regulars
       SMT_ALPHA_ATTACKER_MODIFIER: -1 # can't turn traitor
@@ -374,8 +380,12 @@ soldiers:
       - STR_DW_BT_RANK_4
       - STR_DW_BT_RANK_5
     skillIconSprite:  {mod: 40k, index: 8}
-    skills: # Gives bless ability when combined with backpack item
+    skills:
       - STR_BLESS_SKILL
+      - STR_CMD_ARMOR_SKILL
+      - STR_CMD_FIRE_SKILL
+      - STR_CMD_MELEE_SKILL
+      - STR_CMD_CHECK_SKILL
     tags:
       SMT_RESTRICTED_ITEM_USER: 7 # can use Crozius and DW gear
 
@@ -396,6 +406,7 @@ soldiers:
       - STR_DW_WS_RANK_4
       - STR_DW_WS_RANK_5
     skills:
+      - STR_INSPIRE_CAPTAIN_SKILL
       - STR_LIB_SMITE_SKILL
       - STR_LIB_SMOKE_SKILL
       - STR_LIB_HASTE_SKILL
@@ -419,6 +430,7 @@ soldiers:
       - STR_DW_DA_RANK_4
       - STR_DW_DA_RANK_5
     skills:
+      - STR_INSPIRE_CAPTAIN_SKILL
       - STR_LIB_SMITE_SKILL
       - STR_LIB_LOCKDOWN_SKILL
       - STR_LIB_SHIELD_SKILL
@@ -442,8 +454,12 @@ soldiers:
     statCaps:
       health: 175 # +25, SW bonus
     skillIconSprite:  {mod: 40k, index: 8}
-    skills: # Gives bless ability when combined with backpack item
+    skills:
       - STR_BLESS_SKILL
+      - STR_CMD_ARMOR_SKILL
+      - STR_CMD_FIRE_SKILL
+      - STR_CMD_MELEE_SKILL
+      - STR_CMD_CHECK_SKILL
 
   - type: STR_CRISMONF_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER

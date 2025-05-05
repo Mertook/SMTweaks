@@ -18,6 +18,7 @@ research:
       - STR_IMPERIUM_RESEARCH
       - STR_NOT_STEEL_LEGION_STRATEGY # needed to buy guard lasguns
       - STR_BOLTER_AMMO_PREREQ
+      - STR_STORMRAVEN_PREREQ
       #- STR_NOT_DEATHWATCH # currently just relevant for GK/RR Chamber Militant
     disables:
       - STR_ARBITES
@@ -140,7 +141,7 @@ research:
       - STR_SMOKE
       - STR_CRATED_DROPPODS
       - STR_DEV_ARMOR
-      - STR_GLAUNCHER_PREREQ
+      #- STR_GLAUNCHER_PREREQ
       - STR_NOT_PRIMARIS
     disables:
       - STR_PRIMARIS
@@ -169,7 +170,7 @@ research:
       #- STR_STORMHAWKR
       - STR_CRATED_DROPPODS
       - STR_TRAINFACILITYR
-      - STR_GLAUNCHER_PREREQ
+      #- STR_GLAUNCHER_PREREQ
       - STR_NOT_PRIMARIS
     disables:
       - STR_PRIMARIS
@@ -199,7 +200,7 @@ research:
       - STR_SMOKE_BOMB_UNLOCK
       - STR_APOTHECARY
       - STR_TRAINFACILITYR
-      - STR_GLAUNCHER_PREREQ
+      #- STR_GLAUNCHER_PREREQ
       #- STR_STORMHAWKR
       - STR_PRIMARIS_AND_DEATHWATCH
       - STR_PRIMARIS_AND_ADEPTAS
@@ -221,6 +222,13 @@ research:
       - STR_MARINES_STRATEGY
       - STR_GENERALLOCK
     spawnedEvent: STR_NEOPHYTE_STARTING_PACKAGE
+
+  - name: STR_MARINE_CAPTAIN        # Unlock Captain promotion
+    cost: 400
+    points: 30
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_COMMANDER_PLUS
 
   - name: STR_MT                    # Marine Midtier
     cost: 200
@@ -252,9 +260,16 @@ research:
       - STR_ALIEN_ALLOYS # adamantium
       - STR_ELERIUM_115 # promethium
       #- STR_UFO_CONSTRUCTION
-      - STR_MARINES_AND_ADEPTAS
+      #- STR_MARINES_AND_ADEPTAS
+      - STR_STORMRAVEN_PREREQ # simplify for all factions that can get StormRaven & Thunderhawk
     unlocks: !add
       - STR_ASSC_CLIP
+
+  - name: STR_STORMRAVEN_PREREQ     # StormRaven Unlock for SM, SoB & CM
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
 
   - name: STR_STORMEAGLE_INTERCEPTOR    # Stormeagle
     cost: 600
@@ -373,12 +388,33 @@ research:
       - STR_MEDI_KIT_PREREQ
       - STR_APOC_BAY # unlocks Apoth bay immediately
 
-  - name: STR_CHAINSWORD_R          # Chainsword
+  - name: STR_SCOUT_WEAPONS         # Scout Weaponry
     cost: 30
     points: 10
     dependencies:
-      - STR_NEOPHYTE_REQUEST
+      - STR_NEOPHYTE_REQUEST # picked strategy
       - STR_MARINES_STRATEGY
+    unlocks:
+      - STR_GLAUNCHER_PREREQ
+
+  - name: STR_MARINE_WEAPONS        # Astartes Weaponry
+    cost: 100
+    points: 10
+    dependencies:
+      - STR_NEOPHYTE_REQUEST # picked strategy
+      - STR_MARINES_STRATEGY
+
+  - name: STR_SCT_MELEE_REQ         # Scout Blades/Chainswords
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_SCOUT_WEAPONS
+
+  - name: STR_CHAINSWORD_R          # Marine Chainswords
+    cost: 30
+    points: 10
+    dependencies:
+      - STR_MARINE_WEAPONS
 
   - name: STR_CHAINSWORD_MC         # MC Chainswords (Assault)
     cost: 60
@@ -448,9 +484,8 @@ research:
     cost: 320
     points: 10
     dependencies:
-      - STR_MARINES_STRATEGY
       - STR_NOT_PRIMARIS
-      - STR_LASER_WEAPONS
+      - STR_MARINE_WEAPONS
     unlocks:
       - STR_BOLTPISTOL_REQ
       - STR_BOLTER_AMMO_PREREQ
@@ -475,9 +510,8 @@ research:
     cost: 320
     points: 10
     dependencies:
-      - STR_MARINES_STRATEGY
-      - STR_PRIMARIS
-      - STR_LASER_WEAPONS
+      - STR_PRIMARIS_AND_DEATHWATCH
+      - STR_MARINE_WEAPONS
     unlocks:
       - STR_BOLTPISTOL_REQ
       - STR_BOLTER_AMMO_PREREQ
@@ -530,8 +564,7 @@ research:
     cost: 35
     points: 0
     dependencies:
-      - STR_MARINES_STRATEGY
-      - STR_LASER_WEAPONS
+      - STR_SCOUT_WEAPONS
     listOrder: 10 # push above corpses/etc
 
   - name: STR_DEV_MARS_BOLTER       # Mars Heavy Bolter unlock
@@ -573,7 +606,7 @@ research:
     cost: 220
     points: 10
     dependencies:
-      - STR_LASER_WEAPONS
+      - STR_MARINE_WEAPONS
       - STR_MIDTIER_PREREQ
       - STR_PRIMARIS
 
@@ -681,8 +714,14 @@ research:
       - STR_MARINES_AND_DEATHWATCH
       - STR_MIDTIER_PREREQ
 
-  - name: STR_CHAP_ARMOR            # Chaplain Armor - Reused for Crozius/Rosary
-    cost: 200 # was 300
+  - name: STR_CHAP_ARMOR            # Chaplain Armor - Disabled
+    cost: 300
+    points: 20
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_CHAP_RELICS           # Chaplain Crozius/Rosary
+    cost: 200
     points: 20
     dependencies:
       - STR_MARINES_STRATEGY
@@ -724,7 +763,6 @@ research:
     dependencies:
       - STR_PRIMARIS
       - STR_ALIEN_ALLOYS
-
 
   - name: STR_MKX_ASS_ARMOR         # Primaris Assault Armor
     cost: 180

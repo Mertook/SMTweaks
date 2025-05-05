@@ -70,7 +70,7 @@ armors:
   - type: STR_DW_TAC_ARMOR_DA_UC
     refNode: *STR_DW_TAC_MK7
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_DW_TAC_ARMOR_IF_UC
     refNode: *STR_DW_TAC_MK7
     tags:
@@ -183,7 +183,7 @@ armors:
   - type: STR_DW_APOT_ARMOR_DA_UC
     refNode: *STR_DW_APOTH_MK7
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_DW_APOT_ARMOR_IF_UC
     refNode: *STR_DW_APOTH_MK7
     tags:
@@ -292,7 +292,7 @@ armors:
   - type: STR_DW_DEV_ARMOR_DA_UC
     refNode: *STR_DW_DEV_MK7
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_DW_DEV_ARMOR_IF_UC
     refNode: *STR_DW_DEV_MK7
     customArmorPreviewIndex: {mod: 40k, index: 556} #incorrectly set to 456 in 40k
@@ -406,7 +406,7 @@ armors:
   - type: STR_DW_ASS_ARMOR_DA_UC
     refNode: *STR_DW_ASS_MK7
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_DW_ASS_ARMOR_IF_UC
     refNode: *STR_DW_ASS_MK7
     tags:
@@ -516,7 +516,7 @@ armors:
   - type: STR_DW_TECH_ARMOR_DA_UC
     refNode: *STR_DW_TECH_MK7
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_DW_TECH_ARMOR_IF_UC
     refNode: *STR_DW_TECH_MK7
     tags:
@@ -553,6 +553,243 @@ armors:
     moveCost:
       basePercent: [100, 50] # was 100, 25
 
+  - &REF_DW_SCOUT
+    type: STR_DW_SCOUT_BA_UC
+    ufopediaType: STR_DW_SCT_CODEX_UC
+    corpseBattle:
+      - STR_MKX_DW_PHB_CORPSE ###CHANGEME
+    storeItem: STR_SCOUT_SGT
+    corpseGeo: STR_FALLEN_CORPSE
+    layersDefaultPrefix: "0"
+    layersSpecificPrefix:
+      0: CAPE
+      1: SCTDWBA
+      3: GOGGLESDW
+    layersDefinition:
+      M0: ["CAPEW", "SCOUT", "M0_FACE", "GOGGLES"]
+      M1: ["CAPEW", "SCOUT", "M1_FACE", "GOGGLES"]
+      M2: ["CAPEW", "SCOUT", "M2_FACE", "GOGGLES"]
+      M3: ["CAPEW", "SCOUT", "M3_FACE", "GOGGLES"]
+      M4: ["CAPEW", "SCOUT", "M4_FACE", "GOGGLES"]
+      M5: ["CAPEW", "SCOUT", "M5_FACE", "GOGGLES"]
+      F0: ["CAPEW", "SCOUT", "F0_FACE", "GOGGLES"]
+      F1: ["CAPEW", "SCOUT", "F1_FACE", "GOGGLES"]
+      F2: ["CAPEW", "SCOUT", "F2_FACE", "GOGGLES"]
+      F3: ["CAPEW", "SCOUT", "F3_FACE", "GOGGLES"]
+      F4: ["CAPEW", "SCOUT", "F4_FACE", "GOGGLES"]
+      F5: ["CAPEW", "SCOUT", "F5_FACE", "GOGGLES"]
+    visibilityAtDay: 40
+    visibilityAtDark: 40 # Improved Sensors - DW bonus
+    heatVision: 35 # +15 - DW bonus + Phobos bonus
+    antiCamouflageAtDay: 12 # +2 over regular Officers - DW bonus + Phobos bonus
+    antiCamouflageAtDark: 12 # +2 over regular Officers - DW bonus + Phobos bonus
+    camouflageAtDay: -15 # stealth bonus
+    camouflageAtDark: -15 # stealth bonus
+    forcedTorso: 1
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 100
+    sideArmor: 90
+    rearArmor: 60
+    underArmor: 90
+    stats:
+      tu: 40            # base 10 +10 scout +20 elite
+      stamina: 40       # base 20 -10 scout +30 elite
+      health: 10        # base 10 -10 scout +10 elite
+      bravery: 10       # base 0  +10 elite
+      reactions: 30     # base 10 +5  scout +15  elite
+      firing: 20        # base 0  +20 elite
+      throwing: 10      # base 5  +5  scout
+      strength: 5       # base 10 -10 scout +5  elite
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 25         # base 10 -10 scout +25 elite
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    builtInWeapons: []
+    specialWeapon: STR_STEALTH_ADVSCOUT # camo cloak stealth
+    moveCost:
+      basePercent: [100, 75] # Reduced energy cost - Scout bonus
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
+      INFECTION_RESIST_TYPE: 0
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+      DODGE_CHANCE: 25
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      ARMOR_RESTEALTH_KILL_REQUIREMENT: 3
+      ARMOR_RESTEALTH_TURN_REQUIREMENT: 2
+      ARMOR_IMMEDIATE_KILL_CREDIT: 3
+      ARMOR_IMMEDIATE_TURN_CREDIT: 2
+      ARMOR_CLOAKED_ASSASSIN_TYPE: 3 # sniper/melee
+      ARMOR_CLOAKED_ASSASSIN_RANGE: 3
+
+  - type: STR_DW_SCOUT_BA_UC
+    refNode: *REF_DW_SCOUT
+    customArmorPreviewIndex: 129
+    layersSpecificPrefix:
+      0: CAPE
+      1: SCTDWBA
+      3: GOGGLESDW
+    spriteSheet: SCTDWBA.PCK
+    instantWoundRecovery: true
+    units:
+      - STR_BLOODANGELS
+
+  - type: STR_DW_SCOUT_BT_UC
+    refNode: *REF_DW_SCOUT
+    customArmorPreviewIndex: 131
+    layersSpecificPrefix:
+      0: CAPE
+      1: SCTDWBT
+      3: GOGGLESDW
+    spriteSheet: SCTDWBT.PCK
+    units:
+      - STR_BLACKT
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
+
+  - type: STR_DW_SCOUT_CF_UC
+    refNode: *REF_DW_SCOUT
+    customArmorPreviewIndex: 127
+    layersSpecificPrefix:
+      0: CAPE
+      1: SCTDWCF
+      3: GOGGLESDW
+    spriteSheet: SCTDWCF.PCK
+    units:
+      - STR_CRISMONF
+
+  - type: STR_DW_SCOUT_DA_UC
+    refNode: *REF_DW_SCOUT
+    customArmorPreviewIndex: 130
+    layersSpecificPrefix:
+      0: CAPE
+      1: SCTDWDA
+      3: GOGGLESDW
+    spriteSheet: SCTDWDA.PCK
+    units:
+      - STR_DARKANGELS
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
+
+  - type: STR_DW_SCOUT_IF_UC
+    refNode: *REF_DW_SCOUT
+    customArmorPreviewIndex: 128
+    layersSpecificPrefix:
+      0: CAPE
+      1: SCTDWIF
+      3: GOGGLESDW
+    spriteSheet: SCTDWIF.PCK
+    units:
+      - STR_IMPERIALF
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
+
+  - type: STR_DW_SCOUT_SALA_UC
+    refNode: *REF_DW_SCOUT
+    customArmorPreviewIndex: 130
+    layersSpecificPrefix:
+      0: CAPE
+      1: SCTDWSA
+      3: GOGGLESDW
+    layersDefinition:
+      M0: ["CAPEW", "SCOUT", "M0_FACES", "GOGGLES"]
+      M1: ["CAPEW", "SCOUT", "M1_FACES", "GOGGLES"]
+      M2: ["CAPEW", "SCOUT", "M2_FACES", "GOGGLES"]
+      M3: ["CAPEW", "SCOUT", "M3_FACES", "GOGGLES"]
+      M4: ["CAPEW", "SCOUT", "M4_FACES", "GOGGLES"]
+      M5: ["CAPEW", "SCOUT", "M5_FACES", "GOGGLES"]
+      F0: ["CAPEW", "SCOUT", "F0_FACES", "GOGGLES"]
+      F1: ["CAPEW", "SCOUT", "F1_FACES", "GOGGLES"]
+      F2: ["CAPEW", "SCOUT", "F2_FACES", "GOGGLES"]
+      F3: ["CAPEW", "SCOUT", "F3_FACES", "GOGGLES"]
+      F4: ["CAPEW", "SCOUT", "F4_FACES", "GOGGLES"]
+      F5: ["CAPEW", "SCOUT", "F5_FACES", "GOGGLES"]
+    spriteSheet: SCTDWSA.PCK
+    units:
+      - STR_SALAMANDAR
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+
+  - type: STR_DW_SCOUT_SW_UC
+    refNode: *REF_DW_SCOUT
+    customArmorPreviewIndex: 128
+    layersSpecificPrefix:
+      0: CAPE
+      1: SCTDWSW
+      3: GOGGLESDW
+    spriteSheet: SCTDWSW.PCK
+    units:
+      - STR_SPACEW
+
+  - type: STR_DW_SCOUT_ULTRA_UC
+    refNode: *REF_DW_SCOUT
+    customArmorPreviewIndex: 127
+    layersSpecificPrefix:
+      0: CAPE
+      1: SCTDWUM
+      3: GOGGLESDW
+    spriteSheet: SCTDWUM.PCK
+    units:
+      - STR_ULTRAMARINE
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+
+  - type: STR_DW_SCOUT_WS_UC
+    refNode: *REF_DW_SCOUT
+    customArmorPreviewIndex: 132
+    layersSpecificPrefix:
+      0: CAPE
+      1: SCTDWWS
+      3: GOGGLESDW
+    spriteSheet: SCTDWWS.PCK
+    units:
+      - STR_WHITES
+    moveCost:
+      basePercent: [100, 25] # Whitescar + Scout bonus
+
   - &STR_DW_TERM_MK7                        #Terminator Armor (Firstborn)
     type: STR_DW_TER_ARMOR_BA_UC
     ufopediaType: STR_DW_TERM_CODEX_UC
@@ -572,7 +809,7 @@ armors:
     rearArmor: 125
     underArmor: 175
     stats:
-      tu: -5            # base -5
+      tu: -10            # base -5
       stamina: 20       # base 20
       health: 30        # base 30
       bravery: 10       # base 10
@@ -599,6 +836,7 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (was 1.0)
+    specialWeapon: STR_TELEPORT # all terminators get teleport
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 80
@@ -629,7 +867,7 @@ armors:
   - type: STR_DW_TER_ARMOR_DA_UC
     refNode: *STR_DW_TERM_MK7
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_DW_TER_ARMOR_IF_UC
     refNode: *STR_DW_TERM_MK7
     stats:
@@ -688,7 +926,7 @@ armors:
     rearArmor: 125
     underArmor: 175
     stats:
-      tu: -5            # base -5
+      tu: -10           # base -5
       stamina: 20       # base 20
       health: 30        # base 30
       bravery: 10       # base 10
@@ -715,6 +953,7 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (was 1.0)
+    specialWeapon: STR_TELEPORT # all terminators get teleport
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 80
@@ -745,7 +984,7 @@ armors:
   - type: STR_DW_TASS_ARMOR_DA_UC
     refNode: *STR_DW_TERM_ASS_SHIELD_MK7
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_DW_TASS_ARMOR_IF_UC
     refNode: *STR_DW_TERM_ASS_SHIELD_MK7
     stats:
@@ -804,7 +1043,7 @@ armors:
     rearArmor: 145
     underArmor: 175
     stats:
-      tu: 30            # base -5  +35
+      tu: 20            # base -10  +30
       stamina: 30       # base 20  +10
       health: 30        # base 30
       bravery: 20       # base 10  +10
@@ -940,7 +1179,7 @@ armors:
       F4: ["0", "TERMCLWDA", "F4_FACE"]
       F5: ["0", "TERMCLWDA", "F5_FACE"]
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_DW_TASS_ARMOR_IF_CLAWS_UC
     refNode: *STR_DW_TERM_ASS_CLAWS_MK7
     spriteSheet: TERMCLWDWIF.PCK
@@ -1089,7 +1328,7 @@ armors:
     rearArmor: 125
     underArmor: 175
     stats:
-      tu: -20           # base -5 -15 for Cyclone
+      tu: -20           # base -10 -10 for Cyclone
       stamina: 20       # base 20
       health: 30        # base 30
       bravery: 10       # base 10
@@ -1224,7 +1463,7 @@ armors:
       F4: ["0", "TERMCYCDA", "F4_FACE"]
       F5: ["0", "TERMCYCDA", "F5_FACE"]
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_DW_TSARGENT_ARMOR_IF_UC
     refNode: *STR_DW_TERM_CYCLONE_MK7
     spriteSheet: TERMCYCDWIF.PCK
@@ -1423,7 +1662,7 @@ armors:
   - type: STR_MKX_DW_TAC_DA_UC
     refNode: *STR_DW_TAC_MKX
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_MKX_DW_TAC_IF_UC
     refNode: *STR_DW_TAC_MKX
     tags:
@@ -1459,6 +1698,203 @@ armors:
     refNode: *STR_DW_TAC_MKX
     moveCost:
       basePercent: [100, 50] # was 100, 25
+
+  - &STR_DW_ASS_MKX                        #Assault Intercessor (Primaris)
+    type: STR_MKX_DW_ASS_BA_UC
+    ufopediaType: STR_DW_ASS_MKX_CODEX_UC
+    corpseBattle:
+      - STR_MKX_DW_PHB_CORPSE
+    storeItem: STR_MKX_ASS_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    layersDefaultPrefix: "21"
+    layersSpecificPrefix:
+      1: ASSDWBA
+    layersDefinition:
+      M0: ["0", "MKXASS", "M0_FACE"]
+      M1: ["0", "MKXASS", "M1_FACE"]
+      M2: ["0", "MKXASS", "M2_FACE"]
+      M3: ["0", "MKXASS", "M3_FACE"]
+      M4: ["0", "MKXASS", "M4_FACE"]
+      M5: ["0", "MKXASS", "M5_FACE"]
+      F0: ["0", "MKXASS", "M0_FACE"]
+      F1: ["0", "MKXASS", "M1_FACE"]
+      F2: ["0", "MKXASS", "M2_FACE"]
+      F3: ["0", "MKXASS", "M3_FACE"]
+      F4: ["0", "MKXASS", "M4_FACE"]
+      F5: ["0", "MKXASS", "M5_FACE"]
+    visibilityAtDay: 40
+    visibilityAtDark: 35
+    heatVision: 25
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    forcedTorso: 1
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125
+    sideArmor: 120
+    rearArmor: 100
+    underArmor: 125
+    stats:
+      tu: 25            # base 10 +15
+      stamina: 20       # base 20
+      health: 20        # base 10 +10
+      bravery: 10       # base 0  +10
+      reactions: 25     # base 10 +15
+      firing: -5        # base 0  -10 +5 DW
+      throwing: 0       # base 5  -5
+      strength: 10      # base 10 
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 30         # base 10 +20
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    damageModifier: # DW Marines get Officer values innately
+      - 1.0 #none
+      - 0.9 #AP (was 0.8)
+      - 0.6 #FLAMES
+      - 0.7 #HE (was 0.6)
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID - was 0.8
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
+    specialWeapon: STR_JUMP_GAUNTLET_PLUS # camo cloak stealth
+    builtInWeapons:
+      - INV_NULL_3X3
+    tags:
+      FLIGHT_DODGE_CHANCE: 20
+      ARMOR_MAX_SUCCESSFUL_DODGES: 1
+      MaxFlight: 1
+      MaxCoolDown: 1
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
+      INFECTION_RESIST_TYPE: 0
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+
+  - type: STR_MKX_DW_ASS_BA_UC
+    refNode: *STR_DW_ASS_MKX
+    customArmorPreviewIndex: {mod: 40k, index: 548}
+    layersSpecificPrefix:
+      1: ASSDWBA
+    spriteSheet: ASSDWBAH.PCK
+    instantWoundRecovery: true
+    units:
+      - STR_BLOODANGELS_PRIMARIS
+
+  - type: STR_MKX_DW_ASS_BT_UC
+    refNode: *STR_DW_ASS_MKX
+    customArmorPreviewIndex: {mod: 40k, index: 550}
+    layersSpecificPrefix:
+      1: ASSDWBT
+    spriteSheet: ASSDWBT.PCK
+    units:
+      - STR_BLACKT_PRIMARIS
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
+      INFECTION_RESIST: 100 # immune to corruption
+
+  - type: STR_MKX_DW_ASS_CF_UC
+    refNode: *STR_DW_ASS_MKX
+    customArmorPreviewIndex: {mod: 40k, index: 546}
+    layersSpecificPrefix:
+      1: ASSDWCF
+    spriteSheet: ASSDWCF.PCK
+    units:
+      - STR_CRISMONF_PRIMARIS
+
+  - type: STR_MKX_DW_ASS_DA_UC
+    refNode: *STR_DW_ASS_MKX
+    customArmorPreviewIndex: {mod: 40k, index: 549}
+    layersSpecificPrefix:
+      1: ASSDWDA
+    spriteSheet: ASSDWDA.PCK
+    units:
+      - STR_DARKANGELS_PRIMARIS
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
+
+  - type: STR_MKX_DW_ASS_IF_UC
+    refNode: *STR_DW_ASS_MKX
+    customArmorPreviewIndex: {mod: 40k, index: 547}
+    layersSpecificPrefix:
+      1: ASSDWIF
+    spriteSheet: ASSDWIF.PCK
+    units:
+      - STR_IMPERIALF_PRIMARIS
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
+
+  - type: STR_MKX_DW_ASS_SALA_UC
+    refNode: *STR_DW_ASS_MKX
+    customArmorPreviewIndex: {mod: 40k, index: 549}
+    layersSpecificPrefix:
+      1: ASSDWSA
+    spriteSheet: ASSDWSALA.PCK
+    units:
+      - STR_SALAMANDAR_PRIMARIS
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.0 #FLAMES (default 0.6, Salamander bonus)
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA (default 0.9, Salamander bonus)
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+
+  - type: STR_MKX_DW_ASS_SW_UC
+    refNode: *STR_DW_ASS_MKX
+    customArmorPreviewIndex: {mod: 40k, index: 547}
+    layersSpecificPrefix:
+      1: ASSDWSW
+    spriteSheet: ASSDWSW.PCK
+    units:
+      - STR_SPACEW_PRIMARIS
+
+  - type: STR_MKX_DW_ASS_ULTRA_UC
+    refNode: *STR_DW_ASS_MKX
+    customArmorPreviewIndex: {mod: 40k, index: 546}
+    layersSpecificPrefix:
+      1: ASSDWUM
+    spriteSheet: ASSDWULTRA.PCK
+    units:
+      - STR_ULTRAMARINE_PRIMARIS
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 50
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+
+  - type: STR_MKX_DW_ASS_WS_UC
+    refNode: *STR_DW_ASS_MKX
+    customArmorPreviewIndex: {mod: 40k, index: 551}
+    layersSpecificPrefix:
+      1: ASSDWWS
+    spriteSheet: ASSDWWS.PCK
+    units:
+      - STR_WHITES_PRIMARIS
+    moveCost:
+      basePercent: [100, 25] # Whitescar + Phobos bonus
 
   - &STR_DW_APOTH_MKX                       #Apothecary Armor (Primaris)
     type: STR_MKX_DW_APO_BA_UC
@@ -1536,7 +1972,7 @@ armors:
   - type: STR_MKX_DW_APO_DA_UC
     refNode: *STR_DW_APOTH_MKX
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_MKX_DW_APO_IF_UC
     refNode: *STR_DW_APOTH_MKX
     tags:
@@ -1650,7 +2086,7 @@ armors:
   - type: STR_MKX_DW_TEC_DA_UC
     refNode: *STR_DW_TECH_MKX
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_MKX_DW_TEC_IF_UC
     refNode: *STR_DW_TECH_MKX
     tags:
@@ -1755,7 +2191,8 @@ armors:
       ARMOR_RESTEALTH_TURN_REQUIREMENT: 0
       ARMOR_IMMEDIATE_KILL_CREDIT: 2
       ARMOR_IMMEDIATE_TURN_CREDIT: 0
-      ARMOR_CLOAKED_ASSASSIN: 1 # melee
+      ARMOR_CLOAKED_ASSASSIN_TYPE: 1 # melee
+      ARMOR_CLOAKED_ASSASSIN_RANGE: 3
 
   - type: STR_MKX_DW_PHB_BA_UC
     refNode: *STR_DW_PHB_MKX
@@ -1771,7 +2208,7 @@ armors:
   - type: STR_MKX_DW_PHB_DA_UC
     refNode: *STR_DW_PHB_MKX
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_MKX_DW_PHB_IF_UC
     refNode: *STR_DW_PHB_MKX
     tags:
@@ -1810,12 +2247,16 @@ armors:
 
   - &STR_DW_PHB_ELIM                        #Phobos Armor (Eliminator)
     type: STR_MKX_DW_PHBELIM_BA_UC
-    ufopediaType: STR_DW_PHB_CODEX_UC
+    ufopediaType: STR_DW_PHBELIM_CODEX_UC
+    corpseBattle:
+      - STR_MKX_DW_PHB_CORPSE
+    storeItem: STR_MKX_PHB_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
     layersDefaultPrefix: "21"
     layersSpecificPrefix:
       1: ELIMDWBA
-      3: GOGGLES
-      4: MASK
+      3: GOGGLESDW
+      4: MASKDW
     layersDefinition:
       M0: ["0", "MKXPHB", "M0_FACE", "GOGGLES", "MASK1"]
       M1: ["0", "MKXPHB", "M1_FACE", "GOGGLES", "MASK2"]
@@ -1823,14 +2264,12 @@ armors:
       M3: ["0", "MKXPHB", "M3_FACE", "GOGGLES", "MASK4"]
       M4: ["0", "MKXPHB", "M4_FACE", "GOGGLES", "MASK1"]
       M5: ["0", "MKXPHB", "M5_FACE", "GOGGLES", "MASK2"]
-      M6: ["0", "MKXPHB", "M6_FACE", "GOGGLES", "MASK3"]
-      F0: ["0", "MKXPHB", "M7_FACE", "GOGGLES", "MASK4"]
-      F1: ["0", "MKXPHB", "M8_FACE", "GOGGLES", "MASK1"]
-      F2: ["0", "MKXPHB", "M9_FACE", "GOGGLES", "MASK2"]
-      F3: ["0", "MKXPHB", "M10_FACE", "GOGGLES", "MASK3"]
-      F4: ["0", "MKXPHB", "M11_FACE", "GOGGLES", "MASK4"]
-      F5: ["0", "MKXPHB", "M12_FACE", "GOGGLES", "MASK1"]
-      F5: ["0", "MKXPHB", "M13_FACE", "GOGGLES", "MASK2"]
+      F0: ["0", "MKXPHB", "M0_FACE", "GOGGLES", "MASK4"]
+      F1: ["0", "MKXPHB", "M1_FACE", "GOGGLES", "MASK3"]
+      F2: ["0", "MKXPHB", "M2_FACE", "GOGGLES", "MASK2"]
+      F3: ["0", "MKXPHB", "M3_FACE", "GOGGLES", "MASK1"]
+      F4: ["0", "MKXPHB", "M4_FACE", "GOGGLES", "MASK4"]
+      F5: ["0", "MKXPHB", "M5_FACE", "GOGGLES", "MASK3"]
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 35 # +15 - DW bonus + Phobos bonus
@@ -1897,58 +2336,69 @@ armors:
       ARMOR_RESTEALTH_TURN_REQUIREMENT: 2
       ARMOR_IMMEDIATE_KILL_CREDIT: 0
       ARMOR_IMMEDIATE_TURN_CREDIT: 2
-      ARMOR_CLOAKED_ASSASSIN: 2 # sniper
+      ARMOR_CLOAKED_ASSASSIN_TYPE: 2 # sniper
+      ARMOR_CLOAKED_ASSASSIN_RANGE: 5
 
   - type: STR_MKX_DW_PHBELIM_BA_UC
     refNode: *STR_DW_PHB_ELIM
-    customArmorPreviewIndex: {mod: 40k, index: 428}
+    customArmorPreviewIndex: 123
     layersSpecificPrefix:
       1: ELIMDWBA
-      3: GOGGLES
-      4: MASK
+      3: GOGGLESDW
+      4: MASKDW
     spriteSheet: ELIMDWBA.PCK
     instantWoundRecovery: true
+    units:
+      - STR_BLOODANGELS_PRIMARIS
 
   - type: STR_MKX_DW_PHBELIM_BT_UC
     refNode: *STR_DW_PHB_ELIM
-    customArmorPreviewIndex: {mod: 40k, index: 430}
+    customArmorPreviewIndex: 125
     layersSpecificPrefix:
       1: ELIMDWBT
-      3: GOGGLES
-      4: MASK
+      3: GOGGLESDW
+      4: MASKDW
     spriteSheet: ELIMDWBT.PCK
+    units:
+      - STR_BLACKT_PRIMARIS
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_MKX_DW_PHBELIM_CF_UC
     refNode: *STR_DW_PHB_ELIM
-    customArmorPreviewIndex: {mod: 40k, index: 426}
+    customArmorPreviewIndex: 121
     layersSpecificPrefix:
       1: ELIMDWCF
-      3: GOGGLES
-      4: MASK
+      3: GOGGLESDW
+      4: MASKDW
     spriteSheet: ELIMDWCF.PCK
+    units:
+      - STR_CRISMONF_PRIMARIS
 
   - type: STR_MKX_DW_PHBELIM_DA_UC
     refNode: *STR_DW_PHB_ELIM
-    customArmorPreviewIndex: {mod: 40k, index: 429}
+    customArmorPreviewIndex: 124
     layersSpecificPrefix:
       1: ELIMDWDA
-      3: GOGGLES
-      4: MASK
+      3: GOGGLESDW
+      4: MASKDW
     spriteSheet: ELIMDWDA.PCK
+    units:
+      - STR_DARKANGELS_PRIMARIS
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
 
   - type: STR_MKX_DW_PHBELIM_IF_UC
     refNode: *STR_DW_PHB_ELIM
-    customArmorPreviewIndex: {mod: 40k, index: 427}
+    customArmorPreviewIndex: 122
     layersSpecificPrefix:
       1: ELIMDWIF
-      3: GOGGLES
-      4: MASK
+      3: GOGGLESDW
+      4: MASKDW
     spriteSheet: ELIMDWIF.PCK
+    units:
+      - STR_IMPERIALF_PRIMARIS
     tags:
       SMT_ARMOR_SHRED_RESISTANCE: 55
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
@@ -1957,12 +2407,14 @@ armors:
 
   - type: STR_MKX_DW_PHBELIM_SALA_UC
     refNode: *STR_DW_PHB_ELIM
-    customArmorPreviewIndex: {mod: 40k, index: 429}
+    customArmorPreviewIndex: 124
     layersSpecificPrefix:
       1: ELIMDWSA
-      3: GOGGLES
-      4: MASK
+      3: GOGGLESDW
+      4: MASKDW
     spriteSheet: ELIMDWSA.PCK
+    units:
+      - STR_SALAMANDAR_PRIMARIS
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 0.9 #AP
@@ -1981,33 +2433,39 @@ armors:
 
   - type: STR_MKX_DW_PHBELIM_SW_UC
     refNode: *STR_DW_PHB_ELIM
-    customArmorPreviewIndex: {mod: 40k, index: 427}
+    customArmorPreviewIndex: 122
     layersSpecificPrefix:
       1: ELIMDWSW
-      3: GOGGLES
-      4: MASK
+      3: GOGGLESDW
+      4: MASKDW
     spriteSheet: ELIMDWSW.PCK
+    units:
+      - STR_SPACEW_PRIMARIS
 
   - type: STR_MKX_DW_PHBELIM_ULTRA_UC
     refNode: *STR_DW_PHB_ELIM
-    customArmorPreviewIndex: {mod: 40k, index: 426}
+    customArmorPreviewIndex: 121
     layersSpecificPrefix:
       1: ELIMDWUM
-      3: GOGGLES
-      4: MASK
+      3: GOGGLESDW
+      4: MASKDW
     spriteSheet: ELIMDWUM.PCK
+    units:
+      - STR_ULTRAMARINE_PRIMARIS
     tags:
       ARMOR_OVERWATCH_TU_RESTORED: 50
       ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
 
   - type: STR_MKX_DW_PHBELIM_WS_UC
     refNode: *STR_DW_PHB_ELIM
-    customArmorPreviewIndex: {mod: 40k, index: 431}
+    customArmorPreviewIndex: 126
     layersSpecificPrefix:
       1: ELIMDWWS
-      3: GOGGLES
-      4: MASK
+      3: GOGGLESDW
+      4: MASKDW
     spriteSheet: ELIMDWWS.PCK
+    units:
+      - STR_WHITES_PRIMARIS
     moveCost:
       basePercent: [100, 25] # Whitescar + Phobos bonus
 
@@ -2166,7 +2624,7 @@ armors:
       F4: ["0", "GRVNWDA", "F4_FACE", "GOLA"]
       F5: ["0", "GRVNWDA", "F5_FACE", "GOLA"]
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_MKX_DW_GRV_IF_UC
     refNode: *STR_DW_GRV_MKX_EH
     units:
@@ -2458,7 +2916,7 @@ armors:
       F4: ["0", "GRVBSDA", "F4_FACE", "GOLA"]
       F5: ["0", "GRVBSDA", "F5_FACE", "GOLA"]
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_MKX_DW_GRVBS_IF_UC
     refNode: *STR_DW_GRV_MKX_BS
     units:
@@ -2755,7 +3213,7 @@ armors:
       F4: ["0", "GRVACDA", "F4_FACE", "GOLA"]
       F5: ["0", "GRVACDA", "F5_FACE", "GOLA"]
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_MKX_DW_GRVAC_IF_UC
     refNode: *STR_DW_GRV_MKX_AC
     units:
@@ -3052,7 +3510,7 @@ armors:
       F4: ["0", "GRVFSDA", "F4_FACE", "GOLA"]
       F5: ["0", "GRVFSDA", "F5_FACE", "GOLA"]
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_MKX_DW_GRVFS_IF_UC
     refNode: *STR_DW_GRV_MKX_FS
     units:
@@ -3276,7 +3734,7 @@ armors:
     units:
       - STR_DARKANGELS_PRIMARIS
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_MKX_DW_INC_IF_UC
     refNode: *STR_DW_INC_MKX
     units:
@@ -3488,7 +3946,7 @@ armors:
       F4: ["0", "INCDWDA", "M4_FACE", "GOLA"]
       F5: ["0", "INCDWDA", "M5_FACE", "GOLA"]
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_MKX_DW_INCAC_IF_UC
     refNode: *STR_DW_INC_MKX_AC
     units:
@@ -3791,7 +4249,7 @@ armors:
       F4: ["0", "INCDWDA", "M4_FACE", "GOLA"]
       F5: ["0", "INCDWDA", "M5_FACE", "GOLA"]
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
   - type: STR_MKX_DW_INCPE_IF_UC
     refNode: *STR_DW_INC_MKX_PE
     units:
@@ -3979,7 +4437,7 @@ armors:
       - 0.9 #MELTA
     builtInWeapons:
       - INV_NULL_3X1_BACKPACK
-    specialWeapon: STR_SM_OFFICER_FIST #Officer Fist with Inspire ability
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
@@ -4016,6 +4474,7 @@ armors:
       F5: ["CAPEP", "CAPBAMF", "M5_FACE", ""]
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     builtInWeapons:
+      - INV_INSPIRE_TOKEN
       - INV_NULL_3X3
       - STR_CAPTAIN_SWORD_DW
     tags:
@@ -4070,6 +4529,7 @@ armors:
       F4: ["CAPEP", "MKXCAPDW", "M4_FACE", ""]
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     builtInWeapons:
+      - INV_INSPIRE_TOKEN
       - INV_NULL_3X1_BACKPACK
       - STR_HEAVY_BOLTRIFLE_DW
       - STR_BOLTRIFLE_DRUM_MC_DW
@@ -4096,6 +4556,7 @@ armors:
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
+      - INV_INSPIRE_TOKEN
       - STR_SMITE_TOKEN
       - STR_LIB_LOCKDOWN_TOME
       - STR_LIB_SHIELD_TOME
@@ -4104,7 +4565,7 @@ armors:
       - STR_PLASMA_TWINCORE_CLIP
       - INV_NULL_3X1_BACKPACK
     tags:
-      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 75
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
       ARMOR_PERILS_EFFECTS_RESISTANCE: 100 # immune to perils attacks
 
   - type: STR_DW_LEADER_IF_UC
@@ -4128,6 +4589,7 @@ armors:
       F4: ["CAPEP", "MKXCAPDW", "M4_FACE", ""]
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     builtInWeapons:
+      - INV_INSPIRE_TOKEN
       - INV_NULL_3X1_BACKPACK
       - AUX_SHIELD_DW
     tags:
@@ -4168,8 +4630,8 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.8 #MELTA (default 0.9, Salamander bonus)
-    specialWeapon: AUX_PROBE # Techmarine
     builtInWeapons:
+      - INV_INSPIRE_TOKEN
       - INV_NULL_3X1_BACKPACK
       - STR_VOLKITE_DW
     tags:
@@ -4221,6 +4683,7 @@ armors:
       F4: ["CAPEP", "MKXCAPDW", "M4_FACE", ""]
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     builtInWeapons:
+      - INV_INSPIRE_TOKEN
       - INV_NULL_3X1_BACKPACK
       - STR_ABSOLVOR_PISTOL_DW
       - STR_ABSOLVOR_AMMO_MC_DW
@@ -4252,6 +4715,7 @@ armors:
       F5: ["CAPEP", "MKXCAPDW", "M5_FACE", ""]
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
+      - INV_INSPIRE_TOKEN
       - STR_SMITE_TOKEN
       - STR_LIB_SPEED_TOME_DW
       - STR_LIB_SMOKE_TOME
@@ -4263,7 +4727,7 @@ armors:
     tags:
       ARMOR_PERILS_EFFECTS_RESISTANCE: 100 # immune to perils attacks
 
-  - type: STR_DW_TAC_CODEX_UC               # Tactical Codex Dummy
+  - type: STR_DW_TAC_CODEX_UC               # Tactical Codex
     refNode: *STR_DW_TAC_MK7
     units:
       - STR_DW_ARMOR_DUMMY
@@ -4272,7 +4736,7 @@ armors:
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
-  - type: STR_DW_APOTH_CODEX_UC             # Apothecary Codex Dummy
+  - type: STR_DW_APOTH_CODEX_UC             # Apothecary Codex
     refNode: *STR_DW_APOTH_MK7
     units:
       - STR_DW_ARMOR_DUMMY
@@ -4281,7 +4745,7 @@ armors:
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
-  - type: STR_DW_DEV_CODEX_UC               # Devastator Codex Dummy
+  - type: STR_DW_DEV_CODEX_UC               # Devastator Codex
     refNode: *STR_DW_DEV_MK7
     units:
       - STR_DW_ARMOR_DUMMY
@@ -4290,7 +4754,7 @@ armors:
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
-  - type: STR_DW_ASS_CODEX_UC               # Assault Codex Dummy
+  - type: STR_DW_ASS_CODEX_UC               # Assault Codex
     refNode: *STR_DW_ASS_MK7
     units:
       - STR_DW_ARMOR_DUMMY
@@ -4299,7 +4763,7 @@ armors:
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
-  - type: STR_DW_TECH_CODEX_UC              # Techmarine Codex Dummy
+  - type: STR_DW_TECH_CODEX_UC              # Techmarine Codex
     refNode: *STR_DW_TECH_MK7
     units:
       - STR_DW_ARMOR_DUMMY
@@ -4311,7 +4775,7 @@ armors:
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
-  - type: STR_DW_TERM_CODEX_UC              # Terminator Codex Dummy
+  - type: STR_DW_TERM_CODEX_UC              # Terminator Codex
     refNode: *STR_DW_TERM_MK7
     units:
       - STR_DW_ARMOR_DUMMY
@@ -4320,7 +4784,16 @@ armors:
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
-  - type: STR_DW_PHB_CODEX_UC               # Phobos Codex Dummy
+  - type: STR_DW_ASS_MKX_CODEX_UC           # Assault Intercessor Codex
+    refNode: *STR_DW_ASS_MKX
+    units:
+      - STR_DW_ARMOR_DUMMY
+    corpseBattle:
+      - STR_MKX_DW_TAC_CORPSE
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
+
+  - type: STR_DW_PHB_CODEX_UC               # Phobos Reiver Codex
     refNode: *STR_DW_PHB_MKX
     units:
       - STR_DW_ARMOR_DUMMY
@@ -4329,7 +4802,25 @@ armors:
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
-  - type: STR_DW_GRV_CODEX_UC               # Gravis Codex Dummy
+  - type: STR_DW_PHBELIM_CODEX_UC           # Phobos Eliminator Codex
+    refNode: *STR_DW_PHB_ELIM
+    units:
+      - STR_DW_ARMOR_DUMMY
+    corpseBattle:
+      - STR_MKX_DW_TAC_CORPSE
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
+
+  - type: STR_DW_SCT_CODEX_UC               # Elite Scout Codex
+    refNode: *REF_DW_SCOUT
+    units:
+      - STR_DW_ARMOR_DUMMY
+    corpseBattle:
+      - STR_MKX_DW_TAC_CORPSE
+    tags:
+      INFECTION_RESIST: 0 #don't show in codex
+
+  - type: STR_DW_GRV_CODEX_UC               # Gravis Codex
     refNode: *STR_DW_GRV_MKX_BS
     units:
       - STR_DW_ARMOR_DUMMY
@@ -4342,7 +4833,7 @@ armors:
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
-  - type: STR_DW_INC_CODEX_UC               # Omnis Codex Dummy
+  - type: STR_DW_INC_CODEX_UC               # Omnis Codex
     refNode: *STR_DW_INC_MKX
     units:
       - STR_DW_ARMOR_DUMMY
@@ -4354,7 +4845,7 @@ armors:
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
-  - type: STR_DW_CAP_CODEX_UC               # Captain Codex Dummy
+  - type: STR_DW_CAP_CODEX_UC               # Captain Codex
     refNode: *STR_DW_LEADER_ARMOR
     units:
       - STR_DW_ARMOR_DUMMY
@@ -4372,7 +4863,7 @@ armors:
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
-  - type: STR_DW_TERM_CYC_CODEX_UC          # Terminator Cyclone Codex Dummy
+  - type: STR_DW_TERM_CYC_CODEX_UC          # Terminator Cyclone Codex
     refNode: *STR_DW_TERM_CYCLONE_MK7
     units:
       - STR_DW_ARMOR_DUMMY
@@ -4382,7 +4873,7 @@ armors:
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 
-  - type: STR_DW_TERM_ASS_CODEX_UC          # Terminator Assault Codex Dummy
+  - type: STR_DW_TERM_ASS_CODEX_UC          # Terminator Assault Codex
     refNode: *STR_DW_TERM_ASS_CLAWS_MK7
     units:
       - STR_DW_ARMOR_DUMMY

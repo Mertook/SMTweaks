@@ -1,15 +1,5 @@
 extended:
-  tags:
-    RuleItem:
-      SMT_AMMO_BONUSDMG_FIRINGACC: int      # % bonus damage granted from units Firing Accuracy
-      SMT_AMMO_HP_PREDMG: int # % of power directly added to health damage ignoring armor
-    RuleArmor:
-      SMT_ARMOR_HEAVY_WEAPON_USER: int      # armor that counteracts the penalty for heavy weapons - 1 = no penalty, 2+ = 1/2, 2/3, 3/4 etc penalty
-      SMT_ARMOR_SHRED_RESISTANCE: int       # Reduce armor damage by % (Non-melta damage sources)
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: int    # Reduce armor damage by % (Plasma damage)
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: int # Reduce armor damage by % (Melta damage)
-      SMT_ARMOR_REGEN_HP: int #passive hp regen from armor
-      ARMOR_REGENERATES_WOUNDS: int #wound regen from armor
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
 
   scripts:
     statsForNerdsArmor:

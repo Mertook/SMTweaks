@@ -22,14 +22,14 @@ research:
       - STR_HARDER_MISSIONS
       - STR_BOLTER_AMMO_PREREQ
       - STR_BOLTER_ADV_AMMO
-      - STR_PRIMARIS_BOLTERS
-      - STR_MARINE_BOLTERS
+      - STR_MARINE_WEAPONS
+      - STR_STORMRAVEN_PREREQ
     getOneFree:
-      - STR_SHOTGUNS_ADV #replaces personal armor unlock - making Tac armor is useless for DW
+      - STR_SCOUT_WEAPONS #replaces personal armor unlock - making Tac armor is useless for DW
     disables:
       - STR_GREYKNIGHTS
       - STR_RADICAL_INQUISITOR_STRATEGY
-      - STR_HERETICAL_INQUISITOR_STRATEGY # Radical Road Exclusive
+      - STR_HERETICAL_INQUISITOR_STRATEGY
       - STR_NOT_DEATHWATCH
       - STR_CYDONIA_OR_BUST # has their own version - STR_DEATHWATCH_BUST
     spawnedEvent: STR_DEATHWATCH_CARE_PACKAGE
@@ -78,6 +78,23 @@ research:
       - STR_DEATHWATCH
       - STR_ELERIUM_115
       - STR_MIDTIER_PREREQ
+
+  - name: STR_DW_PRIMARIS           # Deathwatch Primaris Craft
+    cost: 205
+    points: 20
+    dependencies:
+      - STR_DEATHWATCH
+      - STR_UFO_POWER_SOURCE
+    unlocks: []
+    getOneFree: []
+
+  - name: STR_LANDRAIDER_DW         # Deathwatch Final Transport
+    cost: 900
+    points: 30
+    dependencies:
+      - STR_DEATHWATCH
+      - STR_UFO_CONSTRUCTION
+      - STR_COMMANDER_PLUS
 
   - name: STR_DW_SQUAD1             # Deathwatch Squad Expansion +1 (Warp origins)
     cost: 5
@@ -139,8 +156,6 @@ research:
     points: 20
     dependencies:
       - STR_DEATHWATCH
-    getOneFree:
-      - STR_ASS_ARMOR
     listOrder: 5 # push above corpses/etc
 
   - name: STR_DW_SNIPER             # Deathwatch Gear Basic Tier (Phobos armor + Sniper Boltrifle)
@@ -150,8 +165,6 @@ research:
       - STR_DEATHWATCH
     unlocks:
       - STR_BOLT_RIFLE_AMMO
-    getOneFree:
-      - STR_MKX_PHB_ARMOR
     listOrder: 6 # push above corpses/etc
 
   - name: STR_DW_AMMO               # Deathwatch Gear Mid Tier (Special Ammo)
@@ -170,8 +183,6 @@ research:
     unlocks:
       - STR_HBOLTER_AMMO_PREREQ
       - STR_HBOLTER_AMMO_BELTS
-    getOneFree:
-      - STR_DEV_ARMOR
     listOrder: 8 # push above corpses/etc
 
   - name: STR_DW_GRAVIS             # Deathwatch Gear Midtier+ (Gravis)
@@ -180,8 +191,6 @@ research:
     dependencies:
       - STR_MT_DW
       - STR_UFO_CONSTRUCTION # ceramite
-    getOneFree:
-      - STR_MKX_GRV_ARMOR
     listOrder: 9 # push above corpses/etc
 
   - name: STR_DW_TERM               # Deathwatch Gear High Tier (Terminator armor)
@@ -189,8 +198,6 @@ research:
     points: 30
     dependencies:
       - STR_DW_SQUAD5 # commander gated
-    getOneFree:
-      - STR_POWER_SUIT
     listOrder: 10 # push above corpses/etc
 
   - name: STR_DW_PRIMARIS_FLIGHT    # Deathwatch Gear High Tier (Omnis + Light Gravis armor)
@@ -198,8 +205,6 @@ research:
     points: 30
     dependencies:
       - STR_DW_SQUAD5 # commander gated
-    getOneFree:
-      - STR_MKX_INC_ARMOR
     listOrder: 10 # push above corpses/etc
 
   - name: STR_DW_CAP_ARMOR          # Deathwatch Captain Armor (disabled)
@@ -214,22 +219,12 @@ research:
     dependencies:
       - STR_GENERALLOCK # disabled
 
-  - name: STR_DW_PRIMARIS           # Deathwatch Primaris Craft
-    cost: 205
-    points: 20
-    dependencies:
-      - STR_ELERIUM_115
-      - STR_UFO_POWER_SOURCE
-      - STR_MIDTIER_PREREQ
-      - STR_DEATHWATCH
-    unlocks: []
-    getOneFree: []
-
   - name: STR_STORMRAVEN_DW #Stormraven
     dependencies:
       - STR_ALIEN_ALLOYS
       - STR_ELERIUM_115
       - STR_DEATHWATCH
+      - STR_GENERALLOCK # disabled
     getOneFree:
       - STR_NEW_FIGHTER_CRAFT
 
@@ -238,5 +233,6 @@ research:
       - STR_ALIEN_ALLOYS
       - STR_ELERIUM_115
       - STR_GREYKNIGHTS
+      - STR_GENERALLOCK # disabled
 
 

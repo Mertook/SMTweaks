@@ -184,6 +184,8 @@ extraSprites:
       282: Resources/ITEMS/BOLTPISTOL/pistolMC_1.png            # Boltpistol Mastercrafted (boltpistol)
       283: Resources/ITEMS/BSNIPER/SniperBoltMC.png             # Bolt Sniper MC Ammo
       284: Resources/ITEMS/BSNIPER/SniperBoltIncin.png          # Bolt Sniper Incin Ammo
+      285: Resources/UNITS/DW/SCOUT/SCTDW_BigOb.png             # DW Scout Corpse
+      286: Resources/ITEMS/MELEE/PhobosKnife_BigOb.png          # Astartes Combat Blade
 
 ###Item FloorOBs
   - type: FLOOROB.PCK
@@ -219,6 +221,8 @@ extraSprites:
       211: Resources/ITEMS/PRIMARIS/AbsolvorMC_FloorOb.png      # Absolvor Bolt Pistol (MC)
       213: Resources/ITEMS/BOLTER/rifleDD_FloorOb.png           # Bolt Rifle Combi
       216: Resources/ITEMS/VOLKITE/NEOVOLKITE_FLOOROB.png       # Neovolkite Pistol
+      285: Resources/UNITS/DW/SCOUT/SCTDW_FlrOb.png             # DW Scout Corpse
+      286: Resources/ITEMS/MELEE/PhobosKnife_FlrOb.png          # Astartes Combat Blade
 
 ###Item HandOBs - need 8 slots per item
   - type: HANDOB.PCK
@@ -787,7 +791,7 @@ extraSprites:
       0: Resources/UNITS/PRIMA/CHAP/MKXCHP_S_LV1.png
 
 ### Primaris Eliminator
-  - typeSingle: ELIM3__1__MKXPHB
+  - typeSingle: ELIML3__1__MKXPHB
     fileSingle: Resources/UNITS/PRIMA/PHOB/ELIM_I_L3.png
   - type: ELIML3.PCK
     width: 512
@@ -796,7 +800,7 @@ extraSprites:
     subY: 40
     files:
       0: Resources/UNITS/PRIMA/PHOB/ELIM_S_L3.png
-  - typeSingle: ELIM4__1__MKXPHB
+  - typeSingle: ELIML4__1__MKXPHB
     fileSingle: Resources/UNITS/PRIMA/PHOB/ELIM_I_L4.png
   - type: ELIML4.PCK
     width: 512
@@ -805,7 +809,7 @@ extraSprites:
     subY: 40
     files:
       0: Resources/UNITS/PRIMA/PHOB/ELIM_S_L4.png
-  - typeSingle: ELIM5__1__MKXPHB
+  - typeSingle: ELIML5__1__MKXPHB
     fileSingle: Resources/UNITS/PRIMA/PHOB/ELIM_I_L5.png
   - type: ELIML5.PCK
     width: 512
@@ -815,9 +819,25 @@ extraSprites:
     files:
       0: Resources/UNITS/PRIMA/PHOB/ELIM_S_L5.png
 
+  - typeSingle: MASK__4__MASK1
+    fileSingle: Resources/UNITS/PRIMA/PHOB/MASK1.png
+  - typeSingle: MASK__4__MASK2
+    fileSingle: Resources/UNITS/PRIMA/PHOB/MASK2.png
+  - typeSingle: MASK__4__MASK3
+    fileSingle: Resources/UNITS/PRIMA/PHOB/MASK3.png
+  - typeSingle: MASK__4__MASK4
+    fileSingle: Resources/UNITS/PRIMA/PHOB/MASK4.png
+  - typeSingle: MASKV__4__MASK1
+    fileSingle: Resources/UNITS/PRIMA/PHOB/MASK1V.png
+  - typeSingle: MASKV__4__MASK2
+    fileSingle: Resources/UNITS/PRIMA/PHOB/MASK2V.png
+  - typeSingle: MASKV__4__MASK3
+    fileSingle: Resources/UNITS/PRIMA/PHOB/MASK3V.png
+  - typeSingle: MASKV__4__MASK4
+    fileSingle: Resources/UNITS/PRIMA/PHOB/MASK4V.png
 ### DW Primaris Eliminator
   - typeSingle: ELIMDWBA__1__MKXPHB
-    fileSingle: Resources/UNITS/PRIMA/PHOB/ELIMDW_I_BA.png
+    fileSingle: Resources/UNITS/DW/PHOB/ELIMDW_I_BA.png
   - type: ELIMDWBA.PCK
     width: 512
     height: 720
@@ -826,7 +846,7 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/PHOB/ELIMDW_S_BA.png
   - typeSingle: ELIMDWBT__1__MKXPHB
-    fileSingle: Resources/UNITS/PRIMA/PHOB/ELIMDW_I_BT.png
+    fileSingle: Resources/UNITS/DW/PHOB/ELIMDW_I_BT.png
   - type: ELIMDWBT.PCK
     width: 512
     height: 720
@@ -835,7 +855,7 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/PHOB/ELIMDW_S_BT.png
   - typeSingle: ELIMDWCF__1__MKXPHB
-    fileSingle: Resources/UNITS/PRIMA/PHOB/ELIMDW_I_CF.png
+    fileSingle: Resources/UNITS/DW/PHOB/ELIMDW_I_CF.png
   - type: ELIMDWCF.PCK
     width: 512
     height: 720
@@ -844,7 +864,7 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/PHOB/ELIMDW_S_CF.png
   - typeSingle: ELIMDWDA__1__MKXPHB
-    fileSingle: Resources/UNITS/PRIMA/PHOB/ELIMDW_I_DA.png
+    fileSingle: Resources/UNITS/DW/PHOB/ELIMDW_I_DA.png
   - type: ELIMDWDA.PCK
     width: 512
     height: 720
@@ -853,7 +873,7 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/PHOB/ELIMDW_S_DA.png
   - typeSingle: ELIMDWIF__1__MKXPHB
-    fileSingle: Resources/UNITS/PRIMA/PHOB/ELIMDW_I_IF.png
+    fileSingle: Resources/UNITS/DW/PHOB/ELIMDW_I_IF.png
   - type: ELIMDWIF.PCK
     width: 512
     height: 720
@@ -862,7 +882,7 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/PHOB/ELIMDW_S_IF.png
   - typeSingle: ELIMDWSA__1__MKXPHB
-    fileSingle: Resources/UNITS/PRIMA/PHOB/ELIMDW_I_SA.png
+    fileSingle: Resources/UNITS/DW/PHOB/ELIMDW_I_SA.png
   - type: ELIMDWSA.PCK
     width: 512
     height: 720
@@ -871,7 +891,7 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/PHOB/ELIMDW_S_SA.png
   - typeSingle: ELIMDWSW__1__MKXPHB
-    fileSingle: Resources/UNITS/PRIMA/PHOB/ELIMDW_I_SW.png
+    fileSingle: Resources/UNITS/DW/PHOB/ELIMDW_I_SW.png
   - type: ELIMDWSW.PCK
     width: 512
     height: 720
@@ -880,7 +900,7 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/PHOB/ELIMDW_S_SW.png
   - typeSingle: ELIMDWUM__1__MKXPHB
-    fileSingle: Resources/UNITS/PRIMA/PHOB/ELIMDW_I_UM.png
+    fileSingle: Resources/UNITS/DW/PHOB/ELIMDW_I_UM.png
   - type: ELIMDWUM.PCK
     width: 512
     height: 720
@@ -889,7 +909,7 @@ extraSprites:
     files:
       0: Resources/UNITS/DW/PHOB/ELIMDW_S_UM.png
   - typeSingle: ELIMDWWS__1__MKXPHB
-    fileSingle: Resources/UNITS/PRIMA/PHOB/ELIMDW_I_WS.png
+    fileSingle: Resources/UNITS/DW/PHOB/ELIMDW_I_WS.png
   - type: ELIMDWWS.PCK
     width: 512
     height: 720
@@ -897,6 +917,119 @@ extraSprites:
     subY: 40
     files:
       0: Resources/UNITS/DW/PHOB/ELIMDW_S_WS.png
+  - typeSingle: MASKDW__4__MASK1
+    fileSingle: Resources/UNITS/DW/PHOB/MASK1DW.png
+  - typeSingle: MASKDW__4__MASK2
+    fileSingle: Resources/UNITS/DW/PHOB/MASK2DW.png
+  - typeSingle: MASKDW__4__MASK3
+    fileSingle: Resources/UNITS/DW/PHOB/MASK3DW.png
+  - typeSingle: MASKDW__4__MASK4
+    fileSingle: Resources/UNITS/DW/PHOB/MASK4DW.png
+  - typeSingle: GOGGLESDW__3__GOGGLES
+    fileSingle: Resources/UNITS/DW/PHOB/goggles.png
+
+### DW Assault Intercessor
+  - typeSingle: ASSDWBA__1__MKXASS
+    fileSingle: Resources/UNITS/DW/ASS/MKXA_I_BA.png
+  - typeSingle: ASSDWBT__1__MKXASS
+    fileSingle: Resources/UNITS/DW/ASS/MKXA_I_BT.png
+  - typeSingle: ASSDWCF__1__MKXASS
+    fileSingle: Resources/UNITS/DW/ASS/MKXA_I_CF.png
+  - typeSingle: ASSDWDA__1__MKXASS
+    fileSingle: Resources/UNITS/DW/ASS/MKXA_I_DA.png
+  - typeSingle: ASSDWIF__1__MKXASS
+    fileSingle: Resources/UNITS/DW/ASS/MKXA_I_IF.png
+  - typeSingle: ASSDWSA__1__MKXASS
+    fileSingle: Resources/UNITS/DW/ASS/MKXA_I_SA.png
+  - typeSingle: ASSDWSW__1__MKXASS
+    fileSingle: Resources/UNITS/DW/ASS/MKXA_I_SW.png
+  - typeSingle: ASSDWUM__1__MKXASS
+    fileSingle: Resources/UNITS/DW/ASS/MKXA_I_UM.png
+  - typeSingle: ASSDWWS__1__MKXASS
+    fileSingle: Resources/UNITS/DW/ASS/MKXA_I_WS.png
+
+### DW Elite Scout
+  - typeSingle: SCTDWBA__1__SCOUT
+    fileSingle: Resources/UNITS/DW/SCOUT/SCOUT_I_BA.png
+  - type: SCTDWBA.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/SCOUT/SCOUT_S_BA.png
+  - typeSingle: SCTDWBT__1__SCOUT
+    fileSingle: Resources/UNITS/DW/SCOUT/SCOUT_I_BT.png
+  - type: SCTDWBT.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/SCOUT/SCOUT_S_BT.png
+  - typeSingle: SCTDWCF__1__SCOUT
+    fileSingle: Resources/UNITS/DW/SCOUT/SCOUT_I_CF.png
+  - type: SCTDWCF.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/SCOUT/SCOUT_S_CF.png
+  - typeSingle: SCTDWDA__1__SCOUT
+    fileSingle: Resources/UNITS/DW/SCOUT/SCOUT_I_DA.png
+  - type: SCTDWDA.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/SCOUT/SCOUT_S_DA.png
+  - typeSingle: SCTDWIF__1__SCOUT
+    fileSingle: Resources/UNITS/DW/SCOUT/SCOUT_I_IF.png
+  - type: SCTDWIF.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/SCOUT/SCOUT_S_IF.png
+  - typeSingle: SCTDWSA__1__SCOUT
+    fileSingle: Resources/UNITS/DW/SCOUT/SCOUT_I_SA.png
+  - type: SCTDWSA.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/SCOUT/SCOUT_S_SA.png
+  - typeSingle: SCTDWSW__1__SCOUT
+    fileSingle: Resources/UNITS/DW/SCOUT/SCOUT_I_SW.png
+  - type: SCTDWSW.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/SCOUT/SCOUT_S_SW.png
+  - typeSingle: SCTDWUM__1__SCOUT
+    fileSingle: Resources/UNITS/DW/SCOUT/SCOUT_I_UM.png
+  - type: SCTDWUM.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/SCOUT/SCOUT_S_UM.png
+  - typeSingle: SCTDWWS__1__SCOUT
+    fileSingle: Resources/UNITS/DW/SCOUT/SCOUT_I_WS.png
+  - type: SCTDWWS.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/DW/SCOUT/SCOUT_S_WS.png
 
 ### DW Captain (regular)
   - type: DWCAPTAIN.PCK
@@ -1481,6 +1614,13 @@ extraSprites:
     height: 200
     files:
       0: Resources/UFO/CROZIUSUFO.png
+
+  - type: ELIMINATORUFO.SPK
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/UFO/ELIMINATOR.png
 
   - type: DREAD3UFO.SPK
     singleImage: true

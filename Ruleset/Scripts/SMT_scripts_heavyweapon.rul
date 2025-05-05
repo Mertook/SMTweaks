@@ -1,11 +1,5 @@
 extended:
-  tags:
-    RuleItem:
-      ITEM_HAS_BIPOD: int
-      ITEM_IS_HEAVY_WEAPON: int # does weapon have penalties for firing after moving/shooting previously this turn? 1 = standard, 2+ increases penalty 2 = 90%, 3 = 80% etc, snapshots count as one level lower for increased penalty
-      ITEM_HWP_IGNORES_ARMOR_BONUS: int # does weapon ignore armor hwp bonus (see below) meant for snipers etc
-    RuleArmor:
-      SMT_ARMOR_HEAVY_WEAPON_USER: int # armor that counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 2/3, 3 = 2/4, 4 = 2/5 etc
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
 
   scripts:
     accuracyMultiplierBonusStats:

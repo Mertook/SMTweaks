@@ -1,13 +1,5 @@
 extended:
-  tags:
-    RuleArmor:
-      SMT_ARMOR_REGEN_HP: int #passive hp regen from armor
-    BattleUnit:
-      SMT_RECOVERY_TIME: int #store health regenerated for wound recovery time
-    RuleSoldier:
-      SMT_UNIT_REGEN_HP: int #passive hp regen from soldier type
-      SMT_UNIT_REGEN_WOUND: int #passive wound regen from soldier type
-      SMT_UNIT_REGEN_PENALTY_REDUCTION: int #reduces the wound recovery time penalty for regenerating health
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
 
   scripts:
     newTurnUnit:
@@ -155,6 +147,11 @@ soldiers:
     tags:
       SMT_UNIT_REGEN_HP: 8
       SMT_UNIT_REGEN_WOUND: 2
+
+  - type: STR_SOLDIER_CAPTAIN
+    tags:
+      SMT_UNIT_REGEN_HP: 10
+      SMT_UNIT_REGEN_WOUND: 3
 
   - type: STR_SOLDIER_CHAPLAIN
     tags:

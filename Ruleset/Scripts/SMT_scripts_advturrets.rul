@@ -1,26 +1,7 @@
 ### Credit to the amazing Filip_H who did the Advanced Turrets mod for IG that this is a shameless copy of ###
 
 extended:
-  tags:
-    RuleItem:
-      SMT_TURRET_TOKEN: int         # is this item a Turret token?
-      SMT_RAZOR_HBOLTER: int        # Razorback Heavy Bolter token
-      SMT_RAZOR_LAS: int            # Razorback Lascannon token
-      SMT_RAZOR_HFLAME: int         # Razorback Heavy Flamer token
-    RuleArmor:
-      SMT_TURRET_UNIT: int          # marks unit as generic Turret type unit
-      SMT_RAZORBACK_TURRET: int     # marks unit as Razorback default turret that can be replaced
-      SMT_RAZOR_SBOLTER_TURRET: int # marks unit as Razorback Stormbolter turret
-      SMT_RAZOR_HBOLTER_TURRET: int # marks unit as Razorback Heavy Bolter turret
-      SMT_RAZOR_LAS_TURRET: int     # marks unit as Razorback Lascannon turret
-      SMT_RAZOR_HFLAME_TURRET: int  # marks unit as Razorback Heavy Flamer turret
-    BattleGame:
-      SMT_RAZOR_HBOLTER_COUNT: int  # number of Razorback HeavyBolter tokens
-      SMT_RAZOR_HBOLTER_DEATHS: int # number of Razorback HeavyBolter turrets lost
-      SMT_RAZOR_LAS_COUNT: int      # number of Razorback Lascannon tokens
-      SMT_RAZOR_LAS_DEATHS: int     # number of Razorback Lascannon turrets lost
-      SMT_RAZOR_HFLAME_COUNT: int   # number of Razorback HeavyFlamer tokens
-      SMT_RAZOR_HFLAME_DEATHS: int  # number of Razorback HeavyFlamer turrets lost
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
 
   scripts:
     createItem:
@@ -131,40 +112,6 @@ extended:
           end;
           return;
 
-    damageUnit:
-      #*** Script that counts destroyed turrets ***
-      - new: SMTS_turret_destruction
-        offset: 83
-        code: |
-          var ptr RuleArmor unitArmor;
-          var int health;
-          var int temp;
-          var int deaths;
-
-          unit.getHealth health;
-          if gt to_health health; # if lethal damage
-            unit.getTag temp Tag.SMT_RAZOR_HBOLTER_TURRET;   # Razorback Heavy Bolter
-            if eq temp 1;
-              battle_game.getTag deaths Tag.SMT_RAZOR_HBOLTER_DEATHS;
-              add deaths 1;
-              battle_game.setTag Tag.SMT_RAZOR_HBOLTER_DEATHS deaths;
-            end;
-            unit.getTag temp Tag.SMT_RAZOR_LAS_TURRET;       # Razorback Lascannon
-            if eq temp 1;
-              battle_game.getTag deaths Tag.SMT_RAZOR_LAS_DEATHS;
-              add deaths 1;
-              battle_game.setTag Tag.SMT_RAZOR_LAS_DEATHS deaths;
-            end;
-            unit.getTag temp Tag.SMT_RAZOR_HFLAME_TURRET;    # Razorback HeavyFlamer
-            if eq temp 1;
-              battle_game.getTag deaths Tag.SMT_RAZOR_HFLAME_DEATHS;
-              add deaths 1;
-              battle_game.setTag Tag.SMT_RAZOR_HFLAME_DEATHS deaths;
-            end;
-          end;
-          return;
-          
-          
     newTurnItem:
       #*** Script that destroys turret tokens if a turret died ***
       - new: SMTS_turret_destruction
@@ -205,4 +152,4 @@ extended:
             end;
           end;
           return;
-          
+

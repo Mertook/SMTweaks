@@ -52,18 +52,6 @@ manufacture:
     producedItems:
       STR_AIRSTRIKE_VOX: 1
 
-  - name: STR_AIRSTRIKE_MANUFACTURE
-    category: STR_WEAPON
-    requires:
-      - STR_GENERALLOCK
-    space: 0
-    time: 500
-    cost: 200000
-    requiredItems:
-      STR_KILLPOINT_TOKEN: 120
-    producedItems:
-      STR_AIRSTRIKE_VOX: 1
-
   - name: STR_AIRSTRIKE_AMMO_MANUFACTURE
     category: STR_AMMUNITION
     requires:
@@ -74,37 +62,37 @@ manufacture:
     producedItems:
       STR_AIRSTRIKE_AMMO: 1
 
-  - name: STR_EXITUS_AMMO                           # Vindicare Sniper Ammo
-    requires:
-      - STR_VINDICARE_AMMO_REQ
+  # - name: STR_EXITUS_AMMO                           # Vindicare Sniper Ammo
+    # requires:
+      # - STR_VINDICARE_AMMO_REQ
 
-  - name: STR_EXITUS_AMMO_HELLFIRE                  # Vindicare Sniper Ammo (Hellfire)
-    requires:
-      - STR_VINDICARE_AMMO_REQ
+  # - name: STR_EXITUS_AMMO_HELLFIRE                  # Vindicare Sniper Ammo (Hellfire)
+    # requires:
+      # - STR_VINDICARE_AMMO_REQ
 
-  - name: STR_EXITUS_AMMO_TURBOPENETRATOR           # Vindicare Sniper Ammo (Penetrator)
-    requires:
-      - STR_VINDICARE_AMMO_REQ
+  # - name: STR_EXITUS_AMMO_TURBOPENETRATOR           # Vindicare Sniper Ammo (Penetrator)
+    # requires:
+      # - STR_VINDICARE_AMMO_REQ
 
-  - name: STR_EXITUS_AMMO_SHELLBREAKER              # Vindicare Sniper Ammo (Breaker)
-    requires:
-      - STR_VINDICARE_AMMO_REQ
+  # - name: STR_EXITUS_AMMO_SHELLBREAKER              # Vindicare Sniper Ammo (Breaker)
+    # requires:
+      # - STR_VINDICARE_AMMO_REQ
 
-  - name: STR_EXITUS_PISTOL_AMMO                    # Vindicare Pistol Ammo
-    requires:
-      - STR_VINDICARE_AMMO_REQ
+  # - name: STR_EXITUS_PISTOL_AMMO                    # Vindicare Pistol Ammo
+    # requires:
+      # - STR_VINDICARE_AMMO_REQ
 
-  - name: STR_EXITUS_PISTOL_AMMO_HELLFIRE           # Vindicare Pistol Ammo (Hellfire)
-    requires:
-      - STR_VINDICARE_AMMO_REQ
+  # - name: STR_EXITUS_PISTOL_AMMO_HELLFIRE           # Vindicare Pistol Ammo (Hellfire)
+    # requires:
+      # - STR_VINDICARE_AMMO_REQ
 
-  - name: STR_EXITUS_PISTOL_AMMO_TURBOPENETRATOR    # Vindicare Pistol Ammo (Penetrator)
-    requires:
-      - STR_VINDICARE_AMMO_REQ
+  # - name: STR_EXITUS_PISTOL_AMMO_TURBOPENETRATOR    # Vindicare Pistol Ammo (Penetrator)
+    # requires:
+      # - STR_VINDICARE_AMMO_REQ
 
-  - name: STR_EXITUS_PISTOL_AMMO_SHELLBREAKER       # Vindicare Pistol Ammo (Breaker)
-    requires:
-      - STR_VINDICARE_AMMO_REQ
+  # - name: STR_EXITUS_PISTOL_AMMO_SHELLBREAKER       # Vindicare Pistol Ammo (Breaker)
+    # requires:
+      # - STR_VINDICARE_AMMO_REQ
 
   - name: STR_RECRUIT_CAPTIVE_FARSEER
     category: STR_CAT_RADICAL

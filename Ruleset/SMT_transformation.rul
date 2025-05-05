@@ -14,7 +14,7 @@ commendations:
     description: STR_HONOR_MEDAL_DESCRIPTION
     sprite: 5
     criteria:
-      totalScore: [1600,6000,18000,42000]
+      totalScore: [2000,8000,24000,48000]
 
 soldierTransformation:
   - name: STR_PROMOTE_TERMINATOR        # Marine -> Vet Marine
@@ -204,7 +204,7 @@ soldierTransformation:
       - STR_CHAPLAIN_ROSARY
     requires:
       - STR_MARINES_STRATEGY
-      - STR_CHAP_ARMOR
+      - STR_CHAP_RELICS
     cost: 60000
     requiredItems:
       STR_KILLPOINT_TOKEN: 100
@@ -218,6 +218,26 @@ soldierTransformation:
       - STR_PRIMARIS_CHAPLAIN
     soldierBonusType: STR_BONUS_INQ_ROSARIUS
     listOrder: 79
+
+  - name: STR_FB_CAPTAIN                # Captain Promotion
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_MARINE_CAPTAIN
+    cost: 100000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 1800
+    producedSoldierType: STR_SOLDIER_CAPTAIN
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    needsCorpseRecovered: false
+    transferTime: 0
+    allowedSoldierTypes:
+      - STR_SOLDIER_TERMINATOR
+    requiredCommendations:
+      STR_HONOR_MEDAL: 3
+    listOrder: 55
 
   - name: STR_RESURRECT_MARINE          # Create Dreadnought
     upperBoundAtStatCaps: true
@@ -302,6 +322,7 @@ soldierTransformation:
       - STR_PRIMARISLV2
     requiredCommendations:
       STR_HONOR_MEDAL: 1
+      STR_TERMINATOR_CROSS: 0
     transferTime: 0
     recoveryTime: 0
     flatOverallStatChange:
@@ -352,6 +373,7 @@ soldierTransformation:
   - name: STR_LV4_TO_LV5                # Primaris Lv4 -> Lv5
     requires:
       - STR_PRIMARIS
+      - STR_MARINE_CAPTAIN
     cost: 100000
     requiredItems:
       STR_KILLPOINT_TOKEN: 1800

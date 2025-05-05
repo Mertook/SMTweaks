@@ -1,12 +1,5 @@
 extended:
-  tags:
-    RuleSoldier:
-      SMT_RESTRICTED_ITEM_USER: int # Soldier is allowed to used restricted item (1 = Chaplain, 2 = DW Marine, 4 = DW Captain) Supports combined values (7 = Chaplain + DW Marine + DW Captain)
-    RuleItem:
-      SMT_RESTRICTED_ITEM: int # Item should only be usable by certain units (1 = Crozius, 2 = Deathwatch Weapons, 4 = DW Captain Gear)
-      SMT_RESTRICTED_ACCURACY_PEN: int # Percentage of weapon accuracy when used by incorrect units
-      SMT_RESTRICTED_DAMAGE_PEN: int # Percentage of weapon power when used by incorrect units
-      SMT_RESTRICTED_ITEM_MELEE: int # if !0, reduce melee power % by this much when used by incorrect units
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
 
   scripts:
     accuracyMultiplierBonusStats:

@@ -1,13 +1,12 @@
-
 extended:
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
+
   tags:
     RuleItem:
       ITEM_SHIELD_BLOCKING_STRENGTH: int
       ITEM_SHIELD_RECHARGES: int
     BattleItem:
       ITEM_MAX_SHIELD: int
-    RuleArmor:
-      SMT_ARMOR_HEAVY_WEAPON_USER: int # armor that counteracts the penalty for heavy weapons - if =1, allow Shield use even when carrying a 2h weapon
 
 
   scripts:

@@ -1,0 +1,166 @@
+extended:
+  tags:
+    RuleItem:
+      ## Craft Turrets
+      SMT_TURRET_TOKEN: int         # is this item a Turret token?
+      SMT_RAZOR_HBOLTER: int        # Razorback Heavy Bolter token
+      SMT_RAZOR_LAS: int            # Razorback Lascannon token
+      SMT_RAZOR_HFLAME: int         # Razorback Heavy Flamer token
+      ## Bombard
+      BOMBARD_AMMO_LOADER: int              # item used to lock bombard targeter in place and activate weapons
+      BOMBARD_SPAWNER_ITEM: int             # spawner grenade for bombard targeter
+      BOMBARD_AMMO_ITEM: int                # item used to unlock certain strikes 1: Orbital Strike 2: Lightning CAS 3: Stormtalon CAS 4: Orbital Lance
+      BOMBARD_CALLIN_REMOTE: int            # item used to call in bombard strikes
+      BOMBARD_COOLDOWN: int                 # sets cooldown when bombard is used
+      BOMBARD_AMMO_REQUIRED: int            # does this strike remote need ammo?
+      ## Buffs
+      SMT_VIGILIANCE_BUFF: int          # % of power added as overwatch bonus
+      SMT_ITEM_MOVESPEED_BOOST: int     # limit on movespeed bonus provided by haste
+      SMT_ITEM_REACTION_MOD: int        # % of power added as reaction bonus
+      SMT_VULN_DEBUFF: int              # % of power added as vulnerability bonus
+      SMT_VULN_DURATION: int            # length of debuff
+      SMT_SIGNUM_DURATION: int          # length of Signum FA buff in turns
+      ## Weapon Ammo Sprites
+      ITEM_AMMO_SKIP_BIGOBS: int
+      ## Heavy Weapons
+      ITEM_HWP_IGNORES_ARMOR_BONUS: int # does weapon ignore armor hwp bonus (see below) meant for snipers etc
+      ## Infiltrator
+      ITEM_STEALTH_RANGE: int                   # item used to activate restealth - X = detection range
+      ITEM_STEALTH_DURATION: int                # duration of stealth
+      ITEM_STEALTH_MOVEPENALTY: int             # % modifier on movespeed while stealthed
+      ITEM_STEALTH_ASSASSIN_WEAPON: int         # weapon can activate cloaked assassin on kills: X = type (1- Melee, 2- Sniper)
+      ITEM_STEALTH_ASSASSIN_RANGE: int          # X = detection range when activating assassin cloak
+      ## Restricted Items
+      SMT_RESTRICTED_ITEM: int # Item should only be usable by certain units (1 = Crozius, 2 = Deathwatch Weapons, 4 = DW Captain Gear)
+      SMT_RESTRICTED_ACCURACY_PEN: int # Percentage of weapon accuracy when used by incorrect units
+      SMT_RESTRICTED_DAMAGE_PEN: int # Percentage of weapon power when used by incorrect units
+      SMT_RESTRICTED_ITEM_MELEE: int # if !0, reduce melee power % by this much when used by incorrect units
+      ## Shields
+      SMT_ITEM_SHIELD_DURATION: int             # duration of temporary energy shield
+      ## Custom Ammo
+      SMT_AMMO_BONUSDMG_FIRINGACC: int # % bonus damage granted from units Firing Accuracy: (FA - 100) * Tag / 100
+      SMT_DEREVENANT_AMMO: int # Instantly kills Necrons that are or will be knocked unconcious - value = % bonus damage added against 2x2 Necrons that can't be stunned
+      SMT_AMMO_HP_PREDMG: int # % of power directly added to health damage ignoring armor
+      SMT_SHIELD_DAMAGE_AMP: int # % power increase based on targets shield
+      ITEM_IGNORE_ALLIES: int # deal no damage to units belonging to users faction
+      ITEM_IGNORE_IMPERIUM: int # deal no damage to allied units with armor tag `UNIT_TYPE_IMPERIUM: 1`
+    RuleArmor:
+      ## Craft Turrets
+      SMT_TURRET_UNIT: int          # marks unit as generic Turret type unit
+      SMT_RAZORBACK_TURRET: int     # marks unit as Razorback default turret that can be replaced
+      SMT_RAZOR_SBOLTER_TURRET: int # marks unit as Razorback Stormbolter turret
+      SMT_RAZOR_HBOLTER_TURRET: int # marks unit as Razorback Heavy Bolter turret
+      SMT_RAZOR_LAS_TURRET: int     # marks unit as Razorback Lascannon turret
+      SMT_RAZOR_HFLAME_TURRET: int  # marks unit as Razorback Heavy Flamer turret
+      ## Bombard
+      BOMBARD_DUMMY: int                        # marks unit as dummy spawn unit for designators
+      BOMBARD_TARGETER: int                     # marks unit as bombard target designator
+      ## Buffs
+      SMT_SIGNUM_ARMOR: int                     # check for if is unit wearing a signum
+      ## Captain
+      UNIT_TYPE_ASTARTES: int                   # is unit a Space Marine?
+      ## Regeneration
+      SMT_ARMOR_REGEN_HP: int                   #passive hp regen from armor
+      ## Heavy Weapons
+      SMT_ARMOR_HEAVY_WEAPON_USER: int # armor that counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 2/3, 3 = 2/4, 4 = 2/5 etc
+      ## Infiltrator
+      ARMOR_IS_INFILTRATOR: int                 # at start of battle unit immediately enters stealth for X turns
+      ARMOR_INFILTRATOR_RANGE: int              # detection range for infiltrator stealth
+      ARMOR_RESTEALTH_KILL_REQUIREMENT: int     # number of kills required to restealth
+      ARMOR_RESTEALTH_TURN_REQUIREMENT: int     # turns before unit can restealth
+      ARMOR_IMMEDIATE_KILL_CREDIT: int          # at start of battle unit gets this value added to required kills for stealth
+      ARMOR_IMMEDIATE_TURN_CREDIT: int          # at start of battle unit gets this value added to required turns for stealth
+      ARMOR_CLOAKED_ASSASSIN_TYPE: int          # unit immediately enters stealth after killing with an appropriate weapon. X = Allowed weapon types
+      ARMOR_CLOAKED_ASSASSIN_RANGE: int         # unit immediately enters stealth after killing with an appropriate weapon. X = Detection Range
+      ## Overwatch
+      ARMOR_OVERWATCH_TU_RESTORED: int  # 0 to 100; what % of the unit's maximum TUs is restored at the start of each enemy/neutral turn?
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: int  # 1 or 0, True or False; Do we add the % of max TUs restored, or go with the highest value?
+      ## Armor Shred
+      SMT_ARMOR_SHRED_RESISTANCE: int           # Reduce armor damage by % (Generic damage sources)
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: int    # Reduce armor damage by % (Plasma damage)
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: int     # Reduce armor damage by % (Melta damage)
+    RuleSoldier:
+      ## Regeneration
+      SMT_UNIT_REGEN_HP: int #passive hp regen from soldier type
+      SMT_UNIT_REGEN_WOUND: int #passive wound regen from soldier type
+      SMT_UNIT_REGEN_PENALTY_REDUCTION: int #reduces the wound recovery time penalty for regenerating health
+      ## Heroic Save
+      SMT_HEROICSAVE_CHANCE: int #Modifier to chance to resist fatal damage
+      SMT_HEROICSAVE_HP: int #% of currenthp left after heroic save triggers
+      ## Restricted Items
+      SMT_RESTRICTED_ITEM_USER: int # Key for restricted items (1 = Chaplain, 2 = DW Marine, 4 = DW Captain) Supports combined values (7 = Chaplain + DW Marine + DW Captain)
+      ## Alpha
+      SMT_ALPHA_ATTACKER_MODIFIER: int
+    RuleSkill:
+      ## Captain
+      SKILL_SMT_COMMAND: int            # Command Type ( -1 - Check Commands, 1 - Armor of Contempt, 2 - Storm of Fire, 3 - Relentless Assault )
+      ## Infiltrator
+      SKILL_STEALTH_RANGE: int                  # skill used to activate restealth - X = detection range
+      SKILL_STEALTH_DURATION: int               # duration of stealth
+      SKILL_STEALTH_MOVEPENALTY: int            # % modifier on movespeed while stealthed
+      SKILL_STEALTH_CHECK: int                  # skill used to check requirements for restealthing
+    BattleUnit:
+      ## Buffs
+      SMT_VIGILIANCE_ENDTURN: int       # store buff duration
+      SMT_OVERWATCH_BONUS: int          # stores units bonus to Overwatch
+      SMT_VIGILIANCE_OVERFLOW: int      # overflow TUs from >100% vigilance buff that gets added as the unit reacts
+      SMT_HASTE_ENDTURN: int            # store buff duration
+      SMT_HASTE_SPEED_BONUS: int        # stores movement modifier from haste
+      SMT_HASTE_REACTION_BONUS: int     # stores units reaction bonus
+      SMT_VULN_ENDTURN: int             # store debuff duration
+      SMT_VULN_INTENSITY: int           # store debuff strength
+      SMT_SIGNUM_ORIGINAL_FA: int       # store original firing accuracy
+      SMT_SIGNUM_ENDTURN: int           # store buff duration
+      UNIT_MOVESPEED_MODIFIERS: int     # combined movespeed modifiers for a unit
+      ## Rampage
+      SMT_RAMPAGE_COUNT: int            # # of times unit has refunded TUs from kills
+      ## Regeneration
+      SMT_RECOVERY_TIME: int #store health regenerated for wound recovery time
+      ## Heroic Save
+      SMT_HEROICSAVE_TRIGGERS: int #number of times a unit has made a heroic save
+      SMT_RECOVERY_TIME: int #store unit penalties to wound recovery time
+      ## Infiltrator
+      UNIT_DEACTIVATE_CHECK: int                # has the unit tried to deactivate stealth this turn?
+      UNIT_STEALTH_IS_ACTIVE: int               # is unit currently stealthed? X = turn count
+      UNIT_STEALTH_RANGE: int                   # stealth detection range: 1 tile ~= 15.75, 5 tiles ~= 80
+      UNIT_STEALTH_CHARGE_TURN_COUNTER: int     # store restealth turn counter
+      UNIT_LIKE_A_SHADOW_COUNTER: int           # store restealth kill counter
+      UNIT_STEALTH_MOVEPENALTY: int             # store movement modifier for being stealthed
+      UNIT_MOVESPEED_MODIFIERS: int             # combined movespeed modifiers for a unit
+      UNIT_CAMO_CLOAK_MOVE_COST_MULTIPLIER: int # for compat with Dig In ability
+      UNIT_DIG_IN_MOVE_PENALTY: int             # for compat with  digin ability
+      ## Overwatch
+      SMT_OVERWATCH_BONUS: int #stores units bonus to Overwatch
+      ## Shields
+      SMT_SHIELD_ENDTURN: int                   # store duration for shield from item/ability
+    BattleGame:
+      ## Craft Turrets
+      SMT_RAZOR_HBOLTER_COUNT: int  # number of Razorback HeavyBolter tokens
+      SMT_RAZOR_HBOLTER_DEATHS: int # number of Razorback HeavyBolter turrets lost
+      SMT_RAZOR_LAS_COUNT: int      # number of Razorback Lascannon tokens
+      SMT_RAZOR_LAS_DEATHS: int     # number of Razorback Lascannon turrets lost
+      SMT_RAZOR_HFLAME_COUNT: int   # number of Razorback HeavyFlamer tokens
+      SMT_RAZOR_HFLAME_DEATHS: int  # number of Razorback HeavyFlamer turrets lost
+      ## Bombard
+      SMT_STRIKE_ACTIVE: int                # what Strike is currently active? 1: Orbital Strike 2: CAS Bolter 3: CAS Rocket 4: CAS Napalm 5: Stormtalon 6: Orbital Lance
+      SMT_STRIKE_ACTIVE_SPAWN: int          # should a target designator be spawned?
+      SMT_STRIKE_COUNT: int                 # are there strikes available?
+      SMT_STRIKE_AMMO_USED: int             # do we need to consume an ammo item?
+      SMT_STRIKE_ORBITAL_AMMO: int          # amount of Orbital Barrage ammo
+      SMT_STRIKE_ORBITAL_COOLDOWN: int      # turns before Orbital Barrage can be called in again
+      SMT_STRIKE_LANCE_AMMO: int            # amount of Orbital Lance ammo
+      SMT_STRIKE_LANCE_COOLDOWN: int        # turns before Orbital Lance can be called in again
+      SMT_STRIKE_LIGHTNING_AMMO: int        # amount of Lightning CAS Run ammo
+      SMT_STRIKE_LIGHTNING_COOLDOWN: int    # turns before Lightning CAS Run can be called in again
+      SMT_STRIKE_STORM_AMMO: int            # amount of Stormtalon ammo
+      SMT_STRIKE_STORM_COOLDOWN: int        # turns before Stormtalon can be called in again
+      SMT_STRIKE_WHIRL_AMMO: int            # amount of Whirlwind ammo
+      SMT_STRIKE_WHIRL_COOLDOWN: int        # turns before Whirlwind can be called in again
+      ## Captain
+      SMT_COMMAND_TYPE: int             # Last used command
+      SMT_COMMAND_TURN: int             # Turn Command is active for
+      SMT_COMMAND_POINTS: int           # Command points earned this battle
+
+
+    RuleItem:
+

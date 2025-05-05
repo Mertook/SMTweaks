@@ -11,8 +11,13 @@ soldiers:
 
   - type: STR_SOLDIER_TERMINATOR        # Veteran Marine
     tags:
-      SMT_HEROICSAVE_CHANCE: 65
-      SMT_HEROICSAVE_HP: 45 # was 60 - now that wound protection is in this can stand to be lower
+      SMT_HEROICSAVE_CHANCE: 60
+      SMT_HEROICSAVE_HP: 45
+
+  - type: STR_SOLDIER_CAPTAIN           # Marine Captain
+    tags:
+      SMT_HEROICSAVE_CHANCE: 70
+      SMT_HEROICSAVE_HP: 50
 
   - type: STR_SOLDIER_CHAPLAIN          # Chaplain
     tags:
@@ -26,7 +31,7 @@ soldiers:
 
   - type: STR_SOLDIER_LIBRARIAN_TERM    # Veteran Librarian
     tags:
-      SMT_HEROICSAVE_CHANCE: 65
+      SMT_HEROICSAVE_CHANCE: 60
       SMT_HEROICSAVE_HP: 45
 
   - type: STR_FALLEN                    # Dreadnought
@@ -103,7 +108,7 @@ soldiers:
     type: STR_ULTRAMARINE
     tags:
       SMT_HEROICSAVE_CHANCE: 65 # vet level
-      SMT_HEROICSAVE_HP: 50 # +5 over vets
+      SMT_HEROICSAVE_HP: 50
 
   - type: STR_ULTRAMARINE
     refNode: *STR_DEATHWATCH_MARINE
@@ -150,12 +155,12 @@ soldiers:
   - type: STR_SPACEW
     refNode: *STR_DEATHWATCH_MARINE
     tags:
-      SMT_HEROICSAVE_HP: 60 # +10 SW bonus
+      SMT_HEROICSAVE_HP: 70 # +20 SW bonus
 
   - type: STR_SPACEW_PRIMARIS
     refNode: *STR_DEATHWATCH_MARINE
     tags:
-      SMT_HEROICSAVE_HP: 60 # +10 SW bonus
+      SMT_HEROICSAVE_HP: 70 # +20 SW bonus
 
   - type: STR_CRISMONF
     refNode: *STR_DEATHWATCH_MARINE
@@ -166,8 +171,8 @@ soldiers:
   - &STR_DEATHWATCH_LEADER              # Deathwatch Leaders
     type: STR_ULTRAMARINE_LEADER
     tags:
-      SMT_HEROICSAVE_CHANCE: 75 # +10 over vets
-      SMT_HEROICSAVE_HP: 55 # +10 over vets
+      SMT_HEROICSAVE_CHANCE: 75
+      SMT_HEROICSAVE_HP: 55
 
   - type: STR_ULTRAMARINE_LEADER
     refNode: *STR_DEATHWATCH_LEADER
@@ -192,22 +197,14 @@ soldiers:
   - type: STR_SPACEW_LEADER
     refNode: *STR_DEATHWATCH_LEADER
     tags:
-      SMT_HEROICSAVE_HP: 65 # +15 SW bonus
+      SMT_HEROICSAVE_HP: 75 # +20 SW bonus
 
   - type: STR_CRISMONF_LEADER
     refNode: *STR_DEATHWATCH_LEADER
 
 
 extended:
-  tags:
-    BattleUnit:
-      SMT_HEROICSAVE_TRIGGERS: int #number of times a unit has made a heroic save
-      SMT_RECOVERY_TIME: int #store unit penalties to wound recovery time
-      CURRENT_INFECTION_DAMAGE: int #rosigma - current amount of infection the unit has
-      CURRENT_INFECTION_TYPE: int #rosigma - type of infection the unit has
-    RuleSoldier:
-      SMT_HEROICSAVE_CHANCE: int #Modifier to chance to resist fatal damage
-      SMT_HEROICSAVE_HP: int #% of currenthp left after heroic save triggers
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
 
   scripts:
     damageUnit:

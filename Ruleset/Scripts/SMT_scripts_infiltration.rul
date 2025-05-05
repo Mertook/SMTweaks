@@ -1,34 +1,5 @@
 extended:
-  tags:
-    BattleUnit:
-      UNIT_STEALTH_IS_ACTIVE: int               # is unit currently stealthed? X = turn count
-      UNIT_STEALTH_RANGE: int                   # stealth detection range: 1 tile ~= 15.75, 5 tiles ~= 80
-      UNIT_STEALTH_CHARGE_TURN_COUNTER: int     # store restealth turn counter
-      UNIT_LIKE_A_SHADOW_COUNTER: int           # store restealth kill counter
-      UNIT_STEALTH_MOVEPENALTY: int             # store movement modifier for being stealthed
-      UNIT_MOVESPEED_MODIFIERS: int             # combined movespeed modifiers for a unit
-      UNIT_CAMO_CLOAK_MOVE_COST_MULTIPLIER: int # for compat with Dig In ability
-      UNIT_DIG_IN_MOVE_PENALTY: int             # for compat with  digin ability
-    RuleArmor:
-      ARMOR_IS_INFILTRATOR: int                 # at start of battle unit immediately enters stealth for X turns
-      ARMOR_INFILTRATOR_RANGE: int              # detection range for infiltrator stealth
-      ARMOR_RESTEALTH_KILL_REQUIREMENT: int     # number of kills required to restealth
-      ARMOR_RESTEALTH_TURN_REQUIREMENT: int     # turns before unit can restealth
-      ARMOR_IMMEDIATE_KILL_CREDIT: int          # at start of battle unit gets this value added to required kills for stealth
-      ARMOR_IMMEDIATE_TURN_CREDIT: int          # at start of battle unit gets this value added to required turns for stealth
-      ARMOR_CLOAKED_ASSASSIN: int               # unit immediately enters stealth after killing with an appropriate weapon. X = Allowed weapon types
-    RuleItem:
-      ITEM_STEALTH_RANGE: int                   # item used to activate restealth - X = detection range
-      ITEM_STEALTH_DURATION: int                # duration of stealth
-      ITEM_STEALTH_MOVEPENALTY: int             # % modifier on movespeed while stealthed
-      ITEM_STEALTH_ASSASSIN_WEAPON: int         # weapon can activate cloaked assassin on kills: X = type (1- Melee, 2- Sniper)
-      ITEM_STEALTH_ASSASSIN_RANGE: int          # X = detection range when activating assassin cloak
-    RuleSkill:
-      SKILL_STEALTH_RANGE: int                  # skill used to activate restealth - X = detection range
-      SKILL_STEALTH_DURATION: int               # duration of stealth
-      SKILL_STEALTH_MOVEPENALTY: int            # % modifier on movespeed while stealthed
-      SKILL_STEALTH_CHECK: int                  # skill used to check requirements for restealthing
-
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
 
   scripts:
     healUnit:
@@ -53,6 +24,13 @@ extended:
 
           actor.getTag temp Tag.UNIT_STEALTH_IS_ACTIVE; # handle decloaking
           if gt temp 0;
+            actor.getTag temp2 Tag.UNIT_DEACTIVATE_CHECK; # first time a unit tries to decloak display stealth info & confirmation message instead
+            if eq temp2 0;
+              actor.getTag temp2 Tag.UNIT_STEALTH_RANGE;
+              battle_game.flashLongMessage "STR_SCRIPT_STEALTH_PREDEACTIVATE" temp temp2;
+              actor.setTag Tag.UNIT_DEACTIVATE_CHECK 1;
+              return;
+            end;
             battle_game.flashMessage "STR_SCRIPT_CAMO_CLOAK_DEACTIVATE";
             actor.setTag Tag.UNIT_STEALTH_IS_ACTIVE 0; # disable stealth
             actor.setTag Tag.UNIT_STEALTH_RANGE 0;
@@ -126,44 +104,51 @@ extended:
       - new: SMTS_infiltration_assassincloak
         offset: 80  # after reveals
         code: |
-          var int stealthRange;
           var int temp;
           var int temp2;
 
           unit.getFaction temp;
           if neq temp FACTION_HOSTILE; # ignore friendly fire and civilians
+            #debug_log "Assassin Fail - Wrong Faction " unit temp FACTION_HOSTILE;
             return;
           end;
 
           battle_game.getTurnSide temp; # only during player turn
           if neq temp 0;
+            #debug_log "Assassin Fail - Wrong Side " temp;
             return;
           end;
 
           if or eq battle_action battle_action_snapshot eq battle_action battle_action_autoshoot; # ignore snap or autoshots
+            #debug_log "Assassin Fail - Wrong Action " battle_action battle_action_snapshot battle_action_autoshoot;
             return;
           end;
 
           unit.getHealth temp;
-          if and ge to_health temp gt temp 0; # only killing blows
+          if and lt to_health temp gt temp 0; # only killing blows
+            #debug_log "Assassin Fail - Not kill " to_health temp;
             return;
           end;
 
-          damaging_item.getTag stealthRange Tag.ITEM_STEALTH_ASSASSIN_RANGE; # only assassin weapons
-          if eq stealthRange 0;
+          weapon_item.getTag temp2 Tag.ITEM_STEALTH_ASSASSIN_WEAPON; # only assassin weapons
+          if eq temp2 0;
+            #debug_log "Assassin Fail - Invalid Item " weapon_item temp;
             return;
           end;
 
-          attacker.getTag temp Tag.ARMOR_CLOAKED_ASSASSIN; # only assassin units who match item type
-          damaging_item.getTag temp2 Tag.ITEM_STEALTH_ASSASSIN_WEAPON;
+          attacker.getTag temp Tag.ARMOR_CLOAKED_ASSASSIN_TYPE; # only assassin units who match item type
+          #debug_log "Assassin Check - User/Item " temp temp2 weapon_item;
           div temp temp2;
           mod temp 2;
-          if eq temp 1;
+          if neq temp 1;
+            #debug_log "Assassin Fail - User/Item Mismatch " temp temp2;
             return;
           end;
 
+          attacker.getTag temp Tag.ARMOR_CLOAKED_ASSASSIN_RANGE;
           attacker.setTag Tag.UNIT_STEALTH_IS_ACTIVE 1;
-          attacker.setTag Tag.UNIT_STEALTH_RANGE stealthRange;
+          attacker.setTag Tag.UNIT_STEALTH_RANGE temp;
+          #debug_log "Assassin Success " temp;
 
           return;
 
@@ -302,7 +287,7 @@ extended:
           # Check to see if we're using the Fighting A Shadow skill
           skill.getTag shadowSkill Tag.SKILL_LIKE_FIGHTING_A_SHADOW_ID;
           if le shadowSkill 0;
-            debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_shadow | offset: 1 | Not using SKILL_LIKE_FIGHTING_A_SHADOW_ID. Aborting.";
+            #debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_shadow | offset: 1 | Not using SKILL_LIKE_FIGHTING_A_SHADOW_ID. Aborting.";
             return;
           end;
 
@@ -311,7 +296,7 @@ extended:
           myRuleArmor.getTag temp Tag.ARMOR_RESTEALTH_KILL_REQUIREMENT; # get the number of kills required
           if lt temp 1;
             battle_game.flashMessage "STR_SKILL_INFILTRATION_CHECK_NO_RESTEALTH" temp;
-            debug_log "skillUseUnit | ROSIGMA_sUU_infiltration_shadow | offset: 1 | Unit cannot regain infiltration. Aborting.";
+            #debug_log "skillUseUnit | ROSIGMA_sUU_infiltration_shadow | offset: 1 | Unit cannot regain infiltration. Aborting.";
           end;
           actor.getTag temp2 Tag.UNIT_LIKE_A_SHADOW_COUNTER;
           sub temp temp2; # calculate kills remaining
@@ -328,7 +313,7 @@ extended:
             muldiv temp 90 100;
             mul temp -1;
             actor.addTimeUnits temp; # takes our whole turn to go back into stealth mode
-            debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_shadow | offset: 1 | Restealthing: UNIT_STEALTH_IS_ACTIVE. temp." temp;
+            #debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_shadow | offset: 1 | Restealthing: UNIT_STEALTH_IS_ACTIVE. temp." temp;
             skill.getTag temp Tag.SKILL_LIKE_FIGHTING_A_SHADOW_RESTEALTH_DURATION;
             actor.setTag Tag.UNIT_STEALTH_IS_ACTIVE temp; # activate stealth
             # debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_shadow | offset: 1 | Restealthing: UNIT_STEALTH_IS_ACTIVE. temp." temp;
@@ -350,7 +335,7 @@ extended:
           # Check to see if we're using the Fighting A Shadow skill
           skill.getTag shadowSkill Tag.SKILL_ACTIVATE_CAMO_CLOAK_ID;
           if lt shadowSkill 1;
-            debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_camo_cloak | offset: 1 | Not using SKILL_LIKE_FIGHTING_A_SHADOW_ID. Aborting.";
+            #debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_camo_cloak | offset: 1 | Not using SKILL_LIKE_FIGHTING_A_SHADOW_ID. Aborting.";
             return;
           end;
 
@@ -359,7 +344,7 @@ extended:
           myRuleArmor.getTag temp Tag.ARMOR_RESTEALTH_TURN_REQUIREMENT; # get the number of turns required
           if lt temp 1;
             battle_game.flashMessage "STR_SKILL_INFILTRATION_CHECK_NO_RESTEALTH" temp;
-            debug_log "skillUseUnit | ROSIGMA_sUU_infiltration_camo_cloak | offset: 1 | Unit cannot regain infiltration. Aborting.";
+            #debug_log "skillUseUnit | ROSIGMA_sUU_infiltration_camo_cloak | offset: 1 | Unit cannot regain infiltration. Aborting.";
           end;
           actor.getTag temp2 Tag.UNIT_STEALTH_CHARGE_TURN_COUNTER;
           sub temp temp2; # calculate kills remaining
@@ -408,7 +393,7 @@ extended:
           muldiv temp 90 100;
           mul temp -1;
           actor.addTimeUnits temp; # takes most of our turn to go back into stealth mode
-          debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_camo_cloak | offset: 1 | Restealthing: UNIT_STEALTH_IS_ACTIVE. temp." temp;
+          #debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_camo_cloak | offset: 1 | Restealthing: UNIT_STEALTH_IS_ACTIVE. temp." temp;
           skill.getTag temp Tag.SKILL_ACTIVATE_CAMO_CLOAK_RESTEALTH_DURATION;
           actor.setTag Tag.UNIT_STEALTH_IS_ACTIVE temp; # activate stealth
           # debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_camo_cloak | offset: 1 | Restealthing: UNIT_STEALTH_IS_ACTIVE. temp." temp;
@@ -446,6 +431,7 @@ extended:
           end;
 
           unit.getTag temp Tag.UNIT_STEALTH_IS_ACTIVE; # get the unit's current stealth counter
+          unit.setTag Tag.UNIT_DEACTIVATE_CHECK 0; # reset deactivation check
 
           unit.getRuleArmor myRuleArmor;
           if le temp 0;
@@ -604,7 +590,7 @@ extended:
 
 
     visibilityUnit:
-      - override: ROSIGMA_vU_infiltration #***Rosigma script rewritten for custom detection ranges***
+      - override: ROSIGMA_vU_infiltration_proximity_detection #***Rosigma script rewritten for custom detection ranges***
         offset: 5
         code: |
           var int temp;

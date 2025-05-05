@@ -1,30 +1,5 @@
 extended:
-  tags:
-    RuleItem:
-      BOMBARD_AMMO_LOADER: int              # item used to lock bombard targeter in place and activate weapons
-      BOMBARD_SPAWNER_ITEM: int             # spawner grenade for bombard targeter
-      BOMBARD_AMMO_ITEM: int                # item used to unlock certain strikes 1: Orbital Strike 2: Lightning CAS 3: Stormtalon CAS 4: Orbital Lance
-      BOMBARD_CALLIN_REMOTE: int            # item used to call in bombard strikes
-      BOMBARD_COOLDOWN: int                 # sets cooldown when bombard is used
-      BOMBARD_AMMO_REQUIRED: int            # does this strike remote need ammo?
-    RuleArmor:
-      BOMBARD_DUMMY: int                    # marks unit as dummy spawn unit for designators
-      BOMBARD_TARGETER: int                 # marks unit as bombard target designator
-    BattleGame:
-      SMT_STRIKE_ACTIVE: int                # what Strike is currently active? 1: Orbital Strike 2: CAS Bolter 3: CAS Rocket 4: CAS Napalm 5: Stormtalon 6: Orbital Lance
-      SMT_STRIKE_ACTIVE_SPAWN: int          # should a target designator be spawned?
-      SMT_STRIKE_COUNT: int                 # are there strikes available?
-      SMT_STRIKE_AMMO_USED: int             # do we need to consume an ammo item?
-      SMT_STRIKE_ORBITAL_AMMO: int          # amount of Orbital Barrage ammo
-      SMT_STRIKE_ORBITAL_COOLDOWN: int      # turns before Orbital Barrage can be called in again
-      SMT_STRIKE_LANCE_AMMO: int            # amount of Orbital Lance ammo
-      SMT_STRIKE_LANCE_COOLDOWN: int        # turns before Orbital Lance can be called in again
-      SMT_STRIKE_LIGHTNING_AMMO: int        # amount of Lightning CAS Run ammo
-      SMT_STRIKE_LIGHTNING_COOLDOWN: int    # turns before Lightning CAS Run can be called in again
-      SMT_STRIKE_STORM_AMMO: int            # amount of Stormtalon ammo
-      SMT_STRIKE_STORM_COOLDOWN: int        # turns before Stormtalon can be called in again
-      SMT_STRIKE_WHIRL_AMMO: int            # amount of Whirlwind ammo
-      SMT_STRIKE_WHIRL_COOLDOWN: int        # turns before Whirlwind can be called in again
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
 
   scripts:
     createItem:

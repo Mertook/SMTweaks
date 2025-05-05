@@ -1,0 +1,190 @@
+### Collects several "damageUnit" scripts together into two blocks (buff effects and death triggers) to reduce script bloat which exceeds the global script limit
+extended:
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
+
+  scripts:
+    damageUnit:
+      - new: SMTS_buff_triggers
+        offset: 5
+        code: |
+          var int temp;
+          var int temp2;
+
+          begin; ### Vigilance
+            var ptr RuleArmor armorRule;
+            var int vigilBonus;
+            var int vigilOverflow;
+
+            damaging_item.getTag temp Tag.SMT_VIGILIANCE_BUFF;
+            if gt temp 0; # skip if doesn't boost overwatch
+              set vigilBonus orig_power;
+              muldiv vigilBonus temp 100;
+              unit.getRuleArmor armorRule;
+              armorRule.getTag temp Tag.ARMOR_OVERWATCH_TU_RESTORED; # add innate Overwatch from armor
+              add vigilBonus temp;
+              unit.getTag temp Tag.SMT_OVERWATCH_BONUS; # add any previous Overwatch buffs
+              add vigilBonus temp;
+              unit.getTag temp Tag.SMT_VIGILIANCE_OVERFLOW; # add any overflow from previous Overwatch buffs
+              add vigilBonus temp;
+              if gt vigilBonus 100; # if total >100, add overflow TUs
+                set temp vigilBonus;
+                sub temp 100;
+                unit.getTimeUnitsMax vigilOverflow;
+                muldiv vigilOverflow temp 100;
+                unit.setTag Tag.SMT_VIGILIANCE_OVERFLOW vigilOverflow;
+              end;
+              limit vigilBonus 0 100;
+              unit.setTag Tag.SMT_OVERWATCH_BONUS vigilBonus;
+              #debug_log "Vigilance Ping" vigilBonus temp;
+
+              battle_game.getTurn temp;
+              add temp 1; #define end turn for buff
+              unit.setTag Tag.SMT_VIGILIANCE_ENDTURN temp;
+            end;
+          end;
+
+          begin; ### Haste
+            var int currentSpeed;
+            var int originalSpeed;
+            var int currentReactBonus;
+            var int baseMove;
+
+            damaging_item.getTag temp Tag.SMT_ITEM_MOVESPEED_BOOST; # movespeed bonus
+            #debug_log "HasteBuff Ping " temp;
+            if gt temp 0;
+              # Power <50 = no change, >=50 = 75% cost, >=100 50% cost (move bonus capped by item tag)
+              set temp2 orig_power;
+              div temp2 50;
+              #debug_log "HasteBuff Power - " temp orig_power currPower temp2;
+              limit temp2 0 temp; # eliminate negatives and cap power
+              if gt temp2 0; # only continue if move cost would change
+                mul temp2 -25;
+                unit.getTag temp Tag.SMT_HASTE_SPEED_BONUS;
+                if lt temp2 temp; # if new value is faster
+                  unit.getTag baseMove Tag.UNIT_MOVESPEED_MODIFIERS;
+                  sub baseMove temp; # remove old modifier
+                  add baseMove temp2; # add new modifier
+                  unit.setTag Tag.UNIT_STEALTH_MOVEPENALTY temp2;
+                  unit.setTag Tag.UNIT_MOVESPEED_MODIFIERS baseMove; # apply movement modifier
+                  add baseMove 100;
+                  limit_lower temp2 25;
+                  unit.MoveCost.setBaseTimePercent baseMove;
+                end;
+              end;
+            end;
+
+            damaging_item.getTag temp2 Tag.SMT_ITEM_REACTION_MOD; # reactions bonus
+            if gt temp2 0;
+              unit.getTag currentReactBonus Tag.SMT_HASTE_REACTION_BONUS;
+              set temp orig_power;
+              add temp 25; # make low power more effective and high power slightly less effective
+              muldiv temp 3 2;
+              muldiv temp temp2 100; # scale result by item %
+              if gt temp currentReactBonus; # only change if new bonus would be an improvement
+                unit.setTag Tag.SMT_HASTE_REACTION_BONUS temp;
+              end;
+              #debug_log "HasteBuff Reaction Bonus N/O" temp currentReactBonus;
+            end;
+
+            battle_game.getTurn temp;
+            add temp 1; #define end turn for buff
+            unit.setTag Tag.SMT_HASTE_ENDTURN temp;
+          end;
+
+          begin; ## Vulnerability
+            var int debuffVal;
+            var int endTurn;
+
+            damaging_item.getTag temp Tag.SMT_VULN_DEBUFF;
+            if gt temp 0; # skip if doesn't inflict vuln
+              set debuffVal currPower;
+              muldiv debuffVal temp 100;
+              limit debuffVal 0 200; # cap at 300%
+              unit.getTag temp Tag.SMT_VULN_INTENSITY;
+              if gt debuffVal temp; #only change if it would be higher
+                unit.setTag Tag.SMT_VULN_INTENSITY debuffVal;
+                #debug_log "VulnDebuff Ping 1" debuffVal;
+                damaging_item.getTag debuffVal Tag.SMT_VULN_DURATION;
+                battle_game.getTurn temp;
+                add temp debuffVal; #define end turn for buff
+                unit.getTag endTurn Tag.SMT_VULN_ENDTURN;
+                if gt temp endTurn; # only set new endturn if incoming debuff duration is longer
+                  unit.setTag Tag.SMT_VULN_ENDTURN temp;
+                end;
+                #debug_log "VulnDebuff Ping 2" temp;
+              end;
+            end;
+          end;
+
+          ## END
+          return;
+
+
+      - new: SMTS_death_triggers 
+        offset: 95
+        code: |
+          var ptr RuleArmor unitArmor;
+          var int pointVal;
+          var int temp;
+          var int temp2;
+
+          set to_mana 0; # catch for corruption to stop it interfering with turret munitions
+
+          unit.getHealth temp;
+          if and lt to_health temp gt temp 0; # only killing blows
+            debug_log "Death Trigger Fail" to_health temp;
+            return;
+          end;
+
+          ### Turret Death handling
+          unit.getTag temp Tag.SMT_RAZOR_HBOLTER_TURRET;   # Razorback Heavy Bolter
+          if eq temp 1;
+            battle_game.getTag temp Tag.SMT_RAZOR_HBOLTER_DEATHS;
+            add temp 1;
+            battle_game.setTag Tag.SMT_RAZOR_HBOLTER_DEATHS temp;
+          end;
+          unit.getTag temp Tag.SMT_RAZOR_LAS_TURRET;       # Razorback Lascannon
+          if eq temp 1;
+            battle_game.getTag temp Tag.SMT_RAZOR_LAS_DEATHS;
+            add temp 1;
+            battle_game.setTag Tag.SMT_RAZOR_LAS_DEATHS temp;
+          end;
+          unit.getTag temp Tag.SMT_RAZOR_HFLAME_TURRET;    # Razorback HeavyFlamer
+          if eq temp 1;
+            battle_game.getTag temp Tag.SMT_RAZOR_HFLAME_DEATHS;
+            add temp 1;
+            battle_game.setTag Tag.SMT_RAZOR_HFLAME_DEATHS temp;
+          end;
+
+
+          unit.getFaction temp; # enemy kills only
+          if eq temp FACTION_HOSTILE;
+            ## Marine Command Points
+            unit.getHealthMax pointVal;
+            loop var i 5; #cycle through the armor sides
+              unit.getArmorMax temp i;
+              add pointVal temp;
+              #debug_log "Cmd Points Armor " i temp pointVal;
+            end;
+            set temp 100;
+            unit.getTag temp2 Tag.ARMOR_ENERGY_SHIELD_DECAY;
+            if gt temp2 0;
+              div temp temp2;
+              unit.getTag temp2 Tag.ARMOR_ENERGY_SHIELD_HP_PER_TURN;
+              mul temp temp2;
+              add pointVal temp;
+            end;
+
+            #debug_log "Cmd Points Bonus " pointVal;
+            div pointVal 18; # average of hp + shields & armor sides /3
+
+            battle_game.getTag temp Tag.SMT_COMMAND_POINTS;
+            debug_log "Cmd Points Final " pointVal temp;
+            add pointVal temp;
+            battle_game.setTag Tag.SMT_COMMAND_POINTS pointVal;
+          end;
+
+
+          return;
+
+      - delete: ROSIGMA_dU_turret_reload # integrated into above

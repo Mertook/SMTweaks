@@ -20,7 +20,7 @@ manufacture:
     requiresBaseFunc: [PSI] #Chapel
     requires:
       - STR_CHAPTER_PURITY
-      - STR_CHAP_ARMOR
+      - STR_CHAP_RELICS
     requiredItems:
       STR_ALIEN_ALLOYS: 4
       STR_KILLPOINT_TOKEN: 200
@@ -182,7 +182,7 @@ manufacture:
   - name: STR_LIGHT_BOLTPISTOL_AMMO_MC              # MC ammo - Light Boltpistol
     category: STR_AMMUNITION
     requires:
-      - STR_MASTER_CRAFTING # was low tier mastercrafting
+      - STR_MC_LIGHTBOLTER_AMMO # was low tier mastercrafting
       - STR_LIGHTBOLTER_ADV_AMMO
     space: 0
     time: 200
@@ -197,7 +197,7 @@ manufacture:
   - name: STR_LIGHT_BOLTER_AMMO_MC                  # MC ammo - Light Bolter
     category: STR_AMMUNITION
     requires:
-      - STR_MASTER_CRAFTING # was low tier mastercrafting
+      - STR_MC_LIGHTBOLTER_AMMO # was low tier mastercrafting
       - STR_LIGHTBOLTER_ADV_AMMO
     space: 0
     time: 200
@@ -574,6 +574,7 @@ manufacture:
   - name: STR_SARGENT_ARMOR                         # Sergeant
     category: STR_CAT_ARMOR
     requires:
+      - STR_MARINES_STRATEGY
       - STR_CHAPTER_PURITY
       - STR_SARGENT_ARMOR
     space: 0
@@ -585,6 +586,7 @@ manufacture:
   - name: STR_HONOR_ARMOR                           # Tact Honor
     category: STR_CAT_ARMOR
     requires:
+      - STR_MARINES_STRATEGY
       - STR_CHAPTER_PURITY
       - STR_HONOR_ARMOR
     space: 0
@@ -598,6 +600,7 @@ manufacture:
   - name: STR_SCOUT_SGT                             # Scout Sergeant Armor
     category: STR_CAT_ARMOR
     requires:
+      - STR_MARINES_STRATEGY
       - STR_CHAPTER_PURITY
       - STR_SCOUT_SGT_R
     space: 0
@@ -609,6 +612,7 @@ manufacture:
   - name: STR_SCOUTH                                # Scout Honor
     category: STR_CAT_ARMOR
     requires:
+      - STR_MARINES_STRATEGY
       - STR_CHAPTER_PURITY
       - STR_SCOUTH_RESEARCH
     space: 0
@@ -622,7 +626,8 @@ manufacture:
   - name: STR_SIGNAL_ARMOR                          # Dev Honor
     category: STR_CAT_ARMOR
     requires:
-      - STR_CHAPTER_PURITY #was missing
+      - STR_MARINES_STRATEGY
+      - STR_CHAPTER_PURITY
       - STR_SIGNAL_ARMOR_RESEARCH
     space: 0
     time: 800
@@ -634,6 +639,7 @@ manufacture:
   - name: STR_ASS_ARMOR_HONOR                       # Assault Honor
     category: STR_CAT_ARMOR
     requires:
+      - STR_MARINES_STRATEGY
       - STR_CHAPTER_PURITY
       - STR_HONOR_ARMOR_RESEARCH
     space: 0
@@ -643,9 +649,11 @@ manufacture:
       STR_KILLPOINT_TOKEN: 250
       STR_ALIEN_ALLOYS: 30
       STR_UFO_CONSTRUCTION: 4
+
   - name: STR_POWER_SUIT                            # Terminator
     category: STR_CAT_ARMOR
     requires:
+      - STR_MARINES_STRATEGY
       - STR_CHAPTER_PURITY
       - STR_POWER_SUIT
     space: 0
@@ -661,6 +669,7 @@ manufacture:
   - name: STR_CAPTAIN_SUIT                          # Terminator Captain
     category: STR_CAT_ARMOR
     requires:
+      #- STR_MARINES_STRATEGY
       #- STR_CHAPTER_PURITY
       #- STR_CAPTAIN_SUIT
       - STR_GENERALLOCK # disabled
@@ -674,9 +683,10 @@ manufacture:
       STR_ELERIUM_115: 20
       STR_KILLPOINT_TOKEN: 1000 #was 200
 
-  - name: STR_TATICAL_ARMOR                         # Tactical
+  - name: STR_TATICAL_ARMOR                         # Tactical MK7
     category: STR_CAT_ARMOR
     requires:
+      - STR_MARINES_STRATEGY
       - STR_CHAPTER_PURITY
       - STR_PERSONAL_ARMOR
     space: 0
@@ -688,7 +698,8 @@ manufacture:
   - name: STR_DEV_ARMOR                             # Devastator
     category: STR_CAT_ARMOR
     requires:
-      - STR_MARINES_AND_DEATHWATCH
+      - STR_MARINES_STRATEGY
+      - STR_CHAPTER_PURITY
       - STR_DEV_ARMOR
     space: 0
     time: 800
@@ -696,10 +707,11 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 30
 
-  - name: STR_ASS_ARMOR                             # Assault
+  - name: STR_ASS_ARMOR                             # Assault MK7
     category: STR_CAT_ARMOR
     requires:
-      - STR_MARINES_AND_DEATHWATCH
+      - STR_MARINES_STRATEGY
+      - STR_CHAPTER_PURITY
       - STR_ASS_ARMOR
     space: 0
     time: 800
@@ -707,10 +719,11 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 30
 
-  - name: STR_APOT_ARMOR                            # Apothecary
+  - name: STR_APOT_ARMOR                            # Apothecary MK7
     category: STR_CAT_ARMOR
     requires:
-      - STR_MARINES_AND_DEATHWATCH
+      - STR_MARINES_STRATEGY
+      - STR_CHAPTER_PURITY
       - STR_MEDI_KIT_PREREQ
       - STR_NOT_PRIMARIS # SM Primaris don't get any regular marines anymore, this is useless for them
     space: 0
@@ -720,9 +733,11 @@ manufacture:
       STR_ALIEN_ALLOYS: 30 # was 25
       STR_KILLPOINT_TOKEN: 60
 
-  - name: STR_TECH_ARMOR                            # Techmarine
+  - name: STR_TECH_ARMOR                            # Techmarine MK7
     category: STR_CAT_ARMOR
     requires:
+      - STR_MARINES_STRATEGY
+      - STR_CHAPTER_PURITY
       - STR_TEC_BAYR
       - STR_MARINES_AND_DEATHWATCH
       - STR_NOT_PRIMARIS
@@ -779,12 +794,23 @@ manufacture:
       STR_ELERIUM_115: 10
       STR_KILLPOINT_TOKEN: 60
 
-  - name: STR_MKX_APO_ARMOR                         # Primaris Helix Adept
+  - name: STR_MKX_APO_ARMOR                         # Primaris Apothecary (disabled)
     category: STR_CAT_ARMOR
     requires:
+      - STR_GENERALLOCK
+    space: 0
+    time: 800
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+      STR_ELERIUM_115: 10
+
+  - name: STR_MKX_HELIX_ARMOR                       # Primaris Helix Adept
+    category: STR_CAT_ARMOR
+    requires:
+      - STR_PRIMARIS
       - STR_CHAPTER_PURITY
       - STR_MEDI_KIT_PREREQ
-      - STR_PRIMARIS_AND_DEATHWATCH
     space: 0
     time: 800
     cost: 20000
@@ -795,8 +821,9 @@ manufacture:
   - name: STR_MKX_TEC_ARMOR                         # Primaris Techmarine
     category: STR_CAT_ARMOR
     requires:
+      - STR_PRIMARIS
+      - STR_CHAPTER_PURITY
       - STR_TEC_BAYR
-      - STR_PRIMARIS_AND_DEATHWATCH
     space: 0
     time: 800
     cost: 50000
@@ -808,9 +835,9 @@ manufacture:
   - name: STR_MKX_PHB_ARMOR                         # Primaris Phobos
     category: STR_CAT_ARMOR
     requires:
+      - STR_PRIMARIS
       - STR_CHAPTER_PURITY
       - STR_MKX_PHB_ARMOR
-      - STR_PRIMARIS_AND_DEATHWATCH
     space: 0
     time: 800
     cost: 20000
@@ -820,9 +847,9 @@ manufacture:
   - name: STR_MKX_ASS_ARMOR                         # Primaris Assault
     category: STR_CAT_ARMOR
     requires:
+      - STR_PRIMARIS
       - STR_CHAPTER_PURITY
       - STR_MKX_ASS_ARMOR
-      - STR_PRIMARIS_AND_DEATHWATCH
     space: 0
     time: 800
     cost: 20000
@@ -833,23 +860,23 @@ manufacture:
   - name: STR_MKX_GRV_ARMOR                         # Primaris Gravis
     category: STR_CAT_ARMOR
     requires:
+      - STR_PRIMARIS
       - STR_CHAPTER_PURITY
       - STR_MKX_GRV_ARMOR
-      - STR_PRIMARIS_AND_DEATHWATCH
     space: 0
     time: 800
     cost: 28000
     requiresBaseFunc: [ARMO]
     requiredItems:
       STR_ALIEN_ALLOYS: 50
-      STR_KILLPOINT_TOKEN: 50 # was 30
+      STR_KILLPOINT_TOKEN: 100 # was 30
 
   - name: STR_MKX_INC_ARMOR                         # Primaris Omnis/Interceptor
     category: STR_CAT_ARMOR
     requires:
+      - STR_PRIMARIS
       - STR_CHAPTER_PURITY
       - STR_MKX_INC_ARMOR
-      - STR_PRIMARIS_AND_DEATHWATCH
     space: 0
     time: 800
     cost: 28000
@@ -861,11 +888,11 @@ manufacture:
   - name: STR_MKX_LIB_ARMOR                         # Primaris Librarian
     category: STR_CAT_ARMOR
     requires:
-      - STR_CHAPTER_PURITY
-      - STR_PRIMARIS
-      - STR_PRIMARIS_ARMOR
-      - STR_PSI_AMP
-      - STR_GENERALLOCK
+      #- STR_CHAPTER_PURITY
+      #- STR_PRIMARIS
+      #- STR_PRIMARIS_ARMOR
+      #- STR_PSI_AMP
+      - STR_GENERALLOCK # disabled
     space: 0
     time: 800
     cost: 22000
@@ -877,10 +904,10 @@ manufacture:
   - name: STR_MKX_CHP_ARMOR                         # Primaris Chaplain
     category: STR_CAT_ARMOR
     requires:
-      - STR_CHAPTER_PURITY
-      - STR_PRIMARIS
-      - STR_MKX_CHP_ARMOR
-      - STR_GENERALLOCK
+      #- STR_CHAPTER_PURITY
+      #- STR_PRIMARIS
+      #- STR_MKX_CHP_ARMOR
+      - STR_GENERALLOCK # disabled
     space: 0
     time: 800
     cost: 22000
@@ -891,8 +918,8 @@ manufacture:
   - name: STR_PRIMARIS_MELTAPACK                    # Primaris Meltarifle Armor
     category: STR_CAT_ARMOR
     requires:
-      - STR_CHAPTER_PURITY
       - STR_PRIMARIS
+      - STR_CHAPTER_PURITY
       - STR_PRIMARIS_MELTAPACK
     space: 0
     time: 600
@@ -904,8 +931,8 @@ manufacture:
   - name: STR_PRIMARIS_PLASMAPACK                   # Primaris Plasma Incinerator Armor
     category: STR_CAT_ARMOR
     requires:
-      - STR_CHAPTER_PURITY
       - STR_PRIMARIS
+      - STR_CHAPTER_PURITY
       - STR_PRIMARIS_PLASMAPACK
     space: 0
     time: 600

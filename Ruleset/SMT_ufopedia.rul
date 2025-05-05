@@ -1,4 +1,227 @@
 ufopaedia:
+    ### 00000  - Faction Strategy - Doctrine Details, Faction Specific Details
+    ### 10000  - General Strategy - General XCom strategy
+    ### 20000  - Advanced Strategy - 40k specific details and keywords
+    ### 30000  - Research - Generic Research Details
+    ### 40000  - Craft - Craft & Craft Gear
+    ### 50000  - Base Facilities
+    ### 60000  - Psyker Abilities
+    ### 70000  - Ammo Types
+    ### 80000  - Imperium Weapons
+    ### 90000  - Imperium Armor
+    ### 100000 - Enemy Weapons
+    ### 110000 - Enemy Units
+    ### 120000 - Enemy Craft
+    ### 130000 - Misc Items
+    ### 140000 - Commendations
+
+### 00000  - Faction Strategy
+    ## 8    Intro (Marines)
+    ## 8    Intro (Guard)
+    ## 8    Intro (Sisters)
+    ## 8    Intro (Arbites)
+    ## 9    Strategy Pick
+    ## 10   Chosen Strategy (Tactical)
+    ## 12   Chosen Strategy (Assault)
+    ## 14   Chosen Strategy (Devasator)
+    ## 16   Chosen Strategy (Scout)
+    ## 17   Chosen Strategy (Primaris)
+  - id: STR_CHOSEN_IGS              #18 Chosen Strategy (Imperial Guard)
+    type_id: 10
+    section: STR_STRATEGY
+    requires:
+      - STR_IMPERIAL_GUARD_OPERATIONS
+      - STR_NOT_STEEL_LEGION_STRATEGY # don't show immediately or if SL is picked
+    image_id: 4G.SPK
+    listOrder: 18
+    ## 18   Chosen Strategy (Steel Legion)
+    ## 20   Chosen Strategy (Sisters of Battle)
+  - id: STR_CHOSEN_ARBITES          #20 Chosen Strategy (Arbites)
+    type_id: 10
+    section: STR_STRATEGY
+    requires:
+      - STR_ARBITES
+      - STR_THE_IMPERIAL_LAW_STRATEGY # don't show to chaos cult starts
+    image_id: 4ARR.SPK
+    listOrder: 20
+    ## 20   Chosen Strategy (Grey Knights)
+    ## 21   Chosen Strategy (Deathwatch)
+    ## 30   Strategy Info (Tactical)
+    ## 40   Strategy Info (Assault)
+    ## 50   Strategy Info (Devasator)
+    ## 60   Strategy Info (Scout)
+    ## 62   Strategy Info (Primaris)
+    ## 65   Strategy General (Sisters of Battle)
+    ## 66   Strategy Info (Novice)
+    ## 67   Strategy Info (Sisters)
+    ## 68   Strategy Info (Dominion)
+    ## 69   Strategy Info (Repentia)
+    ## 70   Strategy General (Imperial Guard)
+    ## 71   Strategy Info (Guardsmen)
+    ## 71   Strategy Info (Steel Legion)
+    ## 72   Strategy Info (Scions)
+    ## 73   Strategy Info (Abhuman)
+    ## 75   Strategy General (Arbites)
+    ## 80   Strategy Info (Grey Knights)
+    ## 85   Strategy Info (Deathwatch)
+
+  - id: STR_CHOSEN_ELDAR         #89
+    requires:
+      - STR_ELDAR_PATH
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: 3XENO.SPK
+    text: STR_CHOSEN_ELDAR_TEXT
+    listOrder: 89
+
+### 10000  - General Strategy
+  - id: STR_HELP1               #10000 - Help Intro (Marines)
+    type_id: 10
+    section: STR_HELP
+    image_id: 2KAP.SPK
+    text: STR_HELP_INTRO
+    listOrder: 1000 # was 50000 ###CHANGEME - Should be 10000, lowered because of weapon listOrder
+    requires:
+      - STR_MARINES_STRATEGY
+  - id: STR_HELPIG              #10001 - Help Intro (Imperial Guard)
+    type_id: 10
+    section: STR_HELP
+    image_id: 2GUA.SPK
+    text: STR_HELP_INTRO
+    requires:
+      - STR_IMPERIAL_GUARD_OPERATIONS
+    listOrder: 10001 # was 50001
+  - id: STR_HELPSOB             #10001 - Help Intro (Sister of Battle)
+    type_id: 10
+    section: STR_HELP
+    image_id: 2AAA.SPK
+    text: STR_HELP_INTRO
+    requires:
+      - STR_ADEPTAS
+    listOrder: 10001 # was 50001
+
+  - id: STR_HELP_MAP            #10100 - World Map
+    type_id: 10
+    section: STR_HELP
+    image_id: 3MAP.SPK
+    listOrder: 10110 # was 50010
+  - id: STR_HELP_SEARCH         #10110 - Search Menus
+    type_id: 10
+    section: STR_HELP
+    image_id: 3HONOR.SPK
+    text: STR_HELP_CRAFT_CODEX
+    listOrder: 10120 # was 50200
+  - id: STR_HELP2               # Imperial Tokens
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: 3HONOR.SPK
+    text: STR_HELP_HONOR
+    listOrder: 10130 # was 50100
+  - id: STR_HELP3               #10140 - Craft Interception
+    type_id: 10
+    section: STR_HELP
+    image_id: 3CRAFT.SPK
+    text: STR_HELP_CRAFT
+    listOrder: 10140 # was 50200
+  - id: STR_HELP4               #10150 - Craft Escorts
+    type_id: 10
+    section: STR_HELP
+    image_id: 3ESCORT.SPK
+    text: STR_HELP_ESCORT
+    listOrder: 10150 # was 50300
+
+### 20000  - 40k Strategy
+  - id: STR_HELP_ADV_INTRO               #10000 - Help Intro (Marines)
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: 2KAP.SPK
+    text: STR_HELP_ADV_INTRO_CODEX
+    listOrder: 2000 # ###CHANGEME - Should be 20000, lowered because of weapon listOrder
+  - id: STR_HELP7          #HELP 50600
+    type_id: 10
+    section: STR_HELP
+    image_id: 3TILES.SPK
+    text: STR_HELP_AREA
+    listOrder: 20200 # was 50600
+  - id: STR_HELP8          #HELP 50700
+    type_id: 10
+    section: STR_HELP
+    image_id: 3DP.SPK
+    text: STR_HELP_DEPLOYMENT
+    listOrder: 50700
+  - id: STR_HELP9          #HELP 50800
+    type_id: 10
+    section: STR_HELP
+    image_id: 3BON.SPK
+    text: STR_HELP_WEAPONS
+    listOrder: 50800
+  - id: STR_HELP10         #HELP 50900
+    type_id: 10
+    section: STR_HELP
+    image_id: 3REP.SPK
+    text: STR_REPAIRPEDIA
+    listOrder: 50900
+  - id: STR_HELP12         #HELP 50905
+    type_id: 10
+    section: STR_HELP
+    image_id: 3BOMB.SPK
+    text: STR_BOMBARD_INFO
+    listOrder: 50905
+  - id: STR_HELP17         #HELP 50910
+    type_id: 10
+    section: STR_HELP
+    image_id: 3SHIELD.SPK
+    text: STR_SHIELDPEDIA
+    listOrder: 50910
+  - id: STR_HELP_CHAOS_CRAFT_SCAN_DATA
+    type_id: 10
+    section: STR_HELP
+    image_id: CHAOS_CRAFT_HELP_PEDIA.SPK
+    text: STR_HELP_CHAOS_CRAFT_SCAN_DATA_PEDIA
+    listOrder: 51000
+  - id: STR_HELP15         #HELP 51010
+    type_id: 10
+    requires:
+      - STR_ELDAR_PATH
+    section: STR_HELP
+    image_id: 3PROMO.SPK
+    text: STR_HELP_PROMO
+    listOrder: 51010
+
+
+  - id: STR_DEVOTION         #HELP 51100
+    type_id: 10
+    section: STR_HELP
+    image_id: 3DEV.SPK
+    text: STR_DEVOTION_UFOPEDIA
+    listOrder: 51100
+  - id: STR_PROMOTE_TO_CANONESS         #HELP 51200
+    type_id: 10
+    section: STR_HELP
+    image_id: 3DAA.SPK
+    text: STR_PROMOTE_TO_CANONESS_UFOPEDIA
+    listOrder: 51200
+    requires:
+      - STR_ADEPTAS
+
+    ## 
+
+  - id: STR_HELP5               # disabled - Soldier Marks
+    requires:
+      - STR_GENERALLOCK
+    type_id: 10
+    section: STR_HELP
+    image_id: 3STATS.SPK
+    text: STR_HELP_MARKS
+    listOrder: 50400
+  - id: STR_HELP6               # disabled - Scoped weapons
+    requires:
+      - STR_GENERALLOCK
+    type_id: 10
+    section: STR_HELP
+    image_id: 3AIM.SPK
+    text: STR_HELP_SCOPED
+    listOrder: 50500
     ### CODEX
   - id: STR_SMT_PROMOTION_TREE              # Marine Promotion
     type_id: 10
@@ -331,7 +554,7 @@ ufopaedia:
     image_id: 0MXT.SPK
     requires:
       - STR_DEATHWATCH
-    text: STR_DW_TAC_CODEX_UC_UFOPEDIA
+    text: STR_DW_TAC_CODEX_TEXT
     listOrder: 5201
 
   - id: STR_DW_APOTH_CODEX_UC               # DW Apothecary
@@ -340,7 +563,7 @@ ufopaedia:
     image_id: 0APO.SPK
     requires:
       - STR_DEATHWATCH
-    text: STR_DW_APOTH_CODEX_UC_UFOPEDIA
+    text: STR_DW_APOTH_CODEX_TEXT
     listOrder: 5202
 
   - id: STR_DW_DEV_CODEX_UC                 # DW Devasator
@@ -350,18 +573,28 @@ ufopaedia:
     requires:
       - STR_DEATHWATCH
       - STR_DW_HWP
-    text: STR_DW_DEV_CODEX_UC_UFOPEDIA
+    text: STR_DW_DEV_CODEX_TEXT
     listOrder: 5204
 
-  - id: STR_DW_ASS_CODEX_UC                 # DW Assault
+  - id: STR_DW_ASS_CODEX_UC                 # DW Assault0SCO
     type_id: 15
     section: STR_ARMORPEDIA
     image_id: 0ASS.SPK
     requires:
       - STR_DEATHWATCH
       - STR_DW_ASSAULT
-    text: STR_DW_ASS_CODEX_UC_UFOPEDIA
+    text: STR_DW_ASS_CODEX_TEXT
     listOrder: 5205
+
+  - id: STR_DW_SCT_CODEX_UC                 # DW Assault
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0SCO.SPK
+    requires:
+      - STR_DEATHWATCH
+      - STR_DW_SNIPER
+    text: STR_DW_SCT_CODEX_TEXT
+    listOrder: 5204
 
   - id: STR_DW_TECH_CODEX_UC                # DW Techmarine
     type_id: 15
@@ -369,7 +602,7 @@ ufopaedia:
     image_id: 0MXB.SPK
     requires:
       - STR_DEATHWATCH
-    text: STR_DW_TECH_CODEX_UC_UFOPEDIA
+    text: STR_DW_TECH_CODEX_TEXT
     listOrder: 5203
 
   - id: STR_DW_TERM_CODEX_UC                # DW Terminator
@@ -379,7 +612,7 @@ ufopaedia:
     requires:
       - STR_DEATHWATCH
       - STR_DW_TERM
-    text: STR_DW_TERM_CODEX_UC_UFOPEDIA
+    text: STR_DW_TERM_CODEX_TEXT
     listOrder: 5206
 
   - id: STR_DW_TERM_CYC_CODEX_UC            # DW Terminator (Cyclone)
@@ -389,7 +622,7 @@ ufopaedia:
     requires:
       - STR_DEATHWATCH
       - STR_DW_TERM
-    text: STR_DW_TERM_CYC_CODEX_UC_UFOPEDIA
+    text: STR_DW_TERM_CYC_CODEX_TEXT
     listOrder: 5207
 
   - id: STR_DW_TERM_ASS_CODEX_UC            # DW Terminator (Assault)
@@ -399,7 +632,7 @@ ufopaedia:
     requires:
       - STR_DEATHWATCH
       - STR_DW_TERM
-    text: STR_DW_TERM_ASS_CODEX_UC_UFOPEDIA
+    text: STR_DW_TERM_ASS_CODEX_TEXT
     listOrder: 5208
 
   - id: STR_DW_PHB_CODEX_UC                 # DW Phobos
@@ -409,7 +642,7 @@ ufopaedia:
     requires:
       - STR_DEATHWATCH
       - STR_DW_SNIPER
-    text: STR_DW_PHB_CODEX_UC_UFOPEDIA
+    text: STR_DW_PHB_CODEX_TEXT
     listOrder: 5211
 
   - id: STR_DW_GRV_CODEX_UC                 # DW Gravis
@@ -419,7 +652,7 @@ ufopaedia:
     requires:
       - STR_DEATHWATCH
       - STR_DW_GRAVIS
-    text: STR_DW_GRV_CODEX_UC_UFOPEDIA
+    text: STR_DW_GRV_CODEX_TEXT
     listOrder: 5212
 
   - id: STR_DW_INC_CODEX_UC                 # DW Omnis
@@ -429,7 +662,7 @@ ufopaedia:
     requires:
       - STR_DEATHWATCH
       - STR_DW_PRIMARIS_FLIGHT
-    text: STR_DW_INC_CODEX_UC_UFOPEDIA
+    text: STR_DW_INC_CODEX_TEXT
     listOrder: 5213
 
   - id: STR_DW_CAP_CODEX_UC                 # DW Captain (Generic)
@@ -438,7 +671,7 @@ ufopaedia:
     image_id: 0CAP.SPK
     requires:
       - STR_DEATHWATCH
-    text: STR_DW_CAP_CODEX_UC_UFOPEDIA
+    text: STR_DW_CAP_CODEX_TEXT
     listOrder: 5214
 
 
@@ -525,8 +758,8 @@ ufopaedia:
     listOrder: 21102
 
   - id: AUX_CROZIUS                         # Crozius Arcanum
-    # requires:
-      # - STR_CHAP_ARMOR
+    requires:
+      - STR_CHAP_RELICS
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: CROZIUS.SPK
@@ -851,6 +1084,14 @@ ufopaedia:
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_BOLT_SNIPER_AMMO_SHRED
+  - id: STR_BOLT_SNIPER_AMMO_INCIN          # Bolt Sniper Incin Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_BOLT_SNIPER_AMMO_INCIN
+  - id: STR_BOLT_SNIPER_AMMO_MC             # Bolt Sniper MC Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_BOLT_SNIPER_AMMO_MC
   - id: STR_BOLT_SNIPER_AMMO_DEREV          # Bolt Sniper Derevenant Ammo
     type_id: 14
     section: STR_NOT_AVAILABLE
@@ -1019,182 +1260,3 @@ extraStrings:
   - type: en-US
     strings:
       ### STRATEGY
-      STR_STRATEGY_TEXT_INTRO: "{NEWLINE} This section of the Codex displays and details the different doctrines your faction can follow, as well as general strategies for your chosen faction.{NEWLINE} Once a doctrine has been chosen no others can be researched."
-      STR_TATICAL: "Tactical Doctrine"
-      STR_TATICAL_TEXT: "{NEWLINE} Firstborn Marines{NEWLINE}{NEWLINE} Prepared for all situations, Tactical Doctrine favours a well-balanced flexible force.{NEWLINE}{NEWLINE} Unique Wargear:{NEWLINE}{ALT} - Tactical Artificer Armor{NEWLINE} - Master Crafted Bolter"
-      STR_ASSAULT: "Assault Doctrine"
-      STR_ASSAULT_TEXT: "{NEWLINE} Firstborn Marines{NEWLINE}{NEWLINE} Overwhelming the enemy with decisive charges, Assault Doctrine focuses on close combat with high mobility armor.{NEWLINE}{NEWLINE} Unique Wargear:{NEWLINE}{ALT} - Vanguard Assault Armor{NEWLINE} - Master Crafted Boltpistol{NEWLINE} - Master Crafted Chainsword"
-      STR_DEVASTATOR: "Devastator Doctrine"
-      STR_DEVASTATOR_TEXT: "{NEWLINE} Firstborn Marines{NEWLINE}{NEWLINE} Shattering the enemy with a hail of fire, Devastator Doctrine focuses on long-range combat with heavy weapons.{NEWLINE}{NEWLINE} Unique Wargear:{NEWLINE}{ALT} - Squadlink Signum Armor{NEWLINE} - Mars-Pattern Heavy Bolter"
-      STR_SCOUT: "Scout Doctrine"
-      STR_SCOUT_TEXT: "{NEWLINE} Firstborn Marines{NEWLINE}{NEWLINE} Using stealth and superior intel to pick off foes, Scout Doctrine focuses on camoflague and detection.{NEWLINE}{NEWLINE} Unique Wargear:{NEWLINE}{ALT} - Elite Scout Armor{NEWLINE} - Bolt Sniper Rifle"
-      STR_PRIMARIS: "Primaris Doctrine"
-      STR_PRIMARIS_TEXT: "{NEWLINE} Primaris Marines{NEWLINE}{NEWLINE} A new breed of Marine developed by Archmagos Dominus Belisarius Cawl, Primaris Marines have access to a wide variety of weapons and armor not available to Firstborn Marines.{NEWLINE}"
-      STR_GENESEED_DETAILS: "Geneseed"
-      STR_GENESEED_DETAILS_CODEX: "{NEWLINE} Gene-seed is the unique genetic material used to transform humans into the super-human Space Marines. It is essential to the survival of a Chapter and must be carefully preserved.{NEWLINE} A small amount is accrued monthly by our Apothecaries, though some of it will need to be refined into the matured Geneseed required to create new Marines. Fallen Battle Brothers whose bodies have been not been lost or corrupted can have their progenoid glands extracted, recovering their Geneseed."
-      STR_SMT_PROMOTION_TREE: Training Marines
-      STR_SMT_PROMOTION_TREE_CODEX: "{NEWLINE} Neophytes who have earned the Battle Tested medal with {ALT}60+ HP and 50+ Strength{ALT} can undergo the final transformation into true Marines using matured Geneseed, dramatically improving their combat abilities.{NEWLINE}{NEWLINE} Marines who have earned the Crux Terminatus with {ALT}100+ Health, 100+ Firing, 80+ Melee, and 80+ Strength{ALT} can be further promoted to Veterans, increasing their stat limits and allowing use of rare relic armors."
-      STR_SMT_FIRESUPPORT: Using Fire Support Weapons
-      STR_SMT_FIRESUPPORT_CODEX: "{NEWLINE} Fire Support can be requested on the battlefield by using a Vox-Caster if you have the appropriate strike requisition onboard. A target designator will appear above your landing site on the following turn, allowing you to choose the position and targets for the strike. Only one kind of Fire Support can be requested each turn.{NEWLINE}{NEWLINE} Craft with {ALT}Bombard{ALT} will start with an active target designator on turn 1 for you to direct the bombardment."
-      ### MISC
-      ### ARMOR
-      STR_TSARGENT_UFOPEDIA: "{NEWLINE} The immense strength of Terminator armor allows it to support heavy weaponry with ease, unleashing devastating missile barrages while leaving hands free to carry other weapons to fit any situation."
-      STR_SCOUT_SGT_UC_UFOPEDIA: "{NEWLINE} Scout Sergeants are veteran marines who don scout armor in order to lead and train scout recruits. They pass down knowledge and skills off the battlefield and lead scout squads on infiltration missions to gather intelligence or sabotage strategic targets."
-      STR_SCOUTH_UC_UFOPEDIA: "{NEWLINE} Experts in stealth and infiltration, these veteran marines are peerless operatives capable of acting independently for long periods to carry out their missions."
-      STR_SIGNAL_ARMOR_UFOPEDIA: "{NEWLINE} MK7 Armor given to Sergeants of Devasator squads. Equipped with a Signum that allows the user to share battlefield data with squadmates, enhancing their accuracy."
-      STR_SARGENT_ARMOR_UFOPEDIA: "{NEWLINE} A Sergeant is an Astartes non-commissioned officer who commands a squad of Space Marines. They can direct their Battle Brothers in combat and bolster morale."
-      STR_HONOR_ARMOR_UFOPEDIA: "{NEWLINE} Artificer Armors are ancient and ornate Power Suits that have been carefully maintained by Techmarines for generations and used only by the Chapters greatest heroes. The protection it offers is far above that of regular power armor."
-      BIKE_ARMOR_UC_UFOPEDIA: "{NEWLINE} Assault Bikes are incredibly deadly and robust bikes used by the Space Marines for lightning-quick raids and reconnaissance."
-      STR_DREAD_ARMOR_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Flamer and Stormbolter"
-      STR_DREAD_ARMOR2_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Plasma and Stormbolter"
-      STR_DREAD_ARMOR3_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Lascannon and Missiles"
-      STR_DREAD_ARMOR4_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Assault Cannon and Flamer"
-      STR_MKX_HELIX_UC_LV1_UFOPEDIA: "{NEWLINE} Helix Adepts are not fully fledged Apothecaries, but are able to act as medics and maintain the health of their fellow battle brothers when operating behind enemy lines."
-      ### ARMOR DEATHWATCH
-      STR_DW_TAC_CODEX_UC_UFOPEDIA: "{NEWLINE} Tactical Armor is the most common type of armor worn by Space Marines, adaptable to any battlefield situation."
-      STR_DW_APOTH_CODEX_UC_UFOPEDIA: "{NEWLINE} Deathwatch Apothecaries act as field medics for the Kill-Team and preserve the geneseed of any fallen Brother."
-      STR_DW_DEV_CODEX_UC_UFOPEDIA: "{NEWLINE} Deployed when long range firepower is required, Deathwatch Devastators rain destruction from afar."
-      STR_DW_ASS_CODEX_UC_UFOPEDIA: "{NEWLINE} Used to rapidly raid key enemy positions, Deathwatch Assault teams make powerful shock troopers."
-      STR_DW_TECH_CODEX_UC_UFOPEDIA: "{NEWLINE} Deathwatch Techmarines are sent out to investigate Xenotech findings and are able to maintain their Battle-Brothers armor in the field.{NEWLINE}{NEWLINE} Firstborn >{ALT} Tarantula Sentry{ALT}{NEWLINE} Primaris >{ALT} Thunderfire Drone{ALT} "
-      STR_DW_TERM_CODEX_UC_UFOPEDIA: "{NEWLINE} Deathwatch Terminators are deployed to clear out Space Hulks and other high-threat engagements, using their immense bulk to carry heavy weaponry while shrugging off enemy attacks."
-      STR_DW_PHB_CODEX_UC_UFOPEDIA: "{NEWLINE} Built for mobility and stealth, Phobos Armor is used for rapid undercover strikes.{NEWLINE}{NEWLINE} Deathwatch Marines use less energy when moving while wearing Phobos armor."
-      STR_DW_GRV_CODEX_UC_UFOPEDIA: "{NEWLINE} Gravis Armor is a heavier variant of MKX Tacticus, wielding powerful fist-mounted weaponry.{NEWLINE}{NEWLINE} Weapon Options:{NEWLINE}{ALT} Boltstorm Gauntlet{NEWLINE} Flamer Gauntlet{NEWLINE} Twin Autocannon Gauntlets"
-      STR_DW_INC_CODEX_UC_UFOPEDIA: "{NEWLINE} A lighter variant of Gravis Armor capable of flight, Omnis Armor allows to user to unleash firepower from the skies.{NEWLINE}{NEWLINE} Weapon Options:{NEWLINE}{ALT} Accelerator Autocannon{NEWLINE} Twin Plasma Exterminators"
-      STR_DW_CAP_CODEX_UC_UFOPEDIA: "{NEWLINE} Deathwatch Captains carry unqiue high quality gear, with complex bioverification that prevents even other Kill-team members from using them. To see what each Chapters Captain uses, please consult the Heraldry section of the Codex."
-      STR_DW_TERM_CYC_CODEX_UC_UFOPEDIA: "{NEWLINE} The immense strength provided by Terminator armor makes it a powerful heavy weapons platform, raining destruction down on hordes of Xenos."
-      STR_DW_TERM_ASS_CODEX_UC_UFOPEDIA: "{NEWLINE} Utilizing Teleport Beacons to strike deep into enemy formations, Assault Terminators are able to tear apart fearsome Xenos beasts.{NEWLINE}{NEWLINE} Weapon Options:{NEWLINE}{ALT}   Storm Shield{NEWLINE}   Lighting Claws"
-      ### ITEMS
-      STR_STRIKE_VOX_CODEX: "{NEWLINE} Vox-Casters can contact Imperial ships in low orbit to direct precision strikes on the battlefield. This Vox requests a small-caliber shell barrage, dealing heavy damage to everything in a wide area.{NEWLINE} An Orbital Barrage Requisition must be present on the craft to call in a strike."
-      STR_ORBITAL_LANCE_DUMMY_CODEX: "{NEWLINE} Vox-Casters can contact Imperial ships in low orbit to direct precision strikes on the battlefield. This Vox requests a devastating lance strike, obliterating everything in the area.{NEWLINE} An Orbital Lance Requisition must be present on the craft to call in a strike."
-      STR_CAS_STRIKE_DUMMY_CODEX: "{NEWLINE} This Vox-Caster can be used to request Close Air Support from Lightning fighter craft. A soldier can request CAS by targeting a nearby friendly soldier to share the TU cost, or by targeting themselves with doubled TU cost.{NEWLINE} Lightning CAS requisitions must be present on the craft to call in a strike."
-      STR_STRM_STRIKE_DUMMY_CODEX: "{NEWLINE} This Vox-Caster can be used to request Close Air Support from a Stormtalon Gunship armed with Twinlinked Assault Cannons and Typhoon Missiles.{NEWLINE} Stormtalon CAS requisitions must be present on the craft to call in a strike."
-      STR_BOLT_SNIPER_RIFLE_UFOPEDIA: "{NEWLINE} A long range Bolt-Sniper used by experienced Marine sharpshooters to eliminate distant targets. It can be loaded with a variety of specialist rounds to deal with any foe.{NEWLINE}{NEWLINE} RECOIL: {ALT}75{ALT} - {ALT}Heavy Weapon{ALT}"
-      STR_BOLT_SNIPER_RIFLE_DW_UFOPEDIA: "{NEWLINE} The Deathwatch Bolt-Sniper is used to eliminate key Xenos leaders from a distance. It can be loaded with a wide variety of specialist ammo, including some rounds only available to the Deathwatch.{NEWLINE}{NEWLINE} RECOIL: {ALT} 75{ALT} - {ALT}Heavy Weapon{ALT}{NEWLINE} Genelocked - {ALT}Deathwatch Only"
-      STR_GRENADE_LAUNCHER_ASTARTES_UFOPEDIA: "{NEWLINE} The Astartes Grenade Launcher serves the role of a launcher weapon that can be used and carried by Scouts-in-training. They are fired in arcing shots designed to clear obstructions and strike farther into an enemy formation as well as simply being fired directly at foes. This Grenade Launcher holds a magazine of six grenades and is burst fire capable."
-      STR_LIGHT_BOLTPISTOL_UFOPEDIA: "{NEWLINE} Light Boltpistols are often used by Neophytes, Sisters of Battle and Guardsmen Officers, providing a powerful one-handed option without the boneshattering recoil of Astartes Boltpistols.{NEWLINE}{NEWLINE} Recoil: {ALT}16"
-      STR_LIGHT_BOLTERS_UFOPEDIA: "{NEWLINE} 'Light' Bolters are designed for Scouts-in-training who can't yet handle standard Space Marine bolters. They fire smaller rounds and have a lower rate of fire, reducing the fearsome recoil down to a more manageable level.{NEWLINE}{NEWLINE} Recoil: {ALT}25"
-      STR_ROCKET_LAUNCHER_UFOPEDIA: "{NEWLINE} The Soundstrike-pattern Missile Launcher used by Adeptus Astartes features an autoloader and can be quickly readied to fire on the move by Devastator Marines, though its weight makes this impractical for regular soldiers.{NEWLINE}{NEWLINE} Recoil: {ALT}40{ALT} - {ALT}Heavy Weapon"
-      STR_BOLTER_DOMINION_UFOPEDIA: "{NEWLINE} The Dominion Pattern Bolter is a Adeptas Sororitas requested design for their elite forces, capable of using Astartes calibre ammunition it is a heavier Bolter Rifle design, which only the strongest Sisters are chosen to wield. {NEWLINE}{NEWLINE}Recoil: {ALT}60"
-      STR_MC_BOLTPISTOL_DEAZ_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}16"
-      STR_MCPISTOL_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}40"
-      STR_MCRIFLE_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}65"
-      STR_PISTOL_UFOPEDIA: "{NEWLINE} Bolt Pistols are a compact Bolt weapon. They have less range and capacity than the Bolter but can be easily fired with one hand, making them ideal as sidearms.{NEWLINE}{NEWLINE} Recoil: {ALT}40"
-      STR_PISTOLB_UFOPEDIA: "{NEWLINE} The Boltpistol Ultra-pattern has an improved design allowing rapid fire, making it particularly prized by Assault Marines for close quarters fighting.{NEWLINE}{NEWLINE} Recoil: {ALT}40"
-      STR_PISTOLS_UFOPEDIA: "{NEWLINE} The Spectris Boltpistol is specialized for range with a scope allowing carefully aimed shots, making it an ideal sidearm for Marines that need an option for engaging at a distance.{NEWLINE}{NEWLINE} Recoil: {ALT}40"
-      STR_PISTOLH_UFOPEDIA: "{NEWLINE} The Tigrus Pattern is a hybrid carbine design meant to combine the benefits of both Bolters and Boltpistols. It is capable of autofire and scoped shots and comes with a pistol grip, allowing particularly skilled users to effectively wield it with one hand.{NEWLINE}{NEWLINE} Recoil: {ALT}55"
-      STR_RIFLE_UFOPEDIA: "{NEWLINE} The Bolter is the iconic weapon of the Space Marines. They are optimized for close quarters engagements, tearing apart enemies with rapid-fire destructive bolts. {NEWLINE}{NEWLINE} Recoil: {ALT}65"
-      STR_RIFLEA_UFOPEDIA: "{NEWLINE} Deathwatch Killteams utilize the best equipment the Imperium can offer. This scoped Artifex Bolter is capable of both long range engagements and close range burst fire, as well as firing custom Deathwatch Bolts. {NEWLINE}{NEWLINE} Recoil: {ALT}65{ALT}{NEWLINE} Genelocked - {ALT}Deathwatch Only"
-      STR_RIFLEB_UFOPEDIA: "{NEWLINE} The Ultra-pattern Bolter is a high quality variant of the Godwyn Bolter, granting it more effective range and accuracy.{NEWLINE}{NEWLINE} Recoil: {ALT}65"
-      STR_RIFLEC_UFOPEDIA: "{NEWLINE} The Stalker-pattern Bolter is equipped with an extended barrel and scope, allowing it to function as a hybrid battle rifle / sniper weapon. It boasts superior range and powerful aimed shots but sacrifices the rapid-fire capability typical of Bolters.{NEWLINE}{NEWLINE} Recoil: {ALT}65"
-      STR_RIFLED_UFOPEDIA: "{NEWLINE} The Cawl-Pattern Boltrifle is a newer variant of the Bolter introduced for Primaris Marines. Bulkier and with a longer barrel, it is able to lay down heavy fire at mid-range.{NEWLINE}{NEWLINE} Recoil: {ALT}75"
-      STR_RIFLEDW_UFOPEDIA: "{NEWLINE} Deathwatch Killteams utilize the best equipment the Imperium can offer. This Artifex Boltrifle is excellent at laying down heavy fire at longer ranges and can fire custom Deathwatch Bolts. {NEWLINE}{NEWLINE} Recoil: {ALT}75{ALT}{NEWLINE} Genelocked - {ALT}Deathwatch Only"
-      STR_BOLTRIFLE_STERNGUARD_UFOPEDIA: "{NEWLINE} Sternguard are Primaris elites who prefer fighting at range with Bolters, their rifles meticulously modified to give them higher performance and accuracy.{NEWLINE}{NEWLINE} Recoil: {ALT}75"
-      STR_BOLTRIFLE_SCOPE_UFOPEDIA: "{NEWLINE} The Stalker-pattern Boltrifle is equipped with a powerful scope, making it a deadly precision battle rifle able to pick off targets at a distance.{NEWLINE}{NEWLINE} Recoil: {ALT}75"
-      STR_BOLTRIFLE_MC_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}75"
-      STR_BOLTER_CARBINE_UFOPEDIA: "{NEWLINE} Optimized for close-quarters fighting and loaded with light bolter rounds, Bolt Carbines are used by Primaris Marines when standard Boltrifles would be too unwieldy.{NEWLINE}{NEWLINE} Recoil: {ALT}50"
-      STR_BOLTER_CARBINE_SCOPE_UFOPEDIA: "{NEWLINE} With a light profile and attached scope, the Occulus Bolt Carbine is often used by infiltrators and forward scouts to pick off exposed targets.{NEWLINE}{NEWLINE} Recoil: {ALT}50"
-      STR_HEAVY_BOLTRIFLE_UFOPEDIA: "{NEWLINE} An even larger variation of Boltrifle fitted with drum mags, the Heavy Bolt Rifle is able to sustain an incredible firing rate.{NEWLINE} It is typically used with Gravis armor, the extra weight and recoil being too much for regular Tacticus suits. {NEWLINE}{NEWLINE} Recoil: {ALT}85{ALT} - {ALT}Heavy Weapon"
-      STR_AUTO_CANNON_UFOPEDIA: "{NEWLINE} A Heavy Bolter is a powerful Bolt weapon that is used for anti-infantry and fire support roles. The Heavy Bolter is widely used throughout the Imperium, though unlike stationary or vehicle-mounted versions the Mk.IV variant is hand-carried by Devastator Marines.{NEWLINE}{NEWLINE} Recoil: {ALT}90{ALT} - {ALT}Heavy Weapon{ALT}"
-      STR_HEAVY_BOLTER_MARS_UFOPEDIA: "{NEWLINE} The Mars-Pattern Heavy Bolter features a belt-fed design that can be supplied from the users backpack, allowing it to carry more rounds and maintain a high rate of fire.{NEWLINE}{NEWLINE} Recoil: {ALT}90{ALT} - {ALT}Heavy Weapon"
-      STR_AUTO_CANNON_DW_UFOPEDIA: "{NEWLINE} The Artifex Heavy Bolter provides Deathwatch Killteams with powerful fire support, belt-fed with large ammo packs to allow a constant hail of fire. {NEWLINE}{NEWLINE} Recoil: {ALT}90{ALT} - {ALT}Heavy Weapon{ALT}{NEWLINE} Genelocked - {ALT}Deathwatch Only"
-      STR_LASCAN_DW_UFOPEDIA: "{NEWLINE} The Lascannon is the most formidable type of laser weapon, producing an energetic shot of coherent light capable of penetrating most armored vehicles. This Artifex variant is created specifically for Deathwatch Kill-Teams and boasts greater performance.{NEWLINE}{NEWLINE} Recoil: {ALT}60{ALT}{NEWLINE} Genelocked - {ALT}Deathwatch Only"
-      STR_HB_UFOPEDIA: "{NEWLINE} The Storm Bolter is a double-barrelled version of the standard .75 caliber Bolter. Storm Bolters can be used one-handed with a pistol grip, but their weight and fierce recoil means they are generally only employed by Space Marine Terminators or as a vehicle-mounted weapon.{NEWLINE}{NEWLINE} Recoil: {ALT}80{ALT} - {ALT}Heavy Weapon"
-      STR_HB_MC_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}80{ALT} - {ALT}Heavy Weapon"
-      STR_CHAINSWORD_MC_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to attack more rapidly.{NEWLINE}{NEWLINE}Strength required: {ALT}25"
-      STR_MC_BOLTPISTOL_DEAZ_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}16"
-      STR_MC_BOLTER_DEAZ_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}25"
-      STR_MASTER_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to attack more rapidly."
-      AUX_CROZIUS_UFOPEDIA: "{NEWLINE} The Crozius Arcanum serves as both a sacred staff of office and a close combat weapon for Space Marine Chaplains. It is a formidable Power weapon, and in the hands of a Chaplain can also be used to smite enemies with the Emperors fury."
-      STR_ASSC_UFOPEDIA: "{NEWLINE} The Assault Cannon is a six-barrelled, self-loading rotary Autocannon, effective against infantry targets and light vehicles at close to medium range. It fires medium caliber rounds as its 6 barrels are cycled past a single chamber by an electric motor.{NEWLINE}{NEWLINE} Recoil: {ALT}130{ALT} - {ALT}Heavy Weapon{ALT}"
-      STR_CLAWS_UFOPEDIA: "{NEWLINE} Vicious power weapons used by elite Space Marines, Lightning Claws tear through armor and inflict heavy wounds."
-      STR_SHOTGUN_MARINE_UFOPEDIA: "{NEWLINE} The Astartes assault shotgun is a more powerful and versatile version of the shotgun. Assault shotguns are best used in urban and close-quarters combat, as well as in boarding actions aboard voidships.{NEWLINE}{NEWLINE} Recoil: {ALT}45"
-      STR_SHOTGUN_DW_UFOPEDIA: "{NEWLINE} Deathwatch Shotguns are optimized for close-range combat in Space Hulks and other cramped enviroments. In addition to regular shells they can also utilize Wyrmsbreath shells to engulf an area in fire, purging entire rooms of lightly armored Xenos.{NEWLINE}{NEWLINE} Recoil: {ALT}45{ALT}{NEWLINE} Genelocked - {ALT}Deathwatch Only"
-      STR_MCSHOTGUN_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}45"
-      STR_ABSOLVOR_PISTOL_UFOPEDIA: "{NEWLINE} Wielded most commonly by Primaris Chaplains and Apothecaries, the Absolvor is a massive pistol that would match the size of any regular rifle. It fires penetrating bolts meant to punch through armor.{NEWLINE}{NEWLINE} Recoil: {ALT}60"
-      STR_DW_PLASMA_GRENADE_UFOPEDIA: "{NEWLINE} Making use of intentional containment collapse to cause an explosive meltdown, Plasma Grenades are extremely destructive. They are only used by certain elite Imperial Forces, with select few circles of the Adeptus Mechanicus knowing the secrets of their construction."
-      STR_BOLTER_UMBRA_UFOPEDIA: "{NEWLINE} The Umbra Pattern Bolter is one of the earliest patterns of Bolter and its reliable design has lead to widespread use. It has a fearsome recoil but is still light enough to be handled by trained Guardsmen. {NEWLINE}{NEWLINE} Recoil: {ALT}30"
-      STR_BOLTER_LIGHT_UMBRA_UNDERSLUNG_CODEX: "{NEWLINE} The Umbra Pattern Bolter fitted with a underslung 40mm grenade launcher that can use the common guard 40mm grenades and shotgun rounds. Incendiary, Krak and Melta grenades as well as slug and buckshot shells.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
-      STR_BOLTER_LIGHT_LMG_UFOPEDIA: "{NEWLINE} The Accatran MkVe is a bolter pattern variant chambered for light bolter calibre rounds, favored by light troops and Elysian drop troops for the extra firepower it provides. Equipped with a bipod, this squad based support bolter brings superior firepower compared to a heavy stubber. {NEWLINE}{NEWLINE} Recoil: {ALT}70{ALT} - Attached Bipod"
-      STR_HEAVY_BOLTER_GUARD_UFOPEDIA: "{NEWLINE} The Godwyn pattern heavy bolter is a variant commonly in use by the Astra Militarum for anti-infantry fire support. A bipod is deployed when kneeling to brace against the fierce recoil while firing.{NEWLINE}{NEWLINE} Recoil: {ALT}90{ALT} - Attached Bipod"
-      STR_BOLTER_HEAVY_SOLAR_CODEX: "{NEWLINE} An ancient design produced in select manufactorums, the Solar-pattern heavy bolter is as hotly sought after as it is temperamental. The additional litanies required to calm its machine spirit, as well as the lack of a handle, mean only the strongest soldiers can fire it without first bracing it. {NEWLINE} Recoil: {ALT}90{ALT} - Attached Bipod"
-      STR_BOLTER_SOLO_UFOPEDIA: "{NEWLINE} Perinetus Pattern Solo Mark II is unsophisticated and lacks the capability for autofire, allowing it only singleshot firemode. This is made up by the weapon's range, accuracy and reliability in adverse conditions. This pattern of Bolter is intended to be used by normal humans and is sized accordingly. {NEWLINE}{NEWLINE}Recoil: {ALT}16"
-      STR_BOLTER_SOLO_DMR_UFOPEDIA: "{NEWLINE} Perinetus Pattern Solo Mark II Scoped variants enhances the weapon's range and accuracy. Made to be used by normal humans, it is modified to produce less recoil at the expense of automatic fire modes. Popular with sharpshooters within both Guard and PDF, the Solo Pattern finds widespread use. {NEWLINE}{NEWLINE}Recoil: {ALT}16"
-      STR_BOLTER_SOLO_SHORT_UFOPEDIA: "{NEWLINE} Perinetus Pattern Solo Mark II is unsophisticated and lacks the capability for autofire, allowing it only singleshot firemode. This is made up by the weapon's range, accuracy and reliability in adverse conditions. Some Guardsmen were unhappy with the weight and started modifying it accordingly. {NEWLINE}{NEWLINE}Recoil: {ALT}16"
-      STR_VOLKITE_RIFLE_UFOPEDIA: "{NEWLINE} Volkite weapons deflagrate organic matter, explosively burning flesh into ash and jetting fire. They penetrate through armor, causing horrific damage."
-      ### CRAFT
-      STR_SPEED_UFOPEDIA: "{NEWLINE} The Land Speeder is a light anti-gravity vehicle which serves as the primary reconnaissance and fast attack vehicle of the Adeptus Astartes.{NEWLINE}{NEWLINE} Capacity: 12 Soldiers plus 8 Vehicle slots"
-      ### SOLDIERS
-      ### SKILLS
-      ### TRANSFORMATIONS
-      ### RESEARCH
-      STR_ELDAR_SPEECH_UFOPEDIA: "{NEWLINE} The Captured Eldar Seer has discussed the possibility of aiding us in our cause since we share common enemies, she suggests bringing eldar by webway to bypass the Warp Storm. This could lead to assistance in the form of weapons deliveries and even allied Eldar soldiers, but the Ordos Hereticus and planetary government will not be happy if we pursue this further."
-      ### MANUFACTURE
-      ### SCRIPTS
-      ### FACILITIES
-      STR_LIBRARY_UFOPEDIA: "{NEWLINE} This vast sealed chamber known as the Librarium is filled from floor to ceiling with books, scrolls, and data crystals. The Librarium is the repository of all the Chapter's knowledge and history. The Librarians of the Astartes are expected to record the great deeds of their Chapter and maintain the Chapter's storehouse of ancient lore. This facility allows the training of Librarians."
-      STR_TRAINFACILITY_UFOPEDIA: "{NEWLINE} This facility allows us to train up to 50 soldiers at a time."
-      ### EVENTS
-      ### DW HERALDRY
-      STR_ULTRAMARINES: "Ultramarines"
-      STR_ULTRAMARINES_INFO_1: "{NEWLINE}Of all the thousand and more Space Marine Chapters, it is the blue-clad Ultramarines that, in the mind of the countless billions of the Emperor's subjects, personify everything that the Adeptus Astartes stand for.  Originally known as the War-Born, these superb soldiers are here to stem the tide of Chaos on this Planet.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Cleave to the Codex Astartes, their soldiers are expertly trained."
-      STR_ULTRAMARINES_INFO_2: "{NEWLINE} The Ultramarines Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Heavy Bolt Rifle{ALT}{NEWLINE} > {ALT}Inspire{ALT}"
-      STR_IF: "Imperial Fists"
-      STR_IF_INFO_1: "{NEWLINE}One of the most valiant of all Chapters, held as paragons of the principles set down in the Codex Astartes. The Imperial Fists stand as the steadfast defenders of the Imperium and the Emperor's unwavering shield; for ten thousand standard years they have been the bulwark against which the armies of Traitors and aliens have shattered.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Experts in defense, they recover some TUs on enemy turns for reaction fire."
-      STR_IF_INFO_2: "{NEWLINE} The Imperial Fists Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}¬ Mastercrafted Absolvor Pistol{ALT}{NEWLINE}"
-      STR_BA: "Blood Angels"
-      STR_BA_INFO_1: "{NEWLINE}The sons of Sanguinius are experts in the use of all weapons and launching of army-shattering assaults. Their Forces are an inspiring sight in the ranks of the Emperor. {NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Bound in blood, they can regenerate by feeding, with no time needed in the apothecary bay."
-      STR_BA_INFO_2: "{NEWLINE} The Blood Angels Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Jetpack{ALT} (3 turn flight){NEWLINE} > {ALT}¬ Power Sword{ALT}"
-      STR_SALA: "Salamanders"
-      STR_SALA_INFO_1: "{NEWLINE}The Salamanders are warriors possessed of a nobility and compassion that belies their fell appearance. They are excellent craftsmen all, both within the sphere of war and without.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Hailing from Nocturne, they are nigh-immume to fire."
-      STR_SALA_INFO_2: "{NEWLINE} The Salamander Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Volkite Caliver{ALT}{NEWLINE} > {ALT}Repair Armor{ALT}{NEWLINE} > {ALT}Analyze Enemy{ALT}"
-      STR_BT: "Black Templars"
-      STR_BT_INFO_1: "{NEWLINE}A successor Chapter of the Imperial Fists, the Black Templars are on a permanent crusade against the enemies of Mankind. Their religious Fervour is infectious, bolstering morale wherever they fight.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Devout crusaders, the Templars are immune to chaos corruption."
-      STR_BT_INFO_2: "{NEWLINE} The Black Templar Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Crozius Arcanum{ALT}{NEWLINE} > {ALT}Bless Allies{ALT}"
-      STR_WS: "White Scars"
-      STR_WS_INFO_1: "{NEWLINE}The horsemaster tribes of chogoris lend the White Scars that recruit them an affinity with mounted warfare. They carry the proud warrior tradition of Jaghatai khan into the rank.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Experts in assault, they require less energy to move."
-      STR_WS_INFO_2: "{NEWLINE} The White Scars Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Force Halberd{ALT}{NEWLINE} > {ALT}Accelerate Ally{ALT}{NEWLINE} > {ALT}Shroud{ALT}"
-      STR_SW: "Space Wolves"
-      STR_SW_INFO_1: "{NEWLINE}Renowned for their ferocity, courage and hot-blooded approach to warfare. They are masters of the hunt, upholding the savage honour of Lemon Russ.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Born in harsh Fenris, they quickly regenerate from injuries during battle."
-      STR_SW_INFO_2: "{NEWLINE} The Space Wolves Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Power Axe{ALT}{NEWLINE} > {ALT}Medikit{ALT}{NEWLINE} > {ALT}Bless Allies{ALT}"
-      STR_DA: "Dark Angels"
-      STR_DA_INFO_1: "{NEWLINE}The first Chapter founded by the Emperor, Dark Angels are highly secretive and ritualistic. They are relentless in hunting down those who have betrayed them. {NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Mercilessly hunting their targets, their shots are much harder for enemies to dodge."
-      STR_DA_INFO_2: "{NEWLINE} The Dark Angels Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Twincore Plasma Rifle{ALT}{NEWLINE} > {ALT}Smite{ALT}{NEWLINE} > {ALT}Project Shield{ALT}"
-      STR_CF: "Crismon Fists"
-      STR_CF_INFO_1: "{NEWLINE}Though brought to a fraction of full strength by a devastating Ork attack at Rynn´s World, they are famous for never giving up. Excellent Ork hunters, they frequently contribute warriors to Deathwatch Killteams.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Closely tied with the Ordos Xenos, they are more easily recruited by Inquisition forces."
-      STR_CF_INFO_2: "{NEWLINE} The Crimson Fist Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Autocannon Gauntlet{ALT}"
-      ### UFOPAEDIA DW
-      STR_SMT_DW_INFO: DEATHWATCH TWEAKS
-      STR_SMT_DW_RECRUITMENT: Recruiting Deathwatch
-      STR_SMT_DW_RECRUITMENT_CODEX_1: "{NEWLINE} Deathwatch Marines are elite soldiers, hand picked from their chapters to support the Ordos Xenos. They typically operate in small Kill-Teams, conducting surgical strikes to eliminate threats to the Imperium.{NEWLINE}{NEWLINE} Use Deathwatch Tokens in manufacturing to hire a new Kill-Team member. Note: Some Chapter bonuses have been updated, be sure to check the Heraldry section in the Codex.{NEWLINE}{NEWLINE}{ALT}   >>> Getting new Tokens >>>"
-      STR_SMT_DW_RECRUITMENT_CODEX_2: "{NEWLINE} Should a Marine die, you can request a replacement token by reporting their death in the Soldier Transformation menu.{NEWLINE}{NEWLINE} Additional tokens to expand the size of your Kill-Team can be earned by interrogating live captives and discovering more about the Warp Storm engulfing this planet."
-      STR_SMT_DW_MARINES: "Firstborn and Primaris"
-      STR_SMT_DW_MARINES_CODEX_1: "{NEWLINE} Deathwatch Firstborn and Primaris Marines from the same chapter are mostly the same, with the major difference being the types of armor available to them: MK7 for Firstborn and MKX for Primaris.{NEWLINE}{NEWLINE}Both types can use these armors:{NEWLINE} {ALT}Tactical{ALT} > Allpurpose Armor{NEWLINE}{NEWLINE} {ALT}Apothecary{ALT} > Combat Medic{NEWLINE}{NEWLINE} {ALT}Techmarine{ALT} > Armor repairs and deployable sentry{NEWLINE}{NEWLINE}          {ALT}Differences{ALT} >>>"
-      STR_SMT_DW_MARINES_CODEX_2: "{NEWLINE} Deathwatch Firstborn can use the following armor types:{NEWLINE}{NEWLINE} {ALT}Devastator{ALT} > Long range heavy weapon specialist{NEWLINE}{NEWLINE} {ALT}Assault{ALT} > Close combat flight suit{NEWLINE}{NEWLINE} {ALT}Terminator{ALT} > Superheavy elite combat armor{NEWLINE}{NEWLINE}           {ALT}Primaris{ALT} >>> "
-      STR_SMT_DW_MARINES_CODEX_3: "{NEWLINE} Deathwatch Primaris can use the following armor types:{NEWLINE}{NEWLINE} {ALT}Phobos{ALT} > Light-weight tactical scout armor{NEWLINE}{NEWLINE} {ALT}Gravis{ALT} > Heavy tactical suit with inbuilt weaponry{NEWLINE}{NEWLINE} {ALT}Omnis{ALT} > Heavy weapons flight suit{NEWLINE}{NEWLINE}       <<< {ALT}Firstborn"
-      STR_SMT_DW_GENELOCK: Deathwatch Genelocks
-      STR_SMT_DW_GENELOCK_CODEX: "{NEWLINE} Deathwatch equipment is extremely advanced, making use of the best of Imperium technology and even sometimes utilizing Xenotech. Deathwatch weaponry is produced only by specially vetted Techpriests and is protected from capture or misuse by bioverification that locks the weapon if the users genetic pattern does not match. {NEWLINE}{NEWLINE}{ALT} All 'Genelocked' equipment can only be properly used by Deathwatch Marines, and will lose accuracy/power if wielded by someone else."
-      STR_SMT_DW_DEREVENANT: Derevenant Ammo
-      STR_SMT_DW_DEREVENANT_CODEX: "{NEWLINE} Derevenant ammo is a custom ammo type unique to Deathwatch, available for both Artifex Bolters and the Deathwatch Bolt Sniper. It is specifically crafted to disrupt the reanimation protocol of Necrons.{NEWLINE}{NEWLINE} Derevenant Ammo prevents Necrons from reviving if it lands a killing blow, and can instantly kill unconcious Necrons trying to revive."
-      ### UFOPAEDIA EXTRA
-      STR_SMT_INFO: SPACE MARINE TWEAKS
-      STR_SMT_UFOPAEDIA_UNFINISHED: "{NEWLINE}{NEWLINE} Codex Unfinished"
-      STR_SMT_RECOIL: Recoil Changes
-      STR_SMT_RECOIL_CODEX: "{NEWLINE} Recoil has been slightly changed. Using a weapon without a free hand increases the recoil of that weapon by {ALT}+50%{ALT}, increasing the strength required to fire it without penalty.{NEWLINE}{NEWLINE} Melee weapons are unaffected by this and do not get any additional strength penalty."
-      STR_SMT_HWP: Weapon Stabilizers
-      STR_SMT_HWP_CODEX: "{NEWLINE} Some powered suits have weapon stablizers built into the armor, reducing the aim penalty that comes from using heavy weapons with low TUs. Specialized armor meant for handling heavy weapons like Devastator armor are more effective, reducing the penalty by up to 66%. {NEWLINE}{NEWLINE} Terminator armor removes the penalty entirely{NEWLINE}{NEWLINE} Some weapons like Sniper Rifles cannot have their penalty reduced by armor."
-      STR_SMT_HEROICSAVE: Heroic Save
-      STR_SMT_HEROICSAVE_CODEX: "{NEWLINE} When taking lethal damage Space Marines have a chance to heroically endure. Instead of dying they will be knocked unconcious and can be revived to fight on.{NEWLINE} This effect may also protect them from instant-death attacks, but can't prevent death from untreated fatal wounds, corruption or burning.{NEWLINE}{NEWLINE} The chance to endure increases with Health, Devotion, and Veterancy. Units blessed by a Chaplain have their bonus from Devotion doubled."
-      STR_SMT_REGENERATION: Marine Healing
-      STR_SMT_REGENERATION_CODEX: "{NEWLINE} Marines undergo extensive genetic modification, improving their ability to recover from injury far above that of regular humans. This allows them to recover from fatal wounds and restore health even on the battlefield. Units can heal up to 80% of their max health, but lost health restored this way still incurs some post-mission recovery time.{NEWLINE}{NEWLINE}Each Turn:{NEWLINE} {ALT}Neophytes heal 2 HP{NEWLINE} Marines heal 5 HP/1 Wound{NEWLINE} Vet Marines heal 8 HP/2 Wounds"
-      STR_SMT_PROMOTION_CHAPLAINS: Chaplains
-      STR_SMT_PROMOTION_CHAPLAINS_CODEX: "{NEWLINE} Marines who have earned the right to become a Veteran with {ALT}80+ Devotion{ALT} can be promoted into Chaplains instead.{NEWLINE}{NEWLINE} Chaplains have the Bless ability which restores morale and purges chaos corruption from nearby units. It also applies a slowly-decaying buff that grants resistance to corrupting attacks, improves melee skill, and increases the chances of Heroic Save protecting a unit from death."
-      STR_SMT_PROMOTION_LIBRARIANS: Librarians
-      STR_SMT_PROMOTION_LIBRARIANS_CODEX: "{NEWLINE} Neophytes with {ALT}20+ PsiStr{ALT} can be trained into Librarians instead of becoming regular Marines.{NEWLINE}Librarians can use powerful psychic abilities that depend on Psi Strength, which is improved through use in battle.{NEWLINE}{NEWLINE} Librarians with Crux Terminatus and {ALT}90+ PsiStr{ALT} can be further promoted to Veterans, increasing their maximum potential and allowing the use of Terminator Armor."
-      STR_SMT_LIBRARIAN_SPELLS: Librarian Abilities
-      STR_SMT_LIBRARIAN_SPELLS_CODEX: "{NEWLINE} Librarians have 5 different psyker abilities.{NEWLINE}{NEWLINE}{ALT}>Smite{ALT} - Deals armor-ignoring damage to an enemy{NEWLINE}{ALT}>Lockdown{ALT} - Drains enemy time units, paralysing them{NEWLINE}{ALT}>Shroud{ALT} - Creates a blast of smoke to obscure vision{NEWLINE}{ALT}>Shield{ALT} - Grants a temporary energy shield to an ally{NEWLINE}{ALT}>Accelerate{ALT} - Reduces reaction fire and at high levels increases movespeed{NEWLINE}{NEWLINE} All abilities scale with PsiStr only"
-      STR_SMT_BOLTER_CHANGES: Bolter Changes
-      STR_SMT_BOLTER_CHANGES_CODEX: "{NEWLINE} Bolters fire powerful high-caliber self-propelled explosive rounds. They have limited propulsion and lack accuracy at range, instead optimizing for devastating close range firepower.{NEWLINE} Compared to Rosigma SMT Bolters have greater accuracy falloff outside of optimal range but deal more damage and fire faster, specializing in autofire bursts.{NEWLINE}{NEWLINE} Heavy Bolter rounds are larger with more propulsion and aren't given any additonal falloff penalties."
-      STR_SMT_MASTERCRAFTED_AMMO: Mastercrafted Bolts
-      STR_SMT_MASTERCRAFTED_AMMO_CODEX: "{NEWLINE} Mastercrafted Bolts do not get a flat power boost, instead the damage comes from a precision bonus when used by elite troops.{NEWLINE}{NEWLINE} Units with more than 100 firing accuracy gain power equal to {NEWLINE} {ALT}(FA - 100) x Precision%{ALT} when firing Mastercrafted ammo."
-      STR_SMT_ARMOR_SHRED: Armor Shredding
-      STR_SMT_ARMOR_SHRED_CODEX: "{NEWLINE} Space Marine armor is finely crafted and well maintained to a standard far above that of regular Imperial equipment. It stands immovable against the enemies of the Emperor, reducing the durability it loses from enemy attacks.{NEWLINE}{NEWLINE} Terminator Armor is especially effective, reducing durability lost from attacks by 80%"

@@ -1,7 +1,5 @@
 extended:
-  tags:
-    RuleItem:
-      ITEM_AMMO_SKIP_BIGOBS: int
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
 
 items:
   - &STR_WEAPON_SPRITE_SWAP_TEMPLATE
@@ -71,6 +69,12 @@ items:
   - type: STR_LIGHT_BOLTER_AMMO_AP
     refNode: *STR_AMMO_SKIP_TWO
   - type: STR_LIGHT_BOLTER_AMMO_INF
+    refNode: *STR_AMMO_SKIP_TWO
+  - type: STR_RIFLE_CLIP_DEREV
+    refNode: *STR_AMMO_SKIP_TWO
+  - type: STR_RIFLE_CLIP_FUSION
+    refNode: *STR_AMMO_SKIP_TWO
+  - type: STR_RIFLE_CLIP_DRAGON
     refNode: *STR_AMMO_SKIP_TWO
 ### Heavy Boltrifle Ammo
   - type: STR_BOLTRIFLE_DRUM

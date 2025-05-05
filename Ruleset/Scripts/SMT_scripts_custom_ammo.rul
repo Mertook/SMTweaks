@@ -1,12 +1,5 @@
 extended:
-  tags:
-    RuleItem:
-      SMT_AMMO_BONUSDMG_FIRINGACC: int # % bonus damage granted from units Firing Accuracy: (FA - 100) * Tag / 100
-      SMT_DEREVENANT_AMMO: int # Instantly kills Necrons that are or will be knocked unconcious - value = % bonus damage added against 2x2 Necrons that can't be stunned
-      SMT_AMMO_HP_PREDMG: int # % of power directly added to health damage ignoring armor
-      SMT_SHIELD_DAMAGE_AMP: int # % power increase based on targets shield
-      ITEM_IGNORE_ALLIES: int # deal no damage to units belonging to users faction
-      ITEM_IGNORE_IMPERIUM: int # deal no damage to allied units with armor tag `UNIT_TYPE_IMPERIUM: 1`
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
 
 items:
   - &STR_PRECISION_AMMO                 # Precision Template

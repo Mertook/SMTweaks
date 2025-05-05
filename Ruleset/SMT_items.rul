@@ -245,6 +245,11 @@ items:
       ITEM_POWER_BONUS_PERCENTILE: 1
       ITEM_HEAT_MAX_LEVEL: 7
 
+  - type: STR_MKX_HELIX_ARMOR               # Primaris Helix Adept Armor
+    size: 0.3
+    costSell: 20000
+    listOrder: 5460
+
   - type: STR_NEOVOLKITE_PISTOL             # Neo-Volkite Pistol
     bigSprite: 216
     floorSprite: 216
@@ -558,93 +563,6 @@ items:
       # time: true
       # energy: true
 
-
-  - type: STR_ACCEL_AUTOCANNON_FIXED        # Accelerator Autocannon (Omnis Armor)
-    categories: [STR_CAT_AUTO]
-    battleType: 1
-    weight: 50
-    recover: false
-    fixedWeapon: true
-    fixedWeaponShow: true
-    twoHanded: true
-    blockBothHands: true
-    invWidth: 2
-    invHeight: 3
-    armor: 300
-    listOrder: 10775
-    bigSprite: 226
-    floorSprite: {mod: 40k_ROSIGMA_edits, index: 949} #Inq Autocannon
-    handSprite: 432
-    bulletSprite: {mod: 40k, index: 6}
-    fireSound: {mod: 40k, index: 12}
-    compatibleAmmo:
-      - STR_ASSC_CLIP
-    dropoff: 3
-    autoRange: 16
-    snapRange: 28
-    aimRange: 0
-    accuracySnap: 80
-    accuracyAuto: 70
-    accuracyAimed: 0
-    tuAuto: 45
-    tuSnap: 30
-    tuAimed: 0
-    confSnap:
-      shots: 3 # was 1
-      name: STR_BURST_SNAP_SHOT
-      followProjectiles: false
-    confAuto:
-      shots: 6
-      followProjectiles: false
-    bulletSpeed: 20
-    explosionSpeed: 1
-    tags:
-      ITEM_RECOIL: 110 # heavy weapon
-      ITEM_IS_HEAVY_WEAPON: 1 # low fire rate relative to assault cannon
-
-  - type: STR_ACCEL_AUTOCANNON_FIXED_DW     # Accelerator Autocannon (Omnis Armor DW)
-    categories: [STR_CAT_AUTO]
-    battleType: 1
-    weight: 50
-    recover: false
-    fixedWeapon: true
-    fixedWeaponShow: true
-    twoHanded: true
-    blockBothHands: true
-    invWidth: 2
-    invHeight: 3
-    armor: 300
-    listOrder: 10775
-    bigSprite: {mod: 40k_ROSIGMA_edits, index: 1034} #Inq Autocannon
-    floorSprite: {mod: 40k_ROSIGMA_edits, index: 949} #Inq Autocannon
-    handSprite: {mod: 40k_ROSIGMA_edits, index: 864} #Inq Autocannon
-    bulletSprite: {mod: 40k, index: 6}
-    fireSound: {mod: 40k, index: 12}
-    compatibleAmmo:
-      - STR_ASSC_CLIP
-    dropoff: 3
-    autoRange: 16
-    snapRange: 28
-    aimRange: 0
-    accuracySnap: 80
-    accuracyAuto: 70
-    accuracyAimed: 0
-    tuAuto: 45
-    tuSnap: 30
-    tuAimed: 0
-    confSnap:
-      shots: 3 # was 1
-      name: STR_BURST_SNAP_SHOT
-      followProjectiles: false
-    confAuto:
-      shots: 6
-      followProjectiles: false
-    bulletSpeed: 20
-    explosionSpeed: 1
-    tags:
-      ITEM_RECOIL: 110 # heavy weapon
-      ITEM_IS_HEAVY_WEAPON: 1 # low fire rate relative to assault cannon
-
   - type: STR_PLASMA_EXTERMINATOR_FIXED     # Plasma Exterminator (Omnis Armor - single)
     battleType: 1
     weight: 0
@@ -682,7 +600,7 @@ items:
       RandomType: 6
       ToHealth: 1.0
       ToArmorPre: 0.1 #
-      ArmorEffectiveness: 0.75 #
+      ArmorEffectiveness: 0.6 #
       FireThreshold: 70 #
       ToArmor: 0.1
     powerRangeReduction: 5
@@ -730,7 +648,7 @@ items:
       RandomType: 6
       ToHealth: 1.0
       ToArmorPre: 0.1 #
-      ArmorEffectiveness: 0.75 #
+      ArmorEffectiveness: 0.6 #
       FireThreshold: 70 #
       ToArmor: 0.1
     powerRangeReduction: 5
@@ -818,124 +736,6 @@ items:
 
   - type: STR_LASCAN                        # SM Lascannon
     tuAimed: 85 # was 90 - slightly easier to sidestep and fire without needing max TUs
-
-  - type: STR_SHOTGUN_MARINE                # Astartes Shotgun
-    categories: [ STR_CAT_SHOTGUN, STR_CAT_SCOUT]
-    size: 0.2
-    costBuy: 25000
-    costSell: 5000
-    requiresBuy:
-      - STR_MARINES_STRATEGY
-      - STR_SHOTGUNS_ADV
-    armor: 300
-    listOrder: 10601
-    bigSprite: 107
-    floorSprite: 107
-    handSprite: 208
-    bulletSprite: {mod: 40k, index: 2}
-    fireSound: {mod: 40k, index: 755}
-    compatibleAmmo:
-      - STR_SHOTGUN_SHELLS
-      - STR_SHOTGUN_SHELLS_AP
-      - STR_SHOTGUN_SHELLS_INC
-      - STR_SHOTGUN_SHELLS_MC
-    weight: 22
-    dropoff: 5 # was 5
-    accuracyAuto: 55
-    accuracySnap: 65
-    autoRange: 7
-    snapRange: 9 # was 9
-    tuSnap: 16
-    tuAuto: 33
-    autoShots: 3
-    battleType: 1
-    twoHanded: true
-    oneHandedPenalty: 80 # minor penalty for dual-wielding if you can handle recoil
-    invWidth: 1
-    invHeight: 3
-    tags:
-      REACTION_MULTIPLIER: 175 # 175% of normal - shotgun bonus
-      ITEM_RECOIL: 45 # High recoil, marines or strong scouts
-
-  - type: STR_MCSHOTGUN                     # Mastercrafted Shotgun
-    armor: 300
-    weight: 22
-    oneHandedPenalty: 80 # minor penalty for dual-wielding if you can handle recoil
-    dropoff: 5 # was 5
-    autoRange: 8
-    snapRange: 10
-    aimRange: 0
-    accuracyAuto: 60
-    accuracySnap: 75 # was 85
-    accuracyAimed: 0
-    tuAuto: 30
-    tuSnap: 14 # was 25
-    tuAimed: 0
-    autoShots: 3
-    compatibleAmmo:
-      - STR_SHOTGUN_SHELLS
-      - STR_SHOTGUN_SHELLS_AP
-      - STR_SHOTGUN_SHELLS_INC
-      - STR_SHOTGUN_SHELLS_MC
-    tags:
-      REACTION_MULTIPLIER: 200 # 200% of normal - MCshotgun bonus
-      ITEM_RECOIL: 45 # High recoil, marines or strong scouts
-
-  - type: STR_SHOTGUN_SHELLS                # Shotgun Ammo
-    powerRangeThreshold: 18
-    powerRangeReduction: 2
-
-  - type: STR_SHOTGUN_DRUM                  # Shotgun Drum Ammo
-    powerRangeThreshold: 18
-    powerRangeReduction: 3
-
-  - type: STR_SHOTGUN_SHELLS_AP             # Shotgun Krak Ammo
-    bigSprite: 173
-    requiresBuy:
-      - STR_SHOTGUNS_ADV
-    powerRangeThreshold: 18
-    powerRangeReduction: 2
-    damageAlter:
-      RandomType: 1 # 0-200%
-      ArmorEffectiveness: 0.5 # was 0.5
-      ToArmorPre: 0.02 # was 0
-      ToArmor: 0.15 # was 0, decent destruction if it manages to pen
-      ToHealth: 1.0
-      ToStun: 0.1 # was 0.5; AP round rather than concussive
-    shotgunPellets: 5 # was 6
-
-  - type: STR_SHOTGUN_SHELLS_INC            # Shotgun Incin Ammo
-    weight: 3 # was 5?
-    hitSound: {mod: 40k, index: 708}
-    hitAnimation:
-      mod: 40k
-      index: 88
-    powerRangeThreshold: 18
-    powerRangeReduction: 2
-    power: 80 # doesn't get multiple pellets because of AoE splash
-    damageAlter:
-      RandomType: 2 # 50-150%
-      ToHealth: 1.3 # was 1.1
-    shotgunPellets: 1 # was 6, doesn't work with projectiles that have explosion radius
-    requiresBuy:
-      - STR_SHOTGUNS_ADV
-
-  - type: STR_SHOTGUN_SHELLS_MC             # Shotgun MC Ammo
-    bigSprite: 162
-    powerRangeThreshold: 18
-    powerRangeReduction: 2
-    power: 50 # was 60
-    damageAlter: # MC Bolt values - was blank
-      RandomType: 7 # 50-200%
-      ToArmorPre: 0.03
-      ArmorEffectiveness: 0.8
-      ToArmor: 0.15
-      ToHealth: 1.0
-      ToStun: 0.5
-      ToEnergy: 0.3
-      ToWound: 0.2
-      RandomWound: false
-    shotgunPellets: 8 # was 6
 
   - type: STR_BIKE_ARMOR                    # Bike Armor (Item)
     costBuy: 280000 # was 360k
@@ -1032,45 +832,6 @@ items:
     experienceTrainingMode: 1 # melee
     tags:
       ITEM_DOESNT_HURT_USER: 1
-
-  - type: STR_GRENADE_LAUNCHER_ASTARTES     # Grenade Launcher Astartes
-    requiresBuy:
-      - STR_MARINES_STRATEGY
-      - STR_GLAUNCHER_PREREQ
-    requiresBuyBaseFunc: [IMPERIUM]
-    categories: [STR_CAT_ROCKETL]
-    size: 0.4
-    dropoff: 4
-    costBuy: 20000
-    costSell: 7000
-    weight: 15
-    bigSprite: {mod: 40k_ROSIGMA_edits, index: 936}
-    floorSprite: {mod: 40k, index: 1005}
-    handSprite: {mod: 40k_ROSIGMA_edits, index: 1016}
-    bulletSprite: {mod: 40k, index: 0}
-    fireSound: {mod: 40k, index: 4}
-    compatibleAmmo:
-      - STR_FRAG_GRENADE_DRUM
-      - STR_KRAK_GRENADE_DRUM
-      - STR_INCENDIARY_GRENADE_DRUM
-      - STR_SMOKE_GRENADE_DRUM
-      - STR_PHOTON_GRENADE_DRUM
-    accuracySnap: 70
-    accuracyAuto: 50
-    tuSnap: 33
-    tuAuto: 55
-    snapRange: 24
-    autoRange: 24
-    battleType: 1
-    arcingShot: true
-    twoHanded: true
-    blockBothHands: true
-    invWidth: 2
-    invHeight: 3
-    armor: 300
-    listOrder: 11851
-    minRange: 5
-    noLOSAccuracyPenalty: 75
 
   - type: STR_FRAG_GRENADE_DRUM             # GL Frag Rounds
     requiresBuy:
@@ -2386,3 +2147,55 @@ items:
     battleType: 11
     recover: false
 
+  - type: STR_TERMINATOR_CORPSE
+    armor: 150 # was 80
+  - type: STR_MK7_CORPSE
+    armor: 150 # was 80
+  - type: STR_SIGNAL_CORPSE
+    armor: 150 # was 80
+  - type: STR_SCOUT_CORPSE
+    armor: 150 # was 30
+  - type: STR_SCOUTH_CORPSE
+    armor: 150 # was 30
+  - type: STR_CAPTAIN_CORPSE
+    armor: 150 # was 80
+  - type: STR_TERMINATOR_SARGENT_CORPSE
+    armor: 150 # was 80
+  - type: STR_SARGENT_CORPSE
+    armor: 150 # was 80
+  - type: STR_CHAP_CORPSE
+    armor: 150 # was 80
+  - type: STR_APOT_CORPSE
+    armor: 150 # was 80
+  - type: STR_TECH_CORPSE
+    armor: 150 # was 80
+  - type: STR_HONOR_CORPSE
+    armor: 150 # was 80
+  - type: STR_LIB_CORPSE
+    armor: 150 # was 80
+  - type: STR_MKX_CHP_CORPSE
+    armor: 150 # was 80
+  - type: STR_MKX_LIB_CORPSE
+    armor: 150 # was 80
+  - type: STR_MKX_TEC_CORPSE
+    armor: 150 # was 80
+  - type: STR_MKX_APO_CORPSE
+    armor: 150 # was 80
+  - type: STR_MKX_TAC_CORPSE
+    armor: 150 # was 80
+  - type: STR_MKX_INC_CORPSE
+    armor: 150 # was 80
+  - type: STR_MKX_PHB_CORPSE
+    armor: 150 # was 80
+  - type: STR_MKX_GRV_CORPSE
+    armor: 150 # was 80
+  - type: STR_DWSCT_CORPSE
+    name: STR_CORPSE
+    weight: 40
+    bigSprite: 285
+    floorSprite: 285
+    invWidth: 2
+    invHeight: 3
+    armor: 80
+    battleType: 11
+    recover: false

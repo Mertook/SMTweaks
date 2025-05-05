@@ -1,10 +1,5 @@
 extended:
-  tags:
-    RuleArmor:
-      ARMOR_OVERWATCH_TU_RESTORED: int  # 0 to 100; what % of the unit's maximum TUs is restored at the start of each enemy/neutral turn?
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: int  # 1 or 0, True or False; Do we add the % of max TUs restored, or go with the highest value?
-    BattleUnit:
-      SMT_OVERWATCH_BONUS: int #stores units bonus to Overwatch
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
 
   scripts:
     newTurnUnit:

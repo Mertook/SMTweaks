@@ -145,7 +145,7 @@ soldierTransformation:
       firing: 100 # marine max 120  - training cap 100
       melee: 80 # marine max 120   - training cap 100
       strength: 80 # marine max 100 - training cap 80
-      psiSkill: 80 #
+      psiSkill: 100 #
     listOrder: 70
 
   - name: STR_PROMOTE_LIBRARIAN         # Neophyte -> Librarian
@@ -173,7 +173,7 @@ soldierTransformation:
     requiredMinStats:
       health: 60 # Neophyte base 40-55, training cap 60, Marine minimum 75
       strength: 50 # Neophyte base 25-40, training cap 55, Marine minimum 55
-      psiStrength: 20 # Neophyte base 0-20
+      psiStrength: 35 # Neophyte base 10-40
     listOrder: 40
 
   - name: STR_PROMOTE_LIB_TERMINATOR    # Librarian -> Vet Librarian
@@ -219,7 +219,7 @@ soldierTransformation:
     soldierBonusType: STR_BONUS_INQ_ROSARIUS
     listOrder: 79
 
-  - name: STR_FB_CAPTAIN                # Captain Promotion
+  - name: STR_PROMOTE_CAPTAIN                # Captain Promotion
     requires:
       - STR_MARINES_STRATEGY
       - STR_NOT_PRIMARIS
@@ -237,6 +237,7 @@ soldierTransformation:
       - STR_SOLDIER_TERMINATOR
     requiredCommendations:
       STR_HONOR_MEDAL: 3
+      STR_HERO_TO_THE_IMPERIUM: 0
     listOrder: 55
 
   - name: STR_RESURRECT_MARINE          # Create Dreadnought
@@ -386,6 +387,7 @@ soldierTransformation:
       - STR_PRIMARISLV4
     requiredCommendations:
       STR_HONOR_MEDAL: 3
+      STR_HERO_TO_THE_IMPERIUM: 0
     transferTime: 0
     recoveryTime: 0
     lowerBoundAtMinStats: true
@@ -550,7 +552,7 @@ soldierTransformation:
     requiredMinStats:
       health: 60 # Neophyte base 40-55, training cap 60, Primaris minimum 75
       strength: 50 # Neophyte base 25-40, training cap 55, Primaris minimum 65
-      psiStrength: 20 # Neophyte base 0-20
+      psiStrength: 35 # Neophyte base 10-40
     flatOverallStatChange:
       tu: 5
       stamina: 5

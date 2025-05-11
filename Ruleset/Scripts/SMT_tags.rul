@@ -98,7 +98,7 @@ extended:
       SKILL_STEALTH_RANGE: int                  # skill used to activate restealth - X = detection range
       SKILL_STEALTH_DURATION: int               # duration of stealth
       SKILL_STEALTH_MOVEPENALTY: int            # % modifier on movespeed while stealthed
-      SKILL_STEALTH_CHECK: int                  # skill used to check requirements for restealthing
+      SKILL_STEALTH_CHECK: int                  # skill used to check stealth requirements (>0) or remove stealth (<0)
     BattleUnit:
       ## Buffs
       SMT_VIGILIANCE_ENDTURN: int       # store buff duration
@@ -160,7 +160,4 @@ extended:
       SMT_COMMAND_TYPE: int             # Last used command
       SMT_COMMAND_TURN: int             # Turn Command is active for
       SMT_COMMAND_POINTS: int           # Command points earned this battle
-
-
-    RuleItem:
 

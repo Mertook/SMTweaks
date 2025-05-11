@@ -308,6 +308,7 @@ soldiers:
     deathFemale: [{mod: 40k, index: 744}, {mod: 40k, index: 745}, {mod: 40k, index: 746}, {mod: 40k, index: 747}, {mod: 40k, index: 748}, {mod: 40k, index: 749}, {mod: 40k, index: 750}, {mod: 40k, index: 751}, {mod: 40k, index: 752}]
     value: 75
     moraleLossWhenKilled: 200 # Seeing an elite marine die is shocking for regular troops
+    skillIconSprite: 40
     skills:
       - STR_INSPIRE_CAPTAIN_SKILL
       - STR_CMD_ARMOR_SKILL
@@ -411,7 +412,7 @@ soldiers:
       - STR_LIB_SMOKE_SKILL
       - STR_LIB_HASTE_SKILL
       - STR_LIB_OVERWATCH_SKILL
-    skillIconSprite:  {mod: 40k, index: 11}
+    skillIconSprite: {mod: 40k, index: 11}
 
   - type: STR_DARKANGELS_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
@@ -434,8 +435,8 @@ soldiers:
       - STR_LIB_SMITE_SKILL
       - STR_LIB_LOCKDOWN_SKILL
       - STR_LIB_SHIELD_SKILL
-      - STR_LIB_VULNERABILITY_SKILL
-    skillIconSprite:  {mod: 40k, index: 11}
+      - STR_LIB_VULN_SKILL
+    skillIconSprite: {mod: 40k, index: 11}
 
   - type: STR_SPACEW_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
@@ -453,7 +454,7 @@ soldiers:
       health: 155 # +10, SW bonus
     statCaps:
       health: 175 # +25, SW bonus
-    skillIconSprite:  {mod: 40k, index: 8}
+    skillIconSprite: {mod: 40k, index: 8}
     skills:
       - STR_BLESS_SKILL
       - STR_CMD_ARMOR_SKILL
@@ -477,3 +478,6 @@ soldiers:
       - STR_GENERALLOCK
     armor: STR_GUARD_ARMOR_TRAIN
     value: 0
+    soldierNames:
+      - delete
+      - MarineName/

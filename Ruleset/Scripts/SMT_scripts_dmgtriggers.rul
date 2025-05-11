@@ -131,8 +131,8 @@ extended:
           set to_mana 0; # catch for corruption to stop it interfering with turret munitions
 
           unit.getHealth temp;
-          if and lt to_health temp gt temp 0; # only killing blows
-            debug_log "Death Trigger Fail" to_health temp;
+          if lt to_health temp; # only killing blows
+            #debug_log "Death Trigger Fail" to_health temp;
             return;
           end;
 
@@ -179,7 +179,7 @@ extended:
             div pointVal 18; # average of hp + shields & armor sides /3
 
             battle_game.getTag temp Tag.SMT_COMMAND_POINTS;
-            debug_log "Cmd Points Final " pointVal temp;
+            #debug_log "Cmd Points Final " pointVal temp;
             add pointVal temp;
             battle_game.setTag Tag.SMT_COMMAND_POINTS pointVal;
           end;

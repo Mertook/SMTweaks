@@ -2,7 +2,7 @@ ufopaedia:
     ### 00000  - Faction Strategy - Doctrine Details, Faction Specific Details
     ### 10000  - General Strategy - General XCom strategy
     ### 20000  - Advanced Strategy - 40k specific details and keywords
-    ### 30000  - Research - Generic Research Details
+    ### 30000  - Research - Generic Research Details & Items
     ### 40000  - Craft - Craft & Craft Gear
     ### 50000  - Base Facilities
     ### 60000  - Psyker Abilities
@@ -73,6 +73,281 @@ ufopaedia:
     image_id: 3XENO.SPK
     text: STR_CHOSEN_ELDAR_TEXT
     listOrder: 89
+## Marines
+  - id: STR_GENESEED_DETAILS    #00100 - Geneseed
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: TODO.SPK
+    requires:
+      - STR_NEOPHYTE_CODEX
+    text: STR_GENESEED_DETAILS_CODEX
+    listOrder: 100 # was 21011
+  - id: STR_SMT_NEOPHYTE_PROMOTION      #00110 - Marine Creation
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: TODO.SPK
+    requires:
+      - STR_NEOPHYTE_CODEX
+    text: STR_SMT_NEOPHYTE_PROMOTION_CODEX
+    listOrder: 110 # was 21010
+  - id: STR_SMT_FIRSTBORN_PROMOTION     #00120 - Marine Promotion Firstborn
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: TODO.SPK
+    requires:
+      - STR_FIRSTBORN_CODEX
+    text: STR_SMT_FIRSTBORN_PROMOTION_CODEX
+    listOrder: 120 # was 21010
+  - id: STR_SMT_PRIMARIS_PROMOTION      #00120 - Marine Promotion Primaris
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: TODO.SPK
+    requires:
+      - STR_PRIMARIS_CODEX
+    text: STR_SMT_PRIMARIS_PROMOTION_CODEX
+    listOrder: 120 # was 21010
+  - id: STR_SMT_PRIMARIS_SPECIALIST     #00120 - Specialist Promotion Primaris
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: TODO.SPK
+    requires:
+      - STR_PRIMARIS_CODEX
+    text: STR_SMT_PRIMARIS_SPECIALIST_CODEX
+    listOrder: 121 # was 21010
+
+  - id: STR_SMT_PROMOTION_LIBRARIANS    #00120 - Librarian Promotion
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_NEOPHYTE_CODEX
+      - STR_LIBRARY
+    text: STR_SMT_PROMOTION_LIBRARIANS_CODEX
+    listOrder: 124
+
+  - id: STR_SMT_PROMOTION_CHAPLAINS         # Chaplain Promotion
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: CHAPLAINUFO.SPK
+    requires:
+      - STR_NEOPHYTE_CODEX
+      - STR_MARINE_CHAPEL
+    text: STR_SMT_PROMOTION_CHAPLAINS_CODEX
+    listOrder: 125
+
+  - id: STR_SMT_HEROICSAVE      #00160 - Heroic Save
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: TODO.SPK
+    requires:
+      - STR_MARINE_CODEX
+    text: STR_SMT_HEROICSAVE_CODEX
+    listOrder: 128
+
+  - id: STR_SMT_REGENERATION            #00129 - Marine Regen
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: TODO.SPK
+    requires:
+      - STR_MARINE_CODEX
+    text: STR_SMT_REGENERATION_CODEX
+    listOrder: 129
+
+  - id: STR_SMT_CAPTAIN_PROMOTION       #00130 - Marine Captains
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: CAPTAINUFO.SPK
+    requires:
+      - STR_CAPTAIN_CODEX
+    pages:
+      - title: STR_SMT_CAPTAIN_PROMOTION
+        text: STR_SMT_CAPTAIN_PROMOTION_CODEX
+      - title: STR_SMT_COMMANDS
+        text: STR_SMT_COMMANDS_CODEX
+    listOrder: 130 # was 21010
+  - id: STR_SMT_CMD_AOC                 #00131 - Captain Command - Armor of Contempt
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: CMDAOCUFO.SPK
+    requires:
+      - STR_CAPTAIN_CODEX
+    text: STR_SMT_CMD_AOC_CODEX
+    listOrder: 131
+  - id: STR_SMT_CMD_SOF                 #00132 - Captain Command - Storm of Fire
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: CMDSOFUFO.SPK
+    requires:
+      - STR_CAPTAIN_CODEX
+    text: STR_SMT_CMD_SOF_CODEX
+    listOrder: 132
+  - id: STR_SMT_CMD_RA                  #00133 - Captain Command - Relentless Assault
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: CMDRAUFO.SPK
+    requires:
+      - STR_CAPTAIN_CODEX
+    text: STR_SMT_CMD_RA_CODEX
+    listOrder: 133
+
+  - id: STR_SMT_DW_RECRUITMENT              # DW Recruitment
+    type_id: 10
+    section: STR_STRATEGY
+    requires:
+      - STR_DEATHWATCH
+    image_id: C12.SPK
+    listOrder: 150 # 21101
+    pages:
+      - title: STR_SMT_DW_RECRUITMENT
+        text: STR_SMT_DW_RECRUITMENT_CODEX_1
+      - title: STR_SMT_DW_RECRUITMENT
+        text: STR_SMT_DW_RECRUITMENT_CODEX_2
+
+  - id: STR_SMT_DW_MARINES                  # DW FB/Primaris differences
+    type_id: 10
+    section: STR_STRATEGY
+    requires:
+      - STR_DEATHWATCH
+    image_id: C12.SPK
+    listOrder: 155 # 21102
+    pages:
+      - title: STR_SMT_DW_MARINES
+        text: STR_SMT_DW_MARINES_CODEX_1
+      - title: STR_SMT_DW_MARINES
+        text: STR_SMT_DW_MARINES_CODEX_2
+      - title: STR_SMT_DW_MARINES
+        text: STR_SMT_DW_MARINES_CODEX_3
+
+  - id: STR_SMT_DW_DEREVENANT               # DW Derevenant Ammo
+    type_id: 10
+    section: STR_STRATEGY
+    requires:
+      - STR_DEATHWATCH
+    image_id: C12.SPK
+    text: STR_SMT_DW_DEREVENANT_CODEX
+    listOrder: 175 # 21104
+
+  - id: STR_DW_CHAPTERS                     #00260 - Deathwatch Chapters
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: PICK_STRATEGY.SPK
+    requires:
+      - STR_DEATHWATCH
+    text: STR_DW_CHAPTERS_CODEX
+    listOrder: 260
+
+  - id: STR_ULTRAMARINES                    # DW Heraldry (UM)
+    section: STR_STRATEGY
+    requires:
+      - STR_DEATHWATCH
+    pages:
+      - title: STR_ULTRAMARINES
+        text: STR_ULTRAMARINES_INFO_1
+      - title: STR_ULTRAMARINES
+        text: STR_ULTRAMARINES_INFO_2
+    listOrder: 261
+
+  - id: STR_IF                              # DW Heraldry (IF)
+    section: STR_STRATEGY
+    requires:
+      - STR_DEATHWATCH
+    pages:
+      - title: STR_IF
+        text: STR_IF_INFO_1
+      - title: STR_IF
+        text: STR_IF_INFO_2
+    listOrder: 262
+
+  - id: STR_BA                              # DW Heraldry (BA)
+    section: STR_STRATEGY
+    requires:
+      - STR_DEATHWATCH
+    pages:
+      - title: STR_BA
+        text: STR_BA_INFO_1
+      - title: STR_BA
+        text: STR_BA_INFO_2
+    listOrder: 263
+
+  - id: STR_SALA                            # DW Heraldry (SA)
+    section: STR_STRATEGY
+    requires:
+      - STR_DEATHWATCH
+    pages:
+      - title: STR_SALA
+        text: STR_SALA_INFO_1
+      - title: STR_SALA
+        text: STR_SALA_INFO_2
+    listOrder: 264
+
+  - id: STR_BT                              # DW Heraldry (BT)
+    section: STR_STRATEGY
+    requires:
+      - STR_DEATHWATCH
+    pages:
+      - title: STR_BT
+        text: STR_BT_INFO_1
+      - title: STR_BT
+        text: STR_BT_INFO_2
+    listOrder: 265
+
+  - id: STR_WS                              # DW Heraldry (WS)
+    section: STR_STRATEGY
+    requires:
+      - STR_DEATHWATCH
+    pages:
+      - title: STR_WS
+        text: STR_WS_INFO_1
+      - title: STR_WS
+        text: STR_WS_INFO_2
+    listOrder: 266
+
+  - id: STR_SW                              # DW Heraldry (SW)
+    section: STR_STRATEGY
+    requires:
+      - STR_DEATHWATCH
+    pages:
+      - title: STR_SW
+        text: STR_SW_INFO_1
+      - title: STR_SW
+        text: STR_SW_INFO_2
+    listOrder: 267
+
+  - id: STR_DA                              # DW Heraldry (DA)
+    section: STR_STRATEGY
+    requires:
+      - STR_DEATHWATCH
+    pages:
+      - title: STR_DA
+        text: STR_DA_INFO_1
+      - title: STR_DA
+        text: STR_DA_INFO_2
+    listOrder: 268
+
+  - id: STR_CF                              # DW Heraldry (CF)
+    section: STR_STRATEGY
+    requires:
+      - STR_DEATHWATCH
+    pages:
+      - title: STR_CF
+        text: STR_CF_INFO_1
+      - title: STR_CF
+        text: STR_CF_INFO_2
+    listOrder: 269
+
+
+##Chamber
+##Adeptas
+##Imperial Guard
+  - id: STR_EXECUTING_TRAITORS
+    requires:
+      - STR_IMPERIAL_GUARD_OPERATIONS
+    type_id: 10
+    section: STR_HELP
+    image_id: EXECUTING_TRAITORS.SPK
+    text: STR_EXECUTING_TRAITORS_UFOPEDIA
+    listOrder: 52700
+##Arbites/Cult
 
 ### 10000  - General Strategy
   - id: STR_HELP1               #10000 - Help Intro (Marines)
@@ -80,7 +355,7 @@ ufopaedia:
     section: STR_HELP
     image_id: 2KAP.SPK
     text: STR_HELP_INTRO
-    listOrder: 1000 # was 50000 ###CHANGEME - Should be 10000, lowered because of weapon listOrder
+    #listOrder: 1000 # was 50000 ###CHANGEME
     requires:
       - STR_MARINES_STRATEGY
   - id: STR_HELPIG              #10001 - Help Intro (Imperial Guard)
@@ -90,7 +365,7 @@ ufopaedia:
     text: STR_HELP_INTRO
     requires:
       - STR_IMPERIAL_GUARD_OPERATIONS
-    listOrder: 10001 # was 50001
+    #listOrder: 1000 # was 50001
   - id: STR_HELPSOB             #10001 - Help Intro (Sister of Battle)
     type_id: 10
     section: STR_HELP
@@ -98,88 +373,239 @@ ufopaedia:
     text: STR_HELP_INTRO
     requires:
       - STR_ADEPTAS
-    listOrder: 10001 # was 50001
+    #listOrder: 1000 # was 50001
 
-  - id: STR_HELP_MAP            #10100 - World Map
+  - id: STR_DISCRETION_NOTICE   #10050 - Retreat Advice
+    type_id: 10
+    section: STR_HELP
+    image_id: INQUISITOR_CODEX.SPK
+    text: STR_DISCRETION_NOTICE_CODEX
+    #listOrder: 1005 # was 52926
+  - id: STR_HELP_MAP            #10110 - World Map
     type_id: 10
     section: STR_HELP
     image_id: 3MAP.SPK
-    listOrder: 10110 # was 50010
-  - id: STR_HELP_SEARCH         #10110 - Search Menus
+    #listOrder: 1011 # was 50010
+  - id: STR_HELP_SEARCH         #10120 - Search Menus
     type_id: 10
     section: STR_HELP
     image_id: 3HONOR.SPK
-    text: STR_HELP_CRAFT_CODEX
-    listOrder: 10120 # was 50200
-  - id: STR_HELP2               # Imperial Tokens
+    text: STR_HELP_SEARCH_CODEX
+    listOrder: 50200 #1012
+  - id: STR_HELP2               #10130 - Imperial Tokens
     type_id: 10
-    section: STR_HELP_ADV
+    section: STR_HELP
     image_id: 3HONOR.SPK
     text: STR_HELP_HONOR
-    listOrder: 10130 # was 50100
+    #listOrder: 1013 # was 50100
   - id: STR_HELP3               #10140 - Craft Interception
     type_id: 10
     section: STR_HELP
     image_id: 3CRAFT.SPK
     text: STR_HELP_CRAFT
-    listOrder: 10140 # was 50200
+    #listOrder: 1014 # was 50200
   - id: STR_HELP4               #10150 - Craft Escorts
     type_id: 10
     section: STR_HELP
     image_id: 3ESCORT.SPK
     text: STR_HELP_ESCORT
-    listOrder: 10150 # was 50300
-
-### 20000  - 40k Strategy
-  - id: STR_HELP_ADV_INTRO               #10000 - Help Intro (Marines)
-    type_id: 10
-    section: STR_HELP_ADV
-    image_id: 2KAP.SPK
-    text: STR_HELP_ADV_INTRO_CODEX
-    listOrder: 2000 # ###CHANGEME - Should be 20000, lowered because of weapon listOrder
-  - id: STR_HELP7          #HELP 50600
+    #listOrder: 1015 # was 50300
+  - id: STR_HELP7               #10160 - Area Damage
     type_id: 10
     section: STR_HELP
     image_id: 3TILES.SPK
     text: STR_HELP_AREA
-    listOrder: 20200 # was 50600
-  - id: STR_HELP8          #HELP 50700
+    #listOrder: 1016 # was 50600
+  - id: STR_HELP8               #10170 - Droppod deployment
     type_id: 10
     section: STR_HELP
     image_id: 3DP.SPK
     text: STR_HELP_DEPLOYMENT
-    listOrder: 50700
-  - id: STR_HELP9          #HELP 50800
+    #listOrder: 1017 # was 50700
+  - id: STR_SMT_ARMOR_SHRED     #10180 - Armor Destruction
     type_id: 10
     section: STR_HELP
-    image_id: 3BON.SPK
-    text: STR_HELP_WEAPONS
-    listOrder: 50800
-  - id: STR_HELP10         #HELP 50900
+    image_id: ARMORUFO.SPK
+    text: STR_SMT_ARMOR_SHRED_CODEX
+    listOrder: 50899 #1018
+  - id: STR_HELP10              #10190 - Armor Repair
     type_id: 10
     section: STR_HELP
     image_id: 3REP.SPK
     text: STR_REPAIRPEDIA
-    listOrder: 50900
-  - id: STR_HELP12         #HELP 50905
+    #listOrder: 1019 # was 50900
+  - id: STR_OVERWEIGHT_PENALTY  #10200 - Weight Penalty
     type_id: 10
     section: STR_HELP
-    image_id: 3BOMB.SPK
-    text: STR_BOMBARD_INFO
-    listOrder: 50905
-  - id: STR_HELP17         #HELP 50910
+    image_id: OVERWEIGHT_PENALTY.SPK
+    text: STR_OVERWEIGHT_PENALTY_UFOPEDIA
+    #listOrder: 1020 # was 52000
+  - id: STR_EXTINGUISHING_MEDIKIT   #10210 - Extinguishing Fires
     type_id: 10
     section: STR_HELP
+    image_id: 0ENFM.SPK
+    text: STR_EXTINGUISHING_MEDIKIT_UFOPEDIA
+    #listOrder: 52918
+  - id: STR_TU_INDICATOR        #10290 - TU Indicator
+    type_id: 10
+    section: STR_HELP
+    image_id: VISION_CODEX.SPK
+    text: STR_TU_INDICATOR_CODEX
+    #listOrder: 1029 # was 52927
+  - id: STR_TERRAIN_DESTRUCTION #10300 - Terrain Destruction
+    type_id: 10
+    section: STR_HELP
+    image_id: TERRAIN_DESTRUCTION.SPK
+    text: STR_TERRAIN_DESTRUCTION_UFOPEDIA
+    #listOrder: 1030 # was 52200
+  - id: STR_CRAFT_LANDING       #10310 - Craft Landing
+    type_id: 10
+    section: STR_HELP
+    image_id: CRAFT_LANDING.SPK
+    text: STR_CRAFT_LANDING_UFOPEDIA
+    #listOrder: 1031 # was 52400
+  - id: STR_MAP_ICONS           #10320 - Map Icons
+    type_id: 10
+    section: STR_HELP
+    image_id: MAP_ICONS.SPK
+    text: STR_MAP_ICONS_UFOPEDIA
+    #listOrder: 1032 # was 52500
+  - id: STR_SOLDIER_PREFIX      #10400 - Soldier Names
+    type_id: 10
+    section: STR_HELP
+    image_id: SOLDIER_PREFIX_CODEX.SPK
+    pages:
+      - title: STR_SOLDIER_PREFIX
+        text: STR_SOLDIER_PREFIX_UFOPEDIA_PAGE1
+      - title: STR_SOLDIER_PREFIX
+        text: STR_SOLDIER_PREFIX_UFOPEDIA_PAGE2
+    #listOrder: 1040 # was 52926
+
+### 20000  - 40k Strategy
+  - id: STR_HELP_ADV_INTRO          #20000 - Help Intro (Marines)
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: 2KAP.SPK
+    text: STR_HELP_ADV_INTRO_CODEX
+    #listOrder: 2000
+  - id: STR_DEVOTION                #20050 - Devotion
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: 3DEV.SPK
+    text: STR_DEVOTION_UFOPEDIA
+    listOrder: 51100
+  - id: STR_CORRUPTION_MECHANICS    #20060 - Corruption
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: NURGLEZOMBIE_CODEX_ORIGINS.SPK
+    text: STR_CORRUPTION_MECHANICS_UFOPEDIA
+    listOrder: 52923
+  - id: STR_HWP_DETAILS             #20100 - Heavy Weapon Penalties
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: 3BON.SPK
+    text: STR_HWP_DETAILS_CODEX
+    listOrder: 52101
+  - id: STR_RECOIL_PENALTY          #20110 - Recoil Penalty
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: RECOIL_PENALTY.SPK
+    text: STR_RECOIL_PENALTY_UFOPEDIA
+    listOrder: 52100
+  - id: STR_BIPOD_DETAILS           #20120 - Bipods
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: BIPODUFO.SPK
+    text: STR_BIPOD_DETAILS_CODEX
+    listOrder: 52911
+  - id: STR_HEAVY_WEAPON_TEAMS      #20125 - Heavy Weapon Toolkit
+    type_id: 10
+    requires:
+      - STR_GUARD_AND_ARBITES
+    section: STR_HELP_ADV
+    image_id: HEAVY_WEAPON_TEAMS.SPK
+    text: STR_HEAVY_WEAPON_TEAMS_UFOPEDIA
+    listOrder: 52912
+  - id: STR_SMT_HWP                 #20130 - Weapon Stablizers
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: 3BON.SPK
+    text: STR_SMT_HWP_CODEX
+    listOrder: 52913
+  - id: STR_HELP17                  #20140 - Energy Shields
+    type_id: 10
+    section: STR_HELP_ADV
     image_id: 3SHIELD.SPK
     text: STR_SHIELDPEDIA
-    listOrder: 50910
-  - id: STR_HELP_CHAOS_CRAFT_SCAN_DATA
+    #listOrder: 2014 # was 50910
+  - id: STR_HELP_ARMOR_ABILITIES    #20150 - Armor & Skill Abilities
     type_id: 10
-    section: STR_HELP
-    image_id: CHAOS_CRAFT_HELP_PEDIA.SPK
-    text: STR_HELP_CHAOS_CRAFT_SCAN_DATA_PEDIA
-    listOrder: 51000
-  - id: STR_HELP15         #HELP 51010
+    section: STR_HELP_ADV
+    image_id: 0ENFM.SPK
+    text: STR_ARMOR_ABILITIES
+    #listOrder: 2015 # was 52919
+  - id: STR_JETPACK_MECHANIC        #20160 - Jetpacks
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: ELYSIAN.SPK
+    text: STR_JETPACK_MECHANIC_UFOPEDIA
+    #listOrder: 2016 # was 52922
+  - id: STR_ADVANCED_TURRETS        #20180 - Adv Turrets
+    text: STR_ADVANCED_TURRETS_UFOPEDIA
+    section: STR_HELP_ADV
+    type_id: 10
+    image_id: 2LEMON.SPK
+    #listOrder: 2018
+
+  - id: STR_SMT_FIRESUPPORT         #20200 - Fire Support
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: TODO.SPK
+    text: STR_SMT_FIRESUPPORT_CODEX
+    listOrder: 52950
+  - id: STR_HELP12                  #20210 - Bombard
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: 3BOMB.SPK
+    text: STR_BOMBARD_INFO
+    #listOrder: 2021 # was 50905
+
+  - id: STR_DAMAGE_TIME_UNITS_CARRY_OVER    #20300 - TU Damage
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: 1WEB.SPK
+    text: STR_DAMAGE_TIME_UNITS_CARRY_OVER_UFOPEDIA
+    #listOrder: 2030 # was 52916
+  - id: STR_OVERHEATING_WEAPONS     #20310 - Plasma Overheat
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: WEAPON_OVERHEAT.SPK
+    text: STR_OVERHEATING_WEAPONS_UFOPEDIA
+    #listOrder: 2031 # was 52920
+
+  - id: STR_WEAPON_EMPLACEMENTS     #20400 - Weapon Emplacements
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: WEAPON_EMPLACEMENTS.SPK
+    text: STR_WEAPON_EMPLACEMENTS_UFOPEDIA
+    #listOrder: 2040 # was 52600
+  - id: STR_PERILS_OF_THE_WARP      #20500 - Perils
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: UP033.SPK
+    text: STR_PERILS_OF_THE_WARP_CODEX
+    #listOrder: 2050 # was 52924
+
+  - id: STR_SMT_MASTERCRAFTED_AMMO          # MC Ammo Bonus
+    type_id: 10
+    requires:
+      - STR_GUARD_AND_ARBITES
+    section: STR_HELP_ADV
+    image_id: 1AMMO.SPK
+    text: STR_SMT_MASTERCRAFTED_AMMO_CODEX
+    listOrder: 52980 # 21091
+
+  - id: STR_HELP15              # Eldar Promotion
     type_id: 10
     requires:
       - STR_ELDAR_PATH
@@ -187,14 +613,6 @@ ufopaedia:
     image_id: 3PROMO.SPK
     text: STR_HELP_PROMO
     listOrder: 51010
-
-
-  - id: STR_DEVOTION         #HELP 51100
-    type_id: 10
-    section: STR_HELP
-    image_id: 3DEV.SPK
-    text: STR_DEVOTION_UFOPEDIA
-    listOrder: 51100
   - id: STR_PROMOTE_TO_CANONESS         #HELP 51200
     type_id: 10
     section: STR_HELP
@@ -203,6 +621,44 @@ ufopaedia:
     listOrder: 51200
     requires:
       - STR_ADEPTAS
+  - id: STR_TURRETS_DESTRUCTION     # Crash Turrets
+    type_id: 10
+    section: STR_HELP
+    image_id: TURRETS_DESTRUCTION.SPK
+    text: STR_TURRETS_DESTRUCTION_UFOPEDIA
+    listOrder: 52300
+
+  - id: STR_INFILTRATION_MECHANICS
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: IMPERIAL_ASSASSIN_CODEX.SPK
+    text: STR_INFILTRATION_CODEX
+    listOrder: 52924
+
+  - id: STR_SMT_ASSASSIN_STEALTH
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: IMPERIAL_ASSASSIN_CODEX.SPK
+    text: STR_SMT_ASSASSIN_STEALTH_CODEX
+    listOrder: 52925
+
+  - id: STR_PROMOTE_OFFICER
+    requires:
+      - STR_REGIMENT_OFFICERS
+    type_id: 10
+    section: STR_HELP
+    image_id: REGIMENT_ATTENTION.SPK
+    text: STR_PROMOTE_OFFICER_UFOPEDIA
+    listOrder: 52800
+
+  - id: STR_VETERAN_PROMOTION
+    requires:
+      - STR_STORMTROOPER_REQUISITION
+    type_id: 10
+    section: STR_HELP
+    image_id: REGIMENT_ATTENTION.SPK
+    text: STR_VETERAN_PROMOTION_UFOPEDIA
+    listOrder: 52900
 
     ## 
 
@@ -222,202 +678,41 @@ ufopaedia:
     image_id: 3AIM.SPK
     text: STR_HELP_SCOPED
     listOrder: 50500
+  - id: STR_HELP9               # disabled - Weapon accuracy
+    requires:
+      - STR_GENERALLOCK
+    type_id: 10
+    section: STR_HELP
+    image_id: 3BON.SPK
+    text: STR_HELP_WEAPONS
+    listOrder: 50800
+  - id: STR_HELP_CHAOS_CRAFT_SCAN_DATA      # disabled - Enemy Craft Scan Data
+    requires:
+      - STR_GENERALLOCK
+    type_id: 10
+    section: STR_HELP
+    image_id: CHAOS_CRAFT_HELP_PEDIA.SPK
+    text: STR_HELP_CHAOS_CRAFT_SCAN_DATA_PEDIA
+    listOrder: 51000
+
     ### CODEX
-  - id: STR_SMT_PROMOTION_TREE              # Marine Promotion
-    type_id: 10
-    section: STR_SMT_INFO
-    image_id: TODO.SPK
-    requires:
-      - STR_MARINE_CODEX
-    text: STR_SMT_PROMOTION_TREE_CODEX
-    listOrder: 21010
 
-  - id: STR_GENESEED_DETAILS                # Geneseed
-    type_id: 10
-    section: STR_SMT_INFO
-    image_id: TODO.SPK
-    requires:
-      - STR_NEOPHYTE_CODEX
-    text: STR_GENESEED_DETAILS_CODEX
-    listOrder: 21011
+  # - id: STR_SMT_LIBRARIAN_SPELLS            # Librarian Abilities
+    # type_id: 10
+    # section: STR_BOOKS
+    # image_id: TODO.SPK
+    # text: STR_SMT_LIBRARIAN_SPELLS_CODEX
+    # listOrder: 21030
 
-  - id: STR_SMT_PROMOTION_CHAPLAINS         # Chaplain Promotion
-    type_id: 10
-    section: STR_SMT_INFO
-    image_id: TODO.SPK
-    text: STR_SMT_PROMOTION_CHAPLAINS_CODEX
-    listOrder: 21019
 
-  - id: STR_SMT_PROMOTION_LIBRARIANS        # Librarian Promotion
-    type_id: 10
-    section: STR_SMT_INFO
-    image_id: TODO.SPK
-    text: STR_SMT_PROMOTION_LIBRARIANS_CODEX
-    listOrder: 21020
 
-  - id: STR_SMT_LIBRARIAN_SPELLS            # Librarian Abilities
-    type_id: 10
-    section: STR_SMT_INFO
-    image_id: TODO.SPK
-    text: STR_SMT_LIBRARIAN_SPELLS_CODEX
-    listOrder: 21030
+  # - id: STR_SMT_BOLTER_CHANGES              # Bolter Changes
+    # type_id: 10
+    # section: STR_SMT_INFO
+    # image_id: TODO.SPK
+    # text: STR_SMT_BOLTER_CHANGES_CODEX
+    # listOrder: 21090
 
-  - id: STR_SMT_REGENERATION                # Regen
-    type_id: 10
-    section: STR_SMT_INFO
-    image_id: TODO.SPK
-    text: STR_SMT_REGENERATION_CODEX
-    listOrder: 21040
-
-  - id: STR_SMT_HEROICSAVE                  # Heroic Save
-    type_id: 10
-    section: STR_SMT_INFO
-    image_id: TODO.SPK
-    text: STR_SMT_HEROICSAVE_CODEX
-    listOrder: 21050
-
-  - id: STR_SMT_ARMOR_SHRED                 # Armor Shred Resistance
-    type_id: 10
-    section: STR_SMT_INFO
-    image_id: TODO.SPK
-    text: STR_SMT_ARMOR_SHRED_CODEX
-    listOrder: 21060
-
-  - id: STR_SMT_RECOIL                      # Recoil changes
-    type_id: 10
-    section: STR_SMT_INFO
-    image_id: TODO.SPK
-    text: STR_SMT_RECOIL_CODEX
-    listOrder: 21070
-
-  - id: STR_SMT_HWP                         # Heavy Weapon changes
-    type_id: 10
-    section: STR_SMT_INFO
-    image_id: TODO.SPK
-    text: STR_SMT_HWP_CODEX
-    listOrder: 21080
-
-  - id: STR_SMT_BOLTER_CHANGES              # Bolter Changes
-    type_id: 10
-    section: STR_SMT_INFO
-    image_id: TODO.SPK
-    text: STR_SMT_BOLTER_CHANGES_CODEX
-    listOrder: 21090
-
-  - id: STR_SMT_MASTERCRAFTED_AMMO          # MC Ammo Bonus
-    type_id: 10
-    section: STR_SMT_INFO
-    image_id: TODO.SPK
-    text: STR_SMT_MASTERCRAFTED_AMMO_CODEX
-    listOrder: 21091
-
-  - id: STR_SMT_FIRESUPPORT                 # Fire Support
-    type_id: 10
-    section: STR_SMT_INFO
-    image_id: TODO.SPK
-    text: STR_SMT_FIRESUPPORT_CODEX
-    listOrder: 21092
-
-  - id: STR_SMT_DW_RECRUITMENT              # DW Recruitment
-    type_id: 10
-    section: STR_SMT_DW_INFO
-    image_id: C12.SPK
-    listOrder: 21101
-    pages:
-      - title: STR_SMT_DW_RECRUITMENT
-        text: STR_SMT_DW_RECRUITMENT_CODEX_1
-      - title: STR_SMT_DW_RECRUITMENT
-        text: STR_SMT_DW_RECRUITMENT_CODEX_2
-
-  - id: STR_SMT_DW_MARINES                  # DW FB/Primaris differences
-    type_id: 10
-    section: STR_SMT_DW_INFO
-    image_id: C12.SPK
-    listOrder: 21102
-    pages:
-      - title: STR_SMT_DW_MARINES
-        text: STR_SMT_DW_MARINES_CODEX_1
-      - title: STR_SMT_DW_MARINES
-        text: STR_SMT_DW_MARINES_CODEX_2
-      - title: STR_SMT_DW_MARINES
-        text: STR_SMT_DW_MARINES_CODEX_3
-
-  - id: STR_SMT_DW_GENELOCK                 # DW Item Restrictions
-    type_id: 10
-    section: STR_SMT_DW_INFO
-    image_id: C12.SPK
-    text: STR_SMT_DW_GENELOCK_CODEX
-    listOrder: 21103
-
-  - id: STR_SMT_DW_DEREVENANT               # DW Derevenant Ammo
-    type_id: 10
-    section: STR_SMT_DW_INFO
-    image_id: C12.SPK
-    text: STR_SMT_DW_DEREVENANT_CODEX
-    listOrder: 21104
-
-  - id: STR_ULTRAMARINES                    # DW Heraldry (UM)
-    pages:
-      - title: STR_ULTRAMARINES
-        text: STR_ULTRAMARINES_INFO_1
-      - title: STR_ULTRAMARINES
-        text: STR_ULTRAMARINES_INFO_2
-
-  - id: STR_IF                              # DW Heraldry (IF)
-    pages:
-      - title: STR_IF
-        text: STR_IF_INFO_1
-      - title: STR_IF
-        text: STR_IF_INFO_2
-
-  - id: STR_BA                              # DW Heraldry (BA)
-    pages:
-      - title: STR_BA
-        text: STR_BA_INFO_1
-      - title: STR_BA
-        text: STR_BA_INFO_2
-
-  - id: STR_SALA                            # DW Heraldry (SA)
-    pages:
-      - title: STR_SALA
-        text: STR_SALA_INFO_1
-      - title: STR_SALA
-        text: STR_SALA_INFO_2
-
-  - id: STR_BT                              # DW Heraldry (BT)
-    pages:
-      - title: STR_BT
-        text: STR_BT_INFO_1
-      - title: STR_BT
-        text: STR_BT_INFO_2
-
-  - id: STR_WS                              # DW Heraldry (WS)
-    pages:
-      - title: STR_WS
-        text: STR_WS_INFO_1
-      - title: STR_WS
-        text: STR_WS_INFO_2
-
-  - id: STR_SW                              # DW Heraldry (SW)
-    pages:
-      - title: STR_SW
-        text: STR_SW_INFO_1
-      - title: STR_SW
-        text: STR_SW_INFO_2
-
-  - id: STR_DA                              # DW Heraldry (DA)
-    pages:
-      - title: STR_DA
-        text: STR_DA_INFO_1
-      - title: STR_DA
-        text: STR_DA_INFO_2
-
-  - id: STR_CF                              # DW Heraldry (CF)
-    pages:
-      - title: STR_CF
-        text: STR_CF_INFO_1
-      - title: STR_CF
-        text: STR_CF_INFO_2
 
   - id: STR_HONOR_MEDAL                     # Mark of Honor Commendation
     type_id: 10
@@ -426,7 +721,93 @@ ufopaedia:
     text: STR_HONOR_MEDAL_DESCRIPTION
     listOrder: 100060
 
+### Spells
+  - id: STR_LIB_HASTE_TOME                  # Librarian Speed Ability
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_LIB_HASTE_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+  - id: STR_LIB_LOCKDOWN_TOME               # Librarian Lockdown Ability
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_LIB_LOCKDOWN_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+  - id: INV_LIB_VULN_TOKEN                  # Librarian Torment
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_LIB_VULN_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+  - id: STR_LIB_HASTE_TOME                  # Librarian Haste
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_LIB_HASTE_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+  - id: STR_LIB_HASTE_TOME_DW               # Librarian Haste DW
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_LIB_HASTE_CODEX
+  - id: STR_LIB_LOCKDOWN_TOME               # Librarian Lockdown
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_LIB_LOCKDOWN_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+  - id: STR_LIB_SHIELD_TOME                 # Librarian Shield
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_LIB_SHIELD_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+  - id: STR_LIB_SMOKE_TOME                  # Librarian Shroud
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_LIB_SHROUD_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+  - id: STR_SMITE_TOKEN                     # Librarian Smite
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_LIB_SMITE_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+  - id: INV_LIB_OVERWATCH_TOKEN             # Librarian Vigilance
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_LIB_OVERWATCH_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+
 ### ARMOR
+  - id: STR_SCOUT_SGT_UC                    #5105  #ARMOR
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: SCTSGTUFO.SPK
+    text: STR_SCOUT_SGT_UC_UFOPEDIA
+    requires:
+      - STR_SCOUT
+    listOrder: 5105
+  - id: STR_SCOUTH_UC                       #5110  #ARMOR
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0SCO.SPK
+    text: STR_SCOUTH_UC_UFOPEDIA
+    requires:
+      - STR_SCOUTH_RESEARCH
+    listOrder: 5110
+
   - id: STR_PERSONAL_ARMOR_UC               #5200
     requires:
       - STR_MARINES_STRATEGY
@@ -437,6 +818,15 @@ ufopaedia:
       - STR_MARINES_STRATEGY
       - STR_DEV_ARMOR
     listOrder: 5300
+  - id: STR_SIGNUM_DEV_UC                    #5300
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0SIG.SPK
+    text: STR_SIGNUM_DEV_CODEX
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_SIGNAL_ARMOR_RESEARCH
+    listOrder: 5301
   - id: STR_ASS_ARMOR_UC                    #5400
     requires:
       - STR_MARINES_STRATEGY
@@ -445,22 +835,96 @@ ufopaedia:
   - id: STR_MKX_TAC_LV1_UC                  #5620
     requires:
       - STR_PRIMARIS
+    text: STR_MKX_TAC_UFOPEDIA
     listOrder: 5620
-  - id: STR_MKX_PHB_LV1_UC                  #5621
+  - id: STR_MKX_ASS_LV1_UC                  # Jump Assault
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: MKXAUFO.SPK
+    requires:
+      - STR_PRIMARIS
+      - STR_MKX_ASS_ARMOR
+    text: STR_MKX_ASS_UFOPEDIA
+    listOrder: 5620
+  - id: STR_MKX_PHB_CODEX                   # Phobos
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0MXR.SPK
     requires:
       - STR_PRIMARIS
       - STR_MKX_PHB_ARMOR
+    text: STR_MKX_PHB_UFOPEDIA
     listOrder: 5621
-  - id: STR_MKX_GRV_LV1_UC                  #5622
+  - id: STR_MKX_PHB_LV1_UC                  # Phobos
+    requires:
+      - STR_GENERALLOCK
+    listOrder: 5621
+
+  - id: STR_MKX_PHB_LV3_UC                  # Phobos Reiver
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0MXR.SPK
+    requires:
+      - STR_PRIMARIS
+      - STR_MKX_PHB_ARMOR
+    text: STR_MKX_PHB_R_CODEX
+    listOrder: 5622
+  - id: STR_MKX_ELIM_LV3_UC                 # Phobos Eliminator
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: ELIMINATORUFO.SPK
+    requires:
+      - STR_PRIMARIS
+      - STR_MKX_PHB_ARMOR
+    text: STR_MKX_PHB_E_CODEX
+    listOrder: 5622
+
+  - id: STR_MKX_VETS_LV3_UC                 # Sternguard Vet
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: STERNGUFO.SPK
+    requires:
+      - STR_PRIMARIS
+      - STR_PRIMARIS_VETARMOR
+    text: STR_MKX_VETS_CODEX
+    listOrder: 5635
+
+  - id: STR_MKX_VETB_LV3_UC                 # Bladeguard Vet
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: BLADEGUFO.SPK
+    requires:
+      - STR_PRIMARIS
+      - STR_PRIMARIS_VETARMOR
+    text: STR_MKX_VETB_CODEX
+    listOrder: 5636
+
+  - id: STR_MKX_GRV_CODEX                   # Gravis
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0MXA.SPK
     requires:
       - STR_PRIMARIS
       - STR_MKX_GRV_ARMOR
-    listOrder: 5622
-  - id: STR_MKX_INC_LV1_UC                  #5623
+    text: STR_MKX_GRV_UFOPEDIA
+    listOrder: 5623
+  - id: STR_MKX_GRV_LV1_UC                  # Gravis
+    requires:
+      - STR_GENERALLOCK # hidden
+
+  - id: STR_MKX_INC_CODEX                   # Gravis
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0MXI.SPK
     requires:
       - STR_PRIMARIS
       - STR_MKX_INC_ARMOR
-    listOrder: 5623
+    text: STR_MKX_INC_UFOPEDIA
+    listOrder: 5624
+  - id: STR_MKX_INC_LV1_UC                  #5624
+    requires:
+      - STR_GENERALLOCK
+    listOrder: 5624
   - id: STR_APOT_ARMOR_UC                   #5700
     requires:
       - STR_MARINES_STRATEGY
@@ -576,7 +1040,7 @@ ufopaedia:
     text: STR_DW_DEV_CODEX_TEXT
     listOrder: 5204
 
-  - id: STR_DW_ASS_CODEX_UC                 # DW Assault0SCO
+  - id: STR_DW_ASS_CODEX_UC                 # DW Assault
     type_id: 15
     section: STR_ARMORPEDIA
     image_id: 0ASS.SPK
@@ -645,6 +1109,16 @@ ufopaedia:
     text: STR_DW_PHB_CODEX_TEXT
     listOrder: 5211
 
+  - id: STR_DW_PHBELIM_CODEX_UC                 # DW Phobos 
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0MXR.SPK
+    requires:
+      - STR_DEATHWATCH
+      - STR_DW_SNIPER
+    text: STR_DW_PHBELIM_CODEX_TEXT
+    listOrder: 5212
+
   - id: STR_DW_GRV_CODEX_UC                 # DW Gravis
     type_id: 15
     section: STR_ARMORPEDIA
@@ -653,7 +1127,7 @@ ufopaedia:
       - STR_DEATHWATCH
       - STR_DW_GRAVIS
     text: STR_DW_GRV_CODEX_TEXT
-    listOrder: 5212
+    listOrder: 5213
 
   - id: STR_DW_INC_CODEX_UC                 # DW Omnis
     type_id: 15
@@ -663,7 +1137,7 @@ ufopaedia:
       - STR_DEATHWATCH
       - STR_DW_PRIMARIS_FLIGHT
     text: STR_DW_INC_CODEX_TEXT
-    listOrder: 5213
+    listOrder: 5214
 
   - id: STR_DW_CAP_CODEX_UC                 # DW Captain (Generic)
     type_id: 15
@@ -672,7 +1146,7 @@ ufopaedia:
     requires:
       - STR_DEATHWATCH
     text: STR_DW_CAP_CODEX_TEXT
-    listOrder: 5214
+    listOrder: 5215
 
 
 ### WEAPONS
@@ -774,6 +1248,15 @@ ufopaedia:
     image_id: 1CS.SPK
     text: STR_CHAINSWORD_GUARD_UFOPAEDIA # standard chainsword text without Str requirement note
     listOrder: 21099
+
+  - id: STR_SCOUT_BLADE                     # Scout Blade
+    requires:
+      - STR_MARINES_AND_DEATHWATCH
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1CK.SPK
+    text: STR_SCOUT_BLADE_CODEX
+    listOrder: 21098
 
   - id: STR_CLAWS                           # Lightning Claws
     type_id: 14
@@ -1024,6 +1507,14 @@ ufopaedia:
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_SM_OFFICER_FIST
+  - id: INV_BLESS_TOKEN                     # Chaplain Bless
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: INV_BLESS_TOKEN
+  - id: INV_INSPIRE_TOKEN                   # Captain Inspire
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: INV_INSPIRE_TOKEN
   - id: STR_SMT_SIGNUM                      # Signum
     type_id: 14
     section: STR_NOT_AVAILABLE
@@ -1126,30 +1617,6 @@ ufopaedia:
     text: STR_SMITE_UFOPEDIA
     requires:
       - STR_LIBRARY
-  - id: STR_LIB_SPEED_TOME                  # Librarian Speed Ability
-    type_id: 14
-    section: STR_NOT_AVAILABLE # STR_BOOKS
-    text: STR_LIB_HASTE_SKILL
-    requires:
-      - STR_LIBRARY
-  - id: STR_LIB_LOCKDOWN_TOME               # Librarian Lockdown Ability
-    type_id: 14
-    section: STR_NOT_AVAILABLE # STR_BOOKS
-    text: STR_LIB_LOCKDOWN_SKILL
-    requires:
-      - STR_LIBRARY
-  - id: STR_LIB_SHIELD_TOME                 # Librarian Shield Ability
-    type_id: 14
-    section: STR_NOT_AVAILABLE # STR_BOOKS
-    text: STR_LIB_SHIELD_SKILL
-    requires:
-      - STR_LIBRARY
-  - id: STR_LIB_SMOKE_TOME                  # Librarian Smoke Ability
-    type_id: 14
-    section: STR_NOT_AVAILABLE # STR_BOOKS
-    text: STR_LIB_SMOKE_SKILL
-    requires:
-      - STR_LIBRARY
   - id: AUX_RAM_SMT                         # Bike Chainsword attack
     type_id: 14
     section: STR_NOT_AVAILABLE
@@ -1234,6 +1701,22 @@ ufopaedia:
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_ABSOLVOR_AMMO_MC
+  - id: STR_STEALTH_ADVSCOUT                # Stealth (Scout)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_STEALTH_ADVSCOUT
+  - id: STR_STEALTH_REIVER                  # Stealth (Reiver)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_STEALTH_REIVER
+  - id: STR_STEALTH_ELIMINATOR              # Stealth (Eliminator)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_STEALTH_ELIMINATOR
+  - id: STR_SMT_SIGNUM_VUL                  # Signum Targetter
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_SMT_SIGNUM_VUL
   - id: STR_CAS_BOLTER_DUMMY                # CAS Lightning Bolter
     type_id: 14
     section: STR_NOT_AVAILABLE
@@ -1254,6 +1737,11 @@ ufopaedia:
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_STRM_ROCKET_DUMMY
+
+
+
+
+
 
 
 extraStrings:

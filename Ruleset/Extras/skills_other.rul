@@ -1,0 +1,38 @@
+skills:
+  - type: STR_SKILL_LIKE_FIGHTING_A_SHADOW_CHECK
+    tags:
+      SKILL_STEALTH_CHECK: 1
+    costUse:
+      time: 1
+    flatUse: true
+
+  - type: STR_SKILL_LIKE_FIGHTING_A_SHADOW
+    tags:
+      SKILL_STEALTH_RANGE: -1 # perfect stealth, used by temple assassins
+      SKILL_STEALTH_DURATION: 2
+    costUse:
+      time: 90
+    flatUse: false
+
+  - type: STR_SKILL_ACTIVATE_CAMO_CLOAK_CHECK
+    tags:
+      SKILL_STEALTH_CHECK: 1
+    costUse:
+      time: 1
+    flatUse: true
+
+  - type: STR_SKILL_ACTIVATE_CAMO_CLOAK
+    tags:
+      SKILL_STEALTH_RANGE: 5
+      SKILL_STEALTH_DURATION: 20
+      SKILL_STEALTH_MOVEPENALTY: 300 # 400% base movespeed
+    costUse:
+      time: 90
+    flatUse: false
+
+  - type: STR_SKILL_ACTIVATE_CAMO_CLOAK_DEACTIVATE  # Deactivate camo cloak
+    tags:
+      SKILL_STEALTH_CHECK: -1
+    costUse:
+      time: 1
+    flatUse: true

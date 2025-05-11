@@ -42,6 +42,21 @@ extended:
             stats_state.addIntRow "SMT_ARMOR_SHRED_MELTA_RESISTANCE" temp;
           end;
 
+          rule.getTag temp Tag.ARMOR_CLOAKED_ASSASSIN_RANGE;    # Stealth range
+          if gt temp 0;
+            stats_state.addIntRow "ARMOR_CLOAKED_ASSASSIN_RANGE" temp;
+          end;
+
+          rule.getTag temp Tag.ARMOR_RESTEALTH_KILL_REQUIREMENT;    # Stealth Kill Req
+          if gt temp 0;
+            stats_state.addIntRow "ARMOR_RESTEALTH_KILL_REQUIREMENT" temp;
+          end;
+
+          rule.getTag temp Tag.ARMOR_RESTEALTH_TURN_REQUIREMENT;    # Stealth Turn Req
+          if gt temp 0;
+            stats_state.addIntRow "ARMOR_RESTEALTH_TURN_REQUIREMENT" temp;
+          end;
+
           return;
 
     statsForNerdsItem:
@@ -58,6 +73,56 @@ extended:
           rule.getTag temp Tag.SMT_AMMO_HP_PREDMG;                  # Armor-ignoring hp damage
           if gt temp 0;
             stats_state.addIntRow "SMT_AMMO_HP_PREDMG" temp;
+          end;
+
+          rule.getTag temp Tag.SMT_VULN_DEBUFF;                     # Vulnerability Dmg
+          if gt temp 0;
+            stats_state.addIntRow "SMT_VULN_DEBUFF" temp;
+          end;
+          rule.getTag temp Tag.SMT_VULN_DURATION;                   # Vulnerability Duration
+          if gt temp 0;
+            stats_state.addIntRow "SMT_VULN_DURATION" temp;
+          end;
+
+          rule.getTag temp Tag.BOMBARD_COOLDOWN;                    # Bombard Cooldown
+          if gt temp 0;
+            stats_state.addIntRow "BOMBARD_COOLDOWN" temp;
+          end;
+
+          rule.getTag temp Tag.SMT_RESTRICTED_ITEM;                 # Restricted Item
+          if gt temp 0;
+            rule.getTag temp Tag.SMT_RESTRICTED_ACCURACY_PEN;         # Accuracy
+            sub temp 100;
+            stats_state.addIntRow "SMT_RESTRICTED_ACCURACY_PEN" temp;
+            rule.getTag temp Tag.SMT_RESTRICTED_DAMAGE_PEN;           # Damage
+            sub temp 100;
+            stats_state.addIntRow "SMT_RESTRICTED_DAMAGE_PEN" temp;
+            rule.getTag temp Tag.SMT_RESTRICTED_ITEM_MELEE;           # Melee
+            if gt temp 0;
+              mul temp -1;
+              stats_state.addIntRow "SMT_RESTRICTED_ITEM_MELEE" temp;
+            end;
+          end;
+
+          rule.getTag temp Tag.ITEM_STEALTH_RANGE;                  # Stealth Range
+          if gt temp 0;
+            stats_state.addIntRow "ITEM_STEALTH_RANGE" temp;
+          end;
+
+          rule.getTag temp Tag.ITEM_STEALTH_DURATION;               # Stealth Duration
+          if gt temp 0;
+            stats_state.addIntRow "ITEM_STEALTH_DURATION" temp;
+          end;
+
+          rule.getTag temp Tag.ITEM_STEALTH_ASSASSIN_WEAPON;        # Assassin type
+          if gt temp 0;
+            if eq temp 1;
+              stats_state.addTextRow "ITEM_STEALTH_ASSASSIN_WEAPON" "Melee";
+            else eq temp 2;
+              stats_state.addTextRow "ITEM_STEALTH_ASSASSIN_WEAPON" "Sniper";
+            else eq temp 4;
+              stats_state.addTextRow "ITEM_STEALTH_ASSASSIN_WEAPON" "Pistol";
+            end;
           end;
 
 

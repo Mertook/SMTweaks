@@ -123,47 +123,47 @@ items:
       SMT_RESTRICTED_ITEM: 1
       SMT_RESTRICTED_ITEM_MELEE: 50
 
+  - type: AUX_CROZIUS_DW                # Crozius Arcanum DW (Chaplain - 1)
+    refNode: *STR_RESTRICTED_ITEM
+    tags:
+      SMT_RESTRICTED_ITEM: 1
+      SMT_RESTRICTED_ITEM_MELEE: 50
+
   - type: STR_RIFLEA                    # Artifex Bolter (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
-      SMT_RESTRICTED_DAMAGE_PEN: 25
+      SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_RIFLEDW                   # DW Cawl Bolter (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
-      SMT_RESTRICTED_DAMAGE_PEN: 25
+      SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_AUTO_CANNON_DW            # Artifex Heavy Bolter (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
-      SMT_RESTRICTED_DAMAGE_PEN: 25
+      SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_LASCAN_DW                 # Artifex Lascannon (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
-      SMT_RESTRICTED_DAMAGE_PEN: 25
+      SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_BOLT_SNIPER_RIFLE_DW      # DW Bolt Sniper Rifle (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
-      SMT_RESTRICTED_DAMAGE_PEN: 25
+      SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_SHOTGUN_DW                # Deathwatch Shotgun (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
-      SMT_RESTRICTED_DAMAGE_PEN: 25
-
-  - type: AUX_CROZIUS_DW                # Crozius Arcanum DW version (Chaplain - 1)
-    refNode: *STR_RESTRICTED_ITEM
-    tags:
-      SMT_RESTRICTED_ITEM: 1
-      SMT_RESTRICTED_ITEM_MELEE: 50
+      SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_VOLKITE_DW                # Volkite Rifle (DW Captain - 4)
     refNode: *STR_RESTRICTED_ITEM
@@ -175,13 +175,13 @@ items:
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 4
-      SMT_RESTRICTED_DAMAGE_PEN: 25
+      SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_FORCE_HALBERD_DW          # Force Halberd (DW Captain - 4)
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 4
-      SMT_RESTRICTED_ACCURACY_PEN: 100 # no penalty for snap, is technically melee
+      SMT_RESTRICTED_ACCURACY_PEN: 0 # psyker
       SMT_RESTRICTED_DAMAGE_PEN: 15 # only 15% damage
       SMT_RESTRICTED_ITEM_MELEE: 85 # only 15% damage
 
@@ -189,7 +189,7 @@ items:
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 4
-      SMT_RESTRICTED_DAMAGE_PEN: 25
+      SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_POWER_AXE_DW              # Power Axe (DW Captain - 4)
     refNode: *STR_RESTRICTED_ITEM
@@ -207,4 +207,4 @@ items:
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 4
-      SMT_RESTRICTED_DAMAGE_PEN: 25
+      SMT_RESTRICTED_DAMAGE_PEN: 0

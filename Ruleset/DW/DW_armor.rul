@@ -557,7 +557,7 @@ armors:
     type: STR_DW_SCOUT_BA_UC
     ufopediaType: STR_DW_SCT_CODEX_UC
     corpseBattle:
-      - STR_MKX_DW_PHB_CORPSE ###CHANGEME
+      - STR_DWSCT_CORPSE
     storeItem: STR_SCOUT_SGT
     corpseGeo: STR_FALLEN_CORPSE
     layersDefaultPrefix: "0"
@@ -1701,7 +1701,7 @@ armors:
 
   - &STR_DW_ASS_MKX                        #Assault Intercessor (Primaris)
     type: STR_MKX_DW_ASS_BA_UC
-    ufopediaType: STR_DW_ASS_MKX_CODEX_UC
+    ufopediaType: STR_DW_ASS_CODEX_UC
     corpseBattle:
       - STR_MKX_DW_PHB_CORPSE
     storeItem: STR_MKX_ASS_ARMOR
@@ -4449,6 +4449,8 @@ armors:
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_DW_LEADER_BA_UC
     refNode: *STR_DW_LEADER_ARMOR
@@ -4717,7 +4719,7 @@ armors:
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - STR_SMITE_TOKEN
-      - STR_LIB_SPEED_TOME_DW
+      - STR_LIB_HASTE_TOME_DW
       - STR_LIB_SMOKE_TOME
       - INV_LIB_OVERWATCH_TOKEN
       - STR_FORCE_HALBERD_DW

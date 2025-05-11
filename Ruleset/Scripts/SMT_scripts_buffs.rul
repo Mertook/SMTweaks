@@ -187,7 +187,7 @@ extended:
               set temp spentTUs;
               sub spentTUs 100;
               mul spentTUs -1;
-              debug_log "Vigilance Reaction: " bonusTUs spentTUs temp maxTUs;
+              #debug_log "Vigilance Reaction: " bonusTUs spentTUs temp maxTUs;
               if lt bonusTUs spentTUs; #if there's not enough stored TUs for 100%
                 add temp bonusTUs;
                 muldiv temp maxTUs 100; # get absolute TU value

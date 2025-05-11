@@ -299,7 +299,28 @@ items:
     requiresBuyBaseFunc: [IMPERIUM]
     requiresBuy:
       - STR_LASER_WEAPONS
-#      - STR_GUARD_AND_INQUISITION
+      #- STR_GUARD_AND_INQUISITION
+
+  - type: STR_EXITUS_BUILTIN    # Vindicare Rifle
+    tags:
+      ITEM_STEALTH_ASSASSIN_WEAPON: 2 # sniper
+
+  - type: STR_EXITUS_PISTOL     # Vindicare Pistol
+    tags:
+      ITEM_STEALTH_ASSASSIN_WEAPON: 4 # pistol
+
+  - type: STR_NEURAL_SHREDDER   # Callidus Pistol
+    tags:
+      ITEM_STEALTH_ASSASSIN_WEAPON: 4 # pistol
+
+  - type: STR_PHASE_BLADE       # Callidus Melee
+    tags:
+      ITEM_STEALTH_ASSASSIN_WEAPON: 1 # melee
+
+  - type: STR_MARBOKNIFE        # Sly Marbo Melee
+    tags:
+      ITEM_STEALTH_ASSASSIN_WEAPON: 1 # melee
+
 
   - type: STR_VOLKITE_VAULT                     # Volkite Rifle (Ancient Vault)
     bigSprite: 178

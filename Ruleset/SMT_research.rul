@@ -229,6 +229,16 @@ research:
     dependencies:
       - STR_MARINES_STRATEGY
       - STR_COMMANDER_PLUS
+    unlocks:
+      - STR_CAPTAIN_CODEX
+      - STR_SMT_CAPTAIN_PROMOTION
+    lookup: STR_SMT_CAPTAIN_PROMOTION
+    listOrder: 10
+  - name: STR_SMT_CAPTAIN_PROMOTION
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_MARINE_CAPTAIN
 
   - name: STR_MT                    # Marine Midtier
     cost: 200
@@ -396,6 +406,7 @@ research:
       - STR_MARINES_STRATEGY
     unlocks:
       - STR_GLAUNCHER_PREREQ
+    listOrder: 2
 
   - name: STR_MARINE_WEAPONS        # Astartes Weaponry
     cost: 100
@@ -403,6 +414,7 @@ research:
     dependencies:
       - STR_NEOPHYTE_REQUEST # picked strategy
       - STR_MARINES_STRATEGY
+    listOrder: 3
 
   - name: STR_SCT_MELEE_REQ         # Scout Blades/Chainswords
     cost: 0
@@ -415,6 +427,7 @@ research:
     points: 10
     dependencies:
       - STR_MARINE_WEAPONS
+    listOrder: 5
 
   - name: STR_CHAINSWORD_MC         # MC Chainswords (Assault)
     cost: 60
@@ -467,6 +480,13 @@ research:
       - STR_MASTER_CRAFTING
       - STR_LIGHTBOLTER_ADV_AMMO
       - STR_GUARD_AND_ARBITES
+    lookup: STR_SMT_MASTERCRAFTED_AMMO
+
+  - name: STR_SMT_MASTERCRAFTED_AMMO
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_MC_LIGHTBOLTER_AMMO
 
   - name: STR_BOLTPISTOL_REQ        # Boltpistol Unlock (for Boltpistols used by both Firstborn and Primaris)
     cost: 0
@@ -673,6 +693,7 @@ research:
     dependencies:
       - STR_CHAPTER_PURITY
       - STR_NAVY_COMUNICATIONS
+    listOrder: 25
 
   - name: STR_ORBITAL_LANCE_R       # Orbital Lance
     cost: 200
@@ -681,6 +702,7 @@ research:
       - STR_CHAPTER_PURITY
       - STR_NAVY_COMUNICATIONS
       - STR_HIGHTIER_PREREQ
+    listOrder: 26
 
   - name: STR_MARINE_CHAPEL         # Early unlock for Chapel
     cost: 100
@@ -727,6 +749,7 @@ research:
       - STR_MARINES_STRATEGY
       - STR_HIGHTIER_PREREQ
       - STR_PSI_LAB
+    listOrder: 12
 
   - name: STR_MIND_SHIELD           # Base Cloaking
     dependencies: # push back to mid tier
@@ -770,7 +793,22 @@ research:
     dependencies:
       - STR_PRIMARIS
       - STR_ALIEN_ALLOYS
-      #- STR_PRIMARIS_ARMOR
+    listOrder: 20
+
+  - name: STR_PRIMARIS_VETARMOR     # Primaris Sternguard Armor
+    cost: 205
+    points: 20
+    dependencies:
+      - STR_PRIMARIS
+      - STR_UFO_CONSTRUCTION
+      - STR_MIDTIER_PREREQ
+    listOrder: 15
+    lookup: STR_MKX_VETS_LV3_UC
+  - name: STR_MKX_VETS_LV3_UC
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_PRIMARIS_VETARMOR
 
   - name: STR_MKX_INC_ARMOR         # Primaris Interceptor/Omnis Armor
     cost: 180
@@ -825,6 +863,13 @@ research:
       - STR_PRIMARIS
 
   - name: STR_NEOPHYTE_CODEX        # Neophyte and Geneseed topics
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_NEOPHYTE_REQUEST
+
+  - name: STR_CAPTAIN_CODEX         # Company Captain topics
     cost: 0
     points: 0
     dependencies:

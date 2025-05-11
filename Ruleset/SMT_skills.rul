@@ -72,7 +72,7 @@ skills:
 
   - type: STR_LIB_HASTE_SKILL           # Librarian Accelerate
     targetMode: 11
-    compatibleWeapons: [STR_LIB_SPEED_TOME, STR_LIB_SPEED_TOME_DW]
+    compatibleWeapons: [STR_LIB_HASTE_TOME, STR_LIB_HASTE_TOME_DW]
     checkHandsOnly: false
     costUse:
       time: 35
@@ -100,7 +100,7 @@ skills:
       stun: false
       morale: false
 
-  - type: STR_LIB_VULNERABILITY_SKILL   # Librarian Torment
+  - type: STR_LIB_VULN_SKILL   # Librarian Torment
     targetMode: 9
     compatibleWeapons: [INV_LIB_VULN_TOKEN]
     checkHandsOnly: false

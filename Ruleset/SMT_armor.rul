@@ -491,7 +491,7 @@ armors:
     customArmorPreviewIndex: 48
     corpseBattle:
       - STR_SIGNAL_CORPSE
-    storeItem: STR_SIGNALFALSE_ARMOR
+    storeItem: STR_SIGNAL_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
     frontArmor: 135 # base 125 +5 devastator +5 elite
     sideArmor: 125 # base 120 +5 elite
@@ -671,8 +671,7 @@ armors:
     recovery:
       energy:
         stamina: 0.5 # +10% AdvScout bonus
-    units:
-      - STR_SOLDIER
+    units: # exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
@@ -1006,7 +1005,7 @@ armors:
       melee: 10         # base 10 
     builtInWeapons:
       - STR_SMITE_TOKEN
-      - STR_LIB_SPEED_TOME
+      - STR_LIB_HASTE_TOME
       - STR_LIB_SMOKE_TOME
       - STR_LIB_LOCKDOWN_TOME
       - STR_LIB_SHIELD_TOME
@@ -1059,7 +1058,7 @@ armors:
     forcedTorso: 1
     specialWeapon: STR_TELEPORT
     builtInWeapons:
-      - STR_LIB_SPEED_TOME
+      - STR_LIB_HASTE_TOME
       - STR_LIB_SMOKE_TOME
       - STR_LIB_LOCKDOWN_TOME
       - STR_LIB_SHIELD_TOME
@@ -1091,8 +1090,8 @@ armors:
     ufopediaType: STR_PERSONAL_ARMOR_UC
     corpseBattle:
       - STR_SIGNAL_CORPSE
-    storeItem: STR_SIGNALFALSE_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
+    storeItem: STR_NONE
     frontArmor: 130 # base 125
     sideArmor: 125 # base 120
     rearArmor: 105 # base 100
@@ -1245,7 +1244,7 @@ armors:
     ufopediaType: STR_SIGNUM_DEV_UC
     corpseBattle:
       - STR_SIGNAL_CORPSE
-    storeItem: STR_SIGNALFALSE_ARMOR
+    storeItem: STR_SIGNAL_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
     visibilityAtDark: 40
     heatVision: 35 # +5 Captain bonus
@@ -1704,6 +1703,8 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_TAC_MELT_LV1_UC           #TACTICAL (MELTARIFLE)
     refNode: *STR_MKX_TAC_UC
@@ -1799,6 +1800,8 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_TAC_PLAS_LV1_UC           #TACTICAL (PLASMA INCINERATOR)
     refNode: *STR_MKX_TAC_UC
@@ -1896,12 +1899,15 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_VETS_LV3_UC               #STERNGUARD
     refNode: *STR_MKX_TAC_UC
     customArmorPreviewIndex: {mod: 40k, index: 272}
     spriteSheet: PRIMVETLV3.PCK
     storeItem: STR_PRIMARIS_VETARMOR
+    ufopediaType: STR_MKX_VETS_LV3_UC
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
     units:
@@ -1928,6 +1934,7 @@ armors:
     customArmorPreviewIndex: {mod: 40k, index: 273}
     spriteSheet: PRIMVETLV4.PCK
     storeItem: STR_PRIMARIS_VETARMOR
+    ufopediaType: STR_MKX_VETS_LV3_UC
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
     units:
@@ -1957,6 +1964,7 @@ armors:
     customArmorPreviewIndex: {mod: 40k, index: 274}
     spriteSheet: PRIMVETLV5.PCK
     storeItem: STR_PRIMARIS_VETARMOR
+    ufopediaType: STR_MKX_VETS_LV3_UC
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
     units:
@@ -1986,12 +1994,15 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_VETB_LV3_UC               #BLADEGUARD
     refNode: *STR_MKX_TAC_UC
     customArmorPreviewIndex: {mod: 40k, index: 272}
     spriteSheet: PRIMVETLV3.PCK
     storeItem: STR_PRIMARIS_VETARMOR
+    ufopediaType: STR_MKX_VETB_LV3_UC
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
     units:
@@ -2019,6 +2030,9 @@ armors:
   - type: STR_MKX_VETB_LV4_UC
     refNode: *STR_MKX_TAC_UC
     customArmorPreviewIndex: {mod: 40k, index: 273}
+    spriteSheet: PRIMVETLV4.PCK
+    storeItem: STR_PRIMARIS_VETARMOR
+    ufopediaType: STR_MKX_VETB_LV3_UC
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
     frontArmor: 135
@@ -2037,8 +2051,6 @@ armors:
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 30         # base 10
-    spriteSheet: PRIMVETLV4.PCK
-    storeItem: STR_PRIMARIS_VETARMOR
     units:
       - STR_PRIMARISLV4
     builtInWeapons:
@@ -2049,6 +2061,9 @@ armors:
   - type: STR_MKX_VETB_LV5_UC
     refNode: *STR_MKX_TAC_UC
     customArmorPreviewIndex: {mod: 40k, index: 274}
+    spriteSheet: PRIMVETLV5.PCK
+    storeItem: STR_PRIMARIS_VETARMOR
+    ufopediaType: STR_MKX_VETB_LV3_UC
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
     frontArmor: 135
@@ -2067,8 +2082,6 @@ armors:
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 30         # base 10
-    spriteSheet: PRIMVETLV5.PCK
-    storeItem: STR_PRIMARIS_VETARMOR
     units:
       - STR_PRIMARISLV5
     builtInWeapons:
@@ -2081,6 +2094,8 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - &STR_MKX_ASS_UC                         #PRIMARIS ASSAULT INTERCESSOR
     type: STR_MKX_ASS_LV1_UC
@@ -2241,6 +2256,8 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - &STR_MKX_PHB_UC                         #PRIMARIS PHOBOS
     type: STR_MKX_PHB_LV1_UC
@@ -2263,6 +2280,7 @@ armors:
       - STR_MKX_PHB_CORPSE
     storeItem: STR_MKX_PHB_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
+    ufopediaType: STR_MKX_PHB_CODEX
     damageModifier:
       - 1.0 #none
       - 1.0 #AP
@@ -2406,6 +2424,8 @@ armors:
       ARMOR_IMMEDIATE_TURN_CREDIT: 0
       ARMOR_CLOAKED_ASSASSIN_TYPE: 1 # melee only
       ARMOR_CLOAKED_ASSASSIN_RANGE: 3
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_ELIM_LV3_UC               #PHOBOS ELIMINATOR LV3
     refNode: *STR_MKX_PHB_UC
@@ -2513,10 +2533,17 @@ armors:
       ARMOR_IMMEDIATE_TURN_CREDIT: 2
       ARMOR_CLOAKED_ASSASSIN_TYPE: 2 # snipers only
       ARMOR_CLOAKED_ASSASSIN_RANGE: 5
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+  - type: STR_MKX_PHB_CODEX                 #PHOBOS Codex
+    refNode: *STR_MKX_PHB_UC
+    units:
+      - STR_PRIMARISLV1
 
   - &STR_MKX_GRV_UC                         #PRIMARIS GRAVIS
     type: STR_MKX_GRV_LV1_UC
-    ufopediaType: STR_MKX_GRV_LV1_UC
+    ufopediaType: STR_MKX_GRV_CODEX
     customArmorPreviewIndex: {mod: 40k, index: 280}
     visibilityAtDay: 40
     visibilityAtDark: 35
@@ -2873,6 +2900,8 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_GRV_LV5A_UC               #GRAVIS LV5 AUTOCANNON
     refNode: *STR_MKX_GRV_UC
@@ -2905,6 +2934,8 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_GRV_LV5F_UC               #GRAVIS LV5 FLAMER
     refNode: *STR_MKX_GRV_UC
@@ -2937,6 +2968,8 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_GRV_LV5H_UC               #GRAVIS LV5 REGULAR
     refNode: *STR_MKX_GRV_UC
@@ -2968,12 +3001,22 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
-
+  - type: STR_MKX_GRV_CODEX                 #GRAVIS Codex
+    refNode: *STR_MKX_GRV_UC
+    units:
+      - STR_PRIMARISLV1
+    specialWeapon: STR_GRAV_MORTAR
+    builtInWeapons:
+      - STR_GRAV_BOLTER
+      - STR_GRAV_FLAMER
+      - STR_GRAV_AUTOC
 
   - &STR_MKX_INC_UC                         #OMNIS
     type: STR_MKX_INC_LV1_UC
-    ufopediaType: STR_MKX_INC_LV1_UC
+    ufopediaType: STR_MKX_INC_CODEX
     corpseBattle:
       - STR_MKX_INC_CORPSE
     corpseGeo: STR_FALLEN_CORPSE
@@ -3077,6 +3120,8 @@ armors:
     tags:
       MaxFlight: 4
       MaxCoolDown: 1
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_INCPE_LV1_UC
     refNode: *STR_MKX_INC_UC
@@ -3158,6 +3203,8 @@ armors:
     tags:
       MaxFlight: 4
       MaxCoolDown: 1
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_INCAC_LV1_UC
     refNode: *STR_MKX_INC_UC
@@ -3234,6 +3281,16 @@ armors:
     tags:
       MaxFlight: 4
       MaxCoolDown: 1
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+  - type: STR_MKX_INC_CODEX
+    refNode: *STR_MKX_INC_UC
+    units:
+      - STR_PRIMARISLV1
+    builtInWeapons:
+      - STR_PLASMA_EXTERMINATOR_FIXED
+      - STR_ACCEL_AUTOCANNON_FIXED
 
   - &STR_MKX_APO                            #PRIMARIS APOTHECARY
     type: STR_MKX_HELIX_UC_LV1
@@ -3413,6 +3470,7 @@ armors:
     customArmorPreviewIndex: 7
     spriteSheet: APOGRVLV1.PCK
     storeItem: STR_MKX_GRV_ARMOR
+    ufopediaType: STR_MKX_GRV_CODEX
     loftempsSet: [ 4 ]
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
@@ -3476,6 +3534,7 @@ armors:
     customArmorPreviewIndex: 9
     spriteSheet: APOGRVLV2.PCK
     storeItem: STR_MKX_GRV_ARMOR
+    ufopediaType: STR_MKX_GRV_CODEX
     loftempsSet: [ 4 ]
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10

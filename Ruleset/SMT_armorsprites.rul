@@ -445,24 +445,29 @@ armors:
       F5: ["0", "CAPTF", "F5_FACE"]
 
   - type: STR_CAPTAIN_SCOUT             # Captain Scout
+    spriteFaceGroup: 6
+    spriteFaceColor: [96, 96, 96, 96, 160, 160, 163, 163, 96, 96, 96, 96] #M0 F0 M1 F1 M2 F2 M3 F3 M4 F4 M5 F5
+    spriteHairGroup: 9
+    spriteHairColor: [144, 144, 164, 164, 245, 245, 166, 166, 96, 164, 96, 96] #M0 F0 M1 F1 M2 F2 M3 F3 M4 F4 M5 F5
     spriteSheet: CAPTSCT.PCK
     customArmorPreviewIndex: 65
-    layersDefaultPrefix: 0
+    layersDefaultPrefix: CAPE
     layersSpecificPrefix:
       1: SCT
+      3: GOGGLES
     layersDefinition:
-      M0: ["0", "CAPTM", "M0_FACE"]
-      M1: ["0", "CAPTM", "M1_FACE"]
-      M2: ["0", "CAPTM", "M2_FACE"]
-      M3: ["0", "CAPTM", "M3_FACE"]
-      M4: ["0", "CAPTM", "M4_FACE"]
-      M5: ["0", "CAPTM", "M5_FACE"]
-      F0: ["0", "CAPTF", "F0_FACE"]
-      F1: ["0", "CAPTF", "F1_FACE"]
-      F2: ["0", "CAPTF", "F2_FACE"]
-      F3: ["0", "CAPTF", "F3_FACE"]
-      F4: ["0", "CAPTF", "F4_FACE"]
-      F5: ["0", "CAPTF", "F5_FACE"]
+      M0: ["CAPEW", "CAPTM", "M0_FACE", "GOGGLES"]
+      M1: ["CAPEW", "CAPTM", "M1_FACE", "GOGGLES"]
+      M2: ["CAPEW", "CAPTM", "M2_FACE", "GOGGLES"]
+      M3: ["CAPEW", "CAPTM", "M3_FACE", "GOGGLES"]
+      M4: ["CAPEW", "CAPTM", "M4_FACE", "GOGGLES"]
+      M5: ["CAPEW", "CAPTM", "M5_FACE", "GOGGLES"]
+      F0: ["CAPEW", "CAPTF", "F0_FACE", "GOGGLES"]
+      F1: ["CAPEW", "CAPTF", "F1_FACE", "GOGGLES"]
+      F2: ["CAPEW", "CAPTF", "F2_FACE", "GOGGLES"]
+      F3: ["CAPEW", "CAPTF", "F3_FACE", "GOGGLES"]
+      F4: ["CAPEW", "CAPTF", "F4_FACE", "GOGGLES"]
+      F5: ["CAPEW", "CAPTF", "F5_FACE", "GOGGLES"]
 
   - type: STR_CAPTAIN_TERM              # Captain Terminator
     spriteSheet: CAPTTER.PCK

@@ -191,7 +191,7 @@ items:
       - STR_BACK_PACK
 
   - &STR_PSI_TOKEN                          # Token item for Psi Skills
-    type: STR_LIB_SPEED_TOME
+    type: STR_LIB_HASTE_TOME
     categories: [ STR_CAT_SPELLS]
     bigSprite: -1
     weight: 0
@@ -259,7 +259,6 @@ items:
     twoHanded: false
     fixedWeapon: true
     recover: false
-    flatRate: false
     clipSize: -1
     #*** Marine Punch
     specialUseEmptyHand: true
@@ -333,6 +332,7 @@ items:
   - type: STR_LIGHT_BOLTPISTOL_AMMO         # Light BoltPistol Ammo
     refNode: *DMG_BOLTER_AMMO_STD
     listOrder: 10095
+    loadOrder: 200
     bigSprite: 116
     size: 0.05
     power: 60
@@ -342,6 +342,7 @@ items:
     power: 55
     bigSprite: 117
     listOrder: 10096 # group with other light boltpistol ammo
+    loadOrder: 210
     size: 0.05
     requiresBuy:
       - STR_LIGHTBOLTER_ADV_AMMO
@@ -350,6 +351,7 @@ items:
     refNode: *DMG_BOLTER_AMMO_FRAG
     bigSprite: 118
     listOrder: 10097 # group with other light boltpistol ammo
+    loadOrder: 205
     size: 0.05
     power: 55
     requiresBuy:
@@ -362,6 +364,7 @@ items:
     size: 0.05
     bigSprite: 119
     listOrder: 10098 # group with other light boltpistol ammo
+    loadOrder: 205
     power: 70 # gets part of its bonus damage from precision bonus
     tags:
       SMT_AMMO_BONUSDMG_FIRINGACC: 15 # lowered precision bonus, higher base damage
@@ -369,6 +372,7 @@ items:
   - type: STR_LIGHT_BOLTER_AMMO             # Light Bolter Ammo
     refNode: *DMG_BOLTER_AMMO_STD
     listOrder: 10295
+    loadOrder: 100
     bigSprite: 112
     size: 0.05
     power: 60
@@ -377,6 +381,7 @@ items:
     refNode: *DMG_BOLTER_AMMO_KRAK
     bigSprite: 113
     listOrder: 10297
+    loadOrder: 110
     size: 0.05
     power: 55
     requiresBuy:
@@ -385,6 +390,7 @@ items:
   - type: STR_LIGHT_BOLTER_AMMO_EX          # Light Bolter Metalstorm Ammo
     refNode: *DMG_BOLTER_AMMO_FRAG
     listOrder: 10298
+    loadOrder: 115
     bigSprite: 114
     size: 0.05
     power: 55
@@ -396,6 +402,8 @@ items:
   - type: STR_LIGHT_BOLTER_AMMO_MC          # Light Bolter Mastercrafted Ammo
     refNode: *DMG_BOLTER_AMMO_MASTER
     size: 0.05 # was 0.1
+    listOrder: 10296
+    loadOrder: 105
     bigSprite: 115
     size: 0.05
     power: 70 # gets part of its bonus damage from precision bonus
@@ -406,11 +414,13 @@ items:
   - type: STR_LIGHT_BOLTER_AMMO_SHORT       # Light Bolter ShortMag
     refNode: *DMG_BOLTER_AMMO_STD
     size: 0.05
+    loadOrder: 105
     power: 60
 
   - type: STR_LIGHT_BOLTER_AMMO_SHORT_PEN   # Light Bolter Krak ShortMag
     refNode: *DMG_BOLTER_AMMO_KRAK
     size: 0.05
+    loadOrder: 100
     power: 55
     requiresBuy:
       - STR_LIGHT_BOLTERS_LOWTIER # was mid tier, used by low tier bolters
@@ -420,6 +430,7 @@ items:
   - type: STR_LIGHT_BOLTER_AMMO_BELT        # Light Bolter AmmoBelt
     refNode: *DMG_BOLTER_AMMO_STD
     size: 0.05
+    loadOrder: 105
     power: 60
     requiresBuy:
       - STR_LIGHT_BOLTERS_MIDTIER # was low tier, only gun with this ammo requires midtier???
@@ -428,6 +439,7 @@ items:
   - type: STR_LIGHT_BOLTER_AMMO_BELT_PEN    # Light Bolter Krak AmmoBelt
     refNode: *DMG_BOLTER_AMMO_KRAK
     size: 0.05
+    loadOrder: 100
     power: 55
     requiresBuy:
       - STR_LIGHT_BOLTERS_MIDTIER
@@ -833,6 +845,7 @@ items:
     refNode: *DMG_BOLTER_AMMO_STD
   - type: STR_BOLTRIFLE_DRUM                # Boltrifle Drum Ammo
     refNode: *STR_BOLTRIFLE_DRUM_TEMPLATE
+    loadOrder: 100
     bigSprite: 186
     floorSprite: 186
     costBuy: 6500
@@ -848,6 +861,7 @@ items:
     bigSprite: 185
     floorSprite: 185
     listOrder: 10456
+    loadOrder: 110
     costBuy: 8000
     requiresBuyBaseFunc: [TRADE]
     requiresBuy:
@@ -867,6 +881,7 @@ items:
       index: 0
     powerForAnimation: 1 #
     listOrder: 10457
+    loadOrder: 115
     costBuy: 8000
     requiresBuyBaseFunc: [TRADE]
     requiresBuy:
@@ -881,6 +896,7 @@ items:
     bigSprite: 183
     floorSprite: 183
     listOrder: 10458
+    loadOrder: 105
     tags:
       ITEM_AMMO_COLOR: 1
 
@@ -891,6 +907,7 @@ items:
     bigSprite: 183
     floorSprite: 183
     listOrder: 10458
+    loadOrder: 95
     recover: false # part of armor loadout
     tags:
       ITEM_AMMO_COLOR: 1
@@ -907,6 +924,7 @@ items:
     weight: 3
     armor: 300
     listOrder: 10101
+    loadOrder: 100
     bigSprite: 172
     floorSprite: {mod: 40k, index: 12}
     handSprite: {mod: 40k, index: 464}
@@ -931,6 +949,7 @@ items:
     weight: 3
     armor: 300
     listOrder: 10102
+    loadOrder: 105
     bigSprite: 212
     floorSprite: {mod: 40k, index: 12}
     handSprite: {mod: 40k, index: 464}
@@ -956,6 +975,7 @@ items:
     weight: 3
     armor: 300
     listOrder: 10102
+    loadOrder: 95
     bigSprite: 212
     floorSprite: {mod: 40k, index: 12}
     handSprite: {mod: 40k, index: 464}
@@ -1238,7 +1258,7 @@ items:
     accuracyAimed: 0
     tuAimed: 0
     tuSnap: 20 # was 22
-    tuAuto: 26 # was 35
+    tuAuto: 30 # was 35
     autoShots: 4 # was 3
     sprayWaypoints: 2
     requiresBuy:
@@ -1693,7 +1713,7 @@ items:
   - type: STR_HB                            # Stormbolter
     armor: 300
     dropoff: 7 # was 4
-    autoRange: 12
+    autoRange: 8
     snapRange: 16 # was 15
     aimRange: 0
     accuracyAuto: 75
@@ -1711,7 +1731,7 @@ items:
   - type: STR_HB_MC                         # MC Stormbolter
     armor: 300
     dropoff: 7 # was 4
-    autoRange: 14
+    autoRange: 10
     snapRange: 18 # was 15
     aimRange: 0
     accuracyAuto: 90
@@ -1730,6 +1750,7 @@ items:
     refNode: *DMG_BOLTER_AMMO_STD
     armor: 300
     size: 0.1 # was 0.3
+    loadOrder: 100
     damageType: 1
     power: 75 # was 70
 
@@ -1737,6 +1758,7 @@ items:
     refNode: *DMG_BOLTER_AMMO_MASTER
     armor: 300
     size: 0.1 # was 0.3
+    loadOrder: 105
     power: 75 # was 95
 
 ### Heavy Bolters
@@ -1756,17 +1778,18 @@ items:
     damageAlter:
       ArmorEffectiveness: 0.7 #improved pen
     explosionSpeed: 3
-    power: 80
+    power: 85
     clipSize: 90
     armor: 300
     invWidth: 2
     invHeight: 3
     listOrder: 12025
+    loadOrder: 100
 
   - type: STR_AC_AP_AMMO                    # HB AP Ammo
     refNode: *DMG_BOLTER_AMMO_STD
     size: 0.1
-    power: 80
+    power: 85
     clipSize: 60
     costBuy: 6000 # was 1200
     requiresBuy:
@@ -1774,6 +1797,7 @@ items:
     damageAlter:
       ArmorEffectiveness: 0.7 #improved pen
     listOrder: 12021
+    loadOrder: 200
 
   - type: STR_AC_HE_BELT                    # HB HE Ammo Belt
     categories: [STR_CAT_BOLTER, STR_CAT_DEVASTATOR]
@@ -1805,6 +1829,7 @@ items:
     invWidth: 2
     invHeight: 3
     listOrder: 12026
+    loadOrder: 110
 
   - type: STR_AC_HE_AMMO                    # HB HE Ammo
     armor: 300
@@ -1825,6 +1850,7 @@ items:
       ToTime: 0.1
       FixRadius: 3
     listOrder: 12023
+    loadOrder: 210
 
   - type: STR_AC_I_BELT                     # HB I  Ammo Belt
     categories: [STR_CAT_BOLTER, STR_CAT_DEVASTATOR]
@@ -1863,6 +1889,7 @@ items:
     invWidth: 2
     invHeight: 3
     listOrder: 12027
+    loadOrder: 115
 
   - type: STR_AC_I_AMMO                     # HB I  Ammo
     armor: 300
@@ -1894,6 +1921,7 @@ items:
     requiresBuy:
       - STR_HBOLTER_AMMO_PREREQ
     listOrder: 12022
+    loadOrder: 215
 
   - type: STR_AC_MC_BELT                    # HB MC Ammo Belt
     refNode: *DMG_BOLTER_AMMO_MASTER
@@ -1915,6 +1943,7 @@ items:
     invWidth: 2
     invHeight: 3
     listOrder: 12028
+    loadOrder: 105
 
   - type: STR_AC_MC_AMMO                    # HB MC Ammo
     refNode: *DMG_BOLTER_AMMO_MASTER
@@ -1922,6 +1951,7 @@ items:
     power: 85 # was 95
     clipSize: 60
     listOrder: 12024
+    loadOrder: 205
 
   - type: STR_AUTO_CANNON                   # Heavy Bolter MK4
     costBuy: 90000 # was 13500 - Now mid-tier weapon instead of starter gear
@@ -1936,9 +1966,9 @@ items:
     snapRange: 22 # was 23
     aimRange: 0
     accuracyAuto: 50 # was 50
-    accuracySnap: 55 # was 60
+    accuracySnap: 65 # was 60
     accuracyAimed: 0
-    tuAuto: 75 # was 80 for 10
+    tuAuto: 70 # was 80 for 10
     tuSnap: 35 # was 30 for 2 shot
     tuAimed: 0
     tuLoad: 30 # was 40
@@ -1988,12 +2018,12 @@ items:
     autoRange: 16
     snapRange: 22
     aimRange: 18
-    accuracyAuto: 50
-    accuracySnap: 60 # regular 55
-    accuracyAimed: 55 # regular 50
-    tuAuto: 85 # 15 shots
+    accuracyAuto: 55
+    accuracySnap: 65 # regular 65
+    accuracyAimed: 60 # regular 50
+    tuAuto: 75 # 15 shots
     tuSnap: 33 # regular 35
-    tuAimed: 65 # regular 75 for 9
+    tuAimed: 65 # regular 70 for 9
     tuLoad: 30
     minRange: 6
     sprayWaypoints: 2
@@ -2027,12 +2057,12 @@ items:
     autoRange: 16 # mars 16
     snapRange: 22 # regular 22
     aimRange: 18 # regular 18
-    accuracyAuto: 50 # regular 50
-    accuracySnap: 60 # regular 60
-    accuracyAimed: 55 # regular 55
-    tuAuto: 80 # Mars 85
+    accuracyAuto: 60 # regular 50
+    accuracySnap: 70 # regular 60
+    accuracyAimed: 65 # regular 55
+    tuAuto: 75 # Mars 75
     tuSnap: 30 # Mars 33
-    tuAimed: 50 # Mars 50
+    tuAimed: 60 # Mars 65
     tuLoad: 25 #
     minRange: 6 #heavy weapon; cumbersome, not suited to CQC
     requiresBuy:
@@ -2241,6 +2271,7 @@ items:
     refNode: *REF_SNIPER_BOLT_AMMO
     bigSprite: 130
     listOrder: 11932
+    loadOrder: 100
     costBuy: 500 # single shot
     requiresBuy:
       - STR_BOLT_RIFLE_AMMO
@@ -2260,11 +2291,12 @@ items:
     refNode: *REF_SNIPER_BOLT_AMMO
     bigSprite: 283
     listOrder: 11933
+    loadOrder: 105
     hitSound: {mod: 40k, index: 712}
     hitAnimation: {mod: 40k, index: 26}
     damageAlter:
       RandomType: 7
-      ArmorEffectiveness: 0.3
+      ArmorEffectiveness: 0.4
       ToHealth: 1.1
       ToArmorPre: 0.2
       ToArmor: 0.2
@@ -2318,11 +2350,11 @@ items:
       mod: 40k
       index: 88
     damageAlter: # Incindiary
-      FixRadius: 4
+      FixRadius: 3
       RadiusReduction: 5
       RandomType: 6
-      ResistType: 3
-      ArmorEffectiveness: 0.7
+      ResistType: 2
+      ArmorEffectiveness: 0.5
       ToHealth: 1.3
       ToArmorPre: 0.0
       ToArmor: 0.1
@@ -2353,6 +2385,7 @@ items:
       SMT_VULN_DURATION: 1
 
   - type: STR_BOLT_SNIPER_AMMO_DEREV        # Bolt Sniper Derevenant Ammo
+    refNode: *REF_SNIPER_BOLT_AMMO
     bigSprite: 169
     listOrder: 11938
     hitSound: {mod: 40k, index: 712}
@@ -2372,6 +2405,7 @@ items:
       SMT_DEREVENANT_AMMO: 200
 
   - type: STR_BOLT_SNIPER_AMMO_HELS         # Bolt Sniper Helspear Ammo
+    refNode: *REF_SNIPER_BOLT_AMMO
     bigSprite: 170
     listOrder: 11939
     hitSound: {mod: 40k, index: 712}
@@ -2559,6 +2593,46 @@ items:
       ITEM_RECOIL: 110 # heavy weapon
       ITEM_IS_HEAVY_WEAPON: 1 # low fire rate relative to assault cannon
 
+### Flamers
+  - type: STR_HFLAMER                       # Heavy Flamer
+    dropoff: 4
+    autoRange: 8
+    snapRange: 15
+    aimRange: 0
+    accuracyAuto: 30  # 40k 20
+    accuracySnap: 60  # was 40
+    accuracyAimed: 0
+    tuAuto: 33 # was 45
+    tuSnap: 15
+    tuAimed: 0
+    maxRange: 20
+    autoShots: 4
+    arcingShot: true
+    noLOSAccuracyPenalty: 75
+    kneelBonus: 100
+    tags:
+      ITEM_RECOIL: 60 # was 100
+
+  - type: STR_HFLAMER_CLIP                  # Heavy Flamer Fuel
+    power: 80
+    powerRangeReduction: 15
+    powerRangeThreshold: 22
+    damageAlter:
+      FireBlastCalc: false
+      IgnoreOverKill: false
+      IgnoreDirection: false
+      FixRadius: 3
+      ToHealth: 1.7
+      ToStun: 0.4
+      ToTile: 0.3
+      ToItem: 0.3
+      ToMorale: 5.0
+      ToTime: 0.2  # debilitating pain
+      RandomType: 6  # Gaussian
+      ArmorEffectiveness: 0.5 # was 0.8
+      ToArmorPre: 0.1 # was 0.2
+    clipSize: 40
+
 ### Plasma
   - type: STR_DW_PLASMA_GRENADE             # Plasma Grenade
     categories: [ STR_CAT_GRENADES, STR_CAT_TACTICAL]
@@ -2615,6 +2689,28 @@ items:
         end;
 
         return sprite_index;
+
+### Lascannons
+  - type: STR_LASCAN_DW                     # Artifex Lascannon
+    dropoff: 4
+    autoRange: 0
+    snapRange: 22
+    aimRange: 33
+    accuracyAuto: 0
+    accuracySnap: 55
+    accuracyAimed: 80
+    kneelBonus: 130
+    minRange: 7
+    tuAuto: 0
+    tuSnap: 50
+    tuAimed: 80
+    tuLoad: 40
+    armor: 300
+    damageBonus:
+      flatHundred: 0.2  # 20% power bonus
+    tags:
+      REACTION_MULTIPLIER: 50
+      REACTION_PENALTY_KNEELING_BYPASS: 1
 
 ### Shotguns
   - type: STR_SHOTGUN_MARINE                # Astartes Shotgun
@@ -2770,7 +2866,7 @@ items:
     damageAlter:
       RandomType: 2 # 50-150%
       ArmorEffectiveness: 0.6
-      ToHealth: 1.3 # was 1.1
+      ToHealth: 1.1 # was 1.1
     shotgunPellets: 1 # was 6, doesn't work with projectiles that have explosion radius
     requiresBuy:
       - STR_SHOTGUNS_ADV
@@ -2806,7 +2902,7 @@ items:
       IgnoreDirection: false
       FireThreshold: 1
       ArmorEffectiveness: 0.5
-      ToHealth: 1.3
+      ToHealth: 1.2
       ToArmorPre: 0.05
       ToArmor: 0.15
       ToStun: 0.5
@@ -2882,7 +2978,7 @@ items:
       ToStun: 0.6 # was 0.6
       ToEnergy: 0.4 # was 0.4
       ToTime: 0.3 # was 0.3
-      ToTile: 0.4
+      ToTile: 0.6
       ToItem: 0.25
       FixRadius: 5
 
@@ -2988,7 +3084,7 @@ items:
     power: 70 # was 60
     damageBonus:
       melee: 0.3 # was 0.2 - 0.3 is standard for regular melee
-      strength: 0.2
+      strength: 0.3
     damageAlter:
       ToArmorPre: 0.3
       ToHealth: 1.0
@@ -3009,11 +3105,11 @@ items:
       reactions: 0.2
     tuMelee: 10 # was 14
     damageBonus:
-      melee: 0.4 # was 0.2 
-      strength: 0.2
+      melee: [0.2, 0.002] # was 0.2
+      strength: 0.3
     damageAlter:
       ArmorEffectiveness: 0.85
-      ToArmorPre: 0.4
+      ToArmorPre: 0.35
       ToHealth: 1.0
       RandomType: 2
       ToWound: 0.3
@@ -3092,6 +3188,7 @@ items:
 
   - type: STR_JUMP_GAUNTLET_PLUS            # Jumpsuit Punch
     refNode: *REF_FIST
+    
     # meleePower: 20
     # meleeBonus:
       # strength: 0.3 #
@@ -3109,12 +3206,15 @@ items:
     # experienceTrainingMode: 13
 
   - type: STR_KNIF                          # Combat Knife
-    power: 30 # was 20 - pathetic, worse than SM/IG built in melee attacks - made enemy cultists especially sad
     bigSprite: 195 # 1x2 sprite
     invHeight: 2
     invWidth: 1
     inventoryMoveCost:
       basePercent: 50 # half costs for moving into hands etc
+    power: 35 # was 20 - pathetic, worse than SM/IG built in melee attacks - made enemy cultists especially sad
+    damageBonus: # make it worse at scaling but less awful early
+      melee: 0.3 # was 0.4
+      strength: 0.1
     damageAlter:
       RandomType: 2
       IgnoreDirection: false
@@ -3150,15 +3250,16 @@ items:
       basePercent: 50 # half costs for moving into hands etc
     costMelee:
       time: 10
-      energy: 2
+      energy: 1
     flatMelee: true
     accuracyMelee: 90
     meleeMultiplier:
       melee: 0.7
       reactions: 0.3
+    damageType: 7 # melee
     power: 40
     damageBonus:
-      melee: 0.4
+      melee: [0.2, 0.002]
       strength: 0.1
     damageAlter:
       RandomType: 2
@@ -3397,7 +3498,7 @@ items:
       SMT_VULN_DURATION: 2
       ITEM_IGNORE_ALLIES: 1
 
-  - type: STR_LIB_SPEED_TOME                # Librarian Speed                                    ## Haste
+  - type: STR_LIB_HASTE_TOME                # Librarian Speed                                    ## Haste
     refNode: *STR_PSI_TOKEN
     fireSound: {mod: 40k, index: 787} #787 page turn BOOK
     hitSound: {mod: 40k, index: 778} # Lockdown sound
@@ -3426,7 +3527,7 @@ items:
       SMT_ITEM_MOVESPEED_BOOST: 1
       SMT_ITEM_REACTION_MOD: 75
 
-  - type: STR_LIB_SPEED_TOME_DW             # Librarian Speed (Deathwatch White Scars)           ## Haste
+  - type: STR_LIB_HASTE_TOME_DW             # Librarian Speed (Deathwatch White Scars)           ## Haste
     refNode: *STR_PSI_TOKEN
     fireSound: {mod: 40k, index: 787} #787 page turn BOOK
     hitSound: {mod: 40k, index: 778} # Lockdown sound
@@ -3456,7 +3557,7 @@ items:
     maxRange: 15
     LOSRequired: true
     damageAlter:
-      ToTime: 10.0
+      ToTime: 5.0 # was 10
     damageBonus:
       psiStrength: 0.8 # 40 Str = 47 power; 140 psiStr gives 127 power
     damageAlter:
@@ -3499,10 +3600,11 @@ items:
     explosionHitSound: {mod: 40k, index: 792} #792 Smoke
     hitAnimation: {mod: 40k, index: 104} #XSmoke
     battleType: 1
-    power: 40
+    power: 60
     maxRange: 40
     aimRange: 20
     dropoff: 5
+    isFireExtinguisher: true
     noLOSAccuracyPenalty: 75
     damageType: 9
     damageBonus:
@@ -3573,6 +3675,7 @@ items:
     hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2080} # could do with something better/unique
     clipSize: -1
     targetMatrix: 1
+    LOSRequired: false
     maxRange: 20
     power: 5
     damageBonus: # 50% at 90 psiStr, 80% at 150 psiStr
@@ -3940,6 +4043,8 @@ items:
       ITEM_TELEPORTER_COOLDOWN: 1
       ITEM_TELEPORTER_ENERGY: 24 # was 10
 
+  - type: STR_SMT_SIGNUM_VUL                # Devastator Signum
+    refNode: *REF_FIST
   - type: STR_SMT_SIGNUM_VUL                # Devastator Signum
     refNode: *STR_PSI_TOKEN
     specialIconSprite: 41

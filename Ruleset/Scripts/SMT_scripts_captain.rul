@@ -25,7 +25,7 @@ extended:
           battle_game.getTag cmdTurn Tag.SMT_COMMAND_TURN;
           battle_game.getTag cmdPoints Tag.SMT_COMMAND_POINTS;
           set cmdCount cmdPoints;
-          div cmdCount 150; # 150 points per command
+          div cmdCount 200; # 200 points per command
 
           if and eq currentTurn cmdTurn neq cmdType 0; # if a command is already active
             if eq cmdType 1;
@@ -47,7 +47,7 @@ extended:
 
           battle_game.setTag Tag.SMT_COMMAND_TYPE cmdNew; # if all checks passed, activate new command
           battle_game.setTag Tag.SMT_COMMAND_TURN currentTurn;
-          sub cmdPoints 150;
+          sub cmdPoints 200;
           battle_game.setTag Tag.SMT_COMMAND_POINTS cmdPoints;
           sub cmdCount 1;
           if eq cmdNew 1;
@@ -217,7 +217,13 @@ extended:
                   muldiv armorMult 100 temp2;
                   add armorMult 100;
                   limit_lower armorMult 100;
-                  add to_armor 3;
+                  if le to_armor 0; # if shot does no armor damage
+                    add to_armor 3;
+                  end;
+                  if le currPower 0; # if shot is completely blocked by armor
+                    add to_armor 5;
+                  end;
+                  add to_armor 2;
                   muldiv to_armor armorMult 100; # multiply to_armor damage by armor reduction
                   #debug_log "SoF Trigger " to_armor armorMult;
                 end;
@@ -226,26 +232,26 @@ extended:
 
           else eq temp 3; ## Relentless Assault
             attacker.getFaction temp;
-            debug_log "RA Ping1 " battle_action battle_action_hit temp FACTION_PLAYER;
+            #debug_log "RA Ping1 " battle_action battle_action_hit temp FACTION_PLAYER;
             if and eq temp FACTION_PLAYER eq battle_action battle_action_hit; # melee hits only
               attacker.getTag temp Tag.UNIT_TYPE_ASTARTES; # only affects Space Marines
               attacker.getTag temp2 Tag.SMT_RAMPAGE_COUNT; # can only trigger up to 6 times
-              debug_log "RA Ping2 " temp temp2;
+              #debug_log "RA Ping2 " temp temp2;
               if and gt temp 0 lt temp2 6;
                 unit.getHealth temp;
-                debug_log "RA Ping3 " temp to_health;
+                #debug_log "RA Ping3 " temp to_health;
                 if ge to_health temp; # only killing blows
                   add temp2 1;
                   attacker.setTag Tag.SMT_RAMPAGE_COUNT temp2;
                   attacker.getTimeUnitsMax temp;
                   attacker.getTimeUnits temp2;
-                  debug_log "RA Final1 " temp temp2;
+                  #debug_log "RA Final1 " temp temp2;
                   muldiv temp 33 100; # up to 33% of max TUs refunded
                   add temp2 temp;
                   attacker.getTimeUnitsMax temp;
                   limit_upper temp2 temp;
                   attacker.setTimeUnits temp2;
-                  debug_log "RA Final2 " temp temp2;
+                  #debug_log "RA Final2 " temp temp2;
                 end;
               end;
             end;
@@ -324,11 +330,12 @@ extended:
           return temp2;
 
     newTurnUnit:
-      - new: SMTS_rampage_reset         #*** Reset Rampage counter ***
+      - new: SMTS_reset_counters        #*** Reset Rampage counter ***
         offset: 10
         code: |
 
           unit.setTag Tag.SMT_RAMPAGE_COUNT 0;
+          battle_game.setTag Tag.SMT_COMMAND_TYPE 0;
           return;
 
 

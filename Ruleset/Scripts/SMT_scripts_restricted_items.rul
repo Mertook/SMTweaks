@@ -165,46 +165,54 @@ items:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0
 
-  - type: STR_VOLKITE_DW                # Volkite Rifle (DW Captain - 4)
+  - type: STR_VOLKITE_DW                # Volkite Rifle (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM
     tags:
-      SMT_RESTRICTED_ITEM: 4
+      SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0 # can't be higher, otherwise will get full power from penetrating dmg
 
-  - type: STR_HEAVY_BOLTRIFLE_DW        # Heavy BoltRifle (DW Captain - 4)
+  - type: STR_HEAVY_BOLTRIFLE_DW        # Heavy BoltRifle (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM
     tags:
-      SMT_RESTRICTED_ITEM: 4
+      SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0
 
-  - type: STR_FORCE_HALBERD_DW          # Force Halberd (DW Captain - 4)
+  - type: STR_FORCE_HALBERD_DW          # Force Halberd (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM
     tags:
-      SMT_RESTRICTED_ITEM: 4
+      SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_ACCURACY_PEN: 0 # psyker
       SMT_RESTRICTED_DAMAGE_PEN: 15 # only 15% damage
       SMT_RESTRICTED_ITEM_MELEE: 85 # only 15% damage
 
-  - type: STR_PLASMA_GUN_TWINCORE_DW    # Twincore Plasma (DW Captain - 4)
+  - type: STR_PLASMA_GUN_TWINCORE_DW    # Twincore Plasma (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM
     tags:
-      SMT_RESTRICTED_ITEM: 4
+      SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0
 
-  - type: STR_POWER_AXE_DW              # Power Axe (DW Captain - 4)
+  - type: STR_POWER_AXE_DW              # Power Axe (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM
     tags:
-      SMT_RESTRICTED_ITEM: 4
+      SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_ITEM_MELEE: 85 # only 15% damage
 
-  - type: STR_CAPTAIN_SWORD_DW          # Power Sword (DW Captain - 4)
+  - type: STR_CAPTAIN_SWORD_DW          # Power Sword (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM
     tags:
-      SMT_RESTRICTED_ITEM: 4
+      SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_ITEM_MELEE: 85 # only 15% damage
 
-  - type: STR_ABSOLVOR_PISTOL_DW        # Absolvor Pistol (DW Captain - 4)
+  - type: STR_ABSOLVOR_PISTOL_DW        # Absolvor Pistol (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM
     tags:
-      SMT_RESTRICTED_ITEM: 4
+      SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0
+
+  - type: STR_HB_DW                     # Stormbolter (Deathwatch - 2)
+    refNode: *STR_RESTRICTED_ITEM
+    tags:
+      SMT_RESTRICTED_ITEM: 2
+      SMT_RESTRICTED_DAMAGE_PEN: 0
+
+

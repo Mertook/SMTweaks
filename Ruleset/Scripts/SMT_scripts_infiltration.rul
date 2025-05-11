@@ -164,7 +164,7 @@ extended:
           var int temp2;
 
           skill.getTag stealthRange Tag.SKILL_STEALTH_RANGE;
-          if le stealthRange 0;
+          if eq stealthRange 0;
             return;
           end;
 

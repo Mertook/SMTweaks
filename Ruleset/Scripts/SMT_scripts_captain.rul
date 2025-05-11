@@ -218,12 +218,12 @@ extended:
                   add armorMult 100;
                   limit_lower armorMult 100;
                   if le to_armor 0; # if shot does no armor damage
-                    add to_armor 3;
+                    add to_armor 2;
                   end;
                   if le currPower 0; # if shot is completely blocked by armor
-                    add to_armor 5;
+                    add to_armor 1;
                   end;
-                  add to_armor 2;
+                  add to_armor 1;
                   muldiv to_armor armorMult 100; # multiply to_armor damage by armor reduction
                   #debug_log "SoF Trigger " to_armor armorMult;
                 end;

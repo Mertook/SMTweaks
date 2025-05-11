@@ -1461,6 +1461,8 @@ armors:
       #- INV_NULL_3X3
       - INV_NULL_1X3 # allow backpack
       #- INV_NULL_4X2 #removed, allow belt items
+      - INV_NULL_2X1_RL
+      - INV_NULL_2X1_LL
     specialWeapon: AUX_RAM_SMT
     damageModifier: #MARINE ARMOR
       - 1.0 #none
@@ -1479,8 +1481,9 @@ armors:
       baseNormalPercent: [50,50] #halved movement costs
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
-      INTIMIDATION_RESISTANCE: 50
-      INFECTION_RESIST: 100
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9
+      INTIMIDATION_RESISTANCE: 75
+      INFECTION_RESIST: 100 # 2x2 unit
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_ASTARTES: 1
@@ -3893,6 +3896,75 @@ armors:
     tags:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 40
       ARMOR_ENERGY_SHIELD_DECAY: 50
+
+  - &REF_MKX_BIKE
+    type: STR_MKX_BIKE_UC
+    visibilityAtDay: 40
+    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
+    heatVision: 20 #Add anti-smoke vision to all marine armour
+    antiCamouflageAtDay: 8 # advanced senses and inbuilt armor sensors
+    antiCamouflageAtDark: 8
+    frontArmor: 150
+    sideArmor: 140
+    rearArmor: 100
+    underArmor: 145
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.0 #discipline and resolve reinforces their faith
+    allowsRunning: false
+    allowsKneeling: false
+    builtInWeapons:
+      - AUX_PRIMARIS_OUTBOLTER
+      #- AUX_RAM_SMT # moved to innate, allow Bikes to pick their offhand weapon
+      #- INV_NULL_3X3
+      - INV_NULL_1X3 # allow backpack
+      #- INV_NULL_4X2 #removed, allow belt items
+      - INV_NULL_2X1_RL
+      - INV_NULL_2X1_LL
+    specialWeapon: AUX_RAM_SMT
+    stats:
+      tu: 30
+      stamina: 30
+      firing: 0
+      health: 20 # was 0
+      bravery: 0
+      reactions: 0
+      throwing: 0
+      strength: 40 # was 0, bike bonus
+      psiStrength: 0
+      psiSkill: 0
+      melee: 40 # was 0, bike ramming bonus
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.5 #FLAMES (Standard 0.8)
+      - 0.7 #HE
+      - 0.8 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 0.0 #IMPACT
+      - 1.0 #MELTA
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9
+      INTIMIDATION_RESISTANCE: 75
+      INFECTION_RESIST: 100 # 2x2 unit
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_ASTARTES: 1
+
+  - type: STR_MKX_BIKE_LV1_UC
+    refNode: *REF_MKX_BIKE
+  - type: STR_MKX_BIKE_LV2_UC
+    refNode: *REF_MKX_BIKE
+  - type: STR_MKX_BIKE_LV3_UC
+    refNode: *REF_MKX_BIKE
+  - type: STR_MKX_BIKE_LV4_UC
+    refNode: *REF_MKX_BIKE
 
 ### BOMBARD
   - type: STR_DUMMY_TARGETER_UC                 # Target Designator (Dummy base)

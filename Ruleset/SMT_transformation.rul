@@ -25,7 +25,7 @@ soldierTransformation:
     producedSoldierType: STR_SOLDIER_TERMINATOR
     cost: 25000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 160
+      STR_KILLPOINT_TOKEN: 240
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -35,6 +35,16 @@ soldierTransformation:
     transferTime: 0
     requiredCommendations:
       STR_TERMINATOR_CROSS: 0
+    flatOverallStatChange:
+      tu: 5
+      stamina: 5
+      health: 5
+      reactions: 5
+      firing: 5
+      throwing: 5
+      strength: 5
+      melee: 5
+      bravery: 10
     requiredMinStats:
       health: 100   # marine min 75(80)
       firing: 100   # marine min 70(100)
@@ -219,14 +229,14 @@ soldierTransformation:
     soldierBonusType: STR_BONUS_INQ_ROSARIUS
     listOrder: 79
 
-  - name: STR_PROMOTE_CAPTAIN                # Captain Promotion
+  - name: STR_PROMOTE_CAPTAIN           # Captain Promotion
     requires:
       - STR_MARINES_STRATEGY
       - STR_NOT_PRIMARIS
       - STR_MARINE_CAPTAIN
     cost: 100000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 1800
+      STR_KILLPOINT_TOKEN: 2000
     producedSoldierType: STR_SOLDIER_CAPTAIN
     keepSoldierArmor: false
     allowsDeadSoldiers: false
@@ -345,7 +355,7 @@ soldierTransformation:
       - STR_PRIMARIS
     cost: 50000 # was 100k
     requiredItems:
-      STR_KILLPOINT_TOKEN: 600
+      STR_KILLPOINT_TOKEN: 680
     producedSoldierType: STR_PRIMARISLV4
     keepSoldierArmor: false
     allowsDeadSoldiers: false

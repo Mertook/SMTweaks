@@ -1746,6 +1746,45 @@ items:
       ITEM_RECOIL: 80 # +5 - harsh requirement, terminator handgun
       REACTION_MULTIPLIER: 200 # +100% reactions, pistol grip
 
+  - type: STR_HB_DW                         # MC Stormbolter (Deathwatch)
+    categories: [STR_CAT_TERMINATOR, STR_CAT_BOLTER]
+    size: 0.0
+    weight: 40
+    bigSprite: {mod: 40k, index: 510}
+    floorSprite: {mod: 40k, index: 605}
+    handSprite: {mod: 40k, index: 1640}
+    bulletSprite: {mod: 40k, index: 15}
+    fireSound: {mod: 40k, index: 12}
+    compatibleAmmo:
+      - STR_HB_CLIP
+      - STR_HB_CLIP_MC
+      - STR_HB_CLIP_DW
+    battleType: 1
+    twoHanded: true
+    oneHandedPenalty: 100
+    invWidth: 2
+    invHeight: 3
+    bulletSpeed: 50
+    attraction: 9
+    listOrder: 13102
+    armor: 300
+    recover: false
+    dropoff: 7
+    autoRange: 10
+    snapRange: 18 # was 15
+    aimRange: 0
+    accuracyAuto: 90
+    accuracySnap: 90
+    accuracyAimed: 0
+    tuAuto: 24
+    tuSnap: 18 # was 25
+    tuAimed: 0
+    autoShots: 2 # was 0
+    tags:
+      ITEM_IS_HEAVY_WEAPON: 1 # terminator handgun
+      ITEM_RECOIL: 80 # +5 - harsh requirement, terminator handgun
+      REACTION_MULTIPLIER: 200 # +100% reactions, pistol grip
+
   - type: STR_HB_CLIP                       # Stormbolter Ammo
     refNode: *DMG_BOLTER_AMMO_STD
     armor: 300
@@ -1760,6 +1799,32 @@ items:
     size: 0.1 # was 0.3
     loadOrder: 105
     power: 75 # was 95
+
+  - type: STR_HB_CLIP_DW                    # Stormbolter Mastercrafted Ammo (Deathwatch)
+    refNode: *DMG_BOLTER_AMMO_MASTER
+    categories: [STR_CAT_TERMINATOR, STR_CAT_BOLTER]
+    battleType: 2
+    size: 0.0
+    bigSprite: {mod: 40k, index: 464}
+    floorSprite: {mod: 40k, index: 116}
+    handSprite: {mod: 40k, index: 656}
+    hitSound: {mod: 40k, index: 13}
+    hitAnimation: {mod: 40k, index: 26}
+    explosionSpeed: 5
+    listOrder: 13121
+    invWidth: 1
+    invHeight: 2
+    attraction: 8
+    armor: 300
+    weight: 10
+    clipSize: 20
+    recover: false
+    size: 0.1 # was 0.3
+    loadOrder: 105
+    power: 75 # was 95
+    shotgunSpread: 1
+    shotgunBehavior: 1
+    shotgunPellets: 2
 
 ### Heavy Bolters
   - type: STR_AC_AP_BELT                    # HB AP Ammo Belt

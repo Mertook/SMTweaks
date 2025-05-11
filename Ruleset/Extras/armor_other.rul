@@ -1,4 +1,11 @@
 armors:
+  - &REF_LIGHT_AND_STAMINA
+    type: STR_ASSASSINNEUTRAL_FEMSUIT_NPC
+    personalLight: 5
+    recovery:
+      energy:
+        stamina: 0.33
+
   - type: STR_GUARD_IMPERIAL_ASSASSIN_UC  # Vindicare Assassin
     builtInWeapons:
       - STR_EXITUS_PISTOL
@@ -57,20 +64,26 @@ armors:
       ARMOR_INFILTRATOR_RANGE: -1
       ARMOR_RESTEALTH_KILL_REQUIREMENT: 5
       ARMOR_CLOAKED_ASSASSIN_TYPE: 5 # melee & pistol
-      ARMOR_CLOAKED_ASSASSIN_RANGE: 5
-
-  - &STR_PERSONAL_LIGHT_AND_RECOVERY_STAMINA
-    type: STR_ASSASSINNEUTRAL_FEMSUIT_NPC
-    personalLight: 5
-    recovery:
-      energy:
-        stamina: 0.33
+      ARMOR_CLOAKED_ASSASSIN_RANGE: -1 # temple assassin
 
   - type: STR_ASSASSINNEUTRAL_FEMSUIT_NPC
-    refNode: *STR_PERSONAL_LIGHT_AND_RECOVERY_STAMINA
+    refNode: *REF_LIGHT_AND_STAMINA
+    tags:
+      ARMOR_CLOAKED_ASSASSIN_TYPE: 1 # melee
+      ARMOR_CLOAKED_ASSASSIN_RANGE: 5
+
+  - type: STR_ASSASSINNEUTRAL_FEMSUIT
+    tags:
+      ARMOR_CLOAKED_ASSASSIN_TYPE: 1 # melee
+      ARMOR_CLOAKED_ASSASSIN_RANGE: 5
+
+  - type: STR_DEATHCULT_ASSASSIN_ARMOR
+    tags:
+      ARMOR_CLOAKED_ASSASSIN_TYPE: 1 # melee
+      ARMOR_CLOAKED_ASSASSIN_RANGE: 8
 
   - type: THUNDERFIRE_ARMOR_DW
-    refNode: *STR_PERSONAL_LIGHT_AND_RECOVERY_STAMINA
+    refNode: *REF_LIGHT_AND_STAMINA
     recovery:
       energy:
         stamina: 1.0

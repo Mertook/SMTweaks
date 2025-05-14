@@ -186,6 +186,16 @@ extraSprites:
       284: Resources/ITEMS/BSNIPER/SniperBoltIncin.png          # Bolt Sniper Incin Ammo
       285: Resources/UNITS/DW/SCOUT/SCTDW_BigOb.png             # DW Scout Corpse
       286: Resources/ITEMS/MELEE/PhobosKnife_BigOb.png          # Astartes Combat Blade
+      287: Resources/ITEMS/HBOLTER/HBolterSCT1_BigOb.png        # Scout Heavy Bolter
+      288: Resources/ITEMS/HBOLTER/HBolterSCT2_BigOb.png        # Scout Heavy Bolter (Deployed)
+      289: Resources/ITEMS/MISSILE/MLaunch1_BigOb.png           # Scout Missile Launcher
+      290: Resources/ITEMS/MISSILE/MLaunch2_BigOb.png           # Scout Missile Launcher (Deployed)
+      291: Resources/ITEMS/MISSILE/Vengor1_BigOb.png            # Vengor Missile Launcher (unloaded)
+      292: Resources/ITEMS/MISSILE/Vengor2_BigOb.png            # Vengor Missile Launcher (loaded)
+      293: Resources/ITEMS/MISSILE/CastellanHE_BigOb.png        # Castellan Missiles (HE)
+      294: Resources/ITEMS/MISSILE/CastellanKR_BigOb.png        # Castellan Missiles (Krak)
+      295: Resources/ITEMS/MISSILE/CastellanIC_BigOb.png        # Castellan Missiles (Incin)
+      296: Resources/ITEMS/MISSILE/CastellanDF_BigOb.png        # Castellan Missiles (Deforest)
 
 ###Item FloorOBs
   - type: FLOOROB.PCK
@@ -223,6 +233,9 @@ extraSprites:
       216: Resources/ITEMS/VOLKITE/NEOVOLKITE_FLOOROB.png       # Neovolkite Pistol
       285: Resources/UNITS/DW/SCOUT/SCTDW_FlrOb.png             # DW Scout Corpse
       286: Resources/ITEMS/MELEE/PhobosKnife_FlrOb.png          # Astartes Combat Blade
+      287: Resources/ITEMS/HBOLTER/HBolterSCT1_FlrOb.png        # Scout Heavy Bolter
+      291: Resources/ITEMS/MISSILE/Vengor_FlrOb.png             # Vengor Missile Launcher
+      293: Resources/ITEMS/MISSILE/Castellan_FlrOb.png          # Castellan Missiles
 
 ###Item HandOBs - need 8 slots per item
   - type: HANDOB.PCK
@@ -265,6 +278,12 @@ extraSprites:
       448: Resources/ITEMS/BOMBARD/StrikeVox_IG_HandOb.png      # CAS Strike Vox
       456: Resources/ITEMS/BOMBARD/VoxH01.png                   # Stormhawk Vox
       464: Resources/ITEMS/BOMBARD/StrikeVox_I_HandOb.png       # Orbital Lance Vox
+      472: Resources/ITEMS/HBOLTER/HBolterSCT1_HndOb.png        # Scout Heavy Bolter
+      480: Resources/ITEMS/HBOLTER/HBolterSCT2_HndOb.png        # Scout Heavy Bolter (Deployed)
+      488: Resources/ITEMS/MISSILE/MLaunch1_HndOb.png           # Scout Missile Launcher
+      496: Resources/ITEMS/MISSILE/MLaunch2_HndOb.png           # Scout Missile Launcher (Deployed)
+      504: Resources/ITEMS/MISSILE/Vengor_HndOb.png             # Vengor Missile Launcher
+      512: Resources/ITEMS/MISSILE/Castellan_HndOb.png          # Castellan Missiles
 
 
   - type: CustomArmorPreviews

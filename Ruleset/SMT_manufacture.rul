@@ -190,9 +190,9 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 3
       STR_UFO_CONSTRUCTION: 3
-      STR_KILLPOINT_TOKEN: 15
+      STR_KILLPOINT_TOKEN: 40
     producedItems:
-      STR_LIGHT_BOLTPISTOL_AMMO_MC: 30
+      STR_LIGHT_BOLTPISTOL_AMMO_MC: 20
 
   - name: STR_LIGHT_BOLTER_AMMO_MC                  # MC ammo - Light Bolter
     category: STR_AMMUNITION
@@ -205,7 +205,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 4
       STR_UFO_CONSTRUCTION: 4
-      STR_KILLPOINT_TOKEN: 20
+      STR_KILLPOINT_TOKEN: 40
     producedItems:
       STR_LIGHT_BOLTER_AMMO_MC: 15
 
@@ -218,9 +218,9 @@ manufacture:
     time: 200
     cost: 30000
     requiredItems:
-      STR_ALIEN_ALLOYS: 3 # was 4
-      STR_UFO_CONSTRUCTION: 3 # was 4
-      STR_KILLPOINT_TOKEN: 20
+      STR_ALIEN_ALLOYS: 4
+      STR_UFO_CONSTRUCTION: 4
+      STR_KILLPOINT_TOKEN: 40
     producedItems:
       STR_PISTOL_CLIP_MC: 20
 
@@ -235,7 +235,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 5
       STR_UFO_CONSTRUCTION: 5
-      STR_KILLPOINT_TOKEN: 30
+      STR_KILLPOINT_TOKEN: 40
     producedItems:
       STR_RIFLE_CLIP_MC: 10
 
@@ -250,9 +250,9 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 4
       STR_UFO_CONSTRUCTION: 4
-      STR_KILLPOINT_TOKEN: 20
+      STR_KILLPOINT_TOKEN: 40
     producedItems:
-      STR_BOLTRIFLE_DRUM_MC: 5
+      STR_BOLTRIFLE_DRUM_MC: 8
 
   - name: STR_ABSOLVOR_AMMO_MC                      # Absolvor MC Ammo
     category: STR_AMMUNITION
@@ -284,7 +284,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 5 # was 10
       STR_UFO_CONSTRUCTION: 5 # was 10
-      STR_KILLPOINT_TOKEN: 20
+      STR_KILLPOINT_TOKEN: 40
     producedItems:
       STR_HB_CLIP_MC: 10
 
@@ -299,7 +299,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 5
       STR_UFO_CONSTRUCTION: 5
-      STR_KILLPOINT_TOKEN: 30
+      STR_KILLPOINT_TOKEN: 60
     producedItems:
       STR_AC_MC_AMMO: 5
 
@@ -350,7 +350,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 6
       STR_UFO_CONSTRUCTION: 6
-      STR_KILLPOINT_TOKEN: 40
+      STR_KILLPOINT_TOKEN: 75 #
     producedItems:
       STR_AC_MC_BELT: 5
 
@@ -817,7 +817,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 10
       STR_UFO_CONSTRUCTION: 2
-      STR_KILLPOINT_TOKEN: 50
+      STR_KILLPOINT_TOKEN: 40
 
   - name: STR_MKX_HELIX_ARMOR                       # Primaris Helix Adept
     category: STR_CAT_ARMOR

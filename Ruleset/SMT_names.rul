@@ -28,6 +28,10 @@ extraStrings:
       STR_SNAP_SHOT_COUNT: "Snap (x{0})"
       STR_FULL_AUTO: Full Auto
       STR_FULL_AUTO_COUNT: "Full Auto (x{0})"
+      STR_ARCING_SHOT: "Arcing Shot"
+      STR_ARCING_SHOT_SHORT: "Arcing Shot (x{0})"
+      STR_CASTELLAN_SHOT: "Castellan Burst"
+      STR_CASTELLAN_SHOT_SHORT: "Castellan Burst (x{0})"
       STR_FIRESUPPORT_STRIKE_COUNT: "Orb. Strike (x{0})"
       STR_FIRESUPPORT_LANCE_COUNT: "Orb. Lance (x{0})"
       STR_FIRESUPPORT_BOLTER_COUNT: "CAS Bolter (x{0})"
@@ -37,7 +41,6 @@ extraStrings:
       STR_CROZIUS_AIMED_COUNT: "Sanctify (x{0})"
       STR_THROW_KNIFE: "Throw Knife"
       STR_LAUNCH_SALVO_AUTO: Bombardment
-      STR_LAUNCH_FRAGS: Launch Grenade
       STR_DUAL_SNAP: Dual Snap
       STR_SIGNUM_ACTION: Squad Link
       STR_SIGNUM_ENEMY: Mark Target
@@ -186,7 +189,7 @@ extraStrings:
       STR_TERMINATOR_DW_CORPSE: Deathwatch Corpse
       STR_MK7_DW_CORPSE: Deathwatch Corpse
       STR_TELEPORT_CLAWS: Teleporter
-      AUX_RAM_SMT: Chainsword
+      AUX_RAM_SMT: Ram
       STR_CYCLONE_LAUNCHER: Cyclone Missiles
       STR_DREAD_MISSILES: Dreadnought Missiles
       STR_DREAD_STORMBOLTER: Stormbolter Fist
@@ -272,7 +275,7 @@ extraStrings:
       STR_SM_APOTH_FIST_LV3: Apothecary Gear
       STR_SM_APOTH_FIST_DW: Apothecary Gear
       STR_RIFLED: Cawl Boltrifle
-      STR_BOLTRIFLE_GL: "Combi Boltrifle"
+      STR_BOLTRIFLE_GL: Combi Boltrifle
       STR_BOLTRIFLE_STERNGUARD: Sternguard Boltrifle
       STR_BOLTRIFLE_SCOPE: Stalker Boltrifle
       STR_BOLTRIFLE_MC: Master Crafted Boltrifle
@@ -908,7 +911,7 @@ extraStrings:
       STR_RIFLEDW_UFOPEDIA: "{NEWLINE} Deathwatch Killteams utilize the best equipment the Imperium can offer. This Artifex Boltrifle is excellent at laying down heavy fire at longer ranges and can fire custom Deathwatch Bolts. {NEWLINE}{NEWLINE} Recoil: {ALT}75{ALT}{NEWLINE} Restricted ({ALT}Deathwatch{ALT})"
       STR_BOLTRIFLE_STERNGUARD_UFOPEDIA: "{NEWLINE} Sternguard are Primaris elites who prefer fighting at range with Bolters, their rifles meticulously modified to give them higher performance and accuracy.{NEWLINE}{NEWLINE} Recoil: {ALT}75"
       STR_BOLTRIFLE_SCOPE_UFOPEDIA: "{NEWLINE} The Stalker-pattern Boltrifle is equipped with a powerful scope, making it a deadly precision battle rifle able to pick off targets at a distance.{NEWLINE}{NEWLINE} Recoil: {ALT}75"
-      STR_BOLTRIFLE_GL: "{NEWLINE} This Combi-Boltrifle is equipped with an underslung grenade launcher, making it a flexible option against a wide range of threats.{NEWLINE}{NEWLINE} Recoil: {ALT}75"
+      STR_BOLTRIFLE_GL_CODEX: "{NEWLINE} This Combi-Boltrifle is equipped with an underslung grenade launcher, making it a flexible option against a wide range of threats.{NEWLINE}{NEWLINE} Recoil: {ALT}75"
       STR_BOLTRIFLE_MC_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}75"
       STR_BOLTER_CARBINE_UFOPEDIA: "{NEWLINE} Optimized for close-quarters fighting and loaded with light bolter rounds, Bolt Carbines are used by Primaris Marines when standard Boltrifles would be too unwieldy.{NEWLINE}{NEWLINE} Recoil: {ALT}50"
       STR_BOLTER_CARBINE_SCOPE_UFOPEDIA: "{NEWLINE} With a light profile and attached scope, the Occulus Bolt Carbine is often used by infiltrators and forward scouts to pick off exposed targets.{NEWLINE}{NEWLINE} Recoil: {ALT}50"
@@ -1122,6 +1125,13 @@ extraStrings:
       STR_STEALTH_REIVER: Reiver Stealth
       STR_STEALTH_ELIMINATOR: Eliminator Stealth
       STR_HB_DW: "¬ Storm Bolter"
+      STR_HEAVY_BOLTER_SCOUT: Scout Heavy Bolter
+      STR_MISSILE_LAUNCHER_SCOUT: Missile Launcher
+      STR_VENGOR_LAUNCHER: Vengor Missile Launcher
+      STR_CASTELLAN_HE: Castellan HE Missiles
+      STR_CASTELLAN_KRAK: Castellan Krak Missiles
+      STR_CASTELLAN_INCIN: Castellan Incindiary Missiles
+      STR_CASTELLAN_DEFOREST: Castellan Anti-Plant Missiles
       ## Armor
       STR_MKX_ASS_UFOPEDIA: "Mark X Tacticus armor can be outfitted with an assault jetpack, allowing Marines to dive into battle with thunderous impacts."
       STR_MKX_GRV_CODEX: MKX Gravis Armor

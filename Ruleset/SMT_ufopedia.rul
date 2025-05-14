@@ -3,8 +3,8 @@ ufopaedia:
     ### 10000  - General Strategy - General XCom strategy
     ### 20000  - Advanced Strategy - 40k specific details and keywords
     ### 30000  - Research - Generic Research Details & Items
-    ### 40000  - Craft - Craft & Craft Gear
-    ### 50000  - Base Facilities
+    ### 40000  - Base Facilities
+    ### 50000  - Craft - Craft & Craft Gear
     ### 60000  - Psyker Abilities
     ### 70000  - Ammo Types
     ### 80000  - Imperium Weapons
@@ -721,7 +721,10 @@ ufopaedia:
     text: STR_HONOR_MEDAL_DESCRIPTION
     listOrder: 100060
 
-### Spells
+### 30000  - General Research
+### 40000  - Base Facilities
+### 50000  - Craft
+### 60000  - Spells
   - id: STR_LIB_HASTE_TOME                  # Librarian Speed Ability
     type_id: 14
     section: STR_BOOKS
@@ -790,7 +793,9 @@ ufopaedia:
     requires:
       - STR_MARINES_AND_DEATHWATCH
 
-### ARMOR
+### 70000  - Ammo details
+### 80000  - Imperium Weapons
+### 90000  - Imperium Armor
   - id: STR_SCOUT_SGT_UC                    #5105  #ARMOR
     type_id: 15
     section: STR_ARMORPEDIA

@@ -92,6 +92,15 @@ items:
     refNode: *STR_AMMO_SKIP_ONE
   - type: STR_HWP_FUSION_BOMB
     refNode: *STR_AMMO_SKIP_ONE
+### Castellan Missiles
+  - type: STR_CASTELLAN_HE
+    refNode: *STR_AMMO_SKIP_ONE
+  - type: STR_CASTELLAN_KRAK
+    refNode: *STR_AMMO_SKIP_ONE
+  - type: STR_CASTELLAN_INCIN
+    refNode: *STR_AMMO_SKIP_ONE
+  - type: STR_CASTELLAN_DEFOREST
+    refNode: *STR_AMMO_SKIP_ONE
 
 ### Weapons ###
 ### Bolters
@@ -174,5 +183,8 @@ items:
 
 
   - type: AUX_HOVERTANK_LAUNCHER    # Dreadnought Missile Launcher
+    refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
+
+  - type: STR_VENGOR_LAUNCHER       # Vengor Missile Launcher
     refNode: *STR_WEAPON_SPRITE_SWAP_TEMPLATE
 

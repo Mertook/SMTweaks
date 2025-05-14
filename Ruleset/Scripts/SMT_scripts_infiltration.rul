@@ -278,140 +278,11 @@ extended:
 
 
       - delete: ROSIGMA_sUU_infiltration_shadow
-        offset: 1
-        code: |
-          var int temp;
-          var int temp2;
-          var int shadowSkill;
-          var ptr RuleArmor myRuleArmor;
-
-          # Check to see if we're using the Fighting A Shadow skill
-          skill.getTag shadowSkill Tag.SKILL_LIKE_FIGHTING_A_SHADOW_ID;
-          if le shadowSkill 0;
-            #debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_shadow | offset: 1 | Not using SKILL_LIKE_FIGHTING_A_SHADOW_ID. Aborting.";
-            return;
-          end;
-
-          # Check our counter
-          actor.getRuleArmor myRuleArmor;
-          myRuleArmor.getTag temp Tag.ARMOR_RESTEALTH_KILL_REQUIREMENT; # get the number of kills required
-          if lt temp 1;
-            battle_game.flashMessage "STR_SKILL_INFILTRATION_CHECK_NO_RESTEALTH" temp;
-            #debug_log "skillUseUnit | ROSIGMA_sUU_infiltration_shadow | offset: 1 | Unit cannot regain infiltration. Aborting.";
-          end;
-          actor.getTag temp2 Tag.UNIT_LIKE_A_SHADOW_COUNTER;
-          sub temp temp2; # calculate kills remaining
-          limit_lower temp 0; # negatives look ugly when displayed.
-
-          if eq shadowSkill 1;
-            battle_game.flashMessage "STR_SKILL_INFILTRATION_CHECK" temp;
-          else le temp 0;
-            if le have_tu 0;
-               #debug_log "skillUseUnit | ROSIGMA_sUU_infiltration_shadow | offset: 1 | Unit lacks adequate TU. Aborting.";
-              return;
-            end;
-            actor.getTimeUnitsMax temp;
-            muldiv temp 90 100;
-            mul temp -1;
-            actor.addTimeUnits temp; # takes our whole turn to go back into stealth mode
-            #debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_shadow | offset: 1 | Restealthing: UNIT_STEALTH_IS_ACTIVE. temp." temp;
-            skill.getTag temp Tag.SKILL_LIKE_FIGHTING_A_SHADOW_RESTEALTH_DURATION;
-            actor.setTag Tag.UNIT_STEALTH_IS_ACTIVE temp; # activate stealth
-            #debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_shadow | offset: 1 | Restealthing: UNIT_STEALTH_IS_ACTIVE. temp." temp;
-            actor.setTag Tag.UNIT_LIKE_A_SHADOW_COUNTER 0; # reset this counter
-            battle_game.flashMessage "STR_SKILL_INFILTRATION_ACTIVATED" temp;
-          end;
-
-          return;
-
       - delete: ROSIGMA_sUU_infiltration_camo_cloak
-        offset: 1
-        code: |
-          var int temp;
-          var int temp2;
-          var int stealthActive;
-          var int shadowSkill;
-          var ptr RuleArmor myRuleArmor;
-
-          # Check to see if we're using the Fighting A Shadow skill
-          skill.getTag shadowSkill Tag.SKILL_ACTIVATE_CAMO_CLOAK_ID;
-          if lt shadowSkill 1;
-            #debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_camo_cloak | offset: 1 | Not using SKILL_LIKE_FIGHTING_A_SHADOW_ID. Aborting.";
-            return;
-          end;
-
-          # Check our counter
-          actor.getRuleArmor myRuleArmor;
-          myRuleArmor.getTag temp Tag.ARMOR_RESTEALTH_TURN_REQUIREMENT; # get the number of turns required
-          if lt temp 1;
-            battle_game.flashMessage "STR_SKILL_INFILTRATION_CHECK_NO_RESTEALTH" temp;
-            #debug_log "skillUseUnit | ROSIGMA_sUU_infiltration_camo_cloak | offset: 1 | Unit cannot regain infiltration. Aborting.";
-          end;
-          actor.getTag temp2 Tag.UNIT_STEALTH_CHARGE_TURN_COUNTER;
-          sub temp temp2; # calculate kills remaining
-          limit_lower temp 0; # negatives look ugly when displayed.
-
-          actor.getTag stealthActive Tag.UNIT_STEALTH_IS_ACTIVE; # activate stealth
-          if eq shadowSkill 3;
-            if gt stealthActive 0;
-              battle_game.flashMessage "STR_SCRIPT_CAMO_CLOAK_DEACTIVATE";
-              actor.setTag Tag.UNIT_STEALTH_IS_ACTIVE 0; # disable stealth
-              actor.getTag temp Tag.UNIT_DIG_IN_MOVE_PENALTY;
-              actor.setTag Tag.UNIT_CAMO_CLOAK_MOVE_COST_MULTIPLIER 0;
-              if le temp 100;
-                actor.MoveCost.setBaseNormalTimePercent 100;
-              end;
-              return;
-            end;
-            battle_game.flashMessage "STR_SCRIPT_CAMO_CLOAK_NOT_ACTIVE";
-            return;
-          end;
-
-          if eq shadowSkill 1;
-            if gt stealthActive 0;
-              battle_game.flashMessage "STR_SCRIPT_INFILTRATION_TIME_REMAINING" stealthActive;
-            else;
-              if lt temp 1;
-                battle_game.flashMessage "STR_SCRIPT_INFILTRATION_RECHARGED";
-              else;
-                battle_game.flashMessage "STR_SCRIPT_INFILTRATION_RECHARGING" temp;
-              end;
-            end;
-            return;
-          end;
-
-          if gt temp 0;
-            battle_game.flashMessage "STR_SCRIPT_INFILTRATION_RECHARGING" temp;
-            return;
-          end;
-
-          if le have_tu 0;
-            battle_game.flashMessage "STR_SCRIPT_CAMO_CLOAK_NOT_ENOUGH_TUS";
-            return;
-          end;
-
-          actor.getTimeUnitsMax temp;
-          muldiv temp 90 100;
-          mul temp -1;
-          actor.addTimeUnits temp; # takes most of our turn to go back into stealth mode
-          #debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_camo_cloak | offset: 1 | Restealthing: UNIT_STEALTH_IS_ACTIVE. temp." temp;
-          skill.getTag temp Tag.SKILL_ACTIVATE_CAMO_CLOAK_RESTEALTH_DURATION;
-          actor.setTag Tag.UNIT_STEALTH_IS_ACTIVE temp; # activate stealth
-          #debug_log "newTurnUnit | ROSIGMA_sUU_infiltration_camo_cloak | offset: 1 | Restealthing: UNIT_STEALTH_IS_ACTIVE. temp." temp;
-          actor.setTag Tag.UNIT_STEALTH_CHARGE_TURN_COUNTER 0; # reset this counter
-          battle_game.flashMessage "STR_SKILL_CAMO_CLOAK_ACTIVATED" temp;
-          set temp2 700;
-          actor.setTag Tag.UNIT_CAMO_CLOAK_MOVE_COST_MULTIPLIER temp2; # set the multiplier for dig in compatibility
-          actor.MoveCost.getBaseTimePercent temp; #highest penalty applies
-          if lt temp temp2;
-            actor.MoveCost.setBaseNormalTimePercent temp2; #moving is more expensive
-          end;
-
-          return;
-
+      - delete: ROSIGMA_sUU_infiltration
 
     newTurnUnit:
-      - override: ROSIGMA_nTU_infiltration_decrement_stealth
+      - new: SMTS_nTU_decrement_stealth # replace Rosigma version to handle movespeed properly
         offset: 2
         code: |
           var int temp;
@@ -420,14 +291,12 @@ extended:
 
           battle_game.getTurn temp;
           if le temp 0; # we don't care about Turn 0 and prior; abort.
-            #debug_log "newTurnUnit | ROSIGMA_nTU_infiltration_decrement_stealth | offset: 2 | Not past turn 0. Aborting.";
             return;
           end;
 
           battle_game.getTurnSide temp; # trigger only on the same turn as the unit's faction
           unit.getFaction temp2;
           if neq temp temp2;
-            #debug_log "newTurnUnit | ROSIGMA_nTU_infiltration_decrement_stealth | offset: 2 | Not the same turn as the unit. Aborting.";
             return;
           end;
 
@@ -436,7 +305,6 @@ extended:
 
           unit.getRuleArmor myRuleArmor;
           if le temp 0;
-            #debug_log "newTurnUnit | ROSIGMA_nTU_infiltration_decrement_stealth | offset: 2 | Target lacks UNIT_STEALTH_IS_ACTIVE. Aborting.";
             myRuleArmor.getTag temp Tag.ARMOR_RESTEALTH_TURN_REQUIREMENT; #check to see if we need turns to restealth
             if gt temp 0;
               unit.getTag temp2 Tag.UNIT_STEALTH_CHARGE_TURN_COUNTER;
@@ -478,7 +346,7 @@ extended:
           battle_game.flashMessage "STR_SCRIPT_INFILTRATION_TIME_REMAINING" temp;
           return;
 
-      - override: ROSIGMA_nTU_infiltration_set_stealth
+      - new: SMTS_nTU_set_stealth # replace Rosigma version to use SMT variables
         offset: 3
         code: |
           var int temp;
@@ -487,16 +355,12 @@ extended:
 
           battle_game.getTurn temp;
           if gt temp 1; # we don't care about Turns beyond turn 1; abort.
-            #debug_log "newTurnUnit | ROSIGMA_nTU_infiltration_set_stealth | offset: 3 | Past turn 1. Aborting." temp;
             return;
           end;
-
-          #debug_log "newTurnUnit | ROSIGMA_nTU_infiltration_set_stealth | offset: 3 | Current Turn per battle_game.getTurn, temp:" temp;
 
           battle_game.getTurnSide temp; # trigger only on the same turn as the unit's faction
           unit.getFaction temp2;
           if neq temp temp2;
-            #debug_log "newTurnUnit | ROSIGMA_nTU_infiltration_set_stealth | offset: 3 | Not the same turn as the unit. Aborting.";
             return;
           end;
 
@@ -504,7 +368,6 @@ extended:
           myRuleArmor.getTag temp2 Tag.ARMOR_IS_INFILTRATOR; # get the unit's infiltrator value
 
           if le temp2 0;
-            #debug_log "newTurnUnit | ROSIGMA_nTU_infiltration_set_stealth | offset: 3 | Target lacks ARMOR_IS_INFILTRATOR. Aborting.";
             return;
           end;
 
@@ -515,14 +378,13 @@ extended:
           end;
           unit.setTag Tag.UNIT_STEALTH_RANGE temp; # set stealth range
           battle_game.flashMessage "STR_SCRIPT_INFILTRATION_UNIT_STEALTHED" temp2;
-          #debug_log "newTurnUnit | ROSIGMA_nTU_infiltration_set_stealth | offset: 3 | Current Turn:" turn;
-          #debug_log "newTurnUnit | ROSIGMA_nTU_infiltration_set_stealth | offset: 3 | UNIT_STEALTH_IS_ACTIVE. temp." temp;
           return;
 
-
+      - delete: ROSIGMA_nTU_infiltration_set_stealth
+      - delete: ROSIGMA_nTU_infiltration_decrement_stealth
 
     hitUnit:
-      - override: ROSIGMA_hU_infiltration_stealth_deactivate_on_hit
+      - new: SMTS_stealth_deactivate_on_hit # replace Rosigma script to handle movespeed properly
         offset: 5.1
         code: |
           var int temp;
@@ -552,13 +414,12 @@ extended:
                 unit.MoveCost.setBaseNormalTimePercent temp; # handle digin
               end;
             end;
-            #debug_log "ROSIGMA_hU_infiltration_stealth_deactivate_on_hit, offset 1: disabling target invisibility due to damage. UNIT_STEALTH_IS_ACTIVE";
             return power part side;
           end;
 
           return power part side;
 
-      - override: ROSIGMA_hU_infiltration_stealth_deactivate_on_attack
+      - new: SMTS_stealth_deactivate_on_attack # replace Rosigma script to handle movespeed properly
         offset: 5.2
         code: |
           var int temp;
@@ -586,12 +447,14 @@ extended:
               attacker.MoveCost.setBaseNormalTimePercent temp; # handle digin
             end;
           end;
-          #debug_log "ROSIGMA_hU_infiltration_stealth_deactivate_on_attack, offset 1: disabling attacker invisibility due to damage. UNIT_STEALTH_IS_ACTIVE" temp;
           return power part side;
 
+      - delete: ROSIGMA_hU_infiltration_stealth_deactivate
+      - delete: ROSIGMA_hU_infiltration_stealth_deactivate_on_hit
+      - delete: ROSIGMA_hU_infiltration_stealth_deactivate_on_attack
 
     visibilityUnit:
-      - override: ROSIGMA_vU_infiltration_proximity_detection #***Rosigma script rewritten for custom detection ranges***
+      - new: SMTS_stealth_proximity_detection # modified for custom detection ranges
         offset: 5
         code: |
           var int temp;
@@ -610,8 +473,11 @@ extended:
 
           return 0 visibility_mode;
 
+      - delete: ROSIGMA_vU_infiltration_proximity_detection
+      - delete: ROSIGMA_vU_infiltration
+
     reactionUnitAction:
-      - override: ROSIGMA_rUA_infiltration_no_reactions #***modified to account for detection range and not negate enemy reactions (they're already negated by not being visible unless you get within spotting range)
+      - new: SMTS_stealth_no_reactions # modified to account for detection range and not bother negating enemy reactions (they're already negated by not being visible)
         offset: 10
         code: |
           var int temp;
@@ -620,12 +486,12 @@ extended:
           if neq temp 0;
             mul temp 12; # 1 tile ~= 15.75, use 3/4 of detection range
             if gt distance temp; # prevent reactions if enemy is out of detection range
-              #debug_log "reactionUnitAction | ROSIGMA_rUA_infiltration_no_reactions | offset: 10 | Acting unit has UNIT_STEALTH_IS_ACTIVE. Abort reaction." temp distance;
               return 0;
             end;
           end;
 
           return reaction_chance;
 
+      - delete: ROSIGMA_rUA_infiltration_no_reactions
 
 

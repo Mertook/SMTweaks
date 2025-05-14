@@ -557,11 +557,10 @@ research:
     cost: 0 # make it instant so players don't waste time on it
 
   - name: STR_GLAUNCHER_PREREQ      # Grenade Launcher + Ammo Unlock
-    cost: 40
-    points: 10
+    cost: 0
+    points: 0
     dependencies:
       - STR_GENERALLOCK
-    listOrder: 10 # push above corpses/etc
 
   - name: STR_HBOLTER_PREREQ        # MK4 Heavy Bolter unlock
     cost: 100

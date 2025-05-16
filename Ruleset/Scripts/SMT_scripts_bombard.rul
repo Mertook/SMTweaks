@@ -69,7 +69,7 @@ extended:
             return;
           end;
 
-          item.setHealQuantity 10; # infinite use
+          item.setPainKillerQuantity 10; # infinite use
           battle_game.getTag temp Tag.SMT_STRIKE_ACTIVE_SPAWN; # check that a strike isn't already called
           item.getActionCost.getTimeUnits tuCost actor battle_action_use;
           actor.addTimeUnits tuCost; # refund cost if Strike fails

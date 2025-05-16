@@ -305,7 +305,7 @@ soldiers:
     avatarOffsetY: 42
     value: 65
     moraleLossWhenKilled: 200
-    skillIconSprite: 40
+    skillIconSprite: 45
     skills:
       - STR_INSPIRE_CAPTAIN_SKILL
       - STR_CMD_ARMOR_SKILL
@@ -928,7 +928,7 @@ soldiers:
     allowPiloting: true
     armor: STR_MKX_TAC_LV5_UC
     value: 65
-    skillIconSprite: 40
+    skillIconSprite: 45
     skills:
       - STR_INSPIRE_CAPTAIN_SKILL
       - STR_CMD_ARMOR_SKILL
@@ -1661,6 +1661,13 @@ units:
       - - STR_BOMBARD_BATTLECANNON
 
   - type: STR_BOMBARD_ROCKET_TARGETER               # Craft Bombard Rockets
+    refNode: *STR_BOMBARD_TARGETER_DEFAULT
+    livingWeapon: true
+    armor: STR_BOMBARD_ROCKET_ARMOR
+    builtInWeaponSets:
+      - - STR_BOMBARD_ROCKET
+
+  - type: STR_MARINE_CALLIN_TARGETER                # Marine Summon
     refNode: *STR_BOMBARD_TARGETER_DEFAULT
     livingWeapon: true
     armor: STR_BOMBARD_ROCKET_ARMOR

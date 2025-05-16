@@ -196,6 +196,8 @@ extraSprites:
       294: Resources/ITEMS/MISSILE/CastellanKR_BigOb.png        # Castellan Missiles (Krak)
       295: Resources/ITEMS/MISSILE/CastellanIC_BigOb.png        # Castellan Missiles (Incin)
       296: Resources/ITEMS/MISSILE/CastellanDF_BigOb.png        # Castellan Missiles (Deforest)
+      297: Resources/ITEMS/MISSILE/MLaunchIG1_BigOb.png         # Cadian Missile Launcher
+      298: Resources/ITEMS/MISSILE/MLaunchIG2_BigOb.png         # Cadian Missile Launcher (Deployed)
 
 ###Item FloorOBs
   - type: FLOOROB.PCK
@@ -203,6 +205,7 @@ extraSprites:
       99: Resources/ITEMS/blank.png                             # Blank
       100: Resources/ITEMS/BOMBARD/VoxF01.png                   # Stormhawk Strike Vox
       101: Resources/ITEMS/BOMBARD/LaserMarker_FloorOb.png      # Orbital Lance Marker
+      102: Resources/ITEMS/BOMBARD/MarineMarker_FloorOb.png     # Marine Reinforcement Marker
       107: Resources/ITEMS/SHOTGUN/shotgun_FloorOb.png          # Astartes Shotgun
       120: Resources/ITEMS/BOMBARD/StrikeVox_FloorOb.png        # Orbital Strike Vox
       121: Resources/ITEMS/BOMBARD/StrikeVox_IG_FloorOb.png     # CAS Strike Vox
@@ -284,6 +287,8 @@ extraSprites:
       496: Resources/ITEMS/MISSILE/MLaunch2_HndOb.png           # Scout Missile Launcher (Deployed)
       504: Resources/ITEMS/MISSILE/Vengor_HndOb.png             # Vengor Missile Launcher
       512: Resources/ITEMS/MISSILE/Castellan_HndOb.png          # Castellan Missiles
+      520: Resources/ITEMS/MISSILE/MLaunchIG1_HndOb.png         # Cadian Missile Launcher
+      528: Resources/ITEMS/MISSILE/MLaunchIG2_HndOb.png         # Cadian Missile Launcher (Deployed)
 
 
   - type: CustomArmorPreviews
@@ -317,11 +322,13 @@ extraSprites:
     width: 32
     height: 24
     files:
-      40: Resources/DECALS/SPICONINSPIRE.png
-      41: Resources/DECALS/SPICONSIGNUM.png
-      42: Resources/DECALS/SPICONARM.png
-      43: Resources/DECALS/SPICONRAM.png
-      44: Resources/DECALS/SPICONSTOMP.png
+      40: Resources/DECALS/SPICON_INSPIRE.png
+      41: Resources/DECALS/SPICON_SIGNUM.png
+      42: Resources/DECALS/SPICON_ARM.png
+      43: Resources/DECALS/SPICON_RAM.png
+      44: Resources/DECALS/SPICON_STOMP.png
+      45: Resources/DECALS/SPICON_CODEX.png
+      46: Resources/DECALS/SPICON_STEALTH.png
 
 ###Scout Sergeant
   - typeSingle: SCOUT__1__SCOUTSGTM

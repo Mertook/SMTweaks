@@ -36,3 +36,13 @@ skills:
     costUse:
       time: 1
     flatUse: true
+
+  - type: STR_DIG_IN
+    costUse:
+      time: 50
+      energy: 5 # was 30%
+    flatUse:
+      time: false
+      energy: true
+    tags:
+      DigIn: 1

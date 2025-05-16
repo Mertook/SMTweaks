@@ -115,9 +115,9 @@ items:
     type: STR_BOLTER_ENFORCER
     compatibleAmmo: # make sure they can use all the appropriate ammo
       - STR_LIGHT_BOLTER_AMMO
-      - STR_LIGHT_BOLTER_AMMO_MC
       - STR_LIGHT_BOLTER_AMMO_PEN
       - STR_LIGHT_BOLTER_AMMO_EX
+      - STR_LIGHT_BOLTER_AMMO_MC
       - STR_LIGHT_BOLTER_AMMO_AP
       - STR_LIGHT_BOLTER_AMMO_INF
       - STR_LIGHT_BOLTPISTOL_AMMO
@@ -311,9 +311,10 @@ items:
       ToArmorPre: 0.2
       ToHealth: 0.9
 
-  - &STR_STEALTH_MED_TEMPLATE               # Stealth armor tool template
+  - &REF_STEALTH_MED_TEMPLATE               # Stealth armor tool template
     type: STR_STEALTH_ADVSCOUT
     categories: [STR_SCOUT]
+    specialIconSprite: 46
     fixedWeapon: true
     recover: false
     armor: 300
@@ -321,9 +322,10 @@ items:
     medikitTargetMatrix: 0
     woundRecovery: 0
     healthRecovery: 0
-    medikitType: 1
+    medikitType: 3
     medikitTargetSelf: true
-    heal: 10
+    heal: 0
+    painKiller: 10
     tuUse: 60
     flatUse: false
     medikitActionName: STR_TOGGLE_STEALTH
@@ -1748,6 +1750,7 @@ items:
 
   - type: STR_HB_DW                         # MC Stormbolter (Deathwatch)
     categories: [STR_CAT_TERMINATOR, STR_CAT_BOLTER]
+    ufopediaType: STR_HB_MC
     size: 0.0
     weight: 40
     bigSprite: {mod: 40k, index: 510}
@@ -2021,7 +2024,7 @@ items:
   - type: STR_AUTO_CANNON                   # Heavy Bolter MK4
     costBuy: 90000 # was 13500 - Now mid-tier weapon instead of starter gear
     costSell: 45000 #
-    weight: 50
+    weight: 45 # was 50
     bulletSpeed: 50
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     requiresBuy:
@@ -2033,7 +2036,7 @@ items:
     accuracyAuto: 50 # was 50
     accuracySnap: 65 # was 60
     accuracyAimed: 0
-    tuAuto: 70 # was 80 for 10
+    tuAuto: 65 # was 80 for 10
     tuSnap: 35 # was 30 for 2 shot
     tuAimed: 0
     tuLoad: 30 # was 40
@@ -2049,8 +2052,8 @@ items:
     kneelBonus: 150
     tags:
       ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
-      ITEM_IS_HEAVY_WEAPON: 3 # 20% additional penalty when firing with lowered TUs
-      REACTION_MULTIPLIER: 50 # bulky
+      ITEM_IS_HEAVY_WEAPON: 1
+      REACTION_MULTIPLIER: 66 # bulky
       REACTION_PENALTY_KNEELING_BYPASS: 1
 
   - type: STR_HEAVY_BOLTER_MARS             # Heavy Bolter Mars
@@ -2083,12 +2086,12 @@ items:
     autoRange: 16
     snapRange: 22
     aimRange: 18
-    accuracyAuto: 55
+    accuracyAuto: 50
     accuracySnap: 65 # regular 65
     accuracyAimed: 60 # regular 50
     tuAuto: 75 # 15 shots
     tuSnap: 33 # regular 35
-    tuAimed: 65 # regular 70 for 9
+    tuAimed: 65 # regular 65 for 9
     tuLoad: 30
     minRange: 6
     sprayWaypoints: 2
@@ -2122,7 +2125,7 @@ items:
     autoRange: 16 # mars 16
     snapRange: 22 # regular 22
     aimRange: 18 # regular 18
-    accuracyAuto: 60 # regular 50
+    accuracyAuto: 55 # regular 50
     accuracySnap: 70 # regular 60
     accuracyAimed: 65 # regular 55
     tuAuto: 75 # Mars 75
@@ -2227,7 +2230,7 @@ items:
     accuracyAimed: 0
     kneelBonus: 150
     tuAuto: 65 # regular 70 for 9
-    tuSnap: 30 # regular 35 for 3
+    tuSnap: 30 # regular 33 for 3
     tuAimed: 0
     tuLoad: 30
     minRange: 8 # regular 6
@@ -2241,9 +2244,67 @@ items:
       followProjectiles: false
     tags:
       ITEM_RECOIL: 90 # harsh requirement
-      ITEM_IS_HEAVY_WEAPON: 3 # 20% additional penalty when firing with lowered TUs
+      ITEM_IS_HEAVY_WEAPON: 1
       REACTION_MULTIPLIER: 50 # bulky
       REACTION_PENALTY_KNEELING_BYPASS: 1
+      ITEM_HAS_BIPOD: 1
+
+  - type: STR_HEAVY_BOLTER_GUARD            # IG Heavy Bolter (Godwyn)
+    costBuy: 55000
+    costSell: 20000
+    weight: 30 # was 40
+    dropoff: 4
+    autoRange: 17
+    snapRange: 23
+    aimRange: 0
+    accuracyAuto: 45
+    accuracySnap: 55
+    accuracyAimed: 0
+    tuAuto: 75
+    tuSnap: 30
+    tuAimed: 0
+    tuLoad: 40
+    minRange: 7
+    sprayWaypoints: 2
+    autoShots: 10
+    confSnap:
+      shots: 2
+      name: STR_BURST_SNAP_SHOT
+    kneelBonus: 150
+    tags:
+      REACTION_MULTIPLIER: 50
+      REACTION_PENALTY_KNEELING_BYPASS: 1
+      ITEM_RECOIL: 90 # was 60, offset by bipod
+      ITEM_HAS_BIPOD: 1
+
+  - type: STR_BOLTER_HEAVY_SOLAR            # IG Heavy Bolter (Solar)
+    costBuy: 95000
+    costSell: 40000
+    requiresBuy:
+      - STR_UFO_CONSTRUCTION
+      - STR_IMPERIAL_GUARD_OPERATIONS # Make IG exclusive
+    dropoff: 4
+    autoRange: 15 # snapshot focused, better snap than Godwyn but worse autos
+    snapRange: 25
+    aimRange: 0
+    accuracyAuto: 40
+    accuracySnap: 65
+    accuracyAimed: 0
+    tuAuto: 55
+    tuSnap: 35 # was 40
+    tuAimed: 0
+    tuLoad: 40
+    confSnap:
+      name: STR_BURST_SNAP_SHOT
+      shots: 3
+    sprayWaypoints: 2
+    autoShots: 6
+    minRange: 7
+    kneelBonus: 150
+    tags:
+      REACTION_MULTIPLIER: 50
+      REACTION_PENALTY_KNEELING_BYPASS: 1
+      ITEM_RECOIL: 90 # was 60, offset by bipod
       ITEM_HAS_BIPOD: 1
 
 ### Sniper Rifle
@@ -3201,23 +3262,51 @@ items:
     minRange: 5
     noLOSAccuracyPenalty: 75
 
+  - type: STR_ACCATRAN_ROCKET_LAUNCHER      # Accatran Rocket Launcher
+    requiresBuy:
+      - STR_GUARD_AND_ARBITES
+    costBuy: 25000 # was 75k
+    costSell: 10000
+    weight: 15  # was 30
+    compatibleAmmo:
+      - STR_SMALL_ROCKET
+      - STR_LARGE_ROCKET
+      - STR_INCENDIARY_ROCKET
+    dropoff: 6 # was 5, lightweight pocket launcher
+    accuracySnap: 0
+    accuracyAuto: 60  # was 50
+    accuracyAimed: 90  # was 85
+    tuSnap: 0
+    tuAuto: 40
+    tuAimed: 80
+    snapRange: 0
+    autoRange: 10 # was 16
+    aimRange: 20 # was 25
+    autoShots: 1
+    confAuto:
+      name: STR_SNAP_SHOT
+      shortName: STR_SHOT_TYPE_SNAP
+    armor: 300
+    kneelBonus: 130
+
   - type: STR_ROCKET_LAUNCHER               # SM Rocket Launcher
     requiresBuy: # disabled, replaced by Scout ML & Vengor
       - STR_GENERALLOCK
     costBuy: 30000 # was 100k!!
     costSell: 5000 # was 3000
-    weight: 40 # was 50
+    weight: 32 # was 50
     dropoff: 4
-    autoRange: 14
+    autoRange: 16
     snapRange: 0
-    aimRange: 30
+    aimRange: 32
     accuracyAuto: 60
     accuracySnap: 0
     accuracyAimed: 100 #
     tuAuto: 45 # was 55
     tuSnap: 0
     tuAimed: 85
-    tuLoad: 5 # integrated Autoloader
+    tuLoad: 4
+    tuUnload: 2
     confAuto: # snap -> auto to avoid reaction fire and increase recoil penalty
       name: STR_SNAP_SHOT
       shortName: STR_SNAP_SHOT_COUNT
@@ -3225,7 +3314,57 @@ items:
     minRange: 5
     kneelBonus: 150 # was 130
     tags:
-      ITEM_RECOIL: 40 # was 0
+      ITEM_RECOIL: 80 # was 0
+
+  - type: STR_MISSILE_LAUNCHER_GUARD        # IG Missile Launcher
+    requiresBuy:
+      - STR_HEAVY_WEAPONS_IG
+    requiresBuyBaseFunc: [IMPERIUM]
+    categories: [ STR_CAT_ROCKETL, STR_CAT_DEVASTATOR]
+    battleType: 1
+    size: 0.3
+    costBuy: 30000
+    costSell: 12000
+    weight: 27
+    bigSprite: 297
+    floorSprite: {mod: 40k_ROSIGMA_edits, index: 231}
+    handSprite: 520
+    bulletSprite: {mod: 40k, index: 0}
+    fireSound: {mod: 40k, index: 52}
+    twoHanded: true
+    blockBothHands: true
+    invWidth: 2
+    invHeight: 3
+    armor: 300
+    listOrder: 12099
+    compatibleAmmo:
+      - STR_SMALL_ROCKET
+      - STR_LARGE_ROCKET
+      - STR_INCENDIARY_ROCKET
+      - STR_HEAVY_ROCKET_HE
+      - STR_HEAVY_ROCKET_KRAK
+      - STR_HEAVY_ROCKET
+    dropoff: 4
+    autoRange: 16
+    snapRange: 0
+    aimRange: 28
+    minRange: 5
+    accuracyAuto: 66
+    accuracySnap: 0
+    accuracyAimed: 100
+    kneelBonus: 150
+    noLOSAccuracyPenalty: 50
+    tuAuto: 45
+    tuSnap: 0
+    tuAimed: 80
+    confAuto: # snap -> auto to avoid reaction fire and increase recoil penalty
+      name: STR_SNAP_SHOT
+      shortName: STR_SNAP_SHOT_COUNT
+      shots: 1
+    tags:
+      ITEM_IS_HEAVY_WEAPON: 1
+      ITEM_RECOIL: 80
+      ITEM_HAS_BIPOD: 1
 
   - type: STR_MISSILE_LAUNCHER_SCOUT        # Scout Missile Launcher
     requiresBuy:
@@ -3256,19 +3395,20 @@ items:
       - STR_HEAVY_ROCKET_KRAK
       - STR_HEAVY_ROCKET
     dropoff: 4
-    aimRange: 28
-    snapRange: 20
     autoRange: 0
+    snapRange: 16
+    aimRange: 28
     minRange: 5
     accuracyAuto: 0
-    accuracySnap: 60
+    accuracySnap: 66
     accuracyAimed: 100
     kneelBonus: 150
     noLOSAccuracyPenalty: 50
-    tuAimed: 80
-    tuSnap: 45
     tuAuto: 0
-    tuLoad: 5
+    tuSnap: 45
+    tuAimed: 80
+    tuLoad: 4
+    tuUnload: 2
     tags:
       ITEM_IS_HEAVY_WEAPON: 1
       ITEM_RECOIL: 80
@@ -3328,10 +3468,11 @@ items:
       shortName: STR_CASTELLAN_SHOT_SHORT
       shots: 4
       arcing: false
+    sprayWaypoints: 2
     minRange: 5
     tags:
       ITEM_IS_HEAVY_WEAPON: 1
-      ITEM_RECOIL: 100
+      ITEM_RECOIL: 90
       ITEM_COLOR_CHANGES_WITH_AMMO: 2
 
   - &REF_CASTELLAN_MISSILES
@@ -3361,15 +3502,15 @@ items:
     loadOrder: 100
     damageType: 3 # Explosive
     damageAlter:
-      RandomType: 4
+      RandomType: 6
       ArmorEffectiveness: 0.9  # concussive
       ToArmorPre: 0.1
       ToArmor: 0.1
-      ToStun: 0.5
+      ToStun: 0.3
       ToEnergy: 0.3
       ToTime: 0.2
-      ToTile: 0.75
-      ToItem: 0.75
+      ToTile: 0.5
+      ToItem: 0.5
       FixRadius: 4
     tags:
       ITEM_AMMO_COLOR: 1
@@ -3379,14 +3520,15 @@ items:
     bigSprite: 294
     listOrder: 12163
     loadOrder: 105
+    powerForAnimation: 18
     damageType: 3
     damageAlter:
       ResistType: 1 # Standard
       RandomType: 6
       ArmorEffectiveness: 0.5
       ToArmorPre: 0.2
-      ToArmor: 0.4
-      ToHealth: 0.8
+      ToArmor: 0.3
+      ToHealth: 0.7
       ToTile: 1.0
       ToItem: 1.0
       FixRadius: 1
@@ -3405,7 +3547,7 @@ items:
       index: 88
     damageType: 2 # Incin
     damageAlter:
-      RandomType: 2 # 50-150
+      RandomType: 6
       FireBlastCalc: false
       IgnoreDirection: false
       FireThreshold: 1
@@ -3415,12 +3557,12 @@ items:
       ToArmor: 0.15
       ToStun: 0.5
       ToEnergy: 0.3
-      ToWound: 0.2
       ToMorale: 2.0
-      RadiusReduction: 5
-      ToTile: 0.0
+      ToWound: 0.2
       RandomWound: false
+      ToTile: 0.25
       FixRadius: 3
+      RadiusReduction: 5
     tags:
       ITEM_AMMO_COLOR: 2
 
@@ -3436,7 +3578,7 @@ items:
     damageType: 8 # Acid
     damageAlter:
       RandomType: 3 # fixed 100%
-      ArmorEffectiveness: 2.0 # not a proper weapon
+      ArmorEffectiveness: 2.0 # anti-terrain, not a proper weapon
       FireThreshold: 999
       SmokeThreshold: 999
       ToArmorPre: 0.0
@@ -3602,6 +3744,20 @@ items:
     skillApplied: true
     experienceTrainingMode: 13
     listOrder: 12399 # just above regular chainswords
+
+  - type: STR_CHAINSWORD_STEEL_LEGION       # Light Chainsword (Steel Legion)
+    damageType: 7 # was support
+    power: 45
+    damageBonus:
+      melee: 0.3
+      strength: 0.1
+    damageAlter:
+      ToArmorPre: 0.3
+      ToHealth: 0.9
+      RandomType: 2
+      ToWound: 0.3
+      ToEnergy: 0.5
+      RandomWound: false
 
   - type: STR_CLAWS                         # Lightning Claw (Terminator)
     refNode: *STR_CLAW_DMG
@@ -4322,6 +4478,7 @@ items:
     healthRecovery: 5 #
     stunRecovery: 6 #
     energyRecovery: 15 #
+    moraleRecovery: 10
     tuUse: 10
     experienceTrainingMode: 19
     medikitTargetSelf: true
@@ -4340,6 +4497,7 @@ items:
     healthRecovery: 5 #
     stunRecovery: 6 #
     energyRecovery: 15 #
+    moraleRecovery: 15
     tuUse: 10
     experienceTrainingMode: 19
     medikitTargetSelf: true
@@ -4358,6 +4516,7 @@ items:
     healthRecovery: 6 # +1
     stunRecovery: 8 # +2
     energyRecovery: 15 #
+    moraleRecovery: 15
     tuUse: 8 # -2
     experienceTrainingMode: 19
     medikitTargetSelf: true
@@ -4376,6 +4535,7 @@ items:
     healthRecovery: 6 # +1
     stunRecovery: 8 # +2
     energyRecovery: 15 #
+    moraleRecovery: 15
     tuUse: 8 # -2
     experienceTrainingMode: 19
     medikitTargetSelf: true
@@ -4392,6 +4552,7 @@ items:
     healthRecovery: 5 #
     stunRecovery: 6 #
     energyRecovery: 15 #
+    moraleRecovery: 15
     tuUse: 10
     flatRate: true
     medikitTargetSelf: true
@@ -4567,7 +4728,7 @@ items:
       SMT_SIGNUM_DURATION: 1
 
   - type: STR_STEALTH_ADVSCOUT              # Advanced Scout Stealth
-    refNode: *STR_STEALTH_MED_TEMPLATE
+    refNode: *REF_STEALTH_MED_TEMPLATE
     tags:
       ITEM_STEALTH_RANGE: 3
       ITEM_STEALTH_DURATION: 2
@@ -4576,7 +4737,7 @@ items:
   - type: STR_STEALTH_REIVER
     refNode: *REF_FIST
   - type: STR_STEALTH_REIVER                # Primaris Reiver Stealth
-    refNode: *STR_STEALTH_MED_TEMPLATE
+    refNode: *REF_STEALTH_MED_TEMPLATE
     tags:
       ITEM_STEALTH_RANGE: 3
       ITEM_STEALTH_DURATION: 2
@@ -4585,7 +4746,7 @@ items:
   - type: STR_STEALTH_ELIMINATOR
     refNode: *REF_FIST
   - type: STR_STEALTH_ELIMINATOR            # Primaris Eliminator Stealth
-    refNode: *STR_STEALTH_MED_TEMPLATE
+    refNode: *REF_STEALTH_MED_TEMPLATE
     tags:
       ITEM_STEALTH_RANGE: 5
       ITEM_STEALTH_DURATION: 5

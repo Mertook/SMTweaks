@@ -18,7 +18,7 @@ extended:
             return;
           end;
 
-          item.setHealQuantity 10; # infinite use
+          item.setPainKillerQuantity 10; # infinite use
           item.getActionCost.getTimeUnits tuCost actor battle_action_use;
           actor.addTimeUnits tuCost; # refund cost if stealth isn't activated
 

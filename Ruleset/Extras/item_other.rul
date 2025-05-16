@@ -110,14 +110,14 @@ items:
     accuracySnap: 80
     accuracyAimed: 0
     tuAuto: 32 # was 32
-    tuSnap: 18 # was 25
+    tuSnap: 20 # was 25
     tuAimed: 0
     confSnap:
       shots: 1 # was 2
       name: STR_SNAP_SHOT
     autoShots: 4
     tags:
-      ITEM_RECOIL: 30 # was 25, light bolter with high RoF
+      ITEM_RECOIL: 40 # was 25, light bolter with high RoF
 
   - update: STR_BOLTER_LIGHT_UMBRA_UNDERSLUNG   # IG Light Bolter Umbra (GL)
     bigSprite: 245
@@ -134,7 +134,7 @@ items:
     accuracyAuto: 66 #
     accuracySnap: 80 #
     accuracyAimed: 50 #
-    tuSnap: 18 # was 25
+    tuSnap: 20 # was 25
     tuAuto: 32 # was 33
     tuAimed: 40
     confSnap: #Bolter
@@ -153,10 +153,10 @@ items:
       arcing: true
     autoShots: 4 # was 6
     tags:
-      ITEM_RECOIL: 30 # was 25, light bolter with high RoF
+      ITEM_RECOIL: 40 # was 25, light bolter with high RoF
 
   - update: STR_BOLTER_LIGHT_SOLO               # IG Light Bolter Single
-    weight: 12 # was 15
+    weight: 11 # was 15
     dropoff: 8 # was 5
     autoRange: 0
     snapRange: 15 # was 14
@@ -190,7 +190,7 @@ items:
       ITEM_RECOIL: 16 # was 20, single shot light bolter
 
   - update: STR_BOLTER_LIGHT_SOLO_SHORT         # IG Light Bolter Single
-    weight: 10 # was 12
+    weight: 8 # was 12
     dropoff: 8 # was 6
     autoRange: 0
     snapRange: 12 # was 11
@@ -206,21 +206,24 @@ items:
 
   - update: STR_BOLTER_LIGHT_LMG                # IG Accatran LMG Bolter
     size: 0.3
-    weight: 28 # was 32, lower weight = lower requirement for solo bipod deployment
+    weight: 20 # was 32, lower weight = lower requirement for solo bipod deployment
     dropoff: 5 # was 5
-    autoRange: 12 # was 12
-    snapRange: 16 # was 15
+    autoRange: 14 # was 12
+    snapRange: 18 # was 15
     aimRange: 0
-    accuracyAuto: 76
-    accuracySnap: 90
+    accuracyAuto: 66
+    accuracySnap: 80
     accuracyAimed: 0
-    tuAuto: 35 # was 60
-    tuSnap: 20 # was 35
+    tuAuto: 60 # was 60 for 5
+    tuSnap: 25 # was 35 for 1
     tuAimed: 0
-    autoShots: 4 # was 5
-    kneelBonus: 110
+    autoShots: 6 # was 5
+    confSnap:
+      shots: 2
+    kneelBonus: 150 # bipod
     tags:
-      ITEM_RECOIL: 60 # light version of heavy bolter, needs bipod setup for most IG forces
+      ITEM_RECOIL: 70 # light version of heavy bolter, needs bipod setup for most IG forces
+      ITEM_IS_HEAVY_WEAPON: 1
 
   - type: STR_BOLTER_LIGHT_SOLO_COMBIMELTA      # IG Light Bolter Single (Melta)
     requiresBuy:
@@ -282,18 +285,6 @@ items:
 
   - type: STR_BOLTPISTOL_SERAPHIM               # SoB Light Boltpistol Seraphim
     bigSprite: 271
-
-  - update: STR_HEAVY_BOLTER_GUARD              # IG Heavy Bolter (Bipod)
-    autoShots: 8 # was 7
-    tags:
-      ITEM_RECOIL: 90 # was 60, offset by bipod
-
-  - update: STR_BOLTER_HEAVY_SOLAR              # Heavy Bolter Solar
-    requiresBuy:
-      - STR_UFO_CONSTRUCTION
-      - STR_IMPERIAL_GUARD_OPERATIONS # Make IG exclusive
-    tags:
-      ITEM_RECOIL: 90 # was 60, offset by bipod
 
   - update: STR_LASGUN_CLIP_HOTSHOT             # Hotshot Lasgun ammo
     requiresBuyBaseFunc: [IMPERIUM]

@@ -61,6 +61,7 @@ armors:
     instantWoundRecovery: true
   - type: STR_DW_TAC_ARMOR_BT_UC
     refNode: *STR_DW_TAC_MK7
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -174,6 +175,7 @@ armors:
     instantWoundRecovery: true
   - type: STR_DW_APOT_ARMOR_BT_UC
     refNode: *STR_DW_APOTH_MK7
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -283,6 +285,7 @@ armors:
     instantWoundRecovery: true
   - type: STR_DW_DEV_ARMOR_BT_UC
     refNode: *STR_DW_DEV_MK7
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -397,6 +400,7 @@ armors:
     instantWoundRecovery: true
   - type: STR_DW_ASS_ARMOR_BT_UC
     refNode: *STR_DW_ASS_MK7
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -507,6 +511,7 @@ armors:
     instantWoundRecovery: true
   - type: STR_DW_TECH_ARMOR_BT_UC
     refNode: *STR_DW_TECH_MK7
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -669,6 +674,7 @@ armors:
     spriteSheet: SCTDWBT.PCK
     units:
       - STR_BLACKT
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -858,6 +864,7 @@ armors:
     instantWoundRecovery: true
   - type: STR_DW_TER_ARMOR_BT_UC
     refNode: *STR_DW_TERM_MK7
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -975,6 +982,7 @@ armors:
     instantWoundRecovery: true
   - type: STR_DW_TASS_ARMOR_BT_UC
     refNode: *STR_DW_TERM_ASS_SHIELD_MK7
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -1134,6 +1142,7 @@ armors:
       F3: ["0", "TERMCLWBT", "F3_FACE"]
       F4: ["0", "TERMCLWBT", "F4_FACE"]
       F5: ["0", "TERMCLWBT", "F5_FACE"]
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -1418,6 +1427,7 @@ armors:
       F3: ["0", "TERMCYCBT", "F3_FACE"]
       F4: ["0", "TERMCYCBT", "F4_FACE"]
       F5: ["0", "TERMCYCBT", "F5_FACE"]
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -1653,6 +1663,7 @@ armors:
     instantWoundRecovery: true
   - type: STR_MKX_DW_TAC_BT_UC
     refNode: *STR_DW_TAC_MKX
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -1802,6 +1813,7 @@ armors:
     spriteSheet: ASSDWBT.PCK
     units:
       - STR_BLACKT_PRIMARIS
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -1963,6 +1975,7 @@ armors:
     instantWoundRecovery: true
   - type: STR_MKX_DW_APO_BT_UC
     refNode: *STR_DW_APOTH_MKX
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -2077,6 +2090,7 @@ armors:
     instantWoundRecovery: true
   - type: STR_MKX_DW_TEC_BT_UC
     refNode: *STR_DW_TECH_MKX
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -2199,6 +2213,7 @@ armors:
     instantWoundRecovery: true
   - type: STR_MKX_DW_PHB_BT_UC
     refNode: *STR_DW_PHB_MKX
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -2361,6 +2376,7 @@ armors:
     spriteSheet: ELIMDWBT.PCK
     units:
       - STR_BLACKT_PRIMARIS
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -2577,6 +2593,7 @@ armors:
       F3: ["0", "GRVNWBT", "F3_FACE", "GOLA"]
       F4: ["0", "GRVNWBT", "F4_FACE", "GOLA"]
       F5: ["0", "GRVNWBT", "F5_FACE", "GOLA"]
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -2867,6 +2884,7 @@ armors:
       F3: ["0", "GRVBSBT", "F3_FACE", "GOLA"]
       F4: ["0", "GRVBSBT", "F4_FACE", "GOLA"]
       F5: ["0", "GRVBSBT", "F5_FACE", "GOLA"]
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -3164,6 +3182,7 @@ armors:
       F3: ["0", "GRVACBT", "F3_FACE", "GOLA"]
       F4: ["0", "GRVACBT", "F4_FACE", "GOLA"]
       F5: ["0", "GRVACBT", "F5_FACE", "GOLA"]
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -3461,6 +3480,7 @@ armors:
       F3: ["0", "GRVFSBT", "F3_FACE", "GOLA"]
       F4: ["0", "GRVFSBT", "F4_FACE", "GOLA"]
       F5: ["0", "GRVFSBT", "F5_FACE", "GOLA"]
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -3721,6 +3741,7 @@ armors:
     refNode: *STR_DW_INC_MKX
     units:
       - STR_BLACKT_PRIMARIS
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -3897,6 +3918,7 @@ armors:
       F3: ["0", "INCDWBT", "M3_FACE", "GOLA"]
       F4: ["0", "INCDWBT", "M4_FACE", "GOLA"]
       F5: ["0", "INCDWBT", "M5_FACE", "GOLA"]
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
@@ -4200,6 +4222,7 @@ armors:
       F3: ["0", "INCDWBT", "M3_FACE", "GOLA"]
       F4: ["0", "INCDWBT", "M4_FACE", "GOLA"]
       F5: ["0", "INCDWBT", "M5_FACE", "GOLA"]
+    zombiImmune: true
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption

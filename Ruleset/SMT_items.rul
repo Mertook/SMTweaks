@@ -1176,9 +1176,10 @@ items:
     medikitTargetMatrix: 0
     woundRecovery: 0
     healthRecovery: 0
-    medikitType: 1
+    medikitType: 3
     medikitTargetSelf: true
-    heal: 10
+    heal: 0
+    painKiller: 10
     tuUse: 10
     flatUse: true
     invWidth: 2
@@ -1259,6 +1260,54 @@ items:
       BOMBARD_CALLIN_REMOTE: 5 # 5 - Stormhawk
       BOMBARD_COOLDOWN: 4 # turns before this bombard type can be reused
       BOMBARD_AMMO_REQUIRED: 3 # Stormhawk airstrike ammo
+
+  - type: STR_WHIRLWIND_CALLIN              # Whirlwind Strike Vox
+    refNode: *STR_STRIKE_CALLIN_MED
+    ufopediaType: STR_STRM_STRIKE_DUMMY
+    size: 0.05
+    bigSprite: 100
+    floorSprite: 100
+    handSprite: 456
+    size: 0.1
+    costBuy: 60000
+    costSell: 30000
+    requiresBuy:
+      - STR_STORMTALON_CASR
+    invWidth: 2
+    invHeight: 2
+    medikitActionName: STR_STRIKE_WHIRL
+    tuUse: 60
+    flatUse: false
+    hitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
+    listOrder: 15110
+    tags:
+      BOMBARD_CALLIN_REMOTE: 5 # 5 - Stormhawk
+      BOMBARD_COOLDOWN: 20 # turns before this bombard type can be reused
+      BOMBARD_AMMO_REQUIRED: 0 # doesn't use ammo
+
+  - type: STR_MARINEDROP_CALLIN             # Marine Reinforcement Vox
+    refNode: *STR_STRIKE_CALLIN_MED
+    ufopediaType: STR_STRM_STRIKE_DUMMY
+    size: 0.05
+    bigSprite: 100
+    floorSprite: 100
+    handSprite: 456
+    size: 0.1
+    costBuy: 60000
+    costSell: 30000
+    requiresBuy:
+      - STR_STORMTALON_CASR
+    invWidth: 2
+    invHeight: 2
+    medikitActionName: STR_REINFORCE_MARINES
+    tuUse: 60
+    flatUse: false
+    hitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
+    listOrder: 15110
+    tags:
+      BOMBARD_CALLIN_REMOTE: 5 # 5 - Stormhawk
+      BOMBARD_COOLDOWN: 20 # turns before this bombard type can be reused
+      BOMBARD_AMMO_REQUIRED: 0 # doesn't use ammo
 
   - &STR_STRIKE_CALLIN_GUN                  # Firesupport Vox Template (Gun)
     type: STR_CAS_CALLIN
@@ -1709,12 +1758,17 @@ items:
     autoRange: 12
     snapRange: 0
     aimRange: 0
-    accuracyAuto: 90
+    accuracyAuto: 66
     accuracySnap: 0
     accuracyAimed: 0
     costAuto:
       time: 1
       mana: 5
+    flatAuto:
+      time: true
+      mana: true
+    confAuto:
+      name: STR_STRIKE_WHIRL
     power: 150
     damageType: 3
     damageAlter:
@@ -1722,11 +1776,88 @@ items:
       RadiusReduction: 5
       FixRadius: 5
       FireThreshold: 180
-      ToArmorPre: 0.30
+      ToArmorPre: 0.25
       ArmorEffectiveness: 0.75
-      ToTile: 0.75
+      ToTile: 0.5
       ToItem: 0.5
     clipSize: 3
+
+  - type: STR_MARINE_DROP                   # Marine Reinforcement Drop
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k, index: 206}
+    bulletSprite: {mod: 40k, index: 22}
+    bulletSpeed: 50
+    explosionHitSound: {mod: 40k, index: 704}
+    hitSound: {mod: 40k, index: 704}
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2210}
+    vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 9}  # blue laser
+    vaporDensitySurface: 6
+    vaporProbabilitySurface: 100
+    scripts:
+      vaporParticleAmmo: |
+        # noting
+        set particle_lifetime 1;
+        set subvoxel_drift 0;
+        return;
+    dropoff: 4
+    autoRange: 24
+    snapRange: 0
+    aimRange: 0
+    accuracyAuto: 60
+    accuracySnap: 0
+    accuracyAimed: 0
+    autoShots: 4
+    costAuto:
+      time: 1
+      mana: 5
+    flatAuto:
+      time: true
+      mana: true
+    confAuto:
+      name: STR_STRIKE_REINFORCE
+    power: 1
+    damageType: 0
+    damageAlter:
+      ArmorEffectiveness: 0
+      ToHealth: 0
+      ToEnergy: 0
+      ToStun: 0
+      ToWound: 0
+      ToArmor: 0
+      ToTile: 0
+      ToItem: 0
+      ToArmorPre: 0
+    spawnItem: STR_MARINE_REINFORCEMENT_SPAWNER
+    spawnItemChance: 100
+    clipSize: 4
+
+  - type: STR_MARINE_REINFORCEMENT_SPAWNER  # Allied Marine spawner
+    armor: 999
+    floorSprite: 102
+    invWidth: 0
+    invHeight: 0
+    battleType: 4
+    hitAnimation: 100
+    explosionSpeed: 100
+    recover: false
+    supportedInventorySections:
+      - STR_GROUND
+    spawnUnitFaction: 2 # civilian allies
+    spawnUnit: STR_MARINE
+    power: 100
+    damageType: 10 # impact
+    damageAlter:
+      RandomType: 3
+      ToArmorPre: 0
+      ToArmor: 0.1
+      ArmorEffectiveness: 1
+      ToStun: 0.5
+      ToTile: 0.5
+      ToItem: 0
+      FixRadius: 1
+      RadiusReduction: 0
+    tags:
+      ITEM_PRIMED_AT_BATTLE_START: 1
 
   - type: STR_STRIKE_VOX                    # Strike weapon (Old)
     categories: [STR_CAT_DEVASTATOR]
@@ -2003,7 +2134,7 @@ items:
     costAimed:
       time: 1
       mana: 5
-    clipSize: 1
+    clipSize: 2
     damageType: 1
     power: 200
     powerForAnimation: 50

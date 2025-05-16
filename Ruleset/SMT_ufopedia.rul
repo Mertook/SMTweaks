@@ -795,6 +795,49 @@ ufopaedia:
 
 ### 70000  - Ammo details
 ### 80000  - Imperium Weapons
+  - id: STR_HEAVY_BOLTER_SCOUT              # Scout Heavy Bolter
+    requires:
+      - STR_SCOUT_WEAPONS
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1HB.SPK
+    text: STR_HEAVY_BOLTER_SCOUT_CODEX
+    listOrder: 21170
+
+  - id: STR_MISSILE_LAUNCHER_SCOUT          # Scout Missile Launcher
+    requires:
+      - STR_SCOUT_WEAPONS
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1ML.SPK
+    text: STR_MISSILE_LAUNCHER_SCOUT_CODEX
+    listOrder: 21180
+
+  - id: STR_VENGOR_LAUNCHER                 # Vengor Missile Launcher
+    requires:
+      - STR_MARINE_WEAPONS
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1ML.SPK ###CHANGEME
+    text: STR_VENGOR_LAUNCHER_CODEX
+    listOrder: 21181
+  - id: STR_CASTELLAN_HE                    # Castellan HE Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_CASTELLAN_HE
+  - id: STR_CASTELLAN_KRAK                  # Castellan AT Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_CASTELLAN_KRAK
+  - id: STR_CASTELLAN_INCIN                 # Castellan IN Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_CASTELLAN_INCIN
+  - id: STR_CASTELLAN_DEFOREST              # Castellan AP Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_CASTELLAN_DEFOREST
+
 ### 90000  - Imperium Armor
   - id: STR_SCOUT_SGT_UC                    #5105  #ARMOR
     type_id: 15
@@ -823,7 +866,7 @@ ufopaedia:
       - STR_MARINES_STRATEGY
       - STR_DEV_ARMOR
     listOrder: 5300
-  - id: STR_SIGNUM_DEV_UC                    #5300
+  - id: STR_SIGNUM_DEV_UC                   #5300
     type_id: 15
     section: STR_ARMORPEDIA
     image_id: 0SIG.SPK

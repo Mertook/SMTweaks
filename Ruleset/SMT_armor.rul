@@ -817,8 +817,9 @@ armors:
 
   - update: STR_FLYING_SUIT_UC              #TERMINATOR (SHIELD)
     refNode: *STR_TERMINATOR_ARMOR
+    ufopediaType: STR_POWER_SUIT_UC
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
-    requires: STR_FLYING_SUIT
+    #requires: STR_FLYING_SUIT
     stats:
       tu: -10           # base -10
       stamina: 20       # base 20
@@ -834,14 +835,15 @@ armors:
 
   - update: STR_TASS_ARMOR_CLAWS            #TERMINATOR ASSAULT (CLAWS)
     refNode: *STR_TERMINATOR_ARMOR
+    ufopediaType: STR_TASS_ARMOR_CLAWS
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
     requires: STR_FLYING_SUIT
     rearArmor: 145 # +20 assault
     stats:
       tu: 20            # base -10 +30
-      stamina: 30       # base 20  +10
+      stamina: 40       # base 20  +20
       health: 30        # base 30
-      bravery: 20       # base 10  +10
+      bravery: 10       # base 10
       reactions: 10     # base -10 +20
       firing: 20        # base 20
       throwing: 20      # base 20
@@ -852,7 +854,7 @@ armors:
     specialWeapon: STR_TELEPORT_CLAWS # gets extra teleport distance
 
   - update: STR_CHAP_ARMOR_UC               #CHAPLAIN
-    stats: {}
+    stats: []
 
   - update: STR_CHAP_ARMOR_UC               #CHAPLAIN
     refNode: *STR_MARINE_OFFICER_ARMOR

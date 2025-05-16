@@ -31,7 +31,6 @@ extraStrings:
       STR_ARCING_SHOT: "Arcing Shot"
       STR_ARCING_SHOT_SHORT: "Arcing Shot (x{0})"
       STR_CASTELLAN_SHOT: "Castellan Burst"
-      STR_CASTELLAN_SHOT_SHORT: "Castellan Burst (x{0})"
       STR_FIRESUPPORT_STRIKE_COUNT: "Orb. Strike (x{0})"
       STR_FIRESUPPORT_LANCE_COUNT: "Orb. Lance (x{0})"
       STR_FIRESUPPORT_BOLTER_COUNT: "CAS Bolter (x{0})"
@@ -85,7 +84,7 @@ extraStrings:
       STR_LIB_TERMINATOR_UC: Terminator Librarian Armor
       STR_TASS_ARMOR_CLAWS: Terminator Assault Armor
       STR_FLYING_SUIT_UC: Terminator Armor (Shield)
-      STR_TSARGENT_UC: Terminator Armor (Cyclone)
+      STR_TSARGENT_UC: Cyclone Terminator Armor
       STR_HONOR_ARMOR_UC: "MK7 Artificer Armor"
       STR_HONOR_ARMOR: "MK7 Artificer Armor"
       STR_SIGNUM_DEV_UC: "MK7 Devastator Signum Armor"
@@ -271,8 +270,6 @@ extraStrings:
       STR_BOLTRIFLE_DRUM_MC: Master Crafted Bolt Drum Mag
       STR_BOLTRIFLE_DRUM_MC_DW: Master Crafted Boltrifle Drum
       STR_HEAVY_BOLTRIFLE: Heavy Boltrifle
-      STR_VOLKITE_VAULT: Volkite Caliver
-      STR_NEOVOLKITE_PISTOL: Neo-Volkite Pistol
       STR_SM_APOTH_FIST: Apothecary Gear
       STR_SM_APOTH_FIST_LV2: Apothecary Gear
       STR_SM_APOTH_FIST_LV3: Apothecary Gear
@@ -285,7 +282,6 @@ extraStrings:
       STR_BOLTER_CARBINE: Bolt Carbine
       STR_BOLTER_CARBINE_SCOPE: Occulus Bolt Carbine
       STR_RIFLEDW: Artifex Boltrifle
-      STR_PRIMARIS_INCINERATOR_POWER_PACK: Plasma Incinerator
       STR_STRIKE_AMMOLOADER: Load Munitions
       STR_ORBITAL_CALLIN: Orbital Barrage Vox
       STR_ORBITAL_STRIKE_WEAPON: Orbital Barrage
@@ -697,7 +693,7 @@ extraStrings:
       STR_DW_TECH_CODEX_UC: Techmarine Armor
       STR_DW_TERM_CODEX_UC: Terminator Armor
       STR_DW_PHB_CODEX_UC: Phobos Reiver Armor
-      STR_DW_PHBELI_CODEX_UC: Phobos Eliminator Armor
+      STR_DW_PHBELIM_CODEX_UC: Phobos Eliminator Armor
       STR_DW_GRV_CODEX_UC: Gravis Armor
       STR_DW_INC_CODEX_UC: Omnis Armor
       STR_DW_CAP_CODEX_UC: Captain Armor
@@ -860,18 +856,18 @@ extraStrings:
       ### Unsorted
       ### MISC
       ### ARMOR
-      STR_TSARGENT_UFOPEDIA: "{NEWLINE} The immense strength of Terminator armor allows it to support heavy weaponry with ease, unleashing devastating missile barrages while leaving hands free to carry other weapons to fit any situation."
+      STR_TSARGENT_UFOPEDIA: "The immense strength of Terminator armor allows it to support heavy weaponry with ease, unleashing devastating missile barrages while leaving hands free to carry other weapons to fit any situation."
       STR_SCOUT_SGT_UC_UFOPEDIA: "Scout Sergeants are experienced marines who don scout armor in order to guide and train scout recruits. They pass down knowledge and skills off the battlefield and lead scout squads on infiltration missions to gather intelligence or sabotage strategic targets."
       STR_SCOUTH_UC_UFOPEDIA: "Experts in stealth and infiltration, these veteran marines are peerless operatives capable of acting independently for long periods to carry out their missions.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Melee, Sniper{ALT})"
       STR_SIGNUM_DEV_CODEX: "MK7 Armor given to Sergeants of Devasator squads. Equipped with a Signum that allows the user to share battlefield data with squadmates, exposing a targets weakpoints and increasing the damage they take."
       STR_SIGNAL_ARMOR_UFOPEDIA: "MK7 Armor given to Sergeants of Devasator squads. Equipped with a Signum that allows the user to share battlefield data with squadmates, enhancing their accuracy."
-      STR_SARGENT_ARMOR_UFOPEDIA: "{NEWLINE} A Sergeant is an Astartes non-commissioned officer who commands a squad of Space Marines. They can direct their Battle Brothers in combat and bolster morale."
-      STR_HONOR_ARMOR_UFOPEDIA: "{NEWLINE} Artificer Armors are ancient and ornate Power Suits that have been carefully maintained by Techmarines for generations and used only by the Chapters greatest heroes. The protection it offers is far above that of regular power armor."
-      BIKE_ARMOR_UC_UFOPEDIA: "{NEWLINE} Assault Bikes are incredibly deadly and robust bikes used by the Space Marines for lightning-quick raids and reconnaissance."
-      STR_DREAD_ARMOR_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Flamer and Stormbolter"
-      STR_DREAD_ARMOR2_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Plasma and Stormbolter"
-      STR_DREAD_ARMOR3_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Lascannon and Missiles"
-      STR_DREAD_ARMOR4_UC_UFOPEDIA: "{NEWLINE} Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Assault Cannon and Flamer"
+      STR_SARGENT_ARMOR_UFOPEDIA: "A Sergeant is an Astartes non-commissioned officer who commands a squad of Space Marines. They can direct their Battle Brothers in combat and bolster morale."
+      STR_HONOR_ARMOR_UFOPEDIA: "Artificer Armors are ancient and ornate Power Suits that have been carefully maintained by Techmarines for generations and used only by the Chapters greatest heroes. The protection it offers is far above that of regular power armor."
+      BIKE_ARMOR_UC_UFOPEDIA: "Assault Bikes are incredibly deadly and robust bikes used by the Space Marines for lightning-quick raids and reconnaissance."
+      STR_DREAD_ARMOR_UC_UFOPEDIA: "Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Flamer and Stormbolter"
+      STR_DREAD_ARMOR2_UC_UFOPEDIA: "Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Plasma and Stormbolter"
+      STR_DREAD_ARMOR3_UC_UFOPEDIA: "Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Lascannon and Missiles"
+      STR_DREAD_ARMOR4_UC_UFOPEDIA: "Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Assault Cannon and Flamer"
       ### ARMOR DEATHWATCH
       STR_DW_TAC_CODEX_TEXT: "Tactical Armor is the most common type of armor worn by Space Marines, adaptable to any battlefield situation."
       STR_DW_APOTH_CODEX_TEXT: "Deathwatch Apothecaries act as field medics for the Kill-Team and preserve the geneseed of any fallen Brother."
@@ -884,9 +880,9 @@ extraStrings:
       STR_DW_TERM_ASS_CODEX_TEXT: "Utilizing Teleport Beacons to strike deep into enemy formations, Assault Terminators are able to tear apart fearsome Xenos beasts with armor-rending Lightning Claws."
       STR_DW_PHB_CODEX_TEXT: "Using the mobility and stealth of Phobos armor, Reivers strike terror into enemy forces with sudden violent melee assaults.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Melee{ALT})"
       STR_DW_PHBELIM_CODEX_TEXT: "Phobos-clad Eliminators are able to reposition and strike suddenly from the shadows, eliminating key threats from distance with an exotic range of custom ammunition tailored for their targets.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Sniper{ALT})"
-      STR_DW_GRV_CODEX_TEXT: "{NEWLINE} Gravis Armor is a heavier variant of MKX Tacticus, wielding powerful fist-mounted weaponry.{NEWLINE}{NEWLINE} Weapon Options:{NEWLINE}{ALT} Boltstorm Gauntlet{NEWLINE} Flamer Gauntlet{NEWLINE} Twin Autocannon Gauntlets"
-      STR_DW_INC_CODEX_TEXT: "{NEWLINE} A lighter variant of Gravis Armor capable of flight, Omnis Armor allows to user to unleash firepower from the skies.{NEWLINE}{NEWLINE} Weapon Options:{NEWLINE}{ALT} Accelerator Autocannon{NEWLINE} Twin Plasma Exterminators"
-      STR_DW_CAP_CODEX_TEXT: "{NEWLINE} Deathwatch Captains carry unqiue high quality gear, with complex bioverification that prevents even other Kill-team members from using them. To see what each Chapters Captain uses, please consult the Heraldry section of the Codex."
+      STR_DW_GRV_CODEX_TEXT: "Gravis Armor is a heavier variant of MKX Tacticus, wielding powerful fist-mounted weaponry.{NEWLINE}{NEWLINE} Weapon Options:{NEWLINE}{ALT} Boltstorm Gauntlet{NEWLINE} Flamer Gauntlet{NEWLINE} Twin Autocannon Gauntlets"
+      STR_DW_INC_CODEX_TEXT: "A lighter variant of Gravis Armor capable of flight, Omnis Armor allows to user to unleash firepower from the skies.{NEWLINE}{NEWLINE} Weapon Options:{NEWLINE}{ALT} Accelerator Autocannon{NEWLINE} Twin Plasma Exterminators"
+      STR_DW_CAP_CODEX_TEXT: "Deathwatch Captains carry unqiue high quality gear, with complex bioverification that prevents even other Kill-team members from using them. To see what each Chapters Captain uses, please consult the Heraldry section of the Codex."
       ### WEAPONS
       STR_STRIKE_VOX_CODEX: "{NEWLINE} Vox-Casters can contact Imperial ships in low orbit to direct precision strikes on the battlefield. This Vox requests a small-caliber shell barrage, dealing heavy damage to everything in a wide area.{NEWLINE} An Orbital Barrage Requisition must be present on the craft to call in a strike."
       STR_ORBITAL_LANCE_DUMMY_CODEX: "{NEWLINE} Vox-Casters can contact Imperial ships in low orbit to direct precision strikes on the battlefield. This Vox requests a devastating lance strike, obliterating everything in the area.{NEWLINE} An Orbital Lance Requisition must be present on the craft to call in a strike."
@@ -972,10 +968,10 @@ extraStrings:
       STR_BA_INFO_1: "{NEWLINE}The sons of Sanguinius are experts in the use of all weapons and launching of army-shattering assaults. Their Forces are an inspiring sight in the ranks of the Emperor. {NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Bound in blood, they can regenerate by feeding, with no time needed in the apothecary bay."
       STR_BA_INFO_2: "{NEWLINE} The Blood Angels Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Jetpack{ALT} (3 turn flight){NEWLINE} > {ALT}¬ Power Sword{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
       STR_SALA: "Salamanders"
-      STR_SALA_INFO_1: "{NEWLINE}The Salamanders are warriors possessed of a nobility and compassion that belies their fell appearance. They are excellent craftsmen all, both within the sphere of war and without.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Hailing from Nocturne, they are nigh-immume to fire."
+      STR_SALA_INFO_1: "{NEWLINE}The Salamanders are warriors possessed of a nobility and compassion that belies their fell appearance. They are excellent craftsmen all, both within the sphere of war and without.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Hailing from Nocturne, they are immume to fire."
       STR_SALA_INFO_2: "{NEWLINE} The Salamander Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Volkite Caliver{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
       STR_BT: "Black Templars"
-      STR_BT_INFO_1: "{NEWLINE}A successor Chapter of the Imperial Fists, the Black Templars are on a permanent crusade against the enemies of Mankind. Their religious Fervour is infectious, bolstering morale wherever they fight.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Devout crusaders, the Templars are immune to chaos corruption."
+      STR_BT_INFO_1: "{NEWLINE}A successor Chapter of the Imperial Fists, the Black Templars are on a permanent crusade against the enemies of Mankind. Their religious Fervour is infectious, bolstering morale wherever they fight.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Devout crusaders, the Templars are immune to corruption."
       STR_BT_INFO_2: "{NEWLINE} The Black Templar Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Crozius Arcanum{ALT}{NEWLINE} > {ALT}Bless Allies{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
       STR_WS: "White Scars"
       STR_WS_INFO_1: "{NEWLINE}The horsemaster tribes of chogoris lend the White Scars that recruit them an affinity with mounted warfare. They carry the proud warrior tradition of Jaghatai khan into the rank.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Experts in assault, they require less energy to run."
@@ -987,7 +983,7 @@ extraStrings:
       STR_DA_INFO_1: "{NEWLINE}The first Chapter founded by the Emperor, Dark Angels are highly secretive and ritualistic. They are relentless in hunting down those who have betrayed them. {NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Mercilessly hunting their targets, their shots are almost impossible to dodge."
       STR_DA_INFO_2: "{NEWLINE} The Dark Angels Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Twincore Plasma Rifle{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Smite{ALT}{NEWLINE} > {ALT}Lockdown{ALT}{NEWLINE} > {ALT}Project Shield{ALT}{NEWLINE} > {ALT}Torment{ALT}"
       STR_CF: "Crismon Fists"
-      STR_CF_INFO_1: "{NEWLINE}Though brought to a fraction of full strength by a devastating Ork attack at Rynn´s World, they are famous for never giving up. Excellent Ork hunters, they frequently contribute warriors to Deathwatch Killteams.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Closely tied with the Ordos Xenos, they are easily recruited by Inquisition forces."
+      STR_CF_INFO_1: "{NEWLINE}Though brought to a fraction of full strength by a devastating Ork attack at Rynn´s World, they are famous for never giving up. Excellent Ork hunters, they frequently contribute warriors to Deathwatch Killteams.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Closely tied with the Ordos Xenos, they are easy to recruit into service."
       STR_CF_INFO_2: "{NEWLINE} The Crimson Fist Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Heavy Bolt Rifle{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
       ### UFOPAEDIA DW
       STR_SMT_DW_INFO: DEATHWATCH TWEAKS
@@ -1133,14 +1129,21 @@ extraStrings:
       STR_MISSILE_LAUNCHER_GUARD: "Cadian Missile Launcher"
       STR_MISSILE_LAUNCHER_GUARD_CODEX: "{NEWLINE} The standard Cadian Pattern Missile Launcher is widely used by the Guard. Lightweight enough to be handled by a single guardsman, it can fire a variety of unguided missiles.{NEWLINE}{NEWLINE}Recoil: {ALT}80{ALT} - {ALT}Heavy{ALT} - {ALT}Bipod{ALT}"
       STR_MISSILE_LAUNCHER_SCOUT: Soundstrike Missile Launcher
-      STR_MISSILE_LAUNCHER_SCOUT_CODEX: "{NEWLINE} Missile launchers are a flexible tool allowing Scout squads to deal with a variety of difficult targets. The Soundstrike Pattern is equipped with an autoloader and is capable of firing small and large munitions.{NEWLINE}{NEWLINE}Recoil: {ALT}80{ALT} - {ALT}Heavy{ALT} - {ALT}Bipod{ALT}"
+      STR_MISSILE_LAUNCHER_SCOUT_CODEX: "{NEWLINE} Missile launchers are a flexible tool allowing Marines to deal with a variety of difficult targets. The Soundstrike Pattern is equipped with an autoloader and is capable of firing small and large munitions.{NEWLINE}{NEWLINE}Recoil: {ALT}80{ALT} - {ALT}Heavy{ALT} - {ALT}Bipod{ALT}"
       STR_VENGOR_LAUNCHER: Vengor Missile Launcher
       STR_VENGOR_LAUNCHER_CODEX: "{NEWLINE} The Vengor is an advanced Missile Launcher able to fire large missiles directly or in arcs to bombard enemies behind cover. It also comes with a Castellan launcher able to fire a barrage of smaller missiles.{NEWLINE}{NEWLINE}Recoil: {ALT}90{ALT} - {ALT}Heavy{ALT}"
       STR_CASTELLAN_HE: Castellan HE Missiles
       STR_CASTELLAN_KRAK: Castellan Krak Missiles
       STR_CASTELLAN_INCIN: Castellan Incindiary Missiles
       STR_CASTELLAN_DEFOREST: Castellan Anti-Plant Missiles
+      STR_PRIMARIS_INCINERATOR_POWER_PACK: Plasma Incinerator
+      STR_PRIMARIS_INCINERATOR_POWER_PACK_CODEX: "{NEWLINE} A refinement of plasma longarm technology devised by Archmagos Dominus Belisarius Cawl. It is much more stable than conventional plasma weaponry, ensuring it will not overheat when kept within normal operating parameters."
+      STR_VOLKITE_VAULT: Volkite Caliver
+      STR_VOLKITE_VAULT_CODEX: "{NEWLINE} An ancient and complex weapon dating back to before the Heresy. Volkite weapons deflagrate organic matter, explosively reducing targets to ash in moments. Even advanced armor is of little use against it, the intense heat cooking soldiers in their suits."
+      STR_NEOVOLKITE_PISTOL: Neo-Volkite Pistol
+      STR_NEOVOLKITE_PISTOL_CODEX: "{NEWLINE} Neo-Volkite weapons were designed by Archmagos Dominus Belisarius Cawl, recreating ancient Volkite technology. Volkite weaponry is deceptively destructive and even a pistol can cut through armor and explosively burn organic matter."
       ## Armor
+      STR_FLYING_SUIT_UFOPEDIA: "Assault Terminators teleport deep into enemy lines, striking at enemy commanders. With the immense strength of Terminator armor their Lightning Claws easily cut through any flesh or armor, tearing apart everything in their path."
       STR_MKX_ASS_UFOPEDIA: "Mark X Tacticus armor can be outfitted with an assault jetpack, allowing Marines to dive into battle with thunderous impacts."
       STR_MKX_GRV_CODEX: MKX Gravis Armor
       STR_MKX_GRV_UFOPEDIA: "The Mark X Gravis armor is bulkier than Tacticus but are also enormously sturdy, allowing the wearer to stride into the most furious firestorms and harrowing orbital drops.{NEWLINE}{NEWLINE}Inbuilt Weapon choices by rank."

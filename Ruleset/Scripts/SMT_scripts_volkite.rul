@@ -1,38 +1,3 @@
-items:
-  - &STR_VOLKITE_BEAM                 # Script for Volkite weapon beam (thin, low spread, short lifetime)
-    type: STR_VOLKITE_DW            # Volkite Rifle (Deathwatch Captain)
-    vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 8} # 40k 1 orange, 2 blue, 3 green rosigma 1 yellow, 2 green 3 purple 4 red 5 sucks 6 orange 7 blue 8 orange 9 lightblue 10 white 11 white 12 green 13 blue
-    vaporDensitySurface: 5
-    vaporProbabilitySurface: 85
-    scripts: # give it a tighter beam that disappates quickly without spreading
-      vaporParticleAmmo: |
-        var int temp;
-        var int randMax;
-
-        set randMax subvoxel_scale;
-        muldiv randMax 2 3;
-        random.randomRangeSymmetric temp randMax;
-        subvoxel_offset.setX temp;
-        random.randomRangeSymmetric temp randMax;
-        subvoxel_offset.setY temp;
-        random.randomRangeSymmetric temp randMax;
-        subvoxel_offset.setZ temp;
-        set temp 240;
-        sub temp particle_density;
-        div temp 4;
-        subvoxel_velocity.setZ temp;
-        mod particle_lifetime 10;
-        add particle_lifetime 3;
-        return;
-
-  - type: STR_VOLKITE_DW            # Volkite Rifle (Deathwatch Captain)
-    refNode: *STR_VOLKITE_BEAM
-
-  - type: STR_VOLKITE_VAULT         # Volkite Rifle (Ancient Vault Reward)
-    refNode: *STR_VOLKITE_BEAM
-
-  - type: STR_NEOVOLKITE_PISTOL     # NeoVolkite Pistol
-    refNode: *STR_VOLKITE_BEAM
 
 
 

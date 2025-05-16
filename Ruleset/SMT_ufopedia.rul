@@ -838,6 +838,163 @@ ufopaedia:
     section: STR_NOT_AVAILABLE
     text: STR_CASTELLAN_DEFOREST
 
+  - id: STR_PRIMARIS_HEAVY_BOLT_PISTOL      # Heavy Bolt Pistol
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: STR_PRIMARIS_HEAVY_BOLTPISTOL_CODEX.SPK
+    text: STR_PRIMARIS_HEAVY_BOLT_PISTOL_CODEX
+    requires:
+      - STR_PRIMARIS
+      - STR_PRIMARIS_BOLTERS_ADV
+    listOrder: 11540
+
+  - id: STR_ABSOLVOR_PISTOL                 # Absolvor Pistol
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: ABSOLVOR.SPK
+    text: STR_ABSOLVOR_PISTOL_UFOPEDIA
+    listOrder: 11546
+
+  - id: STR_PRIMARIS_ABSOLVER_PISTOL
+    requires:
+      - STR_GENERALLOCK
+
+  - id: STR_BOLTER_CARBINE                  # Bolt Carbine
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: STR_PRIMARIS_CARBINE_CODEX.SPK
+    text: STR_BOLTER_CARBINE_UFOPEDIA
+    listOrder: 10400
+
+  - id: STR_BOLTER_CARBINE_SCOPE            # Bolt Carbine (Occulus)
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: STR_PRIMARIS_SCOPED_CARBINE_CODEX.SPK
+    text: STR_BOLTER_CARBINE_SCOPE_UFOPEDIA
+    listOrder: 10402
+
+  - id: STR_RIFLED                          # Bolt Rifle (Cawl)
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_RIFLED_UFOPEDIA
+    listOrder: 10404
+
+  - id: STR_BOLTRIFLE_GL                    # Bolt Rifle (Combi)
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: STR_PRIMARIS_CAWL_UNDERSLUNG_CODEX.SPK
+    text: STR_BOLTRIFLE_GL_CODEX
+    requires:
+      - STR_PRIMARIS_BOLTERS_ADV
+    listOrder: 10405
+
+  - id: STR_BOLTRIFLE_STERNGUARD            # Bolt Rifle (Sternguard)
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1MB2.SPK
+    text: STR_BOLTRIFLE_STERNGUARD_UFOPEDIA
+    requires:
+      - STR_PRIMARIS_BOLTERS_ADV
+    listOrder: 10406
+
+  - id: STR_BOLTRIFLE_SCOPE                 # Bolt Rifle (Stalker)
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: STR_PRIMARIS_STALKER_BOLTER_CODEX.SPK
+    text: STR_BOLTRIFLE_SCOPE_UFOPEDIA
+    requires:
+      - STR_PRIMARIS_BOLTERS_ADV
+    listOrder: 10408
+
+  - id: STR_BOLTRIFLE_MC                    # Bolt Rifle (Mastercrafted)
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1MB2.SPK
+    text: STR_BOLTRIFLE_MC_UFOPEDIA
+    requires:
+      - STR_PRIMARIS_BOLTERS_ADV
+    listOrder: 10410
+
+  - id: STR_HEAVY_BOLTRIFLE                 # Heavy Bolt Rifle
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: STR_PRIMARIS_HEAVY_BOLTRIFLE_CODEX.SPK
+    text: STR_HEAVY_BOLTRIFLE_UFOPEDIA
+    requires:
+      - STR_PRIMARIS_BOLTERS_ADV
+    listOrder: 11551
+
+  - id: STR_PRIMARIS_HEAVY_BOLT_RIFLE
+    requires:
+      - STR_GENERALLOCK
+
+  - id: STR_PRIMARIS_STALKER_BOLTER
+    requires:
+      - STR_GENERALLOCK
+
+  - id: STR_PRIMARIS_CARBINE
+    requires:
+      - STR_GENERALLOCK
+
+  - id: STR_PRIMARIS_CAWL_UNDERSLUNG
+    requires:
+      - STR_GENERALLOCK
+
+  - id: STR_PRIMARIS_OCCULUS_CARBINE
+    requires:
+      - STR_GENERALLOCK
+
+  - id: STR_PRIMARIS_MELTA_RIFLE
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: PRIMARIS_MELTA_RIFLE_CODEX.SPK
+    text: STR_PRIMARIS_MELTA_RIFLE_CODEX
+    requires:
+      - STR_PRIMARIS
+      - STR_PRIMARIS_MELTAPACK
+    listOrder: 11547
+
+  - id: STR_PRIMARIS_EXTERMINATOR
+    requires:
+      - STR_GENERALLOCK
+
+  - id: STR_PRIMARIS_EXTERMINATOR_POWER_PACK
+    requires:
+      - STR_GENERALLOCK
+
+  - id: STR_PLASMA_INC_TERRAN
+    requires:
+      - STR_GENERALLOCK
+  - id: STR_PRIMARIS_INCINERATOR_POWER_PACK # Plasma Incinerator
+    requires:
+      - STR_PRIMARIS_PLASMAPACK
+
+  - id: STR_VOLKITE_VAULT                   # Volkite Caviler
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: STR_PRIMARIS_VOLKITE_CALIVER_CODEX.SPK
+    text: STR_VOLKITE_VAULT_CODEX
+    listOrder: 11552
+
+  - id: STR_NEOVOLKITE_PISTOL               # NeoVolkite Pistol
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: STR_PRIMARIS_VOLKITE_CHARGER_CODEX.SPK
+    text: STR_NEOVOLKITE_PISTOL_CODEX
+    requires:
+      - STR_VOLKITE
+    listOrder: 11553
+
+  - id: STR_PRIMARIS_VOLKITE_CALIVER
+    requires:
+      - STR_GENERALLOCK
+  - id: STR_PRIMARIS_VOLKITE_CHARGER
+    requires:
+      - STR_GENERALLOCK
+
+
+
+
 ### 90000  - Imperium Armor
   - id: STR_SCOUT_SGT_UC                    #5105  #ARMOR
     type_id: 15
@@ -1025,6 +1182,24 @@ ufopaedia:
       - STR_LIBRARY # PsiAmp tech not used for Marines
     listOrder: 6000
 
+  - id: STR_FLYING_SUIT_UC                  # Terminator Shield
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0TA.SPK
+    requires:
+      - STR_GENERALLOCK
+    text: STR_FLYING_SUIT_UFOPEDIA
+    listOrder: 6200
+
+  - id: STR_TASS_ARMOR_CLAWS                # Terminator Claws
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: TERMCLAWUFO.SPK
+    requires:
+      - STR_FLYING_SUIT
+    text: STR_FLYING_SUIT_UFOPEDIA
+    listOrder: 6200
+
   - id: BIKE_ARMOR_UC                       # Assault Bike
     type_id: 15
     section: STR_ARMORPEDIA
@@ -1140,7 +1315,7 @@ ufopaedia:
   - id: STR_DW_TERM_ASS_CODEX_UC            # DW Terminator (Assault)
     type_id: 15
     section: STR_ARMORPEDIA
-    image_id: 0TA.SPK
+    image_id: TERMCLAWUFO.SPK
     requires:
       - STR_DEATHWATCH
       - STR_DW_TERM
@@ -1160,7 +1335,7 @@ ufopaedia:
   - id: STR_DW_PHBELIM_CODEX_UC                 # DW Phobos 
     type_id: 15
     section: STR_ARMORPEDIA
-    image_id: 0MXR.SPK
+    image_id: ELIMINATORUFO.SPK
     requires:
       - STR_DEATHWATCH
       - STR_DW_SNIPER
@@ -1344,13 +1519,6 @@ ufopaedia:
     text: STR_SHOTGUN_DW_UFOPEDIA
     listOrder: 21116
 
-  - id: STR_ABSOLVOR_PISTOL                 # Absolvor Pistol
-    type_id: 14
-    section: STR_WEAPONS_AND_EQUIPMENT
-    image_id: ABSOLVOR.SPK
-    text: STR_ABSOLVOR_PISTOL_UFOPEDIA
-    listOrder: 21120
-
   - id: STR_DW_PLASMA_GRENADE               # Absolvor Pistol
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
@@ -1360,7 +1528,7 @@ ufopaedia:
     text: STR_DW_PLASMA_GRENADE_UFOPEDIA
     listOrder: 21130
 
-  - id: STR_VOLKITE_DW                      # Volkite Caliver
+  - id: STR_VOLKITE_VAULT                   # Volkite Caliver
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: 1IP.SPK
@@ -1481,54 +1649,6 @@ ufopaedia:
     image_id: 1BP3.SPK
     text: STR_PISTOLH_UFOPEDIA
     listOrder: 10120
-
-  - id: STR_BOLTER_CARBINE                  # Bolt Carbine
-    type_id: 14
-    section: STR_WEAPONS_AND_EQUIPMENT
-    image_id: 1MB.SPK ##CHANGEME
-    text: STR_BOLTER_CARBINE_UFOPEDIA
-    listOrder: 10400
-
-  - id: STR_BOLTER_CARBINE_SCOPE            # Bolt Carbine (Occulus)
-    type_id: 14
-    section: STR_WEAPONS_AND_EQUIPMENT
-    image_id: 1MB.SPK ##CHANGEME
-    text: STR_BOLTER_CARBINE_SCOPE_UFOPEDIA
-    listOrder: 10402
-
-  - id: STR_RIFLED                          # Bolt Rifle (Cawl)
-    type_id: 14
-    section: STR_WEAPONS_AND_EQUIPMENT
-    text: STR_RIFLED_UFOPEDIA
-    listOrder: 10404
-
-  - id: STR_BOLTRIFLE_STERNGUARD            # Bolt Rifle (Sternguard)
-    type_id: 14
-    section: STR_WEAPONS_AND_EQUIPMENT
-    image_id: 1MB2.SPK
-    text: STR_BOLTRIFLE_STERNGUARD_UFOPEDIA
-    listOrder: 10406
-
-  - id: STR_BOLTRIFLE_SCOPE                 # Bolt Rifle (Stalker)
-    type_id: 14
-    section: STR_WEAPONS_AND_EQUIPMENT
-    image_id: 1MB2.SPK
-    text: STR_BOLTRIFLE_SCOPE_UFOPEDIA
-    listOrder: 10408
-
-  - id: STR_BOLTRIFLE_MC                    # Bolt Rifle (Mastercrafted)
-    type_id: 14
-    section: STR_WEAPONS_AND_EQUIPMENT
-    image_id: 1MB2.SPK
-    text: STR_BOLTRIFLE_MC_UFOPEDIA
-    listOrder: 10410
-
-  - id: STR_HEAVY_BOLTRIFLE                 # Heavy Bolt Rifle
-    type_id: 14
-    section: STR_WEAPONS_AND_EQUIPMENT
-    image_id: 1MB2.SPK ##CHANGEME
-    text: STR_HEAVY_BOLTRIFLE_UFOPEDIA
-    listOrder: 10420
 
 
 
@@ -1786,13 +1906,3 @@ ufopaedia:
     section: STR_NOT_AVAILABLE
     text: STR_STRM_ROCKET_DUMMY
 
-
-
-
-
-
-
-extraStrings:
-  - type: en-US
-    strings:
-      ### STRATEGY

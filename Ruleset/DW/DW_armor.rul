@@ -914,7 +914,7 @@ armors:
 
   - &STR_DW_TERM_ASS_SHIELD_MK7             #Terminator Armor (Assault Shield)
     type: STR_DW_TASS_ARMOR_BA_UC
-    ufopediaType: STR_DW_TERM_ASS_CODEX_UC
+    ufopediaType: STR_DW_TERM_CODEX_UC
     visibilityAtDay: 40
     visibilityAtDark: 40 # Improved Sensors - DW bonus
     heatVision: 35 # +5 - DW bonus
@@ -4895,7 +4895,7 @@ armors:
       - STR_DW_ARMOR_DUMMY
     corpseBattle:
       - STR_MKX_DW_TAC_CORPSE
-    specialWeapon: AUX_MORTAR
+    specialWeapon: STR_CYCLONE_LAUNCHER
     tags:
       INFECTION_RESIST: 0 #don't show in codex
 

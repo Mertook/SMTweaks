@@ -1,6 +1,49 @@
 extended:
   tagsFile: Ruleset/Scripts/SMT_tags.rul
 
+  scripts:
+    recolorItemSprite:
+      - override: 40k_rIS_cosmetic_sprites_based_on_ammo # Updated to handle guns with multiple ammo slots
+        offset: 10
+        code: |
+          var ptr BattleItem ammoItem;
+          var ptr RuleItem weaponRuleset;
+          var ptr RuleItem ammoRuleset;
+          var int weaponColor;
+          var int color;
+          var int ammoColor;
+
+          item.getRuleItem weaponRuleset;
+          weaponRuleset.getTag weaponColor Tag.ITEM_COLOR_CHANGES_WITH_AMMO;
+          if eq weaponColor 0;
+            return new_pixel;
+          end;
+
+          get_color color new_pixel;
+
+          item.getAmmoItem ammoItem;
+          ammoItem.getRuleItem ammoRuleset;
+          ammoRuleset.getTag ammoColor Tag.ITEM_AMMO_COLOR;
+          if eq ammoColor 0;
+            item.getAmmoForSlot ammoItem 1;
+            ammoItem.getRuleItem ammoRuleset;
+            ammoRuleset.getTag ammoColor Tag.ITEM_AMMO_COLOR;
+          end;
+
+          if eq color weaponColor;
+            if neq 0 ammoColor;
+              set_color new_pixel ammoColor;
+              ammoRuleset.getTag ammoColor Tag.ITEM_AMMO_SHADE;
+              add ammoColor shade;
+            else;
+              set_color new_pixel 0;
+              set ammoColor shade;
+            end;
+            add_shade new_pixel ammoColor;
+          end;
+
+          return new_pixel;
+
 items:
   - &STR_WEAPON_SPRITE_SWAP_TEMPLATE
     type: STR_RIFLE
@@ -13,6 +56,12 @@ items:
         item.getAmmoItem ammoItem;
         ammoItem.getRuleItem ammoRuleset;
         ammoRuleset.getTag skipBigobs Tag.ITEM_AMMO_SKIP_BIGOBS;
+
+        if eq skipBigobs 0; # handle weapons with multiple ammo types
+          item.getAmmoForSlot ammoItem 1;
+          ammoItem.getRuleItem ammoRuleset;
+          ammoRuleset.getTag skipBigobs Tag.ITEM_AMMO_SKIP_BIGOBS;
+        end;
 
         if and gt skipBigobs 0 eq blit_part blit_item_big;
           add sprite_index skipBigobs;

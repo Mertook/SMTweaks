@@ -2869,6 +2869,182 @@ items:
 
         return sprite_index;
 
+### Volkite
+  - &REF_VOLKITE_BEAM                       # Script for Volkite weapon beams (thin, low spread, short lifetime)
+    type: STR_NEOVOLKITE_PISTOL
+    vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 8} # 40k 1 orange, 2 blue, 3 green rosigma 1 yellow, 2 green 3 purple 4 red 5 sucks 6 orange 7 blue 8 orange 9 lightblue 10 white 11 white 12 green 13 blue
+    vaporDensitySurface: 5
+    vaporProbabilitySurface: 85
+    scripts: # give it a tighter beam that disappates quickly without spreading
+      vaporParticleAmmo: |
+        var int temp;
+        var int randMax;
+
+        set randMax subvoxel_scale;
+        muldiv randMax 2 3;
+        random.randomRangeSymmetric temp randMax;
+        subvoxel_offset.setX temp;
+        random.randomRangeSymmetric temp randMax;
+        subvoxel_offset.setY temp;
+        random.randomRangeSymmetric temp randMax;
+        subvoxel_offset.setZ temp;
+        set temp 240;
+        sub temp particle_density;
+        div temp 4;
+        subvoxel_velocity.setZ temp;
+        mod particle_lifetime 10;
+        add particle_lifetime 3;
+        return;
+
+  - type: STR_NEOVOLKITE_PISTOL             # Neo-Volkite Pistol
+    refNode: *REF_VOLKITE_BEAM
+    bigSprite: 216
+    floorSprite: 216
+    handSprite: 424
+    bulletSprite: { mod: 40k, index: 16 } # meltagun
+    fireSound: { mod: 40k, index: 847 }
+    explosionHitSound: {mod: 40k, index: 690} # heavy plasma blast
+    hitSound: { mod: 40k, index: 19 }
+    hitAnimation: { mod: 40k, index: 128 } # explosion
+    explosionSpeed: 1
+    powerForAnimation: 5
+    battleType: 1
+    armor: 300
+    costSell: 100000
+    invWidth: 1
+    invHeight: 3
+    weight: 22
+    clipSize: -1
+    twoHanded: false
+    accuracySnap: 80
+    accuracyAimed: 0
+    accuracyAuto: 0
+    snapRange: 15
+    aimRange: 0
+    autoRange: 0
+    tuAimed: 0
+    tuSnap: 24
+    tuAuto: 0
+    maxRange: 25
+    powerRangeReduction: 10 # higher than plasma
+    powerRangeThreshold: 18.0 #
+    shotgunPellets: 1 # instant beam rather than projectile
+    power: 80 #
+    damageType: 11 # Melta type - cross between Las & Melta gun
+    damageAlter:
+      RandomType: 2 # 50-150%
+      ToHealth: 0.50 # deals 100% total, 50% ignores armor
+      ArmorEffectiveness: 1.1
+      ToArmorPre: 0.1
+      ToArmor: 0.3
+      ToTile: 1.0
+      FireThreshold: 10
+      FixRadius: 1
+      ToWound: 0.2 # vicious burns
+      RandomWound: false
+      RadiusReduction: 60 # high dropoff if not direct hit
+    tags:
+      REACTION_MULTIPLIER: 200 # pistol
+      SMT_AMMO_HP_PREDMG: 50
+
+  - type: STR_VOLKITE_VAULT                 # Volkite Rifle (Ancient Vault Reward)
+    refNode: *REF_VOLKITE_BEAM
+    bigSprite: 178
+    floorSprite: 178
+    handSprite: 264
+    bulletSprite: { mod: 40k, index: 16 } # meltagun
+    fireSound: { mod: 40k, index: 847 }
+    explosionHitSound: {mod: 40k, index: 690} # heavy plasma blast
+    hitSound: { mod: 40k, index: 19 }
+    hitAnimation: { mod: 40k, index: 128 } # explosion
+    explosionSpeed: 1
+    powerForAnimation: 5
+    battleType: 1
+    armor: 300
+    costSell: 100000
+    invWidth: 2
+    invHeight: 3
+    weight: 22
+    clipSize: -1
+    twoHanded: true
+    accuracySnap: 80
+    accuracyAimed: 0
+    accuracyAuto: 66
+    snapRange: 20
+    aimRange: 0
+    autoRange: 15
+    tuAimed: 0
+    tuSnap: 35
+    tuAuto: 66
+    maxRange: 35
+    powerRangeReduction: 10 # higher than plasma
+    powerRangeThreshold: 25.0 #
+    shotgunPellets: 1 # instant beam rather than projectile
+    power: 120 #
+    damageType: 11 # Melta type - cross between Las & Melta gun
+    damageAlter:
+      RandomType: 2 # 50-150%
+      ToHealth: 0.50 # deals 100% total, 50% ignores armor
+      ArmorEffectiveness: 1.1
+      ToArmorPre: 0.1
+      ToArmor: 0.3
+      ToTile: 1.0 # destructive
+      FireThreshold: 0
+      FixRadius: 1
+      ToWound: 0.2 # vicious burns
+      RandomWound: false
+      RadiusReduction: 75 # high dropoff if not direct hit
+
+  - type: STR_VOLKITE_DW                    # Volkite Rifle (Deathwatch Captain)
+    refNode: *REF_VOLKITE_BEAM
+    bigSprite: 178
+    floorSprite: 178
+    handSprite: 264
+    bulletSprite: { mod: 40k, index: 16 } # meltagun
+    fireSound: { mod: 40k, index: 847 }
+    explosionHitSound: {mod: 40k, index: 690} # heavy plasma blast
+    hitSound: { mod: 40k, index: 19 }
+    hitAnimation: { mod: 40k, index: 128 } # explosion
+    ufopediaType: STR_VOLKITE_VAULT
+    explosionSpeed: 1
+    powerForAnimation: 5
+    battleType: 1
+    armor: 300
+    invWidth: 2
+    invHeight: 3
+    weight: 22
+    clipSize: -1
+    twoHanded: true
+    recover: false # generated item
+    accuracySnap: 80
+    accuracyAimed: 0
+    accuracyAuto: 66
+    snapRange: 20
+    aimRange: 0
+    autoRange: 15
+    tuAimed: 0
+    tuSnap: 33
+    tuAuto: 66
+    maxRange: 35
+    powerRangeReduction: 10 # higher dropoff than plasma
+    powerRangeThreshold: 25.0 #
+    shotgunPellets: 1 # instant beam rather than projectile
+    power: 120 #
+    damageType: 11 # Melta type - cross between Las & Melta gun
+    damageAlter:
+      RandomType: 2 # 50-150%
+      ToHealth: 0.50 # deals 100% total, 50% ignores armor
+      ArmorEffectiveness: 1.1
+      ToArmorPre: 0.1
+      ToArmor: 0.3
+      ToTile: 1.0 # destructive
+      FireThreshold: 0
+      FixRadius: 1
+      ToWound: 0.2 # vicious burns
+      RandomWound: false
+      RadiusReduction: 75 # high dropoff if not direct hit
+    tags:
+      SMT_AMMO_HP_PREDMG: 50
 ### Lascannons
   - type: STR_LASCAN                        # SM Lascannon
     tuAimed: 85 # was 90 - slightly easier to sidestep and fire without needing max TUs
@@ -3438,9 +3614,9 @@ items:
     blockBothHands: true
     ammo:
       0:
-        compatibleAmmo: [STR_CASTELLAN_HE, STR_CASTELLAN_KRAK, STR_CASTELLAN_INCIN, STR_CASTELLAN_DEFOREST]
-      1:
         compatibleAmmo: [STR_HEAVY_ROCKET_HE, STR_HEAVY_ROCKET_KRAK, STR_HEAVY_ROCKET]
+      1:
+        compatibleAmmo: [STR_CASTELLAN_HE, STR_CASTELLAN_KRAK, STR_CASTELLAN_INCIN, STR_CASTELLAN_DEFOREST]
     dropoff: 4
     aimRange: 32
     snapRange: 32
@@ -3456,16 +3632,15 @@ items:
     tuAuto: 40
     tuLoad: 5 # integrated Autoloader
     confAimed:
-      ammoSlot: 1 # Missiles
+      ammoSlot: 0 # Missiles
       name: STR_ARCING_SHOT
       shortName: STR_ARCING_SHOT_SHORT
       arcing: true
     confSnap:
-      ammoSlot: 1 # Missiles
+      ammoSlot: 0 # Missiles
     confAuto:
-      ammoSlot: 0 # Castellan
+      ammoSlot: 1 # Castellan
       name: STR_CASTELLAN_SHOT
-      shortName: STR_CASTELLAN_SHOT_SHORT
       shots: 4
       arcing: false
     sprayWaypoints: 2
@@ -3474,6 +3649,8 @@ items:
       ITEM_IS_HEAVY_WEAPON: 1
       ITEM_RECOIL: 90
       ITEM_COLOR_CHANGES_WITH_AMMO: 2
+      REACTION_MULTIPLIER: 25
+      REACTION_PENALTY_KNEELING_BYPASS: 1
 
   - &REF_CASTELLAN_MISSILES
     type: STR_CASTELLAN_HE

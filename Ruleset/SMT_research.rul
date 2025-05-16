@@ -767,6 +767,14 @@ research:
     dependencies:
       - STR_GENERALLOCK
 
+  - name: STR_DREADNOUGHT_MARINE
+    cost: 400 # was 200
+    points: 20
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_UFO_CONSTRUCTION
+
   - name: STR_SMT_GENESEED_REQ      # Geneseed Requisition
     cost: 100
     points: 200

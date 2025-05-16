@@ -316,55 +316,6 @@ items:
     tags:
       ITEM_STEALTH_ASSASSIN_WEAPON: 2 # sniper
 
-  - type: STR_VOLKITE_VAULT                     # Volkite Rifle (Ancient Vault)
-    bigSprite: 178
-    floorSprite: 178
-    handSprite: 264
-    bulletSprite: { mod: 40k, index: 16 } # meltagun
-    fireSound: { mod: 40k, index: 847 }
-    explosionHitSound: {mod: 40k, index: 690} # heavy plasma blast
-    hitSound: { mod: 40k, index: 19 }
-    hitAnimation: { mod: 40k, index: 128 } # explosion
-    ufopediaType: STR_VOLKITE_DW
-    explosionSpeed: 1
-    powerForAnimation: 5
-    battleType: 1
-    armor: 300
-    costSell: 100000
-    invWidth: 2
-    invHeight: 3
-    weight: 22
-    clipSize: -1
-    twoHanded: true
-    accuracySnap: 80
-    accuracyAimed: 0
-    accuracyAuto: 66
-    snapRange: 20
-    aimRange: 0
-    autoRange: 15
-    tuAimed: 0
-    tuSnap: 35
-    tuAuto: 66
-    maxRange: 35
-    powerRangeReduction: 10 # higher than plasma
-    powerRangeThreshold: 25.0 #
-    shotgunPellets: 1 # instant beam rather than projectile
-    power: 120 #
-    damageType: 11 # Melta type - cross between Las & Melta gun
-    damageAlter:
-      RandomType: 2 # 50-150%
-      ToHealth: 0.50 # deals 100% total, 50% ignores armor
-      ArmorEffectiveness: 1.1
-      ToArmorPre: 0.1
-      ToArmor: 0.3
-      ToTile: 1.25 # destructive
-      FireThreshold: 0
-      FixRadius: 1
-      ToWound: 0.2 # vicious burns
-      RandomWound: false
-      RadiusReduction: 75 # high dropoff if not direct hit
-
-
   - type: STR_STUN_BOMB
     damageAlter:
       ResistType: 12 # Grav

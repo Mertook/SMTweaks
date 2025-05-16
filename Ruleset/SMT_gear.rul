@@ -3753,18 +3753,19 @@ items:
       mod: 40k
       index: 80
     damageType: 8 # Acid
+    power: 50
     damageAlter:
       RandomType: 3 # fixed 100%
       ArmorEffectiveness: 2.0 # anti-terrain, not a proper weapon
       FireThreshold: 999
       SmokeThreshold: 999
       ToArmorPre: 0.0
-      ToArmor: 0.15
-      ToHealth: 0.7
+      ToArmor: 0.1
+      ToHealth: 0.4
       ToTile: 1.0
       TileDamageMethod: 2 # consistent tile damage
       FixRadius: 4
-      RadiusReduction: 5
+      RadiusReduction: 2
     tags:
       ITEM_AMMO_COLOR: 4
 

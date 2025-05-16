@@ -819,7 +819,13 @@ ufopaedia:
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: 1ML.SPK ###CHANGEME
-    text: STR_VENGOR_LAUNCHER_CODEX
+    pages:
+     - title: STR_VENGOR_LAUNCHER
+       text: STR_VENGOR_LAUNCHER_CODEX
+       ammoSlot: 0
+     - title: STR_VENGOR_LAUNCHER
+       text: STR_VENGOR_LAUNCHER_CODEX_P2
+       ammoSlot: 1
     listOrder: 21181
   - id: STR_CASTELLAN_HE                    # Castellan HE Ammo
     type_id: 14
@@ -993,6 +999,12 @@ ufopaedia:
       - STR_GENERALLOCK
 
 
+  - id: STR_ANTIPLANT_BOMB                  # AntiPlant Bomb
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1BM.SPK
+    text: STR_ANTIPLANT_BOMB_CODEX
+    listOrder: 14080
 
 
 ### 90000  - Imperium Armor
@@ -1199,6 +1211,16 @@ ufopaedia:
       - STR_FLYING_SUIT
     text: STR_FLYING_SUIT_UFOPEDIA
     listOrder: 6200
+
+  - id: STR_CAPTAIN_TERM                      # Terminator Captain
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0CAP.SPK
+    text: STR_CAPTAIN_ARMOR_UFOPEDIA
+    requires:
+      - STR_MARINE_CAPTAIN
+      - STR_POWER_SUIT
+    listOrder: 6400
 
   - id: BIKE_ARMOR_UC                       # Assault Bike
     type_id: 15

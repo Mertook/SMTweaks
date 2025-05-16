@@ -2229,7 +2229,7 @@ items:
     accuracySnap: 60 # regular 65
     accuracyAimed: 0
     kneelBonus: 150
-    tuAuto: 65 # regular 70 for 9
+    tuAuto: 70 # regular 70 for 9
     tuSnap: 30 # regular 33 for 3
     tuAimed: 0
     tuLoad: 30
@@ -2240,7 +2240,7 @@ items:
       shots: 2
       followProjectiles: false
     confAuto:
-      shots: 6
+      shots: 8
       followProjectiles: false
     tags:
       ITEM_RECOIL: 90 # harsh requirement
@@ -2929,7 +2929,7 @@ items:
     powerRangeReduction: 10 # higher than plasma
     powerRangeThreshold: 18.0 #
     shotgunPellets: 1 # instant beam rather than projectile
-    power: 80 #
+    power: 75 #
     damageType: 11 # Melta type - cross between Las & Melta gun
     damageAlter:
       RandomType: 2 # 50-150%
@@ -2994,6 +2994,8 @@ items:
       ToWound: 0.2 # vicious burns
       RandomWound: false
       RadiusReduction: 75 # high dropoff if not direct hit
+    tags:
+      SMT_AMMO_HP_PREDMG: 50
 
   - type: STR_VOLKITE_DW                    # Volkite Rifle (Deathwatch Captain)
     refNode: *REF_VOLKITE_BEAM
@@ -3045,6 +3047,7 @@ items:
       RadiusReduction: 75 # high dropoff if not direct hit
     tags:
       SMT_AMMO_HP_PREDMG: 50
+
 ### Lascannons
   - type: STR_LASCAN                        # SM Lascannon
     tuAimed: 85 # was 90 - slightly easier to sidestep and fire without needing max TUs
@@ -3748,24 +3751,26 @@ items:
     bigSprite: 296
     listOrder: 12165
     loadOrder: 115
-    hitSound: {mod: 40k, index: 739}
+    explosionHitSound: {mod: 40k_ROSIGMA_edits, index: 2122}
     hitAnimation:
       mod: 40k
       index: 80
+    isFireExtinguisher: true
     damageType: 8 # Acid
-    power: 50
+    power: 100
     damageAlter:
       RandomType: 3 # fixed 100%
-      ArmorEffectiveness: 2.0 # anti-terrain, not a proper weapon
-      FireThreshold: 999
-      SmokeThreshold: 999
+      ArmorEffectiveness: 4.0 # anti-terrain, not a proper weapon
       ToArmorPre: 0.0
-      ToArmor: 0.1
-      ToHealth: 0.4
-      ToTile: 1.0
+      ToArmor: 0.0
+      ToHealth: 0.1
+      RandomHealth: true
+      ToStun: 0.0
+      ToTile: 0.5
+      ToItem: 0.0
       TileDamageMethod: 2 # consistent tile damage
-      FixRadius: 4
-      RadiusReduction: 2
+      FixRadius: 6
+      RadiusReduction: 0
     tags:
       ITEM_AMMO_COLOR: 4
 
@@ -3803,8 +3808,9 @@ items:
     costBuy: 6000 # was 20k
     costSell: 3000
     damageAlter:
-      ToItem: 0.25 # shrapnel
-      RadiusReduction: 3 # sad damage, make it actually affect the outer edge of radius
+      ToItem: 0.15 # shrapnel
+      ToTile: 0.15 # shrapnel
+      RadiusReduction: 5 # sad damage, make it actually affect the outer edge of radius
 
   - type: STR_HEAVY_ROCKET_KRAK             # Large Krak Missile
     size: 0.1 # was 0.3
@@ -4550,6 +4556,59 @@ items:
       RandomType: 6 #Gaussian
 
 ### Utility
+  - type: STR_ANTIPLANT_BOMB                # Anti-Plant Bomb
+    categories: [ STR_CAT_GRENADES, STR_CAT_TACTICAL]
+    battleType: 4
+    invHeight: 2
+    invWidth: 2
+    bigSprite: 104
+    floorSprite: 104
+    handSprite: 536
+    listOrder: 13703
+    explosionHitSound: {mod: 40k, index: 792}
+    hitAnimation:
+      mod: 40k
+      index: 80
+    primeSound: {mod: 40k_ROSIGMA_edits, index: 2425}
+    size: 0.1
+    requiresBuy:
+      - STR_LASER_WEAPONS
+    costBuy: 10000
+    costSell: 5000
+    fuseType: -1
+    noLOSAccuracyPenalty: 75
+    weight: 10
+    throwRange: 8 # short
+    costThrow:
+      energy: 5
+      time: 35
+    costPrime:
+      time: 2
+    costUnprime:
+      time: 2
+    unprimeActionName: STR_UNPRIME_GRENADE
+    flatPrime:
+      time: true
+      energy: true
+    isFireExtinguisher: true
+    damageType: 8 # Acid
+    power: 200
+    damageAlter:
+      RandomType: 3 # fixed 100%
+      ArmorEffectiveness: 8.0 # anti-terrain, not a proper weapon
+      FireThreshold: 1000
+      SmokeThreshold: 1000
+      ToArmorPre: 0.0
+      ToArmor: 0.0
+      ToHealth: 0.05
+      RandomHealth: true
+      ToStun: 0.0
+      ToTile: 0.25 # 50 terrain dmg
+      ToItem: 0.0
+      TileDamageMethod: 2 # consistent tile damage
+      FixRadius: 8
+      RadiusReduction: 0
+
   - type: AUX_SHIELD                        # Storm Shield
     clipSize: 81 # Shield HP + 1
     tuMelee: 0

@@ -245,7 +245,7 @@ items:
       IgnoreSelfDestruct: true #melee weapon with plasma damage
     costMelee:
       time: 12 # MC power weapon
-      energy: 4 #heavier than regular power weapons
+      energy: 3 #heavier than regular power weapons
     flatRate: true
     experienceTrainingMode: 13
     accuracyMelee: 90
@@ -2521,14 +2521,14 @@ items:
       ToArmor: 0.2
     powerForAnimation: 48
 
-  - type: STR_BOLT_SNIPER_AMMO_INCIN        # Bolt Sniper Incindiary Ammo
+  - type: STR_BOLT_SNIPER_AMMO_INCIN        # Bolt Sniper Incendiary Ammo
     refNode: *REF_SNIPER_BOLT_AMMO
     bigSprite: 284
     listOrder: 11936
     hitAnimation:
       mod: 40k
       index: 88
-    damageAlter: # Incindiary
+    damageAlter: # Incendiary
       FixRadius: 3
       RadiusReduction: 5
       RandomType: 6
@@ -3716,7 +3716,7 @@ items:
     tags:
       ITEM_AMMO_COLOR: 15
 
-  - type: STR_CASTELLAN_INCIN               # Castellan Missiles (Incindiary)
+  - type: STR_CASTELLAN_INCIN               # Castellan Missiles (Incendiary)
     refNode: *REF_CASTELLAN_MISSILES
     bigSprite: 295
     listOrder: 12164
@@ -3763,7 +3763,7 @@ items:
       ArmorEffectiveness: 4.0 # anti-terrain, not a proper weapon
       ToArmorPre: 0.0
       ToArmor: 0.0
-      ToHealth: 0.1
+      ToHealth: 0.10
       RandomHealth: true
       ToStun: 0.0
       ToTile: 0.5
@@ -3993,6 +3993,7 @@ items:
     bigSprite: 195 # 1x2 sprite
     invHeight: 2
     invWidth: 1
+    weight: 3 # was 5
     inventoryMoveCost:
       basePercent: 50 # half costs for moving into hands etc
     power: 35 # was 20 - pathetic, worse than SM/IG built in melee attacks - made enemy cultists especially sad
@@ -4578,7 +4579,7 @@ items:
     fuseType: -1
     noLOSAccuracyPenalty: 75
     weight: 10
-    throwRange: 8 # short
+    throwRange: 12 # short
     costThrow:
       energy: 5
       time: 35
@@ -4600,13 +4601,13 @@ items:
       SmokeThreshold: 1000
       ToArmorPre: 0.0
       ToArmor: 0.0
-      ToHealth: 0.05
+      ToHealth: 0.1
       RandomHealth: true
       ToStun: 0.0
-      ToTile: 0.25 # 50 terrain dmg
       ToItem: 0.0
+      ToTile: 0.25 # 50 terrain dmg
       TileDamageMethod: 2 # consistent tile damage
-      FixRadius: 8
+      FixRadius: 9
       RadiusReduction: 0
 
   - type: AUX_SHIELD                        # Storm Shield

@@ -20,10 +20,6 @@ extended:
 armors:
   - &STR_DODGE_ARMOR # Template
     type: STR_ASS_ARMOR_HONOR_CLAW
-    tags:
-      DODGE_CHANCE: 0
-      FLIGHT_DODGE_CHANCE: 25
-      ARMOR_MAX_SUCCESSFUL_DODGES: 2
     scripts:
       newTurnUnit: |
         var int unitFaction;

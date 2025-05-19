@@ -225,6 +225,8 @@ armors:
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_ASTARTES: 1
+      DODGE_CHANCE: 15
+      ARMOR_MAX_SUCCESSFUL_DODGES: 1
 
   - update: STR_PERSONAL_ARMOR_UC           #TACTICAL
     refNode: *STR_MARINE_ARMOR
@@ -633,6 +635,9 @@ armors:
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_ASTARTES: 1
+      DODGE_CHANCE: 15
+      FLIGHT_DODGE_CHANCE: 0
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
 
   - &STR_ADVANCED_SCOUT_ARMOR               #SCOUT HONOR BROWN (Advanced Scout)
     update: STR_SCOUTH_UC
@@ -686,6 +691,9 @@ armors:
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_ASTARTES: 1
+      DODGE_CHANCE: 20
+      FLIGHT_DODGE_CHANCE: 0
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2
 
   - update: STR_SCOUTHW_UC                  #SCOUT HONOR WHITE
     refNode: *STR_ADVANCED_SCOUT_ARMOR
@@ -1169,7 +1177,7 @@ armors:
       - INV_NULL_3X3
     tags:
       FLIGHT_DODGE_CHANCE: 25
-      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      ARMOR_MAX_SUCCESSFUL_DODGES: 3
       MaxFlight: 2
       MaxCoolDown: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
@@ -1209,7 +1217,7 @@ armors:
       - INV_NULL_3X3
     tags:
       FLIGHT_DODGE_CHANCE: 25
-      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      ARMOR_MAX_SUCCESSFUL_DODGES: 3
       MaxFlight: 2
       MaxCoolDown: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
@@ -1249,7 +1257,7 @@ armors:
       - INV_NULL_3X3
     tags:
       FLIGHT_DODGE_CHANCE: 25
-      ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      ARMOR_MAX_SUCCESSFUL_DODGES: 3
       MaxFlight: 2
       MaxCoolDown: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
@@ -1389,6 +1397,8 @@ armors:
       ARMOR_IMMEDIATE_TURN_CREDIT: 0
       ARMOR_CLOAKED_ASSASSIN_TYPE: 3 # melee or sniper
       ARMOR_CLOAKED_ASSASSIN_RANGE: 3
+      DODGE_CHANCE: 30
+      ARMOR_MAX_SUCCESSFUL_DODGES: 3
 
   - type: STR_CAPTAIN_TERM
     refNode: *REF_CAPTAIN_DEFAULTS

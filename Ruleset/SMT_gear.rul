@@ -3443,7 +3443,7 @@ items:
 
   - type: STR_ACCATRAN_ROCKET_LAUNCHER      # Accatran Rocket Launcher
     requiresBuy:
-      - STR_GUARD_AND_ARBITES
+      - STR_GUARD_AND_INQUISITION
     costBuy: 25000 # was 75k
     costSell: 10000
     weight: 15  # was 30
@@ -3861,6 +3861,7 @@ items:
       RandomType: 2
       ToWound: 0.3
       ToEnergy: 0.5
+      ToTile: 0.7 # wall destruction
       RandomWound: false
     accuracyMelee: 90
     tuMelee: 12 # was 15
@@ -3884,6 +3885,7 @@ items:
       RandomType: 2
       ToWound: 0.3
       ToEnergy: 0.5
+      ToTile: 0.7 # wall destruction
       RandomWound: false
 
   - type: STR_CHAINSWORD_LIGHTSM            # SM Light Chainsword
@@ -3911,6 +3913,7 @@ items:
       RandomType: 2
       ToWound: 0.3
       ToEnergy: 0.5
+      ToTile: 0.7 # wall destruction
       RandomWound: false
     accuracyMelee: 100
     meleeMultiplier:
@@ -3941,6 +3944,7 @@ items:
       RandomType: 2
       ToWound: 0.3
       ToEnergy: 0.5
+      ToTile: 0.7 # wall destruction
       RandomWound: false
 
   - type: STR_CLAWS                         # Lightning Claw (Terminator)
@@ -4006,7 +4010,6 @@ items:
       ToArmorPre: 0.03
       ArmorEffectiveness: 0.9
       ToHealth: 1.0
-      ToTile: 0.75 # wall destruction
       RandomWound: true
       ToWound: 0.1
     tags:
@@ -4050,9 +4053,8 @@ items:
       RandomType: 2
       IgnoreDirection: false
       ToArmorPre: 0.03
-      ArmorEffectiveness: 0.8 # regular 0.9
+      ArmorEffectiveness: 0.9 # regular 0.9
       ToHealth: 1.0
-      ToTile: 0.75 # wall destruction
       RandomWound: true
       ToWound: 0.1
     tags:

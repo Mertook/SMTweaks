@@ -330,6 +330,38 @@ items:
     flatUse: false
     medikitActionName: STR_TOGGLE_STEALTH
 
+  - &REF_TECH_PRIMARY                       # Techmarine Primary Equipment (Type 9 - Aimed Shots)
+    type: STR_TECH_HBOLTER
+    battleType: 1
+    supportedInventorySections:
+      - STR_BACK_PACK
+      - STR_GROUND
+    inventoryMoveCost:
+      basePercent: 1000 # 10x movement cost
+    invHeight: 2
+    invWidth: 2
+
+  - &REF_TECH_UTILITY                       # Techmarine Utility Equipment (Type 11 - 'Use')
+    type: STR_TECH_VULMARKER
+    supportedInventorySections:
+      - STR_BACK_PACK
+      - STR_GROUND
+    inventoryMoveCost:
+      basePercent: 1000 # 10x movement cost
+    invWidth: 1
+    invHeight: 3
+
+  - &REF_TECH_SUPPORT                       # Techmarine Support Equipment (Type 11 - 'Use')
+    type: STR_TECH_MEDKIT
+    supportedInventorySections:
+      - STR_BACK_PACK
+      - STR_GROUND
+    inventoryMoveCost:
+      basePercent: 1000 # 10x movement cost
+    invWidth: 3
+    invHeight: 1
+
+
 ### Light Bolter Ammo
   - type: STR_LIGHT_BOLTPISTOL_AMMO         # Light BoltPistol Ammo
     refNode: *DMG_BOLTER_AMMO_STD
@@ -2307,6 +2339,49 @@ items:
       ITEM_RECOIL: 90 # was 60, offset by bipod
       ITEM_HAS_BIPOD: 1
 
+  - type: STR_TECH_HBOLTER                  # Heavy Bolter (Techmarine)
+    refNode: *REF_TECH_PRIMARY
+    categories: [STR_CAT_BOLTER]
+    bigSprite: 287
+    floorSprite: 287
+    handSprite: 472
+    bulletSprite: {mod: 40k, index: 6}
+    bulletSpeed: 50
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    costBuy: 75000
+    costSell: 30000
+    listOrder: 11999
+    weight: 30
+    compatibleAmmo:
+      - STR_AC_AP_AMMO
+      - STR_AC_MC_AMMO
+      - STR_AC_HE_AMMO
+      - STR_AC_I_AMMO
+    dropoff: 4
+    autoRange: 20
+    snapRange: 0
+    aimRange: 0
+    accuracyAuto: 50
+    accuracySnap: 0
+    accuracyAimed: 0
+    kneelBonus: 150
+    tuAuto: 0 # used by skill
+    tuSnap: 0
+    tuAimed: 0
+    tuLoad: 30
+    minRange: 6
+    sprayWaypoints: 2
+    confAuto:
+      name: STR_BURST_SNAP_SHOT
+      shots: 5
+      followProjectiles: false
+    tags:
+      ITEM_RECOIL: 90 # harsh requirement
+      ITEM_IS_HEAVY_WEAPON: 1
+      REACTION_MULTIPLIER: 50 # bulky
+      REACTION_PENALTY_KNEELING_BYPASS: 1
+      ITEM_HAS_BIPOD: 1
+
 ### Sniper Rifle
   - type: STR_HEAVY_CANNON                  # SM Sniper
     dropoff: 3 #scoped sniper rifle
@@ -3426,7 +3501,7 @@ items:
       - STR_PHOTON_GRENADE_DRUM
     accuracySnap: 70
     accuracyAuto: 0
-    tuSnap: 20
+    tuSnap: 22
     tuAuto: 0
     snapRange: 24
     #autoRange: 24

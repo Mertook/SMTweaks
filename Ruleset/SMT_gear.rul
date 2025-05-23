@@ -2083,7 +2083,7 @@ items:
       followProjectiles: false
     kneelBonus: 150
     tags:
-      ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
+      ITEM_RECOIL: 100 # harsh requirement, meant for specialist marines
       ITEM_IS_HEAVY_WEAPON: 1
       REACTION_MULTIPLIER: 66 # bulky
       REACTION_PENALTY_KNEELING_BYPASS: 1
@@ -2143,7 +2143,7 @@ items:
       followProjectiles: false
     kneelBonus: 150
     tags:
-      ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
+      ITEM_RECOIL: 100 # harsh requirement, meant for specialist marines
       ITEM_IS_HEAVY_WEAPON: 3 # 20% additional penalty when firing with lowered TUs
       REACTION_MULTIPLIER: 50 # bulky
       REACTION_PENALTY_KNEELING_BYPASS: 1
@@ -2192,7 +2192,7 @@ items:
       followProjectiles: false
     kneelBonus: 150
     tags:
-      ITEM_RECOIL: 90 # harsh requirement, meant for specialist marines
+      ITEM_RECOIL: 100 # harsh requirement, meant for specialist marines
       ITEM_IS_HEAVY_WEAPON: 1
       REACTION_MULTIPLIER: 50 # bulky
       REACTION_PENALTY_KNEELING_BYPASS: 1
@@ -2275,7 +2275,7 @@ items:
       shots: 8
       followProjectiles: false
     tags:
-      ITEM_RECOIL: 90 # harsh requirement
+      ITEM_RECOIL: 100 # harsh requirement
       ITEM_IS_HEAVY_WEAPON: 1
       REACTION_MULTIPLIER: 50 # bulky
       REACTION_PENALTY_KNEELING_BYPASS: 1
@@ -2306,7 +2306,7 @@ items:
     tags:
       REACTION_MULTIPLIER: 50
       REACTION_PENALTY_KNEELING_BYPASS: 1
-      ITEM_RECOIL: 90 # was 60, offset by bipod
+      ITEM_RECOIL: 100 # was 60, offset by bipod
       ITEM_HAS_BIPOD: 1
 
   - type: STR_BOLTER_HEAVY_SOLAR            # IG Heavy Bolter (Solar)
@@ -2336,7 +2336,7 @@ items:
     tags:
       REACTION_MULTIPLIER: 50
       REACTION_PENALTY_KNEELING_BYPASS: 1
-      ITEM_RECOIL: 90 # was 60, offset by bipod
+      ITEM_RECOIL: 100 # was 60, offset by bipod
       ITEM_HAS_BIPOD: 1
 
   - type: STR_TECH_HBOLTER                  # Heavy Bolter (Techmarine)
@@ -3808,7 +3808,7 @@ items:
       FireThreshold: 1
       ArmorEffectiveness: 0.5
       ToHealth: 1.2
-      ToArmorPre: 0.05
+      ToArmorPre: 0.02 # basically nothing
       ToArmor: 0.15
       ToStun: 0.5
       ToEnergy: 0.3
@@ -3832,16 +3832,16 @@ items:
       index: 80
     isFireExtinguisher: true
     damageType: 8 # Acid
-    power: 100
+    power: 200
     damageAlter:
       RandomType: 3 # fixed 100%
-      ArmorEffectiveness: 4.0 # anti-terrain, not a proper weapon
+      ArmorEffectiveness: 8.0 # anti-terrain, not a proper weapon
       ToArmorPre: 0.0
       ToArmor: 0.0
-      ToHealth: 0.10
+      ToHealth: 0.05
       RandomHealth: true
       ToStun: 0.0
-      ToTile: 0.5
+      ToTile: 0.25
       ToItem: 0.0
       TileDamageMethod: 2 # consistent tile damage
       FixRadius: 6
@@ -4338,9 +4338,9 @@ items:
       ToStun: 0.0
       ToWound: 0.0
       ToArmor: 0.0
-      ToTile: 0.00
-      ToItem: 0.00
-      RadiusReduction: 5
+      ToTile: 0.0
+      ToItem: 0.0
+      RadiusReduction: 4
     flatRate: true
     costAimed:
       time: 50
@@ -4670,19 +4670,19 @@ items:
       energy: true
     isFireExtinguisher: true
     damageType: 8 # Acid
-    power: 200
+    power: 400
     damageAlter:
       RandomType: 3 # fixed 100%
-      ArmorEffectiveness: 8.0 # anti-terrain, not a proper weapon
+      ArmorEffectiveness: 16.0 # anti-terrain, not a proper weapon
       FireThreshold: 1000
       SmokeThreshold: 1000
       ToArmorPre: 0.0
       ToArmor: 0.0
-      ToHealth: 0.1
+      ToHealth: 0.05
       RandomHealth: true
       ToStun: 0.0
       ToItem: 0.0
-      ToTile: 0.25 # 50 terrain dmg
+      ToTile: 0.13 # 52 terrain dmg
       TileDamageMethod: 2 # consistent tile damage
       FixRadius: 9
       RadiusReduction: 0

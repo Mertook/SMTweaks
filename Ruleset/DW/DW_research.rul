@@ -51,6 +51,7 @@ research:
       - STR_SIDEOPERATIONS
       - STR_TRAINFACILITYR
     cutscene: c2
+    listOrder: 1
 
   - name: STR_DW_HIGHTIER           # Deathwatch High tier
     cost: 900
@@ -63,6 +64,7 @@ research:
       - STR_HIGHTIER_PREREQ
       - STR_HAMMER # thunderhammer
       - STR_POWER_SWORD # power swords
+    listOrder: 1
 
   - name: STR_POWER_SWORD_CM
     cost: 560
@@ -142,6 +144,7 @@ research:
     unlocks:
       - STR_CAPTAIN_CODEX
     spawnedEvent: STR_DEATHWATCH_EXPANSION_L
+    lookup: STR_SMT_CAPTAIN_PROMOTION
     listOrder: 2 # push above corpses/etc
 
   - name: STR_DW_SQUAD6             # Deathwatch Squad Expansion +3 (High Tier)

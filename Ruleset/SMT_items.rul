@@ -707,26 +707,6 @@ items:
     tags:
       ITEM_DOESNT_HURT_USER: 1
 
-  - type: STR_FRAG_GRENADE_DRUM             # GL Frag Rounds
-    requiresBuy:
-      - STR_GLAUNCHER_PREREQ
-
-  - type: STR_KRAK_GRENADE_DRUM             # GL Krak Rounds
-    requiresBuy:
-      - STR_GLAUNCHER_PREREQ
-
-  - type: STR_INCENDIARY_GRENADE_DRUM       # GL Incin Rounds
-    requiresBuy:
-      - STR_GLAUNCHER_PREREQ
-
-  - type: STR_SMOKE_GRENADE_DRUM            # GL Smoke Rounds
-    requiresBuy:
-      - STR_GLAUNCHER_PREREQ
-
-  - type: STR_PHOTON_GRENADE_DRUM           # GL Photon Rounds
-    requiresBuy:
-      - STR_GLAUNCHER_PREREQ
-
   - type: STR_MOTION_SCANNER                # Motion Scanner
     bigSprite: 134
     armor: 300

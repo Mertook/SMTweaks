@@ -405,10 +405,19 @@ research:
     dependencies:
       - STR_NEOPHYTE_REQUEST # picked strategy
       - STR_MARINES_STRATEGY
-    unlocks:
+    getOneFree:
       - STR_GLAUNCHER_PREREQ
-      - STR_HBOLTER_AMMO_PREREQ # for Scout HBolter
     listOrder: 2
+
+  - name: STR_HEAVY_BOLTER_SCOUT    # Scout Heavy Bolter
+    cost: 120
+    points: 10
+    dependencies:
+      - STR_SCOUT_WEAPONS
+      - STR_BOLTER_ADV_AMMO # Astartes or Primaris Bolters researched
+    unlocks:
+      - STR_HBOLTER_AMMO_PREREQ
+    listOrder: 5
 
   - name: STR_MARINE_WEAPONS        # Astartes Weaponry
     cost: 100

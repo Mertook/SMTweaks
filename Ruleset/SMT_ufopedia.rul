@@ -797,7 +797,7 @@ ufopaedia:
 ### 80000  - Imperium Weapons
   - id: STR_HEAVY_BOLTER_SCOUT              # Scout Heavy Bolter
     requires:
-      - STR_SCOUT_WEAPONS
+      - STR_HEAVY_BOLTER_SCOUT
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: 1HB.SPK
@@ -1920,4 +1920,17 @@ ufopaedia:
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_STRM_ROCKET_DUMMY
+
+  - id: STR_SMOKE_GRENADE_DRUM
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    requires:
+      - STR_GLAUNCHER_PREREQ
+      - STR_SMOKE
+  - id: STR_PHOTON_GRENADE_DRUM
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    requires:
+      - STR_GLAUNCHER_PREREQ
+      - STR_PHOTON_GRENADE_REQUISITION
 

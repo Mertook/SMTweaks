@@ -2243,7 +2243,7 @@ items:
     twoHanded: true
     blockBothHands: true
     requiresBuy:
-      - STR_SCOUT_WEAPONS
+      - STR_HEAVY_BOLTER_SCOUT
     costBuy: 75000
     costSell: 30000
     listOrder: 11999
@@ -2348,8 +2348,6 @@ items:
     bulletSprite: {mod: 40k, index: 6}
     bulletSpeed: 50
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
-    costBuy: 75000
-    costSell: 30000
     listOrder: 11999
     weight: 30
     compatibleAmmo:
@@ -3746,8 +3744,8 @@ items:
     invHeight: 1
     requiresBuy:
       - STR_MARINE_WEAPONS
-    costBuy: 6000
-    costSell: 3000
+    costBuy: 4500
+    costSell: 1500
     weight: 7
     power: 80
     clipSize: 16
@@ -3915,6 +3913,30 @@ items:
       FixRadius: 2 # was 3, concentrated blast
     requiresBuy:
       - STR_HEAVY_LASER # Melta tech - was Midtier
+
+  - type: STR_FRAG_GRENADE_DRUM             # GL Frag Rounds
+    power: 70 # was 60
+    requiresBuy:
+      - STR_GLAUNCHER_PREREQ
+
+  - type: STR_KRAK_GRENADE_DRUM             # GL Krak Rounds
+    requiresBuy:
+      - STR_GLAUNCHER_PREREQ
+
+  - type: STR_INCENDIARY_GRENADE_DRUM       # GL Incin Rounds
+    power: 70 # was 50!
+    requiresBuy:
+      - STR_GLAUNCHER_PREREQ
+
+  - type: STR_SMOKE_GRENADE_DRUM            # GL Smoke Rounds
+    requiresBuy:
+      - STR_GLAUNCHER_PREREQ
+      - STR_SMOKE
+
+  - type: STR_PHOTON_GRENADE_DRUM           # GL Photon Rounds
+    requiresBuy:
+      - STR_GLAUNCHER_PREREQ
+      - STR_PHOTON_GRENADE_REQUISITION
 
 ### Melee
   - type: STR_CHAINSWORD                    # Chainsword

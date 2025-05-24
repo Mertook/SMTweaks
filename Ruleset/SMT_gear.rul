@@ -70,8 +70,8 @@ items:
       ToWound: 0.2
       RandomWound: false
     tags:
-      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 25
       SMT_AMMO_BONUSDMG_FIRINGACC: 33
+      DAMAGE_RESIST_PENETRATION_PERCENT: 30
 
   - &REF_BOLTER_AMMO_DW                     # DW Bolter ammo reference
     type: STR_RIFLE_CLIP_DEREV
@@ -655,7 +655,7 @@ items:
     tuAimed: 0
     confSnap:
       shots: 2
-    autoShots: 6
+    autoShots: 5
     sprayWaypoints: 2
     twoHanded: true
     oneHandedPenalty: 85 # +10 over regular bolters, lighter
@@ -862,15 +862,15 @@ items:
       FireBlastCalc: false
       FireThreshold: 1
       ArmorEffectiveness: 0.3
-      ToArmorPre: 0.05
-      ToArmor: 0.15
+      ToArmorPre: 0.02
+      ToArmor: 0.13
       ToMorale: 2.0
       ToHealth: 1.4
       ToStun: 0.2
       ToEnergy: 0.3
       ToWound: 0.5
-      ToTile: 0.25 #firey gas, not explosive
-      ToItem: 0.25 #firey gas, not explosive
+      ToTile: 0.20 #firey gas, not explosive
+      ToItem: 0.20 #firey gas, not explosive
       FixRadius: 2 #
     tags:
       ITEM_AMMO_COLOR: 9 # gold
@@ -2556,8 +2556,8 @@ items:
       ToTile: 0.33
       RandomWound: false
     tags:
-      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 33
       SMT_AMMO_BONUSDMG_FIRINGACC: 33
+      DAMAGE_RESIST_PENETRATION_PERCENT: 30
 
   - type: STR_BOLT_SNIPER_AMMO_FRAG         # Bolt Sniper Frag Ammo
     refNode: *REF_SNIPER_BOLT_AMMO
@@ -3309,6 +3309,8 @@ items:
       RandomType: 2 # 50-150%
       ArmorEffectiveness: 0.6
       ToHealth: 1.1 # was 1.1
+      ToTile: 0.2
+      ToItem: 0.25
     shotgunPellets: 1 # was 6, doesn't work with projectiles that have explosion radius
     requiresBuy:
       - STR_SHOTGUNS_ADV
@@ -3352,7 +3354,8 @@ items:
       ToWound: 0.2
       ToMorale: 2.0
       RadiusReduction: 3 # low power falloff
-      ToTile: 0.0
+      ToTile: 0.2
+      ToItem: 0.25
       RandomWound: false
       FixRadius: 4
 

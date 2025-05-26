@@ -16,7 +16,7 @@ units:
       firing: 120
       throwing: 80
       strength: 60
-      psiStrength: 200
+      psiStrength: 0
       psiSkill: 0
       melee: 120
     armor: STR_NECRON_ARCHITECT_ARMOR
@@ -52,6 +52,8 @@ armors:
     rearArmor: 150 # was 70
     underArmor: 170
     drawingRoutine: 0
+    psiDefence:
+      flatOne: 150.0 # heavy psi resist
     recovery:
       health:
         healthCurrent: 0.5
@@ -70,11 +72,12 @@ armors:
       - 0.9  # IMPACT
       - 1.0  # MELTA
     loftempsSet: [3]
-    builtInWeapons: []
+    builtInWeapons: # make staff built in, can't drop it
+      - STR_STAFF_OF_LIGHT
     tags:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 100 # was 10
       ARMOR_ENERGY_SHIELD_DECAY: 100 # was 12
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 0 # was 6, leftover from bad copypaste
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 0 # was 6, probably leftover from bad copypaste
       ARMOR_TENACIOUS_HP_MOD: 5 # was 3
       ARMOR_TENACIOUS_STUN_RECOVERY: 25 # was 25
       INFECTION_RESIST: 100
@@ -82,6 +85,9 @@ armors:
       UNIT_TYPE_XENO: 1
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_NECRON: 1
+      ARMOR_OVERWATCH_TU_RESTORED: 60
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
       MISSION_OBJECTIVE_UNIT: 100 # final boss
       UNIT_IMMOBILE_TURNS: 4 # don't run off the spawn point while player is clearing entrance
+      UNIT_RAPID_STUN_RECOVERY: 100 # able to act with 100% TUs after getting up from stun
 

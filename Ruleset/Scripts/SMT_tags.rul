@@ -44,6 +44,7 @@ extended:
       SMT_SHIELD_DAMAGE_AMP: int # % power increase based on targets shield
       ITEM_IGNORE_ALLIES: int # deal no damage to units belonging to users faction
       ITEM_IGNORE_IMPERIUM: int # deal no damage to allied units with armor tag `UNIT_TYPE_IMPERIUM: 1`
+      SMT_GRAV_WEAPON: int  # weapon scales power with weight (armor+hp+size) and scales stun inversely with strength
     RuleArmor:
       ## Craft Turrets
       SMT_TURRET_UNIT: int          # marks unit as generic Turret type unit
@@ -62,7 +63,7 @@ extended:
       ## Regeneration
       SMT_ARMOR_REGEN_HP: int                   #passive hp regen from armor
       ## Heavy Weapons
-      SMT_ARMOR_HEAVY_WEAPON_USER: int # armor that counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 2/3, 3 = 2/4, 4 = 2/5 etc
+      SMT_ARMOR_HEAVY_WEAPON_USER: int # counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 2/3, 3 = 2/4, 4 = 2/5 etc
       ## Infiltrator
       ARMOR_IS_INFILTRATOR: int                 # at start of battle unit immediately enters stealth for X turns
       ARMOR_INFILTRATOR_RANGE: int              # detection range for infiltrator stealth
@@ -79,6 +80,10 @@ extended:
       SMT_ARMOR_SHRED_RESISTANCE: int           # Reduce armor damage by % (Generic damage sources)
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: int    # Reduce armor damage by % (Plasma damage)
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: int     # Reduce armor damage by % (Melta damage)
+      ##
+      MISSION_OBJECTIVE_UNIT: int               # Unit contributes % to mission completion when killed; once completion = 100% kill all remaining enemies
+      UNIT_IMMOBILE_TURNS: int                  # Unit loses all TUs for X turns to stop it moving prematurely
+      UNIT_RAPID_STUN_RECOVERY: int             # Unit immediately gains % TUs after standing up from being stunned, letting it act immediately
     RuleSoldier:
       ## Regeneration
       SMT_UNIT_REGEN_HP: int #passive hp regen from soldier type

@@ -196,6 +196,28 @@ items:
   - type: AUX_CROZIUS_DW                # Crozius (DW)
     refNode: *STR_NOFRIENDLYFIRE_AMMO
 
+  - &REF_GRAV_WEAPON                    # Grav Weapon
+    type: STR_STUN_BOMB
+    tags:
+      GravPercentage: 0 # disable Rosigma Grav script
+    scripts:
+      damageUnitAmmo: |
+        var int dmgCheck;
+        var int temp;
+        var int temp2;
+
+        damaging_item.getTag dmgCheck Tag.SMT_GRAV_WEAPON;
+        if gt dmgCheck 0;
+          attacker.getFaction temp;
+          unit.getFaction temp2;
+          #debug_log "FriendlyFire Ping " dmgCheck temp temp2 power;
+          if eq temp temp2;
+            set power 0; # if target is same faction and antifriendly fire conditions are true, negate damage
+            #debug_log "FriendlyFire Negated " dmgCheck temp temp2;
+          end;
+        end;
+
+        return;
 
 
 

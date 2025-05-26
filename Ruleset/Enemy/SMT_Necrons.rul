@@ -2,6 +2,8 @@ weaponSets:
   # Necron Architect
   - type: ARCHITECT_STAFF_WITH_SCARABS
     weapons: [STR_STAFF_OF_LIGHT, STR_NECRON_SCARAB_SPAWNER_GRENADE, STR_NECRON_SCARAB_SPAWNER_GRENADE]
+  - type: SCARABS_ONLY
+    weapons: [STR_NECRON_SCARAB_SPAWNER_GRENADE, STR_NECRON_SCARAB_SPAWNER_GRENADE]
 
 units:
   - type: STR_NECRON_ARCHITECT          # Necron Architect (Deathwatch Final Boss)
@@ -72,8 +74,8 @@ armors:
       - 0.9  # IMPACT
       - 1.0  # MELTA
     loftempsSet: [3]
-    builtInWeapons: # make staff built in, can't drop it
-      - STR_STAFF_OF_LIGHT
+    # builtInWeapons: # make staff built in, can't drop it
+      # - STR_STAFF_OF_LIGHT
     tags:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 100 # was 10
       ARMOR_ENERGY_SHIELD_DECAY: 100 # was 12

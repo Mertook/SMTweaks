@@ -515,6 +515,19 @@ manufacture:
       STR_UFO_CONSTRUCTION: 6
       STR_KILLPOINT_TOKEN: 40
 
+  - name: STR_ASSC_CLIP
+    category: STR_AMMUNITION
+    requires:
+      - STR_ASSC_CLIP # was borked by Rosigma - make it available to players who don't have assault cannons but do have Stormravens/Omnis/whatever
+    space: 0
+    time: 200
+    cost: 1000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+      STR_ELERIUM_115: 5
+    producedItems:
+      STR_ASSC_CLIP: 5
+
 ### BOMBARD
   - name: STR_ORBITAL_STRIKE_AMMO                   # Orbital Strike ammo
     category: STR_CAT_FIRESUPPORT

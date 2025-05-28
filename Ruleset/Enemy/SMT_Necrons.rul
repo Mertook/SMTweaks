@@ -109,7 +109,7 @@ items:
     invWidth: 2
     invHeight: 3
     tuAimed: 0
-    tuSnap: 30
+    tuSnap: 35
     tuAuto: 0
     snapRange: 20
     accuracySnap: 100
@@ -134,7 +134,11 @@ items:
     shotgunSpread: 75
     shotgunChoke: 50 # wide spread on secondary shots
     shotgunBehavior: 1
-    shotgunPellets: 12 # cone of death
+    shotgunPellets: 8 # cone of death
+    confSnap:
+      shots: 3
+      name: STR_BURST_SNAP_SHOT
+      followProjectiles: false
     # Melee
     meleeSound: {mod: 40k, index: 710}  # 710 powerfist miss
     meleeType: 11

@@ -8,78 +8,6 @@ items:
     requires:
       - STR_MULTIMELTA_PREREQ
 
-  - update: STR_CATAPULT_PISTOL                 # Eldar Shuriken Pistol
-    requires:
-      - STR_ELDAR_WEAPONRY
-    armor: 200
-    dropoff: 6 # was 5
-    autoRange: 0
-    snapRange: 14 # was 15
-    aimRange: 0
-    accuracyAuto: 0
-    accuracySnap: 75 # was 75
-    accuracyAimed: 0
-    tuAuto: 0
-    tuSnap: 21
-    tuAimed: 0
-    confSnap:
-      shots: 3 # was 1
-
-  - update: STR_CATAPULT                        # Eldar Shuriken Rfle
-    requires:
-      - STR_ELDAR_WEAPONRY
-    armor: 200
-    dropoff: 5 # was 5
-    autoRange: 12 # was 7
-    snapRange: 16 # was 15
-    aimRange: 0
-    accuracyAuto: 70 # was 66
-    accuracySnap: 80 # was 80
-    accuracyAimed: 0
-    tuAuto: 40
-    tuSnap: 25
-    tuAimed: 0
-    confSnap:
-      shots: 4 # was 1
-    autoShots: 8 # was 3
-
-  - update: STR_SHURIKEN_CLIP                   # Eldar Shuriken Ammo
-    requires:
-      - STR_ELDAR_WEAPONRY
-    armor: 200
-    power: 60 # was 50 - similar raw hp damage but better at piercing armor
-    damageAlter:
-      ToArmorPre: 0.05 # was 0.1
-      ToHealth: 0.4 # was 0.5
-      ToStun: 0.05 # was 0.2
-      ArmorEffectiveness: 0.3
-    clipSize: 60 # was 20
-
-  - update: STR_EPOWER_SWORD                    # Eldar Sword
-    requires:
-      - STR_ELDAR_WEAPONRY
-    armor: 200
-    experienceTrainingMode: 13 # melee & reactions
-
-  - update: STR_ELDAR_MGRENADE                  # Eldar Melta Grenade
-    requires:
-      - STR_ELDAR_WEAPONRY
-    armor: 200
-
-  - update: STR_ELDAR_GRENADE                   # Eldar Grenade
-    requires:
-      - STR_ELDAR_WEAPONRY
-    armor: 200
-    damageType: 5 # Plasma
-    damageAlter:
-      RandomType: 6
-      ToHealth: 1.0
-      ToArmorPre: 0.2
-      ArmorEffectiveness: 0.75 #
-      FireThreshold: 70 #
-      ToArmor: 0.1
-      FixRadius: 1
-
   - update: STR_HYPERPHASESWORD                 # Necron Sword
     experienceTrainingMode: 13 # melee & reactions
 
@@ -94,6 +22,10 @@ items:
   - update: STR_GSC_NEEDLER_RIFLE               # GSC Sniper
     requires:
       - STR_ALIENS_ONLY # was xenotech
+
+  - type: STR_ASSC_CLIP_INFERNO  # Assault Cannon Inferno Bolt Rounds
+    requires:
+      - STR_ALIENS_ONLY # had no requirement
 
   - update: STR_BOLTER_LIGHT_UMBRA              # IG Light Bolter Umbra
     bigSprite: 242

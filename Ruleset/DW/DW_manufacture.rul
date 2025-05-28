@@ -14,7 +14,7 @@ manufacture:
 
   - &STR_DWRECRUITP_TEMPLATE
     name: STR_DWULTRA_FB
-    category: STR_ULTRAMARINE_PRIMARIS
+    category: STR_DEATHWATCH_RECRUIT
     requires:
       - STR_DEATHWATCH
     space: 0
@@ -396,12 +396,12 @@ manufacture:
     producedItems:
       STR_MKX_GRV_ARMOR: 1
 
-  - name: STR_MKX_INC_ARMOR_DW              # Primaris Omnis/Interceptor
+  - name: STR_MKX_INC_ARMOR_DW              # Primaris Omnis
     category: STR_CAT_ARMOR
     requires:
       - STR_DEATHWATCH
       - STR_CHAPTER_PURITY
-      - STR_MKX_INC_ARMOR
+      - STR_DW_PRIMARIS_FLIGHT
     space: 0
     time: 1200
     cost: 80000

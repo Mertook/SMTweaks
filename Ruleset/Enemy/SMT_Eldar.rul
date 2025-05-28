@@ -1,0 +1,79 @@
+items:
+  - type: STR_CATAPULT_PISTOL                   # Eldar Shuriken Pistol
+    requires:
+      - STR_ELDAR_WEAPONRY
+      - STR_CATAPULT_PISTOL
+    armor: 300
+    dropoff: 6 # was 5
+    autoRange: 0
+    snapRange: 14 # was 15
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 75 # was 75
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 21
+    tuAimed: 0
+    confSnap:
+      shots: 3 # was 1
+
+  - type: STR_CATAPULT                          # Eldar Shuriken Rfle
+    requires:
+      - STR_ELDAR_WEAPONRY
+      - STR_CATAPULT
+    armor: 300
+    dropoff: 5 # was 5
+    autoRange: 12 # was 7
+    snapRange: 16 # was 15
+    aimRange: 0
+    accuracyAuto: 70 # was 66
+    accuracySnap: 80 # was 80
+    accuracyAimed: 0
+    tuAuto: 36 # was 40
+    tuSnap: 25
+    tuAimed: 0
+    confSnap:
+      shots: 4 # was 1
+    autoShots: 8 # was 3
+
+  - type: STR_SHURIKEN_CLIP                     # Eldar Shuriken Ammo
+    requires:
+      - STR_ELDAR_WEAPONRY
+    armor: 300
+    power: 50
+    damageBonus:
+      psiStrength: 0.1
+    damageAlter:
+      ArmorEffectiveness: 0.3
+      ToArmorPre: 0.05 # was 0.1
+      ToHealth: 0.4 # was 0.5
+      ToStun: 0.05 # was 0.2
+    clipSize: 60 # was 20
+
+  - type: STR_EPOWER_SWORD                      # Eldar Sword
+    requires:
+      - STR_ELDAR_WEAPONRY
+      - STR_EPOWER_SWORD
+    armor: 300
+    experienceTrainingMode: 13 # melee & reactions
+
+  - type: STR_ELDAR_MGRENADE                    # Eldar Melta Grenade
+    requires:
+      - STR_ELDAR_WEAPONRY
+      - STR_ELDAR_MGRENADE
+    armor: 300
+
+  - type: STR_ELDAR_GRENADE                     # Eldar Grenade
+    requires:
+      - STR_ELDAR_WEAPONRY
+      - STR_ELDAR_GRENADE
+    armor: 300
+    damageType: 5 # Plasma
+    damageAlter:
+      RandomType: 6
+      ToHealth: 1.0
+      ToArmorPre: 0.2
+      ArmorEffectiveness: 0.75 #
+      FireThreshold: 70 #
+      ToArmor: 0.1
+      FixRadius: 1

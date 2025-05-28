@@ -80,10 +80,12 @@ extended:
       SMT_ARMOR_SHRED_RESISTANCE: int           # Reduce armor damage by % (Generic damage sources)
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: int    # Reduce armor damage by % (Plasma damage)
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: int     # Reduce armor damage by % (Melta damage)
-      ##
+      ## Objective Units
       MISSION_OBJECTIVE_UNIT: int               # Unit contributes % to mission completion when killed; once completion = 100% kill all remaining enemies
       UNIT_IMMOBILE_TURNS: int                  # Unit loses all TUs for X turns to stop it moving prematurely
       UNIT_RAPID_STUN_RECOVERY: int             # Unit immediately gains % TUs after standing up from being stunned, letting it act immediately
+      UNIT_DAMAGE_SOFTCAP: int                  # When unit takes hp/stun damage over X, halve it
+      ARMOR_REGENERATE_DURABILITY: int          # Unit armor is restored by X each turn
     RuleSoldier:
       ## Regeneration
       SMT_UNIT_REGEN_HP: int #passive hp regen from soldier type

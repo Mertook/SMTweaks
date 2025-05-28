@@ -64,27 +64,75 @@ soldiers:
 
   - update: STR_ULTRAMARINE             # Ultramarine Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
+    rankStrings:
+      - STR_DW_U_RANK_0
+      - STR_DW_U_RANK_1
+      - STR_DW_U_RANK_2
+      - STR_DW_U_RANK_3
+      - STR_DW_U_RANK_4
 
   - update: STR_ULTRAMARINE_PRIMARIS    # Ultramarine Primaris
     refNode: *STR_SOLDIER_DEATHWATCH
+    rankStrings:
+      - STR_DW_U_RANK_0
+      - STR_DW_U_RANK_1
+      - STR_DW_U_RANK_2
+      - STR_DW_U_RANK_3
+      - STR_DW_U_RANK_4
 
   - update: STR_IMPERIALF               # Imperial Fists Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
+    rankStrings:
+      - STR_DW_IF_RANK_0
+      - STR_DW_IF_RANK_1
+      - STR_DW_IF_RANK_2
+      - STR_DW_IF_RANK_3
+      - STR_DW_IF_RANK_4
 
   - update: STR_IMPERIALF_PRIMARIS      # Imperial Fists Primaris
     refNode: *STR_SOLDIER_DEATHWATCH
+    rankStrings:
+      - STR_DW_IF_RANK_0
+      - STR_DW_IF_RANK_1
+      - STR_DW_IF_RANK_2
+      - STR_DW_IF_RANK_3
+      - STR_DW_IF_RANK_4
 
   - update: STR_BLOODANGELS             # Blood Angels Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
+    rankStrings:
+      - STR_DW_BA_RANK_0
+      - STR_DW_BA_RANK_1
+      - STR_DW_BA_RANK_2
+      - STR_DW_BA_RANK_3
+      - STR_DW_BA_RANK_4
 
   - update: STR_BLOODANGELS_PRIMARIS    # Blood Angels Primaris
     refNode: *STR_SOLDIER_DEATHWATCH
+    rankStrings:
+      - STR_DW_BA_RANK_0
+      - STR_DW_BA_RANK_1
+      - STR_DW_BA_RANK_2
+      - STR_DW_BA_RANK_3
+      - STR_DW_BA_RANK_4
 
   - update: STR_SALAMANDAR              # Salamander Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
+    rankStrings:
+      - STR_DW_SALA_RANK_0
+      - STR_DW_SALA_RANK_1
+      - STR_DW_SALA_RANK_2
+      - STR_DW_SALA_RANK_3
+      - STR_DW_SALA_RANK_4
 
   - update: STR_SALAMANDAR_PRIMARIS     # Salamander Primaris
     refNode: *STR_SOLDIER_DEATHWATCH
+    rankStrings:
+      - STR_DW_SALA_RANK_0
+      - STR_DW_SALA_RANK_1
+      - STR_DW_SALA_RANK_2
+      - STR_DW_SALA_RANK_3
+      - STR_DW_SALA_RANK_4
 
   - update: STR_BLACKT                  # Black Templar Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
@@ -112,6 +160,12 @@ soldiers:
       psiStrength: 100
       psiSkill: 160 # +40 - Black Templar bonus
       melee: 150
+    rankStrings:
+      - STR_DW_BT_RANK_0
+      - STR_DW_BT_RANK_1
+      - STR_DW_BT_RANK_2
+      - STR_DW_BT_RANK_3
+      - STR_DW_BT_RANK_4
 
   - update: STR_BLACKT_PRIMARIS         # Black Templar Primaris
     refNode: *STR_SOLDIER_DEATHWATCH
@@ -139,18 +193,48 @@ soldiers:
       psiStrength: 100
       psiSkill: 160 # +40 - Black Templar bonus
       melee: 150
+    rankStrings:
+      - STR_DW_BT_RANK_0
+      - STR_DW_BT_RANK_1
+      - STR_DW_BT_RANK_2
+      - STR_DW_BT_RANK_3
+      - STR_DW_BT_RANK_4
 
   - update: STR_WHITES                  # White Scars Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
+    rankStrings:
+      - STR_DW_WS_RANK_0
+      - STR_DW_WS_RANK_1
+      - STR_DW_WS_RANK_2
+      - STR_DW_WS_RANK_3
+      - STR_DW_WS_RANK_4
 
   - update: STR_WHITES_PRIMARIS         # White Scars Primaris
     refNode: *STR_SOLDIER_DEATHWATCH
+    rankStrings:
+      - STR_DW_WS_RANK_0
+      - STR_DW_WS_RANK_1
+      - STR_DW_WS_RANK_2
+      - STR_DW_WS_RANK_3
+      - STR_DW_WS_RANK_4
 
   - update: STR_DARKANGELS              # Dark Angels Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
+    rankStrings:
+      - STR_DW_DA_RANK_0
+      - STR_DW_DA_RANK_1
+      - STR_DW_DA_RANK_2
+      - STR_DW_DA_RANK_3
+      - STR_DW_DA_RANK_4
 
   - update: STR_DARKANGELS_PRIMARIS     # Dark Angels Primaris
     refNode: *STR_SOLDIER_DEATHWATCH
+    rankStrings:
+      - STR_DW_DA_RANK_0
+      - STR_DW_DA_RANK_1
+      - STR_DW_DA_RANK_2
+      - STR_DW_DA_RANK_3
+      - STR_DW_DA_RANK_4
 
   - update: STR_SPACEW                  # Space Wolves Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
@@ -190,6 +274,12 @@ soldiers:
       psiStrength: 100
       psiSkill: 100
       melee: 150
+    rankStrings:
+      - STR_DW_SW_RANK_0
+      - STR_DW_SW_RANK_1
+      - STR_DW_SW_RANK_2
+      - STR_DW_SW_RANK_3
+      - STR_DW_SW_RANK_4
 
   - update: STR_SPACEW_PRIMARIS         # Space Wolves Primaris
     refNode: *STR_SOLDIER_DEATHWATCH
@@ -229,12 +319,30 @@ soldiers:
       psiStrength: 100
       psiSkill: 100
       melee: 150
+    rankStrings:
+      - STR_DW_SW_RANK_0
+      - STR_DW_SW_RANK_1
+      - STR_DW_SW_RANK_2
+      - STR_DW_SW_RANK_3
+      - STR_DW_SW_RANK_4
 
   - update: STR_CRISMONF                # Crimson Fists Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
+    rankStrings:
+      - STR_DW_CF_RANK_0
+      - STR_DW_CF_RANK_1
+      - STR_DW_CF_RANK_2
+      - STR_DW_CF_RANK_3
+      - STR_DW_CF_RANK_4
 
   - update: STR_CRISMONF_PRIMARIS       # Crimson Fists Primaris
     refNode: *STR_SOLDIER_DEATHWATCH
+    rankStrings:
+      - STR_DW_CF_RANK_0
+      - STR_DW_CF_RANK_1
+      - STR_DW_CF_RANK_2
+      - STR_DW_CF_RANK_3
+      - STR_DW_CF_RANK_4
 
   - &STR_SOLDIER_DEATHWATCH_LEADER      # DW Captain Reference
     type: STR_ULTRAMARINE_LEADER
@@ -324,44 +432,44 @@ soldiers:
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_ULTRA_UC
     rankStrings:
-      - STR_DW_U_RANK_0
-      - STR_DW_U_RANK_1
-      - STR_DW_U_RANK_2
-      - STR_DW_U_RANK_3
-      - STR_DW_U_RANK_4
+      - STR_DW_U_RANK_5
+      - STR_DW_U_RANK_5
+      - STR_DW_U_RANK_5
+      - STR_DW_U_RANK_5
+      - STR_DW_U_RANK_5
       - STR_DW_U_RANK_5
 
   - type: STR_IMPERIALF_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_IF_UC
     rankStrings:
-      - STR_DW_IF_RANK_0
-      - STR_DW_IF_RANK_1
-      - STR_DW_IF_RANK_2
-      - STR_DW_IF_RANK_3
-      - STR_DW_IF_RANK_4
+      - STR_DW_IF_RANK_5
+      - STR_DW_IF_RANK_5
+      - STR_DW_IF_RANK_5
+      - STR_DW_IF_RANK_5
+      - STR_DW_IF_RANK_5
       - STR_DW_IF_RANK_5
 
   - type: STR_BLOODANGELS_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_BA_UC
     rankStrings:
-      - STR_DW_BA_RANK_0
-      - STR_DW_BA_RANK_1
-      - STR_DW_BA_RANK_2
-      - STR_DW_BA_RANK_3
-      - STR_DW_BA_RANK_4
+      - STR_DW_BA_RANK_5
+      - STR_DW_BA_RANK_5
+      - STR_DW_BA_RANK_5
+      - STR_DW_BA_RANK_5
+      - STR_DW_BA_RANK_5
       - STR_DW_BA_RANK_5
 
   - type: STR_SALAMANDAR_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_SALA_UC
     rankStrings:
-      - STR_DW_SALA_RANK_0
-      - STR_DW_SALA_RANK_1
-      - STR_DW_SALA_RANK_2
-      - STR_DW_SALA_RANK_3
-      - STR_DW_SALA_RANK_4
+      - STR_DW_SALA_RANK_5
+      - STR_DW_SALA_RANK_5
+      - STR_DW_SALA_RANK_5
+      - STR_DW_SALA_RANK_5
+      - STR_DW_SALA_RANK_5
       - STR_DW_SALA_RANK_5
 
   - type: STR_BLACKT_LEADER
@@ -374,11 +482,11 @@ soldiers:
     statCaps:
       psiSkill: 180 # bonus devotion cap
     rankStrings:
-      - STR_DW_BT_RANK_0
-      - STR_DW_BT_RANK_1
-      - STR_DW_BT_RANK_2
-      - STR_DW_BT_RANK_3
-      - STR_DW_BT_RANK_4
+      - STR_DW_BT_RANK_5
+      - STR_DW_BT_RANK_5
+      - STR_DW_BT_RANK_5
+      - STR_DW_BT_RANK_5
+      - STR_DW_BT_RANK_5
       - STR_DW_BT_RANK_5
     skillIconSprite:  {mod: 40k, index: 8}
     skills:
@@ -400,11 +508,11 @@ soldiers:
     statCaps:
       psiStrength: 160
     rankStrings:
-      - STR_DW_WS_RANK_0
-      - STR_DW_WS_RANK_1
-      - STR_DW_WS_RANK_2
-      - STR_DW_WS_RANK_3
-      - STR_DW_WS_RANK_4
+      - STR_DW_WS_RANK_5
+      - STR_DW_WS_RANK_5
+      - STR_DW_WS_RANK_5
+      - STR_DW_WS_RANK_5
+      - STR_DW_WS_RANK_5
       - STR_DW_WS_RANK_5
     skills:
       - STR_INSPIRE_CAPTAIN_SKILL
@@ -424,11 +532,11 @@ soldiers:
     statCaps:
       psiStrength: 160
     rankStrings:
-      - STR_DW_DA_RANK_0
-      - STR_DW_DA_RANK_1
-      - STR_DW_DA_RANK_2
-      - STR_DW_DA_RANK_3
-      - STR_DW_DA_RANK_4
+      - STR_DW_DA_RANK_5
+      - STR_DW_DA_RANK_5
+      - STR_DW_DA_RANK_5
+      - STR_DW_DA_RANK_5
+      - STR_DW_DA_RANK_5
       - STR_DW_DA_RANK_5
     skills:
       - STR_INSPIRE_CAPTAIN_SKILL
@@ -442,11 +550,11 @@ soldiers:
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_SW_UC
     rankStrings:
-      - STR_DW_SW_RANK_0
-      - STR_DW_SW_RANK_1
-      - STR_DW_SW_RANK_2
-      - STR_DW_SW_RANK_3
-      - STR_DW_SW_RANK_4
+      - STR_DW_SW_RANK_5
+      - STR_DW_SW_RANK_5
+      - STR_DW_SW_RANK_5
+      - STR_DW_SW_RANK_5
+      - STR_DW_SW_RANK_5
       - STR_DW_SW_RANK_5
     minStats: # extremely high starting stats, lategame elites
       health: 145 # +10, SW bonus
@@ -466,11 +574,11 @@ soldiers:
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
     armor: STR_DW_LEADER_CF_UC
     rankStrings:
-      - STR_DW_CF_RANK_0
-      - STR_DW_CF_RANK_1
-      - STR_DW_CF_RANK_2
-      - STR_DW_CF_RANK_3
-      - STR_DW_CF_RANK_4
+      - STR_DW_CF_RANK_5
+      - STR_DW_CF_RANK_5
+      - STR_DW_CF_RANK_5
+      - STR_DW_CF_RANK_5
+      - STR_DW_CF_RANK_5
       - STR_DW_CF_RANK_5
 
   - type: STR_DW_ARMOR_DUMMY            # Dummy unit, used for DW Armor codex entries

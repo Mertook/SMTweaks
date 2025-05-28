@@ -254,7 +254,7 @@ items:
       reactions: 0.1
     experienceTrainingMode: 13
 
-  - &REF_FIST                               # SM Armor Fist melee values
+  - &REF_FIST                               # SM Armor Fist melee values (has alt component)
     type: STR_SM_OFFICER_FIST
     twoHanded: false
     fixedWeapon: true
@@ -264,11 +264,11 @@ items:
     specialUseEmptyHand: true
     meleeSound: {mod: 40k, index: 100}
     meleeAnimation: {mod: 40k, index: 0}
-    meleeType: 7
-    meleePower: 10 #
+    meleeType: 7 # melee
+    meleePower: 20
     meleeBonus:
-      strength: 0.25 #
-      melee: 0.25 #
+      strength: 0.20
+      melee: 0.20
     meleeAlter:
       RandomType: 2
       IgnoreDirection: false
@@ -310,6 +310,29 @@ items:
       ArmorEffectiveness: 0.7
       ToArmorPre: 0.2
       ToHealth: 0.9
+
+  - &REF_POWERSWORD                         # Powersword Values
+    type: STR_POWER_SWORD
+    clipSize: -1
+    battleType: 3
+    armor: 300
+    damageType: 5 # plasma
+    damageAlter:
+      RandomType: 2 # 50-150
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.2
+      ToHealth: 0.9
+    power: 100
+    damageBonus:
+      strength: 0.2
+      melee: 0.3
+    meleeMultiplier:
+      melee: 0.9
+      reactions: 0.1
+    flatMelee:
+      time: true
+      energy: true
+    experienceTrainingMode: 13
 
   - &REF_STEALTH_MED_TEMPLATE               # Stealth armor tool template
     type: STR_STEALTH_ADVSCOUT
@@ -3842,10 +3865,10 @@ items:
       ToHealth: 0.05
       RandomHealth: true
       ToStun: 0.0
-      ToTile: 0.25
+      ToTile: 0.22 # 44 base
       ToItem: 0.0
       TileDamageMethod: 2 # consistent tile damage
-      FixRadius: 6
+      FixRadius: 4
       RadiusReduction: 0
     tags:
       ITEM_AMMO_COLOR: 4
@@ -4072,7 +4095,38 @@ items:
     recover: false
 
   - type: STR_UNARMED_GAUNTLET_PLUS         # Regular Marine Armor Punch
-    refNode: *REF_FIST
+    twoHanded: false
+    fixedWeapon: true
+    recover: false
+    clipSize: -1
+    #*** Marine Punch
+    specialUseEmptyHand: true
+    meleeSound: {mod: 40k, index: 100}
+    meleeAnimation: {mod: 40k, index: 0}
+    meleeType: 7
+    power: 20 #
+    damageBonus:
+      strength: 0.20 #
+      melee: 0.20 #
+    damageAlter:
+      RandomType: 2
+      IgnoreDirection: false
+      ToStun: 0.5
+      ToHealth: 1.0
+      ToTile: 1.50 #koolaid man punch through walls
+      RandomWound: false
+      ToWound: 0.0
+    accuracyMelee: 90
+    meleeMultiplier:
+      reactions: 0.25
+      melee: 0.75
+    costMelee:
+      time: 10
+      energy: 1
+    flatMelee:
+      time: true
+      energy: true
+    experienceTrainingMode: 13
 
   - type: STR_JUMP_GAUNTLET_PLUS            # Jumpsuit Punch
     refNode: *REF_FIST
@@ -4147,7 +4201,7 @@ items:
     damageType: 7 # melee
     power: 40
     damageBonus:
-      melee: [0.2, 0.002]
+      melee: [0.3, 0.001]
       strength: 0.1
     damageAlter:
       RandomType: 2
@@ -4207,8 +4261,8 @@ items:
         return sprite_index;
     power: 120 # melee
     damageBonus:
-      strength: 0.6
-      melee: 0.2
+      strength: 0.5
+      melee: 0.3
     meleeMultiplier:
       melee: 0.8
       strength: 0.2
@@ -4230,6 +4284,12 @@ items:
     skillApplied: true
     strengthApplied: false
     listOrder: 13400
+
+  - type: STR_POWER_SWORD                   # Power Sword
+    refNode: *REF_POWERSWORD
+    costMelee:
+      time: 15
+      energy: 2
 
 ### Skill Tokens
   - type: INV_BLESS_TOKEN                   # Chaplain Bless Token
@@ -4350,22 +4410,22 @@ items:
     hitAnimation: {mod: 40k_ROSIGMA_edits, index: 1020}
     bulletSpeed: 30
     battleType: 1
-    power: 10
+    power: 20
     blastRadius: -1
     damageType: 0
     damageBonus:
-      psiStrength: 0.2
+      psiStrength: 0.4
     damageAlter:
       RandomType: 2 # 50-150%
       ArmorEffectiveness: 0.0
       ToEnergy: 0.1
-      ToHealth: 0.2
+      ToHealth: 0.1
       ToStun: 0.0
       ToWound: 0.0
       ToArmor: 0.0
       ToTile: 0.0
       ToItem: 0.0
-      RadiusReduction: 4
+      RadiusReduction: 10
     flatRate: true
     costAimed:
       time: 50
@@ -4381,7 +4441,7 @@ items:
     accuracyMultiplier:
       psiStrength: 1.0
     tags:
-      SMT_VULN_DEBUFF: 200
+      SMT_VULN_DEBUFF: 100
       SMT_VULN_DURATION: 2
       ITEM_IGNORE_ALLIES: 1
 

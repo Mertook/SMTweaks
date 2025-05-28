@@ -12,7 +12,7 @@ units:
     stats:
       tu: 150
       stamina: 150
-      health: 300 # was 200
+      health: 500 # was 200
       bravery: 100
       reactions: 90
       firing: 120
@@ -31,9 +31,10 @@ units:
     spotter: 3
     sniper: 60
     energyRecovery: 200
+    builtInWeaponSets: []
     weightedBuiltInWeaponSets:
       - 
-        ARCHITECT_STAFF_WITH_SCARABS: 100
+        SCARABS_ONLY: 100
 
 armors:
   - type: STR_NECRON_ARCHITECT_ARMOR       # NECRON WARRIOR
@@ -46,12 +47,12 @@ armors:
     fearImmune: true
     painImmune: true
     zombiImmune: true
-    allowsRunning: false  # NPC limits for BAI
+    allowsRunning: true # let BAI be more dangerous here
     corpseBattle:
       - STR_NECRON_ARCHITECT_CORPSE
     frontArmor: 170
     sideArmor: 160
-    rearArmor: 150 # was 70
+    rearArmor: 140 # was 70
     underArmor: 170
     drawingRoutine: 0
     psiDefence:
@@ -74,10 +75,10 @@ armors:
       - 0.9  # IMPACT
       - 1.0  # MELTA
     loftempsSet: [3]
-    # builtInWeapons: # make staff built in, can't drop it
-      # - STR_STAFF_OF_LIGHT
+    builtInWeapons: # make staff built in, can't drop it
+      - STR_STAFF_OF_LIGHT
     tags:
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 100 # was 10
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 100 # was 10 - fast charging instead of slow
       ARMOR_ENERGY_SHIELD_DECAY: 100 # was 12
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 0 # was 6, probably leftover from bad copypaste
       ARMOR_TENACIOUS_HP_MOD: 5 # was 3
@@ -90,6 +91,75 @@ armors:
       ARMOR_OVERWATCH_TU_RESTORED: 60
       ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
       MISSION_OBJECTIVE_UNIT: 100 # final boss
-      UNIT_IMMOBILE_TURNS: 4 # don't run off the spawn point while player is clearing entrance
+      UNIT_IMMOBILE_TURNS: 3 # don't run off the spawn point while player is clearing entrance
       UNIT_RAPID_STUN_RECOVERY: 100 # able to act with 100% TUs after getting up from stun
+      UNIT_DAMAGE_SOFTCAP: 75 # reduce incoming damage and prevent instant kills
+      ARMOR_REGENERATE_DURABILITY: 60 # necrodermis self repair
+
+items:
+  - type: STR_STAFF_OF_LIGHT
+    recover: false
+    fixedWeapon: true
+    fixedWeaponShow: true
+    battleType: 1
+    clipSize: -1
+    vaporColorSurface: {mod: 40k, index: 3}
+    vaporDensitySurface: 6
+    vaporProbabilitySurface: 30
+    invWidth: 2
+    invHeight: 3
+    tuAimed: 0
+    tuSnap: 30
+    tuAuto: 0
+    snapRange: 20
+    accuracySnap: 100
+    accuracyAuto: 70
+    autoRange: 12
+    autoShots: 3
+    power: 80
+    damageType: 11
+    damageAlter:
+      RandomType: 6
+      ArmorEffectiveness: 1.0
+      ToArmorPre: 1.0
+      ToHealth: 1.0
+      ToMorale: 0.4
+      ToStun: 0.4
+      ToArmor: 0.0
+      ToTile: 1.0
+      ToWound: 0.05
+      RandomWound: false
+      IgnoreOverKill: false
+    dropoff: 4
+    shotgunSpread: 75
+    shotgunChoke: 50 # wide spread on secondary shots
+    shotgunBehavior: 1
+    shotgunPellets: 12 # cone of death
+    # Melee
+    meleeSound: {mod: 40k, index: 710}  # 710 powerfist miss
+    meleeType: 11
+    meleePower: 100 # was 50
+    meleeBonus:
+      strength: 0.2
+      melee: 0.3
+    meleeAlter:
+      RandomType: 6  # Gauss has... gaussian damage. Consistent.
+      ArmorEffectiveness: 1.0  # destroys armor; doesn't ignore it.
+      ToArmorPre: 1.0  # gauss weapons strip armor instead of ignoring it
+      ToHealth: 1.0  # normalize damage to health
+      ToMorale: 0.4  # highly painful
+      ToStun: 0.4  # highly painful
+      ToArmor: 0.0  # all the armor damage is done on the way in
+      ToTile: 1.0  # gauss weapons disintegrate matter
+      ToWound: 0.05  # disintegrates rather than causing ugly wounds.
+      RandomWound: false
+      IgnoreOverKill: false
+    accuracyMelee: 100
+    meleeMultiplier:
+      melee: 1.0
+    tuMelee: 0
+    flatMelee:
+      time: true
+    requires:
+      - STR_GENERALLOCK # boss weapon, can't even pick it up - don't show in unlocks for Necron Xenotech
 

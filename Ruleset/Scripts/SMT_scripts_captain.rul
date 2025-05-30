@@ -194,8 +194,8 @@ extended:
           if eq temp 1; ## Armor of Contempt
             unit.getTag temp Tag.UNIT_TYPE_ASTARTES;
             #debug_log "AoC Ping" temp to_armor;
-            if gt temp 0;
-              limit_upper to_armor 2; # negate most armor destruction
+            if and gt temp 0 gt to_armor 0;
+              muldiv to_armor 10 100; # negate 90% of armor destruction
               #debug_log "AoC Trigger" temp to_armor;
             end;
 

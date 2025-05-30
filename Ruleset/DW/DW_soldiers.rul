@@ -5,7 +5,7 @@ soldiers:
     requires:
       - STR_DEATHWATCH
     minStats: # higher starting values than vetMarine, elite hand-picked soldiers
-      tu: 95
+      tu: 85
       stamina: 100
       health: 100
       bravery: 90
@@ -17,7 +17,7 @@ soldiers:
       psiSkill: 60
       melee: 110
     maxStats:
-      tu: 110
+      tu: 95
       stamina: 120
       health: 130
       bravery: 100
@@ -29,7 +29,7 @@ soldiers:
       psiSkill: 75
       melee: 130
     statCaps:
-      tu: 120
+      tu: 100
       stamina: 140
       health: 140 # +10 over vetMarines
       bravery: 110
@@ -137,29 +137,10 @@ soldiers:
   - update: STR_BLACKT                  # Black Templar Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
     minStats:
-      tu: 95
-      stamina: 100
-      health: 100
-      bravery: 80
-      reactions: 95
-      firing: 110
-      throwing: 90
-      strength: 90
-      psiStrength: 0
       psiSkill: 90 # +30 - Black Templar bonus
       melee: 120 # +10 - Black Templar bonus
     statCaps:
-      tu: 120
-      stamina: 140
-      health: 140
-      bravery: 110
-      reactions: 120
-      firing: 150
-      throwing: 140
-      strength: 110
-      psiStrength: 100
       psiSkill: 160 # +40 - Black Templar bonus
-      melee: 150
     rankStrings:
       - STR_DW_BT_RANK_0
       - STR_DW_BT_RANK_1
@@ -170,29 +151,10 @@ soldiers:
   - update: STR_BLACKT_PRIMARIS         # Black Templar Primaris
     refNode: *STR_SOLDIER_DEATHWATCH
     minStats:
-      tu: 95
-      stamina: 100
-      health: 100
-      bravery: 80
-      reactions: 95
-      firing: 110
-      throwing: 90
-      strength: 90
-      psiStrength: 0
       psiSkill: 90 # +30 - Black Templar bonus
       melee: 120 # +10 - Black Templar bonus
     statCaps:
-      tu: 120
-      stamina: 140
-      health: 140
-      bravery: 110
-      reactions: 120
-      firing: 150
-      throwing: 140
-      strength: 110
-      psiStrength: 100
       psiSkill: 160 # +40 - Black Templar bonus
-      melee: 150
     rankStrings:
       - STR_DW_BT_RANK_0
       - STR_DW_BT_RANK_1

@@ -22,10 +22,10 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
-    frontArmor: 125 # base 125
-    sideArmor: 120 # base 120
+    frontArmor: 120 # base 120
+    sideArmor: 110 # base 110
     rearArmor: 100 # base 100
-    underArmor: 125 # base 125
+    underArmor: 120 # base 120
 
   - &ARMOR_TERMINATOR                       #TERMINATOR ARMOR VALUES
     update: STR_POWER_SUIT_UC
@@ -60,10 +60,10 @@ armors:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
       moraleCurrent: 1.5 #discipline and resolve reinforces their faith
-    frontArmor: 125 # base 125
-    sideArmor: 120 # base 120
+    frontArmor: 120 # base 125
+    sideArmor: 110 # base 120
     rearArmor: 100 # base 100
-    underArmor: 125 # base 125
+    underArmor: 120 # base 125
     stats: {}
     # stats: # No values inherited from this, defined in each armor
       # tu: 0             # base 10 
@@ -111,10 +111,10 @@ armors:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD
       moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
-    frontArmor: 125 # base 125
-    sideArmor: 120 # base 120
+    frontArmor: 120 # base 120
+    sideArmor: 110 # base 110
     rearArmor: 100 # base 100
-    underArmor: 125 # base 125
+    underArmor: 120 # base 120
     stats: {}
     damageModifier: #2.7 values for officers
       - 1.0 #none
@@ -149,7 +149,7 @@ armors:
       moraleCurrent: 1.5 #discipline and resolve reinforces their faith
     loftempsSet: [ 3 ]
     stats:
-      tu: 20            # base 10 +10
+      tu: 15            # base 10 +10
       stamina: 10       # base 20 -10
       health: 0         # base 10 -10
       bravery: 0        # base 0  
@@ -196,8 +196,8 @@ armors:
       stamina: 20       # base 20
       health: 0         # base 10 -10
       bravery: 0        # base 0  
-      reactions: 25     # base 10 +10
-      firing: 0         # base 0  
+      reactions: 20     # base 10 +10
+      firing: 5         # base 0  
       throwing: 10      # base 5  +5
       strength: 0       # base 10 -10
       psiStrength: 0    # base 0  
@@ -231,7 +231,7 @@ armors:
   - update: STR_PERSONAL_ARMOR_UC           #TACTICAL
     refNode: *STR_MARINE_ARMOR
     stats:
-      tu: 25            # base 10 +15
+      tu: 10            # base 10
       stamina: 20       # base 20 
       health: 10        # base 10 
       bravery: 10       # base 0  +10
@@ -245,10 +245,10 @@ armors:
 
   - update: STR_ASS_ARMOR_UC                #ASSAULT
     refNode: *STR_MARINE_ARMOR
-    frontArmor: 130 # base 125 +5
-    sideArmor: 125  # base 120 +5
-    rearArmor: 100  # base 100
-    underArmor: 125 # base 125
+    frontArmor: 125 # base 120
+    sideArmor: 115 # base 110
+    rearArmor: 95 # base 100
+    underArmor: 120 # base 120
     stats:
       tu: 25            # base 10 +15
       stamina: 20       # base 20
@@ -266,10 +266,10 @@ armors:
 
   - update: STR_DEV_ARMOR_UC                #DEVASTATOR
     refNode: *STR_MARINE_ARMOR
-    frontArmor: 130 # base 125 +5 devastator
-    sideArmor: 120 # base 120
-    rearArmor: 95 # base 100 -5 devastator
-    underArmor: 125 # base 125
+    frontArmor: 125 # base 120
+    sideArmor: 105 # base 110
+    rearArmor: 100 # base 100
+    underArmor: 120 # base 120
     stats:
       tu: 0             # base 10 -10
       stamina: 10       # base 20 -10
@@ -288,10 +288,6 @@ armors:
 
   - update: STR_APOT_ARMOR_UC               #APOTHECARY
     refNode: *STR_MARINE_ARMOR
-    frontArmor: 125 # base 125
-    sideArmor: 120 # base 120
-    rearArmor: 100 # base 100
-    underArmor: 125 # base 125
     stats:
       tu: 5             # base 10 -5
       stamina: 20       # base 20 
@@ -318,10 +314,6 @@ armors:
     heatVision: 50 # techmarines get advanced sensors
     antiCamouflageAtDay: 16
     antiCamouflageAtDark: 16 # techmarines get advanced sensors
-    frontArmor: 125 # base 125
-    sideArmor: 120 # base 120
-    rearArmor: 100 # base 100
-    underArmor: 125 # base 125
     stats:
       tu: 10            # base 10 
       stamina: 10       # base 20 -10
@@ -337,10 +329,6 @@ armors:
 
   - update: STR_SARGENT_ARMOR_UC            #SERGEANT
     refNode: *STR_MARINE_OFFICER_ARMOR
-    frontArmor: 125 # base 125
-    sideArmor: 120 # base 120
-    rearArmor: 100 # base 100
-    underArmor: 125 # base 125
     stats:
       tu: 10            # base 10 
       stamina: 20       # base 20 
@@ -360,7 +348,7 @@ armors:
   - update: STR_HONOR_ARMOR_UC              #TACTICAL HONOR (Honor Guard)
     refNode: *STR_MARINE_OFFICER_ARMOR
     stats:
-      tu: 25            # base 10 +15 tac
+      tu: 10            # base 10
       stamina: 20       # base 20
       health: 20        # base 10 +10 elite
       bravery: 10       # base 0  +10 tac
@@ -371,10 +359,10 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 10      # base 0  +10 elite
       melee: 25         # base 10 +5 tac +10 elite
-    frontArmor: 135 # base 125 +10 elite
-    sideArmor: 130 # base 120 +10 elite
-    rearArmor: 110 # base 100 +10 elite
-    underArmor: 135 # base 125 +10 elite
+    frontArmor: 130 # base 120
+    sideArmor: 120 # base 110
+    rearArmor: 110 # base 100
+    underArmor: 130 # base 120
     builtInWeapons: #added 3x2 backpack
       - INV_NULL_3X1_BACKPACK
     units: #now exclusive to terminator promoted troops
@@ -661,7 +649,7 @@ armors:
     moveCost:
       basePercent: [100, 75] # Reduced energy cost - Scout bonus
     stats:
-      tu: 40            # base 10 +10 scout +20 elite
+      tu: 35            # base 10 +10 scout +10 elite
       stamina: 40       # base 20 -10 scout +30 elite
       health: 10        # base 10 -10 scout +10 elite
       bravery: 10       # base 0  +10 elite
@@ -923,7 +911,7 @@ armors:
     corpseGeo: STR_FALLEN_CORPSE
     zombiImmune: true
     stats:
-      tu: -5            # base -5
+      tu: -10           # base -10
       stamina: 20       # base 20
       health: 30        # base 30
       bravery: 10       # base 10
@@ -1062,7 +1050,7 @@ armors:
     antiCamouflageAtDark: 12
     heatVision: 40 # psyker powers + terminator bonus
     stats:
-      tu: -5            # base -5
+      tu: -10           # base -10
       stamina: 20       # base 20
       health: 30        # base 30
       bravery: 10       # base 10
@@ -1121,17 +1109,17 @@ armors:
     rearArmor: 105 # base 100
     underArmor: 130 # base 125
     stats:
-      tu: 0             # base 10 -10
-      stamina: 10       # base 20 -10
+      tu: 10            # base 10
+      stamina: 20       # base 20 
       health: 10        # base 10 
-      bravery: 0        # base 0  
-      reactions: -5     # base 10 -15
-      firing: 25        # base 0  +25
-      throwing: 5       # base 5  
-      strength: 40      # base 10 +30
+      bravery: 10       # base 0  +10
+      reactions: 15     # base 10 +5
+      firing: 10        # base 0  +10
+      throwing: 15      # base 5  +10
+      strength: 15      # base 10 +5
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
-      melee: -20        # base 10 -30 (ranged specialist & also to offset strength bonus)
+      melee: 10         # base 10 
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     units:
       - STR_SOLDIER_CAPTAIN
@@ -1647,17 +1635,17 @@ armors:
       - 0.2 #IMPACT
       - 1.0 #MELTA
     stats:
-      tu: 20            # base 20
-      stamina: 15       # base 15
-      health: 10        # base 10
+      tu: 10            # base 10
+      stamina: 20       # base 20 
+      health: 10        # base 10 
       bravery: 10       # base 10
-      reactions: 10     # base 10
+      reactions: 15     # base 15
       firing: 10        # base 10
-      throwing: 10      # base 10
+      throwing: 15      # base 15
       strength: 10      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 10         # base 10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
       - INV_NULL_3X1_BACKPACK
@@ -1685,18 +1673,6 @@ armors:
     refNode: *STR_MKX_TAC_UC
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
-    stats:
-      tu: 20            # base 20
-      stamina: 20       # base 15
-      health: 15        # base 10
-      bravery: 10       # base 10
-      reactions: 15     # base 10
-      firing: 15        # base 10
-      throwing: 15      # base 10
-      strength: 10      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 15         # base 10
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X1_BACKPACK
@@ -1709,18 +1685,6 @@ armors:
     sideArmor: 125
     rearArmor: 105
     underArmor: 130
-    stats:
-      tu: 25            # base 20
-      stamina: 25       # base 15
-      health: 25        # base 10
-      bravery: 10       # base 10
-      reactions: 20     # base 10
-      firing: 20        # base 10
-      throwing: 20      # base 10
-      strength: 15      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 20         # base 10
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X1_BACKPACK
@@ -1771,18 +1735,6 @@ armors:
     customArmorPreviewIndex: {mod: 40k, index: 273}
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
-    stats:
-      tu: 20            # base 20
-      stamina: 20       # base 15
-      health: 15        # base 10
-      bravery: 10       # base 10
-      reactions: 15     # base 10
-      firing: 15        # base 10
-      throwing: 15      # base 10
-      strength: 10      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 15         # base 10
     spriteSheet: PRIMTACLV4.PCK
     storeItem: STR_PRIMARIS_MELTAPACK
     units:
@@ -1801,18 +1753,6 @@ armors:
     sideArmor: 125
     rearArmor: 105
     underArmor: 130
-    stats:
-      tu: 25            # base 20
-      stamina: 25       # base 15
-      health: 25        # base 10
-      bravery: 10       # base 10
-      reactions: 20     # base 10
-      firing: 20        # base 10
-      throwing: 20      # base 10
-      strength: 15      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 20         # base 10
     spriteSheet: PRIMTACLV5.PCK
     storeItem: STR_PRIMARIS_MELTAPACK
     units:
@@ -1870,18 +1810,6 @@ armors:
     customArmorPreviewIndex: {mod: 40k, index: 273}
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
-    stats:
-      tu: 20            # base 20
-      stamina: 20       # base 15
-      health: 15        # base 10
-      bravery: 10       # base 10
-      reactions: 15     # base 10
-      firing: 15        # base 10
-      throwing: 15      # base 10
-      strength: 10      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 15         # base 10
     spriteSheet: PRIMTACLV4.PCK
     storeItem: STR_PRIMARIS_PLASMAPACK
     units:
@@ -1900,18 +1828,6 @@ armors:
     sideArmor: 125
     rearArmor: 105
     underArmor: 130
-    stats:
-      tu: 25            # base 20
-      stamina: 25       # base 15
-      health: 25        # base 10
-      bravery: 10       # base 10
-      reactions: 20     # base 10
-      firing: 20        # base 10
-      throwing: 20      # base 10
-      strength: 15      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 20         # base 10
     spriteSheet: PRIMTACLV5.PCK
     storeItem: STR_PRIMARIS_PLASMAPACK
     units:
@@ -1944,17 +1860,17 @@ armors:
     rearArmor: 110
     underArmor: 130
     stats:
-      tu: 20            # base 20
-      stamina: 20       # base 15
-      health: 25        # base 10
+      tu: 15            # base 10
+      stamina: 20       # base 20 
+      health: 25        # base 10 
       bravery: 10       # base 10
-      reactions: 20     # base 10
-      firing: 20        # base 10
-      throwing: 15      # base 10
+      reactions: 15     # base 15
+      firing: 25        # base 10
+      throwing: 15      # base 15
       strength: 15      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 10         # base 10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
 
   - type: STR_MKX_VETS_LV4_UC
     refNode: *STR_MKX_TAC_UC
@@ -1971,17 +1887,17 @@ armors:
     rearArmor: 110
     underArmor: 130
     stats:
-      tu: 25            # base 20
-      stamina: 20       # base 15
-      health: 30        # base 10
+      tu: 15            # base 10
+      stamina: 20       # base 20 
+      health: 25        # base 10 
       bravery: 10       # base 10
-      reactions: 25     # base 10
+      reactions: 15     # base 15
       firing: 25        # base 10
-      throwing: 15      # base 10
+      throwing: 15      # base 15
       strength: 15      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 15         # base 10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X1_BACKPACK
@@ -2001,17 +1917,17 @@ armors:
     rearArmor: 110
     underArmor: 130
     stats:
-      tu: 30            # base 20
-      stamina: 20       # base 15
-      health: 35        # base 10
+      tu: 15            # base 10
+      stamina: 20       # base 20 
+      health: 25        # base 10 
       bravery: 10       # base 10
-      reactions: 20     # base 10
-      firing: 30        # base 10
-      throwing: 15      # base 10
+      reactions: 15     # base 15
+      firing: 25        # base 10
+      throwing: 15      # base 15
       strength: 15      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 15         # base 10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X1_BACKPACK
@@ -2039,17 +1955,17 @@ armors:
     rearArmor: 110
     underArmor: 130
     stats:
-      tu: 25            # base 20
-      stamina: 20       # base 15
-      health: 25        # base 10
+      tu: 25            # base 10
+      stamina: 20       # base 20 
+      health: 25        # base 10 
       bravery: 10       # base 10
-      reactions: 20     # base 10
-      firing: 15        # base 10
-      throwing: 15      # base 10
+      reactions: 15     # base 15
+      firing: 10        # base 10
+      throwing: 15      # base 15
       strength: 20      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 25         # base 10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 30         # base 10 
     builtInWeapons:
       - INV_NULL_1X3
       - AUX_SHIELD
@@ -2067,17 +1983,17 @@ armors:
     rearArmor: 110
     underArmor: 130
     stats:
-      tu: 25            # base 20
-      stamina: 20       # base 15
-      health: 30        # base 10
+      tu: 25            # base 10
+      stamina: 20       # base 20 
+      health: 25        # base 10 
       bravery: 10       # base 10
-      reactions: 25     # base 10
-      firing: 15        # base 10
-      throwing: 15      # base 10
-      strength: 25      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 30         # base 10
+      reactions: 15     # base 15
+      firing: 10        # base 10
+      throwing: 15      # base 15
+      strength: 20      # base 10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 30         # base 10 
     units:
       - STR_PRIMARISLV4
     builtInWeapons:
@@ -2098,17 +2014,17 @@ armors:
     rearArmor: 110
     underArmor: 130
     stats:
-      tu: 30            # base 20
-      stamina: 20       # base 15
-      health: 35        # base 10
+      tu: 25            # base 10
+      stamina: 20       # base 20 
+      health: 25        # base 10 
       bravery: 10       # base 10
-      reactions: 25     # base 10
-      firing: 20        # base 10
-      throwing: 15      # base 10
-      strength: 25      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 30         # base 10
+      reactions: 15     # base 15
+      firing: 10        # base 10
+      throwing: 15      # base 15
+      strength: 20      # base 10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 30         # base 10 
     units:
       - STR_PRIMARISLV5
     builtInWeapons:
@@ -2160,17 +2076,17 @@ armors:
       - 0.2 #IMPACT
       - 1.0 #MELTA
     stats:
-      tu: 20            # base 20
+      tu: 25            # base 25
       stamina: 20       # base 20
       health: 10        # base 10
       bravery: 10       # base 10
       reactions: 15     # base 15
-      firing: 10        # base 10
+      firing: 0         # base 10
       throwing: 10      # base 10
       strength: 10      # base 10
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
-      melee: 20         # base 15
+      melee: 25         # base 15
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     builtInWeapons:
       - INV_NULL_3X3
@@ -2207,18 +2123,6 @@ armors:
     spriteSheet: PRIMASSLV3.PCK
     units:
       - STR_PRIMARISLV3
-    stats:
-      tu: 25            # base 20
-      stamina: 20       # base 20
-      health: 20        # base 10
-      bravery: 10       # base 10
-      reactions: 20     # base 15
-      firing: 15        # base 10
-      throwing: 10      # base 10
-      strength: 10      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 20         # base 15
     tags:
       FLIGHT_DODGE_CHANCE: 25
       ARMOR_MAX_SUCCESSFUL_DODGES: 2
@@ -2231,18 +2135,6 @@ armors:
     spriteSheet: PRIMASSLV4.PCK
     units:
       - STR_PRIMARISLV4
-    stats:
-      tu: 25            # base 20
-      stamina: 20       # base 20
-      health: 20        # base 10
-      bravery: 10       # base 10
-      reactions: 25     # base 15
-      firing: 15        # base 10
-      throwing: 10      # base 10
-      strength: 15      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 25         # base 15
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X3
@@ -2260,18 +2152,6 @@ armors:
     spriteSheet: PRIMASSLV5.PCK
     units:
       - STR_PRIMARISLV5
-    stats:
-      tu: 30            # base 20
-      stamina: 20       # base 20
-      health: 30        # base 10
-      bravery: 10       # base 10
-      reactions: 30     # base 15
-      firing: 15        # base 10
-      throwing: 10      # base 10
-      strength: 15      # base 10
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 30         # base 15
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X3
@@ -2327,17 +2207,17 @@ armors:
     moveCost:
       basePercent: [100, 75] # Reduced energy cost - Phobos bonus
     stats:
-      tu: 25            # base 25 
-      stamina: 20       # base 20 
-      health: 5         # base 5  
-      bravery: 10       # base 10 
-      reactions: 20     # base 20 
-      firing: 5         # base 5  
-      throwing: 10      # base 10 
-      strength: 5       # base 5  
-      psiStrength: 0    # base 0  
-      psiSkill: 0       # base 0  
-      melee: 15         # base 20 
+      tu: 30            # base 25
+      stamina: 25       # base 20
+      health: 10        # base 5
+      bravery: 10       # base 10
+      reactions: 30     # base 20
+      firing: 5         # base 5
+      throwing: 10      # base 10
+      strength: 10      # base 5
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 30         # base 15
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
@@ -2367,13 +2247,13 @@ armors:
       stamina: 25       # base 20
       health: 10        # base 5
       bravery: 10       # base 10
-      reactions: 30     # base 20
+      reactions: 35     # base 20
       firing: 5         # base 5
       throwing: 10      # base 10
       strength: 10      # base 5
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
-      melee: 30         # base 15
+      melee: 35         # base 20
     specialWeapon: STR_STEALTH_REIVER
     tags:
       DODGE_CHANCE: 25
@@ -2423,17 +2303,17 @@ armors:
     camouflageAtDay: -12
     camouflageAtDark: -12
     stats:
-      tu: 40            # base 25
+      tu: 30            # base 25
       stamina: 25       # base 20
-      health: 20        # base 5
+      health: 10        # base 5
       bravery: 10       # base 10
-      reactions: 40     # base 20
+      reactions: 35     # base 20
       firing: 5         # base 5
       throwing: 10      # base 10
       strength: 10      # base 5
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
-      melee: 40         # base 20
+      melee: 35         # base 20
     specialWeapon: STR_STEALTH_REIVER
     builtInWeapons:
       - INV_INSPIRE_TOKEN
@@ -2464,14 +2344,14 @@ armors:
     units:
       - STR_PRIMARISLV3
     stats:
-      tu: 25            # base 25
+      tu: 15            # base 20
       stamina: 25       # base 20
       health: 10        # base 5
       bravery: 10       # base 10
       reactions: 25     # base 20
-      firing: 20        # base 5
+      firing: 25        # base 5
       throwing: 10      # base 10
-      strength: 5       # base 5
+      strength: 10      # base 5
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 5          # base 20
@@ -2496,14 +2376,14 @@ armors:
     units:
       - STR_PRIMARISLV4
     stats:
-      tu: 25            # base 25
+      tu: 15            # base 20
       stamina: 25       # base 20
       health: 10        # base 5
       bravery: 10       # base 10
       reactions: 25     # base 20
-      firing: 20        # base 5
+      firing: 25        # base 5
       throwing: 10      # base 10
-      strength: 5       # base 5
+      strength: 10      # base 5
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
       melee: 5          # base 20
@@ -2532,17 +2412,17 @@ armors:
     units:
       - STR_PRIMARISLV5
     stats:
-      tu: 25            # base 25
+      tu: 15            # base 20
       stamina: 25       # base 20
-      health: 20        # base 5
+      health: 10        # base 5
       bravery: 10       # base 10
-      reactions: 30     # base 20
-      firing: 30        # base 5
+      reactions: 25     # base 20
+      firing: 25        # base 5
       throwing: 10      # base 10
-      strength: 5       # base 5
+      strength: 10      # base 5
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
-      melee: 10         # base 20
+      melee: 5          # base 20
     specialWeapon: STR_STEALTH_ELIMINATOR
     builtInWeapons:
       - INV_INSPIRE_TOKEN
@@ -2605,17 +2485,17 @@ armors:
       - 0.2 #IMPACT
       - 0.9 #MELTA
     stats:
-      tu: -10           # base 0
-      stamina: -10      # base -10
-      health: 20        # base 20
+      tu: -10           # base -10
+      stamina: 10       # base 10
+      health: 30        # base 30
       bravery: 10       # base 10
       reactions: -10    # base -10
       firing: 15        # base 15
-      throwing: 5       # base 5
-      strength: 30      # base 30
+      throwing: 10      # base 5
+      strength: 40      # base 40
       psiStrength: 0    # base 0
       psiSkill: 0       # base 0
-      melee: 10         # base 10
+      melee: 15         # base 10
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
@@ -2696,18 +2576,6 @@ armors:
     antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV3
-    stats:
-      tu: -5            # base 0
-      stamina: -5       # base -10
-      health: 20        # base 20
-      bravery: 10       # base 10
-      reactions: -10    # base -10
-      firing: 15        # base 15
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 10         # base 10
     specialWeapon: STR_MFIST
     builtInWeapons:
       - STR_GRAV_AUTOC
@@ -2722,18 +2590,6 @@ armors:
     antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV3
-    stats:
-      tu: -5            # base 0
-      stamina: -5       # base -10
-      health: 20        # base 20
-      bravery: 10       # base 10
-      reactions: -10    # base -10
-      firing: 15        # base 15
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 10         # base 10
     specialWeapon: STR_MFIST
     builtInWeapons:
       - STR_GRAV_BOLTER
@@ -2748,18 +2604,6 @@ armors:
     antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV3
-    stats:
-      tu: -5            # base 0
-      stamina: -5       # base -10
-      health: 20        # base 20
-      bravery: 10       # base 10
-      reactions: -10    # base -10
-      firing: 15        # base 15
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 10         # base 10
     specialWeapon: STR_MFIST
     builtInWeapons:
       - STR_GRAV_FLAMER
@@ -2774,18 +2618,6 @@ armors:
     antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV3
-    stats:
-      tu: -5            # base 0
-      stamina: -5       # base -10
-      health: 20        # base 20
-      bravery: 10       # base 10
-      reactions: -10    # base -10
-      firing: 15        # base 15
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 10         # base 10
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
       - INV_NULL_3X3
@@ -2798,18 +2630,6 @@ armors:
     antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV4
-    stats:
-      tu: 5             # base 0
-      stamina: 5        # base -10
-      health: 25        # base 20
-      bravery: 10       # base 10
-      reactions: -5     # base -10
-      firing: 15        # base 15
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 10         # base 10
     specialWeapon: STR_GRAV_MORTAR
     builtInWeapons:
       - INV_INSPIRE_TOKEN
@@ -2825,18 +2645,6 @@ armors:
     antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV4
-    stats:
-      tu: 5             # base 0
-      stamina: 5        # base -10
-      health: 25        # base 20
-      bravery: 10       # base 10
-      reactions: -5     # base -10
-      firing: 15        # base 15
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 10         # base 10
     specialWeapon: STR_GRAV_MORTAR
     builtInWeapons:
       - INV_INSPIRE_TOKEN
@@ -2852,18 +2660,6 @@ armors:
     antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV4
-    stats:
-      tu: 5             # base 0
-      stamina: 5        # base -10
-      health: 25        # base 20
-      bravery: 10       # base 10
-      reactions: -5     # base -10
-      firing: 15        # base 15
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 10         # base 10
     specialWeapon: STR_GRAV_MORTAR
     builtInWeapons:
       - INV_INSPIRE_TOKEN
@@ -2879,18 +2675,6 @@ armors:
     antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV4
-    stats:
-      tu: 5             # base 0
-      stamina: 5        # base -10
-      health: 25        # base 20
-      bravery: 10       # base 10
-      reactions: -5     # base -10
-      firing: 15        # base 15
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 10         # base 10
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
       - INV_INSPIRE_TOKEN
@@ -2904,18 +2688,6 @@ armors:
     antiCamouflageAtDark: 12
     units:
       - STR_PRIMARISLV5
-    stats:
-      tu: 15            # base 0
-      stamina: 10       # base -10
-      health: 30        # base 20
-      bravery: 10       # base 10
-      reactions: 5      # base -10
-      firing: 20        # base 15
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 20         # base 10
     specialWeapon: STR_GRAV_MORTAR
     builtInWeapons:
       - INV_INSPIRE_TOKEN
@@ -2938,18 +2710,6 @@ armors:
     antiCamouflageAtDark: 12
     units:
       - STR_PRIMARISLV5
-    stats:
-      tu: 15            # base 0
-      stamina: 10       # base -10
-      health: 30        # base 20
-      bravery: 10       # base 10
-      reactions: 5      # base -10
-      firing: 20        # base 15
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 20         # base 10
     specialWeapon: STR_GRAV_MORTAR
     builtInWeapons:
       - INV_INSPIRE_TOKEN
@@ -2972,18 +2732,6 @@ armors:
     antiCamouflageAtDark: 12
     units:
       - STR_PRIMARISLV5
-    stats:
-      tu: 15            # base 0
-      stamina: 10       # base -10
-      health: 30        # base 20
-      bravery: 10       # base 10
-      reactions: 5      # base -10
-      firing: 20        # base 15
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 20         # base 10
     specialWeapon: STR_GRAV_MORTAR
     builtInWeapons:
       - INV_INSPIRE_TOKEN
@@ -3006,18 +2754,6 @@ armors:
     antiCamouflageAtDark: 12
     units:
       - STR_PRIMARISLV5
-    stats:
-      tu: 15            # base 0
-      stamina: 10       # base -10
-      health: 30        # base 20
-      bravery: 10       # base 10
-      reactions: 5      # base -10
-      firing: 20        # base 15
-      throwing: 5       # base 5
-      strength: 30      # base 30
-      psiStrength: 0    # base 0
-      psiSkill: 0       # base 0
-      melee: 20         # base 10
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
       - INV_INSPIRE_TOKEN
@@ -3064,9 +2800,9 @@ armors:
     rearArmor: 100
     underArmor: 120
     stats:
-      tu: -5
+      tu: 5
       stamina: 5
-      health: 20
+      health: 15
       bravery: 10
       reactions: 15
       firing: 15
@@ -3122,11 +2858,6 @@ armors:
     spriteSheet: PRIMINCLV4.PCK
     units:
       - STR_PRIMARISLV4
-    stats:
-      tu: 5
-      stamina: 10
-      reactions: 20
-      firing: 20
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X3
@@ -3136,11 +2867,6 @@ armors:
     spriteSheet: PRIMINCLV5.PCK
     units:
       - STR_PRIMARISLV5
-    stats:
-      tu: 15
-      stamina: 20
-      reactions: 20
-      firing: 20
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X3
@@ -3204,11 +2930,6 @@ armors:
       - STR_PLASMA_EXTERMINATOR_FIXED
       - STR_PLASMA_EXTERMINATOR_FIXED2
       - INV_NULL_3X3
-    stats:
-      tu: 5
-      stamina: 10
-      reactions: 20
-      firing: 20
 
   - type: STR_MKX_INCPE_LV5_UC
     refNode: *STR_MKX_INC_UC
@@ -3222,11 +2943,6 @@ armors:
       - STR_PLASMA_EXTERMINATOR_FIXED
       - STR_PLASMA_EXTERMINATOR_FIXED2
       - INV_NULL_3X3
-    stats:
-      tu: 15
-      stamina: 20
-      reactions: 20
-      firing: 20
     tags:
       MaxFlight: 4
       MaxCoolDown: 1
@@ -3283,11 +2999,6 @@ armors:
       - INV_INSPIRE_TOKEN
       - STR_ACCEL_AUTOCANNON_FIXED
       - INV_NULL_3X3
-    stats:
-      tu: 5
-      stamina: 10
-      reactions: 20
-      firing: 20
 
   - type: STR_MKX_INCAC_LV5_UC
     refNode: *STR_MKX_INC_UC
@@ -3300,11 +3011,6 @@ armors:
       - INV_INSPIRE_TOKEN
       - STR_ACCEL_AUTOCANNON_FIXED
       - INV_NULL_3X3
-    stats:
-      tu: 15
-      stamina: 20
-      reactions: 20
-      firing: 20
     tags:
       MaxFlight: 4
       MaxCoolDown: 1
@@ -3399,9 +3105,9 @@ armors:
       health: 20        # base 10 
       bravery: 0        # base 0  
       reactions: 0      # base 10 
-      firing: -10       # base 0  
+      firing: 0         # base 0  
       throwing: 0       # base 5  
-      strength: 5       # base 10 
+      strength: 10       # base 10 
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
@@ -3424,9 +3130,9 @@ armors:
       health: 20        # base 10 
       bravery: 0        # base 0  
       reactions: 0      # base 10 
-      firing: -10       # base 0  
+      firing: 0         # base 0  
       throwing: 0       # base 5  
-      strength: 5       # base 10 
+      strength: 10       # base 10 
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
@@ -3451,9 +3157,9 @@ armors:
       health: 20        # base 10 
       bravery: 0        # base 0  
       reactions: 0      # base 10 
-      firing: -10       # base 0  
+      firing: 0         # base 0  
       throwing: 0       # base 5  
-      strength: 5       # base 10 
+      strength: 10       # base 10 
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
@@ -3811,17 +3517,17 @@ armors:
     rearArmor: 100
     underArmor: 125
     stats:
-      tu: 5
-      stamina: 5
-      health: 10
-      bravery: 0
-      reactions: 5
-      firing: 5
-      throwing: 0
-      strength: 10
-      psiStrength: 0
-      psiSkill: 0
-      melee: 0
+      tu: 10            # base 10
+      stamina: 10       # base 20 
+      health: 10        # base 10 
+      bravery: 10       # base 10
+      reactions: 15     # base 15
+      firing: 10        # base 10
+      throwing: 15      # base 15
+      strength: 10      # base 10
+      psiStrength: 0    # base 0  
+      psiSkill: 0       # base 0  
+      melee: 10         # base 10 
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 1.0 #AP
@@ -3875,18 +3581,6 @@ armors:
       - STR_LIB_LOCKDOWN_TOME
       - INV_LIB_OVERWATCH_TOKEN
       - INV_NULL_3X1_BACKPACK
-    stats:
-      tu: 5
-      stamina: 5
-      health: 10
-      bravery: 0
-      reactions: 5
-      firing: 5
-      throwing: 0
-      strength: 10
-      psiStrength: 0
-      psiSkill: 0
-      melee: 0
     tags:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
       ARMOR_ENERGY_SHIELD_DECAY: 50
@@ -3898,18 +3592,6 @@ armors:
     antiCamouflageAtDark: 14
     units:
       - STR_PRIMARIS_LIBRARIANLV3
-    stats:
-      tu: 5
-      stamina: 5
-      health: 10
-      bravery: 0
-      reactions: 5
-      firing: 5
-      throwing: 0
-      strength: 10
-      psiStrength: 0
-      psiSkill: 0
-      melee: 0
     builtInWeapons:
       - STR_SMITE_TOKEN
       - STR_LIB_SMOKE_TOME

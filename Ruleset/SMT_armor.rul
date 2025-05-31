@@ -2191,7 +2191,7 @@ armors:
       - STR_MKX_PHB_CORPSE
     storeItem: STR_MKX_PHB_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
-    ufopediaType: STR_MKX_PHB_CODEX
+    ufopediaType: STR_MKX_PHB_LV1_UC
     damageModifier:
       - 1.0 #none
       - 1.0 #AP
@@ -2246,6 +2246,7 @@ armors:
     antiCamouflageAtDark: 12
     camouflageAtDay: -8
     camouflageAtDark: -8
+    ufopediaType: STR_MKX_PHB_LV3_UC
     stats:
       tu: 30            # base 25
       stamina: 25       # base 20
@@ -2275,6 +2276,7 @@ armors:
     antiCamouflageAtDark: 12
     camouflageAtDay: -12
     camouflageAtDark: -12
+    ufopediaType: STR_MKX_PHB_LV3_UC
     stats:
       tu: 30            # base 25
       stamina: 25       # base 20
@@ -2306,6 +2308,7 @@ armors:
     antiCamouflageAtDark: 12
     camouflageAtDay: -12
     camouflageAtDark: -12
+    ufopediaType: STR_MKX_PHB_LV3_UC
     stats:
       tu: 30            # base 25
       stamina: 25       # base 20
@@ -2345,6 +2348,7 @@ armors:
     antiCamouflageAtDark: 12
     camouflageAtDay: -12
     camouflageAtDark: -12
+    ufopediaType: STR_MKX_ELIM_LV3_UC
     units:
       - STR_PRIMARISLV3
     stats:
@@ -2377,6 +2381,7 @@ armors:
     antiCamouflageAtDark: 12
     camouflageAtDay: -16
     camouflageAtDark: -16
+    ufopediaType: STR_MKX_ELIM_LV3_UC
     units:
       - STR_PRIMARISLV4
     stats:
@@ -2413,6 +2418,7 @@ armors:
     antiCamouflageAtDark: 14
     camouflageAtDay: -16
     camouflageAtDark: -16
+    ufopediaType: STR_MKX_ELIM_LV3_UC
     units:
       - STR_PRIMARISLV5
     stats:
@@ -2451,6 +2457,7 @@ armors:
     refNode: *STR_MKX_PHB_UC
     units:
       - STR_PRIMARISLV1
+    storeItem: STR_MKX_PHB_CORPSE
 
   - &STR_MKX_GRV_UC                         #PRIMARIS GRAVIS
     type: STR_MKX_GRV_LV1_UC
@@ -2803,6 +2810,19 @@ armors:
     sideArmor: 125
     rearArmor: 100
     underArmor: 120
+    damageModifier: #MARINE ARMOR
+      - 1.0 #none
+      - 1.0 #AP
+      - 0.6 #FLAMES - was 0.8
+      - 0.7 #HE
+      - 0.8 #LASCANON
+      - 1.0 #PLASMA - was 1.1
+      - 1.0 #STUN - was 1.1
+      - 1.0 #MELEE - was 1.1
+      - 0.8 #ACID - was 1.0
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
     stats:
       tu: 5
       stamina: 5
@@ -3229,6 +3249,19 @@ armors:
       melee: 15
     units:
       - STR_PRIMARIS_APOTH
+    damageModifier:
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.6 #FLAMES
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
     builtInWeapons:
       - INV_NULL_3X3
     specialWeapon: STR_SM_APOTH_FIST_LV2
@@ -3293,6 +3326,19 @@ armors:
       melee: 20
     units:
       - STR_PRIMARIS_APOTH_BIO
+    damageModifier:
+      - 1.0 #none
+      - 0.9 #AP
+      - 0.6 #FLAMES
+      - 0.7 #HE
+      - 0.7 #LASCANON
+      - 0.9 #PLASMA
+      - 0.8 #STUN
+      - 0.9 #MELEE
+      - 0.7 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.9 #MELTA
     specialWeapon: STR_SM_APOTH_FIST_LV3
     builtInWeapons:
       - INV_NULL_3X3

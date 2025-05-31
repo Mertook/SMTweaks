@@ -385,10 +385,10 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 35         # base 10 +20 ass +5 elite
-    frontArmor: 135 # base 125 +5 assault +5 elite
-    sideArmor: 130  # base 120 +5  assault +5 elite
-    rearArmor: 110  # base 100 +10 elite
-    underArmor: 125 # base 125
+    frontArmor: 130 # base 125
+    sideArmor: 120 # base 115
+    rearArmor: 100 # base 95
+    underArmor: 125 # base 120
     units: #now exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
     tags:
@@ -407,10 +407,10 @@ armors:
     corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     storeItem: STR_ASS_ARMOR_HONOR
-    frontArmor: 135 # base 125 +5 assault +5 elite
-    sideArmor: 130  # base 120 +5  assault +5 elite
-    rearArmor: 110  # base 100 +10 elite
-    underArmor: 125 # base 125
+    frontArmor: 130 # base 125
+    sideArmor: 120 # base 115
+    rearArmor: 100 # base 95
+    underArmor: 125 # base 120
     stats:
       tu: 30            # base 10 +15 ass +5 elite
       stamina: 30       # base 20 +10 elite
@@ -444,10 +444,10 @@ armors:
     corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     storeItem: STR_ASS_ARMOR_HONOR
-    frontArmor: 135 # base 125 +5 assault +5 elite
-    sideArmor: 130  # base 120 +5  assault +5 elite
-    rearArmor: 110  # base 100 +10 elite
-    underArmor: 125 # base 125
+    frontArmor: 130 # base 125
+    sideArmor: 120 # base 115
+    rearArmor: 100 # base 95
+    underArmor: 125 # base 120
     stats:
       tu: 30            # base 10 +15 ass +5 elite
       stamina: 30       # base 20 +10 elite
@@ -483,10 +483,10 @@ armors:
       - STR_SIGNAL_CORPSE
     storeItem: STR_SIGNAL_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
-    frontArmor: 135 # base 125 +5 devastator +5 elite
-    sideArmor: 125 # base 120 +5 elite
-    rearArmor: 100 # base 100 -5 devastator +5 elite
-    underArmor: 125 # base 125
+    frontArmor: 130 # base 125
+    sideArmor: 110 # base 105
+    rearArmor: 105 # base 100
+    underArmor: 125 # base 120
     stats:
       tu: 0             # base 10 -10
       stamina: 10       # base 20 -10
@@ -643,7 +643,7 @@ armors:
       moraleCurrent: 1.0 #discipline and resolve reinforces their faith
     frontArmor: 90
     sideArmor: 80
-    rearArmor: 50
+    rearArmor: 60
     underArmor: 80
     specialWeapon: STR_STEALTH_ADVSCOUT # motion scanner
     moveCost:
@@ -1447,10 +1447,10 @@ armors:
     heatVision: 20 #Add anti-smoke vision to all marine armour
     antiCamouflageAtDay: 8 # advanced senses and inbuilt armor sensors
     antiCamouflageAtDark: 8
-    frontArmor: 150 # base 125 +25 Bike     - was 160
-    sideArmor: 140  # base 125 +15 Bike     - was 150
-    rearArmor: 100  # base 100              - was 85
-    underArmor: 145 # base 125 + 20 Bike    - was 145
+    frontArmor: 150 # was 160
+    sideArmor: 140  # was 150
+    rearArmor: 100  # was 85
+    underArmor: 145 # was 145
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -1617,10 +1617,10 @@ armors:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
       moraleCurrent: 1.5 #discipline and resolve reinforces their faith
-    frontArmor: 125
-    sideArmor: 120
-    rearArmor: 100
-    underArmor: 125
+    frontArmor: 120 # base 120
+    sideArmor: 110 # base 110
+    rearArmor: 100 # base 100
+    underArmor: 120 # base 120
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 1.0 #AP
@@ -1682,9 +1682,9 @@ armors:
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
     frontArmor: 130
-    sideArmor: 125
+    sideArmor: 115
     rearArmor: 105
-    underArmor: 130
+    underArmor: 125
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X1_BACKPACK
@@ -1750,9 +1750,9 @@ armors:
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
     frontArmor: 130
-    sideArmor: 125
+    sideArmor: 115
     rearArmor: 105
-    underArmor: 130
+    underArmor: 125
     spriteSheet: PRIMTACLV5.PCK
     storeItem: STR_PRIMARIS_MELTAPACK
     units:
@@ -1825,9 +1825,9 @@ armors:
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
     frontArmor: 130
-    sideArmor: 125
+    sideArmor: 115
     rearArmor: 105
-    underArmor: 130
+    underArmor: 125
     spriteSheet: PRIMTACLV5.PCK
     storeItem: STR_PRIMARIS_PLASMAPACK
     units:
@@ -1855,10 +1855,10 @@ armors:
     antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV3
-    frontArmor: 130
-    sideArmor: 125
-    rearArmor: 110
-    underArmor: 130
+    frontArmor: 130 # base 120
+    sideArmor: 115 # base 110
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 120
     stats:
       tu: 15            # base 10
       stamina: 20       # base 20 
@@ -1882,10 +1882,10 @@ armors:
     antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV4
-    frontArmor: 135
-    sideArmor: 125
-    rearArmor: 110
-    underArmor: 130
+    frontArmor: 130 # base 120
+    sideArmor: 115 # base 110
+    rearArmor: 100 # base 100
+    underArmor: 125 # base 120
     stats:
       tu: 15            # base 10
       stamina: 20       # base 20 
@@ -1912,10 +1912,10 @@ armors:
     antiCamouflageAtDark: 12
     units:
       - STR_PRIMARISLV5
-    frontArmor: 135
-    sideArmor: 125
-    rearArmor: 110
-    underArmor: 130
+    frontArmor: 135 # base 120
+    sideArmor: 120 # base 110
+    rearArmor: 105 # base 100
+    underArmor: 130 # base 120
     stats:
       tu: 15            # base 10
       stamina: 20       # base 20 
@@ -1950,10 +1950,10 @@ armors:
     antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV3
-    frontArmor: 130
-    sideArmor: 125
-    rearArmor: 110
-    underArmor: 130
+    frontArmor: 125 # base 120
+    sideArmor: 120 # base 110
+    rearArmor: 115 # base 100
+    underArmor: 125 # base 120
     stats:
       tu: 25            # base 10
       stamina: 20       # base 20 
@@ -1978,10 +1978,10 @@ armors:
     ufopediaType: STR_MKX_VETB_LV3_UC
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
-    frontArmor: 135
-    sideArmor: 125
-    rearArmor: 110
-    underArmor: 130
+    frontArmor: 125 # base 120
+    sideArmor: 120 # base 110
+    rearArmor: 115 # base 100
+    underArmor: 125 # base 120
     stats:
       tu: 25            # base 10
       stamina: 20       # base 20 
@@ -2009,10 +2009,10 @@ armors:
     ufopediaType: STR_MKX_VETB_LV3_UC
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
-    frontArmor: 135
-    sideArmor: 125
-    rearArmor: 110
-    underArmor: 130
+    frontArmor: 130 # base 125
+    sideArmor: 125 # base 120
+    rearArmor: 120 # base 115
+    underArmor: 130 # base 125
     stats:
       tu: 25            # base 10
       stamina: 20       # base 20 
@@ -2058,10 +2058,10 @@ armors:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
       moraleCurrent: 1.5 #discipline and resolve reinforces their faith
-    frontArmor: 125
-    sideArmor: 120
-    rearArmor: 100
-    underArmor: 125
+    frontArmor: 125 # base 120
+    sideArmor: 115 # base 110
+    rearArmor: 95 # base 100
+    underArmor: 120 # base 120
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 1.0 #AP
@@ -2150,6 +2150,10 @@ armors:
     refNode: *STR_MKX_ASS_UC
     customArmorPreviewIndex: 27
     spriteSheet: PRIMASSLV5.PCK
+    frontArmor: 130 # base 125
+    sideArmor: 120 # base 115
+    rearArmor: 100 # base 95
+    underArmor: 125 # base 120
     units:
       - STR_PRIMARISLV5
     builtInWeapons:
@@ -3045,10 +3049,10 @@ armors:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
       moraleCurrent: 1.5 #discipline and resolve reinforces their faith
-    frontArmor: 125 # base 125
-    sideArmor: 120 # base 120
+    frontArmor: 120 # base 120
+    sideArmor: 110 # base 110
     rearArmor: 100 # base 100
-    underArmor: 125 # base 125
+    underArmor: 120 # base 120
     stats: # No values inherited from this, defined in each armor
       tu: 0             # base 10 
       stamina: 0        # base 20 
@@ -3208,8 +3212,8 @@ armors:
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
     frontArmor: 150
-    sideArmor: 135
-    rearArmor: 115
+    sideArmor: 140
+    rearArmor: 120
     underArmor: 145
     stats:
       tu: 0
@@ -3271,10 +3275,10 @@ armors:
     loftempsSet: [ 4 ]
     antiCamouflageAtDay: 10
     antiCamouflageAtDark: 10
-    frontArmor: 140
-    sideArmor: 135
-    rearArmor: 115
-    underArmor: 140
+    frontArmor: 150
+    sideArmor: 140
+    rearArmor: 120
+    underArmor: 145
     stats:
       tu: 10
       stamina: 10
@@ -3311,10 +3315,10 @@ armors:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD
       moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
-    frontArmor: 125 # base 125
-    sideArmor: 120 # base 120
+    frontArmor: 120 # base 120
+    sideArmor: 110 # base 110
     rearArmor: 100 # base 100
-    underArmor: 125 # base 125
+    underArmor: 120 # base 120
     damageModifier: #2.7 values for officers
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -3407,10 +3411,10 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
-    frontArmor: 125
-    sideArmor: 120
-    rearArmor: 100
-    underArmor: 125
+    frontArmor: 120 # base 120
+    sideArmor: 110 # base 110
+    rearArmor: 100 # base 100
+    underArmor: 120 # base 120
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 1.0 #AP
@@ -3512,10 +3516,10 @@ armors:
       psiStrength: 1.0 # psyker
       psiSkill: 0.2 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
       moraleCurrent: 0.7 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
-    frontArmor: 125
-    sideArmor: 120
-    rearArmor: 100
-    underArmor: 125
+    frontArmor: 120 # base 120
+    sideArmor: 110 # base 110
+    rearArmor: 100 # base 100
+    underArmor: 120 # base 120
     stats:
       tu: 10            # base 10
       stamina: 10       # base 20 

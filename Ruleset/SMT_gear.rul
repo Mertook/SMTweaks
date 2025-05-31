@@ -29,7 +29,7 @@ items:
       ToHealth: 1.0
       ToStun: 0.05 # was 0.3; solid AP round rather than concussive
       ToEnergy: 0.1
-      ToWound: 0.2 # (regular 0.2)
+      ToWound: 0.1 # (regular 0.2)
       RandomWound: false
 
   - &DMG_BOLTER_AMMO_FRAG                   # Bolter Metalstorm Ammo Defaults
@@ -272,6 +272,7 @@ items:
     meleeAlter:
       RandomType: 2
       IgnoreDirection: false
+      ArmorEffectiveness: 1.2 # not effective against armor
       ToStun: 0.5
       ToHealth: 1.0
       ToTile: 1.50 #koolaid man punch through walls
@@ -2908,6 +2909,53 @@ items:
       ToArmorPre: 0.1 # was 0.2
     clipSize: 40
 
+### Melta
+  - type: STR_PRIMARIS_MELTA_RIFLE          # Primaris Meltarifle
+    requiresBuy:
+      - STR_GENERALLOCK # disabled
+    categories: [STR_CAT_MELTA, STR_CAT_TACTICAL]
+    battleType: 1
+    fixedWeapon: true
+    fixedWeaponShow: true
+    recover: false
+    bigSprite: 217
+    hitSound: {mod: 40k, index: 19}
+    hitAnimation: {mod: 40k, index: 110}
+    vaporColorSurface: {mod: 40k, index: 1}
+    vaporDensitySurface: 2
+    vaporProbabilitySurface: 85
+    weight: 35
+    invWidth: 2
+    invHeight: 3
+    compatibleAmmo: []
+    clipSize: -1
+    twoHanded: true
+    oneHandedPenalty: 25
+    accuracySnap: 80
+    accuracyAimed: 100
+    dropoff: 6
+    snapRange: 14
+    aimRange: 18
+    tuSnap: 33
+    tuAimed: 50
+    maxRange: 25
+    power: 18 #+20% over regular melta ammo
+    damageType: 11
+    damageAlter:
+      RandomType: 0
+      ToArmorPre: 1.0
+      ToHealth: 1.6
+      ToTile: 6.0
+      ToWound: 0.05
+      FireThreshold: 10
+      RandomWound: false
+      TileDamageMethod: 2
+    shotgunBehavior: 1
+    shotgunPellets: 10
+    shotgunSpread: 0
+    powerRangeReduction: 1.0
+    powerRangeThreshold: 3.0
+
 ### Plasma
   - type: STR_DW_PLASMA_GRENADE             # Plasma Grenade
     categories: [ STR_CAT_GRENADES, STR_CAT_TACTICAL]
@@ -4111,6 +4159,7 @@ items:
     damageAlter:
       RandomType: 2
       IgnoreDirection: false
+      ArmorEffectiveness: 1.2 # not effective against armor
       ToStun: 0.5
       ToHealth: 1.0
       ToTile: 1.50 #koolaid man punch through walls
@@ -4598,12 +4647,14 @@ items:
     damageType: 1
     power: 5
     damageBonus:
-      psiStrength: 0.3 # was 0.002 psi
+      psiStrength: 0.35 # was 0.002 psi
     damageAlter:
       RandomType: 6 # 0-100 x2 - was 2 (50-150)
       ArmorEffectiveness: 0.0
+      ToHealth: 1.0
       ToArmor: 0.0
       ToWound: 0 # brain blast, doesn't inflict flesh wounds
+      ToStun: 0.0
       RandomWound: false
     costUse:
       energy: 10

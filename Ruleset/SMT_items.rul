@@ -142,52 +142,6 @@ items:
     costSell: 20000
     listOrder: 5460
 
-  - type: STR_PRIMARIS_MELTA_RIFLE          # Primaris Meltarifle
-    requiresBuy:
-      - STR_GENERALLOCK # disabled
-    categories: [STR_CAT_MELTA, STR_CAT_TACTICAL]
-    battleType: 1
-    fixedWeapon: true
-    fixedWeaponShow: true
-    recover: false
-    bigSprite: 217
-    hitSound: {mod: 40k, index: 19}
-    hitAnimation: {mod: 40k, index: 110}
-    vaporColorSurface: {mod: 40k, index: 1}
-    vaporDensitySurface: 2
-    vaporProbabilitySurface: 85
-    weight: 35
-    invWidth: 2
-    invHeight: 3
-    compatibleAmmo: []
-    clipSize: -1
-    twoHanded: true
-    oneHandedPenalty: 25
-    accuracySnap: 80
-    accuracyAimed: 100
-    dropoff: 6
-    snapRange: 14
-    aimRange: 18
-    tuSnap: 33
-    tuAimed: 50
-    maxRange: 25
-    power: 18 #+20% over regular melta ammo
-    damageType: 11
-    damageAlter:
-      RandomType: 0
-      ToArmorPre: 1.0
-      ToHealth: 1.6
-      ToTile: 6.0
-      ToWound: 0.05
-      FireThreshold: 10
-      RandomWound: false
-      TileDamageMethod: 2
-    shotgunBehavior: 1
-    shotgunPellets: 10
-    shotgunSpread: 0
-    powerRangeReduction: 1.5
-    powerRangeThreshold: 3.0
-
   - type: STR_PRIMARIS_PLASMAPACK               # Primaris Incinerator Armor
     ufopediaType: STR_PRIMARIS_INCINERATOR_POWER_PACK
     size: 0.3
@@ -1199,8 +1153,8 @@ items:
     floorSprite: 100
     handSprite: 456
     size: 0.1
-    costBuy: 60000
-    costSell: 30000
+    # costBuy: 60000
+    # costSell: 30000
     requiresBuy:
       - STR_STORMTALON_CASR
     invWidth: 2
@@ -1223,8 +1177,8 @@ items:
     floorSprite: 100
     handSprite: 456
     size: 0.1
-    costBuy: 60000
-    costSell: 30000
+    # costBuy: 60000
+    # costSell: 30000
     requiresBuy:
       - STR_STORMTALON_CASR
     invWidth: 2

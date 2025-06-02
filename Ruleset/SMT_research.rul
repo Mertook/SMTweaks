@@ -881,6 +881,14 @@ research:
     dependencies: !add
       - STR_GENERALLOCK
 
+  - name: STR_SIDEOPERATIONS        # Chapter Sideops (disabled)
+    cost: 200
+    points: 25
+    dependencies:
+      - STR_MIDTIER_PREREQ
+      - STR_MARINES_AND_ADEPTAS
+      - STR_GENERALLOCK # incomplete and buggy
+
 ### CODEX ENTRY RESEARCH GATES
 
   - name: STR_MARINE_CODEX          # General Marine topics

@@ -25,11 +25,11 @@ items:
       RandomType: 7 # 50-200%
       ArmorEffectiveness: 0.45 # was 0.5
       ToArmorPre: 0.02 # basically nothing
-      ToArmor: 0.25 # was 0.05, good destruction if it manages to pen
+      ToArmor: 0.20 # was 0.05, good destruction if it manages to pen
       ToHealth: 1.0
       ToStun: 0.05 # was 0.3; solid AP round rather than concussive
       ToEnergy: 0.1
-      ToWound: 0.1 # (regular 0.2)
+      ToWound: 0.05 # (regular 0.2)
       RandomWound: false
 
   - &DMG_BOLTER_AMMO_FRAG                   # Bolter Metalstorm Ammo Defaults
@@ -267,15 +267,15 @@ items:
     meleeType: 7 # melee
     meleePower: 20
     meleeBonus:
-      strength: 0.20
-      melee: 0.20
+      strength: 0.25
+      melee: 0.25
     meleeAlter:
       RandomType: 2
       IgnoreDirection: false
       ArmorEffectiveness: 1.2 # not effective against armor
       ToStun: 0.5
       ToHealth: 1.0
-      ToTile: 1.50 #koolaid man punch through walls
+      ToTile: 1.25 #koolaid man punch through walls
       RandomWound: false
       ToWound: 0.0
     accuracyMelee: 90
@@ -2078,7 +2078,7 @@ items:
     loadOrder: 205
 
   - type: STR_AUTO_CANNON                   # Heavy Bolter MK4
-    costBuy: 90000 # was 13500 - Now mid-tier weapon instead of starter gear
+    costBuy: 150000 # was 13500 - Now mid-tier weapon instead of starter gear
     costSell: 45000 #
     weight: 45 # was 50
     bulletSpeed: 50
@@ -2104,7 +2104,6 @@ items:
     confSnap:
       name: STR_BURST_SNAP_SHOT
       shots: 3
-      followProjectiles: false
     kneelBonus: 150
     tags:
       ITEM_RECOIL: 100 # harsh requirement, meant for specialist marines
@@ -2154,7 +2153,6 @@ items:
     confSnap:
       name: STR_BURST_SNAP_SHOT
       shots: 3
-      followProjectiles: false
     confAimed:
       name: STR_AUTO_SHOT
       shortName: STR_AUTO_SHOT_COUNT
@@ -2172,10 +2170,10 @@ items:
       REACTION_MULTIPLIER: 50 # bulky
       REACTION_PENALTY_KNEELING_BYPASS: 1
 
-  - type: STR_AUTO_CANNON_DW                # Heavy Bolter (Artifex DW)                 ## Restricted item
+  - type: STR_AUTO_CANNON_DW                # Heavy Bolter (Artifex DW)
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
     bulletSpeed: 50
-    costBuy: 125000
+    costBuy: 150000
     dropoff: 4 #
     sprayWaypoints: 2
     autoRange: 16 # mars 16
@@ -2203,7 +2201,6 @@ items:
     confSnap:
       name: STR_BURST_SNAP_SHOT
       shots: 3
-      followProjectiles: false
     confAimed:
       name: STR_AUTO_SHOT
       shortName: STR_AUTO_SHOT_COUNT
@@ -2223,7 +2220,7 @@ items:
 
   - type: STR_ASSAULT_BOLTER                # Primaris Assault Bolter
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
-    costBuy: 13500
+    costBuy: 120000
     costSell: 10125
     requiresBuy:
       - STR_PRIMARIS
@@ -2268,7 +2265,7 @@ items:
     blockBothHands: true
     requiresBuy:
       - STR_HEAVY_BOLTER_SCOUT
-    costBuy: 75000
+    costBuy: 125000
     costSell: 30000
     listOrder: 11999
     weight: 30
@@ -2286,7 +2283,7 @@ items:
     accuracyAimed: 0
     kneelBonus: 150
     tuAuto: 70 # regular 70 for 9
-    tuSnap: 30 # regular 33 for 3
+    tuSnap: 35 # regular 33 for 3
     tuAimed: 0
     tuLoad: 30
     minRange: 8 # regular 6
@@ -2294,7 +2291,6 @@ items:
     confSnap:
       name: STR_BURST_SNAP_SHOT
       shots: 2
-      followProjectiles: false
     confAuto:
       shots: 8
       followProjectiles: false
@@ -2306,8 +2302,8 @@ items:
       ITEM_HAS_BIPOD: 1
 
   - type: STR_HEAVY_BOLTER_GUARD            # IG Heavy Bolter (Godwyn)
-    costBuy: 55000
-    costSell: 20000
+    costBuy: 90000
+    costSell: 30000
     weight: 30 # was 40
     dropoff: 4
     autoRange: 17
@@ -2366,9 +2362,9 @@ items:
   - type: STR_TECH_HBOLTER                  # Heavy Bolter (Techmarine)
     refNode: *REF_TECH_PRIMARY
     categories: [STR_CAT_BOLTER]
-    bigSprite: 287
+    bigSprite: 287 ###CHANGEME
     floorSprite: 287
-    handSprite: 472
+    handSprite: 256 # doesn't ever go into hands
     bulletSprite: {mod: 40k, index: 6}
     bulletSpeed: 50
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
@@ -2486,7 +2482,7 @@ items:
       ITEM_POWER_BONUS_PERCENTILE: 1
       ITEM_STEALTH_ASSASSIN_WEAPON: 2 # sniper
 
-  - type: STR_BOLT_SNIPER_RIFLE_DW          # Bolt Sniper Rifle - DW edition            ## Restricted item
+  - type: STR_BOLT_SNIPER_RIFLE_DW          # Bolt Sniper Rifle (Deathwatch)
     categories: [STR_CAT_SNIPER]
     dropoff: 3 #scoped sniper rifle
     weight: 50
@@ -2803,6 +2799,8 @@ items:
     fireSound: {mod: 40k, index: 12}
     compatibleAmmo:
       - STR_ASSC_CLIP
+      - STR_ASSC_CLIP_AP
+      - STR_ASSC_CLIP_HE
     dropoff: 3
     autoRange: 16
     snapRange: 28
@@ -2846,6 +2844,8 @@ items:
     fireSound: {mod: 40k, index: 12}
     compatibleAmmo:
       - STR_ASSC_CLIP
+      - STR_ASSC_CLIP_AP
+      - STR_ASSC_CLIP_HE
     dropoff: 3
     autoRange: 16
     snapRange: 28
@@ -3573,7 +3573,7 @@ items:
       - STR_PHOTON_GRENADE_DRUM
     accuracySnap: 70
     accuracyAuto: 0
-    tuSnap: 22
+    tuSnap: 24
     tuAuto: 0
     snapRange: 24
     #autoRange: 24
@@ -3802,6 +3802,7 @@ items:
       REACTION_MULTIPLIER: 25
       REACTION_PENALTY_KNEELING_BYPASS: 1
 
+### Explosive Launcher Ammo
   - &REF_CASTELLAN_MISSILES
     type: STR_CASTELLAN_HE
     categories: [STR_CAT_ROCKETL]
@@ -3916,7 +3917,7 @@ items:
       ToTile: 0.22 # 44 base
       ToItem: 0.0
       TileDamageMethod: 2 # consistent tile damage
-      FixRadius: 4
+      FixRadius: 3
       RadiusReduction: 0
     tags:
       ITEM_AMMO_COLOR: 4
@@ -4154,15 +4155,15 @@ items:
     meleeType: 7
     power: 20 #
     damageBonus:
-      strength: 0.20 #
-      melee: 0.20 #
+      strength: 0.25 #
+      melee: 0.25 #
     damageAlter:
       RandomType: 2
       IgnoreDirection: false
       ArmorEffectiveness: 1.2 # not effective against armor
       ToStun: 0.5
       ToHealth: 1.0
-      ToTile: 1.50 #koolaid man punch through walls
+      ToTile: 1.25 #koolaid man punch through walls
       RandomWound: false
       ToWound: 0.0
     accuracyMelee: 90
@@ -4283,7 +4284,8 @@ items:
     fixedWeaponShow: true
     defaultInventorySlot: STR_LEFT_HAND
     twoHanded: true
-    blockBothHands: true
+    blockBothHands: false
+    oneHandedPenalty: 60
     weight: 55
     bigSprite: {mod: 40k_ROSIGMA_edits, index: 2217}
     floorSprite: {mod: 40k_ROSIGMA_edits, index: 2092}
@@ -4922,9 +4924,9 @@ items:
     refNode: *REF_FIST
     specialIconSprite: {mod: 40k, index: 100} # medkit icon
     battleType: 6
-    painKiller: 20 # -30 supplies compared to mk7 medkit - doesn't take up hand slot
-    heal: 20 # -30 supplies compared to mk7 medkit - doesn't take up hand slot
-    stimulant: 20 # -30 supplies compared to mk7 medkit - doesn't take up hand slot
+    painKiller: 15 # -20 supplies compared to primaris apoth
+    heal: 15 # -20 supplies compared to primaris apoth
+    stimulant: 15 # -20 supplies compared to primaris apoth
     woundRecovery: 1
     healthRecovery: 5 #
     stunRecovery: 6 #
@@ -4985,7 +4987,7 @@ items:
     woundRecovery: 1
     healthRecovery: 6 # +1
     stunRecovery: 8 # +2
-    energyRecovery: 15 #
+    energyRecovery: 15
     moraleRecovery: 15
     tuUse: 8 # -2
     experienceTrainingMode: 19
@@ -4993,6 +4995,98 @@ items:
     flatRate: true
     recover: false
     fixedWeapon: true
+
+  - type: STR_APOTH_NARTH                   # Inbuilt Apothecary medkit + Chainfist (Apothecary)
+    size: 0.1
+    costSell: 50
+    weight: 0
+    bigSprite: {mod: 40k, index: 24}
+    floorSprite: {mod: 40k, index: 24}
+    battleType: 6
+    invWidth: 2
+    invHeight: 3
+    defaultInventorySlot: STR_LEFT_HAND
+    recover: false
+    fixedWeapon: true
+    painKiller: 50
+    heal: 50
+    stimulant: 50
+    woundRecovery: 1
+    healthRecovery: 5
+    stunRecovery: 6
+    energyRecovery: 15
+    moraleRecovery: 15
+    tuUse: 10
+    experienceTrainingMode: 19
+    flatRate: true
+    medikitTargetSelf: true
+    meleeSound: {mod: 40k, index: 753}
+    meleeHitSound: {mod: 40k, index: 709}
+    meleeAnimation: {mod: 40k, index: 44}
+    tuMelee: 15
+    flatMelee:
+      time: true
+    meleeType: 7
+    meleePower: 50
+    accuracyMelee: 80
+    meleeBonus:
+      strength: 0.2
+      melee: 0.3
+    meleeAlter:
+      ToArmorPre: 0.3
+      ToHealth: 0.9
+      RandomType: 2 # 50-150
+      ToWound: 0.3
+      ToEnergy: 0.5
+    meleeMultiplier:
+      melee: 0.9
+      reactions: 0.1
+
+  - type: STR_APOTH_NARTH_ADV               # Inbuilt Apothecary medkit + Chainfist (Apothecary Veteran)
+    size: 0.1
+    costSell: 50
+    weight: 0
+    bigSprite: {mod: 40k, index: 24}
+    floorSprite: {mod: 40k, index: 24}
+    battleType: 6
+    invWidth: 2
+    invHeight: 3
+    defaultInventorySlot: STR_LEFT_HAND
+    recover: false
+    fixedWeapon: true
+    painKiller: 60
+    heal: 60
+    stimulant: 60
+    woundRecovery: 1
+    healthRecovery: 5
+    stunRecovery: 6
+    energyRecovery: 15
+    moraleRecovery: 15
+    tuUse: 8
+    experienceTrainingMode: 19
+    flatRate: true
+    medikitTargetSelf: true
+    meleeSound: {mod: 40k, index: 753}
+    meleeHitSound: {mod: 40k, index: 709}
+    meleeAnimation: {mod: 40k, index: 44}
+    tuMelee: 15
+    flatMelee:
+      time: true
+    meleeType: 7
+    meleePower: 50
+    accuracyMelee: 80
+    meleeBonus:
+      strength: 0.2
+      melee: 0.3
+    meleeAlter:
+      ToArmorPre: 0.3
+      ToHealth: 0.9
+      RandomType: 2 # 50-150
+      ToWound: 0.3
+      ToEnergy: 0.5
+    meleeMultiplier:
+      melee: 0.9
+      reactions: 0.1
 
   - type: AUX_MEDI_KIT_ADVANCED             # Advanced Apoth Medkit
     defaultInventorySlot: STR_LEFT_HAND

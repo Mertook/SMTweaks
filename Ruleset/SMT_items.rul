@@ -989,13 +989,13 @@ items:
 
   - &STR_BOMBARD_AMMO                       # Bombard Ammo Template
     type: STR_AIRSTRIKE_AMMO
-    categories: [STR_CAT_FIRESUPPORT, STR_CAT_TERMINATOR]
+    categories: [STR_CAT_FIRESUPPORT]
     size: 0.01
     costSell: 50000
     armor: 999
     invWidth: 0
     invHeight: 0
-    battleType: 4
+    battleType: 2 # ammo, for equipment screen appearances
     recover: true
     bigSprite: 99
     floorSprite: -1
@@ -1018,7 +1018,7 @@ items:
       ToTile: 0.0
       ToItem: 1.0
     tags:
-      BOMBARD_AMMO_ITEM: 0 # 1: Orbital Strike 2: CAS Run 3: Stormhawk 4: Orbital Lance
+      BOMBARD_AMMO_ITEM: 0 # 1: Orbital Strike 2: CAS Run 3: Stormhawk 4: Orbital Lance 5: Whirlwind
 
   - type: STR_ORBITAL_STRIKE_AMMO           # Orbital Strike ammo
     refNode: *STR_BOMBARD_AMMO
@@ -1050,6 +1050,12 @@ items:
     listOrder: 15155
     tags:
       BOMBARD_AMMO_ITEM: 4 # 4 - Orbital Laser
+
+  - type: STR_WHIRLWIND_AMMO               # Whirlwind Bombard ammo
+    refNode: *STR_BOMBARD_AMMO
+    listOrder: 15118
+    tags:
+      BOMBARD_AMMO_ITEM: 5 # 5 - Whirlwind
 
   - &STR_STRIKE_CALLIN_MED                  # Firesupport Vox Template (Medkit)
     type: STR_ORBITAL_CALLIN
@@ -1156,7 +1162,7 @@ items:
     # costBuy: 60000
     # costSell: 30000
     requiresBuy:
-      - STR_STORMTALON_CASR
+      - STR_WHIRLWIND_FSR
     invWidth: 2
     invHeight: 2
     medikitActionName: STR_STRIKE_WHIRL

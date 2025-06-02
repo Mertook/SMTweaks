@@ -2453,12 +2453,6 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
       ARMOR_ENERGY_SHIELD_DECAY: 75
 
-  - type: STR_MKX_PHB_CODEX                 #PHOBOS Codex
-    refNode: *STR_MKX_PHB_UC
-    units:
-      - STR_PRIMARISLV1
-    storeItem: STR_MKX_PHB_CORPSE
-
   - &STR_MKX_GRV_UC                         #PRIMARIS GRAVIS
     type: STR_MKX_GRV_LV1_UC
     ufopediaType: STR_MKX_GRV_CODEX

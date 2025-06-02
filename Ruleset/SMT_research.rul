@@ -530,6 +530,7 @@ research:
     points: 20
     dependencies:
       - STR_UFO_CONSTRUCTION # ceramite
+      - STR_MIDTIER_PREREQ
       - STR_MARINE_BOLTERS
       - STR_THREAT_ONE
     unlocks:
@@ -556,6 +557,7 @@ research:
     points: 20
     dependencies:
       - STR_UFO_CONSTRUCTION # ceramite
+      - STR_MIDTIER_PREREQ
       - STR_PRIMARIS_BOLTERS
       - STR_THREAT_ONE
     unlocks:
@@ -645,6 +647,7 @@ research:
     points: 10
     dependencies:
       - STR_PRIMARIS
+      - STR_LASER_WEAPONS
 
   - name: STR_PRIMARIS_MELTAPACK    # Primaris Meltarifle
     cost: 80
@@ -681,6 +684,15 @@ research:
       - STR_MASTER_CRAFTING
 
   - name: STR_STORMTALON_CASR       # Stormtalon CAS Firesupport
+    cost: 400
+    points: 20
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_MIDTIER_PREREQ
+      - STR_LEADER_PLUS
+      - STR_GENERALLOCK # temp disabled
+
+  - name: STR_WHIRLWIND_FSR       # Whirlwind Bombard Firesupport
     cost: 400
     points: 20
     dependencies:

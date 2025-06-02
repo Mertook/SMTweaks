@@ -12,7 +12,7 @@ skills:
       energy: false
       stun: false
 
-  - type: STR_INSPIRE_CAPTAIN_SKILL    # Marine Captain Inspire
+  - type: STR_INSPIRE_CAPTAIN_SKILL     # Marine Captain Inspire
     targetMode: 9
     compatibleWeapons: [INV_INSPIRE_TOKEN]
     checkHandsOnly: false
@@ -28,6 +28,7 @@ skills:
   - type: STR_LIB_SMOKE_SKILL           # Librarian Shroud
     targetMode: 9
     compatibleWeapons: [STR_LIB_SMOKE_TOME]
+    #requiredBonuses: [STR_PSI_SHROUD]
     checkHandsOnly: false
     costUse:
       time: 20
@@ -165,3 +166,41 @@ skills:
       time: true
     tags:
       SKILL_SMT_COMMAND: -1
+
+  - type: STR_TECH_PRIMARY_SKILL        # Techmarine Primary Item
+    targetMode: 7
+    compatibleWeapons: [STR_TECH_HBOLTER]
+    checkHandsOnly: false
+    costUse:
+      time: 40
+    flatUse:
+      time: false
+
+  - type: STR_TECH_UTILITY_SKILL        # Techmarine Utility Item
+    targetMode: 7
+    compatibleWeapons: [STR_TECH_HBOLTER]
+    checkHandsOnly: false
+    costUse:
+      time: 40
+    flatUse:
+      time: false
+
+  - type: STR_TECH_SUPPORT_SKILL        # Techmarine Support Item
+    targetMode: 11
+    compatibleWeapons: [STR_TECH_HBOLTER]
+    checkHandsOnly: false
+    costUse:
+      time: 40
+    flatUse:
+      time: false
+
+  - type: STR_TECH_SKULL_SKILL          # Techmarine ServoSkull
+    targetMode: 7
+    compatibleWeapons: [STR_TECH_HBOLTER]
+    checkHandsOnly: false
+    costUse:
+      time: 40
+    flatUse:
+      time: false
+
+

@@ -47,7 +47,7 @@ events:
       STR_SMOKE_GRENADE: 12 # was 5
       STR_ELECTRO_FLARE: 12
       STR_TRAUMA_PACK: 8
-    spawnedPersons: 18
+    spawnedPersons: 20
     spawnedPersonType: STR_SOLDIER_NEOPHYTE
 
   - name: STR_TACTICAL_CARE_PACKAGE     # TACTICAL STRATEGY
@@ -57,12 +57,12 @@ events:
       STR_CRATED_RHINO: 1
       STR_CRATED_LANDSPEEDER: 1
       STR_TATICAL_ARMOR: 2 
-      STR_RIFLE: 4 # ultra patterns in january is too strong
+      STR_RIFLEB: 2
       STR_RIFLE_CLIP: 30
       STR_RIFLE_CLIP_AP: 10
       STR_RIFLE_CLIP_EX: 10
       STR_SMOKE_BOMB: 8
-    spawnedPersons: 4
+    spawnedPersons: 2
     spawnedPersonType: STR_SOLDIER
 
   - name: STR_ASSAULT_CARE_PACKAGE      # ASSAULT STRATEGY
@@ -72,14 +72,14 @@ events:
       STR_CRATED_RHINO: 1
       STR_CRATED_LANDSPEEDER: 1
       STR_ASS_ARMOR: 2
-      STR_CHAINSWORD_MC: 1 # Gets a little taste of the fancy stuff early
-      STR_CHAINSWORD: 3
-      STR_PISTOLB: 3
+      STR_CHAINSWORD_MC: 1
+      STR_CHAINSWORD: 1
+      STR_PISTOLB: 2
       STR_PISTOL_CLIP: 30
       STR_PISTOL_CLIP_AP: 15
       STR_PISTOL_CLIP_EX: 15
       STR_MGRENADE: 8
-    spawnedPersons: 4
+    spawnedPersons: 2
     spawnedPersonType: STR_SOLDIER
 
   - name: STR_DEVASTATOR_CARE_PACKAGE   # DEVASTATOR STRATEGY
@@ -96,9 +96,7 @@ events:
       STR_HEAVY_ROCKET_HE: 6
       STR_HEAVY_ROCKET_KRAK: 6
       STR_CASTELLAN_HE: 6
-      STR_GRENADE_LAUNCHER_ASTARTES: 2
-      STR_FRAG_GRENADE_DRUM: 6
-    spawnedPersons: 4
+    spawnedPersons: 2
     spawnedPersonType: STR_SOLDIER
 
   - name: STR_SCOUT_CARE_PACKAGE        # SCOUT STRATEGY
@@ -107,30 +105,30 @@ events:
       STR_SMT_GENESEED_IMPURE: 6
       STR_CRATED_RHINO: 1
       STR_CRATED_LANDSPEEDER: 1
-      STR_SCOUT_SGT: 4 #Scout Sgt Armor
+      STR_SCOUT_SGT: 3 #Scout Sgt Armor
       STR_RIFLEC: 1 # Stalker Bolter
       STR_RIFLE_CLIP: 20
       STR_PISTOLS: 2 # Spectris Pistol
       STR_PISTOL_CLIP: 30
-      STR_SCOUT_BLADE: 4
+      STR_SCOUT_BLADE: 2
       STR_GRENADE_LAUNCHER_ASTARTES: 2
       STR_FRAG_GRENADE_DRUM: 12
-    spawnedPersons: 4
+    spawnedPersons: 3
     spawnedPersonType: STR_SOLDIER
-    
+
   - name: STR_PRIMARIS_CARE_PACKAGE     # PRIMARIS STRATEGY
     description: STR_PRIMARIS_CARE_PACKAGE_DESCRIPTION
     spawnedCraftType: STR_IMPULSOR
     everyMultiItemList:
       STR_SMT_GENESEED_IMPURE: 8
-      STR_RIFLED: 2
+      STR_RIFLED: 1
       STR_RIFLE_CLIP: 20
-      STR_BOLTER_CARBINE: 2
+      STR_BOLTER_CARBINE: 1
       STR_LIGHT_BOLTER_AMMO: 20
-      STR_MKX_HELIX_ARMOR: 2
+      STR_MKX_HELIX_ARMOR: 1
       STR_PRIMARIS_HEAVY_BOLT_PISTOL: 1
       STR_PISTOL_CLIP: 20
-    spawnedPersons: 5
+    spawnedPersons: 2
     spawnedPersonType: STR_PRIMARISLV1
 
   - name: STR_GENESEED_PACKAGE_STARTER      # First Geneseed Monthly Package - Avg 0+8 
@@ -167,7 +165,7 @@ events:
     randomMultiItemList:
       -
         STR_SMT_GENESEED: 1
-        STR_SMT_GENESEED_IMPURE: 7
+        STR_SMT_GENESEED_IMPURE: 8
       -
         STR_SMT_GENESEED: 1
         STR_SMT_GENESEED_IMPURE: 9
@@ -176,7 +174,7 @@ events:
         STR_SMT_GENESEED_IMPURE: 11
       -
         STR_SMT_GENESEED: 1
-        STR_SMT_GENESEED_IMPURE: 13
+        STR_SMT_GENESEED_IMPURE: 12
     timer: 720 # 1/2 day
     timerRandom: 6480 # +4.5~ days
 

@@ -158,57 +158,6 @@ soldierTransformation:
       psiSkill: 100 #
     listOrder: 70
 
-  - name: STR_PROMOTE_LIBRARIAN         # Neophyte -> Librarian
-    requires:
-      - STR_MARINES_STRATEGY
-      - STR_NOT_PRIMARIS
-      - STR_LIBRARY
-    producedSoldierType: STR_SOLDIER_LIBRARIAN
-    cost: 125000
-    requiredItems:
-      STR_SMT_GENESEED: 1
-      STR_ALIEN_ALLOYS: 30
-      STR_KILLPOINT_TOKEN: 200
-    keepSoldierArmor: false
-    allowsDeadSoldiers: false
-    allowsLiveSoldiers: true
-    allowsWoundedSoldiers: true
-    allowedSoldierTypes:
-      - STR_SOLDIER_NEOPHYTE
-    transferTime: 0
-    recoveryTime: 5
-    requiredCommendations:
-      STR_BATTLE_TESTED: 0
-    requiresBaseFunc: [LIB] #needs library
-    requiredMinStats:
-      health: 60 # Neophyte base 40-55, training cap 60, Marine minimum 75
-      strength: 50 # Neophyte base 25-40, training cap 55, Marine minimum 55
-      psiStrength: 35 # Neophyte base 10-40
-    listOrder: 40
-
-  - name: STR_PROMOTE_LIB_TERMINATOR    # Librarian -> Vet Librarian
-    requires:
-      - STR_MARINES_STRATEGY
-      - STR_NOT_PRIMARIS
-      - STR_MIDTIER_PREREQ
-      - STR_LIBRARY
-    producedSoldierType: STR_SOLDIER_LIBRARIAN_TERM
-    cost: 40000
-    requiredItems:
-      STR_KILLPOINT_TOKEN: 200 # was 150
-    keepSoldierArmor: false
-    allowsDeadSoldiers: false
-    allowsLiveSoldiers: true
-    allowsWoundedSoldiers: true
-    allowedSoldierTypes:
-      - STR_SOLDIER_LIBRARIAN
-    transferTime: 0
-    requiredCommendations:
-      STR_TERMINATOR_CROSS: 0
-    requiredMinStats:
-      psiStrength: 90 #
-    listOrder: 60
-
   - name: STR_CHAPLAIN_ROSARY           # Chaplain Shield
     forbiddenPreviousTransformations:
       - STR_CHAPLAIN_ROSARY
@@ -229,7 +178,7 @@ soldierTransformation:
     soldierBonusType: STR_BONUS_INQ_ROSARIUS
     listOrder: 79
 
-  - name: STR_PROMOTE_CAPTAIN           # Captain Promotion
+  - name: STR_PROMOTE_CAPTAIN           # Vet Marine -> Captain
     requires:
       - STR_MARINES_STRATEGY
       - STR_NOT_PRIMARIS
@@ -403,7 +352,7 @@ soldierTransformation:
     lowerBoundAtMinStats: true
     listOrder: 55
 
-  - name: STR_LV2_TO_APOTH              # Primaris Lv2 -> Apothecary (Lv3)
+  - name: STR_PROMOTE_APOTH_PRIM        # Primaris Lv1 -> Apothecary (Lv2)
     requires:
       - STR_PRIMARIS
       - STR_MEDI_KIT_PREREQ
@@ -416,7 +365,7 @@ soldierTransformation:
     allowsLiveSoldiers: true
     needsCorpseRecovered: false
     allowedSoldierTypes:
-      - STR_PRIMARISLV2
+      - STR_PRIMARISLV1
     requiredCommendations:
       STR_HONOR_MEDAL: 1
     transferTime: 0
@@ -435,7 +384,7 @@ soldierTransformation:
     upperBoundAtStatCaps: true
     listOrder: 60
 
-  - name: STR_APOTH_LV3_TO_LV4          # Apothecary (Lv3) -> Biologis (Lv4)
+  - name: STR_PROMOTE_APOTH_BIO         # Apothecary (Lv2) -> Biologis (Lv4)
     requires:
       - STR_PRIMARIS
       - STR_APOC_BAY
@@ -467,7 +416,7 @@ soldierTransformation:
     upperBoundAtStatCaps: true
     listOrder: 65
 
-  - name: STR_LV1_TO_JUDICAR            # Primaris Lv1 -> Judicar (Lv2)
+  - name: STR_PROMOTE_JUDICAR           # Primaris Lv1 -> Judicar (Lv2)
     requires:
       - STR_PRIMARIS
       - STR_PSI_LAB
@@ -536,6 +485,57 @@ soldierTransformation:
     lowerBoundAtMinStats: true
     upperBoundAtStatCaps: true
     listOrder: 75
+
+  - name: STR_PROMOTE_LIBRARIAN         # Neophyte -> Librarian
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_LIBRARY
+    producedSoldierType: STR_SOLDIER_LIBRARIAN
+    cost: 125000
+    requiredItems:
+      STR_SMT_GENESEED: 1
+      STR_ALIEN_ALLOYS: 30
+      STR_KILLPOINT_TOKEN: 200
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_SOLDIER_NEOPHYTE
+    transferTime: 0
+    recoveryTime: 5
+    requiredCommendations:
+      STR_BATTLE_TESTED: 0
+    requiresBaseFunc: [LIB] #needs library
+    requiredMinStats:
+      health: 60 # Neophyte base 40-55, training cap 60, Marine minimum 75
+      strength: 50 # Neophyte base 25-40, training cap 55, Marine minimum 55
+      psiStrength: 35 # Neophyte base 10-40
+    listOrder: 40
+
+  - name: STR_PROMOTE_LIB_TERMINATOR    # Librarian -> Vet Librarian
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_MIDTIER_PREREQ
+      - STR_LIBRARY
+    producedSoldierType: STR_SOLDIER_LIBRARIAN_TERM
+    cost: 40000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 200 # was 150
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_SOLDIER_LIBRARIAN
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requiredMinStats:
+      psiStrength: 90 #
+    listOrder: 60
 
   - name: STR_LIBRARIAN_PRIMARISLV1     # Neophyte -> LibrarianL1 (Primaris)
     requires:
@@ -653,3 +653,7 @@ soldierTransformation:
     upperBoundAtStatCaps: true
     listOrder: 90
 
+
+soldierBonuses:
+  - name: STR_PSI_SHROUD
+    heatVision: 10

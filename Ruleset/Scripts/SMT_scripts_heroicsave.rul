@@ -285,12 +285,12 @@ extended:
           sub temp saveHealth;
           set to_health temp; # only damage unit up to the saveHealth limit
           sub temp2 temp; # get overflow damage
-          mul temp2 2; # multiply overflow by 2
+          mul temp2 3; # multiply overflow by 3
           add to_stun temp2; # add overflow to stun damage
           unit.setFire 0; # extinguish fire
           set to_transform 0; # prevent any chance of transforming
           unit.getTag temp Tag.SMT_RECOVERY_TIME;
-          add temp 15; # divided by unit woundRecovery modifier
+          add temp 30; # divided by unit woundRecovery modifier
           unit.setTag Tag.SMT_RECOVERY_TIME temp; # increase post-mission recovery time
           unit.setTag Tag.SMT_HEROICSAVE_TRIGGERS saveCount; # increment save counter;
           battle_game.flashLongMessage "STR_SCRIPT_HEROIC_SAVE"; # 'Unit endured the hit'
@@ -319,7 +319,6 @@ extended:
           var int unitSaveMod;
           var int maxHealth;
           var int saveHealth;
-          var int saveCount;
           var int temp;
           var int temp2;
 
@@ -347,10 +346,6 @@ extended:
           end;
           add saveChance temp; #add devotion to base
           muldiv saveChance unitSaveMod 100; # reduce by soldier save % chance
-          unit.getTag saveCount Tag.SMT_HEROICSAVE_TRIGGERS; # Reduced by number of heroic saves made
-          add saveCount 1;
-          limit_lower saveCount 1; #sanity check to make sure there's no /0 nonsense
-          div saveChance saveCount; #divide chance by number of heroic saves made by this unit +1
           battle_game.randomRange temp 0 100; 
           #debug_log "HeroSave randomRoll - " saveChance temp;
           if lt saveChance temp; # fail if random roll 0-100 > save chance
@@ -360,6 +355,5 @@ extended:
 
           set transform_chance 0; # negate the transformation chance
           # We don't increase wound time or increase the saveCount here because this will trigger even on transformation attempts that would fail
-          # Every shot from nurgle would trigger this, even the ones with 1% chance to transform
 
           return;

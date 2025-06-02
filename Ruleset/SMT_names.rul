@@ -231,12 +231,12 @@ extraStrings:
       STR_LIGHT_BOLTER_AMMO_AP: Light Bolter Elohim AP Mag.
       STR_LIGHT_BOLTER_AMMO_INF: Light Bolter Inferno Mag.
       STR_BOLT_SNIPER_RIFLE: Bolt Sniper Rifle
-      STR_BOLT_SNIPER_AMMO_AP: AP Bolt
-      STR_BOLT_SNIPER_AMMO_FRAG: Frag Bolt
-      STR_BOLT_SNIPER_AMMO_KRAK: Krak Bolt
-      STR_BOLT_SNIPER_AMMO_INCIN: Incin Bolt
-      STR_BOLT_SNIPER_AMMO_SHRED: Shredder Bolt
-      STR_BOLT_SNIPER_AMMO_MC: Master Crafted Bolt
+      STR_BOLT_SNIPER_AMMO_AP: AP Sniper Bolt
+      STR_BOLT_SNIPER_AMMO_FRAG: Frag Sniper Bolt
+      STR_BOLT_SNIPER_AMMO_KRAK: Krak Sniper Bolt
+      STR_BOLT_SNIPER_AMMO_INCIN: Incin Sniper Bolt
+      STR_BOLT_SNIPER_AMMO_SHRED: Shredder Sniper Bolt
+      STR_BOLT_SNIPER_AMMO_MC: Master Crafted Sniper Bolt
       STR_HEAVY_BOLTER_MARS: Mars-Pattern Heavy Bolter
       STR_AC_AP_BELT: AP Heavy Bolter Belt
       STR_AC_HE_BELT: HE Heavy Bolter Belt
@@ -244,6 +244,8 @@ extraStrings:
       STR_AC_MC_BELT: MC Heavy Bolter Belt # 'Master Crafted' is too long, gets cut off
       STR_AC_MC_AMMO: MC Heavy Bolter Case # 'Master Crafted' is too long, gets cut off
       STR_GRENADE_LAUNCHER_ASTARTES: Astartes Grenade Launcher
+      STR_APOTH_NARTH: Narthecium
+      STR_APOTH_NARTH_ADV: Narthecium
       STR_HONOR_CORPSE: Veteran Corpse
       AUX_CROZIUS_PRIMARIS: Crozius Arcanum
       STR_CROZIUS_AIMED: Sanctify
@@ -331,10 +333,16 @@ extraStrings:
       STR_SOLDIER_TERMINATOR: Veteran Marine
       STR_SOLDIER_CHAPLAIN: Chaplain
       STR_SOLDIER_LIBRARIAN: Librarian
-      STR_SOLDIER_LIBRARIAN_TERM: Vet Librarian
+      STR_SOLDIER_LIBRARIAN_TERM: Vet. Librarian
+      STR_SOLDIER_APOTH: Apothecary
+      STR_SOLDIER_APOTHVET: Vet. Apothecary
+      STR_SOLDIER_TECH: Techmarine
+      STR_SOLDIER_TECHVET: Vet. Techmarine
       STR_FALLEN_HERO: Venerable Dreadnought
       STR_PRIMARIS_APOTH: Apothecary
       STR_PRIMARIS_APOTH_BIO: Apothecary Biologis
+      STR_PRIMARIS_TECH: Techmarine
+      STR_PRIMARIS_TECHVET: Vet. Techmarine
       STR_PRIMARIS_JUDICAR: Judiciar
       STR_PRIMARIS_CHAPLAIN: Chaplain
       STR_PRIMARIS_LIBRARIANLV1: Librarian
@@ -350,7 +358,7 @@ extraStrings:
       STR_COMMANDER: Champion
       STR_TERMINATOR_RANK_0: Veteran Marine
       STR_TERMINATOR_RANK_1: Veteran Marine
-      STR_TERMINATOR_RANK_2: Vet Sergeant
+      STR_TERMINATOR_RANK_2: Vet. Sergeant
       STR_TERMINATOR_RANK_3: Terminator
       STR_TERMINATOR_RANK_4: Honor Guard
       STR_TERMINATOR_RANK_5: Company Captain
@@ -364,6 +372,10 @@ extraStrings:
       STR_LIBRARIAN_RANK_2: Codicier
       STR_LIBRARIAN_RANK_3: Epistolary
       STR_LIBRARIAN_RANK_4: Chief Librarian
+      STR_APOTHECARY_RANK_0: Apothecary
+      STR_APOTHECARY_RANK_1: Vet. Apothecary
+      STR_TECHMARINE_RANK_0: Techmarine
+      STR_TECHMARINE_RANK_1: Vet. Techmarine
       STR_DREAD_RANK_0: Dreadnought
       STR_PRIMARIS_RANK_0: "Marine"
       STR_PRIMARIS_RANK_1: "Brother Marine"
@@ -383,6 +395,10 @@ extraStrings:
       STR_CMD_MELEE_SKILL: Relentless Assault
       STR_CMD_CHECK_SKILL: Check CMD Points
       STR_GRAV_MORTAR: Fragstorm Grenades
+      STR_TECH_PRIMARY_SKILL: Primary Item
+      STR_TECH_UTILITY_SKILL: Utility Item
+      STR_TECH_SUPPORT_SKILL: Support Item
+      STR_TECH_SKULL_SKILL: Deploy Servo Skull
       ### TRANSFORMATIONS
       STR_PROMOTE_TERMINATOR: Promote Vet Marine
       STR_PROMOTE_CAPTAIN: Promote to Captain
@@ -393,9 +409,9 @@ extraStrings:
       STR_PROMOTE_LIBRARIAN: Train Librarian
       STR_PROMOTE_LIB_TERMINATOR: Promote Vet Librarian
       STR_CHAPLAIN_ROSARY: Award Rosary
-      STR_LV2_TO_APOTH: Train Apothecary
-      STR_APOTH_LV3_TO_LV4: Promote Apothecary Biologis
-      STR_LV1_TO_JUDICAR: Induct Judicar
+      STR_PROMOTE_APOTH_PRIM: Train Apothecary
+      STR_PROMOTE_APOTH_BIO: Promote Apothecary Biologis
+      STR_PROMOTE_JUDICAR: Induct Judiciar
       STR_JUDICAR_TO_CHAPLAIN: Anoint Chaplain
       STR_LIBRARIAN_PRIMARISLV1: Train Librarian
       STR_LIBRARIAN_PRIMARISLV2: Promote to Lexicanium
@@ -1098,9 +1114,9 @@ extraStrings:
       STR_SMT_FIRSTBORN_PROMOTION: Promoting Marines
       STR_SMT_FIRSTBORN_PROMOTION_CODEX: "{NEWLINE}{NEWLINE} Marines who have earned the Crux Terminatus with {ALT}100+ Health, 100+ Firing, 80+ Melee, and 80+ Strength{ALT} can be further promoted to Veterans, increasing their stat limits and allowing use of rare relic armors.{NEWLINE}{NEWLINE} "
       STR_SMT_PRIMARIS_PROMOTION: Promoting Marines
-      STR_SMT_PRIMARIS_PROMOTION_CODEX: "{NEWLINE} Primaris Marines can be promoted as they earn new Marks of Honor for successful missions.{NEWLINE} The standard progression is Brother > Sergeant > Veteran > Lieutenant > Captain{NEWLINE}{NEWLINE} At certain ranks Marines can choose to enter a specialized field."
+      STR_SMT_PRIMARIS_PROMOTION_CODEX: "{NEWLINE} Primaris Marines can be promoted as they earn new Marks of Honor for successful missions.{NEWLINE} The standard progression is {ALT}Brother{ALT} > {ALT}Sergeant{ALT} > {ALT}Veteran{ALT} > {ALT}Lieutenant{ALT} > {ALT}Captain{ALT}{NEWLINE}{NEWLINE} New Battle Brothers can choose to become a Judiciar or Apothecary instead of following the standard promotion tree."
       STR_SMT_PRIMARIS_SPECIALIST: Specialist Marines
-      STR_SMT_PRIMARIS_SPECIALIST_CODEX: "{NEWLINE} Instead of serving as a regular Battle Brother Marines can choose to enter specialist roles, limiting their combat flexibility but granting them unique skills.{NEWLINE}{NEWLINE} Rank 1 Brothers can become Judiciars and eventually Chaplains, while Rank 2 Sergeants can become Apothecaries and eventually Apothecary Biologis."
+      STR_SMT_PRIMARIS_SPECIALIST_CODEX: "{NEWLINE} Instead of serving as a regular Battle Brother Marines can choose to enter specialist roles, limiting their combat flexibility but granting them unique skills.{NEWLINE}{NEWLINE} Fresh Battle Brothers can become Apothecaries and eventually Apothecary Biologis, or with enough Devotion can become Judiciars and eventually Chaplains."
       STR_SMT_CAPTAIN_PROMOTION: Company Captain
       STR_SMT_CAPTAIN_PROMOTION_CODEX: "{NEWLINE} The most experienced and battle hardened Marines can be promoted to the rank of Captain, leading your forces from the front lines. Captains are capable of using powerful Commands in battles to bolster all allied Space Marines.{NEWLINE}{NEWLINE} Marines need the highest Mark of Honor and Hero of the Imperium commendations to be promoted to Captain.{NEWLINE}{NEWLINE}                               {ALT}>>"
       STR_SMT_COMMANDS: Captain Commands
@@ -1118,7 +1134,7 @@ extraStrings:
       STR_SMT_PROMOTION_LIBRARIANS: Librarians
       STR_SMT_PROMOTION_LIBRARIANS_CODEX: "{NEWLINE} Neophytes with {ALT}35+ PsiStr{ALT} who qualify for Marinehood can be trained into Librarians instead of becoming regular Marines.{NEWLINE}{NEWLINE} Librarians can use powerful psyker abilities that depend on Psi Strength, which is improved through use in battle."
       STR_SMT_PROMOTION_CHAPLAINS: Chaplains
-      STR_SMT_PROMOTION_CHAPLAINS_CODEX: "{NEWLINE} Marines which earn the right to become a Veteran who have {ALT}100+ Devotion{ALT} can be promoted into Chaplains.{NEWLINE}{NEWLINE} Chaplains have the Bless ability which restores morale and purges chaos corruption from nearby units. It also applies a slowly-decaying buff that grants resistance to corrupting attacks, improves melee skill, and increases the chances of Heroic Save protecting a unit from death."
+      STR_SMT_PROMOTION_CHAPLAINS_CODEX: "{NEWLINE} Marines which earn the right to become a Veteran with {ALT}100+ Devotion{ALT} can be promoted into Chaplains.{NEWLINE}{NEWLINE} Chaplains have the Bless ability which restores morale and purges chaos corruption from nearby units. It also applies a slowly-decaying buff that grants resistance to corrupting attacks, improves melee skill, and increases the chances of Heroic Save protecting a unit from death."
       # Chamber Militant
       ## General Strategy
       STR_HELP: GENERAL STRATEGY

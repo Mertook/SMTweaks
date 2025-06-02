@@ -1957,6 +1957,13 @@ units:
       - - STR_STRM_STRIKE_ASSC
         - STR_STRM_STRIKE_ROCKET
 
+  - type: STR_WHIRLWIND_TARGETER                    # Whirlwind Bombard
+    refNode: *STR_BOMBARD_TARGETER_DEFAULT
+    livingWeapon: true
+    armor: STR_BOMBARD_ROCKET_ARMOR
+    builtInWeaponSets:
+      - - STR_WHIRL_STRIKE_ROCKET
+
   - type: STR_ORBITAL_LANCE_TARGETER                # Orbital Lance
     refNode: *STR_BOMBARD_TARGETER_DEFAULT
     livingWeapon: true

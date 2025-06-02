@@ -2433,8 +2433,7 @@ items:
     requiresBuy:
       - STR_MARINES_STRATEGY
       - STR_SCOUT_BOLT_RIFLE
-    requiresBuyBaseFunc: [TRADE]
-    costBuy: 350000
+    costBuy: 250000
     costSell: 50000
     bigSprite: 128
     floorSprite: 128
@@ -2489,7 +2488,7 @@ items:
     size: 0.4
     requiresBuy:
       - STR_DW_SNIPER
-    costBuy: 125000
+    costBuy: 250000
     costSell: 50000
     bigSprite: 164
     floorSprite: 164
@@ -4285,7 +4284,7 @@ items:
     defaultInventorySlot: STR_LEFT_HAND
     twoHanded: true
     blockBothHands: false
-    oneHandedPenalty: 60
+    oneHandedPenalty: 70
     weight: 55
     bigSprite: {mod: 40k_ROSIGMA_edits, index: 2217}
     floorSprite: {mod: 40k_ROSIGMA_edits, index: 2092}

@@ -641,6 +641,7 @@ research:
       - STR_MARINE_WEAPONS
       - STR_MIDTIER_PREREQ
       - STR_PRIMARIS
+    listOrder: 15 # push above corpses/etc
 
   - name: STR_PRIMARIS_BACKPACKS    # Primaris Backpack Weaponry
     cost: 60
@@ -648,40 +649,50 @@ research:
     dependencies:
       - STR_PRIMARIS
       - STR_LASER_WEAPONS
+      - STR_GENERALLOCK # temp disabled
+    listOrder: 15 # push above corpses/etc
 
   - name: STR_PRIMARIS_MELTAPACK    # Primaris Meltarifle
     cost: 80
     points: 10
     dependencies:
-      - STR_PRIMARIS_BACKPACKS
+      - STR_PRIMARIS
+      #- STR_PRIMARIS_BACKPACKS
       - STR_HEAVY_LASER
+    listOrder: 15 # push above corpses/etc
 
   - name: STR_PRIMARIS_PLASMAPACK   # Primaris Plasma Incinerator
     cost: 110
     points: 10
     dependencies:
-      - STR_PRIMARIS_BACKPACKS
+      - STR_PRIMARIS
+      #- STR_PRIMARIS_BACKPACKS
       - STR_PLASMA_RIFLE_DEP1
       - STR_MASTER_CRAFTING
+    listOrder: 15 # push above corpses/etc
 
   - name: STR_OMNIS_AUTOCPACK       # Primaris Accelerator Autocannon
     cost: 120
     points: 10
     dependencies:
-      - STR_PRIMARIS_BACKPACKS
+      - STR_PRIMARIS
+      #- STR_PRIMARIS_BACKPACKS
       - STR_MKX_INC_ARMOR
       - STR_MASTER_CRAFTING
     unlocks:
       - STR_ASSC_CLIP
+    listOrder: 15 # push above corpses/etc
 
   - name: STR_OMNIS_PLASMAPACK      # Primaris Plasma Exterminators
     cost: 120
     points: 10
     dependencies:
-      - STR_PRIMARIS_BACKPACKS
+      - STR_PRIMARIS
+      #- STR_PRIMARIS_BACKPACKS
       - STR_MKX_INC_ARMOR
       - STR_PLASMA_PISTOL_DEP1
       - STR_MASTER_CRAFTING
+    listOrder: 15 # push above corpses/etc
 
   - name: STR_STORMTALON_CASR       # Stormtalon CAS Firesupport
     cost: 400
@@ -691,14 +702,16 @@ research:
       - STR_MIDTIER_PREREQ
       - STR_LEADER_PLUS
       - STR_GENERALLOCK # temp disabled
+    listOrder: 15 # push above corpses/etc
 
-  - name: STR_WHIRLWIND_FSR       # Whirlwind Bombard Firesupport
+  - name: STR_WHIRLWIND_FSR         # Whirlwind Bombard Firesupport
     cost: 400
     points: 20
     dependencies:
       - STR_MARINES_STRATEGY
       - STR_MIDTIER_PREREQ
       - STR_LEADER_PLUS
+    listOrder: 15 # push above corpses/etc
 
   - name: STR_NAVY_COMUNICATIONS    # Orbital Communications
     cost: 100
@@ -862,7 +875,7 @@ research:
       #- STR_HIGHTIER_PREREQ
       - STR_GENERALLOCK
 
-  - name: STR_PLASMA_INC_R  # NEW
+  - name: STR_PLASMA_INC_R
     cost: 860
     points: 20
     dependencies: !add

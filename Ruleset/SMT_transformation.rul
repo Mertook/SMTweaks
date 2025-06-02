@@ -358,7 +358,7 @@ soldierTransformation:
       - STR_MEDI_KIT_PREREQ
     cost: 50000 # was 100k
     requiredItems:
-      STR_KILLPOINT_TOKEN: 300
+      STR_KILLPOINT_TOKEN: 200
     producedSoldierType: STR_PRIMARIS_APOTH
     keepSoldierArmor: false
     allowsDeadSoldiers: false
@@ -367,7 +367,7 @@ soldierTransformation:
     allowedSoldierTypes:
       - STR_PRIMARISLV1
     requiredCommendations:
-      STR_HONOR_MEDAL: 1
+      STR_HONOR_MEDAL: 0
     transferTime: 0
     recoveryTime: 0
     flatOverallStatChange:

@@ -1423,6 +1423,15 @@ ufopaedia:
     text: STR_STRM_STRIKE_DUMMY_CODEX
     listOrder: 21404
 
+  - id: STR_WHIRL_STRIKE_DUMMY              # Whirlwind Vox
+    requires:
+      - STR_WHIRLWIND_FSR
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: HEAVY_WEAPON_TOOLS.SPK
+    text: STR_WHIRL_STRIKE_DUMMY_CODEX
+    listOrder: 21405
+
   - id: STR_CAS_STRIKE_DUMMY                # Lightning CAS Vox
     requires:
       - STR_AIRSTRIKE_REQUISITION
@@ -1918,6 +1927,10 @@ ufopaedia:
     section: STR_NOT_AVAILABLE
     text: STR_STRM_ASSC_DUMMY
   - id: STR_STRM_ROCKET_DUMMY               # CAS Stormtalon Typhoon Missiles
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_STRM_ROCKET_DUMMY
+  - id: STR_WHIRL_ROCKET_DUMMY              # Whirlwind Vengeance Missiles
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_STRM_ROCKET_DUMMY

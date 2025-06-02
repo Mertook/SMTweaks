@@ -4,7 +4,7 @@ items:
     powerRangeReduction: 99
     power: 0
     damageBonus:
-      strength: 1.0
+      strength: 0.90
     meleePower: 0
     meleeBonus:
       strength: 1.0
@@ -21,7 +21,7 @@ items:
       ArmorEffectiveness: 0.8 # was 0.5
       ToArmorPre: 0.1 # was 0.15
       ToTime: 0.2 # was 0.5
-      ToHealth: 0.2 # was 0.1
+      ToHealth: 0.25 # was 0.1
       FixRadius: 0
       ToArmor: 0.3
     meleeType: 7  # melee damage
@@ -34,7 +34,7 @@ items:
       ArmorEffectiveness: 0.8 # was 0.5
       ToArmorPre: 0.1 # was 0.15
       ToTime: 0.2 # was 0.5
-      ToHealth: 0.2 # was 0.1
+      ToHealth: 0.25 # was 0.1
       ToArmor: 0.3
     tags:
       INFECTION_DAMAGE_PERCENT: 50 # was 100

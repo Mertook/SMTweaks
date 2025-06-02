@@ -156,6 +156,23 @@ extended:
             item.getTag temp Tag.BOMBARD_COOLDOWN; # set cooldown for this strike type
             add temp turn;
             battle_game.setTag Tag.SMT_STRIKE_LANCE_COOLDOWN temp;
+          else eq strikeType 7; # Whirlwind
+            battle_game.getTag temp Tag.SMT_STRIKE_WHIRL_AMMO; # check we have this strike available
+            if and gt ammoCheck 0 le temp 0;
+              battle_game.flashMessage "STR_STRIKE_NOAMMO"; # "Firesupport is unavailable"
+              #debug_log "StrikeCallin (Lance) NoStrikes " temp;
+              return;
+            end;
+            battle_game.getTag temp Tag.SMT_STRIKE_WHIRL_COOLDOWN; # check this strike is not on cooldown
+            if gt temp turn;
+              sub temp turn; # get # of turns until cooldown expires
+              battle_game.flashMessage "STR_STRIKE_COOLDOWN" temp; # 'This strike is on cooldown. Turns remaining: {0}'
+              #debug_log "StrikeCallin (Lance) Cooldown " temp;
+              return;
+            end;
+            item.getTag temp Tag.BOMBARD_COOLDOWN; # set cooldown for this strike type
+            add temp turn;
+            battle_game.setTag Tag.SMT_STRIKE_WHIRL_COOLDOWN temp;
           end;
 
           if gt ammoCheck 0; # strike consumes ammo
@@ -427,6 +444,11 @@ extended:
             battle_game.getTag temp Tag.SMT_STRIKE_LANCE_AMMO; # ammo count - Orbital Lance
             sub temp 1;
             battle_game.setTag Tag.SMT_STRIKE_LANCE_AMMO temp;
+          else eq strikeType 7; # Whirlwind
+            rules.getRuleUnit strikeUnit "STR_WHIRLWIND_TARGETER";
+            battle_game.getTag temp Tag.SMT_STRIKE_WHIRL_AMMO; # ammo count - Whirlwind
+            sub temp 1;
+            battle_game.setTag Tag.SMT_STRIKE_WHIRL_AMMO temp;
           else; #emergency fallback
             rules.getRuleUnit strikeUnit "STR_CAS_BOLTER_TARGETER";
             set temp 0;

@@ -1075,7 +1075,7 @@ items:
     invWidth: 2
     invHeight: 3
     tags:
-      BOMBARD_CALLIN_REMOTE: 0 # 1: Orbital Strike 2: CAS Run
+      BOMBARD_CALLIN_REMOTE: 0 # 1: Orbital Strike 2-4: CAS Run 5: Stormtalon 6: Lance 7: Whirlwind
       BOMBARD_COOLDOWN: 0 # turns before this bombard type can be reused
       BOMBARD_AMMO_REQUIRED: 0 # does this strike need ammo to be used?
 
@@ -1141,7 +1141,7 @@ items:
       - STR_STORMTALON_CASR
     invWidth: 2
     invHeight: 2
-    medikitActionName: STR_CALL_STORMHAWK
+    medikitActionName: STR_CALL_STORMTALON
     tuUse: 60
     flatUse: false
     hitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
@@ -1153,27 +1153,27 @@ items:
 
   - type: STR_WHIRLWIND_CALLIN              # Whirlwind Strike Vox
     refNode: *STR_STRIKE_CALLIN_MED
-    ufopediaType: STR_STRM_STRIKE_DUMMY
+    ufopediaType: STR_WHIRL_STRIKE_DUMMY
     size: 0.05
-    bigSprite: 100
+    bigSprite: 123
     floorSprite: 100
     handSprite: 456
     size: 0.1
-    # costBuy: 60000
-    # costSell: 30000
+    costBuy: 60000
+    costSell: 30000
     requiresBuy:
       - STR_WHIRLWIND_FSR
-    invWidth: 2
+    invWidth: 1
     invHeight: 2
     medikitActionName: STR_STRIKE_WHIRL
     tuUse: 60
     flatUse: false
     hitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
-    listOrder: 15110
+    listOrder: 15117
     tags:
-      BOMBARD_CALLIN_REMOTE: 5 # 5 - Stormhawk
-      BOMBARD_COOLDOWN: 20 # turns before this bombard type can be reused
-      BOMBARD_AMMO_REQUIRED: 0 # doesn't use ammo
+      BOMBARD_CALLIN_REMOTE: 7 # 7 - Whirlwind
+      BOMBARD_COOLDOWN: 3 # turns before this bombard type can be reused
+      BOMBARD_AMMO_REQUIRED: 5 # 5 - Whirlwind Ammo
 
   - type: STR_MARINEDROP_CALLIN             # Marine Reinforcement Vox
     refNode: *STR_STRIKE_CALLIN_MED
@@ -1639,7 +1639,7 @@ items:
 
   - type: STR_WHIRL_STRIKE_ROCKET           # Whirlwind Rockets
     refNode: *STR_STRIKE_WEAPON_DEFAULTS
-    bigSprite: {mod: 40k, index: 451}
+    bigSprite: {mod: 40k, index: 874}
     bulletSprite: {mod: 40k, index: 0}
     fireSound: {mod: 40k, index: 702}
     hitSound: {mod: 40k, index: 0}
@@ -1648,7 +1648,7 @@ items:
     autoRange: 12
     snapRange: 0
     aimRange: 0
-    accuracyAuto: 66
+    accuracyAuto: 33
     accuracySnap: 0
     accuracyAimed: 0
     costAuto:
@@ -1659,6 +1659,7 @@ items:
       mana: true
     confAuto:
       name: STR_STRIKE_WHIRL
+      shots: 3
     power: 150
     damageType: 3
     damageAlter:
@@ -2006,6 +2007,37 @@ items:
       ToTile: 0.8
       ToItem: 0.5
     clipSize: 2
+
+  - type: STR_WHIRL_STRIKE_DUMMY            # Whirlwind Vox Codex
+    battleType: 1
+    accuracyAimed: 0
+    accuracySnap: 0
+    accuracyAuto: 33
+    confAuto:
+      shortName: STR_FIRESUPPORT_MISSILES_COUNT
+      shots: 3
+    compatibleAmmo:
+      - STR_STRM_ASSC_DUMMY
+      - STR_STRM_ROCKET_DUMMY
+    tuAimed: 0
+    tuSnap: 0
+    tuAuto: 60
+    clipSize: -1
+
+  - type: STR_WHIRL_ROCKET_DUMMY            # Whirlwind Rocket Codex
+    battleType: 2
+    power: 160
+    damageType: 3
+    damageAlter:
+      RandomType: 2  # 50-150%
+      RadiusReduction: 5
+      FixRadius: 9
+      FireThreshold: 180
+      ToArmorPre: 0.30
+      ArmorEffectiveness: 0.75
+      ToTile: 0.8
+      ToItem: 0.5
+    clipSize: 3
 
   - type: STR_BOMBARD_BATTLECANNON          # Craft Battlecanon
     refNode: *STR_STRIKE_WEAPON_DEFAULTS

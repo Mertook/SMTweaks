@@ -25,10 +25,10 @@ items:
       RandomType: 7 # 50-200%
       ArmorEffectiveness: 0.45 # was 0.5
       ToArmorPre: 0.02 # basically nothing
-      ToArmor: 0.20 # was 0.05, good destruction if it manages to pen
+      ToArmor: 0.15 # was 0.05, decent destruction if it manages to pen
       ToHealth: 1.0
       ToStun: 0.05 # was 0.3; solid AP round rather than concussive
-      ToEnergy: 0.1
+      ToEnergy: 0.0 # was 0.1
       ToWound: 0.05 # (regular 0.2)
       RandomWound: false
 
@@ -42,10 +42,10 @@ items:
       RandomType: 7 # 50-200%
       ToArmorPre: 0.02 # was 0.02
       ArmorEffectiveness: 1.1 # was 1.2 (regular 0.9)
-      ToArmor: 0.15 # was 0.1
-      ToHealth: 1.5 # was 1.5 (regular 1.1)
+      ToArmor: 0.12 # was 0.1
+      ToHealth: 1.4 # was 1.5 (regular 1.1)
       ToStun: 0.2 # was 0.6 (regular 0.5)
-      ToEnergy: 0.4 # (regular 0.3)
+      ToEnergy: 0.5 # (regular 0.3)
       ToWound: 0.4 # (regular 0.2)
       RandomWound: false
       ToTile: 0.0 #shrapnel, not explosive
@@ -2611,6 +2611,7 @@ items:
       ToHealth: 0.7
       ToArmorPre: 0.35
       ToArmor: 0.2
+      ToTile: 0.6
     powerForAnimation: 48
 
   - type: STR_BOLT_SNIPER_AMMO_INCIN        # Bolt Sniper Incendiary Ammo

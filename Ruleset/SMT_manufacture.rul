@@ -269,9 +269,33 @@ manufacture:
     producedItems:
       STR_ABSOLVOR_AMMO_MC: 10
 
+  - name: STR_HB                                    # Stormbolter
+    category: STR_WEAPON
+    requires:
+      - STR_STORMBOLTER_SM
+      - STR_IMPERIAL_WEAPONS
+    space: 0
+    time: 1000
+    cost: 125000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 20
+
+  - name: STR_HB_MC                                 # Stormboler MC
+    category: STR_WEAPON
+    requires:
+      - STR_MASTER_CRAFTING
+      - STR_STORMBOLTER_SM
+      - STR_IMPERIAL_WEAPONS
+    space: 0
+    time: 1000
+    cost: 200000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 25
+      STR_KILLPOINT_TOKEN: 200 # was 250
+
   - name: STR_HB_CLIP                               # Stormbolter Ammo
     requires:
-      - STR_HB # Stormbolter tech
+      - STR_STORMBOLTER_SM
     requiredItems:
       STR_ALIEN_ALLOYS: 5
     producedItems:
@@ -279,7 +303,7 @@ manufacture:
 
   - name: STR_HB_CLIP_MC                            # Stormbolter Ammo (Mastercrafted)
     requires:
-      - STR_HB # Stormbolter tech
+      - STR_STORMBOLTER_SM
       - STR_MC_BOLTER_AMMO
     requiredItems:
       STR_ALIEN_ALLOYS: 5 # was 10

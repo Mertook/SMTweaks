@@ -105,6 +105,10 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_NURGLE_CULTIST_LEADER
     destroyItem: true
 
+  - name: STR_CHB                                   # Chaos Storm Bolter
+    dependencies: !remove
+      - STR_MARINES_AND_DEATHWATCH
+
   - name: STR_XENO_ONLY                             # was Gate for Seer recruitment + Eldar/Ork weapons, now just Ork gear
     cost: 150 # was 250
     points: -100

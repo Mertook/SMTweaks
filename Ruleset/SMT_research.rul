@@ -535,8 +535,23 @@ research:
       - STR_THREAT_ONE
     unlocks:
       - STR_BOLTPISTOL_ADV_REQ
-      - STR_HB_DEP1 # storm bolters
+      - STR_HB_DEP1 # storm bolter unlock
     listOrder: 9 # push above corpses/etc
+
+  - name: STR_HB_DEP1               # Storm Bolter Unlock
+    cost: 0 # was 1250
+    points: 0 # was 45
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_STORMBOLTER_SM        # Marine Stormbolters
+    cost: 380 # was 860
+    points: 20
+    dependencies:
+      - STR_HB_DEP1
+      - STR_MARINES_AND_INQUISITION
+      - STR_MIDTIER_PREREQ
+      - STR_MARINE_BOLTERS
 
   - name: STR_PRIMARIS_BOLTERS      # Primaris Bolters Unlock
     cost: 320

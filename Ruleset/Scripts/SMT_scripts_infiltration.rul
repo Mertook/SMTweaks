@@ -279,7 +279,6 @@ extended:
 
       - delete: ROSIGMA_sUU_infiltration_shadow
       - delete: ROSIGMA_sUU_infiltration_camo_cloak
-      - delete: ROSIGMA_sUU_infiltration
 
     newTurnUnit:
       - new: SMTS_nTU_decrement_stealth # replace Rosigma version to handle movespeed properly
@@ -449,7 +448,6 @@ extended:
           end;
           return power part side;
 
-      - delete: ROSIGMA_hU_infiltration_stealth_deactivate
       - delete: ROSIGMA_hU_infiltration_stealth_deactivate_on_hit
       - delete: ROSIGMA_hU_infiltration_stealth_deactivate_on_attack
 
@@ -474,7 +472,6 @@ extended:
           return 0 visibility_mode;
 
       - delete: ROSIGMA_vU_infiltration_proximity_detection
-      - delete: ROSIGMA_vU_infiltration
 
     reactionUnitAction:
       - new: SMTS_stealth_no_reactions # modified to account for detection range and not bother negating enemy reactions (they're already negated by not being visible)

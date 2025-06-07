@@ -399,6 +399,12 @@ research:
       - STR_MEDI_KIT_PREREQ
       - STR_APOC_BAY # unlocks Apoth bay immediately
 
+  - name: STR_40MM_AMMO             # 40mm underslung grenade ammo
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
   - name: STR_SCOUT_WEAPONS         # Scout Weaponry
     cost: 30
     points: 10
@@ -482,6 +488,10 @@ research:
       - STR_BOLTER_ADV_AMMO
     getOneFree:
       - STR_MC_LIGHTBOLTER_AMMO
+    unlocks:
+      - STR_SMT_MASTERCRAFTED_AMMO
+    lookup: STR_SMT_MASTERCRAFTED_AMMO
+    listOrder: 20
 
   - name: STR_MC_LIGHTBOLTER_AMMO   # Mastercrafted Light Bolter Ammo
     cost: 350
@@ -491,13 +501,16 @@ research:
       - STR_MASTER_CRAFTING
       - STR_LIGHTBOLTER_ADV_AMMO
       - STR_GUARD_AND_ARBITES
+    unlocks:
+      - STR_SMT_MASTERCRAFTED_AMMO
     lookup: STR_SMT_MASTERCRAFTED_AMMO
+    listOrder: 20
 
   - name: STR_SMT_MASTERCRAFTED_AMMO
     cost: 0
     points: 0
     dependencies:
-      - STR_MC_LIGHTBOLTER_AMMO
+      - STR_GENERALLOCK
 
   - name: STR_BOLTPISTOL_REQ        # Boltpistol Unlock (for Boltpistols used by both Firstborn and Primaris)
     cost: 0
@@ -552,6 +565,7 @@ research:
       - STR_MARINES_AND_INQUISITION
       - STR_MIDTIER_PREREQ
       - STR_MARINE_BOLTERS
+    listOrder: 20
 
   - name: STR_PRIMARIS_BOLTERS      # Primaris Bolters Unlock
     cost: 320
@@ -579,10 +593,8 @@ research:
       - STR_BOLTPISTOL_ADV_REQ
       - STR_SCOUT_BOLT_RIFLE
       - STR_HBOLTER_PREREQ
+      - STR_40MM_AMMO
     listOrder: 9 # push above corpses/etc
-
-  - name: STR_HB_CLIP               # Stormbolter Clip (does nothing)
-    cost: 0 # make it instant so players don't waste time on it
 
   - name: STR_GLAUNCHER_PREREQ      # Grenade Launcher + Ammo Unlock
     cost: 0
@@ -608,10 +620,12 @@ research:
       - STR_GENERALLOCK
 
   - name: STR_SHOTGUNS_ADV          # Shotgun research for SM/Arbites - unlocks krak/incin ammo
-    cost: 35
-    points: 0
+    cost: 65
+    points: 10
     dependencies:
       - STR_SCOUT_WEAPONS
+    unlocks:
+      - STR_40MM_AMMO
     listOrder: 10 # push above corpses/etc
 
   - name: STR_DEV_MARS_BOLTER       # Mars Heavy Bolter unlock
@@ -657,6 +671,14 @@ research:
       - STR_MIDTIER_PREREQ
       - STR_PRIMARIS
     listOrder: 15 # push above corpses/etc
+
+  - name: STR_PLASMA_SPRAYGUN_CHAOS # Corrupted Plasma Spray Gun
+    dependencies: !remove
+      - STR_ADEPTAS
+
+  - name: STR_PLASMA_CARBINE_CHAOS  # Chaos Plasma Carbine
+    dependencies: !remove
+      - STR_ADEPTAS
 
   - name: STR_PRIMARIS_BACKPACKS    # Primaris Backpack Weaponry
     cost: 60

@@ -75,9 +75,13 @@ extended:
             stats_state.addIntRow "SMT_AMMO_HP_PREDMG" temp;
           end;
 
-          rule.getTag temp Tag.SMT_VULN_DEBUFF;                     # Vulnerability Dmg
+          rule.getTag temp Tag.SMT_VULN_DEBUFF_MOD;                 # Vulnerability DmgMod
           if gt temp 0;
-            stats_state.addIntRow "SMT_VULN_DEBUFF" temp;
+            stats_state.addIntRow "SMT_VULN_DEBUFF_MOD" temp;
+          end;
+          rule.getTag temp Tag.SMT_VULN_DEBUFF_FIXED;               # Vulnerability Fixed
+          if gt temp 0;
+            stats_state.addIntRow "SMT_VULN_DEBUFF_FIXED" temp;
           end;
           rule.getTag temp Tag.SMT_VULN_DURATION;                   # Vulnerability Duration
           if gt temp 0;

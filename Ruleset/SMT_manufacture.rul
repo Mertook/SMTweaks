@@ -552,6 +552,53 @@ manufacture:
     producedItems:
       STR_ASSC_CLIP: 5
 
+  - name: STR_PLASMA_CARBINE_TERRAN                 # Plasma Carbine
+    category: STR_WEAPON
+    requires:
+      - STR_LIGHT_PLASMA_TECH
+    space: 0
+    time: 700
+    cost: 150000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 10
+      STR_ELERIUM_115: 3
+
+  - name: STR_PLASMA_RIFLE_ADEPTAS                  # Plasma Carbine (Sisters)
+    category: STR_WEAPON
+    requires:
+      - STR_LIGHT_PLASMA_TECH
+      - STR_ADEPTAS
+    space: 0
+    time: 700
+    cost: 75000 # was 125k
+    requiredItems:
+      STR_ALIEN_ALLOYS: 8 # was 10
+      STR_ELERIUM_115: 3
+
+  - name: STR_PLASMA_CARBINE_ADEPTAS                # Plasma Rifle (Sisters)
+    category: STR_WEAPON
+    requires:
+      - STR_LIGHT_PLASMA_TECH
+      - STR_ADEPTAS
+    space: 0
+    time: 700
+    cost: 100000 # was 75k
+    requiredItems:
+      STR_ALIEN_ALLOYS: 10
+      STR_ELERIUM_115: 2
+
+  - name: STR_PLASMA_SPRAY_CLIP
+    category: STR_AMMUNITION
+    requires:
+      - STR_LIGHT_PLASMA_TECH
+    space: 0
+    time: 200
+    cost: 25000
+    requiredItems:
+      STR_ELERIUM_115: 1
+    producedItems:
+      STR_PLASMA_SPRAY_CLIP: 5
+
 ### BOMBARD
   - name: STR_ORBITAL_STRIKE_AMMO                   # Orbital Strike ammo
     category: STR_CAT_FIRESUPPORT
@@ -579,7 +626,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 50
       STR_ELERIUM_115: 200
-      STR_KILLPOINT_TOKEN: 400
+      STR_KILLPOINT_TOKEN: 500
 
   - name: STR_ORBITAL_BEACON
     category: STR_HEAVY_WEAPONS_PLATFORM

@@ -221,7 +221,7 @@ items:
   - update: STR_LASGUN_CLIP_HOTSHOT             # Hotshot Lasgun ammo
     requiresBuyBaseFunc: [IMPERIUM]
     requiresBuy:
-      - STR_LASER_WEAPONS
+      - STR_MIDTIER_PREREQ
       #- STR_GUARD_AND_INQUISITION
 
   - type: STR_EXITUS_BUILTIN    # Vindicare Rifle
@@ -280,6 +280,42 @@ items:
     requires: # removed HWP IG requirement, added to CM
      - STR_GUARD_AND_INQUISITION
 
+  - type: STR_STUBCANNON_GUARD
+    requiresBuy:
+      - STR_GUARD_AND_ARBITES
+    #tuLoad: 5
+    noLOSAccuracyPenalty: 75
+    confSnap:
+      arcing: true
 
-
+  - type: STR_HOTSHOT_VOLLEY_GUN  # done  # Power Pack
+    dropoff: 5
+    autoRange: 9
+    snapRange: 16
+    aimRange: 0
+    accuracyAuto: 50
+    accuracySnap: 60
+    accuracyAimed: 0
+    costAuto:
+      time: 40
+      mana: 7 # was 3
+    confAuto:
+      shots: 7
+    costSnap:
+      time: 25
+      mana: 3 # was 7
+    confSnap:
+      shots: 3
+      name: STR_BURST_SNAP_SHOT
+    tuAimed: 0
+    power: 75  # 40k 75
+    damageType: 1  # AP instead of LAS
+    damageAlter:
+      ToArmorPre: 0.3
+      ArmorEffectiveness: 0.75
+      ToHealth: 1.0
+      ToArmor: 0.0
+      ToStun: 0.3
+      ToWound: 0.05
+      RandomWound: false
 

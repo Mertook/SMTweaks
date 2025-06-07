@@ -166,40 +166,9 @@ items:
     vaporDensitySurface: 6
     vaporProbabilitySurface: 18
     size: 0.0
-    dropoff: 5
-    weight: 40
-    autoRange: 12
-    snapRange: 18
-    aimRange: 18
-    accuracyAuto: 70
-    accuracySnap: 80
-    accuracyAimed: 80
-    tuAuto: 45
-    tuSnap: 33
-    tuAimed: 33
-    confAimed:
-      spendPerShot: 4
-      name: STR_MAXIMAL_SHOT
-    power: 100
-    damageType: 5
-    damageAlter:
-      RandomType: 6
-      ToArmorPre: 0.1
-      ArmorEffectiveness: 0.75
-      FireThreshold: 70
-      ToArmor: 0.1
-    powerRangeReduction: 5
-    powerRangeThreshold: 20.0
-    clipSize: 600
-    twoHanded: true
-    oneHandedPenalty: 25
     invWidth: 2
     invHeight: 3
     armor: 300
-    tags:
-      ITEM_AIMED_FLAT_POWER_BONUS: 50
-      ITEM_POWER_BONUS_PERCENTILE: 1
-      ITEM_HEAT_MAX_LEVEL: 7
 
   - type: STR_MKX_HELIX_ARMOR               # Primaris Helix Adept Armor
     ufopediaType: STR_MKX_HELIX_UC_LV1
@@ -489,33 +458,6 @@ items:
     recover: false
     fixedWeapon: true
     fixedWeaponShow: true
-    clipSize: -1
-    dropoff: 5
-    autoRange: 0
-    snapRange: 18
-    aimRange: 18
-    accuracyAuto: 0
-    accuracySnap: 80
-    accuracyAimed: 80
-    tuAuto: 0
-    tuSnap: 30
-    tuAimed: 50
-    confAimed:
-      name: STR_MAXIMAL_SHOT
-    power: 100
-    damageType: 5 # Plasma
-    damageAlter:
-      RandomType: 6
-      ToHealth: 1.0
-      ToArmorPre: 0.1 #
-      ArmorEffectiveness: 0.6 #
-      FireThreshold: 70 #
-      ToArmor: 0.1
-    powerRangeReduction: 5
-    powerRangeThreshold: 25.0 #plasma range penalty
-    tags:
-      ITEM_AIMED_FLAT_POWER_BONUS: 50 #Maximal Shot Bonus
-      ITEM_POWER_BONUS_PERCENTILE: 1 #
 
   - type: STR_PLASMA_EXTERMINATOR_FIXED2    # Plasma Exterminator (Omnis Armor - double)
     battleType: 1
@@ -535,32 +477,80 @@ items:
     recover: false
     fixedWeapon: true
     fixedWeaponShow: true
-    clipSize: -1
-    dropoff: 6 # +1 dropoff for dual-wielding
-    autoRange: 8
-    snapRange: 13
-    aimRange: 0
-    accuracyAuto: 45
-    accuracySnap: 60
-    accuracyAimed: 0
-    tuAuto: 45
-    tuSnap: 30
-    tuAimed: 0
-    autoShots: 4
-    confSnap:
-      name: STR_DUAL_SNAP
-      shots: 2
-    power: 100
-    damageType: 5 # Plasma
-    damageAlter:
-      RandomType: 6
-      ToHealth: 1.0
-      ToArmorPre: 0.1 #
-      ArmorEffectiveness: 0.6 #
-      FireThreshold: 70 #
-      ToArmor: 0.1
-    powerRangeReduction: 5
-    powerRangeThreshold: 25.0 #plasma range penalty
+
+  - type: STR_DW_PLASMA_GRENADE             # Plasma Grenade
+    categories: [ STR_CAT_GRENADES, STR_CAT_TACTICAL]
+    bigSprite: 176
+    floorSprite: 176
+    handSprite: 256
+    explosionHitSound: {mod: 40k, index: 690}
+    hitAnimation: {mod: 40k, index: 112}
+    powerForAnimation: 5
+    primeSound: {mod: 40k_ROSIGMA_edits, index: 2425}
+    size: 0.1
+    requiresBuy:
+      - STR_DW_AMMO
+    listOrder: 13902 # just after Melta grenades
+    battleType: 4
+    invHeight: 2
+    invWidth: 1
+    unprimeActionName: STR_UNPRIME_GRENADE
+    scripts:
+      recolorItemSprite: # recolor sprite when primed
+        var int temp;
+        var int color;
+
+        get_color color new_pixel;
+        item.isFuseEnabled temp;
+
+        if and eq color 13 gt temp 0;
+          set_color new_pixel 2;
+          set temp anim_frame;
+          wavegen_tri temp 8 8 7;
+          mul temp -1;
+          add temp 4;
+          add_shade new_pixel temp;
+        end;
+        add_shade new_pixel shade;
+        return new_pixel;
+
+  - type: STR_PLASMA_GUN_TWINCORE_DW        # Twincore Plasma (Dark Angels Captain)
+    categories: [STR_CAT_PLASMA, STR_CAT_DEVASTATOR]
+    battleType: 1
+    size: 0.3
+    bigSprite: 187
+    floorSprite: { mod: 40k, index: 30 }
+    handSprite:  { mod: 40k, index: 48 }
+    bulletSprite: { mod: 40k, index: 11 }
+    fireSound: { mod: 40k, index: 18 }
+    recover: false
+    invWidth: 2
+    invHeight: 3
+    armor: 300
+    listOrder: 11500
+
+  - type: STR_PLASMA_CARBINE_TERRAN         # Plasma Carbine (IG/CM)
+    categories: [STR_CAT_PLASMA, STR_CAT_TACTICAL]
+    size: 0.2
+    bigSprite: 800
+    handSprite: {mod: 40k, index: 224}
+    floorSprite: {mod: 40k, index: 107}
+    bulletSprite: {mod: 40k, index: 11}
+    fireSound: {mod: 40k, index: 18}
+    battleType: 1
+    invWidth: 1
+    invHeight: 3
+    armor: 300
+    attraction: 1
+    listOrder: 11400
+
+  - type: STR_PLASMA_RIFLE_ADEPTAS          # Plasma Carbine (Adeptas)
+    bigSprite: 808
+    armor: 300
+
+  - type: STR_PLASMA_CARBINE_ADEPTAS        # Plasma Rifle (Adeptas)
+    bigSprite: 816
+    armor: 300
 
   - type: STR_BIKE_ARMOR                    # Bike Armor (Item)
     costBuy: 280000 # was 360k
@@ -1091,7 +1081,7 @@ items:
     costSell: 40000
     requiresBuy:
       - STR_CHAPTER_PURITY
-      - STR_NAVY_COMUNICATIONS
+      - STR_ORBITAL_STRIKE_R
     medikitActionName: STR_CALL_ORBITAL
     weight: 40
     tuUse: 60
@@ -1115,7 +1105,7 @@ items:
     costSell: 40000
     requiresBuy:
       - STR_CHAPTER_PURITY
-      - STR_NAVY_COMUNICATIONS
+      - STR_ORBITAL_LANCE_R
     medikitActionName: STR_CALL_LANCE
     weight: 40
     tuUse: 60

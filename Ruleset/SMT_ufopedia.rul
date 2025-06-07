@@ -599,7 +599,7 @@ ufopaedia:
   - id: STR_SMT_MASTERCRAFTED_AMMO          # MC Ammo Bonus
     type_id: 10
     requires:
-      - STR_GUARD_AND_ARBITES
+      - STR_SMT_MASTERCRAFTED_AMMO
     section: STR_HELP_ADV
     image_id: 1AMMO.SPK
     text: STR_SMT_MASTERCRAFTED_AMMO_CODEX
@@ -1830,6 +1830,10 @@ ufopaedia:
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_GRAV_MORTAR
+  - id: STR_CYCLONE_LAUNCHER                # Terminator Cyclone Launcher
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_CYCLONE_LAUNCHER
   - id: STR_ACCEL_AUTOCANNON_FIXED          # Accelerator Autocannon (Vanguard)
     type_id: 14
     section: STR_NOT_AVAILABLE
@@ -1842,15 +1846,27 @@ ufopaedia:
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_PLASMA_EXTERMINATOR_FIXED
+  - id: STR_GRAV_BOLTER                     # Boltstorm Fist (Gravis)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_GRAV_BOLTER
   - id: STR_GRAV_BOLTER_DW                  # Boltstorm Fist (Gravis DW)
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_GRAV_BOLTER_DW
+  - id: STR_GRAV_AUTOC                      # Autocannon Fist (Gravis)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_GRAV_AUTOC
   - id: STR_GRAV_AUTOC_DW                   # Autocannon Fist (Gravis DW)
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_GRAV_AUTOC_DW
-  - id: STR_GRAV_FLAMER_DW                  # Flame Fist (Gravis DW)
+  - id: STR_GRAV_FLAMER                     # Flamer Fist (Gravis)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_GRAV_FLAMER
+  - id: STR_GRAV_FLAMER_DW                  # Flamer Fist (Gravis DW)
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_GRAV_FLAMER_DW

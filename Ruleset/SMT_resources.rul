@@ -77,8 +77,8 @@ extraSprites:
       173: Resources/ITEMS/SHOTGUN/shells_Krak.png              # AP Shotgun Shells
       174: Resources/ITEMS/PRIMARIS/GEXTERMINATOR_BIGOB.png     # Interceptor Plasma Exterminator
       175: Resources/ITEMS/PRIMARIS/GEXTERMINATOR2_BIGOB.png    # Interceptor Plasma Exterminator (Dual-wielding)
-      176: Resources/ITEMS/plasgrenade0_BigOb.png               # DW Plasma Grenade (inactive)
-      177: Resources/ITEMS/plasgrenade1_BigOb.png               # DW Plasma Grenade (primed)
+      176: Resources/ITEMS/PLASMA/plasgrenade_BigOb.png         # DW Plasma Grenade
+      #177: Resources/ITEMS/plasgrenade1_BigOb.png               # DW Plasma Grenade (primed)
       178: Resources/ITEMS/VOLKITE/VOLKITE_CALIVER_BIGOB.png    # DW Volkite Rifle
       179: Resources/ITEMS/BOLTER/HeavyBoltRifle0_BigOb.png     # Heavy Bolt Rifle (Unloaded)
       180: Resources/ITEMS/BOLTER/HeavyBoltRifle1_BigOb.png     # Heavy Bolt Rifle (Loaded)
@@ -201,6 +201,16 @@ extraSprites:
       297: Resources/ITEMS/MISSILE/MLaunchIG1_BigOb.png         # Cadian Missile Launcher
       298: Resources/ITEMS/MISSILE/MLaunchIG2_BigOb.png         # Cadian Missile Launcher (Deployed)
 
+  - type: BIGOBS.PCK # Plasma Indexes - need 8 slots per item
+    height: 96
+    width: 128
+    subX: 32
+    subY: 48
+    files:
+      800: Resources/ITEMS/PLASMA/carbineIG_07.png              # Plasma Carbine (IG)
+      808: Resources/ITEMS/PLASMA/carbineSOB_07.png             # Plasma Carbine (SoB)
+      816: Resources/ITEMS/PLASMA/rifleSoB_07.png               # Plasma Rifle (SoB)
+
 ###Item FloorOBs
   - type: FLOOROB.PCK
     files:
@@ -221,7 +231,7 @@ extraSprites:
       163: Resources/ITEMS/SHOTGUN/shotgunDW_FloorOb.png        # DW Shotgun 
       164: Resources/ITEMS/BSNIPER/HeavySniperDW_FloorOb.png    # DW Bolt Sniper
       171: Resources/ITEMS/PRIMARIS/Absolvor_FloorOb.png        # Absolvor Bolt Pistol
-      176: Resources/ITEMS/plasgrenade_FloorOb.png              # DW Plasma Grenade
+      176: Resources/ITEMS/PLASMA/plasgrenade_FlrOb.png         # DW Plasma Grenade
       178: Resources/ITEMS/VOLKITE/VOLKITE_CALIVER_FLOOROB.png  # DW Volkite Rifle
       179: Resources/ITEMS/BOLTER/HeavyBoltRifle_FloorOb.png    # Heavy Bolt Rifle
       181: Resources/ITEMS/BOLTER/HeavyBoltRifleDW_FloorOb.png  # DW Heavy Bolt Rifle
@@ -257,7 +267,7 @@ extraSprites:
       232: Resources/ITEMS/SHOTGUN/shotgunDW_HandOb.png         # DW Shotgun
       240: Resources/ITEMS/PRIMARIS/Absolvor_HandOb.png         # Absolvor Bolt Pistol
       248: Resources/ITEMS/PRIMARIS/GEXTERMINATOR_HANDOB.png    # Interceptor Plasma Exterminator
-      256: Resources/ITEMS/plasgrenade_HandOb.png               # DW Plasma Grenade
+      256: Resources/ITEMS/PLASMA/plasgrenade_HndOb.png         # DW Plasma Grenade
       264: Resources/ITEMS/VOLKITE/VOLKITE_CALIVER_HANDOB.png   # DW Volkite Rifle
       272: Resources/ITEMS/BOLTER/HeavyBoltRifle_HandOb.png     # Heavy Bolt Rifle
       280: Resources/ITEMS/BOLTER/HeavyBoltRifleDW_HandOb.png   # DW Heavy Bolt Rifle

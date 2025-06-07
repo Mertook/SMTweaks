@@ -27,8 +27,9 @@ extraStrings:
       STR_HONOR_MEDAL_DESCRIPTION: "Soldiers who participate in successful operations are awarded Marks of Honor, with more distinguished marks given to those with a long record of contributions to the Imperium.{NEWLINE}{NEWLINE} Marks of Honor are granted when a Soldiers total Score earned from missions reaches a certain level:{NEWLINE}{NEWLINE} Rank 1 - {ALT}2000{ALT}{NEWLINE} Rank 2 - {ALT}8000{ALT}{NEWLINE} Rank 3 - {ALT}24000{ALT}{NEWLINE} Rank 4 - {ALT}48000{ALT}"
       STR_AUTO_SHOT_COUNT: "Auto (x{0})"
       STR_SNAP_SHOT_COUNT: "Snap (x{0})"
-      STR_FULL_AUTO: Full Auto
+      STR_FULL_AUTO: "Full Auto"
       STR_FULL_AUTO_COUNT: "Full Auto (x{0})"
+      STR_DIRECT_SHOT: "Direct Shot"
       STR_ARCING_SHOT: "Arcing Shot"
       STR_ARCING_SHOT_SHORT: "Arcing Shot (x{0})"
       STR_CASTELLAN_SHOT: "Castellan Burst"
@@ -42,6 +43,7 @@ extraStrings:
       STR_CROZIUS_AIMED_COUNT: "Sanctify (x{0})"
       STR_THROW_KNIFE: "Throw Knife"
       STR_LAUNCH_SALVO_AUTO: Bombardment
+      STR_DIRECT_SHOT: Direct Shot
       STR_DUAL_SNAP: Dual Snap
       STR_SIGNUM_ACTION: Squad Link
       STR_SIGNUM_ENEMY: Mark Target
@@ -462,6 +464,7 @@ extraStrings:
       STR_ORBITAL_LANCE_R: Orbital Lance
       STR_APOTHECARY_PREREQ: (Apothecary Unlock)
       STR_TSARGENT: Terminator Cyclone Launcher
+      STR_40MM_AMMO: (40mm Grenade Ammo)
       STR_BOLTPISTOL_REQ: (Boltpistols Unlocked)
       STR_BOLTPISTOL_ADV_REQ: (Advanced Boltpistols)
       STR_LIGHTBOLTER_ADV_AMMO: (Adv Light Bolter Ammo)
@@ -501,7 +504,8 @@ extraStrings:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: "Shred Resist (Melta)"
       STR_ARMOR_WOUNDHEAL: "Wound Healing"
       SMT_AMMO_HP_PREDMG: "Armor-Ignoring HP Dmg%"
-      SMT_VULN_DEBUFF: "Vulnerability %"
+      SMT_VULN_DEBUFF_MOD: "Vulnerability (Power)%"
+      SMT_VULN_DEBUFF_FIXED: "Vulnerability (Flat)%"
       SMT_VULN_DURATION: "Vuln. Duration"
       SMT_RESTRICTED_ACCURACY_PEN: "Restricted Acc. Penalty%"
       SMT_RESTRICTED_DAMAGE_PEN: "Restricted Dmg. Penalty%"
@@ -534,6 +538,7 @@ extraStrings:
       STR_SCRIPT_CMD_ARMOR: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Armor of Contempt"
       STR_SCRIPT_CMD_FIRE: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Storm of Fire"
       STR_SCRIPT_CMD_MELEE: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Relentless Assault"
+      STR_HEAT_AMMO_SPENT_FOR_INCREASE: "Heat increase per X ammo"
       ### FACILITIES
       STR_OUTPOST_GK: "Outpost"
       STR_OUTPOST_INQ_HYPER: "Outpost w/ Decoder"
@@ -1030,7 +1035,7 @@ extraStrings:
       STR_SHOTGUN_DW_UFOPEDIA: "{NEWLINE} Deathwatch Shotguns are optimized for close-range combat in Space Hulks and other cramped enviroments. In addition to regular shells and 40mm grenades they can also utilize Wyrmsbreath shells to engulf an area in fire, purging entire rooms of lightly armored Xenos.{NEWLINE}{NEWLINE} Recoil: {ALT}45{ALT}{NEWLINE} Restricted ({ALT}Deathwatch{ALT})"
       STR_MCSHOTGUN_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}45"
       STR_ABSOLVOR_PISTOL_UFOPEDIA: "{NEWLINE} Wielded most commonly by Primaris Chaplains and Apothecaries, the Absolvor is a massive pistol that would match the size of any regular rifle. It fires penetrating bolts meant to punch through armor.{NEWLINE}{NEWLINE} Recoil: {ALT}60"
-      STR_DW_PLASMA_GRENADE_UFOPEDIA: "{NEWLINE} Making use of intentional containment collapse to cause an explosive meltdown, Plasma Grenades are extremely destructive. They are only used by certain elite Imperial Forces, with select few circles of the Adeptus Mechanicus knowing the secrets of their construction."
+      STR_DW_PLASMA_GRENADE_UFOPEDIA: "{NEWLINE} Making use of intentional containment collapse to cause an explosive meltdown, Plasma Grenades are extremely destructive. Once they are primed and active they cannot be disarmed and should be thrown at an enemy immediately."
       STR_BOLTER_UMBRA_UFOPEDIA: "{NEWLINE} The Umbra Pattern Bolter is one of the earliest patterns of Bolter and its reliable design has lead to widespread use. It has a fearsome recoil but is still light enough to be handled by trained Guardsmen. {NEWLINE}{NEWLINE} Recoil: {ALT}40"
       STR_BOLTER_LIGHT_UMBRA_UNDERSLUNG_CODEX: "{NEWLINE} The Umbra Pattern Bolter fitted with a underslung 40mm grenade launcher that can use the common guard 40mm grenades and shotgun rounds. Incendiary, Krak and Melta grenades as well as slug and buckshot shells.{NEWLINE}{NEWLINE} Recoil: {ALT}40"
       STR_BOLTER_LIGHT_LMG_UFOPEDIA: "{NEWLINE} The Accatran MkVe is a bolter pattern variant chambered for light bolter calibre rounds, favored by light troops and Elysian drop troops for the extra firepower it provides. Equipped with a bipod, this squad based support bolter brings superior firepower compared to a heavy stubber. {NEWLINE}{NEWLINE} Recoil: {ALT}70{ALT} - {ALT}Heavy{ALT} - {ALT}Bipod{ALT}"
@@ -1040,6 +1045,10 @@ extraStrings:
       STR_BOLTER_SOLO_DMR_UFOPEDIA: "{NEWLINE} Perinetus Pattern Solo Mark II Scoped variants enhances the weapon's range and accuracy. Made to be used by normal humans, it is modified to produce less recoil at the expense of automatic fire modes. Popular with sharpshooters within both Guard and PDF, the Solo Pattern finds widespread use. {NEWLINE}{NEWLINE}Recoil: {ALT}16"
       STR_BOLTER_SOLO_SHORT_UFOPEDIA: "{NEWLINE} Perinetus Pattern Solo Mark II is unsophisticated and lacks the capability for autofire, allowing it only singleshot firemode. This is made up by the weapon's range, accuracy and reliability in adverse conditions. Some Guardsmen were unhappy with the weight and started modifying it accordingly. {NEWLINE}{NEWLINE}Recoil: {ALT}16"
       STR_VOLKITE_RIFLE_UFOPEDIA: "{NEWLINE} Volkite weapons deflagrate organic matter, explosively burning flesh into ash and jetting fire. They penetrate through armor, causing horrific damage."
+      STR_PLASMA_RIFLE_ADEPTAS: "Adeptas Plasma Carbine"
+      STR_PLASMA_RIFLE_ADEPTAS_UFOPEDIA: "{NEWLINE} The Adeptas Sororitas favor the light barrage type Plasma Gun, using a development of the Clovis pattern. Though it has less power than standard Plasma Weapons the Clovis type allows the user to spray more blasts without overheating, providing effective suppression and severely damaging armor."
+      STR_PLASMA_CARBINE_ADEPTAS: "Plasma Carbine De'az pattern"
+      STR_PLASMA_CARBINE_ADEPTAS_UFOPEDIA: "{NEWLINE} The Godwyn-De'az pattern plasma carbine was developed by joint-specification between the Ecclesiarchy and the Departmento Munitorum calling for a lightweight plasma gun design. This hybrid design has more power than regular carbine variants while achieving a higher fire rate than standard plasma guns."
       ### CRAFT
       STR_SPEED_UFOPEDIA: "{NEWLINE} The Land Speeder is a light anti-gravity vehicle which serves as the primary reconnaissance and fast attack vehicle of the Adeptus Astartes.{NEWLINE}{NEWLINE} Capacity: 12 Soldiers plus 8 Vehicle slots"
       ### SOLDIERS
@@ -1129,7 +1138,7 @@ extraStrings:
       STR_SMT_CAPTAIN_PROMOTION: Company Captain
       STR_SMT_CAPTAIN_PROMOTION_CODEX: "{NEWLINE} The most experienced and battle hardened Marines can be promoted to the rank of Captain, leading your forces from the front lines. Captains are capable of using powerful Commands in battles to bolster all allied Space Marines.{NEWLINE}{NEWLINE} Marines need the highest Mark of Honor and Hero of the Imperium commendations to be promoted to Captain.{NEWLINE}{NEWLINE}                               {ALT}>>"
       STR_SMT_COMMANDS: Captain Commands
-      STR_SMT_COMMANDS_CODEX: "{NEWLINE} Captain Commands are powerful skills that affect all allied Marines until the start of your next turn. Each Command requires 200 command points. Command points are earned in battle by killing enemies, with tougher enemies earning more points.{NEWLINE}{NEWLINE} Command List:{NEWLINE} {ALT}>{ALT} Armor of Contempt{NEWLINE} {ALT}>{ALT} Storm of Fire{NEWLINE} {ALT}>{ALT} Relentless Assault"
+      STR_SMT_COMMANDS_CODEX: "{NEWLINE} Captain Commands are powerful skills that affect all allied Marines until the start of your next turn. Each Command requires 250 command points. Command points are earned in battle by killing enemies, with tougher enemies earning more points.{NEWLINE}{NEWLINE} Command List:{NEWLINE} {ALT}>{ALT} Armor of Contempt{NEWLINE} {ALT}>{ALT} Storm of Fire{NEWLINE} {ALT}>{ALT} Relentless Assault"
       STR_SMT_CMD_AOC: Armor of Contempt
       STR_SMT_CMD_AOC_CODEX: "{NEWLINE} Unyielding in the face of any foe, the resilience of Space Marines is unmatched{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Reduce incoming damage by 20%{NEWLINE}> Greatly reduce damage to Armor{NEWLINE}> Use the strongest intact Armor facing to block attacks"
       STR_SMT_CMD_SOF: Storm of Fire
@@ -1214,6 +1223,8 @@ extraStrings:
       INV_LIB_VULN_TOKEN: Torment
       STR_LIB_VULN_CODEX: "{NEWLINE} Tears at the minds of enemies, dealing minor damage in an area and inflicting vulnerability for two turns. Vulnerability increases the damage units take from attacks.{NEWLINE} Torment can be freely targeted and does not hit allies, but accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Damage, Accuracy and Area of Effect scale with PsiStrength"
       ## Weapons
+      STR_PLASMA_AMMO: "Plasma Flasks"
+      STR_PLASMA_AMMO_UFOPEDIA: "{NEWLINE} Plasma Flask damage details: {NEWLINE} Ignores armor: 40% {NEWLINE} Health damage: 100% {NEWLINE} Armor damage before piercing: 30%"
       STR_KNIF_UFOPEDIA: "{NEWLINE} A Combat Knife is the ubiquitous back-up melee weapon for warriors all across the Imperium of Man, be they lowly hive city scum or the elite soldiers of a Planetary Governor.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Melee{ALT})"
       STR_SCOUT_BLADE: Astartes Combat Blade
       STR_SCOUT_BLADE_CODEX: "{NEWLINE} Lightweight despite its size, this blade is used by Marines as a backup weapon or when silent kills are required. In the hands of a skilled user it is a quick and deadly tool.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Melee{ALT})"
@@ -1244,6 +1255,7 @@ extraStrings:
       STR_NEOVOLKITE_PISTOL_CODEX: "{NEWLINE} Neo-Volkite weapons were designed by Archmagos Dominus Belisarius Cawl, recreating ancient Volkite technology. Volkite weaponry is deceptively destructive and even a pistol can cut through armor and explosively burn organic matter."
       STR_ANTIPLANT_BOMB: "Anti-Plant Bomb"
       STR_ANTIPLANT_BOMB_CODEX: "{NEWLINE} Anti-Plant Bombs are designed to destroy foliage in order to clear landing zones or expose enemies. The explosion saturates an area with toxins and compounds that rapidly destroys plant material and light cover, leaving only open ground.{NEWLINE}Unprotected civilians may suffer adversely if caught in the blast but the direct combat applications of this weapon are minimal."
+      STR_PLASMA_CARBINE_TERRAN: Plasma Carbine
       ## Armor
       STR_FLYING_SUIT_UFOPEDIA: "Assault Terminators teleport deep into enemy lines, striking at enemy commanders. Their Lightning Claws easily cut through any flesh or armor, tearing apart everything in their path."
       STR_MKX_TAC_UFOPEDIA: "The Mark X series power armor can be modified and upgraded to suit the needs of the battlefield. Tacticus is the most common variant, a flexible and reliable all-purpose combat armor."

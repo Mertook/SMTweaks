@@ -4,10 +4,12 @@ research: # Research changes only made to maintain functionality for other facti
     unlocks: !add
       - STR_SHOTGUNS_ADV # added
       - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
+      - STR_40MM_AMMO
 
   - name: STR_IMPERIAL_GUARD_OPERATIONS             # Imperial Guard Faction
     unlocks: !add
       - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
+      - STR_40MM_AMMO
 
   - name: STR_ADEPTAS                               # Sisters of Battle Faction
     unlocks: !add
@@ -241,9 +243,11 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_BOLTER_AMMO_PREREQ # Jove uses marine bolter ammo
       - STR_BOLTER_ADV_AMMO
       - STR_LIGHTBOLTER_ADV_AMMO
+      - STR_40MM_AMMO
 
 
   - name: STR_LIGHT_BOLTERS_MIDTIER
     unlocks: !add
       - STR_LIGHTBOLTER_ADV_AMMO
+      - STR_40MM_AMMO
 

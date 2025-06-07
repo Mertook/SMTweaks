@@ -17,7 +17,8 @@ extended:
       SMT_VIGILIANCE_BUFF: int          # % of power added as overwatch bonus
       SMT_ITEM_MOVESPEED_BOOST: int     # limit on movespeed bonus provided by haste
       SMT_ITEM_REACTION_MOD: int        # % of power added as reaction bonus
-      SMT_VULN_DEBUFF: int              # % of power added as vulnerability bonus
+      SMT_VULN_DEBUFF_MOD: int          # % of power added as vulnerability debuff
+      SMT_VULN_DEBUFF_FIXED: int        # flat amount added as vulnerability debuff
       SMT_VULN_DURATION: int            # length of debuff
       SMT_SIGNUM_DURATION: int          # length of Signum FA buff in turns
       ## Weapon Ammo Sprites
@@ -45,6 +46,8 @@ extended:
       ITEM_IGNORE_ALLIES: int # deal no damage to units belonging to users faction
       ITEM_IGNORE_IMPERIUM: int # deal no damage to allied units with armor tag `UNIT_TYPE_IMPERIUM: 1`
       SMT_GRAV_WEAPON: int  # weapon scales power with weight (armor+hp+size) and scales stun inversely with strength
+      ## Plasma Heat
+      ITEM_HEAT_SINK_COLOR: int # sprite color index for heatsink parts that glow, if not set defaults to 2 (red)
     RuleArmor:
       ## Craft Turrets
       SMT_TURRET_UNIT: int          # marks unit as generic Turret type unit

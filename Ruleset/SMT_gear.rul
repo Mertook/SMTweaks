@@ -22,11 +22,11 @@ items:
     power: 70
     damageType: 1
     damageAlter:
-      RandomType: 7 # 50-200%
+      RandomType: 1 # 0-200%
       ArmorEffectiveness: 0.45 # was 0.5
       ToArmorPre: 0.02 # basically nothing
       ToArmor: 0.15 # was 0.05, decent destruction if it manages to pen
-      ToHealth: 1.0
+      ToHealth: 0.95
       ToStun: 0.05 # was 0.3; solid AP round rather than concussive
       ToEnergy: 0.0 # was 0.1
       ToWound: 0.05 # (regular 0.2)
@@ -299,18 +299,18 @@ items:
       time: 25
       energy: 4
     flatMelee: true
-    accuracyMelee: 70
-    meleeMultiplier:
-      melee: 0.7
-      strength: 0.3
+    meleeType: 5 # plasma
     meleePower: 40
     meleeBonus:
       strength: 1.5
-    meleeType: 5 # plasma
     meleeAlter:
       ArmorEffectiveness: 0.7
       ToArmorPre: 0.2
       ToHealth: 0.9
+    accuracyMelee: 70
+    meleeMultiplier:
+      melee: 0.7
+      strength: 0.3
 
   - &REF_POWERSWORD                         # Powersword Values
     type: STR_POWER_SWORD
@@ -716,16 +716,16 @@ items:
     invHeight: 3
     attraction: 1
     armor: 300
-    dropoff: 7 # -1, scoped
-    autoRange: 10 #
+    dropoff: 8
+    autoRange: 10
     snapRange: 17
-    aimRange: 22
+    aimRange: 24
     accuracyAuto: 66 # godwyn 66
     accuracySnap: 75 # godwyn 80
     accuracyAimed: 100
     tuAuto: 30
     tuSnap: 18
-    tuAimed: 22
+    tuAimed: 24
     autoShots: 4
     sprayWaypoints: 2
     twoHanded: true
@@ -2476,8 +2476,8 @@ items:
       ITEM_HWP_IGNORES_ARMOR_BONUS: 1 # Sniper Rifle
       REACTION_MULTIPLIER: 10 # 10% of normal - Sniper rifle, bad at reactions
       ITEM_RECOIL: 75
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 100
-      ITEM_SNAP_ACCURACY_POWER_BONUS: 30
+      ITEM_AIMED_ACCURACY_POWER_BONUS: 80
+      ITEM_SNAP_ACCURACY_POWER_BONUS: 0
       ITEM_POWER_BONUS_PERCENTILE: 1
       ITEM_STEALTH_ASSASSIN_WEAPON: 2 # sniper
 
@@ -2533,8 +2533,8 @@ items:
       ITEM_HWP_IGNORES_ARMOR_BONUS: 1 # Sniper Rifle
       REACTION_MULTIPLIER: 10 # 10% of normal - Sniper rifle, bad at reactions
       ITEM_RECOIL: 75
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 100
-      ITEM_SNAP_ACCURACY_POWER_BONUS: 30
+      ITEM_AIMED_ACCURACY_POWER_BONUS: 80
+      ITEM_SNAP_ACCURACY_POWER_BONUS: 0
       ITEM_POWER_BONUS_PERCENTILE: 1
       ITEM_STEALTH_ASSASSIN_WEAPON: 2 # sniper
 
@@ -2653,7 +2653,7 @@ items:
       RandomWound: false
     tags:
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
-      SMT_VULN_DEBUFF: 20
+      SMT_VULN_DEBUFF_MOD: 20
       SMT_VULN_DURATION: 1
 
   - type: STR_BOLT_SNIPER_AMMO_DEREV        # Bolt Sniper Derevenant Ammo
@@ -2934,12 +2934,14 @@ items:
     accuracySnap: 80
     accuracyAimed: 100
     dropoff: 6
+    autoRange: 0
     snapRange: 14
-    aimRange: 18
+    aimRange: 0
+    tuAuto: 0
     tuSnap: 35
-    tuAimed: 0 # not really worthwhile
+    tuAimed: 0
     maxRange: 25
-    power: 18 #+20% over regular melta ammo
+    power: 16 # +1 over regular melta
     damageType: 11
     damageAlter:
       RandomType: 0
@@ -2954,64 +2956,276 @@ items:
     shotgunPellets: 10
     shotgunSpread: 0
     powerRangeReduction: 1.0
-    powerRangeThreshold: 3.0
+    powerRangeThreshold: 4.0 # +1 over regular
 
 ### Plasma
-  - type: STR_DW_PLASMA_GRENADE             # Plasma Grenade
-    categories: [ STR_CAT_GRENADES, STR_CAT_TACTICAL]
-    bigSprite: 176
-    floorSprite: 176
-    handSprite: 256
-    explosionHitSound: {mod: 40k, index: 690}
-    hitAnimation: {mod: 40k, index: 112}
-    powerForAnimation: 5
-    primeSound: {mod: 40k_ROSIGMA_edits, index: 2425}
-    size: 0.1
-    requiresBuy:
-      - STR_DW_AMMO
-    costBuy: 32000 # expensive
-    costSell: 8000
-    listOrder: 13902 # just after Melta grenades
-    battleType: 4
-    invHeight: 2
-    invWidth: 1
-    fuseType: -2 #impact
-    noLOSAccuracyPenalty: 75 #indirect fire weapon
-    weight: 8 # heavy grenade
-    throwRange: 18 # need 58 strength to throw this far, 31 str to reach 10 tiles
-    costThrow:
-      energy: 5
-      time: 35
-    costPrime:
-      time: 2
-    costUnprime:
-      time: 2
-    unprimeActionName: STR_UNPRIME_GRENADE
-    flatPrime:
-      time: true
-      energy: true
-    power: 120 # heavy plasma shot in a can
-    damageType: 5 # Plasma
+  - &DMG_PLASMA_STD                         # Plasma Standard Damage
+    type: STR_PLASMA_RIFLE_CLIP
+    damageType: 5
     damageAlter:
       RandomType: 6
+      ToArmorPre: 0.3 # was 0.1
+      ArmorEffectiveness: 0.6 # was 0.75
       ToHealth: 1.0
-      ToArmorPre: 0.1 #
-      ArmorEffectiveness: 0.6 #
-      FireThreshold: 70 #
+      ToStun: 0.1
+      ToWound: 0.05
+      FireThreshold: 70
       ToArmor: 0.1
+
+  - type: STR_PLASMA_PISTOL_CLIP            # Plasma Pistol Ammo
+    refNode: *DMG_PLASMA_STD
+    power: 90
+    powerRangeReduction: 5
+    powerRangeThreshold: 20.0
+
+  - type: STR_PLASMA_PISTOL_CLIP_SLAAN      # Plasma Pistol Ammo (Slaanesh)
+    refNode: *DMG_PLASMA_STD
+    power: 90
+    damageAlter:
+      ToMorale: 0.2
+    powerRangeReduction: 5
+    powerRangeThreshold: 20.0
+
+  - type: STR_PLASMA_RIFLE_CLIP             # Plasma Rifle Ammo
+    refNode: *DMG_PLASMA_STD
+    power: 100
+    powerRangeReduction: 5
+    powerRangeThreshold: 25.0
+
+  - type: STR_PLASMA_TWINCORE_CLIP          # Twin Plasma Ammo
+    refNode: *DMG_PLASMA_STD
+    power: 110
+    powerRangeReduction: 5
+    powerRangeThreshold: 30.0
+
+  - type: STR_HEAVY_PLASMA_CLIP             # Heavy Plasma Ammo
+    refNode: *DMG_PLASMA_STD
+    power: 120
+    damageAlter:
       FixRadius: 1
-    scripts:
-      selectItemSprite: # change BigObs sprite when primed
-        var int fuse;
-        item.isFuseEnabled fuse;
+    powerRangeReduction: 5
+    powerRangeThreshold: 30.0
 
-        if and gt fuse 0 eq blit_part blit_item_big;
-          add sprite_index fuse;
-        else;
-          add sprite_index sprite_offset;
-        end;
+  - type: STR_BARRAGE_PLASMA_CLIP           # Barrage Plasma Ammo
+    refNode: *DMG_PLASMA_STD
+    power: 120
+    damageAlter:
+      FixRadius: 1
+      RadiusReduction: 30.0
 
-        return sprite_index;
+  - type: STR_PLASMA_SPRAY_CLIP             # Plasma Carbine Ammo
+    refNode: *DMG_PLASMA_STD
+    power: 70
+    damageAlter:
+      RandomType: 3
+    powerRangeReduction: 5
+    powerRangeThreshold: 20.0 # was missing
+
+  - type: STR_PRIMARIS_INCINERATOR_POWER_PACK   # Primaris Incinerator
+    refNode: *DMG_PLASMA_STD
+    dropoff: 5
+    weight: 40
+    autoRange: 12
+    snapRange: 18
+    aimRange: 18
+    accuracyAuto: 70
+    accuracySnap: 80
+    accuracyAimed: 80
+    tuAuto: 45
+    tuSnap: 33
+    tuAimed: 33
+    confAimed:
+      spendPerShot: 4
+      name: STR_MAXIMAL_SHOT
+    power: 100
+    powerRangeReduction: 5
+    powerRangeThreshold: 20.0
+    clipSize: 600
+    twoHanded: true
+    oneHandedPenalty: 25
+    tags:
+      ITEM_AIMED_FLAT_POWER_BONUS: 50
+      ITEM_POWER_BONUS_PERCENTILE: 1
+      ITEM_HEAT_MAX_LEVEL: 7
+      ITEM_OVERHEAT_DAMAGE: 50
+
+  - type: STR_PLASMA_EXTERMINATOR_FIXED     # Plasma Exterminator (Omnis Armor - single)
+    refNode: *DMG_PLASMA_STD
+    clipSize: -1
+    dropoff: 5
+    autoRange: 0
+    snapRange: 18
+    aimRange: 14
+    accuracyAuto: 0
+    accuracySnap: 80
+    accuracyAimed: 80
+    tuAuto: 0
+    tuSnap: 30
+    tuAimed: 50
+    confAimed:
+      name: STR_MAXIMAL_SHOT
+    power: 100
+    powerRangeReduction: 5
+    powerRangeThreshold: 25.0
+    tags:
+      ITEM_AIMED_FLAT_POWER_BONUS: 50 #Maximal Shot Bonus
+      ITEM_POWER_BONUS_PERCENTILE: 1
+
+  - type: STR_PLASMA_EXTERMINATOR_FIXED2    # Plasma Exterminator (Omnis Armor - double)
+    refNode: *DMG_PLASMA_STD
+    clipSize: -1
+    dropoff: 6 # +1 dropoff for dual-wielding
+    autoRange: 8
+    snapRange: 13
+    aimRange: 0
+    accuracyAuto: 45
+    accuracySnap: 60
+    accuracyAimed: 0
+    tuAuto: 45
+    tuSnap: 30
+    tuAimed: 0
+    autoShots: 4
+    confSnap:
+      name: STR_DUAL_SNAP
+      shots: 2
+    power: 100
+    powerRangeReduction: 5
+    powerRangeThreshold: 25.0
+
+  - type: STR_PLASMA_CARBINE_TERRAN         # Plasma Carbine (IG/CM)
+    costSell: 20000
+    weight: 16
+    compatibleAmmo:
+      - STR_PLASMA_SPRAY_CLIP
+    twoHanded: true
+    dropoff: 6
+    autoRange: 10
+    snapRange: 14
+    aimRange: 14
+    accuracyAuto: 55
+    accuracySnap: 60
+    accuracyAimed: 60
+    tuAuto: 40
+    tuSnap: 24
+    tuAimed: 24
+    confAuto:
+      shots: 4
+    confSnap:
+      name: STR_BURST_SNAP_SHOT
+      shots: 2
+    confAimed:
+      spendPerShot: 4
+      name: STR_MAXIMAL_SHOT
+    tags:
+      REACTION_MULTIPLIER: 150 # carbine bonus
+      ITEM_HEAT_MAX_LEVEL: 5 # lower capacity
+      ITEM_HEAT_DISSIPATION_PER_TURN: 1
+      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2 # lower power multishot
+      ITEM_AIMED_FLAT_POWER_BONUS: 50
+      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_OVERHEAT_DAMAGE: 50
+      ITEM_HEAT_SINK_COLOR: 15
+
+  - type: STR_PLASMA_RIFLE_ADEPTAS          # Plasma Carbine (Adeptas)
+    weight: 13 # was 20
+    tags:
+      REACTION_MULTIPLIER: 150 # carbine bonus
+      ITEM_HEAT_MAX_LEVEL: 5 # lower capacity
+      ITEM_HEAT_DISSIPATION_PER_TURN: 1
+      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2 # lower power multishot
+      ITEM_AIMED_FLAT_POWER_BONUS: 50
+      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_OVERHEAT_DAMAGE: 50
+      ITEM_HEAT_SINK_COLOR: 15
+
+  - type: STR_PLASMA_CARBINE_ADEPTAS        # Plasma Rifle (Adeptas) - Yes, I know
+    weight: 17 # was 16
+    dropoff: 5 # was 6
+    autoRange: 8 # was 10
+    snapRange: 14
+    aimRange: 14
+    accuracyAuto: 55
+    accuracySnap: 70 # was 60
+    accuracyAimed: 70 # was 60
+    tuAuto: 33
+    tuSnap: 22
+    tuAimed: 22
+    confAimed:
+      spendPerShot: 8
+      name: STR_MAXIMAL_SHOT
+    confSnap:
+      name: STR_SNAP_SHOT
+      shots: 1 # was 2
+      spendPerShot: 2
+    confAuto:
+      spendPerShot: 2
+    tags:
+      ITEM_HEAT_MAX_LEVEL: 6 # lower capacity
+      ITEM_HEAT_DISSIPATION_PER_TURN: 1
+      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2 # doubled ammo consumption
+      ITEM_AUTO_FLAT_POWER_BONUS: 50
+      ITEM_SNAP_FLAT_POWER_BONUS: 50
+      ITEM_AIMED_FLAT_POWER_BONUS: 50
+      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_OVERHEAT_DAMAGE: 50
+      ITEM_HEAT_SINK_COLOR: 15
+
+  - type: STR_PLASMA_GUN_TWINCORE_DW        # Twincore Plasma (Dark Angels Captain)
+    compatibleAmmo:
+      - STR_PLASMA_TWINCORE_CLIP
+    weight: 26
+    twoHanded: true
+    blockBothHands: true
+    dropoff: 4
+    snapRange: 21 # base 21
+    aimRange: 21 # base 21
+    autoRange: 13 # base 13
+    accuracySnap: 70 # base 70
+    accuracyAimed: 70 # base 70
+    accuracyAuto: 60 # base 60
+    tuSnap: 30 # base 30
+    tuAimed: 30 # base 30
+    tuAuto: 35 # base 35
+    confSnap:
+      name: STR_BURST_SNAP_SHOT
+      shots: 2
+    confAuto:
+      name: STR_AUTOFIRE
+      shots: 4
+    confAimed:
+      spendPerShot: 4
+      name: STR_MAXIMAL_SHOT
+    tags:
+      ITEM_HEAT_MAX_LEVEL: 7
+      ITEM_HEAT_DISSIPATION_PER_TURN: 4 # high quality
+      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2
+      ITEM_AIMED_FLAT_POWER_BONUS: 50
+      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_OVERHEAT_DAMAGE: 50
+      ITEM_HEAT_SINK_COLOR: 15
+
+  - type: STR_DW_PLASMA_GRENADE             # Plasma Grenade
+    refNode: *DMG_PLASMA_STD
+    fuseType: 0 # fixed 0 turn fuse
+    fuseTriggerEvents:
+      throwExplode: true
+    isExplodingInHands: true
+    noLOSAccuracyPenalty: 75 # indirect fire weapon
+    weight: 4 # heavy grenade
+    throwRange: 16
+    costThrow:
+      energy: 2
+      time: 40
+    costPrime:
+      time: 10
+    costUnprime:
+      time: 0 # can't unprime
+    flatPrime:
+      time: false
+      energy: true
+    power: 160 # overcharged plasma in a can
+    damageAlter:
+      FixRadius: 1
 
 ### Volkite
   - &REF_VOLKITE_BEAM                       # Script for Volkite weapon beams (thin, low spread, short lifetime)
@@ -3082,7 +3296,7 @@ items:
       ToArmorPre: 0.1
       ToArmor: 0.3
       ToTile: 1.0
-      FireThreshold: 10
+      FireThreshold: 1
       FixRadius: 1
       ToWound: 0.2 # vicious burns
       RandomWound: false
@@ -3121,7 +3335,7 @@ items:
     tuSnap: 35
     tuAuto: 66
     maxRange: 35
-    powerRangeReduction: 10 # higher than plasma
+    powerRangeReduction: 5
     powerRangeThreshold: 25.0 #
     shotgunPellets: 1 # instant beam rather than projectile
     power: 120 #
@@ -3132,8 +3346,8 @@ items:
       ArmorEffectiveness: 1.1
       ToArmorPre: 0.1
       ToArmor: 0.3
-      ToTile: 1.0 # destructive
-      FireThreshold: 0
+      ToTile: 0.75 # destructive
+      FireThreshold: 1
       FixRadius: 1
       ToWound: 0.2 # vicious burns
       RandomWound: false
@@ -3171,9 +3385,9 @@ items:
     tuAimed: 0
     tuSnap: 33
     tuAuto: 66
-    maxRange: 35
-    powerRangeReduction: 10 # higher dropoff than plasma
-    powerRangeThreshold: 25.0 #
+    maxRange: 40
+    powerRangeReduction: 5
+    powerRangeThreshold: 25.0
     shotgunPellets: 1 # instant beam rather than projectile
     power: 120 #
     damageType: 11 # Melta type - cross between Las & Melta gun
@@ -3183,8 +3397,8 @@ items:
       ArmorEffectiveness: 1.1
       ToArmorPre: 0.1
       ToArmor: 0.3
-      ToTile: 1.0 # destructive
-      FireThreshold: 0
+      ToTile: 0.75 # destructive
+      FireThreshold: 1
       FixRadius: 1
       ToWound: 0.2 # vicious burns
       RandomWound: false
@@ -3464,23 +3678,31 @@ items:
     specialUseEmptyHand: true
     sprayWaypoints: 2
     confAuto:
-      name: STR_LAUNCH_SALVO_AUTO
-      shots: 4
-    costAuto:
-      time: 60
-      mana: 40
-    confAimed:
       name: STR_LAUNCH_SALVO
       shots: 2
-    costAimed:
-      time: 40
+    costAuto:
+      time: 50
       mana: 20
-    autoRange: 15
-    snapRange: 0
-    aimRange: 20
-    accuracyAuto: 60
-    accuracyAimed: 80
+    confSnap:
+      name: STR_DIRECT_SHOT
+      shots: 1
+    costSnap:
+      time: 30
+      mana: 10
+    confAimed:
+      name: STR_ARCING_SHOT
+      arcing: true
+      shots: 1
+    costAimed:
+      time: 30
+      mana: 10
     dropoff: 4
+    autoRange: 15
+    snapRange: 20
+    aimRange: 20
+    accuracyAuto: 80
+    accuracySnap: 80
+    accuracyAimed: 80
     minRange: 5
     clipSize: -1
     power: 135 # was 100
@@ -3489,14 +3711,35 @@ items:
       RandomType: 6
       ArmorEffectiveness: 0.7 # was 0.9
       ToHealth: 1.0 # was 1.0
-      ToArmorPre: 0.2
-      ToArmor: 0.3
+      ToArmorPre: 0.3
+      ToArmor: 0.2
       ToStun: 0.6 # was 0.6
       ToEnergy: 0.4 # was 0.4
       ToTime: 0.3 # was 0.3
       ToTile: 0.6
       ToItem: 0.25
       FixRadius: 5
+    meleeSound: {mod: 40k, index: 710}
+    meleeHitSound: {mod: 40k, index: 772}
+    meleeAnimation: {mod: 40k, index: 28}
+    costMelee:
+      time: 25
+      energy: 4
+    flatMelee: true
+    meleeType: 5 # plasma
+    meleePower: 40
+    meleeBonus:
+      strength: 1.5
+    meleeAlter:
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.2
+      ToHealth: 0.9
+    accuracyMelee: 70
+    meleeMultiplier:
+      melee: 0.7
+      strength: 0.3
+    tags:
+      TURRET_RELOAD_TURNS: 0
 
   - type: STR_GRAV_MORTAR                   # Gravis Fragstorm Launcher
     battleType: 1
@@ -3773,12 +4016,12 @@ items:
     autoRange: 16
     minRange: 5
     accuracyAuto: 50
-    accuracySnap: 80
-    accuracyAimed: 80
-    kneelBonus: 150
+    accuracySnap: 90
+    accuracyAimed: 90
+    kneelBonus: 140
     noLOSAccuracyPenalty: 75
-    tuAimed: 45
-    tuSnap: 45
+    tuAimed: 55
+    tuSnap: 55
     tuAuto: 40
     tuLoad: 5 # integrated Autoloader
     confAimed:
@@ -3914,7 +4157,7 @@ items:
       ToHealth: 0.05
       RandomHealth: true
       ToStun: 0.0
-      ToTile: 0.22 # 44 base
+      ToTile: 0.21 # 42 base
       ToItem: 0.0
       TileDamageMethod: 2 # consistent tile damage
       FixRadius: 3
@@ -4012,6 +4255,34 @@ items:
     requiresBuy:
       - STR_GLAUNCHER_PREREQ
       - STR_PHOTON_GRENADE_REQUISITION
+
+  - type: STR_INCENDIARY_GRENADE40          # 40mm Incin Grenade
+    #size: 0.03 # was 0.1
+    #weight: 1 # was 3
+    #costBuy: 500 # was 5000
+    #costSell: 200 # was 2000
+    requiresBuy:
+      - STR_40MM_AMMO
+    #clipSize: 1 # was 3
+
+  - type: STR_KRAK_GRENADE40                # 40mm Krak Grenade
+    #size: 0.03 # was 0.1
+    #weight: 1 # was 3
+    #costBuy: 500 # was 1500
+    #costSell: 200 # was 500
+    requiresBuy:
+      - STR_40MM_AMMO
+    #clipSize: 1 # was 3
+
+  - type: STR_MELTA_GRENADE40               # 40mm Melta Grenade
+    #size: 0.03 # was 0.1
+    #weight: 1 # was 3
+    #costBuy: 2500 # was 7500
+    #costSell: 1000 # was 3000
+    requiresBuy:
+      - STR_40MM_AMMO
+      - STR_MIDTIER_PREREQ
+    #clipSize: 1 # was 3
 
 ### Melee
   - type: STR_CHAINSWORD                    # Chainsword
@@ -4212,7 +4483,7 @@ items:
       RandomType: 2
       IgnoreDirection: false
       ToArmorPre: 0.03
-      ArmorEffectiveness: 0.9
+      ArmorEffectiveness: 1.0
       ToHealth: 1.0
       RandomWound: true
       ToWound: 0.1
@@ -4257,7 +4528,7 @@ items:
       RandomType: 2
       IgnoreDirection: false
       ToArmorPre: 0.03
-      ArmorEffectiveness: 0.9 # regular 0.9
+      ArmorEffectiveness: 1.0
       ToHealth: 1.0
       RandomWound: true
       ToWound: 0.1
@@ -4492,7 +4763,7 @@ items:
     accuracyMultiplier:
       psiStrength: 1.0
     tags:
-      SMT_VULN_DEBUFF: 100
+      SMT_VULN_DEBUFF_MOD: 100
       SMT_VULN_DURATION: 2
       ITEM_IGNORE_ALLIES: 1
 
@@ -4793,8 +5064,8 @@ items:
     costSell: 5000
     fuseType: -1
     noLOSAccuracyPenalty: 75
-    weight: 10
-    throwRange: 12 # short
+    weight: 8
+    throwRange: 18
     costThrow:
       energy: 5
       time: 35
@@ -5219,7 +5490,7 @@ items:
       firing: 2.0
     psiAttackName: STR_SIGNUM_ENEMY
     tags:
-      SMT_VULN_DEBUFF: 100
+      SMT_VULN_DEBUFF_MOD: 100
       SMT_VULN_DURATION: 1
 
   - type: STR_SMT_SIGNUM                    # Signum for Devastators                        ## Signum

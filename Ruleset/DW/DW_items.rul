@@ -16,8 +16,8 @@ items:
     weight: 3
     bigSprite: 99
     armor: 300
-    invWidth: 1
-    invHeight: 1
+    invWidth: 0
+    invHeight: 0
     recover: true
     recoveryPoints: 20
 
@@ -27,8 +27,8 @@ items:
     weight: 3
     bigSprite: 99
     armor: 300
-    invWidth: 1
-    invHeight: 1
+    invWidth: 0
+    invHeight: 0
     recover: true
     recoveryPoints: 20
 
@@ -192,46 +192,6 @@ items:
     tags:
       ITEM_STRENGTH_REQUIREMENT: 100
       REACTION_MULTIPLIER: 200 #multiplies base reaction score by this amount divided by 100
-
-
-  - type: STR_PLASMA_GUN_TWINCORE_DW        # Twincore Plasma (Dark Angels Captain)     ## Restricted item, Plasma heat
-    categories: [STR_CAT_PLASMA, STR_CAT_DEVASTATOR]
-    size: 0.3
-    weight: 26
-    bigSprite: 187
-    floorSprite: { mod: 40k, index: 30 }
-    handSprite:  { mod: 40k, index: 48 }
-    bulletSprite: { mod: 40k, index: 11 }
-    fireSound: { mod: 40k, index: 18 }
-    compatibleAmmo:
-      - STR_PLASMA_TWINCORE_CLIP
-    battleType: 1
-    twoHanded: true
-    blockBothHands: true
-    recover: false
-    invWidth: 2
-    invHeight: 3
-    armor: 300
-    listOrder: 11500
-    dropoff: 4
-    snapRange: 21 # base 21
-    aimRange: 21 # base 21
-    autoRange: 13 # base 13
-    accuracySnap: 70 # base 70
-    accuracyAimed: 70 # base 70
-    accuracyAuto: 60 # base 60
-    tuSnap: 30 # base 30
-    tuAimed: 30 # base 30
-    tuAuto: 35 # base 35
-    confSnap:
-      name: STR_BURST_SNAP_SHOT
-      shots: 2
-    confAuto:
-      name: STR_AUTOFIRE
-      shots: 4
-    confAimed:
-      spendPerShot: 3 # base 4
-      name: STR_MAXIMAL_SHOT
 
   - type: STR_POWER_AXE_DW                  # Power Axe (Space Wolves Captain)          ## Restricted item
     clipSize: -1

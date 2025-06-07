@@ -20,18 +20,52 @@ extended:
       ITEM_HEAT_PREVIOUS_AMMO_COUNT: int
       ITEM_HEAT_CRITICAL: int #have we gone critical?
 
+  scripts:
+    reactionUnitReaction:
+      - type: ROSIGMA_rUR_plasma_heat ### Modified to be more aggressive about preventing reaction overheat
+        offset: 20
+        code: |
+          var int temp;
+          var int currentHeat;
+          var int maxHeat;
+
+          var int previousAmmoCount;
+          var int currentAmmoCount;
+          var ptr BattleItem ammoItem;
+
+          reaction_unit.getFaction temp;
+          if neq temp FACTION_PLAYER;
+            return reaction_chance;
+          end;
+
+          reaction_weapon.getTag maxHeat Tag.ITEM_HEAT_MAX_LEVEL;
+
+          if eq maxHeat 0;
+            return reaction_chance;
+          end;
+
+          reaction_weapon.getTag currentHeat Tag.ITEM_HEAT_CURRENT_LEVEL;
+          reaction_weapon.getTag previousAmmoCount Tag.ITEM_HEAT_PREVIOUS_AMMO_COUNT;
+          reaction_weapon.getAmmoItem ammoItem;
+          ammoItem.getAmmoQuantity currentAmmoCount;
+
+          if le currentAmmoCount previousAmmoCount;
+            sub previousAmmoCount currentAmmoCount; # delta ammo count
+          end;
+
+          add previousAmmoCount reaction_count;
+          add currentHeat previousAmmoCount;
+
+          if ge currentHeat maxHeat;
+            return 0;
+          end;
+
+          return reaction_chance;
+
 
 items:
   - &STR_OVERHEATING_PLASMA
     type: STR_PLASMA_GUN_TWINCORE_DW
-    tags:
-      ITEM_HEAT_MAX_LEVEL: 7
-      ITEM_HEAT_DISSIPATION_PER_TURN: 1
-      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 1
-      ITEM_AIMED_FLAT_POWER_BONUS: 50 #Maximal Shot Bonus
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
-      ITEM_OVERHEAT_DAMAGE: 100 #average damage dealt directly to the wielder's HP modified by plasma resistance if the weapon overheats
-
     tuUnload: 999 # DO NOT UNLOAD WEAPONS, THEY ARE LIKELY TO BE HOT
     isExplodingInHands: true # won't explode though as it's not a grenade
     isConsumable: true
@@ -90,6 +124,7 @@ items:
 
       recolorItemSprite: |
         var int color;
+        var int sinkColor;
         var int temp;
 
         var int currentHeat;
@@ -118,21 +153,32 @@ items:
 
           item.getTag temp Tag.ITEM_HEAT_AMMO_SPENT_FOR_INCREASE;
           div previousAmmoCount temp;
-
           add currentHeat previousAmmoCount;
+
+          item.getTag sinkColor Tag.ITEM_HEAT_SINK_COLOR;
+          if eq sinkColor 0;
+            set sinkColor 2; # default to red if not set
+          end;
 
           get_color color new_pixel;
           item.isFuseEnabled temp;
-          if or gt temp 0 gt currentHeat maxHeat; # todo refactor to max heat + 1 or fuse enabled
-            get_shade temp new_pixel;
-            if and eq color 2 le temp 4; # red heatsink parts only
-              set temp anim_frame;
-              wavegen_tri temp 16 16 15;
-              mul temp -1;
-              add temp 8;
-              add_shade new_pixel temp;
+
+          if eq color sinkColor; # heatsink parts only
+            set sinkColor anim_frame;
+            set_color new_pixel 2; # change to red
+            if or gt temp 0 gt currentHeat maxHeat; # faster glow if overheating
+              wavegen_tri sinkColor 8 8 7;
+              mul sinkColor -1;
+              add sinkColor 4;
+            else;
+              wavegen_tri sinkColor 32 16 15;
+              mul sinkColor -1;
+              add sinkColor 8;
             end;
+            limit_lower sinkColor 0;
+            add_shade new_pixel sinkColor;
           end;
+
         end;
 
         add_shade new_pixel shade;
@@ -274,12 +320,13 @@ items:
 
   - type: STR_PLASMA_GUN_TWINCORE_DW    # Deathwatch MC Twincore Plasma
     refNode: *STR_OVERHEATING_PLASMA
-    tags:
-      ITEM_HEAT_MAX_LEVEL: 7
-      ITEM_HEAT_DISSIPATION_PER_TURN: 4 #improved dissipation
-      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2 #improved cooling
-      ITEM_AIMED_FLAT_POWER_BONUS: 50 #Maximal Shot Bonus
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
 
+  - type: STR_PLASMA_CARBINE_TERRAN     # Plasma Carbine
+    refNode: *STR_OVERHEATING_PLASMA
 
+  - type: STR_PLASMA_CARBINE_ADEPTAS    # Plasma Rifle (Adeptas)
+    refNode: *STR_OVERHEATING_PLASMA
+
+  - type: STR_PLASMA_RIFLE_ADEPTAS      # Plasma Carbine (Adeptas)
+    refNode: *STR_OVERHEATING_PLASMA
 

@@ -95,10 +95,12 @@ extended:
             var int debuffVal;
             var int endTurn;
 
-            damaging_item.getTag temp Tag.SMT_VULN_DEBUFF;
-            if gt temp 0; # skip if doesn't inflict vuln
+            damaging_item.getTag temp Tag.SMT_VULN_DEBUFF_MOD;
+            damaging_item.getTag temp2 Tag.SMT_VULN_DEBUFF_FIXED;
+            if or gt temp 0 gt temp2 0; # skip if doesn't inflict vuln
               set debuffVal currPower;
               muldiv debuffVal temp 100;
+              add debuffVal temp2;
               limit debuffVal 0 200; # cap at 300%
               unit.getTag temp Tag.SMT_VULN_INTENSITY;
               if gt debuffVal temp; #only change if it would be higher

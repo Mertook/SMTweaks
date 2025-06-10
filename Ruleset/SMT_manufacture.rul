@@ -1,4 +1,15 @@
 manufacture:
+### Craft
+### Craft Weapons
+### Armor
+### Repair Armor
+### Weapons
+### Ammo
+### Misc Equipment
+### Fire Support
+### Promotions
+### Recruitment
+
 ### WEAPONS
   - name: STR_STRIKE_VOX                            # Strike Vox caster
     category: STR_WEAPON
@@ -556,6 +567,8 @@ manufacture:
     category: STR_WEAPON
     requires:
       - STR_LIGHT_PLASMA_TECH
+      - STR_NOT_ADEPTAS
+      - STR_IMPERIAL_WEAPONS
     space: 0
     time: 700
     cost: 150000
@@ -879,7 +892,7 @@ manufacture:
     category: STR_CAT_ARMOR
     requires:
       - STR_MARINES_STRATEGY
-      - STR_ASSC
+      - STR_CASS_R
       - STR_DREADNOUGHT_MARINE
       - STR_NOT_PRIMARIS
     space: 0

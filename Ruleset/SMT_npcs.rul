@@ -1,0 +1,227 @@
+weaponSets:
+  - type: NPC_BOLTER_SET
+    weapons: [STR_RIFLEB_AI, STR_RIFLE_CLIP, STR_RIFLE_CLIP, STR_MGRENADE]
+  - type: NPC_BOLTER_ELITE_SET
+    weapons: [STR_RIFLEB_AI, STR_RIFLE_CLIP_MC, STR_RIFLE_CLIP_MC, STR_MGRENADE, STR_MGRENADE]
+  - type: NPC_BOLTPISTOL_SET
+    weapons: [STR_CHAINSWORD, STR_PISTOLB_AI, STR_PISTOL_CLIP, STR_PISTOL_CLIP]
+  - type: NPC_BOLTPISTOL_ELITE_SET
+    weapons: [STR_POWERFIST, STR_PISTOLB_AI, STR_PISTOL_CLIP_MC, STR_PISTOL_CLIP_MC]
+  - type: NPC_MELTA_SET
+    weapons: [STR_HEAVY_LASER, STR_MELTA_AMMO, STR_MELTA_AMMO, STR_MGRENADE]
+  - type: NPC_GRAVGUN_SET
+    weapons: [STR_SMALL_LAUNCHER_TERRAN, STR_STUN_BOMB, STR_STUN_BOMB, STR_STUN_BOMB, STR_MGRENADE]
+  - type: NPC_PLASMAGUN_SET
+    weapons: [STR_CFPLASMA_RIFLE, STR_PLASMA_RIFLE_CLIP, STR_PLASMA_RIFLE_CLIP, STR_MGRENADE]
+  - type: NPC_TWINPLASMA_SET
+    weapons: [STR_PLASMA_GUN_TWINCORE_DEKKER, STR_PLASMA_TWINCORE_CLIP, STR_PLASMA_TWINCORE_CLIP, STR_MGRENADE]
+  - type: NPC_VENGOR_SET
+    weapons: [STR_VENGOR_LAUNCHER, STR_CASTELLAN_HE, STR_HEAVY_ROCKET, STR_HEAVY_ROCKET, STR_HEAVY_ROCKET, STR_MGRENADE]
+  - type: NPC_HEAVYBOLTER_SET
+    weapons: [STR_AUTO_CANNON, STR_AC_AP_AMMO, STR_AC_AP_AMMO, STR_MGRENADE]
+  - type: NPC_HEAVYBOLTER_ELITE_SET
+    weapons: [STR_AUTO_CANNON, STR_AC_MC_AMMO, STR_AC_MC_AMMO, STR_MGRENADE]
+  - type: NPC_HEAVYPLASMA_SET
+    weapons: [STR_CFHEAVY_PLASMA, STR_HEAVY_PLASMA_CLIP, STR_HEAVY_PLASMA_CLIP, STR_MGRENADE]
+  - type: NPC_MULTIMELTA_SET
+    weapons: [STR_BLASTER_LAUNCHER_TERRAN, STR_BLASTER_BOMB, STR_BLASTER_BOMB, STR_BLASTER_BOMB, STR_MGRENADE]
+
+
+
+items:
+  - &REF_UNIT_SPAWNER                       # NPC Spawner Grenade
+    type: STR_ALLIED_MARINE_SPAWNER
+    spawnUnitFaction: 1 # Enemy
+    invWidth: 0
+    invHeight: 0
+    battleType: 4
+    recover: false
+
+  - type: STR_NPC_MARINE_TAC                # NPC Tactical Marine
+    refNode: *REF_UNIT_SPAWNER
+    spawnUnitFaction: 2 # Civilian
+    spawnUnit: STR_MARINETAC_SMT
+
+  - type: STR_NPC_MARINE_DEV                # NPC Devastator Marine
+    refNode: *REF_UNIT_SPAWNER
+    spawnUnitFaction: 2 # Civilian
+    spawnUnit: STR_MARINEDEV_SMT
+
+  - &REF_NPC_WEAPON                         # NPC Weapon Reference
+    type: STR_RIFLEB_AI
+    battleType: 1
+    requiresBuy:
+      - STR_GENERALLOCK
+    attraction: 40
+    armor: 100
+
+  - type: STR_RIFLEB_AI                     # Bolter - AI
+    refNode: *REF_NPC_WEAPON
+    bigSprite: {mod: 40k, index: 339}
+    floorSprite: {mod: 40k, index: 201}
+    handSprite: {mod: 40k, index: 752}
+    bulletSprite: {mod: 40k, index: 6}
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    bulletSpeed: 30
+    compatibleAmmo:
+      - STR_RIFLE_CLIP
+      - STR_RIFLE_CLIP_MC
+      - STR_RIFLE_CLIP_AP
+      - STR_RIFLE_CLIP_EX
+      - STR_PISTOL_CLIP
+      - STR_PISTOL_CLIP_AP
+      - STR_PISTOL_CLIP_EX
+      - STR_PISTOL_CLIP_MC
+    twoHanded: true
+    invWidth: 2
+    invHeight: 3
+    weight: 28
+    dropoff: 4
+    autoRange: 13
+    snapRange: 16
+    aimRange: 0
+    accuracyAuto: 75
+    accuracySnap: 90
+    accuracyAimed: 0
+    tuAimed: 0
+    tuSnap: 20
+    tuAuto: 30
+    autoShots: 4
+    recoveryTransformations:
+      STR_RIFLEB: [1]
+    tags:
+      ITEM_COLOR_CHANGES_WITH_AMMO: 15
+
+  - type: STR_PISTOLB_AI                    # Boltpistol - AI
+    refNode: *REF_NPC_WEAPON
+    bigSprite: {mod: 40k, index: 341}
+    floorSprite: {mod: 40k, index: 202}
+    handSprite: {mod: 40k, index: 656}
+    bulletSprite: {mod: 40k, index: 6}
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    bulletSpeed: 30
+    compatibleAmmo:
+      - STR_PISTOL_CLIP
+      - STR_PISTOL_CLIP_EX
+      - STR_PISTOL_CLIP_AP
+      - STR_PISTOL_CLIP_MC
+    twoHanded: false
+    invWidth: 2
+    invHeight: 2
+    weight: 20
+    dropoff: 5
+    autoRange: 9
+    snapRange: 11
+    aimRange: 0
+    accuracyAuto: 66
+    accuracySnap: 90
+    accuracyAimed: 0
+    tuAuto: 24
+    tuSnap: 18
+    tuAimed: 0
+    autoShots: 2
+    recoveryTransformations:
+      STR_PISTOLB: [1]
+    tags:
+      ITEM_COLOR_CHANGES_WITH_AMMO: 15
+
+units: # Civ units
+  - &REF_NPC_MARINE                         # NPC Marine Defaults
+    type: STR_MARINETAC_SMT
+    stats: # elite Marine vet stats
+      tu: 120
+      stamina: 120
+      health: 160
+      bravery: 110
+      reactions: 90
+      firing: 150
+      throwing: 90
+      strength: 150 # bonus to make sure they can carry gear
+      psiStrength: 80
+      psiSkill: 100
+      melee: 150
+    standHeight: 21
+    kneelHeight: 14
+    value: 50
+    intelligence: 8
+    aggression: 7
+    energyRecovery: 40
+    deathSound: [{mod: 40k, index: 744}, {mod: 40k, index: 745}, {mod: 40k, index: 746}, {mod: 40k, index: 747}, {mod: 40k, index: 748}, {mod: 40k, index: 749}, {mod: 40k, index: 750}, {mod: 40k, index: 751}, {mod: 40k, index: 752}]
+
+  - type: STR_MARINETAC_SMT                 # NPC Tactical Marine
+    refNode: *REF_NPC_MARINE
+    race: STR_CIVILIAN
+    armor: STR_PERSONAL_ARMOR_CIVILIAN
+    weightedBuiltInWeaponSets:
+      - 
+        NPC_BOLTER_SET: 40
+        NPC_BOLTER_ELITE_SET: 10
+        NPC_BOLTPISTOL_SET: 15
+        NPC_BOLTPISTOL_ELITE_SET: 5
+        NPC_MELTA_SET: 10
+        NPC_GRAVGUN_SET: 10
+        NPC_PLASMAGUN_SET: 10
+      - 
+        NPC_BOLTER_ELITE_SET: 50
+        NPC_BOLTPISTOL_ELITE_SET: 20
+        NPC_MELTA_SET: 10
+        NPC_GRAVGUN_SET: 10
+        NPC_PLASMAGUN_SET: 10
+      - 
+        NPC_BOLTER_ELITE_SET: 50
+        NPC_BOLTPISTOL_ELITE_SET: 10
+        NPC_MELTA_SET: 10
+        NPC_GRAVGUN_SET: 10
+        NPC_TWINPLASMA_SET: 20
+
+  - type: STR_MARINEDEV_SMT                 # NPC Devastator Marine
+    refNode: *REF_NPC_MARINE
+    race: STR_CIVILIAN
+    armor: STR_DEV_ARMOR_ULTRA
+    weightedBuiltInWeaponSets:
+      - 
+        NPC_VENGOR_SET: 40
+        NPC_HEAVYBOLTER_SET: 40
+        NPC_HEAVYBOLTER_ELITE_SET: 10
+        NPC_HEAVYPLASMA_SET: 10
+        NPC_MULTIMELTA_SET: 10
+      - 
+        NPC_VENGOR_SET: 30
+        NPC_HEAVYBOLTER_ELITE_SET: 40
+        NPC_HEAVYPLASMA_SET: 30
+        NPC_MULTIMELTA_SET: 20
+      - 
+        NPC_HEAVYBOLTER_ELITE_SET: 40
+        NPC_HEAVYPLASMA_SET: 40
+        NPC_MULTIMELTA_SET: 20
+
+terrains:
+  - name: ALLIED_MARINE_DEPLOYMENT          # IG Marine Reinforcement block
+    mapDataSets:
+      - BLANKS
+      - DROPPOD_ALLIED
+    mapBlocks:
+      - name: DROPPOD_ALLIED
+        width: 20
+        length: 10
+        height: 4
+        items:
+          STR_DROPPOD_DEPLOY_CHARGE:
+            - [4, 4, 0]
+            - [14, 3, 0]
+          STR_NPC_MARINE_TAC:
+            - [1, 1, 0]
+            - [2, 7, 0]
+            - [9, 6, 0]
+            - [12, 2, 0]
+            - [12, 7, 0]
+            - [17, 1, 0]
+          STR_NPC_MARINE_DEV:
+            - [7, 2, 0]
+            - [16, 8, 0]
+        fuseTimers:
+          STR_DROPPOD_DEPLOY_CHARGE: [1, 1]
+          STR_NPC_MARINE_TAC: [1, 1]
+          STR_NPC_MARINE_DEV: [1, 1]
+
+

@@ -848,7 +848,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 80
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 50
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalties
       SMT_ARMOR_REGEN_HP: 4
@@ -966,7 +966,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 80
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 50
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalties
       SMT_ARMOR_REGEN_HP: 4
@@ -1090,7 +1090,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 80
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 50
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalties
       SMT_ARMOR_REGEN_HP: 4
@@ -1375,7 +1375,7 @@ armors:
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 80
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 50
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalties
       SMT_ARMOR_REGEN_HP: 4
@@ -3817,7 +3817,7 @@ armors:
     corpseBattle:
       - STR_MKX_DW_INC_CORPSE
     storeItem: STR_MKX_INC_ARMOR
-    requires: STR_ASSC # uses assault cannon ammo
+    requires: STR_ASSC_CLIP # uses assault cannon ammo
     corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities

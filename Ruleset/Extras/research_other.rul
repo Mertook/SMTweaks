@@ -5,11 +5,24 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_SHOTGUNS_ADV # added
       - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
       - STR_40MM_AMMO
+      - STR_IMPERIAL_CHURCH
 
   - name: STR_IMPERIAL_GUARD_OPERATIONS             # Imperial Guard Faction
     unlocks: !add
       - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
       - STR_40MM_AMMO
+
+  - name: STR_NORMAL_STRATEGY_IG                    # IG Standard Strategy
+    unlocks: !add
+      - STR_IMPERIAL_CHURCH
+
+  - name: STR_ELITE_STRATEGY_IG                     # IG Scions Strategy
+    unlocks: !add
+      - STR_IMPERIAL_CHURCH
+
+  - name: STR_STEEL_LEGION_STRATEGY                 # IG Steel Legion Strategy
+    unlocks: !add
+      - STR_IMPERIAL_CHURCH
 
   - name: STR_ADEPTAS                               # Sisters of Battle Faction
     unlocks: !add
@@ -244,7 +257,6 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_BOLTER_ADV_AMMO
       - STR_LIGHTBOLTER_ADV_AMMO
       - STR_40MM_AMMO
-
 
   - name: STR_LIGHT_BOLTERS_MIDTIER
     unlocks: !add

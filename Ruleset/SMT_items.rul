@@ -1,5 +1,4 @@
 items:
-
   - type: STR_SMT_GENESEED                  # geoscape item used for neophyte promotion
     costSell: 500000 # make excess geneseed useful (also for other factions if they ever manage to get it) - not worth manufacturing for money
     battleType: 0
@@ -32,6 +31,8 @@ items:
       - STR_GENERALLOCK
     requiresBuy:
       - STR_GENERALLOCK
+    recoveryTransformations:
+      STR_PISTOLH_SM: [1] # give player usable Tigrus when recovered
 
   - type: STR_PRIMARIS_VETARMOR             # Primaris Sternguard/Bladeguard Armor
     ufopediaType: STR_MKX_VETS_LV3_UC
@@ -992,6 +993,9 @@ items:
     hitAnimation: -1
     ignoreInCraftEquip: false
     hiddenOnMinimap: true
+    fuseType: 0 # fixed 0 turn fuse
+    isExplodingInHands: true
+    isConsumable: true
     supportedInventorySections:
       - STR_GROUND
     power: 0
@@ -1724,7 +1728,7 @@ items:
     supportedInventorySections:
       - STR_GROUND
     spawnUnitFaction: 2 # civilian allies
-    spawnUnit: STR_MARINE
+    spawnUnit: STR_MARINETAC_SMT
     power: 100
     damageType: 10 # impact
     damageAlter:

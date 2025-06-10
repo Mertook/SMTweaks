@@ -4,10 +4,6 @@ items:
       - STR_IMPERIAL_GUARD_OPERATIONS
       - STR_MULTIMELTA_PREREQ
 
-  - update: STR_BLASTER_LAUNCHER_TERRAN         # Multimelta
-    requires:
-      - STR_MULTIMELTA_PREREQ
-
   - update: STR_HYPERPHASESWORD                 # Necron Sword
     experienceTrainingMode: 13 # melee & reactions
 
@@ -217,12 +213,6 @@ items:
 
   - type: STR_BOLTPISTOL_SERAPHIM               # SoB Light Boltpistol Seraphim
     bigSprite: 271
-
-  - update: STR_LASGUN_CLIP_HOTSHOT             # Hotshot Lasgun ammo
-    requiresBuyBaseFunc: [IMPERIUM]
-    requiresBuy:
-      - STR_MIDTIER_PREREQ
-      #- STR_GUARD_AND_INQUISITION
 
   - type: STR_EXITUS_BUILTIN    # Vindicare Rifle
     tags:

@@ -24,9 +24,9 @@ items:
     damageAlter:
       RandomType: 1 # 0-200%
       ArmorEffectiveness: 0.45 # was 0.5
-      ToArmorPre: 0.02 # basically nothing
-      ToArmor: 0.15 # was 0.05, decent destruction if it manages to pen
-      ToHealth: 0.95
+      ToArmorPre: 0.02 # was 0.02
+      ToArmor: 0.1 # was 0.05
+      ToHealth: 0.95 # was 0.9
       ToStun: 0.05 # was 0.3; solid AP round rather than concussive
       ToEnergy: 0.0 # was 0.1
       ToWound: 0.05 # (regular 0.2)
@@ -734,8 +734,7 @@ items:
     tuUnload: 4 # Carbine bonus
     listOrder: 10294
     tags:
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 15 # minor scoped weapon aimed shot bonus
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 15 # minor scoped weapon aimed shot bonus
       ITEM_RECOIL: 50 # Light bolter ammo, but built for Marines
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
@@ -1127,7 +1126,7 @@ items:
     requiresBuy:
       - STR_MARINE_BOLTERS_ADV
     tags:
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 15 # was 25
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 15 # was 25
 
   - type: STR_PISTOLH_SM                    # BoltPistol (Tigrus SM)
     categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
@@ -1173,8 +1172,7 @@ items:
     tags:
       ITEM_RECOIL: 55 # harder requirement, hybrid weapon
       REACTION_MULTIPLIER: 150 # was 200 - carbine rather than pure pistol
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 15 # was 25
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 15 # was 25
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - type: STR_PRIMARIS_HEAVY_BOLT_PISTOL    # BoltPistol (Heavy)
@@ -1345,8 +1343,7 @@ items:
     sprayWaypoints: 2
     tags:
       ITEM_RECOIL: 65
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 25
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 25
 
   - type: STR_RIFLEC                        # Bolter (Stalker)
     refNode: *REF_BOLTER
@@ -1368,9 +1365,8 @@ items:
     requiresBuy:
       - STR_MARINE_BOLTERS_ADV
     tags:
-      ITEM_SNAP_ACCURACY_POWER_BONUS: 10
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 30
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_SNAP_ACCURACY_POWER_BONUS_PERCENT: 10
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 30
 
   - type: STR_MCRIFLE                       # Bolter (MC) - Now TactStrat exclusive
     refNode: *REF_BOLTER
@@ -1575,8 +1571,7 @@ items:
     autoShots: 4 # cawl 4
     sprayWaypoints: 2
     tags:
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 33 # scoped weapon aimed shot bonus
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 33 # scoped weapon aimed shot bonus
       ITEM_RECOIL: 75 # +10 over regular - larger battle rifle
       REACTION_MULTIPLIER: 70 # scope penalty
       REACTION_PENALTY_KNEELING_BYPASS: 1
@@ -2304,6 +2299,7 @@ items:
   - type: STR_HEAVY_BOLTER_GUARD            # IG Heavy Bolter (Godwyn)
     costBuy: 90000
     costSell: 30000
+    armor: 300
     weight: 30 # was 40
     dropoff: 4
     autoRange: 17
@@ -2420,9 +2416,8 @@ items:
       ITEM_IS_HEAVY_WEAPON: 4 # Sniper Rifle, +20% penalty on snap shots after moving
       ITEM_HWP_IGNORES_ARMOR_BONUS: 1 # Sniper Rifle
       REACTION_MULTIPLIER: 10 # 10% of normal - Sniper rifle, bad at reactions
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 50
-      ITEM_SNAP_ACCURACY_POWER_BONUS: 20 # was 0
-      ITEM_POWER_BONUS_PERCENTILE: 1
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 50
+      ITEM_SNAP_ACCURACY_POWER_BONUS_PERCENT: 10 # was 0
       ITEM_STEALTH_ASSASSIN_WEAPON: 2 # sniper
 
   - type: STR_BOLT_SNIPER_RIFLE             # SM Bolt Sniper
@@ -2476,9 +2471,8 @@ items:
       ITEM_HWP_IGNORES_ARMOR_BONUS: 1 # Sniper Rifle
       REACTION_MULTIPLIER: 10 # 10% of normal - Sniper rifle, bad at reactions
       ITEM_RECOIL: 75
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 80
-      ITEM_SNAP_ACCURACY_POWER_BONUS: 0
-      ITEM_POWER_BONUS_PERCENTILE: 1
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 80
+      ITEM_SNAP_ACCURACY_POWER_BONUS_PERCENT: 10
       ITEM_STEALTH_ASSASSIN_WEAPON: 2 # sniper
 
   - type: STR_BOLT_SNIPER_RIFLE_DW          # Bolt Sniper Rifle (Deathwatch)
@@ -2533,9 +2527,8 @@ items:
       ITEM_HWP_IGNORES_ARMOR_BONUS: 1 # Sniper Rifle
       REACTION_MULTIPLIER: 10 # 10% of normal - Sniper rifle, bad at reactions
       ITEM_RECOIL: 75
-      ITEM_AIMED_ACCURACY_POWER_BONUS: 80
-      ITEM_SNAP_ACCURACY_POWER_BONUS: 0
-      ITEM_POWER_BONUS_PERCENTILE: 1
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 80
+      ITEM_SNAP_ACCURACY_POWER_BONUS_PERCENT: 10
       ITEM_STEALTH_ASSASSIN_WEAPON: 2 # sniper
 
   - type: STR_BOLT_SNIPER_AMMO_AP           # Bolt Sniper AP Ammo
@@ -2910,7 +2903,98 @@ items:
     clipSize: 40
 
 ### Melta
+  - &DMG_MELTA_STD                          # Standard Melta Damage
+    type: STR_MELTA_AMMO
+    damageType: 11
+    damageAlter:
+      RandomType: 2 # 50-150, was 0-200
+      ToArmorPre: 1.0
+      ToHealth: 1.6
+      ToTile: 6.0
+      ToWound: 0.05
+      FireThreshold: 5
+      RandomWound: false
+      TileDamageMethod: 2
+    shotgunBehavior: 1
+    shotgunPellets: 10
+    shotgunSpread: 0
+    powerRangeReduction: 1.5 # was 1.0
+    powerRangeThreshold: 5.0 # was 3, deadlier at short range but falls off faster - 9 range is tipping point
+
+  - &DMG_MELTA_LIGHT                        # Light Melta Damage
+    type: STR_LIGHT_MELTA_AMMO
+    damageType: 11
+    damageAlter:
+      RandomType: 2 # 50-150, was 0-200
+      ToArmorPre: 1.0
+      ToHealth: 1.6
+      ToTile: 6.0
+      ToWound: 0.05
+      FireThreshold: 5
+      RandomWound: false
+      TileDamageMethod: 2
+    shotgunBehavior: 1
+    shotgunPellets: 8
+    shotgunSpread: 0
+    powerRangeReduction: 1.5 # was 1.0
+    powerRangeThreshold: 5.0 # was 3, deadlier at short range but falls off faster - 9 range is tipping point
+
+
+  - &DMG_MELTA_MULTI                        # Multi Melta Damage
+    type: STR_BLASTER_BOMB
+    power: 15
+    damageType: 11
+    damageAlter:
+      RandomType: 2 # 50-150, was 0-200
+      ToArmorPre: 1.0
+      ToHealth: 1.6
+      ToTile: 6.0
+      ToWound: 0.05
+      FireThreshold: 5 # was 16
+      RandomWound: false
+      TileDamageMethod: 2
+    shotgunBehavior: 1
+    shotgunPellets: 20
+    shotgunSpread: 0
+    powerRangeReduction: 0.5
+    powerRangeThreshold: 10.0
+
+  - type: STR_MELTA_AMMO                    # Meltagun Ammo
+    refNode: *DMG_MELTA_STD
+
+  - type: STR_LIGHT_MELTA_AMMO              # Light Melta Ammo
+    refNode: *DMG_MELTA_LIGHT
+    power: 12
+    clipSize: 6
+
+  - &STR_MULTIMELTA_TEMPLATE
+    type: STR_BLASTER_LAUNCHER_TERRAN 
+    dropoff: 5
+    autoRange: 12
+    snapRange: 16 # was 15
+    aimRange: 0
+    accuracyAuto: 80
+    accuracySnap: 80
+    accuracyAimed: 0
+    tuAuto: 50
+    tuSnap: 30 # was 50 for 2
+    tuAimed: 0
+    maxRange: 40
+    confAuto:
+      shots: 2
+    confSnap:
+      shots: 1 # was 2
+
+  - type: STR_BLASTER_LAUNCHER_TERRAN       # Multimelta
+    refNode: *STR_MULTIMELTA_TEMPLATE
+    requires:
+      - STR_MULTIMELTA_PREREQ
+
+  - type: STR_BLASTER_LAUNCHER              # Chaos Multimelta
+    refNode: *STR_MULTIMELTA_TEMPLATE
+
   - type: STR_PRIMARIS_MELTA_RIFLE          # Primaris Meltarifle
+    refNode: *DMG_MELTA_STD
     requiresBuy:
       - STR_GENERALLOCK # disabled
     categories: [STR_CAT_MELTA, STR_CAT_TACTICAL]
@@ -2942,35 +3026,22 @@ items:
     tuAimed: 0
     maxRange: 25
     power: 16 # +1 over regular melta
-    damageType: 11
-    damageAlter:
-      RandomType: 0
-      ToArmorPre: 1.0
-      ToHealth: 1.6
-      ToTile: 6.0
-      ToWound: 0.05
-      FireThreshold: 10
-      RandomWound: false
-      TileDamageMethod: 2
-    shotgunBehavior: 1
-    shotgunPellets: 10
-    shotgunSpread: 0
-    powerRangeReduction: 1.0
-    powerRangeThreshold: 4.0 # +1 over regular
+    powerRangeReduction: 1.5
+    powerRangeThreshold: 6.0 # +1 over regular
 
 ### Plasma
-  - &DMG_PLASMA_STD                         # Plasma Standard Damage
+  - &DMG_PLASMA_STD                         # Standard Plasma Damage
     type: STR_PLASMA_RIFLE_CLIP
     damageType: 5
     damageAlter:
       RandomType: 6
       ToArmorPre: 0.3 # was 0.1
+      ToArmor: 0.2 # was 0.1
       ArmorEffectiveness: 0.6 # was 0.75
       ToHealth: 1.0
       ToStun: 0.1
       ToWound: 0.05
       FireThreshold: 70
-      ToArmor: 0.1
 
   - type: STR_PLASMA_PISTOL_CLIP            # Plasma Pistol Ammo
     refNode: *DMG_PLASMA_STD
@@ -3044,8 +3115,7 @@ items:
     twoHanded: true
     oneHandedPenalty: 25
     tags:
-      ITEM_AIMED_FLAT_POWER_BONUS: 50
-      ITEM_POWER_BONUS_PERCENTILE: 1
+      ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 50
       ITEM_HEAT_MAX_LEVEL: 7
       ITEM_OVERHEAT_DAMAGE: 50
 
@@ -3068,8 +3138,7 @@ items:
     powerRangeReduction: 5
     powerRangeThreshold: 25.0
     tags:
-      ITEM_AIMED_FLAT_POWER_BONUS: 50 #Maximal Shot Bonus
-      ITEM_POWER_BONUS_PERCENTILE: 1
+      ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 50 #Maximal Shot Bonus
 
   - type: STR_PLASMA_EXTERMINATOR_FIXED2    # Plasma Exterminator (Omnis Armor - double)
     refNode: *DMG_PLASMA_STD
@@ -3094,7 +3163,7 @@ items:
 
   - type: STR_PLASMA_CARBINE_TERRAN         # Plasma Carbine (IG/CM)
     costSell: 20000
-    weight: 16
+    weight: 12
     compatibleAmmo:
       - STR_PLASMA_SPRAY_CLIP
     twoHanded: true
@@ -3105,9 +3174,9 @@ items:
     accuracyAuto: 55
     accuracySnap: 60
     accuracyAimed: 60
-    tuAuto: 40
-    tuSnap: 24
-    tuAimed: 24
+    tuAuto: 33
+    tuSnap: 22
+    tuAimed: 22
     confAuto:
       shots: 4
     confSnap:
@@ -3121,20 +3190,20 @@ items:
       ITEM_HEAT_MAX_LEVEL: 5 # lower capacity
       ITEM_HEAT_DISSIPATION_PER_TURN: 1
       ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2 # lower power multishot
-      ITEM_AIMED_FLAT_POWER_BONUS: 50
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 50
       ITEM_OVERHEAT_DAMAGE: 50
       ITEM_HEAT_SINK_COLOR: 15
 
   - type: STR_PLASMA_RIFLE_ADEPTAS          # Plasma Carbine (Adeptas)
-    weight: 13 # was 20
+    weight: 12 # was 20
+    confAuto:
+      shots: 4
     tags:
       REACTION_MULTIPLIER: 150 # carbine bonus
       ITEM_HEAT_MAX_LEVEL: 5 # lower capacity
       ITEM_HEAT_DISSIPATION_PER_TURN: 1
       ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2 # lower power multishot
-      ITEM_AIMED_FLAT_POWER_BONUS: 50
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 50
       ITEM_OVERHEAT_DAMAGE: 50
       ITEM_HEAT_SINK_COLOR: 15
 
@@ -3163,10 +3232,9 @@ items:
       ITEM_HEAT_MAX_LEVEL: 6 # lower capacity
       ITEM_HEAT_DISSIPATION_PER_TURN: 1
       ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2 # doubled ammo consumption
-      ITEM_AUTO_FLAT_POWER_BONUS: 50
-      ITEM_SNAP_FLAT_POWER_BONUS: 50
-      ITEM_AIMED_FLAT_POWER_BONUS: 50
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_AUTO_FLAT_POWER_BONUS_PERCENT: 25
+      ITEM_SNAP_FLAT_POWER_BONUS_PERCENT: 25
+      ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 80
       ITEM_OVERHEAT_DAMAGE: 50
       ITEM_HEAT_SINK_COLOR: 15
 
@@ -3199,8 +3267,7 @@ items:
       ITEM_HEAT_MAX_LEVEL: 7
       ITEM_HEAT_DISSIPATION_PER_TURN: 4 # high quality
       ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2
-      ITEM_AIMED_FLAT_POWER_BONUS: 50
-      ITEM_POWER_BONUS_PERCENTILE: 1 #use %
+      ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 50
       ITEM_OVERHEAT_DAMAGE: 50
       ITEM_HEAT_SINK_COLOR: 15
 
@@ -3406,7 +3473,86 @@ items:
     tags:
       SMT_AMMO_HP_PREDMG: 50
 
+### Lasguns
+  - &DMG_LASGUN_STD
+    type: STR_LASPISTOL_CLIP
+    damageType: 1 # standard
+    damageAlter:
+      RandomType: 6  # gaussian
+      ToArmorPre: 0.2
+      ToHealth: 1.0
+      ToArmor: 0.1
+      ToStun: 0.05 # was 0.3
+      ToWound: 0.05
+      RandomWound: false
+
+  - &DMG_LASGUN_HOT
+    type: STR_LASPISTOL_CLIP_HOTSHOT
+    damageType: 1 # standard
+    damageAlter:
+      RandomType: 6  # gaussian
+      ArmorEffectiveness: 0.75
+      ToArmorPre: 0.2
+      ToHealth: 1.0
+      ToArmor: 0.1
+      ToStun: 0.05 # was 0.3
+      ToWound: 0.05
+      RandomWound: false
+
+  - type: STR_LASPISTOL_CLIP                # Laspistol Ammo
+    refNode: *DMG_LASGUN_STD
+
+  - type: STR_LASGUN_CLIP                   # Lasgun Ammo
+    refNode: *DMG_LASGUN_STD
+
+  - type: STR_LASPISTOL_CLIP_HOTSHOT        # Laspistol Hotshot Ammo
+    refNode: *DMG_LASGUN_HOT
+    requiresBuyBaseFunc: [IMPERIUM]
+    requiresBuy:
+      - STR_MIDTIER_PREREQ # was locked to mid tier mastercrafting?
+
+  - type: STR_LASGUN_CLIP_HOTSHOT           # Lasgun Hotshot Ammo
+    refNode: *DMG_LASGUN_HOT
+    requiresBuyBaseFunc: [IMPERIUM]
+    requiresBuy:
+      - STR_MIDTIER_PREREQ # was guard only
+
+  - type: STR_LASGUN_CLIP_HOTSHOT_CHAOS     # Lasgun Chaos HotshotAmmo
+    refNode: *DMG_LASGUN_HOT
+
+
+
+
 ### Lascannons
+  - &DMG_LASCANNON_STD
+    type: STR_LASCAN_CLIP  # LASCANON CLIP
+    power: 220
+    damageType: 4
+    damageAlter:
+      RandomType: 6  # gaussian
+      ToArmorPre: 0.3 # was 0.4
+      ToHealth: 1.0
+      ToArmor: 0.1
+      ToStun: 0.05 # was 0.3
+      ToWound: 0.05
+      RandomWound: false
+
+  - type: STR_LASCANNON_CLIP_MALTHUS  # LASCANON MALTHUS POWER PACK               2018
+    power: 140
+    damageType: 4
+    damageAlter:
+      RandomType: 6
+      ToArmorPre: 0.3 # was 0.5
+      ToHealth: 1.0 # was 0.8
+      ToArmor: 0.1 # was 0.2
+      ToStun: 0.05 # was 0.0
+    clipSize: 8
+    powerRangeThreshold: 0 # was 16
+    powerRangeReduction: 0 # was 5
+
+  - type: STR_LASCANNON_CLIP_SMALL
+    refNode: *DMG_LASCANNON_STD
+
   - type: STR_LASCAN                        # SM Lascannon
     tuAimed: 85 # was 90 - slightly easier to sidestep and fire without needing max TUs
 
@@ -3430,6 +3576,21 @@ items:
     tags:
       REACTION_MULTIPLIER: 50
       REACTION_PENALTY_KNEELING_BYPASS: 1
+
+  - type: AUX_HOVERTANK_LASER               # Dreadnought Lascannon
+    refNode: *DMG_LASCANNON_STD
+    power: 200 # was 150, Sentinel numbers
+    dropoff: 3
+    autoRange: 16
+    snapRange: 25
+    aimRange: 0
+    accuracyAuto: 50
+    accuracySnap: 85
+    accuracyAimed: 0
+    tuAuto: 50
+    tuSnap: 30
+    tuAimed: 0
+    autoShots: 2
 
 ### Shotguns
   - type: STR_SHOTGUN_MARINE                # Astartes Shotgun
@@ -4045,6 +4206,24 @@ items:
       REACTION_MULTIPLIER: 25
       REACTION_PENALTY_KNEELING_BYPASS: 1
 
+  - type: STR_STUBCANNON_GUARD              # Stubcannon
+    requiresBuy:
+      - STR_GUARD_AND_ARBITES
+    noLOSAccuracyPenalty: 75
+    autoRange: 0
+    snapRange: 16
+    aimRange: 16
+    accuracyAuto: 0
+    accuracySnap: 40
+    accuracyAimed: 40
+    tuAuto: 0
+    tuSnap: 25
+    tuAimed: 25
+    confAimed:
+      arcing: true
+      name: STR_ARCING_SHOT
+      shortName: STR_ARCING_SHOT_SHORT
+
 ### Explosive Launcher Ammo
   - &REF_CASTELLAN_MISSILES
     type: STR_CASTELLAN_HE
@@ -4449,6 +4628,37 @@ items:
       energy: true
     experienceTrainingMode: 13
 
+  - type: STR_MARINE_NPC_FIST         # NPC Marine Armor Punch
+    twoHanded: false
+    fixedWeapon: true
+    recover: false
+    clipSize: -1
+    #*** Marine Punch
+    specialUseEmptyHand: true
+    meleeSound: {mod: 40k, index: 100}
+    meleeAnimation: {mod: 40k, index: 0}
+    meleeType: 7
+    power: 100 # fixed power
+    damageAlter:
+      RandomType: 2
+      IgnoreDirection: false
+      ArmorEffectiveness: 1.0 # better pen
+      ToArmorPre: 0.15 # let them achieve something even if it doesn't pen
+      ToStun: 0.5
+      ToHealth: 0.6
+      RandomWound: false
+      ToWound: 0.0
+    accuracyMelee: 90
+    meleeMultiplier:
+      reactions: 0.25
+      melee: 0.75
+    costMelee:
+      time: 15 # higher cost
+      energy: 1
+    flatMelee:
+      time: true
+      energy: true
+
   - type: STR_JUMP_GAUNTLET_PLUS            # Jumpsuit Punch
     refNode: *REF_FIST
     
@@ -4474,18 +4684,22 @@ items:
     invWidth: 1
     weight: 3 # was 5
     inventoryMoveCost:
-      basePercent: 50 # half costs for moving into hands etc
-    power: 35 # was 20 - pathetic, worse than SM/IG built in melee attacks - made enemy cultists especially sad
+      basePercent: 25 # reduced costs for moving into hands etc
+    accuracyMelee: 110 #was 90
+    meleeMultiplier:
+      melee: 0.7
+      reactions: 0.3
+    power: 40 # was 20 - pathetic, worse than SM/IG built in melee attacks - made enemy cultists especially sad
     damageBonus: # make it worse at scaling but less awful early
       melee: 0.3 # was 0.4
-      strength: 0.1
+      strength: 0.1 # was 0.1
     damageAlter:
       RandomType: 2
       IgnoreDirection: false
       ToArmorPre: 0.03
       ArmorEffectiveness: 1.0
       ToHealth: 1.0
-      RandomWound: true
+      RandomWound: false
       ToWound: 0.1
     tags:
       ITEM_STEALTH_ASSASSIN_WEAPON: 1 # melee
@@ -4510,17 +4724,17 @@ items:
     invWidth: 1
     clipSize: -1
     inventoryMoveCost:
-      basePercent: 50 # half costs for moving into hands etc
+      basePercent: 25 # reduced costs for moving into hands etc
     costMelee:
       time: 10
       energy: 1
     flatMelee: true
-    accuracyMelee: 90
+    accuracyMelee: 110
     meleeMultiplier:
       melee: 0.7
       reactions: 0.3
     damageType: 7 # melee
-    power: 40
+    power: 45
     damageBonus:
       melee: [0.3, 0.001]
       strength: 0.1
@@ -5056,8 +5270,10 @@ items:
     hitAnimation:
       mod: 40k
       index: 80
+    powerForAnimation: 160
     primeSound: {mod: 40k_ROSIGMA_edits, index: 2425}
     size: 0.1
+    armor: 300
     requiresBuy:
       - STR_LASER_WEAPONS
     costBuy: 10000

@@ -975,6 +975,15 @@ ufopaedia:
     requires:
       - STR_PRIMARIS_PLASMAPACK
 
+  - id: STR_PLASMA_CARBINE_TERRAN                  # Marine Shotgun
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1MP.SPK
+    text: STR_PLASMA_CARBINE_TERRAN_CODEX
+    requires: 
+      - STR_LIGHT_PLASMA_TECH
+    listOrder: 21115
+
   - id: STR_VOLKITE_VAULT                   # Volkite Caviler
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
@@ -1527,7 +1536,7 @@ ufopaedia:
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: 1LC.SPK
     requires:
-      - STR_LASCAN
+      - STR_LASCAN_TECH
       - STR_DEATHWATCH
     text: STR_LASCAN_DW_UFOPEDIA
     listOrder: 12200

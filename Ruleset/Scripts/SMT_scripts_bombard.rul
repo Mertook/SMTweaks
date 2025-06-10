@@ -394,6 +394,7 @@ extended:
           item.getTag temp2 Tag.BOMBARD_AMMO_ITEM; # check if item matches ammo type used
           if eq temp temp2;
             #debug_log "StrikeAmmo Type: " temp temp2;
+            item.setFuseEnabled 1;
             item.setFuseTimer 0;
             battle_game.setTag Tag.SMT_STRIKE_AMMO_USED 0;
           end;

@@ -666,6 +666,31 @@ soldierTransformation:
     upperBoundAtStatCaps: true
     listOrder: 90
 
+### Imperial Guard
+
+  - &STR_OFFICER_PROMOTION
+    name: STR_PROMOTE_VETERAN_OFFICER
+    requiredMinStats:
+      bravery: 60
+      psiStrength: 1 # was 60 (why does an officer need to be psychic?)
+      tu: 1
+
+  - name: STR_PROMOTE_OFFICER
+    refNode: *STR_OFFICER_PROMOTION
+
+  - name: STR_PROMOTE_OFFICER_VETERAN
+    refNode: *STR_OFFICER_PROMOTION
+
+  - name: STR_PROMOTE_SCION_OFFICER
+    refNode: *STR_OFFICER_PROMOTION
+
+  - name: STR_PROMOTE_VETERAN_OFFICER_SL
+    refNode: *STR_OFFICER_PROMOTION
+
+  - name: STR_PROMOTE_OFFICER_VETERAN_SL
+    refNode: *STR_OFFICER_PROMOTION
+
+
 
 soldierBonuses:
   - name: STR_PSI_SHROUD

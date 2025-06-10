@@ -21,11 +21,13 @@ research:
       - STR_STORMRAVEN_PREREQ
       #- STR_NOT_DEATHWATCH # currently just relevant for GK/RR Chamber Militant
     disables:
+      - STR_NOT_MARINES
       - STR_ARBITES
       - STR_IMPERIAL_GUARD_OPERATIONS
       - STR_ADEPTAS
       - STR_DEFENSE_CORRIDORBR
       - STR_PSI_AMP # replaced by chapter teachings
+      - STR_MARINE_CHAOS_PATH # not supported
 
   - name: STR_POWER_SUIT            # Terminator Suit
     cost: 500 # was 205
@@ -405,6 +407,12 @@ research:
     dependencies:
       - STR_GENERALLOCK
 
+  - name: STR_ASSC_CLIP             # Assault Cannon ammo
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
   - name: STR_SCOUT_WEAPONS         # Scout Weaponry
     cost: 30
     points: 10
@@ -673,12 +681,20 @@ research:
     listOrder: 15 # push above corpses/etc
 
   - name: STR_PLASMA_SPRAYGUN_CHAOS # Corrupted Plasma Spray Gun
+    cost: 160 # was 700! (still need to research light plasma research)
     dependencies: !remove
       - STR_ADEPTAS
 
   - name: STR_PLASMA_CARBINE_CHAOS  # Chaos Plasma Carbine
+    cost: 160 # was 700! (still need to research light plasma research)
     dependencies: !remove
       - STR_ADEPTAS
+
+  - name: STR_LIGHT_PLASMA_TECH     # Light Plasma Technology
+    cost: 800 # was 500
+    points: 20
+    dependencies:
+      - STR_ADEPTAS_MIDTIER
 
   - name: STR_PRIMARIS_BACKPACKS    # Primaris Backpack Weaponry
     cost: 60
@@ -775,6 +791,15 @@ research:
     listOrder: 26
 
   - name: STR_MARINE_CHAPEL         # Early unlock for Chapel
+    cost: 100
+    points: 10
+    dependencies:
+      - STR_GENERALLOCK
+    getOneFree:
+      - STR_PSI_LAB
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_IMPERIAL_CHURCH       # Early unlock for Chapel (IG/Arbites)
     cost: 100
     points: 10
     dependencies:

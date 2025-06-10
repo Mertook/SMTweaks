@@ -18,6 +18,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       #- STR_HARDER_MISSIONS
       - STR_IMPERIUM_RESEARCH
     disables:
+      - STR_NOT_CHAMBER
       - STR_ARBITES
       - STR_MARINES_STRATEGY
       - STR_IMPERIAL_GUARD_OPERATIONS
@@ -96,7 +97,7 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_NOT_DEATHWATCH
     unlocks:
       - STR_MIDTIER_PREREQ
-      - STR_ASSC
+      - STR_CASS_R
       - STR_SIDEOPERATIONS
       - STR_HARDER_MISSIONS # For Radical Road, GK gets Harder Missions immediately
     getOneFree:

@@ -50,7 +50,7 @@ extended:
       ITEM_HEAT_SINK_COLOR: int # sprite color index for heatsink parts that glow, if not set defaults to 2 (red)
     RuleArmor:
       ## Craft Turrets
-      SMT_TURRET_UNIT: int          # marks unit as generic Turret type unit
+      STARTS_WITH_FULL_TUS: int     # make sure unit has full starting TUs regardless of other scripts
       SMT_RAZORBACK_TURRET: int     # marks unit as Razorback default turret that can be replaced
       SMT_RAZOR_SBOLTER_TURRET: int # marks unit as Razorback Stormbolter turret
       SMT_RAZOR_HBOLTER_TURRET: int # marks unit as Razorback Heavy Bolter turret
@@ -166,6 +166,10 @@ extended:
       SMT_STRIKE_STORM_COOLDOWN: int        # turns before Stormtalon can be called in again
       SMT_STRIKE_WHIRL_AMMO: int            # amount of Whirlwind ammo
       SMT_STRIKE_WHIRL_COOLDOWN: int        # turns before Whirlwind can be called in again
+      SMT_STRIKE_MARINEDROP_AMMO: int       # amount of Marine Reinforcements ammo
+      SMT_STRIKE_MARINEDROP_COOLDOWN: int   # turns before Marine Drop can be called in again
+      SMT_STRIKE_SCIONDROP_AMMO: int        # amount of Scion Reinforcements ammo
+      SMT_STRIKE_SCIONDROP_COOLDOWN: int    # turns before Scion Drop can be called in again
       ## Captain
       SMT_COMMAND_TYPE: int             # Last used command
       SMT_COMMAND_TURN: int             # Turn Command is active for

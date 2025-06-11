@@ -1,51 +1,61 @@
 weaponSets:
   - type: NPC_BOLTER_SET
-    weapons: [STR_RIFLEB_AI, STR_RIFLE_CLIP, STR_RIFLE_CLIP, STR_MGRENADE]
+    weapons: [STR_RIFLEB_AI, STR_RIFLE_CLIP, STR_RIFLE_CLIP, STR_RIFLE_CLIP, STR_MGRENADE]
   - type: NPC_BOLTER_ELITE_SET
-    weapons: [STR_RIFLEB_AI, STR_RIFLE_CLIP_MC, STR_RIFLE_CLIP_MC, STR_MGRENADE, STR_MGRENADE]
+    weapons: [STR_RIFLEB_AI, STR_RIFLE_CLIP_MC, STR_RIFLE_CLIP_MC, STR_RIFLE_CLIP_MC, STR_MGRENADE]
   - type: NPC_BOLTPISTOL_SET
-    weapons: [STR_CHAINSWORD, STR_PISTOLB_AI, STR_PISTOL_CLIP, STR_PISTOL_CLIP]
+    weapons: [STR_CHAINSWORD, STR_PISTOLB_AI, STR_PISTOL_CLIP, STR_PISTOL_CLIP, STR_PISTOL_CLIP]
   - type: NPC_BOLTPISTOL_ELITE_SET
-    weapons: [STR_POWERFIST, STR_PISTOLB_AI, STR_PISTOL_CLIP_MC, STR_PISTOL_CLIP_MC]
-  - type: NPC_MELTA_SET
+    weapons: [STR_POWERFIST, STR_PISTOLB_AI, STR_PISTOL_CLIP_MC, STR_PISTOL_CLIP_MC, STR_PISTOL_CLIP_MC]
+  - type: NPC_MELTAGUN_SET
     weapons: [STR_HEAVY_LASER, STR_MELTA_AMMO, STR_MELTA_AMMO, STR_MGRENADE]
   - type: NPC_GRAVGUN_SET
     weapons: [STR_SMALL_LAUNCHER_TERRAN, STR_STUN_BOMB, STR_STUN_BOMB, STR_STUN_BOMB, STR_MGRENADE]
   - type: NPC_PLASMAGUN_SET
     weapons: [STR_CFPLASMA_RIFLE, STR_PLASMA_RIFLE_CLIP, STR_PLASMA_RIFLE_CLIP, STR_MGRENADE]
   - type: NPC_TWINPLASMA_SET
-    weapons: [STR_PLASMA_GUN_TWINCORE_DEKKER, STR_PLASMA_TWINCORE_CLIP, STR_PLASMA_TWINCORE_CLIP, STR_MGRENADE]
+    weapons: [STR_PLASMA_GUN_TWINCORE_DEKKER, STR_PLASMA_TWINCORE_CLIP, STR_PLASMA_TWINCORE_CLIP, STR_PLASMA_TWINCORE_CLIP, STR_MGRENADE]
   - type: NPC_VENGOR_SET
     weapons: [STR_VENGOR_LAUNCHER, STR_CASTELLAN_HE, STR_HEAVY_ROCKET, STR_HEAVY_ROCKET, STR_HEAVY_ROCKET, STR_MGRENADE]
   - type: NPC_HEAVYBOLTER_SET
     weapons: [STR_AUTO_CANNON, STR_AC_AP_AMMO, STR_AC_AP_AMMO, STR_MGRENADE]
   - type: NPC_HEAVYBOLTER_ELITE_SET
     weapons: [STR_AUTO_CANNON, STR_AC_MC_AMMO, STR_AC_MC_AMMO, STR_MGRENADE]
+  - type: NPC_HEAVYFLAMER_SET
+    weapons: [STR_CHAINSWORD, STR_HFLAMER, STR_HFLAMER_CLIP, STR_HFLAMER_CLIP, STR_MGRENADE]
   - type: NPC_HEAVYPLASMA_SET
-    weapons: [STR_CFHEAVY_PLASMA, STR_HEAVY_PLASMA_CLIP, STR_HEAVY_PLASMA_CLIP, STR_MGRENADE]
+    weapons: [STR_HEAVY_PLASMA_TERRAN, STR_HEAVY_PLASMA_CLIP, STR_HEAVY_PLASMA_CLIP, STR_MGRENADE]
   - type: NPC_MULTIMELTA_SET
     weapons: [STR_BLASTER_LAUNCHER_TERRAN, STR_BLASTER_BOMB, STR_BLASTER_BOMB, STR_BLASTER_BOMB, STR_MGRENADE]
-
+  - type: NPC_PLASMACARBINE_SET
+    weapons: [STR_PLASMA_CARBINE_AI, STR_PLASMA_SPRAY_CLIP, STR_PLASMA_SPRAY_CLIP, STR_PLASMA_SPRAY_CLIP, STR_MGRENADE]
+  - type: NPC_HELLGUN_SET
+    weapons: [STR_HELLGUN, STR_MGRENADE]
 
 
 items:
   - &REF_UNIT_SPAWNER                       # NPC Spawner Grenade
-    type: STR_ALLIED_MARINE_SPAWNER
+    type: STR_NPCSPAWNER_MARINE_TAC
     spawnUnitFaction: 1 # Enemy
     invWidth: 0
     invHeight: 0
     battleType: 4
     recover: false
 
-  - type: STR_NPC_MARINE_TAC                # NPC Tactical Marine
+  - type: STR_NPCSPAWNER_MARINE_TAC         # NPC Tactical Marine
     refNode: *REF_UNIT_SPAWNER
     spawnUnitFaction: 2 # Civilian
     spawnUnit: STR_MARINETAC_SMT
 
-  - type: STR_NPC_MARINE_DEV                # NPC Devastator Marine
+  - type: STR_NPCSPAWNER_MARINE_DEV         # NPC Devastator Marine
     refNode: *REF_UNIT_SPAWNER
     spawnUnitFaction: 2 # Civilian
     spawnUnit: STR_MARINEDEV_SMT
+
+  - type: STR_NPCSPAWNER_SCION              # NPC Scion
+    refNode: *REF_UNIT_SPAWNER
+    spawnUnitFaction: 2 # Civilian
+    spawnUnit: STR_SCIONAI_SMT
 
   - &REF_NPC_WEAPON                         # NPC Weapon Reference
     type: STR_RIFLEB_AI
@@ -125,6 +135,43 @@ items:
     tags:
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
+  - type: STR_PLASMA_CARBINE_AI         # Plasma Carbine AI
+    refNode: *REF_NPC_WEAPON
+    bigSprite: 800
+    handSprite: {mod: 40k, index: 224}
+    floorSprite: {mod: 40k, index: 107}
+    bulletSprite: {mod: 40k, index: 11}
+    fireSound: {mod: 40k, index: 18}
+    invWidth: 1
+    invHeight: 3
+    weight: 12
+    compatibleAmmo:
+      - STR_PLASMA_SPRAY_CLIP
+    twoHanded: true
+    dropoff: 6
+    autoRange: 10
+    snapRange: 14
+    aimRange: 14
+    accuracyAuto: 55
+    accuracySnap: 60
+    accuracyAimed: 60
+    tuAuto: 33
+    tuSnap: 22
+    tuAimed: 22
+    confAuto:
+      shots: 4
+    confSnap:
+      name: STR_BURST_SNAP_SHOT
+      shots: 2
+    confAimed:
+      spendPerShot: 4
+      name: STR_MAXIMAL_SHOT
+    recoveryTransformations:
+      STR_PLASMA_CARBINE_TERRAN: [1]
+    tags:
+      REACTION_MULTIPLIER: 150 # carbine bonus
+      ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 50
+
 units: # Civ units
   - &REF_NPC_MARINE                         # NPC Marine Defaults
     type: STR_MARINETAC_SMT
@@ -133,12 +180,12 @@ units: # Civ units
       stamina: 120
       health: 160
       bravery: 110
-      reactions: 90
+      reactions: 100
       firing: 150
-      throwing: 90
+      throwing: 120
       strength: 150 # bonus to make sure they can carry gear
       psiStrength: 80
-      psiSkill: 100
+      psiSkill: 0
       melee: 150
     standHeight: 21
     kneelHeight: 14
@@ -158,21 +205,24 @@ units: # Civ units
         NPC_BOLTER_ELITE_SET: 10
         NPC_BOLTPISTOL_SET: 15
         NPC_BOLTPISTOL_ELITE_SET: 5
-        NPC_MELTA_SET: 10
+        NPC_MELTAGUN_SET: 10
         NPC_GRAVGUN_SET: 10
         NPC_PLASMAGUN_SET: 10
+        NPC_HEAVYFLAMER_SET: 5
       - 
         NPC_BOLTER_ELITE_SET: 50
         NPC_BOLTPISTOL_ELITE_SET: 20
-        NPC_MELTA_SET: 10
+        NPC_MELTAGUN_SET: 10
         NPC_GRAVGUN_SET: 10
         NPC_PLASMAGUN_SET: 10
+        NPC_HEAVYFLAMER_SET: 5
       - 
         NPC_BOLTER_ELITE_SET: 50
-        NPC_BOLTPISTOL_ELITE_SET: 10
-        NPC_MELTA_SET: 10
+        NPC_BOLTPISTOL_ELITE_SET: 15
+        NPC_MELTAGUN_SET: 10
         NPC_GRAVGUN_SET: 10
         NPC_TWINPLASMA_SET: 20
+        NPC_HEAVYFLAMER_SET: 5
 
   - type: STR_MARINEDEV_SMT                 # NPC Devastator Marine
     refNode: *REF_NPC_MARINE
@@ -191,9 +241,46 @@ units: # Civ units
         NPC_HEAVYPLASMA_SET: 30
         NPC_MULTIMELTA_SET: 20
       - 
+        NPC_VENGOR_SET: 20
         NPC_HEAVYBOLTER_ELITE_SET: 40
         NPC_HEAVYPLASMA_SET: 40
         NPC_MULTIMELTA_SET: 20
+
+
+  - type: STR_SCIONAI_SMT
+    race: STR_CIVILIAN
+    armor: STR_SCION_ARMOR_AI
+    stats:
+      tu: 75
+      stamina: 100
+      health: 75
+      bravery: 100
+      reactions: 80
+      firing: 100
+      throwing: 70
+      strength: 70
+      psiStrength: 60
+      psiSkill: 0
+      melee: 100
+    standHeight: 21
+    kneelHeight: 14
+    value: 30
+    intelligence: 8
+    aggression: 7
+    energyRecovery: 40
+    standHeight: 21
+    kneelHeight: 14
+    value: 50
+    intelligence: 8
+    aggression: 7
+    energyRecovery: 40
+    weightedBuiltInWeaponSets:
+      - 
+        NPC_HELLGUN_SET: 70
+        NPC_PLASMACARBINE_SET: 10
+        NPC_MELTAGUN_SET: 10
+        NPC_GRAVGUN_SET: 10
+
 
 terrains:
   - name: ALLIED_MARINE_DEPLOYMENT          # IG Marine Reinforcement block
@@ -209,19 +296,19 @@ terrains:
           STR_DROPPOD_DEPLOY_CHARGE:
             - [4, 4, 0]
             - [14, 3, 0]
-          STR_NPC_MARINE_TAC:
+          STR_NPCSPAWNER_MARINE_TAC:
             - [1, 1, 0]
             - [2, 7, 0]
             - [9, 6, 0]
             - [12, 2, 0]
             - [12, 7, 0]
             - [17, 1, 0]
-          STR_NPC_MARINE_DEV:
+          STR_NPCSPAWNER_MARINE_DEV:
             - [7, 2, 0]
             - [16, 8, 0]
         fuseTimers:
           STR_DROPPOD_DEPLOY_CHARGE: [1, 1]
-          STR_NPC_MARINE_TAC: [1, 1]
-          STR_NPC_MARINE_DEV: [1, 1]
+          STR_NPCSPAWNER_MARINE_TAC: [1, 1]
+          STR_NPCSPAWNER_MARINE_DEV: [1, 1]
 
 

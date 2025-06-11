@@ -3728,8 +3728,6 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
-    tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
 
   - &REF_NPC_MARINE_ARMOR            # NPC Marine Tactical
     type: STR_PERSONAL_ARMOR_CIVILIAN
@@ -3773,6 +3771,7 @@ armors:
     builtInWeapons: []
     specialWeapon: STR_MARINE_NPC_FIST
     tags:
+      STARTS_WITH_FULL_TUS: 1
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
@@ -3785,7 +3784,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
 
   - type: STR_DEV_ARMOR_ULTRA       # NPC Marine Devastator
-    refNode: *STR_MARINE_OFFICER_ARMOR
+    refNode: *REF_NPC_MARINE_ARMOR
     frontArmor: 125 # base 120
     sideArmor: 105 # base 110
     rearArmor: 100 # base 100
@@ -4001,5 +4000,47 @@ armors:
       - 3.0 #IMPACT
       - 1.2 #MELTA
     specialWeapon: STR_TURRET_RELOAD
+
+  - type: STR_SCION_ARMOR_AI                    # NPC Scion Armor
+    visibilityAtDay: 40
+    visibilityAtDark: 30
+    antiCamouflageAtDay: 8
+    antiCamouflageAtDark: 8
+    heatVision: 30
+    spriteSheet: SCION_CARAPACE.PCK
+    spriteInv: SCIONHEAVY_33M0.SPK
+    corpseBattle:
+      - STR_STORMTROOPER_CORPSE
+    movementType: 0
+    drawingRoutine: 0
+    specialWeapon: STR_GUARD_MEDI_KIT
+    frontArmor: 110 # heavy carapace
+    sideArmor: 90
+    rearArmor: 60
+    underArmor: 90
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatOne: 100 # infinite Hellgun
+    damageModifier: # SCION ARMOR
+      - 1.0  # none
+      - 0.9  # AP
+      - 0.8  # FLAMES
+      - 0.8  # HE
+      - 0.8  # LASCANON
+      - 0.7  # PLASMA
+      - 0.9  # STUN
+      - 0.9  # MELEE
+      - 0.9  # ACID
+      - 0.0  # SMOKE
+      - 0.2  # IMPACT
+      - 0.9  # MELTA
+    loftempsSet: [3]
+    tags:
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      ARMOR_BUILTIN_WEAPON_VARIANT: 1
+      STARTS_WITH_FULL_TUS: 1
 
 

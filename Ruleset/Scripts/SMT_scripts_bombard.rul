@@ -44,6 +44,16 @@ extended:
             add temp 1; # +1 to count
             battle_game.setTag Tag.SMT_STRIKE_WHIRL_AMMO temp;
             #debug_log "StrikeAmmo (Whirlwind) " temp;
+          else eq itemVal 6; # Marine Reinforcements
+            battle_game.getTag temp Tag.SMT_STRIKE_MARINEDROP_AMMO;
+            add temp 1; # +1 to count
+            battle_game.setTag Tag.SMT_STRIKE_MARINEDROP_AMMO temp;
+            #debug_log "StrikeAmmo (Whirlwind) " temp;
+          else eq itemVal 7; # Scion Reinforcements
+            battle_game.getTag temp Tag.SMT_STRIKE_SCIONDROP_AMMO;
+            add temp 1; # +1 to count
+            battle_game.setTag Tag.SMT_STRIKE_SCIONDROP_AMMO temp;
+            #debug_log "StrikeAmmo (Whirlwind) " temp;
           end;
 
           battle_game.setTag Tag.SMT_STRIKE_ORBITAL_COOLDOWN 0; # reset any cooldowns in case of multi-stage missions
@@ -51,6 +61,9 @@ extended:
           battle_game.setTag Tag.SMT_STRIKE_STORM_COOLDOWN 0;
           battle_game.setTag Tag.SMT_STRIKE_LANCE_COOLDOWN 0;
           battle_game.setTag Tag.SMT_STRIKE_WHIRL_COOLDOWN 0;
+          battle_game.setTag Tag.SMT_STRIKE_MARINEDROP_COOLDOWN 0;
+          battle_game.setTag Tag.SMT_STRIKE_SCIONDROP_COOLDOWN 0;
+
           #debug_log "StrikeAmmo Cooldowns reset";
           return;
 
@@ -61,6 +74,7 @@ extended:
           var int strikeType;
           var int tuCost;
           var int ammoCheck;
+          var int ammoTotal;
           var int turn;
           var int temp;
 
@@ -89,10 +103,10 @@ extended:
           item.getTag ammoCheck Tag.BOMBARD_AMMO_REQUIRED;
           battle_game.getTurn turn;
           if eq strikeType 1; # Orbital Barrage
-            battle_game.getTag temp Tag.SMT_STRIKE_ORBITAL_AMMO; # check we have this strike available
-            if and gt ammoCheck 0 le temp 0;
+            battle_game.getTag ammoTotal Tag.SMT_STRIKE_ORBITAL_AMMO; # check we have this strike available
+            if and gt ammoCheck 0 le ammoTotal 0;
               battle_game.flashMessage "STR_STRIKE_NOAMMO"; # "Firesupport is unavailable"
-              #debug_log "StrikeCallin (Orbital) NoStrikes " temp;
+              #debug_log "StrikeCallin (Orbital) NoStrikes " ammoTotal;
               return;
             end;
             battle_game.getTag temp Tag.SMT_STRIKE_ORBITAL_COOLDOWN; # check this strike is not on cooldown
@@ -106,10 +120,10 @@ extended:
             add temp turn;
             battle_game.setTag Tag.SMT_STRIKE_ORBITAL_COOLDOWN temp;
           else or eq strikeType 2 eq strikeType 3 eq strikeType 4; # CAS Bolter/Rocket/Napalm
-            battle_game.getTag temp Tag.SMT_STRIKE_LIGHTNING_AMMO; # check we have this strike available
-            if and gt ammoCheck 0 le temp 0;
+            battle_game.getTag ammoTotal Tag.SMT_STRIKE_LIGHTNING_AMMO; # check we have this strike available
+            if and gt ammoCheck 0 le ammoTotal 0;
               battle_game.flashMessage "STR_STRIKE_NOAMMO"; # "Firesupport is unavailable"
-              #debug_log "StrikeCallin (CAS-B) NoStrikes " temp;
+              #debug_log "StrikeCallin (CAS-B) NoStrikes " ammoTotal;
               return;
             end;
             battle_game.getTag temp Tag.SMT_STRIKE_LIGHTNING_COOLDOWN; # check this strike is not on cooldown
@@ -123,10 +137,10 @@ extended:
             add temp turn;
             battle_game.setTag Tag.SMT_STRIKE_LIGHTNING_COOLDOWN temp;
           else eq strikeType 5; # Stormtalon
-            battle_game.getTag temp Tag.SMT_STRIKE_STORM_AMMO; # check we have this strike available
-            if and gt ammoCheck 0 le temp 0;
+            battle_game.getTag ammoTotal Tag.SMT_STRIKE_STORM_AMMO; # check we have this strike available
+            if and gt ammoCheck 0 le ammoTotal 0;
               battle_game.flashMessage "STR_STRIKE_NOAMMO"; # "Firesupport is unavailable"
-              #debug_log "StrikeCallin (Stormtalon) NoStrikes " temp;
+              #debug_log "StrikeCallin (Stormtalon) NoStrikes " ammoTotal;
               return;
             end;
             battle_game.getTag temp Tag.SMT_STRIKE_STORM_COOLDOWN; # check this strike is not on cooldown
@@ -140,10 +154,10 @@ extended:
             add temp turn;
             battle_game.setTag Tag.SMT_STRIKE_STORM_COOLDOWN temp;
           else eq strikeType 6; # Orbital Lance
-            battle_game.getTag temp Tag.SMT_STRIKE_LANCE_AMMO; # check we have this strike available
-            if and gt ammoCheck 0 le temp 0;
+            battle_game.getTag ammoTotal Tag.SMT_STRIKE_LANCE_AMMO; # check we have this strike available
+            if and gt ammoCheck 0 le ammoTotal 0;
               battle_game.flashMessage "STR_STRIKE_NOAMMO"; # "Firesupport is unavailable"
-              #debug_log "StrikeCallin (Lance) NoStrikes " temp;
+              #debug_log "StrikeCallin (Lance) NoStrikes " ammoTotal;
               return;
             end;
             battle_game.getTag temp Tag.SMT_STRIKE_LANCE_COOLDOWN; # check this strike is not on cooldown
@@ -157,10 +171,10 @@ extended:
             add temp turn;
             battle_game.setTag Tag.SMT_STRIKE_LANCE_COOLDOWN temp;
           else eq strikeType 7; # Whirlwind
-            battle_game.getTag temp Tag.SMT_STRIKE_WHIRL_AMMO; # check we have this strike available
-            if and gt ammoCheck 0 le temp 0;
+            battle_game.getTag ammoTotal Tag.SMT_STRIKE_WHIRL_AMMO; # check we have this strike available
+            if and gt ammoCheck 0 le ammoTotal 0;
               battle_game.flashMessage "STR_STRIKE_NOAMMO"; # "Firesupport is unavailable"
-              #debug_log "StrikeCallin (Lance) NoStrikes " temp;
+              #debug_log "StrikeCallin (Lance) NoStrikes " ammoTotal;
               return;
             end;
             battle_game.getTag temp Tag.SMT_STRIKE_WHIRL_COOLDOWN; # check this strike is not on cooldown
@@ -173,14 +187,52 @@ extended:
             item.getTag temp Tag.BOMBARD_COOLDOWN; # set cooldown for this strike type
             add temp turn;
             battle_game.setTag Tag.SMT_STRIKE_WHIRL_COOLDOWN temp;
+          else eq strikeType 8; # Marine Drop
+            battle_game.getTag ammoTotal Tag.SMT_STRIKE_MARINEDROP_AMMO; # check we have this strike available
+            if and gt ammoCheck 0 le ammoTotal 0;
+              battle_game.flashMessage "STR_STRIKE_NOAMMO"; # "Firesupport is unavailable"
+              #debug_log "StrikeCallin (Lance) NoStrikes " ammoTotal;
+              return;
+            end;
+            battle_game.getTag temp Tag.SMT_STRIKE_MARINEDROP_COOLDOWN; # check this strike is not on cooldown
+            if gt temp turn;
+              sub temp turn; # get # of turns until cooldown expires
+              battle_game.flashMessage "STR_STRIKE_COOLDOWN" temp; # 'This strike is on cooldown. Turns remaining: {0}'
+              #debug_log "StrikeCallin (Lance) Cooldown " temp;
+              return;
+            end;
+            item.getTag temp Tag.BOMBARD_COOLDOWN; # set cooldown for this strike type
+            add temp turn;
+            battle_game.setTag Tag.SMT_STRIKE_MARINEDROP_COOLDOWN temp;
+          else eq strikeType 9; # Scion Drop
+            battle_game.getTag ammoTotal Tag.SMT_STRIKE_SCIONDROP_AMMO; # check we have this strike available
+            if and gt ammoCheck 0 le ammoTotal 0;
+              battle_game.flashMessage "STR_STRIKE_NOAMMO"; # "Firesupport is unavailable"
+              #debug_log "StrikeCallin (Lance) NoStrikes " ammoTotal;
+              return;
+            end;
+            battle_game.getTag temp Tag.SMT_STRIKE_SCIONDROP_COOLDOWN; # check this strike is not on cooldown
+            if gt temp turn;
+              sub temp turn; # get # of turns until cooldown expires
+              battle_game.flashMessage "STR_STRIKE_COOLDOWN" temp; # 'This strike is on cooldown. Turns remaining: {0}'
+              #debug_log "StrikeCallin (Lance) Cooldown " temp;
+              return;
+            end;
+            item.getTag temp Tag.BOMBARD_COOLDOWN; # set cooldown for this strike type
+            add temp turn;
+            battle_game.setTag Tag.SMT_STRIKE_SCIONDROP_COOLDOWN temp;
           end;
 
-          if gt ammoCheck 0; # strike consumes ammo
-            battle_game.setTag Tag.SMT_STRIKE_AMMO_USED ammoCheck;
-          end;
           battle_game.setTag Tag.SMT_STRIKE_ACTIVE strikeType; # request strike callin
           battle_game.setTag Tag.SMT_STRIKE_ACTIVE_SPAWN strikeType; # request strike callin
-          battle_game.flashMessage "STR_STRIKE_ACTIVE"; # 'Strike request confirmed'
+          if gt ammoCheck 0; # check if ammo used
+            sub ammoTotal 1;
+            limit_lower ammoTotal 0;
+            battle_game.flashMessage "STR_STRIKE_ACTIVE_AMMO" ammoTotal; # 'Fire support request confirmed Calldowns remaining: X'
+            battle_game.setTag Tag.SMT_STRIKE_AMMO_USED ammoCheck; # set ammo to be consumed
+          else;
+            battle_game.flashMessage "STR_STRIKE_ACTIVE" ammoTotal; # 'Fire support request confirmed'
+          end;
           actor.getTimeUnits temp;
           sub temp tuCost;
           actor.setTimeUnits temp; # reapply TU cost
@@ -212,6 +264,7 @@ extended:
           var int tuCost;
           var int tuCostTarget;
           var int ammoCheck;
+          var int ammoTotal;
           var int turn;
           var int temp;
 
@@ -263,10 +316,10 @@ extended:
           damaging_item.getTag ammoCheck Tag.BOMBARD_AMMO_REQUIRED;
           battle_game.getTurn turn;
           if eq strikeType 1; # Orbital Barrage
-            battle_game.getTag temp Tag.SMT_STRIKE_ORBITAL_AMMO; # check we have this strike available
-            if and gt ammoCheck 0 le temp 0;
+            battle_game.getTag ammoTotal Tag.SMT_STRIKE_ORBITAL_AMMO; # check we have this strike available
+            if and gt ammoCheck 0 le ammoTotal 0;
               battle_game.flashMessage "STR_STRIKE_NOAMMO"; # "Firesupport is unavailable"
-              #debug_log "StrikeCallin (Orbital) NoStrikes " temp;
+              #debug_log "StrikeCallin (Orbital) NoStrikes " ammoTotal;
               return;
             end;
             battle_game.getTag temp Tag.SMT_STRIKE_ORBITAL_COOLDOWN; # check this strike is not on cooldown
@@ -280,10 +333,10 @@ extended:
             add temp turn;
             battle_game.setTag Tag.SMT_STRIKE_ORBITAL_COOLDOWN temp;
           else or eq strikeType 2 eq strikeType 3 eq strikeType 4; # CAS Bolter/Rocket/Napalm
-            battle_game.getTag temp Tag.SMT_STRIKE_LIGHTNING_AMMO; # check we have this strike available
-            if and gt ammoCheck 0 le temp 0;
+            battle_game.getTag ammoTotal Tag.SMT_STRIKE_LIGHTNING_AMMO; # check we have this strike available
+            if and gt ammoCheck 0 le ammoTotal 0;
               battle_game.flashMessage "STR_STRIKE_NOAMMO"; # "Firesupport is unavailable"
-              #debug_log "StrikeCallin (CAS-B) NoStrikes " temp;
+              #debug_log "StrikeCallin (CAS-B) NoStrikes " ammoTotal;
               return;
             end;
             battle_game.getTag temp Tag.SMT_STRIKE_LIGHTNING_COOLDOWN; # check this strike is not on cooldown
@@ -297,10 +350,10 @@ extended:
             add temp turn;
             battle_game.setTag Tag.SMT_STRIKE_LIGHTNING_COOLDOWN temp;
           else eq strikeType 5; # Stormtalon
-            battle_game.getTag temp Tag.SMT_STRIKE_STORM_AMMO; # check we have this strike available
-            if and gt ammoCheck 0 le temp 0;
+            battle_game.getTag ammoTotal Tag.SMT_STRIKE_STORM_AMMO; # check we have this strike available
+            if and gt ammoCheck 0 le ammoTotal 0;
               battle_game.flashMessage "STR_STRIKE_NOAMMO"; # "Firesupport is unavailable"
-              #debug_log "StrikeCallin (Stormtalon) NoStrikes " temp;
+              #debug_log "StrikeCallin (Stormtalon) NoStrikes " ammoTotal;
               return;
             end;
             battle_game.getTag temp Tag.SMT_STRIKE_STORM_COOLDOWN; # check this strike is not on cooldown
@@ -314,10 +367,10 @@ extended:
             add temp turn;
             battle_game.setTag Tag.SMT_STRIKE_STORM_COOLDOWN temp;
           else eq strikeType 6; # Orbital Lance
-            battle_game.getTag temp Tag.SMT_STRIKE_LANCE_AMMO; # check we have this strike available
-            if and gt ammoCheck 0 le temp 0;
+            battle_game.getTag ammoTotal Tag.SMT_STRIKE_LANCE_AMMO; # check we have this strike available
+            if and gt ammoCheck 0 le ammoTotal 0;
               battle_game.flashMessage "STR_STRIKE_NOAMMO"; # "Firesupport is unavailable"
-              #debug_log "StrikeCallin (Lance) NoStrikes " temp;
+              #debug_log "StrikeCallin (Lance) NoStrikes " ammoTotal;
               return;
             end;
             battle_game.getTag temp Tag.SMT_STRIKE_LANCE_COOLDOWN; # check this strike is not on cooldown
@@ -334,7 +387,14 @@ extended:
 
           battle_game.setTag Tag.SMT_STRIKE_ACTIVE strikeType; # request strike callin
           battle_game.setTag Tag.SMT_STRIKE_ACTIVE_SPAWN strikeType; # request strike callin
-          battle_game.flashMessage "STR_STRIKE_ACTIVE"; # 'Fire support request confirmed'
+          if gt ammoCheck 0;
+            sub ammoTotal 1;
+            limit_lower ammoTotal 0;
+            battle_game.flashMessage "STR_STRIKE_ACTIVE_AMMO" ammoTotal; # 'Fire support request confirmed Calldowns remaining: X'
+            battle_game.setTag Tag.SMT_STRIKE_AMMO_USED ammoCheck;
+          else;
+            battle_game.flashMessage "STR_STRIKE_ACTIVE"; # 'Fire support request confirmed'
+          end;
           attacker.getTimeUnits temp;
           sub temp tuCost;
           attacker.setTimeUnits temp; # reapply TU cost
@@ -380,23 +440,60 @@ extended:
       - new: SMTS_strike_use_ammo # Handles consuming ammo charges when strike is called
         offset: 94
         code: |
+          var int ammoType;
           var int temp;
-          var int temp2;
 
           if neq side FACTION_HOSTILE; # only trigger on enemy turns
             return;
           end;
-          battle_game.getTag temp Tag.SMT_STRIKE_AMMO_USED;
-          if eq temp 0; # check if ammo has been used
+          battle_game.getTag ammoType Tag.SMT_STRIKE_AMMO_USED;
+          if eq ammoType 0; # check if ammo has been used
             return;
           end;
 
-          item.getTag temp2 Tag.BOMBARD_AMMO_ITEM; # check if item matches ammo type used
-          if eq temp temp2;
-            #debug_log "StrikeAmmo Type: " temp temp2;
+          item.getTag temp Tag.BOMBARD_AMMO_ITEM; # check if item matches ammo type used
+          if eq ammoType temp;
+            #debug_log "StrikeAmmo Type: " ammoType temp;
             item.setFuseEnabled 1;
             item.setFuseTimer 0;
             battle_game.setTag Tag.SMT_STRIKE_AMMO_USED 0;
+            if eq ammoType 1; # Orbital Strike
+              battle_game.getTag temp Tag.SMT_STRIKE_ORBITAL_AMMO;
+              sub temp 1;
+              battle_game.setTag Tag.SMT_STRIKE_ORBITAL_AMMO temp;
+            else eq ammoType 2; # CAS Bolter
+              battle_game.getTag temp Tag.SMT_STRIKE_LIGHTNING_AMMO;
+              sub temp 1;
+              battle_game.setTag Tag.SMT_STRIKE_LIGHTNING_AMMO temp;
+            else eq ammoType 3; # CAS Rockets
+              battle_game.getTag temp Tag.SMT_STRIKE_LIGHTNING_AMMO;
+              sub temp 1;
+              battle_game.setTag Tag.SMT_STRIKE_LIGHTNING_AMMO temp;
+            else eq ammoType 4; # CAS Napalm
+              battle_game.getTag temp Tag.SMT_STRIKE_LIGHTNING_AMMO;
+              sub temp 1;
+              battle_game.setTag Tag.SMT_STRIKE_LIGHTNING_AMMO temp;
+            else eq ammoType 5; # Stormtalon
+              battle_game.getTag temp Tag.SMT_STRIKE_STORM_AMMO;
+              sub temp 1;
+              battle_game.setTag Tag.SMT_STRIKE_STORM_AMMO temp;
+            else eq ammoType 6; # Orbital Lance
+              battle_game.getTag temp Tag.SMT_STRIKE_LANCE_AMMO;
+              sub temp 1;
+              battle_game.setTag Tag.SMT_STRIKE_LANCE_AMMO temp;
+            else eq ammoType 7; # Whirlwind
+              battle_game.getTag temp Tag.SMT_STRIKE_WHIRL_AMMO;
+              sub temp 1;
+              battle_game.setTag Tag.SMT_STRIKE_WHIRL_AMMO temp;
+            else eq ammoType 8; # Marines
+              battle_game.getTag temp Tag.SMT_STRIKE_WHIRL_AMMO;
+              sub temp 1;
+              battle_game.setTag Tag.SMT_STRIKE_WHIRL_AMMO temp;
+            else eq ammoType 9; # Scions
+              battle_game.getTag temp Tag.SMT_STRIKE_WHIRL_AMMO;
+              sub temp 1;
+              battle_game.setTag Tag.SMT_STRIKE_WHIRL_AMMO temp;
+            end;
           end;
           return;
 
@@ -417,51 +514,35 @@ extended:
           #debug_log "StrikeTransform Ping: " strikeType;
           if eq strikeType 1; # Orbital Strike
             rules.getRuleUnit strikeUnit "STR_ORBITAL_STRIKE_TARGETER";
-            battle_game.getTag temp Tag.SMT_STRIKE_ORBITAL_AMMO; # ammo count - Orbital Strike
-            sub temp 1;
-            battle_game.setTag Tag.SMT_STRIKE_ORBITAL_AMMO temp;
           else eq strikeType 2; # CAS Bolter
             rules.getRuleUnit strikeUnit "STR_CAS_BOLTER_TARGETER";
-            battle_game.getTag temp Tag.SMT_STRIKE_LIGHTNING_AMMO; # ammo count - CAS
-            sub temp 1;
-            battle_game.setTag Tag.SMT_STRIKE_LIGHTNING_AMMO temp;
           else eq strikeType 3; # CAS Rockets
             rules.getRuleUnit strikeUnit "STR_CAS_ROCKET_TARGETER";
-            battle_game.getTag temp Tag.SMT_STRIKE_LIGHTNING_AMMO; # ammo count - CAS
-            sub temp 1;
-            battle_game.setTag Tag.SMT_STRIKE_LIGHTNING_AMMO temp;
           else eq strikeType 4; # CAS Napalm
             rules.getRuleUnit strikeUnit "STR_CAS_NAPALM_TARGETER";
-            battle_game.getTag temp Tag.SMT_STRIKE_LIGHTNING_AMMO; # ammo count - CAS
-            sub temp 1;
-            battle_game.setTag Tag.SMT_STRIKE_LIGHTNING_AMMO temp;
           else eq strikeType 5; # Stormtalon
             rules.getRuleUnit strikeUnit "STR_STORMTALON_TARGETER";
-            battle_game.getTag temp Tag.SMT_STRIKE_STORM_AMMO; # ammo count - Stormtalon
-            sub temp 1;
-            battle_game.setTag Tag.SMT_STRIKE_STORM_AMMO temp;
           else eq strikeType 6; # Orbital Lance
             rules.getRuleUnit strikeUnit "STR_ORBITAL_LANCE_TARGETER";
-            battle_game.getTag temp Tag.SMT_STRIKE_LANCE_AMMO; # ammo count - Orbital Lance
-            sub temp 1;
-            battle_game.setTag Tag.SMT_STRIKE_LANCE_AMMO temp;
           else eq strikeType 7; # Whirlwind
             rules.getRuleUnit strikeUnit "STR_WHIRLWIND_TARGETER";
-            battle_game.getTag temp Tag.SMT_STRIKE_WHIRL_AMMO; # ammo count - Whirlwind
-            sub temp 1;
-            battle_game.setTag Tag.SMT_STRIKE_WHIRL_AMMO temp;
+          else eq strikeType 8; # Marines
+            rules.getRuleUnit strikeUnit "STR_MARINE_CALLIN_TARGETER";
+          else eq strikeType 9; # Scions
+            rules.getRuleUnit strikeUnit "STR_SCION_CALLIN_TARGETER";
           else; #emergency fallback
             rules.getRuleUnit strikeUnit "STR_CAS_BOLTER_TARGETER";
-            set temp 0;
             #debug_log "StrikeSpawner ERROR Type: " strikeType;
           end;
+
+
 
           #debug_log "StrikeTransform Transform: " strikeType strikeUnit;
           unit.setSpawnUnit strikeUnit;
           unit.setSpawnUnitFaction FACTION_PLAYER;
           unit.setSpawnUnitInstantRespawn 1;
           battle_game.setTag Tag.SMT_STRIKE_ACTIVE 0;
-          battle_game.flashLongMessage "STR_STRIKE_ARRIVED" temp; # 'Targeting Designator available'
+          battle_game.flashLongMessage "STR_STRIKE_ARRIVED"; # 'Targeting Designator available'
           return;
 
       - new: SMTS_strike_targeter_init # Handles the spawning of new strike targeter units

@@ -21,6 +21,8 @@ extraStrings:
       STR_CAS_NAPALM_TARGETER: CAS-N Target Designator
       STR_STORMTALON_TARGETER: Stormtalon CAS Designator
       STR_WHIRLWIND_TARGETER: Whirlwind Bombard Designator
+      STR_MARINE_CALLIN_TARGETER: Reinforcement Designator
+      STR_SCION_CALLIN_TARGETER: Reinforcement Designator
       ### MISC
       STR_TERMINATOR_CROSS_DESCRIPTION: Space Marines awarded with the Crux Terminatus are recognized as elites, allowing promotion to the highest ranks and access to rare relics including Terminator Armor. {NEWLINE}{NEWLINE} For this honor the Space Marine needs to have achieved 30 enemy kills, 15 successful missions and serve for three months.
       STR_HONOR_MEDAL: "Mark of Honor"
@@ -58,8 +60,9 @@ extraStrings:
       STR_STRIKE_CASNAPALM: Napalm Strike
       STR_CALL_STORMTALON: Stormtalon Support
       STR_STRIKE_WHIRL: Whirlwind Barrage
-      STR_REINFORCE_MARINES: Droppod Strike
+      STR_CALL_REINFORCEMENTS: Call Reinforcements
       STR_STRIKE_REINFORCE: Deep Strike
+      STR_STRIKE_REINFORCE_SCION: Gravdrop
       STR_CAT_FIRESUPPORT: Fire Support
       STR_CAT_ASSASSIN: Assassin
       STR_CAT_ARMOR: Armor
@@ -223,6 +226,8 @@ extraStrings:
       STR_STRM_ROCKET_DUMMY: Typhoon Missile
       STR_WHIRL_STRIKE_DUMMY: Whirlwind Vox-Caster
       STR_WHIRL_ROCKET_DUMMY: Vengeance Missiles
+      STR_MARINEDROP_DUMMY: Marine Fireteam Vox-Caster
+      STR_SCIONDROP_DUMMY: Scion Fireteam Vox-Caster
       STR_SMT_GENESEED: Geneseed
       STR_SMT_GENESEED_IMPURE: Immature Geneseed
       STR_SMITE_TOME: Tome of Fulmination
@@ -303,6 +308,10 @@ extraStrings:
       STR_STRM_STRIKE_ROCKET: Typhoon Missile
       STR_WHIRLWIND_CALLIN: Whirlwind Barrage Vox
       STR_LANCE_CALLIN: Orbital Lance Vox
+      STR_MARINEDROP_CALLIN: Marine Fireteam Vox
+      STR_MARINE_DROP_WEAPON: Marine Deep Strike
+      STR_SCIONDROP_CALLIN: Scion Fireteam Vox
+      STR_SCION_DROP_WEAPON: Scion Deep Strike
       STR_ORBITAL_LANCE_WEAPON: Orbital Lance Designator
       STR_ORBITAL_LANCE_BLAST: Orbital Lance Target
       STR_ORBITAL_STRIKE_AMMO: Orbital Barrage Requisition
@@ -310,8 +319,12 @@ extraStrings:
       STR_STORMTALON_AMMO: Stormtalon CAS Requisition
       STR_WHIRLWIND_AMMO: Whirlwind Barrage Requisition
       STR_AIRSTRIKE_AMMO: Lightning CAS Requisition
+      STR_MARINEDROP_AMMO: Marine Fireteam Requisition
+      STR_SCIONDROP_AMMO: Scion Fireteam Requisition
       STR_BOMBARD_BATTLECANNON: Battlecannon
       STR_BOMBARD_ROCKET: Bombard Rocket
+      STR_PISTOLB_AI: Boltpistol Ultra Pattern
+      STR_RIFLEB_AI: Bolter Ultra Pattern
       ### CRAFT
       STR_AVENGER: "THUNDERHAWK T."
       AUX_BOLTER: Mounted Heavy Bolter
@@ -336,9 +349,11 @@ extraStrings:
       LTT_DW_ARMOR: "Twin Linked Bolter"
       RTT_GK_ARMOR: "Twin Linked Bolter"
       LTT_GK_ARMOR: "Twin Linked Bolter"
+      STR_SCION_ARMOR_AI: "Scion Heavy Carapace"
       ### SOLDIERS
       STR_MARINETAC_SMT: Ultramarine
       STR_MARINEDEV_SMT: Ultramarine
+      STR_SCIONAI_SMT: Tempestus Aquilon
       STR_SOLDIER_NEOPHYTE: Neophyte
       STR_SOLDIER_TERMINATOR: Veteran Marine
       STR_SOLDIER_CHAPLAIN: Chaplain
@@ -527,8 +542,9 @@ extraStrings:
       STR_STRIKE_EMPTY: "Fire support is unavailable!"
       STR_STRIKE_NOAMMO: "You don't have permission for this strike!"
       STR_STRIKE_COOLDOWN: "This Strike is on cooldown. Turns remaining: {0}"
-      STR_STRIKE_ACTIVE: "Fire support request confirmed"
-      STR_STRIKE_ARRIVED: "Strike Targeting Designator active. Calldowns remaining: {0}"
+      STR_STRIKE_ACTIVE: "Fire support request confirmed!"
+      STR_STRIKE_ACTIVE_AMMO: "Fire support request confirmed!{NEWLINE} Remaining Calldowns: {0}"
+      STR_STRIKE_ARRIVED: "Strike Targeting Designator Active!"
       STR_STRIKE_LOWTUS: "Target Unit doesn't have enough TUs! Required: {0}"
       STR_STRIKE_FRIENDLY: "You must target a friendly unit!"
       STR_SCRIPT_INFILTRATION_RECHARGING: "Your Unit's Stealth Will Recharge In {0} Turns!"
@@ -995,6 +1011,8 @@ extraStrings:
       STR_STRM_STRIKE_DUMMY_CODEX: "{NEWLINE} This Vox-Caster can be used to request Close Air Support from a Stormtalon Gunship armed with Twinlinked Assault Cannons and Typhoon Missiles.{NEWLINE} Stormtalon CAS requisitions must be present on the craft to call in a strike."
       STR_WHIRL_STRIKE_DUMMY_CODEX: "{NEWLINE} This Vox-Caster can be used to request Fire Support from a Whirlwind Artillery Tank armed with Vengeance Missiles.{NEWLINE} Whirlwind Barrage requisitions must be present on the craft to call in a strike."
       STR_WHIRL_ROCKET_DUMMY: Vengeance Missiles
+      STR_MARINEDROP_DUMMY_CODEX: "{NEWLINE} This Vox-Caster can be used to request reinforcements in the form of a Marine Tactical Squad.{NEWLINE} Reinforcements cannot be called in before turn 12."
+      STR_SCIONDROP_DUMMY_CODEX: "{NEWLINE} This Vox-Caster can be used to request reinforcements in the form of Tempestus Aquilons, elite Scion Droptroopers.{NEWLINE} A Scion Reinforcement Requisition must be present on the craft to call in a strike."
       STR_BOLT_SNIPER_RIFLE_UFOPEDIA: "{NEWLINE} A long range Bolt-Sniper used by experienced Marine sharpshooters to eliminate distant targets. It can be loaded with a variety of specialist rounds to deal with any foe.{NEWLINE}{NEWLINE} RECOIL: {ALT}75{ALT} - {ALT}Heavy{ALT}{NEWLINE} Silent Killer ({ALT}Sniper{ALT})"
       STR_BOLT_SNIPER_RIFLE_DW_UFOPEDIA: "{NEWLINE} The Deathwatch Bolt-Sniper is used to eliminate key Xenos leaders from a distance. It can be loaded with a wide variety of specialist ammo, including some rounds only available to the Deathwatch.{NEWLINE}{NEWLINE} RECOIL: {ALT}75{ALT} - {ALT}Heavy{ALT}{NEWLINE} Silent Killer ({ALT}Sniper{ALT}){NEWLINE} Restricted ({ALT}Deathwatch{ALT})"
       STR_GRENADE_LAUNCHER_ASTARTES_UFOPEDIA: "{NEWLINE} The Astartes Grenade Launcher serves the role of a launcher weapon that can be used and carried by Scouts. They are fired in arcing shots designed to clear obstructions and strike farther into an enemy formation as well as simply being fired directly at foes."

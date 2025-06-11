@@ -1012,7 +1012,7 @@ items:
       ToTile: 0.0
       ToItem: 1.0
     tags:
-      BOMBARD_AMMO_ITEM: 0 # 1: Orbital Strike 2: CAS Run 3: Stormhawk 4: Orbital Lance 5: Whirlwind
+      BOMBARD_AMMO_ITEM: 0 # 1: Orbital Strike 2: CAS Run 3: Stormhawk 4: Orbital Lance 5: Whirlwind 6: Marines 7: Scions
 
   - type: STR_ORBITAL_STRIKE_AMMO           # Orbital Strike ammo
     refNode: *STR_BOMBARD_AMMO
@@ -1045,11 +1045,23 @@ items:
     tags:
       BOMBARD_AMMO_ITEM: 4 # 4 - Orbital Laser
 
-  - type: STR_WHIRLWIND_AMMO               # Whirlwind Bombard ammo
+  - type: STR_WHIRLWIND_AMMO                # Whirlwind Bombard ammo
     refNode: *STR_BOMBARD_AMMO
     listOrder: 15118
     tags:
       BOMBARD_AMMO_ITEM: 5 # 5 - Whirlwind
+
+  - type: STR_MARINEDROP_AMMO               # Marine Drop ammo
+    refNode: *STR_BOMBARD_AMMO
+    listOrder: 15175
+    tags:
+      BOMBARD_AMMO_ITEM: 6 # 6 - Marines
+
+  - type: STR_SCIONDROP_AMMO                # Scion Drop ammo
+    refNode: *STR_BOMBARD_AMMO
+    listOrder: 15185
+    tags:
+      BOMBARD_AMMO_ITEM: 7 # 7 - Scions
 
   - &STR_STRIKE_CALLIN_MED                  # Firesupport Vox Template (Medkit)
     type: STR_ORBITAL_CALLIN
@@ -1069,7 +1081,7 @@ items:
     invWidth: 2
     invHeight: 3
     tags:
-      BOMBARD_CALLIN_REMOTE: 0 # 1: Orbital Strike 2-4: CAS Run 5: Stormtalon 6: Lance 7: Whirlwind
+      BOMBARD_CALLIN_REMOTE: 0 # 1: Orbital Strike 2-4: CAS Run 5: Stormtalon 6: Lance 7: Whirlwind 8: Marines 9: Scions
       BOMBARD_COOLDOWN: 0 # turns before this bombard type can be reused
       BOMBARD_AMMO_REQUIRED: 0 # does this strike need ammo to be used?
 
@@ -1094,7 +1106,7 @@ items:
     listOrder: 15140
     tags:
       BOMBARD_CALLIN_REMOTE: 1 # 1 - Orbital Strike
-      BOMBARD_COOLDOWN: 5 # turns before this bombard type can be reused
+      BOMBARD_COOLDOWN: 8 # turns before this bombard type can be reused
       BOMBARD_AMMO_REQUIRED: 1 # Orbital Strike ammo
 
   - type: STR_LANCE_CALLIN                  # Orbital Lance Vox
@@ -1118,7 +1130,7 @@ items:
     listOrder: 15150
     tags:
       BOMBARD_CALLIN_REMOTE: 6 # 6 - Orbital Lance
-      BOMBARD_COOLDOWN: 20 # turns before this bombard type can be reused
+      BOMBARD_COOLDOWN: 99 # turns before this bombard type can be reused
       BOMBARD_AMMO_REQUIRED: 4 # Orbital Lance ammo
 
   - type: STR_STORMTALON_CALLIN             # Stormhawk CAS Vox
@@ -1173,25 +1185,51 @@ items:
     refNode: *STR_STRIKE_CALLIN_MED
     ufopediaType: STR_STRM_STRIKE_DUMMY
     size: 0.05
-    bigSprite: 100
+    bigSprite: 123
     floorSprite: 100
     handSprite: 456
     size: 0.1
     # costBuy: 60000
     # costSell: 30000
     requiresBuy:
-      - STR_STORMTALON_CASR
-    invWidth: 2
+      - STR_GENERALLOCK
+    invWidth: 1
     invHeight: 2
-    medikitActionName: STR_REINFORCE_MARINES
+    weight: 12
+    medikitActionName: STR_CALL_REINFORCEMENTS
+    tuUse: 60
+    flatUse: false
+    hitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
+    listOrder: 15170
+    tags:
+      BOMBARD_CALLIN_REMOTE: 8 # 8 - Marine Drop
+      BOMBARD_COOLDOWN: 20 # turns before this bombard type can be reused
+      BOMBARD_AMMO_REQUIRED: 0 # doesn't use ammo
+
+  - type: STR_SCIONDROP_CALLIN              # Scion Reinforcement Vox
+    refNode: *STR_STRIKE_CALLIN_MED
+    ufopediaType: STR_STRM_STRIKE_DUMMY
+    size: 0.05
+    bigSprite: 124
+    floorSprite: 100
+    handSprite: 456
+    size: 0.1
+    # costBuy: 60000
+    # costSell: 30000
+    requiresBuy:
+      - STR_GENERALLOCK
+    invWidth: 1
+    invHeight: 2
+    weight: 12
+    medikitActionName: STR_CALL_REINFORCEMENTS
     tuUse: 60
     flatUse: false
     hitSound: {mod: 40k_ROSIGMA_edits, index: 3987}
     listOrder: 15110
     tags:
-      BOMBARD_CALLIN_REMOTE: 5 # 5 - Stormhawk
+      BOMBARD_CALLIN_REMOTE: 9 # 9 - Scion Drop
       BOMBARD_COOLDOWN: 20 # turns before this bombard type can be reused
-      BOMBARD_AMMO_REQUIRED: 0 # doesn't use ammo
+      BOMBARD_AMMO_REQUIRED: 7 # 7 - Scions
 
   - &STR_STRIKE_CALLIN_GUN                  # Firesupport Vox Template (Gun)
     type: STR_CAS_CALLIN
@@ -1638,11 +1676,11 @@ items:
     fireSound: {mod: 40k, index: 702}
     hitSound: {mod: 40k, index: 0}
     hitAnimation: {mod: 40k, index: 0}
-    dropoff: 4
-    autoRange: 12
+    dropoff: 2
+    autoRange: 6
     snapRange: 0
     aimRange: 0
-    accuracyAuto: 33
+    accuracyAuto: 10
     accuracySnap: 0
     accuracyAimed: 0
     costAuto:
@@ -1667,7 +1705,7 @@ items:
       ToItem: 0.5
     clipSize: 3
 
-  - type: STR_MARINE_DROP                   # Marine Reinforcement Drop
+  - type: STR_MARINE_DROP_WEAPON            # Marine Reinforcement Drop
     refNode: *STR_STRIKE_WEAPON_DEFAULTS
     bigSprite: {mod: 40k, index: 206}
     bulletSprite: {mod: 40k, index: 22}
@@ -1741,6 +1779,84 @@ items:
       ToItem: 0
       FixRadius: 1
       RadiusReduction: 0
+    tags:
+      ITEM_PRIMED_AT_BATTLE_START: 1
+
+  - type: STR_SCION_DROP_WEAPON                 # Scion Reinforcement Drop
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k, index: 206}
+    bulletSprite: {mod: 40k, index: 22}
+    bulletSpeed: 50
+    explosionHitSound: {mod: 40k, index: 704}
+    hitSound: {mod: 40k, index: 704}
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2210}
+    vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 9}  # blue laser
+    vaporDensitySurface: 6
+    vaporProbabilitySurface: 100
+    scripts:
+      vaporParticleAmmo: |
+        # noting
+        set particle_lifetime 1;
+        set subvoxel_drift 0;
+        return;
+    dropoff: 4
+    autoRange: 24
+    snapRange: 0
+    aimRange: 0
+    accuracyAuto: 70
+    accuracySnap: 0
+    accuracyAimed: 0
+    autoShots: 1
+    costAuto:
+      time: 1
+      mana: 5
+    flatAuto:
+      time: true
+      mana: true
+    confAuto:
+      name: STR_STRIKE_REINFORCE
+    power: 1
+    damageType: 0
+    damageAlter:
+      ArmorEffectiveness: 0
+      ToHealth: 0
+      ToEnergy: 0
+      ToStun: 0
+      ToWound: 0
+      ToArmor: 0
+      ToTile: 0
+      ToItem: 0
+      ToArmorPre: 0
+    spawnItem: STR_SCION_REINFORCEMENT_SPAWNER
+    spawnItemChance: 100
+    clipSize: 6
+
+  - type: STR_SCION_REINFORCEMENT_SPAWNER  # Allied Scion spawner
+    armor: 999
+    floorSprite: 102
+    invWidth: 0
+    invHeight: 0
+    battleType: 4
+    hitAnimation: 800
+    explosionHitSound: {mod: 40k, index: 15}
+    recover: false
+    supportedInventorySections:
+      - STR_GROUND
+    spawnUnitFaction: 2 # civilian allies
+    spawnUnit: STR_SCIONAI_SMT
+    power: 1
+    damageType: 10 # impact
+    damageAlter:
+      RandomType: 3
+      ToArmorPre: 0
+      ToArmor: 0.0
+      ArmorEffectiveness: 1
+      ToHealth: 0
+      ToStun: 0.0
+      ToTile: 0.0
+      ToItem: 0
+      RadiusReduction: 0
+      FixRadius: 1
     tags:
       ITEM_PRIMED_AT_BATTLE_START: 1
 
@@ -2032,6 +2148,29 @@ items:
       ToTile: 0.8
       ToItem: 0.5
     clipSize: 3
+
+  - type: STR_MARINEDROP_DUMMY              # Marine Reinforcements Codex
+    battleType: 1
+    accuracyAuto: 100
+    confAuto:
+      shortName: STR_STRIKE_REINFORCE
+      shots: 4
+    tuAimed: 0
+    tuSnap: 0
+    tuAuto: 60
+    power: 100
+    damageType: 10 # impact
+    damageAlter:
+      RandomType: 3
+      ToArmorPre: 0
+      ToArmor: 0.1
+      ArmorEffectiveness: 1
+      ToStun: 0.5
+      ToTile: 0.5
+      ToItem: 0
+      FixRadius: 1
+      RadiusReduction: 0
+    clipSize: 4
 
   - type: STR_BOMBARD_BATTLECANNON          # Craft Battlecanon
     refNode: *STR_STRIKE_WEAPON_DEFAULTS

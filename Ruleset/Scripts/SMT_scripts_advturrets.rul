@@ -98,14 +98,14 @@ extended:
           end; # Razorback end
           return;
 
-      #*** Script that gives new turrets TUs on turn 1 ***
-      - new: SMTS_turret_tu_restore
+      #*** Script that gives new units full TUs when spawning ***
+      - new: SMTS_createunit_tu_restore
         offset: 99
         code: |
           var int turret;
           var int timeUnits;
 
-          unit.getTag turret Tag.SMT_TURRET_UNIT;
+          unit.getTag turret Tag.STARTS_WITH_FULL_TUS;
           if eq turret 1;
             unit.getTimeUnitsMax timeUnits;
             unit.setTimeUnits timeUnits;

@@ -337,7 +337,7 @@ extraSprites:
     subX: 128
     subY: 64
     files:
-      800: Resources_IG/grav_chute_x1.png
+      800: Resources/SPRITES/gravchute_blue.png
 
 
 ###Ability Icons
@@ -1622,6 +1622,17 @@ extraSprites:
     height: 40
     files:
       0: Resources/UNITS/BOMBARD/BombardSoldier.png
+
+###Guardsmen
+
+  - type: STORMTROOPER_CARAPACE_OFFICER_BERET.PCK
+    width: 512
+    height: 760
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/IG/stormtrooper_officer_carapace_beret.png
+      1000: Resources/UNITS/IG/stormtrooper_officer_carapace_beret_SANDBAG.png
 
 ###Backgrounds
   - type: GuardBG.SCR

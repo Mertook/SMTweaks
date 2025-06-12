@@ -136,3 +136,8 @@ armors:
       - STR_GUARDSL_VETERAN
       - STR_GUARDSL_OFFICER_VETERAN
 
+  - type: STR_MEDIC_CARAPACE_ARMOR
+    stats: # match carapace stats, just like carapace scanner and flak medic
+      tu: -5
+      stamina: -10
+      reactions: -5 # I really wish values of 0 didn't get ignored

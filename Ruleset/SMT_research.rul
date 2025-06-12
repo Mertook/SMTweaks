@@ -26,7 +26,6 @@ research:
       - STR_IMPERIAL_GUARD_OPERATIONS
       - STR_ADEPTAS
       - STR_DEFENSE_CORRIDORBR
-      - STR_PSI_AMP # replaced by chapter teachings
       - STR_MARINE_CHAOS_PATH # not supported
 
   - name: STR_POWER_SUIT            # Terminator Suit
@@ -816,6 +815,10 @@ research:
     unlocks:
       - STR_SPELLS_PREREQ
     lookup: STR_SPELLS_PREREQ
+
+  - name: STR_PSI_AMP               # Tome of the Mind - Disabled
+    dependencies:
+      - STR_GENERALLOCK
 
   - name: STR_LIBRARY               # Library
     cost: 100

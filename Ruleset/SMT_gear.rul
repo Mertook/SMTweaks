@@ -3045,7 +3045,8 @@ items:
       ArmorEffectiveness: 0.6 # was 0.75
       ToHealth: 1.0
       ToStun: 0.1
-      ToWound: 0.05
+      ToWound: 0.1 # was standard
+      RandomWound: false
       FireThreshold: 70
 
   - type: STR_PLASMA_PISTOL_CLIP            # Plasma Pistol Ammo
@@ -3172,6 +3173,7 @@ items:
     compatibleAmmo:
       - STR_PLASMA_SPRAY_CLIP
     twoHanded: true
+    oneHandedPenalty: 75 # carbine bonus
     dropoff: 6
     autoRange: 10
     snapRange: 14
@@ -3201,6 +3203,17 @@ items:
 
   - type: STR_PLASMA_RIFLE_ADEPTAS          # Plasma Carbine (Adeptas)
     weight: 12 # was 20
+    oneHandedPenalty: 75 # carbine bonus
+    dropoff: 6
+    autoRange: 10
+    snapRange: 14
+    aimRange: 14
+    accuracyAuto: 55
+    accuracySnap: 60
+    accuracyAimed: 60
+    tuAuto: 33
+    tuSnap: 22
+    tuAimed: 22
     confAuto:
       shots: 4
     tags:
@@ -3239,7 +3252,7 @@ items:
       ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2 # doubled ammo consumption
       ITEM_AUTO_FLAT_POWER_BONUS_PERCENT: 25
       ITEM_SNAP_FLAT_POWER_BONUS_PERCENT: 25
-      ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 80
+      ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 85
       ITEM_OVERHEAT_DAMAGE: 50
       ITEM_HEAT_SINK_COLOR: 15
 
@@ -3275,6 +3288,33 @@ items:
       ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 50
       ITEM_OVERHEAT_DAMAGE: 50
       ITEM_HEAT_SINK_COLOR: 15
+
+  - type: STR_INQ_PLASMA                    # Inquisition Twincore Plasma
+    refNode: *DMG_PLASMA_STD
+    dropoff: 4
+    autoRange: 11
+    snapRange: 22
+    aimRange: 22
+    accuracyAuto: 80
+    accuracySnap: 90
+    accuracyAimed: 90
+    tuAuto: 35
+    tuSnap: 30
+    tuAimed: 30
+    confSnap:
+      shots: 2
+      name: STR_BURST_SNAP_SHOT
+      arcing: false
+    confAuto:
+      name: STR_AUTOFIRE
+      shots: 4
+    confAimed:
+      name: STR_MAXIMAL_SHOT
+      spendPerShot: 4
+    battleType: 1
+    power: 110 # was 120 - match twincore ammo
+    powerRangeReduction: 5
+    powerRangeThreshold: 30.0 # was 35
 
   - type: STR_DW_PLASMA_GRENADE             # Plasma Grenade
     refNode: *DMG_PLASMA_STD

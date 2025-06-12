@@ -69,6 +69,19 @@ soldierTransformation:
     requires:
       - STR_GUARD_AND_INQUISITION
 
+  - name: STR_BIONICS_OPERATION
+    transferTime: 0 # was 720 hours (30 days)
+    recoveryTime: 40 # can be reduced by apothecary bays
+    requires:
+      - STR_GUARD_AND_INQUISITION # allow CM
+      - STR_MIDTIER_PREREQ
+    allowedSoldierTypes: !add
+      - STR_CATACHANVET_FIGHTER
+      - STR_CATACHANTOP_FIGHTER
+
+  - name: STR_BIONICS_OPERATION
+    allowedSoldierTypes: !remove
+      - STR_CATACHAN_FIGHTER # regular soldiers don't get access to bionics, only vets/officers
 
 soldierBonuses:
   - name: STR_BONUS_PERSONAL_SHIELD

@@ -2030,6 +2030,15 @@ crafts:
             STR_CAS_CANNON_SPAWNER: [0, 0]
 
   - type: STR_VALKYRIE_GRAV_DROP            # Drop Valk
+    weapons: 3 # add aux slot
+    weaponTypes:        #definition of allowed weapon types in craft. Max 4 different types per slot.
+      - 0               #slot 1 accepts weapons with type 0. This is default.
+      - 0               #slot 2 accepts weapons with type 0.
+      - [4, 5, 13]      #slot 3 accepts weapons with type 4, 5 and 13.
+    weaponStrings:
+      - STR_WEAPON_ONE
+      - STR_WEAPON_TWO
+      - STR_WEAPON_THREE
     battlescapeTerrainData:
       name: GUARD_GRAV_DROP_HWP
       mapDataSets:

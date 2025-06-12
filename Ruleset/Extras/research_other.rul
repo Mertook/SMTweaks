@@ -94,31 +94,31 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_MULTIMELTA_PREREQ
     needItem: false # was true
 
-  - name: STR_KHORNE_UNGOR                          # Khornugor (was missing)
-    cost: 75
-    points: 20
-    needItem: true
-    unlocks:
-      - STR_INTERROGATION_COMPLETED
-      - STR_THREAT_ONE
-    getOneFree:
-      - STR_KHORNEGOR_UNGOR
-    destroyItem: true
+  # - name: STR_KHORNE_UNGOR                          # Khornugor (was missing)
+    # cost: 75
+    # points: 20
+    # needItem: true
+    # unlocks:
+      # - STR_INTERROGATION_COMPLETED
+      # - STR_THREAT_ONE
+    # getOneFree:
+      # - STR_KHORNEGOR_UNGOR
+    # destroyItem: true
 
-  - name: STR_NURGLE_CULTIST_LEADER_RITUALIST       # Nurgle Cult Leader (was missing)
-    cost: 75
-    points: 20
-    needItem: true
-    unlocks:
-      - STR_INTERROGATION_COMPLETED
-      - STR_THREAT_ONE
-      - STR_ALIEN_ORIGINS
-      - STR_LEADER_PLUS
-      - STR_CHAOS_PATH
-      - STR_PSI_LAB
-    getOneFree:
-      - STR_NURGLE_CULTIST_LEADER
-    destroyItem: true
+  # - name: STR_NURGLE_CULTIST_LEADER_RITUALIST       # Nurgle Cult Leader (was missing)
+    # cost: 75
+    # points: 20
+    # needItem: true
+    # unlocks:
+      # - STR_INTERROGATION_COMPLETED
+      # - STR_THREAT_ONE
+      # - STR_ALIEN_ORIGINS
+      # - STR_LEADER_PLUS
+      # - STR_CHAOS_PATH
+      # - STR_PSI_LAB
+    # getOneFree:
+      # - STR_NURGLE_CULTIST_LEADER
+    # destroyItem: true
 
   - name: STR_CHB                                   # Chaos Storm Bolter
     dependencies: !remove

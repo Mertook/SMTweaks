@@ -20,6 +20,8 @@ eventScripts:
       STR_PSIONIC_LABORATORY: true # chapel building
 
   - type: STR_REWARD_INQUISITION_STORMTROOPERS_SCRIPT
+    oneTimeRandomEvents: !remove
+      STR_REWARD_INQUISITION_STORMTROOPERS: 100
     eventWeights:
       0:
        STR_REWARD_INQUISITION_STORMTROOPERS: 50

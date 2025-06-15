@@ -2910,35 +2910,15 @@ items:
       RandomType: 2 # 50-150, was 0-200
       ToArmorPre: 1.0
       ToHealth: 1.6
-      ToTile: 7.0 # was 6.0
+      ToTile: 8.0 # was 6.0
       ToWound: 0.05
       FireThreshold: 5
       RandomWound: false
       TileDamageMethod: 2
     shotgunBehavior: 1
-    shotgunPellets: 10
     shotgunSpread: 0
     powerRangeReduction: 1.5 # was 1.0
     powerRangeThreshold: 5.0 # was 3, deadlier at short range but falls off faster - 9 range is tipping point
-
-  - &DMG_MELTA_LIGHT                        # Light Melta Damage
-    type: STR_LIGHT_MELTA_AMMO
-    damageType: 11
-    damageAlter:
-      RandomType: 2 # 50-150, was 0-200
-      ToArmorPre: 1.0
-      ToHealth: 1.6
-      ToTile: 6.0
-      ToWound: 0.05
-      FireThreshold: 5
-      RandomWound: false
-      TileDamageMethod: 2
-    shotgunBehavior: 1
-    shotgunPellets: 8
-    shotgunSpread: 0
-    powerRangeReduction: 1.5 # was 1.0
-    powerRangeThreshold: 5.0 # was 3, deadlier at short range but falls off faster - 9 range is tipping point
-
 
   - &DMG_MELTA_MULTI                        # Multi Melta Damage
     type: STR_BLASTER_BOMB
@@ -2947,7 +2927,7 @@ items:
       RandomType: 2 # 50-150, was 0-200
       ToArmorPre: 1.0
       ToHealth: 1.6
-      ToTile: 7.0 # was 6.0
+      ToTile: 8.0 # was 6.0
       ToWound: 0.05
       FireThreshold: 5 # was 16
       RandomWound: false
@@ -2961,11 +2941,20 @@ items:
   - type: STR_MELTA_AMMO                    # Meltagun Ammo
     refNode: *DMG_MELTA_STD
     power: 15
+    shotgunPellets: 10
 
   - type: STR_LIGHT_MELTA_AMMO              # Light Melta Ammo
-    refNode: *DMG_MELTA_LIGHT
+    refNode: *DMG_MELTA_STD
     power: 12
+    shotgunPellets: 8
     clipSize: 6
+
+  - type: STR_INFERNO_PISTOL_AMMO
+    refNode: *DMG_MELTA_STD
+    power: 15
+    shotgunPellets: 6
+    powerRangeThreshold: 4.0 # -1 for pistol
+    clipSize: 5
 
   - type: STR_BLASTER_BOMB                  # Multimelta Ammo
     refNode: *DMG_MELTA_MULTI
@@ -2982,7 +2971,7 @@ items:
     accuracySnap: 80
     accuracyAimed: 0
     tuAuto: 50
-    tuSnap: 30 # was 50 for 2
+    tuSnap: 33 # was 50 for 2
     tuAimed: 0
     maxRange: 40
     confAuto:
@@ -3031,7 +3020,6 @@ items:
     tuAimed: 0
     maxRange: 25
     power: 16 # +1 over regular melta
-    powerRangeReduction: 1.5
     powerRangeThreshold: 6.0 # +1 over regular
 
 ### Plasma

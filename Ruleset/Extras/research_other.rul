@@ -27,6 +27,7 @@ research: # Research changes only made to maintain functionality for other facti
   - name: STR_ADEPTAS                               # Sisters of Battle Faction
     unlocks: !add
       - STR_STORMRAVEN_PREREQ
+      - STR_INFERNOPISTOL_REQ
 
   - name: STR_OGRYN_REQUISITION                     # Keep IG ability to buy smokebombs intact
     unlocks: !add
@@ -47,7 +48,7 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_HBOLTER_AMMO_PREREQ
       - STR_GLAUNCHER_PREREQ
 
-  - name: STR_MULTIMELTA_PREREQ                     # Let you research Multimeltas even if you don't find a chaos multimelta (only a couple of enemy factions even have the chance to carry multimeltas)
+  - name: STR_MULTIMELTA_PREREQ                     # Let you research Multimeltas even if you don't find a chaos multimelta
     cost: 900
     points: 30
     dependencies:

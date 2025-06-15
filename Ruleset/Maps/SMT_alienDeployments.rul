@@ -70,19 +70,19 @@ alienDeployments:
         mapBlockFilterType: 0 # all blocks, just go by node placement
         data:
           - alienRank: 5
-            lowQty: 2
-            highQty: 2
-            dQty: 1
+            lowQty: 1
+            highQty: 3
+            dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 4
             lowQty: 0
-            highQty: 0
+            highQty: 1
             dQty: 1
             itemSets: *emptyItemSets
           - alienRank: 3
             lowQty: 0
-            highQty: 0
-            dQty: 0
+            highQty: 1
+            dQty: 1
             itemSets: *emptyItemSets
           - alienRank: 6
             lowQty: 0
@@ -114,27 +114,27 @@ alienDeployments:
         data:
           - alienRank: 5
             lowQty: 2
-            highQty: 2
-            dQty: 1
+            highQty: 4
+            dQty: 3
             itemSets: *emptyItemSets
           - alienRank: 4
             lowQty: 1
             highQty: 1
-            dQty: 1
+            dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 3
             lowQty: 0
-            highQty: 0
+            highQty: 1
             dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 6
             lowQty: 0
-            highQty: 0
+            highQty: 1
             dQty: 1
             itemSets: *emptyItemSets
           - alienRank: 7
             lowQty: 0
-            highQty: 0
+            highQty: 1
             dQty: 1
             itemSets: *emptyItemSets
       - type: necronsAwakeningMany
@@ -155,9 +155,9 @@ alienDeployments:
         mapBlockFilterType: 0 # all blocks, just go by node placement
         data:
           - alienRank: 5
-            lowQty: 2
-            highQty: 2
-            dQty: 2
+            lowQty: 3
+            highQty: 6
+            dQty: 4
             itemSets: *emptyItemSets
           - alienRank: 4
             lowQty: 1
@@ -166,24 +166,24 @@ alienDeployments:
             itemSets: *emptyItemSets
           - alienRank: 3
             lowQty: 0
-            highQty: 0
+            highQty: 1
             dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 6
             lowQty: 0
-            highQty: 0
+            highQty: 1
             dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 7
             lowQty: 0
-            highQty: 0
+            highQty: 1
             dQty: 1
             itemSets: *emptyItemSets
     genMissionFreq: 5 # 10
     genMission:
       STR_MONOLITH_PATROL: 100 #
       STR_NECRON_TERROR: 66 # was 50 - more aggressive to force a response
-      STR_NECRON_BASE: 20 # was 30 - compensate for added monthly chance to spawn bases
+      STR_NECRON_BASE: 10 # was 30 - compensate for added monthly chance to spawn bases
       STR_NECRON_RETALIATION: 20 # was 20
     objectiveComplete: [STR_NECRON_BASE_DESTROYED, 1000]
     objectiveFailed: [STR_NECRON_BASE_NOT_DESTROYED, -500]
@@ -239,77 +239,34 @@ alienDeployments:
         percentageOutsideUfo: 0
         itemSets: *emptyItemSets
     reinforcements:
-      - type: necronsAwakeningLight
+      - type: necronShipReinforcementStart
         briefing:
           palette: 4
           textOffset: -32
           title: STR_MONOLITH_REINFORCEMENTS_TITLE
-          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_LIGHT
+          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_START
           background: BACK171.SCR
           cutscene: ""
           showCraft: false
           showTarget: false
-        minTurn: 10 # was 5 - only punish very slow clears
-        maxTurn: 12 # was 9
-        executionOdds: 15
+        minTurn: 0 # was 5
+        maxTurn: 6 # was 9
+        executionOdds: 100 # overwhelming start
         maxRuns: -1 # they just keep coming
         useSpawnNodes: true
-        spawnNodeRanks: [4] # leader/commander nodes
-        mapBlockFilterType: 0 # all blocks, just go by node placement
+        #spawnNodeRanks: [4] # leader/commander nodes
+        mapBlockFilterType: 1 # marked blocks - inside the monolith
         data:
           - alienRank: 5
             lowQty: 1
             highQty: 1
-            dQty: 1
+            dQty: 3
             itemSets: *emptyItemSets
           - alienRank: 4
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 3
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 6
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 7
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-      - type: necronReinforcementsFew
-        briefing:
-          palette: 4
-          textOffset: -32
-          title: STR_MONOLITH_REINFORCEMENTS_TITLE
-          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_MEDIUM
-          background: BACK171.SCR
-          cutscene: ""
-          showCraft: false
-          showTarget: false
-        minTurn: 13 # was 10
-        maxTurn: 19 # was 19
-        executionOdds: 30
-        maxRuns: -1 # they just keep coming
-        useSpawnNodes: true
-        spawnNodeRanks: [4] # leader/commander nodes
-        mapBlockFilterType: 0 # all blocks, just go by node placement
-        data:
-          - alienRank: 5
             lowQty: 1
             highQty: 1
             dQty: 1
             itemSets: *emptyItemSets
-          - alienRank: 4
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
           - alienRank: 3
             lowQty: 0
             highQty: 0
@@ -323,29 +280,30 @@ alienDeployments:
           - alienRank: 7
             lowQty: 0
             highQty: 0
-            dQty: 1
+            dQty: 0
             itemSets: *emptyItemSets
-      - type: necronReinforcementsMany
+      - type: necronShipReinforcementEnd
         briefing:
           palette: 4
           textOffset: -32
           title: STR_MONOLITH_REINFORCEMENTS_TITLE
-          desc: STR_NECRON_REINFORCEMENTS_DESC_HEAVY
+          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_END
           background: BACK171.SCR
           cutscene: ""
           showCraft: false
           showTarget: false
-        minTurn: 20
-        executionOdds: 66
-        maxRuns: -1 # they just keep coming
+        minTurn: 7
+        maxTurn: 8
+        executionOdds: 100
+        maxRuns: 1
         useSpawnNodes: true
-        spawnNodeRanks: [4] # leader/commander nodes
-        mapBlockFilterType: 0 # all blocks, just go by node placement
+        #spawnNodeRanks: [4] # leader/commander nodes
+        mapBlockFilterType: 1 # marked blocks - inside the monolith
         data:
           - alienRank: 5
-            lowQty: 2
-            highQty: 2
-            dQty: 1
+            lowQty: 1
+            highQty: 1
+            dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 4
             lowQty: 0
@@ -365,10 +323,10 @@ alienDeployments:
           - alienRank: 7
             lowQty: 0
             highQty: 0
-            dQty: 1
+            dQty: 0
             itemSets: *emptyItemSets
     missionBountyItem: STR_REQUISITION_BOUNTY_500K
-    missionBountyItemCount: 2
+    missionBountyItemCount: 1
     unlockedResearch: STR_MONOLITH
 
   - type: STR_DOOMSDAY_MONOLITH    #NECRON
@@ -416,117 +374,75 @@ alienDeployments:
         percentageOutsideUfo: 50
         itemSets: *emptyItemSets
     reinforcements:
-      - type: necronsAwakeningLight
+      - type: necronShipReinforcementStart
         briefing:
           palette: 4
           textOffset: -32
           title: STR_MONOLITH_REINFORCEMENTS_TITLE
-          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_LIGHT
+          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_START
           background: BACK171.SCR
           cutscene: ""
           showCraft: false
           showTarget: false
-        minTurn: 10 # was 5
-        maxTurn: 12 # was 9
-        executionOdds: 25
+        minTurn: 0 # was 5
+        maxTurn: 6 # was 9
+        executionOdds: 100 # overwhelming start
         maxRuns: -1 # they just keep coming
         useSpawnNodes: true
-        spawnNodeRanks: [4] # leader/commander nodes
-        mapBlockFilterType: 0 # all blocks, just go by node placement
-        data:
-          - alienRank: 5
-            lowQty: 1
-            highQty: 1
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 4
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 3
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 6
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 7
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-      - type: necronReinforcementsFew
-        briefing:
-          palette: 4
-          textOffset: -32
-          title: STR_MONOLITH_REINFORCEMENTS_TITLE
-          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_MEDIUM
-          background: BACK171.SCR
-          cutscene: ""
-          showCraft: false
-          showTarget: false
-        minTurn: 13 # was 10
-        maxTurn: 19 # was 19
-        executionOdds: 50
-        maxRuns: -1 # they just keep coming
-        useSpawnNodes: true
-        spawnNodeRanks: [4] # leader/commander nodes
-        mapBlockFilterType: 0 # all blocks, just go by node placement
-        data:
-          - alienRank: 5
-            lowQty: 1
-            highQty: 1
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 4
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 3
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 6
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 7
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-      - type: necronReinforcementsMany
-        briefing:
-          palette: 4
-          textOffset: -32
-          title: STR_MONOLITH_REINFORCEMENTS_TITLE
-          desc: STR_NECRON_REINFORCEMENTS_DESC_HEAVY
-          background: BACK171.SCR
-          cutscene: ""
-          showCraft: false
-          showTarget: false
-        minTurn: 20
-        executionOdds: 66 # was 100
-        maxRuns: -1 # they just keep coming
-        useSpawnNodes: true
-        spawnNodeRanks: [4] # leader/commander nodes
-        mapBlockFilterType: 0 # all blocks, just go by node placement
+        #spawnNodeRanks: [4] # leader/commander nodes
+        mapBlockFilterType: 1 # marked blocks - inside the monolith
         data:
           - alienRank: 5
             lowQty: 2
             highQty: 2
-            dQty: 1
+            dQty: 3
             itemSets: *emptyItemSets
           - alienRank: 4
             lowQty: 1
             highQty: 1
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 0
+            highQty: 0
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 6
+            lowQty: 0
+            highQty: 0
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 7
+            lowQty: 0
+            highQty: 0
+            dQty: 0
+            itemSets: *emptyItemSets
+      - type: necronShipReinforcementEnd
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_MONOLITH_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_END
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 7
+        maxTurn: 8
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        spawnNodeRanks: [4] # leader/commander nodes
+        mapBlockFilterType: 1 # marked blocks - inside the monolith
+        data:
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 4
+            lowQty: 0
+            highQty: 0
             dQty: 1
             itemSets: *emptyItemSets
           - alienRank: 3
@@ -542,17 +458,17 @@ alienDeployments:
           - alienRank: 7
             lowQty: 0
             highQty: 0
-            dQty: 1
+            dQty: 0
             itemSets: *emptyItemSets
     missionBountyItem: STR_REQUISITION_BOUNTY_500K
-    missionBountyItemCount: 3
+    missionBountyItemCount: 1
     unlockedResearch: STR_DOOMSDAY_MONOLITH
 
   - type: STR_NECRON_RETALIATION
     data:
       - alienRank: 5 #doomsday monolith numbers
-        lowQty: 5
-        highQty: 5 #6
+        lowQty: 2
+        highQty: 2 #6
         dQty: 2 #1
         percentageOutsideUfo: 70
         itemSets: *emptyItemSets
@@ -592,106 +508,21 @@ alienDeployments:
         dQty: 3 #2
         percentageOutsideUfo: 50
         itemSets: *emptyItemSets
-    reinforcements: #time pressure; get it done
-      - type: necronsAwakeningLight
+    reinforcements:
+      - type: necronShipReinforcementStart
         briefing:
           palette: 4
           textOffset: -32
           title: STR_MONOLITH_REINFORCEMENTS_TITLE
-          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_LIGHT
+          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_START
           background: BACK171.SCR
           cutscene: ""
           showCraft: false
           showTarget: false
-        minTurn: 15 # was 10
-        maxTurn: 19 # was 14
-        executionOdds: 25
-        maxRuns: -1 # they just keep coming
-        useSpawnNodes: true
-        spawnNodeRanks: [4] # leader/commander nodes
-        mapBlockFilterType: 0 # all blocks, just go by node placement
-        data:
-          - alienRank: 5
-            lowQty: 1
-            highQty: 1
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 4
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 3
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 6
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 7
-            lowQty: 0
-            highQty: 0
-            dQty: 0 # was 1
-            itemSets: *emptyItemSets
-      - type: necronReinforcementsFew
-        briefing:
-          palette: 4
-          textOffset: -32
-          title: STR_MONOLITH_REINFORCEMENTS_TITLE
-          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_MEDIUM
-          background: BACK171.SCR
-          cutscene: ""
-          showCraft: false
-          showTarget: false
-        minTurn: 20 # was 15
-        maxTurn: 24 # was 19
-        executionOdds: 50
-        maxRuns: -1 # they just keep coming
-        useSpawnNodes: true
-        spawnNodeRanks: [4] # leader/commander nodes
-        mapBlockFilterType: 0 # all blocks, just go by node placement
-        data:
-          - alienRank: 5
-            lowQty: 1
-            highQty: 1
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 4
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 3
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 6
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 7
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-      - type: necronReinforcementsMany
-        briefing:
-          palette: 4
-          textOffset: -32
-          title: STR_MONOLITH_REINFORCEMENTS_TITLE
-          desc: STR_NECRON_REINFORCEMENTS_DESC_HEAVY
-          background: BACK171.SCR
-          cutscene: ""
-          showCraft: false
-          showTarget: false
-        minTurn: 25 # was 20
-        executionOdds: 66 # was 100
-        maxRuns: -1 # they just keep coming
+        minTurn: 0
+        maxTurn: 4
+        executionOdds: 100 # overwhelming start
+        maxRuns: -1
         useSpawnNodes: true
         spawnNodeRanks: [4] # leader/commander nodes
         mapBlockFilterType: 0 # all blocks, just go by node placement
@@ -699,11 +530,11 @@ alienDeployments:
           - alienRank: 5
             lowQty: 2
             highQty: 2
-            dQty: 1
+            dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 4
-            lowQty: 1
-            highQty: 1
+            lowQty: 0
+            highQty: 0
             dQty: 1
             itemSets: *emptyItemSets
           - alienRank: 3
@@ -719,35 +550,83 @@ alienDeployments:
           - alienRank: 7
             lowQty: 0
             highQty: 0
+            dQty: 0
+            itemSets: *emptyItemSets
+      - type: necronShipReinforcementEnd
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_MONOLITH_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_END
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 5
+        maxTurn: 6
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        spawnNodeRanks: [4] # leader/commander nodes
+        mapBlockFilterType: 0 # all blocks, just go by node placement
+        data:
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 4
+            lowQty: 0
+            highQty: 0
             dQty: 1
             itemSets: *emptyItemSets
-
+          - alienRank: 3
+            lowQty: 0
+            highQty: 0
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 6
+            lowQty: 0
+            highQty: 0
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 7
+            lowQty: 0
+            highQty: 0
+            dQty: 0
+            itemSets: *emptyItemSets
 
   - type: STR_NECRON_TERROR
+    terrains: []
+    mapScripts:
+     - INDUSTRIALURBANMONO
+     - REFINERYMONO
+     - BDAIRPORTMONO
+     - URBANMONO
     data:
       - alienRank: 5
-        lowQty: 6 #5
-        highQty: 6 #7
-        dQty: 6
-        percentageOutsideUfo: 50
+        lowQty: 2 #5
+        highQty: 2 #7
+        dQty: 2 # was 6
+        percentageOutsideUfo: 80
         itemSets: *emptyItemSets
       - alienRank: 4
         lowQty: 1
         highQty: 1 #2
         dQty: 1 #0
-        percentageOutsideUfo: 20
+        percentageOutsideUfo: 60
         itemSets: *emptyItemSets
       - alienRank: 3
         lowQty: 1
         highQty: 1 #2
         dQty: 1 #0
-        percentageOutsideUfo: 20
+        percentageOutsideUfo: 60
         itemSets: *emptyItemSets
       - alienRank: 2
         lowQty: 1
         highQty: 1 #2
         dQty: 1 #0
-        percentageOutsideUfo: 20
+        percentageOutsideUfo: 60
         itemSets: *emptyItemSets
       - alienRank: 1
         lowQty: 1
@@ -756,125 +635,40 @@ alienDeployments:
         percentageOutsideUfo: 0
         itemSets: *emptyItemSets
       - alienRank: 6
-        lowQty: 1
-        highQty: 1 #2
+        lowQty: 2
+        highQty: 2 #2
         dQty: 3 #2
-        percentageOutsideUfo: 50
+        percentageOutsideUfo: 80
         itemSets: *emptyItemSets
       - alienRank: 7
         lowQty: 1
         highQty: 1 #2
         dQty: 3 #2
-        percentageOutsideUfo: 50
+        percentageOutsideUfo: 80
         itemSets: *emptyItemSets
-    reinforcements: #time pressure; get it done
-      - type: necronsAwakeningLight
+    reinforcements:
+      - type: necronShipReinforcementStart
         briefing:
           palette: 4
           textOffset: -32
           title: STR_MONOLITH_REINFORCEMENTS_TITLE
-          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_LIGHT
+          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_START
           background: BACK171.SCR
           cutscene: ""
           showCraft: false
           showTarget: false
-        minTurn: 15 # was 10
-        maxTurn: 18 # was 14
-        executionOdds: 25
-        maxRuns: -1 # they just keep coming
+        minTurn: 0
+        maxTurn: 4
+        executionOdds: 100 # overwhelming start
+        maxRuns: -1
         useSpawnNodes: true
-        spawnNodeRanks: [4] # leader/commander nodes
-        mapBlockFilterType: 0 # all blocks, just go by node placement
-        data:
-          - alienRank: 5
-            lowQty: 1
-            highQty: 1
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 4
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 3
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 6
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 7
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-      - type: necronReinforcementsFew
-        briefing:
-          palette: 4
-          textOffset: -32
-          title: STR_MONOLITH_REINFORCEMENTS_TITLE
-          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_MEDIUM
-          background: BACK171.SCR
-          cutscene: ""
-          showCraft: false
-          showTarget: false
-        minTurn: 18 # was 15
-        maxTurn: 23 # was 19
-        executionOdds: 50
-        maxRuns: -1 # they just keep coming
-        useSpawnNodes: true
-        spawnNodeRanks: [4] # leader/commander nodes
-        mapBlockFilterType: 0 # all blocks, just go by node placement
-        data:
-          - alienRank: 5
-            lowQty: 1
-            highQty: 1
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 4
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 3
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 6
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 7
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
-      - type: necronReinforcementsMany
-        briefing:
-          palette: 4
-          textOffset: -32
-          title: STR_MONOLITH_REINFORCEMENTS_TITLE
-          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_HEAVY
-          background: BACK171.SCR
-          cutscene: ""
-          showCraft: false
-          showTarget: false
-        minTurn: 24 # was 20
-        executionOdds: 66 # was 100
-        maxRuns: -1 # they just keep coming
-        useSpawnNodes: true
-        spawnNodeRanks: [4] # leader/commander nodes
-        mapBlockFilterType: 0 # all blocks, just go by node placement
+        #spawnNodeRanks: [4] # leader/commander nodes
+        mapBlockFilterType: 1 # marked blocks - inside the monolith
         data:
           - alienRank: 5
             lowQty: 2
             highQty: 2
-            dQty: 1
+            dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 4
             lowQty: 1
@@ -894,7 +688,51 @@ alienDeployments:
           - alienRank: 7
             lowQty: 0
             highQty: 0
+            dQty: 0
+            itemSets: *emptyItemSets
+      - type: necronShipReinforcementEnd
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_MONOLITH_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_SHIP_DESC_END
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 5
+        maxTurn: 6
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        #spawnNodeRanks: [4] # leader/commander nodes
+        mapBlockFilterType: 1 # marked blocks - inside the monolith
+        data:
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 4
+            lowQty: 0
+            highQty: 0
             dQty: 1
             itemSets: *emptyItemSets
-    height: 9
+          - alienRank: 3
+            lowQty: 0
+            highQty: 0
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 6
+            lowQty: 0
+            highQty: 0
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 7
+            lowQty: 0
+            highQty: 0
+            dQty: 0
+            itemSets: *emptyItemSets
+    missionBountyItem: STR_REQUISITION_BOUNTY_500K
+    missionBountyItemCount: 1
 

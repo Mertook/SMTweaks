@@ -15,26 +15,26 @@ terrains:
         width: 20
         length: 20
         groups: 0
-          items:
-            STR_REQUISITION_BOUNTY_500K:
-              - [0, 0, 0]
-            STR_MONON_SPAWNER:
-              - [6, 3, 3]
-              - [3, 6, 3]
-            STR_MONOS_SPAWNER:
-              - [12, 15, 3]
-              - [15, 12, 3]
-            STR_MONOE_SPAWNER:
-              - [12, 3, 3]
-              - [15, 6, 3]
-            STR_MONOW_SPAWNER:
-              - [3, 12, 3]
-              - [6, 15, 3]
-          fuseTimers:
-            STR_MONOW_SPAWNER: [0, 0]
-            STR_MONOE_SPAWNER: [0, 0]
-            STR_MONON_SPAWNER: [0, 0]
-            STR_MONOS_SPAWNER: [0, 0]
+        items:
+          STR_REQUISITION_BOUNTY_500K:
+            - [0, 0, 0]
+          STR_MONON_SPAWNER:
+            - [6, 3, 3]
+            - [3, 6, 3]
+          STR_MONOS_SPAWNER:
+            - [12, 15, 3]
+            - [15, 12, 3]
+          STR_MONOE_SPAWNER:
+            - [12, 3, 3]
+            - [15, 6, 3]
+          STR_MONOW_SPAWNER:
+            - [3, 12, 3]
+            - [6, 15, 3]
+        fuseTimers:
+          STR_MONOW_SPAWNER: [0, 0]
+          STR_MONOE_SPAWNER: [0, 0]
+          STR_MONON_SPAWNER: [0, 0]
+          STR_MONOS_SPAWNER: [0, 0]
 
   - name: MONOTERRORBASE
     script: 
@@ -52,25 +52,34 @@ terrains:
         width: 20
         length: 20
         groups: 0
-          items:
-            STR_REQUISITION_BOUNTY_500K:
-              - [0, 0, 0]
-            STR_MONON_SPAWNER:
-              - [6, 3, 3]
-              - [3, 6, 3]
-            STR_MONOS_SPAWNER:
-              - [12, 15, 3]
-              - [15, 12, 3]
-            STR_MONOE_SPAWNER:
-              - [12, 3, 3]
-              - [15, 6, 3]
-            STR_MONOW_SPAWNER:
-              - [3, 12, 3]
-              - [6, 15, 3]
-          fuseTimers:
-            STR_MONOW_SPAWNER: [0, 0]
-            STR_MONOE_SPAWNER: [0, 0]
-            STR_MONON_SPAWNER: [0, 0]
-            STR_MONOS_SPAWNER: [0, 0]
+        items:
+          STR_REQUISITION_BOUNTY_500K:
+            - [0, 0, 0]
+          STR_MONON_SPAWNER:
+            - [6, 3, 3]
+            - [3, 6, 3]
+          STR_MONOS_SPAWNER:
+            - [12, 15, 3]
+            - [15, 12, 3]
+          STR_MONOE_SPAWNER:
+            - [12, 3, 3]
+            - [15, 6, 3]
+          STR_MONOW_SPAWNER:
+            - [3, 12, 3]
+            - [6, 15, 3]
+        fuseTimers:
+          STR_MONOW_SPAWNER: [0, 0]
+          STR_MONOE_SPAWNER: [0, 0]
+          STR_MONON_SPAWNER: [0, 0]
+          STR_MONOS_SPAWNER: [0, 0]
+
+
+
+
+
+
+
+
+
 
 

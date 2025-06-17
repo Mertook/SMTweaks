@@ -2,17 +2,17 @@ extended:
   tags:
     RuleItem:
       ## Craft Turrets
-      SMT_TURRET_TOKEN: int         # is this item a Turret token?
-      SMT_RAZOR_HBOLTER: int        # Razorback Heavy Bolter token
-      SMT_RAZOR_LAS: int            # Razorback Lascannon token
-      SMT_RAZOR_HFLAME: int         # Razorback Heavy Flamer token
+      SMT_TURRET_TOKEN: int             # is this item a Turret token?
+      SMT_RAZOR_HBOLTER: int            # Razorback Heavy Bolter token
+      SMT_RAZOR_LAS: int                # Razorback Lascannon token
+      SMT_RAZOR_HFLAME: int             # Razorback Heavy Flamer token
       ## Bombard
-      BOMBARD_AMMO_LOADER: int              # item used to lock bombard targeter in place and activate weapons
-      BOMBARD_SPAWNER_ITEM: int             # spawner grenade for bombard targeter
-      BOMBARD_AMMO_ITEM: int                # item used to unlock certain strikes 1: Orbital Strike 2: Lightning CAS 3: Stormtalon CAS 4: Orbital Lance
-      BOMBARD_CALLIN_REMOTE: int            # item used to call in bombard strikes
-      BOMBARD_COOLDOWN: int                 # sets cooldown when bombard is used
-      BOMBARD_AMMO_REQUIRED: int            # does this strike remote need ammo?
+      BOMBARD_AMMO_LOADER: int          # item used to lock bombard targeter in place and activate weapons
+      BOMBARD_SPAWNER_ITEM: int         # spawner grenade for bombard targeter
+      BOMBARD_AMMO_ITEM: int            # item used to unlock certain strikes 1: Orbital Strike 2: Lightning CAS 3: Stormtalon CAS 4: Orbital Lance
+      BOMBARD_CALLIN_REMOTE: int        # item used to call in bombard strikes
+      BOMBARD_COOLDOWN: int             # sets cooldown when bombard is used
+      BOMBARD_AMMO_REQUIRED: int        # does this strike remote need ammo?
       ## Buffs
       SMT_VIGILIANCE_BUFF: int          # % of power added as overwatch bonus
       SMT_ITEM_MOVESPEED_BOOST: int     # limit on movespeed bonus provided by haste
@@ -22,30 +22,31 @@ extended:
       SMT_VULN_DURATION: int            # length of debuff
       SMT_SIGNUM_DURATION: int          # length of Signum FA buff in turns
       ## Weapon Ammo Sprites
-      ITEM_AMMO_SKIP_BIGOBS: int
+      ITEM_AMMO_SKIP_BIGOBS: int        # ammo causes weapon sprite to change - X = size of index shift
       ## Heavy Weapons
       ITEM_HWP_IGNORES_ARMOR_BONUS: int # does weapon ignore armor hwp bonus (see below) meant for snipers etc
       ## Infiltrator
-      ITEM_STEALTH_RANGE: int                   # item used to activate restealth - X = detection range
-      ITEM_STEALTH_DURATION: int                # duration of stealth
-      ITEM_STEALTH_MOVEPENALTY: int             # % modifier on movespeed while stealthed
-      ITEM_STEALTH_ASSASSIN_WEAPON: int         # weapon can activate cloaked assassin on kills: X = type (1- Melee, 2- Sniper)
-      ITEM_STEALTH_ASSASSIN_RANGE: int          # X = detection range when activating assassin cloak
+      ITEM_STEALTH_RANGE: int           # item used to activate restealth - X = detection range
+      ITEM_STEALTH_DURATION: int        # duration of stealth
+      ITEM_STEALTH_MOVEPENALTY: int     # % modifier on movespeed while stealthed
+      ITEM_STEALTH_ASSASSIN_WEAPON: int # weapon can activate cloaked assassin on kills: X = type (1- Melee, 2- Sniper)
+      ITEM_STEALTH_ASSASSIN_RANGE: int  # X = detection range when activating assassin cloak
       ## Restricted Items
-      SMT_RESTRICTED_ITEM: int # Item should only be usable by certain units (1 = Crozius, 2 = Deathwatch Weapons, 4 = DW Captain Gear)
-      SMT_RESTRICTED_ACCURACY_PEN: int # Percentage of weapon accuracy when used by incorrect units
-      SMT_RESTRICTED_DAMAGE_PEN: int # Percentage of weapon power when used by incorrect units
-      SMT_RESTRICTED_ITEM_MELEE: int # if !0, reduce melee power % by this much when used by incorrect units
+      SMT_RESTRICTED_ITEM: int          # Item should only be usable by certain units (1 = Crozius, 2 = Deathwatch Weapons, 4 = DW Captain Gear)
+      SMT_RESTRICTED_ACCURACY_PEN: int  # Percentage of weapon accuracy when used by incorrect units
+      SMT_RESTRICTED_DAMAGE_PEN: int    # Percentage of weapon power when used by incorrect units
+      SMT_RESTRICTED_ITEM_MELEE: int    # if !0, reduce melee power % by this much when used by incorrect units
       ## Shields
-      SMT_ITEM_SHIELD_DURATION: int             # duration of temporary energy shield
+      SMT_ITEM_SHIELD_DURATION: int     # duration of temporary energy shield
       ## Custom Ammo
-      SMT_AMMO_BONUSDMG_FIRINGACC: int # % bonus damage granted from units Firing Accuracy: (FA - 100) * Tag / 100
-      SMT_DEREVENANT_AMMO: int # Instantly kills Necrons that are or will be knocked unconcious - value = % bonus damage added against 2x2 Necrons that can't be stunned
-      SMT_AMMO_HP_PREDMG: int # % of power directly added to health damage ignoring armor
-      SMT_SHIELD_DAMAGE_AMP: int # % power increase based on targets shield
-      ITEM_IGNORE_ALLIES: int # deal no damage to units belonging to users faction
-      ITEM_IGNORE_IMPERIUM: int # deal no damage to allied units with armor tag `UNIT_TYPE_IMPERIUM: 1`
-      SMT_GRAV_WEAPON: int  # weapon scales power with weight (armor+hp+size) and scales stun inversely with strength
+      SMT_AMMO_BONUSDMG_FIRINGACC: int  # % bonus damage granted from units Firing Accuracy: (FA - 100) * Tag / 100
+      SMT_DEREVENANT_AMMO: int          # Instantly kills Necrons that are or will be knocked unconcious - value = % bonus damage added against 2x2 Necrons that can't be stunned
+      SMT_AMMO_HP_PREDMG: int           # % of power directly added to health damage ignoring armor
+      SMT_SHIELD_DAMAGE_AMP: int        # % power increase based on targets shield
+      ITEM_IGNORE_ALLIES: int           # deal no damage to units belonging to users faction
+      ITEM_IGNORE_IMPERIUM: int         # deal no damage to allied units with armor tag `UNIT_TYPE_IMPERIUM: 1`
+      SMT_GRAV_WEAPON: int              # weapon scales power with weight (armor+hp+size) and scales stun inversely with strength
+      SMT_RENDING_WEAPON: int           # Negate effect of shred resistance by %
       ## Plasma Heat
       ITEM_HEAT_SINK_COLOR: int # sprite color index for heatsink parts that glow, if not set defaults to 2 (red)
     RuleArmor:
@@ -64,7 +65,8 @@ extended:
       ## Captain
       UNIT_TYPE_ASTARTES: int                   # is unit a Space Marine?
       ## Regeneration
-      SMT_ARMOR_REGEN_HP: int                   #passive hp regen from armor
+      SMT_ARMOR_REGEN_HP: int                   # passive hp regen from armor
+      ARMOR_REGENERATE_DURABILITY: int          # Unit armor is restored by X each turn
       ## Heavy Weapons
       SMT_ARMOR_HEAVY_WEAPON_USER: int # counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 2/3, 3 = 2/4, 4 = 2/5 etc
       ## Infiltrator
@@ -86,9 +88,8 @@ extended:
       ## Objective Units
       MISSION_OBJECTIVE_UNIT: int               # Unit contributes % to mission completion when killed; once completion = 100% kill all remaining enemies
       UNIT_IMMOBILE_TURNS: int                  # Unit loses all TUs for X turns to stop it moving prematurely
-      UNIT_RAPID_STUN_RECOVERY: int             # Unit immediately gains % TUs after standing up from being stunned, letting it act immediately
+      UNIT_RAPID_KO_RECOVERY: int               # Unit immediately gains % TUs after standing up from being stunned, letting it act immediately
       UNIT_DAMAGE_SOFTCAP: int                  # When unit takes hp/stun damage over X, halve it
-      ARMOR_REGENERATE_DURABILITY: int          # Unit armor is restored by X each turn
     RuleSoldier:
       ## Regeneration
       SMT_UNIT_REGEN_HP: int #passive hp regen from soldier type

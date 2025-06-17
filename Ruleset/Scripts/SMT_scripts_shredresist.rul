@@ -23,25 +23,31 @@ armors:
         var ptr RuleArmor unitArmor;
         var int armorResist;
         var int damageReduction;
+        var int rendValue;
 
         unit.getRuleArmor unitArmor;
         #debug_log "Armor Dmg: " to_armor;
 
         if eq damaging_type 5; #Plasma damage
           unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_PLASMA_RESISTANCE;
-          #debug_log "Armor resist: " armorResist;
-        end;
-        if eq damaging_type 11; #Melta damage
+          #debug_log "Armor resist (Plasma): " armorResist damaging_type;
+        else eq damaging_type 11; #Melta damage
           unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_MELTA_RESISTANCE;
-          #debug_log "Armor resist (Melta): " armorResist;
-        end;
-        if and neq damaging_type 5 neq damaging_type 11; #Other
+          #debug_log "Armor resist (Melta): " armorResist damaging_type;
+        else;
           unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_RESISTANCE;
-          #debug_log "Armor resist: " armorResist;
+          #debug_log "Armor resist (Regular): " armorResist damaging_type;
         end;
 
         if and neq armorResist 0 gt to_armor 0; #Only run if the armor actually has resist (and damage is being dealt)
           set damageReduction to_armor;
+          weapon_item.getTag rendValue Tag.SMT_RENDING_WEAPON;
+          if gt rendValue 0;
+            sub rendValue 100;
+            mul rendValue -1;
+            muldiv armorResist rendValue 100;
+            debug_log "Armor Rend Adjustment: " rendValue armorResist;
+          end;
           muldiv damageReduction armorResist 100;
           #debug_log "Armor DmgReduction: " damageReduction;
           sub to_armor damageReduction;
@@ -996,4 +1002,9 @@ armors:
   - type: STR_DW_LEADER_ULTRA_UC
     refNode: *STR_SHREDRESIST_ARMOR
   - type: STR_DW_LEADER_WS_UC
+    refNode: *STR_SHREDRESIST_ARMOR
+
+### Enemies
+
+  - type: STR_NECRON_ARCHITECT_ARMOR
     refNode: *STR_SHREDRESIST_ARMOR

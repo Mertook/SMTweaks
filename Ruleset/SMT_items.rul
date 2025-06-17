@@ -553,6 +553,21 @@ items:
     bigSprite: 816
     armor: 300
 
+  - type: STR_GRAVCANNON_TERRAN             # Gravcannon
+    categories: [STR_CAT_GRAVGUN, STR_CAT_DEVASTATOR]
+    battleType: 1
+    invWidth: 2
+    invHeight: 3
+    listOrder: 11805
+    size: 0.3
+    bigSprite: 299
+    floorSprite: 299
+    handSprite: 544
+    bulletSprite: {mod: 40k, index: 14}
+    fireSound: {mod: 40k, index: 829}
+    compatibleAmmo:
+      - STR_GRAVCANNON_AMMO
+
   - type: STR_BIKE_ARMOR                    # Bike Armor (Item)
     costBuy: 280000 # was 360k
     costSell: 140000 # was 140k

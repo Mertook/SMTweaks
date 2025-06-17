@@ -92,6 +92,34 @@ extended:
 
           return;
 
+      - new: SMTS_regen_armor
+        offset: 1
+        code: |
+          var int armorRecovery;
+          var int temp;
+          var int temp2;
+
+          unit.getFaction temp;
+          if neq side temp; # don't trigger on others' turns
+            return;
+          end;
+
+          unit.getTag armorRecovery Tag.ARMOR_REGENERATE_DURABILITY;
+          if eq armorRecovery 0; # skip if unit doesn't regen wounds
+            return;
+          end;
+
+          loop var i 5; #cycle through the armor sides
+            unit.getArmor temp i;
+            unit.getArmorMax temp2 i;
+            debug_log "RegenArmor Pre  " i temp temp2 armorRecovery;
+            add temp armorRecovery;
+            limit_upper temp temp2;
+            unit.setArmor temp i;
+            debug_log "RegenArmor Post " i temp temp2 armorRecovery;
+          end;
+
+          return;
 
     returnFromMissionUnit:
       #*** Increases wound times for soldiers who received battlefield healing ***

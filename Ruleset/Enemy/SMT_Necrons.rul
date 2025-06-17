@@ -4,9 +4,13 @@ weaponSets:
     weapons: [STR_STAFF_OF_LIGHT, STR_NECRON_SCARAB_SPAWNER_GRENADE, STR_NECRON_SCARAB_SPAWNER_GRENADE]
   - type: SCARABS_ONLY
     weapons: [STR_NECRON_SCARAB_SPAWNER_GRENADE, STR_NECRON_SCARAB_SPAWNER_GRENADE]
+  - type: BASIC_SYNAPTIC_DISINTEGRATOR
+    weapons: [STR_SYNAPTIC_DISINTEGRATOR_AI, STR_KILLPOINT_TOKEN_7]
+  - type: SYNAPTIC_DISINTEGRATOR_WITH_SCARAB
+    weapons: [STR_SYNAPTIC_DISINTEGRATOR_AI, STR_NECRON_SCARAB_SPAWNER_GRENADE, STR_KILLPOINT_TOKEN_7]
 
 units:
-  - type: STR_NECRON_ARCHITECT          # Necron Architect (Deathwatch Final Boss)
+  - type: STR_NECRON_ARCHITECT                  # Necron Architect (Deathwatch Final Boss)
     race: STR_NECRON
     rank: STR_LIVE_COMMANDER
     stats:
@@ -32,12 +36,48 @@ units:
     sniper: 60
     energyRecovery: 200
     builtInWeaponSets: []
+    weightedBuiltInWeaponSets: [] # just stick to the staff
+
+  - &REF_DEATHMARK_UNIT                         # Necron Deathmark
+    type: STR_NECRON_DEATHMARK
+    stats:
+      tu: 75
+      stamina: 100
+      health: 80 # was 60
+      bravery: 110
+      reactions: 100
+      firing: 100
+      throwing: 80
+      strength: 60
+      psiStrength: 200
+      psiSkill: 0
+      melee: 65
+    intelligence: 4
+    aggression: 1
+    spotter: 2
+    sniper: 100
+    energyRecovery: 200
+    value: 25 # was 15 - Necron elites
+    builtInWeaponSets: []
     weightedBuiltInWeaponSets:
-      - 
-        SCARABS_ONLY: 100
+      -  # Tier 1
+        BASIC_SYNAPTIC_DISINTEGRATOR: 80
+        SYNAPTIC_DISINTEGRATOR_WITH_SCARAB: 20
+      -  # Tier 2
+        BASIC_SYNAPTIC_DISINTEGRATOR: 40
+        SYNAPTIC_DISINTEGRATOR_WITH_SCARAB: 60
+      -  # Tier 3
+        BASIC_SYNAPTIC_DISINTEGRATOR: 20
+        SYNAPTIC_DISINTEGRATOR_WITH_SCARAB: 80
+
+  - type: STR_NECRON_DEATHMARK_REVIVES          # Necron Deathmark (Revives)
+    refNode: *REF_DEATHMARK_UNIT
+    armor: STR_NECRON_DEATHMARK_ARMOR_REVIVES
+    spawnUnit: STR_NECRON_DEATHMARK
+
 
 armors:
-  - type: STR_NECRON_ARCHITECT_ARMOR       # NECRON WARRIOR
+  - type: STR_NECRON_ARCHITECT_ARMOR            # Necron Architect
     visibilityAtDay: 40
     visibilityAtDark: 40
     heatVision: 50
@@ -45,7 +85,7 @@ armors:
     antiCamouflageAtDay: 20 # was 5 - sees all
     bleedImmune: true
     fearImmune: true
-    painImmune: true
+    painImmune: false # don't block stun from tenacious
     zombiImmune: true
     allowsRunning: true # let BAI be more dangerous here
     corpseBattle:
@@ -59,8 +99,8 @@ armors:
       flatOne: 150.0 # heavy psi resist
     recovery:
       health:
-        healthCurrent: 0.5
-        flatOne: 5
+        healthCurrent: 0.1 # giant health pool
+        flatOne: 20
     damageModifier:
       - 1.0  # none
       - 0.8  # AP
@@ -74,6 +114,7 @@ armors:
       - 0.0  # SMOKE
       - 0.9  # IMPACT
       - 1.0  # MELTA
+      - 0.2  # GRAV - Compensate for boss health/armor, not actually a superheavy unit
     loftempsSet: [3]
     builtInWeapons: # make staff built in, can't drop it
       - STR_STAFF_OF_LIGHT
@@ -82,7 +123,7 @@ armors:
       ARMOR_ENERGY_SHIELD_DECAY: 100 # was 12
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 0 # was 6, probably leftover from bad copypaste
       ARMOR_TENACIOUS_HP_MOD: 5 # was 3
-      ARMOR_TENACIOUS_STUN_RECOVERY: 25 # was 25
+      ARMOR_TENACIOUS_STUN_RECOVERY: 50 # was 25
       INFECTION_RESIST: 100
       INTIMIDATION_RESISTANCE: 100
       UNIT_TYPE_XENO: 1
@@ -92,20 +133,117 @@ armors:
       ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
       MISSION_OBJECTIVE_UNIT: 100 # final boss
       UNIT_IMMOBILE_TURNS: 3 # don't run off the spawn point while player is clearing entrance
-      UNIT_RAPID_STUN_RECOVERY: 100 # able to act with 100% TUs after getting up from stun
+      UNIT_RAPID_KO_RECOVERY: 100 # able to act with 100% TUs after getting up from stun
       UNIT_DAMAGE_SOFTCAP: 75 # reduce incoming damage and prevent instant kills
-      ARMOR_REGENERATE_DURABILITY: 60 # necrodermis self repair
+      ARMOR_REGENERATE_DURABILITY: 100 # necrodermis self repair
+      SMT_ARMOR_SHRED_RESISTANCE: 75
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 60
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 45
+
+
+  - &REF_DEATHMARK_ARMOR                        # Necron Deathmark
+    type: STR_NECRON_DEATHMARK_ARMOR_REVIVES
+    visibilityAtDay: 40
+    visibilityAtDark: 40
+    heatVision: 50
+    antiCamouflageAtDark: 15
+    antiCamouflageAtDay: 15
+    camouflageAtDark: -15
+    camouflageAtDay: -10
+    frontArmor: 95 # was 60 - Deathmarks are elites (and are t5 with a 3+ save)
+    sideArmor: 80 # was 50
+    rearArmor: 50 # was 40
+    underArmor: 80 # was 50
+    recovery:  # Living metal rapidly regenerates health
+      health:
+        healthCurrent: 0.5
+    damageModifier:  # NECRON ARMOR
+      - 1.0  # none
+      - 0.9  # AP
+      - 0.4  # FLAMES
+      - 1.0  # HE
+      - 1.1  # LASCANON
+      - 1.0  # PLASMA
+      - 1.0  # STUN
+      - 1.0  # MELEE
+      - 0.5  # ACID
+      - 0.0  # SMOKE
+      - 1.0  # IMPACT
+      - 1.1  # MELTA
+      - 1.0  # GRAV
+    loftempsSet: [3]
+    builtInWeapons: []
+    tags:
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      UNIT_TYPE_XENO: 1
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_NECRON: 1
+      ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
+      ARMOR_OVERWATCH_TU_RESTORED: 55 # enough for 1 shot
+
+  - type: STR_NECRON_DEATHMARK_ARMOR
+    refNode: *REF_DEATHMARK_ARMOR
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 3 # was 2
+      ARMOR_TENACIOUS_STUN_RECOVERY: 30 # was 20
+      ARMOR_OVERWATCH_TU_RESTORED: 55 # enough for 1 shot
+
+  - &REF_SCARAB_ARMOR                       # Canoptic Scarabs
+    type: STR_NECRON_SCARAB_ARMOR5
+    damageModifier:
+      - 1.0  # none
+      - 0.5  # AP
+      - 0.4  # FLAMES
+      - 1.0  # HE; only AoE does full damage due to being a dispersed swarm
+      - 0.6  # LASCANON; dispersed swarm, but weakness to lascannon
+      - 0.5  # PLASMA
+      - 0.0  # STUN; they're automatons, they can't be stunned.
+      - 0.5  # MELEE
+      - 0.5  # ACID
+      - 0.0  # SMOKE
+      - 0.5  # IMPACT
+      - 0.6  # MELTA; dispersed swarm, but weakness to melta
+      - 0.2  # GRAV; dispersed swarm, invidually small
+
+  - type: STR_NECRON_SCARAB_ARMOR3
+    refNode: *REF_SCARAB_ARMOR
+  - type: STR_NECRON_SCARAB_ARMOR1
+    refNode: *REF_SCARAB_ARMOR
+
+
+
 
 items:
-  - type: STR_STAFF_OF_LIGHT
+  - &DMG_GAUSS_STD                          # Standard Gauss Damage
+    type: STR_STAFF_OF_LIGHT
+    vaporColorSurface: {mod: 40k, index: 3}
+    vaporDensitySurface: 6
+    vaporProbabilitySurface: 30
+    damageType: 11
+    damageAlter:
+      RandomType: 6
+      ArmorEffectiveness: 1.0
+      ToArmorPre: 1.0
+      ToHealth: 1.0
+      ToMorale: 0.4
+      ToStun: 0.2 # was 0.4
+      ToArmor: 0.0
+      ToTile: 1.0
+      ToWound: 0.05
+      RandomWound: false
+      IgnoreOverKill: false
+    shotgunSpread: 1
+    shotgunBehavior: 1
+    shotgunPellets: 1 # instant beams
+
+  - type: STR_STAFF_OF_LIGHT                # Staff of Light (Architect)
+    refNode: *DMG_GAUSS_STD
     recover: false
     fixedWeapon: true
     fixedWeaponShow: true
     battleType: 1
     clipSize: -1
-    vaporColorSurface: {mod: 40k, index: 3}
-    vaporDensitySurface: 6
-    vaporProbabilitySurface: 30
     invWidth: 2
     invHeight: 3
     tuAimed: 0
@@ -117,23 +255,10 @@ items:
     autoRange: 12
     autoShots: 3
     power: 80
-    damageType: 11
-    damageAlter:
-      RandomType: 6
-      ArmorEffectiveness: 1.0
-      ToArmorPre: 1.0
-      ToHealth: 1.0
-      ToMorale: 0.4
-      ToStun: 0.4
-      ToArmor: 0.0
-      ToTile: 1.0
-      ToWound: 0.05
-      RandomWound: false
-      IgnoreOverKill: false
     dropoff: 4
-    shotgunSpread: 75
-    shotgunChoke: 50 # wide spread on secondary shots
     shotgunBehavior: 1
+    shotgunSpread: 75
+    shotgunChoke: 60 # wide spread on secondary shots
     shotgunPellets: 8 # cone of death
     confSnap:
       shots: 3
@@ -168,12 +293,206 @@ items:
       - STR_GENERALLOCK # boss weapon, can't even pick it up - don't show in unlocks for Necron Xenotech
 
 
+  - type: STR_GAUSS_CANNON                  # Gauss Cannon (Destroyer)
+    refNode: *DMG_GAUSS_STD
+    power: 100 # was 140
+    snapRange: 20
+    tuSnap: 30 # was 33
+    tuAuto: 50
+    accuracyAuto: 70
+    autoRange: 15
+    dropoff: 4
+    autoShots: 3 # 3x2, was 6x1
+    shotgunBehavior: 1
+    shotgunSpread: 50
+    shotgunChoke: 50 # wider spread on secondary shot
+    shotgunPellets: 2
+    requires:
+      - STR_ALIENS_ONLY # fixed destroyer weapon, can't recover
+
+  - type: STR_GAUSS_FLAYER                  # Gauss Flayer (Rifle)
+    refNode: *DMG_GAUSS_STD
+    dropoff: 4
+    snapRange: 18
+    autoRange: 10
+    accuracySnap: 90
+    accuracyAuto: 65
+    tuSnap: 28 # was 30
+    tuAuto: 40
+    autoShots: 3
+    power: 60
+    # Gauss Axe bayonet
+    meleeType: 7
+    meleePower: 50
+    meleeBonus:
+      strength: 0.3
+      melee: 0.2
+    meleeAlter:
+      RandomType: 6
+      ToArmorPre: 0.1  # Axe bayo does some nasty damage to armor
+      ToArmor: 0.2  # Axe bayo does some nasty damage to armor
+      ArmorEffectiveness: 0.9
+      ToWound: 0.2
+    accuracyMelee: 80  # it's a little cumbersome
+    meleeMultiplier:
+      flatHundred: 0.5
+      melee: 0.4
+      strength: 0.1  # heavy and cumbersome; strength is influential
+    costMelee:
+      time: 15
+      energy: 2
+    flatMelee:
+      energy: true
+      time: true
+    attraction: 10
+    requires:
+      - STR_NECRONTECH_RESEARCH
+      - STR_GAUSS_FLAYER
+
+  - type: STR_GAUSS_REAPER                  # Gauss Reaper (Carbine)
+    refNode: *DMG_GAUSS_STD
+    dropoff: 5
+    snapRange: 12
+    autoRange: 7
+    accuracySnap: 75
+    accuracyAuto: 60
+    tuSnap: 28 # was 30
+    tuAuto: 40
+    autoShots: 4 # was 3x2
+    confSnap: # double shots instead of x2 shotgun bursts
+      shots: 2
+    clipSize: -1
+    power: 60
+    requires:
+      - STR_NECRONTECH_RESEARCH
+      - STR_GAUSS_REAPER
+    tags:
+      REACTION_MULTIPLIER: 150 #CQC
+
+  - type: STR_GAUSS_BLASTER                 # Gauss Blaster (Immortal)
+    refNode: *DMG_GAUSS_STD
+    snapRange: 20
+    tuSnap: 40  # can manage 2 shots if you don't really move
+    tuAuto: 45
+    accuracyAuto: 65
+    autoRange: 12
+    dropoff: 4
+    power: 70
+    autoShots: 4 # was 3x2
+    confSnap: # double shots instead of x2 shotgun bursts
+      shots: 2
+    meleeType: 7
+    meleePower: 60  # heavier but clumsier
+    meleeBonus:
+      strength: 0.4
+      melee: 0.1
+    meleeAlter:
+      RandomType: 2  # TFTD [50% - 150%]
+      ToArmorPre: 0.1  # Axe bayo does some nasty damage to armor
+      ToArmor: 0.2  # Axe bayo does some nasty damage to armor
+      ArmorEffectiveness: 0.9
+      ToWound: 0.2
+    accuracyMelee: 70  # cumbersome
+    meleeMultiplier:
+      flatHundred: 0.5
+      melee: 0.3
+      strength: 0.2  # heavy and cumbersome; strength is influential
+    tuMelee: 15
+    flatMelee:
+      time: true
+    kneelBonus: 130  # heavyish weapon; benefits twice as much from kneeling
+    requires:
+      - STR_NECRONTECH_RESEARCH
+      - STR_GAUSS_BLASTER
+    tags:
+      ITEM_IS_HEAVY_WEAPON: 1
+
+  - type: STR_SYNAPTIC_DISINTEGRATOR_AI     # Synaptic Disintegrator (Deathmark)
+    categories: [STR_CAT_NECRON, STR_CAT_SNIPER, STR_CAT_SCOUT]
+    refNode: *DMG_GAUSS_STD
+    requires:
+      - STR_ALIENS_ONLY
+    size: 0.1
+    weight: 20
+    bigSprite: {mod: 40k, index: 702}
+    floorSprite: {mod: 40k, index: 702}
+    handSprite: {mod: 40k, index: 32}
+    bulletSprite: {mod: 40k, index: 23}
+    fireSound: [{mod: 40k, index: 802}, {mod: 40k, index: 803}]
+    bulletSpeed: 10
+    hitSound: {mod: 40k, index: 801}
+    hitAnimation: {mod: 40k, index: 26}
+    explosionSpeed: 5
+    attraction: 1
+    battleType: 1
+    twoHanded: true
+    invWidth: 2
+    invHeight: 3
+    armor: 150
+    clipSize: -1
+    dropoff: 2
+    snapRange: 30
+    accuracySnap: 120
+    tuAuto: 0
+    tuSnap: 50
+    tuAimed: 0
+    power: 150 # don't use scripted bonus power
+    damageType: 11
+    damageAlter:
+      RandomType: 6
+      ToArmorPre: 0.0
+      ToArmor: 0.0
+      ArmorEffectiveness: 0.3 # was 0.4
+      ToHealth: 1.0 # was 0.2
+      ToWound: 0.3 # was 0.5, do more direct to kill instead of allowing apothecary recovery
+      RandomWound: false
+      ToMorale: 50.0
+      ToStun: 1.5
+      ToTime: 0.5
+      FixRadius: 0
+    recoveryTransformations:
+      STR_SYNAPTIC_DISINTEGRATOR: [1]
+    ufopediaType: STR_SYNAPTIC_DISINTEGRATOR
+
+  - type: STR_SYNAPTIC_DISINTEGRATOR        # Synaptic Disintegrator (Recovered)
+    power: 60  # power scales with accuracy
+    accuracyMultiplier:  # sniper rifle accuracy
+      firing: [0.5, 0.005]
+    dropoff: 2  # it's a proper sniper rifle
+    tuSnap: 45
+    tuAimed: 85 # was 75
+    aimRange: 38
+    damageType: 11
+    damageAlter:
+      RandomType: 6
+      ToArmorPre: 0.0
+      ToArmor: 0.0
+      ArmorEffectiveness: 0.3 # was 0.4
+      ToHealth: 1.0 # was 0.2
+      ToWound: 0.3 # was 0.5, do more direct to kill instead of allowing apothecary recovery
+      RandomWound: false
+      ToMorale: 50.0
+      ToStun: 1.5
+      ToTime: 0.5
+      FixRadius: 0
+    kneelBonus: 130  # light sniper weapon; benefits twice as much from kneeling
+    minRange: 7  # less accurate up close
+    tags:
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 130  # Sniper rifle bonus to aimed shots; power of precision
+    attraction: 9
+    requires:
+      - STR_NECRONTECH_RESEARCH
+      - STR_SYNAPTIC_DISINTEGRATOR
+
+  - type: STR_NECRON_SCARAB_CORPSE          # Scarab Corpse
+    power: 60 # was 120
+    damageType: 9 # Smoke, was 1 - scarabs are not hyperfrag rockets
 
 alienRaces:
   - id: STR_NECRON
     retaliationAggression: -100
     membersRandom:
-      - [STR_NECRON_LYCHGUARD_REVIVES, STR_NECRON_ARCHITECT]         # 0 Commander
+      - [STR_NECRON_LYCHGUARD_REVIVES]         # 0 Commander - remove Architect, is boss enemy
       - [STR_NECRON_LYCHGUARD, STR_NECRON_LYCHGUARD, STR_NECRON_LYCHGUARD_REVIVES, STR_NECRON_LYCHGUARD_REVIVES]             # 1 leader
       - [STR_NECRON_DEATHMARK, STR_NECRON_DEATHMARK_REVIVES]             # 2 Engineer
       - [STR_NECRON_IMORTAL, STR_NECRON_IMORTAL_REVIVES]             # 3 MEDIC
@@ -182,3 +501,14 @@ alienRaces:
       - [STR_NECRON_DESTROYER, STR_NECRON_DESTROYER, STR_NECRON_DESTROYER, STR_NECRON_SCARAB5, STR_NECRON_FLAYED_ONE_REVIVES] # 6 Terror Unit
       - [STR_NECRON_DESTROYER, STR_NECRON_DESTROYER, STR_NECRON_DESTROYER, STR_NECRON_SCARAB5, STR_NECRON_FLAYED_ONE_REVIVES] # 7 Terror Unit
 
+  - id: STR_NECRON_TERROR
+    retaliationAggression: -100
+    membersRandom:
+      - [STR_NECRON_LYCHGUARD_REVIVES]         # 0 Commander - Lord
+      - [STR_NECRON_LYCHGUARD, STR_NECRON_LYCHGUARD, STR_NECRON_LYCHGUARD_REVIVES]             # 1 leader - High Tier
+      - [STR_NECRON_IMORTAL, STR_NECRON_IMORTAL_REVIVES, STR_NECRON_DEATHMARK, STR_NECRON_DEATHMARK_REVIVES, STR_NECRON_FLAYED_ONE, STR_NECRON_FLAYED_ONE_REVIVES]    # 2 Engineer - Mixed Strong units
+      - [STR_NECRON_IMORTAL, STR_NECRON_IMORTAL, STR_NECRON_IMORTAL_REVIVES]                    # 3 Medic
+      - [STR_NECRON_DEATHMARK, STR_NECRON_DEATHMARK, STR_NECRON_DEATHMARK_REVIVES]              # 4 Navigator
+      - [STR_NECRON_WARRIOR, STR_NECRON_WARRIOR, STR_NECRON_WARRIOR, STR_NECRON_SCARAB1, STR_NECRON_WARRIOR_REVIVES]    # 5 SOLDIER - Basic troops
+      - [STR_NECRON_FLAYED_ONE, STR_NECRON_FLAYED_ONE, STR_NECRON_FLAYED_ONE_REVIVES]           # 6 Terror Unit 1
+      - [STR_NECRON_DESTROYER, STR_NECRON_DESTROYER, STR_NECRON_DESTROYER, STR_NECRON_SCARAB5]  # 7 Terror Unit 2 - 2x2 Units

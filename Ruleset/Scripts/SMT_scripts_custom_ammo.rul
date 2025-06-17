@@ -73,7 +73,7 @@ items:
 
         if and gt temp 0 gt derevBonus 0;
           #debug_log "DerevDmg pinged B/H " derevBonus to_health;
-          targetArmor.getSize temp; # if unit is 2x2 deal extra damage directly (2x2 can't be stunned)
+          targetArmor.getSize temp; # if unit is 2x2 deal extra damage directly (2x2 can't be stunned normally)
           if ge temp 2;
             add derevBonus 100;
             muldiv to_health derevBonus 100; # Derev value is added to damage as % bonus
@@ -196,28 +196,93 @@ items:
   - type: AUX_CROZIUS_DW                # Crozius (DW)
     refNode: *STR_NOFRIENDLYFIRE_AMMO
 
-  # - &REF_GRAV_WEAPON                    # Grav Weapon
-    # type: STR_STUN_BOMB
-    # tags:
-      # GravPercentage: 0 # disable Rosigma Grav script
-    # scripts:
-      # damageUnitAmmo: |
-        # var int dmgCheck;
-        # var int temp;
-        # var int temp2;
+  - &REF_GRAV_WEAPON                    # Grav Weapon
+    type: STR_STUN_BOMB
+    tags:
+      GravPercentage: 0 # disable Rosigma Grav script
+    scripts:
+      damageUnitAmmo: |
+        var ptr RuleArmor targetArmor;
+        var int gravPow;
+        var int gravMult;
+        var int strMult;
+        var int temp;
+        var int temp2;
 
-        # damaging_item.getTag dmgCheck Tag.SMT_GRAV_WEAPON;
-        # if gt dmgCheck 0;
-          # attacker.getFaction temp;
-          # unit.getFaction temp2;
-          # #debug_log "FriendlyFire Ping " dmgCheck temp temp2 power;
-          # if eq temp temp2;
-            # set power 0; # if target is same faction and antifriendly fire conditions are true, negate damage
-            # #debug_log "FriendlyFire Negated " dmgCheck temp temp2;
+        damaging_item.getTag gravPow Tag.SMT_GRAV_WEAPON;
+        if gt gravPow 0;
+          loop var i 5; #cycle through the armor sides
+            unit.getArmorMax temp i;
+            add gravMult temp;
+            #debug_log "Grav Armor: " i gravMult temp;
+          end;
+          #debug_log "Grav Armor Final: " gravMult;
+          muldiv gravMult 3 2;
+          unit.getRuleArmor targetArmor;
+          unit.getHealthMax temp;
+          muldiv temp 2 3;
+          add gravMult temp; # add health
+          #debug_log "Grav Health: " gravMult temp;
+
+          # targetArmor.getSize temp;
+          # if gt temp 1;
+            # muldiv gravMult 3 2; # increased power against 2x2 units
+            # #debug_log "Grav 2x2Unit " gravMult temp;
           # end;
-        # end;
 
-        # return;
+          unit.Stats.getStrength temp;
+          targetArmor.Stats.getStrength temp2;
+          debug_log "Grav Str: " temp temp2 gravMult;
+          sub temp temp2; # ignore strength granted by armor
+          #sub gravMult temp; # minor resistance from base strength - disabled until enemy rework
+          div gravMult 5;
+          set strMult gravMult;
+          sub strMult temp; # high resistance from base strength
+          muldiv gravMult gravPow 100; # further adjust modifier based on weapon value
+          muldiv strMult gravPow 100;
+
+          add gravMult 100; # add to base 100% damage
+          add strMult 100;
+          debug_log "Grav Mult Final: " gravMult strMult gravPow orig_power;
+          debug_log "Grav Start Dmg H/A/W/M: " to_health to_armor to_wound to_mana;
+          muldiv to_health gravMult 100;
+          muldiv to_armor gravMult 100;
+          muldiv to_wound gravMult 100;
+          muldiv to_mana gravMult 100;
+          debug_log "Grav Final Dmg H/A/W/M: " to_health to_armor to_wound to_mana;
+          debug_log "Grav Start Dmg S/T/E/M: " to_stun to_time to_energy to_morale; # str helps more against secondary effects
+          muldiv to_stun strMult 100;
+          muldiv to_time strMult 100;
+          muldiv to_energy strMult 100;
+          muldiv to_morale strMult 100;
+          debug_log "Grav Final Dmg S/T/E/M: " to_stun to_time to_energy to_morale;
+        end;
+
+        return;
+
+#Terminator 830(489) armor 180 hp 110 str = 155 base mult
+#Marine     560(336) armor 140 hp 110 str = 105 base mult
+#50+49 bonus damage - rosigma gravcannon vs terminator
+
+  - type: STR_STUN_BOMB                 # Gravgun Ammo
+    refNode: *REF_GRAV_WEAPON
+  - type: AUX_CENTURION_GRAVGUN         # Centurion Gravgun
+    refNode: *REF_GRAV_WEAPON
+  - type: STR_GRAVGUN_AOE_AMMO          # Gravgun Ammo
+    refNode: *REF_GRAV_WEAPON
+  - type: STR_GRAVGUN_AOE_AMMO_SHOTGUN  # Gravgun Ammo
+    refNode: *REF_GRAV_WEAPON
+  - type: STR_GRAVPISTOL_AMMO           # Gravpistol Ammo
+    refNode: *REF_GRAV_WEAPON
+  - type: STR_GRAVCANNON_AMMO           # Gravgun Ammo
+    refNode: *REF_GRAV_WEAPON
+  - type: STR_BLIGHT_HAULER_GRAVCANNON  # Blight Hauler Gravgun
+    refNode: *REF_GRAV_WEAPON
+
+
+
+
+
 
 
 

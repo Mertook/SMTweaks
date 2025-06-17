@@ -3047,7 +3047,7 @@ items:
     refNode: *DMG_PLASMA_STD
     power: 90
     damageAlter:
-      ToMorale: 0.2
+      ToMorale: 0.3 # unsettling
     powerRangeReduction: 5
     powerRangeThreshold: 20.0
 
@@ -3505,6 +3505,115 @@ items:
       RadiusReduction: 75 # high dropoff if not direct hit
     tags:
       SMT_AMMO_HP_PREDMG: 50
+
+### Grav Weapons
+  - &DMG_GRAV_STD                           # Gravitic Standard Values
+    type: STR_STUN_BOMB
+    damageType: 12
+    damageAlter:
+      RandomType: 2 # 50-150%
+      ArmorEffectiveness: 0.0
+      ToArmorPre: 0.0
+      ToArmor: 0.2
+      ToHealth: 0.85
+      ToWound: 0.1
+      RandomWound: false
+      ToStun: 0.6
+      ToTime: 0.6
+      ToEnergy: 1.0
+      ToTile: 2.0 # building destroyer
+      ToItem: 0.5
+    powerRangeThreshold: 25
+    powerRangeReduction: 2
+
+  - type: STR_STUN_BOMB                     # Gravgun Ammo
+    refNode: *DMG_GRAV_STD
+    power: 25 # was 40
+    tags:
+      SMT_GRAV_WEAPON: 120
+
+  - type: STR_GRAVPISTOL_AMMO               # Gravpistol Ammo Cell
+    refNode: *DMG_GRAV_STD
+    power: 20 # was 35
+    tags:
+      SMT_GRAV_WEAPON: 120
+
+  - type: STR_GRAVGUN_AOE_AMMO              # Jupiter Gravgun Cell
+    refNode: *DMG_GRAV_STD
+    powerForAnimation: 10
+    power: 25
+    clipSize: 5 # was 3
+    damageAlter:
+      FixRadius: 1
+      RadiusReduction: 5
+    tags:
+      SMT_GRAV_WEAPON: 90 # AoE
+
+  - type: STR_GRAVGUN_AOE_AMMO_SHOTGUN      # Grav Burst Cell
+    refNode: *DMG_GRAV_STD
+    hitSound: {mod: 40k, index: 830}
+    hitAnimation: {mod: 40k, index: 130}
+    hitAnimFrames: -1
+    shotgunBehavior: 1
+    shotgunSpread: 65
+    shotgunPellets: 4 # was 5, broken by AoE
+    power: 8
+    tags:
+      SMT_GRAV_WEAPON: 120
+
+  - type: STR_GRAVCANNON_AMMO               # Gravcannon Ammo
+    refNode: *DMG_GRAV_STD
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 1150} #was 2200, broken
+    hitAnimFrames: 16
+    powerForAnimation: 20
+    requires: !remove
+      - STR_NURGLE_OPTIONS
+      - STR_GRAVITON_TECH
+    power: 40 # was 50
+    clipSize: 5
+    damageAlter:
+      FixRadius: 1
+      RadiusReduction: 3
+    tags:
+      SMT_GRAV_WEAPON: 90 # AoE
+
+  - type: AUX_CENTURION_GRAVGUN             # Centurion Gravcannon
+    refNode: *DMG_GRAV_STD
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 1150}
+    hitAnimFrames: 16
+    powerForAnimation: 20
+    power: 40 # was 60
+    damageAlter:
+      FixRadius: 1
+      RadiusReduction: 3
+    tags:
+      SMT_GRAV_WEAPON: 90 # AoE
+
+  - type: STR_BLIGHT_HAULER_GRAVCANNON      # Blight Hauler Gravcannon
+    refNode: *DMG_GRAV_STD
+    powerForAnimation: 20
+    power: 40 # was 60
+    damageAlter:
+      FixRadius: 1
+      RadiusReduction: 3
+    tags:
+      SMT_GRAV_WEAPON: 90 # AoE
+
+  - type: STR_GRAVCANNON_TERRAN             # Gravcannon
+    costSell: 50000
+    twoHanded: true
+    weight: 40 # heavy
+    dropoff: 4
+    accuracySnap: 65
+    accuracyAimed: 90
+    snapRange: 16
+    aimRange: 25
+    minRange: 5
+    tuSnap: 45 # nurgle 35
+    tuAimed: 70
+    tags:
+      ITEM_IS_HEAVY_WEAPON: 1
+      ITEM_RECOIL: 80 # bulky, devastator weapon
 
 ### Lasguns
   - &DMG_LASGUN_STD

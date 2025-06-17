@@ -1007,6 +1007,13 @@ ufopaedia:
     requires:
       - STR_GENERALLOCK
 
+  - id: STR_GRAVCANNON_TERRAN               # Gravcannon
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1GGC.SPK
+    requires:
+      - STR_GRAVCANNON_TECH
+    text: STR_GRAVCANNON_TERRAN_CODEX
 
   - id: STR_ANTIPLANT_BOMB                  # AntiPlant Bomb
     type_id: 14

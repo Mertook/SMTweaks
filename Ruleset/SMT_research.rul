@@ -702,6 +702,28 @@ research:
     dependencies:
       - STR_ADEPTAS_MIDTIER
 
+  - name: STR_GRAVCANNON_REQ        # Gravcannon Requirement
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_GRAVCANNON_TECH       # Gravcannon Technology
+    cost: 750 # +600 for unlock
+    points: 20
+    dependencies:
+      - STR_GRAVCANNON_REQ
+
+  - name: STR_GRAVCANNON_NURGLE     # Nurgle Gravcannon
+    unlocks: !add
+      - STR_GRAVCANNON_REQ
+    dependencies:
+      - STR_GRAVITON_TECH
+
+  - name: STR_NURGLE_BLIGHT_HAULER  # Blight Hauler (Live)
+    unlocks: !add
+      - STR_GRAVCANNON_REQ
+
   - name: STR_PRIMARIS_BACKPACKS    # Primaris Backpack Weaponry
     cost: 60
     points: 10

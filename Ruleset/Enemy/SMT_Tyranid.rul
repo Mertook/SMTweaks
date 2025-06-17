@@ -18,8 +18,8 @@ items:
     damageAlter:
       IgnoreSelfDestruct: false
       RandomType: 7
-      ArmorEffectiveness: 0.8 # was 0.5
-      ToArmorPre: 0.1 # was 0.15
+      ArmorEffectiveness: 0.9 # was 0.5
+      ToArmorPre: 0.3 # was 0.15
       ToTime: 0.2 # was 0.5
       ToHealth: 0.25 # was 0.1
       FixRadius: 0
@@ -32,26 +32,25 @@ items:
     flatRate: true
     meleeAlter:
       ArmorEffectiveness: 0.8 # was 0.5
-      ToArmorPre: 0.1 # was 0.15
+      ToArmorPre: 0.3 # was 0.15
       ToTime: 0.2 # was 0.5
       ToHealth: 0.25 # was 0.1
       ToArmor: 0.3
     tags:
       INFECTION_DAMAGE_PERCENT: 50 # was 100
       INFECTION_TYPE: 2
-      SMT_VULN_DEBUFF_MOD: 12
-      SMT_VULN_DURATION: 2
-    specialChance: 2 # was 15%
+      SMT_RENDING_WEAPON: 50 # ignore 50% of shredresist
+    specialChance: 1 # was 15%
 
   - type: STR_GENOCLAWS             # Ancient Genestealer Melee L1
-    power: 80
+    power: 100 # was 80
     damageAlter:
       RandomType: 2  # TFTD [50% - 150%]
       IgnoreSelfDestruct: false
-      ArmorEffectiveness: 0.5
-      ToArmorPre: 0.3 # was 0.6
+      ArmorEffectiveness: 0.8 # was 0.5
+      ToArmorPre: 0.4 # was 0.6
       ToWound: 0.1
-      ToHealth: 0.8
+      ToHealth: 1.0 # was 0.8
     damageType: 7
     accuracyMelee: 100
     tuMelee: 10
@@ -59,18 +58,17 @@ items:
       melee: 1.0
       flatHundred: 0.0
     tags:
-      SMT_VULN_DEBUFF_MOD: 15
-      SMT_VULN_DURATION: 3
+      SMT_RENDING_WEAPON: 80 # ignore 80% of shredresist
 
   - type: STR_GENOCLAWS_END         # Ancient Genestealer Melee L2
-    power: 90
+    power: 120 # was 90
     damageAlter:
       RandomType: 2  # TFTD [50% - 150%]
       IgnoreSelfDestruct: false
-      ArmorEffectiveness: 0.4
-      ToArmorPre: 0.3 # was 0.8
+      ArmorEffectiveness: 0.8 # was 0.4
+      ToArmorPre: 0.5 # was 0.8
       ToWound: 0.2
-      ToHealth: 0.9
+      ToHealth: 1.0 # was 0.9
     damageType: 7
     accuracyMelee: 100
     tuMelee: 10
@@ -78,14 +76,13 @@ items:
       melee: 1.0
       flatHundred: 0.0
     tags:
-      SMT_VULN_DEBUFF_MOD: 20
-      SMT_VULN_DURATION: 3
+      SMT_RENDING_WEAPON: 90 # ignore 90% of shredresist
 
   - type: CTHULHU_GENE_WEAK         # Ancient Genestealer Ranged L1
     power: 80
     damageAlter:
       RandomType: 2  # TFTD [50% - 150%]
-      ToArmorPre: 0.3 # was 0.8
+      ToArmorPre: 0.2 # was 0.8
       ToHealth: 0.9
       ToWound: 0.2
       ToStun: 0.3
@@ -105,7 +102,7 @@ items:
     power: 100
     damageAlter:
       RandomType: 2  # TFTD [50% - 150%]
-      ToArmorPre: 0.3 # was 0.8
+      ToArmorPre: 0.2 # was 0.8
       ToHealth: 0.9
       ToWound: 0.2
       ToStun: 0.3

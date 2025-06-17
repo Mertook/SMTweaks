@@ -1,65 +1,41 @@
 mapScripts:
   - type: INDUSTRIALURBANMONO # Terror 4
     commands:
-    - type: addUFO
-      UFOName: STR_DOOMSDAY_MONOLITH
+    #*** Add Road
+    - type: addLine
+      label: 1
+      direction: vertical
+      executionChances: 35
+      rects:
+        - [1, 1, 4, 1]
       terrain: INDUSTRIALURBANDIO
+    - type: addLine
+      label: 2
+      conditionals: -1
+      executionChances: 35
+      direction: horizontal
+      rects:
+        - [1, 1, 1, 4]
+      terrain: INDUSTRIALURBANDIO
+    - type: addLine
+      conditionals: [-1, -2]
+      executionChances: 20
+      direction: both
+      rects:
+        - [1, 1, 4, 4]
+      terrain: INDUSTRIALURBANDIO
+    #*** Add the Monolith ***
+    - type: addBlock
       size: 2
-      #blocks: [0]
       rects:
-        - [2, 2, 2, 2]
-      markAsReinforcementsBlock: true
-    - type: removeBlock
-      rects:
-        - [2, 2, 2, 2]
-    - type: addBlock
-      #size: 2
-      terrain: INDUSTRIALURBANDIO
-      blocks: [25, 26, 27]
-      maxUses: [1]
-      rects:
-        - [2, 2, 1, 1]
-      markAsReinforcementsBlock: true
-    - type: addBlock
-      #size: 2
-      terrain: INDUSTRIALURBANDIO
-      blocks: [25, 26, 27]
-      maxUses: [1]
-      rects:
-        - [2, 3, 1, 1]
-      markAsReinforcementsBlock: true
-    - type: addBlock
-      #size: 2
-      terrain: INDUSTRIALURBANDIO
-      blocks: [25, 26, 27]
-      maxUses: [1]
-      rects:
-        - [3, 2, 1, 1]
-      markAsReinforcementsBlock: true
-    - type: addBlock
-      #size: 2
-      terrain: INDUSTRIALURBANDIO
-      blocks: [25, 26, 27]
-      maxUses: [1]
-      rects:
-        - [3, 3, 1, 1]
+        - [1, 1, 4, 4]
+      executions: 1
+      terrain: MONOTERRORURBAN
       markAsReinforcementsBlock: true
     #*** Add the player's craft ***
     - type: addCraft
       terrain: INDUSTRIALURBANDIO
-    #*** Fill in the area ***
-    - type: addBlock # Droppod escape pad
-      size: [1, 1, 4]
-      craftGroups: [80]
-      executions: 1
-      verticalLevels: &VL_DROPPOD_ESCAPE
-        - type: ground
-          size: [1, 1, 0]
-          groups: [1] #<--- FLAT GROUP add this!
-        - type: ceiling
-          blocks: [0]
-          size: [1, 1, 4]
-          terrain: HELPERDROPPOD
+    #*** Add Firestorm Droppod
     - type: addBlock # Firestorm Droppod
       size: [1, 1, 4]
       craftGroups: [81]
@@ -72,6 +48,7 @@ mapScripts:
           blocks: [0]
           size: [1, 1, 4]
           terrain: HELPERDROPPOD2
+    #*** Fill in the area ***
     - type: addBlock
       size: 2
       executions: 5
@@ -82,70 +59,28 @@ mapScripts:
 
   - type: REFINERYMONO # Terror 3
     commands:
-    #*** Add the Terror Ship ***
-    - type: addUFO
-      UFOName: STR_DOOMSDAY_MONOLITH
-      terrain: INDUSTRIALURBANDIO
+    #*** Add the Monolith ***
+    - type: addBlock
       size: 2
-      #blocks: [0]
       rects:
-        - [2, 2, 2, 2]
-    - type: removeBlock
-      rects:
-        - [2, 2, 2, 2]
-    - type: addBlock
-      #size: 2
-      executions: 4
-      terrain: INDUSTRIALURBANDIO
-      blocks: [25, 26, 27]
-      maxUses: [1]
-      rects:
-        - [2, 2, 1, 1]
+        - [1, 1, 4, 4]
+      executions: 1
+      terrain: MONOTERRORBASE
       markAsReinforcementsBlock: true
-    - type: addBlock
-      #size: 2
-      executions: 4
-      terrain: INDUSTRIALURBANDIO
-      blocks: [25, 26, 27]
-      maxUses: [1]
-      rects:
-        - [2, 3, 1, 1]
-      markAsReinforcementsBlock: true
-    - type: addBlock
-      #size: 2
-      executions: 4
-      terrain: INDUSTRIALURBANDIO
-      blocks: [25, 26, 27]
-      maxUses: [1]
-      rects:
-        - [3, 2, 1, 1]
-      markAsReinforcementsBlock: true
-    - type: addBlock
-      #size: 2
-      executions: 4
-      terrain: INDUSTRIALURBANDIO
-      blocks: [25, 26, 27]
-      maxUses: [1]
-      rects:
-        - [3, 3, 1, 1]
-      markAsReinforcementsBlock: true
+    #*** Add the player's craft ***
     - type: addCraft
       terrain: REFINERY
-    - type: addBlock #BLOCK1X1 #DROPPODHELPER1
-      size: [1, 1, 4]
-      craftGroups: [80]
-      executions: 1
-      verticalLevels: *VL_DROPPOD_ESCAPE
-    - type: addBlock #BLOCK1X1 #DROPPODHELPER2
+    #*** Add Firestorm Droppod
+    - type: addBlock # Firestorm Droppod
       size: [1, 1, 4]
       craftGroups: [81]
       executions: 1
       verticalLevels: *VL_DROPPOD_FIRESTORM
-    # - type: addUFO
-      # size: 1
-      # executions: 1
-      # executionChances: 100
-      # UFOName: STR_CONST_UFO
+    - type: addUFO
+      size: 1
+      executions: 1
+      executionChances: 100
+      UFOName: STR_CONST_UFO
     - type: addBlock
       size: 2
       executions: 4
@@ -160,67 +95,19 @@ mapScripts:
 
   - type: BDAIRPORTMONO # Terror 2
     commands:
-    #*** Add the Terror Ship ***
-    - type: addUFO
-      UFOName: STR_DOOMSDAY_MONOLITH
-      terrain: INDUSTRIALURBANDIO
+    #*** Add the Monolith ***
+    - type: addBlock
       size: 2
-      #blocks: [0]
+      rects:
+        - [1, 1, 4, 4]
+      executions: 1
+      terrain: MONOTERRORBASE
       markAsReinforcementsBlock: true
-      rects:
-        - [2, 2, 2, 2]
-    - type: removeBlock
-      rects:
-        - [2, 2, 2, 2]
-    - type: addBlock
-      #size: 2
-      executions: 4
-      terrain: BDAIRPORT
-      blocks: [15]
-      maxUses: [1]
-      rects:
-        - [2, 2, 1, 1]
-      markAsReinforcementsBlock: true
-    - type: addBlock
-      #size: 2
-      executions: 4
-      terrain: BDAIRPORT
-      blocks: [15]
-      maxUses: [1]
-      rects:
-        - [2, 3, 1, 1]
-      markAsReinforcementsBlock: true
-    - type: addBlock
-      #size: 2
-      executions: 4
-      terrain: BDAIRPORT
-      blocks: [15]
-      maxUses: [1]
-      rects:
-        - [3, 2, 1, 1]
-      markAsReinforcementsBlock: true
-    - type: addBlock
-      #size: 2
-      executions: 4
-      terrain: BDAIRPORT
-      blocks: [15]
-      maxUses: [1]
-      rects:
-        - [3, 3, 1, 1]
-      markAsReinforcementsBlock: true
+    #*** Add the player's craft ***
     - type: addCraft
       terrain: BDAIRPORT
-      # rects:
-        # - [0,0,1,2]
-        # - [4,0,1,2]
-        # - [0,4,1,2]
-        # - [4,4,1,2]
-    - type: addBlock #BLOCK1X1 #DROPPODHELPER1
-      size: [1, 1, 4]
-      craftGroups: [80]
-      executions: 1
-      verticalLevels: *VL_DROPPOD_ESCAPE
-    - type: addBlock #BLOCK1X1 #DROPPODHELPER2
+    #*** Add Firestorm Droppod
+    - type: addBlock # Firestorm Droppod
       size: [1, 1, 4]
       craftGroups: [81]
       executions: 1
@@ -242,6 +129,11 @@ mapScripts:
       size: 2
       executions: 1
       terrain: BDAIRPORT
+    - type: addUFO
+      size: 1
+      executions: 3
+      executionChances: 100
+      UFOName: STR_VOSS_UFO
     - type: fillArea
       terrain: BDAIRPORT
       blocks: [3, 4, 5, 6, 7, 8, 9, 13, 14, 15, 16, 17]
@@ -257,68 +149,50 @@ mapScripts:
 
   - type: URBANMONO # Terror 1
     commands:
-    #*** Add the Terror Ship ***
-    - type: addUFO
-      UFOName: STR_DOOMSDAY_MONOLITH
-      terrain: INDUSTRIALURBANDIO
+    #*** Add Road
+    - type: addLine
+      label: 1
+      direction: vertical
+      executionChances: 35
       rects:
-        - [2, 2, 2, 2]
-      markAsReinforcementsBlock: true
-    - type: removeBlock
+        - [1, 1, 4, 1]
+      terrain: URBAN
+    - type: addLine
+      label: 2
+      conditionals: -1
+      executionChances: 35
+      direction: horizontal
       rects:
-        - [2, 2, 2, 2]
+        - [1, 1, 1, 4]
+      terrain: URBAN
+    - type: addLine
+      conditionals: [-1, -2]
+      executionChances: 20
+      direction: both
+      rects:
+        - [1, 1, 4, 4]
+      terrain: URBAN
+    #*** Add the Monolith ***
     - type: addBlock
-      #size: 2
-      terrain: INDUSTRIALURBANDIO
-      blocks: [25, 26, 27]
-      maxUses: [1]
+      size: 2
       rects:
-        - [2, 2, 1, 1]
+        - [1, 1, 4, 4]
+      executions: 1
+      terrain: MONOTERRORURBAN
       markAsReinforcementsBlock: true
-    - type: addBlock
-      #size: 2
-      terrain: INDUSTRIALURBANDIO
-      blocks: [25, 26, 27]
-      maxUses: [1]
-      rects:
-        - [2, 3, 1, 1]
-      markAsReinforcementsBlock: true
-    - type: addBlock
-      #size: 2
-      terrain: INDUSTRIALURBANDIO
-      blocks: [25, 26, 27]
-      maxUses: [1]
-      rects:
-        - [3, 2, 1, 1]
-      markAsReinforcementsBlock: true
-    - type: addBlock
-      #size: 2
-      terrain: INDUSTRIALURBANDIO
-      blocks: [25, 26, 27]
-      maxUses: [1]
-      rects:
-        - [3, 3, 1, 1]
-      markAsReinforcementsBlock: true
+    #*** Add the player's craft ***
     - type: addCraft
       terrain: URBAN
-      # rects:
-        # - [0,0,1,2]
-        # - [4,0,1,2]
-        # - [0,4,1,2]
-        # - [4,4,1,2]
-    - type: addBlock #BLOCK1X1 #DROPPODHELPER1
-      size: [1, 1, 4]
-      craftGroups: [80]
-      executions: 1
-      verticalLevels: *VL_DROPPOD_ESCAPE
-    - type: addBlock #BLOCK1X1 #DROPPODHELPER2
+    #*** Add Firestorm Droppod
+    - type: addBlock # Firestorm Droppod
       size: [1, 1, 4]
       craftGroups: [81]
       executions: 1
       verticalLevels: *VL_DROPPOD_FIRESTORM
     - type: addBlock
       size: 2
-      executions: 1
+      executionChances: 80
+      executions: 3
       terrain: URBAN
     - type: fillArea
       # URBAN set is lacking blocks 10-13, so the numbers don't correlate properly here,

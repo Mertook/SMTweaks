@@ -246,34 +246,6 @@ items:
     tags:
       ITEM_STEALTH_ASSASSIN_WEAPON: 2 # sniper
 
-  - type: STR_STUN_BOMB
-    damageAlter:
-      ResistType: 12 # Grav
-
-  - type: STR_GRAVGUN_MC
-    damageAlter:
-      ResistType: 12 # Grav
-
-  - type: AUX_CENTURION_GRAVGUN
-    damageAlter:
-      ResistType: 12 # Grav
-
-  - type: STR_GRAVGUN_AOE_AMMO
-    damageAlter:
-      ResistType: 12 # Grav
-
-  - type: STR_GRAVGUN_AOE_AMMO_SHOTGUN
-    damageAlter:
-      ResistType: 12 # Grav
-
-  - type: STR_GRAVPISTOL_AMMO
-    damageAlter:
-      ResistType: 12 # Grav
-
-  - type: STR_GRAVCANNON_AMMO
-    damageAlter:
-      ResistType: 12 # Grav
-
   - type: STR_DISPOSABLE_LAUNCHER_KRAK
     requires: # removed HWP IG requirement, added to CM
      - STR_GUARD_AND_INQUISITION

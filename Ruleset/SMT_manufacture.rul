@@ -553,7 +553,7 @@ manufacture:
   - name: STR_ASSC_CLIP
     category: STR_AMMUNITION
     requires:
-      - STR_ASSC_CLIP # was borked by Rosigma - make it available to players who don't have assault cannons but do have Stormravens/Omnis/whatever
+      - STR_ASSC_CLIP # make it available to players who don't have assault cannons but do have Stormravens/Omnis/whatever
     space: 0
     time: 200
     cost: 1000
@@ -562,6 +562,34 @@ manufacture:
       STR_ELERIUM_115: 5
     producedItems:
       STR_ASSC_CLIP: 5
+
+  - name: STR_ASSC_CLIP_AP
+    category: STR_AMMUNITION
+    requires:
+      - STR_ASSC_CLIP_AP
+    space: 0
+    time: 200
+    cost: 1000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+      STR_ELERIUM_115: 5
+      STR_UFO_CONSTRUCTION: 2
+    producedItems:
+      STR_ASSC_CLIP_AP: 5
+
+  - name: STR_ASSC_CLIP_HE
+    category: STR_AMMUNITION
+    requires:
+      - STR_ASSC_CLIP
+      - STR_UFO_CONSTRUCTION
+    space: 0
+    time: 200
+    cost: 1000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+      STR_ELERIUM_115: 10
+    producedItems:
+      STR_ASSC_CLIP_HE: 5
 
   - name: STR_PLASMA_CARBINE_TERRAN                 # Plasma Carbine
     category: STR_WEAPON
@@ -641,6 +669,7 @@ manufacture:
     requires:
       - STR_GRAVITON_TECH
       - STR_GRAVCANNON_TECH
+      - STR_IMPERIAL_WEAPONS
     space: 0
     time: 1250
     cost: 125000
@@ -653,6 +682,7 @@ manufacture:
     requires:
       - STR_GRAVITON_TECH
       - STR_GRAVCANNON_TECH
+      - STR_IMPERIAL_WEAPONS
     space: 0
     time: 400
     cost: 15000
@@ -673,6 +703,43 @@ manufacture:
       STR_ELERIUM_115: 10
     producedItems:
       STR_GRAVCANNON_AMMO: 5
+
+  - name: STR_GRAVPISTOL_TERRAN
+    category: STR_WEAPON
+    requires:
+      - STR_GRAVITON_TECH
+      - STR_IMPERIAL_WEAPONS
+    space: 0
+    time: 750
+    cost: 60000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 4
+
+  - name: STR_GRAVPISTOL_AMMO
+    category: STR_AMMUNITION
+    requires:
+      - STR_GRAVITON_TECH
+      - STR_IMPERIAL_WEAPONS
+    space: 1
+    time: 200
+    cost: 8000
+    requiredItems:
+      STR_ELERIUM_115: 5
+    producedItems:
+      STR_GRAVPISTOL_AMMO: 5
+
+  - name: STR_GRAVPISTOL_AMMO_CHAOS
+    category: STR_AMMUNITION
+    requires:
+      - STR_GRAVITON_TECH
+      - STR_NURGLE_OPTIONS
+    space: 1
+    time: 200
+    cost: 8000
+    requiredItems:
+      STR_ELERIUM_115: 5
+    producedItems:
+      STR_GRAVPISTOL_AMMO: 5
 
 ### BOMBARD
   - name: STR_ORBITAL_STRIKE_AMMO                   # Orbital Strike ammo

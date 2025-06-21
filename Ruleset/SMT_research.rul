@@ -236,7 +236,7 @@ research:
       - STR_SMT_CAPTAIN_PROMOTION
     lookup: STR_SMT_CAPTAIN_PROMOTION
     listOrder: 10
-  - name: STR_SMT_CAPTAIN_PROMOTION
+  - name: STR_SMT_CAPTAIN_PROMOTION # Captain Codex entry
     cost: 0
     points: 0
     dependencies:
@@ -411,7 +411,14 @@ research:
     cost: 0
     points: 0
     dependencies:
-      - STR_GENERALLOCK
+      - STR_CASS_R
+
+  - name: STR_ASSC_CLIP_AP  # Assault Cannon AP Rounds
+    cost: 120
+    points: 10
+    dependencies:
+      - STR_ASSC_CLIP
+      - STR_UFO_CONSTRUCTION
 
   - name: STR_SCOUT_WEAPONS         # Scout Weaponry
     cost: 30
@@ -520,7 +527,7 @@ research:
     lookup: STR_SMT_MASTERCRAFTED_AMMO
     listOrder: 20
 
-  - name: STR_SMT_MASTERCRAFTED_AMMO
+  - name: STR_SMT_MASTERCRAFTED_AMMO    # Mastercrafted Bolts Codex entry
     cost: 0
     points: 0
     dependencies:
@@ -895,7 +902,7 @@ research:
     dependencies:
       - STR_GENERALLOCK
 
-  - name: STR_DREADNOUGHT_MARINE
+  - name: STR_DREADNOUGHT_MARINE    # Dreadnought
     cost: 400 # was 200
     points: 20
     dependencies:
@@ -939,7 +946,7 @@ research:
       - STR_MIDTIER_PREREQ
     listOrder: 15
     lookup: STR_MKX_VETS_LV3_UC
-  - name: STR_MKX_VETS_LV3_UC
+  - name: STR_MKX_VETS_LV3_UC       # Primaris Sternguard Codex entry
     cost: 0
     points: 0
     dependencies:
@@ -969,7 +976,7 @@ research:
       #- STR_HIGHTIER_PREREQ
       - STR_GENERALLOCK
 
-  - name: STR_PLASMA_INC_R
+  - name: STR_PLASMA_INC_R          # Plasma Incinerator (disabled)
     cost: 860
     points: 20
     dependencies: !add

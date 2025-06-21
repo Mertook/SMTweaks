@@ -790,6 +790,7 @@ crafts:
 
   - type: STR_STORMEAGLE                    # Stormeagle
     soldiers: 16 #could fit more
+    speedMax: 4600 # was 6700
     battlescapeTerrainData:
       name: STORMEAGLE
       mapDataSets:
@@ -1112,7 +1113,7 @@ crafts:
     fuelMax: 1600 # was 1000
     refuelRate: 900
     requiresBuyBaseFunc: [HANGAR] # was missing?
-    speedMax: 350 #was 240, worse than first company! - give it some chance to compete with landspeeders
+    speedMax: 300 #was 240, worse than first company! - give it some chance to compete with landspeeders
     soldiers: 16 # was 12 - flagrant abuse of the codex - this is where the two missing spots from rhinos went
     vehicles: 999
     maxLargeUnits: 1 # was 1
@@ -1734,6 +1735,7 @@ crafts:
 
   - type: STR_STORMEAGLE_ADEPTAS            # DW/SoB StormEagle
     soldiers: 16 #could fit more
+    speedMax: 4600 # was 6700
     battlescapeTerrainData:
       name: STORMEAGLE
       mapDataSets:
@@ -1841,6 +1843,7 @@ crafts:
       - [5, 4, 2, 4]
 
   - type: STR_ARVUS_GK                      # Arvus (Grey Knight)
+    speedMax: 700 # was 600, worse than Valkyrie
     battlescapeTerrainData:
       name: ARVUSGK
       mapDataSets:
@@ -1884,6 +1887,7 @@ crafts:
 
   - type: STR_STORMEAGLE_GK                 # GK Stormeagle
     soldiers: 16 #could fit more
+    speedMax: 4600 # was 6700
     battlescapeTerrainData:
       name: STORMEAGLEGK
       mapDataSets:
@@ -2110,6 +2114,7 @@ crafts:
             STR_CAS_CANNON_SPAWNER: [0, 0]
 
   - type: STR_CHIMERA                       # Chimera
+    speedMax: 225 #was 150
     battlescapeTerrainData:
       name: CHIMERA
       mapDataSets:
@@ -2150,6 +2155,7 @@ crafts:
             STR_CHIMERA_HULL_SPAWNER: [0, 0]
 
   - type: STR_CHIMERASL                     # Chimera (Steel Legion)
+    speedMax: 300 #was 250
     battlescapeTerrainData:
       name: CHIMERA
       mapDataSets:
@@ -2190,6 +2196,7 @@ crafts:
             STR_CHIMERASL_HULL_SPAWNER: [0, 0]
 
   - type: STR_CASSIUM                       # Crassus
+    speedMax: 250 #was 75
     battlescapeTerrainData:
       name: CASSIUM
       mapDataSets:
@@ -2229,6 +2236,7 @@ crafts:
             STR_CASSIUM_BOLTER_RIGHT2_SPAWNER: [0, 0]
 
   - type: STR_CASSIUMSL                     # Crassus (Steel Legion)
+    speedMax: 325 #was 200
     battlescapeTerrainData:
       name: CASSIUM
       mapDataSets:
@@ -2268,6 +2276,7 @@ crafts:
             STR_CASSIUM_BOLTER_RIGHT2_SPAWNER: [0, 0]
 
   - type: STR_PREATOR                       # Preator
+    speedMax: 225 #was 75
     battlescapeTerrainData:
       name: CASSIUMBOMB
       mapDataSets:
@@ -2305,6 +2314,7 @@ crafts:
             STR_BOMBARD_ROCKET_SPAWNER: [0, 0]
 
   - type: STR_TAUROX                        # Tauros
+    speedMax: 360 #was 240, pathetic for "fast recon"
     battlescapeTerrainData:
       name: TAUROX
       mapDataSets:
@@ -2336,6 +2346,7 @@ crafts:
             STR_TAUROX_TURRET_SPAWNER: [0, 0]
 
   - type: STR_GORGON                        # Gorgon
+    speedMax: 225 #was 125
     battlescapeTerrainData:
       name: GORGON
       mapDataSets:
@@ -2385,6 +2396,7 @@ crafts:
             STR_GORGON_HEAVY_STUBBER_RIGHT_SPAWNER: [0, 0]
 
   - type: STR_GORGONSL                      # Gorgon (Steel Legion)
+    speedMax: 275 #was 150
     battlescapeTerrainData:
       name: GORGON
       mapDataSets:
@@ -2434,6 +2446,7 @@ crafts:
             STR_GORGONSL_HEAVY_STUBBER_RIGHT_SPAWNER: [0, 0]
 
   - type: STR_ARMOR_COLUMN                  # Leman Russ
+    speedMax: 225 #was 150
     battlescapeTerrainData:
       name: CHIMERA
       mapDataSets:
@@ -2484,6 +2497,7 @@ crafts:
             STR_CHIMERA_HULL_SPAWNER: [0, 0]
 
   - type: STR_ARMOR_COLUMNSL_NORIDERS       # Leman Russ (Steel Legion)
+    speedMax: 275 #was 200
     battlescapeTerrainData:
       name: CHIMERA
       mapDataSets:
@@ -2532,6 +2546,7 @@ crafts:
             STR_CHIMERASL_HULL_SPAWNER: [0, 0]
 
   - type: STR_ARMOR_COLUMNSL                # Leman Russ (Steel Legion)
+    speedMax: 275 #was 200
     battlescapeTerrainData:
       name: CHIMERA
       mapDataSets:

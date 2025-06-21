@@ -292,9 +292,9 @@ extended:
           add to_stun temp2; # add overflow to stun damage
           unit.setFire 0; # extinguish fire
           set to_transform 0; # prevent any chance of transforming
-          unit.getTag temp Tag.SMT_RECOVERY_TIME;
-          add temp 60; # divided by unit woundRecovery modifier
-          unit.setTag Tag.SMT_RECOVERY_TIME temp; # increase post-mission recovery time
+          unit.getTag temp Tag.SMT_RECOVERY_PENALTY;
+          add temp 45; # divided by unit woundRecovery modifier
+          unit.setTag Tag.SMT_RECOVERY_PENALTY temp; # increase post-mission recovery time
           unit.setTag Tag.SMT_HEROICSAVE_TRIGGERS saveCount; # increment save counter;
           battle_game.flashLongMessage "STR_SCRIPT_HEROIC_SAVE"; # 'Unit endured the hit'
 

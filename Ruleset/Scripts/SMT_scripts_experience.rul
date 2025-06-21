@@ -1,0 +1,93 @@
+extended:
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
+
+  scripts:
+    returnFromMissionUnit:
+
+      - new: SMTS_post_mission_bonus_experience
+        offset: 11
+        code: |
+          var ptr RuleArmor soldierArmor;
+          var ptr RuleSoldier soldierRuleset;
+          var int devotionExperience;
+          var int psychicExperience;
+          var int expTotal;
+          var int statCurrent;
+          var int statBonus;
+          var int temp;
+
+          unit.getRuleArmor soldierArmor;
+          unit.getRuleSoldier soldierRuleset;
+          soldierArmor.getTag devotionExperience Tag.ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE;
+          soldierRuleset.getTag temp Tag.SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE;
+          add devotionExperience temp;
+          soldierArmor.getTag psychicExperience Tag.ARMOR_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE;
+          soldierRuleset.getTag temp Tag.SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE;
+          add psychicExperience temp;
+
+          if and eq devotionExperience 0 eq psychicExperience 0;
+            return;
+          end;
+
+          set expTotal 0;
+
+          unit.Exp.getBravery statCurrent;
+          add expTotal statCurrent;
+          unit.Exp.getFiring statCurrent;
+          add expTotal statCurrent;
+          unit.Exp.getMelee statCurrent;
+          add expTotal statCurrent;
+          unit.Exp.getPsiSkill statCurrent;
+          add expTotal statCurrent;
+          unit.Exp.getPsiStrength statCurrent;
+          add expTotal statCurrent;
+          unit.Exp.getReactions statCurrent;
+          add expTotal statCurrent;
+          unit.Exp.getStrength statCurrent;
+          add expTotal statCurrent;
+          unit.Exp.getThrowing statCurrent;
+          add expTotal statCurrent;
+
+          if eq expTotal 0; # ignore if unit didn't gain any xp
+            return;
+          end;
+
+          if neq psychicExperience 0;
+            soldier.Stats.getPsiStrength statCurrent;
+            soldierRuleset.StatsCap.getPsiStrength temp;
+            if lt statCurrent temp;
+              battle_game.randomRange statBonus 1 psychicExperience;
+              limit_upper statBonus expTotal;
+              add statBonus statCurrent;
+              soldier.Stats.setPsiStrength statBonus;
+            end;
+          end;
+
+          if neq devotionExperience 0;
+            # traitors lose devotion!
+            unit.getTag temp Tag.UNIT_TURNED_TRAITOR;
+            if neq 0 temp;
+              soldier.Stats.getPsiSkill statCurrent;
+              div temp 50;
+              battle_game.randomRange statBonus 1 3;
+              mul temp statBonus;
+              sub statCurrent temp;
+              limit_lower statCurrent 1;
+              soldier.Stats.setPsiSkill statCurrent;
+            else neq 0 expTotal;
+              soldier.Stats.getPsiSkill statCurrent;
+              soldierRuleset.StatsCap.getPsiSkill temp;
+              if lt statCurrent temp;
+                battle_game.randomRange statBonus 1 devotionExperience;
+                limit_upper statBonus expTotal;
+                add statBonus statCurrent;
+                soldier.Stats.setPsiSkill statBonus;
+              end;
+            end;
+          end;
+
+          return;
+
+
+      - delete: 40k_rFMU_psiskill_as_secondary_experience
+

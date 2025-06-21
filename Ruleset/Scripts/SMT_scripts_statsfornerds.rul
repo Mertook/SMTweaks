@@ -17,14 +17,29 @@ extended:
             stats_state.addIntRow "SMT_ARMOR_HEAVY_WEAPON_USER" temp2;
           end;
 
-          rule.getTag temp Tag.SMT_ARMOR_REGEN_HP;                  # Health Regeneration
+          rule.getTag temp Tag.ARMOR_REGENERATE_HEALTH_FLAT;        # Health Regeneration
           if gt temp 0;
-            stats_state.addIntRow "SMT_ARMOR_REGEN_HP" temp;
+            stats_state.addIntRow "ARMOR_REGENERATE_HEALTH" temp;
           end;
 
           rule.getTag temp Tag.ARMOR_REGENERATES_WOUNDS;            # Wound Regeneration
           if gt temp 0;
             stats_state.addIntRow "STR_ARMOR_WOUNDHEAL" temp;
+          end;
+
+          rule.getTag temp Tag.ARMOR_CLOAKED_ASSASSIN_RANGE;        # Stealth range
+          if gt temp 0;
+            stats_state.addIntRow "ARMOR_CLOAKED_ASSASSIN_RANGE" temp;
+          end;
+
+          rule.getTag temp Tag.ARMOR_RESTEALTH_KILL_REQUIREMENT;    # Stealth Kill Req
+          if gt temp 0;
+            stats_state.addIntRow "ARMOR_RESTEALTH_KILL_REQUIREMENT" temp;
+          end;
+
+          rule.getTag temp Tag.ARMOR_RESTEALTH_TURN_REQUIREMENT;    # Stealth Turn Req
+          if gt temp 0;
+            stats_state.addIntRow "ARMOR_RESTEALTH_TURN_REQUIREMENT" temp;
           end;
 
           rule.getTag temp Tag.SMT_ARMOR_SHRED_RESISTANCE;          # Armorshred 
@@ -40,21 +55,6 @@ extended:
           rule.getTag temp Tag.SMT_ARMOR_SHRED_MELTA_RESISTANCE;    # Armorshred Melta
           if gt temp 0;
             stats_state.addIntRow "SMT_ARMOR_SHRED_MELTA_RESISTANCE" temp;
-          end;
-
-          rule.getTag temp Tag.ARMOR_CLOAKED_ASSASSIN_RANGE;    # Stealth range
-          if gt temp 0;
-            stats_state.addIntRow "ARMOR_CLOAKED_ASSASSIN_RANGE" temp;
-          end;
-
-          rule.getTag temp Tag.ARMOR_RESTEALTH_KILL_REQUIREMENT;    # Stealth Kill Req
-          if gt temp 0;
-            stats_state.addIntRow "ARMOR_RESTEALTH_KILL_REQUIREMENT" temp;
-          end;
-
-          rule.getTag temp Tag.ARMOR_RESTEALTH_TURN_REQUIREMENT;    # Stealth Turn Req
-          if gt temp 0;
-            stats_state.addIntRow "ARMOR_RESTEALTH_TURN_REQUIREMENT" temp;
           end;
 
           return;
@@ -73,6 +73,11 @@ extended:
           rule.getTag temp Tag.SMT_AMMO_HP_PREDMG;                  # Armor-ignoring hp damage
           if gt temp 0;
             stats_state.addIntRow "SMT_AMMO_HP_PREDMG" temp;
+          end;
+
+          rule.getTag temp Tag.SMT_GRAV_WEAPON;                     # Graviton bonus
+          if gt temp 0;
+            stats_state.addIntRow "SMT_GRAV_WEAPON" temp;
           end;
 
           rule.getTag temp Tag.SMT_VULN_DEBUFF_MOD;                 # Vulnerability DmgMod

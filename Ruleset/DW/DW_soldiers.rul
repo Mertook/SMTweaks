@@ -58,9 +58,14 @@ soldiers:
     value: 50
     moraleLossWhenKilled: 150 # Seeing an elite marine die is shocking for regular troops
     tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 20 # -5 over Vet Marines
       SMT_ALPHA_ATTACKER_MODIFIER: -1 # can't turn traitor
       SMT_RESTRICTED_ITEM_USER: 2 # can use DW gear
+      SOLDIER_WOUND_TIME_MULTIPLIER: 35 # vet bonus
+      UNIT_REGENERATE_HEALTH_FLAT: 3
+      UNIT_REGENERATE_HEALTH_PERCENT: 5
+      UNIT_REGENERATE_HEALTH_SOFTCAP: 60
+      SMT_UNIT_REGEN_WOUND: 2
+      SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # gain 1-2 devotion from battles
 
   - update: STR_ULTRAMARINE             # Ultramarine Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
@@ -106,6 +111,8 @@ soldiers:
       - STR_DW_BA_RANK_2
       - STR_DW_BA_RANK_3
       - STR_DW_BA_RANK_4
+    tags:
+      SOLDIER_WOUND_TIME_MULTIPLIER: 10 # Blood Angels bonus
 
   - update: STR_BLOODANGELS_PRIMARIS    # Blood Angels Primaris
     refNode: *STR_SOLDIER_DEATHWATCH
@@ -115,6 +122,8 @@ soldiers:
       - STR_DW_BA_RANK_2
       - STR_DW_BA_RANK_3
       - STR_DW_BA_RANK_4
+    tags:
+      SOLDIER_WOUND_TIME_MULTIPLIER: 10 # Blood Angels bonus
 
   - update: STR_SALAMANDAR              # Salamander Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
@@ -147,6 +156,8 @@ soldiers:
       - STR_DW_BT_RANK_2
       - STR_DW_BT_RANK_3
       - STR_DW_BT_RANK_4
+    tags:
+      SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Black Templar bonus
 
   - update: STR_BLACKT_PRIMARIS         # Black Templar Primaris
     refNode: *STR_SOLDIER_DEATHWATCH
@@ -161,6 +172,8 @@ soldiers:
       - STR_DW_BT_RANK_2
       - STR_DW_BT_RANK_3
       - STR_DW_BT_RANK_4
+    tags:
+      SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Black Templar bonus
 
   - update: STR_WHITES                  # White Scars Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
@@ -201,92 +214,42 @@ soldiers:
   - update: STR_SPACEW                  # Space Wolves Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
     minStats:
-      tu: 95
-      stamina: 100
       health: 120 # +20, Spacewolf bonus
-      bravery: 80
-      reactions: 95
-      firing: 110
-      throwing: 90
-      strength: 90
-      psiStrength: 0
-      psiSkill: 60
-      melee: 110
     maxStats:
-      tu: 110
-      stamina: 120
       health: 140 # +10, Spacewolf bonus
-      bravery: 100
-      reactions: 110
-      firing: 130
-      throwing: 120
-      strength: 100
-      psiStrength: 100
-      psiSkill: 75
-      melee: 130
     statCaps:
-      tu: 120
-      stamina: 140
       health: 150 # +10, Spacewolf bonus
-      bravery: 110
-      reactions: 120
-      firing: 150
-      throwing: 140
-      strength: 110
-      psiStrength: 100
-      psiSkill: 100
-      melee: 150
     rankStrings:
       - STR_DW_SW_RANK_0
       - STR_DW_SW_RANK_1
       - STR_DW_SW_RANK_2
       - STR_DW_SW_RANK_3
       - STR_DW_SW_RANK_4
+    tags: # Spacewolf bonus healing
+      UNIT_REGENERATE_HEALTH_FLAT: 4
+      UNIT_REGENERATE_HEALTH_PERCENT: 10
+      UNIT_REGENERATE_HEALTH_SOFTCAP: 80
+      SMT_UNIT_REGEN_WOUND: 3
 
   - update: STR_SPACEW_PRIMARIS         # Space Wolves Primaris
     refNode: *STR_SOLDIER_DEATHWATCH
     minStats:
-      tu: 95
-      stamina: 100
       health: 120 # +20, Spacewolf bonus
-      bravery: 80
-      reactions: 95
-      firing: 110
-      throwing: 90
-      strength: 90
-      psiStrength: 0
-      psiSkill: 60
-      melee: 110
     maxStats:
-      tu: 110
-      stamina: 120
       health: 140 # +10, Spacewolf bonus
-      bravery: 100
-      reactions: 110
-      firing: 130
-      throwing: 120
-      strength: 100
-      psiStrength: 100
-      psiSkill: 75
-      melee: 130
     statCaps:
-      tu: 120
-      stamina: 140
       health: 150 # +10, Spacewolf bonus
-      bravery: 110
-      reactions: 120
-      firing: 150
-      throwing: 140
-      strength: 110
-      psiStrength: 100
-      psiSkill: 100
-      melee: 150
     rankStrings:
       - STR_DW_SW_RANK_0
       - STR_DW_SW_RANK_1
       - STR_DW_SW_RANK_2
       - STR_DW_SW_RANK_3
       - STR_DW_SW_RANK_4
+    tags: # Spacewolf bonus healing
+      UNIT_REGENERATE_HEALTH_FLAT: 4
+      UNIT_REGENERATE_HEALTH_PERCENT: 10
+      UNIT_REGENERATE_HEALTH_SOFTCAP: 80
+      SMT_UNIT_REGEN_WOUND: 3
 
   - update: STR_CRISMONF                # Crimson Fists Firstborn
     refNode: *STR_SOLDIER_DEATHWATCH
@@ -386,9 +349,13 @@ soldiers:
       - STR_CMD_MELEE_SKILL
       - STR_CMD_CHECK_SKILL
     tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 15 # -5 over DW regulars
-      SMT_ALPHA_ATTACKER_MODIFIER: -1 # can't turn traitor
       SMT_RESTRICTED_ITEM_USER: 6 # can use DW gear and DW captain gear
+      SOLDIER_WOUND_TIME_MULTIPLIER: 30
+      UNIT_REGENERATE_HEALTH_FLAT: 3
+      UNIT_REGENERATE_HEALTH_PERCENT: 5
+      UNIT_REGENERATE_HEALTH_SOFTCAP: 60
+      SMT_UNIT_REGEN_WOUND: 2
+      SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 4 # gain 1-2 devotion from battles
 
   - type: STR_ULTRAMARINE_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
@@ -422,6 +389,8 @@ soldiers:
       - STR_DW_BA_RANK_5
       - STR_DW_BA_RANK_5
       - STR_DW_BA_RANK_5
+    tags:
+      SOLDIER_WOUND_TIME_MULTIPLIER: 10 # Blood Angels bonus
 
   - type: STR_SALAMANDAR_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
@@ -459,6 +428,7 @@ soldiers:
       - STR_CMD_CHECK_SKILL
     tags:
       SMT_RESTRICTED_ITEM_USER: 7 # can use Crozius and DW gear
+      SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # chaplain
 
   - type: STR_WHITES_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
@@ -531,6 +501,12 @@ soldiers:
       - STR_CMD_FIRE_SKILL
       - STR_CMD_MELEE_SKILL
       - STR_CMD_CHECK_SKILL
+    tags: # Spacewolf bonus healing
+      SOLDIER_WOUND_TIME_MULTIPLIER: 30
+      UNIT_REGENERATE_HEALTH_FLAT: 5
+      UNIT_REGENERATE_HEALTH_PERCENT: 10
+      UNIT_REGENERATE_HEALTH_SOFTCAP: 90
+      SMT_UNIT_REGEN_WOUND: 4
 
   - type: STR_CRISMONF_LEADER
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER

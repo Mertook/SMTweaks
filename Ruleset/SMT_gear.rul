@@ -519,6 +519,8 @@ items:
     tuAimed: 0
     tuLoad: 8 # pistol bonus
     tuUnload: 4 # pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
     compatibleAmmo:
       - STR_LIGHT_BOLTPISTOL_AMMO
       - STR_LIGHT_BOLTPISTOL_AMMO_MC
@@ -543,6 +545,8 @@ items:
     tuAimed: 0
     tuLoad: 8 # pistol bonus
     tuUnload: 4 # pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
     compatibleAmmo:
       - STR_LIGHT_BOLTPISTOL_AMMO
       - STR_LIGHT_BOLTPISTOL_AMMO_MC
@@ -566,6 +570,8 @@ items:
     tuAimed: 0
     tuLoad: 2 # MC pistol bonus
     tuUnload: 2 # pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
     compatibleAmmo:
       - STR_LIGHT_BOLTPISTOL_AMMO
       - STR_LIGHT_BOLTPISTOL_AMMO_MC
@@ -850,22 +856,24 @@ items:
     listOrder: 10442
     loadOrder: 120
     hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2100}
-    power: 65
+    power: 65 #reduced
     damageType: 1 # standard
     damageAlter:
-      ResistType: 12 # Grav - unresisted
+      ResistType: 12 # Grav
       RandomType: 2 # 50-150%
-      ToArmorPre: 0.5 # grav
-      ArmorEffectiveness: 0.0
-      ToArmor: 0.0
-      ToHealth: 0.25 # most of the damage should come from grav bonus
+      ToArmorPre: 0.3 # armor breaker
+      ArmorEffectiveness: 0.8
+      ToArmor: 0.2
+      ToHealth: 0.8
+      ToTime: 0.2
       ToStun: 0.3
       ToEnergy: 0.3
       ToWound: 0.1
       RandomWound: false
     tags:
       ITEM_AMMO_COLOR: 8 # blue
-      GravPercentage: 4
+      GravPercentage: 0
+      SMT_GRAV_WEAPON: 30 # not pure grav weapon
 
   - type: STR_RIFLE_CLIP_DRAGON             # Dragonfire Bolter ammo
     refNode: *REF_BOLTER_AMMO_DW
@@ -1065,6 +1073,8 @@ items:
     tuAimed: 0
     tuLoad: 8 # pistol bonus
     tuUnload: 4 # pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
     requiresBuy:
       - STR_BOLTPISTOL_REQ
 
@@ -1085,6 +1095,8 @@ items:
     autoShots: 2
     tuLoad: 8 # pistol bonus
     tuUnload: 4 # pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
     requiresBuy:
       - STR_BOLTPISTOL_ADV_REQ
 
@@ -1104,6 +1116,8 @@ items:
     autoShots: 3
     tuLoad: 2 # MCpistol bonus
     tuUnload: 2 # MCpistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
     tags:
       REACTION_MULTIPLIER: 250 # was 200 - MCpistol bonus
 
@@ -1123,6 +1137,8 @@ items:
     tuAimed: 35 # was 35
     tuLoad: 8 # pistol bonus
     tuUnload: 4 # pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
     requiresBuy:
       - STR_MARINE_BOLTERS_ADV
     tags:
@@ -1169,6 +1185,8 @@ items:
     autoShots: 3
     tuLoad: 8 # pistol bonus
     tuUnload: 4 # pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
     tags:
       ITEM_RECOIL: 55 # harder requirement, hybrid weapon
       REACTION_MULTIPLIER: 150 # was 200 - carbine rather than pure pistol
@@ -1198,6 +1216,8 @@ items:
     tuLoad: 10
     invWidth: 2 # was 1 ???
     invHeight: 2
+    inventoryMoveCost: # pistol
+      basePercent: 75
 
 
   - type: STR_ABSOLVOR_PISTOL               # Boltpistol (Absolvor)
@@ -1237,6 +1257,8 @@ items:
     autoShots: 0
     tuLoad: 10 # pistol bonus
     tuUnload: 4 # pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
     tags:
       ITEM_RECOIL: 60 # high requirement - Primaris + heavy pistol
       REACTION_MULTIPLIER: 200 # pistol
@@ -1277,6 +1299,8 @@ items:
     autoShots: 0
     tuLoad: 4 # MC pistol bonus
     tuUnload: 2 # MC pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
     tags:
       ITEM_RECOIL: 60 #
       REACTION_MULTIPLIER: 200 # pistol
@@ -1772,10 +1796,12 @@ items:
     accuracyAuto: 75
     accuracySnap: 80
     accuracyAimed: 0
-    tuAuto: 25
-    tuSnap: 20 # was 25
+    tuAuto: 24
+    tuSnap: 16 # was 25
     tuAimed: 0
     autoShots: 2 # was 0
+    inventoryMoveCost: # pistol
+      basePercent: 75
     tags:
       ITEM_IS_HEAVY_WEAPON: 1 # terminator handgun
       ITEM_RECOIL: 80 # +5 - harsh requirement, terminator handgun
@@ -1791,9 +1817,11 @@ items:
     accuracySnap: 90
     accuracyAimed: 0
     tuAuto: 24
-    tuSnap: 18 # was 25
+    tuSnap: 16 # was 25
     tuAimed: 0
     autoShots: 2 # was 0
+    inventoryMoveCost: # pistol
+      basePercent: 75
     tags:
       ITEM_IS_HEAVY_WEAPON: 1 # terminator handgun
       ITEM_RECOIL: 80 # +5 - harsh requirement, terminator handgun
@@ -2959,7 +2987,7 @@ items:
   - type: STR_BLASTER_BOMB                  # Multimelta Ammo
     refNode: *DMG_MELTA_MULTI
     power: 15
-    #clipSize: 6
+    clipSize: 4 # was 3
 
   - &STR_MULTIMELTA_TEMPLATE
     type: STR_BLASTER_LAUNCHER_TERRAN 
@@ -3401,6 +3429,8 @@ items:
       ToWound: 0.2 # vicious burns
       RandomWound: false
       RadiusReduction: 60 # high dropoff if not direct hit
+    inventoryMoveCost: # pistol
+      basePercent: 75
     tags:
       REACTION_MULTIPLIER: 200 # pistol
       SMT_AMMO_HP_PREDMG: 50
@@ -3523,7 +3553,7 @@ items:
       ToEnergy: 1.0
       ToTile: 2.0 # building destroyer
       ToItem: 0.5
-    powerRangeThreshold: 25
+    powerRangeThreshold: 18 # was set on weapons instead of ammo, did nothing
     powerRangeReduction: 2
 
   - type: STR_STUN_BOMB                     # Gravgun Ammo
@@ -3534,15 +3564,20 @@ items:
 
   - type: STR_GRAVPISTOL_AMMO               # Gravpistol Ammo Cell
     refNode: *DMG_GRAV_STD
+    weight: 2 # was 3
+    clipSize: 3 # was 8
     power: 20 # was 35
+    damageAlter:
+      ToStun: 0.4 #
+    powerRangeThreshold: 15 # pistol
     tags:
       SMT_GRAV_WEAPON: 120
 
   - type: STR_GRAVGUN_AOE_AMMO              # Jupiter Gravgun Cell
     refNode: *DMG_GRAV_STD
+    clipSize: 4 # was 3
     powerForAnimation: 10
     power: 25
-    clipSize: 5 # was 3
     damageAlter:
       FixRadius: 1
       RadiusReduction: 5
@@ -3557,6 +3592,7 @@ items:
     shotgunBehavior: 1
     shotgunSpread: 65
     shotgunPellets: 4 # was 5, broken by AoE
+    clipSize: 4 # was 3
     power: 8
     tags:
       SMT_GRAV_WEAPON: 120
@@ -3569,8 +3605,9 @@ items:
     requires: !remove
       - STR_NURGLE_OPTIONS
       - STR_GRAVITON_TECH
+    clipSize: 4
     power: 40 # was 50
-    clipSize: 5
+    powerRangeThreshold: 24 #gravcannon bonus
     damageAlter:
       FixRadius: 1
       RadiusReduction: 3
@@ -3583,6 +3620,7 @@ items:
     hitAnimFrames: 16
     powerForAnimation: 20
     power: 40 # was 60
+    powerRangeThreshold: 24 #gravcannon bonus
     damageAlter:
       FixRadius: 1
       RadiusReduction: 3
@@ -3593,6 +3631,7 @@ items:
     refNode: *DMG_GRAV_STD
     powerForAnimation: 20
     power: 40 # was 60
+    powerRangeThreshold: 24 #gravcannon bonus
     damageAlter:
       FixRadius: 1
       RadiusReduction: 3
@@ -3614,6 +3653,57 @@ items:
     tags:
       ITEM_IS_HEAVY_WEAPON: 1
       ITEM_RECOIL: 80 # bulky, devastator weapon
+
+  - type: STR_SMALL_LAUNCHER_TERRAN         # Gravgun
+    weight: 14 # was 10
+    dropoff: 5
+    autoRange: 0
+    snapRange: 16 # was 15
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 70 # was 65
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 40
+    tuAimed: 0
+
+  - type: STR_GRAVGUN_MC                    # Gravgun (Mastercrafted)
+    weight: 14 # was 10
+
+  - type: STR_GRAVGUN_ADEPTAS               # Gravgun (Sisters)
+    weight: 14 # was 10
+
+  - type: STR_GRAVPISTOL_TERRAN             # Gravpistol
+    costSell: 20000
+    twoHanded: false
+    weight: 8
+    dropoff: 6
+    accuracySnap: 65
+    accuracyAimed: 0
+    snapRange: 10
+    #aimRange: 0
+    tuSnap: 30
+    tuAimed: 0
+    inventoryMoveCost: # pistol
+      basePercent: 75
+    tags:
+      REACTION_MULTIPLIER: 200 # multiplies base reaction score by this amount divided by 100
+
+  - type: STR_GRAVPISTOL_MC_TERRAN          # Gravpistol (Mastercrafted)
+    costSell: 40000
+    twoHanded: false
+    weight: 6
+    dropoff: 6
+    accuracySnap: 75
+    accuracyAimed: 0
+    snapRange: 13
+    aimRange: 0
+    tuSnap: 25
+    tuAimed: 0
+    inventoryMoveCost: # pistol
+      basePercent: 75
+    tags:
+      REACTION_MULTIPLIER: 200 # multiplies base reaction score by this amount divided by 100
 
 ### Lasguns
   - &DMG_LASGUN_STD
@@ -4969,6 +5059,72 @@ items:
       time: 15
       energy: 2
 
+### Force Weapons
+  # - &DMG_FORCE_WEAPON
+    # type: STR_FORCE_SWORD
+    # damageBonus:
+      # strength: 0.2
+      # melee: 0.3
+      # psiStrength: 0.2
+      # psiSkill: 0.02
+    # meleeBonus:
+      # strength: 0.2
+      # melee: 0.3
+      # psiStrength: 0.2
+      # psiSkill: 0.02
+
+  # - type: STR_FORCE_SWORD                   # Force Blade
+    # costMelee:
+      # time: 15
+      # energy: 2
+
+  # - type: STR_HALLEBARD
+    # armor: 200
+    # fireSound: {mod: 40k, index: 753}
+    # explosionHitSound: {mod: 40k, index: 101}  # stabhit
+    # hitAnimation: 2040  # Bloodgush sprite, X1.pck for ranged attacks, was 1070  # AOEMELEEGENE.png
+    # hitAnimFrames: 8
+    # powerForAnimation: 10
+    # hitSound: {mod: 40k, index: 101}  # stabhit
+    # bulletSprite: 5
+    # clipSize: -1
+    # snapRange: 2
+    # maxRange: 2
+    # powerRangeThreshold: 3
+    # powerRangeReduction: 200
+    # power: 100  # lower base damage; compensated for by stat scaling
+    # meleePower: 100
+    # battleType: 1
+    # damageType: 11  # melta damage; more effective against daemons
+    # meleeType: 11  # melta damage; more effective against daemons
+    # confSnap:
+      # name: STR_HALLEBARD_SNAPSHOT_LUNGE
+      # shots: 1
+    # costSnap:
+      # time: 25  # lunge costs more TU and energy
+      # energy: 12
+    # accuracySnap: 90
+    # accuracyMelee: 90
+    # accuracyMultiplier:
+      # firing: 0.0
+      # melee: 0.8
+      # strength: 0.2
+    # meleeMultiplier:
+      # firing: 0.0
+      # melee: 0.8
+      # strength: 0.2
+    # skillApplied: false
+    # costMelee:
+      # time: 22
+      # energy: 8  # very heavy melee weapon; light 1 energy, medium 2, heavy 4, very heavy 8
+    # flatRate: true
+    # tags:
+      # ITEM_STRENGTH_REQUIREMENT: 100
+      # REACTION_MULTIPLIER: 200  # multiplies base reaction score by this amount divided by 100
+      # DAMAGE_BONUS_PERCENT_DAEMONIC: 150 #1.5x damage vs Daemons
+
+
+
 ### Skill Tokens
   - type: INV_BLESS_TOKEN                   # Chaplain Bless Token
     refNode: *STR_SKILL_TOKEN
@@ -5119,9 +5275,80 @@ items:
     accuracyMultiplier:
       psiStrength: 1.0
     tags:
+      ITEM_IS_PSYCHIC_POWER: 1
+      ITEM_PSYCHIC_POWER_MODIFIER: 5
       SMT_VULN_DEBUFF_MOD: 100
       SMT_VULN_DURATION: 2
       ITEM_IGNORE_ALLIES: 1
+
+  - type: INV_LIB_ILLUMINATE_TOKEN                # Librarian Illumination Token
+    refNode: *STR_SKILL_TOKEN
+    categories: [ STR_CAT_SPELLS]
+    weight: 0
+    fireSound: {mod: 40k, index: 847} ###CHANGEME
+    hitSound: {mod: 40k, index: 844} ###CHANGEME
+    explosionHitSound: {mod: 40k, index: 845} ###CHANGEME
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 1020} ###CHANGEME
+    bulletSpeed: 30
+    battleType: 1
+    power: 2
+    blastRadius: -1
+    damageType: 0
+    damageBonus:
+      psiStrength: 0.1
+    damageAlter:
+      RandomType: 3
+      ArmorEffectiveness: 0.0
+      ToEnergy: 0.0
+      ToHealth: 0.0
+      ToStun: 0.0
+      ToWound: 0.0
+      ToArmor: 0.0
+      ToTile: 0.0
+      ToItem: 0.0
+      FireThreshold: 1
+      RadiusReduction: 3
+    accuracyAimed: 100
+    aimRange: 25
+    confAimed:
+      arcing: true
+    dropoff: 5
+    accuracyMultiplier:
+      psiStrength: 1.0
+    spawnItem: STR_SUPERFLARE
+    spawnItemChance: 100
+    tags:
+      ITEM_IS_PSYCHIC_POWER: 1
+      ITEM_PSYCHIC_POWER_MODIFIER: 3
+
+  - type: STR_LIB_REFLEXES_TOME                # Librarian Speed                                    ## Haste
+    refNode: *STR_PSI_TOKEN
+    fireSound: {mod: 40k, index: 787} #787 page turn BOOK
+    hitSound: {mod: 40k, index: 778} # Lockdown sound
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2170} # could do with something better/unique
+    clipSize: -1
+    targetMatrix: 1
+    LOSRequired: true
+    maxRange: 10
+    power: 0
+    damageBonus:
+      psiStrength: 0.5 # <100 PsiStr = no movespeed bonus, >= 100 PsiStr = 75% movespeed cost
+    accuracyUse: 500
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
+    tuUse: 25
+    costUse:
+      energy: 25
+      stun: 10
+      morale: 10
+    flatRate: true
+    experienceTrainingMode: 25
+    tags:
+      ITEM_IS_BUFF_WEAPON: 1
+      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
+      SMT_ITEM_MOVESPEED_BOOST: 0
+      SMT_ITEM_REACTION_MOD: 75
 
   - type: STR_LIB_HASTE_TOME                # Librarian Speed                                    ## Haste
     refNode: *STR_PSI_TOKEN
@@ -5453,6 +5680,21 @@ items:
       TileDamageMethod: 2 # consistent tile damage
       FixRadius: 9
       RadiusReduction: 0
+
+  - type: STR_SUPERFLARE                    # Flare
+    battleType: 10 # electroflare
+    weight: 999
+    bigSprite: 99
+    floorSprite: 72
+    power: 30 # double electroflare power
+    armor: 400 # not standard flare, can't be destroyed by regular weapons
+    weight: 0
+    invWidth: 0
+    invHeight: 0
+    clipSize: -1
+    recover: false
+    supportedInventorySections:
+      - STR_GROUND
 
   - type: AUX_SHIELD                        # Storm Shield
     clipSize: 81 # Shield HP + 1

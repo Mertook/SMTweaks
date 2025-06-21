@@ -568,6 +568,44 @@ items:
     compatibleAmmo:
       - STR_GRAVCANNON_AMMO
 
+  - type: STR_GRAVPISTOL_TERRAN             # Gravpistol
+    categories: [STR_CAT_GRAVGUN]
+    battleType: 1
+    invWidth: 1
+    invHeight: 3
+    listOrder: 11820
+    size: 0.2
+    bigSprite: 301
+    floorSprite: 301
+    handSprite: 560
+    bulletSprite: {mod: 40k, index: 14}
+    fireSound: {mod: 40k, index: 829}
+    compatibleAmmo:
+      - STR_GRAVPISTOL_AMMO
+
+  - type: STR_GRAVPISTOL_MC_TERRAN           # Gravpistol (Mastercrafted)
+    categories: [STR_CAT_GRAVGUN]
+    battleType: 1
+    invWidth: 1
+    invHeight: 2
+    listOrder: 11821
+    size: 0.2
+    bigSprite: 302
+    floorSprite: 302
+    handSprite: 568
+    bulletSprite: {mod: 40k, index: 14}
+    fireSound: {mod: 40k, index: 829}
+    compatibleAmmo:
+      - STR_GRAVPISTOL_AMMO
+
+  - type: STR_CHAOS_GRAVPISTOL              # Gravpistol (Chaos)
+    bigSprite: 303
+
+  - type: STR_CHAOS_MC_GRAVPISTOL           # Gravpistol (Chaos Mastercrafted)
+    bigSprite: 304
+    invWidth: 1 # was 2x1
+    invHeight: 2
+
   - type: STR_BIKE_ARMOR                    # Bike Armor (Item)
     costBuy: 280000 # was 360k
     costSell: 140000 # was 140k

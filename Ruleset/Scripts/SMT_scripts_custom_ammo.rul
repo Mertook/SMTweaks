@@ -232,7 +232,7 @@ items:
 
           unit.Stats.getStrength temp;
           targetArmor.Stats.getStrength temp2;
-          debug_log "Grav Str: " temp temp2 gravMult;
+          #debug_log "Grav Str: " temp temp2 gravMult;
           sub temp temp2; # ignore strength granted by armor
           #sub gravMult temp; # minor resistance from base strength - disabled until enemy rework
           div gravMult 5;
@@ -243,40 +243,38 @@ items:
 
           add gravMult 100; # add to base 100% damage
           add strMult 100;
-          debug_log "Grav Mult Final: " gravMult strMult gravPow orig_power;
-          debug_log "Grav Start Dmg H/A/W/M: " to_health to_armor to_wound to_mana;
+          #debug_log "Grav Mult Final: " gravMult strMult gravPow orig_power;
+          #debug_log "Grav Start Dmg H/A/W/M: " to_health to_armor to_wound to_mana;
           muldiv to_health gravMult 100;
           muldiv to_armor gravMult 100;
           muldiv to_wound gravMult 100;
           muldiv to_mana gravMult 100;
-          debug_log "Grav Final Dmg H/A/W/M: " to_health to_armor to_wound to_mana;
-          debug_log "Grav Start Dmg S/T/E/M: " to_stun to_time to_energy to_morale; # str helps more against secondary effects
+          #debug_log "Grav Final Dmg H/A/W/M: " to_health to_armor to_wound to_mana;
+          #debug_log "Grav Start Dmg S/T/E/M: " to_stun to_time to_energy to_morale; # str helps more against secondary effects
           muldiv to_stun strMult 100;
           muldiv to_time strMult 100;
           muldiv to_energy strMult 100;
           muldiv to_morale strMult 100;
-          debug_log "Grav Final Dmg S/T/E/M: " to_stun to_time to_energy to_morale;
+          #debug_log "Grav Final Dmg S/T/E/M: " to_stun to_time to_energy to_morale;
         end;
 
         return;
-
-#Terminator 830(489) armor 180 hp 110 str = 155 base mult
-#Marine     560(336) armor 140 hp 110 str = 105 base mult
-#50+49 bonus damage - rosigma gravcannon vs terminator
 
   - type: STR_STUN_BOMB                 # Gravgun Ammo
     refNode: *REF_GRAV_WEAPON
   - type: AUX_CENTURION_GRAVGUN         # Centurion Gravgun
     refNode: *REF_GRAV_WEAPON
-  - type: STR_GRAVGUN_AOE_AMMO          # Gravgun Ammo
+  - type: STR_GRAVGUN_AOE_AMMO          # Grav AoE Ammo
     refNode: *REF_GRAV_WEAPON
-  - type: STR_GRAVGUN_AOE_AMMO_SHOTGUN  # Gravgun Ammo
+  - type: STR_GRAVGUN_AOE_AMMO_SHOTGUN  # Grav Shotgun Ammo
     refNode: *REF_GRAV_WEAPON
   - type: STR_GRAVPISTOL_AMMO           # Gravpistol Ammo
     refNode: *REF_GRAV_WEAPON
-  - type: STR_GRAVCANNON_AMMO           # Gravgun Ammo
+  - type: STR_GRAVCANNON_AMMO           # Gravcannon Ammo
     refNode: *REF_GRAV_WEAPON
   - type: STR_BLIGHT_HAULER_GRAVCANNON  # Blight Hauler Gravgun
+    refNode: *REF_GRAV_WEAPON
+  - type: STR_RIFLE_CLIP_FUSION         # Inertial Fusion Ammo
     refNode: *REF_GRAV_WEAPON
 
 

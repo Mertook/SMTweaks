@@ -65,8 +65,11 @@ extended:
       ## Captain
       UNIT_TYPE_ASTARTES: int                   # is unit a Space Marine?
       ## Regeneration
-      SMT_ARMOR_REGEN_HP: int                   # passive hp regen from armor
-      ARMOR_REGENERATE_DURABILITY: int          # Unit armor is restored by X each turn
+      ARMOR_REGENERATE_HEALTH_FLAT: int         # special hp regen from armor - Flat values
+      ARMOR_REGENERATE_HEALTH_PERCENT: int      # special hp regen from armor - Percentage of (Max HP - Lowest HP)
+      ARMOR_REGENERATE_HEALTH_SOFTCAP: int      # % of total missing HP unit can regenerate from special regen
+      ARMOR_REGENERATE_HEALTH_BURN_TOGGLE: int  # does this unit regenerate when on fire? 0 - ignore, 1 - no regen on when fire, 2 - only regen when on fire
+      ARMOR_REGENERATE_DURABILITY: int          # Unit armor sides are restored by X each turn
       ## Heavy Weapons
       SMT_ARMOR_HEAVY_WEAPON_USER: int # counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 2/3, 3 = 2/4, 4 = 2/5 etc
       ## Infiltrator
@@ -85,6 +88,8 @@ extended:
       SMT_ARMOR_SHRED_RESISTANCE: int           # Reduce armor damage by % (Generic damage sources)
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: int    # Reduce armor damage by % (Plasma damage)
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: int     # Reduce armor damage by % (Melta damage)
+      ## Experience Gain
+      ARMOR_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: int # gain up to this much PsiStrength when earning experience in battles
       ## Objective Units
       MISSION_OBJECTIVE_UNIT: int               # Unit contributes % to mission completion when killed; once completion = 100% kill all remaining enemies
       UNIT_IMMOBILE_TURNS: int                  # Unit loses all TUs for X turns to stop it moving prematurely
@@ -92,7 +97,9 @@ extended:
       UNIT_DAMAGE_SOFTCAP: int                  # When unit takes hp/stun damage over X, halve it
     RuleSoldier:
       ## Regeneration
-      SMT_UNIT_REGEN_HP: int #passive hp regen from soldier type
+      UNIT_REGENERATE_HEALTH_FLAT: int          # hp regen from soldier type - Flat values
+      UNIT_REGENERATE_HEALTH_PERCENT: int       # hp regen from soldier type - Percentage of (Max HP - Lowest HP)
+      UNIT_REGENERATE_HEALTH_SOFTCAP: int       # % of total missing HP unit can regenerate from special regen
       SMT_UNIT_REGEN_WOUND: int #passive wound regen from soldier type
       SMT_UNIT_REGEN_PENALTY_REDUCTION: int #reduces the wound recovery time penalty for regenerating health
       ## Heroic Save
@@ -102,6 +109,9 @@ extended:
       SMT_RESTRICTED_ITEM_USER: int # Key for restricted items (1 = Chaplain, 2 = DW Marine, 4 = DW Captain) Supports combined values (7 = Chaplain + DW Marine + DW Captain)
       ## Alpha
       SMT_ALPHA_ATTACKER_MODIFIER: int
+      ## Experience Gain
+      SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: int      # gain up to this much Devotion when earning experience in battles
+      SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: int   # gain up to this much PsiStrength when earning experience in battles
     RuleSkill:
       ## Captain
       SKILL_SMT_COMMAND: int            # Command Type ( -1 - Check Commands, 1 - Armor of Contempt, 2 - Storm of Fire, 3 - Relentless Assault )
@@ -126,10 +136,10 @@ extended:
       ## Rampage
       SMT_RAMPAGE_COUNT: int            # # of times unit has refunded TUs from kills
       ## Regeneration
-      SMT_RECOVERY_TIME: int #store health regenerated for wound recovery time
+      SMT_RECOVERY_PENALTY: int         # store unit penalties to wound recovery time
+      SMT_LOWEST_HEALTH: int            # store lowest HP unit has reached for regeneration/recovery time
       ## Heroic Save
       SMT_HEROICSAVE_TRIGGERS: int #number of times a unit has made a heroic save
-      SMT_RECOVERY_TIME: int #store unit penalties to wound recovery time
       ## Infiltrator
       UNIT_DEACTIVATE_CHECK: int                # has the unit tried to deactivate stealth this turn?
       UNIT_STEALTH_IS_ACTIVE: int               # is unit currently stealthed? X = turn count
@@ -138,8 +148,8 @@ extended:
       UNIT_LIKE_A_SHADOW_COUNTER: int           # store restealth kill counter
       UNIT_STEALTH_MOVEPENALTY: int             # store movement modifier for being stealthed
       UNIT_MOVESPEED_MODIFIERS: int             # combined movespeed modifiers for a unit
-      UNIT_CAMO_CLOAK_MOVE_COST_MULTIPLIER: int # for compat with Dig In ability
-      UNIT_DIG_IN_MOVE_PENALTY: int             # for compat with  digin ability
+      UNIT_CAMO_CLOAK_MOVE_COST_MULTIPLIER: int # for compat with Dig In
+      UNIT_DIG_IN_MOVE_PENALTY: int             # for compat with Dig In
       ## Overwatch
       SMT_OVERWATCH_BONUS: int #stores units bonus to Overwatch
       ## Shields

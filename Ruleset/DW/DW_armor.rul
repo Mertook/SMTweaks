@@ -45,7 +45,6 @@ armors:
       - 0.2 #IMPACT
       - 0.9 #MELTA
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
@@ -58,12 +57,11 @@ armors:
 
   - type: STR_DW_TAC_ARMOR_BA_UC
     refNode: *STR_DW_TAC_MK7
-    instantWoundRecovery: true
+
   - type: STR_DW_TAC_ARMOR_BT_UC
     refNode: *STR_DW_TAC_MK7
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_DW_TAC_ARMOR_CF_UC
@@ -157,12 +155,11 @@ armors:
       - INV_NULL_3X1_BACKPACK
       - AUX_MEDI_KIT_ADVANCED
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      SMT_ARMOR_REGEN_HP: 3
+      ARMOR_REGENERATE_HEALTH_FLAT: 3
       ARMOR_REGENERATES_WOUNDS: 1
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
@@ -172,12 +169,11 @@ armors:
 
   - type: STR_DW_APOT_ARMOR_BA_UC
     refNode: *STR_DW_APOTH_MK7
-    instantWoundRecovery: true
+
   - type: STR_DW_APOT_ARMOR_BT_UC
     refNode: *STR_DW_APOTH_MK7
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_DW_APOT_ARMOR_CF_UC
@@ -269,7 +265,6 @@ armors:
       - 0.9 #MELTA
     builtInWeapons: [] # Devastators get a full backpack
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
@@ -282,12 +277,11 @@ armors:
 
   - type: STR_DW_DEV_ARMOR_BA_UC
     refNode: *STR_DW_DEV_MK7
-    instantWoundRecovery: true
+
   - type: STR_DW_DEV_ARMOR_BT_UC
     refNode: *STR_DW_DEV_MK7
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_DW_DEV_ARMOR_CF_UC
@@ -382,7 +376,6 @@ armors:
     builtInWeapons:
       - INV_NULL_3X3
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
@@ -399,12 +392,11 @@ armors:
 
   - type: STR_DW_ASS_ARMOR_BA_UC
     refNode: *STR_DW_ASS_MK7
-    instantWoundRecovery: true
+
   - type: STR_DW_ASS_ARMOR_BT_UC
     refNode: *STR_DW_ASS_MK7
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_DW_ASS_ARMOR_CF_UC
@@ -497,7 +489,6 @@ armors:
     builtInWeapons:
       - STR_TT_DW_SPAWNER
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # Techmarine maintenance bonus
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
@@ -510,12 +501,11 @@ armors:
 
   - type: STR_DW_TECH_ARMOR_BA_UC
     refNode: *STR_DW_TECH_MK7
-    instantWoundRecovery: true
+
   - type: STR_DW_TECH_ARMOR_BT_UC
     refNode: *STR_DW_TECH_MK7
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_DW_TECH_ARMOR_CF_UC
@@ -635,7 +625,6 @@ armors:
     moveCost:
       basePercent: [100, 75] # Reduced energy cost - Scout bonus
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
@@ -662,7 +651,6 @@ armors:
       1: SCTDWBA
       3: GOGGLESDW
     spriteSheet: SCTDWBA.PCK
-    instantWoundRecovery: true
     units:
       - STR_BLOODANGELS
 
@@ -678,7 +666,6 @@ armors:
       - STR_BLACKT
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_DW_SCOUT_CF_UC
@@ -846,12 +833,11 @@ armors:
       - 0.8 #MELTA (was 1.0)
     specialWeapon: STR_TELEPORT # all terminators get teleport
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 80
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 50
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalties
-      SMT_ARMOR_REGEN_HP: 4
+      ARMOR_REGENERATE_HEALTH_FLAT: 4
       ARMOR_REGENERATES_WOUNDS: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
       ARMOR_ENERGY_SHIELD_DECAY: 50
@@ -863,12 +849,11 @@ armors:
 
   - type: STR_DW_TER_ARMOR_BA_UC
     refNode: *STR_DW_TERM_MK7
-    instantWoundRecovery: true
+
   - type: STR_DW_TER_ARMOR_BT_UC
     refNode: *STR_DW_TERM_MK7
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_DW_TER_ARMOR_CF_UC
@@ -964,12 +949,11 @@ armors:
       - 0.8 #MELTA (was 1.0)
     specialWeapon: STR_TELEPORT # all terminators get teleport
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 80
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 50
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalties
-      SMT_ARMOR_REGEN_HP: 4
+      ARMOR_REGENERATE_HEALTH_FLAT: 4
       ARMOR_REGENERATES_WOUNDS: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 50
@@ -981,12 +965,11 @@ armors:
 
   - type: STR_DW_TASS_ARMOR_BA_UC
     refNode: *STR_DW_TERM_ASS_SHIELD_MK7
-    instantWoundRecovery: true
+
   - type: STR_DW_TASS_ARMOR_BT_UC
     refNode: *STR_DW_TERM_ASS_SHIELD_MK7
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_DW_TASS_ARMOR_CF_UC
@@ -1088,12 +1071,11 @@ armors:
       - INV_NULL_2X1_RL
       - INV_NULL_2X1_LL
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 80
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 50
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalties
-      SMT_ARMOR_REGEN_HP: 4
+      ARMOR_REGENERATE_HEALTH_FLAT: 4
       ARMOR_REGENERATES_WOUNDS: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 50
@@ -1105,7 +1087,6 @@ armors:
 
   - type: STR_DW_TASS_ARMOR_BA_CLAWS_UC
     refNode: *STR_DW_TERM_ASS_CLAWS_MK7
-    instantWoundRecovery: true
     spriteSheet: TERMCLWDWBA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 518}
     layersDefaultPrefix: 0
@@ -1146,7 +1127,6 @@ armors:
       F5: ["0", "TERMCLWBT", "F5_FACE"]
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_DW_TASS_ARMOR_CF_CLAWS_UC
@@ -1373,12 +1353,11 @@ armors:
       - INV_NULL_2X1_RL
       - INV_NULL_2X1_LL
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 80
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 50
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalties
-      SMT_ARMOR_REGEN_HP: 4
+      ARMOR_REGENERATE_HEALTH_FLAT: 4
       ARMOR_REGENERATES_WOUNDS: 1
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
       ARMOR_ENERGY_SHIELD_DECAY: 50
@@ -1390,7 +1369,6 @@ armors:
 
   - type: STR_DW_TSARGENT_ARMOR_BA_UC
     refNode: *STR_DW_TERM_CYCLONE_MK7
-    instantWoundRecovery: true
     spriteSheet: TERMCYCDWBA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 518}
     layersDefaultPrefix: 0
@@ -1431,7 +1409,6 @@ armors:
       F5: ["0", "TERMCYCBT", "F5_FACE"]
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_DW_TSARGENT_ARMOR_CF_UC
@@ -1649,7 +1626,6 @@ armors:
       - 0.2 #IMPACT
       - 0.9 #MELTA
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
@@ -1662,12 +1638,11 @@ armors:
 
   - type: STR_MKX_DW_TAC_BA_UC
     refNode: *STR_DW_TAC_MKX
-    instantWoundRecovery: true
+
   - type: STR_MKX_DW_TAC_BT_UC
     refNode: *STR_DW_TAC_MKX
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_MKX_DW_TAC_CF_UC
@@ -1786,7 +1761,6 @@ armors:
       ARMOR_MAX_SUCCESSFUL_DODGES: 1
       MaxFlight: 2
       MaxCoolDown: 1
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
@@ -1803,7 +1777,6 @@ armors:
     layersSpecificPrefix:
       1: ASSDWBA
     spriteSheet: ASSDWBAH.PCK
-    instantWoundRecovery: true
     units:
       - STR_BLOODANGELS_PRIMARIS
 
@@ -1817,7 +1790,6 @@ armors:
       - STR_BLACKT_PRIMARIS
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_MKX_DW_ASS_CF_UC
@@ -1959,12 +1931,11 @@ armors:
       - INV_NULL_3X1_BACKPACK
     specialWeapon: STR_SM_APOTH_FIST_LV2
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      SMT_ARMOR_REGEN_HP: 3
+      ARMOR_REGENERATE_HEALTH_FLAT: 3
       ARMOR_REGENERATES_WOUNDS: 1
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 33
@@ -1974,12 +1945,11 @@ armors:
 
   - type: STR_MKX_DW_APO_BA_UC
     refNode: *STR_DW_APOTH_MKX
-    instantWoundRecovery: true
+
   - type: STR_MKX_DW_APO_BT_UC
     refNode: *STR_DW_APOTH_MKX
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_MKX_DW_APO_CF_UC
@@ -2076,7 +2046,6 @@ armors:
       - STR_THUNDERFIRE_SHELL
       - STR_THUNDERFIRE_SHELL
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
@@ -2089,12 +2058,11 @@ armors:
 
   - type: STR_MKX_DW_TEC_BA_UC
     refNode: *STR_DW_TECH_MKX
-    instantWoundRecovery: true
+
   - type: STR_MKX_DW_TEC_BT_UC
     refNode: *STR_DW_TECH_MKX
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_MKX_DW_TEC_CF_UC
@@ -2191,7 +2159,6 @@ armors:
     moveCost:
       basePercent: [100, 75] # Reduced energy cost - Phobos bonus
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
@@ -2212,12 +2179,11 @@ armors:
 
   - type: STR_MKX_DW_PHB_BA_UC
     refNode: *STR_DW_PHB_MKX
-    instantWoundRecovery: true
+
   - type: STR_MKX_DW_PHB_BT_UC
     refNode: *STR_DW_PHB_MKX
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_MKX_DW_PHB_CF_UC
@@ -2337,7 +2303,6 @@ armors:
     moveCost:
       basePercent: [100, 75] # Reduced energy cost - Phobos bonus
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
@@ -2364,7 +2329,6 @@ armors:
       3: GOGGLESDW
       4: MASKDW
     spriteSheet: ELIMDWBA.PCK
-    instantWoundRecovery: true
     units:
       - STR_BLOODANGELS_PRIMARIS
 
@@ -2380,7 +2344,6 @@ armors:
       - STR_BLACKT_PRIMARIS
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_MKX_DW_PHBELIM_CF_UC
@@ -2541,7 +2504,6 @@ armors:
     builtInWeapons:
       - INV_NULL_3X3
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
@@ -2556,7 +2518,6 @@ armors:
     refNode: *STR_DW_GRV_MKX_EH
     units:
       - STR_BLOODANGELS_PRIMARIS
-    instantWoundRecovery: true
     spriteSheet: DWGRVHANDBA.PCK
     layersDefaultPrefix: 0
     layersSpecificPrefix:
@@ -2597,7 +2558,6 @@ armors:
       F5: ["0", "GRVNWBT", "F5_FACE", "GOLA"]
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_MKX_DW_GRV_CF_UC
@@ -2830,7 +2790,6 @@ armors:
       - STR_GRAV_BOLTER_DW
       - INV_NULL_3X3
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
@@ -2845,7 +2804,6 @@ armors:
     refNode: *STR_DW_GRV_MKX_BS
     units:
       - STR_BLOODANGELS_PRIMARIS
-    instantWoundRecovery: true
     spriteSheet: DWGRVARMBA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 440}
     layersDefaultPrefix: 0
@@ -2888,7 +2846,6 @@ armors:
       F5: ["0", "GRVBSBT", "F5_FACE", "GOLA"]
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_MKX_DW_GRVBS_CF_UC
@@ -3128,7 +3085,6 @@ armors:
       - STR_GRAV_AUTOC_DW
       - INV_NULL_3X3
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
@@ -3143,7 +3099,6 @@ armors:
     refNode: *STR_DW_GRV_MKX_AC
     units:
       - STR_BLOODANGELS_PRIMARIS
-    instantWoundRecovery: true
     spriteSheet: DWGRVARMBA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 440}
     layersDefaultPrefix: 0
@@ -3186,7 +3141,6 @@ armors:
       F5: ["0", "GRVACBT", "F5_FACE", "GOLA"]
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_MKX_DW_GRVAC_CF_UC
@@ -3426,7 +3380,6 @@ armors:
       - STR_GRAV_FLAMER_DW
       - INV_NULL_3X3
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
@@ -3441,7 +3394,6 @@ armors:
     refNode: *STR_DW_GRV_MKX_FS
     units:
       - STR_BLOODANGELS_PRIMARIS
-    instantWoundRecovery: true
     spriteSheet: DWGRVARMBA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 440}
     layersDefaultPrefix: 0
@@ -3484,7 +3436,6 @@ armors:
       F5: ["0", "GRVFSBT", "F5_FACE", "GOLA"]
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_MKX_DW_GRVFS_CF_UC
@@ -3719,7 +3670,6 @@ armors:
       - 0.9 #MELTA
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
@@ -3738,14 +3688,12 @@ armors:
     refNode: *STR_DW_INC_MKX
     units:
       - STR_BLOODANGELS_PRIMARIS
-    instantWoundRecovery: true
   - type: STR_MKX_DW_INC_BT_UC
     refNode: *STR_DW_INC_MKX
     units:
       - STR_BLACKT_PRIMARIS
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_MKX_DW_INC_CF_UC
@@ -3860,7 +3808,6 @@ armors:
       - INV_NULL_3X3
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
@@ -3879,7 +3826,6 @@ armors:
     refNode: *STR_DW_INC_MKX_AC
     units:
       - STR_BLOODANGELS_PRIMARIS
-    instantWoundRecovery: true
     spriteSheet: MKXINCDWBA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 434}
     layersDefaultPrefix: 0
@@ -3922,7 +3868,6 @@ armors:
       F5: ["0", "INCDWBT", "M5_FACE", "GOLA"]
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_MKX_DW_INCAC_CF_UC
@@ -4164,7 +4109,6 @@ armors:
       - INV_NULL_3X3
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
@@ -4183,7 +4127,6 @@ armors:
     refNode: *STR_DW_INC_MKX_PE
     units:
       - STR_BLOODANGELS_PRIMARIS
-    instantWoundRecovery: true
     spriteSheet: MKXINCDWBA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 434}
     layersDefaultPrefix: 0
@@ -4226,7 +4169,6 @@ armors:
       F5: ["0", "INCDWBT", "M5_FACE", "GOLA"]
     zombiImmune: true
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 5 # Gain 1-5 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to corruption
 
   - type: STR_MKX_DW_INCPE_CF_UC
@@ -4464,7 +4406,6 @@ armors:
       - INV_NULL_3X1_BACKPACK
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
@@ -4482,7 +4423,6 @@ armors:
     spriteSheet: DWCAPTAINBA.PCK
     units:
       - STR_BLOODANGELS_LEADER
-    instantWoundRecovery: true
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       1: DWCAPTAIN
@@ -4535,7 +4475,6 @@ armors:
       - AUX_CROZIUS_DW
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 8 # Gain 1-8 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100 # immune to all corruption - chaplain
   - type: STR_DW_LEADER_CF_UC
     refNode: *STR_DW_LEADER_ARMOR
@@ -4559,7 +4498,6 @@ armors:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X1_BACKPACK
       - STR_HEAVY_BOLTRIFLE_DW
-      - STR_BOLTRIFLE_DRUM_MC_DW
       - STR_BOLTRIFLE_DRUM_MC_DW
   - type: STR_DW_LEADER_DA_UC
     refNode: *STR_DW_LEADER_ARMOR

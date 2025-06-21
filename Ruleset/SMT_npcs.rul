@@ -87,15 +87,15 @@ items:
     invHeight: 3
     weight: 28
     dropoff: 4
-    autoRange: 13
+    #autoRange: 13
     snapRange: 16
-    aimRange: 0
-    accuracyAuto: 75
+    #aimRange: 0
+    #accuracyAuto: 75
     accuracySnap: 90
-    accuracyAimed: 0
+    #accuracyAimed: 0
     tuAimed: 0
-    tuSnap: 20
-    tuAuto: 30
+    tuSnap: 12 # make NPC decisions easy and avoid autofire overkill
+    tuAuto: 0
     autoShots: 4
     recoveryTransformations:
       STR_RIFLEB: [1]
@@ -120,16 +120,16 @@ items:
     invHeight: 2
     weight: 20
     dropoff: 5
-    autoRange: 9
+    #autoRange: 9
     snapRange: 11
-    aimRange: 0
-    accuracyAuto: 66
+    #aimRange: 0
+    #accuracyAuto: 0
     accuracySnap: 90
-    accuracyAimed: 0
-    tuAuto: 24
-    tuSnap: 18
+    #accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 12 # make NPC decisions easy
     tuAimed: 0
-    autoShots: 2
+    #autoShots: 2
     recoveryTransformations:
       STR_PISTOLB: [1]
     tags:
@@ -155,17 +155,12 @@ items:
     accuracyAuto: 55
     accuracySnap: 60
     accuracyAimed: 60
-    tuAuto: 33
-    tuSnap: 22
-    tuAimed: 22
-    confAuto:
-      shots: 4
+    tuAuto: 0
+    tuSnap: 18 # Make NPC decisions easy
+    tuAimed: 0
     confSnap:
       name: STR_BURST_SNAP_SHOT
       shots: 2
-    confAimed:
-      spendPerShot: 4
-      name: STR_MAXIMAL_SHOT
     recoveryTransformations:
       STR_PLASMA_CARBINE_TERRAN: [1]
     tags:

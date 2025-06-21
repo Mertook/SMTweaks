@@ -666,6 +666,279 @@ soldierTransformation:
     upperBoundAtStatCaps: true
     listOrder: 90
 
+### Psychic Abilities
+# Tier 1
+  - name: STR_PSIUNLOCK_ILLUMINATE      # Illuminate (Tier 1)
+    requires: &Psyker_TierOne_Requires
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_MIDTIER_PREREQ
+      - STR_LIBRARY
+    cost: 50000
+    requiredItems: &Psyker_TierOne_Cost
+      STR_KILLPOINT_TOKEN: 20
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes: &Psyker_TierOne_Soldiers
+      - STR_SOLDIER_LIBRARIAN
+      - STR_SOLDIER_LIBRARIAN_TERM
+      - STR_PRIMARIS_LIBRARIANLV1
+      - STR_PRIMARIS_LIBRARIANLV2
+      - STR_PRIMARIS_LIBRARIANLV3
+    forbiddenPreviousTransformations: &Psyker_TierOne_TransformList
+      - STR_PSIUNLOCK_ILLUMINATE
+      - STR_PSIUNLOCK_SHROUD
+      - STR_PSIUNLOCK_TELEPATHY
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requiredMinStats: &Psyker_TierOne_MinStats
+      psiStrength: 40
+    listOrder: 200
+    soldierBonusType: STR_PSIBONUS_ILLUMINATE
+
+  - name: STR_PSIUNLOCK_SHROUD          # Shroud (Tier 1)
+    cost: 50000
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requires: *Psyker_TierOne_Requires
+    requiredItems: *Psyker_TierOne_Cost
+    allowedSoldierTypes: *Psyker_TierOne_Soldiers
+    forbiddenPreviousTransformations: *Psyker_TierOne_TransformList
+    requiredMinStats: *Psyker_TierOne_MinStats
+    listOrder: 205
+    soldierBonusType: STR_PSIBONUS_SHROUD
+
+  - name: STR_PSIUNLOCK_TELEPATHY       # Telepathy (Tier 1)
+    cost: 50000
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requires: *Psyker_TierOne_Requires
+    requiredItems: *Psyker_TierOne_Cost
+    allowedSoldierTypes: *Psyker_TierOne_Soldiers
+    forbiddenPreviousTransformations: *Psyker_TierOne_TransformList
+    requiredMinStats: *Psyker_TierOne_MinStats
+    listOrder: 210
+    soldierBonusType: STR_PSIBONUS_TELEPATHY
+
+# Tier 2
+  - name: STR_PSIUNLOCK_THUNDERCLAP     # Thunderclap (Tier 2)
+    requires: &Psyker_TierTwo_Requires
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_MIDTIER_PREREQ
+      - STR_LIBRARY
+    cost: 50000
+    requiredItems: &Psyker_TierTwo_Cost
+      STR_KILLPOINT_TOKEN: 20
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes: &Psyker_TierTwo_Soldiers
+      - STR_SOLDIER_LIBRARIAN
+      - STR_SOLDIER_LIBRARIAN_TERM
+      - STR_PRIMARIS_LIBRARIANLV1
+      - STR_PRIMARIS_LIBRARIANLV2
+      - STR_PRIMARIS_LIBRARIANLV3
+    forbiddenPreviousTransformations: &Psyker_TierTwo_TransformList
+      - STR_PSIUNLOCK_THUNDERCLAP
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requiredMinStats: &Psyker_TierTwo_MinStats
+      psiStrength: 60
+    listOrder: 215
+    soldierBonusType: STR_PSIBONUS_THUNDERCLAP
+
+  - name: STR_PSIUNLOCK_LREFLEX         # Lightning Reflexes (Tier 2)
+    cost: 50000
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requires: *Psyker_TierTwo_Requires
+    requiredItems: *Psyker_TierTwo_Cost
+    allowedSoldierTypes: *Psyker_TierTwo_Soldiers
+    forbiddenPreviousTransformations: *Psyker_TierTwo_TransformList
+    requiredMinStats: *Psyker_TierTwo_MinStats
+    listOrder: 220
+    soldierBonusType: STR_PSIBONUS_LREFLEX
+
+  - name: STR_PSIUNLOCK_MENDWOUNDS      # Mend Wounds (Tier 2)
+    cost: 50000
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requires: *Psyker_TierTwo_Requires
+    requiredItems: *Psyker_TierTwo_Cost
+    allowedSoldierTypes: *Psyker_TierTwo_Soldiers
+    forbiddenPreviousTransformations: *Psyker_TierTwo_TransformList
+    requiredMinStats: *Psyker_TierTwo_MinStats
+    listOrder: 225
+    soldierBonusType: STR_PSIBONUS_MENDWOUNDS
+
+  - name: STR_PSIUNLOCK_SENTRYWARD      # Minds Eye (Tier 2)
+    cost: 50000
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requires: *Psyker_TierTwo_Requires
+    requiredItems: *Psyker_TierTwo_Cost
+    allowedSoldierTypes: *Psyker_TierTwo_Soldiers
+    forbiddenPreviousTransformations: *Psyker_TierTwo_TransformList
+    requiredMinStats: *Psyker_TierTwo_MinStats
+    listOrder: 230
+    soldierBonusType: STR_PSIBONUS_SENTRYWARD
+
+  - name: STR_PSIUNLOCK_SMITE           # Smite (Tier 3)
+    requires: &Psyker_TierThree_Requires
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_MIDTIER_PREREQ
+      - STR_LIBRARY
+    cost: 50000
+    requiredItems: &Psyker_TierThree_Cost
+      STR_KILLPOINT_TOKEN: 20
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes: &Psyker_TierThree_Soldiers
+      - STR_SOLDIER_LIBRARIAN
+      - STR_SOLDIER_LIBRARIAN_TERM
+      - STR_PRIMARIS_LIBRARIANLV1
+      - STR_PRIMARIS_LIBRARIANLV2
+      - STR_PRIMARIS_LIBRARIANLV3
+    forbiddenPreviousTransformations: &Psyker_TierThree_TransformList
+      - STR_PSIUNLOCK_THUNDERCLAP
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requiredMinStats: &Psyker_TierThree_MinStats
+      psiStrength: 80
+    listOrder: 235
+    soldierBonusType: STR_PSIBONUS_SMITE
+
+  - name: STR_PSIUNLOCK_VIGILANCE       # Vigilance (Tier 3)
+    cost: 50000
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requires: *Psyker_TierThree_Requires
+    requiredItems: *Psyker_TierThree_Cost
+    allowedSoldierTypes: *Psyker_TierThree_Soldiers
+    forbiddenPreviousTransformations: *Psyker_TierThree_TransformList
+    requiredMinStats: *Psyker_TierThree_MinStats
+    listOrder: 240
+    soldierBonusType: STR_PSIBONUS_VIGILANCE
+
+  - name: STR_PSIUNLOCK_WALLBREAKER     # Seismic Shift (Tier 3)
+    cost: 50000
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requires: *Psyker_TierThree_Requires
+    requiredItems: *Psyker_TierThree_Cost
+    allowedSoldierTypes: *Psyker_TierThree_Soldiers
+    forbiddenPreviousTransformations: *Psyker_TierThree_TransformList
+    requiredMinStats: *Psyker_TierThree_MinStats
+    listOrder: 240
+    soldierBonusType: STR_PSIBONUS_WALLBREAKER
+
+  - name: STR_PSIUNLOCK_UNDYING         # Martyr's Armor (Tier 3)
+    cost: 50000
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requires: *Psyker_TierThree_Requires
+    requiredItems: *Psyker_TierThree_Cost
+    allowedSoldierTypes: *Psyker_TierThree_Soldiers
+    forbiddenPreviousTransformations: *Psyker_TierThree_TransformList
+    requiredMinStats: *Psyker_TierThree_MinStats
+    listOrder: 240
+    soldierBonusType: STR_PSIBONUS_UNDYING
+
+  - name: STR_PSIUNLOCK_SHIELD          # Shield (Tier 4)
+    requires: &Psyker_TierFour_Requires
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_MIDTIER_PREREQ
+      - STR_LIBRARY
+    cost: 50000
+    requiredItems: &Psyker_TierFour_Cost
+      STR_KILLPOINT_TOKEN: 20
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes: &Psyker_TierFour_Soldiers
+      - STR_SOLDIER_LIBRARIAN
+      - STR_SOLDIER_LIBRARIAN_TERM
+      - STR_PRIMARIS_LIBRARIANLV2
+      - STR_PRIMARIS_LIBRARIANLV3
+    forbiddenPreviousTransformations: &Psyker_TierFour_TransformList
+      - STR_PSIUNLOCK_THUNDERCLAP
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requiredMinStats: &Psyker_TierFour_MinStats
+      psiStrength: 100
+    listOrder: 235
+    soldierBonusType: STR_PSIBONUS_SHIELD
+
+  - name: STR_PSIUNLOCK_HOLODUMMY       # Hallucination (Tier 4)
+    cost: 50000
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    transferTime: 0
+    requiredCommendations:
+      STR_TERMINATOR_CROSS: 0
+    requires: *Psyker_TierFour_Requires
+    requiredItems: *Psyker_TierFour_Cost
+    allowedSoldierTypes: *Psyker_TierFour_Soldiers
+    forbiddenPreviousTransformations: *Psyker_TierFour_TransformList
+    requiredMinStats: *Psyker_TierFour_MinStats
+    listOrder: 240
+    soldierBonusType: STR_PSIBONUS_HOLODUMMY
+
 ### Imperial Guard
 
   - &STR_OFFICER_PROMOTION
@@ -693,5 +966,22 @@ soldierTransformation:
 
 
 soldierBonuses:
-  - name: STR_PSI_SHROUD
+  - name: STR_PSIBONUS_SHROUD
     heatVision: 10
+
+  - name: STR_PSIBONUS_ILLUMINATE
+  - name: STR_PSIBONUS_TELEPATHY
+  - name: STR_PSIBONUS_THUNDERCLAP
+  - name: STR_PSIBONUS_LREFLEX
+  - name: STR_PSIBONUS_MENDWOUNDS
+  - name: STR_PSIBONUS_SENTRYWARD
+  - name: STR_PSIBONUS_SMITE
+  - name: STR_PSIBONUS_VIGILANCE
+  - name: STR_PSIBONUS_WALLBREAKER
+  - name: STR_PSIBONUS_UNDYING
+  - name: STR_PSIBONUS_SHIELD
+  - name: STR_PSIBONUS_HOLODUMMY
+  - name: STR_PSIBONUS_WALLBREAKER
+  - name: STR_PSIBONUS_WALLBREAKER
+  - name: STR_PSIBONUS_WALLBREAKER
+

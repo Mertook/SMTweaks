@@ -91,7 +91,6 @@ armors:
       - 0.2 #IMPACT
       - 1.0 #MELTA
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 10
@@ -129,7 +128,6 @@ armors:
       - 0.2 #IMPACT
       - 0.9 #MELTA
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 10
@@ -162,7 +160,6 @@ armors:
     units:
       - STR_SOLDIER_NEOPHYTE
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_ASTARTES: 1
@@ -218,7 +215,6 @@ armors:
       - STR_SOLDIER
       - STR_SOLDIER_TERMINATOR
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 10
       UNIT_TYPE_LIVING: 1
@@ -303,7 +299,7 @@ armors:
       - INV_NULL_3X1_BACKPACK
       - AUX_MEDI_KIT_ADVANCED
     tags: #Apoth gets better regeneration
-      SMT_ARMOR_REGEN_HP: 3
+      ARMOR_REGENERATE_HEALTH_FLAT: 3
       ARMOR_REGENERATES_WOUNDS: 1
       INFECTION_RESIST: 25
 
@@ -616,7 +612,6 @@ armors:
       - STR_SOLDIER
       - STR_SOLDIER_TERMINATOR
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 10
       UNIT_TYPE_LIVING: 1
@@ -665,7 +660,6 @@ armors:
     units: # exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 10
       ARMOR_RESTEALTH_KILL_REQUIREMENT: 4
@@ -740,13 +734,12 @@ armors:
       melee: 20         # base 20
     specialWeapon: STR_TELEPORT # all Terminators (except Cyclone) now get basic teleport
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalty
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 75
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 10
-      SMT_ARMOR_REGEN_HP: 4
+      ARMOR_REGENERATE_HEALTH_FLAT: 4
       ARMOR_REGENERATES_WOUNDS: 1
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
@@ -897,7 +890,6 @@ armors:
       - INV_NULL_3X1_BACKPACK
     tags:
       INFECTION_RESIST: 100 #infection immune - Chaplains bonus
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
 
   - type: STR_CHAP_TERMINATOR_UC            #CHAPLAIN TERMINATOR
     refNode: *STR_TERMINATOR_ARMOR
@@ -936,7 +928,6 @@ armors:
       - INV_NULL_2X1_LL
     tags:
       INFECTION_RESIST: 100 #infection immune - Chaplains bonus
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
 
@@ -978,7 +969,6 @@ armors:
       - STR_SOLDIER_CHAPLAIN
     tags:
       INFECTION_RESIST: 100 #infection immune - Chaplains bonus
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
       FLIGHT_DODGE_CHANCE: 25
@@ -1029,7 +1019,6 @@ armors:
       psiSkill: 0.2 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
       moraleCurrent: 0.7 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45 # buffed for new shield mechanics
       ARMOR_ENERGY_SHIELD_DECAY: 75
       UNIT_TYPE_PSYKER: 1
@@ -1078,7 +1067,6 @@ armors:
       - INV_NULL_2X1_RL
       - INV_NULL_2X1_LL
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # improved shield
       ARMOR_ENERGY_SHIELD_DECAY: 75
       UNIT_TYPE_PSYKER: 1
@@ -1092,7 +1080,6 @@ armors:
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6
       INTIMIDATION_RESISTANCE: 100
       INFECTION_RESIST: 33
 
@@ -1491,7 +1478,6 @@ armors:
     moveCost:
       baseNormalPercent: [50,50] #halved movement costs
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 9
       INTIMIDATION_RESISTANCE: 75
       INFECTION_RESIST: 100 # 2x2 unit
@@ -1541,7 +1527,6 @@ armors:
       - 1.1 #MELTA - was 1.2
     specialWeapon: AUX_STOMP_SMT
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 4 # Gain 1-4 Devotion in any fight where this unit gains xp
       INFECTION_RESIST: 100
       INTIMIDATION_RESISTANCE: 100
       UNIT_TYPE_IMPERIUM: 1
@@ -1649,7 +1634,6 @@ armors:
     builtInWeapons:
       - INV_NULL_3X1_BACKPACK
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       SMT_ARMOR_SHRED_RESISTANCE: 35
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
@@ -2094,7 +2078,6 @@ armors:
       ARMOR_MAX_SUCCESSFUL_DODGES: 1
       MaxFlight: 1
       MaxCoolDown: 1
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       SMT_ARMOR_SHRED_RESISTANCE: 35
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
@@ -2140,6 +2123,8 @@ armors:
     tags:
       FLIGHT_DODGE_CHANCE: 30
       ARMOR_MAX_SUCCESSFUL_DODGES: 2
+      MaxFlight: 2
+      MaxCoolDown: 1
       SMT_ARMOR_SHRED_RESISTANCE: 35
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
@@ -2161,6 +2146,8 @@ armors:
     tags:
       FLIGHT_DODGE_CHANCE: 35
       ARMOR_MAX_SUCCESSFUL_DODGES: 3
+      MaxFlight: 2
+      MaxCoolDown: 1
       SMT_ARMOR_SHRED_RESISTANCE: 40
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 30
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
@@ -2222,7 +2209,6 @@ armors:
       psiSkill: 0       # base 0
       melee: 30         # base 15
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       SMT_ARMOR_SHRED_RESISTANCE: 30
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 15
@@ -2501,7 +2487,6 @@ armors:
       psiSkill: 0       # base 0
       melee: 15         # base 10
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
@@ -2832,7 +2817,6 @@ armors:
     builtInWeapons:
       - INV_NULL_3X3
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60 # High level armor values
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
@@ -3102,8 +3086,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
-      SMT_ARMOR_REGEN_HP: 2
+      ARMOR_REGENERATE_HEALTH_FLAT: 2
       ARMOR_REGENERATES_WOUNDS: 1
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 25
@@ -3132,7 +3115,7 @@ armors:
       - STR_PRIMARISLV1
     specialWeapon: STR_SM_APOTH_FIST
     tags:
-      SMT_ARMOR_REGEN_HP: 2
+      ARMOR_REGENERATE_HEALTH_FLAT: 2
       ARMOR_REGENERATES_WOUNDS: 1
 
   - type: STR_MKX_HELIX_UC_LV2              #HELIX ADEPT LV2
@@ -3157,7 +3140,7 @@ armors:
       - STR_PRIMARISLV2
     specialWeapon: STR_SM_APOTH_FIST
     tags:
-      SMT_ARMOR_REGEN_HP: 2
+      ARMOR_REGENERATE_HEALTH_FLAT: 2
       ARMOR_REGENERATES_WOUNDS: 1
 
   - type: STR_MKX_HELIX_UC_LV3              #HELIX ADEPT LV3
@@ -3184,7 +3167,7 @@ armors:
       - STR_PRIMARISLV3
     specialWeapon: STR_SM_APOTH_FIST
     tags:
-      SMT_ARMOR_REGEN_HP: 2
+      ARMOR_REGENERATE_HEALTH_FLAT: 2
       ARMOR_REGENERATES_WOUNDS: 1
 
   - type: STR_MKX_APO_UC_LV1                #APOTHECARY
@@ -3385,7 +3368,6 @@ armors:
       melee: 15         # base 10 +5
     specialWeapon: AUX_PROBE
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 60
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
@@ -3474,7 +3456,6 @@ armors:
       - INV_NULL_3X1_BACKPACK
     specialWeapon: STR_JUDICAR_BLESS
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
       SMT_ARMOR_SHRED_RESISTANCE: 35
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
@@ -3534,7 +3515,6 @@ armors:
       - INV_NULL_3X1_BACKPACK
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # Gain 1-6 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 100
@@ -3595,7 +3575,6 @@ armors:
       - INV_LIB_VULN_TOKEN
       - INV_NULL_3X1_BACKPACK
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 15
       ARMOR_ENERGY_SHIELD_DECAY: 50
       UNIT_TYPE_PSYKER: 1
@@ -3696,7 +3675,6 @@ armors:
       - 0.0 #IMPACT
       - 1.0 #MELTA
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 9
       INTIMIDATION_RESISTANCE: 75
       INFECTION_RESIST: 100 # 2x2 unit
@@ -3930,9 +3908,8 @@ armors:
       - STR_PRIMARISLV4
       - STR_PRIMARISLV5
     tags:
-      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # Gain 1-2 Devotion in any fight where this unit gains xp
       SMT_ARMOR_HEAVY_WEAPON_USER: 3 # 1/2 HWP penalties
-      SMT_ARMOR_REGEN_HP: 4
+      ARMOR_REGENERATE_HEALTH_FLAT: 4
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20 # double shield regen to account for new shield mechanics
       ARMOR_ENERGY_SHIELD_DECAY: 20
       INTIMIDATION_RESISTANCE: 50

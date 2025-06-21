@@ -130,11 +130,16 @@ extended:
           var int temp;
           var int temp2;
 
-          set to_mana 0; # catch for corruption to stop it interfering with turret munitions
+          set to_mana 0; # catch for corruption to stop it interfering with munitions
 
           unit.getHealth temp;
           if lt to_health temp; # only killing blows
-            #debug_log "Death Trigger Fail" to_health temp;
+            unit.getTag temp2 Tag.SMT_LOWEST_HEALTH;
+            debug_log "Death Trigger Fail" to_health temp temp2;
+            sub temp to_health;
+            if or lt temp temp2 eq temp2 0;
+             unit.setTag Tag.SMT_LOWEST_HEALTH temp; # adjust lowest health reached for regen
+            end;
             return;
           end;
 

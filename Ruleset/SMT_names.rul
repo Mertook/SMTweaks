@@ -519,6 +519,7 @@ extraStrings:
       STR_MKX_GRV_ARMOR_DW: MKX Gravis Armor
       STR_MKX_INC_ARMOR_DW: MKX Omnis Armor
       STR_GRAVCANNON_AMMO_CHAOS: Gravcannon Cell
+      STR_GRAVPISTOL_AMMO_CHAOS: Gravpistol Cell
       ### SCRIPTS
       STR_SCRIPT_HEROIC_SAVE: Unit endured fatal damage!
       SMT_AMMO_BONUSDMG_FIRINGACC: "Precision %"
@@ -527,6 +528,7 @@ extraStrings:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: "Shred Resist (Melta)"
       STR_ARMOR_WOUNDHEAL: "Wound Healing"
       SMT_AMMO_HP_PREDMG: "Armor-Ignoring HP Dmg%"
+      SMT_GRAV_WEAPON: "Graviton Multiplier %"
       SMT_VULN_DEBUFF_MOD: "Vulnerability (Power)%"
       SMT_VULN_DEBUFF_FIXED: "Vulnerability (Flat)%"
       SMT_VULN_DURATION: "Vuln. Duration"
@@ -534,7 +536,7 @@ extraStrings:
       SMT_RESTRICTED_DAMAGE_PEN: "Restricted Dmg. Penalty%"
       SMT_RESTRICTED_ITEM_MELEE: "Restricted Melee Penalty%"
       BOMBARD_COOLDOWN: Fire Support Cooldown
-      SMT_ARMOR_REGEN_HP: "Health Regeneration"
+      ARMOR_REGENERATE_HEALTH_FLAT: "Health Regeneration"
       SMT_ARMOR_HEAVY_WEAPON_USER: "HWP Penalty Reduction%"
       ITEM_STEALTH_RANGE: "Stealth Detect Range"
       ITEM_STEALTH_DURATION: "Stealth Duration"
@@ -1098,7 +1100,7 @@ extraStrings:
       STR_IF_INFO_1: "{NEWLINE}One of the most valiant of all Chapters, held as paragons of the principles set down in the Codex Astartes. The Imperial Fists stand as the steadfast defenders of the Imperium and the Emperor's unwavering shield; for ten thousand standard years they have been the bulwark against which the armies of Traitors and aliens have shattered.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Experts in defense, they are less affected by Heavy Weapons and their armor is more durable."
       STR_IF_INFO_2: "{NEWLINE} The Imperial Fists Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Mastercrafted Storm Bolter{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
       STR_BA: "Blood Angels"
-      STR_BA_INFO_1: "{NEWLINE}The sons of Sanguinius are experts in the use of all weapons and launching of army-shattering assaults. Their Forces are an inspiring sight in the ranks of the Emperor. {NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Bound in blood, they can regenerate by feeding, with no time needed in the apothecary bay."
+      STR_BA_INFO_1: "{NEWLINE}The sons of Sanguinius are experts in the use of all weapons and launching of army-shattering assaults. Their Forces are an inspiring sight in the ranks of the Emperor. {NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Bound in blood, they can regenerate by feeding greatly reducing the time spent recovering from wounds."
       STR_BA_INFO_2: "{NEWLINE} The Blood Angels Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Jetpack{ALT} (3 turn flight){NEWLINE} > {ALT}¬ Power Sword{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
       STR_SALA: "Salamanders"
       STR_SALA_INFO_1: "{NEWLINE}The Salamanders are warriors possessed of a nobility and compassion that belies their fell appearance. They are excellent craftsmen all, both within the sphere of war and without.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Hailing from Nocturne, they are immume to fire."
@@ -1283,8 +1285,15 @@ extraStrings:
       STR_ANTIPLANT_BOMB_CODEX: "{NEWLINE} Anti-Plant Bombs are designed to destroy foliage in order to clear landing zones or expose enemies. The explosion saturates an area with toxins and compounds that rapidly destroys plant material and light cover, leaving only open ground.{NEWLINE}Unprotected civilians may suffer adversely if caught in the blast but the direct combat applications of this weapon are minimal."
       STR_PLASMA_CARBINE_TERRAN: Plasma Carbine
       STR_PLASMA_CARBINE_TERRAN_CODEX: "{NEWLINE} Plasma Carbines are based on the Clovis Mark IV design, a weaker form of Plasma gun that lacks power but is more resistant to overheating, allowing it to fire in bursts."
+      STR_PLASMA_CARBINE_AI: Plasma Carbine
       STR_GRAVCANNON_TERRAN: Gravcannon
       STR_GRAVCANNON_TERRAN_CODEX: "{NEWLINE} The Gravcannon is a heavy graviton weapon that turns the targets weight against itself, easily crushing armor and bunkers. The Gravcannon can crush several targets within its implosion area, destroying armor and flesh alike.{NEWLINE}{NEWLINE}Recoil: {ALT}80{ALT} - {ALT}Heavy{ALT}"
+      STR_GRAVPISTOL_TERRAN: Gravpistol
+      STR_GRAVPISTOL_TERRAN_CODEX: "{NEWLINE} The Gravpistol is based on the same ancient Graviton tech as the bigger Gravgun. Less potent, the Gravpistol sacrifices range to create similar gravity crushing fields against heavy armor wearers and fortifications, turning the targets weight against them."
+      STR_GRAVPISTOL_MC_TERRAN: Master-crafted Gravpistol
+      STR_GRAVPISTOL_MC_TERRAN_CODEX: "{NEWLINE} The Gravpistol is based on the same ancient Graviton tech as the bigger Gravgun. Less potent, the Gravpistol sacrifices range to create similar gravity crushing fields against heavy armor wearers and fortifications, turning the targets weight against them.{NEWLINE} This Master-crafted variant is more compact and accurate, making it an excellent sidearm against giant foes."
+      STR_GRAVGUN_ADEPTAS_UFOPEDIA: "{NEWLINE} The Adeptas Jupiter-Pattern Grav-Gun is a variation on the ancient Gravgun technology. It manipulates the very gravity in a area to cause an gravimetric implosion, crushing targets under the weight of their own sins."
+      STR_GRAVGUN_AOE_CHAOS_UFOPEDIA: "{NEWLINE} The Jupiter-Pattern Grav-Gun is a variation on the ancient Gravgun technology. It manipulates the very gravity in a area to cause an gravimetric implosion, crushing several targets with their own mass. It has less range and uses more power than the standard gravgun."
       ## Armor
       STR_FLYING_SUIT_UFOPEDIA: "Assault Terminators teleport deep into enemy lines, striking at enemy commanders. Their Lightning Claws easily cut through any flesh or armor, tearing apart everything in their path."
       STR_MKX_TAC_UFOPEDIA: "The Mark X series power armor can be modified and upgraded to suit the needs of the battlefield. Tacticus is the most common variant, a flexible and reliable all-purpose combat armor."

@@ -413,7 +413,7 @@ research:
     dependencies:
       - STR_CASS_R
 
-  - name: STR_ASSC_CLIP_AP  # Assault Cannon AP Rounds
+  - name: STR_ASSC_CLIP_AP          # Assault Cannon AP Rounds
     cost: 120
     points: 10
     dependencies:
@@ -861,7 +861,8 @@ research:
     points: 15
     dependencies:
       - STR_MARINE_CHAPEL
-      #- STR_MIDTIER_PREREQ
+    unlocks:
+      - STR_PSYKER_T6_UNLOCK
 
   - name: STR_TEC_BAYR              # Techmarine - removed Apoth requirement
     cost: 100
@@ -989,6 +990,42 @@ research:
       - STR_MIDTIER_PREREQ
       - STR_MARINES_AND_ADEPTAS
       - STR_GENERALLOCK # incomplete and buggy
+
+  - name: STR_PSYKER_T1_UNLOCK      # Unlocks Tier 1 Psyker transformations
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_PSYKER_T2_UNLOCK
+
+  - name: STR_PSYKER_T2_UNLOCK      # Unlocks Tier 2 Psyker transformations
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_PSYKER_T3_UNLOCK
+
+  - name: STR_PSYKER_T3_UNLOCK      # Unlocks Tier 3 Psyker transformations
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_PSYKER_T4_UNLOCK
+
+  - name: STR_PSYKER_T4_UNLOCK      # Unlocks Tier 4 Psyker transformations
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_PSYKER_T5_UNLOCK
+
+  - name: STR_PSYKER_T5_UNLOCK      # Unlocks Tier 5 Psyker transformations
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_PSYKER_T6_UNLOCK
+
+  - name: STR_PSYKER_T6_UNLOCK      # Unlocks Tier 6 Psyker transformations
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
 
 ### CODEX ENTRY RESEARCH GATES
 

@@ -1,0 +1,42 @@
+# extended:
+  # tagsFile: Ruleset/Scripts/SMT_tags.rul
+
+  # scripts:
+    # damageUnit:
+      # - new: SMTS_trigger_martyr
+        # offset: 80
+        # code: |
+          # var int temp;
+          # var int temp2;
+
+          # return;
+
+    # hitUnit:
+      # - new: SMTS_martyr_negate_hits
+        # offset: 5.1
+        # code: |
+          # var int temp;
+          # var int temp2;
+
+          # return power part side;
+
+    # visibilityUnit:
+      # - new: SMTS_martyr_invis
+        # offset: 5
+        # code: |
+          # var int temp;
+
+          # if eq temp 1;
+            # set current_visibility 0;
+          # end;
+
+          # return current_visibility visibility_mode;
+
+    # reactionUnitAction:
+      # - new: SMTS_martyr_reactions
+        # offset: 10
+        # code: |
+          # var int temp;
+
+          # return reaction_chance;
+

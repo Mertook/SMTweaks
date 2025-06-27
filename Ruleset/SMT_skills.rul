@@ -25,112 +25,6 @@ skills:
       energy: false
       stun: false
 
-  - type: STR_LIB_SMOKE_SKILL           # Librarian Shroud
-    targetMode: 9
-    compatibleWeapons: [STR_LIB_SMOKE_TOME]
-    #requiredBonuses: [STR_PSI_SHROUD]
-    checkHandsOnly: false
-    costUse:
-      time: 20
-      energy: 15
-      stun: 5
-      morale: 10
-    flatUse:
-      time: false
-      energy: false
-      stun: false
-      morale: false
-
-  - type: STR_LIB_LOCKDOWN_SKILL        # Librarian Lockdown
-    targetMode: 11
-    compatibleWeapons: [STR_LIB_LOCKDOWN_TOME]
-    checkHandsOnly: false
-    costUse:
-      time: 45 # was 25
-      energy: 25
-      stun: 15 # was 5
-      morale: 15 # was 10
-    flatUse:
-      time: false
-      energy: false
-      stun: false
-      morale: false
-
-  - type: STR_LIB_SHIELD_SKILL          # Librarian Shield
-    targetMode: 11
-    compatibleWeapons: [STR_LIB_SHIELD_TOME]
-    checkHandsOnly: false
-    costUse:
-      time: 35
-      energy: 15
-      stun: 15
-      morale: 15
-    flatUse:
-      time: false
-      energy: false
-      stun: false
-      morale: false
-
-  - type: STR_LIB_HASTE_SKILL           # Librarian Accelerate
-    targetMode: 11
-    compatibleWeapons: [STR_LIB_HASTE_TOME, STR_LIB_HASTE_TOME_DW]
-    checkHandsOnly: false
-    costUse:
-      time: 35
-      energy: 40
-      stun: 15
-      morale: 20
-    flatUse:
-      time: false
-      energy: false
-      stun: false
-      morale: false
-
-  - type: STR_LIB_SMITE_SKILL           # Librarian Smite
-    targetMode: 11
-    compatibleWeapons: [STR_SMITE_TOKEN]
-    checkHandsOnly: false
-    costUse:
-      time: 25
-      energy: 10
-      stun: 8
-      morale: 5
-    flatUse:
-      time: false
-      energy: false
-      stun: false
-      morale: false
-
-  - type: STR_LIB_VULN_SKILL   # Librarian Torment
-    targetMode: 9
-    compatibleWeapons: [INV_LIB_VULN_TOKEN]
-    checkHandsOnly: false
-    costUse:
-      time: 45
-      energy: 25
-      stun: 15
-      morale: 10
-    flatUse:
-      time: false
-      energy: false
-      stun: false
-      morale: false
-
-  - type: STR_LIB_OVERWATCH_SKILL       # Librarian Vigilance
-    targetMode: 11
-    compatibleWeapons: [INV_LIB_OVERWATCH_TOKEN]
-    checkHandsOnly: false
-    costUse:
-      time: 25
-      energy: 20
-      stun: 10
-      morale: 5
-    flatUse:
-      time: false
-      energy: false
-      stun: false
-      morale: false
-
   - type: STR_CMD_ARMOR_SKILL           # Armor of Contempt Command
     targetMode: 0
     costUse:
@@ -202,5 +96,430 @@ skills:
       time: 40
     flatUse:
       time: false
+
+
+  - type: STR_PSISKILL_SHROUD           # Psyker T1 - Shroud
+    targetMode: 9
+    compatibleWeapons: [STR_PSITOKEN_SHROUD]
+    requiredBonuses: [STR_PSIBONUS_SHROUD]
+    checkHandsOnly: false
+    costUse:
+      time: 20
+      energy: 20
+      stun: 10
+      morale: 15
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_FLARE            # Psyker T1 - Illuminate
+    targetMode: 9
+    compatibleWeapons: [STR_PSITOKEN_FLARE]
+    requiredBonuses: [STR_PSIBONUS_FLARE]
+    checkHandsOnly: false
+    costUse:
+      time: 20
+      energy: 20
+      stun: 10
+      morale: 15
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_TELEPATHY        # Psyker T1 - Telepathy
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_TELEPATHY]
+    requiredBonuses: [STR_PSIBONUS_TELEPATHY]
+    checkHandsOnly: false
+    costUse:
+      time: 5
+      energy: 5
+      stun: 5
+      morale: 5
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_FLASH            # Psyker T2 - Thunderclap
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_FLASH]
+    requiredBonuses: [STR_PSIBONUS_FLASH]
+    checkHandsOnly: false
+    costUse:
+      time: 25
+      energy: 20
+      stun: 15
+      morale: 10
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_REFLEXES         # Psyker T2 - Lightning Reflexes
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_REFLEXES]
+    requiredBonuses: [STR_PSIBONUS_REFLEXES]
+    checkHandsOnly: false
+    costUse:
+      time: 25
+      energy: 20
+      stun: 15
+      morale: 10
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_VIGILANCE        # Psyker T2 - Vigilance
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_VIGILANCE]
+    requiredBonuses: [STR_PSIBONUS_VIGILANCE]
+    checkHandsOnly: false
+    costUse:
+      time: 25
+      energy: 20
+      stun: 15
+      morale: 10
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_WALLBREAKER      # Psyker T2 - Rend Landscape
+    targetMode: 9
+    compatibleWeapons: [STR_PSITOKEN_WALLBREAKER]
+    requiredBonuses: [STR_PSIBONUS_WALLBREAKER]
+    checkHandsOnly: false
+    costUse:
+      time: 25
+      energy: 20
+      stun: 15
+      morale: 10
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_SMITE            # Psyker T3 - Smite
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_SMITE]
+    requiredBonuses: [STR_PSIBONUS_SMITE]
+    checkHandsOnly: false
+    costUse:
+      time: 45
+      energy: 25
+      stun: 20
+      morale: 15
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_MENDWOUNDS       # Psyker T3 - Mend Flesh
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_MENDWOUNDS]
+    requiredBonuses: [STR_PSIBONUS_MENDWOUNDS]
+    checkHandsOnly: false
+    costUse:
+      time: 45
+      energy: 25
+      stun: 20
+      morale: 15
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_MENDWOUNDS_FREE  # Psyker T3 - Mend Flesh (No Req)
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_MENDWOUNDS]
+    checkHandsOnly: false
+    costUse:
+      time: 45
+      energy: 25
+      stun: 20
+      morale: 15
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_SENTRYWARD       # Psyker T3 - Farsight
+    targetMode: 9
+    compatibleWeapons: [STR_PSITOKEN_SENTRYWARD]
+    requiredBonuses: [STR_PSIBONUS_SENTRYWARD]
+    checkHandsOnly: false
+    costUse:
+      time: 50
+      energy: 25
+      stun: 20
+      morale: 15
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_SENTRYWARD_FREE  # Psyker T3 - Farsight (No Req)
+    targetMode: 9
+    compatibleWeapons: [STR_PSITOKEN_SENTRYWARD]
+    checkHandsOnly: false
+    costUse:
+      time: 50
+      energy: 25
+      stun: 20
+      morale: 15
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_UNDYING          # Psyker T3 - Martyrs Armor
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_UNDYING]
+    requiredBonuses: [STR_PSIBONUS_UNDYING]
+    checkHandsOnly: false
+    costUse:
+      time: 50
+      energy: 25
+      stun: 20
+      morale: 15
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_HOLODUMMY        # Psyker T4 - Hallucinate
+    targetMode: 9
+    compatibleWeapons: [STR_PSITOKEN_HOLODUMMY]
+    requiredBonuses: [STR_PSIBONUS_HOLODUMMY]
+    checkHandsOnly: false
+    costUse:
+      time: 50
+      energy: 30
+      stun: 25
+      morale: 15
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_HOLODUMMY_FREE   # Psyker T4 - Hallucinate (No Req)
+    targetMode: 9
+    compatibleWeapons: [STR_PSITOKEN_HOLODUMMY]
+    checkHandsOnly: false
+    costUse:
+      time: 50
+      energy: 30
+      stun: 25
+      morale: 15
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_LOCKDOWN         # Psyker T4 - Lockdown
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_LOCKDOWN]
+    requiredBonuses: [STR_PSIBONUS_LOCKDOWN]
+    checkHandsOnly: false
+    costUse:
+      time: 45
+      energy: 30
+      stun: 25
+      morale: 20
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_LOCKDOWN_FREE    # Psyker T4 - Lockdown (No Req)
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_LOCKDOWN]
+    checkHandsOnly: false
+    costUse:
+      time: 45
+      energy: 30
+      stun: 25
+      morale: 20
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_SHIELD           # Psyker T4 - Shield
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_SHIELD]
+    requiredBonuses: [STR_PSIBONUS_SHIELD]
+    checkHandsOnly: false
+    costUse:
+      time: 45
+      energy: 30
+      stun: 25
+      morale: 20
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_SHIELD_FREE      # Psyker T4 - Shield (No Req)
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_SHIELD]
+    checkHandsOnly: false
+    costUse:
+      time: 45
+      energy: 30
+      stun: 25
+      morale: 20
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_TORMENT          # Psyker T4 - Torment
+    targetMode: 9
+    compatibleWeapons: [STR_PSITOKEN_TORMENT]
+    requiredBonuses: [STR_PSIBONUS_TORMENT]
+    checkHandsOnly: false
+    costUse:
+      time: 45
+      energy: 25
+      stun: 25
+      morale: 20
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_TORMENT_FREE     # Psyker T4 - Torment (No Req)
+    targetMode: 9
+    compatibleWeapons: [STR_PSITOKEN_TORMENT]
+    checkHandsOnly: false
+    costUse:
+      time: 45
+      energy: 25
+      stun: 25
+      morale: 20
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_HASTE            # Psyker T6 - Accelerate
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_HASTE]
+    requiredBonuses: [STR_PSIBONUS_HASTE]
+    checkHandsOnly: false
+    costUse:
+      time: 55
+      energy: 40
+      stun: 35
+      morale: 25
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_HASTE_FREE       # Psyker T6 - Accelerate (No Req)
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_HASTE]
+    checkHandsOnly: false
+    costUse:
+      time: 55
+      energy: 40
+      stun: 35
+      morale: 25
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_CLOAK            # Psyker T6 - Shadowstep
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_CLOAK]
+    requiredBonuses: [STR_PSIBONUS_CLOAK]
+    checkHandsOnly: false
+    costUse:
+      time: 55
+      energy: 40
+      stun: 35
+      morale: 25
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_SOULSTORM        # Psyker T6 - Soul Storm
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_SOULSTORM]
+    requiredBonuses: [STR_PSIBONUS_SOULSTORM]
+    checkHandsOnly: false
+    costUse:
+      time: 55
+      energy: 40
+      stun: 35
+      morale: 25
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_SOULSTORM_FREE   # Psyker T6 - Soul Storm (No Req)
+    targetMode: 11
+    compatibleWeapons: [STR_PSITOKEN_SOULSTORM]
+    checkHandsOnly: false
+    costUse:
+      time: 55
+      energy: 40
+      stun: 35
+      morale: 25
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
+  - type: STR_PSISKILL_HOLOCAUST        # Psyker T6 - Holocaust
+    targetMode: 9
+    compatibleWeapons: [STR_PSITOKEN_HOLOCAUST]
+    requiredBonuses: [STR_PSIBONUS_HOLOCAUST]
+    checkHandsOnly: false
+    costUse:
+      time: 50
+      energy: 40
+      stun: 35
+      morale: 25
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
 
 

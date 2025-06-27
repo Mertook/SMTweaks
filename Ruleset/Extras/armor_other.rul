@@ -90,27 +90,6 @@ armors:
   - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_MULTIMELTA
     requires: STR_MULTIMELTA_PREREQ
 
-
-  - type: STR_NECRON_WARRIOR_ARMOR_REVIVES          # Necron Warrior
-    tags:
-      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
-
-  - type: STR_NECRON_LYCHGUARD_ARMOR_REVIVES        # Necron Lychguard
-    tags:
-      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
-
-  - type: STR_NECRON_IMORTAL_ARMOR_REVIVES          # Necron Immortal
-    tags:
-      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
-
-  - type: STR_NECRON_DEATHMARK_ARMOR_REVIVES        # Necron Deathmark
-    tags:
-      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
-
-  - type: STR_NECRON_FLAYED_ONE_ARMOR_REVIVES       # Necron Flayed One
-    tags:
-      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
-
   - type: STR_STEELLEGION_FLAK_ARMOR_OFFICER
     units: # make SL exclusive
       - STR_GUARDSL_OFFICER
@@ -141,3 +120,38 @@ armors:
       tu: -5
       stamina: -10
       reactions: -5 # I really wish values of 0 didn't get ignored
+
+
+  - &STR_GUARD_ARMOR_PSYKER                 # Imperial Guard Psyker
+    type: STR_PSYKER_ARMOR
+    specialWeapon: STR_NONE
+    builtInWeapons:
+      - STR_PSITOKEN_SHROUD
+      - STR_PSITOKEN_FLARE
+      - STR_PSITOKEN_TELEPATHY
+      - STR_PSITOKEN_FLASH
+      - STR_PSITOKEN_REFLEXES
+      - STR_PSITOKEN_VIGILANCE
+      - STR_PSITOKEN_WALLBREAKER
+      - STR_PSITOKEN_SMITE
+      - STR_PSITOKEN_MENDWOUNDS
+      - STR_PSITOKEN_SENTRYWARD
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # was 6, doesn't rely on devotion for abilities anymore
+
+  - type: STR_BIOMANCER
+    requires: STR_GENERALLOCK
+
+  - type: STR_DIVINER
+    psiVision: 0
+    requires: STR_GENERALLOCK
+
+  - type: STR_PYROMANCER
+    requires: STR_GENERALLOCK
+
+  - type: STR_TELEKINE
+    requires: STR_GENERALLOCK
+
+  - type: STR_TELEPATH
+    psiVision: 0
+    requires: STR_GENERALLOCK

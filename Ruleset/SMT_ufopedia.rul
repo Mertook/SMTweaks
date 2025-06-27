@@ -725,70 +725,56 @@ ufopaedia:
 ### 40000  - Base Facilities
 ### 50000  - Craft
 ### 60000  - Spells
-  - id: STR_LIB_HASTE_TOME                  # Librarian Speed Ability
-    type_id: 14
-    section: STR_BOOKS
-    text: STR_LIB_HASTE_CODEX
-    image_id: LIBRARIANUFO.SPK
-    requires:
-      - STR_MARINES_AND_DEATHWATCH
-  - id: STR_LIB_LOCKDOWN_TOME               # Librarian Lockdown Ability
-    type_id: 14
-    section: STR_BOOKS
-    text: STR_LIB_LOCKDOWN_CODEX
-    image_id: LIBRARIANUFO.SPK
-    requires:
-      - STR_MARINES_AND_DEATHWATCH
-  - id: INV_LIB_VULN_TOKEN                  # Librarian Torment
+  - id: STR_PSITOKEN_TORMENT                  # Librarian Torment
     type_id: 14
     section: STR_BOOKS
     text: STR_LIB_VULN_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_MARINES_AND_DEATHWATCH
-  - id: STR_LIB_HASTE_TOME                  # Librarian Haste
+  - id: STR_PSITOKEN_HASTE                  # Librarian Haste
     type_id: 14
     section: STR_BOOKS
-    text: STR_LIB_HASTE_CODEX
+    text: STR_PSITOKEN_HASTE_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_MARINES_AND_DEATHWATCH
-  - id: STR_LIB_HASTE_TOME_DW               # Librarian Haste DW
+  - id: STR_PSITOKEN_HASTE               # Librarian Haste DW
     type_id: 14
     section: STR_NOT_AVAILABLE
-    text: STR_LIB_HASTE_CODEX
-  - id: STR_LIB_LOCKDOWN_TOME               # Librarian Lockdown
+    text: STR_PSITOKEN_HASTE_CODEX
+  - id: STR_PSITOKEN_LOCKDOWN               # Librarian Lockdown
     type_id: 14
     section: STR_BOOKS
-    text: STR_LIB_LOCKDOWN_CODEX
+    text: STR_PSITOKEN_LOCKDOWN_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_MARINES_AND_DEATHWATCH
-  - id: STR_LIB_SHIELD_TOME                 # Librarian Shield
+  - id: STR_PSITOKEN_SHIELD                 # Librarian Shield
     type_id: 14
     section: STR_BOOKS
     text: STR_LIB_SHIELD_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_MARINES_AND_DEATHWATCH
-  - id: STR_LIB_SMOKE_TOME                  # Librarian Shroud
+  - id: STR_PSITOKEN_SHROUD                  # Librarian Shroud
     type_id: 14
     section: STR_BOOKS
-    text: STR_LIB_SHROUD_CODEX
+    text: STR_PSITOKEN_SHROUD_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_MARINES_AND_DEATHWATCH
-  - id: STR_SMITE_TOKEN                     # Librarian Smite
+  - id: STR_PSITOKEN_SMITE                     # Librarian Smite
     type_id: 14
     section: STR_BOOKS
-    text: STR_LIB_SMITE_CODEX
+    text: STR_PSITOKEN_SMITE_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_MARINES_AND_DEATHWATCH
-  - id: INV_LIB_OVERWATCH_TOKEN             # Librarian Vigilance
+  - id: STR_PSITOKEN_VIGILANCE             # Librarian Vigilance
     type_id: 14
     section: STR_BOOKS
-    text: STR_LIB_OVERWATCH_CODEX
+    text: STR_PSITOKEN_VIGILANCE_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_MARINES_AND_DEATHWATCH

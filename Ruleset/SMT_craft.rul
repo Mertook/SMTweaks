@@ -802,7 +802,7 @@ crafts:
           width: 10
           length: 20
           items:
-            STR_BOMBARD_ROCKET_SPAWNER:
+            STR_BOMBARD_ROCKETSMALL_SPAWNER:
               - [0, 0, 5]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
@@ -818,18 +818,24 @@ crafts:
               - [0, 0, 5]
               - [0, 0, 5]
           fuseTimers:
-            STR_BOMBARD_ROCKET_SPAWNER: [0, 0]
+            STR_BOMBARD_ROCKETSMALL_SPAWNER: [0, 0]
     deployment:
       - [4, 11, 0, 0]
       - [5, 11, 0, 0]
       - [4, 10, 0, 0]
       - [5, 10, 0, 0]
       - [4, 9, 0, 0]
+      - [5, 9, 0, 0]
       - [4, 8, 0, 0]
+      - [5, 8, 0, 0]
       - [4, 7, 0, 0]
+      - [5, 7, 0, 0]
       - [4, 6, 0, 0]
+      - [5, 6, 0, 0]
       - [4, 5, 0, 0]
+      - [5, 5, 0, 0]
       - [4, 4, 0, 0]
+      - [5, 4, 0, 0]
       - [4, 7, 1, 0]
       - [5, 7, 1, 0]
       - [4, 8, 1, 0]
@@ -850,7 +856,7 @@ crafts:
           length: 20
           items:
             STR_STORMTURRET_SPAWNER:
-              - [4, 6, 2]
+              - [4, 9, 2]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -866,6 +872,17 @@ crafts:
               - [0, 0, 5]
           fuseTimers:
             STR_STORMTURRET_SPAWNER: [0, 0]
+    deployment:
+      - [4, 11, 0, 0]
+      - [5, 11, 0, 0]
+      - [4, 12, 0, 0]
+      - [5, 12, 0, 0]
+      - [4, 10, 0, 0]
+      - [5, 10, 0, 0]
+      - [4, 9, 1, 0]
+      - [5, 9, 1, 0]
+      - [4, 10, 1, 0]
+      - [5, 10, 1, 0]
 
   - type: STR_THUNDERHAWNK                  # Thunderhawk
     requires:
@@ -1275,7 +1292,7 @@ crafts:
     fuelMax: 2000 # was 1800
     refuelRate: 900
     damageMax: 1600 # was 1000
-    speedMax: 600 # was 400
+    speedMax: 550 # was 400
     soldiers: 12 # was 10
     battlescapeTerrainData:
       name: IMPULSOR
@@ -1323,12 +1340,40 @@ crafts:
     requires:
       - STR_GENERALLOCK # disabled
 
+  - type: STR_REPULSOR                      # Primaris Repulsor Executioner
+    damageMax: 2000
+    battlescapeTerrainData:
+      name: REPULSORD_SMT
+      mapDataSets:
+        - BLANKS
+        - REPULSOR
+        - TURRET
+        - SMTBOMBARD
+      mapBlocks:
+        - name: REPULSORD_SMT
+          width: 10
+          length: 20
+          items:
+            STR_BOMBARD_REPULSOR_SPAWNER:
+              - [0, 0, 5]
+            STR_BOMBARD_SPAWNER: # 8 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_BOMBARD_REPULSOR_SPAWNER: [0, 0]
+
   - type: STR_REPULSOR_T                    # Primaris Repulsor Transport
     costRent: 600000          #TIER II
     costSell: 600000
     fuelMax: 2000 # was 1800
-    damageMax: 2000 # was 1000
-    speedMax: 500 # was 400
+    damageMax: 1500 # was 1000
+    speedMax: 400 # was 400
     battlescapeTerrainData:
       name: REPULSOR_SMT
       mapDataSets:
@@ -1577,9 +1622,38 @@ crafts:
       - [4, 4, 2, 4]
       - [5, 4, 2, 4]
 
+  - type: STR_REPULSOR_DW                   # Primaris Repulsor Executioner (Deathwatch)
+    damageMax: 2000
+    speedMax: 800
+    battlescapeTerrainData:
+      name: REPULSORD_SMT
+      mapDataSets:
+        - BLANKS
+        - REPULSORDW
+        - TURRETDW
+        - SMTBOMBARD
+      mapBlocks:
+        - name: REPULSORD_SMT
+          width: 10
+          length: 20
+          items:
+            STR_BOMBARD_REPULSOR_SPAWNER:
+              - [0, 0, 5]
+            STR_BOMBARD_SPAWNER: # 8 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_BOMBARD_REPULSOR_SPAWNER: [0, 0]
+
   - type: STR_REPULSOR_T_DW                 # Deathwatch Repulsor Transport
     fuelMax: 2000
-    damageMax: 2000
+    damageMax: 1500
     speedMax: 500
     battlescapeTerrainData:
       name: REPULSOR_SMT
@@ -1716,7 +1790,7 @@ crafts:
           length: 20
           items:
             STR_STORMTURRET_ADEPTAS_SPAWNER:
-              - [4, 6, 2]
+              - [4, 9, 2]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -1732,6 +1806,17 @@ crafts:
               - [0, 0, 5]
           fuseTimers:
             STR_STORMTURRET_ADEPTAS_SPAWNER: [0, 0]
+    deployment:
+      - [4, 11, 0, 0]
+      - [5, 11, 0, 0]
+      - [4, 12, 0, 0]
+      - [5, 12, 0, 0]
+      - [4, 10, 0, 0]
+      - [5, 10, 0, 0]
+      - [4, 9, 1, 0]
+      - [5, 9, 1, 0]
+      - [4, 10, 1, 0]
+      - [5, 10, 1, 0]
 
   - type: STR_STORMEAGLE_ADEPTAS            # DW/SoB StormEagle
     soldiers: 16 #could fit more
@@ -1747,7 +1832,7 @@ crafts:
           width: 10
           length: 20
           items:
-            STR_BOMBARD_ROCKET_SPAWNER:
+            STR_BOMBARD_ROCKETSMALL_SPAWNER:
               - [0, 0, 5]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
@@ -1763,7 +1848,7 @@ crafts:
               - [0, 0, 5]
               - [0, 0, 5]
           fuseTimers:
-            STR_BOMBARD_ROCKET_SPAWNER: [0, 0]
+            STR_BOMBARD_ROCKETSMALL_SPAWNER: [0, 0]
     deployment:
       - [4, 11, 0, 0]
       - [5, 11, 0, 0]
@@ -1857,7 +1942,7 @@ crafts:
 
   - type: STR_STORMRAVEN_GK                 # GK Stormraven
     battlescapeTerrainData:
-      name: STORMRAVENGK
+      name: STORMRAVEN
       mapDataSets:
         - BLANKS
         - 0W0STORMRAVEN
@@ -1884,12 +1969,23 @@ crafts:
               - [0, 0, 5]
           fuseTimers:
             STR_STORMTURRET_GK_SPAWNER: [0, 0]
+    deployment:
+      - [4, 11, 0, 0]
+      - [5, 11, 0, 0]
+      - [4, 12, 0, 0]
+      - [5, 12, 0, 0]
+      - [4, 10, 0, 0]
+      - [5, 10, 0, 0]
+      - [4, 9, 1, 0]
+      - [5, 9, 1, 0]
+      - [4, 10, 1, 0]
+      - [5, 10, 1, 0]
 
   - type: STR_STORMEAGLE_GK                 # GK Stormeagle
     soldiers: 16 #could fit more
     speedMax: 4600 # was 6700
     battlescapeTerrainData:
-      name: STORMEAGLEGK
+      name: STORMEAGLE
       mapDataSets:
         - BLANKS
         - 0W0STORMEAGLE
@@ -1899,7 +1995,7 @@ crafts:
           width: 10
           length: 20
           items:
-            STR_BOMBARD_ROCKET_SPAWNER:
+            STR_BOMBARD_ROCKETSMALL_SPAWNER:
               - [0, 0, 5]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
@@ -1915,7 +2011,7 @@ crafts:
               - [0, 0, 5]
               - [0, 0, 5]
           fuseTimers:
-            STR_BOMBARD_ROCKET_SPAWNER: [0, 0]
+            STR_BOMBARD_ROCKETSMALL_SPAWNER: [0, 0]
     deployment:
       - [4, 11, 0, 0]
       - [5, 11, 0, 0]
@@ -2314,7 +2410,7 @@ crafts:
             STR_BOMBARD_ROCKET_SPAWNER: [0, 0]
 
   - type: STR_TAUROX                        # Tauros
-    speedMax: 360 #was 240, pathetic for "fast recon"
+    speedMax: 420 #was 240, pathetic for "fast recon"
     battlescapeTerrainData:
       name: TAUROX
       mapDataSets:

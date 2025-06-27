@@ -90,6 +90,8 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
+      - 1.0 #GRAV
+      - 1.0 #WARP
     tags:
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
@@ -126,7 +128,9 @@ armors:
       - 0.7 #ACID - was 0.8
       - 0.0 #SMOKE
       - 0.2 #IMPACT
-      - 0.9 #MELTA
+      - 1.0 #MELTA
+      - 1.0 #GRAV
+      - 1.0 #WARP
     tags:
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
@@ -712,7 +716,9 @@ armors:
       - 0.6 #ACID (was 0.8)
       - 0.0 #SMOKE
       - 0.2 #IMPACT
-      - 0.8 #MELTA (was 1.0)
+      - 1.0 #MELTA
+      - 1.2 #GRAV
+      - 1.0 #WARP
     frontArmor: 180 #was 150
     sideArmor: 175 #was 130
     rearArmor: 125 #was 100
@@ -1005,11 +1011,24 @@ armors:
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
     builtInWeapons:
-      - STR_SMITE_TOKEN
-      - STR_LIB_HASTE_TOME
-      - STR_LIB_SMOKE_TOME
-      - STR_LIB_LOCKDOWN_TOME
-      - STR_LIB_SHIELD_TOME
+      - STR_PSITOKEN_SHROUD
+      - STR_PSITOKEN_FLARE
+      - STR_PSITOKEN_TELEPATHY
+      - STR_PSITOKEN_FLASH
+      - STR_PSITOKEN_REFLEXES
+      - STR_PSITOKEN_VIGILANCE
+      - STR_PSITOKEN_WALLBREAKER
+      - STR_PSITOKEN_SMITE
+      - STR_PSITOKEN_MENDWOUNDS
+      - STR_PSITOKEN_SENTRYWARD
+      - STR_PSITOKEN_UNDYING
+      - STR_PSITOKEN_HOLODUMMY
+      - STR_PSITOKEN_LOCKDOWN
+      - STR_PSITOKEN_SHIELD
+      - STR_PSITOKEN_TORMENT
+      - STR_PSITOKEN_HASTE
+      - STR_PSITOKEN_CLOAK
+      - STR_PSITOKEN_SOULSTORM
       - INV_NULL_3X1_BACKPACK
     units:
       - STR_SOLDIER_LIBRARIAN
@@ -1019,8 +1038,6 @@ armors:
       psiSkill: 0.2 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
       moraleCurrent: 0.7 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
     tags:
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45 # buffed for new shield mechanics
-      ARMOR_ENERGY_SHIELD_DECAY: 75
       UNIT_TYPE_PSYKER: 1
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
@@ -1058,17 +1075,28 @@ armors:
     forcedTorso: 1
     specialWeapon: STR_TELEPORT
     builtInWeapons:
-      - STR_LIB_HASTE_TOME
-      - STR_LIB_SMOKE_TOME
-      - STR_LIB_LOCKDOWN_TOME
-      - STR_LIB_SHIELD_TOME
-      - STR_SMITE_TOKEN
+      - STR_PSITOKEN_SHROUD
+      - STR_PSITOKEN_FLARE
+      - STR_PSITOKEN_TELEPATHY
+      - STR_PSITOKEN_FLASH
+      - STR_PSITOKEN_REFLEXES
+      - STR_PSITOKEN_VIGILANCE
+      - STR_PSITOKEN_WALLBREAKER
+      - STR_PSITOKEN_SMITE
+      - STR_PSITOKEN_MENDWOUNDS
+      - STR_PSITOKEN_SENTRYWARD
+      - STR_PSITOKEN_UNDYING
+      - STR_PSITOKEN_HOLODUMMY
+      - STR_PSITOKEN_LOCKDOWN
+      - STR_PSITOKEN_SHIELD
+      - STR_PSITOKEN_TORMENT
+      - STR_PSITOKEN_HASTE
+      - STR_PSITOKEN_CLOAK
+      - STR_PSITOKEN_SOULSTORM
       - INV_NULL_3X3
       - INV_NULL_2X1_RL
       - INV_NULL_2X1_LL
     tags:
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # improved shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
       UNIT_TYPE_PSYKER: 1
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
@@ -1503,7 +1531,7 @@ armors:
     stats: #
       tu: 30            # base 30 
       stamina: 20       # base 20 
-      health: 100       # base 100 
+      health: 150       # base 150 
       bravery: 0        # base 0 - dreads are immune to most morale effects anyway
       reactions: 20     # base 20 
       firing: 20        # base 20 
@@ -1525,6 +1553,8 @@ armors:
       - 0.0 #SMOKE
       - 0.0 #IMPACT
       - 1.1 #MELTA - was 1.2
+      - 1.2 #GRAV
+      - 1.0 #WARP
     specialWeapon: AUX_STOMP_SMT
     tags:
       INFECTION_RESIST: 100
@@ -3568,15 +3598,13 @@ armors:
     forcedTorso: 1
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     builtInWeapons:
-      - STR_SMITE_TOKEN
-      - STR_LIB_SMOKE_TOME
-      - STR_LIB_LOCKDOWN_TOME
-      - INV_LIB_OVERWATCH_TOKEN
-      - INV_LIB_VULN_TOKEN
+      - STR_PSITOKEN_SMITE
+      - STR_PSITOKEN_SHROUD
+      - STR_PSITOKEN_LOCKDOWN
+      - STR_PSITOKEN_VIGILANCE
+      - STR_PSITOKEN_TORMENT
       - INV_NULL_3X1_BACKPACK
     tags:
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 15
-      ARMOR_ENERGY_SHIELD_DECAY: 50
       UNIT_TYPE_PSYKER: 1
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
@@ -3585,9 +3613,16 @@ armors:
     units:
       - STR_PRIMARIS_LIBRARIANLV1
     builtInWeapons:
-      - STR_SMITE_TOKEN
-      - STR_LIB_SMOKE_TOME
-      - STR_LIB_LOCKDOWN_TOME
+      - STR_PSITOKEN_SHROUD
+      - STR_PSITOKEN_FLARE
+      - STR_PSITOKEN_TELEPATHY
+      - STR_PSITOKEN_FLASH
+      - STR_PSITOKEN_REFLEXES
+      - STR_PSITOKEN_VIGILANCE
+      - STR_PSITOKEN_WALLBREAKER
+      - STR_PSITOKEN_SMITE
+      - STR_PSITOKEN_MENDWOUNDS
+      - STR_PSITOKEN_SENTRYWARD
       - INV_NULL_3X1_BACKPACK
 
   - type: STR_MKX_LIB_LV2_UC
@@ -3598,14 +3633,22 @@ armors:
     units:
       - STR_PRIMARIS_LIBRARIANLV2
     builtInWeapons:
-      - STR_SMITE_TOKEN
-      - STR_LIB_SMOKE_TOME
-      - STR_LIB_LOCKDOWN_TOME
-      - INV_LIB_OVERWATCH_TOKEN
+      - STR_PSITOKEN_SHROUD
+      - STR_PSITOKEN_FLARE
+      - STR_PSITOKEN_TELEPATHY
+      - STR_PSITOKEN_FLASH
+      - STR_PSITOKEN_REFLEXES
+      - STR_PSITOKEN_VIGILANCE
+      - STR_PSITOKEN_WALLBREAKER
+      - STR_PSITOKEN_SMITE
+      - STR_PSITOKEN_MENDWOUNDS
+      - STR_PSITOKEN_SENTRYWARD
+      - STR_PSITOKEN_UNDYING
+      - STR_PSITOKEN_HOLODUMMY
+      - STR_PSITOKEN_LOCKDOWN
+      - STR_PSITOKEN_SHIELD
+      - STR_PSITOKEN_TORMENT
       - INV_NULL_3X1_BACKPACK
-    tags:
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 20
-      ARMOR_ENERGY_SHIELD_DECAY: 50
 
   - type: STR_MKX_LIB_LV3_UC
     refNode: *STR_MKX_LIB_UC
@@ -3615,15 +3658,25 @@ armors:
     units:
       - STR_PRIMARIS_LIBRARIANLV3
     builtInWeapons:
-      - STR_SMITE_TOKEN
-      - STR_LIB_SMOKE_TOME
-      - STR_LIB_LOCKDOWN_TOME
-      - INV_LIB_OVERWATCH_TOKEN
-      - INV_LIB_VULN_TOKEN
+      - STR_PSITOKEN_SHROUD
+      - STR_PSITOKEN_FLARE
+      - STR_PSITOKEN_TELEPATHY
+      - STR_PSITOKEN_FLASH
+      - STR_PSITOKEN_REFLEXES
+      - STR_PSITOKEN_VIGILANCE
+      - STR_PSITOKEN_WALLBREAKER
+      - STR_PSITOKEN_SMITE
+      - STR_PSITOKEN_MENDWOUNDS
+      - STR_PSITOKEN_SENTRYWARD
+      - STR_PSITOKEN_UNDYING
+      - STR_PSITOKEN_HOLODUMMY
+      - STR_PSITOKEN_LOCKDOWN
+      - STR_PSITOKEN_SHIELD
+      - STR_PSITOKEN_TORMENT
+      - STR_PSITOKEN_HASTE
+      - STR_PSITOKEN_CLOAK
+      - STR_PSITOKEN_SOULSTORM
       - INV_NULL_3X1_BACKPACK
-    tags:
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 40
-      ARMOR_ENERGY_SHIELD_DECAY: 50
 
   - &REF_MKX_BIKE
     type: STR_MKX_BIKE_UC
@@ -3692,7 +3745,7 @@ armors:
     refNode: *REF_MKX_BIKE
 
 ### Other Marines
-  - update: STR_BLOODRAVENS_TACTICAL_ARMOR  #BLOODRAVEN TACTICAL
+  - update: STR_BLOODRAVENS_TACTICAL_ARMOR      # Bloodraven Tactical
     refNode: *STR_MARINE_ARMOR
     stats: # tac stats
       tu: 10            # base 10
@@ -3707,7 +3760,7 @@ armors:
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
 
-  - &REF_NPC_MARINE_ARMOR            # NPC Marine Tactical
+  - &REF_NPC_MARINE_ARMOR                       # NPC Marine Tactical
     type: STR_PERSONAL_ARMOR_CIVILIAN
     loftempsSet: [ 3 ]
     visibilityAtDay: 40
@@ -3761,7 +3814,7 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
 
-  - type: STR_DEV_ARMOR_ULTRA       # NPC Marine Devastator
+  - type: STR_DEV_ARMOR_ULTRA                   # NPC Marine Devastator
     refNode: *REF_NPC_MARINE_ARMOR
     frontArmor: 125 # base 120
     sideArmor: 105 # base 110
@@ -3800,6 +3853,7 @@ armors:
     visibilityAtDark: 1
     camouflageAtDay: -80 # should be invisible to enemies
     camouflageAtDark: -80
+    psiCamouflage: -80
     personalLight: 12
     frontArmor: 200
     sideArmor: 200
@@ -3862,6 +3916,9 @@ armors:
     refNode: *STR_BOMBARD_ARMOR
     spriteSheet: BOMBARDSOLDIER.PCK
 
+  - type: STR_BOMBARD_TANK_ARMOR                # Target Designator (Tank)
+    refNode: *STR_BOMBARD_ARMOR
+    spriteSheet: BOMBARDTANK.PCK
 
 ### EXTRA
   - update: STR_SIGNAL_ARMOR_UC_HULK        #SUPERHULK REWARD ARMOR
@@ -4020,4 +4077,57 @@ armors:
       ARMOR_BUILTIN_WEAPON_VARIANT: 1
       STARTS_WITH_FULL_TUS: 1
 
+
+  - type: STR_SENTRYWARD_ARMOR                  # Farsight Projection
+    spriteSheet: SENTRYWARD.PCK
+    drawingRoutine: 16
+    spriteInv: NOTDONEIMP
+    visibilityAtDay: 30 # limited vision
+    visibilityAtDark: 30 # limited vision
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 10
+    camouflageAtDay: -80 # should be invisible to enemies
+    camouflageAtDark: -80
+    psiCamouflage: -80
+    personalLight: 12
+    frontArmor: 10
+    sideArmor: 10
+    rearArmor: 10
+    underArmor: 10
+    movementType: 1 # floating
+    damageModifier:
+      - 0.0 #none
+      - 1.0 #AP
+      - 1.0 #FLAMES
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 0.0 #STUN
+      - 1.0 #MELEE 
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 1.0 #IMPACT
+      - 1.0 #MELTA
+      - 1.0 #GRAV
+      - 1.0 #WARP
+    allowInv: false
+    zombiImmune: true
+    bleedImmune: true
+    fearImmune: true
+    painImmune: true
+    allowsMoving: false
+    allowsKneeling: false
+    personalLight: 1
+    corpseBattle:
+      - STR_BLANK_CORPSE
+    loftempsSet: [ 1 ]
+    tags:
+      BOMBARD_TARGETER: 1 # adjusts starting mana and kills it at the end of turn
+      INFECTION_RESIST: 100 #infection immune
+      INTIMIDATION_RESISTANCE: 100 #intimidation immune
+      UNIT_TYPE_MECHANICAL: 1
+
+  - type: TARGET_GUARDSMAN
+    corpseBattle:
+      - STR_BLANK_CORPSE
 

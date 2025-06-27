@@ -3,7 +3,7 @@ extended:
 
   scripts:
     newTurnUnit:
-      - new: SMTS_haste_removebuff #*** Script that removes haste bonus from unit once turn ends ***
+      - new: SMTS_misc_removebuff #*** Script that removes haste bonus from unit once turn ends ***
         offset: 90.0
         code: |
           var int currTurn;
@@ -14,69 +14,54 @@ extended:
           if neq side 0; # only run at the start of the players turn
             return;
           end;
-          unit.getTag endTurn Tag.SMT_HASTE_ENDTURN;
           battle_game.getTurn currTurn;
-          if eq endTurn 0;
-            return;
-          end;
-          if or le currTurn 1 ge currTurn endTurn; # if buff expires or it's turn 1 (entering a new stage of multi-part mission)
-            unit.getTag hasteMove Tag.SMT_HASTE_SPEED_BONUS;
-            if neq hasteMove 0;
-              unit.getTag baseMove Tag.UNIT_MOVESPEED_MODIFIERS;
-              sub baseMove hasteMove;
-              unit.MoveCost.setBaseTimePercent baseMove;
-              unit.setTag Tag.UNIT_MOVESPEED_MODIFIERS baseMove;
-              unit.setTag Tag.SMT_HASTE_SPEED_BONUS 0; #cancel tag
+
+          unit.getTag endTurn Tag.SMT_HASTE_ENDTURN; ## Haste
+          if neq endTurn 0;
+            if or le currTurn 1 ge currTurn endTurn; # if buff expires or it's turn 1 (entering a new stage of multi-part mission)
+              unit.getTag hasteMove Tag.SMT_HASTE_SPEED_BONUS;
+              if neq hasteMove 0;
+                unit.getTag baseMove Tag.UNIT_MOVESPEED_MODIFIERS;
+                sub baseMove hasteMove;
+                unit.setTag Tag.UNIT_MOVESPEED_MODIFIERS baseMove;
+                add baseMove 100;
+                limit_lower baseMove 25;
+                unit.MoveCost.setBaseTimePercent baseMove;
+                unit.setTag Tag.SMT_HASTE_SPEED_BONUS 0; #cancel tag
+              end;
+              unit.setTag Tag.SMT_HASTE_ENDTURN 0; #cancel tag
+              #debug_log "HasteEnd Ping" currTurn endTurn;
             end;
-            unit.setTag Tag.SMT_HASTE_REACTION_BONUS 0; #cancel tag
           end;
-          return;
 
-      - new: SMTS_vigilance_removebuff #*** Script that removes vigilance bonus from unit once turn ends ***
-        offset: 90.1
-        code: |
-          var ptr RuleArmor unitArmor;
-          var int currTurn;
-          var int endTurn;
-          var int temp;
+          unit.getTag endTurn Tag.SMT_REFLEX_ENDTURN; ## Reflex
+          if neq endTurn 0;
+            if or le currTurn 1 ge currTurn endTurn; # if buff expires or it's turn 1 (entering a new stage of multi-part mission)
+              unit.setTag Tag.SMT_REFLEX_REACTION_BONUS 0;
+              unit.setTag Tag.SMT_REFLEX_ENDTURN 0; #cancel tags
+              #debug_log "ReflexEnd Ping" currTurn endTurn;
+            end;
+          end;
 
-          if neq side 0; # only run at the start of the players turn
-            return;
+          unit.getTag endTurn Tag.SMT_VIGILIANCE_ENDTURN; ## Vigilance
+          if neq endTurn 0;
+            if or le currTurn 1 ge currTurn endTurn; # if buff expires or it's turn 1 (entering a new stage of multi-part mission)
+              unit.setTag Tag.SMT_OVERWATCH_BONUS 0;
+              unit.setTag Tag.SMT_VIGILIANCE_OVERFLOW 0;
+              unit.setTag Tag.SMT_VIGILIANCE_ENDTURN 0; #cancel tags
+              #debug_log "VigilanceEnd Ping" currTurn endTurn;
+            end;
           end;
-          unit.getTag endTurn Tag.SMT_VIGILIANCE_ENDTURN;
-          if eq endTurn 0;
-            return;
-          end;
-          battle_game.getTurn currTurn;
 
-          if or le currTurn 1 ge currTurn endTurn; # if buff expires or it's turn 1 (entering a new stage of multi-part mission)
-            unit.setTag Tag.SMT_OVERWATCH_BONUS 0;
-            unit.setTag Tag.SMT_VIGILIANCE_OVERFLOW 0;
-            unit.setTag Tag.SMT_VIGILIANCE_ENDTURN 0; #cancel tags
-            #debug_log "VigilanceEnd Ping" currTurn endTurn;
+          unit.getTag endTurn Tag.SMT_VULN_ENDTURN; ## Vulnerability
+          if neq endTurn 0;
+            if or le currTurn 1 ge currTurn endTurn; # if buff expires or it's turn 1 (entering a new stage of multi-part mission)
+              unit.setTag Tag.SMT_VULN_INTENSITY 0;
+              unit.setTag Tag.SMT_VULN_ENDTURN 0; #cancel tags
+              #debug_log "VulnEnd Ping" currTurn endTurn;
+            end;
           end;
-          return;
 
-      - new: SMTS_vulnerability_removebuff #*** Script that removes vulnerability bonus from unit once duration ends ***
-        offset: 90.2
-        code: |
-          var int currTurn;
-          var int endTurn;
-          var int temp;
-
-          if neq side 0; # only run at the start of the players turn
-            return;
-          end;
-          unit.getTag endTurn Tag.SMT_VULN_ENDTURN;
-          if eq endTurn 0;
-            return;
-          end;
-          battle_game.getTurn currTurn;
-          #debug_log "VulnTurn Ping" endTurn currTurn;
-          if or le currTurn 1 ge currTurn endTurn; # if buff expires or it's turn 1 (entering a new stage of multi-part mission)
-            unit.setTag Tag.SMT_VULN_INTENSITY 0;
-            unit.setTag Tag.SMT_VULN_ENDTURN 0;
-          end;
           return;
 
       - new: SMTS_signum_removebuff #*** Script that removes FA bonuses from unit once turn ends ***
@@ -100,45 +85,188 @@ extended:
           end;
           return;
 
-    reactionUnitAction:
-      - new: SMTS_haste_reactionbonus
-        offset: 21
+    damageUnit:
+      - new: SMTS_buff_triggers
+        offset: 5
         code: |
-          var int friendyReactionScore;
-          var int enemyReactionScore;
-          var int reactionBonus;
           var int temp;
+          var int temp2;
 
-          action_unit.getFaction temp;
-          if neq temp FACTION_PLAYER;
-            return reaction_chance;
+          begin; ### Vigilance
+            var ptr RuleArmor armorRule;
+            var int vigilBonus;
+            var int vigilOverflow;
+
+            damaging_item.getTag temp Tag.SMT_VIGILIANCE_BUFF;
+            if gt temp 0; # skip if doesn't boost overwatch
+              set vigilBonus orig_power;
+              muldiv vigilBonus temp 100;
+              unit.getRuleArmor armorRule;
+              armorRule.getTag temp Tag.ARMOR_OVERWATCH_TU_RESTORED; # add innate Overwatch from armor
+              add vigilBonus temp;
+              unit.getTag temp Tag.SMT_OVERWATCH_BONUS; # add any previous Overwatch buffs
+              add vigilBonus temp;
+              unit.getTag temp Tag.SMT_VIGILIANCE_OVERFLOW; # add any overflow from previous Overwatch buffs
+              add vigilBonus temp;
+              if gt vigilBonus 100; # if total >100, add overflow TUs
+                set temp vigilBonus;
+                sub temp 100;
+                unit.getTimeUnitsMax vigilOverflow;
+                muldiv vigilOverflow temp 100;
+                unit.setTag Tag.SMT_VIGILIANCE_OVERFLOW vigilOverflow;
+              end;
+              limit vigilBonus 0 100;
+              unit.setTag Tag.SMT_OVERWATCH_BONUS vigilBonus;
+              #debug_log "Vigilance Ping" vigilBonus temp;
+
+              battle_game.getTurn temp;
+              add temp 1; #define end turn for buff
+              unit.setTag Tag.SMT_VIGILIANCE_ENDTURN temp;
+            end;
           end;
 
-          action_unit.getTag reactionBonus Tag.SMT_HASTE_REACTION_BONUS;
-          if eq reactionBonus 0;
-            return reaction_chance;
+          begin; ### Haste
+            var int baseMove;
+
+            damaging_item.getTag temp Tag.SMT_ITEM_MOVESPEED_BOOST; # movespeed bonus
+            #debug_log "HasteBuff Ping " temp;
+            if gt temp 0;
+              # Power <50 = no change, >=50 = 75% cost, >=100 50% cost (move bonus capped by item tag)
+              set temp2 orig_power;
+              div temp2 50;
+              #debug_log "HasteBuff Power - " temp orig_power currPower temp2;
+              limit temp2 0 temp; # eliminate negatives and cap power
+              if gt temp2 0; # only continue if move cost would change
+                mul temp2 -25;
+                unit.getTag temp Tag.SMT_HASTE_SPEED_BONUS;
+                if lt temp2 temp; # if new value is faster
+                  unit.getTag baseMove Tag.UNIT_MOVESPEED_MODIFIERS;
+                  sub baseMove temp; # remove old modifier
+                  add baseMove temp2; # add new modifier
+                  unit.setTag Tag.UNIT_STEALTH_MOVEPENALTY temp2;
+                  unit.setTag Tag.UNIT_MOVESPEED_MODIFIERS baseMove; # apply movement modifier
+                  add baseMove 100;
+                  limit_lower baseMove 25;
+                  unit.MoveCost.setBaseTimePercent baseMove;
+                end;
+              end;
+            battle_game.getTurn temp;
+            add temp 1; #define end turn for buff
+            unit.setTag Tag.SMT_HASTE_ENDTURN temp;
+            end;
           end;
 
-          action_unit.Stats.getReactions friendyReactionScore;
-          action_unit.getTimeUnits temp;
-          mul friendyReactionScore temp;
-          action_unit.getTimeUnitsMax temp;
-          div friendyReactionScore temp;
+          begin; ### Reflexes
+            var int currentReactBonus;
 
-          add friendyReactionScore reactionBonus; # flat bonus applied after TU% modifier
-
-          reaction_unit.Stats.getReactions enemyReactionScore;
-          reaction_unit.getTimeUnits temp;
-          mul enemyReactionScore temp;
-          reaction_unit.getTimeUnitsMax temp;
-          div enemyReactionScore temp;
-          #debug_log "HasteReaction Ping - " friendyReactionScore reactionBonus enemyReactionScore reaction_chance;
-
-          if gt friendyReactionScore enemyReactionScore;
-            return 0;
+            damaging_item.getTag temp2 Tag.SMT_ITEM_REACTION_MOD; # reactions bonus
+            if gt temp2 0;
+              unit.getTag currentReactBonus Tag.SMT_REFLEX_REACTION_BONUS;
+              set temp orig_power;
+              add temp 25; # make low power more effective and high power slightly less effective
+              muldiv temp 3 2;
+              muldiv temp temp2 100; # scale result by item %
+              if gt temp currentReactBonus; # only change if new bonus would be an improvement
+                unit.setTag Tag.SMT_REFLEX_REACTION_BONUS temp;
+              end;
+              #debug_log "ReflexBuff Reaction Bonus N/O" temp currentReactBonus;
+              battle_game.getTurn temp;
+              add temp 1; #define end turn for buff
+              unit.setTag Tag.SMT_REFLEX_ENDTURN temp;
+            end;
           end;
 
-          return reaction_chance;
+          begin; ### Vulnerability
+            var int debuffVal;
+
+            damaging_item.getTag temp Tag.SMT_VULN_DEBUFF_MOD;
+            damaging_item.getTag temp2 Tag.SMT_VULN_DEBUFF_FIXED;
+            if or gt temp 0 gt temp2 0; # skip if doesn't inflict vuln
+              set debuffVal currPower;
+              muldiv debuffVal temp 100;
+              add debuffVal temp2;
+              limit debuffVal 0 200; # cap at 300%
+              unit.getTag temp Tag.SMT_VULN_INTENSITY;
+              if gt debuffVal temp; #only change if it would be higher
+                unit.setTag Tag.SMT_VULN_INTENSITY debuffVal;
+                #debug_log "VulnDebuff Ping 1" debuffVal;
+                damaging_item.getTag debuffVal Tag.SMT_VULN_DURATION;
+                battle_game.getTurn temp;
+                add temp debuffVal; #define end turn for buff
+                unit.getTag temp2 Tag.SMT_VULN_ENDTURN;
+                if gt temp temp2; # only set new endturn if incoming debuff duration is longer
+                  unit.setTag Tag.SMT_VULN_ENDTURN temp;
+                end;
+                #debug_log "VulnDebuff Ping 2" temp;
+              end;
+            end;
+          end;
+
+          begin; ### Mend Wounds
+            var int healWounds;
+            var int numWounds;
+            var int hpMult;
+            var int healthRestored;
+            var int hpCap;
+
+            damaging_item.getTag temp Tag.SMT_HEAL_WOUNDS_POW; # wounds restored
+            damaging_item.getTag hpMult Tag.SMT_HEAL_WOUNDS_HP_WOUND; # health restored per wound
+            set healWounds currPower;
+            muldiv healWounds temp 100;
+            #debug_log "HealWounds Ping " healWounds temp hpMult;
+            if gt healWounds 0;
+              loop var i 6; # cycle through the body parts
+                unit.getFatalwounds numWounds i; # check the number of wounds in this bodypart
+                if and gt numWounds 0 gt healWounds 0; # if there are any wounds in this body part and any heals remaining, remove as many as we can
+                  set temp numWounds; # save the initial number of wounds
+                  sub numWounds healWounds; # remove wounds equal to our heal wound count
+                  limit_upper temp healWounds; # get total wounds healed
+                  sub healWounds temp; # decrement the number of heals by the initial number of wounds
+                  limit_lower numWounds 0; # ensure wounds do not go below 0
+                  unit.setFatalwounds i numWounds; # remove the wounds
+                  mul temp hpMult; # get hp per wound restored
+                  add healthRestored temp; # add to HP total
+                end;
+              end;
+            end;
+            #debug_log "HealWounds WoundHeals " healthRestored;
+
+            damaging_item.getTag temp Tag.SMT_HEAL_WOUNDS_HP_CAP; # health cap
+            if gt temp 0;
+              unit.getHealthMax hpCap;
+              unit.getTag temp2 Tag.SMT_LOWEST_HEALTH;
+              #debug_log "HealWounds Hp Max/Low " hpCap temp2 temp;
+              sub hpCap temp2;
+              muldiv hpCap temp 100; # get health cap based on missing hp
+              add hpCap temp2;
+              damaging_item.getTag temp Tag.SMT_HEAL_WOUNDS_HP_PERCENT; # direct health restored
+              set temp2 currPower;
+              muldiv temp2 temp 100;
+              add healthRestored temp2;
+              unit.getHealth temp;
+              #debug_log "HealWounds Hp restored " healthRestored temp hpCap;
+              add healthRestored temp;
+              limit_upper healthRestored hpCap; # limit healing to cap
+              limit_lower healthRestored temp; # don't reduce health if it's above cap
+              unit.setHealthWithOverkill healthRestored;
+            end;
+          end;
+
+          begin; ### Cloaking
+
+            damaging_item.getTag temp Tag.ITEM_CLOAKING_EFFECT;
+            if gt temp 0;
+              unit.getTag temp2 Tag.UNIT_STEALTH_IS_ACTIVE;
+              #debug_log "Cloaking Ping 2" temp temp2;
+              if eq temp2 0; # only activate if unit is not already stealthed
+                unit.setTag Tag.UNIT_STEALTH_IS_ACTIVE 1;
+                unit.setTag Tag.UNIT_STEALTH_RANGE temp;
+              end;
+            end;
+          end;
+
+          ## END
+          return;
 
     hitUnit:
       - new: SMTS_vulnerable_target #*** Script that amplifies incoming attacks based on vulnerability ***
@@ -202,6 +330,46 @@ extended:
           end;
 
           return power part side;
+
+    reactionUnitAction:
+      - new: SMTS_haste_reactionbonus
+        offset: 21
+        code: |
+          var int friendyReactionScore;
+          var int enemyReactionScore;
+          var int reactionBonus;
+          var int temp;
+
+          action_unit.getFaction temp;
+          if neq temp FACTION_PLAYER;
+            return reaction_chance;
+          end;
+
+          action_unit.getTag reactionBonus Tag.SMT_REFLEX_REACTION_BONUS;
+          if eq reactionBonus 0;
+            return reaction_chance;
+          end;
+
+          action_unit.Stats.getReactions friendyReactionScore;
+          action_unit.getTimeUnits temp;
+          mul friendyReactionScore temp;
+          action_unit.getTimeUnitsMax temp;
+          div friendyReactionScore temp;
+
+          add friendyReactionScore reactionBonus; # flat bonus applied after TU% modifier
+
+          reaction_unit.Stats.getReactions enemyReactionScore;
+          reaction_unit.getTimeUnits temp;
+          mul enemyReactionScore temp;
+          reaction_unit.getTimeUnitsMax temp;
+          div enemyReactionScore temp;
+          #debug_log "HasteReaction Ping - " friendyReactionScore reactionBonus enemyReactionScore reaction_chance;
+
+          if gt friendyReactionScore enemyReactionScore;
+            return 0;
+          end;
+
+          return reaction_chance;
 
     recolorUnitSprite:
       - new: SMTS_vuln_recolor

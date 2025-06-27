@@ -18,31 +18,33 @@ extended:
           var int temp2;
 
           unit.getHealth unitCurrentHp;
-          if le unitCurrentHp 0; # skip if unit is dead
+          unit.getHealthMax unitMaxHp;
+          if or le unitCurrentHp 0 eq unitCurrentHp unitMaxHp; # skip if unit is dead or max hp
             return;
           end;
 
           unit.getTag unitLowestHp Tag.SMT_LOWEST_HEALTH;
-          if lt unitCurrentHp unitLowestHp; # adjust lowest HP level if needed
+          if or lt unitCurrentHp unitLowestHp eq unitLowestHp 0; # adjust lowest HP level if needed
             set unitLowestHp unitCurrentHp;
             unit.setTag Tag.SMT_LOWEST_HEALTH unitLowestHp;
           end;
 
           unit.getFaction temp;
-          if neq side temp; # skip if not unit owners turn
-            return;
-          end;
-
-          unit.getRuleArmor unitArmor;
-          unitArmor.getTag temp Tag.ARMOR_REGENERATE_HEALTH_BURN_TOGGLE;
-          unit.getFire temp2;
-          if and neq temp 0 gt temp2 0; # check if fire is disabling regeneration
+          if neq side temp; # don't trigger on others' turns
             return;
           end;
 
           unit.getRuleSoldier unitSoldier;
-          unit.getHealthMax unitMaxHp;
-          unit.getHealth unitCurrentHp;
+          unitSoldier.getTag temp Tag.UNIT_REGENERATE_HEALTH_BURN_TOGGLE;
+          unit.getRuleArmor unitArmor;
+          unitArmor.getTag temp2 Tag.ARMOR_REGENERATE_HEALTH_BURN_TOGGLE;
+          add temp temp2;
+          unit.getFire temp2;
+          if and gt temp 0 gt temp2 0; # skip if fire is disabling regeneration
+            return;
+          end;
+
+          unit.getRuleSoldier unitSoldier;
           unitSoldier.getTag regenHpFlat Tag.UNIT_REGENERATE_HEALTH_FLAT;
           unitArmor.getTag temp Tag.ARMOR_REGENERATE_HEALTH_FLAT;
           add regenHpFlat temp;
@@ -117,7 +119,6 @@ extended:
                 limit_lower numWounds 0; #ensure wounds do not go below 0
                 limit_lower healWounds 0; #ensure heals do not go below 0
                 unit.setFatalwounds i numWounds; #remove the wounds
-                unit.getFatalwoundsTotal numWounds; #recalculate wounds
               end;
             end;
           end;
@@ -144,11 +145,11 @@ extended:
           loop var i 5; #cycle through the armor sides
             unit.getArmor temp i;
             unit.getArmorMax temp2 i;
-            debug_log "RegenArmor Pre  " i temp temp2 armorRecovery;
+            #debug_log "RegenArmor Pre  " i temp temp2 armorRecovery;
             add temp armorRecovery;
             limit_upper temp temp2;
             unit.setArmor temp i;
-            debug_log "RegenArmor Post " i temp temp2 armorRecovery;
+            #debug_log "RegenArmor Post " i temp temp2 armorRecovery;
           end;
 
           return;
@@ -166,21 +167,21 @@ extended:
           var int temp2;
 
           # if and gt health_loss 0 eq recovery_time 0; # skip if the unit was hurt but instantly recovers because of armor tag
-            # debug_log "Recovery Aborted - Armor Tag?: " health_loss final_health_loss recovery_time;
+            # #debug_log "Recovery Aborted - Armor Tag?: " health_loss final_health_loss recovery_time;
             # return;
           # end;
 
           unit.getRuleSoldier soldierRuleset;
           soldierRuleset.getTag woundTimeMultiplier Tag.SOLDIER_WOUND_TIME_MULTIPLIER;
           if lt woundTimeMultiplier 0; # skip if the unit ignores recovery
-            debug_log "Recovery Aborted - Soldier Tag: " woundTimeMultiplier health_loss recovery_time;
+            #debug_log "Recovery Aborted - Soldier Tag: " woundTimeMultiplier health_loss recovery_time;
             set recovery_time 0;
             return;
           end;
 
           unit.getTag recoveryHealth Tag.SMT_LOWEST_HEALTH;
           if le recoveryHealth 0; # skip if the unit never got its health adjusted
-            debug_log "Recovery Aborted - Lowest Health Not Set: " recoveryHealth health_loss recovery_time;
+            #debug_log "Recovery Aborted - Lowest Health Not Set: " recoveryHealth health_loss recovery_time;
             set recovery_time 0;
             return;
           end;
@@ -188,9 +189,9 @@ extended:
           unit.getRuleArmor unitArmor;
           unitArmor.Stats.getHealth temp2;
           sub temp temp2; # ignore health granted by armor
-          debug_log "Recovery Health: " recoveryHealth temp temp2 recovery_time;
+          #debug_log "Recovery Health: " recoveryHealth temp temp2 recovery_time;
           if ge recoveryHealth temp; # if units lowest HP is greater or equal to its max without armor bonuses, no recovery time
-            debug_log "Recovery Aborted - Health Above Max: " recoveryHealth temp health_loss recovery_time;
+            #debug_log "Recovery Aborted - Health Above Max: " recoveryHealth temp health_loss recovery_time;
             set recovery_time 0;
             return;
           end;
@@ -198,7 +199,7 @@ extended:
           sub recoveryHealth 101; # +1 - 1 health remaining returns as 100 instead of 99
           abs recoveryHealth;
           div recoveryHealth 2; # reduce to 1/2 - max penalty 50 (40-60) days
-          debug_log "RecoveryTime Calc: " recoveryHealth health_loss recovery_time;
+          #debug_log "RecoveryTime Calc: " recoveryHealth health_loss recovery_time;
           if le recoveryHealth 0; # if recovery penalty ends up at <=0, no recovery time
             set recovery_time 0;
             return;
@@ -208,216 +209,25 @@ extended:
           muldiv temp 80 100;
           muldiv temp2 120 100; # 80-120% random range
           battle_game.randomRange recoveryHealth temp temp2;
-          debug_log "RecoveryTime Roll: " recoveryHealth temp temp2;
+          #debug_log "RecoveryTime Roll: " recoveryHealth temp temp2;
 
           unit.getTag temp Tag.SMT_RECOVERY_PENALTY;
           add recoveryHealth temp; # add recovery penalty time
 
           if gt woundTimeMultiplier 0; #adjust based on soldier recovery speed
             muldiv recoveryHealth woundTimeMultiplier 100;
-            debug_log "RecoveryTime -  Soldier Bonus: " recoveryHealth woundTimeMultiplier;
+            #debug_log "RecoveryTime -  Soldier Bonus: " recoveryHealth woundTimeMultiplier;
           end;
 
           unit.getTag temp Tag.UNIT_BIONICS; # adjust for bionics bonus
           if eq temp 1;
             muldiv recoveryHealth 2 3; # 2/3 recovery time for bionics (original 1/2)
-            debug_log "RecoveryTime -  Bionics Bonus: " recoveryHealth temp;
+            #debug_log "RecoveryTime -  Bionics Bonus: " recoveryHealth temp;
           end;
 
           set recovery_time recoveryHealth;
-          debug_log "Final RecoveryTime: " recovery_time;
+          #debug_log "Final RecoveryTime: " recovery_time;
 
           return;
 
 
-
-soldiers:
-  - type: STR_SOLDIER
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 5
-      SMT_UNIT_REGEN_WOUND: 1
-
-  - type: STR_SOLDIER_NEOPHYTE
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 2 # Neophytes get only minor healing
-      SMT_UNIT_REGEN_WOUND: 0
-
-  - type: STR_SOLDIER_TERMINATOR
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 8
-      SMT_UNIT_REGEN_WOUND: 2
-
-  - type: STR_SOLDIER_CAPTAIN
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 10
-      SMT_UNIT_REGEN_WOUND: 3
-
-  - type: STR_SOLDIER_CHAPLAIN
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 8
-      SMT_UNIT_REGEN_WOUND: 2
-
-  - type: STR_SOLDIER_LIBRARIAN
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 5
-      SMT_UNIT_REGEN_WOUND: 1
-
-  - type: STR_SOLDIER_LIBRARIAN_TERM
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 8
-      SMT_UNIT_REGEN_WOUND: 2
-
-  - type: STR_PRIMARISLV1
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 5
-      SMT_UNIT_REGEN_WOUND: 1
-
-  - type: STR_PRIMARISLV2
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 6
-      SMT_UNIT_REGEN_WOUND: 1
-
-  - type: STR_PRIMARISLV3
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 7
-      SMT_UNIT_REGEN_WOUND: 2
-
-  - type: STR_PRIMARISLV4
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 8
-      SMT_UNIT_REGEN_WOUND: 2
-
-  - type: STR_PRIMARISLV5
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 10
-      SMT_UNIT_REGEN_WOUND: 3
-
-  - type: STR_PRIMARIS_APOTH
-    tags: # Apoth armor bonus builtin
-      UNIT_REGENERATE_HEALTH_FLAT: 10
-      SMT_UNIT_REGEN_WOUND: 3
-
-  - type: STR_PRIMARIS_APOTH_BIO
-    tags: # Apoth armor bonus builtin
-      UNIT_REGENERATE_HEALTH_FLAT: 12
-      SMT_UNIT_REGEN_WOUND: 4
-
-  - type: STR_PRIMARIS_JUDICAR
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 6
-      SMT_UNIT_REGEN_WOUND: 1
-
-  - type: STR_PRIMARIS_CHAPLAIN
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 8
-      SMT_UNIT_REGEN_WOUND: 2
-
-  - type: STR_BLOODRAVENS_MARINE
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 5
-      SMT_UNIT_REGEN_WOUND: 1
-
-  - &STR_DEATHWATCH_MARINE              # Deathwatch Marines
-    type: STR_ULTRAMARINE
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 8 # Vet level
-      SMT_UNIT_REGEN_WOUND: 2 # Vet level
-      SMT_UNIT_REGEN_PENALTY_REDUCTION: 50 # DW bonus, ignore 50% of recovery time added by healing
-
-  - type: STR_ULTRAMARINE
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_ULTRAMARINE_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_IMPERIALF
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_IMPERIALF_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_BLOODANGELS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_BLOODANGELS_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_SALAMANDAR
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_SALAMANDAR_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_BLACKT
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_BLACKT_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_WHITES
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_WHITES_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_DARKANGELS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_DARKANGELS_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_SPACEW
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 12 # +4 Spacewolf Bonus
-      SMT_UNIT_REGEN_WOUND: 5 # +3 Spacewolf Bonus
-      SMT_UNIT_REGEN_PENALTY_REDUCTION: 80 # +30% Spacewolf Bonus
-
-  - type: STR_SPACEW_PRIMARIS
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 12 # +4 Spacewolf Bonus
-      SMT_UNIT_REGEN_WOUND: 5 # +3 Spacewolf Bonus
-      SMT_UNIT_REGEN_PENALTY_REDUCTION: 80 # +30% Spacewolf Bonus
-
-  - type: STR_CRISMONF
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_CRISMONF_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - &STR_DEATHWATCH_LEADER              # Deathwatch Captains
-    type: STR_ULTRAMARINE_LEADER
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 10 # Vet level +2
-      SMT_UNIT_REGEN_WOUND: 3 # Vet level +1
-      SMT_UNIT_REGEN_PENALTY_REDUCTION: 60 # DW Captain bonus, ignore 60% of recovery time added by healing
-
-  - type: STR_ULTRAMARINE_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_BLOODANGELS_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_IMPERIALF_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_SALAMANDAR_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_BLACKT_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_DARKANGELS_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_WHITES_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_SPACEW_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-    tags:
-      UNIT_REGENERATE_HEALTH_FLAT: 16 # +6 Spacewolf Bonus
-      SMT_UNIT_REGEN_WOUND: 8 # +5 Spacewolf Bonus
-      SMT_UNIT_REGEN_PENALTY_REDUCTION: 85 # +25% Spacewolf Bonus
-
-  - type: STR_CRISMONF_LEADER
-    refNode: *STR_DEATHWATCH_LEADER

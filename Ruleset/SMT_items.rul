@@ -192,14 +192,6 @@ items:
     invWidth: 2
     invHeight: 2 # was 2
     armor: 300
-    weight: 18 # was 30
-    costThrow:
-      energy: 20 # was 40
-      time: 40 # was 80!
-    costPrime:
-      time: 10 # was 40!
-    costUnprime:
-      time: 5
 
   - type: STR_SMOKE_GRENADE                 # Smoke Grenade
     costThrow:
@@ -216,12 +208,77 @@ items:
     weight: 12 # was 20
     armor: 300
     costThrow:
-      energy: 20 # was 40
+      energy: 5 # was 40
       time: 40 # was 80!
     costPrime:
-      time: 10 # was 40!
+      time: 5 # was 40!
     costUnprime:
       time: 5
+
+  - &REF_VOLKITE_SFX                        # Volkite Weapon Ref
+    type: STR_NEOVOLKITE_PISTOL
+    bulletSprite: { mod: 40k, index: 16 } # meltagun
+    fireSound: { mod: 40k, index: 847 }
+    explosionHitSound: {mod: 40k, index: 690} # heavy plasma blast
+    hitSound: { mod: 40k, index: 19 }
+    hitAnimation: { mod: 40k, index: 128 } # explosion
+    vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 8} # orange
+    explosionSpeed: 1
+    powerForAnimation: 5
+    vaporDensitySurface: 5
+    vaporProbabilitySurface: 85
+    scripts: # give it a tighter beam that disappates quickly without spreading
+      vaporParticleAmmo: |
+        var int temp;
+        var int randMax;
+
+        set randMax subvoxel_scale;
+        muldiv randMax 2 3;
+        random.randomRangeSymmetric temp randMax;
+        subvoxel_offset.setX temp;
+        random.randomRangeSymmetric temp randMax;
+        subvoxel_offset.setY temp;
+        random.randomRangeSymmetric temp randMax;
+        subvoxel_offset.setZ temp;
+        set temp 240;
+        sub temp particle_density;
+        div temp 4;
+        subvoxel_velocity.setZ temp;
+        mod particle_lifetime 10;
+        add particle_lifetime 3;
+        return;
+
+  - type: STR_VOLKITE_VAULT                 # Volkite Rifle (Ancient Vault Reward)
+    refNode: *REF_VOLKITE_SFX
+    bigSprite: 178
+    floorSprite: 178
+    handSprite: 264
+    battleType: 1
+    armor: 300
+    invWidth: 2
+    invHeight: 3
+
+  - type: STR_VOLKITE_DW                    # Volkite Rifle (Deathwatch Captain)
+    refNode: *REF_VOLKITE_SFX
+    bigSprite: 178
+    floorSprite: 178
+    handSprite: 264
+    ufopediaType: STR_VOLKITE_VAULT
+    battleType: 1
+    armor: 300
+    invWidth: 2
+    invHeight: 3
+    recover: false # generated item
+
+  - type: STR_NEOVOLKITE_PISTOL             # Neo-Volkite Pistol
+    refNode: *REF_VOLKITE_SFX
+    bigSprite: 216
+    floorSprite: 216
+    handSprite: 424
+    battleType: 1
+    armor: 300
+    invWidth: 1
+    invHeight: 3
 
   - type: AUX_CROZIUS                       # Crozius                                       ## Restricted Item
     weight: 15
@@ -290,7 +347,7 @@ items:
     experienceTrainingMode: 19 # Trains Bravery when used
     tags:
       ITEM_DOESNT_HURT_USER: 1
-      ITEM_IGNORE_IMPERIUM: 1
+      ITEM_DMGMOD_IMPERIUM: -1
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
 
   - type: AUX_CROZIUS_PRIMARIS              # Crozius (Primaris Chaplain)
@@ -375,7 +432,7 @@ items:
     experienceTrainingMode: 19 #
     tags:
       ITEM_DOESNT_HURT_USER: 1
-      ITEM_IGNORE_IMPERIUM: 1
+      ITEM_DMGMOD_IMPERIUM: -1
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
 
   - type: AUX_MORTAR                        # Terminator Cyclone Launcher
@@ -1026,10 +1083,20 @@ items:
     spawnUnitFaction: 0
     spawnUnit: STR_BOMBARD_CANNON_TARGETER
 
-  - type: STR_BOMBARD_ROCKET_SPAWNER        # Craft Bombard Rocket spawner
+  - type: STR_BOMBARD_ROCKET_SPAWNER        # Craft Bombard Rocket (x4) spawner
     refNode: *STR_BOMBARD_SPAWNER_TEMPLATE
     spawnUnitFaction: 0
     spawnUnit: STR_BOMBARD_ROCKET_TARGETER
+
+  - type: STR_BOMBARD_ROCKETSMALL_SPAWNER   # Craft Bombard Rocket (x2) spawner
+    refNode: *STR_BOMBARD_SPAWNER_TEMPLATE
+    spawnUnitFaction: 0
+    spawnUnit: STR_BOMBARD_ROCKETSMALL_TARGETER
+
+  - type: STR_BOMBARD_REPULSOR_SPAWNER      # Craft Bombard Repulsor spawner
+    refNode: *STR_BOMBARD_SPAWNER_TEMPLATE
+    spawnUnitFaction: 0
+    spawnUnit: STR_BOMBARD_REPULSOR_TARGETER
 
   - &STR_BOMBARD_AMMO                       # Bombard Ammo Template
     type: STR_AIRSTRIKE_AMMO
@@ -1600,7 +1667,7 @@ items:
       ToHealth: 1.0
       ToArmorPre: 0.3
       ToArmor: 0.3
-      ToTile: 0.5
+      ToTile: 0.60
       ToItem: 0.5
       ArmorEffectiveness: 0.5
       FireThreshold: 180
@@ -1718,7 +1785,7 @@ items:
       FireThreshold: 180
       ToArmorPre: 0.30
       ArmorEffectiveness: 0.75
-      ToTile: 0.75
+      ToTile: 0.60
       ToItem: 0.5
     clipSize: 2
 
@@ -1754,7 +1821,7 @@ items:
       FireThreshold: 180
       ToArmorPre: 0.25
       ArmorEffectiveness: 0.75
-      ToTile: 0.5
+      ToTile: 0.60
       ToItem: 0.5
     clipSize: 3
 
@@ -1890,7 +1957,7 @@ items:
     invWidth: 0
     invHeight: 0
     battleType: 4
-    hitAnimation: 800
+    hitAnimation: 600
     explosionHitSound: {mod: 40k, index: 15}
     recover: false
     supportedInventorySections:
@@ -2092,7 +2159,7 @@ items:
       ToHealth: 1.0
       ToArmorPre: 0.3
       ToArmor: 0.3
-      ToTile: 0.8
+      ToTile: 0.60
       ToItem: 0.5
       ArmorEffectiveness: 0.5
       FireThreshold: 180
@@ -2167,7 +2234,7 @@ items:
       FireThreshold: 180
       ToArmorPre: 0.30
       ArmorEffectiveness: 0.75
-      ToTile: 0.8
+      ToTile: 0.60
       ToItem: 0.5
     clipSize: 2
 
@@ -2180,8 +2247,7 @@ items:
       shortName: STR_FIRESUPPORT_MISSILES_COUNT
       shots: 3
     compatibleAmmo:
-      - STR_STRM_ASSC_DUMMY
-      - STR_STRM_ROCKET_DUMMY
+      - STR_WHIRL_ROCKET_DUMMY
     tuAimed: 0
     tuSnap: 0
     tuAuto: 60
@@ -2198,7 +2264,7 @@ items:
       FireThreshold: 180
       ToArmorPre: 0.30
       ArmorEffectiveness: 0.75
-      ToTile: 0.8
+      ToTile: 0.60
       ToItem: 0.5
     clipSize: 3
 
@@ -2244,7 +2310,7 @@ items:
       mana: 5
     clipSize: 2
     damageType: 1
-    power: 200
+    power: 280
     powerForAnimation: 50
     damageAlter:
       RandomType: 2  # 50-150%
@@ -2252,6 +2318,7 @@ items:
       ToArmorPre: 0.9
       ToHealth: 1.0
       FixRadius: 8
+      ToTile: 0.3
 
   - type: STR_BOMBARD_ROCKET                # Preator Rockets
     refNode: *STR_STRIKE_WEAPON_DEFAULTS
@@ -2279,11 +2346,49 @@ items:
       FireThreshold: 180
       ToArmorPre: 0.30
       ArmorEffectiveness: 0.75
-      ToTile: 1.0
+      ToTile: 0.60
       ToItem: 0.5
     clipSize: 4
 
-
+  - type: STR_BOMBARD_LASCANNON             # Laser Destroyer
+    refNode: *STR_STRIKE_WEAPON_DEFAULTS
+    bigSprite: {mod: 40k, index: 244}
+    hitSound: [{mod: 40k_ROSIGMA_edits, index: 3986}]
+    fireSound: [{mod: 40k_ROSIGMA_edits, index: 3984}]
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2230}
+    bulletSprite: {mod: 40k, index: 22}
+    bulletSpeed: 100
+    vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 4} # red laser
+    vaporDensitySurface: 6
+    vaporProbabilitySurface: 100
+    scripts:
+      vaporParticleAmmo: |
+        # noting
+        set particle_lifetime 1;
+        set subvoxel_drift 0;
+        return;
+    dropoff: 3
+    autoRange: 0
+    snapRange: 0
+    aimRange: 16
+    accuracyAuto: 0
+    accuracySnap: 0
+    accuracyAimed: 90
+    costAimed:
+      time: 1
+      mana: 5
+    power: 260
+    damageType: 4
+    damageAlter:
+      RandomType: 6  # gaussian
+      ToArmorPre: 0.5
+      ToHealth: 1.0
+      ToArmor: 0.1
+      ToStun: 0.05
+      ToWound: 0.05
+      RandomWound: false
+      ToTile: 0.3
+    clipSize: 2
 
   - type: STR_BLANK_CORPSE                  # Blank Corpse Object
     size: 0.0

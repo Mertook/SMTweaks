@@ -1,8 +1,9 @@
 extended:
   tagsFile: Ruleset/Scripts/SMT_tags.rul
 
+
 items:
-  - &STR_PRECISION_AMMO                 # Precision Template
+  - &REF_PRECISION_AMMO                 # Precision Template
     type: STR_PISTOL_CLIP_MC
     scripts:
       hitUnitAmmo: |
@@ -13,7 +14,7 @@ items:
         attacker.Stats.getFiring attackerFA;
         sub attackerFA 100; # only units with FA above 100 benefit
         #debug_log "PrecisionDmg pinged " precisionBonus attackerFA;
-        if and gt precisionBonus 0 gt attackerFA 0;
+        if and gt precisionBonus 0 gt attackerFA 0 gt power 0;
           muldiv attackerFA precisionBonus 100;
           add power attackerFA;
           #debug_log "PrecisionDmg " attackerFA power;
@@ -22,43 +23,43 @@ items:
         return power part side;
 
   - type: STR_PISTOL_CLIP_MC            # Boltpistol
-    refNode: *STR_PRECISION_AMMO
+    refNode: *REF_PRECISION_AMMO
 
   - type: STR_RIFLE_CLIP_MC             # Bolter
-    refNode: *STR_PRECISION_AMMO
+    refNode: *REF_PRECISION_AMMO
 
   - type: STR_LIGHT_BOLTPISTOL_AMMO_MC  # Light Boltpistol
-    refNode: *STR_PRECISION_AMMO
+    refNode: *REF_PRECISION_AMMO
 
   - type: STR_LIGHT_BOLTER_AMMO_MC      # Light Bolter
-    refNode: *STR_PRECISION_AMMO
+    refNode: *REF_PRECISION_AMMO
 
   - type: STR_AC_MC_AMMO                # Heavy Bolter
-    refNode: *STR_PRECISION_AMMO
+    refNode: *REF_PRECISION_AMMO
 
   - type: STR_AC_MC_BELT                # Heavy Bolter Belt
-    refNode: *STR_PRECISION_AMMO
+    refNode: *REF_PRECISION_AMMO
 
   - type: STR_HB_CLIP_MC                # Stormbolter
-    refNode: *STR_PRECISION_AMMO
+    refNode: *REF_PRECISION_AMMO
 
   - type: STR_BOLTRIFLE_DRUM_MC         # Boltrifle Drum
-    refNode: *STR_PRECISION_AMMO
+    refNode: *REF_PRECISION_AMMO
 
   - type: STR_BOLTRIFLE_DRUM_MC_DW      # Boltrifle Drum (DW)
-    refNode: *STR_PRECISION_AMMO
+    refNode: *REF_PRECISION_AMMO
 
   - type: STR_ABSOLVOR_AMMO_MC          # Absolvor
-    refNode: *STR_PRECISION_AMMO
+    refNode: *REF_PRECISION_AMMO
 
   - type: STR_ABSOLVOR_AMMO_MC_DW       # Absolvor (DW)
-    refNode: *STR_PRECISION_AMMO
+    refNode: *REF_PRECISION_AMMO
 
   - type: STR_BOLT_SNIPER_AMMO_MC       # Bolt Sniper
-    refNode: *STR_PRECISION_AMMO
+    refNode: *REF_PRECISION_AMMO
 
 
-  - &STR_DEREVENANT_AMMO                # Derevenant Template
+  - &REF_DEREVENANT_AMMO                # Derevenant Template
     type: STR_RIFLE_CLIP_DEREV
     scripts:
       damageUnitAmmo: |
@@ -102,14 +103,14 @@ items:
         return;
 
   - type: STR_RIFLE_CLIP_DEREV          # DW Bolter ammo
-    refNode: *STR_DEREVENANT_AMMO
+    refNode: *REF_DEREVENANT_AMMO
     tags:
       SMT_DEREVENANT_AMMO: 10
 
   - type: STR_BOLT_SNIPER_AMMO_DEREV    # DW Bolt Sniper ammo
-    refNode: *STR_DEREVENANT_AMMO
+    refNode: *REF_DEREVENANT_AMMO
 
-  - &STR_ARMOR_IGNORING_AMMO            # Penetrating damage Template
+  - &REF_ARMOR_IGNORING_DMG            # Penetrating damage Template
     type: STR_VOLKITE_VAULT
     scripts:
       damageUnitAmmo: |
@@ -129,15 +130,15 @@ items:
         return;
 
   - type: STR_VOLKITE_DW                # DW Volkite Rifle
-    refNode: *STR_ARMOR_IGNORING_AMMO
+    refNode: *REF_ARMOR_IGNORING_DMG
 
   - type: STR_VOLKITE_VAULT             # Volkite Rifle (Ancient Vault Reward)
-    refNode: *STR_ARMOR_IGNORING_AMMO
+    refNode: *REF_ARMOR_IGNORING_DMG
 
   - type: STR_NEOVOLKITE_PISTOL         # NeoVolkite Pistol
-    refNode: *STR_ARMOR_IGNORING_AMMO
+    refNode: *REF_ARMOR_IGNORING_DMG
 
-  - &STR_SHIELDBREAKER_AMMO             # Shieldbreaker Template
+  - &REF_SHIELDBREAKER_AMMO             # Shieldbreaker Template
     type: STR_BOLT_SNIPER_AMMO_HELS
     scripts:
       hitUnitAmmo: |
@@ -154,40 +155,48 @@ items:
         return power part side;
 
   - type: STR_BOLT_SNIPER_AMMO_HELS     # Bolt Sniper Helspear ammo
-    refNode: *STR_SHIELDBREAKER_AMMO
+    refNode: *REF_SHIELDBREAKER_AMMO
 
   - &STR_NOFRIENDLYFIRE_AMMO            # Friend-safe Template
-    type: INV_LIB_VULN_TOKEN
+    type: STR_PSITOKEN_TORMENT
     scripts:
       hitUnitAmmo: |
         var int dmgCheck;
         var int temp;
         var int temp2;
 
-        damaging_item.getTag dmgCheck Tag.ITEM_IGNORE_IMPERIUM; #check if target is Imperium
-        if gt dmgCheck 0;
+        damaging_item.getTag dmgCheck Tag.ITEM_DMGMOD_IMPERIUM; #check if target is Imperium
+        if neq dmgCheck 0;
           unit.getTag temp Tag.UNIT_TYPE_IMPERIUM;
           #debug_log "FriendlyFire Imperium " dmgCheck temp;
           if le temp 0;
             set dmgCheck 0;
+            if lt dmgCheck 0;
+              set power 0; # if -1 negate all damage
+            else;
+              muldiv power dmgCheck 100; # otherwise reduce to %
+            end;
           end;
         end;
 
-        damaging_item.getTag temp Tag.ITEM_IGNORE_ALLIES; # check if target is allied
-        add dmgCheck temp;
-        if gt dmgCheck 0;
+        damaging_item.getTag dmgCheck Tag.ITEM_DMGMOD_ALLIES; # check if target is allied
+        if neq dmgCheck 0;
           attacker.getFaction temp;
           unit.getFaction temp2;
           #debug_log "FriendlyFire Ping " dmgCheck temp temp2 power;
           if eq temp temp2;
-            set power 0; # if target is same faction and antifriendly fire conditions are true, negate damage
-            #debug_log "FriendlyFire Negated " dmgCheck temp temp2;
+            if lt dmgCheck 0;
+              set power 0; # if -1 negate all damage
+            else;
+              muldiv power dmgCheck 100; # otherwise reduce to %
+            end;
           end;
         end;
 
+        #debug_log "FriendlyFire Final Power " power;
         return power part side;
 
-  - type: INV_LIB_VULN_TOKEN            # Librarian Torment Spell
+  - type: STR_PSITOKEN_TORMENT            # Librarian Torment Spell
     refNode: *STR_NOFRIENDLYFIRE_AMMO
 
   - type: AUX_CROZIUS                   # Crozius

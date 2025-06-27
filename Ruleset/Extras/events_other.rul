@@ -35,7 +35,7 @@ events:
     spawnedPersonType: STR_INQ_STORMTROOPER
 
   - name: STR_LONESOME_VINDICARE_EVENT      # Rare event that gifts a Vindicare Assassin
-    researchList: [STR_VINDICARE_AMMO_REQ] # allow player to make more ammo for their assassin even if they can't get it normally
+    researchList: [STR_EXITUS_AMMO_PREREQUISITE] # allow player to make more ammo for their assassin even if they can't get it normally
 
   - name: STR_BASIC_SPAWN_TACTICAL_MARINES
     spawnedPersons: 2 # was 4
@@ -102,6 +102,19 @@ events:
     researchList: [STR_BOLTER_AMMO_PREREQ] # allow player to make more ammo for their marines even if they can't get it normally
 
 
+  - name: STR_MYSTERIOUS_PSYKER_EVENT
+    everyMultiItemList:
+      STR_LASER_PISTOLG: 1
+      STR_LASPISTOL_CLIP: 2
+    spawnedPersons: 1
+    spawnedPersonType: STR_PSYKER
+    researchList: [STR_PSYKER_T4_UNLOCK]
+
+  - name: STR_BASIC_SPAWN_SANCTIONED_PSYKERS
+    everyMultiItemList:
+      STR_LASER_PISTOLG: 2
+      STR_LASPISTOL_CLIP: 4
+    researchList: [STR_PSYKER_T4_UNLOCK]
 
 
 

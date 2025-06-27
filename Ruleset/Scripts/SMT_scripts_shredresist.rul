@@ -6,6 +6,7 @@ armors:
     type: STR_PERSONAL_ARMOR_UC
     personalLight: 5 # adjust all new armors to the rosigma standard
     psiCamouflage: -30
+    psiVision: 0
     recovery:
       energy:
         stamina: 0.4 # was 0.33, marine bonus
@@ -46,7 +47,7 @@ armors:
             sub rendValue 100;
             mul rendValue -1;
             muldiv armorResist rendValue 100;
-            debug_log "Armor Rend Adjustment: " rendValue armorResist;
+            #debug_log "Armor Rend Adjustment: " rendValue armorResist;
           end;
           muldiv damageReduction armorResist 100;
           #debug_log "Armor DmgReduction: " damageReduction;

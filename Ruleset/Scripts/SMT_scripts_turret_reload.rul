@@ -59,10 +59,8 @@ extended:
           add temp TurretReloadTurnsSpecial;
 
           if lt temp 1;
-            # debug_log "Turret Reload Scripts; ROSIGMA_nTU_turret_reload_check_ammo, offset 10: Equipped weapon lacks a turret reload property." temp;
           end;
 
-          # debug_log "Turret Reload Scripts; ROSIGMA_nTU_turret_reload_check_ammo, offset 10: Starting left hand reload process for:" unit;
           unit.getTag timer Tag.TURRET_RELOAD_TIMER; # set timer variable
 
           if le timer 0;
@@ -82,7 +80,7 @@ extended:
           end;
 
           sub timer 1;
-          debug_log "Turret Reload Scripts; ROSIGMA_nTU_turret_reload_check_ammo, offset 10: Decrementing turret reload timer. New timer, timer:" timer;
+          #debug_log "Turret Reload Scripts; ROSIGMA_nTU_turret_reload_check_ammo, offset 10: Decrementing turret reload timer. New timer, timer:" timer;
 
           if gt timer 0;
             unit.setTag Tag.TURRET_RELOAD_TIMER timer;

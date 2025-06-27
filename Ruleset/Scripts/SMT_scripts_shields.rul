@@ -90,6 +90,47 @@ extended:
       - delete: ROSIGMA_nTU_personal_shield_soldier_bonus # this script is already handled in the above - deleted to prevent units benefiting from shield regen twice
 
 
+    applySoldierBonuses:
+      - new: SMTS_apply_bonus_shields ### modified to allow stacking multiple bonuses (relevant for Inquisitors)
+        offset: 11
+        code: |
+          var int shieldAdded;
+          var int shieldDecay;
+          var int temp;
+
+          soldier_bonus.getTag shieldAdded Tag.BONUS_ENERGY_SHIELD_HP_PER_TURN;
+
+          #debug_log "shieldBonus Ping: " shieldAdded;
+          if eq shieldAdded 0;
+            return;
+          end;
+
+
+          unit.getTag temp Tag.UNIT_BONUS_ENERGY_SHIELD_HP_PER_TURN;
+          add shieldAdded temp;
+          #debug_log "shieldBonus Added: " shieldAdded temp;
+          unit.setTag Tag.UNIT_BONUS_ENERGY_SHIELD_HP_PER_TURN shieldAdded;
+          soldier_bonus.getTag shieldDecay Tag.BONUS_ENERGY_SHIELD_DECAY;
+          unit.getTag temp Tag.UNIT_BONUS_ENERGY_SHIELD_DECAY;
+          #debug_log "shieldBonus Decay: " shieldDecay temp;
+          if gt temp 0;
+            add shieldDecay temp;
+            div shieldDecay 2; # get average
+          end;
+          unit.setTag Tag.UNIT_BONUS_ENERGY_SHIELD_DECAY shieldDecay;
+
+          # sets shield at max value (when flat addition = percent decay)
+          if neq 0 shieldDecay;
+            muldiv shieldAdded 100 shieldDecay;
+          end;
+
+          unit.setTag Tag.UNIT_ENERGY_SHIELD_HP shieldAdded;
+          #debug_log "shieldBonus Final: " shieldAdded shieldDecay;
+
+          return;
+
+      - delete: ROSIGMA_aSB_personal_shield_soldier_bonus
+
 
     damageUnit: 
       #*** Spells that add to energy shields - modified from 40k to account for turn-limited shields that don't decay***

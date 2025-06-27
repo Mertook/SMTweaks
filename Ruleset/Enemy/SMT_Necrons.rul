@@ -5,9 +5,9 @@ weaponSets:
   - type: SCARABS_ONLY
     weapons: [STR_NECRON_SCARAB_SPAWNER_GRENADE, STR_NECRON_SCARAB_SPAWNER_GRENADE]
   - type: BASIC_SYNAPTIC_DISINTEGRATOR
-    weapons: [STR_SYNAPTIC_DISINTEGRATOR_AI, STR_KILLPOINT_TOKEN_7]
+    weapons: [STR_SYNAPTIC_DISINTEGRATOR_AI, STR_KILLPOINT_TOKEN_10]
   - type: SYNAPTIC_DISINTEGRATOR_WITH_SCARAB
-    weapons: [STR_SYNAPTIC_DISINTEGRATOR_AI, STR_NECRON_SCARAB_SPAWNER_GRENADE, STR_KILLPOINT_TOKEN_7]
+    weapons: [STR_SYNAPTIC_DISINTEGRATOR_AI, STR_NECRON_SCARAB_SPAWNER_GRENADE, STR_KILLPOINT_TOKEN_10]
 
 units:
   - type: STR_NECRON_ARCHITECT                  # Necron Architect (Deathwatch Final Boss)
@@ -41,7 +41,7 @@ units:
   - &REF_DEATHMARK_UNIT                         # Necron Deathmark
     type: STR_NECRON_DEATHMARK
     stats:
-      tu: 75
+      tu: 80
       stamina: 100
       health: 80 # was 60
       bravery: 110
@@ -77,7 +77,7 @@ units:
 
 
 armors:
-  - type: STR_NECRON_ARCHITECT_ARMOR            # Necron Architect
+  - type: STR_NECRON_ARCHITECT_ARMOR            # Architect
     visibilityAtDay: 40
     visibilityAtDark: 40
     heatVision: 50
@@ -141,7 +141,7 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 45
 
 
-  - &REF_DEATHMARK_ARMOR                        # Necron Deathmark
+  - &REF_DEATHMARK_ARMOR                        # Deathmark (revives)
     type: STR_NECRON_DEATHMARK_ARMOR_REVIVES
     visibilityAtDay: 40
     visibilityAtDark: 40
@@ -180,16 +180,15 @@ armors:
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_NECRON: 1
       ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
-      ARMOR_OVERWATCH_TU_RESTORED: 55 # enough for 1 shot
+      ARMOR_OVERWATCH_TU_RESTORED: 50 # enough for 1 shot - blame Mechanicus
 
-  - type: STR_NECRON_DEATHMARK_ARMOR
+  - type: STR_NECRON_DEATHMARK_ARMOR            # Deathmark
     refNode: *REF_DEATHMARK_ARMOR
     tags:
       ARMOR_TENACIOUS_HP_MOD: 3 # was 2
       ARMOR_TENACIOUS_STUN_RECOVERY: 30 # was 20
-      ARMOR_OVERWATCH_TU_RESTORED: 55 # enough for 1 shot
 
-  - &REF_SCARAB_ARMOR                       # Canoptic Scarabs
+  - &REF_SCARAB_ARMOR                           # Canoptic Scarabs (Five)
     type: STR_NECRON_SCARAB_ARMOR5
     damageModifier:
       - 1.0  # none
@@ -206,11 +205,27 @@ armors:
       - 0.6  # MELTA; dispersed swarm, but weakness to melta
       - 0.2  # GRAV; dispersed swarm, invidually small
 
-  - type: STR_NECRON_SCARAB_ARMOR3
+  - type: STR_NECRON_SCARAB_ARMOR3              # Canoptic Scarabs (Three)
     refNode: *REF_SCARAB_ARMOR
-  - type: STR_NECRON_SCARAB_ARMOR1
+  - type: STR_NECRON_SCARAB_ARMOR1              # Canoptic Scarabs (One)
     refNode: *REF_SCARAB_ARMOR
 
+
+  - type: STR_NECRON_WARRIOR_ARMOR_REVIVES      # Warrior (revives)
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
+
+  - type: STR_NECRON_LYCHGUARD_ARMOR_REVIVES    # Lychguard (revives)
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
+
+  - type: STR_NECRON_IMORTAL_ARMOR_REVIVES      # Immortal (revives)
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
+
+  - type: STR_NECRON_FLAYED_ONE_ARMOR_REVIVES   # Flayed One (revives)
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
 
 
 

@@ -101,6 +101,13 @@ manufacture:
   - name: STR_STEELLEGION_ARMORS_HSENTINEL_MULTIMELTA
     category: STR_CAT_ARMOR
 
+  - name: STR_PSYKER_REQUISITION
+    requires:
+      - STR_PSYKER_REQUISITION
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 50 # was 500, cost now split into psi abilities
+    producedItems: {} # a laspistol is not worth mentioning
+
   # - name: STR_EXITUS_AMMO                           # Vindicare Sniper Ammo
     # requires:
       # - STR_VINDICARE_AMMO_REQ

@@ -9,7 +9,7 @@ extended:
       ## Bombard
       BOMBARD_AMMO_LOADER: int          # item used to lock bombard targeter in place and activate weapons
       BOMBARD_SPAWNER_ITEM: int         # spawner grenade for bombard targeter
-      BOMBARD_AMMO_ITEM: int            # item used to unlock certain strikes 1: Orbital Strike 2: Lightning CAS 3: Stormtalon CAS 4: Orbital Lance
+      BOMBARD_AMMO_ITEM: int            # item used to unlock certain strikes
       BOMBARD_CALLIN_REMOTE: int        # item used to call in bombard strikes
       BOMBARD_COOLDOWN: int             # sets cooldown when bombard is used
       BOMBARD_AMMO_REQUIRED: int        # does this strike remote need ammo?
@@ -21,6 +21,11 @@ extended:
       SMT_VULN_DEBUFF_FIXED: int        # flat amount added as vulnerability debuff
       SMT_VULN_DURATION: int            # length of debuff
       SMT_SIGNUM_DURATION: int          # length of Signum FA buff in turns
+      SMT_HEAL_WOUNDS_POW: int          # % of power removed from fatal wounds
+      SMT_HEAL_WOUNDS_HP_WOUND: int     # health restored per fatal wound cured
+      SMT_HEAL_WOUNDS_HP_PERCENT: int   # health restored based on power
+      SMT_HEAL_WOUNDS_HP_CAP: int       # % healing cap based on max hp
+      ITEM_CLOAKING_EFFECT: int         # cloaks unit for 1 turn - X = detection range
       ## Weapon Ammo Sprites
       ITEM_AMMO_SKIP_BIGOBS: int        # ammo causes weapon sprite to change - X = size of index shift
       ## Heavy Weapons
@@ -43,8 +48,8 @@ extended:
       SMT_DEREVENANT_AMMO: int          # Instantly kills Necrons that are or will be knocked unconcious - value = % bonus damage added against 2x2 Necrons that can't be stunned
       SMT_AMMO_HP_PREDMG: int           # % of power directly added to health damage ignoring armor
       SMT_SHIELD_DAMAGE_AMP: int        # % power increase based on targets shield
-      ITEM_IGNORE_ALLIES: int           # deal no damage to units belonging to users faction
-      ITEM_IGNORE_IMPERIUM: int         # deal no damage to allied units with armor tag `UNIT_TYPE_IMPERIUM: 1`
+      ITEM_DMGMOD_ALLIES: int              # deal reduced damage to units belonging to users faction X = % dealt, -1 = no damage
+      ITEM_DMGMOD_IMPERIUM: int            # deal reduced damage to allied units with armor tag `UNIT_TYPE_IMPERIUM: 1` X = % dealt, -1 = no damage
       SMT_GRAV_WEAPON: int              # weapon scales power with weight (armor+hp+size) and scales stun inversely with strength
       SMT_RENDING_WEAPON: int           # Negate effect of shred resistance by %
       ## Plasma Heat
@@ -68,7 +73,7 @@ extended:
       ARMOR_REGENERATE_HEALTH_FLAT: int         # special hp regen from armor - Flat values
       ARMOR_REGENERATE_HEALTH_PERCENT: int      # special hp regen from armor - Percentage of (Max HP - Lowest HP)
       ARMOR_REGENERATE_HEALTH_SOFTCAP: int      # % of total missing HP unit can regenerate from special regen
-      ARMOR_REGENERATE_HEALTH_BURN_TOGGLE: int  # does this unit regenerate when on fire? 0 - ignore, 1 - no regen on when fire, 2 - only regen when on fire
+      ARMOR_REGENERATE_HEALTH_BURN_TOGGLE: int  # does this unit regenerate when on fire? 0 = ignore, 1 = no regen on when fire, -1 = cancel out soldier penalty
       ARMOR_REGENERATE_DURABILITY: int          # Unit armor sides are restored by X each turn
       ## Heavy Weapons
       SMT_ARMOR_HEAVY_WEAPON_USER: int # counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 2/3, 3 = 2/4, 4 = 2/5 etc
@@ -100,8 +105,9 @@ extended:
       UNIT_REGENERATE_HEALTH_FLAT: int          # hp regen from soldier type - Flat values
       UNIT_REGENERATE_HEALTH_PERCENT: int       # hp regen from soldier type - Percentage of (Max HP - Lowest HP)
       UNIT_REGENERATE_HEALTH_SOFTCAP: int       # % of total missing HP unit can regenerate from special regen
+      UNIT_REGENERATE_HEALTH_BURN_TOGGLE: int   # does this unit regenerate when on fire? 0 = ignore, 1 = no regen on when fire, -1 = cancel out armor penalty
       SMT_UNIT_REGEN_WOUND: int #passive wound regen from soldier type
-      SMT_UNIT_REGEN_PENALTY_REDUCTION: int #reduces the wound recovery time penalty for regenerating health
+      #SMT_UNIT_REGEN_PENALTY_REDUCTION: int #reduces the wound recovery time penalty for regenerating health
       ## Heroic Save
       SMT_HEROICSAVE_CHANCE: int #Modifier to chance to resist fatal damage
       SMT_HEROICSAVE_HP: int #% of currenthp left after heroic save triggers
@@ -127,7 +133,8 @@ extended:
       SMT_VIGILIANCE_OVERFLOW: int      # overflow TUs from >100% vigilance buff that gets added as the unit reacts
       SMT_HASTE_ENDTURN: int            # store buff duration
       SMT_HASTE_SPEED_BONUS: int        # stores movement modifier from haste
-      SMT_HASTE_REACTION_BONUS: int     # stores units reaction bonus
+      SMT_REFLEX_ENDTURN: int           # store buff duration
+      SMT_REFLEX_REACTION_BONUS: int    # stores units reaction bonus
       SMT_VULN_ENDTURN: int             # store debuff duration
       SMT_VULN_INTENSITY: int           # store debuff strength
       SMT_SIGNUM_ORIGINAL_FA: int       # store original firing accuracy

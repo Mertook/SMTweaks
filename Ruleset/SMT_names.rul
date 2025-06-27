@@ -15,6 +15,8 @@ extraStrings:
       STR_ORBITAL_LANCE_TARGETER: Orbital Lance Designator
       STR_BOMBARD_CANNON_TARGETER: Cannon Bombardment
       STR_BOMBARD_ROCKET_TARGETER: Rocket Bombardment
+      STR_BOMBARD_ROCKETSMALL_TARGETER: Rocket Bombardment
+      STR_BOMBARD_REPULSOR_TARGETER: Repulsor Bombardment
       STR_DUMMY_TARGETER: Blank Target Designator
       STR_CAS_BOLTER_TARGETER: CAS-B Target Designator
       STR_CAS_ROCKET_TARGETER: CAS-R Target Designator
@@ -23,6 +25,8 @@ extraStrings:
       STR_WHIRLWIND_TARGETER: Whirlwind Bombard Designator
       STR_MARINE_CALLIN_TARGETER: Reinforcement Designator
       STR_SCION_CALLIN_TARGETER: Reinforcement Designator
+      STR_PSI_UNIT: Psi Projection
+      STR_PSI_SENTRYWARD: Farsight Projection
       ### MISC
       STR_TERMINATOR_CROSS_DESCRIPTION: Space Marines awarded with the Crux Terminatus are recognized as elites, allowing promotion to the highest ranks and access to rare relics including Terminator Armor. {NEWLINE}{NEWLINE} For this honor the Space Marine needs to have achieved 30 enemy kills, 15 successful missions and serve for three months.
       STR_HONOR_MEDAL: "Mark of Honor"
@@ -51,6 +55,7 @@ extraStrings:
       STR_SIGNUM_ENEMY: Mark Target
       STR_TOGGLE_STEALTH: "Toggle Stealth Camo"
       STR_DAMAGE_12: "GRAVITON"
+      STR_DAMAGE_13: "WARP"
       STR_STRIKE_ORBITAL: Orbital Barrage
       STR_BOMBARD_SET_POSITION: Set Firing Position
       STR_CALL_ORBITAL: Orbital Barrage
@@ -67,14 +72,15 @@ extraStrings:
       STR_CAT_ASSASSIN: Assassin
       STR_CAT_ARMOR: Armor
       STR_NECRON_REINFORCEMENTS_SHIP_DESC_START: "The Monolith is calling forth reinforcements, teleporting Necrons directly onto the battlefield. Hold the line against the Necron onslaught!"
-      STR_NECRON_REINFORCEMENTS_SHIP_DESC_END: "The flow of reserves has slowed, the Necrons appear unwilling the commit more to this assault. Defeat these final enemy forces and drive them back."
+      STR_NECRON_REINFORCEMENTS_SHIP_DESC_END: "The flow of reserves has slowed, the Necrons appear unwilling the commit more to this assault. Defeat these final enemy forces and drive them back!"
       STR_NECRON_REINFORCEMENTS_TOMB_DESC_LIGHT: "Force Commander, the Necron Tomb is reacting to our presence and Necrons are being roused from stasis. While their numbers are low for now, we must make haste before they increase in intensity."
       STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM: "Force Commander, the Tomb is awakening and more warriors are arriving to impede our progress. We need to be quick in reaching our objective or prepare to evacuate lest our forces be overwhelmed!"
       STR_NECRON_REINFORCEMENTS_TOMB_DESC_HEAVY: "Force Commander, the Necron Tomb is on high alert and summoning all of its warriors to bear on us. We must destroy the heart of the base immediately or risk being overwhelemd!"
+      STR_BONUS_INQ_ROSARIUS: "Rosarius"
       ### ARMOR
       STR_SCOUT_SMT_UC: "Scout Armor"
-      STR_SCOUT_SGT_UC: "Scout Sergeant Armor"
       STR_SCOUT_SGT: "Scout Sergeant Armor"
+      STR_SCOUT_SGT_UC: "Scout Sergeant Armor"
       STR_SCOUTH: "Elite Scout Armor"
       STR_SCOUTH_UC: "Elite Scout Armor"
       STR_SCOUTHW_UC: "Elite Scout Armor Snow"
@@ -102,13 +108,20 @@ extraStrings:
       STR_CAPTAIN_HONOR: "MK7 Artificer Armor"
       STR_CAPTAIN_SCOUT: "Elite Scout Armor"
       STR_CAPTAIN_TERM: "Terminator Captain"
-      DREAD_ARMOR2_UC: "Mortis Dreadnought Armor"
-      DREAD_ARMOR3_UC: "Hellfire Dreadnought Armor"
-      DREAD_ARMOR4_UC: "Castraferrum Dreadnought Armor"
+      STR_DREAD2_ARMOR: "Dreadnought Plasma Cannon"
+      DREAD_ARMOR2_UC: "Dreadnought (Plasma)"
+      STR_DREAD3_ARMOR: "Dreadnought Lascannon/Missiles"
+      DREAD_ARMOR3_UC: "Dreadnought (Lascannon/Missile)"
+      STR_DREAD4_ARMOR: "Dreadnought Assault Cannon"
+      DREAD_ARMOR4_UC: "Dreadnought (Assault Cannon)"
       STR_DUMMY_TARGETER_UC: Target Designator
       STR_BOMBARD_ORBITAL_ARMOR: Target Designator
       STR_BOMBARD_PLANE_ARMOR: Target Designator
       STR_BOMBARD_NUKE_ARMOR: Target Designator
+      STR_BOMBARD_ROCKET_ARMOR: Target Designator
+      STR_BOMBARD_SOLDIER_ARMOR: Target Designator
+      STR_BOMBARD_TANK_ARMOR: Target Designator
+      STR_SENTRYWARD_ARMOR: Farsight Projection
       STR_MKX_INC_ARMOR: MKX Omnis Armor
       STR_MKX_HELIX_ARMOR: MKX Helix Adept Armor
       STR_MKX_TAC_MELT_LV1_UC: MKX Tacticus (Melta)
@@ -322,6 +335,7 @@ extraStrings:
       STR_SCIONDROP_AMMO: Scion Fireteam Requisition
       STR_BOMBARD_BATTLECANNON: Battlecannon
       STR_BOMBARD_ROCKET: Bombard Rocket
+      STR_BOMBARD_LASCANNON: Laser Destroyer
       STR_PISTOLB_AI: Boltpistol Ultra Pattern
       STR_RIFLEB_AI: Bolter Ultra Pattern
       STR_SYNAPTIC_DISINTEGRATOR_AI: Synaptic Disintegrator
@@ -425,6 +439,57 @@ extraStrings:
       STR_TECH_UTILITY_SKILL: Utility Item
       STR_TECH_SUPPORT_SKILL: Support Item
       STR_TECH_SKULL_SKILL: Deploy Servo Skull
+      ### Psykers
+      STR_PSYKER_T1_UNLOCK: (Tier 1 Psyker Abilities)
+      STR_PSYKER_T2_UNLOCK: (Tier 2 Psyker Abilities)
+      STR_PSYKER_T3_UNLOCK: (Tier 3 Psyker Abilities)
+      STR_PSYKER_T4_UNLOCK: (Tier 4 Psyker Abilities)
+      STR_PSYKER_T5_UNLOCK: (Tier 5 Psyker Abilities)
+      STR_PSYKER_T6_UNLOCK: (Tier 6 Psyker Abilities)
+      STR_PSIUNLOCK_SHROUD: T1 Psi - Shroud
+      STR_PSIBONUS_SHROUD: T1 Psi - Shroud
+      STR_PSIUNLOCK_FLARE: T1 Psi - Flare
+      STR_PSIBONUS_FLARE: T1 Psi - Flare
+      STR_PSIUNLOCK_TELEPATHY: T1 Psi - Telepathy
+      STR_PSIBONUS_TELEPATHY: T1 Psi - Telepathy
+      STR_PSIUNLOCK_FLASH: T2 Psi - Thunderclap
+      STR_PSIBONUS_FLASH: T2 Psi - Thunderclap
+      STR_PSIUNLOCK_REFLEXES: T2 Psi - Lightning Reflexes
+      STR_PSIBONUS_REFLEXES: T2 Psi - Lightning Reflexes
+      STR_PSIUNLOCK_VIGILANCE: T2 Psi - Vigilance
+      STR_PSIBONUS_VIGILANCE: T2 Psi - Vigilance
+      STR_PSIUNLOCK_WALLBREAKER: T2 Psi - Rend Landscape
+      STR_PSIBONUS_WALLBREAKER: T2 Psi - Rend Landscape
+      STR_PSIUNLOCK_SENTRYWARD: T3 Psi - Farsight
+      STR_PSIBONUS_SENTRYWARD: T3 Psi - Farsight
+      STR_PSIUNLOCK_SMITE: T3 Psi - Smite
+      STR_PSIBONUS_SMITE: T3 Psi - Smite
+      STR_PSIUNLOCK_MENDWOUNDS: T3 Psi - Mend Wounds
+      STR_PSIBONUS_MENDWOUNDS: T3 Psi - Mend Wounds
+      STR_PSIUNLOCK_UNDYING: T3 Psi - Enduring Spirit
+      STR_PSIBONUS_UNDYING: T3 Psi - Enduring Spirit
+      STR_PSIUNLOCK_PASSIVESHIELD: T4 Psi - Personal Shield
+      STR_PSIBONUS_PASSIVESHIELD: T4 Psi - Personal Shield
+      STR_PSIUNLOCK_RECOVERY: T4 Psi - Rapid Recovery
+      STR_PSIBONUS_RECOVERY: T4 Psi - Rapid Recovery
+      STR_PSIUNLOCK_TRUESIGHT: T4 Psi - Warp Vision
+      STR_PSIBONUS_TRUESIGHT: T4 Psi - Warp Vision
+      STR_PSIUNLOCK_SHIELD: T5 Psi - Project Shield
+      STR_PSIBONUS_SHIELD: T5 Psi - Project Shield
+      STR_PSIUNLOCK_HOLODUMMY: T5 Psi - Hallucination
+      STR_PSIBONUS_HOLODUMMY: T5 Psi - Hallucination
+      STR_PSIUNLOCK_LOCKDOWN: T5 Psi - Lockdown
+      STR_PSIBONUS_LOCKDOWN: T5 Psi - Lockdown
+      STR_PSIUNLOCK_TORMENT: T5 Psi - Torment
+      STR_PSIBONUS_TORMENT: T5 Psi - Torment
+      STR_PSIUNLOCK_CLOAK: T6 Psi - Shadowcloak
+      STR_PSIBONUS_CLOAK: T6 Psi - Shadowcloak
+      STR_PSIUNLOCK_HASTE: T6 Psi - Accelerate
+      STR_PSIBONUS_HASTE: T6 Psi - Accelerate
+      STR_PSIUNLOCK_SOULSTORM: T6 Psi - Soul Storm
+      STR_PSIBONUS_SOULSTORM: T6 Psi - Soul Storm
+      STR_PSIUNLOCK_HOLOCAUST: T6 Psi - Holocaust
+      STR_PSIBONUS_HOLOCAUST: T6 Psi - Holocaust
       ### TRANSFORMATIONS
       STR_PROMOTE_TERMINATOR: Promote Vet Marine
       STR_PROMOTE_CAPTAIN: Promote to Captain
@@ -483,6 +548,7 @@ extraStrings:
       STR_APOTHECARY_PREREQ: (Apothecary Unlock)
       STR_TSARGENT: Terminator Cyclone Launcher
       STR_IMPERIAL_CHURCH: Ecclesiarchy Teachings
+      STR_ABHUMAN_GUARD_RECRUITS: Abhuman Regiments
       STR_INFERNOPISTOL_REQ: Inferno Pistol Prerequisite
       STR_40MM_AMMO: (40mm Grenade Ammo)
       STR_BOLTPISTOL_REQ: (Boltpistols Unlocked)
@@ -1229,27 +1295,80 @@ extraStrings:
       ## Spells
       STR_SMT_LIBRARIAN_SPELLS: Librarian Abilities
       STR_SMT_LIBRARIAN_SPELLS_CODEX: "{NEWLINE} Librarians have 5 different psyker abilities.{NEWLINE}{NEWLINE}{ALT}>Smite{ALT} - Deals armor-ignoring damage to an enemy{NEWLINE}{ALT}>Lockdown{ALT} - Drains enemy time units, paralysing them{NEWLINE}{ALT}>Shroud{ALT} - Creates a blast of smoke to obscure vision{NEWLINE}{ALT}>Shield{ALT} - Grants a temporary energy shield to an ally{NEWLINE}{ALT}>Accelerate{ALT} - Reduces reaction fire and at high levels increases movespeed{NEWLINE}{NEWLINE} All abilities scale with PsiStr only"
-      STR_LIB_SMITE_SKILL: Smite
-      STR_SMITE_TOKEN: Smite
-      STR_LIB_SMITE_CODEX: "{NEWLINE} Attacking the enemy directly with warp lightning, Smite deals armor-ignoring damage to the target if successful.{NEWLINE} Smite can target any enemy visible to the Librarian.{NEWLINE}{NEWLINE} Success chance and Damage scales with PsiStrength"
-      STR_LIB_SMOKE_SKILL: Shroud
-      STR_LIB_SMOKE_TOME: Shroud
-      STR_LIB_SHROUD_CODEX: "{NEWLINE} Shroud blankets an area in fog, reducing visibility and extinguishing fires.{NEWLINE} Shroud can be freely targeted, but accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Accuracy and Area of Effect scale with PsiStrength"
-      STR_LIB_SHIELD_SKILL: Project Shield
-      STR_LIB_SHIELD_TOME: Project Shield
-      STR_LIB_SHIELD_CODEX: "{NEWLINE} Protecting the unit with a psychic barrier, Project Shield grants a friendly unit a one turn energy shield and extinguishes fire.{NEWLINE} Project Shield has a maximum range of 10 and does not require line of sight.{NEWLINE}{NEWLINE} Shield health scales with PsiStrength"
-      STR_LIB_LOCKDOWN_SKILL: Lockdown
-      STR_LIB_LOCKDOWN_TOME: Lockdown
-      STR_LIB_LOCKDOWN_CODEX: "{NEWLINE} Attempting to ensnare the target, Lockdown drains Time Units from the target, preventing reactions and even potentially removing their ability to act next turn.{NEWLINE} Lockdown has a maximum range of 15 and requires line of sight.{NEWLINE}{NEWLINE} Success chance and TUs drained scales with PsiStrength"
-      STR_LIB_HASTE_SKILL: Accelerate
-      STR_LIB_HASTE_TOME: Accelerate
-      STR_LIB_HASTE_CODEX: "{NEWLINE} Enhances a friendly unit with unnatural speed, making it harder for enemies to react to them.{NEWLINE} Accelerate has a maximum range of 10 and requires line of sight.{NEWLINE}{NEWLINE} Reaction bonus scales with PsiStrength{NEWLINE} With 100+ PsiStrength Accelerate also reduces the TU cost of moving"
-      STR_LIB_OVERWATCH_SKILL: Vigilance
-      INV_LIB_OVERWATCH_TOKEN: Vigilance
-      STR_LIB_OVERWATCH_CODEX: "{NEWLINE} Heightens the awareness of a friendly unit, restoring their TUs at the start of the enemy turn to allow reaction fire.{NEWLINE} Vigilance has a maximum range of 20 and does not requires line of sight.{NEWLINE}{NEWLINE} Restored TUs scale with PsiStrength"
-      STR_LIB_VULN_SKILL: Torment
-      INV_LIB_VULN_TOKEN: Torment
-      STR_LIB_VULN_CODEX: "{NEWLINE} Tears at the minds of enemies, dealing minor damage in an area and inflicting vulnerability for two turns. Vulnerability increases the damage units take from attacks.{NEWLINE} Torment can be freely targeted and does not hit allies, but accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Damage, Accuracy and Area of Effect scale with PsiStrength"
+      #T1
+      STR_PSISKILL_FLARE: Flare
+      STR_PSITOKEN_FLARE: Flare
+      STR_PSITOKEN_FLARE_CODEX: "{NEWLINE} Creates a briliant burst of light, igniting the immediate area and providing strong illumination for several turns.{NEWLINE} Flare uses arced targeting, and accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Accuracy and Area of Effect scale with PsiStrength"
+      STR_PSISKILL_TELEPATHY: Telepathy
+      STR_PSITOKEN_TELEPATHY: Telepathy
+      STR_PSITOKEN_TELEPATHY_CODEX: "{NEWLINE} Telepathy allows you to read the status of enemy units, revealing their stats.{NEWLINE} Telepathy has a maximum range of 40 and does not require line of sight.{NEWLINE}{NEWLINE} Telepathy also provides the Psyker with a small passive bonus to night and smoke vision."
+      STR_PSISKILL_SHROUD: Shroud
+      STR_PSITOKEN_SHROUD: Shroud
+      STR_PSITOKEN_SHROUD_CODEX: "{NEWLINE} Shroud blankets an area in fog, reducing visibility and extinguishing fires.{NEWLINE} Shroud can be freely targeted, but accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Accuracy and Area of Effect scale with PsiStrength"
+      #T2
+      STR_PSISKILL_VIGILANCE: Vigilance
+      STR_PSITOKEN_VIGILANCE: Vigilance
+      STR_PSITOKEN_VIGILANCE_CODEX: "{NEWLINE} Heightens the awareness of a friendly unit, restoring their TUs at the start of the enemy turn to allow reaction fire.{NEWLINE} Vigilance has a maximum range of 20 and does not requires line of sight.{NEWLINE}{NEWLINE} Restored TUs scale with PsiStrength"
+      STR_PSISKILL_FLASH: Thunderclap
+      STR_PSITOKEN_FLASH: Thunderclap
+      STR_PSITOKEN_FLASH_CODEX: "{NEWLINE} Blasts a target and the surrounding area with light and noise, attempting to disorientate them. Thunderclap does minor stun damage and drains TUs in an area around the target.{NEWLINE} Thunderclap has a maximum range of 20 and requires line of sight.{NEWLINE}{NEWLINE} Stun, TU drain and Area of Effect scale with PsiStrength"
+      STR_PSISKILL_WALLBREAKER: Rend Landscape
+      STR_PSITOKEN_WALLBREAKER: Rend Landscape
+      STR_PSITOKEN_WALLBREAKER_CODEX: "{NEWLINE} Tears a hole through the battlefield by reshaping earth and bending plasteel. This ability does minor damage to enemies but effectively destroys terrain.{NEWLINE} Rend Landscape has a maximum range of 15 and requires line of sight.{NEWLINE}{NEWLINE} Power and Area of Effect scales with PsiStrength"
+      STR_PSISKILL_REFLEXES: Lightning Reflexes
+      STR_PSITOKEN_REFLEXES: Lightning Reflexes
+      STR_PSITOKEN_REFLEXES_CODEX: "{NEWLINE} Enhances a friendly unit with unnatural reflexes, making it harder for enemies to react to them.{NEWLINE} Lightning Reflexes has a maximum range of 10 and does not require line of sight.{NEWLINE}{NEWLINE} Reaction bonus scales with PsiStrength"
+      #T3
+      STR_PSISKILL_SMITE: Smite
+      STR_PSITOKEN_SMITE: Smite
+      STR_PSITOKEN_SMITE_CODEX: "{NEWLINE} Smite attacks the targets mind directly, dealing armor-ignoring damage if successful.{NEWLINE} Smite can target any enemy visible to the Psyker.{NEWLINE}{NEWLINE} Success chance and Damage scales with PsiStrength"
+      STR_PSISKILL_UNDYING: Enduring Spirit
+      STR_PSITOKEN_UNDYING: Enduring Spirit
+      STR_PSITOKEN_UNDYING_CODEX: "{NEWLINE} Steels the spirit of an ally, allowing them to fight through horrific injuries. If the target takes fatal damage while under its effects they will become invulnerable for a turn before falling.{NEWLINE} Enduring Spirit has a maximum range of 5 {NEWLINE}{NEWLINE}"
+      STR_PSISKILL_MENDWOUNDS: Mend Flesh
+      STR_PSISKILL_MENDWOUNDS_FREE: Mend Flesh
+      STR_PSITOKEN_MENDWOUNDS: Mend Flesh
+      STR_PSITOKEN_MENDWOUNDS_CODEX: "{NEWLINE} Binds and knits injured flesh back together, restoring some lost HP and healing Fatal Wounds.{NEWLINE} Mend Flesh has a maximum range of 10 and requires line of sight.{NEWLINE}{NEWLINE} Health restored and number of fatal wounds healed scales with PsiStrength"
+      STR_PSISKILL_SENTRYWARD: Farsight
+      STR_PSISKILL_SENTRYWARD_FREE: Farsight
+      STR_PSITOKEN_SENTRYWARD: Farsight
+      STR_PSITOKEN_SENTRYWARD_CODEX: "{NEWLINE} Farsight projects the Psykers conciousness, allowing them to detect enemies hiding on the battlefield.{NEWLINE} Farsight uses arced targeting, and accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Accuracy scales with PsiStrength"
+      #T4
+      STR_PSIBONUS_PASSIVESHIELD_CODEX: "{NEWLINE} The Psyker projects a powerful psychic shield, passively protecting them from incoming attacks.{NEWLINE}{NEWLINE} The shield has a strength of {ALT}100{ALT} and stacks with any other shields from bonuses or armor."
+      STR_PSIBONUS_RECOVERY_CODEX: "{NEWLINE} The Psyker has unusual vigor, greatly increasing their natural recovery and allowing them to use psyker abilities more frequently.{NEWLINE}{NEWLINE} An additional {ALT}30%{ALT} Stamina, {ALT}15{ALT} Morale and {ALT}5{ALT} points of Stun are recovered each turn."
+      STR_PSIBONUS_TRUESIGHT_CODEX: "{NEWLINE} Augmenting their vision by peering into the warp, the Psyker is able to see enemies obscured by darkness, smoke and even cover.{NEWLINE}{NEWLINE} The Psyker gains perfect night vision, is {ALT}30%{ALT} better at seeing through smoke, and has {ALT}5{ALT} tiles of PsiVision, providing sight of enemies through walls and other obstacles."
+      #T5
+      STR_PSISKILL_SHIELD: Project Shield
+      STR_PSISKILL_SHIELD_FREE: Project Shield
+      STR_PSITOKEN_SHIELD: Project Shield
+      STR_PSITOKEN_SHIELD_CODEX: "{NEWLINE} Protecting the unit with a psychic barrier, Project Shield grants a friendly unit a one turn energy shield and extinguishes fire.{NEWLINE} Project Shield has a maximum range of 10 and does not require line of sight.{NEWLINE}{NEWLINE} Shield health scales with PsiStrength"
+      STR_PSISKILL_LOCKDOWN: Lockdown
+      STR_PSISKILL_LOCKDOWN_FREE: Lockdown
+      STR_PSITOKEN_LOCKDOWN: Lockdown
+      STR_PSITOKEN_LOCKDOWN_CODEX: "{NEWLINE} Attempting to ensnare the target, Lockdown drains Time Units from the target, preventing reactions and even potentially removing their ability to act next turn.{NEWLINE} Lockdown has a maximum range of 15 and requires line of sight.{NEWLINE}{NEWLINE} Success chance and TUs drained scales with PsiStrength"
+      STR_PSISKILL_TORMENT: Torment
+      STR_PSISKILL_TORMENT_FREE: Torment
+      STR_PSITOKEN_TORMENT: Torment
+      STR_PSITOKEN_TORMENT_CODEX: "{NEWLINE} Tears at the minds of enemies, dealing minor damage in an area and inflicting vulnerability for two turns. Vulnerability increases the damage units take from attacks.{NEWLINE} Torment requires line of sight and has no range limit, but accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Damage, Accuracy and Area of Effect scale with PsiStrength"
+      STR_PSISKILL_HOLODUMMY: Hallucination
+      STR_PSISKILL_HOLODUMMY_FREE: Hallucination
+      STR_PSITOKEN_HOLODUMMY: Hallucination
+      STR_PSITOKEN_HOLODUMMY_CODEX: "{NEWLINE} Muddles the minds of enemies, creating a fake target to draw attacks.{NEWLINE} Hallucination uses arced targeting, and accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Accuracy scales with PsiStrength"
+      #T6
+      STR_PSISKILL_HASTE: Accelerate
+      STR_PSISKILL_HASTE_FREE: Accelerate
+      STR_PSITOKEN_HASTE: Accelerate
+      STR_PSITOKEN_HASTE_CODEX: "{NEWLINE} Invigorates the target with unnatural speed, reducing the TUs needed to move.{NEWLINE} Accelerate has a maximum range of 5 and does not require line of sight."
+      STR_PSISKILL_CLOAK: Shadowcloak
+      STR_PSITOKEN_CLOAK: Shadowcloak
+      STR_PSITOKEN_CLOAK_CODEX: "{NEWLINE} Obscures a friendly unit from the minds of enemies, rendering them invisible for the turn. Cloaked units can only be seen by enemies within 5 tiles. {NEWLINE} Shadowcloak has a maximum range of 5 and does not require line of sight."
+      STR_PSISKILL_SOULSTORM: Soul Storm
+      STR_PSISKILL_SOULSTORM_FREE: Soul Storm
+      STR_PSITOKEN_SOULSTORM: Soul Storm
+      STR_PSITOKEN_SOULSTORM_CODEX: "{NEWLINE} Engulfs the area in warp energy, tearing apart anything caught in the storm. {NEWLINE} Soul Storm can target any enemy visible to the Psyker.{NEWLINE}{NEWLINE} Damage and Area of Effect scale with PsiStrength"
+      STR_PSISKILL_HOLOCAUST: Holocaust
+      STR_PSITOKEN_HOLOCAUST: Holocaust
+      STR_PSITOKEN_HOLOCAUST_CODEX: "{NEWLINE} Concentrates the psykers power into white hot flames that melt through armor and banish demons. {NEWLINE} Holocaust has a maximum range of 15 and requires line of sight.{NEWLINE}{NEWLINE} Damage and Accuracy scale with PsiStrength"
       ## Weapons
       STR_PLASMA_AMMO: "Plasma Flasks"
       STR_PLASMA_AMMO_UFOPEDIA: "{NEWLINE} Plasma Flask damage details: {NEWLINE} Ignores armor: 40% {NEWLINE} Health damage: 100% {NEWLINE} Armor damage before piercing: 30%"

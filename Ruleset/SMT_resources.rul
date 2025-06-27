@@ -328,7 +328,7 @@ extraSprites:
       0: Resources/UNITS/unit_preview.png
 
 ###Hit Animations
-  - type: SMOKE.PCK  # small
+  - type: SMOKE.PCK  # bullet impact - 10 sprites
     width: 320
     height: 40
     subX: 32
@@ -337,7 +337,7 @@ extraSprites:
       100: Resources/SPRITES/blankEx.png
       110: Resources/SPRITES/lock.png
 
-  - type: X1.PCK  # small
+  - type: X1.PCK  # small explosion 
     width: 320
     height: 40
     subX: 32
@@ -345,14 +345,23 @@ extraSprites:
     files:
       100: Resources/SPRITES/blankEx.png
 
-  - type: X1.PCK # large
-    width: 512
+  - type: X1.PCK    # large explosion - 8 sprites
+    width: 1024
+    height: 64
+    subX: 128
+    subY: 64
+    files:
+      600: Resources/SPRITES/gravchute_blue.png
+      608: Resources/SPRITES/XLightning.png
+      616: Resources/SPRITES/XYellowBlast.png
+
+  - type: X1.PCK    # large explosion - 16 sprites
+    width: 1024
     height: 128
     subX: 128
     subY: 64
     files:
-      800: Resources/SPRITES/gravchute_blue.png
-
+      800: Resources/SPRITES/PurpleXOM.png
 
 ###Ability Icons
   - type: SPICONS.DAT
@@ -1636,6 +1645,22 @@ extraSprites:
     height: 40
     files:
       0: Resources/UNITS/BOMBARD/BombardSoldier.png
+  - type: BOMBARDTANK.PCK
+    subX: 32
+    subY: 40
+    width: 352
+    height: 40
+    files:
+      0: Resources/UNITS/BOMBARD/BombardTank.png
+
+### Psi Ability
+  - type: SENTRYWARD.PCK
+    subX: 32
+    subY: 40
+    width: 352
+    height: 40
+    files:
+      0: Resources/UNITS/LIB/WARD.png
 
 ###Guardsmen
 

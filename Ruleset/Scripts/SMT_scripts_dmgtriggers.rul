@@ -1,127 +1,8 @@
-### Collects several "damageUnit" scripts together into two blocks (buff effects and death triggers) to reduce script bloat which exceeds the global script limit
 extended:
   tagsFile: Ruleset/Scripts/SMT_tags.rul
 
   scripts:
     damageUnit:
-      - new: SMTS_buff_triggers
-        offset: 5
-        code: |
-          var int temp;
-          var int temp2;
-
-          begin; ### Vigilance
-            var ptr RuleArmor armorRule;
-            var int vigilBonus;
-            var int vigilOverflow;
-
-            damaging_item.getTag temp Tag.SMT_VIGILIANCE_BUFF;
-            if gt temp 0; # skip if doesn't boost overwatch
-              set vigilBonus orig_power;
-              muldiv vigilBonus temp 100;
-              unit.getRuleArmor armorRule;
-              armorRule.getTag temp Tag.ARMOR_OVERWATCH_TU_RESTORED; # add innate Overwatch from armor
-              add vigilBonus temp;
-              unit.getTag temp Tag.SMT_OVERWATCH_BONUS; # add any previous Overwatch buffs
-              add vigilBonus temp;
-              unit.getTag temp Tag.SMT_VIGILIANCE_OVERFLOW; # add any overflow from previous Overwatch buffs
-              add vigilBonus temp;
-              if gt vigilBonus 100; # if total >100, add overflow TUs
-                set temp vigilBonus;
-                sub temp 100;
-                unit.getTimeUnitsMax vigilOverflow;
-                muldiv vigilOverflow temp 100;
-                unit.setTag Tag.SMT_VIGILIANCE_OVERFLOW vigilOverflow;
-              end;
-              limit vigilBonus 0 100;
-              unit.setTag Tag.SMT_OVERWATCH_BONUS vigilBonus;
-              #debug_log "Vigilance Ping" vigilBonus temp;
-
-              battle_game.getTurn temp;
-              add temp 1; #define end turn for buff
-              unit.setTag Tag.SMT_VIGILIANCE_ENDTURN temp;
-            end;
-          end;
-
-          begin; ### Haste
-            var int currentSpeed;
-            var int originalSpeed;
-            var int currentReactBonus;
-            var int baseMove;
-
-            damaging_item.getTag temp Tag.SMT_ITEM_MOVESPEED_BOOST; # movespeed bonus
-            #debug_log "HasteBuff Ping " temp;
-            if gt temp 0;
-              # Power <50 = no change, >=50 = 75% cost, >=100 50% cost (move bonus capped by item tag)
-              set temp2 orig_power;
-              div temp2 50;
-              #debug_log "HasteBuff Power - " temp orig_power currPower temp2;
-              limit temp2 0 temp; # eliminate negatives and cap power
-              if gt temp2 0; # only continue if move cost would change
-                mul temp2 -25;
-                unit.getTag temp Tag.SMT_HASTE_SPEED_BONUS;
-                if lt temp2 temp; # if new value is faster
-                  unit.getTag baseMove Tag.UNIT_MOVESPEED_MODIFIERS;
-                  sub baseMove temp; # remove old modifier
-                  add baseMove temp2; # add new modifier
-                  unit.setTag Tag.UNIT_STEALTH_MOVEPENALTY temp2;
-                  unit.setTag Tag.UNIT_MOVESPEED_MODIFIERS baseMove; # apply movement modifier
-                  add baseMove 100;
-                  limit_lower temp2 25;
-                  unit.MoveCost.setBaseTimePercent baseMove;
-                end;
-              end;
-            end;
-
-            damaging_item.getTag temp2 Tag.SMT_ITEM_REACTION_MOD; # reactions bonus
-            if gt temp2 0;
-              unit.getTag currentReactBonus Tag.SMT_HASTE_REACTION_BONUS;
-              set temp orig_power;
-              add temp 25; # make low power more effective and high power slightly less effective
-              muldiv temp 3 2;
-              muldiv temp temp2 100; # scale result by item %
-              if gt temp currentReactBonus; # only change if new bonus would be an improvement
-                unit.setTag Tag.SMT_HASTE_REACTION_BONUS temp;
-              end;
-              #debug_log "HasteBuff Reaction Bonus N/O" temp currentReactBonus;
-            end;
-
-            battle_game.getTurn temp;
-            add temp 1; #define end turn for buff
-            unit.setTag Tag.SMT_HASTE_ENDTURN temp;
-          end;
-
-          begin; ## Vulnerability
-            var int debuffVal;
-            var int endTurn;
-
-            damaging_item.getTag temp Tag.SMT_VULN_DEBUFF_MOD;
-            damaging_item.getTag temp2 Tag.SMT_VULN_DEBUFF_FIXED;
-            if or gt temp 0 gt temp2 0; # skip if doesn't inflict vuln
-              set debuffVal currPower;
-              muldiv debuffVal temp 100;
-              add debuffVal temp2;
-              limit debuffVal 0 200; # cap at 300%
-              unit.getTag temp Tag.SMT_VULN_INTENSITY;
-              if gt debuffVal temp; #only change if it would be higher
-                unit.setTag Tag.SMT_VULN_INTENSITY debuffVal;
-                #debug_log "VulnDebuff Ping 1" debuffVal;
-                damaging_item.getTag debuffVal Tag.SMT_VULN_DURATION;
-                battle_game.getTurn temp;
-                add temp debuffVal; #define end turn for buff
-                unit.getTag endTurn Tag.SMT_VULN_ENDTURN;
-                if gt temp endTurn; # only set new endturn if incoming debuff duration is longer
-                  unit.setTag Tag.SMT_VULN_ENDTURN temp;
-                end;
-                #debug_log "VulnDebuff Ping 2" temp;
-              end;
-            end;
-          end;
-
-          ## END
-          return;
-
-
       - new: SMTS_death_triggers 
         offset: 95
         code: |
@@ -135,7 +16,7 @@ extended:
           unit.getHealth temp;
           if lt to_health temp; # only killing blows
             unit.getTag temp2 Tag.SMT_LOWEST_HEALTH;
-            debug_log "Death Trigger Fail" to_health temp temp2;
+            #debug_log "Death Trigger Fail" to_health temp temp2;
             sub temp to_health;
             if or lt temp temp2 eq temp2 0;
              unit.setTag Tag.SMT_LOWEST_HEALTH temp; # adjust lowest health reached for regen
@@ -195,3 +76,4 @@ extended:
           return;
 
       - delete: ROSIGMA_dU_turret_reload # integrated into above
+      - delete: ROSIGMA_dU_alpha_infiltration

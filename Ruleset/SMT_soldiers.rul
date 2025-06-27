@@ -86,7 +86,7 @@ soldiers:
       SOLDIER_WOUND_TIME_MULTIPLIER: 40
       UNIT_REGENERATE_HEALTH_FLAT: 3
       UNIT_REGENERATE_HEALTH_PERCENT: 3
-      UNIT_REGENERATE_HEALTH_SOFTCAP: 50
+      UNIT_REGENERATE_HEALTH_SOFTCAP: 66
       SMT_UNIT_REGEN_WOUND: 1
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # gain 1-2 devotion from battles
 
@@ -96,7 +96,7 @@ soldiers:
       SOLDIER_WOUND_TIME_MULTIPLIER: 35 # vet bonus
       UNIT_REGENERATE_HEALTH_FLAT: 3
       UNIT_REGENERATE_HEALTH_PERCENT: 5
-      UNIT_REGENERATE_HEALTH_SOFTCAP: 60
+      UNIT_REGENERATE_HEALTH_SOFTCAP: 66
       SMT_UNIT_REGEN_WOUND: 2
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # gain 1-2 devotion from battles
 
@@ -246,13 +246,6 @@ soldiers:
       - STR_TERMINATOR_RANK_3
       - STR_TERMINATOR_RANK_4
       - STR_COMMANDER # Champion
-    tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 35 # vet bonus
-      UNIT_REGENERATE_HEALTH_FLAT: 3
-      UNIT_REGENERATE_HEALTH_PERCENT: 5
-      UNIT_REGENERATE_HEALTH_SOFTCAP: 60
-      SMT_UNIT_REGEN_WOUND: 2
-      SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # gain 1-2 devotion from battles
 
   - type: STR_SOLDIER_CAPTAIN           # Company Captain
     refNode: *REF_MARINE_VET_TAGS
@@ -503,11 +496,21 @@ soldiers:
       - STR_LIBRARIAN_RANK_3
       - STR_LIBRARIAN_RANK_4
     skills:
-      - STR_LIB_SMITE_SKILL
-      - STR_LIB_SMOKE_SKILL
-      - STR_LIB_LOCKDOWN_SKILL
-      - STR_LIB_SHIELD_SKILL
-      - STR_LIB_HASTE_SKILL
+      - STR_PSISKILL_SHROUD
+      - STR_PSISKILL_FLARE
+      - STR_PSISKILL_TELEPATHY
+      - STR_PSISKILL_FLASH
+      - STR_PSISKILL_REFLEXES
+      - STR_PSISKILL_VIGILANCE
+      - STR_PSISKILL_WALLBREAKER
+      - STR_PSISKILL_SMITE
+      - STR_PSISKILL_MENDWOUNDS
+      - STR_PSISKILL_SENTRYWARD
+      - STR_PSISKILL_UNDYING
+      - STR_PSISKILL_HOLODUMMY
+      - STR_PSISKILL_LOCKDOWN
+      - STR_PSISKILL_SHIELD
+      - STR_PSISKILL_TORMENT
     skillIconSprite:  {mod: 40k, index: 11}
     tags:
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 2 # gain 1-2 psistrength from battles
@@ -589,11 +592,24 @@ soldiers:
       - STR_LIBRARIAN_RANK_3
       - STR_LIBRARIAN_RANK_4
     skills:
-      - STR_LIB_SMITE_SKILL
-      - STR_LIB_SMOKE_SKILL
-      - STR_LIB_LOCKDOWN_SKILL
-      - STR_LIB_SHIELD_SKILL
-      - STR_LIB_HASTE_SKILL
+      - STR_PSISKILL_SHROUD
+      - STR_PSISKILL_FLARE
+      - STR_PSISKILL_TELEPATHY
+      - STR_PSISKILL_FLASH
+      - STR_PSISKILL_REFLEXES
+      - STR_PSISKILL_VIGILANCE
+      - STR_PSISKILL_WALLBREAKER
+      - STR_PSISKILL_SMITE
+      - STR_PSISKILL_MENDWOUNDS
+      - STR_PSISKILL_SENTRYWARD
+      - STR_PSISKILL_UNDYING
+      - STR_PSISKILL_HOLODUMMY
+      - STR_PSISKILL_LOCKDOWN
+      - STR_PSISKILL_SHIELD
+      - STR_PSISKILL_TORMENT
+      - STR_PSISKILL_HASTE
+      - STR_PSISKILL_CLOAK
+      - STR_PSISKILL_SOULSTORM
     skillIconSprite:  {mod: 40k, index: 11}
     tags:
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 2 # gain 1-2 psistrength from battles
@@ -672,7 +688,7 @@ soldiers:
       - STR_APOTHECARY_RANK_0
       - STR_APOTHECARY_RANK_0
     tags:
-      UNIT_REGENERATE_HEALTH_SOFTCAP: 70 # apoth bonus
+      UNIT_REGENERATE_HEALTH_SOFTCAP: 75 # apoth bonus
 
   - type: STR_SOLDIER_APOTHVET          # Veteran Apothecary
     refNode: *REF_MARINE_VET_TAGS
@@ -828,8 +844,6 @@ soldiers:
       - STR_TECH_UTILITY_SKILL
       - STR_TECH_SUPPORT_SKILL
       - STR_TECH_SKULL_SKILL
-    #tags:
-      #SOLDIER_WOUND_TIME_MULTIPLIER: 40
 
   - type: STR_SOLDIER_TECHVET           # Veteran Techmarine
     refNode: *REF_MARINE_VET_TAGS
@@ -909,8 +923,6 @@ soldiers:
       - STR_TECH_UTILITY_SKILL
       - STR_TECH_SUPPORT_SKILL
       - STR_TECH_SKULL_SKILL
-    #tags:
-      #SOLDIER_WOUND_TIME_MULTIPLIER: 35 # vet bonus
 
   - type: STR_FALLEN                    # Dreadnought Pilot
     minStats: # boosted to Marine values
@@ -1346,7 +1358,7 @@ soldiers:
     rankStrings:
       - STR_PRIM_APOTH_RANK_0
     tags:
-      UNIT_REGENERATE_HEALTH_SOFTCAP: 70
+      UNIT_REGENERATE_HEALTH_SOFTCAP: 75
 
   - type: STR_PRIMARIS_APOTH_BIO        # Apothecary Biologis - Primaris lv4
     refNode: *REF_MARINE_VET_TAGS
@@ -1648,9 +1660,17 @@ soldiers:
       - STR_LIBRARIAN_RANK_0
       - STR_LIBRARIAN_RANK_0
     skills:
-      - STR_LIB_SMITE_SKILL
-      - STR_LIB_SMOKE_SKILL
-      - STR_LIB_LOCKDOWN_SKILL
+      - STR_PSISKILL_SHROUD
+      - STR_PSISKILL_FLARE
+      - STR_PSISKILL_TELEPATHY
+      - STR_PSISKILL_FLASH
+      - STR_PSISKILL_REFLEXES
+      - STR_PSISKILL_VIGILANCE
+      - STR_PSISKILL_WALLBREAKER
+      - STR_PSISKILL_SMITE
+      - STR_PSISKILL_MENDWOUNDS
+      - STR_PSISKILL_SENTRYWARD
+      - STR_PSISKILL_UNDYING
     skillIconSprite:  {mod: 40k, index: 11}
     tags:
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 2 # gain 1-2 psistrength from battles
@@ -1729,10 +1749,21 @@ soldiers:
       - STR_LIBRARIAN_RANK_1
       - STR_LIBRARIAN_RANK_1
     skills:
-      - STR_LIB_SMITE_SKILL
-      - STR_LIB_SMOKE_SKILL
-      - STR_LIB_LOCKDOWN_SKILL
-      - STR_LIB_OVERWATCH_SKILL
+      - STR_PSISKILL_SHROUD
+      - STR_PSISKILL_FLARE
+      - STR_PSISKILL_TELEPATHY
+      - STR_PSISKILL_FLASH
+      - STR_PSISKILL_REFLEXES
+      - STR_PSISKILL_VIGILANCE
+      - STR_PSISKILL_WALLBREAKER
+      - STR_PSISKILL_SMITE
+      - STR_PSISKILL_MENDWOUNDS
+      - STR_PSISKILL_SENTRYWARD
+      - STR_PSISKILL_UNDYING
+      - STR_PSISKILL_HOLODUMMY
+      - STR_PSISKILL_LOCKDOWN
+      - STR_PSISKILL_SHIELD
+      - STR_PSISKILL_TORMENT
     skillIconSprite:  {mod: 40k, index: 11}
     tags:
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 2 # gain 1-2 psistrength from battles
@@ -1811,11 +1842,24 @@ soldiers:
       - STR_LIBRARIAN_RANK_2
       - STR_LIBRARIAN_RANK_2
     skills:
-      - STR_LIB_SMITE_SKILL
-      - STR_LIB_SMOKE_SKILL
-      - STR_LIB_LOCKDOWN_SKILL
-      - STR_LIB_OVERWATCH_SKILL
-      - STR_LIB_VULN_SKILL
+      - STR_PSISKILL_SHROUD
+      - STR_PSISKILL_FLARE
+      - STR_PSISKILL_TELEPATHY
+      - STR_PSISKILL_FLASH
+      - STR_PSISKILL_REFLEXES
+      - STR_PSISKILL_VIGILANCE
+      - STR_PSISKILL_WALLBREAKER
+      - STR_PSISKILL_SMITE
+      - STR_PSISKILL_MENDWOUNDS
+      - STR_PSISKILL_SENTRYWARD
+      - STR_PSISKILL_UNDYING
+      - STR_PSISKILL_HOLODUMMY
+      - STR_PSISKILL_LOCKDOWN
+      - STR_PSISKILL_SHIELD
+      - STR_PSISKILL_TORMENT
+      - STR_PSISKILL_HASTE
+      - STR_PSISKILL_CLOAK
+      - STR_PSISKILL_SOULSTORM
     skillIconSprite: {mod: 40k, index: 11}
     tags:
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 2 # gain 1-2 psistrength from battles
@@ -1892,25 +1936,23 @@ soldiers:
     value: 30
 
 ### IG
-  - type: STR_OGRYN
+  - &REF_OGYRN_TAGS                     # Generic Ogyrn Tags
+    type: STR_OGRYN
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 50 # was 33
+      UNIT_REGENERATE_HEALTH_FLAT: 1
+      UNIT_REGENERATE_HEALTH_PERCENT: 2
+      UNIT_REGENERATE_HEALTH_SOFTCAP: 33
+      UNIT_REGENERATE_HEALTH_BURN_TOGGLE: 1
 
   - type: STR_OGRYN_BONEHEAD
-    tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 50 # was 33
-
+    refNode: *REF_OGYRN_TAGS
   - type: STR_CHAOSCULT_OGRYN
-    tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 50 # was 33
-
+    refNode: *REF_OGYRN_TAGS
   - type: STR_CHAOSCULT_OGRYNDEFENSE
-    tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 50 # was 33
-
+    refNode: *REF_OGYRN_TAGS
   - type: STR_CHAOSCULT_OGRYNBERSERK
-    tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 50 # was 33
+    refNode: *REF_OGYRN_TAGS
 
   - type: STR_GUARD_SQUAT
     tags:
@@ -1923,19 +1965,49 @@ soldiers:
   - type: STR_CATACHAN_FIGHTER
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 90
+      UNIT_REGENERATE_HEALTH_FLAT: 1
+      UNIT_REGENERATE_HEALTH_SOFTCAP: 33
+      UNIT_REGENERATE_HEALTH_BURN_TOGGLE: 1
 
   - type: STR_CATACHANVET_FIGHTER
     tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 90 # was 80
+      SOLDIER_WOUND_TIME_MULTIPLIER: 85 # was 80
+      UNIT_REGENERATE_HEALTH_FLAT: 1
+      UNIT_REGENERATE_HEALTH_PERCENT: 2
+      UNIT_REGENERATE_HEALTH_SOFTCAP: 33
+      UNIT_REGENERATE_HEALTH_BURN_TOGGLE: 1
 
   - type: STR_CATACHANTOP_FIGHTER
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 80 # was 70
+      UNIT_REGENERATE_HEALTH_FLAT: 2
+      UNIT_REGENERATE_HEALTH_PERCENT: 2
+      UNIT_REGENERATE_HEALTH_SOFTCAP: 33
+      UNIT_REGENERATE_HEALTH_BURN_TOGGLE: 1
 
+  - type: STR_PSYKER                    # Imperial Guard Psyker
+    minStats:
+      psiStrength: 25
+    maxStats:
+      psiStrength: 45
+    skills:
+      - STR_PSISKILL_SHROUD
+      - STR_PSISKILL_FLARE
+      - STR_PSISKILL_TELEPATHY
+      - STR_PSISKILL_FLASH
+      - STR_PSISKILL_REFLEXES
+      - STR_PSISKILL_VIGILANCE
+      - STR_PSISKILL_WALLBREAKER
+      - STR_PSISKILL_SMITE
+      - STR_PSISKILL_MENDWOUNDS
+      - STR_PSISKILL_SENTRYWARD
+      - STR_PSISKILL_UNDYING
+    tags:
+      SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 2 # gain 1-2 psistrength from battles
 
 
 units:
-  - update: STR_STORMTALON              # Stormtalon Cockpit
+  - update: STR_STORMTALON                  # Stormtalon Cockpit
     stats:
       tu: 20
       stamina: 10
@@ -1953,13 +2025,13 @@ units:
     builtInWeaponSets:
       - - STR_STORMTALON_ASSC
 
-  - &STR_BOMBARD_TARGETER_DEFAULT                   # Dummy targeter
+  - &STR_BOMBARD_TARGETER_DEFAULT           # Dummy targeter
     type: STR_DUMMY_TARGETER
     race: STR_BOMBARD_TARGETER
     stats:
       tu: 200
       stamina: 200
-      health: 50
+      health: 100
       bravery: 110
       reactions: 300
       firing: 100
@@ -1985,35 +2057,35 @@ units:
       - - STR_ORBITAL_STRIKE_WEAPON
     liveAlien: ""
 
-  - type: STR_ORBITAL_STRIKE_TARGETER               # Orbital Strike
+  - type: STR_ORBITAL_STRIKE_TARGETER       # Orbital Strike
     refNode: *STR_BOMBARD_TARGETER_DEFAULT
     livingWeapon: true
     armor: STR_BOMBARD_ORBITAL_ARMOR
     builtInWeaponSets:
       - - STR_ORBITAL_STRIKE_WEAPON
 
-  - type: STR_CAS_BOLTER_TARGETER                   # CAS-Bolter
+  - type: STR_CAS_BOLTER_TARGETER           # CAS-Bolter
     refNode: *STR_BOMBARD_TARGETER_DEFAULT
     livingWeapon: true
     armor: STR_BOMBARD_PLANE_ARMOR
     builtInWeaponSets:
       - - STR_CAS_STRIKE_BOLTER_WEAPON
 
-  - type: STR_CAS_ROCKET_TARGETER                   # CAS-Rockets
+  - type: STR_CAS_ROCKET_TARGETER           # CAS-Rockets
     refNode: *STR_BOMBARD_TARGETER_DEFAULT
     livingWeapon: true
     armor: STR_BOMBARD_PLANE_ARMOR
     builtInWeaponSets:
       - - STR_CAS_STRIKE_ROCKET_WEAPON
 
-  - type: STR_CAS_NAPALM_TARGETER                   # CAS-Napalm
+  - type: STR_CAS_NAPALM_TARGETER           # CAS-Napalm
     refNode: *STR_BOMBARD_TARGETER_DEFAULT
     livingWeapon: true
     armor: STR_BOMBARD_PLANE_ARMOR
     builtInWeaponSets:
       - - STR_CAS_STRIKE_NAPALM_WEAPON
 
-  - type: STR_STORMTALON_TARGETER                   # Stormtalon strike
+  - type: STR_STORMTALON_TARGETER           # Stormtalon strike
     refNode: *STR_BOMBARD_TARGETER_DEFAULT
     livingWeapon: true
     armor: STR_BOMBARD_PLANE_ARMOR
@@ -2021,92 +2093,84 @@ units:
       - - STR_STRM_STRIKE_ASSC
         - STR_STRM_STRIKE_ROCKET
 
-  - type: STR_WHIRLWIND_TARGETER                    # Whirlwind Bombard
+  - type: STR_WHIRLWIND_TARGETER            # Whirlwind Bombard
     refNode: *STR_BOMBARD_TARGETER_DEFAULT
     livingWeapon: true
     armor: STR_BOMBARD_ROCKET_ARMOR
     builtInWeaponSets:
       - - STR_WHIRL_STRIKE_ROCKET
 
-  - type: STR_ORBITAL_LANCE_TARGETER                # Orbital Lance
+  - type: STR_ORBITAL_LANCE_TARGETER        # Orbital Lance
     refNode: *STR_BOMBARD_TARGETER_DEFAULT
     livingWeapon: true
     armor: STR_BOMBARD_NUKE_ARMOR
     builtInWeaponSets:
       - - STR_ORBITAL_LANCE_WEAPON
 
-  - type: STR_BOMBARD_CANNON_TARGETER               # Craft Bombard Cannon
+  - type: STR_BOMBARD_CANNON_TARGETER       # Craft Bombard Cannon
     refNode: *STR_BOMBARD_TARGETER_DEFAULT
     livingWeapon: true
     armor: STR_BOMBARD_PLANE_ARMOR
     builtInWeaponSets:
       - - STR_BOMBARD_BATTLECANNON
 
-  - type: STR_BOMBARD_ROCKET_TARGETER               # Craft Bombard Rockets
+  - type: STR_BOMBARD_ROCKET_TARGETER       # Craft Bombard Rockets (x4)
     refNode: *STR_BOMBARD_TARGETER_DEFAULT
     livingWeapon: true
     armor: STR_BOMBARD_ROCKET_ARMOR
     builtInWeaponSets:
       - - STR_BOMBARD_ROCKET
 
-  - type: STR_MARINE_CALLIN_TARGETER                # Marines Summon
+  - type: STR_BOMBARD_ROCKETSMALL_TARGETER  # Craft Bombard Rockets (x2)
+    refNode: *STR_BOMBARD_TARGETER_DEFAULT
+    livingWeapon: true
+    armor: STR_BOMBARD_ROCKET_ARMOR
+    builtInWeaponSets:
+      - - STR_STRM_STRIKE_ROCKET
+
+  - type: STR_BOMBARD_REPULSOR_TARGETER     # Craft Bombard Lascannon + Assault Cannon
+    refNode: *STR_BOMBARD_TARGETER_DEFAULT
+    livingWeapon: true
+    armor: STR_BOMBARD_TANK_ARMOR
+    builtInWeaponSets:
+      - - STR_STRM_STRIKE_ASSC
+        - STR_BOMBARD_LASCANNON
+
+  - type: STR_MARINE_CALLIN_TARGETER        # Marines Summon
     refNode: *STR_BOMBARD_TARGETER_DEFAULT
     livingWeapon: true
     armor: STR_BOMBARD_SOLDIER_ARMOR
     builtInWeaponSets:
       - - STR_MARINE_DROP_WEAPON
 
-  - type: STR_SCION_CALLIN_TARGETER                 # Scions Summon
+  - type: STR_SCION_CALLIN_TARGETER         # Scions Summon
     refNode: *STR_BOMBARD_TARGETER_DEFAULT
     livingWeapon: true
     armor: STR_BOMBARD_SOLDIER_ARMOR
     builtInWeaponSets:
       - - STR_SCION_DROP_WEAPON
 
+  - type: STR_PSI_SENTRYWARD                # Farsight Projection
+    race: STR_PSI_UNIT
+    rank: STR_LIVE_SOLDIER
+    stats:
+      tu: 50
+      stamina: 1
+      health: 1
+      bravery: 110
+      reactions: 0
+      firing: 0
+      throwing: 0
+      strength: 0
+      psiStrength: 200
+      psiSkill: 0
+      melee: 0
+    armor: STR_SENTRYWARD_ARMOR
+    standHeight: 16
+    kneelHeight: 16
+    value: 0
+    deathSound: [{mod: 40k, index: 788}]
+    intelligence: 1
+    aggression: 1
+    energyRecovery: 40
 
-  # minStats: #Scout Marine Terminator Chaplain Librarian LibTerm
-      # tu: 60            #s40 m60 t75 c75 l60 lt75
-      # stamina: 70       #s50 m70 t80 c80 l70 lt80
-      # health: 60        #s40 m60 t75 c75 l60 lt75
-      # bravery: 40       #s30 m40 t60 c70 l40 lt60
-      # reactions: 55     #s35 m55 t65 c65 l50 lt60
-      # firing: 65        #s40 m60 t80 c80 l60 lt70
-      # throwing: 60      #s50 m60 t70 c70 l60 lt60
-      # strength: 45      #s30 m45 t60 c60 l45 lt55
-      # psiStrength: 0    #s0 m0 t0 c0 l0 lt0 - Causes issues if starting troop has unsual min/max psiStrength
-      # psiSkill: 0       #s0 m0 t0 c0 l0 lt0 - Same as above for min skill >0
-      # melee: 65         #s45 m65 t85 c85 l60 lt70
-  # maxStats:
-      # tu: 80            #s60 m80 t90 c90 l80 lt90
-      # stamina: 90       #s70 m90 t100 c100 l90 lt100
-      # health: 75        #s55 m75 t100 c100 l75 lt750
-      # bravery: 90       #s70 m90 t100 c100 l90 lt100
-      # reactions: 80     #s55 m80 t100 c90 l80 lt90
-      # firing: 80        #s60 m80 t120 c100 l80 lt90
-      # throwing: 85      #s65 m85 t100 c95 l85 lt95
-      # strength: 60      #s40 m60 t80 c80 l60 lt70
-      # psiStrength: 100  #s100 m100 t100 c100 l100 lt100 - Causes issues if starting troop has unsual min/max psiStrength
-      # psiSkill: 40      #s16 m40 t60 c60 l40 lt50 - Same as above for min skill >0
-      # melee: 90         #s60 m90 t120 c120 l90 lt100
-  # statCaps:
-      # tu: 100           #s80 m100 t120 c100 l100 lt100
-      # stamina: 120      #s100 m120 t150 c120 l120 lt120
-      # health: 100       #s80 m100 t120 c120 l100 lt100
-      # bravery: 110      #s90 m110 t110 c110 l110 lt110
-      # reactions: 110    #s90 m110 t120 c110 l100 lt100
-      # firing: 130       #s100 m130 t150 c130 l110 lt110
-      # throwing: 120     #s100 m120 t140 c120 l110 lt110
-      # strength: 100     #s80 m100 t100 c100 l100 lt100
-      # psiStrength: 100  #s100 m100 t100 c100 l100 lt140 - Causes issues if starting troop has unsual min/max psiStrength
-      # psiSkill: 100     #s70 m100 t100 c140 l100 lt100
-      # melee: 130        #s100 m130 t150 c150 l110 lt110
-  # trainingStatCaps:
-      # tu: 80            #s60 m80 t80 c80 l80 lt80
-      # stamina: 100      #s75 m100 t100 c100 l100 lt100
-      # health: 70        #s60 m70 t90 c90 l70 lt70
-      # firing: 100       #s70 m100 t120 c100 l90 lt90
-      # throwing: 90      #s70 m90 t110 c90 l80 lt80
-      # strength: 80      #s55 m80 t90 c90 l80 lt80
-      # psiStrength: 20   #s20 m20 t20 c20 l100 lt140
-      # psiSkill: 100     #s70 m100 t100 c140 l100 lt100
-      # melee: 100        #s70 m100 t120 c120 l90 lt90

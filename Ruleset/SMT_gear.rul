@@ -71,7 +71,7 @@ items:
       RandomWound: false
     tags:
       SMT_AMMO_BONUSDMG_FIRINGACC: 33
-      DAMAGE_RESIST_PENETRATION_PERCENT: 30
+      DAMAGE_RESIST_PENETRATION_PERCENT: 50
 
   - &REF_BOLTER_AMMO_DW                     # DW Bolter ammo reference
     type: STR_RIFLE_CLIP_DEREV
@@ -189,9 +189,10 @@ items:
     defaultInventorySlot: STR_BACK_PACK
     supportedInventorySections:
       - STR_BACK_PACK
+    experienceTrainingMode: 32 # Don't give XP for use by default
 
   - &STR_PSI_TOKEN                          # Token item for Psi Skills
-    type: STR_LIB_HASTE_TOME
+    type: STR_PSITOKEN_HASTE
     categories: [ STR_CAT_SPELLS]
     bigSprite: -1
     weight: 0
@@ -204,6 +205,7 @@ items:
     defaultInventorySlot: STR_BACK_PACK
     supportedInventorySections:
       - STR_BACK_PACK
+    tuUse: 0
     tuPanic: 0
     tuMindControl: 0
     targetMatrix: 1
@@ -220,10 +222,8 @@ items:
       ToStun: 0.0
       ToWound: 0.0
       ToArmor: 0.0
-    experienceTrainingMode: 25
-    tags:
-      ITEM_IS_PSYCHIC_POWER: 1
-      ITEM_PSYCHIC_POWER_MODIFIER: 3
+      ToTile: 0.0
+    experienceTrainingMode: 32 # Don't give XP for use by default
 
   - &STR_CLAW_DMG                           # Lightning Claw Defaults
     type: STR_CLAWS
@@ -855,7 +855,7 @@ items:
     bigSprite: 167
     listOrder: 10442
     loadOrder: 120
-    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2100}
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2170}
     power: 65 #reduced
     damageType: 1 # standard
     damageAlter:
@@ -2116,7 +2116,7 @@ items:
     accuracySnap: 65 # was 60
     accuracyAimed: 0
     tuAuto: 65 # was 80 for 10
-    tuSnap: 35 # was 30 for 2 shot
+    tuSnap: 33 # was 30 for 2 shot
     tuAimed: 0
     tuLoad: 30 # was 40
     minRange: 6 #heavy weapon; cumbersome, not suited to CQC
@@ -2167,9 +2167,9 @@ items:
     accuracyAuto: 50
     accuracySnap: 65 # regular 65
     accuracyAimed: 60 # regular 50
-    tuAuto: 75 # 15 shots
-    tuSnap: 33 # regular 35
-    tuAimed: 65 # regular 65 for 9
+    tuAuto: 70 # 15 shots
+    tuSnap: 30 # regular 35
+    tuAimed: 60 # regular 65 for 9
     tuLoad: 30
     minRange: 6
     sprayWaypoints: 2
@@ -2203,11 +2203,11 @@ items:
     snapRange: 22 # regular 22
     aimRange: 18 # regular 18
     accuracyAuto: 55 # regular 50
-    accuracySnap: 70 # regular 60
-    accuracyAimed: 65 # regular 55
+    accuracySnap: 70 # regular 65
+    accuracyAimed: 65 # regular 60
     tuAuto: 75 # Mars 75
-    tuSnap: 30 # Mars 33
-    tuAimed: 60 # Mars 65
+    tuSnap: 30 # Mars 30
+    tuAimed: 60 # Mars 60
     tuLoad: 25 #
     minRange: 6 #heavy weapon; cumbersome, not suited to CQC
     requiresBuy:
@@ -2306,7 +2306,7 @@ items:
     accuracyAimed: 0
     kneelBonus: 150
     tuAuto: 70 # regular 70 for 9
-    tuSnap: 35 # regular 33 for 3
+    tuSnap: 33 # regular 33 for 3
     tuAimed: 0
     tuLoad: 30
     minRange: 8 # regular 6
@@ -2325,7 +2325,7 @@ items:
       ITEM_HAS_BIPOD: 1
 
   - type: STR_HEAVY_BOLTER_GUARD            # IG Heavy Bolter (Godwyn)
-    costBuy: 90000
+    costBuy: 125000
     costSell: 30000
     armor: 300
     weight: 30 # was 40
@@ -2337,7 +2337,7 @@ items:
     accuracySnap: 55
     accuracyAimed: 0
     tuAuto: 75
-    tuSnap: 30
+    tuSnap: 33
     tuAimed: 0
     tuLoad: 40
     minRange: 7
@@ -2354,7 +2354,7 @@ items:
       ITEM_HAS_BIPOD: 1
 
   - type: STR_BOLTER_HEAVY_SOLAR            # IG Heavy Bolter (Solar)
-    costBuy: 95000
+    costBuy: 165000
     costSell: 40000
     requiresBuy:
       - STR_UFO_CONSTRUCTION
@@ -2367,7 +2367,7 @@ items:
     accuracySnap: 65
     accuracyAimed: 0
     tuAuto: 55
-    tuSnap: 35 # was 40
+    tuSnap: 33 # was 40
     tuAimed: 0
     tuLoad: 40
     confSnap:
@@ -2588,8 +2588,8 @@ items:
     hitAnimation: {mod: 40k, index: 26}
     damageAlter:
       RandomType: 7
-      ArmorEffectiveness: 0.4
-      ToHealth: 1.1
+      ArmorEffectiveness: 0.5
+      ToHealth: 1.0
       ToArmorPre: 0.2
       ToArmor: 0.2
       ToWound: 0.02
@@ -2597,7 +2597,7 @@ items:
       RandomWound: false
     tags:
       SMT_AMMO_BONUSDMG_FIRINGACC: 33
-      DAMAGE_RESIST_PENETRATION_PERCENT: 30
+      DAMAGE_RESIST_PENETRATION_PERCENT: 50
 
   - type: STR_BOLT_SNIPER_AMMO_FRAG         # Bolt Sniper Frag Ammo
     refNode: *REF_SNIPER_BOLT_AMMO
@@ -2930,7 +2930,7 @@ items:
       ToArmorPre: 0.1 # was 0.2
     clipSize: 40
 
-### Melta
+### Melta Guns
   - &DMG_MELTA_STD                          # Standard Melta Damage
     type: STR_MELTA_AMMO
     damageType: 11
@@ -2945,26 +2945,8 @@ items:
       TileDamageMethod: 2
     shotgunBehavior: 1
     shotgunSpread: 0
-    powerRangeReduction: 1.5 # was 1.0
-    powerRangeThreshold: 5.0 # was 3, deadlier at short range but falls off faster - 9 range is tipping point
-
-  - &DMG_MELTA_MULTI                        # Multi Melta Damage
-    type: STR_BLASTER_BOMB
-    damageType: 11
-    damageAlter:
-      RandomType: 2 # 50-150, was 0-200
-      ToArmorPre: 1.0
-      ToHealth: 1.6
-      ToTile: 8.0 # was 6.0
-      ToWound: 0.05
-      FireThreshold: 5 # was 16
-      RandomWound: false
-      TileDamageMethod: 2
-    shotgunBehavior: 1
-    shotgunPellets: 20
-    shotgunSpread: 0
-    powerRangeReduction: 0.5
-    powerRangeThreshold: 10.0
+    powerRangeReduction: 2.0 # was 1.0
+    powerRangeThreshold: 6.0 # was 3, deadlier at short range but falls off faster - 9 range is tipping point
 
   - type: STR_MELTA_AMMO                    # Meltagun Ammo
     refNode: *DMG_MELTA_STD
@@ -2977,17 +2959,19 @@ items:
     shotgunPellets: 8
     clipSize: 6
 
-  - type: STR_INFERNO_PISTOL_AMMO
+  - type: STR_INFERNO_PISTOL_AMMO           # Inferno Pistol Ammo
     refNode: *DMG_MELTA_STD
     power: 15
     shotgunPellets: 6
-    powerRangeThreshold: 4.0 # -1 for pistol
+    powerRangeThreshold: 5.0 # -1 for pistol
     clipSize: 5
 
   - type: STR_BLASTER_BOMB                  # Multimelta Ammo
-    refNode: *DMG_MELTA_MULTI
+    refNode: *DMG_MELTA_STD
     power: 15
-    clipSize: 4 # was 3
+    shotgunPellets: 20
+    powerRangeThreshold: 12.0 # multimelta
+    clipSize: 6 # was 3
 
   - &STR_MULTIMELTA_TEMPLATE
     type: STR_BLASTER_LAUNCHER_TERRAN 
@@ -3049,6 +3033,71 @@ items:
     maxRange: 25
     power: 16 # +1 over regular melta
     powerRangeThreshold: 6.0 # +1 over regular
+
+### Melta Explosives
+  - &DMG_MELTA_BLAST                    # Explosive Melta Damage
+    type: STR_HIGH_EXPLOSIVE
+    damageType: 11
+    damageAlter:
+      RandomType: 6
+      ToArmorPre: 1.0
+      ToTile: 1.0
+      ToItem: 1.0
+      ToArmor: 0
+      ToHealth: 0.7
+      ToWound: 0.05
+      RandomWound: false
+      FireThreshold: 0
+
+  - type: STR_HIGH_EXPLOSIVE            # Melta Bomb
+    refNode: *DMG_MELTA_BLAST
+    throwRange: 10
+    flatThrow:
+      time: false
+      energy: true
+    flatPrime:
+      time: false
+      energy: true
+    flatUnprime:
+      time: false
+      energy: true
+    weight: 18 # was 30
+    costThrow:
+      energy: 10 # was 40
+      time: 40 # was 80!
+    costPrime:
+      time: 5 # was 40!
+    costUnprime:
+      time: 5
+    power: 200  # deadly
+    damageAlter:
+      FixRadius: 10
+
+  - type: STR_MGRENADE                  # Melta Grenade
+    refNode: *DMG_MELTA_BLAST
+    throwRange: 15
+    weight: 3
+    fuseType: -2
+    costThrow:
+      time: 55
+      energy: 10
+    costPrime:
+      time: 5
+    costUnprime:
+      time: 5
+    flatThrow:
+      time: false
+      energy: true
+    flatPrime:
+      time: false
+      energy: true
+    flatUnprime:
+      time: false
+      energy: true
+    power: 110
+    damageAlter:
+      FixRadius: 4
+
 
 ### Plasma
   - &DMG_PLASMA_STD                         # Standard Plasma Damage
@@ -3156,7 +3205,7 @@ items:
     tuAimed: 50
     confAimed:
       name: STR_MAXIMAL_SHOT
-    power: 100
+    power: 90
     powerRangeReduction: 5
     powerRangeThreshold: 25.0
     tags:
@@ -3179,7 +3228,7 @@ items:
     confSnap:
       name: STR_DUAL_SNAP
       shots: 2
-    power: 100
+    power: 90
     powerRangeReduction: 5
     powerRangeThreshold: 25.0
 
@@ -3332,6 +3381,24 @@ items:
     powerRangeReduction: 5
     powerRangeThreshold: 30.0 # was 35
 
+  - type: AUX_HOVERTANK_PLASMA              # Dreadnought Plasma Cannon
+    refNode: *DMG_PLASMA_STD
+    power: 120
+    damageAlter:
+      FixRadius: 1
+    powerRangeReduction: 5
+    powerRangeThreshold: 30.0
+    dropoff: 4
+    autoRange: 0
+    snapRange: 24
+    aimRange: 33
+    accuracyAuto: 0
+    accuracySnap: 85
+    accuracyAimed: 100
+    tuAuto: 0
+    tuSnap: 30
+    tuAimed: 60
+
   - type: STR_DW_PLASMA_GRENADE             # Plasma Grenade
     refNode: *DMG_PLASMA_STD
     fuseType: 0 # fixed 0 turn fuse
@@ -3339,66 +3406,66 @@ items:
       throwExplode: true
     isExplodingInHands: true
     noLOSAccuracyPenalty: 75 # indirect fire weapon
-    weight: 4 # heavy grenade
+    weight: 4
     throwRange: 16
     costThrow:
       energy: 2
-      time: 40
+      time: 55
     costPrime:
-      time: 10
+      time: 5
     costUnprime:
       time: 0 # can't unprime
     flatPrime:
       time: false
       energy: true
-    power: 160 # overcharged plasma in a can
+    power: 150 # overcharged plasma in a can
     damageAlter:
       FixRadius: 1
 
-### Volkite
-  - &REF_VOLKITE_BEAM                       # Script for Volkite weapon beams (thin, low spread, short lifetime)
-    type: STR_NEOVOLKITE_PISTOL
-    vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 8} # 40k 1 orange, 2 blue, 3 green rosigma 1 yellow, 2 green 3 purple 4 red 5 sucks 6 orange 7 blue 8 orange 9 lightblue 10 white 11 white 12 green 13 blue
-    vaporDensitySurface: 5
-    vaporProbabilitySurface: 85
-    scripts: # give it a tighter beam that disappates quickly without spreading
-      vaporParticleAmmo: |
-        var int temp;
-        var int randMax;
+  - type: STR_ELDAR_GRENADE                 # Eldar Plasma Grenade
+    refNode: *DMG_PLASMA_STD
+    costThrow:
+      time: 55
+      energy: 5
+    costPrime:
+      time: 5
+    costUnprime:
+      time: 5
+    unprimeActionName: STR_UNPRIME_GRENADE
+    flatThrow:
+      time: false
+      energy: true
+    flatPrime:
+      time: false
+      energy: true
+    damageType: 5
+    power: 130 # was 90
+    damageAlter:
+      FixRadius: 5
 
-        set randMax subvoxel_scale;
-        muldiv randMax 2 3;
-        random.randomRangeSymmetric temp randMax;
-        subvoxel_offset.setX temp;
-        random.randomRangeSymmetric temp randMax;
-        subvoxel_offset.setY temp;
-        random.randomRangeSymmetric temp randMax;
-        subvoxel_offset.setZ temp;
-        set temp 240;
-        sub temp particle_density;
-        div temp 4;
-        subvoxel_velocity.setZ temp;
-        mod particle_lifetime 10;
-        add particle_lifetime 3;
-        return;
+### Volkite
+  - &REF_VOLKITE_DMG                        # Volkite Standard Damage
+    type: STR_NEOVOLKITE_PISTOL
+    shotgunPellets: 1 # instant beam rather than projectile
+    damageType: 11 # Melta type - cross between Las & Melta gun
+    damageAlter:
+      RandomType: 2 # 50-150%
+      ToHealth: 0.50 # deals 100% total, 50% ignores armor
+      ArmorEffectiveness: 1.1
+      ToArmorPre: 0.1
+      ToArmor: 0.3
+      ToTile: 0.75 # destructive
+      FireThreshold: 1
+      FixRadius: 1
+      ToWound: 0.2 # vicious burns
+      RandomWound: false
+      RadiusReduction: 60 # high dropoff if not direct hit
+    tags:
+      SMT_AMMO_HP_PREDMG: 50
 
   - type: STR_NEOVOLKITE_PISTOL             # Neo-Volkite Pistol
-    refNode: *REF_VOLKITE_BEAM
-    bigSprite: 216
-    floorSprite: 216
-    handSprite: 424
-    bulletSprite: { mod: 40k, index: 16 } # meltagun
-    fireSound: { mod: 40k, index: 847 }
-    explosionHitSound: {mod: 40k, index: 690} # heavy plasma blast
-    hitSound: { mod: 40k, index: 19 }
-    hitAnimation: { mod: 40k, index: 128 } # explosion
-    explosionSpeed: 1
-    powerForAnimation: 5
-    battleType: 1
-    armor: 300
+    refNode: *REF_VOLKITE_DMG
     costSell: 100000
-    invWidth: 1
-    invHeight: 3
     weight: 22
     clipSize: -1
     twoHanded: false
@@ -3414,44 +3481,15 @@ items:
     maxRange: 25
     powerRangeReduction: 10 # higher than plasma
     powerRangeThreshold: 18.0 #
-    shotgunPellets: 1 # instant beam rather than projectile
     power: 75 #
-    damageType: 11 # Melta type - cross between Las & Melta gun
-    damageAlter:
-      RandomType: 2 # 50-150%
-      ToHealth: 0.50 # deals 100% total, 50% ignores armor
-      ArmorEffectiveness: 1.1
-      ToArmorPre: 0.1
-      ToArmor: 0.3
-      ToTile: 1.0
-      FireThreshold: 1
-      FixRadius: 1
-      ToWound: 0.2 # vicious burns
-      RandomWound: false
-      RadiusReduction: 60 # high dropoff if not direct hit
     inventoryMoveCost: # pistol
       basePercent: 75
     tags:
       REACTION_MULTIPLIER: 200 # pistol
-      SMT_AMMO_HP_PREDMG: 50
 
   - type: STR_VOLKITE_VAULT                 # Volkite Rifle (Ancient Vault Reward)
-    refNode: *REF_VOLKITE_BEAM
-    bigSprite: 178
-    floorSprite: 178
-    handSprite: 264
-    bulletSprite: { mod: 40k, index: 16 } # meltagun
-    fireSound: { mod: 40k, index: 847 }
-    explosionHitSound: {mod: 40k, index: 690} # heavy plasma blast
-    hitSound: { mod: 40k, index: 19 }
-    hitAnimation: { mod: 40k, index: 128 } # explosion
-    explosionSpeed: 1
-    powerForAnimation: 5
-    battleType: 1
-    armor: 300
+    refNode: *REF_VOLKITE_DMG
     costSell: 100000
-    invWidth: 2
-    invHeight: 3
     weight: 22
     clipSize: -1
     twoHanded: true
@@ -3467,45 +3505,13 @@ items:
     maxRange: 35
     powerRangeReduction: 5
     powerRangeThreshold: 25.0 #
-    shotgunPellets: 1 # instant beam rather than projectile
     power: 120 #
-    damageType: 11 # Melta type - cross between Las & Melta gun
-    damageAlter:
-      RandomType: 2 # 50-150%
-      ToHealth: 0.50 # deals 100% total, 50% ignores armor
-      ArmorEffectiveness: 1.1
-      ToArmorPre: 0.1
-      ToArmor: 0.3
-      ToTile: 0.75 # destructive
-      FireThreshold: 1
-      FixRadius: 1
-      ToWound: 0.2 # vicious burns
-      RandomWound: false
-      RadiusReduction: 75 # high dropoff if not direct hit
-    tags:
-      SMT_AMMO_HP_PREDMG: 50
 
   - type: STR_VOLKITE_DW                    # Volkite Rifle (Deathwatch Captain)
-    refNode: *REF_VOLKITE_BEAM
-    bigSprite: 178
-    floorSprite: 178
-    handSprite: 264
-    bulletSprite: { mod: 40k, index: 16 } # meltagun
-    fireSound: { mod: 40k, index: 847 }
-    explosionHitSound: {mod: 40k, index: 690} # heavy plasma blast
-    hitSound: { mod: 40k, index: 19 }
-    hitAnimation: { mod: 40k, index: 128 } # explosion
-    ufopediaType: STR_VOLKITE_VAULT
-    explosionSpeed: 1
-    powerForAnimation: 5
-    battleType: 1
-    armor: 300
-    invWidth: 2
-    invHeight: 3
+    refNode: *REF_VOLKITE_DMG
     weight: 22
     clipSize: -1
     twoHanded: true
-    recover: false # generated item
     accuracySnap: 80
     accuracyAimed: 0
     accuracyAuto: 66
@@ -3518,23 +3524,7 @@ items:
     maxRange: 40
     powerRangeReduction: 5
     powerRangeThreshold: 25.0
-    shotgunPellets: 1 # instant beam rather than projectile
     power: 120 #
-    damageType: 11 # Melta type - cross between Las & Melta gun
-    damageAlter:
-      RandomType: 2 # 50-150%
-      ToHealth: 0.50 # deals 100% total, 50% ignores armor
-      ArmorEffectiveness: 1.1
-      ToArmorPre: 0.1
-      ToArmor: 0.3
-      ToTile: 0.75 # destructive
-      FireThreshold: 1
-      FixRadius: 1
-      ToWound: 0.2 # vicious burns
-      RandomWound: false
-      RadiusReduction: 75 # high dropoff if not direct hit
-    tags:
-      SMT_AMMO_HP_PREDMG: 50
 
 ### Grav Weapons
   - &DMG_GRAV_STD                           # Gravitic Standard Values
@@ -3977,19 +3967,20 @@ items:
   - type: STR_SHOTGUN_SHELLS_INC            # Shotgun Incin Ammo
     weight: 3 # was 5?
     hitSound: {mod: 40k, index: 708}
-    hitAnimation:
-      mod: 40k
-      index: 88
+    # hitAnimation:
+      # mod: 40k
+      # index: 88
     powerRangeThreshold: 24
     powerRangeReduction: 2
-    power: 80 # doesn't get multiple pellets because of AoE splash
+    power: 40
     damageAlter:
       RandomType: 2 # 50-150%
-      ArmorEffectiveness: 0.6
+      ArmorEffectiveness: 0.8
       ToHealth: 1.1 # was 1.1
       ToTile: 0.2
       ToItem: 0.25
-    shotgunPellets: 1 # was 6, doesn't work with projectiles that have explosion radius
+      FixRadius: 0 # was splash, doesn't work with multiple pellets
+    shotgunPellets: 6
     requiresBuy:
       - STR_SHOTGUNS_ADV
 
@@ -4624,22 +4615,14 @@ items:
       - STR_LASER_WEAPONS #Weapon Req - was Midtier
 
   - type: STR_HEAVY_ROCKET                  # Melta Missile
+    refNode: *DMG_MELTA_BLAST
     size: 0.1 # was 0.3
     weight: 8 # was 15
     loadOrder: 105
     costBuy: 16000 # was 80k!!
     costSell: 8000
     damageAlter:
-      RandomType: 6
-      ToArmorPre: 1.0
-      ToTile: 0.75
-      ToItem: 1.0
-      ToArmor: 0.0
-      ToHealth: 0.7
-      ToWound: 0.05
-      RandomWound: false
-      FireThreshold: 0
-      FixRadius: 2 # was 3, concentrated blast
+      FixRadius: 2 # was 3
     requiresBuy:
       - STR_HEAVY_LASER # Melta tech - was Midtier
 
@@ -4686,14 +4669,13 @@ items:
     #clipSize: 1 # was 3
 
   - type: STR_MELTA_GRENADE40               # 40mm Melta Grenade
-    #size: 0.03 # was 0.1
-    #weight: 1 # was 3
-    #costBuy: 2500 # was 7500
-    #costSell: 1000 # was 3000
+    refNode: *DMG_MELTA_BLAST
+    power: 90
     requiresBuy:
       - STR_40MM_AMMO
       - STR_MIDTIER_PREREQ
-    #clipSize: 1 # was 3
+    damageAlter:
+      FixRadius: 1 # was 2
 
 ### Melee
   - type: STR_CHAINSWORD                    # Chainsword
@@ -5169,7 +5151,6 @@ items:
       psiSkill: 2.0
     maxRange: 8
     bulletSpeed: 80
-    experienceTrainingMode: 32 # don't give xp for blessing enemies
     tags:
       ITEM_BLESS_MELEE_ACCURACY: 1
       ITEM_IS_BUFF_WEAPON: 1
@@ -5228,226 +5209,13 @@ items:
     powerRangeReduction: 4.0
     aimRange: 8 #just to give an indication of power falloff
     dropoff: 4
-    experienceTrainingMode: 19 #bravery
     tags:
       ITEM_IS_BUFF_WEAPON: 1
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
       ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
 
-  - type: INV_LIB_VULN_TOKEN                # Librarian Vulnerability Token
-    refNode: *STR_SKILL_TOKEN
-    categories: [ STR_CAT_SPELLS]
-    weight: 0
-    fireSound: {mod: 40k, index: 847}
-    hitSound: {mod: 40k, index: 844}
-    explosionHitSound: {mod: 40k, index: 845}
-    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 1020}
-    bulletSpeed: 30
-    battleType: 1
-    power: 20
-    blastRadius: -1
-    damageType: 0
-    damageBonus:
-      psiStrength: 0.4
-    damageAlter:
-      RandomType: 2 # 50-150%
-      ArmorEffectiveness: 0.0
-      ToEnergy: 0.1
-      ToHealth: 0.1
-      ToStun: 0.0
-      ToWound: 0.0
-      ToArmor: 0.0
-      ToTile: 0.0
-      ToItem: 0.0
-      RadiusReduction: 10
-    flatRate: true
-    costAimed:
-      time: 50
-      energy: 30
-      stun: 15
-    flatAimed:
-      time: false
-      energy: false
-      stun: false
-    accuracyAimed: 100
-    aimRange: 25
-    dropoff: 5
-    accuracyMultiplier:
-      psiStrength: 1.0
-    tags:
-      ITEM_IS_PSYCHIC_POWER: 1
-      ITEM_PSYCHIC_POWER_MODIFIER: 5
-      SMT_VULN_DEBUFF_MOD: 100
-      SMT_VULN_DURATION: 2
-      ITEM_IGNORE_ALLIES: 1
-
-  - type: INV_LIB_ILLUMINATE_TOKEN                # Librarian Illumination Token
-    refNode: *STR_SKILL_TOKEN
-    categories: [ STR_CAT_SPELLS]
-    weight: 0
-    fireSound: {mod: 40k, index: 847} ###CHANGEME
-    hitSound: {mod: 40k, index: 844} ###CHANGEME
-    explosionHitSound: {mod: 40k, index: 845} ###CHANGEME
-    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 1020} ###CHANGEME
-    bulletSpeed: 30
-    battleType: 1
-    power: 2
-    blastRadius: -1
-    damageType: 0
-    damageBonus:
-      psiStrength: 0.1
-    damageAlter:
-      RandomType: 3
-      ArmorEffectiveness: 0.0
-      ToEnergy: 0.0
-      ToHealth: 0.0
-      ToStun: 0.0
-      ToWound: 0.0
-      ToArmor: 0.0
-      ToTile: 0.0
-      ToItem: 0.0
-      FireThreshold: 1
-      RadiusReduction: 3
-    accuracyAimed: 100
-    aimRange: 25
-    confAimed:
-      arcing: true
-    dropoff: 5
-    accuracyMultiplier:
-      psiStrength: 1.0
-    spawnItem: STR_SUPERFLARE
-    spawnItemChance: 100
-    tags:
-      ITEM_IS_PSYCHIC_POWER: 1
-      ITEM_PSYCHIC_POWER_MODIFIER: 3
-
-  - type: STR_LIB_REFLEXES_TOME                # Librarian Speed                                    ## Haste
-    refNode: *STR_PSI_TOKEN
-    fireSound: {mod: 40k, index: 787} #787 page turn BOOK
-    hitSound: {mod: 40k, index: 778} # Lockdown sound
-    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2170} # could do with something better/unique
-    clipSize: -1
-    targetMatrix: 1
-    LOSRequired: true
-    maxRange: 10
-    power: 0
-    damageBonus:
-      psiStrength: 0.5 # <100 PsiStr = no movespeed bonus, >= 100 PsiStr = 75% movespeed cost
-    accuracyUse: 500
-    accuracyMultiplier:
-      psiStrength: 1.0
-      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
-    tuUse: 25
-    costUse:
-      energy: 25
-      stun: 10
-      morale: 10
-    flatRate: true
-    experienceTrainingMode: 25
-    tags:
-      ITEM_IS_BUFF_WEAPON: 1
-      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
-      SMT_ITEM_MOVESPEED_BOOST: 0
-      SMT_ITEM_REACTION_MOD: 75
-
-  - type: STR_LIB_HASTE_TOME                # Librarian Speed                                    ## Haste
-    refNode: *STR_PSI_TOKEN
-    fireSound: {mod: 40k, index: 787} #787 page turn BOOK
-    hitSound: {mod: 40k, index: 778} # Lockdown sound
-    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2170} # could do with something better/unique
-    clipSize: -1
-    targetMatrix: 1
-    LOSRequired: true
-    maxRange: 10
-    power: 0
-    damageBonus:
-      psiStrength: 0.5 # <100 PsiStr = no movespeed bonus, >= 100 PsiStr = 75% movespeed cost
-    accuracyUse: 500
-    accuracyMultiplier:
-      psiStrength: 1.0
-      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
-    tuUse: 25
-    costUse:
-      energy: 25
-      stun: 10
-      morale: 10
-    flatRate: true
-    experienceTrainingMode: 25
-    tags:
-      ITEM_IS_BUFF_WEAPON: 1
-      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
-      SMT_ITEM_MOVESPEED_BOOST: 1
-      SMT_ITEM_REACTION_MOD: 75
-
-  - type: STR_LIB_HASTE_TOME_DW             # Librarian Speed (Deathwatch White Scars)           ## Haste
-    refNode: *STR_PSI_TOKEN
-    fireSound: {mod: 40k, index: 787} #787 page turn BOOK
-    hitSound: {mod: 40k, index: 778} # Lockdown sound
-    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2170} # could do with something better/unique
-    power: 0
-    maxRange: 10
-    LOSRequired: true
-    damageBonus:
-      psiStrength: 0.75 # 67 psiStr = 75% movespeed, 134 psiStr = 50% movespeed
-    accuracyUse: 100
-    accuracyMultiplier:
-      psiStrength: 1.0
-      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
-    dropoff: 0
-    tags:
-      ITEM_IS_BUFF_WEAPON: 1
-      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
-      SMT_ITEM_MOVESPEED_BOOST: 2
-      SMT_ITEM_REACTION_MOD: 75
-
-  - type: STR_LIB_LOCKDOWN_TOME             # Librarian Lockdown
-    refNode: *STR_PSI_TOKEN
-    hitSound: {mod: 40k, index: 778}
-    hitAnimation: {mod: 40k, index: 160}
-    targetMatrix: 6
-    power: 15 # was 100
-    maxRange: 15
-    LOSRequired: true
-    damageAlter:
-      ToTime: 5.0 # was 10
-    damageBonus:
-      psiStrength: 0.8 # 40 Str = 47 power; 140 psiStr gives 127 power
-    damageAlter:
-      RandomType: 2 # 50-150%
-    costUse:
-      energy: 25
-      stun: 10
-      morale: 10
-    accuracyUse: 25 # was 25
-    psiAttackName: STR_LOCKDOWN_SPELL
-    tags:
-      ITEM_CAUSES_LOCKDOWN: 100
-
-  - type: STR_LIB_SHIELD_TOME               # Librarian Shield
-    refNode: *STR_PSI_TOKEN
-    hitSound: {mod: 40k, index: 778}
-    hitAnimation: {mod: 40k, index: 100}
-    psiAttackName: STR_SHIELD_SPELL
-    targetMatrix: 5 #ally + civ
-    accuracyUse: 100
-    LOSRequired: false
-    accuracyMultiplier:
-      psiStrength: 1.0
-      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
-    power: 0 # was 50 + 0.01 psi
-    maxRange: 10
-    damageBonus:
-      psiStrength: 1.0 # 40 psiStr gives 100 power 140 psiStr gives 350 power
-    isFireExtinguisher: true
-    tags:
-      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 250 # done to stop the '200 power hits knocks flyers out of the air' quirk of rosigma
-      ITEM_SETS_ENERGY_SHIELD_DECAY: 0 # not used, is removed entirely when duration ends
-      SMT_ITEM_SHIELD_DURATION: 1
-      ITEM_IS_BUFF_WEAPON: 1
-      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 100
-      ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
-
-  - type: STR_LIB_SMOKE_TOME                # Librarian Smoke
+### Psi Abilities
+  - type: STR_PSITOKEN_SHROUD               # T1 Smoke
     refNode: *STR_PSI_TOKEN
     explosionHitSound: {mod: 40k, index: 792} #792 Smoke
     hitAnimation: {mod: 40k, index: 104} #XSmoke
@@ -5481,62 +5249,140 @@ items:
       morale: 10
       energy: 50
     flatRate: true
-    experienceTrainingMode: 32 # Don't give XP for smoking enemies
-    tags:
-      ITEM_PSYCHIC_POWER_MODIFIER: 5
-      ITEM_PSYCHIC_POWER_FLAT_CHECK: 1 # only check for perils once per turn
 
-  - type: STR_SMITE_TOKEN                   # Librarian Smite
-    refNode: *STR_PSI_TOKEN
-    hitAnimation: {mod: 40k, index: 1110}
-    fireSound: {mod: 40k, index: 787}
-    hitSound: {mod: 40k, index: 864}
-    psiAttackName: STR_SMITE_SPELL
-    LOSRequired: true
-    battleType: 9
-    tuUse: 20
-    flatRate: false
-    accuracyUse: 20
+  - type: STR_PSITOKEN_FLARE                # T1 Illuminate
+    refNode: *STR_SKILL_TOKEN
+    categories: [ STR_CAT_SPELLS]
+    fireSound: {mod: 40k, index: 847} ###CHANGEME
+    hitSound: {mod: 40k, index: 844} ###CHANGEME
+    explosionHitSound: {mod: 40k, index: 845} ###CHANGEME
+    #hitAnimation: {mod: 40k_ROSIGMA_edits, index: 1020} ###CHANGEME
+    bulletSpeed: 30
+    battleType: 1
+    power: 4
+    damageType: 13 # warp
+    damageBonus:
+      psiStrength: 0.15
+    damageAlter:
+      RandomType: 3
+      ArmorEffectiveness: 0.0
+      ToEnergy: 0.0
+      ToHealth: 0.25
+      ToStun: 0.0
+      ToWound: 0.0
+      ToArmor: 0.0
+      ToTile: 0.0
+      ToItem: 0.0
+      FireThreshold: 0
+      FixRadius: -1
+      RadiusReduction: 3
+    accuracyAimed: 20
+    aimRange: 25
+    confAimed:
+      arcing: true
+    dropoff: 5
     accuracyMultiplier:
       psiStrength: 1.0
-      flatHundred: 0.5
-    damageType: 1
-    power: 5
-    damageBonus:
-      psiStrength: 0.35 # was 0.002 psi
-    damageAlter:
-      RandomType: 6 # 0-100 x2 - was 2 (50-150)
-      ArmorEffectiveness: 0.0
-      ToHealth: 1.0
-      ToArmor: 0.0
-      ToWound: 0 # brain blast, doesn't inflict flesh wounds
-      ToStun: 0.0
-      RandomWound: false
-    costUse:
-      energy: 10
-      stun: 5
-      morale: 5
-    tags:
-      ITEM_PSYCHIC_POWER_MODIFIER: 1 # was 5 - don't punish lightning tickle spam that harshly
-      ITEM_IS_PSYCHIC_POWER: 1
+      flatHundred: 1.0
+    spawnItem: STR_SUPERFLARE
+    spawnItemChance: 100
 
-  - type: INV_LIB_OVERWATCH_TOKEN           # Librarian Vigilance Token                         ## Vigilance
+  - type: STR_PSITOKEN_TELEPATHY            # T1 Telepathy
     refNode: *STR_PSI_TOKEN
     categories: [ STR_CAT_SPELLS]
-    weight: 0
+    battleType: 8
+    hitSound: {mod: 40k, index: 37}
+    costUse:
+      time: 20
+      energy: 5
+    LOSRequired: false
+    recover: false
+    fixedWeapon: true
+
+  - type: STR_PSITOKEN_FLASH                # T2 Thunderclap
+    refNode: *STR_PSI_TOKEN
+    hitSound: {mod: 40k, index: 743}
+    hitAnimation: {mod: 40k, index: 96}
+    targetMatrix: 6
+    costUse:
+      time: 20
+      energy: 10
+      morale: 5
+    costPanic:
+      time: 0
+    costMindControl:
+      time: 0
+    accuracyUse: 100
+    psiAttackName: STR_BLINDING_FLASH
+    dropoff: 0
+    LOSRequired: true
+    powerRangeThreshold: 10.0
+    powerRangeReduction: 5.0
+    damageType: 13 # warp
+    power: 20 # was 0
+    damageBonus:
+      psiStrength: 0.5 # was 1.0
+    damageAlter:
+      RandomType: 6
+      ArmorEffectiveness: 0.0 # was 0.25
+      ToArmor: 0.0
+      ToHealth: 0.0
+      ToTime: 0.6 # was 1.0
+      ToEnergy: 0.6
+      ToStun: 0.2
+      ToMorale: 0.2
+      ToWound: 0.0
+      ToTile: 0.0
+      ToItem: 0.0
+      IgnorePainImmunity: true
+      FixRadius: 5 # was 5
+      RadiusReduction: 10
+
+  - type: STR_PSITOKEN_REFLEXES             # T2 Lightning Reflexes
+    refNode: *STR_PSI_TOKEN
+    fireSound: {mod: 40k, index: 787} #787 page turn BOOK
+    hitSound: {mod: 40k, index: 37}
+    hitAnimation: 616
+    powerForAnimation: 12
+    clipSize: -1
+    targetMatrix: 1
+    LOSRequired: true
+    maxRange: 10
+    power: 0
+    damageBonus:
+      psiStrength: 0.5
+    damageAlter:
+      FixRadius: 1
+    accuracyUse: 500
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
+    costUse:
+      energy: 25
+      stun: 10
+      morale: 10
+    flatRate: true
+    experienceTrainingMode: 25
+    tags:
+      ITEM_IS_BUFF_WEAPON: 1
+      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
+      SMT_ITEM_MOVESPEED_BOOST: 0
+      SMT_ITEM_REACTION_MOD: 100
+
+  - type: STR_PSITOKEN_VIGILANCE            # T2 Vigilance
+    refNode: *STR_PSI_TOKEN
+    categories: [ STR_CAT_SPELLS]
     fireSound: {mod: 40k, index: 787} #787 page turn BOOK
     hitSound: {mod: 40k, index: 778} # Lockdown sound
-    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2080} # could do with something better/unique
+    hitAnimation: {mod: 40k, index: 170}
+    hitAnimFrames: 10
     clipSize: -1
     targetMatrix: 1
     LOSRequired: false
     maxRange: 20
     power: 5
-    damageBonus: # 50% at 90 psiStr, 80% at 150 psiStr
+    damageBonus:
       psiStrength: 0.5
-    tuUse: 25
-    tuPanic: 0
-    tuMindControl: 0
     costUse:
       energy: 25
       stun: 10
@@ -5549,6 +5395,483 @@ items:
     tags:
       ITEM_IS_BUFF_WEAPON: 1
       SMT_VIGILIANCE_BUFF: 100
+
+  - type: STR_PSITOKEN_WALLBREAKER          # T1 Rend Landscape
+    refNode: *STR_SKILL_TOKEN
+    categories: [ STR_CAT_SPELLS]
+    #fireSound: {mod: 40k, index: 847} ###CHANGEME
+    hitSound: {mod: 40k, index: 830}
+    hitAnimation: 800
+    powerForAnimation: 12
+    bulletSpeed: 80
+    battleType: 1
+    dropoff: 20
+    accuracyMultiplier:
+      psiStrength: 1.0
+    accuracyAimed: 150
+    noLOSAccuracyPenalty: 100
+    aimRange: 15
+    confAimed:
+      shots: 4
+    power: 40
+    powerRangeThreshold: 15
+    powerRangeReduction: 100 # loses all power outside of max range
+    damageType: 13 # warp
+    damageBonus:
+      psiStrength: 0.5
+    damageAlter:
+      RandomType: 3
+      ArmorEffectiveness: 1.2
+      ToArmorPre: 0.02
+      ToArmor: 0.0
+      ToHealth: 0.1
+      ToEnergy: 0.2
+      ToStun: 0.2
+      ToTile: 1.2
+      TileDamageMethod: 1
+      ToItem: 0.0
+      FixRadius: 1
+      RadiusReduction: 3
+
+  - type: STR_PSITOKEN_SMITE                # T3 Smite
+    refNode: *STR_PSI_TOKEN
+    hitAnimation: {mod: 40k, index: 1110}
+    fireSound: {mod: 40k, index: 787}
+    hitSound: {mod: 40k, index: 864}
+    psiAttackName: STR_SMITE_SPELL
+    LOSRequired: true
+    battleType: 9
+    flatRate: false
+    targetMatrix: 2
+    accuracyUse: 20
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 0.5
+    damageType: 1
+    power: 5
+    damageBonus:
+      psiStrength: 0.35 # was 0.002 psi
+    damageType: 13 # warp
+    damageAlter:
+      RandomType: 6 # 0-100 x2 - was 2 (50-150)
+      ArmorEffectiveness: 0.0
+      ToHealth: 1.0
+      ToArmor: 0.0
+      ToWound: 0.0 # brain blast, doesn't inflict flesh wounds
+      ToStun: 0.0
+      RandomWound: false
+    costUse:
+      energy: 10
+      stun: 5
+      morale: 5
+    tags:
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 #ignores shields
+
+  - type: STR_PSITOKEN_MENDWOUNDS           # T3 Mend Flesh
+    refNode: *STR_PSI_TOKEN
+    fireSound: {mod: 40k, index: 787} ###CHANGEME
+    hitSound: {mod: 40k, index: 864} ###CHANGEME
+    hitAnimation: {mod: 40k, index: 170}
+    hitAnimFrames: 10
+    LOSRequired: true
+    battleType: 9
+    targetMatrix: 5 #ally + civ
+    maxRange: 10
+    accuracyUse: 100
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 4.0
+    damageType: 1
+    power: 5
+    damageBonus:
+      psiStrength: 0.4
+    damageAlter:
+      RandomType: 2 # 50-150%
+      ArmorEffectiveness: 0.0
+      ToHealth: 0.0
+      ToArmor: 0.0
+      ToStun: 0.3
+      ToEnergy: 0.3
+      RandomEnergy: false
+      ToWound: 0.0
+      RandomWound: false
+    costUse:
+      energy: 10
+      stun: 5
+      morale: 5
+    tags:
+      SMT_HEAL_WOUNDS_POW: 60
+      SMT_HEAL_WOUNDS_HP_WOUND: 2
+      SMT_HEAL_WOUNDS_HP_PERCENT: 20
+      SMT_HEAL_WOUNDS_HP_CAP: 50
+
+  - type: STR_PSITOKEN_SENTRYWARD           # T3 Farsight
+    refNode: *STR_SKILL_TOKEN
+    categories: [ STR_CAT_SPELLS]
+    fireSound: {mod: 40k, index: 847}
+    hitSound: {mod: 40k, index: 844}
+    explosionHitSound: {mod: 40k, index: 788}
+    hitAnimation: {mod: 40k, index: 1992}
+    bulletSprite: {mod: 40k, index: 14} # green
+    bulletSpeed: 15
+    explosionSpeed: 30
+    battleType: 1
+    power: 1
+    damageType: 0
+    damageBonus:
+      psiStrength: 0.0
+    damageAlter:
+      RandomType: 5
+      ArmorEffectiveness: 0.0
+      ToEnergy: 0.0
+      ToHealth: 0.0
+      ToStun: 0.0
+      ToWound: 0.0
+      ToArmor: 0.0
+      ToTile: 0.0
+      ToItem: 0.0
+    flatRate: true
+    spawnUnit: STR_PSI_SENTRYWARD
+    spawnUnitFaction: 0
+    costAimed:
+      time: 50
+      energy: 30
+      stun: 15
+    flatAimed:
+      time: false
+      energy: false
+      stun: false
+    confAimed:
+      arcing: true
+    accuracyAimed: 20
+    aimRange: 25
+    dropoff: 5
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 1.0
+
+  - type: STR_PSITOKEN_UNDYING              # T3 Enduring Spirit ###CHANGEME
+    refNode: *STR_PSI_TOKEN
+    hitSound: {mod: 40k, index: 778}
+    hitAnimation: {mod: 40k, index: 170}
+    hitAnimFrames: 10
+    targetMatrix: 5 #ally + civ
+    accuracyUse: 100
+    LOSRequired: false
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
+    power: 0 # was 50 + 0.01 psi
+    maxRange: 10
+    damageBonus:
+      psiStrength: 1.0 # 40 psiStr gives 100 power 140 psiStr gives 350 power
+    isFireExtinguisher: true
+    tags:
+      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 250 # done to stop the '200 power hits knocks flyers out of the air' quirk of rosigma
+      ITEM_SETS_ENERGY_SHIELD_DECAY: 0 # not used, is removed entirely when duration ends
+      SMT_ITEM_SHIELD_DURATION: 1
+      ITEM_IS_BUFF_WEAPON: 1
+      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 100
+      ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
+
+  - type: STR_PSITOKEN_HOLODUMMY            # T4 Hallucination
+    refNode: *STR_SKILL_TOKEN
+    categories: [ STR_CAT_SPELLS]
+    weight: 0
+    fireSound: {mod: 40k, index: 847}
+    hitSound: {mod: 40k, index: 844}
+    explosionHitSound: {mod: 40k, index: 788}
+    hitAnimation: {mod: 40k, index: 1992}
+    bulletSprite: {mod: 40k, index: 14} # green
+    bulletSpeed: 15
+    explosionSpeed: 30
+    battleType: 1
+    power: 20
+    blastRadius: -1
+    damageType: 0
+    damageAlter:
+      RandomType: 2 # 50-150%
+      ArmorEffectiveness: 0.0
+      ToEnergy: 0.1
+      ToHealth: 0.1
+      ToStun: 0.0
+      ToWound: 0.0
+      ToArmor: 0.0
+      ToTile: 0.0
+      ToItem: 0.0
+      RadiusReduction: 10
+    spawnUnit: STR_HOLOGRAM_GRENADE_TARGET_GUARDSMAN
+    spawnUnitFaction: 2
+    flatRate: true
+    costAimed:
+      time: 50
+      energy: 30
+      stun: 15
+    flatAimed:
+      time: false
+      energy: false
+      stun: false
+    accuracyAimed: 20
+    aimRange: 25
+    confAimed:
+      arcing: true
+    dropoff: 5
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 1.0
+
+  - type: STR_PSITOKEN_LOCKDOWN             # T4 Lockdown
+    refNode: *STR_PSI_TOKEN
+    hitSound: {mod: 40k, index: 778}
+    hitAnimation: {mod: 40k, index: 160}
+    targetMatrix: 6
+    power: 15 # was 100
+    maxRange: 15
+    LOSRequired: true
+    damageAlter:
+      ToTime: 5.0 # was 10
+    damageBonus:
+      psiStrength: 0.8 # 40 Str = 47 power; 140 psiStr gives 127 power
+    damageAlter:
+      RandomType: 2 # 50-150%
+    costUse:
+      energy: 25
+      stun: 10
+      morale: 10
+    accuracyUse: 25 # was 25
+    psiAttackName: STR_LOCKDOWN_SPELL
+    tags:
+      ITEM_CAUSES_LOCKDOWN: 100
+
+  - type: STR_PSITOKEN_SHIELD               # T4 Shield
+    refNode: *STR_PSI_TOKEN
+    hitSound: {mod: 40k, index: 778}
+    hitAnimation: {mod: 40k, index: 100}
+    psiAttackName: STR_SHIELD_SPELL
+    targetMatrix: 5 #ally + civ
+    accuracyUse: 100
+    LOSRequired: false
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
+    power: 0 # was 50 + 0.01 psi
+    maxRange: 10
+    damageBonus:
+      psiStrength: 1.0 # 40 psiStr gives 100 power 140 psiStr gives 350 power
+    isFireExtinguisher: true
+    tags:
+      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 250 # done to stop the '200 power hits knocks flyers out of the air' quirk of rosigma
+      ITEM_SETS_ENERGY_SHIELD_DECAY: 0 # not used, is removed entirely when duration ends
+      SMT_ITEM_SHIELD_DURATION: 1
+      ITEM_IS_BUFF_WEAPON: 1
+      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 100
+      ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
+
+  - type: STR_PSITOKEN_TORMENT              # T4 Torment
+    refNode: *STR_SKILL_TOKEN
+    categories: [ STR_CAT_SPELLS]
+    weight: 0
+    fireSound: {mod: 40k, index: 847}
+    hitSound: {mod: 40k, index: 844}
+    explosionHitSound: {mod: 40k, index: 845}
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 1020}
+    bulletSpeed: 30
+    battleType: 1
+    power: 20
+    damageBonus:
+      psiStrength: 0.4
+    damageType: 13 # warp
+    damageAlter:
+      RandomType: 2 # 50-150%
+      ArmorEffectiveness: 0.0
+      ToEnergy: 0.1
+      ToHealth: 0.1
+      ToStun: 0.0
+      ToWound: 0.0
+      ToArmor: 0.0
+      ToTile: 0.0
+      ToItem: 0.0
+      FixRadius: -1
+      RadiusReduction: 10
+    flatRate: true
+    costAimed:
+      time: 50
+      energy: 30
+      stun: 15
+    flatAimed:
+      time: false
+      energy: false
+      stun: false
+    accuracyAimed: 100
+    aimRange: 25
+    dropoff: 5
+    accuracyMultiplier:
+      psiStrength: 1.0
+    tags:
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 #ignores shields
+      SMT_VULN_DEBUFF_MOD: 100
+      SMT_VULN_DURATION: 2
+      ITEM_DMGMOD_ALLIES: -1
+
+  - type: STR_PSITOKEN_HASTE                # T6 Accelerate
+    refNode: *STR_PSI_TOKEN
+    fireSound: {mod: 40k, index: 787} #787 page turn BOOK
+    hitSound: {mod: 40k, index: 778} # Lockdown sound
+    hitAnimation: {mod: 40k, index: 170}
+    hitAnimFrames: 10
+    clipSize: -1
+    targetMatrix: 1
+    LOSRequired: true
+    maxRange: 10
+    power: 0
+    damageBonus:
+      psiStrength: 0.65 # 50% movespeed at 153 Psi
+    accuracyUse: 500
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
+    costUse:
+      energy: 25
+      stun: 10
+      morale: 10
+    flatRate: true
+    tags:
+      ITEM_IS_BUFF_WEAPON: 1
+      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
+      SMT_ITEM_MOVESPEED_BOOST: 2
+
+  - type: STR_PSITOKEN_CLOAK                # T6 Shadowcloak ###CHANGEME
+    refNode: *STR_PSI_TOKEN
+    fireSound: {mod: 40k, index: 787} #787 page turn BOOK
+    hitSound: {mod: 40k, index: 778} # Lockdown sound
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2170} # could do with something better/unique
+    clipSize: -1
+    targetMatrix: 1
+    LOSRequired: true
+    maxRange: 10
+    power: 1
+    accuracyUse: 500
+    accuracyMultiplier:
+      psiStrength: 1.0
+      flatHundred: 4.00 # needs to be high because friendly psi-resist works against this
+    costUse:
+      energy: 25
+      stun: 10
+      morale: 10
+    flatRate: true
+    experienceTrainingMode: 25
+    tags:
+      ITEM_IS_BUFF_WEAPON: 1
+      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
+      ITEM_CLOAKING_EFFECT: 5
+
+  - type: STR_PSITOKEN_SOULSTORM            # T6 Soul Storm
+    refNode: *STR_PSI_TOKEN
+    fireSound: {mod: 40k, index: 787} #787 page turn BOOK
+    hitSound: {mod: 40k, index: 864}
+    explosionHitSound: {mod: 40k, index: 864}
+    hitAnimation: 608
+    hitAnimFrames: 8
+    powerForAnimation: 120
+    clipSize: -1
+    targetMatrix: 2
+    LOSRequired: true
+    maxRange: 40
+    power: 0
+    damageBonus:
+      psiStrength: 0.8
+    damageType: 13 # warp
+    damageAlter:
+      RandomType: 6
+      ArmorEffectiveness: 0.0
+      ToHealth: 1.0
+      ToTime: 0.2
+      ToEnergy: 0.6
+      ToStun: 0.2
+      ToMorale: 1.5
+      ToTile: 0.0
+      ToItem: 0.0
+      IgnorePainImmunity: true
+      FixRadius: 4
+      RadiusReduction: 5
+    accuracyUse: 200
+    accuracyMultiplier:
+      psiStrength: 1.0
+    costUse:
+      energy: 25
+      stun: 10
+      morale: 10
+    flatRate: true
+    tags:
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 #ignores shields
+
+  - type: STR_PSITOKEN_HOLOCAUST            # T6 Holocaust
+    refNode: *STR_SKILL_TOKEN
+    battleType: 1
+    vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 13}
+    vaporDensitySurface: 4
+    vaporProbabilitySurface: 100
+    scripts: # faster disappation
+      vaporParticleAmmo: |
+        var int temp;
+        var int randMax;
+
+        set randMax subvoxel_scale;
+        muldiv randMax 3 2;
+        random.randomRangeSymmetric temp randMax;
+        subvoxel_offset.setX temp;
+        random.randomRangeSymmetric temp randMax;
+        subvoxel_offset.setY temp;
+        random.randomRangeSymmetric temp randMax;
+        subvoxel_offset.setZ temp;
+        set temp 320;
+        sub temp particle_density;
+        subvoxel_velocity.setZ temp;
+        div particle_lifetime 4;
+
+        return;
+    bulletSprite: {mod: 40k, index: 5}
+    fireSound: {mod: 40k, index: 706}
+    hitSound: {mod: 40k, index: 12}
+    hitAnimation: {mod: 40k, index: 88}  # XFIRE
+    powerForAnimation: 60
+    bulletSpeed: 50
+    explosionSpeed: 10
+    # Attack parameters
+    accuracyAimed: 70
+    aimRange: 10
+    maxRange: 20
+    dropoff: 5
+    confAimed:
+      shots: 6
+      followProjectiles: false
+    power: 20
+    powerRangeReduction: 5.0
+    powerRangeThreshold: 11.0
+    damageBonus:
+      psiStrength: 0.4
+    damageType: 13 # warp
+    damageAlter:
+      RandomType: 6
+      FireBlastCalc: false
+      IgnoreOverKill: false
+      FireThreshold: 0
+      ToArmorPre: 0.0
+      ToHealth: 1.0
+      ToArmor: 1.0
+      ToTile: 0.3
+      ToItem: 0.3
+      ToWound: 0.05
+      RandomWound: false
+      ToMorale: 40.0
+      ArmorEffectiveness: 0.0
+      FixRadius: 2
+    flatRate: true
+    accuracyMultiplier:
+      psiStrength: 1.0
+    tags:
+      DAMAGE_BONUS_PERCENT_DAEMONIC: 150 #1.5x damage vs Daemons
+
 ### Inbuilt Equipment - Guns
   - type: STR_GRAV_FLAMER                   # Gravis Flamestorm Gauntlet
     refNode: *REF_POWERFIST_TEMPLATE
@@ -5695,6 +6018,8 @@ items:
     recover: false
     supportedInventorySections:
       - STR_GROUND
+    tags:
+      ITEM_PRIMED_AT_BATTLE_START: 3
 
   - type: AUX_SHIELD                        # Storm Shield
     clipSize: 81 # Shield HP + 1
@@ -6071,6 +6396,7 @@ items:
     specialIconSprite: 41
     hitSound: [{mod: 40k, index: 821}, {mod: 40k, index: 822}]
     hitAnimation: 110
+    hitAnimFrames: 10
     targetMatrix: 6
     power: 30
     LOSRequired: true

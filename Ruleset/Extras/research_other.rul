@@ -17,12 +17,54 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_IMPERIAL_CHURCH
 
   - name: STR_ELITE_STRATEGY_IG                     # IG Scions Strategy
+    unlocks: !remove
+      - STR_SQUAT_GUARDSMEN
+
+  - name: STR_ELITE_STRATEGY_IG                     # IG Scions Strategy
     unlocks: !add
       - STR_IMPERIAL_CHURCH
 
   - name: STR_STEEL_LEGION_STRATEGY                 # IG Steel Legion Strategy
     unlocks: !add
       - STR_IMPERIAL_CHURCH
+
+  - name: STR_ABHUMAN_STRATEGY_IG                   # Abhuman Strategy
+    unlocks: !remove
+      - STR_BIOMANCER
+
+  - name: STR_ABHUMAN_STRATEGY_IG                   # Abhuman Strategy
+    unlocks: !add
+      - STR_PSYKER_REQUISITION
+
+  - name: STR_MIDTIER_GUARDSMEN                     # Guardsmen Mid-tier Requisitions
+    unlocks: !remove
+      - STR_SQUAT_GUARDSMEN
+      - STR_FELINID_GUARDSMEN
+      - STR_BEASTMEN_GUARDSMEN
+      - STR_BASIC_PSYKERS_IG
+
+  - name: STR_ABHUMAN_GUARD_RECRUITS                # Abhuman Recruitments
+    cost: 180 # was free for Guardsmen Strat
+    points: 20
+    listOrder: 30
+    dependencies:
+      - STR_MIDTIER_GUARDSMEN
+    unlocks:
+      - STR_SQUAT_GUARDSMEN
+      - STR_FELINID_GUARDSMEN
+      - STR_BEASTMEN_GUARDSMEN
+
+  - name: STR_MIDTIER_ELITE                         # Scion Mid-tier Requisitions
+    unlocks: !remove
+      - STR_BASIC_PSYKERS_IG
+
+  - name: STR_MIDTIER_ABHUMAN                       # Abhuman Mid-tier Requisitions
+    unlocks: !remove
+      - STR_BASIC_PSYKERS_IG
+
+  - name: STR_STEEL_LEGION_STRATEGY_MIDTIER         # Steel Legion mid-tier
+    unlocks: !remove
+      - STR_BASIC_PSYKERS_IG
 
   - name: STR_ADEPTAS                               # Sisters of Battle Faction
     unlocks: !add
@@ -33,15 +75,15 @@ research: # Research changes only made to maintain functionality for other facti
     unlocks: !add
       - STR_SMOKE_BOMB_UNLOCK
 
-  - name: STR_GUARD_IMPERIAL_ASSASSIN_REQUISITION   # Vindicare Assassin tech
-    unlocks: !add
-      - STR_VINDICARE_AMMO_REQ
+  # - name: STR_GUARD_IMPERIAL_ASSASSIN_REQUISITION   # Vindicare Assassin tech
+    # unlocks: !add
+      # - STR_VINDICARE_AMMO_REQ
 
-  - name: STR_VINDICARE_AMMO_REQ                    # Exitus Rifle/Pistol ammo unlock (given by Vindicare event)
-    cost: 0
-    points: 0
-    dependencies:
-      - STR_GENERALLOCK
+  # - name: STR_VINDICARE_AMMO_REQ                    # Exitus Rifle/Pistol ammo unlock (given by Vindicare event)
+    # cost: 0
+    # points: 0
+    # dependencies:
+      # - STR_GENERALLOCK
 
   - name: STR_HEAVY_WEAPONS_IG                      # Let IG/Arbites buy Heavy Bolter ammo
     unlocks: !add
@@ -264,3 +306,30 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_LIGHTBOLTER_ADV_AMMO
       - STR_40MM_AMMO
 
+  - name: STR_PSYKER_REQUISITION                    # Sanctioned Psyker Requisition
+    unlocks:
+      - STR_PSYKER_T4_UNLOCK
+    dependencies:
+      - STR_MIDTIER_PREREQ # was high tier
+      - STR_IMPERIAL_GUARD_OPERATIONS
+    spawnedItem: STR_NONE
+
+  - name: STR_BIOMANCER  # Biomancer
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+    unlocks: !remove
+      - STR_PSYKER_RECRUITMENT
+
+  - name: STR_BASIC_PSYKERS_IG  # Telepath Psyker Requisition
+    cost: 200
+    points: 50
+    dependencies:
+      - STR_GENERALLOCK
+    unlocks: !remove
+      - STR_PSYKER_RECRUITMENT
+
+  - name: STR_PSYKER_RECRUITMENT  # Recruiting Psyker
+    dependencies:
+      - STR_GENERALLOCK

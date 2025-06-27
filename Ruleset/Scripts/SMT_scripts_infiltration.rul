@@ -395,7 +395,9 @@ extended:
           end;
 
           # disable stealth for unit from non-impact damage
-          if neq damaging_type 10;
+          if or eq damaging_type 0 eq damaging_type 6 eq damaging_type 10; # ignore support, smoke & impact damage
+            return power part side;
+          else;
             battle_game.flashMessage "STR_SCRIPT_INFILTRATION_NO_TIME_REMAINING";
             unit.setTag Tag.UNIT_STEALTH_IS_ACTIVE 0;
             unit.setTag Tag.UNIT_STEALTH_RANGE 0;
@@ -413,7 +415,6 @@ extended:
                 unit.MoveCost.setBaseNormalTimePercent temp; # handle digin
               end;
             end;
-            return power part side;
           end;
 
           return power part side;

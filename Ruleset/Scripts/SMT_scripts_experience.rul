@@ -98,10 +98,12 @@ extended:
       - new: SMTS_devotion_teacher_val # Sets global value for soldier devotion training
         offset: 1
         code: |
+          var ptr RuleSoldier soldierRuleset;
           var int temp;
           var int temp2;
 
-          unit.getTag temp Tag.SOLDIER_IS_PSISKILL_TEACHER;
+          unit.getRuleSoldier soldierRuleset;
+          soldierRuleset.getTag temp Tag.SOLDIER_IS_PSISKILL_TEACHER;
           if le temp 0;
             return;
           end;

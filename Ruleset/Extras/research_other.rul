@@ -90,6 +90,16 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_HBOLTER_AMMO_PREREQ
       - STR_GLAUNCHER_PREREQ
 
+    name: STR_CASSC                                 # Reaper Autocannon
+    getOneFree:
+      - STR_AUTOCANNON_TECH
+  - name: STR_IW_AUTOCANNON                         # Iron Warrior Autocannon
+    getOneFree:
+      - STR_AUTOCANNON_TECH
+  - name: STR_ORK_SNIPER_RIFLE                      # Ork Sniper Gun
+    getOneFree:
+      - STR_AUTOCANNON_TECH
+
   - name: STR_MULTIMELTA_PREREQ                     # Let you research Multimeltas even if you don't find a chaos multimelta
     cost: 900
     points: 30

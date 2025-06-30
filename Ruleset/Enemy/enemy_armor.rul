@@ -1,0 +1,153 @@
+armors:
+  - type: STR_NECRON_ARCHITECT_ARMOR            # Architect
+    visibilityAtDay: 40
+    visibilityAtDark: 40
+    heatVision: 50
+    antiCamouflageAtDark: 20 # was 10 - sees all
+    antiCamouflageAtDay: 20 # was 5 - sees all
+    bleedImmune: true
+    fearImmune: true
+    painImmune: false # don't block stun from tenacious
+    zombiImmune: true
+    allowsRunning: true # let BAI be more dangerous here
+    corpseBattle:
+      - STR_NECRON_ARCHITECT_CORPSE
+    frontArmor: 170
+    sideArmor: 160
+    rearArmor: 140 # was 70
+    underArmor: 170
+    drawingRoutine: 0
+    psiDefence:
+      flatOne: 150.0 # heavy psi resist
+    recovery:
+      health:
+        healthCurrent: 0.1 # giant health pool
+        flatOne: 20
+    damageModifier:
+      - 1.0  # none
+      - 0.8  # AP
+      - 0.3  # FLAMES
+      - 0.9  # HE
+      - 1.0  # LASCANON
+      - 0.9  # PLASMA
+      - 0.5  # STUN
+      - 0.9  # MELEE
+      - 0.4  # ACID
+      - 0.0  # SMOKE
+      - 0.9  # IMPACT
+      - 1.0  # MELTA
+      - 0.2  # GRAV - Compensate for boss health/armor, not actually a superheavy unit
+      - 1.0  # WARP
+    loftempsSet: [3]
+    builtInWeapons: # make staff built in, can't drop it
+      - STR_STAFF_OF_LIGHT
+    tags:
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 100 # was 10 - fast charging instead of slow
+      ARMOR_ENERGY_SHIELD_DECAY: 100 # was 12
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 0 # was 6, probably leftover from bad copypaste
+      ARMOR_TENACIOUS_HP_MOD: 5 # was 3
+      ARMOR_TENACIOUS_STUN_RECOVERY: 50 # was 25
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      UNIT_TYPE_XENO: 1
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_NECRON: 1
+      ARMOR_OVERWATCH_TU_RESTORED: 60
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+      MISSION_OBJECTIVE_UNIT: 100 # final boss
+      UNIT_IMMOBILE_TURNS: 3 # don't run off the spawn point while player is clearing entrance
+      UNIT_RAPID_KO_RECOVERY: 100 # able to act with 100% TUs after getting up from stun
+      UNIT_DAMAGE_SOFTCAP: 75 # reduce incoming damage and prevent instant kills
+      ARMOR_REGENERATE_DURABILITY: 100 # necrodermis self repair
+      SMT_ARMOR_SHRED_RESISTANCE: 75
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 60
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 45
+
+
+  - &REF_DEATHMARK_ARMOR                        # Deathmark (revives)
+    type: STR_NECRON_DEATHMARK_ARMOR_REVIVES
+    visibilityAtDay: 40
+    visibilityAtDark: 40
+    heatVision: 50
+    antiCamouflageAtDark: 15
+    antiCamouflageAtDay: 15
+    camouflageAtDark: -15
+    camouflageAtDay: -10
+    frontArmor: 95 # was 60 - Deathmarks are elites (and are t5 with a 3+ save)
+    sideArmor: 80 # was 50
+    rearArmor: 50 # was 40
+    underArmor: 80 # was 50
+    recovery:  # Living metal rapidly regenerates health
+      health:
+        healthCurrent: 0.5
+    damageModifier:  # NECRON ARMOR
+      - 1.0  # none
+      - 0.9  # AP
+      - 0.4  # FLAMES
+      - 1.0  # HE
+      - 1.1  # LASCANON
+      - 1.0  # PLASMA
+      - 1.0  # STUN
+      - 1.0  # MELEE
+      - 0.5  # ACID
+      - 0.0  # SMOKE
+      - 1.0  # IMPACT
+      - 1.1  # MELTA
+      - 1.0  # GRAV
+    loftempsSet: [3]
+    builtInWeapons: []
+    tags:
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      UNIT_TYPE_XENO: 1
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_NECRON: 1
+      ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
+      ARMOR_OVERWATCH_TU_RESTORED: 50 # enough for 1 shot - blame Mechanicus
+
+  - type: STR_NECRON_DEATHMARK_ARMOR            # Deathmark
+    refNode: *REF_DEATHMARK_ARMOR
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 3 # was 2
+      ARMOR_TENACIOUS_STUN_RECOVERY: 30 # was 20
+
+  - &REF_SCARAB_ARMOR                           # Canoptic Scarabs (Five)
+    type: STR_NECRON_SCARAB_ARMOR5
+    damageModifier:
+      - 1.0  # none
+      - 0.5  # AP
+      - 0.4  # FLAMES
+      - 1.0  # HE; only AoE does full damage due to being a dispersed swarm
+      - 0.6  # LASCANON; dispersed swarm, but weakness to lascannon
+      - 0.5  # PLASMA
+      - 0.0  # STUN; they're automatons, they can't be stunned.
+      - 0.5  # MELEE
+      - 0.5  # ACID
+      - 0.0  # SMOKE
+      - 0.5  # IMPACT
+      - 0.6  # MELTA; dispersed swarm, but weakness to melta
+      - 0.2  # GRAV; dispersed swarm, invidually small
+
+  - type: STR_NECRON_SCARAB_ARMOR3              # Canoptic Scarabs (Three)
+    refNode: *REF_SCARAB_ARMOR
+  - type: STR_NECRON_SCARAB_ARMOR1              # Canoptic Scarabs (One)
+    refNode: *REF_SCARAB_ARMOR
+
+
+  - type: STR_NECRON_WARRIOR_ARMOR_REVIVES      # Warrior (revives)
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
+
+  - type: STR_NECRON_LYCHGUARD_ARMOR_REVIVES    # Lychguard (revives)
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
+
+  - type: STR_NECRON_IMORTAL_ARMOR_REVIVES      # Immortal (revives)
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
+
+  - type: STR_NECRON_FLAYED_ONE_ARMOR_REVIVES   # Flayed One (revives)
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
+
+

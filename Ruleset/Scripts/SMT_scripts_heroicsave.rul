@@ -1,215 +1,27 @@
-soldiers:
-  - type: STR_SOLDIER                   # Marine
-    tags:
-      SMT_HEROICSAVE_CHANCE: 30 # success chance is (((Current HP% * 2) + (Devotion/2)) * saveChance/100) / # of Save checks made
-      SMT_HEROICSAVE_HP: 30
-
-  - type: STR_SOLDIER_NEOPHYTE          # Neophyte
-    tags:
-      SMT_HEROICSAVE_CHANCE: 5
-      SMT_HEROICSAVE_HP: 10
-
-  - type: STR_SOLDIER_TERMINATOR        # Veteran Marine
-    tags:
-      SMT_HEROICSAVE_CHANCE: 60
-      SMT_HEROICSAVE_HP: 45
-
-  - type: STR_SOLDIER_CAPTAIN           # Marine Captain
-    tags:
-      SMT_HEROICSAVE_CHANCE: 70
-      SMT_HEROICSAVE_HP: 50
-
-  - type: STR_SOLDIER_CHAPLAIN          # Chaplain
-    tags:
-      SMT_HEROICSAVE_CHANCE: 65
-      SMT_HEROICSAVE_HP: 45
-
-  - type: STR_SOLDIER_LIBRARIAN         # Librarian
-    tags:
-      SMT_HEROICSAVE_CHANCE: 30
-      SMT_HEROICSAVE_HP: 30
-
-  - type: STR_SOLDIER_LIBRARIAN_TERM    # Veteran Librarian
-    tags:
-      SMT_HEROICSAVE_CHANCE: 60
-      SMT_HEROICSAVE_HP: 45
-
-  - type: STR_FALLEN                    # Dreadnought
-    tags:
-      SMT_HEROICSAVE_CHANCE: 0 # dreadnoughts can't get stunned, heroic save leaves them standing
-      SMT_HEROICSAVE_HP: 0
-
-  - type: STR_BLOODRAVENS_MARINE        # Event Marine
-    tags:
-      SMT_HEROICSAVE_CHANCE: 30
-      SMT_HEROICSAVE_HP: 30
-
-  - type: STR_PRIMARISLV1               # Primaris Lv1
-    tags:
-      SMT_HEROICSAVE_CHANCE: 30
-      SMT_HEROICSAVE_HP: 30
-
-  - type: STR_PRIMARISLV2               # Primaris Lv2
-    tags:
-      SMT_HEROICSAVE_CHANCE: 35
-      SMT_HEROICSAVE_HP: 30
-
-  - type: STR_PRIMARISLV3               # Primaris Lv3
-    tags:
-      SMT_HEROICSAVE_CHANCE: 55
-      SMT_HEROICSAVE_HP: 40
-
-  - type: STR_PRIMARISLV4               # Primaris Lv4
-    tags:
-      SMT_HEROICSAVE_CHANCE: 60
-      SMT_HEROICSAVE_HP: 45
-
-  - type: STR_PRIMARISLV5               # Primaris Lv5
-    tags:
-      SMT_HEROICSAVE_CHANCE: 70
-      SMT_HEROICSAVE_HP: 50
-
-  - type: STR_PRIMARIS_APOTH            # Primaris Apothecary
-    tags:
-      SMT_HEROICSAVE_CHANCE: 55
-      SMT_HEROICSAVE_HP: 40
-
-  - type: STR_PRIMARIS_APOTH_BIO        # Primaris Apothecary Biologis
-    tags:
-      SMT_HEROICSAVE_CHANCE: 60
-      SMT_HEROICSAVE_HP: 45
-
-  - type: STR_PRIMARIS_JUDICAR          # Primaris Judicar
-    tags:
-      SMT_HEROICSAVE_CHANCE: 35
-      SMT_HEROICSAVE_HP: 30
-
-  - type: STR_PRIMARIS_CHAPLAIN         # Primaris Chaplain
-    tags:
-      SMT_HEROICSAVE_CHANCE: 60
-      SMT_HEROICSAVE_HP: 45
-
-  - type: STR_PRIMARIS_LIBRARIANLV1     # Primaris Librarian Lv1
-    tags:
-      SMT_HEROICSAVE_CHANCE: 35
-      SMT_HEROICSAVE_HP: 30
-
-  - type: STR_PRIMARIS_LIBRARIANLV2     # Primaris Librarian Lv2
-    tags:
-      SMT_HEROICSAVE_CHANCE: 55
-      SMT_HEROICSAVE_HP: 40
-
-  - type: STR_PRIMARIS_LIBRARIANLV3     # Primaris Librarian Lv3
-    tags:
-      SMT_HEROICSAVE_CHANCE: 60
-      SMT_HEROICSAVE_HP: 45
-
-  - &STR_DEATHWATCH_MARINE              # Deathwatch Marines
-    type: STR_ULTRAMARINE
-    tags:
-      SMT_HEROICSAVE_CHANCE: 65 # vet level
-      SMT_HEROICSAVE_HP: 50
-
-  - type: STR_ULTRAMARINE
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_ULTRAMARINE_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_IMPERIALF
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_IMPERIALF_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_BLOODANGELS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_BLOODANGELS_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_SALAMANDAR
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_SALAMANDAR_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_BLACKT
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_BLACKT_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_WHITES
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_WHITES_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_DARKANGELS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_DARKANGELS_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_SPACEW
-    refNode: *STR_DEATHWATCH_MARINE
-    tags:
-      SMT_HEROICSAVE_HP: 70 # +20 SW bonus
-
-  - type: STR_SPACEW_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-    tags:
-      SMT_HEROICSAVE_HP: 70 # +20 SW bonus
-
-  - type: STR_CRISMONF
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - type: STR_CRISMONF_PRIMARIS
-    refNode: *STR_DEATHWATCH_MARINE
-
-  - &STR_DEATHWATCH_LEADER              # Deathwatch Leaders
-    type: STR_ULTRAMARINE_LEADER
-    tags:
-      SMT_HEROICSAVE_CHANCE: 75
-      SMT_HEROICSAVE_HP: 55
-
-  - type: STR_ULTRAMARINE_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_IMPERIALF_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_BLOODANGELS_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-  - type: STR_SALAMANDAR_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_BLACKT_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_WHITES_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_DARKANGELS_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-  - type: STR_SPACEW_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-    tags:
-      SMT_HEROICSAVE_HP: 75 # +20 SW bonus
-
-  - type: STR_CRISMONF_LEADER
-    refNode: *STR_DEATHWATCH_LEADER
-
-
 extended:
   tagsFile: Ruleset/Scripts/SMT_tags.rul
 
   scripts:
+    newTurnUnit:
+      - new: SMTS_heroic_save_startinghealth
+        offset: 90.0
+        code: |
+          var int temp;
+          var int endTurn;
+
+          if neq side 0; # only run on the players turn
+            return;
+          end;
+          unit.getHealth temp;
+          if gt temp 0; # only living units
+            unit.setTag Tag.UNIT_STARTOFTURN_HEALTH temp;
+          end;
+
+          return;
+
     damageUnit:
       #*** Script for protecting units from fatal damage ***
-      - new: SMTS_heroic_save
+      - new: SMTS_heroic_save_protect
         offset: 22.1 # run after corruption is applied but before the unit gets instakilled for having too much corruption
         code: |
           var ptr RuleSoldier unitSoldier;
@@ -251,17 +63,17 @@ extended:
           end;
 
           ### Handle chance to be protected by Heroic Save
-          #debug_log "HeroSave ping (turn|health|damage|baseChance) - " turnSide currentHealth to_health unitSaveMod;
           unit.getHealthMax maxHealth;
-          set saveChance currentHealth;
-          if lt maxHealth 100;
-            muldiv saveChance 100 maxHealth; #get hp as % if maxHP is less than 100
-          end;
+          unit.getTag saveChance Tag.UNIT_STARTOFTURN_HEALTH;
+          limit_lower saveChance currentHealth;
+          #debug_log "HeroSave ping (turn|health|starthealth|damage|baseChance) - " turnSide currentHealth saveChance to_health unitSaveMod;
+          muldiv saveChance 100 maxHealth; #get hp as % of maxHP
           mul saveChance 2; #double value from hp
           unit.Stats.getPsiSkill temp;
+          div temp 2; # half devotion as bonus
           unit.getTag temp2 Tag.SOLDIER_IS_FANATIC;
           if eq temp2 0;
-            div temp 2; # divide bonus from devotion by 2 if unit isn't blessed
+            div temp 2; # divide bonus from devotion by 2 again if unit isn't blessed
           end;
           #debug_log "HeroSave Devotion Bonus - " temp temp2;
           add saveChance temp; #add devotion to base
@@ -269,7 +81,8 @@ extended:
           unit.getTag saveCount Tag.SMT_HEROICSAVE_TRIGGERS;
           add saveCount 1;
           limit_lower saveCount 1; #sanity check to make sure there's no /0 nonsense
-          div saveChance saveCount; #divide chance by number of successful saves made by this unit +1
+          div saveChance saveCount;
+          div saveChance saveCount; #divide chance by number of successful saves made by this unit +1, twice
           battle_game.randomRange temp 0 100; 
           #debug_log "HeroSave randomRoll (chance|roll) - " saveChance temp;
           if lt saveChance temp; # fail if random roll 0-100 > save chance
@@ -293,7 +106,7 @@ extended:
           unit.setFire 0; # extinguish fire
           set to_transform 0; # prevent any chance of transforming
           unit.getTag temp Tag.SMT_RECOVERY_PENALTY;
-          add temp 45; # divided by unit woundRecovery modifier
+          add temp 40; # divided by unit woundRecovery modifier
           unit.setTag Tag.SMT_RECOVERY_PENALTY temp; # increase post-mission recovery time
           unit.setTag Tag.SMT_HEROICSAVE_TRIGGERS saveCount; # increment save counter;
           battle_game.flashLongMessage "STR_SCRIPT_HEROIC_SAVE"; # 'Unit endured the hit'

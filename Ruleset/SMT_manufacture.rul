@@ -591,6 +591,82 @@ manufacture:
     producedItems:
       STR_ASSC_CLIP_HE: 5
 
+  - name: STR_AUTOCANNON_HANDHELD                   # Autocannon (Guard)
+    category: STR_WEAPON
+    requires:
+      - STR_IMPERIAL_GUARD_OPERATIONS
+      - STR_AUTOCANNON_TECH
+    space: 0
+    time: 720 # was 400
+    cost: 20000 # was 40k
+    requiredItems:
+      STR_ALIEN_ALLOYS: 12 # was 30!
+
+  - name: STR_AUTOCANNON_HANDHELD_ANY               # Autocannon (Not Guard)
+    category: STR_WEAPON
+    requires:
+      - STR_AUTOCANNON_TECH
+      - STR_NOT_GUARD
+    space: 0
+    time: 720
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 12
+
+  - name: STR_AUTOCANNON_CLIP                       # Mounted Autocannon Ammo
+    category: STR_AMMUNITION
+    requires:
+      - STR_AUTOCANNON_AMMO_R
+    space: 0
+    time: 200
+    cost: 1000
+    requiredItems:
+      STR_ELERIUM_115: 5
+      STR_ALIEN_ALLOYS: 5
+    producedItems:
+      STR_AUTOCANNON_CLIP: 5
+
+  - name: STR_AUTOCANNON_AMMO                       # Autocannon Drum
+    category: STR_AMMUNITION
+    requires:
+      - STR_AUTOCANNON_AMMO_R
+    space: 0
+    time: 200
+    cost: 1000
+    requiredItems:
+      STR_ELERIUM_115: 5
+      STR_ALIEN_ALLOYS: 5
+    producedItems:
+      STR_AUTOCANNON_AMMO: 6
+
+  - name: STR_AUTOCANNON_CLIP                       # Autocannon Box Mag
+    category: STR_AMMUNITION
+    requires:
+      - STR_AUTOCANNON_AMMO_R
+    space: 0
+    time: 200
+    cost: 1000
+    requiredItems:
+      STR_ELERIUM_115: 5
+      STR_ALIEN_ALLOYS: 5
+    producedItems:
+      STR_AUTOCANNON_CLIP: 2
+
+  - name: STR_AUTOCANNON_HE_AMMO                    # Autocannon HE Drum
+    category: STR_AMMUNITION
+    requires:
+      - STR_AUTOCANNON_AMMO_R
+    space: 0
+    time: 200
+    cost: 1000
+    requiredItems:
+      STR_ELERIUM_115: 6
+      STR_ALIEN_ALLOYS: 4
+    producedItems:
+      STR_AUTOCANNON_HE_AMMO: 6
+
+  - delete: STR_AUTOCANNON_AP_AMMO
+
   - name: STR_PLASMA_CARBINE_TERRAN                 # Plasma Carbine
     category: STR_WEAPON
     requires:

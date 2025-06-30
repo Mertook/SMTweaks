@@ -11,6 +11,9 @@ facilities:
     storage: 150 # provides additional storage
     rightClickActionType: 4 # training menu
 
+  - type: STR_GUARD_BARRACKS
+    rightClickActionType: 4 # training menu
+
   - type: STR_TEC_BAY
     workshops: 25 # was 10
     provideBaseFunc: [TEC, MANU] # counts as a workshop
@@ -21,6 +24,10 @@ facilities:
 
   - type: STR_STEELMILL
     rightClickActionType: 2 # manufacturing menu
+
+  - type: STR_APOC_BAY
+    sickBayAbsoluteBonus: 1.0 # was 0.5
+    sickBayRelativeBonus: 0.0
 
   - &DW_QUARTERS
     type: STR_DW_QUARTERS_ULTRA
@@ -45,32 +52,34 @@ facilities:
   - type: STR_DW_QUARTERS
     refNode: *DW_QUARTERS
 
-  - type: STR_OUTPOST_MARINES
+  - &OUTPOST_TRAINING
+    type: STR_OUTPOST_MARINES
     trainingRooms: 20
+    rightClickActionType: 4 # training menu
 
   - type: STR_OUTPOST_MARINES_HYPER
-    trainingRooms: 20
+    refNode: *OUTPOST_TRAINING
 
   - type: STR_OUTPOST # Arbites
-    trainingRooms: 20
+    refNode: *OUTPOST_TRAINING
 
   - type: STR_OUTPOST_ARBITES_HYPER
-    trainingRooms: 20
+    refNode: *OUTPOST_TRAINING
 
   - type: STR_OUTPOST_ADEPTAS
-    trainingRooms: 20
+    refNode: *OUTPOST_TRAINING
 
   - type: STR_OUTPOST_ADEPTAS_HYPER
-    trainingRooms: 20
+    refNode: *OUTPOST_TRAINING
 
   - type: STR_OUTPOST_GUARD
-    trainingRooms: 20
+    refNode: *OUTPOST_TRAINING
     
   - type: STR_OUTPOST_GUARD_HYPER
-    trainingRooms: 20
+    refNode: *OUTPOST_TRAINING
 
   - type: STR_OUTPOST_GK # Chamber Militant
-    trainingRooms: 20
+    refNode: *OUTPOST_TRAINING
 
   - type: STR_OUTPOST_INQ_HYPER
     requires:
@@ -88,6 +97,7 @@ facilities:
     monthlyCost: 650000
     personnel: 50
     trainingRooms: 20
+    rightClickActionType: 4 # training menu
     storage: 100
     mapName: XBASE_60
     storageTiles:

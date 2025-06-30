@@ -155,3 +155,11 @@ armors:
   - type: STR_TELEPATH
     psiVision: 0
     requires: STR_GENERALLOCK
+
+  - type: STR_INQ_POWER_ARMOR_AUTOCANNON
+    builtInWeapons:
+      - STR_INQ_AUTOCANNON
+      - STR_AUTOCANNON_BOX_AMMO # was size 60 drum
+
+
+

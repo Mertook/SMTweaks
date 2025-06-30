@@ -420,6 +420,12 @@ research:
       - STR_ASSC_CLIP
       - STR_UFO_CONSTRUCTION
 
+  - name: STR_AUTOCANNON_AMMO_R     # Autocannon ammo
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_AUTOCANNON_TECH
+
   - name: STR_SCOUT_WEAPONS         # Scout Weaponry
     cost: 30
     points: 10
@@ -768,7 +774,7 @@ research:
       - STR_MKX_INC_ARMOR
       - STR_MASTER_CRAFTING
     unlocks:
-      - STR_ASSC_CLIP
+      - STR_AUTOCANNON_AMMO_R
     listOrder: 15 # push above corpses/etc
 
   - name: STR_OMNIS_PLASMAPACK      # Primaris Plasma Exterminators

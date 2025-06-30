@@ -2718,9 +2718,22 @@ items:
       SMT_SHIELD_DAMAGE_AMP: 50
 
 ### Assault/Auto Cannons
+  - type: STR_ASSC_CLIP                     # Assault Cannon Ammo
+    power: 100
+    clipSize: 100
+    damageType: 1
+    damageAlter: 
+      ToArmorPre: 0.15 # was 0.1
+      ArmorEffectiveness: 1.0 # was 0.9
+      ToArmor: 0.15 # was 0.1
+      ToHealth: 1.0
+      ToStun: 0.5
+      ToWound: 0.1
+      RandomWound: false
+
   - type: STR_ASSC                          # Assault Cannon
     weight: 90 # was 100 - +15 when loaded
-    sprayWaypoints: 2
+    sprayWaypoints: 4
     dropoff: 6 # was 4
     accuracySnap: 75 # was 70
     accuracyAuto: 45 # was 60
@@ -2729,8 +2742,8 @@ items:
     snapRange: 15
     aimRange: 0
     tuAimed: 0
-    tuAuto: 66 # was 60
-    tuSnap: 33
+    tuAuto: 50 # was 60
+    tuSnap: 30 # was 33
     confSnap:
       shots: 4 # was 4
       shortName: STR_BURST_SNAP_SHOT
@@ -2744,16 +2757,48 @@ items:
       REACTION_MULTIPLIER: 75
       REACTION_PENALTY_KNEELING_BYPASS: 0
 
-  - type: STR_ASSC_CLIP                     # Assault Cannon Ammo
-    power: 100
-    clipSize: 100
+  - &REF_AUTOCANNON_DMG_AP
+    type: STR_AUTOCANNON_AMMO
+    costBuy: 0 # have to manufacture it
+    weight: 15
+    clipSize: 20
+    power: 120
     damageType: 1
-    damageAlter: 
-      ToArmorPre: 0.1
-      ArmorEffectiveness: 0.85
-      ToArmor: 0.15 # was 0.1
-      ToHealth: 1.0
-      ToStun: 0.5
+    damageAlter:
+      ArmorEffectiveness: 0.80 # was 0.9
+      ToArmorPre: 0.02 # was 0.05
+      ToArmor: 0.05 # was 0.1
+      ToHealth: 1.0 # was 1.0
+      ToStun: 0.3 # was 0.5
+    armor: 300
+    weight: 12 # was 15
+
+  - type: STR_AUTOCANNON_AMMO               # Autocannon Drum Ammo
+    refNode: *REF_AUTOCANNON_DMG_AP
+
+  - type: STR_AUTOCANNON_CLIP               # Mounted Autocannon Drum Ammo
+    refNode: *REF_AUTOCANNON_DMG_AP
+    clipSize: 60
+
+  - type: STR_AUTOCANNON_BOX_AMMO           # Autocannon Box Ammo
+    refNode: *REF_AUTOCANNON_DMG_AP
+    clipSize: 30
+    weight: 30 # was 25
+
+  - type: STR_AUTOCANNON_HE_AMMO            # Autocannon HE Ammo
+    power: 120 # was 100
+    damageType: 3
+    damageAlter:  # high explosive
+      RandomType: 6
+      ToArmorPre: 0.05
+      ToArmor: 0.1
+      ArmorEffectiveness: 1.0 # was 0.95
+      ToStun: 0.6
+      ToEnergy: 0.4
+      ToTime: 0.2
+      ToTile: 0.75
+      ToItem: 0.75
+      FixRadius: 2
 
   - type: STR_GRAV_AUTOC                    # Gravis Autocannon Gauntlet
     refNode: *REF_POWERFIST_TEMPLATE
@@ -2764,17 +2809,17 @@ items:
     accuracyAuto: 60 # was 50
     accuracySnap: 80 # was 75
     accuracyAimed: 0
-    tuAuto: 35 # was 30
-    tuSnap: 25 # was 20
+    tuAuto: 40 # was 30
+    tuSnap: 26 # was 20
     tuAimed: 0
     autoShots: 3
-    power: 100
+    power: 120
     damageAlter: 
-      ToArmorPre: 0.1
-      ArmorEffectiveness: 0.85
+      ToArmorPre: 0.05
+      ArmorEffectiveness: 0.9
       ToArmor: 0.15 # was 0.1
       ToHealth: 1.0
-      ToStun: 0.5
+      ToStun: 0.3
 
   - type: STR_GRAV_AUTOC_DW                 # Gravis Autocannon Gauntlet (DW)
     refNode: *REF_POWERFIST_TEMPLATE
@@ -2788,22 +2833,22 @@ items:
     accuracyAuto: 60 # was 50
     accuracySnap: 80 # was 75
     accuracyAimed: 0
-    tuAuto: 35 # was 30
-    tuSnap: 25 # was 20
+    tuAuto: 40 # was 30
+    tuSnap: 26 # was 20
     tuAimed: 0
     autoShots: 3
-    power: 100
+    power: 120
     damageAlter: 
-      ToArmorPre: 0.1
-      ArmorEffectiveness: 0.85
+      ToArmorPre: 0.05
+      ArmorEffectiveness: 0.9
       ToArmor: 0.15 # was 0.1
       ToHealth: 1.0
-      ToStun: 0.5
+      ToStun: 0.3
 
   - type: STR_ACCEL_AUTOCANNON_FIXED        # Accelerator Autocannon (Omnis Armor)
     categories: [STR_CAT_AUTO]
     battleType: 1
-    weight: 50
+    weight: 45
     recover: false
     fixedWeapon: true
     fixedWeaponShow: true
@@ -2818,10 +2863,10 @@ items:
     handSprite: 432
     bulletSprite: {mod: 40k, index: 6}
     fireSound: {mod: 40k, index: 12}
-    compatibleAmmo:
-      - STR_ASSC_CLIP
-      - STR_ASSC_CLIP_AP
-      - STR_ASSC_CLIP_HE
+    compatibleAmmo: # was assault cannon ammo
+      - STR_AUTOCANNON_AMMO
+      - STR_AUTOCANNON_BOX_AMMO
+      - STR_AUTOCANNON_HE_AMMO
     dropoff: 3
     autoRange: 16
     snapRange: 28
@@ -2833,22 +2878,20 @@ items:
     tuSnap: 30
     tuAimed: 0
     confSnap:
-      shots: 3 # was 1
-      name: STR_BURST_SNAP_SHOT
-      followProjectiles: false
+      shots: 1 # was 1
     confAuto:
-      shots: 6
+      shots: 3
       followProjectiles: false
     bulletSpeed: 20
     explosionSpeed: 1
     tags:
-      ITEM_RECOIL: 110 # heavy weapon
-      ITEM_IS_HEAVY_WEAPON: 1 # low fire rate relative to assault cannon
+      ITEM_RECOIL: 100 # heavy weapon
+      ITEM_IS_HEAVY_WEAPON: 1
 
   - type: STR_ACCEL_AUTOCANNON_FIXED_DW     # Accelerator Autocannon (Omnis Armor DW)
     categories: [STR_CAT_AUTO]
     battleType: 1
-    weight: 50
+    weight: 45
     recover: false
     fixedWeapon: true
     fixedWeaponShow: true
@@ -2863,10 +2906,10 @@ items:
     handSprite: {mod: 40k_ROSIGMA_edits, index: 864} #Inq Autocannon
     bulletSprite: {mod: 40k, index: 6}
     fireSound: {mod: 40k, index: 12}
-    compatibleAmmo:
-      - STR_ASSC_CLIP
-      - STR_ASSC_CLIP_AP
-      - STR_ASSC_CLIP_HE
+    compatibleAmmo: # was assault cannon ammo
+      - STR_AUTOCANNON_AMMO
+      - STR_AUTOCANNON_BOX_AMMO
+      - STR_AUTOCANNON_HE_AMMO
     dropoff: 3
     autoRange: 16
     snapRange: 28
@@ -2878,17 +2921,83 @@ items:
     tuSnap: 30
     tuAimed: 0
     confSnap:
-      shots: 3 # was 1
-      name: STR_BURST_SNAP_SHOT
-      followProjectiles: false
+      shots: 1
     confAuto:
-      shots: 6
+      shots: 4
       followProjectiles: false
     bulletSpeed: 20
     explosionSpeed: 1
     tags:
-      ITEM_RECOIL: 110 # heavy weapon
-      ITEM_IS_HEAVY_WEAPON: 1 # low fire rate relative to assault cannon
+      ITEM_RECOIL: 100 # heavy weapon
+      ITEM_IS_HEAVY_WEAPON: 1
+
+  - &STR_AUTOCANNON_TEMPLATE                # Autocannon
+    type: STR_AUTOCANNON_HANDHELD
+    costBuy: 0 # have to manufacture it
+    dropoff: 3
+    minRange: 7
+    sprayWaypoints: 2
+    autoRange: 20
+    snapRange: 25
+    aimRange: 0
+    accuracyAuto: 65
+    accuracySnap: 70
+    accuracyAimed: 0
+    tuAuto: 55 # was 60
+    tuSnap: 30 # was 40
+    tuAimed: 0
+    autoShots: 3
+    weight: 40 # was 70!
+    compatibleAmmo: # no AP ammo, no large ammo box for non-mounted guns
+      - STR_AUTOCANNON_AMMO
+      - STR_AUTOCANNON_BOX_AMMO
+      - STR_AUTOCANNON_HE_AMMO
+    tags:
+      ITEM_RECOIL: 100 # was 70
+
+  - type: STR_AUTOCANNON_HANDHELD           # Autocannon (Guard)
+    refNode: *STR_AUTOCANNON_TEMPLATE
+
+  - type: STR_AUTOCANNON_HANDHELD_ANY       # Autocannon (Generic)
+    refNode: *STR_AUTOCANNON_TEMPLATE
+    ufopediaType: STR_AUTOCANNON_HANDHELD_ANY
+
+  - type: STR_AUTOCANNON_KALIBRAX           # Kalibrax Autocannon
+    refNode: *STR_AUTOCANNON_TEMPLATE
+    snapRange: 28
+    autoRange: 22
+    accuracySnap: 80
+    accuracyAuto: 70
+    tuAuto: 50
+    tuSnap: 30
+    autoShots: 2
+
+  - type: STR_CHAOS_AUTOCANNON_HANDHELD     # Chaos Autocannon
+    refNode: *STR_AUTOCANNON_TEMPLATE
+    dropoff: 4
+    accuracySnap: 65
+    accuracyAuto: 60
+    snapRange: 25
+    autoRange: 20
+    tuSnap: 35
+    tuAuto: 55
+    autoShots: 3
+
+  - type: STR_INQ_AUTOCANNON                # Inq Stormtrooper Autocannon
+    refNode: *STR_AUTOCANNON_TEMPLATE
+    dropoff: 3
+    minRange: 7
+    accuracySnap: 60
+    tuSnap: 30
+    snapRange: 23
+    accuracyAuto: 50
+    tuAuto: 60
+    autoRange: 20
+    aimRange: 0
+    autoShots: 4
+    accuracyAimed: 0
+    tuAimed: 0
+    kneelBonus: 150  # heavy weapon
 
 ### Flamers
   - type: STR_HFLAMER                       # Heavy Flamer
@@ -3035,7 +3144,7 @@ items:
     powerRangeThreshold: 6.0 # +1 over regular
 
 ### Melta Explosives
-  - &DMG_MELTA_BLAST                    # Explosive Melta Damage
+  - &DMG_MELTA_BLAST                        # Explosive Melta Damage
     type: STR_HIGH_EXPLOSIVE
     damageType: 11
     damageAlter:
@@ -3049,7 +3158,7 @@ items:
       RandomWound: false
       FireThreshold: 0
 
-  - type: STR_HIGH_EXPLOSIVE            # Melta Bomb
+  - type: STR_HIGH_EXPLOSIVE                # Melta Bomb
     refNode: *DMG_MELTA_BLAST
     throwRange: 10
     flatThrow:
@@ -3073,7 +3182,7 @@ items:
     damageAlter:
       FixRadius: 10
 
-  - type: STR_MGRENADE                  # Melta Grenade
+  - type: STR_MGRENADE                      # Melta Grenade
     refNode: *DMG_MELTA_BLAST
     throwRange: 15
     weight: 3
@@ -4677,6 +4786,10 @@ items:
     damageAlter:
       FixRadius: 1 # was 2
 
+  - type: STR_MORTAR_AMMO_ILLUMINATION_EXPLOSION # Mortar Flare
+    spawnItem: STR_SUPERFLARE
+    spawnItemChance: 100
+
 ### Melee
   - type: STR_CHAINSWORD                    # Chainsword
     categories: [STR_CAT_MELEE, STR_CAT_ASSAULT]
@@ -5284,7 +5397,7 @@ items:
     accuracyMultiplier:
       psiStrength: 1.0
       flatHundred: 1.0
-    spawnItem: STR_SUPERFLARE
+    spawnItem: STR_SUPERFLARE_SHORT
     spawnItemChance: 100
 
   - type: STR_PSITOKEN_TELEPATHY            # T1 Telepathy
@@ -6004,12 +6117,29 @@ items:
       FixRadius: 9
       RadiusReduction: 0
 
-  - type: STR_SUPERFLARE                    # Flare
+  - type: STR_SUPERFLARE                    # Flare (Mortar)
     battleType: 10 # electroflare
     weight: 999
     bigSprite: 99
     floorSprite: 72
-    power: 30 # double electroflare power
+    power: 25
+    armor: 400 # not standard flare, can't be destroyed by regular weapons
+    weight: 0
+    invWidth: 0
+    invHeight: 0
+    clipSize: -1
+    recover: false
+    supportedInventorySections:
+      - STR_GROUND
+    tags:
+      ITEM_PRIMED_AT_BATTLE_START: 7
+
+  - type: STR_SUPERFLARE_SHORT              # Flare (Psi power)
+    battleType: 10 # electroflare
+    weight: 999
+    bigSprite: 99
+    floorSprite: 72
+    power: 25
     armor: 400 # not standard flare, can't be destroyed by regular weapons
     weight: 0
     invWidth: 0

@@ -6,36 +6,5 @@ soldiers:
       - STR_ELDAR_SEER
 
 
-  - &STR_OFFICER
-    type: STR_GUARD_OFFICER
-    skillIconSprite: 203
-    skills:
-      - STR_HUNKER_DOWN
-      - STR_BLITZKRIEG
-      - STR_FIX_BAYONETS
-      - STR_CHECK_COMMAND
-      - STR_DIG_IN # give them dig in
-
-  - type: STR_GUARD_OFFICER_VETERAN
-    refNode: *STR_OFFICER
-
-  - type: STR_STORMTROOPER_OFFICER
-    refNode: *STR_OFFICER
-
-  - type: STR_GUARDSL_OFFICER
-    refNode: *STR_OFFICER
-
-  - type: STR_GUARDSL_OFFICER_VETERAN
-    refNode: *STR_OFFICER
-
-  - type: STR_CATACHANTOP_FIGHTER
-    skillIconSprite: 995
-    skills:
-      - STR_DIG_IN
-  - type: STR_CATACHANVET_FIGHTER
-    skillIconSprite: 995
-    skills:
-      - STR_DIG_IN
-
 
 

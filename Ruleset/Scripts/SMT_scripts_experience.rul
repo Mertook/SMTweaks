@@ -18,10 +18,12 @@ extended:
 
           unit.getRuleArmor soldierArmor;
           unit.getRuleSoldier soldierRuleset;
-          soldierArmor.getTag devotionExperience Tag.ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE;
+          soldierArmor.getTag devotionExperience Tag.ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE; # inbuilt xp from armor/soldier
           soldierRuleset.getTag temp Tag.SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE;
           add devotionExperience temp;
-          soldierArmor.getTag psychicExperience Tag.ARMOR_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE;
+          battle_game.getTag temp Tag.SMT_DEVOTION_TEACHER_VAL; # global bonus for spiritual leader, use if higher than soldiers base
+          limit_lower devotionExperience temp;
+          soldierArmor.getTag psychicExperience Tag.ARMOR_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE; # inbuilt xp from armor/soldier
           soldierRuleset.getTag temp Tag.SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE;
           add psychicExperience temp;
 
@@ -90,4 +92,26 @@ extended:
 
 
       - delete: 40k_rFMU_psiskill_as_secondary_experience
+
+
+    createUnit:
+      - new: SMTS_devotion_teacher_val # Sets global value for soldier devotion training
+        offset: 1
+        code: |
+          var int temp;
+          var int temp2;
+
+          unit.getTag temp Tag.SOLDIER_IS_PSISKILL_TEACHER;
+          if le temp 0;
+            return;
+          end;
+          battle_game.getTag temp2 Tag.SMT_DEVOTION_TEACHER_VAL;
+          if gt temp temp2;
+            battle_game.setTag Tag.SMT_DEVOTION_TEACHER_VAL temp;
+          end;
+
+          return;
+
+
+
 

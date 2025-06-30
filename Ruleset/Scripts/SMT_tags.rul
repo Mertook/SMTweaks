@@ -116,6 +116,7 @@ extended:
       ## Alpha
       SMT_ALPHA_ATTACKER_MODIFIER: int
       ## Experience Gain
+      SOLDIER_IS_PSISKILL_TEACHER: int                      # all units get up to this much Devotion when earning experience in battle if this unit is present
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: int      # gain up to this much Devotion when earning experience in battles
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: int   # gain up to this much PsiStrength when earning experience in battles
     RuleSkill:
@@ -146,7 +147,8 @@ extended:
       SMT_RECOVERY_PENALTY: int         # store unit penalties to wound recovery time
       SMT_LOWEST_HEALTH: int            # store lowest HP unit has reached for regeneration/recovery time
       ## Heroic Save
-      SMT_HEROICSAVE_TRIGGERS: int #number of times a unit has made a heroic save
+      UNIT_STARTOFTURN_HEALTH: int      # amount of health at start of turn for calculating heroic save
+      SMT_HEROICSAVE_TRIGGERS: int      # number of times a unit has made a heroic save
       ## Infiltrator
       UNIT_DEACTIVATE_CHECK: int                # has the unit tried to deactivate stealth this turn?
       UNIT_STEALTH_IS_ACTIVE: int               # is unit currently stealthed? X = turn count
@@ -192,4 +194,6 @@ extended:
       SMT_COMMAND_TYPE: int             # Last used command
       SMT_COMMAND_TURN: int             # Turn Command is active for
       SMT_COMMAND_POINTS: int           # Command points earned this battle
+      ## Experience Gain
+      SMT_DEVOTION_TEACHER_VAL: int         # highest value teacher for devotion training in battle
 

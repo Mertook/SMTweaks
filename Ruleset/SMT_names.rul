@@ -5,6 +5,8 @@ itemCategories:
     listOrder: 8
   - type: STR_CAT_ASSASSIN
     listOrder: 200
+  - type: STR_CAT_TECHPRIEST
+    listOrder: 165
 
 extraStrings:
   - type: en-US
@@ -70,6 +72,7 @@ extraStrings:
       STR_STRIKE_REINFORCE_SCION: Gravdrop
       STR_CAT_FIRESUPPORT: Fire Support
       STR_CAT_ASSASSIN: Assassin
+      STR_CAT_TECHPRIEST: Techpriest
       STR_CAT_ARMOR: Armor
       STR_NECRON_REINFORCEMENTS_SHIP_DESC_START: "The Monolith is calling forth reinforcements, teleporting Necrons directly onto the battlefield. Hold the line against the Necron onslaught!"
       STR_NECRON_REINFORCEMENTS_SHIP_DESC_END: "The flow of reserves has slowed, the Necrons appear unwilling the commit more to this assault. Defeat these final enemy forces and drive them back!"
@@ -385,8 +388,8 @@ extraStrings:
       STR_FALLEN_HERO: Venerable Dreadnought
       STR_PRIMARIS_APOTH: Apothecary
       STR_PRIMARIS_APOTH_BIO: Apothecary Biologis
-      STR_PRIMARIS_TECH: Techmarine
-      STR_PRIMARIS_TECHVET: Vet. Techmarine
+      STR_PRIMARIS_TECHNOVICE: Tech Novitiate
+      STR_PRIMARIS_TECHMARINE: Techmarine
       STR_PRIMARIS_JUDICAR: Judiciar
       STR_PRIMARIS_CHAPLAIN: Chaplain
       STR_PRIMARIS_LIBRARIANLV1: Librarian
@@ -429,6 +432,8 @@ extraStrings:
       STR_PRIMARIS_RANK_5: "Captain"
       STR_PRIM_APOTH_RANK_0: Apothecary
       STR_PRIM_APOTH_RANK_1: Apoth. Biologis
+      STR_PRIM_TECH_RANK_0: Tech Novitiate
+      STR_PRIM_TECH_RANK_1: Techmarine
       ### SKILLS
       STR_BLESS_SKILL: Litany of Faith
       INV_BLESS_TOKEN: Litany of Faith
@@ -439,10 +444,9 @@ extraStrings:
       STR_CMD_MELEE_SKILL: Relentless Assault
       STR_CMD_CHECK_SKILL: Check CMD Points
       STR_GRAV_MORTAR: Fragstorm Grenades
-      STR_TECH_PRIMARY_SKILL: Primary Item
-      STR_TECH_UTILITY_SKILL: Utility Item
-      STR_TECH_SUPPORT_SKILL: Support Item
-      STR_TECH_SKULL_SKILL: Deploy Servo Skull
+      STR_TECH_PRIMARY_SKILL: Servo Weapon
+      STR_TECH_UTILITY_SKILL: Utility Tool
+      STR_TECH_SKULL_SKILL: Deploy Gear
       ### Psykers
       STR_PSYKER_T1_UNLOCK: (Tier 1 Psyker Abilities)
       STR_PSYKER_T2_UNLOCK: (Tier 2 Psyker Abilities)
@@ -502,10 +506,16 @@ extraStrings:
       STR_PROMOTE_NEOPHYTE_PRIMARIS: Induct Neophyte
       STR_PROMOTE_CHAPLAIN: Anoint Chaplain
       STR_PROMOTE_LIBRARIAN: Train Librarian
-      STR_PROMOTE_LIB_TERMINATOR: Promote Vet Librarian
+      STR_PROMOTE_LIB_TERMINATOR: Promote Vet. Librarian
+      STR_PROMOTE_APOTHECARY: Train Apothecary
+      STR_PROMOTE_APOTHECARY_VET: Promote Vet. Apothecary
+      STR_PROMOTE_TECHMARINE: Train Techmarine
+      STR_PROMOTE_TECHMARINE_VET: Promote Vet. Techmarine
       STR_CHAPLAIN_ROSARY: Award Rosary
       STR_PROMOTE_APOTH_PRIM: Train Apothecary
       STR_PROMOTE_APOTH_BIO: Promote Apothecary Biologis
+      STR_PROMOTE_TECHNOVICE_PRIM: Train Tech Novitiate
+      STR_PROMOTE_TECHMARINE_PRIM: Promote Techmarine
       STR_PROMOTE_JUDICAR: Induct Judiciar
       STR_JUDICAR_TO_CHAPLAIN: Anoint Chaplain
       STR_LIBRARIAN_PRIMARISLV1: Train Librarian

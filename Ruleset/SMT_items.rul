@@ -320,7 +320,7 @@ items:
       FireBlastCalc: false
       IgnoreOverKill: false
       IgnoreSelfDestruct: false # default true for HE, fire, smoke, stun, mel
-      IgnoreDirection: true # always hits front armor
+      IgnoreDirection: false
       ToHealth: 0.2 # was 1.0
       ToArmorPre: 0.7 # was 0
       ToArmor: 0.3 # was 0
@@ -337,7 +337,7 @@ items:
     meleeBonus: # normal power weapons are 0.2 str 0.3 melee
       strength: 0.1 # was 0.2
       melee: 0.3 # was 0.2
-      psiSkill: 0.3 # was 0
+      psiSkill: 0.2 # was 0
     meleeMultiplier:
       melee: 0.8
       psiSkill: 0.2
@@ -349,6 +349,8 @@ items:
       ITEM_DOESNT_HURT_USER: 1
       ITEM_DMGMOD_IMPERIUM: -1
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
+      SMT_ARMOR_DAMAGE_ALL: 66
+      SMT_ARMOR_TARGET_WEAKEST: 1
 
   - type: AUX_CROZIUS_PRIMARIS              # Crozius (Primaris Chaplain)
     bigSprite: {mod: 40k, index: 253}
@@ -434,6 +436,8 @@ items:
       ITEM_DOESNT_HURT_USER: 1
       ITEM_DMGMOD_IMPERIUM: -1
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
+      SMT_ARMOR_DAMAGE_ALL: 66
+      SMT_ARMOR_TARGET_WEAKEST: 1
 
   - type: AUX_MORTAR                        # Terminator Cyclone Launcher
     # weight: 40 # fixed weapon ignores this?
@@ -948,31 +952,16 @@ items:
     invWidth: 2
     invHeight: 3
     armor: 300
-    power: 130
-    clipSize: 8 # was 8
+    power: 150
+    clipSize: 8
     damageType: 3 # HE
     damageAlter:
       RandomType: 6
-      ToArmorPre: 0.3
+      ToArmorPre: 0.2
       ArmorEffectiveness: 0.75
-      FixRadius: 8
+      FixRadius: 10
     tags:
       ITEM_AMMO_COLOR: 1
-
-  - type: STR_HWP_FUSION_BOMB               # Dread Hellfire Missile ammo
-    size: 0.1
-    armor: 300
-    power: 130
-    damageType: 11 # Melta - was HE
-    damageAlter:
-      RandomType: 6 # was 2
-      ToArmorPre: 0.75 # was 0.5
-      ArmorEffectiveness: 0.75
-      FireThreshold: 1
-      FixRadius: 11
-    clipSize: 8 # was 8
-    tags:
-      ITEM_AMMO_COLOR: 2
 
   - type: STR_STUN_ROD                      # Shock Maul
     armor: 300

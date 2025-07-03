@@ -6,7 +6,6 @@ extended:
       - new: SMTS_death_triggers 
         offset: 95
         code: |
-          var ptr RuleArmor unitArmor;
           var int pointVal;
           var int temp;
           var int temp2;
@@ -23,53 +22,83 @@ extended:
             end;
             return;
           end;
+          #debug_log "Death Trigger" to_health temp unit;
 
-          ### Turret Death handling
-          unit.getTag temp Tag.SMT_RAZOR_HBOLTER_TURRET;   # Razorback Heavy Bolter
-          if eq temp 1;
-            battle_game.getTag temp Tag.SMT_RAZOR_HBOLTER_DEATHS;
-            add temp 1;
-            battle_game.setTag Tag.SMT_RAZOR_HBOLTER_DEATHS temp;
-          end;
-          unit.getTag temp Tag.SMT_RAZOR_LAS_TURRET;       # Razorback Lascannon
-          if eq temp 1;
-            battle_game.getTag temp Tag.SMT_RAZOR_LAS_DEATHS;
-            add temp 1;
-            battle_game.setTag Tag.SMT_RAZOR_LAS_DEATHS temp;
-          end;
-          unit.getTag temp Tag.SMT_RAZOR_HFLAME_TURRET;    # Razorback HeavyFlamer
-          if eq temp 1;
-            battle_game.getTag temp Tag.SMT_RAZOR_HFLAME_DEATHS;
-            add temp 1;
-            battle_game.setTag Tag.SMT_RAZOR_HFLAME_DEATHS temp;
-          end;
-
-
-          unit.getFaction temp; # enemy kills only
-          if eq temp FACTION_HOSTILE;
-            ## Marine Command Points
-            unit.getHealthMax pointVal;
-            loop var i 5; #cycle through the armor sides
-              unit.getArmorMax temp i;
-              add pointVal temp;
-              #debug_log "Cmd Points Armor " i temp pointVal;
+          begin; ### Turret Deaths
+            unit.getTag temp Tag.SMT_RAZOR_HBOLTER_TURRET;   # Razorback Heavy Bolter
+            if eq temp 1;
+              battle_game.getTag temp Tag.SMT_RAZOR_HBOLTER_DEATHS;
+              add temp 1;
+              battle_game.setTag Tag.SMT_RAZOR_HBOLTER_DEATHS temp;
             end;
-            set temp 100;
-            unit.getTag temp2 Tag.ARMOR_ENERGY_SHIELD_DECAY;
-            if gt temp2 0;
-              div temp temp2;
-              unit.getTag temp2 Tag.ARMOR_ENERGY_SHIELD_HP_PER_TURN;
-              mul temp temp2;
-              add pointVal temp;
+            unit.getTag temp Tag.SMT_RAZOR_LAS_TURRET;       # Razorback Lascannon
+            if eq temp 1;
+              battle_game.getTag temp Tag.SMT_RAZOR_LAS_DEATHS;
+              add temp 1;
+              battle_game.setTag Tag.SMT_RAZOR_LAS_DEATHS temp;
             end;
+            unit.getTag temp Tag.SMT_RAZOR_HFLAME_TURRET;    # Razorback HeavyFlamer
+            if eq temp 1;
+              battle_game.getTag temp Tag.SMT_RAZOR_HFLAME_DEATHS;
+              add temp 1;
+              battle_game.setTag Tag.SMT_RAZOR_HFLAME_DEATHS temp;
+            end;
+          end;
 
-            #debug_log "Cmd Points Bonus " pointVal;
-            div pointVal 18; # average of hp + shields & armor sides /3
+          begin; ### Expert Deaths
+            var ptr RuleSoldier soldierRuleset;
 
-            battle_game.getTag temp Tag.SMT_COMMAND_POINTS;
-            #debug_log "Cmd Points Final " pointVal temp;
-            add pointVal temp;
-            battle_game.setTag Tag.SMT_COMMAND_POINTS pointVal;
+            unit.getFaction temp; # player units only
+            if eq temp FACTION_PLAYER;
+              unit.getRuleSoldier soldierRuleset;
+              soldierRuleset.getTag temp Tag.SOLDIER_IS_PSISKILL_TEACHER; # Devotion Teacher
+              if gt temp 0;
+                battle_game.getTag temp2 Tag.SMT_DEVOTION_TEACHER_TOTAL;
+                sub temp2 temp;
+                battle_game.setTag Tag.SMT_DEVOTION_TEACHER_TOTAL temp2;
+                battle_game.getTag temp Tag.SMT_DEVOTION_TEACHER_PEAK;
+                limit_upper temp temp2;
+                battle_game.setTag Tag.SMT_DEVOTION_TEACHER_PEAK temp;
+              end;
+              soldierRuleset.getTag temp Tag.SOLDIER_WOUNDTIME_RECOVERY_GLOBAL; # Medical Expert
+              if gt temp 0;
+                battle_game.getTag temp2 Tag.SMT_FAST_RECOVERY_TOTAL;
+                sub temp2 temp;
+                battle_game.setTag Tag.SMT_FAST_RECOVERY_TOTAL temp2;
+                battle_game.getTag temp Tag.SMT_FAST_RECOVERY_PEAK;
+                limit_upper temp temp2;
+                battle_game.setTag Tag.SMT_FAST_RECOVERY_PEAK temp;
+              end;
+            end;
+          end;
+
+          begin; ### SM Captain Points
+            unit.getFaction temp; # enemy kills only
+            if eq temp FACTION_HOSTILE;
+              ## Marine Command Points
+              unit.getHealthMax pointVal;
+              loop var i 5; #cycle through the armor sides
+                unit.getArmorMax temp i;
+                add pointVal temp;
+                #debug_log "Cmd Points Armor " i temp pointVal;
+              end;
+              set temp 100;
+              unit.getTag temp2 Tag.ARMOR_ENERGY_SHIELD_DECAY;
+              if gt temp2 0;
+                div temp temp2;
+                unit.getTag temp2 Tag.ARMOR_ENERGY_SHIELD_HP_PER_TURN;
+                mul temp temp2;
+                add pointVal temp;
+              end;
+
+              #debug_log "Cmd Points Bonus " pointVal;
+              div pointVal 18; # average of hp + shields & armor sides /3
+
+              battle_game.getTag temp Tag.SMT_COMMAND_POINTS;
+              #debug_log "Cmd Points Final " pointVal temp;
+              add pointVal temp;
+              battle_game.setTag Tag.SMT_COMMAND_POINTS pointVal;
+            end;
           end;
 
 
@@ -77,3 +106,5 @@ extended:
 
       - delete: ROSIGMA_dU_turret_reload # integrated into above
       - delete: ROSIGMA_dU_alpha_infiltration
+
+

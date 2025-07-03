@@ -63,7 +63,7 @@ extended:
 
     hitUnit:
       - new: SMTS_cmd_armor_hitunit     #*** Armor of Contempt damage reduction - 1.0 ***
-        offset: 1.0
+        offset: 2.0
         code: |
           var int temp;
           var int temp2;
@@ -92,35 +92,44 @@ extended:
           muldiv power 4 5; # reduce power to 80%
 
           set temp2 0; # compare armor sides and pick most armored side
-          unit.getArmor temp SIDE_FRONT;
-          if gt temp temp2;
-            set side SIDE_FRONT;
-            set temp2 temp;
+          loop var i 5; #cycle through the armor sides
+            unit.getArmor temp i;
+            if gt temp temp2;
+              set side i;
+              set temp2 temp;
+            end;
+            #debug_log "AoC Armor " i temp temp2;
           end;
 
-          unit.getArmor temp SIDE_LEFT;
-          if gt temp temp2;
-            set side SIDE_LEFT;
-            set temp2 temp;
-          end;
+          # unit.getArmor temp SIDE_FRONT;
+          # if gt temp temp2;
+            # set side SIDE_FRONT;
+            # set temp2 temp;
+          # end;
 
-          unit.getArmor temp SIDE_RIGHT;
-          if gt temp temp2;
-            set side SIDE_RIGHT;
-            set temp2 temp;
-          end;
+          # unit.getArmor temp SIDE_LEFT;
+          # if gt temp temp2;
+            # set side SIDE_LEFT;
+            # set temp2 temp;
+          # end;
 
-          unit.getArmor temp SIDE_REAR;
-          if gt temp temp2;
-            set side SIDE_REAR;
-            set temp2 temp;
-          end;
+          # unit.getArmor temp SIDE_RIGHT;
+          # if gt temp temp2;
+            # set side SIDE_RIGHT;
+            # set temp2 temp;
+          # end;
 
-          unit.getArmor temp SIDE_UNDER;
-          if gt temp temp2;
-            set side SIDE_UNDER;
-            set temp2 temp;
-          end;
+          # unit.getArmor temp SIDE_REAR;
+          # if gt temp temp2;
+            # set side SIDE_REAR;
+            # set temp2 temp;
+          # end;
+
+          # unit.getArmor temp SIDE_UNDER;
+          # if gt temp temp2;
+            # set side SIDE_UNDER;
+            # set temp2 temp;
+          # end;
           #debug_log "AoC Hit Post " power side;
 
           return power part side;

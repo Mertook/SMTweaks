@@ -443,6 +443,34 @@ units: # Civ units
     aggression: 1
     energyRecovery: 40
 
+  - type: STR_SKULL_TECH
+    race: STR_SKULL
+    stats:
+      tu: 80
+      stamina: 80
+      health: 20
+      bravery: 200
+      reactions: 150
+      firing: 0
+      throwing: 0
+      strength: 10
+      psiStrength: 250
+      psiSkill: 0
+      melee: 0
+    armor: SKULL_ARMOR
+    moveSound: 704
+    standHeight: 23
+    kneelHeight: 16
+    value: 0
+    deathSound: 23
+    intelligence: 4
+    aggression: 5
+    sniper: 50
+    spotter: 1
+    energyRecovery: 100
+    livingWeapon: true
+    civilianRecoveryType: STR_TECH_SKULL_SPAWNER
+
 
 terrains:
   - name: ALLIED_MARINE_DEPLOYMENT          # IG Marine Reinforcement block

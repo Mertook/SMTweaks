@@ -49,7 +49,7 @@ soldierTransformation:
       - STR_PRIMARIS_APOTH_BIO
       - STR_PRIMARIS_JUDICAR
       - STR_PRIMARIS_CHAPLAIN
-    listOrder: 10
+    listOrder: 5
 
   - name: STR_CHAPLAIN_ROSARY           # Chaplain Shield
     forbiddenPreviousTransformations:
@@ -69,7 +69,7 @@ soldierTransformation:
       - STR_SOLDIER_CHAPLAIN
       - STR_PRIMARIS_CHAPLAIN
     soldierBonusType: STR_BONUS_INQ_ROSARIUS
-    listOrder: 79
+    listOrder: 90
 
 ### Firstborn
   - name: STR_PROMOTE_NEOPHYTE          # Neophyte -> Marine
@@ -113,6 +113,7 @@ soldierTransformation:
       - STR_SOLDIER
     transferTime: 0
     requiredCommendations:
+      STR_HONOR_MEDAL: 1
       STR_TERMINATOR_CROSS: 0
     flatOverallStatChange:
       tu: 5
@@ -124,11 +125,8 @@ soldierTransformation:
       strength: 5
       melee: 5
       bravery: 10
-    requiredMinStats:
-      health: 100   # marine min 75(80)
-      firing: 100   # marine min 70(100)
-      melee: 80     # marine min 70(100)
-      strength: 80  # marine min 55(80)
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
     listOrder: 50
 
   - name: STR_PROMOTE_CHAPLAIN          # Marine -> Chaplain
@@ -205,6 +203,120 @@ soldierTransformation:
       - STR_SOLDIER_JOAN
     listOrder: 20
 
+  - name: STR_PROMOTE_APOTHECARY        # Marine -> Apothecary
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_MEDI_KIT
+    producedSoldierType: STR_SOLDIER_APOTH
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 25
+      STR_KILLPOINT_TOKEN: 100
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_SOLDIER
+    transferTime: 0
+    flatOverallStatChange:
+      bravery: 10
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 50
+
+  - name: STR_PROMOTE_APOTHECARY_VET     # Apothecary -> Veteran Apothecary
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_MIDTIER_PREREQ
+      - STR_MEDI_KIT
+    producedSoldierType: STR_SOLDIER_APOTHVET
+    cost: 75000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 300
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_SOLDIER_APOTH
+    transferTime: 0
+    requiredCommendations:
+      STR_HONOR_MEDAL: 1
+      STR_TERMINATOR_CROSS: 0
+    flatOverallStatChange:
+      tu: 5
+      stamina: 5
+      health: 5
+      reactions: 5
+      firing: 5
+      throwing: 5
+      strength: 5
+      melee: 5
+      bravery: 10
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 50
+
+  - name: STR_PROMOTE_TECHMARINE        # Marine -> Techmarine
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_TEC_BAYR
+    producedSoldierType: STR_SOLDIER_TECH
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 25
+      STR_KILLPOINT_TOKEN: 100
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_SOLDIER
+    transferTime: 0
+    flatOverallStatChange:
+      melee: 5
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 50
+
+  - name: STR_PROMOTE_TECHMARINE_VET     # Techmarine -> Veteran Techmarine
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_MIDTIER_PREREQ
+      - STR_TEC_BAYR
+    producedSoldierType: STR_SOLDIER_TECHVET
+    cost: 75000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 300
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_SOLDIER_TECH
+    transferTime: 0
+    requiredCommendations:
+      STR_HONOR_MEDAL: 1
+      STR_TERMINATOR_CROSS: 0
+    flatOverallStatChange:
+      tu: 5
+      stamina: 5
+      health: 5
+      reactions: 5
+      firing: 5
+      throwing: 5
+      strength: 5
+      melee: 5
+      bravery: 10
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 50
+
   - name: STR_PROMOTE_LIBRARIAN         # Neophyte -> Librarian
     requires:
       - STR_MARINES_STRATEGY
@@ -215,7 +327,7 @@ soldierTransformation:
     requiredItems:
       STR_SMT_GENESEED: 1
       STR_ALIEN_ALLOYS: 25
-      STR_KILLPOINT_TOKEN: 100
+      STR_KILLPOINT_TOKEN: 60
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -242,7 +354,7 @@ soldierTransformation:
     producedSoldierType: STR_SOLDIER_LIBRARIAN_TERM
     cost: 40000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 200
+      STR_KILLPOINT_TOKEN: 240
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -251,6 +363,7 @@ soldierTransformation:
       - STR_SOLDIER_LIBRARIAN
     transferTime: 0
     requiredCommendations:
+      STR_HONOR_MEDAL: 1
       STR_TERMINATOR_CROSS: 0
     requiredMinStats:
       psiStrength: 90 #
@@ -422,7 +535,7 @@ soldierTransformation:
       - STR_MEDI_KIT_PREREQ
     cost: 50000 # was 100k
     requiredItems:
-      STR_KILLPOINT_TOKEN: 200
+      STR_KILLPOINT_TOKEN: 100
     producedSoldierType: STR_PRIMARIS_APOTH
     keepSoldierArmor: false
     allowsDeadSoldiers: false
@@ -462,6 +575,70 @@ soldierTransformation:
     needsCorpseRecovered: false
     allowedSoldierTypes:
       - STR_PRIMARIS_APOTH
+    requiredCommendations:
+      STR_HONOR_MEDAL: 2
+    flatOverallStatChange:
+      tu: 5
+      stamina: 5
+      health: 5
+      reactions: 5
+      firing: 5
+      throwing: 5
+      strength: 5
+      melee: 5
+      bravery: 10
+    transferTime: 0
+    recoveryTime: 0
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 65
+
+  - name: STR_PROMOTE_TECHNOVICE_PRIM   # Primaris Lv1 -> Tech Novitiate (Lv2)
+    requires:
+      - STR_PRIMARIS
+      - STR_MEDI_KIT_PREREQ
+    cost: 50000 # was 100k
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 200
+    producedSoldierType: STR_PRIMARIS_TECHNOVICE
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    needsCorpseRecovered: false
+    allowedSoldierTypes:
+      - STR_PRIMARISLV1
+    requiredCommendations:
+      STR_HONOR_MEDAL: 0
+    transferTime: 0
+    recoveryTime: 0
+    flatOverallStatChange:
+      tu: 5
+      stamina: 5
+      health: 5
+      reactions: 5
+      firing: 5
+      throwing: 5
+      strength: 5
+      melee: 5
+      bravery: 10
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 60
+
+  - name: STR_PROMOTE_TECHMARINE_PRIM   # Tech Novitiate (Lv2) -> Techmarine (Lv4)
+    requires:
+      - STR_PRIMARIS
+      - STR_APOC_BAY
+    cost: 50000 # was 100k
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 700
+    producedSoldierType: STR_PRIMARIS_TECHMARINE
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    needsCorpseRecovered: false
+    allowedSoldierTypes:
+      - STR_PRIMARIS_TECHNOVICE
     requiredCommendations:
       STR_HONOR_MEDAL: 2
     flatOverallStatChange:
@@ -560,7 +737,7 @@ soldierTransformation:
     requiredItems:
       STR_SMT_GENESEED: 1
       STR_ALIEN_ALLOYS: 25
-      STR_KILLPOINT_TOKEN: 100
+      STR_KILLPOINT_TOKEN: 60
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -599,7 +776,7 @@ soldierTransformation:
     producedSoldierType: STR_PRIMARIS_LIBRARIANLV2
     cost: 60000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 150
+      STR_KILLPOINT_TOKEN: 120
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -637,7 +814,7 @@ soldierTransformation:
     producedSoldierType: STR_PRIMARIS_LIBRARIANLV3
     cost: 100000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 250
+      STR_KILLPOINT_TOKEN: 260
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -665,6 +842,114 @@ soldierTransformation:
     lowerBoundAtMinStats: true
     upperBoundAtStatCaps: true
     listOrder: 90
+
+### Deathwatch
+  - name: STR_RECYCLE_DW                # Recover DW Token from dead
+    requires:
+      - STR_DEATHWATCH
+    cost: 5000
+    producedItem: STR_DW_TOKEN
+    allowsDeadSoldiers: true
+    allowsLiveSoldiers: false
+    allowsWoundedSoldiers: false
+    needsCorpseRecovered: false
+    createsClone: true
+    transferTime: 0
+    allowedSoldierTypes:
+      - STR_ULTRAMARINE
+      - STR_ULTRAMARINE_PRIMARIS
+      - STR_IMPERIALF
+      - STR_IMPERIALF_PRIMARIS
+      - STR_BLOODANGELS
+      - STR_BLOODANGELS_PRIMARIS
+      - STR_SALAMANDAR
+      - STR_SALAMANDAR_PRIMARIS
+      - STR_BLACKT
+      - STR_BLACKT_PRIMARIS
+      - STR_WHITES
+      - STR_WHITES_PRIMARIS
+      - STR_DARKANGELS
+      - STR_DARKANGELS_PRIMARIS
+      - STR_SPACEW
+      - STR_SPACEW_PRIMARIS
+      - STR_CRISMONF
+      - STR_CRISMONF_PRIMARIS
+      - STR_FALLEN_DW # if you somehow got a dead DW dreadnought
+    listOrder: 10
+
+
+  - name: STR_RECYCLE_DW_LEADER         # Recover DW Token from dead captain
+    requires:
+      - STR_DEATHWATCH
+      - STR_DW_SQUAD5
+    cost: 10000
+    producedItem: STR_DW_TOKEN_LEADER
+    allowsDeadSoldiers: true
+    allowsLiveSoldiers: false
+    allowsWoundedSoldiers: false
+    needsCorpseRecovered: false
+    createsClone: true
+    transferTime: 0
+    allowedSoldierTypes:
+      - STR_ULTRAMARINE_LEADER
+      - STR_IMPERIALF_LEADER
+      - STR_BLOODANGELS_LEADER
+      - STR_SALAMANDAR_LEADER
+      - STR_BLACKT_LEADER
+      - STR_WHITES_LEADER
+      - STR_DARKANGELS_LEADER
+      - STR_SPACEW_LEADER
+      - STR_CRISMONF_LEADER
+    listOrder: 11
+
+
+  - name: STR_RESURRECT_MARINE_DW       # Deathwatch Dreadnought
+    requires:
+      - STR_GENERALLOCK # disable Dreadnoughts
+
+### Imperial Guard
+  - &STR_OFFICER_PROMOTION
+    name: STR_PROMOTE_VETERAN_OFFICER
+    requiredMinStats:
+      bravery: 60
+      psiStrength: 1 # was 60 (why does an officer need to be psychic?)
+      tu: 1
+
+  - name: STR_PROMOTE_OFFICER
+    refNode: *STR_OFFICER_PROMOTION
+
+  - name: STR_PROMOTE_OFFICER_VETERAN
+    refNode: *STR_OFFICER_PROMOTION
+
+  - name: STR_PROMOTE_SCION_OFFICER
+    refNode: *STR_OFFICER_PROMOTION
+
+  - name: STR_PROMOTE_VETERAN_OFFICER_SL
+    refNode: *STR_OFFICER_PROMOTION
+
+  - name: STR_PROMOTE_OFFICER_VETERAN_SL
+    refNode: *STR_OFFICER_PROMOTION
+
+  - name: STR_AWARD_PERSONAL_SHIELD     # allow CM to give their various recruits shields
+    forbiddenPreviousTransformations:
+      - STR_AWARD_PERSONAL_SHIELD
+    transferTime: 0
+    requires:
+      - STR_GUARD_AND_INQUISITION
+
+  - name: STR_BIONICS_OPERATION
+    transferTime: 0 # was 720 hours (30 days)
+    recoveryTime: 35 # can be reduced by apothecary bay
+    requires:
+      - STR_GUARD_AND_INQUISITION # allow CM
+      - STR_MIDTIER_PREREQ
+    allowedSoldierTypes: !add
+      - STR_CATACHANVET_FIGHTER
+      - STR_CATACHANTOP_FIGHTER
+
+  - name: STR_BIONICS_OPERATION
+    allowedSoldierTypes: !remove
+      - STR_CATACHAN_FIGHTER # regular soldiers don't get access to bionics, only vets/officers
 
 ### Psychic Abilities
 # Tier 1
@@ -953,7 +1238,7 @@ soldierTransformation:
       - STR_PSIUNLOCK_TORMENT
     transferTime: 0
     requiredMinStats: &Psyker_TierFive_MinStats
-      psiStrength: 100 ###CHANGEME
+      psiStrength: 120
     listOrder: 4070
     soldierBonusType: STR_PSIBONUS_PASSIVESHIELD
 
@@ -1023,7 +1308,7 @@ soldierTransformation:
       - STR_PSIUNLOCK_HOLOCAUST
     transferTime: 0
     requiredMinStats: &Psyker_TierSix_MinStats
-      psiStrength: 100
+      psiStrength: 140
     listOrder: 4090
     soldierBonusType: STR_PSIBONUS_CLOAK
 
@@ -1073,33 +1358,18 @@ soldierTransformation:
     soldierBonusType: STR_PSIBONUS_HOLOCAUST
 
 
-### Imperial Guard
-
-  - &STR_OFFICER_PROMOTION
-    name: STR_PROMOTE_VETERAN_OFFICER
-    requiredMinStats:
-      bravery: 60
-      psiStrength: 1 # was 60 (why does an officer need to be psychic?)
-      tu: 1
-
-  - name: STR_PROMOTE_OFFICER
-    refNode: *STR_OFFICER_PROMOTION
-
-  - name: STR_PROMOTE_OFFICER_VETERAN
-    refNode: *STR_OFFICER_PROMOTION
-
-  - name: STR_PROMOTE_SCION_OFFICER
-    refNode: *STR_OFFICER_PROMOTION
-
-  - name: STR_PROMOTE_VETERAN_OFFICER_SL
-    refNode: *STR_OFFICER_PROMOTION
-
-  - name: STR_PROMOTE_OFFICER_VETERAN_SL
-    refNode: *STR_OFFICER_PROMOTION
-
-
 
 soldierBonuses:
+  - name: STR_BONUS_PERSONAL_SHIELD
+    tags:
+      BONUS_ENERGY_SHIELD_HP_PER_TURN: 60 # was 40/50, adjusted for SMT shield regeneration changes
+      BONUS_ENERGY_SHIELD_DECAY: 75
+
+  - name: STR_BONUS_INQ_ROSARIUS
+    tags:
+      BONUS_ENERGY_SHIELD_HP_PER_TURN: 75 # was 50/50, adjusted for SMT shield regeneration changes
+      BONUS_ENERGY_SHIELD_DECAY: 75
+### Psi Bonuses
   - name: STR_PSIBONUS_SHROUD
   - name: STR_PSIBONUS_FLARE
   - name: STR_PSIBONUS_TELEPATHY

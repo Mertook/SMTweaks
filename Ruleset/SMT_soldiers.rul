@@ -85,10 +85,11 @@ soldiers:
   - &REF_MARINE_TAGS                    # Generic Marine Tags
     type: STR_SOLDIER
     tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 45
+      SOLDIER_WOUND_TIME_MULTIPLIER: 60
       UNIT_REGENERATE_HEALTH_FLAT: 3
       UNIT_REGENERATE_HEALTH_PERCENT: 3
       UNIT_REGENERATE_HEALTH_SOFTCAP: 66
+      UNIT_REGENERATE_HEALTH_BURN_TOGGLE: 1
       SMT_UNIT_REGEN_WOUND: 1
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 1 # gain 1 devotion from battles
       SMT_HEROICSAVE_CHANCE: 30 # success chance is (((Current HP% * 2) + (Devotion/2)) * saveChance/100) / # of Save checks made
@@ -97,12 +98,13 @@ soldiers:
   - &REF_MARINE_VET_TAGS                # Veteran Marine Tags
     type: STR_SOLDIER_TERMINATOR
     tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 40 # vet bonus
+      SOLDIER_WOUND_TIME_MULTIPLIER: 50 # vet bonus
       UNIT_REGENERATE_HEALTH_FLAT: 3
       UNIT_REGENERATE_HEALTH_PERCENT: 5
       UNIT_REGENERATE_HEALTH_SOFTCAP: 66
+      UNIT_REGENERATE_HEALTH_BURN_TOGGLE: 1
       SMT_UNIT_REGEN_WOUND: 2
-      SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # gain 1-2 devotion from battles
+      SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 1 # gain 1 devotion from battles
       SMT_HEROICSAVE_CHANCE: 45
       SMT_HEROICSAVE_HP: 45
 
@@ -339,7 +341,6 @@ soldiers:
       - STR_CMD_MELEE_SKILL
       - STR_CMD_CHECK_SKILL
     tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 33
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 4 # gain 1-4 devotion from battles
       SOLDIER_IS_PSISKILL_TEACHER: 2 # all units gain 1-2 devotion from battle
       SMT_HEROICSAVE_CHANCE: 75
@@ -682,7 +683,7 @@ soldiers:
       reactions: 30
       firing: 25
     allowPiloting: true
-    armor: STR_SCOUT_SMT_UC ###CHANGEME
+    armor: STR_APOT_ARMOR_UC
     standHeight: 22
     kneelHeight: 14
     femaleFrequency: 15
@@ -699,6 +700,7 @@ soldiers:
       - STR_APOTHECARY_RANK_0
     tags:
       UNIT_REGENERATE_HEALTH_SOFTCAP: 75 # apoth bonus
+      SOLDIER_WOUNDTIME_RECOVERY_GLOBAL: 33 # reduce all wound times by 1/3 if soldier is present
 
   - type: STR_SOLDIER_APOTHVET          # Veteran Apothecary
     refNode: *REF_MARINE_VET_TAGS
@@ -758,7 +760,7 @@ soldiers:
       reactions: 30
       firing: 25
     allowPiloting: true
-    armor: STR_SCOUT_SMT_UC ###CHANGEME
+    armor: STR_APOT_ARMOR_UC
     standHeight: 22
     kneelHeight: 14
     femaleFrequency: 15
@@ -775,6 +777,7 @@ soldiers:
       - STR_APOTHECARY_RANK_1
     tags:
       UNIT_REGENERATE_HEALTH_SOFTCAP: 75 # apoth bonus
+      SOLDIER_WOUNDTIME_RECOVERY_GLOBAL: 50 # reduce all wound times by 1/2 if soldier is present
 
   - type: STR_SOLDIER_TECH              # Firstborn Techmarine
     refNode: *REF_MARINE_TAGS
@@ -834,7 +837,7 @@ soldiers:
       reactions: 30
       firing: 25
     allowPiloting: true
-    armor: STR_SCOUT_SMT_UC ###CHANGEME
+    armor: STR_TECH_ARMOR_UC
     standHeight: 22
     kneelHeight: 14
     femaleFrequency: 15
@@ -852,7 +855,6 @@ soldiers:
     skills:
       - STR_TECH_PRIMARY_SKILL
       - STR_TECH_UTILITY_SKILL
-      - STR_TECH_SUPPORT_SKILL
       - STR_TECH_SKULL_SKILL
 
   - type: STR_SOLDIER_TECHVET           # Veteran Techmarine
@@ -913,7 +915,7 @@ soldiers:
       reactions: 30
       firing: 25
     allowPiloting: true
-    armor: STR_SCOUT_SMT_UC ###CHANGEME
+    armor: STR_TECH_ARMOR_UC
     standHeight: 22
     kneelHeight: 14
     femaleFrequency: 15
@@ -931,7 +933,6 @@ soldiers:
     skills:
       - STR_TECH_PRIMARY_SKILL
       - STR_TECH_UTILITY_SKILL
-      - STR_TECH_SUPPORT_SKILL
       - STR_TECH_SKULL_SKILL
 
   - type: STR_FALLEN                    # Dreadnought Pilot
@@ -975,7 +976,7 @@ soldiers:
       - STR_DREAD_RANK_0
     tags:
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # gain 1-2 devotion from battles
-      SOLDIER_WOUND_TIME_MULTIPLIER: 33 # Dreadnought
+      SOLDIER_WOUND_TIME_MULTIPLIER: 50 # Dreadnought
 
 ### Primaris
   - type: STR_PRIMARISLV1               # Primaris Marine Lv1
@@ -1293,13 +1294,12 @@ soldiers:
       - STR_CMD_MELEE_SKILL
       - STR_CMD_CHECK_SKILL
     tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 33
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 4 # gain 1-4 devotion from battles
       SOLDIER_IS_PSISKILL_TEACHER: 2 # all units gain 1-2 devotion from battle
       SMT_HEROICSAVE_CHANCE: 75
       SMT_HEROICSAVE_HP: 45
 
-  - type: STR_PRIMARIS_APOTH            # Apothecary - Primaris lv3
+  - type: STR_PRIMARIS_APOTH            # Apothecary - Primaris lv2
     refNode: *REF_MARINE_TAGS
     costSalary: 75000
     requires:
@@ -1370,8 +1370,10 @@ soldiers:
     value: 50
     rankStrings:
       - STR_PRIM_APOTH_RANK_0
+      - STR_PRIM_APOTH_RANK_0
     tags:
       UNIT_REGENERATE_HEALTH_SOFTCAP: 75
+      SOLDIER_WOUNDTIME_RECOVERY_GLOBAL: 33 # reduce all wound times by 1/3 if soldier is present
 
   - type: STR_PRIMARIS_APOTH_BIO        # Apothecary Biologis - Primaris lv4
     refNode: *REF_MARINE_VET_TAGS
@@ -1444,8 +1446,164 @@ soldiers:
     value: 50
     rankStrings:
       - STR_PRIM_APOTH_RANK_1
+      - STR_PRIM_APOTH_RANK_1
     tags:
       UNIT_REGENERATE_HEALTH_SOFTCAP: 75
+      SOLDIER_WOUNDTIME_RECOVERY_GLOBAL: 50 # reduce all wound times by 1/2 if soldier is present
+
+  - type: STR_PRIMARIS_TECHNOVICE       # Tech Novitiate - Primaris lv2
+    refNode: *REF_MARINE_TAGS
+    costSalary: 75000
+    requires:
+      - STR_GENERALLOCK # shouldn't be able to buy marines directly
+      - STR_PRIMARIS
+      - STR_CHAPTER_PURITY
+    minStats:
+      tu: 65
+      stamina: 70
+      health: 75
+      bravery: 60
+      reactions: 65
+      firing: 70
+      throwing: 60
+      strength: 65 # +10 over regular marines
+      psiStrength: 15
+      psiSkill: 35
+      melee: 70
+    maxStats:
+      tu: 75
+      stamina: 85
+      health: 95
+      bravery: 90
+      reactions: 80
+      firing: 90
+      throwing: 85
+      strength: 80 # +10 over regular marines
+      psiStrength: 45
+      psiSkill: 40
+      melee: 90
+    statCaps:
+      tu: 95
+      stamina: 115
+      health: 105
+      bravery: 110
+      reactions: 110
+      firing: 135
+      throwing: 120
+      strength: 105
+      psiStrength: 100
+      psiSkill: 110
+      melee: 135
+    trainingStatCaps:
+      tu: 80
+      stamina: 100
+      health: 80
+      firing: 100
+      throwing: 90
+      strength: 80
+      psiStrength: 100
+      psiSkill: 110
+      melee: 100
+    dogfightExperience:
+      bravery: 10
+      reactions: 30
+      firing: 25
+    allowPiloting: true
+    armor: STR_MKX_TEC_LV1_UC
+    standHeight: 22
+    kneelHeight: 14
+    avatarOffsetX: 67
+    avatarOffsetY: 42
+    soldierNames:
+      - delete
+      - MarineName/
+    deathMale: [{mod: 40k, index: 713}, {mod: 40k, index: 714}, {mod: 40k, index: 715}, {mod: 40k, index: 716}, {mod: 40k, index: 717}, {mod: 40k, index: 718}, {mod: 40k, index: 719}, {mod: 40k, index: 720}, {mod: 40k, index: 721}, {mod: 40k, index: 722}]
+    deathFemale: [{mod: 40k, index: 744}, {mod: 40k, index: 745}, {mod: 40k, index: 746}, {mod: 40k, index: 747}, {mod: 40k, index: 748}, {mod: 40k, index: 749}, {mod: 40k, index: 750}, {mod: 40k, index: 751}, {mod: 40k, index: 752}]
+    value: 50
+    rankStrings:
+      - STR_PRIM_TECH_RANK_0
+      - STR_PRIM_TECH_RANK_0
+    skills:
+      - STR_TECH_PRIMARY_SKILL
+      - STR_TECH_UTILITY_SKILL
+      - STR_TECH_SKULL_SKILL
+
+  - type: STR_PRIMARIS_TECHMARINE       # Techmarine - Primaris lv4
+    refNode: *REF_MARINE_VET_TAGS
+    costSalary: 100000
+    requires:
+      - STR_GENERALLOCK # shouldn't be able to buy marines directly
+      - STR_PRIMARIS
+      - STR_CHAPTER_PURITY
+    minStats:
+      tu: 80
+      stamina: 70
+      health: 75
+      bravery: 60
+      reactions: 65
+      firing: 70
+      throwing: 60
+      strength: 65 # +10 over regular marines
+      psiStrength: 15
+      psiSkill: 35
+      melee: 70
+    maxStats:
+      tu: 90
+      stamina: 85
+      health: 95
+      bravery: 90
+      reactions: 80
+      firing: 90
+      throwing: 85
+      strength: 80 # +10 over regular marines
+      psiStrength: 45
+      psiSkill: 40
+      melee: 90
+    statCaps:
+      tu: 100
+      stamina: 125
+      health: 125
+      bravery: 110
+      reactions: 115
+      firing: 155
+      throwing: 150
+      strength: 110
+      psiStrength: 100
+      psiSkill: 120
+      melee: 155
+    trainingStatCaps:
+      tu: 90
+      stamina: 100
+      health: 90
+      firing: 120
+      throwing: 90
+      strength: 90
+      psiStrength: 100
+      psiSkill: 100
+      melee: 120
+    dogfightExperience:
+      bravery: 10
+      reactions: 30
+      firing: 25
+    allowPiloting: true
+    armor: STR_MKX_TEC_LV3_UC
+    standHeight: 22
+    kneelHeight: 14
+    avatarOffsetX: 67
+    avatarOffsetY: 42
+    soldierNames:
+      - delete
+      - MarineName/
+    deathMale: [{mod: 40k, index: 713}, {mod: 40k, index: 714}, {mod: 40k, index: 715}, {mod: 40k, index: 716}, {mod: 40k, index: 717}, {mod: 40k, index: 718}, {mod: 40k, index: 719}, {mod: 40k, index: 720}, {mod: 40k, index: 721}, {mod: 40k, index: 722}]
+    deathFemale: [{mod: 40k, index: 744}, {mod: 40k, index: 745}, {mod: 40k, index: 746}, {mod: 40k, index: 747}, {mod: 40k, index: 748}, {mod: 40k, index: 749}, {mod: 40k, index: 750}, {mod: 40k, index: 751}, {mod: 40k, index: 752}]
+    value: 50
+    rankStrings:
+      - STR_PRIM_TECH_RANK_1
+      - STR_PRIM_TECH_RANK_1
+    skills:
+      - STR_TECH_PRIMARY_SKILL
+      - STR_TECH_UTILITY_SKILL
+      - STR_TECH_SKULL_SKILL
 
   - type: STR_PRIMARIS_JUDICAR          # Judiciar - Primaris lv2
     refNode: *REF_MARINE_TAGS
@@ -2012,10 +2170,11 @@ soldiers:
     tags:
       SMT_ALPHA_ATTACKER_MODIFIER: -1 # can't turn traitor
       SMT_RESTRICTED_ITEM_USER: 2 # can use DW gear
-      SOLDIER_WOUND_TIME_MULTIPLIER: 40 # vet bonus
+      SOLDIER_WOUND_TIME_MULTIPLIER: 50 # vet bonus
       UNIT_REGENERATE_HEALTH_FLAT: 3
       UNIT_REGENERATE_HEALTH_PERCENT: 5
       UNIT_REGENERATE_HEALTH_SOFTCAP: 66
+      UNIT_REGENERATE_HEALTH_BURN_TOGGLE: 1
       SMT_UNIT_REGEN_WOUND: 2
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # gain 1-2 devotion from battles
       SMT_HEROICSAVE_CHANCE: 45
@@ -2183,6 +2342,7 @@ soldiers:
       UNIT_REGENERATE_HEALTH_FLAT: 4
       UNIT_REGENERATE_HEALTH_PERCENT: 10
       UNIT_REGENERATE_HEALTH_SOFTCAP: 90
+      UNIT_REGENERATE_HEALTH_BURN_TOGGLE: 0
       SMT_UNIT_REGEN_WOUND: 3
       SMT_HEROICSAVE_HP: 60
 
@@ -2204,6 +2364,7 @@ soldiers:
       UNIT_REGENERATE_HEALTH_FLAT: 4
       UNIT_REGENERATE_HEALTH_PERCENT: 10
       UNIT_REGENERATE_HEALTH_SOFTCAP: 90
+      UNIT_REGENERATE_HEALTH_BURN_TOGGLE: 0
       SMT_UNIT_REGEN_WOUND: 3
       SMT_HEROICSAVE_HP: 60
 
@@ -2306,10 +2467,11 @@ soldiers:
       - STR_CMD_CHECK_SKILL
     tags:
       SMT_RESTRICTED_ITEM_USER: 6 # can use DW gear and DW captain gear
-      SOLDIER_WOUND_TIME_MULTIPLIER: 33
+      SOLDIER_WOUND_TIME_MULTIPLIER: 40 # DW Captain bonus
       UNIT_REGENERATE_HEALTH_FLAT: 3
       UNIT_REGENERATE_HEALTH_PERCENT: 5
       UNIT_REGENERATE_HEALTH_SOFTCAP: 66
+      UNIT_REGENERATE_HEALTH_BURN_TOGGLE: 1
       SMT_UNIT_REGEN_WOUND: 2
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 4 # gain 1-2 devotion from battles
       SOLDIER_IS_PSISKILL_TEACHER: 2 # all units gain 1-2 devotion from battle
@@ -2468,8 +2630,10 @@ soldiers:
       UNIT_REGENERATE_HEALTH_FLAT: 5
       UNIT_REGENERATE_HEALTH_PERCENT: 10
       UNIT_REGENERATE_HEALTH_SOFTCAP: 90
+      UNIT_REGENERATE_HEALTH_BURN_TOGGLE: 0
       SMT_UNIT_REGEN_WOUND: 4
       SMT_HEROICSAVE_HP: 75
+      SOLDIER_WOUNDTIME_RECOVERY_GLOBAL: 50 # reduce all wound times by 1/2 if soldier is present
 
   - type: STR_CRISMONF_LEADER           # Crimson Fists Captain
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
@@ -2496,7 +2660,7 @@ soldiers:
   - &REF_OGYRN_TAGS                     # Generic Ogyrn Tags
     type: STR_OGRYN
     tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 60 # was 33
+      SOLDIER_WOUND_TIME_MULTIPLIER: 66 # was 33
       UNIT_REGENERATE_HEALTH_FLAT: 1
       UNIT_REGENERATE_HEALTH_PERCENT: 2
       UNIT_REGENERATE_HEALTH_SOFTCAP: 33
@@ -2517,7 +2681,7 @@ soldiers:
 
   - type: STR_GUARD_BEASTMAN
     tags:
-      SOLDIER_WOUND_TIME_MULTIPLIER: 80 # was 75
+      SOLDIER_WOUND_TIME_MULTIPLIER: 90 # was 75
 
   - type: STR_CATACHAN_FIGHTER
     tags:
@@ -2560,7 +2724,8 @@ soldiers:
       - STR_PSISKILL_SENTRYWARD
       - STR_PSISKILL_UNDYING
     tags:
-      SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 5 # gain 1-5 psistrength from battles
+      SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 5
+      SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 0 # gains devotion through using abilities now
 
   - type: STR_GUARD_PRIEST              # Imperial Guard Priest
     tags:
@@ -2568,7 +2733,7 @@ soldiers:
 
   - type: STR_COMMISSAR
     tags:
-      SOLDIER_IS_PSISKILL_TEACHER: 2 # all units gain 1-2 devotion from battle
+      SOLDIER_IS_PSISKILL_TEACHER: 1 # all units gain 1 devotion from battle
 
   - &STR_OFFICER
     type: STR_GUARD_OFFICER

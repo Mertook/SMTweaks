@@ -63,25 +63,16 @@ skills:
 
   - type: STR_TECH_PRIMARY_SKILL        # Techmarine Primary Item
     targetMode: 7
-    compatibleWeapons: [STR_TECH_HBOLTER]
+    compatibleWeapons: [STR_TECH_FLAMER, STR_TECH_MELTA, STR_TECH_GRAV, STR_TECH_PLASMA]
     checkHandsOnly: false
     costUse:
-      time: 40
+      time: 35
     flatUse:
       time: false
 
   - type: STR_TECH_UTILITY_SKILL        # Techmarine Utility Item
     targetMode: 7
-    compatibleWeapons: [STR_TECH_HBOLTER]
-    checkHandsOnly: false
-    costUse:
-      time: 40
-    flatUse:
-      time: false
-
-  - type: STR_TECH_SUPPORT_SKILL        # Techmarine Support Item
-    targetMode: 11
-    compatibleWeapons: [STR_TECH_HBOLTER]
+    compatibleWeapons: [STR_TECH_FLAMER]
     checkHandsOnly: false
     costUse:
       time: 40
@@ -90,7 +81,7 @@ skills:
 
   - type: STR_TECH_SKULL_SKILL          # Techmarine ServoSkull
     targetMode: 7
-    compatibleWeapons: [STR_TECH_HBOLTER]
+    compatibleWeapons: [STR_TECH_FLAMER]
     checkHandsOnly: false
     costUse:
       time: 40

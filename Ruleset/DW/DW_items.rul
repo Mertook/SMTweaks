@@ -32,14 +32,6 @@ items:
     recover: true
     recoveryPoints: 20
 
-  - type: AUX_SHIELD_DW                     # DW Terminator Storm Shield
-    defaultInventorySlot: STR_LEFT_HAND
-    clipSize: 61 # Shield HP + 1
-    tuMelee: 0
-    tags:
-      ITEM_SHIELD_BLOCKING_STRENGTH: 20
-      ITEM_SHIELD_RECHARGES: 1
-
   - type: AUX_CROZIUS_DW                    # Crozius (Black Templar Captain)           ## Restricted item
     bigSprite: {mod: 40k, index: 253}
     floorSprite: {mod: 40k, index: 134}
@@ -125,8 +117,10 @@ items:
     experienceTrainingMode: 19 #
     tags:
       ITEM_DOESNT_HURT_USER: 1
-      ITEM_DMGMOD_IMPERIUM: 1
+      ITEM_DMGMOD_IMPERIUM: -1
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
+      SMT_ARMOR_DAMAGE_ALL: 66
+      SMT_ARMOR_TARGET_WEAKEST: 1
 
   - type: STR_FORCE_HALBERD_DW              # Force Halberd (White Scars Captain)       ## Restricted item
     armor: 300

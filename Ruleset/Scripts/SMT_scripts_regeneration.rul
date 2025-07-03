@@ -200,7 +200,7 @@ extended:
           abs recoveryHealth;
           div recoveryHealth 2; # reduce to 1/2 - max penalty 50 (40-60) days
           #debug_log "RecoveryTime Calc: " recoveryHealth health_loss recovery_time;
-          if le recoveryHealth 0; # if recovery penalty ends up at <=0, no recovery time
+          if le recoveryHealth 0; # if recovery penalty ends up at <=0, no recovery time - shouldn't ever happen
             set recovery_time 0;
             return;
           end;
@@ -222,6 +222,14 @@ extended:
           unit.getTag temp Tag.UNIT_BIONICS; # adjust for bionics bonus
           if eq temp 1;
             muldiv recoveryHealth 2 3; # 2/3 recovery time for bionics (original 1/2)
+            #debug_log "RecoveryTime -  Bionics Bonus: " recoveryHealth temp;
+          end;
+
+          battle_game.getTag temp Tag.SMT_FAST_RECOVERY_PEAK; # adjust for apoth bonus
+          if gt temp 0;
+            sub temp 100;
+            abs temp;
+            muldiv recoveryHealth temp 100;
             #debug_log "RecoveryTime -  Bionics Bonus: " recoveryHealth temp;
           end;
 

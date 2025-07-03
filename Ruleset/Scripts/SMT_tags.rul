@@ -48,10 +48,12 @@ extended:
       SMT_DEREVENANT_AMMO: int          # Instantly kills Necrons that are or will be knocked unconcious - value = % bonus damage added against 2x2 Necrons that can't be stunned
       SMT_AMMO_HP_PREDMG: int           # % of power directly added to health damage ignoring armor
       SMT_SHIELD_DAMAGE_AMP: int        # % power increase based on targets shield
-      ITEM_DMGMOD_ALLIES: int              # deal reduced damage to units belonging to users faction X = % dealt, -1 = no damage
-      ITEM_DMGMOD_IMPERIUM: int            # deal reduced damage to allied units with armor tag `UNIT_TYPE_IMPERIUM: 1` X = % dealt, -1 = no damage
+      ITEM_DMGMOD_ALLIES: int           # deal reduced damage to units belonging to users faction X = % dealt, -1 = no damage
+      ITEM_DMGMOD_IMPERIUM: int         # deal reduced damage to allied units with armor tag `UNIT_TYPE_IMPERIUM: 1` X = % dealt, -1 = no damage
       SMT_GRAV_WEAPON: int              # weapon scales power with weight (armor+hp+size) and scales stun inversely with strength
       SMT_RENDING_WEAPON: int           # Negate effect of shred resistance by %
+      SMT_ARMOR_TARGET_WEAKEST: int     # Weapon targets weakest armor facing when dealing damage
+      SMT_ARMOR_DAMAGE_ALL: int         # Weapon damages all armor facings by %
       ## Plasma Heat
       ITEM_HEAT_SINK_COLOR: int # sprite color index for heatsink parts that glow, if not set defaults to 2 (red)
     RuleArmor:
@@ -107,7 +109,7 @@ extended:
       UNIT_REGENERATE_HEALTH_SOFTCAP: int       # % of total missing HP unit can regenerate from special regen
       UNIT_REGENERATE_HEALTH_BURN_TOGGLE: int   # does this unit regenerate when on fire? 0 = ignore, 1 = no regen on when fire, -1 = cancel out armor penalty
       SMT_UNIT_REGEN_WOUND: int #passive wound regen from soldier type
-      #SMT_UNIT_REGEN_PENALTY_REDUCTION: int #reduces the wound recovery time penalty for regenerating health
+      SOLDIER_WOUNDTIME_RECOVERY_GLOBAL: int    # all units get up to this much bonus medbay recovery bonus if this unit is present
       ## Heroic Save
       SMT_HEROICSAVE_CHANCE: int #Modifier to chance to resist fatal damage
       SMT_HEROICSAVE_HP: int #% of currenthp left after heroic save triggers
@@ -191,9 +193,12 @@ extended:
       SMT_STRIKE_SCIONDROP_AMMO: int        # amount of Scion Reinforcements ammo
       SMT_STRIKE_SCIONDROP_COOLDOWN: int    # turns before Scion Drop can be called in again
       ## Captain
-      SMT_COMMAND_TYPE: int             # Last used command
-      SMT_COMMAND_TURN: int             # Turn Command is active for
-      SMT_COMMAND_POINTS: int           # Command points earned this battle
-      ## Experience Gain
-      SMT_DEVOTION_TEACHER_VAL: int         # highest value teacher for devotion training in battle
+      SMT_COMMAND_TYPE: int                 # Last used command
+      SMT_COMMAND_TURN: int                 # Turn Command is active for
+      SMT_COMMAND_POINTS: int               # Command points earned this battle
+      ## Battlefield Experts
+      SMT_DEVOTION_TEACHER_TOTAL: int       # total value for devotion training bonus
+      SMT_DEVOTION_TEACHER_PEAK: int        # highest value for devotion training bonus
+      SMT_FAST_RECOVERY_TOTAL: int          # total value for medbay recovery bonus
+      SMT_FAST_RECOVERY_PEAK: int           # highest value for medbay recovery bonus
 

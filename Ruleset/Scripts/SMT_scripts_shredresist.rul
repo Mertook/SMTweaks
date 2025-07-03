@@ -7,6 +7,7 @@ armors:
     personalLight: 5 # adjust all new armors to the rosigma standard
     psiCamouflage: -30
     psiVision: 0
+    overKill: 1.0
     recovery:
       energy:
         stamina: 0.4 # was 0.33, marine bonus
@@ -15,7 +16,7 @@ armors:
         health: 0.03 # 3% of health added as bonus stun recovery
       morale:
         flatOne: 5
-        psiSkill: 0.3 # 30% of devotion as additional morale recovery
+        psiSkill: 0.2 # 20% of devotion as additional morale recovery
     tags:
       ARMOR_ALPHA_ATTACKER_BONUS_MODIFIER: -1
       UNIT_TYPE_ASTARTES: 1

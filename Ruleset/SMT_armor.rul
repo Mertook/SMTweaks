@@ -302,6 +302,9 @@ armors:
     builtInWeapons: #improved medkit
       - INV_NULL_3X1_BACKPACK
       - AUX_MEDI_KIT_ADVANCED
+    units:
+      - STR_SOLDIER_APOTH
+      - STR_SOLDIER_APOTHVET
     tags: #Apoth gets better regeneration
       ARMOR_REGENERATE_HEALTH_FLAT: 3
       ARMOR_REGENERATES_WOUNDS: 1
@@ -325,6 +328,12 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 15         # base 10 +5
+    builtInWeapons: [] # remove backpack blocker
+    units:
+      - STR_SOLDIER_TECH
+      - STR_SOLDIER_TECHVET
+    tags:
+      ARMOR_REGENERATE_DURABILITY: 20 # techmarine repair
 
   - update: STR_SARGENT_ARMOR_UC            #SERGEANT
     refNode: *STR_MARINE_OFFICER_ARMOR
@@ -729,7 +738,7 @@ armors:
     stats:
       tu: -10           # base -10
       stamina: 20       # base 20
-      health: 50        # base 30
+      health: 50        # base 50
       bravery: 10       # base 10
       reactions: -10    # base -10
       firing: 20        # base 20
@@ -745,8 +754,7 @@ armors:
       ARMOR_ENERGY_SHIELD_DECAY: 75
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 10
-      ARMOR_REGENERATE_HEALTH_FLAT: 4
-      ARMOR_REGENERATES_WOUNDS: 1
+      ARMOR_REGENERATE_HEALTH_BURN_TOGGLE: -1
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_ASTARTES: 1
@@ -1107,6 +1115,8 @@ armors:
     heatVision: 25
     antiCamouflageAtDay: 12
     antiCamouflageAtDark: 12
+    units:
+      - STR_SOLDIER_CAPTAIN
     tags:
       INTIMIDATION_RESISTANCE: 100
       INFECTION_RESIST: 33
@@ -1135,8 +1145,6 @@ armors:
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
-    units:
-      - STR_SOLDIER_CAPTAIN
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X1_BACKPACK
@@ -1169,8 +1177,6 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 35         # base 10 +20 ass +5 elite
-    units:
-      - STR_SOLDIER_CAPTAIN
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     builtInWeapons:
       - INV_INSPIRE_TOKEN
@@ -1208,8 +1214,6 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 35         # base 10 +20 ass +5 elite
-    units:
-      - STR_SOLDIER_CAPTAIN
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     builtInWeapons:
       - INV_INSPIRE_TOKEN
@@ -1248,8 +1252,6 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 35         # base 10 +20 ass +5 elite
-    units:
-      - STR_SOLDIER_CAPTAIN
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     builtInWeapons:
       - INV_INSPIRE_TOKEN
@@ -1293,8 +1295,6 @@ armors:
       psiSkill: 0       # base 0  
       melee: -20        # base 10 -30 (ranged specialist & also to offset strength bonus)
     specialWeapon: STR_SMT_SIGNUM_VUL
-    units:
-      - STR_SOLDIER_CAPTAIN
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_1X3
@@ -1329,8 +1329,6 @@ armors:
       psiSkill: 10      # base 0  +10 elite
       melee: 25         # base 10 +5 tac +10 elite
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
-    units:
-      - STR_SOLDIER_CAPTAIN
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X1_BACKPACK
@@ -1384,8 +1382,6 @@ armors:
       psiSkill: 0       # base 0  
       melee: 25         # base 10 -10 scout +25 elite
     specialWeapon: STR_STEALTH_ADVSCOUT
-    units:
-      - STR_SOLDIER_CAPTAIN
     builtInWeapons:
       - INV_INSPIRE_TOKEN
     tags:
@@ -1443,8 +1439,6 @@ armors:
       psiSkill: 0
       melee: 20
     specialWeapon: STR_TELEPORT
-    units:
-      - STR_SOLDIER_CAPTAIN
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X3
@@ -3404,13 +3398,13 @@ armors:
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 10
+      ARMOR_REGENERATE_DURABILITY: 20 # techmarine repair
 
   - type: STR_MKX_TEC_LV1_UC
     refNode: *STR_MKX_TEC_UC
-    builtInWeapons:
-      - INV_NULL_3X3
+    builtInWeapons: [] # remove backpack blocker
     units:
-      - STR_PRIMARISLV2
+      - STR_PRIMARIS_TECHNOVICE
 
   - type: STR_MKX_TEC_LV2_UC
     refNode: *STR_MKX_TEC_UC
@@ -3421,13 +3415,9 @@ armors:
 
   - type: STR_MKX_TEC_LV3_UC
     refNode: *STR_MKX_TEC_UC
-    builtInWeapons:
-      - INV_INSPIRE_TOKEN #temp
-      - STR_TF_SPAWNER
-      - STR_THUNDERFIRE_SHELL
-      - STR_THUNDERFIRE_SHELL
+    builtInWeapons: [] # remove backpack blocker
     units:
-      - STR_PRIMARISLV4
+      - STR_PRIMARIS_TECHMARINE
     tags:
       SMT_ARMOR_SHRED_RESISTANCE: 70
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 45

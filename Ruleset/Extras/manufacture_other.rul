@@ -157,49 +157,26 @@ manufacture:
 
 
   - name: STR_WARPED_LOOT_SM                        # Ancient Vault (Marines)
-    category: STR_FOES_FOR_HONOR
-    requires:
-      - STR_RES_WARPED_HULK_LOOT_SM
-    listOrder: 50
-    requiredItems:
-      STR_WARPED_HULK_LOOT: 1
-    space: 0
-    time: 10
-    cost: 100
     producedItems:
       STR_VOLKITE_VAULT: 2
       STR_SMT_GENESEED_IMPURE: 45
-      STR_LE10_POWER_ARMOR_HULK: 4
       STR_ALIEN_ALLOYS: 400
       STR_ELERIUM_115: 400
-      STR_KILLPOINT_TOKEN: 3000
-    points: 1000
+      STR_KILLPOINT_TOKEN: 4000
 
   - name: STR_WARPED_LOOT_IG                        # Ancient Vault (Guard)
-    category: STR_FOES_FOR_HONOR
     producedItems: !add
       STR_VOLKITE_VAULT: 1
 
   - name: STR_WARPED_LOOT_SIS                       # Ancient Vault (Sisters)
-    category: STR_FOES_FOR_HONOR
     producedItems: !add
       STR_VOLKITE_VAULT: 1
 
   - name: STR_WARPED_LOOT_JUDGE                     # Ancient Vault (Arbites)
-    category: STR_FOES_FOR_HONOR
     producedItems: !add
       STR_VOLKITE_VAULT: 1
 
   - name: STR_WARPED_LOOT_DEATH                     # Ancient Vault (Deathwatch)
-    category: STR_FOES_FOR_HONOR
-    requires:
-      - STR_RES_WARPED_HULK_LOOT_DEATH
-    listOrder: 50
-    requiredItems:
-      STR_WARPED_HULK_LOOT: 1
-    space: 0
-    time: 10
-    cost: 100
     producedItems:
       STR_VOLKITE_VAULT: 2
       #STR_SATURNINE_ARMOR_HULK: 4
@@ -208,13 +185,10 @@ manufacture:
       STR_ALIEN_ALLOYS: 400
       STR_ELERIUM_115: 400
       STR_KILLPOINT_TOKEN: 3000
-    points: 1000
 
   - name: STR_WARPED_LOOT_CHAMB                     # Ancient Vault (Grey Knights)
-    category: STR_FOES_FOR_HONOR
     producedItems: !add
       STR_VOLKITE_VAULT: 1
-    points: 1000
 
 
 

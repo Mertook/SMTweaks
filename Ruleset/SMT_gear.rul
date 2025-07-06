@@ -423,73 +423,6 @@ items:
     costBuy: 10000 # was 30k
 
 ### Light Bolters
-  - type: STR_BOLTPISTOL_DEAZ               # Light Boltpistol (Deaz)
-    bigSprite: 263
-    dropoff: 9 # was 6
-    autoRange: 0
-    snapRange: 11 # was 11
-    aimRange: 0
-    accuracyAuto: 0
-    accuracySnap: 75
-    accuracyAimed: 0
-    tuAuto: 0
-    tuSnap: 20
-    tuAimed: 0
-    tuLoad: 8 # pistol bonus
-    tuUnload: 4 # pistol bonus
-    inventoryMoveCost: # pistol
-      basePercent: 75
-    compatibleAmmo: &Ref_Light_Boltpistol_Ammo
-      - STR_LIGHT_BOLTPISTOL_AMMO
-      - STR_LIGHT_BOLTPISTOL_AMMO_MC
-      - STR_LIGHT_BOLTPISTOL_AMMO_AP
-      - STR_LIGHT_BOLTPISTOL_AMMO_EX
-    tags:
-      ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
-
-  - type: STR_BOLTPISTOL_LIGHT_ULTRA        # Light Boltpistol (Ultra)
-    bigSprite: 265
-    listOrder: 10091 # move to just under deaz
-    costBuy: 50000 # was 75k - trainee weapon
-    dropoff: 9 # was 6
-    autoRange: 0
-    snapRange: 12 # was 11
-    aimRange: 0
-    accuracyAuto: 0
-    accuracySnap: 90 # (105 MC + 75 normal) / 2
-    accuracyAimed: 0
-    tuAuto: 0
-    tuSnap: 20
-    tuAimed: 0
-    tuLoad: 8 # pistol bonus
-    tuUnload: 4 # pistol bonus
-    inventoryMoveCost: # pistol
-      basePercent: 75
-    compatibleAmmo: *Ref_Light_Boltpistol_Ammo
-    tags:
-      ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
-
-  - type: STR_MC_BOLTPISTOL_DEAZ            # Light Boltpistol (MC)
-    bigSprite: 267
-    listOrder: 10092 # move to just under ultra
-    dropoff: 8 # was 6
-    autoRange: 0
-    snapRange: 13 # was 12
-    aimRange: 0
-    accuracyAuto: 0
-    accuracySnap: 105
-    accuracyAimed: 0
-    tuAuto: 0
-    tuSnap: 20
-    tuAimed: 0
-    tuLoad: 2 # MC pistol bonus
-    tuUnload: 2 # pistol bonus
-    inventoryMoveCost: # pistol
-      basePercent: 75
-    compatibleAmmo: *Ref_Light_Boltpistol_Ammo
-    tags:
-      ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
-
   - type: STR_BOLTER_LIGHT_SOLO             # Light Bolter Single
     weight: 11 # was 15
     dropoff: 8 # was 5
@@ -580,6 +513,83 @@ items:
       ITEM_RECOIL: 70 # light version of heavy bolter, needs bipod setup for most IG forces
       ITEM_IS_HEAVY_WEAPON: 1
 
+  - type: STR_BOLTPISTOL_DEAZ               # Light Boltpistol (Deaz)
+    bigSprite: 263
+    dropoff: 9 # was 6
+    autoRange: 0
+    snapRange: 11 # was 11
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 75
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 20
+    tuAimed: 0
+    tuLoad: 8 # pistol bonus
+    tuUnload: 4 # pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
+    compatibleAmmo: &Ref_Light_Boltpistol_Ammo
+      - STR_LIGHT_BOLTPISTOL_AMMO
+      - STR_LIGHT_BOLTPISTOL_AMMO_MC
+      - STR_LIGHT_BOLTPISTOL_AMMO_AP
+      - STR_LIGHT_BOLTPISTOL_AMMO_EX
+    tags:
+      ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
+
+  - type: STR_BOLTPISTOL_LIGHT_ULTRA        # Light Boltpistol (Ultra)
+    bigSprite: 265
+    listOrder: 10091 # move to just under deaz
+    costBuy: 50000 # was 75k - trainee weapon
+    dropoff: 9 # was 6
+    autoRange: 0
+    snapRange: 12 # was 11
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 90 # (105 MC + 75 normal) / 2
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 20
+    tuAimed: 0
+    tuLoad: 8 # pistol bonus
+    tuUnload: 4 # pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
+    compatibleAmmo: *Ref_Light_Boltpistol_Ammo
+    tags:
+      ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
+
+  - type: STR_BOLTPISTOL_SCOURGE            # SoB Light Boltpistol Scourge
+    bigSprite: 269
+    inventoryMoveCost: # pistol
+      basePercent: 75
+
+  - type: STR_BOLTPISTOL_SERAPHIM           # SoB Light Boltpistol Seraphim
+    bigSprite: 271
+    inventoryMoveCost: # pistol
+      basePercent: 75
+
+  - type: STR_MC_BOLTPISTOL_DEAZ            # Light Boltpistol (MC)
+    bigSprite: 267
+    listOrder: 10092 # move to just under ultra
+    dropoff: 8 # was 6
+    autoRange: 0
+    snapRange: 13 # was 12
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 105
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 20
+    tuAimed: 0
+    tuLoad: 2 # MC pistol bonus
+    tuUnload: 2 # pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
+    compatibleAmmo: *Ref_Light_Boltpistol_Ammo
+    tags:
+      ITEM_RECOIL: 16 # was 20, adjusted for 2h penalty (24 with both hands full)
+
   - type: STR_BOLTER_ENFORCER               # Light Bolter (Enforcer)
     bigSprite: 230
     armor: 300
@@ -633,8 +643,8 @@ items:
     costBuy: 50000 # was 100k - trainee weapon
     compatibleAmmo: *Ref_Light_Bolter_Ammo
     dropoff: 8 # was 6
-    autoRange: 11 # was 7
-    snapRange: 17 # was 14
+    autoRange: 12 # was 7
+    snapRange: 18 # was 14
     aimRange: 0
     accuracyAuto: 75
     accuracySnap: 90
@@ -674,14 +684,14 @@ items:
       - STR_UFO_CONSTRUCTION #ceramite tier
     compatibleAmmo: *Ref_Light_Bolter_Ammo
     dropoff: 8 # was 5
-    autoRange: 15 # was 10, autofire focus +1 for no attachment
-    snapRange: 18 # was 13, +1 for no attachment
+    autoRange: 12 # was 10
+    snapRange: 18 # was 13
     aimRange: 0
     accuracyAuto: 72 # was 66, +6 for no attachment
     accuracySnap: 80
     accuracyAimed: 0
-    tuAuto: 32 # was 32
-    tuSnap: 20 # was 25
+    tuAuto: 33 # was 32
+    tuSnap: 22 # was 25
     tuAimed: 0
     confSnap:
       shots: 1 # was 2
@@ -699,14 +709,14 @@ items:
       - STR_GUARD_AND_INQUISITION # was IG exclusive
       - STR_UFO_CONSTRUCTION #ceramite tier
     dropoff: 8 # was 5
-    autoRange: 14 # was 10, autofire focus
-    snapRange: 17 # was 13
+    autoRange: 11 # was 10
+    snapRange: 16 # was 13
     aimRange: 25 #underslung
     accuracyAuto: 66 #
     accuracySnap: 80 #
     accuracyAimed: 50 #
-    tuSnap: 20 # was 25
-    tuAuto: 32 # was 33
+    tuSnap: 22 # was 25
+    tuAuto: 33 # was 33
     tuAimed: 40
     confSnap: #Bolter
       shots: 1 # was 2
@@ -725,6 +735,33 @@ items:
     autoShots: 4 # was 6
     tags:
       ITEM_RECOIL: 40 # was 25, light bolter with high RoF
+
+  - type: STR_BOLTER_CANTUS                 # SoB Light Bolter Cantus
+    bigSprite: 248
+
+  - type: STR_BOLTER_DEAZ                   # SoB Light Bolter Deaz
+    bigSprite: 251
+    compatibleAmmo: *Ref_Light_Bolter_Ammo
+
+  - type: STR_BOLTER_ELOHIM                 # SoB Light Bolter Elohim
+    bigSprite: 254
+    compatibleAmmo:
+      - STR_LIGHT_BOLTER_AMMO
+      - STR_LIGHT_BOLTER_AMMO_PEN
+      - STR_LIGHT_BOLTER_AMMO_EX
+      - STR_LIGHT_BOLTER_AMMO_MC
+      - STR_LIGHT_BOLTER_AMMO_INF
+      - STR_LIGHT_BOLTER_AMMO_AP
+      - STR_LIGHT_BOLTPISTOL_AMMO
+      - STR_LIGHT_BOLTPISTOL_AMMO_MC
+      - STR_LIGHT_BOLTPISTOL_AMMO_AP
+      - STR_LIGHT_BOLTPISTOL_AMMO_EX
+
+  - type: STR_BOLTER_HELLSPITE              # SoB Light Bolter Hellspite
+    bigSprite: 257
+
+  - type: STR_BOLTER_MEPHISTO               # SoB Light Bolter Mephisto
+    bigSprite: 260
 
   - type: STR_BOLTER_CARBINE                # Bolt Carbine
     categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
@@ -813,40 +850,6 @@ items:
       ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 15 # minor scoped weapon aimed shot bonus
       ITEM_RECOIL: 50 # Light bolter ammo, but built for Marines
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
-
-  - type: STR_BOLTER_CANTUS                     # SoB Light Bolter Cantus
-    bigSprite: 248
-    compatibleAmmo: *Ref_Light_Bolter_Ammo
-
-  - type: STR_BOLTER_DEAZ                       # SoB Light Bolter Deaz
-    bigSprite: 251
-    compatibleAmmo: *Ref_Light_Bolter_Ammo
-
-  - type: STR_BOLTER_ELOHIM                     # SoB Light Bolter Elohim
-    bigSprite: 254
-    compatibleAmmo:
-      - STR_LIGHT_BOLTER_AMMO
-      - STR_LIGHT_BOLTER_AMMO_PEN
-      - STR_LIGHT_BOLTER_AMMO_EX
-      - STR_LIGHT_BOLTER_AMMO_MC
-      - STR_LIGHT_BOLTER_AMMO_INF
-      - STR_LIGHT_BOLTER_AMMO_AP
-      - STR_LIGHT_BOLTPISTOL_AMMO
-      - STR_LIGHT_BOLTPISTOL_AMMO_MC
-      - STR_LIGHT_BOLTPISTOL_AMMO_AP
-      - STR_LIGHT_BOLTPISTOL_AMMO_EX
-
-  - type: STR_BOLTER_HELLSPITE                  # SoB Light Bolter Hellspite
-    bigSprite: 257
-
-  - type: STR_BOLTER_MEPHISTO                   # SoB Light Bolter Mephisto
-    bigSprite: 260
-
-  - type: STR_BOLTPISTOL_SCOURGE                # SoB Light Boltpistol Scourge
-    bigSprite: 269
-
-  - type: STR_BOLTPISTOL_SERAPHIM               # SoB Light Boltpistol Seraphim
-    bigSprite: 271
 
 ### Bolter Ammo
   - type: STR_PISTOL_CLIP                   # Boltpistol Ammo
@@ -2819,8 +2822,6 @@ items:
   - &REF_AUTOCANNON_DMG_AP
     type: STR_AUTOCANNON_AMMO
     costBuy: 0 # have to manufacture it
-    weight: 15
-    clipSize: 20
     power: 120
     damageType: 1
     damageAlter:
@@ -2830,10 +2831,11 @@ items:
       ToHealth: 1.0 # was 1.0
       ToStun: 0.3 # was 0.5
     armor: 300
-    weight: 12 # was 15
 
   - type: STR_AUTOCANNON_AMMO               # Autocannon Drum Ammo
     refNode: *REF_AUTOCANNON_DMG_AP
+    clipSize: 20
+    weight: 12 # was 15
 
   - type: STR_AUTOCANNON_CLIP               # Mounted Autocannon Drum Ammo
     refNode: *REF_AUTOCANNON_DMG_AP
@@ -2841,10 +2843,11 @@ items:
 
   - type: STR_AUTOCANNON_BOX_AMMO           # Autocannon Box Ammo
     refNode: *REF_AUTOCANNON_DMG_AP
-    clipSize: 30
+    clipSize: 40 # was 30
     weight: 30 # was 25
 
   - type: STR_AUTOCANNON_HE_AMMO            # Autocannon HE Ammo
+    weight: 12 # was 15
     power: 120 # was 100
     damageType: 3
     damageAlter:  # high explosive
@@ -2934,7 +2937,7 @@ items:
     accuracyAuto: 70
     accuracyAimed: 0
     tuAuto: 45
-    tuSnap: 30
+    tuSnap: 25
     tuAimed: 0
     confSnap:
       shots: 1 # was 1
@@ -2977,7 +2980,7 @@ items:
     accuracyAuto: 70
     accuracyAimed: 0
     tuAuto: 45
-    tuSnap: 30
+    tuSnap: 25
     tuAimed: 0
     confSnap:
       shots: 1
@@ -2990,7 +2993,7 @@ items:
       ITEM_RECOIL: 100 # heavy weapon
       ITEM_IS_HEAVY_WEAPON: 1
 
-  - &STR_AUTOCANNON_TEMPLATE                # Autocannon
+  - &STR_AUTOCANNON_TEMPLATE                # Autocannon (Handheld)
     type: STR_AUTOCANNON_HANDHELD
     costBuy: 0 # have to manufacture it
     dropoff: 3
@@ -3003,14 +3006,14 @@ items:
     accuracySnap: 70
     accuracyAimed: 0
     tuAuto: 55 # was 60
-    tuSnap: 30 # was 40
+    tuSnap: 25 # was 40
     tuAimed: 0
     autoShots: 3
     weight: 40 # was 70!
     compatibleAmmo: # no AP ammo, no large ammo box for non-mounted guns
       - STR_AUTOCANNON_AMMO
-      - STR_AUTOCANNON_BOX_AMMO
       - STR_AUTOCANNON_HE_AMMO
+      - STR_AUTOCANNON_BOX_AMMO
     tags:
       ITEM_RECOIL: 100 # was 70
 
@@ -3046,15 +3049,15 @@ items:
     refNode: *STR_AUTOCANNON_TEMPLATE
     dropoff: 3
     minRange: 7
-    accuracySnap: 60
-    tuSnap: 30
-    snapRange: 23
-    accuracyAuto: 50
-    tuAuto: 60
     autoRange: 20
+    snapRange: 25
+    accuracyAuto: 50
+    accuracySnap: 70
+    accuracyAimed: 0
+    tuAuto: 55
+    tuSnap: 25
     aimRange: 0
     autoShots: 4
-    accuracyAimed: 0
     tuAimed: 0
     kneelBonus: 150  # heavy weapon
 
@@ -3103,6 +3106,7 @@ items:
 ### Melta Guns
   - &DMG_MELTA_STD                          # Standard Melta Damage
     type: STR_MELTA_AMMO
+    armor: 300
     damageType: 11
     damageAlter:
       RandomType: 2 # 50-150, was 0-200
@@ -3207,6 +3211,7 @@ items:
 ### Melta Explosives
   - &DMG_MELTA_BLAST                        # Explosive Melta Damage
     type: STR_HIGH_EXPLOSIVE
+    armor: 300
     damageType: 11
     damageAlter:
       RandomType: 6
@@ -3287,6 +3292,7 @@ items:
 ### Plasma
   - &DMG_PLASMA_STD                         # Standard Plasma Damage
     type: STR_PLASMA_RIFLE_CLIP
+    armor: 300
     damageType: 5
     damageAlter:
       RandomType: 6
@@ -3476,7 +3482,7 @@ items:
       ITEM_HEAT_SINK_COLOR: 15
 
   - type: STR_PLASMA_CARBINE_ADEPTAS        # Plasma Rifle (Adeptas) - Yes, I know
-    weight: 17 # was 16
+    weight: 16 # was 16
     dropoff: 5 # was 6
     autoRange: 8 # was 10
     snapRange: 14
@@ -3487,6 +3493,8 @@ items:
     tuAuto: 33
     tuSnap: 22
     tuAimed: 22
+    ignoreAmmoPower: true
+    power: 90 # light plasma 70, reg plasma 100
     confAimed:
       spendPerShot: 8
       name: STR_MAXIMAL_SHOT
@@ -3500,9 +3508,7 @@ items:
       ITEM_HEAT_MAX_LEVEL: 6 # lower capacity
       ITEM_HEAT_DISSIPATION_PER_TURN: 1
       ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2 # doubled ammo consumption
-      ITEM_AUTO_FLAT_POWER_BONUS_PERCENT: 25
-      ITEM_SNAP_FLAT_POWER_BONUS_PERCENT: 25
-      ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 85
+      ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 50
       ITEM_OVERHEAT_DAMAGE: 50
       ITEM_HEAT_SINK_COLOR: 15
 
@@ -3714,6 +3720,7 @@ items:
 ### Grav Weapons
   - &DMG_GRAV_STD                           # Gravitic Standard Values
     type: STR_STUN_BOMB
+    armor: 300
     damageType: 12
     damageAlter:
       RandomType: 2 # 50-150%
@@ -3726,7 +3733,7 @@ items:
       ToStun: 0.6
       ToTime: 0.6
       ToEnergy: 1.0
-      ToTile: 2.0 # building destroyer
+      ToTile: 5.0 # building destroyer
       ToItem: 0.5
     powerRangeThreshold: 18 # was set on weapons instead of ammo, did nothing
     powerRangeReduction: 2
@@ -3752,7 +3759,7 @@ items:
     refNode: *DMG_GRAV_STD
     clipSize: 4 # was 3
     powerForAnimation: 10
-    power: 25
+    power: 20
     damageAlter:
       FixRadius: 1
       RadiusReduction: 5
@@ -3764,11 +3771,15 @@ items:
     hitSound: {mod: 40k, index: 830}
     hitAnimation: {mod: 40k, index: 130}
     hitAnimFrames: -1
+    weight: 6 # was 3
+    clipSize: 4 # was 3
     shotgunBehavior: 1
     shotgunSpread: 65
-    shotgunPellets: 4 # was 5, broken by AoE
-    clipSize: 4 # was 3
-    power: 8
+    shotgunChoke: 30
+    shotgunPellets: 8
+    power: 5 # was 5
+    damageAlter:
+      ToTile: 15.0
     tags:
       SMT_GRAV_WEAPON: 120
 
@@ -3786,6 +3797,7 @@ items:
     damageAlter:
       FixRadius: 1
       RadiusReduction: 3
+      ToTile: 3.5
     tags:
       SMT_GRAV_WEAPON: 90 # AoE
 
@@ -3799,6 +3811,7 @@ items:
     damageAlter:
       FixRadius: 1
       RadiusReduction: 3
+      ToTile: 3.5
     tags:
       SMT_GRAV_WEAPON: 90 # AoE
 
@@ -3810,6 +3823,7 @@ items:
     damageAlter:
       FixRadius: 1
       RadiusReduction: 3
+      ToTile: 3.5
     tags:
       SMT_GRAV_WEAPON: 90 # AoE
 
@@ -3844,7 +3858,6 @@ items:
 
   - type: STR_GRAVGUN_MC                    # Gravgun (Mastercrafted)
     weight: 14 # was 10
-<<<<<<< HEAD
     tags:
       GravPercentage: 0
 
@@ -3857,13 +3870,11 @@ items:
     snapRange: 16
     aimRange: 0
     accuracyAuto: 0
-    accuracySnap: 60
+    accuracySnap: 65
     accuracyAimed: 0
     tuAuto: 0
     tuSnap: 40
     tuAimed: 0
-=======
->>>>>>> parent of 7f931b4 (Gravgun Burst)
 
   - type: STR_GRAVGUN_ADEPTAS               # Gravgun (Sisters)
     weight: 14 # was 10
@@ -3903,6 +3914,7 @@ items:
 ### Lasguns
   - &DMG_LASGUN_STD
     type: STR_LASPISTOL_CLIP
+    armor: 300
     damageType: 1 # standard
     damageAlter:
       RandomType: 6  # gaussian
@@ -3915,6 +3927,7 @@ items:
 
   - &DMG_LASGUN_HOT
     type: STR_LASPISTOL_CLIP_HOTSHOT
+    armor: 300
     damageType: 1 # standard
     damageAlter:
       RandomType: 6  # gaussian
@@ -3953,6 +3966,7 @@ items:
 ### Lascannons
   - &DMG_LASCANNON_STD
     type: STR_LASCAN_CLIP  # LASCANON CLIP
+    armor: 300
     power: 220
     damageType: 4
     damageAlter:
@@ -3964,16 +3978,10 @@ items:
       ToWound: 0.05
       RandomWound: false
 
-  - type: STR_LASCANNON_CLIP_MALTHUS  # LASCANON MALTHUS POWER PACK               2018
+  - type: STR_LASCANNON_CLIP_MALTHUS        # Light Lascannon Ammo
+    refNode: *DMG_LASCANNON_STD
     power: 140
-    damageType: 4
-    damageAlter:
-      RandomType: 6
-      ToArmorPre: 0.3 # was 0.5
-      ToHealth: 1.0 # was 0.8
-      ToArmor: 0.1 # was 0.2
-      ToStun: 0.05 # was 0.0
-    clipSize: 8
+    clipSize: 4 # was 8
     powerRangeThreshold: 0 # was 16
     powerRangeReduction: 0 # was 5
 
@@ -3982,6 +3990,7 @@ items:
 
   - type: STR_LASCAN                        # SM Lascannon
     tuAimed: 85 # was 90 - slightly easier to sidestep and fire without needing max TUs
+    armor: 300
 
   - type: STR_LASCAN_DW                     # Artifex Lascannon
     dropoff: 4
@@ -4427,20 +4436,20 @@ items:
       - STR_GUARD_AND_INQUISITION
     costBuy: 25000 # was 75k
     costSell: 10000
-    weight: 15  # was 30
+    weight: 9  # was 30
     compatibleAmmo:
       - STR_SMALL_ROCKET
       - STR_LARGE_ROCKET
       - STR_INCENDIARY_ROCKET
     dropoff: 6 # was 5, lightweight pocket launcher
-    accuracySnap: 0
-    accuracyAuto: 60  # was 50
+    accuracySnap: 65 # was 50
+    accuracyAuto: 0
     accuracyAimed: 90  # was 85
-    tuSnap: 0
-    tuAuto: 40
+    tuSnap: 40
+    tuAuto: 0
     tuAimed: 80
-    snapRange: 0
-    autoRange: 10 # was 16
+    snapRange: 14 # was 16
+    autoRange: 0
     aimRange: 20 # was 25
     autoShots: 1
     confAuto:
@@ -4653,6 +4662,16 @@ items:
       arcing: true
       name: STR_ARCING_SHOT
       shortName: STR_ARCING_SHOT_SHORT
+
+  - type: STR_DISPOSABLE_LAUNCHER_KRAK
+    requires: # removed HWP IG requirement, added to CM
+     - STR_GUARD_AND_INQUISITION
+    weight: 10 # was 15
+    battleType: 1
+    twoHanded: true
+    blockBothHands: true
+    dropoff: 6 # was 5, lightweight pocket launcher
+    kneelBonus: 130
 
 ### Explosive Launcher Ammo
   - &REF_CASTELLAN_MISSILES
@@ -5601,9 +5620,9 @@ items:
     LOSRequired: false
     experienceTrainingMode: 26
     maxRange: 20
-    power: 5
+    power: 40
     damageBonus:
-      psiStrength: 0.5
+      psiStrength: 0.40
     costUse:
       energy: 25
       stun: 10
@@ -6107,7 +6126,7 @@ items:
 
 ### Tech Items
   - &REF_TECH_PRIMARY                       # Techmarine Primary Equipment (Type 9 - Aimed Shots)
-    type: STR_TECH_FLAMER
+    type: STR_TECHMARINE_FLAMER
     battleType: 1
     size: 0.3
     armor: 300
@@ -6126,7 +6145,7 @@ items:
     weight: 15 # normalized, carried by servo arm
     kneelBonus: 100 # servo arm
 
-  - type: STR_TECH_FLAMER                   # Techmarine Flamer
+  - type: STR_TECHMARINE_FLAMER             # Techmarine Flamer
     categories: [ STR_CAT_TECHPRIEST, STR_CAT_FLAMER]
     bigSprite: 291 ###CHANGEME
     floorSprite: 291 ###CHANGEME
@@ -6146,7 +6165,25 @@ items:
       shots: 6
     listOrder: 12101
 
-  - type: STR_TECH_MELTA                    # Techmarine Meltagun
+  - type: STR_TECHMARINE_BOLTER             # Techmarine Bolter
+    categories: [ STR_CAT_TECHPRIEST, STR_CAT_FLAMER]
+    bigSprite: 291 ###CHANGEME
+    floorSprite: 291 ###CHANGEME
+    bulletSprite: {mod: 40k, index: 6}
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    compatibleAmmo:
+      - STR_RIFLE_CLIP
+      - STR_RIFLE_CLIP_AP
+      - STR_RIFLE_CLIP_EX
+      - STR_RIFLE_CLIP_MC
+    dropoff: 8
+    aimRange: 12
+    accuracyAimed: 60
+    confAimed:
+      shots: 5
+    listOrder: 12101
+
+  - type: STR_TECHMARINE_MELTA              # Techmarine Meltagun
     refNode: *REF_TECH_PRIMARY
     categories: [ STR_CAT_TECHPRIEST, STR_CAT_MELTA]
     bigSprite: 291 ###CHANGEME
@@ -6161,7 +6198,7 @@ items:
     accuracyAimed: 70
     listOrder: 12101
 
-  - type: STR_TECH_GRAV                     # Techmarine Gravgun
+  - type: STR_TECHMARINE_GRAV               # Techmarine Gravgun
     refNode: *REF_TECH_PRIMARY
     categories: [ STR_CAT_TECHPRIEST, STR_CAT_GRAVGUN]
     bigSprite: 291 ###CHANGEME
@@ -6176,13 +6213,13 @@ items:
     accuracyAimed: 65
     listOrder: 12101
 
-  - type: STR_TECH_PLASMA                   # Techmarine Plasmagun
+  - type: STR_TECHMARINE_PLASMA             # Techmarine Plasmagun
     refNode: *REF_TECH_PRIMARY
     categories: [ STR_CAT_TECHPRIEST, STR_CAT_PLASMA]
     bigSprite: 291 ###CHANGEME
     floorSprite: 291 ###CHANGEME
-    bulletSprite: {mod: 40k, index: 0} ###CHANGEME
-    fireSound: {mod: 40k, index: 52} ###CHANGEME
+    bulletSprite: {mod: 40k, index: 11}
+    fireSound: {mod: 40k, index: 18}
     compatibleAmmo:
       - STR_PLASMA_RIFLE_CLIP
     dropoff: 5
@@ -6205,11 +6242,10 @@ items:
     size: 0.1
     weight: 5
     power: 1
+    clipSize: 1
     damageType: 3
     blastRadius: 1
-    costBuy: 50000
     costSell: 2000
-
 
 ### Inbuilt Equipment - Guns
   - type: STR_GRAV_FLAMER                   # Gravis Flamestorm Gauntlet

@@ -2751,6 +2751,12 @@ crafts:
             STR_BANE_BOLTER_TURRET_SPAWNER: [0, 0]
             STR_BANEBLADE_BOLTER_LEFT_SPAWNER: [0, 0]
             STR_BANEBLADE_BOLTER_RIGHT_SPAWNER: [0, 0]
+
+  - type: STR_MARAUDER                      # Marauder
+    damageMax: 750
+    speedMax: 1800
+    repairRate: 10 # was 3
+
 ### SOB CRAFT
   - type: STR_DROPPODS_ADEPTAS              # Droppods
     battlescapeTerrainData:

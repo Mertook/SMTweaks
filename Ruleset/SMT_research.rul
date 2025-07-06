@@ -726,6 +726,8 @@ research:
     points: 20
     dependencies:
       - STR_GRAVCANNON_REQ
+      - STR_HIGHTIER_PREREQ
+      - STR_NOT_CHAOSCULT
 
   - name: STR_GRAVCANNON_NURGLE     # Nurgle Gravcannon
     unlocks: !add
@@ -733,9 +735,19 @@ research:
     dependencies:
       - STR_GRAVITON_TECH
 
+  - name: STR_GRAVGUN_AOE_CHAOS     # Graviton Burst Gun Chaos
+    dependencies:
+      - STR_GRAVITON_TECH
+
+  - name: STR_GRAVGUN_NURGLE        # Graviton Burst Gun Nurgle
+    dependencies:
+      - STR_GRAVITON_TECH
+
   - name: STR_NURGLE_BLIGHT_HAULER  # Blight Hauler (Live)
     unlocks: !add
       - STR_GRAVCANNON_REQ
+    getOneFree:
+      - STR_ADEPTAS_GRAVGUN_DEP1
 
   - name: STR_PRIMARIS_BACKPACKS    # Primaris Backpack Weaponry
     cost: 60

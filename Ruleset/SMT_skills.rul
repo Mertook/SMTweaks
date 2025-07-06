@@ -62,8 +62,8 @@ skills:
       SKILL_SMT_COMMAND: -1
 
   - type: STR_TECH_PRIMARY_SKILL        # Techmarine Primary Item
-    targetMode: 7
-    compatibleWeapons: [STR_TECH_FLAMER, STR_TECH_MELTA, STR_TECH_GRAV, STR_TECH_PLASMA]
+    targetMode: 9
+    compatibleWeapons: [STR_TECHMARINE_FLAMER, STR_TECHMARINE_BOLTER, STR_TECHMARINE_MELTA, STR_TECHMARINE_GRAV, STR_TECHMARINE_PLASMA]
     checkHandsOnly: false
     costUse:
       time: 35
@@ -71,8 +71,8 @@ skills:
       time: false
 
   - type: STR_TECH_UTILITY_SKILL        # Techmarine Utility Item
-    targetMode: 7
-    compatibleWeapons: [STR_TECH_FLAMER]
+    targetMode: 9
+    compatibleWeapons: [STR_TECHMARINE_FLAMER]
     checkHandsOnly: false
     costUse:
       time: 40
@@ -80,11 +80,11 @@ skills:
       time: false
 
   - type: STR_TECH_SKULL_SKILL          # Techmarine ServoSkull
-    targetMode: 7
-    compatibleWeapons: [STR_TECH_FLAMER]
+    targetMode: 9
+    compatibleWeapons: [STR_TECH_SKULL_SPAWNER]
     checkHandsOnly: false
     costUse:
-      time: 40
+      time: 30
     flatUse:
       time: false
 
@@ -96,7 +96,7 @@ skills:
     checkHandsOnly: false
     costUse:
       time: 20
-      energy: 20
+      energy: 25
       stun: 10
       morale: 15
     flatUse:
@@ -112,7 +112,7 @@ skills:
     checkHandsOnly: false
     costUse:
       time: 20
-      energy: 20
+      energy: 25
       stun: 10
       morale: 15
     flatUse:
@@ -129,10 +129,10 @@ skills:
     costUse:
       time: 5
       energy: 5
-      stun: 5
-      morale: 5
+      stun: 0
+      morale: 0
     flatUse:
-      time: false
+      time: true
       energy: false
       stun: true
       morale: true
@@ -143,8 +143,8 @@ skills:
     requiredBonuses: [STR_PSIBONUS_FLASH]
     checkHandsOnly: false
     costUse:
-      time: 25
-      energy: 20
+      time: 24
+      energy: 30
       stun: 15
       morale: 10
     flatUse:
@@ -159,8 +159,8 @@ skills:
     requiredBonuses: [STR_PSIBONUS_REFLEXES]
     checkHandsOnly: false
     costUse:
-      time: 25
-      energy: 20
+      time: 24
+      energy: 30
       stun: 15
       morale: 10
     flatUse:
@@ -175,8 +175,8 @@ skills:
     requiredBonuses: [STR_PSIBONUS_VIGILANCE]
     checkHandsOnly: false
     costUse:
-      time: 25
-      energy: 20
+      time: 24
+      energy: 30
       stun: 15
       morale: 10
     flatUse:
@@ -191,8 +191,8 @@ skills:
     requiredBonuses: [STR_PSIBONUS_WALLBREAKER]
     checkHandsOnly: false
     costUse:
-      time: 25
-      energy: 20
+      time: 24
+      energy: 30
       stun: 15
       morale: 10
     flatUse:
@@ -207,8 +207,8 @@ skills:
     requiredBonuses: [STR_PSIBONUS_SMITE]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 25
+      time: 33
+      energy: 50
       stun: 20
       morale: 15
     flatUse:
@@ -223,8 +223,8 @@ skills:
     requiredBonuses: [STR_PSIBONUS_MENDWOUNDS]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 25
+      time: 33
+      energy: 50
       stun: 20
       morale: 15
     flatUse:
@@ -238,8 +238,8 @@ skills:
     compatibleWeapons: [STR_PSITOKEN_MENDWOUNDS]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 25
+      time: 33
+      energy: 50
       stun: 20
       morale: 15
     flatUse:
@@ -254,8 +254,8 @@ skills:
     requiredBonuses: [STR_PSIBONUS_SENTRYWARD]
     checkHandsOnly: false
     costUse:
-      time: 50
-      energy: 25
+      time: 33
+      energy: 50
       stun: 20
       morale: 15
     flatUse:
@@ -269,8 +269,8 @@ skills:
     compatibleWeapons: [STR_PSITOKEN_SENTRYWARD]
     checkHandsOnly: false
     costUse:
-      time: 50
-      energy: 25
+      time: 33
+      energy: 50
       stun: 20
       morale: 15
     flatUse:
@@ -285,8 +285,8 @@ skills:
     requiredBonuses: [STR_PSIBONUS_UNDYING]
     checkHandsOnly: false
     costUse:
-      time: 50
-      energy: 25
+      time: 33
+      energy: 50
       stun: 20
       morale: 15
     flatUse:
@@ -295,45 +295,45 @@ skills:
       stun: true
       morale: true
 
-  - type: STR_PSISKILL_HOLODUMMY        # Psyker T4 - Hallucinate
+  - type: STR_PSISKILL_HOLODUMMY        # Psyker T5 - Hallucinate
     targetMode: 9
     compatibleWeapons: [STR_PSITOKEN_HOLODUMMY]
     requiredBonuses: [STR_PSIBONUS_HOLODUMMY]
     checkHandsOnly: false
     costUse:
-      time: 50
-      energy: 30
+      time: 35
+      energy: 60
       stun: 25
-      morale: 15
+      morale: 20
     flatUse:
       time: false
       energy: false
       stun: true
       morale: true
 
-  - type: STR_PSISKILL_HOLODUMMY_FREE   # Psyker T4 - Hallucinate (No Req)
+  - type: STR_PSISKILL_HOLODUMMY_FREE   # Psyker T5 - Hallucinate (No Req)
     targetMode: 9
     compatibleWeapons: [STR_PSITOKEN_HOLODUMMY]
     checkHandsOnly: false
     costUse:
-      time: 50
-      energy: 30
+      time: 35
+      energy: 60
       stun: 25
-      morale: 15
+      morale: 20
     flatUse:
       time: false
       energy: false
       stun: true
       morale: true
 
-  - type: STR_PSISKILL_LOCKDOWN         # Psyker T4 - Lockdown
+  - type: STR_PSISKILL_LOCKDOWN         # Psyker T5 - Lockdown
     targetMode: 11
     compatibleWeapons: [STR_PSITOKEN_LOCKDOWN]
     requiredBonuses: [STR_PSIBONUS_LOCKDOWN]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 30
+      time: 35
+      energy: 60
       stun: 25
       morale: 20
     flatUse:
@@ -342,13 +342,13 @@ skills:
       stun: true
       morale: true
 
-  - type: STR_PSISKILL_LOCKDOWN_FREE    # Psyker T4 - Lockdown (No Req)
+  - type: STR_PSISKILL_LOCKDOWN_FREE    # Psyker T5 - Lockdown (No Req)
     targetMode: 11
     compatibleWeapons: [STR_PSITOKEN_LOCKDOWN]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 30
+      time: 35
+      energy: 60
       stun: 25
       morale: 20
     flatUse:
@@ -357,14 +357,14 @@ skills:
       stun: true
       morale: true
 
-  - type: STR_PSISKILL_SHIELD           # Psyker T4 - Shield
+  - type: STR_PSISKILL_SHIELD           # Psyker T5 - Shield
     targetMode: 11
     compatibleWeapons: [STR_PSITOKEN_SHIELD]
     requiredBonuses: [STR_PSIBONUS_SHIELD]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 30
+      time: 35
+      energy: 60
       stun: 25
       morale: 20
     flatUse:
@@ -373,13 +373,13 @@ skills:
       stun: true
       morale: true
 
-  - type: STR_PSISKILL_SHIELD_FREE      # Psyker T4 - Shield (No Req)
+  - type: STR_PSISKILL_SHIELD_FREE      # Psyker T5 - Shield (No Req)
     targetMode: 11
     compatibleWeapons: [STR_PSITOKEN_SHIELD]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 30
+      time: 35
+      energy: 60
       stun: 25
       morale: 20
     flatUse:
@@ -388,14 +388,14 @@ skills:
       stun: true
       morale: true
 
-  - type: STR_PSISKILL_TORMENT          # Psyker T4 - Torment
+  - type: STR_PSISKILL_TORMENT          # Psyker T5 - Torment
     targetMode: 9
     compatibleWeapons: [STR_PSITOKEN_TORMENT]
     requiredBonuses: [STR_PSIBONUS_TORMENT]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 25
+      time: 35
+      energy: 60
       stun: 25
       morale: 20
     flatUse:
@@ -404,13 +404,13 @@ skills:
       stun: true
       morale: true
 
-  - type: STR_PSISKILL_TORMENT_FREE     # Psyker T4 - Torment (No Req)
+  - type: STR_PSISKILL_TORMENT_FREE     # Psyker T5 - Torment (No Req)
     targetMode: 9
     compatibleWeapons: [STR_PSITOKEN_TORMENT]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 25
+      time: 35
+      energy: 60
       stun: 25
       morale: 20
     flatUse:
@@ -425,8 +425,8 @@ skills:
     requiredBonuses: [STR_PSIBONUS_HASTE]
     checkHandsOnly: false
     costUse:
-      time: 55
-      energy: 40
+      time: 45
+      energy: 70
       stun: 35
       morale: 25
     flatUse:
@@ -440,8 +440,8 @@ skills:
     compatibleWeapons: [STR_PSITOKEN_HASTE]
     checkHandsOnly: false
     costUse:
-      time: 55
-      energy: 40
+      time: 45
+      energy: 70
       stun: 35
       morale: 25
     flatUse:
@@ -456,8 +456,8 @@ skills:
     requiredBonuses: [STR_PSIBONUS_CLOAK]
     checkHandsOnly: false
     costUse:
-      time: 55
-      energy: 40
+      time: 45
+      energy: 70
       stun: 35
       morale: 25
     flatUse:
@@ -472,8 +472,8 @@ skills:
     requiredBonuses: [STR_PSIBONUS_SOULSTORM]
     checkHandsOnly: false
     costUse:
-      time: 55
-      energy: 40
+      time: 45
+      energy: 70
       stun: 35
       morale: 25
     flatUse:
@@ -487,8 +487,8 @@ skills:
     compatibleWeapons: [STR_PSITOKEN_SOULSTORM]
     checkHandsOnly: false
     costUse:
-      time: 55
-      energy: 40
+      time: 45
+      energy: 70
       stun: 35
       morale: 25
     flatUse:
@@ -503,8 +503,8 @@ skills:
     requiredBonuses: [STR_PSIBONUS_HOLOCAUST]
     checkHandsOnly: false
     costUse:
-      time: 50
-      energy: 40
+      time: 45
+      energy: 70
       stun: 35
       morale: 25
     flatUse:

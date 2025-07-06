@@ -6,25 +6,26 @@ extended:
       - new: SMTS_blast_all_armor_sides
         offset: 96 # after all damage modifiers
         code: |
-          var int blastVal;
           var int temp;
-          var int temp2;
 
-          damaging_item.getTag blastVal Tag.SMT_ARMOR_DAMAGE_ALL;
+          damaging_item.getTag temp Tag.SMT_ARMOR_DAMAGE_ALL;
           if eq temp 0;
             return;
           end;
 
-          muldiv to_armor blastVal 100; # modify armor damage by blast value
+          #debug_log "Blast Ping " temp side to_armor;
+          muldiv to_armor temp 100; # modify armor damage by blast value
+          #debug_log "Blast DmgMod " side temp to_armor;
 
           loop var i 5; #cycle through the armor sides
             if neq side i; #ignore the side being targetted directly
+              #debug_log "Blast SidePre " i side temp;
               unit.getArmor temp i;
               sub temp to_armor;
               limit_lower temp 0;
               unit.setArmor i temp;
+              #debug_log "Blast SidePost " i side temp;
             end;
-            #debug_log "Blast DmgArmor " i side temp temp2;
           end;
 
           return;

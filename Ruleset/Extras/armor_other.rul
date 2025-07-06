@@ -107,13 +107,13 @@ armors:
     units: # make SL exclusive
       - STR_GUARDSL
       - STR_GUARDSL_VETERAN
-      #- STR_GUARDSL_OFFICER_VETERAN
+      - STR_GUARDSL_OFFICER_VETERAN
 
   - type: STR_STEELLEGION_CARAPACE_ARMOR_MEDIC
     units: # make SL exclusive
       - STR_GUARDSL
       - STR_GUARDSL_VETERAN
-      #- STR_GUARDSL_OFFICER_VETERAN
+      - STR_GUARDSL_OFFICER_VETERAN
 
   - type: STR_MEDIC_CARAPACE_ARMOR
     stats: # match carapace stats, just like carapace scanner and flak medic
@@ -121,25 +121,9 @@ armors:
       stamina: -10
       reactions: -5 # I really wish values of 0 didn't get ignored
 
-  - &REF_GUARD_OFFICER                  # Imperial Guard Officers
-    type: STR_OFFICER_CARAPACE_ARMOR
-    specialWeapon: STR_GUARD_PRIMER # commissar inspire
 
-  - type: STR_OFFICER_FLAK_ARMOR
-    refNode: *REF_GUARD_OFFICER
-  - type: STR_STEELLEGION_FLAK_ARMOR_OFFICER
-    refNode: *REF_GUARD_OFFICER
-  - type: STR_STEELLEGION_FLAK_ARMOR_OFFICER
-    refNode: *REF_GUARD_OFFICER
-  - type: STR_STEELLEGION_CARAPACE_ARMOR_OFFICER
-    refNode: *REF_GUARD_OFFICER
-  - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR
-    refNode: *REF_GUARD_OFFICER
-  - type: STR_OFFICER_FLAK_ARMOR
-    refNode: *REF_GUARD_OFFICER
-
-
-  - type: STR_PSYKER_ARMOR              # Imperial Guard Psyker
+  - &STR_GUARD_ARMOR_PSYKER                 # Imperial Guard Psyker
+    type: STR_PSYKER_ARMOR
     specialWeapon: STR_NONE
     builtInWeapons:
       - STR_PSITOKEN_SHROUD

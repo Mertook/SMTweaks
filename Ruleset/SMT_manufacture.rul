@@ -647,10 +647,10 @@ manufacture:
     time: 200
     cost: 1000
     requiredItems:
-      STR_ELERIUM_115: 5
-      STR_ALIEN_ALLOYS: 5
+      STR_ELERIUM_115: 4
+      STR_ALIEN_ALLOYS: 4
     producedItems:
-      STR_AUTOCANNON_BOX_AMMO: 3
+      STR_AUTOCANNON_BOX_AMMO: 2
 
   - name: STR_AUTOCANNON_HE_AMMO                    # Autocannon HE Drum
     category: STR_AMMUNITION
@@ -779,46 +779,6 @@ manufacture:
     producedItems:
       STR_GRAVCANNON_AMMO: 5
 
-  - name: STR_GRAVGUN_BURST_TERRAN
-    category: STR_WEAPON
-    requires:
-      - STR_ADEPTAS_GRAVGUN_DEP1
-      - STR_IMPERIAL_WEAPONS
-      - STR_NOT_ADEPTAS
-    space: 0
-    time: 1250
-    cost: 100000
-    requiredItems:
-      STR_ELERIUM_115: 5
-      STR_UFO_CONSTRUCTION: 2
-
-  - name: STR_GRAVGUN_AOE_AMMO_SHOTGUN
-    category: STR_AMMUNITION
-    requires:
-      - STR_ADEPTAS_GRAVGUN_DEP1
-      - STR_IMPERIAL_WEAPONS
-      - STR_CHAPTER_PURITY
-    space: 0
-    time: 400
-    cost: 5000
-    requiredItems:
-      STR_ELERIUM_115: 5
-    producedItems:
-      STR_GRAVGUN_AOE_AMMO_SHOTGUN: 5
-
-  - name: STR_GRAVGUN_AOE_AMMO_SHOTGUN_CHAOS
-    category: STR_AMMUNITION
-    requires:
-      - STR_GRAVITON_TECH
-      - STR_NURGLE_PATH
-    space: 0
-    time: 400
-    cost: 15000
-    requiredItems:
-      STR_ELERIUM_115: 10
-    producedItems:
-      STR_GRAVGUN_AOE_AMMO_SHOTGUN: 5
-
   - name: STR_GRAVPISTOL_TERRAN
     category: STR_WEAPON
     requires:
@@ -835,7 +795,6 @@ manufacture:
     requires:
       - STR_GRAVITON_TECH
       - STR_IMPERIAL_WEAPONS
-      - STR_CHAPTER_PURITY
     space: 1
     time: 200
     cost: 8000

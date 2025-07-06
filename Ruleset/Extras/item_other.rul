@@ -57,6 +57,10 @@ items:
     tags:
       ITEM_STEALTH_ASSASSIN_WEAPON: 2 # sniper
 
+  - type: STR_DISPOSABLE_LAUNCHER_KRAK
+    requires: # removed HWP IG requirement, added to CM
+     - STR_GUARD_AND_INQUISITION
+
   - type: STR_HOTSHOT_VOLLEY_GUN  # done  # Power Pack
     dropoff: 5
     autoRange: 9

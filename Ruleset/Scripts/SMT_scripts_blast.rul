@@ -53,3 +53,20 @@ extended:
           end;
 
           return power part side;
+
+      - new: SMTS_blast_ignite
+        offset: 80
+        code: |
+          var int temp;
+          var int temp2;
+
+          damaging_item.getTag temp Tag.ITEM_IGNITES_TARGETS;
+          if and gt temp 0 gt power 0;
+            unit.getFire temp2;
+            #debug_log "Blast Fire " temp temp2 power;
+            add temp2 temp;
+            limit_upper temp2 5;
+            unit.setFire temp2;
+          end;
+
+          return power part side;

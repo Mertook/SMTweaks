@@ -3102,6 +3102,16 @@ items:
     clipSize: 40
     tags:
       SMT_ARMOR_TARGET_WEAKEST: 1
+      ITEM_IGNITES_TARGETS: 1
+
+  - type: STR_FLAMETHROWER_CLIP             # Flamer Fuel
+    tags:
+      SMT_ARMOR_TARGET_WEAKEST: 1
+
+  - type: STR_FLAMETHROWER_PROMETHIUM_CLIP  # Flamer Fuel (Promethium)
+    tags:
+      SMT_ARMOR_TARGET_WEAKEST: 1
+      ITEM_IGNITES_TARGETS: 1
 
 ### Melta Guns
   - &DMG_MELTA_STD                          # Standard Melta Damage
@@ -3225,7 +3235,7 @@ items:
       FireThreshold: 0
     tags:
       SMT_ARMOR_DAMAGE_ALL: 66
-      SMT_ARMOR_TARGET_WEAKEST: 1
+      ITEM_IGNITES_TARGETS: 2
 
   - type: STR_HIGH_EXPLOSIVE                # Melta Bomb
     refNode: *DMG_MELTA_BLAST
@@ -3653,6 +3663,7 @@ items:
       RadiusReduction: 60 # high dropoff if not direct hit
     tags:
       SMT_AMMO_HP_PREDMG: 50
+      ITEM_IGNITES_TARGETS: 1
 
   - type: STR_NEOVOLKITE_PISTOL             # Neo-Volkite Pistol
     refNode: *REF_VOLKITE_DMG
@@ -3774,12 +3785,13 @@ items:
     weight: 6 # was 3
     clipSize: 4 # was 3
     shotgunBehavior: 1
-    shotgunSpread: 65
-    shotgunChoke: 30
+    shotgunSpread: 75
+    shotgunChoke: 50
     shotgunPellets: 6
     power: 6 # was 5
     damageAlter:
       ToTile: 15.0
+    powerRangeThreshold: 12
     tags:
       SMT_GRAV_WEAPON: 120
 
@@ -4890,24 +4902,15 @@ items:
       - STR_PHOTON_GRENADE_REQUISITION
 
   - type: STR_INCENDIARY_GRENADE40          # 40mm Incin Grenade
-    #size: 0.03 # was 0.1
-    #weight: 1 # was 3
-    #costBuy: 500 # was 5000
-    #costSell: 200 # was 2000
     requiresBuy:
       - STR_40MM_AMMO
-    #clipSize: 1 # was 3
     tags:
       SMT_ARMOR_TARGET_WEAKEST: 1
+      ITEM_IGNITES_TARGETS: 2
 
   - type: STR_KRAK_GRENADE40                # 40mm Krak Grenade
-    #size: 0.03 # was 0.1
-    #weight: 1 # was 3
-    #costBuy: 500 # was 1500
-    #costSell: 200 # was 500
     requiresBuy:
       - STR_40MM_AMMO
-    #clipSize: 1 # was 3
 
   - type: STR_MELTA_GRENADE40               # 40mm Melta Grenade
     refNode: *DMG_MELTA_BLAST
@@ -4915,12 +4918,52 @@ items:
     requiresBuy:
       - STR_40MM_AMMO
       - STR_MIDTIER_PREREQ
+      - STR_MELTAGUN_TECH
     damageAlter:
       FixRadius: 1 # was 2
 
   - type: STR_MORTAR_AMMO_ILLUMINATION_EXPLOSION # Mortar Flare
     spawnItem: STR_SUPERFLARE
     spawnItemChance: 100
+
+### Grenades
+  - type: STR_PHOSPHOR_GRENADE              # Phosphor Grenade
+    power: 90 # was 80
+    noLOSAccuracyPenalty: 75  # indirect fire weapon
+    throwRange: 24 # was 18
+    weight: 2  # Light grenade
+    fuseType: -2
+    costThrow:
+      time: 55
+      energy: 5
+    costPrime:
+      time: 5
+    costUnprime:
+      time: 5
+    unprimeActionName: STR_UNPRIME_GRENADE
+    flatThrow:
+      time: false
+      energy: true
+    flatPrime:
+      time: false
+      energy: true
+    damageType: 2 # incin - was 8, acid
+    damageAlter:
+      RandomType: 2 # 50-150%
+      ToMorale: 1.0
+      ToWound: 0.2
+      RandomWound: false
+      ToHealth: 0.7 # was 0.4
+      ToStun: 0.4
+      FireThreshold: 0
+      FixRadius: 6 # was 5
+      RadiusReduction: 5
+      FireBlastCalc: false
+      IgnoreOverKill: false
+      IgnoreDirection: false
+    tags:
+      SMT_ARMOR_TARGET_WEAKEST: 1
+      ITEM_IGNITES_TARGETS: 3
 
 ### Melee
   - type: STR_CHAINSWORD                    # Chainsword
@@ -5508,7 +5551,7 @@ items:
     power: 4
     damageType: 13 # warp
     damageBonus:
-      psiStrength: 0.15
+      psiStrength: 0.2
     damageAlter:
       RandomType: 3
       ArmorEffectiveness: 0.0
@@ -5522,6 +5565,7 @@ items:
       FireThreshold: 0
       FixRadius: -1
       RadiusReduction: 3
+      RadiusEffectiveness: 0.1
     accuracyAimed: 20
     aimRange: 25
     confAimed:
@@ -5533,6 +5577,8 @@ items:
     spawnItem: STR_SUPERFLARE_SHORT
     spawnItemChance: 100
     experienceTrainingMode: 26
+    tags:
+      ITEM_IGNITES_TARGETS: 1
 
   - type: STR_PSITOKEN_TELEPATHY            # T1 Telepathy
     refNode: *STR_PSI_TOKEN
@@ -5646,7 +5692,7 @@ items:
       ITEM_IS_BUFF_WEAPON: 1
       SMT_VIGILIANCE_BUFF: 100
 
-  - type: STR_PSITOKEN_WALLBREAKER          # T1 Rend Landscape
+  - type: STR_PSITOKEN_WALLBREAKER          # T2 Rend Landscape
     refNode: *STR_SKILL_TOKEN
     categories: [ STR_CAT_SPELLS]
     #fireSound: {mod: 40k, index: 847} ###CHANGEME
@@ -5758,7 +5804,7 @@ items:
       SMT_HEAL_WOUNDS_HP_PERCENT: 20
       SMT_HEAL_WOUNDS_HP_CAP: 50
 
-  - type: STR_PSITOKEN_SENTRYWARD           # T3 Farsight
+  - type: STR_PSITOKEN_SENTRYWARD           # T5 Farsight
     refNode: *STR_SKILL_TOKEN
     categories: [ STR_CAT_SPELLS]
     fireSound: {mod: 40k, index: 847}
@@ -5804,7 +5850,7 @@ items:
       psiStrength: 1.0
       flatHundred: 1.0
 
-  - type: STR_PSITOKEN_UNDYING              # T3 Enduring Spirit ###CHANGEME
+  - type: STR_PSITOKEN_UNDYING              # T3 Enduring Spirit
     refNode: *STR_PSI_TOKEN
     hitSound: {mod: 40k, index: 778}
     hitAnimation: {mod: 40k, index: 170}
@@ -5829,7 +5875,7 @@ items:
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 100
       ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
 
-  - type: STR_PSITOKEN_HOLODUMMY            # T4 Hallucination
+  - type: STR_PSITOKEN_HOLODUMMY            # T3 Hallucination
     refNode: *STR_SKILL_TOKEN
     categories: [ STR_CAT_SPELLS]
     weight: 0
@@ -5876,7 +5922,7 @@ items:
       psiStrength: 1.0
       flatHundred: 1.0
 
-  - type: STR_PSITOKEN_LOCKDOWN             # T4 Lockdown
+  - type: STR_PSITOKEN_LOCKDOWN             # T5 Lockdown
     refNode: *STR_PSI_TOKEN
     hitSound: {mod: 40k, index: 778}
     hitAnimation: {mod: 40k, index: 160}
@@ -5900,7 +5946,7 @@ items:
     tags:
       ITEM_CAUSES_LOCKDOWN: 100
 
-  - type: STR_PSITOKEN_SHIELD               # T4 Shield
+  - type: STR_PSITOKEN_SHIELD               # T5 Shield
     refNode: *STR_PSI_TOKEN
     hitSound: {mod: 40k, index: 778}
     hitAnimation: {mod: 40k, index: 100}
@@ -5925,7 +5971,7 @@ items:
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 100
       ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
 
-  - type: STR_PSITOKEN_TORMENT              # T4 Torment
+  - type: STR_PSITOKEN_TORMENT              # T5 Torment
     refNode: *STR_SKILL_TOKEN
     categories: [ STR_CAT_SPELLS]
     weight: 0
@@ -6000,7 +6046,7 @@ items:
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
       SMT_ITEM_MOVESPEED_BOOST: 2
 
-  - type: STR_PSITOKEN_CLOAK                # T6 Shadowcloak ###CHANGEME
+  - type: STR_PSITOKEN_CLOAK                # T6 Shadowcloak
     refNode: *STR_PSI_TOKEN
     fireSound: {mod: 40k, index: 787} #787 page turn BOOK
     hitSound: {mod: 40k, index: 778} # Lockdown sound

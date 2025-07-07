@@ -181,14 +181,30 @@ ufopaedia:
       - STR_CAPTAIN_CODEX
     text: STR_SMT_CMD_SOF_CODEX
     listOrder: 132
-  - id: STR_SMT_CMD_RA                  #00133 - Captain Command - Relentless Assault
+  - id: STR_SMT_CMD_FD                  #00133 - Captain Command - Fire Discipline
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: CMDSOFUFO.SPK
+    requires:
+      - STR_CAPTAIN_CODEX
+    text: STR_SMT_CMD_FD_CODEX
+    listOrder: 133
+  - id: STR_SMT_CMD_LB                  #00134 - Captain Command - Lightning Blitz
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: CMDRAUFO.SPK
+    requires:
+      - STR_CAPTAIN_CODEX
+    text: STR_SMT_CMD_LB_CODEX
+    listOrder: 134
+  - id: STR_SMT_CMD_RA                  #00135 - Captain Command - Relentless Assault
     type_id: 10
     section: STR_STRATEGY
     image_id: CMDRAUFO.SPK
     requires:
       - STR_CAPTAIN_CODEX
     text: STR_SMT_CMD_RA_CODEX
-    listOrder: 133
+    listOrder: 135
 
   - id: STR_SMT_DW_RECRUITMENT              # DW Recruitment
     type_id: 10
@@ -725,59 +741,153 @@ ufopaedia:
 ### 40000  - Base Facilities
 ### 50000  - Craft
 ### 60000  - Spells
-  - id: STR_PSITOKEN_TORMENT                  # Librarian Torment
-    type_id: 14
-    section: STR_BOOKS
-    text: STR_LIB_VULN_CODEX
-    image_id: LIBRARIANUFO.SPK
-    requires:
-      - STR_MARINES_AND_DEATHWATCH
-  - id: STR_PSITOKEN_HASTE                  # Librarian Haste
-    type_id: 14
-    section: STR_BOOKS
-    text: STR_PSITOKEN_HASTE_CODEX
-    image_id: LIBRARIANUFO.SPK
-    requires:
-      - STR_MARINES_AND_DEATHWATCH
-  - id: STR_PSITOKEN_HASTE               # Librarian Haste DW
-    type_id: 14
-    section: STR_NOT_AVAILABLE
-    text: STR_PSITOKEN_HASTE_CODEX
-  - id: STR_PSITOKEN_LOCKDOWN               # Librarian Lockdown
-    type_id: 14
-    section: STR_BOOKS
-    text: STR_PSITOKEN_LOCKDOWN_CODEX
-    image_id: LIBRARIANUFO.SPK
-    requires:
-      - STR_MARINES_AND_DEATHWATCH
-  - id: STR_PSITOKEN_SHIELD                 # Librarian Shield
-    type_id: 14
-    section: STR_BOOKS
-    text: STR_LIB_SHIELD_CODEX
-    image_id: LIBRARIANUFO.SPK
-    requires:
-      - STR_MARINES_AND_DEATHWATCH
-  - id: STR_PSITOKEN_SHROUD                  # Librarian Shroud
+  - id: STR_PSITOKEN_SHROUD                 # Shroud
     type_id: 14
     section: STR_BOOKS
     text: STR_PSITOKEN_SHROUD_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
-      - STR_MARINES_AND_DEATHWATCH
-  - id: STR_PSITOKEN_SMITE                     # Librarian Smite
+      - STR_PSYKER_T1_UNLOCK
+  - id: STR_PSITOKEN_FLARE                  # Flare
     type_id: 14
     section: STR_BOOKS
-    text: STR_PSITOKEN_SMITE_CODEX
+    text: STR_PSITOKEN_FLARE_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
-      - STR_MARINES_AND_DEATHWATCH
-  - id: STR_PSITOKEN_VIGILANCE             # Librarian Vigilance
+      - STR_PSYKER_T1_UNLOCK
+  - id: STR_PSITOKEN_TELEPATHY              # Telepathy
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_TELEPATHY_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T1_UNLOCK
+  - id: STR_PSITOKEN_FLASH                  # Thunderclap
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_FLASH_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T2_UNLOCK
+  - id: STR_PSITOKEN_REFLEXES               # Lightning Reflexes
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_REFLEXES_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T2_UNLOCK
+  - id: STR_PSITOKEN_VIGILANCE              # Vigilance
     type_id: 14
     section: STR_BOOKS
     text: STR_PSITOKEN_VIGILANCE_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
-      - STR_MARINES_AND_DEATHWATCH
+      - STR_PSYKER_T2_UNLOCK
+  - id: STR_PSITOKEN_WALLBREAKER            # Rend Landscape
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_WALLBREAKER_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T2_UNLOCK
+  - id: STR_PSITOKEN_SMITE                  # Smite
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_SMITE_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T3_UNLOCK
+  - id: STR_PSITOKEN_HOLODUMMY              # Hallucination
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_HOLODUMMY_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T3_UNLOCK
+  - id: STR_PSITOKEN_MENDWOUNDS             # Mend Flesh
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_MENDWOUNDS_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T3_UNLOCK
+  - id: STR_PSIBONUS_PASSIVESHIELD          # Passive Shield
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSIBONUS_PASSIVESHIELD_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T4_UNLOCK
+  - id: STR_PSIBONUS_RECOVERY               # Rapid Recovery
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSIBONUS_RECOVERY_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T4_UNLOCK
+  - id: STR_PSIBONUS_TRUESIGHT              # Truesight
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSIBONUS_TRUESIGHT_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T4_UNLOCK
+  - id: STR_PSITOKEN_TORMENT                # Torment
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_TORMENT_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T5_UNLOCK
+  - id: STR_PSITOKEN_LOCKDOWN               # Lockdown
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_LOCKDOWN_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T5_UNLOCK
+  - id: STR_PSITOKEN_SHIELD                 # Shield
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_SHIELD_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T5_UNLOCK
+  - id: STR_PSITOKEN_SENTRYWARD             # Farsight
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_SENTRYWARD_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T5_UNLOCK
+  - id: STR_PSITOKEN_HASTE                  # Acceleration
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_HASTE_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T6_UNLOCK
+  - id: STR_PSITOKEN_CLOAK                  # Shadowcloak
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_CLOAK_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T6_UNLOCK
+  - id: STR_PSITOKEN_SOULSTORM              # Soul Storm
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_SOULSTORM_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T6_UNLOCK
+  - id: STR_PSITOKEN_HOLOCAUST              # Holocaust
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_HOLOCAUST_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T6_UNLOCK
 
 ### 70000  - Ammo details
 ### 80000  - Imperium Weapons

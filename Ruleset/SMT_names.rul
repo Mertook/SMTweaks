@@ -442,6 +442,8 @@ extraStrings:
       STR_CMD_ARMOR_SKILL: Armor of Contempt
       STR_CMD_FIRE_SKILL: Storm of Fire
       STR_CMD_MELEE_SKILL: Relentless Assault
+      STR_CMD_REACT_SKILL: Lightning Blitz
+      STR_CMD_OVERWATCH_SKILL: Fire Discipline
       STR_CMD_CHECK_SKILL: Check CMD Points
       STR_GRAV_MORTAR: Fragstorm Grenades
       STR_TECH_PRIMARY_SKILL: Servo Weapon
@@ -648,6 +650,8 @@ extraStrings:
       STR_SCRIPT_CMD_ARMOR: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Armor of Contempt"
       STR_SCRIPT_CMD_FIRE: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Storm of Fire"
       STR_SCRIPT_CMD_MELEE: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Relentless Assault"
+      STR_SCRIPT_CMD_REACT: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Lightning Blitz"
+      STR_SCRIPT_CMD_OVERWATCH: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Battle Drill"
       STR_HEAT_AMMO_SPENT_FOR_INCREASE: "Heat increase per X ammo"
       ### FACILITIES
       STR_OUTPOST_GK: "Outpost"
@@ -1179,28 +1183,28 @@ extraStrings:
       STR_DW_CHAPTERS_CODEX: "{NEWLINE} Deathwatch hail from many different Chapters, bringing the experiences and tactics of their Chapter with them. Each Deathwatch Marine has a unique bonus related to their Chapter.{NEWLINE}{NEWLINE} Deathwatch Captains also come with unique equipment in addition to their Chapter bonus."
       STR_ULTRAMARINES: "Ultramarines"
       STR_ULTRAMARINES_INFO_1: "{NEWLINE}Of all the thousand and more Space Marine Chapters, it is the blue-clad Ultramarines that, in the mind of the countless billions of the Emperor's subjects, personify everything that the Adeptus Astartes stand for.  Originally known as the War-Born, these superb soldiers are here to stem the tide of Chaos on this Planet.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Tactical experts, they recover some TUs on enemy turns for reaction fire."
-      STR_ULTRAMARINES_INFO_2: "{NEWLINE} The Ultramarines Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Mastercrafted Absolvor Pistol{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
+      STR_ULTRAMARINES_INFO_2: "{NEWLINE} The Ultramarines Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Mastercrafted Absolvor Pistol{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Lightning Blitz{ALT}{NEWLINE} > {ALT}Fire Discipline{ALT}"
       STR_IF: "Imperial Fists"
       STR_IF_INFO_1: "{NEWLINE}One of the most valiant of all Chapters, held as paragons of the principles set down in the Codex Astartes. The Imperial Fists stand as the steadfast defenders of the Imperium and the Emperor's unwavering shield; for ten thousand standard years they have been the bulwark against which the armies of Traitors and aliens have shattered.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Experts in defense, they are less affected by Heavy Weapons and their armor is more durable."
-      STR_IF_INFO_2: "{NEWLINE} The Imperial Fists Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Mastercrafted Storm Bolter{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
+      STR_IF_INFO_2: "{NEWLINE} The Imperial Fists Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Mastercrafted Storm Bolter{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Fire Discipline{ALT}"
       STR_BA: "Blood Angels"
       STR_BA_INFO_1: "{NEWLINE}The sons of Sanguinius are experts in the use of all weapons and launching of army-shattering assaults. Their Forces are an inspiring sight in the ranks of the Emperor. {NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Bound in blood, they can regenerate by feeding greatly reducing the time spent recovering from wounds."
-      STR_BA_INFO_2: "{NEWLINE} The Blood Angels Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Jetpack{ALT} (3 turn flight){NEWLINE} > {ALT}¬ Power Sword{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
+      STR_BA_INFO_2: "{NEWLINE} The Blood Angels Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Jetpack{ALT} (3 turn flight){NEWLINE} > {ALT}¬ Power Sword{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Lightning Blitz{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
       STR_SALA: "Salamanders"
       STR_SALA_INFO_1: "{NEWLINE}The Salamanders are warriors possessed of a nobility and compassion that belies their fell appearance. They are excellent craftsmen all, both within the sphere of war and without.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Hailing from Nocturne, they are immume to fire."
-      STR_SALA_INFO_2: "{NEWLINE} The Salamander Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Volkite Caliver{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
+      STR_SALA_INFO_2: "{NEWLINE} The Salamander Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Volkite Caliver{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > Lightning Blitz{ALT}{ALT}"
       STR_BT: "Black Templars"
       STR_BT_INFO_1: "{NEWLINE}A successor Chapter of the Imperial Fists, the Black Templars are on a permanent crusade against the enemies of Mankind. Their religious Fervour is infectious, bolstering morale wherever they fight.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Devout crusaders, the Templars are immune to corruption."
-      STR_BT_INFO_2: "{NEWLINE} The Black Templar Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Crozius Arcanum{ALT}{NEWLINE} > {ALT}Bless Allies{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
+      STR_BT_INFO_2: "{NEWLINE} The Black Templar Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Crozius Arcanum{ALT}{NEWLINE} > {ALT}Bless Allies{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Lightning Blitz{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
       STR_WS: "White Scars"
       STR_WS_INFO_1: "{NEWLINE}The horsemaster tribes of chogoris lend the White Scars that recruit them an affinity with mounted warfare. They carry the proud warrior tradition of Jaghatai khan into the rank.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Experts in assault, they require less energy to run."
-      STR_WS_INFO_2: "{NEWLINE} The White Scars Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Force Halberd{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Smite{ALT}{NEWLINE} > {ALT}Shroud{ALT}{NEWLINE} > {ALT}Vigilance{ALT}{NEWLINE} > {ALT}Accelerate{ALT}"
+      STR_WS_INFO_2: "{NEWLINE} The White Scars Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Force Halberd{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Farsight{ALT}{NEWLINE} > {ALT}Lockdown{ALT}{NEWLINE} > {ALT}Project Shield{ALT}{NEWLINE} > {ALT}Accelerate{ALT}"
       STR_SW: "Space Wolves"
       STR_SW_INFO_1: "{NEWLINE}Renowned for their ferocity, courage and hot-blooded approach to warfare. They are masters of the hunt, upholding the savage honour of Lemon Russ.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Born in harsh Fenris, they quickly regenerate from injuries during battle."
-      STR_SW_INFO_2: "{NEWLINE} The Space Wolves Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Power Axe{ALT}{NEWLINE} > {ALT}Medikit{ALT}{NEWLINE} > {ALT}Bless Allies{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
+      STR_SW_INFO_2: "{NEWLINE} The Space Wolves Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Power Axe{ALT}{NEWLINE} > {ALT}Medikit{ALT}{NEWLINE} > {ALT}Bless Allies{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Lightning Blitz{ALT}{NEWLINE} > {ALT}Fire Discipline{ALT}"
       STR_DA: "Dark Angels"
       STR_DA_INFO_1: "{NEWLINE}The first Chapter founded by the Emperor, Dark Angels are highly secretive and ritualistic. They are relentless in hunting down those who have betrayed them. {NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Mercilessly hunting their targets, their shots are almost impossible to dodge."
-      STR_DA_INFO_2: "{NEWLINE} The Dark Angels Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Twincore Plasma Rifle{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Smite{ALT}{NEWLINE} > {ALT}Lockdown{ALT}{NEWLINE} > {ALT}Project Shield{ALT}{NEWLINE} > {ALT}Torment{ALT}"
+      STR_DA_INFO_2: "{NEWLINE} The Dark Angels Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Twincore Plasma Rifle{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Hallucination{ALT}{NEWLINE} > {ALT}Mend Flesh{ALT}{NEWLINE} > {ALT}Torment{ALT}{NEWLINE} > {ALT}Soul Storm{ALT}"
       STR_CF: "Crimson Fists"
       STR_CF_INFO_1: "{NEWLINE}Though brought to a fraction of full strength by a devastating Ork attack at Rynn´s World, they are famous for never giving up. Excellent Ork hunters, they frequently contribute warriors to Deathwatch Killteams.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Closely tied with the Ordos Xenos, they are easy to recruit into service."
       STR_CF_INFO_2: "{NEWLINE} The Crimson Fist Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Heavy Bolt Rifle{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
@@ -1250,13 +1254,17 @@ extraStrings:
       STR_SMT_CAPTAIN_PROMOTION: Company Captain
       STR_SMT_CAPTAIN_PROMOTION_CODEX: "{NEWLINE} The most experienced and battle hardened Marines can be promoted to the rank of Captain, leading your forces from the front lines. Captains are capable of using powerful Commands in battles to bolster all allied Space Marines.{NEWLINE}{NEWLINE} Marines need the highest Mark of Honor and Hero of the Imperium commendations to be promoted to Captain.{NEWLINE}{NEWLINE}                               {ALT}>>"
       STR_SMT_COMMANDS: Captain Commands
-      STR_SMT_COMMANDS_CODEX: "{NEWLINE} Captain Commands are powerful skills that affect all allied Marines until the start of your next turn. Each Command requires 250 command points. Command points are earned in battle by killing enemies, with tougher enemies earning more points.{NEWLINE}{NEWLINE} Command List:{NEWLINE} {ALT}>{ALT} Armor of Contempt{NEWLINE} {ALT}>{ALT} Storm of Fire{NEWLINE} {ALT}>{ALT} Relentless Assault"
+      STR_SMT_COMMANDS_CODEX: "{NEWLINE} Captain Commands are powerful skills that affect all allied Marines until the start of your next turn. Each Command requires 250 command points. Command points are earned in battle by killing enemies, with tougher enemies earning more points.{NEWLINE}{NEWLINE} Command List:{NEWLINE} {ALT}>{ALT} Armor of Contempt{NEWLINE} {ALT}>{ALT} Storm of Fire{NEWLINE} {ALT}>{ALT} Fire Discipline{NEWLINE} {ALT}>{ALT} Relentless Assault{NEWLINE} {ALT}>{ALT} Lightning Blitz"
       STR_SMT_CMD_AOC: Armor of Contempt
       STR_SMT_CMD_AOC_CODEX: "{NEWLINE} Unyielding in the face of any foe, the resilience of Space Marines is unmatched{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Reduce incoming damage by 20%{NEWLINE}> Greatly reduce damage to Armor{NEWLINE}> Use the strongest intact Armor facing to block attacks"
       STR_SMT_CMD_SOF: Storm of Fire
       STR_SMT_CMD_SOF_CODEX: "{NEWLINE} No enemy can stand against the Astartes, no shield can protect from their fury{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Increase the power of ranged attacks if they are weaker than the targets armor{NEWLINE}> Increase the armor destruction of all ranged attacks"
+      STR_SMT_CMD_FD: Fire Discipline
+      STR_SMT_CMD_FD_CODEX: "{NEWLINE} Honed by a lifetime of combat, Space Marines are always ready for battle{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Recover 100% TUs at the end of turn for reaction fire{NEWLINE}> Recover up to 50% more TUs upon successfully landing reaction shots"
       STR_SMT_CMD_RA: Relentless Assault
-      STR_SMT_CMD_RA_CODEX: "{NEWLINE} The Angels of Death descend upon their enemies, cutting through them in a whirlwind of violence{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Do not trigger enemy reactions while moving{NEWLINE}> Increase the accuracy of melee attacks{NEWLINE}> When killing an enemy unit with melee regain 33% of Max TUs (Up to 4 times)"
+      STR_SMT_CMD_RA_CODEX: "{NEWLINE} The Angels of Death descend upon their enemies, cutting through them in a whirlwind of violence{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> When killing an enemy unit with melee regain 33% of Max TUs (Up to 4 times){NEWLINE}> Increase the power of melee attacks"
+      STR_SMT_CMD_LB: Lightning Blitz
+      STR_SMT_CMD_LB_CODEX: "{NEWLINE} The Astartes strike furiously and without warning, leaving their enemies in disarray {NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Do not trigger any enemy reactions{NEWLINE}> Increase the accuracy of melee attacks"
       STR_SMT_HEROICSAVE: Heroic Save
       STR_SMT_HEROICSAVE_CODEX: "{NEWLINE} When taking lethal damage Space Marines have a chance to heroically endure. Instead of dying they will be knocked unconcious and can be revived to fight on.{NEWLINE} This effect may also protect them from instant-death attacks, but can't prevent death from untreated fatal wounds, corruption or burning.{NEWLINE}{NEWLINE} The chance to endure increases with Health, Devotion, and Veterancy. Units blessed by a Chaplain have their bonus from Devotion doubled."
       STR_SMT_REGENERATION: Marine Healing
@@ -1311,8 +1319,8 @@ extraStrings:
       STR_SMT_ASSASSIN_STEALTH_CODEX: "{NEWLINE} Particularly skilled infiltrators are able to steathily kill their target and vanish without a trace.{NEWLINE} When a unit using armor with {ALT}Silent Killer{ALT} gets a killing blow they immediately enter {ALT}Stealth{ALT} for one turn, the detection range depending on the units armor.{NEWLINE}{NEWLINE} Only Melee attacks or Aimed shots using a weapon with a matching Silent Killer (Type) can trigger stealth this way."
       ## Research
       ## Spells
-      STR_SMT_LIBRARIAN_SPELLS: Librarian Abilities
-      STR_SMT_LIBRARIAN_SPELLS_CODEX: "{NEWLINE} Librarians have 5 different psyker abilities.{NEWLINE}{NEWLINE}{ALT}>Smite{ALT} - Deals armor-ignoring damage to an enemy{NEWLINE}{ALT}>Lockdown{ALT} - Drains enemy time units, paralysing them{NEWLINE}{ALT}>Shroud{ALT} - Creates a blast of smoke to obscure vision{NEWLINE}{ALT}>Shield{ALT} - Grants a temporary energy shield to an ally{NEWLINE}{ALT}>Accelerate{ALT} - Reduces reaction fire and at high levels increases movespeed{NEWLINE}{NEWLINE} All abilities scale with PsiStr only"
+      STR_SMT_LIBRARIAN_SPELLS: Pysker Abilities
+      STR_SMT_LIBRARIAN_SPELLS_CODEX: "{NEWLINE} Psykers can use many different special abilities, divided into tiers. Psyker skills are exhausting, requiring TUs, Energy, Stun & Morale, but can turn the tide of battle in unique ways. One ability per tier can be chosen.{NEWLINE}{NEWLINE} {ALT}Tier 1{ALT} - 40+ PsiStr{NEWLINE} {ALT}Tier 2{ALT} - 60+ PsiStr {NEWLINE} {ALT}Tier 3{ALT} - 80+ PsiStr{NEWLINE} {ALT}Tier 4{ALT} - 100+ PsiStr{NEWLINE} {ALT}Tier 5{ALT} - 120+ PsiStr{NEWLINE} {ALT}Tier 6{ALT} - 140+ PsiStr"
       #T1
       STR_PSISKILL_FLARE: Flare
       STR_PSITOKEN_FLARE: Flare
@@ -1347,10 +1355,10 @@ extraStrings:
       STR_PSISKILL_MENDWOUNDS_FREE: Mend Flesh
       STR_PSITOKEN_MENDWOUNDS: Mend Flesh
       STR_PSITOKEN_MENDWOUNDS_CODEX: "{NEWLINE} Binds and knits injured flesh back together, restoring some lost HP and healing Fatal Wounds.{NEWLINE} Mend Flesh has a maximum range of 10 and requires line of sight.{NEWLINE}{NEWLINE} Health restored and number of fatal wounds healed scales with PsiStrength"
-      STR_PSISKILL_SENTRYWARD: Farsight
-      STR_PSISKILL_SENTRYWARD_FREE: Farsight
-      STR_PSITOKEN_SENTRYWARD: Farsight
-      STR_PSITOKEN_SENTRYWARD_CODEX: "{NEWLINE} Farsight projects the Psykers conciousness, allowing them to detect enemies hiding on the battlefield.{NEWLINE} Farsight uses arced targeting, and accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Accuracy scales with PsiStrength"
+      STR_PSISKILL_HOLODUMMY: Hallucination
+      STR_PSISKILL_HOLODUMMY_FREE: Hallucination
+      STR_PSITOKEN_HOLODUMMY: Hallucination
+      STR_PSITOKEN_HOLODUMMY_CODEX: "{NEWLINE} Muddles the minds of enemies, creating a fake target to draw attacks.{NEWLINE} Hallucination uses arced targeting, and accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Accuracy scales with PsiStrength"
       #T4
       STR_PSIBONUS_PASSIVESHIELD_CODEX: "{NEWLINE} The Psyker projects a powerful psychic shield, passively protecting them from incoming attacks.{NEWLINE}{NEWLINE} The shield has a strength of {ALT}100{ALT} and stacks with any other shields from bonuses or armor."
       STR_PSIBONUS_RECOVERY_CODEX: "{NEWLINE} The Psyker has unusual vigor, greatly increasing their natural recovery and allowing them to use psyker abilities more frequently.{NEWLINE}{NEWLINE} An additional {ALT}30%{ALT} Stamina, {ALT}15{ALT} Morale and {ALT}5{ALT} points of Stun are recovered each turn."
@@ -1368,10 +1376,10 @@ extraStrings:
       STR_PSISKILL_TORMENT_FREE: Torment
       STR_PSITOKEN_TORMENT: Torment
       STR_PSITOKEN_TORMENT_CODEX: "{NEWLINE} Tears at the minds of enemies, dealing minor damage in an area and inflicting vulnerability for two turns. Vulnerability increases the damage units take from attacks.{NEWLINE} Torment requires line of sight and has no range limit, but accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Damage, Accuracy and Area of Effect scale with PsiStrength"
-      STR_PSISKILL_HOLODUMMY: Hallucination
-      STR_PSISKILL_HOLODUMMY_FREE: Hallucination
-      STR_PSITOKEN_HOLODUMMY: Hallucination
-      STR_PSITOKEN_HOLODUMMY_CODEX: "{NEWLINE} Muddles the minds of enemies, creating a fake target to draw attacks.{NEWLINE} Hallucination uses arced targeting, and accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Accuracy scales with PsiStrength"
+      STR_PSISKILL_SENTRYWARD: Farsight
+      STR_PSISKILL_SENTRYWARD_FREE: Farsight
+      STR_PSITOKEN_SENTRYWARD: Farsight
+      STR_PSITOKEN_SENTRYWARD_CODEX: "{NEWLINE} Farsight projects the Psykers conciousness, allowing them to detect enemies hiding on the battlefield from afar.{NEWLINE} Farsight uses arced targeting, and accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Accuracy scales with PsiStrength"
       #T6
       STR_PSISKILL_HASTE: Accelerate
       STR_PSISKILL_HASTE_FREE: Accelerate

@@ -2462,8 +2462,8 @@ soldiers:
     skills:
       - STR_INSPIRE_CAPTAIN_SKILL
       - STR_CMD_ARMOR_SKILL
-      - STR_CMD_FIRE_SKILL
-      - STR_CMD_MELEE_SKILL
+      - STR_CMD_REACT_SKILL
+      - STR_CMD_OVERWATCH_SKILL
       - STR_CMD_CHECK_SKILL
     tags:
       SMT_RESTRICTED_ITEM_USER: 6 # can use DW gear and DW captain gear
@@ -2499,6 +2499,12 @@ soldiers:
       - STR_DW_IF_RANK_5
       - STR_DW_IF_RANK_5
       - STR_DW_IF_RANK_5
+    skills:
+      - STR_INSPIRE_CAPTAIN_SKILL
+      - STR_CMD_ARMOR_SKILL
+      - STR_CMD_FIRE_SKILL
+      - STR_CMD_OVERWATCH_SKILL
+      - STR_CMD_CHECK_SKILL
 
   - type: STR_BLOODANGELS_LEADER        # Blood Angels Captain
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
@@ -2510,6 +2516,12 @@ soldiers:
       - STR_DW_BA_RANK_5
       - STR_DW_BA_RANK_5
       - STR_DW_BA_RANK_5
+    skills:
+      - STR_INSPIRE_CAPTAIN_SKILL
+      - STR_CMD_ARMOR_SKILL
+      - STR_CMD_REACT_SKILL
+      - STR_CMD_MELEE_SKILL
+      - STR_CMD_CHECK_SKILL
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 10 # Blood Angels bonus
 
@@ -2523,6 +2535,12 @@ soldiers:
       - STR_DW_SALA_RANK_5
       - STR_DW_SALA_RANK_5
       - STR_DW_SALA_RANK_5
+    skills:
+      - STR_INSPIRE_CAPTAIN_SKILL
+      - STR_CMD_ARMOR_SKILL
+      - STR_CMD_REACT_SKILL
+      - STR_CMD_FIRE_SKILL
+      - STR_CMD_CHECK_SKILL
 
   - type: STR_BLACKT_LEADER             # Black Templar Captain
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
@@ -2544,7 +2562,7 @@ soldiers:
     skills:
       - STR_BLESS_SKILL
       - STR_CMD_ARMOR_SKILL
-      - STR_CMD_FIRE_SKILL
+      - STR_CMD_REACT_SKILL
       - STR_CMD_MELEE_SKILL
       - STR_CMD_CHECK_SKILL
     tags:
@@ -2623,8 +2641,8 @@ soldiers:
     skills:
       - STR_BLESS_SKILL
       - STR_CMD_ARMOR_SKILL
-      - STR_CMD_FIRE_SKILL
-      - STR_CMD_MELEE_SKILL
+      - STR_CMD_REACT_SKILL
+      - STR_CMD_OVERWATCH_SKILL
       - STR_CMD_CHECK_SKILL
     tags: # Spacewolf bonus healing
       UNIT_REGENERATE_HEALTH_FLAT: 5
@@ -2645,6 +2663,12 @@ soldiers:
       - STR_DW_CF_RANK_5
       - STR_DW_CF_RANK_5
       - STR_DW_CF_RANK_5
+    skills:
+      - STR_INSPIRE_CAPTAIN_SKILL
+      - STR_CMD_ARMOR_SKILL
+      - STR_CMD_MELEE_SKILL
+      - STR_CMD_FIRE_SKILL
+      - STR_CMD_CHECK_SKILL
 
   - type: STR_DW_ARMOR_DUMMY            # Dummy unit, used for DW Armor codex entries
     requires:

@@ -3,7 +3,7 @@ extended:
 
   scripts:
     newTurnUnit:
-      - new: SMTS_misc_removebuff #*** Script that removes haste bonus from unit once turn ends ***
+      - new: SMTS_misc_removebuff #*** Script that removes tags from units once turn ends ***
         offset: 90.0
         code: |
           var int currTurn;
@@ -43,12 +43,12 @@ extended:
             end;
           end;
 
-          unit.getTag endTurn Tag.SMT_VIGILIANCE_ENDTURN; ## Vigilance
+          unit.getTag endTurn Tag.SMT_OVERWATCH_BUFF_ENDTURN; ## Vigilance
           if neq endTurn 0;
             if or le currTurn 1 ge currTurn endTurn; # if buff expires or it's turn 1 (entering a new stage of multi-part mission)
-              unit.setTag Tag.SMT_OVERWATCH_BONUS 0;
-              unit.setTag Tag.SMT_VIGILIANCE_OVERFLOW 0;
-              unit.setTag Tag.SMT_VIGILIANCE_ENDTURN 0; #cancel tags
+              unit.setTag Tag.SMT_OVERWATCH_BUFF 0;
+              unit.setTag Tag.SMT_OVERWATCH_BUFF_EXCESS 0;
+              unit.setTag Tag.SMT_OVERWATCH_BUFF_ENDTURN 0; #cancel tags
               #debug_log "VigilanceEnd Ping" currTurn endTurn;
             end;
           end;
@@ -61,6 +61,8 @@ extended:
               #debug_log "VulnEnd Ping" currTurn endTurn;
             end;
           end;
+
+          unit.setTag Tag.SMT_RAMPAGE_COUNT 0; # Rampage
 
           return;
 
@@ -104,24 +106,24 @@ extended:
               unit.getRuleArmor armorRule;
               armorRule.getTag temp Tag.ARMOR_OVERWATCH_TU_RESTORED; # add innate Overwatch from armor
               add vigilBonus temp;
-              unit.getTag temp Tag.SMT_OVERWATCH_BONUS; # add any previous Overwatch buffs
+              unit.getTag temp Tag.SMT_OVERWATCH_BUFF; # add any previous Overwatch buffs
               add vigilBonus temp;
-              unit.getTag temp Tag.SMT_VIGILIANCE_OVERFLOW; # add any overflow from previous Overwatch buffs
+              unit.getTag temp Tag.SMT_OVERWATCH_BUFF_EXCESS; # add any overflow from previous Overwatch buffs
               add vigilBonus temp;
               if gt vigilBonus 100; # if total >100, add overflow TUs
                 set temp vigilBonus;
                 sub temp 100;
                 unit.getTimeUnitsMax vigilOverflow;
                 muldiv vigilOverflow temp 100;
-                unit.setTag Tag.SMT_VIGILIANCE_OVERFLOW vigilOverflow;
+                unit.setTag Tag.SMT_OVERWATCH_BUFF_EXCESS vigilOverflow;
               end;
               limit vigilBonus 0 100;
-              unit.setTag Tag.SMT_OVERWATCH_BONUS vigilBonus;
+              unit.setTag Tag.SMT_OVERWATCH_BUFF vigilBonus;
               #debug_log "Vigilance Ping" vigilBonus temp;
 
               battle_game.getTurn temp;
               add temp 1; #define end turn for buff
-              unit.setTag Tag.SMT_VIGILIANCE_ENDTURN temp;
+              unit.setTag Tag.SMT_OVERWATCH_BUFF_ENDTURN temp;
             end;
           end;
 
@@ -291,7 +293,7 @@ extended:
 
           return power part side;
 
-      - new: SMTS_vigilance_reactionRefund #*** Script that grants bonus TUs when landing reaction shots if unit has been buffed with >100% Overwatch
+      - new: SMTS_overwatch_reactionRefund #*** Script that grants bonus TUs when landing reaction shots if unit has been buffed with >100% Overwatch
         offset: 2.1
         code: |
           var int bonusTUs;
@@ -306,7 +308,7 @@ extended:
             return power part side;
           end;
 
-          attacker.getTag bonusTUs Tag.SMT_VIGILIANCE_OVERFLOW;
+          attacker.getTag bonusTUs Tag.SMT_OVERWATCH_BUFF_EXCESS;
           if gt bonusTUs 0;
             attacker.getTimeUnits spentTUs;
             attacker.getTimeUnitsMax maxTUs;
@@ -325,7 +327,7 @@ extended:
                 sub bonusTUs spentTUs;
                 attacker.setTimeUnits maxTUs;
               end;
-              attacker.setTag Tag.SMT_VIGILIANCE_OVERFLOW bonusTUs;
+              attacker.setTag Tag.SMT_OVERWATCH_BUFF_EXCESS bonusTUs;
             end;
           end;
 

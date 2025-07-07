@@ -22,7 +22,7 @@ extended:
 
           unit.getRuleArmor armorRule;
           armorRule.getTag percentTU Tag.ARMOR_OVERWATCH_TU_RESTORED;
-          unit.getTag temp Tag.SMT_OVERWATCH_BONUS;
+          unit.getTag temp Tag.SMT_OVERWATCH_BUFF;
           add percentTU temp;
           if lt percentTU 1;
             return;

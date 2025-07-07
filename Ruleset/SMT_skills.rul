@@ -52,6 +52,24 @@ skills:
     tags:
       SKILL_SMT_COMMAND: 3
 
+  - type: STR_CMD_REACT_SKILL           # Lightning Blitz Command
+    targetMode: 0
+    costUse:
+      time: 1
+    flatUse:
+      time: true
+    tags:
+      SKILL_SMT_COMMAND: 4
+
+  - type: STR_CMD_OVERWATCH_SKILL       # Fire Discipline Command
+    targetMode: 0
+    costUse:
+      time: 1
+    flatUse:
+      time: true
+    tags:
+      SKILL_SMT_COMMAND: 5
+
   - type: STR_CMD_CHECK_SKILL           # Check Commands
     targetMode: 0
     costUse:

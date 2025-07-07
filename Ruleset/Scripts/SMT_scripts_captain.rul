@@ -37,6 +37,12 @@ extended:
             else eq cmdType 3;
               battle_game.flashLongMessage "STR_SCRIPT_CMD_MELEE" cmdPoints cmdCount;
               return;
+            else eq cmdType 4;
+              battle_game.flashLongMessage "STR_SCRIPT_CMD_REACT" cmdPoints cmdCount;
+              return;
+            else eq cmdType 5;
+              battle_game.flashLongMessage "STR_SCRIPT_CMD_OVERWATCH" cmdPoints cmdCount;
+              return;
             end;
           end;
 
@@ -56,13 +62,17 @@ extended:
             battle_game.flashLongMessage "STR_SCRIPT_CMD_FIRE" cmdPoints cmdCount;
           else eq cmdNew 3;
             battle_game.flashLongMessage "STR_SCRIPT_CMD_MELEE" cmdPoints cmdCount;
+          else eq cmdNew 4;
+            battle_game.flashLongMessage "STR_SCRIPT_CMD_REACT" cmdPoints cmdCount;
+          else eq cmdNew 5;
+            battle_game.flashLongMessage "STR_SCRIPT_CMD_OVERWATCH" cmdPoints cmdCount;
           end;
 
           return;
 
 
     hitUnit:
-      - new: SMTS_cmd_armor_hitunit     #*** Armor of Contempt damage reduction - 1.0 ***
+      - new: SMTS_cmd_armor_hitunit     #*** Armor of Contempt damage reduction - 2.0 ***
         offset: 2.0
         code: |
           var int temp;
@@ -100,37 +110,6 @@ extended:
             end;
             #debug_log "AoC Armor " i temp temp2;
           end;
-
-          # unit.getArmor temp SIDE_FRONT;
-          # if gt temp temp2;
-            # set side SIDE_FRONT;
-            # set temp2 temp;
-          # end;
-
-          # unit.getArmor temp SIDE_LEFT;
-          # if gt temp temp2;
-            # set side SIDE_LEFT;
-            # set temp2 temp;
-          # end;
-
-          # unit.getArmor temp SIDE_RIGHT;
-          # if gt temp temp2;
-            # set side SIDE_RIGHT;
-            # set temp2 temp;
-          # end;
-
-          # unit.getArmor temp SIDE_REAR;
-          # if gt temp temp2;
-            # set side SIDE_REAR;
-            # set temp2 temp;
-          # end;
-
-          # unit.getArmor temp SIDE_UNDER;
-          # if gt temp temp2;
-            # set side SIDE_UNDER;
-            # set temp2 temp;
-          # end;
-          #debug_log "AoC Hit Post " power side;
 
           return power part side;
 
@@ -179,8 +158,42 @@ extended:
           #debug_log "SoF End " power;
           return power part side;
 
+      - new: SMTS_cmd_melee_hitunit     #*** Relentless Assault damage boost - 2.0 ***
+        offset: 2.0
+        code: |
+          var int temp;
+          var int temp2;
+
+          if eq damaging_type 0; # ignore support type damage
+            return power part side;
+          end;
+
+          attacker.getTag temp Tag.UNIT_TYPE_ASTARTES; # only affects Space Marines
+          if le temp 0;
+            return power part side;
+          end;
+
+          battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Lightning Blitz
+          if neq temp 3;
+            return power part side;
+          end;
+
+          battle_game.getTurn temp; # only if command is still active
+          battle_game.getTag temp2 Tag.SMT_COMMAND_TURN;
+          if neq temp temp2;
+            return power part side;
+          end;
+
+          #debug_log "LB Hit " power battle_action;
+          if eq battle_action battle_action_hit; # only if action is melee (10)
+            muldiv power 6 5; # +20% power
+          end;
+
+          #debug_log "LB End " power;
+          return power part side;
+
     damageUnit:
-      - new: SMTS_cmd_dmgunit    #*** AoC Armor Protection, SoF Armor Destruction, RA TU Recovery ***
+      - new: SMTS_cmd_dmgunit           #*** AoC Armor Protection, SoF Armor Destruction, RA TU Recovery ***
         offset: 2.0
         code: |
           var int armorMult;
@@ -269,7 +282,7 @@ extended:
           return;
 
     reactionUnitAction:
-      - new: SMTS_cmd_melee_reactions    #*** Relentless Assault reactions negation - 1.0 ***
+      - new: SMTS_cmd_reactions         #*** Lightning Blitz reactions negation - 1.0 ***
         offset: 1.0
         code: |
           var int temp;
@@ -286,7 +299,7 @@ extended:
           end;
 
           battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Relentless Assault
-          if neq temp 3;
+          if neq temp 4;
             return reaction_chance;
           end;
 
@@ -296,14 +309,10 @@ extended:
             return reaction_chance;
           end;
 
-          if and ge battle_action battle_action_autoshoot le battle_action battle_action_aimshoot; # only if action is not auto, snap or aimed shot (7/8/9)
-            return reaction_chance;
-          end;
-
           return 0;
 
     tryMeleeAttackItem:
-      - new: SMTS_cmd_melee_accuracy    #*** Relentless Assault accuracy bonus - 10.0 ***
+      - new: SMTS_cmd_melee_accuracy    #*** Lightning Blitz accuracy bonus - 10.0 ***
         offset: 10
         code: |
           var int temp;
@@ -319,8 +328,8 @@ extended:
             return melee_attack_success;
           end;
 
-          battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Relentless Assault
-          if neq temp 3;
+          battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Lightning Blitz
+          if neq temp 4;
             return melee_attack_success;
           end;
 
@@ -330,8 +339,7 @@ extended:
             return melee_attack_success;
           end;
 
-          set temp attack_strength;
-          muldiv temp 6 5; # +20%
+          muldiv temp 4 3; # +33%
           sub temp attack_strength;
           set temp2 melee_attack_success;
           add temp2 temp;
@@ -339,12 +347,53 @@ extended:
           return temp2;
 
     newTurnUnit:
-      - new: SMTS_reset_counters        #*** Reset Rampage counter ***
+      - new: SMTS_cmd_overwatch         #*** Fire Discipline Overwatch bonus ***
         offset: 10
         code: |
+          var ptr RuleArmor armorRule;
+          var int reactVal;
+          var int reactExtra;
+          var int temp;
+          var int temp2;
 
-          unit.setTag Tag.SMT_RAMPAGE_COUNT 0;
-          battle_game.setTag Tag.SMT_COMMAND_TYPE 0;
+          unit.getTag temp Tag.UNIT_TYPE_ASTARTES; # only affects Space Marines
+          if gt temp 0;
+            return;
+          end;
+
+          battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Fire Discipline
+          if neq temp 5;
+            return;
+          end;
+
+          battle_game.getTurn temp; # only if command is still active
+          battle_game.getTag temp2 Tag.SMT_COMMAND_TURN;
+          if neq temp temp2;
+            return;
+          end;
+
+          set reactVal 150; # 150% from command
+          unit.getRuleArmor armorRule;
+          armorRule.getTag temp Tag.ARMOR_OVERWATCH_TU_RESTORED; # add innate Overwatch from armor
+          add reactVal temp;
+          unit.getTag temp Tag.SMT_OVERWATCH_BUFF; # add any previous Overwatch buffs
+          add reactVal temp;
+          unit.getTag temp Tag.SMT_OVERWATCH_BUFF_EXCESS; # add any overflow from previous Overwatch buffs
+          add reactVal temp;
+          if gt reactVal 100; # if total >100, add overflow TUs
+            set temp reactVal;
+            sub temp 100;
+            unit.getTimeUnitsMax reactExtra;
+            muldiv reactExtra temp 100;
+            unit.setTag Tag.SMT_OVERWATCH_BUFF_EXCESS reactExtra;
+          end;
+          limit reactVal 0 100;
+          unit.setTag Tag.SMT_OVERWATCH_BUFF reactVal;
+          #debug_log "Discipline Ping" reactVal temp;
+          battle_game.getTurn temp;
+          add temp 1;
+          unit.setTag Tag.SMT_OVERWATCH_BUFF_ENDTURN temp;
+
           return;
 
 

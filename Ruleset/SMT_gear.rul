@@ -3757,7 +3757,6 @@ items:
 
   - type: STR_GRAVGUN_AOE_AMMO              # Jupiter Gravgun Cell
     refNode: *DMG_GRAV_STD
-    requires:
     clipSize: 4 # was 3
     powerForAnimation: 10
     power: 20
@@ -3777,8 +3776,8 @@ items:
     shotgunBehavior: 1
     shotgunSpread: 65
     shotgunChoke: 30
-    shotgunPellets: 8
-    power: 5 # was 5
+    shotgunPellets: 6
+    power: 6 # was 5
     damageAlter:
       ToTile: 15.0
     tags:
@@ -3859,6 +3858,16 @@ items:
 
   - type: STR_GRAVGUN_MC                    # Gravgun (Mastercrafted)
     weight: 14 # was 10
+    dropoff: 5
+    autoRange: 0
+    snapRange: 16
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 90 # was 85
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 40
+    tuAimed: 0
     tags:
       GravPercentage: 0
 

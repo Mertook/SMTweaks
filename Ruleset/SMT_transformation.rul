@@ -1113,7 +1113,7 @@ soldierTransformation:
     listOrder: 4035
     soldierBonusType: STR_PSIBONUS_SMITE
 
-  - name: STR_PSIUNLOCK_SENTRYWARD      # Minds Eye (Tier 3)
+  - name: STR_PSIUNLOCK_HOLODUMMY       # Hallucination (Tier 3)
     cost: 50000
     keepSoldierArmor: true
     allowsDeadSoldiers: false
@@ -1126,7 +1126,7 @@ soldierTransformation:
     forbiddenPreviousTransformations: *Psyker_TierThree_TransformList
     requiredMinStats: *Psyker_TierThree_MinStats
     listOrder: 4040
-    soldierBonusType: STR_PSIBONUS_SENTRYWARD
+    soldierBonusType: STR_PSIBONUS_HOLODUMMY
 
   - name: STR_PSIUNLOCK_MENDWOUNDS      # Mend Wounds (Tier 3)
     cost: 50000
@@ -1242,7 +1242,7 @@ soldierTransformation:
     listOrder: 4070
     soldierBonusType: STR_PSIBONUS_PASSIVESHIELD
 
-  - name: STR_PSIUNLOCK_HOLODUMMY       # Hallucination (Tier 5)
+  - name: STR_PSIUNLOCK_SENTRYWARD      # Farsight (Tier 5)
     cost: 50000
     keepSoldierArmor: true
     allowsDeadSoldiers: false
@@ -1255,7 +1255,7 @@ soldierTransformation:
     forbiddenPreviousTransformations: *Psyker_TierFive_TransformList
     requiredMinStats: *Psyker_TierFive_MinStats
     listOrder: 4075
-    soldierBonusType: STR_PSIBONUS_HOLODUMMY
+    soldierBonusType: STR_PSIBONUS_SENTRYWARD
 
   - name: STR_PSIUNLOCK_LOCKDOWN        # Lockdown (Tier 5)
     cost: 50000

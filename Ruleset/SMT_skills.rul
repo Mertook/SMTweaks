@@ -248,10 +248,10 @@ skills:
       stun: true
       morale: true
 
-  - type: STR_PSISKILL_SENTRYWARD       # Psyker T3 - Farsight
+  - type: STR_PSISKILL_HOLODUMMY        # Psyker T5 - Hallucinate
     targetMode: 9
-    compatibleWeapons: [STR_PSITOKEN_SENTRYWARD]
-    requiredBonuses: [STR_PSIBONUS_SENTRYWARD]
+    compatibleWeapons: [STR_PSITOKEN_HOLODUMMY]
+    requiredBonuses: [STR_PSIBONUS_HOLODUMMY]
     checkHandsOnly: false
     costUse:
       time: 33
@@ -264,9 +264,9 @@ skills:
       stun: true
       morale: true
 
-  - type: STR_PSISKILL_SENTRYWARD_FREE  # Psyker T3 - Farsight (No Req)
+  - type: STR_PSISKILL_HOLODUMMY_FREE   # Psyker T5 - Hallucinate (No Req)
     targetMode: 9
-    compatibleWeapons: [STR_PSITOKEN_SENTRYWARD]
+    compatibleWeapons: [STR_PSITOKEN_HOLODUMMY]
     checkHandsOnly: false
     costUse:
       time: 33
@@ -295,10 +295,10 @@ skills:
       stun: true
       morale: true
 
-  - type: STR_PSISKILL_HOLODUMMY        # Psyker T5 - Hallucinate
+  - type: STR_PSISKILL_SENTRYWARD       # Psyker T5 - Farsight
     targetMode: 9
-    compatibleWeapons: [STR_PSITOKEN_HOLODUMMY]
-    requiredBonuses: [STR_PSIBONUS_HOLODUMMY]
+    compatibleWeapons: [STR_PSITOKEN_SENTRYWARD]
+    requiredBonuses: [STR_PSIBONUS_SENTRYWARD]
     checkHandsOnly: false
     costUse:
       time: 35
@@ -311,9 +311,9 @@ skills:
       stun: true
       morale: true
 
-  - type: STR_PSISKILL_HOLODUMMY_FREE   # Psyker T5 - Hallucinate (No Req)
+  - type: STR_PSISKILL_SENTRYWARD_FREE  # Psyker T5 - Farsight (No Req)
     targetMode: 9
-    compatibleWeapons: [STR_PSITOKEN_HOLODUMMY]
+    compatibleWeapons: [STR_PSITOKEN_SENTRYWARD]
     checkHandsOnly: false
     costUse:
       time: 35

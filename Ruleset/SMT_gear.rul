@@ -3757,6 +3757,7 @@ items:
 
   - type: STR_GRAVGUN_AOE_AMMO              # Jupiter Gravgun Cell
     refNode: *DMG_GRAV_STD
+    requires:
     clipSize: 4 # was 3
     powerForAnimation: 10
     power: 20

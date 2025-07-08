@@ -6179,6 +6179,7 @@ items:
     accuracyAimed: 70
     aimRange: 10
     maxRange: 20
+    tuAimed: 45
     dropoff: 5
     confAimed:
       shots: 6
@@ -6210,6 +6211,7 @@ items:
       psiStrength: 1.0
     tags:
       DAMAGE_BONUS_PERCENT_DAEMONIC: 150 #1.5x damage vs Daemons
+      ITEM_IGNITES_TARGETS: 1
 
 ### Tech Items
   - &REF_TECH_PRIMARY                       # Techmarine Primary Equipment (Type 9 - Aimed Shots)

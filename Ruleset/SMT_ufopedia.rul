@@ -713,13 +713,6 @@ ufopaedia:
 
     ### CODEX
 
-  # - id: STR_SMT_LIBRARIAN_SPELLS            # Librarian Abilities
-    # type_id: 10
-    # section: STR_BOOKS
-    # image_id: TODO.SPK
-    # text: STR_SMT_LIBRARIAN_SPELLS_CODEX
-    # listOrder: 21030
-
 
 
   # - id: STR_SMT_BOLTER_CHANGES              # Bolter Changes
@@ -741,6 +734,14 @@ ufopaedia:
 ### 40000  - Base Facilities
 ### 50000  - Craft
 ### 60000  - Spells
+  - id: STR_SMT_LIBRARIAN_SPELLS            # Psyker Abilities
+    type_id: 10
+    section: STR_BOOKS
+    image_id: LIBRARIANUFO.SPK
+    text: STR_SMT_LIBRARIAN_SPELLS_CODEX
+    requires:
+      - STR_PSYKER_T1_UNLOCK
+
   - id: STR_PSITOKEN_SHROUD                 # Shroud
     type_id: 10
     section: STR_BOOKS
@@ -832,6 +833,13 @@ ufopaedia:
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_PSYKER_T4_UNLOCK
+  - id: STR_PSIBONUS_WARRIOR                # Martial Focus
+    type_id: 10
+    section: STR_BOOKS
+    text: STR_PSIBONUS_WARRIOR_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T4_UNLOCK
   - id: STR_PSITOKEN_TORMENT                # Torment
     type_id: 14
     section: STR_BOOKS
@@ -888,6 +896,7 @@ ufopaedia:
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_PSYKER_T6_UNLOCK
+      - STR_GREYKNIGHTS
 
 ### 70000  - Ammo details
 ### 80000  - Imperium Weapons

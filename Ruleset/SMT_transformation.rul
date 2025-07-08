@@ -1104,7 +1104,7 @@ soldierTransformation:
       - STR_PRIMARIS_LIBRARIANLV3
     forbiddenPreviousTransformations: &Psyker_TierThree_TransformList
       - STR_PSIUNLOCK_SMITE
-      - STR_PSIUNLOCK_SENTRYWARD
+      - STR_PSIUNLOCK_HOLODUMMY
       - STR_PSIUNLOCK_MENDWOUNDS
       - STR_PSIUNLOCK_UNDYING
     transferTime: 0
@@ -1180,6 +1180,7 @@ soldierTransformation:
       - STR_PSIUNLOCK_PASSIVESHIELD
       - STR_PSIUNLOCK_RECOVERY
       - STR_PSIUNLOCK_TRUESIGHT
+      - STR_PSIUNLOCK_WARRIOR
     transferTime: 0
     requiredMinStats: &Psyker_TierFour_MinStats
       psiStrength: 100
@@ -1216,7 +1217,7 @@ soldierTransformation:
     listOrder: 4065
     soldierBonusType: STR_PSIBONUS_TRUESIGHT
 
-  - name: STR_PSIUNLOCK_WARRIOR         # Martial Focus (Tier 4)
+  - name: STR_PSIUNLOCK_WARRIOR         # Heroic Might (Tier 4)
     cost: 50000
     keepSoldierArmor: true
     allowsDeadSoldiers: false
@@ -1248,7 +1249,7 @@ soldierTransformation:
       - STR_PRIMARIS_LIBRARIANLV3
     forbiddenPreviousTransformations: &Psyker_TierFive_TransformList
       - STR_PSIUNLOCK_SHIELD
-      - STR_PSIUNLOCK_HOLODUMMY
+      - STR_PSIUNLOCK_SENTRYWARD
       - STR_PSIUNLOCK_LOCKDOWN
       - STR_PSIUNLOCK_TORMENT
     transferTime: 0
@@ -1413,20 +1414,13 @@ soldierBonuses:
         flatOne: 15
   - name: STR_PSIBONUS_TRUESIGHT
     visibilityAtDark: 40 # perfect night vision
-    heatVision: 30
+    heatVision: 40
     psiVision: 4
   - name: STR_PSIBONUS_WARRIOR
     stats:
       melee: 30
       strength: 10
       firing: 30
-  - name: STR_PSIBONUS_IRONSKIN
-    frontArmor: 20
-    sideArmor: 20
-    rearArmor: 20
-    underArmor: 20
-    stats:
-      health: 25
   - name: STR_PSIBONUS_SHIELD
   - name: STR_PSIBONUS_HOLODUMMY
   - name: STR_PSIBONUS_LOCKDOWN

@@ -4074,8 +4074,8 @@ armors:
     spriteInv: NOTDONEIMP
     visibilityAtDay: 30 # limited vision
     visibilityAtDark: 30 # limited vision
-    antiCamouflageAtDay: 0
-    antiCamouflageAtDark: 10
+    antiCamouflageAtDay: 5
+    antiCamouflageAtDark: 5
     camouflageAtDay: -80 # should be invisible to enemies
     camouflageAtDark: -80
     psiCamouflage: -80
@@ -4110,7 +4110,7 @@ armors:
     personalLight: 1
     corpseBattle:
       - STR_BLANK_CORPSE
-    loftempsSet: [ 1 ]
+    loftempsSet: [ 0 ]
     tags:
       BOMBARD_TARGETER: 1 # adjusts starting mana and kills it at the end of turn
       INFECTION_RESIST: 100 #infection immune

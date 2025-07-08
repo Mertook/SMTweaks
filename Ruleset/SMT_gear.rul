@@ -1013,6 +1013,7 @@ items:
     tags:
       ITEM_AMMO_COLOR: 9 # gold
       SMT_ARMOR_TARGET_WEAKEST: 1
+      ITEM_IGNITES_TARGETS: 1
 
   - type: STR_BOLTRIFLE_DRUM
     refNode: *DMG_BOLTER_AMMO_STD
@@ -2138,6 +2139,8 @@ items:
     invHeight: 3
     listOrder: 12027
     loadOrder: 115
+    tags:
+      ITEM_IGNITES_TARGETS: 1
 
   - type: STR_AC_I_AMMO                     # HB I  Ammo
     armor: 300
@@ -2170,6 +2173,8 @@ items:
       - STR_HBOLTER_AMMO_PREREQ
     listOrder: 12022
     loadOrder: 215
+    tags:
+      ITEM_IGNITES_TARGETS: 1
 
   - type: STR_AC_MC_BELT                    # HB MC Ammo Belt
     refNode: *DMG_BOLTER_AMMO_MASTER
@@ -2719,6 +2724,7 @@ items:
       ToItem: 0.25
     tags:
       SMT_ARMOR_TARGET_WEAKEST: 1
+      ITEM_IGNITES_TARGETS: 3
 
   - type: STR_BOLT_SNIPER_AMMO_SHRED        # Bolt Sniper Shredder Ammo
     refNode: *REF_SNIPER_BOLT_AMMO
@@ -3178,7 +3184,7 @@ items:
   - type: STR_BLASTER_LAUNCHER_TERRAN       # Multimelta
     refNode: *STR_MULTIMELTA_TEMPLATE
     requires:
-      - STR_MULTIMELTA_PREREQ
+      - STR_HEAVY_LASER
 
   - type: STR_BLASTER_LAUNCHER              # Chaos Multimelta
     refNode: *STR_MULTIMELTA_TEMPLATE
@@ -4265,6 +4271,7 @@ items:
       FixRadius: 4
     tags:
       SMT_ARMOR_TARGET_WEAKEST: 1
+      ITEM_IGNITES_TARGETS: 3
 
   - type: STR_SHOTGUN_SHELLS_MC             # Shotgun MC Ammo
     bigSprite: 162
@@ -4685,7 +4692,7 @@ items:
       name: STR_ARCING_SHOT
       shortName: STR_ARCING_SHOT_SHORT
 
-  - type: STR_DISPOSABLE_LAUNCHER_KRAK
+  - type: STR_DISPOSABLE_LAUNCHER_KRAK      # Krak Launcher
     requires: # removed HWP IG requirement, added to CM
      - STR_GUARD_AND_INQUISITION
     weight: 10 # was 15
@@ -4786,6 +4793,7 @@ items:
       RadiusReduction: 5
     tags:
       ITEM_AMMO_COLOR: 2
+      ITEM_IGNITES_TARGETS: 1
 
   - type: STR_CASTELLAN_DEFOREST            # Castellan Missiles (Anti-Plant)
     refNode: *REF_CASTELLAN_MISSILES
@@ -4843,6 +4851,7 @@ items:
       ArmorEffectiveness: 0.7
     tags:
       SMT_ARMOR_TARGET_WEAKEST: 1
+      ITEM_IGNITES_TARGETS: 2
 
   - type: STR_HEAVY_ROCKET_HE               # Large Frag Missile
     size: 0.1 # was 0.3
@@ -4890,6 +4899,8 @@ items:
     power: 70 # was 50!
     requiresBuy:
       - STR_GLAUNCHER_PREREQ
+    tags:
+      ITEM_IGNITES_TARGETS: 2
 
   - type: STR_SMOKE_GRENADE_DRUM            # GL Smoke Rounds
     requiresBuy:
@@ -4925,6 +4936,26 @@ items:
   - type: STR_MORTAR_AMMO_ILLUMINATION_EXPLOSION # Mortar Flare
     spawnItem: STR_SUPERFLARE
     spawnItemChance: 100
+
+  - type: STR_MORTAR_AMMO_PHOSPHOR_EXPLOSION    # Mortar Phosphor
+    power: 120
+    damageType: 2 # incin, was 8 - acid
+    damageAlter:
+      RandomType: 2 # 50-150%
+      ToMorale: 1.0
+      ToWound: 0.2
+      RandomWound: false
+      ToHealth: 0.7 # was 0.4
+      ToStun: 0.4
+      FireThreshold: 0
+      FixRadius: 8
+      RadiusReduction: 5
+      FireBlastCalc: false
+      IgnoreOverKill: false
+      IgnoreDirection: false
+    tags:
+      SMT_ARMOR_TARGET_WEAKEST: 1
+      ITEM_IGNITES_TARGETS: 3
 
 ### Grenades
   - type: STR_PHOSPHOR_GRENADE              # Phosphor Grenade

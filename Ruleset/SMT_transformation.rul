@@ -1216,6 +1216,21 @@ soldierTransformation:
     listOrder: 4065
     soldierBonusType: STR_PSIBONUS_TRUESIGHT
 
+  - name: STR_PSIUNLOCK_WARRIOR         # Martial Focus (Tier 4)
+    cost: 50000
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    transferTime: 0
+    requires: *Psyker_TierFour_Requires
+    requiredItems: *Psyker_TierFour_Cost
+    allowedSoldierTypes: *Psyker_TierFour_Soldiers
+    forbiddenPreviousTransformations: *Psyker_TierFour_TransformList
+    requiredMinStats: *Psyker_TierFour_MinStats
+    listOrder: 4067
+    soldierBonusType: STR_PSIBONUS_WARRIOR
+
 # Tier 5
   - name: STR_PSIUNLOCK_SHIELD          # Shield (Tier 5)
     requires: &Psyker_TierFive_Requires
@@ -1399,7 +1414,19 @@ soldierBonuses:
   - name: STR_PSIBONUS_TRUESIGHT
     visibilityAtDark: 40 # perfect night vision
     heatVision: 30
-    psiVision: 5
+    psiVision: 4
+  - name: STR_PSIBONUS_WARRIOR
+    stats:
+      melee: 30
+      strength: 10
+      firing: 30
+  - name: STR_PSIBONUS_IRONSKIN
+    frontArmor: 20
+    sideArmor: 20
+    rearArmor: 20
+    underArmor: 20
+    stats:
+      health: 25
   - name: STR_PSIBONUS_SHIELD
   - name: STR_PSIBONUS_HOLODUMMY
   - name: STR_PSIBONUS_LOCKDOWN

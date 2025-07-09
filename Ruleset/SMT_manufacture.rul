@@ -830,6 +830,19 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 4
 
+  - name: STR_GRAVPISTOL_MC_TERRAN
+    category: STR_WEAPON
+    requires:
+      - STR_GRAVITON_TECH
+      - STR_MASTER_CRAFTING
+      - STR_IMPERIAL_WEAPONS
+    space: 0
+    time: 900
+    cost: 125000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 4
+      STR_KILLPOINT_TOKEN: 160
+
   - name: STR_GRAVPISTOL_AMMO
     category: STR_AMMUNITION
     requires:
@@ -856,6 +869,76 @@ manufacture:
       STR_ELERIUM_115: 5
     producedItems:
       STR_GRAVPISTOL_AMMO: 5
+
+  - name: STR_TECHMARINE_FLAMER
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TEC_BAYR
+    space: 0
+    time: 900
+    cost: 50000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 2
+      STR_ELERIUM_115: 4
+
+  - name: STR_TECHMARINE_BOLTER
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TEC_BAYR
+      - STR_GENERALLOCK # temp disabled
+    space: 0
+    time: 900
+    cost: 50000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 2
+      STR_ELERIUM_115: 4
+
+  - name: STR_TECHMARINE_MELTA
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TEC_BAYR
+      - STR_MELTAGUN_TECH
+    space: 0
+    time: 900
+    cost: 75000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+      STR_ELERIUM_115: 5
+
+  - name: STR_TECHMARINE_GRAV
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TEC_BAYR
+      - STR_GRAVITON_TECH
+    space: 0
+    time: 900
+    cost: 75000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+      STR_ELERIUM_115: 5
+
+  - name: STR_TECHMARINE_PLASMA
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TEC_BAYR
+      - STR_PLASMA_RIFLE_DEP1
+    space: 0
+    time: 900
+    cost: 75000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+      STR_ELERIUM_115: 5
+
+  - name: STR_TECH_SKULL_SPAWNER
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TEC_BAYR
+    space: 0
+    time: 400
+    cost: 25000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 1
+      STR_KILLPOINT_TOKEN: 10
 
 ### BOMBARD
   - name: STR_ORBITAL_STRIKE_AMMO                   # Orbital Strike ammo

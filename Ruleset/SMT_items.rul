@@ -46,6 +46,9 @@ items:
     costSell: 40000
     listOrder: 5465
 
+  - type: STR_GUARD_ARMORH                  # Guard Carapace Armor
+    size: 0.2 # was 0.4, medic carapace is 0.2
+
   - type: STR_PRIMARIS_HEAVY_BOLT_RIFLE_DRUM
     requires:
       - STR_GENERALLOCK # disabled
@@ -193,11 +196,6 @@ items:
     invHeight: 2 # was 2
     armor: 300
 
-  - type: STR_SMOKE_GRENADE                 # Smoke Grenade
-    costThrow:
-      time: 25 # was 55
-      energy: 5
-
   - type: STR_SMOKE_BOMB                    # Smokebomb
     requiresBuy: # allow TactStrat to buy smokebombs
       - STR_SMOKE
@@ -205,15 +203,6 @@ items:
     bigSprite: 103
     invWidth: 2
     invHeight: 2 # was 2
-    weight: 12 # was 20
-    armor: 300
-    costThrow:
-      energy: 5 # was 40
-      time: 40 # was 80!
-    costPrime:
-      time: 5 # was 40!
-    costUnprime:
-      time: 5
 
   - &REF_VOLKITE_SFX                        # Volkite Weapon Ref
     type: STR_NEOVOLKITE_PISTOL
@@ -1603,6 +1592,7 @@ items:
     recover: false
     tags:
       ITEM_PRIMED_AT_BATTLE_START: 1
+      DAMAGE_RESIST_PENETRATION_PERCENT: 100 # there is NO defense
 
   - type: STR_CAS_STRIKE_BOLTER_WEAPON      # Lightning CAS Heavy Bolter
     refNode: *STR_STRIKE_WEAPON_DEFAULTS

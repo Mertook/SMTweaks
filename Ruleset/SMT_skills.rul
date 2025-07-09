@@ -107,6 +107,17 @@ skills:
       time: false
 
 
+  - type: STR_TECH_REPAIR_SKILL         # Techmarine Repair Armor
+    targetMode: 10
+    compatibleWeapons: [STR_TECH_REPAIRTOOL]
+    checkHandsOnly: false
+    costUse:
+      time: 20
+      energy: 20
+    flatUse:
+      time: true
+      energy: true
+
   - type: STR_PSISKILL_SHROUD           # Psyker T1 - Shroud
     targetMode: 9
     compatibleWeapons: [STR_PSITOKEN_SHROUD]

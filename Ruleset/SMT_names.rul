@@ -29,6 +29,7 @@ extraStrings:
       STR_SCION_CALLIN_TARGETER: Reinforcement Designator
       STR_PSI_UNIT: Psi Projection
       STR_PSI_SENTRYWARD: Farsight Projection
+      STR_SKULL_TECH: Servo Skull
       ### MISC
       STR_TERMINATOR_CROSS_DESCRIPTION: Space Marines awarded with the Crux Terminatus are recognized as elites, allowing promotion to the highest ranks and access to rare relics including Terminator Armor. {NEWLINE}{NEWLINE} For this honor the Space Marine needs to have achieved 30 enemy kills, 15 successful missions and serve for three months.
       STR_HONOR_MEDAL: "Mark of Honor"
@@ -346,6 +347,14 @@ extraStrings:
       STR_SYNAPTIC_DISINTEGRATOR_AI: Synaptic Disintegrator
       STR_SUPERFLARE: Flare
       STR_SUPERFLARE_SHORT: Flare
+      STR_TECHMARINE_FLAMER: Servo-Arm Flamer
+      STR_TECHMARINE_BOLTER: Servo-Arm Bolter
+      STR_TECHMARINE_MELTA: Servo-Arm Melta
+      STR_TECHMARINE_GRAV: Servo-Arm Gravgun
+      STR_TECHMARINE_PLASMA: Servo-Arm Plasmagun
+      STR_TECH_SKULL_SPAWNER: Servo Skull
+      STR_TECH_REPAIRTOOL: Repair
+      STR_SKULL_ANALYZE: Analyze
       ### CRAFT
       STR_AVENGER: "THUNDERHAWK T."
       AUX_BOLTER: Mounted Heavy Bolter
@@ -397,6 +406,7 @@ extraStrings:
       STR_PRIMARIS_LIBRARIANLV3: Chief Librarian
       STR_NEOPHYTE_RANK_0: Neophyte
       STR_NEOPHYTE_RANK_1: Scout
+      STR_ENGINSEER: Enginseer
       STR_ROOKIE: Marine
       STR_SQUADDIE: Brother Marine
       STR_SERGEANT: Battle Brother
@@ -434,6 +444,7 @@ extraStrings:
       STR_PRIM_APOTH_RANK_1: Apoth. Biologis
       STR_PRIM_TECH_RANK_0: Tech Novitiate
       STR_PRIM_TECH_RANK_1: Techmarine
+      STR_TECH_ENGINSEER_RANK_0: Enginseer
       ### SKILLS
       STR_BLESS_SKILL: Litany of Faith
       INV_BLESS_TOKEN: Litany of Faith
@@ -449,6 +460,7 @@ extraStrings:
       STR_TECH_PRIMARY_SKILL: Servo Weapon
       STR_TECH_UTILITY_SKILL: Utility Tool
       STR_TECH_SKULL_SKILL: Deploy Gear
+      STR_TECH_REPAIR_SKILL: Repair Armor
       ### Psykers
       STR_PSYKER_T1_UNLOCK: (Tier 1 Psyker Abilities)
       STR_PSYKER_T2_UNLOCK: (Tier 2 Psyker Abilities)
@@ -470,8 +482,8 @@ extraStrings:
       STR_PSIBONUS_VIGILANCE: Vigilance
       STR_PSIUNLOCK_WALLBREAKER: T2 Psi - Rend Landscape
       STR_PSIBONUS_WALLBREAKER: Rend Landscape
-      STR_PSIUNLOCK_SENTRYWARD: T3 Psi - Farsight
-      STR_PSIBONUS_SENTRYWARD: Farsight
+      STR_PSIUNLOCK_HOLODUMMY: T3 Psi - Hallucination
+      STR_PSIBONUS_HOLODUMMY: Hallucination
       STR_PSIUNLOCK_SMITE: T3 Psi - Smite
       STR_PSIBONUS_SMITE: Smite
       STR_PSIUNLOCK_MENDWOUNDS: T3 Psi - Mend Wounds
@@ -484,14 +496,12 @@ extraStrings:
       STR_PSIBONUS_RECOVERY: Rapid Recovery
       STR_PSIUNLOCK_TRUESIGHT: T4 Psi - Warp Vision
       STR_PSIBONUS_TRUESIGHT: Warp Vision
-      STR_PSIUNLOCK_WARRIOR: T4 Psi - Martial Focus
-      STR_PSIBONUS_WARRIOR: Martial Focus
-      STR_PSIUNLOCK_IRONSKIN: T4 Psi - Iron Skin
-      STR_PSIBONUS_IRONSKIN: Iron Skin
+      STR_PSIUNLOCK_WARRIOR: T4 Psi - Heroic Might
+      STR_PSIBONUS_WARRIOR: Heroic Might
       STR_PSIUNLOCK_SHIELD: T5 Psi - Project Shield
       STR_PSIBONUS_SHIELD: Project Shield
-      STR_PSIUNLOCK_HOLODUMMY: T5 Psi - Hallucination
-      STR_PSIBONUS_HOLODUMMY: Hallucination
+      STR_PSIUNLOCK_SENTRYWARD: T5 Psi - Farsight
+      STR_PSIBONUS_SENTRYWARD: Farsight
       STR_PSIUNLOCK_LOCKDOWN: T5 Psi - Lockdown
       STR_PSIBONUS_LOCKDOWN: Lockdown
       STR_PSIUNLOCK_TORMENT: T5 Psi - Torment
@@ -572,6 +582,7 @@ extraStrings:
       STR_IMPERIAL_CHURCH: Ecclesiarchy Teachings
       STR_ABHUMAN_GUARD_RECRUITS: Abhuman Regiments
       STR_INFERNOPISTOL_REQ: Inferno Pistol Prerequisite
+      STR_TECHMARINE_GEAR: Mechanicus Equipment
       STR_40MM_AMMO: (40mm Grenade Ammo)
       STR_BOLTPISTOL_REQ: (Boltpistols Unlocked)
       STR_BOLTPISTOL_ADV_REQ: (Advanced Boltpistols)

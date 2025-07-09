@@ -64,7 +64,6 @@ armors:
     sideArmor: 110 # base 120
     rearArmor: 100 # base 100
     underArmor: 120 # base 125
-    stats: {}
     # stats: # No values inherited from this, defined in each armor
       # tu: 0             # base 10 
       # stamina: 0        # base 20 
@@ -312,6 +311,7 @@ armors:
 
   - update: STR_TECH_ARMOR_UC               #TECHMARINE
     refNode: *STR_MARINE_OFFICER_ARMOR
+    storeItem: STR_NONE
     visibilityAtDark: 40 # signum equipment provides advanced vision
     heatVision: 50 # techmarines get advanced sensors
     antiCamouflageAtDay: 16
@@ -328,7 +328,8 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 15         # base 10 +5
-    builtInWeapons: [] # remove backpack blocker
+    builtInWeapons:
+      - STR_TECH_REPAIRTOOL
     units:
       - STR_SOLDIER_TECH
       - STR_SOLDIER_TECHVET
@@ -3351,6 +3352,7 @@ armors:
 
   - &STR_MKX_TEC_UC                         #PRIMARIS TECHMARINE
     type: STR_MKX_TEC_LV1_UC
+    storeItem: STR_NONE
     visibilityAtDay: 40
     visibilityAtDark: 40 # signum equipment provides advanced vision
     heatVision: 50 # techmarines get advanced sensors
@@ -3390,7 +3392,9 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 15         # base 10 +5
-    specialWeapon: AUX_PROBE
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - STR_TECH_REPAIRTOOL
     tags:
       SMT_ARMOR_SHRED_RESISTANCE: 60
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
@@ -3402,7 +3406,6 @@ armors:
 
   - type: STR_MKX_TEC_LV1_UC
     refNode: *STR_MKX_TEC_UC
-    builtInWeapons: [] # remove backpack blocker
     units:
       - STR_PRIMARIS_TECHNOVICE
 
@@ -3415,7 +3418,6 @@ armors:
 
   - type: STR_MKX_TEC_LV3_UC
     refNode: *STR_MKX_TEC_UC
-    builtInWeapons: [] # remove backpack blocker
     units:
       - STR_PRIMARIS_TECHMARINE
     tags:
@@ -4122,5 +4124,6 @@ armors:
       - STR_BLANK_CORPSE
 
   - type: SKULL_ARMOR
+    specialWeapon: STR_SKULL_ANALYZE
     tags:
       STARTS_WITH_FULL_TUS: 1

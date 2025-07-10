@@ -3776,7 +3776,7 @@ items:
 
   - type: STR_STUN_BOMB                     # Gravgun Ammo
     refNode: *DMG_GRAV_STD
-    power: 25 # was 40
+    power: 28 # was 40
     tags:
       SMT_GRAV_WEAPON: 120
 
@@ -3784,7 +3784,7 @@ items:
     refNode: *DMG_GRAV_STD
     weight: 2 # was 3
     clipSize: 3 # was 8
-    power: 20 # was 35
+    power: 24 # was 35
     damageAlter:
       ToStun: 0.4 #
     powerRangeThreshold: 15 # pistol
@@ -3795,7 +3795,7 @@ items:
     refNode: *DMG_GRAV_STD
     clipSize: 4 # was 3
     powerForAnimation: 10
-    power: 20
+    power: 24
     damageAlter:
       FixRadius: 1
       RadiusReduction: 5

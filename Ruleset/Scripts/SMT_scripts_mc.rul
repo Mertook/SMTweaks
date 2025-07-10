@@ -1,0 +1,23 @@
+items:
+  - type: STR_GREEN_FIRE
+    tuMindControl: 0
+
+  - type: ALIEN_PSI_WEAPON
+    tuMindControl: 0
+
+  - type: STR_PSI_AMP
+    tuMindControl: 0
+
+
+extended:
+  scripts:
+    tryPsiAttackUnit:
+      - offset: 99.99
+        code: |
+          var int temp;
+
+          victim.getFaction temp;
+          if and eq battle_action battle_action_mindcontrol neq temp FACTION_HOSTILE;
+            set psi_attack_success 0;
+          end;
+          return psi_attack_success;

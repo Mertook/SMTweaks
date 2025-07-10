@@ -3344,6 +3344,8 @@ items:
       FixRadius: 1
     powerRangeReduction: 5
     powerRangeThreshold: 30.0
+    tags:
+      SMT_ARMOR_TARGET_WEAKEST: 1
 
   - type: STR_BARRAGE_PLASMA_CLIP           # Barrage Plasma Ammo
     refNode: *DMG_PLASMA_STD
@@ -4061,7 +4063,7 @@ items:
 
   - type: AUX_HOVERTANK_LASER               # Dreadnought Lascannon
     refNode: *DMG_LASCANNON_STD
-    power: 200 # was 150, Sentinel numbers
+    power: 220 # was 150, Sentinel numbers
     dropoff: 3
     autoRange: 16
     snapRange: 25
@@ -4274,7 +4276,7 @@ items:
       FireBlastCalc: false
       IgnoreDirection: false
       FireThreshold: 1
-      ArmorEffectiveness: 0.5
+      ArmorEffectiveness: 0.8
       ToHealth: 1.2
       ToArmorPre: 0.05
       ToArmor: 0.15
@@ -4848,7 +4850,19 @@ items:
     costBuy: 3000
     costSell: 1500
     armor: 300
-    power: 95
+    power: 110 # was 90
+    damageType: 3
+    damageAlter:
+      ToArmorPre: 0.1 # was 0.2
+      ToArmor: 0.2 # was 0.0
+      RandomType: 6
+      ArmorEffectiveness: 0.9
+      ToStun: 0.5
+      ToEnergy: 0.3
+      ToTime: 0.2
+      ToTile: 0.50
+      ToItem: 0.25
+      FixRadius: 6
 
   - type: STR_LARGE_ROCKET                  # Small Krak Missile
     size: 0.1 # was 0.2

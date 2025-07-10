@@ -186,7 +186,7 @@ extraSprites:
       282: Resources/ITEMS/BOLTPISTOL/pistolMC_1.png            # Boltpistol Mastercrafted (boltpistol)
       283: Resources/ITEMS/BSNIPER/SniperBoltMC.png             # Bolt Sniper MC Ammo
       284: Resources/ITEMS/BSNIPER/SniperBoltIncin.png          # Bolt Sniper Incin Ammo
-      285: Resources/UNITS/DW/SCOUT/SCTDW_BigOb.png             # DW Scout Corpse
+      #285
       286: Resources/ITEMS/MELEE/PhobosKnife_BigOb.png          # Astartes Combat Blade
       287: Resources/ITEMS/HBOLTER/HBolterSCT1_BigOb.png        # Scout Heavy Bolter
       288: Resources/ITEMS/HBOLTER/HBolterSCT2_BigOb.png        # Scout Heavy Bolter (Deployed)
@@ -215,6 +215,10 @@ extraSprites:
       311: Resources/ITEMS/TECH/TechMelt_BigOb.png              # Techpriest Melta
       312: Resources/ITEMS/TECH/TechPlas_BigOb.png              # Techpriest Plasma
       313: Resources/ITEMS/GRAV/GravBurst_BigOb.png             # Gravgun Burst
+
+      ### Corpses
+      800: Resources/UNITS/DW/SCOUT/SCTDW_BigOb.png             # DW Scout Corpse
+      801: Resources/UNITS/TECH/CorpseTech_BigOb.png            # Enginseer Corpse
 
   - type: BIGOBS.PCK # Plasma Indexes - need 8 slots per item
     height: 96
@@ -263,7 +267,6 @@ extraSprites:
       211: Resources/ITEMS/PRIMARIS/AbsolvorMC_FloorOb.png      # Absolvor Bolt Pistol (MC)
       213: Resources/ITEMS/BOLTER/rifleDD_FloorOb.png           # Bolt Rifle Combi
       216: Resources/ITEMS/VOLKITE/NEOVOLKITE_FLOOROB.png       # Neovolkite Pistol
-      285: Resources/UNITS/DW/SCOUT/SCTDW_FlrOb.png             # DW Scout Corpse
       286: Resources/ITEMS/MELEE/PhobosKnife_FlrOb.png          # Astartes Combat Blade
       287: Resources/ITEMS/HBOLTER/HBolterSCT1_FlrOb.png        # Scout Heavy Bolter
       291: Resources/ITEMS/MISSILE/Vengor_FlrOb.png             # Vengor Missile Launcher
@@ -273,6 +276,9 @@ extraSprites:
       301: Resources/ITEMS/GRAV/Gravpistol_FlrOb.png            # GravPistol
       302: Resources/ITEMS/GRAV/GravpistolMC_FlrOb.png          # GravPistol MC
       313: Resources/ITEMS/GRAV/GravBurst_FlrOb.png             # Gravgun Burst
+      ### Corpses
+      800: Resources/UNITS/DW/SCOUT/SCTDW_FlrOb.png             # DW Scout Corpse
+      801: Resources/UNITS/TECH/CorpseTech_FlrOb.png            # Enginseer Corpse
 
 ###Item HandOBs - need 8 slots per item
   - type: HANDOB.PCK
@@ -1685,6 +1691,17 @@ extraSprites:
       0: Resources/UNITS/IG/stormtrooper_officer_carapace_beret.png
       1000: Resources/UNITS/IG/stormtrooper_officer_carapace_beret_SANDBAG.png
 
+
+  - typeSingle: ENGINSEER.SPK
+    fileSingle: Resources/UNITS/TECH/ENGINSEER_I.png
+  - type: ENGINSEER.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/TECH/ENGINSEER_S.png
+
 ###Backgrounds
   - type: GuardBG.SCR
     singleImage: true
@@ -1844,6 +1861,12 @@ extraSprites:
     files:
       0: Resources/UFO/DREAD4.png
 
+  - type: ENGINSEERUFO.SPK
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/UFO/ENGINSEERUFO.png
 
 extraSounds:
   - type: BATTLE.CAT

@@ -2805,64 +2805,64 @@ soldiers:
     requires:
       - STR_GENERALLOCK
     minStats:
-      tu: 65
-      stamina: 70
-      health: 75
-      bravery: 60
-      reactions: 65
-      firing: 70
-      throwing: 60
-      strength: 65
-      psiStrength: 15
-      psiSkill: 35
-      melee: 70
+      tu: 50
+      stamina: 60
+      health: 45
+      bravery: 50
+      reactions: 50
+      firing: 60
+      throwing: 50
+      strength: 30
+      psiStrength: 10 # min human
+      psiSkill: 0
+      melee: 50  # was 20
     maxStats:
-      tu: 75
-      stamina: 85
-      health: 95
-      bravery: 90
-      reactions: 80
-      firing: 90
-      throwing: 85
-      strength: 80
-      psiStrength: 45
-      psiSkill: 40
-      melee: 90
+      tu: 60
+      stamina: 70
+      health: 60
+      bravery: 60
+      reactions: 60
+      firing: 70
+      throwing: 65
+      strength: 45
+      psiStrength: 40 # regular non-psionic human
+      psiSkill: 25
+      melee: 60
     statCaps:
-      tu: 95
-      stamina: 115
-      health: 105
-      bravery: 110
-      reactions: 110
-      firing: 135
-      throwing: 120
-      strength: 105
-      psiStrength: 100
-      psiSkill: 110
-      melee: 135
-    trainingStatCaps:
-      tu: 80
-      stamina: 100
+      tu: 75
+      stamina: 120
       health: 80
-      firing: 100
-      throwing: 90
-      strength: 80
-      psiStrength: 100
-      psiSkill: 110
-      melee: 100
+      firing: 130
+      melee: 120
+      throwing: 80
+      strength: 65
+      health: 55
+      reactions: 80
+      psiStrength: 45
+      psiSkill: 100
+    trainingStatCaps:
+      tu: 60
+      stamina: 80
+      health: 60
+      firing: 80
+      throwing: 70
+      strength: 35
+      melee: 70
+      psiStrength: 45
+      psiSkill: 100
     dogfightExperience:
       bravery: 10
       reactions: 30
       firing: 25
     allowPiloting: true
-    armor: STR_MKX_TEC_LV1_UC ###CHANGEME
+    armor: STR_ENGINSEER_ARMOR_UC
     standHeight: 22
     kneelHeight: 14
     avatarOffsetX: 67
     avatarOffsetY: 42
     soldierNames:
       - delete
-      - MarineName/
+      - Names/enginseer.nam
     deathMale: [{mod: 40k, index: 713}, {mod: 40k, index: 714}, {mod: 40k, index: 715}, {mod: 40k, index: 716}, {mod: 40k, index: 717}, {mod: 40k, index: 718}, {mod: 40k, index: 719}, {mod: 40k, index: 720}, {mod: 40k, index: 721}, {mod: 40k, index: 722}]
     deathFemale: [{mod: 40k, index: 744}, {mod: 40k, index: 745}, {mod: 40k, index: 746}, {mod: 40k, index: 747}, {mod: 40k, index: 748}, {mod: 40k, index: 749}, {mod: 40k, index: 750}, {mod: 40k, index: 751}, {mod: 40k, index: 752}]
     value: 30
@@ -2875,4 +2875,7 @@ soldiers:
       - STR_TECH_UTILITY_SKILL
       - STR_TECH_SKULL_SKILL
       - STR_TECH_REPAIR_SKILL
+    tags:
+      SOLDIER_WOUND_TIME_MULTIPLIER: 66 # inbuilt bionics
+      SOLDIER_WOUNDTIME_RECOVERY_GLOBAL: 20 # reduce all wound times by 1/5 if soldier is present
 

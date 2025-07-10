@@ -792,6 +792,11 @@ manufacture:
       STR_ELERIUM_115: 5
       STR_UFO_CONSTRUCTION: 2
 
+  - name: STR_GRAVGUN_ADEPTAS
+    requires:
+      - STR_ADEPTAS_GRAVGUN_DEP1
+      - STR_ADEPTAS
+
   - name: STR_GRAVGUN_AOE_AMMO_SHOTGUN
     category: STR_AMMUNITION
     requires:
@@ -873,7 +878,7 @@ manufacture:
   - name: STR_TECHMARINE_FLAMER
     category: STR_CAT_TECHPRIEST
     requires:
-      - STR_TEC_BAYR
+      - STR_TECHMARINE_GEAR
     space: 0
     time: 900
     cost: 50000
@@ -884,7 +889,7 @@ manufacture:
   - name: STR_TECHMARINE_BOLTER
     category: STR_CAT_TECHPRIEST
     requires:
-      - STR_TEC_BAYR
+      - STR_TECHMARINE_GEAR
       - STR_GENERALLOCK # temp disabled
     space: 0
     time: 900
@@ -896,7 +901,7 @@ manufacture:
   - name: STR_TECHMARINE_MELTA
     category: STR_CAT_TECHPRIEST
     requires:
-      - STR_TEC_BAYR
+      - STR_TECHMARINE_GEAR
       - STR_MELTAGUN_TECH
     space: 0
     time: 900
@@ -908,7 +913,7 @@ manufacture:
   - name: STR_TECHMARINE_GRAV
     category: STR_CAT_TECHPRIEST
     requires:
-      - STR_TEC_BAYR
+      - STR_TECHMARINE_GEAR
       - STR_GRAVITON_TECH
     space: 0
     time: 900
@@ -920,7 +925,7 @@ manufacture:
   - name: STR_TECHMARINE_PLASMA
     category: STR_CAT_TECHPRIEST
     requires:
-      - STR_TEC_BAYR
+      - STR_TECHMARINE_GEAR
       - STR_PLASMA_RIFLE_DEP1
     space: 0
     time: 900
@@ -932,7 +937,7 @@ manufacture:
   - name: STR_TECH_SKULL_SPAWNER
     category: STR_CAT_TECHPRIEST
     requires:
-      - STR_TEC_BAYR
+      - STR_TECHMARINE_GEAR
     space: 0
     time: 400
     cost: 25000
@@ -1178,6 +1183,7 @@ manufacture:
       - STR_TEC_BAYR
       - STR_MARINES_AND_DEATHWATCH
       - STR_NOT_PRIMARIS
+      - STR_GENERALLOCK
     space: 0
     time: 800
     cost: 60000 # was 30k
@@ -1275,6 +1281,7 @@ manufacture:
       - STR_PRIMARIS
       - STR_CHAPTER_PURITY
       - STR_TEC_BAYR
+      - STR_GENERALLOCK
     space: 0
     time: 800
     cost: 50000

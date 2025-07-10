@@ -316,6 +316,15 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_LIGHTBOLTER_ADV_AMMO
       - STR_40MM_AMMO
 
+  - name: STR_ENGINSEER_REQUISITION                 # Enginseer
+    cost: 400
+    points: 20
+    dependencies:
+      - STR_MIDTIER_PREREQ
+      - STR_IMPERIAL_GUARD_OPERATIONS
+    unlocks:
+      - STR_TECHMARINE_GEAR
+
   - name: STR_PSYKER_REQUISITION                    # Sanctioned Psyker Requisition
     unlocks:
       - STR_PSYKER_T4_UNLOCK

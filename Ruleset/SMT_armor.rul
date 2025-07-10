@@ -160,6 +160,21 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 0          # base 10 -10
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 1.0 #AP
+      - 1.0 #FLAMES
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+      - 0.75 #GRAV
+      - 1.0 #WARP
     units:
       - STR_SOLDIER_NEOPHYTE
     tags:
@@ -203,17 +218,20 @@ armors:
       psiSkill: 0       # base 0  
       melee: 5          # base 10 -5
     damageModifier:
-      - 1.0
-      - 1.0
-      - 1.0
-      - 1.0
-      - 1.0
-      - 1.0
-      - 1.0
-      - 1.0
-      - 1.0
-      - 1.0
+      - 1.0 #SUPPORT
+      - 1.0 #AP
+      - 1.0 #FLAMES
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
       - 0.2 #IMPACT
+      - 1.0 #MELTA
+      - 0.75 #GRAV
+      - 1.0 #WARP
     units:
       - STR_SOLDIER
       - STR_SOLDIER_TERMINATOR
@@ -611,17 +629,20 @@ armors:
       psiSkill: 0       # base 0  
       melee: 15         # base 10 +5
     damageModifier:
-      - 1.0
-      - 1.0
-      - 1.0
-      - 1.0
-      - 1.0
-      - 1.0
-      - 1.0
-      - 1.0
-      - 1.0
-      - 1.0
+      - 1.0 #SUPPORT
+      - 1.0 #AP
+      - 1.0 #FLAMES
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
       - 0.2 #IMPACT
+      - 1.0 #MELTA
+      - 0.75 #GRAV
+      - 1.0 #WARP
     units:
       - STR_SOLDIER
       - STR_SOLDIER_TERMINATOR
@@ -653,6 +674,21 @@ armors:
     sideArmor: 80
     rearArmor: 60
     underArmor: 80
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 1.0 #AP
+      - 1.0 #FLAMES
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+      - 0.75 #GRAV
+      - 1.0 #WARP
     specialWeapon: STR_STEALTH_ADVSCOUT # motion scanner
     moveCost:
       basePercent: [100, 75] # Reduced energy cost - Scout bonus
@@ -3814,6 +3850,53 @@ armors:
     underArmor: 120 # base 120
     tags:
       SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/3 HWP penalties
+
+### Non-Marines
+  - type: STR_ENGINSEER_ARMOR_UC                # Enginseer
+    antiCamouflageAtDark: 8
+    spriteSheet: ENGINSEER.PCK
+    spriteInv: ENGINSEER.SPK
+    customArmorPreviewIndex: 181
+    forcedTorso: 1
+    corpseBattle:
+      - STR_ENGINSEER_CORPSE
+    storeItem: STR_NONE
+    units:
+      - STR_ENGINSEER
+    visibilityAtDay: 40
+    visibilityAtDark: 25
+    heatVision: 20
+    antiCamouflageAtDay: 8
+    antiCamouflageAtDark: 8
+    personalLight: 5
+    recovery:
+      energy:
+        stamina: 0.33
+        flatOne: 10 # built in bionics
+    frontArmor: 90
+    sideArmor: 80
+    rearArmor: 60
+    underArmor: 80
+    weight: -15 # partially negate servo arm
+    drawingRoutine: 0
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 1.0 #AP
+      - 0.7 #FLAMES
+      - 0.8 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+      - 0.8 #GRAV
+      - 1.0 #WARP
+    loftempsSet: [ 3 ]
+    builtInWeapons:
+      - STR_TECH_REPAIRTOOL
 
 ### BOMBARD
   - type: STR_DUMMY_TARGETER_UC                 # Target Designator (Dummy base)

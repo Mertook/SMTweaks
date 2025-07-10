@@ -930,12 +930,14 @@ soldierTransformation:
   - name: STR_PROMOTE_OFFICER_VETERAN_SL
     refNode: *STR_OFFICER_PROMOTION
 
-  - name: STR_AWARD_PERSONAL_SHIELD     # allow CM to give their various recruits shields
+  - name: STR_AWARD_PERSONAL_SHIELD     # IG/CM Personal Shield
     forbiddenPreviousTransformations:
       - STR_AWARD_PERSONAL_SHIELD
     transferTime: 0
     requires:
       - STR_GUARD_AND_INQUISITION
+    allowedSoldierTypes: !add
+      - STR_ENGINSEER
 
   - name: STR_BIONICS_OPERATION
     transferTime: 0 # was 720 hours (30 days)

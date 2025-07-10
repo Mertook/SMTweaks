@@ -110,6 +110,18 @@ manufacture:
       STR_KILLPOINT_TOKEN: 50 # was 500, cost now split into psi abilities
     producedItems: {} # a laspistol is not worth mentioning
 
+  - name: STR_ENGINSEER_REQUISITION                 # Enginseer Recruit
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_ENGINSEER_REQUISITION
+    space: 0
+    time: 200
+    cost: 100000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 200
+    producedItems: {}
+    spawnedPersonType: STR_ENGINSEER
+
   # - name: STR_EXITUS_AMMO                           # Vindicare Sniper Ammo
     # requires:
       # - STR_VINDICARE_AMMO_REQ

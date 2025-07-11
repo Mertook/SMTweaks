@@ -348,11 +348,10 @@ extended:
 
     newTurnUnit:
       - new: SMTS_cmd_overwatch         #*** Fire Discipline Overwatch bonus ***
-        offset: 10
+        offset: 1.5
         code: |
           var ptr RuleArmor armorRule;
           var int reactVal;
-          var int reactExtra;
           var int temp;
           var int temp2;
 
@@ -383,9 +382,9 @@ extended:
           if gt reactVal 100; # if total >100, add overflow TUs
             set temp reactVal;
             sub temp 100;
-            unit.getTimeUnitsMax reactExtra;
-            muldiv reactExtra temp 100;
-            unit.setTag Tag.SMT_OVERWATCH_BUFF_EXCESS reactExtra;
+            unit.getTimeUnitsMax temp2;
+            muldiv temp2 temp 100;
+            unit.setTag Tag.SMT_OVERWATCH_BUFF_EXCESS temp2;
           end;
           limit reactVal 0 100;
           unit.setTag Tag.SMT_OVERWATCH_BUFF reactVal;

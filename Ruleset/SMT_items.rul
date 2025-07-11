@@ -336,7 +336,8 @@ items:
     experienceTrainingMode: 19 # Trains Bravery when used
     tags:
       ITEM_DOESNT_HURT_USER: 1
-      ITEM_DMGMOD_IMPERIUM: -1
+      #ITEM_DMGMOD_IMPERIUM: -1
+      ITEM_DMGMOD_ALLIES: -1
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
       SMT_ARMOR_DAMAGE_ALL: 66
       SMT_ARMOR_TARGET_WEAKEST: 1
@@ -423,7 +424,7 @@ items:
     experienceTrainingMode: 19 #
     tags:
       ITEM_DOESNT_HURT_USER: 1
-      ITEM_DMGMOD_IMPERIUM: -1
+      #ITEM_DMGMOD_IMPERIUM: -1
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
       SMT_ARMOR_DAMAGE_ALL: 66
       SMT_ARMOR_TARGET_WEAKEST: 1
@@ -1593,6 +1594,7 @@ items:
     tags:
       ITEM_PRIMED_AT_BATTLE_START: 1
       DAMAGE_RESIST_PENETRATION_PERCENT: 100 # there is NO defense
+      ITEM_ENERGY_SHIELD_REDUCTION_PERCENT: 100 # NO DEFENSE
 
   - type: STR_CAS_STRIKE_BOLTER_WEAPON      # Lightning CAS Heavy Bolter
     refNode: *STR_STRIKE_WEAPON_DEFAULTS
@@ -1712,6 +1714,9 @@ items:
       ToWound: 0.3
       RandomWound: false
     clipSize: 2
+    tags:
+      SMT_ARMOR_TARGET_WEAKEST: 1
+      ITEM_IGNITES_TARGETS: 2
 
   - type: STR_STRM_STRIKE_ASSC              # Stormtalon CAS Assault Cannon
     refNode: *STR_STRIKE_WEAPON_DEFAULTS
@@ -1901,7 +1906,7 @@ items:
     tags:
       ITEM_PRIMED_AT_BATTLE_START: 1
 
-  - type: STR_SCION_DROP_WEAPON                 # Scion Reinforcement Drop
+  - type: STR_SCION_DROP_WEAPON             # Scion Reinforcement Drop
     refNode: *STR_STRIKE_WEAPON_DEFAULTS
     bigSprite: {mod: 40k, index: 206}
     bulletSprite: {mod: 40k, index: 22}
@@ -1950,7 +1955,7 @@ items:
     spawnItemChance: 100
     clipSize: 6
 
-  - type: STR_SCION_REINFORCEMENT_SPAWNER  # Allied Scion spawner
+  - type: STR_SCION_REINFORCEMENT_SPAWNER   # Allied Scion spawner
     armor: 999
     floorSprite: 102
     invWidth: 0
@@ -2459,8 +2464,8 @@ items:
   - type: STR_DWSCT_CORPSE
     name: STR_CORPSE
     weight: 40
-    bigSprite: 800
-    floorSprite: 800
+    bigSprite: 700
+    floorSprite: 700
     invWidth: 2
     invHeight: 3
     armor: 80
@@ -2469,8 +2474,8 @@ items:
   - type: STR_ENGINSEER_CORPSE
     name: STR_CORPSE
     weight: 40
-    bigSprite: 801
-    floorSprite: 801
+    bigSprite: 701
+    floorSprite: 701
     invWidth: 2
     invHeight: 3
     armor: 80

@@ -123,7 +123,37 @@ armors:
 
   - &REF_GUARD_OFFICER                  # Imperial Guard Officers
     type: STR_OFFICER_CARAPACE_ARMOR
-    specialWeapon: STR_GUARD_PRIMER # commissar inspire
+    #specialWeapon: STR_GUARD_PRIMER # commissar inspire
+
+    type: STR_STORMTROOPER_CARAPACE_ARMOR
+    weight: 5 # was 10
+    damageModifier: &Ref_Guard_Carapace
+      - 1.0 #SUPPORT
+      - 1.0 #AP
+      - 0.8 #FLAMES
+      - 0.8 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 1.0 #IMPACT
+      - 1.0 #MELTA
+      - 0.8 #GRAV
+      - 1.0 #WARP
+    stats:
+      firing: 10
+      reactions: 10
+      bravery: 10
+
+  - type: STR_STORMTROOPER_MEDIC_CARAPACE_ARMOR
+    damageModifier: *Ref_Guard_Carapace
+    stats:
+      tu: -5
+      stamina: -5 # was -10
+      reactions: -5 # was -10
+    weight: 10 # was 5
 
   - type: STR_OFFICER_FLAK_ARMOR
     refNode: *REF_GUARD_OFFICER
@@ -133,8 +163,10 @@ armors:
     refNode: *REF_GUARD_OFFICER
   - type: STR_STEELLEGION_CARAPACE_ARMOR_OFFICER
     refNode: *REF_GUARD_OFFICER
+    damageModifier: *Ref_Guard_Carapace
   - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR
     refNode: *REF_GUARD_OFFICER
+    damageModifier: *Ref_Guard_Carapace
   - type: STR_OFFICER_FLAK_ARMOR
     refNode: *REF_GUARD_OFFICER
 
@@ -145,6 +177,21 @@ armors:
     sideArmor: 20
     rearArmor: 15
     underArmor: 20
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 1.0 #AP
+      - 1.0 #FLAMES
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 1.0 #IMPACT
+      - 1.0 #MELTA
+      - 0.8 #GRAV
+      - 1.2 #WARP
     builtInWeapons:
       - STR_PSITOKEN_SHROUD
       - STR_PSITOKEN_FLARE
@@ -155,7 +202,7 @@ armors:
       - STR_PSITOKEN_WALLBREAKER
       - STR_PSITOKEN_SMITE
       - STR_PSITOKEN_MENDWOUNDS
-      - STR_PSITOKEN_SENTRYWARD
+      - STR_PSITOKEN_HOLODUMMY
     tags:
       ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # was 6, doesn't rely on devotion for abilities anymore
 
@@ -182,4 +229,43 @@ armors:
       - STR_AUTOCANNON_BOX_AMMO # was size 60 drum
 
 
+
+
+  - &REF_JETPACK_SPEED                  # Limited Flight Jetpack Speed
+    type: STR_ADEPTAS_ARMORS_UC
+    moveCost: #jetpack speed
+      baseFlyPercent: [75, 100] #move cost for flying
+  - type: STR_ADEPTAS_ARMORCEL_UC
+    refNode: *REF_JETPACK_SPEED
+  - type: STR_ELYSIAN_JUMP_ARMOR
+    refNode: *REF_JETPACK_SPEED
+  - type: STR_ELYSIAN_JUMP_MEDIC_ARMOR
+    refNode: *REF_JETPACK_SPEED
+  - type: STR_FELINID_JUMP_ARMOR
+    refNode: *REF_JETPACK_SPEED
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_JUMPPACK
+    refNode: *REF_JETPACK_SPEED
+  - type: STR_FELINIDGUARD_JUMP_CARAPACE
+    refNode: *REF_JETPACK_SPEED
+  - type: STR_HARAKONI_JUMP_CARAPACE
+    refNode: *REF_JETPACK_SPEED
+  - type: STR_SCION_JUMP_ARMOR
+    refNode: *REF_JETPACK_SPEED
+  - type: STR_CHAOS_RAPTOR_ARMOR
+    refNode: *REF_JETPACK_SPEED
+
+
+  - &REF_SERVITOR  # Anchor for referencing
+    type: GENERIC_BATTLESERVITOR_HBARMOR
+    tags:
+      UNIT_TYPE_SERVITOR: 1
+
+  - type: GENERIC_BATTLESERVITOR_HBARMOR
+    refNode: *REF_SERVITOR
+  - type: GENERIC_BATTLESERVITOR_MIARMOR
+    refNode: *REF_SERVITOR
+  - type: GENERIC_BATTLESERVITOR_PLARMOR
+    refNode: *REF_SERVITOR
+  - type: SERVITOR_ARMOR_UC
+    refNode: *REF_SERVITOR
 

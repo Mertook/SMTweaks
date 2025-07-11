@@ -3,8 +3,8 @@ extended:
 
   scripts:
     newTurnUnit:
-      - override: ROSIGMA_nTU_Overwatch #override to add the ability to increase Overwatch value through Unit tags
-        offset: 1  # restores a % of the unit's max TUs on enemy/neutral turns.
+      - new: SMTS_overwatch_TUrestore # override Rosigma to add the ability to increase Overwatch value through Unit tags
+        offset: 2  # restores a % of the unit's max TUs on enemy/neutral turns.
         code: |
           var int currentTU;
           var int maxTU;
@@ -43,3 +43,5 @@ extended:
           unit.setTimeUnits overwatchTU;
 
           return;
+
+      - delete: ROSIGMA_nTU_Overwatch

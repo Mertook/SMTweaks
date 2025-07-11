@@ -111,7 +111,7 @@ research: # Research changes only made to maintain functionality for other facti
     cost: 750 # was 900
     points: 15 # was 30
     dependencies:
-      - STR_HEAVY_LASER
+      - STR_MELTAGUN_TECH
     needItem: true
     getOneFree:
       - STR_MULTIMELTA_PREREQ
@@ -324,6 +324,7 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_IMPERIAL_GUARD_OPERATIONS
     unlocks:
       - STR_TECHMARINE_GEAR
+    listOrder: 20
 
   - name: STR_PSYKER_REQUISITION                    # Sanctioned Psyker Requisition
     unlocks:

@@ -463,7 +463,7 @@ items:
     costPrime:
       time: 999
     tags:
-      SMT_TURRET_TOKEN: 1
+      SMT_TURRET_TOKEN: 0
 
   - type: STR_RAZOR_HBOLTER                 # Razorback HBolter Shop item
     refNode: *STR_TURRET_SHOP_BASE
@@ -475,7 +475,7 @@ items:
       - STR_MARINES_STRATEGY
       - STR_NOT_PRIMARIS
     tags:
-      SMT_RAZOR_HBOLTER: 1
+      SMT_TURRET_TOKEN: 1 # Heavy Bolter
 
   - type: STR_RAZOR_HFLAME                  # Razorback HFlamer Shop item
     refNode: *STR_TURRET_SHOP_BASE
@@ -487,7 +487,7 @@ items:
       - STR_MARINES_STRATEGY
       - STR_NOT_PRIMARIS
     tags:
-      SMT_RAZOR_HFLAME: 1
+      SMT_TURRET_TOKEN: 2 # Heavy Flamer
 
   - type: STR_RAZOR_LAS                     # Razorback Las Shop item
     refNode: *STR_TURRET_SHOP_BASE
@@ -500,7 +500,7 @@ items:
       - STR_MARINES_STRATEGY
       - STR_NOT_PRIMARIS
     tags:
-      SMT_RAZOR_LAS: 1
+      SMT_TURRET_TOKEN: 3 # Lascannon
 
   - &STR_SMT_TURRET_GUN_DEFAULT             # Craft Turret Gun Defaults
     type: STR_SMT_CRAFT_SMOKE
@@ -2543,6 +2543,7 @@ crafts:
 
   - type: STR_ARMOR_COLUMN                  # Leman Russ
     speedMax: 225 #was 150
+    maxLargeUnits: 2 # was 1
     battlescapeTerrainData:
       name: CHIMERA
       mapDataSets:

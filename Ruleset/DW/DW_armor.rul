@@ -344,6 +344,8 @@ armors:
     sideArmor: 125  # base 120 +5
     rearArmor: 100  # base 100
     underArmor: 125 # base 125
+    moveCost: #jetpack speed
+      baseFlyPercent: [75, 100] #move cost for flying
     stats: # assault values
       tu: 25            # base 10 +15
       stamina: 20       # base 20
@@ -1721,6 +1723,8 @@ armors:
     sideArmor: 120
     rearArmor: 100
     underArmor: 125
+    moveCost: #jetpack speed
+      baseFlyPercent: [75, 100] #move cost for flying
     stats:
       tu: 25            # base 10 +15
       stamina: 20       # base 20
@@ -4436,6 +4440,8 @@ armors:
       F4: ["CAPEP", "CAPBAMF", "M4_FACE", ""]
       F5: ["CAPEP", "CAPBAMF", "M5_FACE", ""]
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
+    moveCost: #jetpack speed
+      baseFlyPercent: [75, 100] #move cost for flying
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X3

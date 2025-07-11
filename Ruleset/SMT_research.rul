@@ -492,19 +492,19 @@ research:
     cost: 0
     points: 0
     dependencies:
-      - STR_GENERALLOCK
+      - STR_HIGHTIER_PREREQ # everyone gets it at high tier if they don't have it already
 
   - name: STR_BOLTER_ADV_AMMO       # Non-standard Bolter ammo
     cost: 0
     points: 0
     dependencies:
-      - STR_GENERALLOCK
+      - STR_HIGHTIER_PREREQ # everyone gets it at high tier if they don't have it already
 
   - name: STR_LIGHTBOLTER_ADV_AMMO  # Non-standard Light Bolter ammo (Can be unlocked by IG as well)
     cost: 0
     points: 0
     dependencies:
-      - STR_GENERALLOCK
+      - STR_HIGHTIER_PREREQ # everyone gets it at high tier if they don't have it already
 
   - name: STR_MC_BOLTER_AMMO        # Mastercrafted Bolter Ammo
     cost: 350
@@ -762,7 +762,7 @@ research:
     dependencies:
       - STR_PRIMARIS
       #- STR_PRIMARIS_BACKPACKS
-      - STR_HEAVY_LASER
+      - STR_MELTAGUN_TECH
     listOrder: 15 # push above corpses/etc
 
   - name: STR_PRIMARIS_PLASMAPACK   # Primaris Plasma Incinerator

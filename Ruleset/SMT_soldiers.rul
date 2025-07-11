@@ -2761,11 +2761,11 @@ soldiers:
 
   - type: STR_GUARD_PRIEST              # Imperial Guard Priest
     tags:
-      SOLDIER_IS_PSISKILL_TEACHER: 3 # all units gain 1-3 devotion from battle
+      SOLDIER_IS_PSISKILL_TEACHER: 4 # all units gain 1-4 devotion from battle
 
   - type: STR_COMMISSAR
     tags:
-      SOLDIER_IS_PSISKILL_TEACHER: 1 # all units gain 1 devotion from battle
+      SOLDIER_IS_PSISKILL_TEACHER: 2 # all units gain 1-2 devotion from battle
 
   - &STR_OFFICER
     type: STR_GUARD_OFFICER

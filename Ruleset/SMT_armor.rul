@@ -265,6 +265,8 @@ armors:
     sideArmor: 115 # base 110
     rearArmor: 95 # base 100
     underArmor: 120 # base 120
+    moveCost: #jetpack speed
+      baseFlyPercent: [75, 100] #move cost for flying
     stats:
       tu: 25            # base 10 +15
       stamina: 20       # base 20
@@ -412,6 +414,8 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 35         # base 10 +20 ass +5 elite
+    moveCost: #jetpack speed
+      baseFlyPercent: [75, 100] #move cost for flying
     frontArmor: 130 # base 125
     sideArmor: 120 # base 115
     rearArmor: 100 # base 95
@@ -438,6 +442,8 @@ armors:
     sideArmor: 120 # base 115
     rearArmor: 100 # base 95
     underArmor: 125 # base 120
+    moveCost: #jetpack speed
+      baseFlyPercent: [75, 100] #move cost for flying
     stats:
       tu: 30            # base 10 +15 ass +5 elite
       stamina: 30       # base 20 +10 elite
@@ -475,6 +481,8 @@ armors:
     sideArmor: 120 # base 115
     rearArmor: 100 # base 95
     underArmor: 125 # base 120
+    moveCost: #jetpack speed
+      baseFlyPercent: [75, 100] #move cost for flying
     stats:
       tu: 30            # base 10 +15 ass +5 elite
       stamina: 30       # base 20 +10 elite
@@ -585,7 +593,7 @@ armors:
       psiStrength: 0    # base 0  
       psiSkill: 0       # base 0  
       melee: 10         # base 10 
-    specialWeapon: STR_SMT_SIGNUM # changed from Airstrike
+    #specialWeapon: STR_SMT_SIGNUM # changed from Airstrike
     units: # exclusive to terminator promoted troops
       - STR_SOLDIER_TERMINATOR
 
@@ -1009,6 +1017,8 @@ armors:
     sideArmor: 130  # base 120 +5  assault +5 elite
     rearArmor: 110  # base 100 +10 elite
     underArmor: 125 # base 125
+    moveCost: #jetpack speed
+      baseFlyPercent: [75, 100] #move cost for flying
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 2.0 #Chaplains are supremely resistant to warp influence
@@ -1185,9 +1195,6 @@ armors:
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X1_BACKPACK
-    tags:
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_CAPTAIN_ASS
     refNode: *REF_CAPTAIN_DEFAULTS
@@ -1202,6 +1209,8 @@ armors:
     sideArmor: 135  # base 130 +5
     rearArmor: 115  # base 110 +5
     underArmor: 130 # base 125 +5
+    moveCost: #jetpack speed
+      baseFlyPercent: [75, 100] #move cost for flying
     stats:
       tu: 30            # base 10 +15 ass +5 elite
       stamina: 30       # base 20 +10 elite
@@ -1223,8 +1232,6 @@ armors:
       ARMOR_MAX_SUCCESSFUL_DODGES: 3
       MaxFlight: 2
       MaxCoolDown: 1
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_CAPTAIN_ASS_CLAW
     refNode: *REF_CAPTAIN_DEFAULTS
@@ -1239,6 +1246,8 @@ armors:
     sideArmor: 135  # base 130 +5
     rearArmor: 115  # base 110 +5
     underArmor: 130 # base 125 +5
+    moveCost: #jetpack speed
+      baseFlyPercent: [75, 100] #move cost for flying
     stats:
       tu: 30            # base 10 +15 ass +5 elite
       stamina: 30       # base 20 +10 elite
@@ -1261,8 +1270,6 @@ armors:
       ARMOR_MAX_SUCCESSFUL_DODGES: 3
       MaxFlight: 2
       MaxCoolDown: 1
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_CAPTAIN_ASS_SHIELD
     refNode: *REF_CAPTAIN_DEFAULTS
@@ -1277,6 +1284,8 @@ armors:
     sideArmor: 135  # base 130 +5
     rearArmor: 115  # base 110 +5
     underArmor: 130 # base 125 +5
+    moveCost: #jetpack speed
+      baseFlyPercent: [75, 100] #move cost for flying
     stats:
       tu: 30            # base 10 +15 ass +5 elite
       stamina: 30       # base 20 +10 elite
@@ -1299,8 +1308,6 @@ armors:
       ARMOR_MAX_SUCCESSFUL_DODGES: 3
       MaxFlight: 2
       MaxCoolDown: 1
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_CAPTAIN_DEV
     refNode: *REF_CAPTAIN_DEFAULTS
@@ -1337,8 +1344,6 @@ armors:
       - INV_NULL_1X3
     tags:
       SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/3 HWP penalties
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_CAPTAIN_HONOR
     refNode: *REF_CAPTAIN_DEFAULTS
@@ -1422,8 +1427,6 @@ armors:
     builtInWeapons:
       - INV_INSPIRE_TOKEN
     tags:
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
       ARMOR_RESTEALTH_KILL_REQUIREMENT: 4
       ARMOR_RESTEALTH_TURN_REQUIREMENT: 0
       ARMOR_IMMEDIATE_KILL_CREDIT: 4
@@ -1483,7 +1486,7 @@ armors:
       - INV_NULL_2X1_LL
     tags:
       SMT_ARMOR_HEAVY_WEAPON_USER: 2 # 1/3 HWP penalties
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 105 # captain shield + terminator
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45 # terminator shield
       ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - update: BIKE_ARMOR_UC                   #BIKE
@@ -1738,8 +1741,6 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 10
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_TAC_MELT_LV1_UC           #TACTICAL (MELTARIFLE)
     refNode: *STR_MKX_TAC_UC
@@ -1811,8 +1812,6 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 10
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_TAC_PLAS_LV1_UC           #TACTICAL (PLASMA INCINERATOR)
     refNode: *STR_MKX_TAC_UC
@@ -1886,8 +1885,6 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 10
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_VETS_LV3_UC               #STERNGUARD
     refNode: *STR_MKX_TAC_UC
@@ -1981,8 +1978,6 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 10
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_VETB_LV3_UC               #BLADEGUARD
     refNode: *STR_MKX_TAC_UC
@@ -2081,8 +2076,6 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 10
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - &STR_MKX_ASS_UC                         #PRIMARIS ASSAULT INTERCESSOR
     type: STR_MKX_ASS_LV1_UC
@@ -2106,6 +2099,8 @@ armors:
     sideArmor: 115 # base 110
     rearArmor: 95 # base 100
     underArmor: 120 # base 120
+    moveCost: #jetpack speed
+      baseFlyPercent: [75, 100] #move cost for flying
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 1.0 #AP
@@ -2214,8 +2209,6 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 20
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 10
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - &STR_MKX_PHB_UC                         #PRIMARIS PHOBOS
     type: STR_MKX_PHB_LV1_UC
@@ -2384,8 +2377,6 @@ armors:
       ARMOR_IMMEDIATE_TURN_CREDIT: 0
       ARMOR_CLOAKED_ASSASSIN_TYPE: 1 # melee only
       ARMOR_CLOAKED_ASSASSIN_RANGE: 3
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_ELIM_LV3_UC               #PHOBOS ELIMINATOR LV3
     refNode: *STR_MKX_PHB_UC
@@ -2496,8 +2487,6 @@ armors:
       ARMOR_IMMEDIATE_TURN_CREDIT: 2
       ARMOR_CLOAKED_ASSASSIN_TYPE: 2 # snipers only
       ARMOR_CLOAKED_ASSASSIN_RANGE: 5
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - &STR_MKX_GRV_UC                         #PRIMARIS GRAVIS
     type: STR_MKX_GRV_LV1_UC
@@ -2749,8 +2738,6 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 10
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_GRV_LV5A_UC               #GRAVIS LV5 AUTOCANNON
     refNode: *STR_MKX_GRV_UC
@@ -2771,8 +2758,6 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 10
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_GRV_LV5F_UC               #GRAVIS LV5 FLAMER
     refNode: *STR_MKX_GRV_UC
@@ -2793,8 +2778,6 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 10
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_GRV_LV5H_UC               #GRAVIS LV5 REGULAR
     refNode: *STR_MKX_GRV_UC
@@ -2814,8 +2797,6 @@ armors:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 30
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 10
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_GRV_CODEX                 #GRAVIS Codex
     refNode: *STR_MKX_GRV_UC
@@ -2935,8 +2916,6 @@ armors:
     tags:
       MaxFlight: 4
       MaxCoolDown: 1
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_INCPE_LV1_UC
     refNode: *STR_MKX_INC_UC
@@ -3008,8 +2987,6 @@ armors:
     tags:
       MaxFlight: 4
       MaxCoolDown: 1
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_INCAC_LV1_UC
     refNode: *STR_MKX_INC_UC
@@ -3076,8 +3053,6 @@ armors:
     tags:
       MaxFlight: 4
       MaxCoolDown: 1
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # captain shield
-      ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_MKX_INC_CODEX
     refNode: *STR_MKX_INC_UC
@@ -3869,6 +3844,7 @@ armors:
     antiCamouflageAtDay: 8
     antiCamouflageAtDark: 8
     personalLight: 5
+    painImmune: true
     recovery:
       energy:
         stamina: 0.33

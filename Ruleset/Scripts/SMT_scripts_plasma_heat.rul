@@ -1,24 +1,24 @@
 ### Rosigma Plasma script, used here to implement new Plasma guns and fix Rosgima issue that causes red guns to pulse all over when overheating instead of just the heat core
 
 extended:
-  tags:
-    RuleItem:
-      ITEM_HEAT_MAX_LEVEL: int
-      ITEM_HEAT_DISSIPATION_PER_TURN: int
-      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: int
-      ITEM_AUTO_FLAT_POWER_BONUS: int
-      ITEM_SNAP_FLAT_POWER_BONUS: int
-      ITEM_AIMED_FLAT_POWER_BONUS: int
-      ITEM_MELEE_POWER_BONUS: int
-      ITEM_AIMED_ACCURACY_POWER_BONUS: int #percent of the user's Firing Accuracy that applies as a damage bonus; used for precision weapons like sniper rifles
-      ITEM_SNAP_ACCURACY_POWER_BONUS: int #percent of the user's Firing Accuracy that applies as a damage bonus; used for precision weapons like sniper rifles
-      ITEM_AUTO_ACCURACY_POWER_BONUS: int #percent of the user's Firing Accuracy that applies as a damage bonus; used for precision weapons like sniper rifles
-      ITEM_POWER_BONUS_PERCENTILE: int #0-2+; if 0 we just add the flat bonus and add the % of applicable firing accuracy as bonus power. If 1, we apply the bonuses as a percentile bonus of the attack power. If 2+, we do both.
-      ITEM_OVERHEAT_DAMAGE: int #how much damage we apply on average direct to the target's HP.
-    BattleItem:
-      ITEM_HEAT_CURRENT_LEVEL: int
-      ITEM_HEAT_PREVIOUS_AMMO_COUNT: int
-      ITEM_HEAT_CRITICAL: int #have we gone critical?
+  # tags:
+    # RuleItem:
+      # ITEM_HEAT_MAX_LEVEL: int
+      # ITEM_HEAT_DISSIPATION_PER_TURN: int
+      # ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: int
+      # ITEM_AUTO_FLAT_POWER_BONUS: int
+      # ITEM_SNAP_FLAT_POWER_BONUS: int
+      # ITEM_AIMED_FLAT_POWER_BONUS: int
+      # ITEM_MELEE_POWER_BONUS: int
+      # ITEM_AIMED_ACCURACY_POWER_BONUS: int #percent of the user's Firing Accuracy that applies as a damage bonus; used for precision weapons like sniper rifles
+      # ITEM_SNAP_ACCURACY_POWER_BONUS: int #percent of the user's Firing Accuracy that applies as a damage bonus; used for precision weapons like sniper rifles
+      # ITEM_AUTO_ACCURACY_POWER_BONUS: int #percent of the user's Firing Accuracy that applies as a damage bonus; used for precision weapons like sniper rifles
+      # ITEM_POWER_BONUS_PERCENTILE: int #0-2+; if 0 we just add the flat bonus and add the % of applicable firing accuracy as bonus power. If 1, we apply the bonuses as a percentile bonus of the attack power. If 2+, we do both.
+      # ITEM_OVERHEAT_DAMAGE: int #how much damage we apply on average direct to the target's HP.
+    # BattleItem:
+      # ITEM_HEAT_CURRENT_LEVEL: int
+      # ITEM_HEAT_PREVIOUS_AMMO_COUNT: int
+      # ITEM_HEAT_CRITICAL: int #have we gone critical?
 
   scripts:
     reactionUnitReaction:

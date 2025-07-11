@@ -69,7 +69,7 @@ extended:
             return;
           end;
 
-          item.getTag temp Tag.ITEM_STEALTH_DURATION;
+          item.getTag temp Tag.ITEM_EFFECT_DURATION;
           actor.setTag Tag.UNIT_STEALTH_IS_ACTIVE temp; # activate stealth
           actor.setTag Tag.UNIT_STEALTH_RANGE stealthRange;
           actor.setTag Tag.UNIT_LIKE_A_SHADOW_COUNTER 0; # reset kill counter

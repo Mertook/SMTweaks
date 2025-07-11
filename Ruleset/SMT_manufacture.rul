@@ -718,7 +718,7 @@ manufacture:
   - name: STR_INFERNO_PISTOL
     category: STR_WEAPON
     requires:
-      - STR_HEAVY_LASER
+      - STR_MELTAGUN_TECH
       - STR_INFERNOPISTOL_REQ
     space: 0
     time: 300
@@ -932,6 +932,26 @@ manufacture:
     cost: 75000
     requiredItems:
       STR_ALIEN_ALLOYS: 5
+      STR_ELERIUM_115: 5
+
+  - name: STR_TECH_TOOL_SHIELD
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TECHMARINE_GEAR
+    space: 0
+    time: 600
+    cost: 20000
+    requiredItems:
+      STR_ELERIUM_115: 5
+
+  - name: STR_TECH_TOOL_SCANNER
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TECHMARINE_GEAR
+    space: 0
+    time: 600
+    cost: 20000
+    requiredItems:
       STR_ELERIUM_115: 5
 
   - name: STR_TECH_SKULL_SPAWNER

@@ -2,10 +2,7 @@ extended:
   tags:
     RuleItem:
       ## Craft Turrets
-      SMT_TURRET_TOKEN: int             # is this item a Turret token?
-      SMT_RAZOR_HBOLTER: int            # Razorback Heavy Bolter token
-      SMT_RAZOR_LAS: int                # Razorback Lascannon token
-      SMT_RAZOR_HFLAME: int             # Razorback Heavy Flamer token
+      SMT_TURRET_TOKEN: int             # is this item a Turret token? 1 = HBolter 2 = HFlamer 3 = Lascannon
       ## Bombard
       BOMBARD_AMMO_LOADER: int          # item used to lock bombard targeter in place and activate weapons
       BOMBARD_SPAWNER_ITEM: int         # spawner grenade for bombard targeter
@@ -19,20 +16,18 @@ extended:
       SMT_ITEM_REACTION_MOD: int        # % of power added as reaction bonus
       SMT_VULN_DEBUFF_MOD: int          # % of power added as vulnerability debuff
       SMT_VULN_DEBUFF_FIXED: int        # flat amount added as vulnerability debuff
-      SMT_VULN_DURATION: int            # length of debuff
-      SMT_SIGNUM_DURATION: int          # length of Signum FA buff in turns
       SMT_HEAL_WOUNDS_POW: int          # % of power removed from fatal wounds
       SMT_HEAL_WOUNDS_HP_WOUND: int     # health restored per fatal wound cured
       SMT_HEAL_WOUNDS_HP_PERCENT: int   # health restored based on power
       SMT_HEAL_WOUNDS_HP_CAP: int       # % healing cap based on max hp
       ITEM_CLOAKING_EFFECT: int         # cloaks unit for 1 turn - X = detection range
+      ITEM_EFFECT_DURATION: int         # length of items effect
       ## Weapon Ammo Sprites
       ITEM_AMMO_SKIP_BIGOBS: int        # ammo causes weapon sprite to change - X = size of index shift
       ## Heavy Weapons
       ITEM_HWP_IGNORES_ARMOR_BONUS: int # does weapon ignore armor hwp bonus (see below) meant for snipers etc
       ## Infiltrator
       ITEM_STEALTH_RANGE: int           # item used to activate restealth - X = detection range
-      ITEM_STEALTH_DURATION: int        # duration of stealth
       ITEM_STEALTH_MOVEPENALTY: int     # % modifier on movespeed while stealthed
       ITEM_STEALTH_ASSASSIN_WEAPON: int # weapon can activate cloaked assassin on kills: X = type (1- Melee, 2- Sniper)
       ITEM_STEALTH_ASSASSIN_RANGE: int  # X = detection range when activating assassin cloak
@@ -42,14 +37,13 @@ extended:
       SMT_RESTRICTED_DAMAGE_PEN: int    # Percentage of weapon power when used by incorrect units
       SMT_RESTRICTED_ITEM_MELEE: int    # if !0, reduce melee power % by this much when used by incorrect units
       ## Shields
-      SMT_ITEM_SHIELD_DURATION: int     # duration of temporary energy shield
       ## Custom Ammo
       SMT_AMMO_BONUSDMG_FIRINGACC: int  # % bonus damage granted from units Firing Accuracy: (FA - 100) * Tag / 100
       SMT_DEREVENANT_AMMO: int          # Instantly kills Necrons that are or will be knocked unconcious - value = % bonus damage added against 2x2 Necrons that can't be stunned
       SMT_AMMO_HP_PREDMG: int           # % of power directly added to health damage ignoring armor
       SMT_SHIELD_DAMAGE_AMP: int        # % power increase based on targets shield
       ITEM_DMGMOD_ALLIES: int           # deal reduced damage to units belonging to users faction X = % dealt, -1 = no damage
-      ITEM_DMGMOD_IMPERIUM: int         # deal reduced damage to allied units with armor tag `UNIT_TYPE_IMPERIUM: 1` X = % dealt, -1 = no damage
+      #ITEM_DMGMOD_IMPERIUM: int         # deal reduced damage to allied units with armor tag `UNIT_TYPE_IMPERIUM: 1` X = % dealt, -1 = no damage
       SMT_GRAV_WEAPON: int              # weapon scales power with weight (armor+hp+size) and scales stun inversely with strength
       SMT_RENDING_WEAPON: int           # Negate effect of shred resistance by %
       SMT_ARMOR_TARGET_WEAKEST: int     # Weapon targets weakest armor facing when dealing damage
@@ -103,6 +97,10 @@ extended:
       UNIT_IMMOBILE_TURNS: int                  # Unit loses all TUs for X turns to stop it moving prematurely
       UNIT_RAPID_KO_RECOVERY: int               # Unit immediately gains % TUs after standing up from being stunned, letting it act immediately
       UNIT_DAMAGE_SOFTCAP: int                  # When unit takes hp/stun damage over X, halve it
+      ## Flight
+      FLIGHT_MOVESPEED_MODIFIER: int            # set flying movespeed to this value
+      ## Unit Types
+      UNIT_TYPE_SERVITOR: int                   # mark unit as servitor
     RuleSoldier:
       ## Regeneration
       UNIT_REGENERATE_HEALTH_FLAT: int          # hp regen from soldier type - Flat values
@@ -141,8 +139,6 @@ extended:
       SMT_REFLEX_REACTION_BONUS: int    # stores units reaction bonus
       SMT_VULN_ENDTURN: int             # store debuff duration
       SMT_VULN_INTENSITY: int           # store debuff strength
-      SMT_SIGNUM_ORIGINAL_FA: int       # store original firing accuracy
-      SMT_SIGNUM_ENDTURN: int           # store buff duration
       UNIT_MOVESPEED_MODIFIERS: int     # combined movespeed modifiers for a unit
       ## Rampage
       SMT_RAMPAGE_COUNT: int            # # of times unit has refunded TUs from kills
@@ -164,6 +160,7 @@ extended:
       UNIT_DIG_IN_MOVE_PENALTY: int             # for compat with Dig In
       ## Shields
       SMT_SHIELD_ENDTURN: int                   # store duration for shield from item/ability
+      UNIT_SHIELD_COOLDOWN: int                 # limit for reusing shield items
     BattleGame:
       ## Craft Turrets
       SMT_RAZOR_HBOLTER_COUNT: int  # number of Razorback HeavyBolter tokens

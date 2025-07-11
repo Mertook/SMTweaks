@@ -9,34 +9,27 @@ extended:
       - new: SMTS_turret_count
         offset: 80
         code: |
-          var int temp;
+          var int tokenVal;
           var int temp2;
 
-          item.getTag temp Tag.SMT_TURRET_TOKEN;
+          item.getTag tokenVal Tag.SMT_TURRET_TOKEN;
           battle_game.getTurn temp2;
-          if and eq temp 1 eq temp2 0;
-            item.getTag temp Tag.SMT_RAZOR_HBOLTER; ## Count Razorback Heavy Bolter Tokens
-            if eq temp 1;
+          if and gt tokenVal 0 eq temp2 0;
+            if eq tokenVal 1;
               battle_game.getTag temp2 Tag.SMT_RAZOR_HBOLTER_COUNT;
               add temp2 1; # +1 to count
               battle_game.setTag Tag.SMT_RAZOR_HBOLTER_COUNT temp2;
               #debug_log "TurretCounter (HeavyBolter) " temp2;
-            end;
-
-            item.getTag temp Tag.SMT_RAZOR_LAS; ## Count Razorback Lascannon Tokens
-            if eq temp 1;
-              battle_game.getTag temp2 Tag.SMT_RAZOR_LAS_COUNT;
-              add temp2 1; # +1 to count
-              battle_game.setTag Tag.SMT_RAZOR_LAS_COUNT temp2;
-              #debug_log "TurretCounter (Lascannon) " temp2;
-            end;
-            
-            item.getTag temp Tag.SMT_RAZOR_HFLAME; ## Count Razorback Heavy Flamer Tokens
-            if eq temp 1;
+            else eq tokenVal 2;
               battle_game.getTag temp2 Tag.SMT_RAZOR_HFLAME_COUNT;
               add temp2 1; # +1 to count
               battle_game.setTag Tag.SMT_RAZOR_HFLAME_COUNT temp2;
               #debug_log "TurretCounter (HeavyFlamer) " temp2;
+            else eq tokenVal 3;
+              battle_game.getTag temp2 Tag.SMT_RAZOR_LAS_COUNT;
+              add temp2 1; # +1 to count
+              battle_game.setTag Tag.SMT_RAZOR_LAS_COUNT temp2;
+              #debug_log "TurretCounter (Lascannon) " temp2;
             end;
           end;
           
@@ -117,36 +110,31 @@ extended:
       - new: SMTS_turret_destruction
         offset: 84
         code: |
-          var int temp;
-          var int deadRazorHBolter;
-          var int deadRazorLas;
-          var int deadRazorHFlame;
+          var int tokenVal;
+          var int deathCount;
 
-          item.getTag temp Tag.SMT_TURRET_TOKEN;
-          if gt temp 0;
-            item.getTag temp Tag.SMT_RAZOR_HBOLTER; # Razorback Heavy Bolter
-            battle_game.getTag deadRazorHBolter Tag.SMT_RAZOR_HBOLTER_DEATHS;
-            if and gt temp 0 gt deadRazorHBolter 0;
-              sub deadRazorHBolter 1;
-              battle_game.setTag Tag.SMT_RAZOR_HBOLTER_DEATHS deadRazorHBolter;
+          item.getTag tokenVal Tag.SMT_TURRET_TOKEN;
+          if gt tokenVal 0;
+            battle_game.getTag deathCount Tag.SMT_RAZOR_HBOLTER_DEATHS;
+            if and eq tokenVal 1 gt deathCount 0;
+              sub deathCount 1;
+              battle_game.setTag Tag.SMT_RAZOR_HBOLTER_DEATHS deathCount;
               item.setFuseTimer 0;
               return;
             end;
-            
-            item.getTag temp Tag.SMT_RAZOR_LAS; # Razorback Lascannon
-            battle_game.getTag deadRazorLas Tag.SMT_RAZOR_LAS_DEATHS;
-            if and gt temp 0 gt deadRazorLas 0;
-              sub deadRazorLas 1;
-              battle_game.setTag Tag.SMT_RAZOR_LAS_DEATHS deadRazorLas;
+
+            battle_game.getTag deathCount Tag.SMT_RAZOR_LAS_DEATHS;
+            if and eq tokenVal 3 gt deathCount 0;
+              sub deathCount 1;
+              battle_game.setTag Tag.SMT_RAZOR_LAS_DEATHS deathCount;
               item.setFuseTimer 0;
               return;
             end;
-            
-            item.getTag temp Tag.SMT_RAZOR_HFLAME; # Razorback Heavy Flamer
-            battle_game.getTag deadRazorHFlame Tag.SMT_RAZOR_HFLAME_DEATHS;
-            if and gt temp 0 gt deadRazorHFlame 0;
-              sub deadRazorHFlame 1;
-              battle_game.setTag Tag.SMT_RAZOR_HFLAME_DEATHS deadRazorHFlame;
+
+            battle_game.getTag deathCount Tag.SMT_RAZOR_HFLAME_DEATHS;
+            if and eq tokenVal 2 gt deathCount 0;
+              sub deathCount 1;
+              battle_game.setTag Tag.SMT_RAZOR_HFLAME_DEATHS deathCount;
               item.setFuseTimer 0;
               return;
             end;

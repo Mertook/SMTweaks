@@ -477,7 +477,7 @@ items:
       - STR_LIGHT_BOLTERS_MIDTIER
       - STR_MIDTIER_PREREQ
       - STR_GUARD_AND_INQUISITION # was IG exclusive
-      - STR_HEAVY_LASER #meltagun
+      - STR_MELTAGUN_TECH #meltagun
     weight: 18 # was 30, light melta + light bolter shouldn't be such a brick
     dropoff: 8 # was 5
     autoRange: 0
@@ -2743,7 +2743,7 @@ items:
     tags:
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
       SMT_VULN_DEBUFF_MOD: 20
-      SMT_VULN_DURATION: 1
+      ITEM_EFFECT_DURATION: 1
 
   - type: STR_BOLT_SNIPER_AMMO_DEREV        # Bolt Sniper Derevenant Ammo
     refNode: *REF_SNIPER_BOLT_AMMO
@@ -3243,7 +3243,7 @@ items:
   - type: STR_BLASTER_LAUNCHER_TERRAN       # Multimelta
     refNode: *STR_MULTIMELTA_TEMPLATE
     requires:
-      - STR_HEAVY_LASER
+      - STR_MELTAGUN_TECH
 
   - type: STR_BLASTER_LAUNCHER              # Chaos Multimelta
     refNode: *STR_MULTIMELTA_TEMPLATE
@@ -4506,6 +4506,9 @@ items:
       shortName: STR_SHOT_TYPE_SNAP
     armor: 300
     kneelBonus: 130
+    tags:
+      REACTION_MULTIPLIER: 50
+      REACTION_PENALTY_KNEELING_BYPASS: 1
 
   - type: STR_ROCKET_LAUNCHER               # SM Rocket Launcher
     requiresBuy: # disabled, replaced by Scout ML & Vengor
@@ -4916,7 +4919,8 @@ items:
     damageAlter:
       FixRadius: 2 # was 3
     requiresBuy:
-      - STR_HEAVY_LASER # Melta tech - was Midtier
+      - STR_MELTAGUN_TECH
+      - STR_MIDTIER_PREREQ
 
   - type: STR_FRAG_GRENADE_DRUM             # GL Frag Rounds
     power: 70 # was 60
@@ -6094,7 +6098,7 @@ items:
     tags:
       ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 250 # done to stop the '200 power hits knocks flyers out of the air' quirk of rosigma
       ITEM_SETS_ENERGY_SHIELD_DECAY: 0 # not used, is removed entirely when duration ends
-      SMT_ITEM_SHIELD_DURATION: 1
+      ITEM_EFFECT_DURATION: 1
       ITEM_IS_BUFF_WEAPON: 1
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 100
       ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
@@ -6190,7 +6194,7 @@ items:
     tags:
       ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 250 # done to stop the '200 power hits knocks flyers out of the air' quirk of rosigma
       ITEM_SETS_ENERGY_SHIELD_DECAY: 0 # not used, is removed entirely when duration ends
-      SMT_ITEM_SHIELD_DURATION: 1
+      ITEM_EFFECT_DURATION: 1
       ITEM_IS_BUFF_WEAPON: 1
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 100
       ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
@@ -6239,7 +6243,7 @@ items:
     tags:
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 #ignores shields
       SMT_VULN_DEBUFF_MOD: 100
-      SMT_VULN_DURATION: 2
+      ITEM_EFFECT_DURATION: 2
       ITEM_DMGMOD_ALLIES: -1
 
   - type: STR_PSITOKEN_HASTE                # T6 Accelerate
@@ -6410,6 +6414,7 @@ items:
   - &REF_TECH_PRIMARY                       # Techmarine Primary Equipment (Type 9 - Aimed Shots)
     type: STR_TECHMARINE_FLAMER
     battleType: 1
+    floorSprite: {mod: 40k, index: 169}
     size: 0.2
     armor: 600
     floorSprite: 99
@@ -6431,7 +6436,6 @@ items:
   - type: STR_TECHMARINE_FLAMER             # Techmarine Flamer
     categories: [ STR_CAT_TECHPRIEST, STR_CAT_FLAMER]
     bigSprite: 309
-    floorSprite: 99
     bulletSprite: {mod: 40k, index: 5}
     fireSound: {mod: 40k, index: 706}
     compatibleAmmo:
@@ -6451,7 +6455,6 @@ items:
     refNode: *REF_TECH_PRIMARY
     categories: [ STR_CAT_TECHPRIEST, STR_CAT_BOLTER]
     bigSprite: 309 ###CHANGEME
-    floorSprite: 99
     bulletSprite: {mod: 40k, index: 6}
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     compatibleAmmo:
@@ -6470,8 +6473,6 @@ items:
     refNode: *REF_TECH_PRIMARY
     categories: [ STR_CAT_TECHPRIEST, STR_CAT_MELTA]
     bigSprite: 311
-    floorSprite: 99
-    #bulletSpeed: 100
     bulletSprite: {mod: 40k, index: 16}
     fireSound: {mod: 40k, index: 739}
     compatibleAmmo:
@@ -6485,7 +6486,6 @@ items:
     refNode: *REF_TECH_PRIMARY
     categories: [ STR_CAT_TECHPRIEST, STR_CAT_GRAVGUN]
     bigSprite: 310
-    floorSprite: 99
     bulletSprite: {mod: 40k, index: 14}
     fireSound: {mod: 40k, index: 829}
     compatibleAmmo:
@@ -6499,7 +6499,6 @@ items:
     refNode: *REF_TECH_PRIMARY
     categories: [ STR_CAT_TECHPRIEST, STR_CAT_PLASMA]
     bigSprite: 824
-    floorSprite: 99
     bulletSprite: {mod: 40k, index: 11}
     fireSound: {mod: 40k, index: 18}
     compatibleAmmo:
@@ -6576,9 +6575,10 @@ items:
 
   - &REF_TECH_SUPPORT                       # Techmarine Utility Tools (Type 11 - Use)
     type: STR_TECH_MEDKIT
+    weight: 8
     size: 0.1
     armor: 600
-    floorSprite: 99
+    floorSprite: {mod: 40k, index: 168}
     costSell: 20000
     supportedInventorySections:
       - STR_BACK_PACK
@@ -6588,7 +6588,7 @@ items:
 
   - type: STR_TECH_MEDKIT                   # Techpriest Medkit
     weight: 8
-    bigSprite: 99 ### CHANGEME
+    bigSprite: 314
     invHeight: 2
     invWidth: 1
     battleType: 6
@@ -6602,20 +6602,73 @@ items:
     medikitTargetSelf: false
     medikitTargetMatrix: 31
 
-  - type: STR_TECH_SHIELD                   # Techpriest Shield
+  - type: STR_TECH_TOOL_SERVITOR            # Techpriest Sanctus Canister
     refNode: *REF_TECH_SUPPORT
-    weight: 8
-    bigSprite: 99 ### CHANGEME
+    bigSprite: 317
     invHeight: 2
     invWidth: 1
     battleType: 6
-    painKiller: 10
+    medikitType: 3
+    painKiller: 999
     heal: 0
     stimulant: 0
     woundRecovery: 0
     healthRecovery: 0
-    tuUse: 10
+    tuUse: 25
+    flatRate: false
+    medikitTargetSelf: false
+    medikitTargetMatrix: 31
+    # tags:
+      # ITEM_SERVITOR_ENHANCER: 30
+      # ITEM_SERVITOR_ENERGIZER: 40
+
+  - type: STR_TECH_TOOL_SHIELD              # Techpriest Shield
+    refNode: *REF_TECH_SUPPORT
+    bigSprite: 316
+    invHeight: 2
+    invWidth: 1
+    battleType: 6
+    medikitType: 3
+    painKiller: 999
+    heal: 0
+    stimulant: 0
+    woundRecovery: 0
+    healthRecovery: 0
+    tuUse: 25
+    flatRate: false
     medikitTargetSelf: true
+    tags:
+      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 400
+      ITEM_SETS_ENERGY_SHIELD_DECAY: 50
+      ITEM_EFFECT_DURATION: 4
+
+  - type: STR_TECH_TOOL_SCANNER             # Techpriest Omnispex
+    refNode: *REF_TECH_SUPPORT
+    battleType: 9
+    hitSound: {mod: 40k, index: 37}
+    hitAnimation: 110
+    hitAnimFrames: 10
+    targetMatrix: 6
+    bigSprite: 315
+    invHeight: 2
+    invWidth: 1
+    power: 1
+    LOSRequired: true
+    damageType: 0
+    damageAlter:
+      RandomType: 3 # 50-150%
+      ToHealth: 0.0
+      ToArmor: 0.0
+      ArmorEffectiveness: 0.0
+    flatRate: false
+    tuUse: 25
+    accuracyUse: 400
+    accuracyMultiplier:
+      flatHundred: 1.0
+    psiAttackName: STR_SIGNUM_ENEMY
+    tags:
+      SMT_VULN_DEBUFF_FIXED: 20
+      ITEM_EFFECT_DURATION: 1
 
   - type: STR_SKULL_ANALYZE                 # Skull Analyzer
     battleType: 8 # mind probe
@@ -7190,63 +7243,16 @@ items:
     psiAttackName: STR_SIGNUM_ENEMY
     tags:
       SMT_VULN_DEBUFF_MOD: 100
-      SMT_VULN_DURATION: 1
+      ITEM_EFFECT_DURATION: 1
 
-  - type: STR_SMT_SIGNUM                    # Signum for Devastators                        ## Signum
-    refNode: *REF_FIST
-    categories: [STR_CAT_SPELLS]
-    specialIconSprite: 41
-    fireSound: [{mod: 40k, index: 821}, {mod: 40k, index: 822}]
-    hitAnimation: {mod: 40k, index: 136}
-    power: 0
-    damageType: 0
-    bulletSpeed: 30
-    blastRadius: 3
-    powerForAnimation: 5 # small effect
-    damageBonus:
-      firing: 1
-    damageAlter:
-      RandomType: 3 #fixed value
-      FixRadius: 3
-      RadiusReduction: 0
-      ArmorEffectiveness: 0.0
-      ToStun: 0.05
-      ToMorale: 0.00
-      ToTime: 0.00
-      ToHealth: 0.0
-      ToWound: 0.0
-      ToArmor: 0.0
-      ToTile: 0.00
-      ToItem: 0.00
-    confAimed:
-      name: STR_SIGNUM_ACTION
-    costAimed:
-      time: 20
-      energy: 15
-    flatAimed:
-      time: false # 20% TU
-      energy: false # 15% energy
-    accuracyAimed: 100
-    accuracyMultiplier:
-      firing: 2.0
-    maxRange: 8
-    powerRangeThreshold: 5
-    powerRangeReduction: 10
-    aimRange: 5 #just to give an indication of power falloff
-    dropoff: 5
-    battleType: 1
-    experienceTrainingMode: 32 #don't train skills
-    meleePower: 10
-    tags:
-      ITEM_IS_BUFF_WEAPON: 1
-      ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
-      SMT_SIGNUM_DURATION: 1
+### Jetpacks
 
+### Stealth
   - type: STR_STEALTH_ADVSCOUT              # Advanced Scout Stealth
     refNode: *REF_STEALTH_MED_TEMPLATE
     tags:
       ITEM_STEALTH_RANGE: 3
-      ITEM_STEALTH_DURATION: 2
+      ITEM_EFFECT_DURATION: 2
       ITEM_STEALTH_MOVEPENALTY: 50 # 150% base movespeed
 
   - type: STR_STEALTH_REIVER
@@ -7255,7 +7261,7 @@ items:
     refNode: *REF_STEALTH_MED_TEMPLATE
     tags:
       ITEM_STEALTH_RANGE: 3
-      ITEM_STEALTH_DURATION: 2
+      ITEM_EFFECT_DURATION: 2
       ITEM_STEALTH_MOVEPENALTY: 50 # 150% base movespeed
 
   - type: STR_STEALTH_ELIMINATOR
@@ -7264,7 +7270,7 @@ items:
     refNode: *REF_STEALTH_MED_TEMPLATE
     tags:
       ITEM_STEALTH_RANGE: 5
-      ITEM_STEALTH_DURATION: 5
+      ITEM_EFFECT_DURATION: 5
       ITEM_STEALTH_MOVEPENALTY: 300 # 400% base movespeed
 
 ### Fire Support

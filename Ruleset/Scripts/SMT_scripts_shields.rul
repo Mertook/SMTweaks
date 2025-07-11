@@ -1,7 +1,7 @@
 extended:
   tags:
     RuleItem:
-      SMT_ITEM_SHIELD_DURATION: int             # duration of temporary energy shield
+      ITEM_EFFECT_DURATION: int             # duration of temporary energy shield
       ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: int   # % of power converted into shield for target
       ITEM_SETS_ENERGY_SHIELD_DECAY: int        # decay rate of shield applied by item
     RuleArmor:
@@ -182,6 +182,7 @@ extended:
           add linearAddition diminishingAddition;
           add shieldHP linearAddition;
           unit.setTag Tag.UNIT_ENERGY_SHIELD_HP shieldHP;
+          battle_game.flashMessage "STR_SCRIPT_SHIELD_ACTIVE" shieldHP;
 
           weaponRuleset.getTag shieldDecay Tag.ITEM_SETS_ENERGY_SHIELD_DECAY;
           unit.getTag currentDecay Tag.UNIT_ENERGY_SHIELD_DECAY;
@@ -189,7 +190,7 @@ extended:
             unit.setTag Tag.UNIT_ENERGY_SHIELD_DECAY shieldDecay;
           end;
 
-          weaponRuleset.getTag endTurn Tag.SMT_ITEM_SHIELD_DURATION;
+          weaponRuleset.getTag endTurn Tag.ITEM_EFFECT_DURATION;
           if gt endTurn 0;
             battle_game.getTurn currTurn;
             add endTurn currTurn;

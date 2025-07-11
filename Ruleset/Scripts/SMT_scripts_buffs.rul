@@ -66,29 +66,8 @@ extended:
 
           return;
 
-      - new: SMTS_signum_removebuff #*** Script that removes FA bonuses from unit once turn ends ***
-        offset: 90.3
-        code: |
-          var int faction;
-          var int endTurn;
-          var int originalFiring;
-
-          unit.getTag endTurn Tag.SMT_SIGNUM_ENDTURN;
-          unit.getTag originalFiring Tag.SMT_SIGNUM_ORIGINAL_FA;
-          #debug_log "SignumRemoveBuff Pinged" endTurn originalFiring;
-          if eq turn 1;
-            set endTurn 0; # reset at the start for multi-stage missions
-          end;
-
-          if and neq originalFiring 0 le turn endTurn;
-            #debug_log "Signum Restoring FA: " originalFiring;
-            unit.Stats.setFiring originalFiring; 
-            unit.setTag Tag.SMT_SIGNUM_ORIGINAL_FA 0; #cancel tag
-          end;
-          return;
-
     damageUnit:
-      - new: SMTS_buff_triggers
+      - new: SMTS_buff_triggers # Buffs applied via weapon
         offset: 5
         code: |
           var int temp;
@@ -192,7 +171,7 @@ extended:
               if gt debuffVal temp; #only change if it would be higher
                 unit.setTag Tag.SMT_VULN_INTENSITY debuffVal;
                 #debug_log "VulnDebuff Ping 1" debuffVal;
-                damaging_item.getTag debuffVal Tag.SMT_VULN_DURATION;
+                damaging_item.getTag debuffVal Tag.ITEM_EFFECT_DURATION;
                 battle_game.getTurn temp;
                 add temp debuffVal; #define end turn for buff
                 unit.getTag temp2 Tag.SMT_VULN_ENDTURN;
@@ -333,6 +312,145 @@ extended:
 
           return power part side;
 
+    healUnit:
+      - new: SMTS_buff_medkit_trigger # Buffs applied via medkit
+        offset: 20
+        code: |
+          var int turn;
+          var int tuCost;
+          var int temp;
+          var int temp2;
+
+          battle_game.getTurn turn;
+          item.getActionCost.getTimeUnits tuCost actor battle_action_use;
+          mul tuCost -1; # invert, don't refund TUs by default
+          item.getPainKillerQuantity temp;
+          if gt temp 900;
+            item.setPainKillerQuantity 999; # infinite use
+            set painkiller_recovery 0;
+          end;
+
+          begin; ### Jetpack
+            var int flightTime;
+            var int cooldownTime;
+
+            item.getTag temp Tag.ActivateFlight;
+            if eq temp 1;
+              actor.getTag flightTime Tag.FlightTime;
+              actor.getTag cooldownTime Tag.CooldownTime;
+              if lt turn flightTime;
+                set temp flightTime;
+                sub temp turn;
+                battle_game.flashMessage "STR_SCRIPT_FLIGHT_DURATION_LEFT" temp;
+                abs tuCost; # refund TUs
+              else lt turn cooldownTime;
+                set temp cooldownTime;
+                sub temp turn;
+                battle_game.flashMessage "STR_SCRIPT_COOLDOWN_DURATION_LEFT" temp;
+                abs tuCost; # refund TUs
+              else;
+                actor.setMovementType movement_type_fly;
+                actor.getTag temp Tag.MaxFlight;
+                actor.getTag temp2 Tag.MaxCoolDown;
+                set cooldownTime turn;
+                add cooldownTime temp;
+                add cooldownTime temp2;
+                actor.setTag Tag.CooldownTime cooldownTime;
+                set flightTime turn;
+                add flightTime temp;
+                actor.setTag Tag.FlightTime flightTime;
+                battle_game.flashMessage "STR_SCRIPT_FLIGHT_ACTIVE" temp;
+              end;
+            end;
+          end;
+
+          begin; ### Teleport
+            var int flightTime;
+            var int cooldownTime;
+
+            actor.getTag temp Tag.UNIT_IS_TELEPORTING;
+            item.getTag temp2 Tag.ITEM_IS_TELEPORTER;
+            if ge temp 1; # unit already teleporting
+              actor.setTag Tag.UNIT_IS_TELEPORTING 0;
+              actor.MoveCost.setBaseTimePercent 100;
+              actor.MoveCost.setBaseClimbEnergyPercent 100;
+              actor.MoveCost.setBaseNormalEnergyPercent 100;
+              actor.MoveCost.setBaseFlyEnergyPercent 100;
+              actor.getOriginalMovementType temp;
+              actor.setMovementType temp;
+              actor.getTag temp Tag.UNIT_ENERGY_BEFORE_TELEPORT; # this assumes no weapon requires energy
+              actor.setEnergy temp;
+              abs tuCost; # refund TUs
+              battle_game.flashMessage "STR_SCRIPT_TELEPORTER_SHUTTING_DOWN";
+            else ge temp2 1;
+              actor.getTag temp Tag.UNIT_LAST_ACTIVATED_TELEPORTER_TURN;
+              if gt turn temp;
+                actor.getEnergy temp;
+                actor.setTag Tag.UNIT_ENERGY_BEFORE_TELEPORT temp;
+                item.getTag temp Tag.ITEM_TELEPORTER_ENERGY;
+                actor.setEnergy temp;
+                actor.MoveCost.setBaseTimePercent 0;
+                actor.MoveCost.setBaseClimbEnergyPercent 100;
+                actor.MoveCost.setBaseNormalEnergyPercent 50;
+                actor.MoveCost.setBaseFlyEnergyPercent 50;
+                actor.setMovementType movement_type_fly;
+                battle_game.flashMessage "STR_SCRIPT_TELEPORTER_STARTING_UP";
+                actor.setTag Tag.UNIT_IS_TELEPORTING 1;
+                item.getTag temp Tag.ITEM_TELEPORTER_COOLDOWN;
+                add temp turn;
+                actor.setTag Tag.UNIT_LAST_ACTIVATED_TELEPORTER_TURN temp;
+              else; # if on cooldown
+                sub temp turn;
+                add temp 1;
+                battle_game.flashMessage "STR_SCRIPT_COOLDOWN_DURATION_LEFT" temp;
+                abs tuCost; # refund TUs
+              end;
+            end;
+          end;
+
+          begin; ### Self Shield
+            var int shieldHP;
+            var int cooldownTime;
+
+            item.getTag shieldHP Tag.ITEM_ADDS_ENERGY_SHIELD_FROM_POWER;
+            actor.getTag temp Tag.UNIT_SHIELD_COOLDOWN;
+            debug_log "techShield Ping " shieldHP temp;
+            if gt shieldHP 0;
+              if gt turn temp;
+                actor.getTag temp Tag.UNIT_ENERGY_SHIELD_HP; # calc shield boost
+                add shieldHP temp;
+                actor.setTag Tag.UNIT_ENERGY_SHIELD_HP shieldHP;
+                actor.getTag temp Tag.UNIT_ENERGY_SHIELD_DECAY; # calc shield decay
+                item.getTag temp2 Tag.ITEM_SETS_ENERGY_SHIELD_DECAY;
+                limit_lower temp temp2;
+                actor.setTag Tag.UNIT_ENERGY_SHIELD_DECAY temp;
+                item.getTag temp Tag.ITEM_EFFECT_DURATION; # set shield cooldown
+                add temp turn;
+                actor.setTag Tag.UNIT_SHIELD_COOLDOWN temp;
+                battle_game.flashMessage "STR_SCRIPT_SHIELD_ACTIVE" shieldHP;
+                debug_log "techShield Success " shieldHP temp turn;
+              else;
+                debug_log "techShield Failed " turn temp;
+                sub temp turn;
+                add temp 1;
+                battle_game.flashMessage "STR_SCRIPT_COOLDOWN_DURATION_LEFT" temp;
+                abs tuCost; # refund TUs
+              end;
+            end;
+
+
+          end;
+
+          if gt tuCost 0;
+            actor.addTimeUnits tuCost; # refund cost if effect failed
+          end;
+
+          return;
+
+      - delete: ROSIGMA_healU_limited_flight
+      - delete: ROSIGMA_healU_start_teleport
+
+
     reactionUnitAction:
       - new: SMTS_haste_reactionbonus
         offset: 21
@@ -438,45 +556,5 @@ extended:
           return new_pixel;
 
 
-
-items:
-  - type: STR_SMT_SIGNUM
-    tags:
-      SMT_SIGNUM_DURATION: 1
-    scripts:
-      damageUnitAmmo: |
-        var ptr RuleItem itemRuleset;
-        var int statValue;
-        var int buffTime;
-        var int temp;
-
-        damaging_item.getRuleItem itemRuleset;
-        itemRuleset.getTag buffTime Tag.SMT_SIGNUM_DURATION;
-        unit.getTag temp Tag.SMT_SIGNUM_ORIGINAL_FA; #used here to check if unit already has signum buff
-        #debug_log "SignumBuff Pinged" buffTime temp;
-
-        if neq temp 0; # skip if target already has signum buff
-          #debug_log "SignumBuff Aborted - " signumUser temp;
-          return;
-        end;
-
-        unit.Stats.getFiring statValue; #remember original Firing stat
-        #debug_log "Signum values: " currPower statValue;
-        if gt currPower statValue; # only boost if signum user FA is greater than the target FA
-          unit.setTag Tag.SMT_SIGNUM_ORIGINAL_FA statValue;
-          #debug_log "original FA: " statValue;
-          set temp currPower;
-          div temp 2;
-          add statValue temp; # add half Signum user FA to target FA
-          limit_upper statValue currPower; # don't exceed Signum user FA
-          unit.Stats.setFiring statValue;
-          #debug_log "buffed FA: " statValue;
-
-          battle_game.getTurn temp;
-          add temp buffTime; #define end turn for buff
-          unit.setTag Tag.SMT_SIGNUM_ENDTURN temp;
-        end;
-
-        return;
 
 

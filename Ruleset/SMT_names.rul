@@ -81,6 +81,10 @@ extraStrings:
       STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM: "Force Commander, the Tomb is awakening and more warriors are arriving to impede our progress. We need to be quick in reaching our objective or prepare to evacuate lest our forces be overwhelmed!"
       STR_NECRON_REINFORCEMENTS_TOMB_DESC_HEAVY: "Force Commander, the Necron Tomb is on high alert and summoning all of its warriors to bear on us. We must destroy the heart of the base immediately or risk being overwhelemd!"
       STR_BONUS_INQ_ROSARIUS: "Rosarius"
+      STR_BONUS_CAPTAIN_TACTICAL: Iron Halo
+      STR_BONUS_CAPTAIN_DEVASTATOR: Iron Halo
+      STR_BONUS_CAPTAIN_ASSAULT: Iron Halo
+      STR_BONUS_CAPTAIN_SCOUT: Iron Halo
       ### ARMOR
       STR_SCOUT_SMT_UC: "Scout Armor"
       STR_SCOUT_SGT: "Scout Sergeant Armor"
@@ -353,8 +357,12 @@ extraStrings:
       STR_TECHMARINE_MELTA: Servo-Arm Melta
       STR_TECHMARINE_GRAV: Servo-Arm Gravgun
       STR_TECHMARINE_PLASMA: Servo-Arm Plasmagun
-      STR_TECH_SKULL_SPAWNER: Servo Skull
       STR_TECH_REPAIRTOOL: Repair
+      STR_TECH_TOOL_SERVITOR: Sanctus Canister
+      STR_TECH_TOOL_SHIELD: Refractor Field Projector
+      STR_TECH_TOOL_SCANNER: Omnispex
+      STR_TECH_MEDKIT: Curatio Claw
+      STR_TECH_SKULL_SPAWNER: Servo Skull
       STR_SKULL_ANALYZE: Analyze
       ### CRAFT
       STR_AVENGER: "THUNDERHAWK T."
@@ -517,7 +525,10 @@ extraStrings:
       STR_PSIBONUS_HOLOCAUST: Holocaust
       ### TRANSFORMATIONS
       STR_PROMOTE_TERMINATOR: Promote Vet Marine
-      STR_PROMOTE_CAPTAIN: Promote to Captain
+      STR_PROMOTE_CAPTAIN_TACT: Promote to Captain
+      STR_PROMOTE_CAPTAIN_ASS: Promote to Captain
+      STR_PROMOTE_CAPTAIN_DEV: Promote to Captain
+      STR_PROMOTE_CAPTAIN_SCT: Promote to Captain
       STR_HARVEST_GENESEED: Recover Geneseed
       STR_PROMOTE_NEOPHYTE: Induct Neophyte
       STR_PROMOTE_NEOPHYTE_PRIMARIS: Induct Neophyte
@@ -625,7 +636,11 @@ extraStrings:
       STR_ENGINSEER_REQUISITION: Enginseer Requisiton
       STR_CONVERT_COMMISSION: "Request Officer Promotion"
       ### SCRIPTS
-      STR_SCRIPT_HEROIC_SAVE: Unit endured fatal damage!
+      STR_SCRIPT_HEROIC_SAVE: "Unit endured fatal damage!"
+      STR_SCRIPT_FLIGHT_ACTIVE: "Flight activated!{NEWLINE}Duration Left: {0}"
+      STR_SCRIPT_FLIGHT_DURATION_LEFT: "Flight is already active!{NEWLINE}Duration Left: {0}"
+      STR_SCRIPT_COOLDOWN_DURATION_LEFT: "Ability is on cooldown!{NEWLINE}Turns Left: {0}"
+      STR_SCRIPT_SHIELD_ACTIVE: "Shield Active!{NEWLINE}Shield Health: {0}"
       SMT_AMMO_BONUSDMG_FIRINGACC: "Precision %"
       SMT_ARMOR_SHRED_RESISTANCE: "Shred Resist (Standard)"
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: "Shred Resist (Plasma)"
@@ -635,7 +650,7 @@ extraStrings:
       SMT_GRAV_WEAPON: "Graviton Multiplier %"
       SMT_VULN_DEBUFF_MOD: "Vulnerability (Power)%"
       SMT_VULN_DEBUFF_FIXED: "Vulnerability (Flat)%"
-      SMT_VULN_DURATION: "Vuln. Duration"
+      ITEM_EFFECT_DURATION: "Vuln. Duration"
       SMT_RESTRICTED_ACCURACY_PEN: "Restricted Acc. Penalty%"
       SMT_RESTRICTED_DAMAGE_PEN: "Restricted Dmg. Penalty%"
       SMT_RESTRICTED_ITEM_MELEE: "Restricted Melee Penalty%"
@@ -643,7 +658,7 @@ extraStrings:
       ARMOR_REGENERATE_HEALTH_FLAT: "Health Regeneration"
       SMT_ARMOR_HEAVY_WEAPON_USER: "HWP Penalty Reduction%"
       ITEM_STEALTH_RANGE: "Stealth Detect Range"
-      ITEM_STEALTH_DURATION: "Stealth Duration"
+      ITEM_EFFECT_DURATION: "Stealth Duration"
       ARMOR_RESTEALTH_TURN_REQUIREMENT: "Stealth Turn Req."
       ARMOR_RESTEALTH_KILL_REQUIREMENT: "Stealth Kill Req."
       ARMOR_CLOAKED_ASSASSIN_RANGE: "Silent Killer Detect Rng"

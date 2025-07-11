@@ -6524,6 +6524,11 @@ items:
     hitAnimation: {mod: 40k, index: 192}
     invWidth: 1
     invHeight: 1
+    supportedInventorySections:
+      - STR_BACK_PACK
+      - STR_GROUND
+    inventoryMoveCost:
+      basePercent: 1000 # 10x movement cost, only move during loadout
     spawnUnit: STR_SKULL_TECH
     spawnUnitFaction: 0
     size: 0.05

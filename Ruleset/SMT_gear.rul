@@ -3776,20 +3776,20 @@ items:
 
   - type: STR_STUN_BOMB                     # Gravgun Ammo
     refNode: *DMG_GRAV_STD
-    power: 28 # was 40
+    power: 25 # was 40
     tags:
-      SMT_GRAV_WEAPON: 120
+      SMT_GRAV_WEAPON: 133
 
   - type: STR_GRAVPISTOL_AMMO               # Gravpistol Ammo Cell
     refNode: *DMG_GRAV_STD
     weight: 2 # was 3
     clipSize: 3 # was 8
-    power: 24 # was 35
+    power: 20 # was 35
     damageAlter:
       ToStun: 0.4 #
     powerRangeThreshold: 15 # pistol
     tags:
-      SMT_GRAV_WEAPON: 120
+      SMT_GRAV_WEAPON: 133
 
   - type: STR_GRAVGUN_AOE_AMMO              # Jupiter Gravgun Cell
     refNode: *DMG_GRAV_STD
@@ -3836,7 +3836,7 @@ items:
       RadiusReduction: 3
       ToTile: 3.5
     tags:
-      SMT_GRAV_WEAPON: 90 # AoE
+      SMT_GRAV_WEAPON: 100
 
   - type: AUX_CENTURION_GRAVGUN             # Centurion Gravcannon
     refNode: *DMG_GRAV_STD
@@ -3850,7 +3850,7 @@ items:
       RadiusReduction: 3
       ToTile: 3.5
     tags:
-      SMT_GRAV_WEAPON: 90 # AoE
+      SMT_GRAV_WEAPON: 100
 
   - type: STR_BLIGHT_HAULER_GRAVCANNON      # Blight Hauler Gravcannon
     refNode: *DMG_GRAV_STD
@@ -3862,7 +3862,7 @@ items:
       RadiusReduction: 3
       ToTile: 3.5
     tags:
-      SMT_GRAV_WEAPON: 90 # AoE
+      SMT_GRAV_WEAPON: 100
 
   - type: STR_GRAVCANNON_TERRAN             # Gravcannon
     costSell: 50000

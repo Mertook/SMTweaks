@@ -414,7 +414,7 @@ extended:
 
             item.getTag shieldHP Tag.ITEM_ADDS_ENERGY_SHIELD_FROM_POWER;
             actor.getTag temp Tag.UNIT_SHIELD_COOLDOWN;
-            debug_log "techShield Ping " shieldHP temp;
+            #debug_log "techShield Ping " shieldHP temp;
             if gt shieldHP 0;
               if gt turn temp;
                 actor.getTag temp Tag.UNIT_ENERGY_SHIELD_HP; # calc shield boost
@@ -428,9 +428,9 @@ extended:
                 add temp turn;
                 actor.setTag Tag.UNIT_SHIELD_COOLDOWN temp;
                 battle_game.flashMessage "STR_SCRIPT_SHIELD_ACTIVE" shieldHP;
-                debug_log "techShield Success " shieldHP temp turn;
+                #debug_log "techShield Success " shieldHP temp turn;
               else;
-                debug_log "techShield Failed " turn temp;
+                #debug_log "techShield Failed " turn temp;
                 sub temp turn;
                 add temp 1;
                 battle_game.flashMessage "STR_SCRIPT_COOLDOWN_DURATION_LEFT" temp;

@@ -8,6 +8,10 @@ armors:
     psiCamouflage: -30
     psiVision: 0
     overKill: 1.0
+    psiDefence:
+      psiStrength: 0.02 # psyker strength barely helps
+      psiSkill: 1.5 #FAITH IS MY SHIELD
+      moraleCurrent: 1.5 #discipline and resolve reinforces faith
     recovery:
       energy:
         stamina: 0.4 # was 0.33, marine bonus
@@ -20,6 +24,52 @@ armors:
     tags:
       ARMOR_ALPHA_ATTACKER_BONUS_MODIFIER: -1
       UNIT_TYPE_ASTARTES: 1
+    scripts:
+      damageUnit: |
+        var ptr RuleArmor unitArmor;
+        var int armorResist;
+        var int damageReduction;
+        var int rendValue;
+
+        unit.getRuleArmor unitArmor;
+        #debug_log "Armor Dmg: " to_armor;
+
+        if eq damaging_type 5; #Plasma damage
+          unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_PLASMA_RESISTANCE;
+          #debug_log "Armor resist (Plasma): " armorResist damaging_type;
+        else eq damaging_type 11; #Melta damage
+          unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_MELTA_RESISTANCE;
+          #debug_log "Armor resist (Melta): " armorResist damaging_type;
+        else;
+          unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_RESISTANCE;
+          #debug_log "Armor resist (Regular): " armorResist damaging_type;
+        end;
+
+        if and neq armorResist 0 gt to_armor 0; #Only run if the armor actually has resist (and damage is being dealt)
+          set damageReduction to_armor;
+          weapon_item.getTag rendValue Tag.SMT_RENDING_WEAPON;
+          if gt rendValue 0;
+            sub rendValue 100;
+            mul rendValue -1;
+            muldiv armorResist rendValue 100;
+            #debug_log "Armor Rend Adjustment: " rendValue armorResist;
+          end;
+          muldiv damageReduction armorResist 100;
+          #debug_log "Armor DmgReduction: " damageReduction;
+          sub to_armor damageReduction;
+          #debug_log "Armor NewDmg: " to_armor;
+        end;
+
+        return;
+
+
+  - &STR_SHREDRESIST_ARMOR_NOTSM          #BASE
+    type: STR_ENGINSEER_ARMOR_UC
+    personalLight: 5 # adjust all new armors to the rosigma standard
+    psiVision: 0
+    recovery:
+      energy:
+        stamina: 0.33
     scripts:
       damageUnit: |
         var ptr RuleArmor unitArmor;
@@ -1008,8 +1058,12 @@ armors:
 
 ### IG
   - type: STR_ENGINSEER_ARMOR_UC
-    refNode: *STR_SHREDRESIST_ARMOR
+    refNode: *STR_SHREDRESIST_ARMOR_NOTSM
+    recovery:
+      energy:
+        stamina: 0.33
+        flatOne: 10 # built in bionics
 
 ### Enemies
   - type: STR_NECRON_ARCHITECT_ARMOR
-    refNode: *STR_SHREDRESIST_ARMOR
+    refNode: *STR_SHREDRESIST_ARMOR_NOTSM

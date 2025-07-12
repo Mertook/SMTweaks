@@ -786,11 +786,10 @@ manufacture:
       - STR_IMPERIAL_WEAPONS
       - STR_NOT_ADEPTAS
     space: 0
-    time: 1250
+    time: 1000
     cost: 100000
     requiredItems:
       STR_ELERIUM_115: 5
-      STR_UFO_CONSTRUCTION: 2
 
   - name: STR_GRAVGUN_ADEPTAS
     requires:
@@ -846,7 +845,7 @@ manufacture:
     cost: 125000
     requiredItems:
       STR_ALIEN_ALLOYS: 4
-      STR_KILLPOINT_TOKEN: 160
+      STR_KILLPOINT_TOKEN: 140
 
   - name: STR_GRAVPISTOL_AMMO
     category: STR_AMMUNITION

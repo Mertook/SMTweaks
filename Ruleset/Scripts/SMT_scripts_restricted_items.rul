@@ -69,26 +69,12 @@ items:
         unitSoldier.getTag unitVal Tag.SMT_RESTRICTED_ITEM_USER;
         #debug_log "Restricted Item Dmg Ping - " itemVal unitVal power;
 
-          set checkVal unitVal;
-          div checkVal itemVal;
-          mod checkVal 2;
-          if eq checkVal 1;
-            return power part side;
-          end;
-
-        # set checkVal unitVal;
-        # mod checkVal 10;
-        # #debug_log "Restricted Item Dmg Check1 - " itemVal checkVal;
-        # if eq checkVal itemVal; # first digit check
-          # return power part side;
-        # end;
-        # set checkVal unitVal;
-        # div checkVal 10;
-        # mod checkVal 10;
-        # #debug_log "Restricted Item Dmg Check2 - " itemVal checkVal;
-        # if eq checkVal itemVal; # second digit check
-          # return power part side;
-        # end;
+        set checkVal unitVal;
+        div checkVal itemVal;
+        mod checkVal 2;
+        if eq checkVal 1;
+          return power part side;
+        end;
 
         weapon_item.getTag penalty Tag.SMT_RESTRICTED_DAMAGE_PEN;
         weapon_item.getTag itemVal Tag.SMT_RESTRICTED_ITEM_MELEE;
@@ -115,19 +101,19 @@ items:
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 1
-      SMT_RESTRICTED_ITEM_MELEE: 50
+      SMT_RESTRICTED_ITEM_MELEE: 90
 
   - type: AUX_CROZIUS_PRIMARIS          # Crozius Arcanum (Chaplain - 1)
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 1
-      SMT_RESTRICTED_ITEM_MELEE: 50
+      SMT_RESTRICTED_ITEM_MELEE: 90
 
   - type: AUX_CROZIUS_DW                # Crozius Arcanum DW (Chaplain - 1)
     refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 1
-      SMT_RESTRICTED_ITEM_MELEE: 50
+      SMT_RESTRICTED_ITEM_MELEE: 90
 
   - type: STR_RIFLEA                    # Artifex Bolter (Deathwatch - 2)
     refNode: *STR_RESTRICTED_ITEM

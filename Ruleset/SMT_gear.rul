@@ -6009,7 +6009,7 @@ items:
     accuracyMultiplier:
       psiStrength: 1.0
       flatHundred: 4.0
-    damageType: 1
+    damageType: 0
     power: 5
     damageBonus:
       psiStrength: 0.4
@@ -6581,6 +6581,7 @@ items:
 
   - &REF_TECH_SUPPORT                       # Techmarine Utility Tools (Type 11 - Use)
     type: STR_TECH_MEDKIT
+    categories: [ STR_CAT_TECHPRIEST, STR_CAT_EQUIPMENT]
     weight: 8
     size: 0.1
     armor: 600

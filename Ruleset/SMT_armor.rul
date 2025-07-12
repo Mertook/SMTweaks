@@ -3873,6 +3873,13 @@ armors:
     loftempsSet: [ 3 ]
     builtInWeapons:
       - STR_TECH_REPAIRTOOL
+    tags:
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      ARMOR_REGENERATE_DURABILITY: 20 # techpriest repair
+      SMT_ARMOR_SHRED_RESISTANCE: 35
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
 
 ### BOMBARD
   - type: STR_DUMMY_TARGETER_UC                 # Target Designator (Dummy base)

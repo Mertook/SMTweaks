@@ -88,10 +88,6 @@ extended:
           if gt temp 0;
             stats_state.addIntRow "SMT_VULN_DEBUFF_FIXED" temp;
           end;
-          rule.getTag temp Tag.ITEM_EFFECT_DURATION;                   # Vulnerability Duration
-          if gt temp 0;
-            stats_state.addIntRow "ITEM_EFFECT_DURATION" temp;
-          end;
 
           rule.getTag temp Tag.BOMBARD_COOLDOWN;                    # Bombard Cooldown
           if gt temp 0;
@@ -118,11 +114,6 @@ extended:
             stats_state.addIntRow "ITEM_STEALTH_RANGE" temp;
           end;
 
-          rule.getTag temp Tag.ITEM_EFFECT_DURATION;               # Stealth Duration
-          if gt temp 0;
-            stats_state.addIntRow "ITEM_EFFECT_DURATION" temp;
-          end;
-
           rule.getTag temp Tag.ITEM_STEALTH_ASSASSIN_WEAPON;        # Assassin type
           if gt temp 0;
             if eq temp 1;
@@ -135,6 +126,10 @@ extended:
           end;
 
 
+          rule.getTag temp Tag.ITEM_EFFECT_DURATION;                # Effect Duration
+          if gt temp 0;
+            stats_state.addIntRow "ITEM_EFFECT_DURATION" temp;
+          end;
 
 
           return;

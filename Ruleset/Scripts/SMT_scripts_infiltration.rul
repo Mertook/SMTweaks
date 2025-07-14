@@ -466,7 +466,7 @@ extended:
 
           target_unit.getTag temp Tag.UNIT_STEALTH_RANGE;
           mul temp 16; # 1 tile ~= 15.75
-          debug_log "Stealth VisCheck" temp distance;
+          #debug_log "Stealth VisCheck" temp distance;
           if lt distance temp;
             return current_visibility visibility_mode; # ignore stealth if they're within detection range
           end;
@@ -484,7 +484,7 @@ extended:
           action_unit.getTag temp Tag.UNIT_STEALTH_RANGE;
           if neq temp 0;
             mul temp 12; # 1 tile ~= 15.75, use 3/4 of detection range
-            debug_log "Stealth ReactCheck" temp distance;
+            #debug_log "Stealth ReactCheck" temp distance;
             if gt distance temp; # prevent reactions if enemy is out of detection range
               return 0;
             end;

@@ -64,6 +64,10 @@ extended:
 
           unit.setTag Tag.SMT_RAMPAGE_COUNT 0; # Rampage
 
+          if eq currTurn 1;  # shield
+            unit.setTag Tag.UNIT_SHIELD_COOLDOWN 0;
+          end;
+
           return;
 
     damageUnit:

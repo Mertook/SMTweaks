@@ -3815,7 +3815,7 @@ items:
     bigSprite: 320
     invWidth: 1
     invHeight: 1
-    weight: 6 # was 3
+    weight: 3
     clipSize: 4 # was 3
     shotgunBehavior: 1
     shotgunSpread: 75
@@ -3837,6 +3837,7 @@ items:
       - STR_NURGLE_OPTIONS
       - STR_GRAVITON_TECH
     clipSize: 4
+    weight: 8
     power: 40 # was 50
     powerRangeThreshold: 24 #gravcannon bonus
     damageAlter:
@@ -3882,54 +3883,65 @@ items:
     snapRange: 16
     aimRange: 25
     minRange: 5
-    tuSnap: 45 # nurgle 35
+    tuSnap: 40
     tuAimed: 70
     tags:
       ITEM_IS_HEAVY_WEAPON: 1
       ITEM_RECOIL: 80 # bulky, devastator weapon
 
+  - type: STR_GRAVCANNON_NURGLE             # Gravcannon Nurgle
+    dropoff: 4
+    weight: 40 # was 30
+    accuracySnap: 65
+    accuracyAimed: 95
+    tuSnap: 40 # was 35
+    tuAimed: 70
+    snapRange: 16
+    aimRange: 25
+    minRange: 5
+
   - type: STR_SMALL_LAUNCHER_TERRAN         # Gravgun
-    weight: 14 # was 10
+    weight: 15 # was 10
     dropoff: 5
     autoRange: 0
-    snapRange: 16 # was 15
-    aimRange: 0
+    snapRange: 14 # was 15
+    aimRange: 20
     accuracyAuto: 0
-    accuracySnap: 70 # was 65
-    accuracyAimed: 0
+    accuracySnap: 65 # was 65
+    accuracyAimed: 100
     tuAuto: 0
-    tuSnap: 40
-    tuAimed: 0
+    tuSnap: 35 # was 40
+    tuAimed: 65
 
   - type: STR_GRAVGUN_MC                    # Gravgun (Mastercrafted)
-    weight: 14 # was 10
+    weight: 15 # was 10
     dropoff: 5
     autoRange: 0
-    snapRange: 16
-    aimRange: 0
+    snapRange: 14
+    aimRange: 20
     accuracyAuto: 0
-    accuracySnap: 90 # was 85
-    accuracyAimed: 0
+    accuracySnap: 85 # was 85
+    accuracyAimed: 120
     tuAuto: 0
-    tuSnap: 40
-    tuAimed: 0
+    tuSnap: 35
+    tuAimed: 65
     tags:
       GravPercentage: 0
 
   - type: STR_GRAVGUN_BURST_TERRAN          # Gravgun Burst
     costSell: 40000
     twoHanded: true
-    weight: 14
+    weight: 15
     dropoff: 5
     autoRange: 0
-    snapRange: 16
-    aimRange: 0
+    snapRange: 14
+    aimRange: 20
     accuracyAuto: 0
-    accuracySnap: 65
-    accuracyAimed: 0
+    accuracySnap: 60
+    accuracyAimed: 95
     tuAuto: 0
-    tuSnap: 40
-    tuAimed: 0
+    tuSnap: 35
+    tuAimed: 65
 
   - type: STR_GRAVGUN_ADEPTAS               # Gravgun (Sisters)
     weight: 14 # was 10
@@ -3943,7 +3955,7 @@ items:
     accuracyAimed: 0
     snapRange: 10
     #aimRange: 0
-    tuSnap: 30
+    tuSnap: 33
     tuAimed: 0
     inventoryMoveCost: # pistol
       basePercent: 75
@@ -3957,9 +3969,9 @@ items:
     dropoff: 6
     accuracySnap: 75
     accuracyAimed: 0
-    snapRange: 13
+    snapRange: 12
     aimRange: 0
-    tuSnap: 25
+    tuSnap: 30
     tuAimed: 0
     inventoryMoveCost: # pistol
       basePercent: 75
@@ -6562,9 +6574,10 @@ items:
     meleeSound: {mod: 40k, index: 698}
     meleeHitSound: {mod: 40k, index: 699}
     meleeAnimation: {mod: 40k, index: 32}
-    accuracyMelee: 100
+    accuracyMelee: 80
     meleeMultiplier:
-      melee: 1.1
+      melee: 0.5
+      flatHundred: 1.0
     power: 60
     damageBonus:
       strength: 0.5

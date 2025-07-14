@@ -515,8 +515,6 @@ research:
       - STR_BOLTER_ADV_AMMO
     getOneFree:
       - STR_MC_LIGHTBOLTER_AMMO
-    unlocks:
-      - STR_SMT_MASTERCRAFTED_AMMO
     lookup: STR_SMT_MASTERCRAFTED_AMMO
     listOrder: 20
 
@@ -528,16 +526,12 @@ research:
       - STR_MASTER_CRAFTING
       - STR_LIGHTBOLTER_ADV_AMMO
       - STR_GUARD_AND_ARBITES
-    unlocks:
-      - STR_SMT_MASTERCRAFTED_AMMO
     lookup: STR_SMT_MASTERCRAFTED_AMMO
     listOrder: 20
 
   - name: STR_SMT_MASTERCRAFTED_AMMO    # Mastercrafted Bolts Codex entry
     cost: 0
     points: 0
-    dependencies:
-      - STR_GENERALLOCK
 
   - name: STR_BOLTPISTOL_REQ        # Boltpistol Unlock (for Boltpistols used by both Firstborn and Primaris)
     cost: 0

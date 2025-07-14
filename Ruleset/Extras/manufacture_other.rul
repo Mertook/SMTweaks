@@ -122,6 +122,11 @@ manufacture:
     producedItems: {}
     spawnedPersonType: STR_ENGINSEER
 
+  - name: STR_CONVERT_COMMISSION
+    producedItems:
+      STR_OFFICER_COMMISSION: 1
+      STR_OFFICERS_CHAIN_SWORD: 1
+
   # - name: STR_EXITUS_AMMO                           # Vindicare Sniper Ammo
     # requires:
       # - STR_VINDICARE_AMMO_REQ

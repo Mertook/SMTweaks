@@ -1536,6 +1536,7 @@ items:
     bigSprite: 145
     ufopediaType: STR_RIFLEC # was pointed at Godwyn for some reason
     costBuy: 200000 # was 200000 - Higher end gear
+    weight: 32 # +4, scope/extended barrel
     dropoff: 6 # was 4
     autoRange: 8 # was 7
     snapRange: 18 # was 16
@@ -1599,7 +1600,7 @@ items:
     costBuy: 120000
     costSell: 30000
     listOrder: 10450
-    weight: 41 # +5 - GL attachment
+    weight: 42 # +6 - GL attachment
     minRange: 5 # +1 - GL
     autoRange: 10 # cawl 10
     snapRange: 16 # cawl 17
@@ -1680,7 +1681,7 @@ items:
     costBuy: 120000
     costSell: 30000
     listOrder: 10450
-    weight: 39 # +3 - Scope
+    weight: 40 # +4, scope/extended barrel
     dropoff: 6
     minRange: 5 #cumbersome, not suited to CQC
     autoRange: 9 # cawl 11
@@ -3196,7 +3197,7 @@ items:
   - type: STR_MELTA_AMMO                    # Meltagun Ammo
     refNode: *DMG_MELTA_STD
     size: 0.05
-    power: 15
+    power: 16 # was 15
     shotgunPellets: 10
 
   - type: STR_LIGHT_MELTA_AMMO              # Light Melta Ammo
@@ -3217,7 +3218,7 @@ items:
   - type: STR_BLASTER_BOMB                  # Multimelta Ammo
     refNode: *DMG_MELTA_STD
     size: 0.05
-    power: 15
+    power: 16 # was 15
     shotgunPellets: 20
     powerRangeThreshold: 12.0 # multimelta
     clipSize: 6 # was 3
@@ -3766,7 +3767,7 @@ items:
       ToHealth: 0.85
       ToWound: 0.1
       RandomWound: false
-      ToStun: 0.4
+      ToStun: 0.35
       RandomStun: false
       ToTime: 0.6
       ToEnergy: 1.0
@@ -3777,29 +3778,32 @@ items:
 
   - type: STR_STUN_BOMB                     # Gravgun Ammo
     refNode: *DMG_GRAV_STD
-    power: 25 # was 40
+    bigSprite: 318
+    power: 28 # was 40
     tags:
-      SMT_GRAV_WEAPON: 133
+      SMT_GRAV_WEAPON: 120
 
   - type: STR_GRAVPISTOL_AMMO               # Gravpistol Ammo Cell
     refNode: *DMG_GRAV_STD
+    bigSprite: 321
     weight: 2 # was 3
     clipSize: 3 # was 8
-    power: 20 # was 35
+    power: 24 # was 35
     damageAlter:
       ToStun: 0.4 #
-    powerRangeThreshold: 15 # pistol
+    powerRangeThreshold: 12 # pistol
     tags:
-      SMT_GRAV_WEAPON: 133
+      SMT_GRAV_WEAPON: 120
 
   - type: STR_GRAVGUN_AOE_AMMO              # Jupiter Gravgun Cell
     refNode: *DMG_GRAV_STD
     clipSize: 4 # was 3
+    bigSprite: 319
     powerForAnimation: 10
     power: 24
     damageAlter:
       FixRadius: 1
-      RadiusReduction: 5
+      RadiusReduction: 3
     tags:
       SMT_GRAV_WEAPON: 90 # AoE
 
@@ -3808,13 +3812,16 @@ items:
     hitSound: {mod: 40k, index: 830}
     hitAnimation: {mod: 40k, index: 130}
     hitAnimFrames: -1
+    bigSprite: 320
+    invWidth: 1
+    invHeight: 1
     weight: 6 # was 3
     clipSize: 4 # was 3
     shotgunBehavior: 1
     shotgunSpread: 75
     shotgunChoke: 50
-    shotgunPellets: 6
-    power: 6 # was 5
+    shotgunPellets: 8
+    power: 5 # was 5
     damageAlter:
       ToTile: 15.0
     powerRangeThreshold: 12
@@ -4701,6 +4708,7 @@ items:
   - type: STR_STUBCANNON_GUARD              # Stubcannon
     requiresBuy:
       - STR_GUARD_AND_ARBITES
+    weight: 9 # was 15
     noLOSAccuracyPenalty: 75
     autoRange: 0
     snapRange: 16
@@ -5996,11 +6004,11 @@ items:
 
   - type: STR_PSITOKEN_MENDWOUNDS           # T3 Mend Flesh
     refNode: *REF_PSI_TOKEN
-    fireSound: {mod: 40k, index: 787} ###CHANGEME
-    hitSound: {mod: 40k, index: 864} ###CHANGEME
+    hitSound: {mod: 40k, index: 778} ###CHANGEME
     hitAnimation: {mod: 40k, index: 170}
     hitAnimFrames: 10
     LOSRequired: true
+    isFireExtinguisher: true
     battleType: 9
     targetMatrix: 5 #ally + civ
     experienceTrainingMode: 26
@@ -6029,9 +6037,8 @@ items:
       morale: 5
     tags:
       SMT_HEAL_WOUNDS_POW: 60
-      SMT_HEAL_WOUNDS_HP_WOUND: 2
-      SMT_HEAL_WOUNDS_HP_PERCENT: 20
-      SMT_HEAL_WOUNDS_HP_CAP: 50
+      SMT_HEAL_WOUNDS_HP_PERCENT: 30
+      SMT_HEAL_WOUNDS_HP_CAP: 66
 
   - type: STR_PSITOKEN_SENTRYWARD           # T5 Farsight
     refNode: *REF_SKILL_TOKEN
@@ -6447,6 +6454,7 @@ items:
     maxRange: 20
     accuracyAimed: 50
     noLOSAccuracyPenalty: 75
+    experienceTrainingMode: 5
     confAimed:
       arcing: true
       shots: 6

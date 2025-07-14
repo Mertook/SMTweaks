@@ -186,15 +186,12 @@ extended:
           begin; ### Mend Wounds
             var int healWounds;
             var int numWounds;
-            var int hpMult;
             var int healthRestored;
             var int hpCap;
 
             damaging_item.getTag temp Tag.SMT_HEAL_WOUNDS_POW; # wounds restored
-            damaging_item.getTag hpMult Tag.SMT_HEAL_WOUNDS_HP_WOUND; # health restored per wound
             set healWounds currPower;
             muldiv healWounds temp 100;
-            #debug_log "HealWounds Ping " healWounds temp hpMult;
             if gt healWounds 0;
               loop var i 6; # cycle through the body parts
                 unit.getFatalwounds numWounds i; # check the number of wounds in this bodypart
@@ -205,12 +202,9 @@ extended:
                   sub healWounds temp; # decrement the number of heals by the initial number of wounds
                   limit_lower numWounds 0; # ensure wounds do not go below 0
                   unit.setFatalwounds i numWounds; # remove the wounds
-                  mul temp hpMult; # get hp per wound restored
-                  add healthRestored temp; # add to HP total
                 end;
               end;
             end;
-            #debug_log "HealWounds WoundHeals " healthRestored;
 
             damaging_item.getTag temp Tag.SMT_HEAL_WOUNDS_HP_CAP; # health cap
             if gt temp 0;
@@ -221,9 +215,8 @@ extended:
               muldiv hpCap temp 100; # get health cap based on missing hp
               add hpCap temp2;
               damaging_item.getTag temp Tag.SMT_HEAL_WOUNDS_HP_PERCENT; # direct health restored
-              set temp2 currPower;
-              muldiv temp2 temp 100;
-              add healthRestored temp2;
+              set healthRestored currPower;
+              muldiv healthRestored temp 100;
               unit.getHealth temp;
               #debug_log "HealWounds Hp restored " healthRestored temp hpCap;
               add healthRestored temp;

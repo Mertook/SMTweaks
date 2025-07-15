@@ -880,12 +880,21 @@ research:
     dependencies:
       - STR_MARINES_AND_DEATHWATCH
       - STR_MIDTIER_PREREQ
+    getOneFree:
+      - STR_TECHMARINE_GEAR
 
   - name: STR_TECHMARINE_GEAR              # Techmarine Gear
     cost: 0
     points: 0
     dependencies:
+      - STR_GENERALLOCK
       - STR_TEC_BAYR
+
+  - name: STR_GRAV_SHIELD  # Grave Shield
+    cost: 930
+    points: 25
+    dependencies:
+      - STR_GRAVCANNON_TECH
 
   - name: STR_CHAP_ARMOR            # Chaplain Armor - Disabled
     cost: 300

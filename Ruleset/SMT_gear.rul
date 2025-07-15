@@ -493,7 +493,7 @@ items:
       ITEM_RECOIL: 16 # was 20, single shot light bolter
 
   - type: STR_BOLTER_LIGHT_LMG              # IG Accatran LMG Bolter
-    size: 0.3
+    size: 0.2
     weight: 20 # was 32, lower weight = lower requirement for solo bipod deployment
     dropoff: 5 # was 5
     autoRange: 14 # was 12
@@ -769,7 +769,7 @@ items:
     requiresBuy:
       - STR_PRIMARIS_BOLTERS
     battleType: 1
-    size: 0.3
+    size: 0.2
     costBuy: 40000
     costSell: 10000
     weight: 20
@@ -820,7 +820,7 @@ items:
     bulletSprite: {mod: 40k, index: 6}
     bulletSpeed: 30
     fireSound: {mod: 40k, index: 707} # light bolter ammo
-    size: 0.3
+    size: 0.2
     costBuy: 80000
     costSell: 20000
     weight: 20
@@ -1419,6 +1419,7 @@ items:
     type: STR_RIFLE
     dropoff: 8 # standard was 5 - Bolts are short range projectiles that fall off quickly outside of their standard range
     weight: 28 # +8 weight, not meant for regular humans
+    size: 0.2
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
     bulletSprite: {mod: 40k, index: 6}
     bulletSpeed: 30
@@ -1973,7 +1974,7 @@ items:
   - type: STR_HB_CLIP                       # Stormbolter Ammo
     refNode: *DMG_BOLTER_AMMO_STD
     armor: 300
-    size: 0.1 # was 0.3
+    size: 0.05 # was 0.3
     loadOrder: 100
     damageType: 1
     power: 75 # was 70
@@ -1981,7 +1982,7 @@ items:
   - type: STR_HB_CLIP_MC                    # Stormbolter Mastercrafted Ammo
     refNode: *DMG_BOLTER_AMMO_MASTER
     armor: 300
-    size: 0.1 # was 0.3
+    size: 0.05 # was 0.3
     loadOrder: 105
     power: 75 # was 95
 
@@ -2004,7 +2005,6 @@ items:
     weight: 10
     clipSize: 20
     recover: false
-    size: 0.1 # was 0.3
     loadOrder: 105
     power: 75 # was 95
     shotgunSpread: 1
@@ -3648,6 +3648,8 @@ items:
     power: 150 # overcharged plasma in a can
     damageAlter:
       FixRadius: 1
+    tags:
+      SMT_ARMOR_TARGET_WEAKEST: 1
 
   - type: STR_ELDAR_GRENADE                 # Eldar Plasma Grenade
     refNode: *DMG_PLASMA_STD
@@ -4467,7 +4469,7 @@ items:
       - STR_GLAUNCHER_PREREQ
     requiresBuyBaseFunc: [IMPERIUM]
     categories: [STR_CAT_ROCKETL]
-    size: 0.3
+    size: 0.2
     dropoff: 4
     costBuy: 20000
     costSell: 7000
@@ -4485,7 +4487,7 @@ items:
       - STR_PHOTON_GRENADE_DRUM
     accuracySnap: 70
     accuracyAuto: 0
-    tuSnap: 24
+    tuSnap: 30
     tuAuto: 0
     snapRange: 24
     #autoRange: 24
@@ -4493,12 +4495,28 @@ items:
     arcingShot: true
     twoHanded: true
     blockBothHands: true
+    experienceTrainingMode: 4
     invWidth: 2
     invHeight: 3
     armor: 300
     listOrder: 11851
     minRange: 5
     noLOSAccuracyPenalty: 75
+
+  - type: STR_GRENADE_LAUNCHER              # IG Grenade Launcher
+    dropoff: 4
+    autoRange: 0
+    snapRange: 21
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 65
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 35 # was 45
+    tuAimed: 0
+    experienceTrainingMode: 4
+    noLOSAccuracyPenalty: 75  # indirect fire weapon
+    arcingShot: true
 
   - type: STR_ACCATRAN_ROCKET_LAUNCHER      # Accatran Rocket Launcher
     requiresBuy:
@@ -4868,7 +4886,7 @@ items:
       ITEM_AMMO_COLOR: 4
 
   - type: STR_SMALL_ROCKET                  # Small Frag Missile
-    size: 0.1 # was 0.2
+    size: 0.05 # was 0.2
     weight: 3 # was 5
     loadOrder: 205
     costBuy: 3000
@@ -4889,7 +4907,7 @@ items:
       FixRadius: 6
 
   - type: STR_LARGE_ROCKET                  # Small Krak Missile
-    size: 0.1 # was 0.2
+    size: 0.05 # was 0.2
     weight: 3 # was 6
     loadOrder: 200
     costBuy: 4000
@@ -4897,7 +4915,7 @@ items:
     armor: 300
 
   - type: STR_INCENDIARY_ROCKET             # Incendiary missile
-    size: 0.1 # was 0.2
+    size: 0.05 # was 0.2
     weight: 3 # was 5
     loadOrder: 210
     costBuy: 3000
@@ -4957,6 +4975,7 @@ items:
     requiresBuy:
       - STR_GLAUNCHER_PREREQ
     tags:
+      SMT_ARMOR_TARGET_WEAKEST: 1
       ITEM_IGNITES_TARGETS: 2
 
   - type: STR_SMOKE_GRENADE_DRUM            # GL Smoke Rounds
@@ -4972,6 +4991,9 @@ items:
   - type: STR_INCENDIARY_GRENADE40          # 40mm Incin Grenade
     requiresBuy:
       - STR_40MM_AMMO
+    damageAlter:
+      FixRadius: 3 # was 2
+      RadiusReduction: 5
     tags:
       SMT_ARMOR_TARGET_WEAKEST: 1
       ITEM_IGNITES_TARGETS: 2
@@ -5017,6 +5039,9 @@ items:
 ### Grenades
   - type: STR_MGRENADE                      # Melta Grenade
     refNode: *DMG_MELTA_BLAST
+    fuseType: 0 # fixed 0 turn fuse
+    fuseTriggerEvents:
+      throwExplode: true
     size: 0.05
     throwRange: 15
     weight: 3
@@ -5069,6 +5094,9 @@ items:
       SMT_ARMOR_DAMAGE_ALL: 100 # boosted
 
   - type: STR_KRAK_GRENADE                  # Krak Grenade
+    fuseType: 0 # fixed 0 turn fuse
+    fuseTriggerEvents:
+      throwExplode: true
     weight: 3  # Guardsmen should be able to throw these a reasonable distance
     fuseType: -2
     costThrow:
@@ -5097,6 +5125,9 @@ items:
       FixRadius: 1
 
   - type: STR_GRENADE                       # Frag Grenade
+    fuseType: 0 # fixed 0 turn fuse
+    fuseTriggerEvents:
+      throwExplode: true
     throwRange: 18
     weight: 2
     fuseType: -2
@@ -5130,6 +5161,9 @@ items:
       ToItem: 0.25
 
   - type: STR_PHOSPHOR_GRENADE              # Phosphor Grenade
+    fuseType: 0 # fixed 0 turn fuse
+    fuseTriggerEvents:
+      throwExplode: true
     power: 90 # was 80
     noLOSAccuracyPenalty: 75
     throwRange: 18
@@ -5167,6 +5201,9 @@ items:
       ITEM_IGNITES_TARGETS: 3
 
   - type: STR_SMOKE_GRENADE                 # Smoke Grenade
+    fuseType: 0 # fixed 0 turn fuse
+    fuseTriggerEvents:
+      throwExplode: true
     costThrow:
       time: 25 # was 55
       energy: 4
@@ -5183,9 +5220,11 @@ items:
       time: 5
 
   - type: STR_PHOTON_GRENADE                # Photon Grenade
+    fuseType: 0 # fixed 0 turn fuse
+    fuseTriggerEvents:
+      throwExplode: true
     throwRange: 18
     weight: 2
-    fuseType: -2
     costThrow:
       time: 50
       energy: 4
@@ -5220,7 +5259,7 @@ items:
     requiresBuyBaseFunc: [IMPERIUM]
     requiresBuy:
       - STR_CHAINSWORD_R
-    size: 0.1
+    size: 0.2
     costBuy: 12000 # was 5000
     costSell: 4000 # was 2500
     weight: 15
@@ -5508,7 +5547,6 @@ items:
 
   - type: STR_EXECUTIONER_BLADE             # Judicar Executioner Relic Blade
     categories: [STR_CAT_MELEE]
-    size: 0.3
     clipSize: -1
     battleType: 3
     invWidth: 2
@@ -6463,7 +6501,7 @@ items:
       - STR_FLAMETHROWER_PROMETHIUM_CLIP
     dropoff: 5
     aimRange: 11
-    maxRange: 20
+    maxRange: 12
     accuracyAimed: 50
     noLOSAccuracyPenalty: 75
     experienceTrainingMode: 5
@@ -6604,7 +6642,7 @@ items:
     type: STR_TECH_MEDKIT
     categories: [ STR_CAT_TECHPRIEST, STR_CAT_EQUIPMENT]
     weight: 8
-    size: 0.1
+    size: 0.05
     armor: 600
     floorSprite: {mod: 40k, index: 168}
     costSell: 20000
@@ -6801,7 +6839,7 @@ items:
       index: 80
     powerForAnimation: 160
     primeSound: {mod: 40k_ROSIGMA_edits, index: 2425}
-    size: 0.1
+    size: 0.05
     armor: 300
     requiresBuy:
       - STR_LASER_WEAPONS
@@ -7047,7 +7085,6 @@ items:
     fixedWeapon: true
 
   - type: STR_APOTH_NARTH                   # Inbuilt Apothecary medkit + Chainfist (Apothecary)
-    size: 0.1
     costSell: 50
     weight: 0
     bigSprite: {mod: 40k, index: 24}
@@ -7093,7 +7130,6 @@ items:
       reactions: 0.1
 
   - type: STR_APOTH_NARTH_ADV               # Inbuilt Apothecary medkit + Chainfist (Apothecary Veteran)
-    size: 0.1
     costSell: 50
     weight: 0
     bigSprite: {mod: 40k, index: 24}

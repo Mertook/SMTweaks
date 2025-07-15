@@ -25,6 +25,12 @@ items:
     recoveryPoints: 2
     ufopediaType: STR_GENESEED_DETAILS
 
+  - type: STR_ALIEN_ALLOYS
+    size: 0.1
+
+  - type: STR_ELERIUM_115
+    size: 0.05
+
   - type: STR_PISTOLH                       # BoltPistol (Tigrus Original)
     ufopediaType: STR_PISTOLH_SM
     requires: # Only for Alpharius Infiltrators
@@ -540,7 +546,7 @@ items:
     hitAnimation: {mod: 40k, index: 112}
     powerForAnimation: 5
     primeSound: {mod: 40k_ROSIGMA_edits, index: 2425}
-    size: 0.1
+    size: 0.05
     requiresBuy:
       - STR_DW_AMMO
     listOrder: 13902 # just after Melta grenades

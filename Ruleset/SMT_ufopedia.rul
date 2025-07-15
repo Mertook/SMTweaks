@@ -1717,8 +1717,15 @@ ufopaedia:
     text: STR_DW_PLASMA_GRENADE_UFOPEDIA
     listOrder: 21130
 
-
-
+  - id: STR_HEAVY_PLASMA_TERRAN  # Heavy Plasma
+    requires:
+      - STR_HEAVY_PLASMA_DEP1
+  - id: STR_HEAVY_PLASMA_MC  # Master Crafted Heavy Plasma
+    requires:
+      - STR_HEAVY_PLASMA_DEP1
+  - id: STR_HEAVY_PLASMA_CLIP
+    requires:
+      - STR_HEAVY_PLASMA_DEP1
 
 ###BOLTERS
   - id: STR_BOLTER_ENFORCER                 # Light Bolter (Locke)

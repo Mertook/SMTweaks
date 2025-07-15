@@ -54,7 +54,6 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_CORVUS_RESEARCH
       - STR_RADICAL_INQUISITOR
       - STR_INQUISITION
-      - STR_NOT_DEATHWATCH
     disables:
       - STR_GREYKNIGHTS
       - STR_DEATHWATCH
@@ -73,7 +72,6 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_APOTHECARY_GK
       - STR_INQUISITION
       - STR_HARDER_MISSIONS
-      - STR_NOT_DEATHWATCH
       - STR_BOLTER_AMMO_PREREQ
       - STR_STORMRAVEN_PREREQ
     disables:
@@ -119,11 +117,11 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     getOneFree:
       - STR_HAMMER
 
-  - name: STR_NOT_DEATHWATCH                # Tech to lock Chamber Militant techs that DW shouldn't get (because they have their own versions)
-    cost: 0
-    points: 0
-    dependencies:
-      - STR_GENERALLOCK
+  # - name: STR_NOT_DEATHWATCH                # Tech to lock Chamber Militant techs that DW shouldn't get (because they have their own versions)
+    # cost: 0
+    # points: 0
+    # dependencies:
+      # - STR_GENERALLOCK
 
   - name: STR_GUARD_AND_INQUISITION         # Tech for things that should be available to Chamber Militant and Imperial Guard
     cost: 0

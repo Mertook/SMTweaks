@@ -94,38 +94,7 @@ armors:
     units: # make SL exclusive
       - STR_GUARDSL_OFFICER
 
-  - type: STR_STEELLEGION_CARAPACE_ARMOR
-    units: # make SL exclusive
-      - STR_GUARDSL
-      - STR_GUARDSL_VETERAN
-
-  - type: STR_STEELLEGION_CARAPACE_ARMOR_OFFICER
-    units: # make SL Officer exclusive
-      - STR_GUARDSL_OFFICER_VETERAN
-
-  - type: STR_STEELLEGION_CARAPACE_ARMOR_VOX
-    units: # make SL exclusive
-      - STR_GUARDSL
-      - STR_GUARDSL_VETERAN
-      #- STR_GUARDSL_OFFICER_VETERAN
-
-  - type: STR_STEELLEGION_CARAPACE_ARMOR_MEDIC
-    units: # make SL exclusive
-      - STR_GUARDSL
-      - STR_GUARDSL_VETERAN
-      #- STR_GUARDSL_OFFICER_VETERAN
-
-  - type: STR_MEDIC_CARAPACE_ARMOR
-    stats: # match carapace stats, just like carapace scanner and flak medic
-      tu: -5
-      stamina: -10
-      reactions: -5 # I really wish values of 0 didn't get ignored
-
-  - &REF_GUARD_OFFICER                  # Imperial Guard Officers
-    type: STR_OFFICER_CARAPACE_ARMOR
-    #specialWeapon: STR_GUARD_PRIMER # commissar inspire
-
-    type: STR_STORMTROOPER_CARAPACE_ARMOR
+  - type: STR_STORMTROOPER_CARAPACE_ARMOR
     weight: 5 # was 10
     damageModifier: &Ref_Guard_Carapace
       - 1.0 #SUPPORT
@@ -147,6 +116,59 @@ armors:
       reactions: 10
       bravery: 10
 
+  - type: STR_STEELLEGION_CARAPACE_ARMOR
+    damageModifier: *Ref_Guard_Carapace
+    units: # make SL exclusive
+      - STR_GUARDSL
+      - STR_GUARDSL_VETERAN
+
+  - type: STR_OFFICER_CARAPACE_ARMOR
+    weight: 5 # was 10
+    damageModifier: *Ref_Guard_Carapace
+
+  - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR
+    weight: 5 # was 10
+    damageModifier: *Ref_Guard_Carapace
+
+  - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR_HELLGUN
+    damageModifier: *Ref_Guard_Carapace
+    weight: 15
+
+  - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR_VOLLEYGUN
+    damageModifier: *Ref_Guard_Carapace
+    weight: 20
+
+  - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR_HELLPISTOL
+    damageModifier: *Ref_Guard_Carapace
+    weight: 10
+
+  - type: STR_STEELLEGION_CARAPACE_ARMOR_OFFICER
+    weight: 5 # was 10
+    damageModifier: *Ref_Guard_Carapace
+    units: # make SL Officer exclusive
+      - STR_GUARDSL_OFFICER_VETERAN
+
+  - type: STR_STEELLEGION_CARAPACE_ARMOR_VOX
+    damageModifier: *Ref_Guard_Carapace
+    units: # make SL exclusive
+      - STR_GUARDSL
+      - STR_GUARDSL_VETERAN
+      #- STR_GUARDSL_OFFICER_VETERAN
+
+  - type: STR_STEELLEGION_CARAPACE_ARMOR_MEDIC
+    damageModifier: *Ref_Guard_Carapace
+    units: # make SL exclusive
+      - STR_GUARDSL
+      - STR_GUARDSL_VETERAN
+      #- STR_GUARDSL_OFFICER_VETERAN
+
+  - type: STR_MEDIC_CARAPACE_ARMOR
+    damageModifier: *Ref_Guard_Carapace
+    stats: # match carapace stats, just like carapace scanner and flak medic
+      tu: -5
+      stamina: -10
+      reactions: -5 # I really wish values of 0 didn't get ignored
+
   - type: STR_STORMTROOPER_MEDIC_CARAPACE_ARMOR
     damageModifier: *Ref_Guard_Carapace
     stats:
@@ -155,21 +177,25 @@ armors:
       reactions: -5 # was -10
     weight: 10 # was 5
 
-  - type: STR_OFFICER_FLAK_ARMOR
-    refNode: *REF_GUARD_OFFICER
-  - type: STR_STEELLEGION_FLAK_ARMOR_OFFICER
-    refNode: *REF_GUARD_OFFICER
-  - type: STR_STEELLEGION_FLAK_ARMOR_OFFICER
-    refNode: *REF_GUARD_OFFICER
-  - type: STR_STEELLEGION_CARAPACE_ARMOR_OFFICER
-    refNode: *REF_GUARD_OFFICER
+  - type: STR_STORMTROOPER_CARAPACE_ARMOR_HELLGUN
     damageModifier: *Ref_Guard_Carapace
-  - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR
-    refNode: *REF_GUARD_OFFICER
-    damageModifier: *Ref_Guard_Carapace
-  - type: STR_OFFICER_FLAK_ARMOR
-    refNode: *REF_GUARD_OFFICER
+    weight: 15 # was 20
 
+  - type: STR_STORMTROOPER_CARAPACE_ARMOR_VOLLEYGUN
+    damageModifier: *Ref_Guard_Carapace
+    weight: 20
+
+  - type: STR_STORMTROOPER_CARAPACE_ARMOR_HELLPISTOL
+    damageModifier: *Ref_Guard_Carapace
+    weight: 10
+
+  - type: STR_OFFICER_FLAK_ARMOR
+
+  - type: STR_STEELLEGION_FLAK_ARMOR_OFFICER
+
+  - type: STR_STEELLEGION_FLAK_ARMOR_OFFICER
+
+  - type: STR_OFFICER_FLAK_ARMOR
 
   - type: STR_PSYKER_ARMOR              # Imperial Guard Psyker
     specialWeapon: STR_NONE

@@ -117,9 +117,9 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     getOneFree:
       - STR_HAMMER
 
-  # - name: STR_NOT_DEATHWATCH                # Tech to lock Chamber Militant techs that DW shouldn't get (because they have their own versions)
-    # cost: 0
-    # points: 0
+  - name: STR_NOT_DEATHWATCH                # Tech to lock Chamber Militant techs that DW shouldn't get (because they have their own versions)
+    cost: 0
+    points: 0
     # dependencies:
       # - STR_GENERALLOCK
 

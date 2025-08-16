@@ -1,8 +1,8 @@
 weaponSets:
   - type: NPC_BOLTER_SET
-    weapons: [STR_RIFLEB_AI, STR_RIFLE_CLIP, STR_RIFLE_CLIP, STR_RIFLE_CLIP, STR_MGRENADE]
+    weapons: [STR_RIFLEB_AI, STR_RIFLE_CLIP, STR_RIFLE_CLIP, STR_MGRENADE]
   - type: NPC_BOLTER_ELITE_SET
-    weapons: [STR_RIFLEB_AI, STR_RIFLE_CLIP_MC, STR_RIFLE_CLIP_MC, STR_RIFLE_CLIP_MC, STR_MGRENADE]
+    weapons: [STR_RIFLEB_AI, STR_RIFLE_CLIP_MC, STR_RIFLE_CLIP_MC, STR_MGRENADE]
   - type: NPC_BOLTPISTOL_SET
     weapons: [STR_CHAINSWORD, STR_PISTOLB_AI, STR_PISTOL_CLIP, STR_PISTOL_CLIP, STR_PISTOL_CLIP]
   - type: NPC_BOLTPISTOL_ELITE_SET
@@ -14,9 +14,9 @@ weaponSets:
   - type: NPC_PLASMAGUN_SET
     weapons: [STR_CFPLASMA_RIFLE, STR_PLASMA_RIFLE_CLIP, STR_PLASMA_RIFLE_CLIP, STR_MGRENADE]
   - type: NPC_TWINPLASMA_SET
-    weapons: [STR_PLASMA_GUN_TWINCORE_DEKKER, STR_PLASMA_TWINCORE_CLIP, STR_PLASMA_TWINCORE_CLIP, STR_PLASMA_TWINCORE_CLIP, STR_MGRENADE]
+    weapons: [STR_PLASMA_GUN_TWINCORE_DEKKER, STR_PLASMA_TWINCORE_CLIP, STR_PLASMA_TWINCORE_CLIP, STR_MGRENADE]
   - type: NPC_VENGOR_SET
-    weapons: [STR_VENGOR_LAUNCHER, STR_CASTELLAN_HE, STR_HEAVY_ROCKET, STR_HEAVY_ROCKET, STR_HEAVY_ROCKET, STR_MGRENADE]
+    weapons: [STR_VENGOR_LAUNCHER, STR_CASTELLAN_KRAK, STR_HEAVY_ROCKET, STR_CASTELLAN_KRAK, STR_HEAVY_ROCKET, STR_MGRENADE]
   - type: NPC_HEAVYBOLTER_SET
     weapons: [STR_AUTO_CANNON, STR_AC_AP_AMMO, STR_AC_AP_AMMO, STR_MGRENADE]
   - type: NPC_HEAVYBOLTER_ELITE_SET
@@ -25,6 +25,8 @@ weaponSets:
     weapons: [STR_CHAINSWORD, STR_HFLAMER, STR_HFLAMER_CLIP, STR_HFLAMER_CLIP, STR_MGRENADE]
   - type: NPC_HEAVYPLASMA_SET
     weapons: [STR_HEAVY_PLASMA_TERRAN, STR_HEAVY_PLASMA_CLIP, STR_HEAVY_PLASMA_CLIP, STR_MGRENADE]
+  - type: NPC_GRAVCANNON_SET
+    weapons: [STR_GRAVCANNON_TERRAN, STR_GRAVCANNON_AMMO, STR_GRAVCANNON_AMMO, STR_MGRENADE]
   - type: NPC_MULTIMELTA_SET
     weapons: [STR_BLASTER_LAUNCHER_TERRAN, STR_BLASTER_BOMB, STR_BLASTER_BOMB, STR_BLASTER_BOMB, STR_MGRENADE]
   - type: NPC_PLASMACARBINE_SET
@@ -201,22 +203,20 @@ units: # Civ units
         NPC_BOLTPISTOL_SET: 15
         NPC_BOLTPISTOL_ELITE_SET: 5
         NPC_MELTAGUN_SET: 10
-        NPC_GRAVGUN_SET: 10
         NPC_PLASMAGUN_SET: 10
         NPC_HEAVYFLAMER_SET: 5
       - 
         NPC_BOLTER_ELITE_SET: 50
         NPC_BOLTPISTOL_ELITE_SET: 20
         NPC_MELTAGUN_SET: 10
-        NPC_GRAVGUN_SET: 10
-        NPC_PLASMAGUN_SET: 10
+        NPC_PLASMAGUN_SET: 20
         NPC_HEAVYFLAMER_SET: 5
       - 
         NPC_BOLTER_ELITE_SET: 50
         NPC_BOLTPISTOL_ELITE_SET: 15
         NPC_MELTAGUN_SET: 10
-        NPC_GRAVGUN_SET: 10
-        NPC_TWINPLASMA_SET: 20
+        NPC_PLASMAGUN_SET: 15
+        NPC_TWINPLASMA_SET: 5
         NPC_HEAVYFLAMER_SET: 5
 
   - type: STR_MARINEDEV_SMT                 # NPC Devastator Marine
@@ -230,16 +230,19 @@ units: # Civ units
         NPC_HEAVYBOLTER_ELITE_SET: 10
         NPC_HEAVYPLASMA_SET: 10
         NPC_MULTIMELTA_SET: 10
+        NPC_GRAVCANNON_SET: 10
       - 
         NPC_VENGOR_SET: 30
         NPC_HEAVYBOLTER_ELITE_SET: 40
         NPC_HEAVYPLASMA_SET: 30
         NPC_MULTIMELTA_SET: 20
+        NPC_GRAVCANNON_SET: 20
       - 
         NPC_VENGOR_SET: 20
         NPC_HEAVYBOLTER_ELITE_SET: 40
         NPC_HEAVYPLASMA_SET: 40
         NPC_MULTIMELTA_SET: 20
+        NPC_GRAVCANNON_SET: 20
 
 
   - type: STR_SCIONAI_SMT                   # NPC Scion Reinforcement
@@ -325,6 +328,11 @@ units: # Civ units
     builtInWeaponSets:
       - - STR_ORBITAL_STRIKE_WEAPON
     liveAlien: ""
+
+  - type: STR_DUMMY_TARGETER                # Dummy Targeter
+    stats:
+      tu: 1
+      stamina: 1
 
   - type: STR_ORBITAL_STRIKE_TARGETER       # Orbital Strike
     refNode: *STR_BOMBARD_TARGETER_DEFAULT
@@ -444,7 +452,7 @@ units: # Civ units
     aggression: 1
     energyRecovery: 40
 
-  - type: STR_SKULL_TECH
+  - type: STR_SKULL_TECH                    # Techpriest Servoskull
     race: STR_SKULL
     stats:
       tu: 80
@@ -464,7 +472,7 @@ units: # Civ units
     kneelHeight: 16
     value: 0
     moraleLossWhenKilled: 0
-    deathSound: 23
+    deathSound: [{mod: 40k, index: 713}, {mod: 40k, index: 714}, {mod: 40k, index: 715}, {mod: 40k, index: 716}, {mod: 40k, index: 717}, {mod: 40k, index: 727}, {mod: 40k, index: 729}, {mod: 40k, index: 732}]
     intelligence: 4
     aggression: 5
     sniper: 50
@@ -472,6 +480,53 @@ units: # Civ units
     energyRecovery: 100
     livingWeapon: true
     civilianRecoveryType: STR_TECH_SKULL_SPAWNER
+
+  - type: STR_T_BOLTER_TECH              # Techpriest Tarantula Sentry
+    race: STR_T_BOLTER
+    stats:
+      tu: 100
+      stamina: 10
+      health: 90
+      bravery: 110
+      reactions: 120
+      firing: 60
+      throwing: 0
+      strength: 60
+      psiStrength: 100
+      psiSkill: 0
+      melee: 0
+      mana: 100
+    armor: TARANTULA_ARBITES_BOLTER_ARMOR
+    standHeight: 14
+    kneelHeight: 14
+    value: 10
+    deathSound: {mod: 40k, index: 23}
+    moveSound: 14
+    energyRecovery: 50
+    civilianRecoveryType: STR_TECH_SENTRY_SPAWNER
+
+  - type: STR_THUNDERFIRE_TECH
+    race: STR_THUNDERFIRE
+    stats:
+      tu: 70
+      stamina: 100
+      health: 90
+      bravery: 110
+      reactions: 20
+      firing: 60
+      throwing: 0
+      strength: 60
+      psiStrength: 100
+      psiSkill: 0
+    armor: THUNDERFIRE_ARMOR_DW
+    standHeight: 16
+    kneelHeight: 16
+    value: 10
+    deathSound: 23
+    moveSound: 12
+    energyRecovery: 50
+    civilianRecoveryType: STR_TECH_TF_SPAWNER
+
 
 terrains:
   - name: ALLIED_MARINE_DEPLOYMENT          # IG Marine Reinforcement block

@@ -803,6 +803,11 @@ items:
       time: 5 # was 100 (lol, lmao) - doesn't accelerate reload time at all, just makes you start reloading NEXT turn
       mana: 1  # need at least one mana to try
 
+  - type: STR_GENERICSERVITOR_AMMO          # Generic Servitor Reload Item
+    costUse:
+      time: 5 # was 90 (lol, lmao) - doesn't accelerate reload time at all, just makes you start reloading NEXT turn
+      mana: 1  # need at least one mana to try
+
   - type: STR_DREAD_STORMBOLTER             # Dread Stormbolter Fist
     bigSprite: 157
     bulletSprite: {mod: 40k, index: 6}
@@ -1573,6 +1578,7 @@ items:
 
   - type: STR_ORBITAL_LANCE_BLAST           # Orbital Lance Blast
     battleType: 4
+    armor: 999
     weight: 1
     floorSprite: 101
     handSprite: 0
@@ -2052,7 +2058,7 @@ items:
     fuseType: -1
     supportedInventorySections:
       - STR_GROUND #shouldn't be able to pick this up
-    armor: 500 #shouldn't be destroyed by explosions
+    armor: 999 #shouldn't be destroyed by explosions
     power: 250
     damageType: 3 #HE
     damageAlter:

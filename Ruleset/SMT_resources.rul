@@ -1730,6 +1730,13 @@ extraSprites:
     files:
       0: Resources/BACKGROUND/MarineBG.gif
 ###UFOPEDIA
+  - type: PRIMARISTREE.SPK
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/UFO/PROMOPRI.png
+
   - type: 1VOX.SPK
     singleImage: true
     width: 320
@@ -1875,6 +1882,15 @@ extraSprites:
     height: 200
     files:
       0: Resources/UFO/ENGINSEERUFO.png
+
+
+  - type: CommendationDecorations
+    width: 31
+    height: 80
+    subX: 31
+    subY: 8
+    files:
+      0: Resources/RANKS/Awards.png
 
 extraSounds:
   - type: BATTLE.CAT

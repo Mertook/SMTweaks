@@ -289,6 +289,7 @@ extended:
           var int temp2;
 
           action_target.getFaction temp; # only affects player units
+          #debug_log "Lightning Ping " action_target;
           if neq temp FACTION_PLAYER;
             return reaction_chance;
           end;
@@ -309,6 +310,7 @@ extended:
             return reaction_chance;
           end;
 
+          #debug_log "Lightning Success " temp temp2;
           return 0;
 
     tryMeleeAttackItem:
@@ -382,9 +384,7 @@ extended:
           if gt reactVal 100; # if total >100, add overflow TUs
             set temp reactVal;
             sub temp 100;
-            unit.getTimeUnitsMax temp2;
-            muldiv temp2 temp 100;
-            unit.setTag Tag.SMT_OVERWATCH_BUFF_EXCESS temp2;
+            unit.setTag Tag.SMT_OVERWATCH_BUFF_EXCESS temp;
           end;
           limit reactVal 0 100;
           unit.setTag Tag.SMT_OVERWATCH_BUFF reactVal;

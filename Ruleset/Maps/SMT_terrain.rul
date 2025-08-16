@@ -15,6 +15,11 @@ terrains:
         width: 20
         length: 20
         groups: 0
+        randomizedItems:
+          - position: [9, 4, 1]
+            amount: 3
+            mixed: true
+            itemList: [STR_GAUSS_FLAYER, STR_GAUSS_REAPER, STR_GAUSS_BLASTER, STR_SYNAPTIC_DISINTEGRATOR]
         items:
           STR_REQUISITION_BOUNTY_500K:
             - [0, 0, 0]
@@ -52,6 +57,11 @@ terrains:
         width: 20
         length: 20
         groups: 0
+        randomizedItems:
+          - position: [9, 4, 1]
+            amount: 3
+            mixed: true
+            itemList: [STR_GAUSS_FLAYER, STR_GAUSS_FLAYER, STR_GAUSS_REAPER, STR_GAUSS_REAPER, STR_GAUSS_BLASTER, STR_SYNAPTIC_DISINTEGRATOR]
         items:
           STR_REQUISITION_BOUNTY_500K:
             - [0, 0, 0]

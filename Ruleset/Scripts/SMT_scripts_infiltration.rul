@@ -40,12 +40,12 @@ extended:
               sub baseMove temp;
               actor.setTag Tag.UNIT_MOVESPEED_MODIFIERS baseMove;
               add baseMove 100;
-              actor.MoveCost.setBaseNormalTimePercent baseMove;
+              actor.MoveCost.setBaseTimePercent baseMove;
               actor.setTag Tag.UNIT_STEALTH_MOVEPENALTY 0;
               actor.setTag Tag.UNIT_CAMO_CLOAK_MOVE_COST_MULTIPLIER 0; # digin compatibility
               actor.getTag temp Tag.UNIT_DIG_IN_MOVE_PENALTY;
               if gt temp 0;
-                actor.MoveCost.setBaseNormalTimePercent temp; # handle digin
+                actor.MoveCost.setBaseTimePercent temp; # handle digin
               end;
             end;
             return; # no TU cost for decloaking
@@ -91,7 +91,7 @@ extended:
 
           actor.getTag temp Tag.UNIT_DIG_IN_MOVE_PENALTY;
           if gt temp 0;
-            actor.MoveCost.setBaseNormalTimePercent temp; # handle digin
+            actor.MoveCost.setBaseTimePercent temp; # handle digin
           end;
 
           actor.getTimeUnits temp;
@@ -180,12 +180,12 @@ extended:
               sub baseMove temp;
               actor.setTag Tag.UNIT_MOVESPEED_MODIFIERS baseMove;
               add baseMove 100;
-              actor.MoveCost.setBaseNormalTimePercent baseMove;
+              actor.MoveCost.setBaseTimePercent baseMove;
               actor.setTag Tag.UNIT_STEALTH_MOVEPENALTY 0;
               actor.setTag Tag.UNIT_CAMO_CLOAK_MOVE_COST_MULTIPLIER 0; # digin compatibility
               actor.getTag temp Tag.UNIT_DIG_IN_MOVE_PENALTY;
               if gt temp 0;
-                actor.MoveCost.setBaseNormalTimePercent temp; # handle digin
+                actor.MoveCost.setBaseTimePercent temp; # handle digin
               end;
             end;
             set spend_tu 0; # no TU cost for decloaking
@@ -235,11 +235,10 @@ extended:
 
           actor.getTag temp Tag.UNIT_DIG_IN_MOVE_PENALTY;
           if gt temp 0;
-            actor.MoveCost.setBaseNormalTimePercent temp; # handle digin
+            actor.MoveCost.setBaseTimePercent temp; # handle digin
           end;
 
           return;
-
 
       - new: SMTS_infiltration_check_skill # display conditions needed for restealthing
         offset: 10
@@ -331,12 +330,12 @@ extended:
               sub temp2 temp;
               unit.setTag Tag.UNIT_MOVESPEED_MODIFIERS temp2;
               add temp2 100;
-              unit.MoveCost.setBaseNormalTimePercent temp2;
+              unit.MoveCost.setBaseTimePercent temp2;
               unit.setTag Tag.UNIT_STEALTH_MOVEPENALTY 0;
               unit.setTag Tag.UNIT_CAMO_CLOAK_MOVE_COST_MULTIPLIER 0; # digin compatibility
               unit.getTag temp Tag.UNIT_DIG_IN_MOVE_PENALTY;
               if gt temp 0;
-                unit.MoveCost.setBaseNormalTimePercent temp; # handle digin
+                unit.MoveCost.setBaseTimePercent temp; # handle digin
               end;
             end;
             return;
@@ -404,15 +403,17 @@ extended:
             unit.getTag temp Tag.UNIT_STEALTH_MOVEPENALTY; # remove movement penalty
             if neq temp 0;
               unit.getTag temp2 Tag.UNIT_MOVESPEED_MODIFIERS;
+              #debug_log "StealthReveal1 " temp temp2;
               sub temp2 temp;
               unit.setTag Tag.UNIT_MOVESPEED_MODIFIERS temp2;
               add temp2 100;
-              unit.MoveCost.setBaseNormalTimePercent temp2;
+              #debug_log "StealthReveal2 " temp temp2;
+              unit.MoveCost.setBaseTimePercent temp2;
               unit.setTag Tag.UNIT_STEALTH_MOVEPENALTY 0;
               unit.setTag Tag.UNIT_CAMO_CLOAK_MOVE_COST_MULTIPLIER 0; # digin compatibility
               unit.getTag temp Tag.UNIT_DIG_IN_MOVE_PENALTY;
               if gt temp 0;
-                unit.MoveCost.setBaseNormalTimePercent temp; # handle digin
+                unit.MoveCost.setBaseTimePercent temp; # handle digin
               end;
             end;
           end;
@@ -436,15 +437,17 @@ extended:
           attacker.getTag temp Tag.UNIT_STEALTH_MOVEPENALTY; # remove movement penalty
           if neq temp 0;
             attacker.getTag temp2 Tag.UNIT_MOVESPEED_MODIFIERS;
+            #debug_log "StealthReveal1 " temp temp2;
             sub temp2 temp;
             attacker.setTag Tag.UNIT_MOVESPEED_MODIFIERS temp2;
             add temp2 100;
-            attacker.MoveCost.setBaseNormalTimePercent temp2;
+            #debug_log "StealthReveal2 " temp temp2;
+            attacker.MoveCost.setBaseTimePercent temp2;
             attacker.setTag Tag.UNIT_STEALTH_MOVEPENALTY 0;
             attacker.setTag Tag.UNIT_CAMO_CLOAK_MOVE_COST_MULTIPLIER 0; # digin compatibility
             attacker.getTag temp Tag.UNIT_DIG_IN_MOVE_PENALTY;
             if gt temp 0;
-              attacker.MoveCost.setBaseNormalTimePercent temp; # handle digin
+              attacker.MoveCost.setBaseTimePercent temp; # handle digin
             end;
           end;
           return power part side;
@@ -468,6 +471,7 @@ extended:
           mul temp 16; # 1 tile ~= 15.75
           #debug_log "Stealth VisCheck" temp distance;
           if lt distance temp;
+            #debug_log "Stealth VisCheck Detected" temp distance;
             return current_visibility visibility_mode; # ignore stealth if they're within detection range
           end;
 
@@ -481,10 +485,10 @@ extended:
         code: |
           var int temp;
 
-          action_unit.getTag temp Tag.UNIT_STEALTH_RANGE;
+          reaction_unit.getTag temp Tag.UNIT_STEALTH_RANGE;
+          #debug_log "Stealth ReactCheckUA" temp distance;
           if neq temp 0;
-            mul temp 12; # 1 tile ~= 15.75, use 3/4 of detection range
-            #debug_log "Stealth ReactCheck" temp distance;
+            mul temp 15; # 1 tile ~= 15.75
             if gt distance temp; # prevent reactions if enemy is out of detection range
               return 0;
             end;
@@ -493,5 +497,7 @@ extended:
           return reaction_chance;
 
       - delete: ROSIGMA_rUA_infiltration_no_reactions
+
+
 
 

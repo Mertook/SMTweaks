@@ -14,14 +14,14 @@ units:
     race: STR_NECRON
     rank: STR_LIVE_COMMANDER
     stats:
-      tu: 150
-      stamina: 150
+      tu: 120
+      stamina: 200
       health: 500 # was 200
       bravery: 100
       reactions: 90
       firing: 120
       throwing: 80
-      strength: 60
+      strength: 100
       psiStrength: 0
       psiSkill: 0
       melee: 120
@@ -41,11 +41,11 @@ units:
   - &REF_DEATHMARK_UNIT                         # Necron Deathmark
     type: STR_NECRON_DEATHMARK
     stats:
-      tu: 80
+      tu: 60 # was 75
       stamina: 100
       health: 80 # was 60
       bravery: 110
-      reactions: 100
+      reactions: 60
       firing: 100
       throwing: 80
       strength: 60
@@ -75,11 +75,128 @@ units:
     armor: STR_NECRON_DEATHMARK_ARMOR_REVIVES
     spawnUnit: STR_NECRON_DEATHMARK
 
+  - &REF_FLAYEDONE_UNIT                         # Necron Flayed One
+    type: STR_NECRON_FLAYED_ONE
+    race: STR_NECRON
+    rank: STR_LIVE_SOLDIER
+    stats:
+      tu: 90 # was 60
+      stamina: 200
+      health: 60 # was 100 - Flayed ones aren't any tougher than warriors
+      bravery: 120
+      reactions: 80 # was 65
+      firing: 0
+      throwing: 0
+      strength: 80
+      psiStrength: 200
+      psiSkill: 0
+      melee: 100
+    armor: STR_NECRON_FLAYED_ONE_ARMOR
+    standHeight: 20
+    kneelHeight: 15
+    deathSound: [{mod: 40k, index: 289}, {mod: 40k, index: 290}, {mod: 40k, index: 291}]
+    intelligence: 2
+    aggression: 8
+    canPanic: false
+    canBeMindControlled: false
+    avoidsFire: false
+    isLeeroyJenkins: true
+    spotter: 1
+    value: 10
+    energyRecovery: 200
+    builtInWeaponSets:
+      - - STR_NECRON_FLAYED_ONE_CLAW
+        - STR_INTIMIDATION_WEAPON
+        - STR_KILLPOINT_TOKEN_7
+      - - STR_NECRON_FLAYED_ONE_CLAW
+        - STR_INTIMIDATION_WEAPON
+        - STR_KILLPOINT_TOKEN_7
+      - - STR_NECRON_FLAYED_ONE_CLAW
+        - STR_INTIMIDATION_WEAPON
+        - STR_KILLPOINT_TOKEN_7
+
+  - type: STR_NECRON_FLAYED_ONE_REVIVES         # Necron Flayed One (Revives)
+    refNode: *REF_FLAYEDONE_UNIT
+    armor: STR_NECRON_FLAYED_ONE_ARMOR_REVIVES
+    spawnUnit: STR_NECRON_FLAYED_ONE
+
+  - type: STR_NECRON_SCARAB5                    # Scarabs (Five)
+    race: STR_NECRON
+    rank: STR_LIVE_SOLDIER
+    stats:
+      tu: 90 # was 115
+      stamina: 200
+      health: 100 # was 60
+      bravery: 110
+      reactions: 100
+      firing: 74
+      throwing: 80
+      strength: 30
+      psiStrength: 200
+      psiSkill: 0
+      melee: 65
+    value: 8
+
+  - type: STR_NECRON_SCARAB3                    # Scarabs (Three)
+    race: STR_NECRON
+    rank: STR_LIVE_SOLDIER
+    stats:
+      tu: 80 # was 115
+      stamina: 200
+      health: 60
+      bravery: 110
+      reactions: 100
+      firing: 74
+      throwing: 80
+      strength: 30
+      psiStrength: 200
+      psiSkill: 0
+      melee: 65
+    value: 6
+
+  - type: STR_NECRON_SCARAB1  # STR_NECRON_WARRIOR_ARMOR                        RANK 5 weapons done
+    race: STR_NECRON
+    rank: STR_LIVE_SOLDIER
+    stats:
+      tu: 70 # was 115
+      stamina: 200
+      health: 30
+      bravery: 110
+      reactions: 100
+      firing: 74
+      throwing: 80
+      strength: 30
+      psiStrength: 200
+      psiSkill: 0
+      melee: 65
+    value: 4
+    specab: 0
+
+  - &REF_MONOLITH_TURRET                        # Monolith Turrets
+    type: STR_MONO_N
+    stats:
+      tu: 20
+      stamina: 100
+      health: 180 # was 100
+      bravery: 100
+      reactions: 1 # was 30
+      firing: 100
+      throwing: 0
+      strength: 100
+      psiStrength: 250
+      psiSkill: 0
+      melee: 0
+  - type: STR_MONO_W
+    refNode: *REF_MONOLITH_TURRET
+  - type: STR_MONO_S
+    refNode: *REF_MONOLITH_TURRET
+  - type: STR_MONO_E
+    refNode: *REF_MONOLITH_TURRET
 
 armors:
   - type: STR_NECRON_ARCHITECT_ARMOR            # Architect
-    visibilityAtDay: 40
-    visibilityAtDark: 40
+    visibilityAtDay: 0
+    visibilityAtDark: 0
     heatVision: 50
     antiCamouflageAtDark: 20 # was 10 - sees all
     antiCamouflageAtDay: 20 # was 5 - sees all
@@ -112,9 +229,10 @@ armors:
       - 0.9  # MELEE
       - 0.4  # ACID
       - 0.0  # SMOKE
-      - 0.9  # IMPACT
+      - 1.0  # IMPACT
       - 1.0  # MELTA
       - 0.2  # GRAV - Compensate for boss health/armor, not actually a superheavy unit
+      - 0.5  # WARP
     loftempsSet: [3]
     builtInWeapons: # make staff built in, can't drop it
       - STR_STAFF_OF_LIGHT
@@ -143,34 +261,35 @@ armors:
 
   - &REF_DEATHMARK_ARMOR                        # Deathmark (revives)
     type: STR_NECRON_DEATHMARK_ARMOR_REVIVES
-    visibilityAtDay: 40
-    visibilityAtDark: 40
+    visibilityAtDay: 0
+    visibilityAtDark: 0
     heatVision: 50
-    antiCamouflageAtDark: 15
     antiCamouflageAtDay: 15
-    camouflageAtDark: -15
-    camouflageAtDay: -10
-    frontArmor: 95 # was 60 - Deathmarks are elites (and are t5 with a 3+ save)
+    antiCamouflageAtDark: 15
+    camouflageAtDay: 0
+    camouflageAtDark: 15
+    frontArmor: 100 # was 60 - Deathmarks are elites (and are t5 with a 3+ save)
     sideArmor: 80 # was 50
-    rearArmor: 50 # was 40
+    rearArmor: 60 # was 40
     underArmor: 80 # was 50
     recovery:  # Living metal rapidly regenerates health
       health:
         healthCurrent: 0.5
-    damageModifier:  # NECRON ARMOR
-      - 1.0  # none
-      - 0.9  # AP
-      - 0.4  # FLAMES
-      - 1.0  # HE
-      - 1.1  # LASCANON
-      - 1.0  # PLASMA
-      - 1.0  # STUN
-      - 1.0  # MELEE
-      - 0.5  # ACID
-      - 0.0  # SMOKE
-      - 1.0  # IMPACT
-      - 1.1  # MELTA
-      - 1.0  # GRAV
+    damageModifier: &Ref_Necron_Resist_Std
+      - 1.0  # Support
+      - 0.9  # Standard
+      - 0.5  # Burning
+      - 1.0  # Explosive
+      - 1.0  # LASCANON
+      - 1.0  # Plasma
+      - 0.5  # Stun
+      - 1.0  # Melee
+      - 0.5  # Acid
+      - 0.0  # Smoke
+      - 1.0  # Impact
+      - 1.1  # Melta
+      - 0.9  # Graviton
+      - 0.6  # Warp
     loftempsSet: [3]
     builtInWeapons: []
     tags:
@@ -179,36 +298,210 @@ armors:
       UNIT_TYPE_XENO: 1
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_NECRON: 1
+      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
       ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
       ARMOR_OVERWATCH_TU_RESTORED: 50 # enough for 1 shot - blame Mechanicus
-
   - type: STR_NECRON_DEATHMARK_ARMOR            # Deathmark
     refNode: *REF_DEATHMARK_ARMOR
     tags:
       ARMOR_TENACIOUS_HP_MOD: 3 # was 2
       ARMOR_TENACIOUS_STUN_RECOVERY: 30 # was 20
 
+  - &REF_IMMORTAL_ARMOR                         # Necron Immortal (revives)
+    type: STR_NECRON_IMORTAL_ARMOR_REVIVES
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    bleedImmune: true
+    fearImmune: true
+    painImmune: true
+    zombiImmune: true
+    spriteSheet: NECRONDR2.PCK
+    spriteInv: NECRON2.SPK
+    corpseBattle:
+      - STR_NECRON_IMORTAL_CORPSE
+    frontArmor: 110
+    sideArmor: 90
+    rearArmor: 50
+    underArmor: 90
+    drawingRoutine: 0
+    damageModifier: *Ref_Necron_Resist_Std
+    loftempsSet: [3]
+    builtInWeapons: []
+    tags:
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      UNIT_TYPE_XENO: 1
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_NECRON: 1
+      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
+      ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
+  - type: STR_NECRON_IMORTAL_ARMOR              # Necron Immortal
+    refNode: *REF_IMMORTAL_ARMOR
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 3
+
+  - &REF_FLAYEDONE_ARMOR                        # Necron Flayed One (revives)
+    type: STR_NECRON_FLAYED_ONE_ARMOR_REVIVES
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    antiCamouflageAtDark: 10
+    antiCamouflageAtDay: 10
+    camouflageAtDay: -5 # was 5
+    camouflageAtDark: 5 # was 2
+    heatVision: 40
+    psiVision: 0 # was 10
+    bleedImmune: true
+    fearImmune: true
+    painImmune: true
+    zombiImmune: true
+    frontArmor: 75 # was 110 - Flayed ones are the same toughness as basic warriors (t4 4+ save)
+    sideArmor: 60 # was 100
+    rearArmor: 40 # was 70
+    underArmor: 70 # was 100
+    damageModifier: *Ref_Necron_Resist_Std
+    loftempsSet: [3]
+    builtInWeapons: []
+    tags:
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      UNIT_TYPE_XENO: 1
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_NECRON: 1
+      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
+      ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
+  - type: STR_NECRON_FLAYED_ONE_ARMOR           # Necron Flayed One
+    refNode: *REF_FLAYEDONE_ARMOR
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 2 # was 3
+
   - &REF_SCARAB_ARMOR                           # Canoptic Scarabs (Five)
     type: STR_NECRON_SCARAB_ARMOR5
-    damageModifier:
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 0
+    overKill: 1.0 # hard to vaporize, large swarm
+    psiVision: 0
+    damageModifier: # high resists to most things - dispersed swarm
       - 1.0  # none
       - 0.5  # AP
-      - 0.4  # FLAMES
-      - 1.0  # HE; only AoE does full damage due to being a dispersed swarm
-      - 0.6  # LASCANON; dispersed swarm, but weakness to lascannon
+      - 0.8  # FLAMES
+      - 1.0  # HE
+      - 0.6  # LASCANON
       - 0.5  # PLASMA
-      - 0.0  # STUN; they're automatons, they can't be stunned.
+      - 0.2  # STUN
       - 0.5  # MELEE
       - 0.5  # ACID
       - 0.0  # SMOKE
       - 0.5  # IMPACT
-      - 0.6  # MELTA; dispersed swarm, but weakness to melta
-      - 0.2  # GRAV; dispersed swarm, invidually small
-
+      - 0.6  # MELTA
+      - 0.2  # GRAV
+      - 0.5  # WARP
+    tags:
+      ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
+      DODGE_CHANCE: 0 # was 40
+      ARMOR_MAX_SUCCESSFUL_DODGES: 0 # was 4
   - type: STR_NECRON_SCARAB_ARMOR3              # Canoptic Scarabs (Three)
     refNode: *REF_SCARAB_ARMOR
+    overKill: 0.75 # hard to vaporize, swarm
+    tags:
+      DODGE_CHANCE: 25 # was 50
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2 # was 4
   - type: STR_NECRON_SCARAB_ARMOR1              # Canoptic Scarabs (One)
     refNode: *REF_SCARAB_ARMOR
+    overKill: 0.5 # default value
+    loftempsSet: [2] # was 3
+    damageModifier:
+      - 1.0  # none
+      - 0.8  # AP
+      - 0.5  # FLAMES
+      - 1.0  # HE
+      - 0.8  # LASCANON
+      - 0.8  # PLASMA
+      - 0.2  # STUN
+      - 0.5  # MELEE
+      - 0.5  # ACID
+      - 0.0  # SMOKE
+      - 0.5  # IMPACT
+      - 0.8  # MELTA
+      - 0.2  # GRAV
+      - 0.5  # WARP
+    tags:
+      DODGE_CHANCE: 33 # was 70
+      ARMOR_MAX_SUCCESSFUL_DODGES: 3 # was 5
+
+  - type: STR_DESTROYER_ARMOR                   # Necron Destroyer
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    heatVision: 40
+    antiCamouflageAtDark: 10
+    antiCamouflageAtDay: 10
+    frontArmor: 140 # was 120
+    sideArmor: 120 # was 110
+    rearArmor: 80
+    underArmor: 130 # was 120
+    recovery:  # Living metal rapidly regenerates health
+      health:
+        healthCurrent: 0.5
+    damageModifier: # Large, higher general resists but bonus damage from Grav
+      - 1.0  # Support
+      - 0.8  # AP
+      - 0.33 # FLAMES
+      - 0.8  # HE
+      - 1.0  # LASCANON
+      - 1.0  # PLASMA
+      - 0.4  # STUN
+      - 0.9  # MELEE
+      - 0.5  # ACID
+      - 0.0  # SMOKE
+      - 0.2  # IMPACT
+      - 1.1  # MELTA
+      - 2.0  # GRAV
+      - 0.5  # WARP
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 4 # was 6 - immune to stun
+      ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
+
+  - &REF_MONOLITH_TURRET_ARMOR
+    type: STR_MONO_N_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    heatVision: 50
+    antiCamouflageAtDay: 5
+    antiCamouflageAtDark: 5
+    frontArmor: 130 # was 130
+    sideArmor: 130 # was 130
+    rearArmor: 130 # was 130
+    underArmor: 150 # was 150
+    recovery:
+      health:
+        healthCurrent: 0.5
+    damageModifier:
+      - 1.0  # Support
+      - 0.8  # AP
+      - 0.33 # FLAMES
+      - 0.8  # HE
+      - 1.0  # LASCANON
+      - 1.0  # PLASMA
+      - 0.0  # STUN
+      - 0.9  # MELEE
+      - 0.5  # ACID
+      - 0.0  # SMOKE
+      - 0.2  # IMPACT
+      - 1.1  # MELTA
+      - 2.0  # GRAV
+      - 0.5  # WARP
+    tags:
+      ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
+
+  - type: STR_MONO_S_ARMOR
+    refNode: *REF_MONOLITH_TURRET_ARMOR
+  - type: STR_MONO_W_ARMOR
+    refNode: *REF_MONOLITH_TURRET_ARMOR
+  - type: STR_MONO_E_ARMOR
+    refNode: *REF_MONOLITH_TURRET_ARMOR
 
 
   - type: STR_NECRON_WARRIOR_ARMOR_REVIVES      # Warrior (revives)
@@ -216,14 +509,6 @@ armors:
       ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
 
   - type: STR_NECRON_LYCHGUARD_ARMOR_REVIVES    # Lychguard (revives)
-    tags:
-      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
-
-  - type: STR_NECRON_IMORTAL_ARMOR_REVIVES      # Immortal (revives)
-    tags:
-      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
-
-  - type: STR_NECRON_FLAYED_ONE_ARMOR_REVIVES   # Flayed One (revives)
     tags:
       ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
 
@@ -235,9 +520,11 @@ items:
     vaporColorSurface: {mod: 40k, index: 3}
     vaporDensitySurface: 6
     vaporProbabilitySurface: 30
+    bulletSprite: {mod: 40k, index: 23}
+    bulletSpeed: 100
     damageType: 11
     damageAlter:
-      RandomType: 6
+      RandomType: 8 # 25-175%
       ArmorEffectiveness: 1.0
       ToArmorPre: 1.0
       ToHealth: 1.0
@@ -248,9 +535,7 @@ items:
       ToWound: 0.05
       RandomWound: false
       IgnoreOverKill: false
-    shotgunSpread: 1
-    shotgunBehavior: 1
-    shotgunPellets: 1 # instant beams
+    shotgunPellets: 0 # no shotguns
 
   - type: STR_STAFF_OF_LIGHT                # Staff of Light (Architect)
     refNode: *DMG_GAUSS_STD
@@ -307,12 +592,11 @@ items:
     requires:
       - STR_GENERALLOCK # boss weapon, can't even pick it up - don't show in unlocks for Necron Xenotech
 
-
   - type: STR_GAUSS_CANNON                  # Gauss Cannon (Destroyer)
     refNode: *DMG_GAUSS_STD
-    power: 100 # was 140
+    power: 90 # was 140
     snapRange: 20
-    tuSnap: 30 # was 33
+    tuSnap: 35 # was 33
     tuAuto: 50
     accuracyAuto: 70
     autoRange: 15
@@ -422,6 +706,26 @@ items:
     tags:
       ITEM_IS_HEAVY_WEAPON: 1
 
+  - type: STR_TRIPLE_GAUSS_CANNON           # Gauss Turret
+    refNode: *DMG_GAUSS_STD
+    dropoff: 3
+    power: 100 # was 150
+    autoRange: 0
+    snapRange: 24
+    aimRange: 0
+    tuAuto: 0
+    tuSnap: 60
+    tuAimed: 0
+    accuracyAuto: 0
+    accuracySnap: 60
+    accuracyAimed: 0
+    shotgunBehavior: 1
+    shotgunSpread: 50
+    shotgunChoke: 50
+    shotgunPellets: 2
+    confSnap:
+      shots: 3
+
   - type: STR_SYNAPTIC_DISINTEGRATOR_AI     # Synaptic Disintegrator (Deathmark)
     categories: [STR_CAT_NECRON, STR_CAT_SNIPER, STR_CAT_SCOUT]
     refNode: *DMG_GAUSS_STD
@@ -447,7 +751,7 @@ items:
     clipSize: -1
     dropoff: 2
     snapRange: 30
-    accuracySnap: 120
+    accuracySnap: 100
     tuAuto: 0
     tuSnap: 50
     tuAimed: 0
@@ -457,16 +761,18 @@ items:
       RandomType: 6
       ToArmorPre: 0.0
       ToArmor: 0.0
-      ArmorEffectiveness: 0.3 # was 0.4
+      ArmorEffectiveness: 0.5 # was 0.4
       ToHealth: 1.0 # was 0.2
-      ToWound: 0.3 # was 0.5, do more direct to kill instead of allowing apothecary recovery
+      ToWound: 0.2 # was 0.5
       RandomWound: false
-      ToMorale: 50.0
+      ToMorale: 5.0
       ToStun: 1.5
       ToTime: 0.5
+      RandomTime: true
       FixRadius: 0
     recoveryTransformations:
-      STR_SYNAPTIC_DISINTEGRATOR: [1]
+      STR_ALIEN_ALLOYS: [1]
+    attraction: 80
     ufopediaType: STR_SYNAPTIC_DISINTEGRATOR
 
   - type: STR_SYNAPTIC_DISINTEGRATOR        # Synaptic Disintegrator (Recovered)
@@ -482,13 +788,14 @@ items:
       RandomType: 6
       ToArmorPre: 0.0
       ToArmor: 0.0
-      ArmorEffectiveness: 0.3 # was 0.4
+      ArmorEffectiveness: 0.5 # was 0.4
       ToHealth: 1.0 # was 0.2
-      ToWound: 0.3 # was 0.5, do more direct to kill instead of allowing apothecary recovery
+      ToWound: 0.2 # was 0.5, do more direct to kill instead of allowing apothecary recovery
       RandomWound: false
-      ToMorale: 50.0
+      ToMorale: 5.0
       ToStun: 1.5
       ToTime: 0.5
+      RandomTime: true
       FixRadius: 0
     kneelBonus: 130  # light sniper weapon; benefits twice as much from kneeling
     minRange: 7  # less accurate up close
@@ -500,30 +807,84 @@ items:
       - STR_SYNAPTIC_DISINTEGRATOR
 
   - type: STR_NECRON_SCARAB_CORPSE          # Scarab Corpse
-    power: 60 # was 120
-    damageType: 9 # Smoke, was 1 - scarabs are not hyperfrag rockets
+    power: 0 # was 120 - scarabs are not hyperfrag rockets
+    damageType: 9 # Smoke, was AP
+
+  - &REF_SCARAB_WEAPON
+    type: STR_SCARAB_L_WEAPON  # Solo Scarab
+    battleType: 3
+    weight: 0
+    power: 40
+    damageType: 11
+    damageAlter:
+      RandomType: 6
+      ToArmorPre: 1.0
+      ToHealth: 1.0
+      ToMorale: 0.4
+      ToStun: 0.4
+      ToArmor: 0.0
+      ToTile: 3.0
+      ToWound: 0.02
+      RandomWound: false
+      IgnoreSelfDestruct: false
+    accuracyMelee: 80
+    meleeMultiplier:
+      melee: 1.0
+    tuMelee: 10
+    tuSnap: 0
+    tuAimed: 0
+    fixedWeapon: true
+    flatMelee:
+      time: true
+    invWidth: 2
+    invHeight: 3
+    maxRange: 200
+    recover: false
+
+  - type: STR_SCARAB_R_WEAPON  # Solo Scarab
+    refNode: *REF_SCARAB_WEAPON
+
+  - type: STR_SCARAB_L_WEAPON_MEDIUM  # Small Swarm; more Scarabs so it attacks more quickly
+    tuMelee: 7
+    refNode: *REF_SCARAB_WEAPON
+
+  - type: STR_SCARAB_R_WEAPON_MEDIUM  # Small Swarm; more Scarabs so it attacks more quickly
+    tuMelee: 7
+    refNode: *REF_SCARAB_WEAPON
+
+  - type: STR_SCARAB_L_WEAPON_HEAVY  # Large Swarm; more Scarabs so it attacks more quickly
+    tuMelee: 5
+    refNode: *REF_SCARAB_WEAPON
+
+  - type: STR_SCARAB_R_WEAPON_HEAVY  # Large Swarm; more Scarabs so it attacks more quickly
+    tuMelee: 5
+    refNode: *REF_SCARAB_WEAPON
+
+  - type: STR_INTIMIDATION_WEAPON
+    snapRange: 5 # was 20 - have to be close to scare units
+    maxRange: 5 # was 20
 
 alienRaces:
   - id: STR_NECRON
     retaliationAggression: -100
     membersRandom:
-      - [STR_NECRON_LYCHGUARD_REVIVES]         # 0 Commander - remove Architect, is boss enemy
-      - [STR_NECRON_LYCHGUARD, STR_NECRON_LYCHGUARD, STR_NECRON_LYCHGUARD_REVIVES, STR_NECRON_LYCHGUARD_REVIVES]             # 1 leader
-      - [STR_NECRON_DEATHMARK, STR_NECRON_DEATHMARK_REVIVES]             # 2 Engineer
-      - [STR_NECRON_IMORTAL, STR_NECRON_IMORTAL_REVIVES]             # 3 MEDIC
-      - [STR_NECRON_IMORTAL, STR_NECRON_IMORTAL_REVIVES, STR_NECRON_DEATHMARK, STR_NECRON_DEATHMARK_REVIVES, STR_NECRON_WARRIOR_REVIVES, STR_NECRON_FLAYED_ONE_REVIVES]            # 4 NAVIGATOR
-      - [STR_NECRON_WARRIOR, STR_NECRON_WARRIOR, STR_NECRON_SCARAB1, STR_NECRON_WARRIOR, STR_NECRON_WARRIOR_REVIVES, STR_NECRON_WARRIOR_REVIVES, STR_NECRON_FLAYED_ONE, STR_NECRON_FLAYED_ONE, STR_NECRON_FLAYED_ONE_REVIVES]              # 5 SOLDIER
-      - [STR_NECRON_DESTROYER, STR_NECRON_DESTROYER, STR_NECRON_DESTROYER, STR_NECRON_SCARAB5, STR_NECRON_FLAYED_ONE_REVIVES] # 6 Terror Unit
-      - [STR_NECRON_DESTROYER, STR_NECRON_DESTROYER, STR_NECRON_DESTROYER, STR_NECRON_SCARAB5, STR_NECRON_FLAYED_ONE_REVIVES] # 7 Terror Unit
+      - [STR_NECRON_DESTROYER_LORD, STR_NECRON_DESTROYER_LORD_SCYTHE, STR_NECRON_LORD] # 0 Commander
+      - [STR_NECRON_LYCHGUARD, STR_NECRON_DEATHMARK, STR_NECRON_DEATHMARK_REVIVES]    # 1 Leader
+      - [STR_NECRON_LYCHGUARD, STR_NECRON_DEATHMARK, STR_NECRON_DEATHMARK_REVIVES]            # 2 Engineer
+      - [STR_NECRON_IMORTAL, STR_NECRON_IMORTAL_REVIVES]                                            # 3 Medic
+      - [STR_NECRON_SCARAB1, STR_NECRON_SCARAB1, STR_NECRON_SCARAB1, STR_NECRON_WARRIOR]            # 4 Navigator
+      - [STR_NECRON_WARRIOR, STR_NECRON_WARRIOR, STR_NECRON_WARRIOR, STR_NECRON_WARRIOR_REVIVES, STR_NECRON_IMORTAL]              # 5 Soldier
+      - [STR_NECRON_FLAYED_ONE, STR_NECRON_FLAYED_ONE, STR_NECRON_FLAYED_ONE_REVIVES] # 6 Terror Unit
+      - [STR_NECRON_DESTROYER, STR_NECRON_DESTROYER, STR_NECRON_SCARAB5]      # 7 Terror2 Unit
 
-  - id: STR_NECRON_TERROR
+  - id: RACE_NECRON_TERROR
     retaliationAggression: -100
     membersRandom:
-      - [STR_NECRON_LYCHGUARD_REVIVES]         # 0 Commander - Lord
-      - [STR_NECRON_LYCHGUARD, STR_NECRON_LYCHGUARD, STR_NECRON_LYCHGUARD_REVIVES]             # 1 leader - High Tier
-      - [STR_NECRON_IMORTAL, STR_NECRON_IMORTAL_REVIVES, STR_NECRON_DEATHMARK, STR_NECRON_DEATHMARK_REVIVES, STR_NECRON_FLAYED_ONE, STR_NECRON_FLAYED_ONE_REVIVES]    # 2 Engineer - Mixed Strong units
-      - [STR_NECRON_IMORTAL, STR_NECRON_IMORTAL, STR_NECRON_IMORTAL_REVIVES]                    # 3 Medic
-      - [STR_NECRON_DEATHMARK, STR_NECRON_DEATHMARK, STR_NECRON_DEATHMARK_REVIVES]              # 4 Navigator
-      - [STR_NECRON_WARRIOR, STR_NECRON_WARRIOR, STR_NECRON_WARRIOR, STR_NECRON_SCARAB1, STR_NECRON_WARRIOR_REVIVES]    # 5 SOLDIER - Basic troops
-      - [STR_NECRON_FLAYED_ONE, STR_NECRON_FLAYED_ONE, STR_NECRON_FLAYED_ONE_REVIVES]           # 6 Terror Unit 1
-      - [STR_NECRON_DESTROYER, STR_NECRON_DESTROYER, STR_NECRON_DESTROYER, STR_NECRON_SCARAB5]  # 7 Terror Unit 2 - 2x2 Units
+      - [STR_NECRON_DESTROYER_LORD, STR_NECRON_DESTROYER_LORD_SCYTHE, STR_NECRON_LORD] # 0 Commander
+      - [STR_NECRON_LYCHGUARD, STR_NECRON_LYCHGUARD_REVIVES]    # 1 Leader
+      - [STR_NECRON_LYCHGUARD, STR_NECRON_LYCHGUARD, STR_NECRON_DEATHMARK, STR_NECRON_DEATHMARK, STR_NECRON_DEATHMARK, STR_NECRON_DEATHMARK_REVIVES]                  # 2 Engineer
+      - [STR_NECRON_IMORTAL, STR_NECRON_IMORTAL, STR_NECRON_IMORTAL, STR_NECRON_IMORTAL, STR_NECRON_IMORTAL_REVIVES]                                            # 3 Medic
+      - [STR_NECRON_SCARAB1, STR_NECRON_SCARAB1, STR_NECRON_SCARAB1, STR_NECRON_WARRIOR]            # 4 Navigator
+      - [STR_NECRON_WARRIOR, STR_NECRON_WARRIOR, STR_NECRON_WARRIOR, STR_NECRON_WARRIOR, STR_NECRON_WARRIOR_REVIVES, STR_NECRON_IMORTAL]              # 5 Soldier
+      - [STR_NECRON_FLAYED_ONE, STR_NECRON_FLAYED_ONE, STR_NECRON_FLAYED_ONE, STR_NECRON_FLAYED_ONE, STR_NECRON_FLAYED_ONE_REVIVES] # 6 Terror Unit
+      - [STR_NECRON_DESTROYER, STR_NECRON_DESTROYER, STR_NECRON_SCARAB5]      # 7 Terror2 Unit

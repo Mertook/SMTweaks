@@ -466,47 +466,54 @@ alienDeployments:
 
   - type: STR_NECRON_RETALIATION
     data:
-      - alienRank: 5 #doomsday monolith numbers
-        lowQty: 2
-        highQty: 2 #6
-        dQty: 2 #1
-        percentageOutsideUfo: 70
-        itemSets: *emptyItemSets
-      - alienRank: 4
-        lowQty: 1
-        highQty: 1 #2
-        dQty: 1 #0
-        percentageOutsideUfo: 20
-        itemSets: *emptyItemSets
-      - alienRank: 3
-        lowQty: 2
-        highQty: 2 #3
-        dQty: 2 #1
-        percentageOutsideUfo: 20
-        itemSets: *emptyItemSets
-      - alienRank: 2
-        lowQty: 1
-        highQty: 1
-        dQty: 0
-        percentageOutsideUfo: 20
-        itemSets: *emptyItemSets
       - alienRank: 1
-        lowQty: 1
-        highQty: 1
+        lowQty: 0
+        medQty: 0
+        highQty: 0
         dQty: 0
         percentageOutsideUfo: 0
         itemSets: *emptyItemSets
-      - alienRank: 6
+      - alienRank: 2
         lowQty: 1
-        highQty: 1 #2
-        dQty: 3 #2
-        percentageOutsideUfo: 50
+        medQty: 1
+        highQty: 1
+        dQty: 0
+        percentageOutsideUfo: 20
+        itemSets: *emptyItemSets
+      - alienRank: 3
+        lowQty: 1
+        medQty: 1
+        highQty: 1
+        dQty: 1
+        percentageOutsideUfo: 80
+        itemSets: *emptyItemSets
+      - alienRank: 4
+        lowQty: 3
+        medQty: 3
+        highQty: 3
+        dQty: 5
+        percentageOutsideUfo: 100
+        itemSets: *emptyItemSets
+      - alienRank: 5
+        lowQty: 2
+        medQty: 2
+        highQty: 2
+        dQty: 2
+        percentageOutsideUfo: 90
+        itemSets: *emptyItemSets
+      - alienRank: 6
+        lowQty: 3
+        medQty: 3
+        highQty: 3
+        dQty: 2
+        percentageOutsideUfo: 100
         itemSets: *emptyItemSets
       - alienRank: 7
         lowQty: 1
-        highQty: 1 #2
-        dQty: 3 #2
-        percentageOutsideUfo: 50
+        medQty: 1
+        highQty: 1
+        dQty: 1
+        percentageOutsideUfo: 10
         itemSets: *emptyItemSets
     reinforcements:
       - type: necronShipReinforcementStart
@@ -524,33 +531,31 @@ alienDeployments:
         executionOdds: 100 # overwhelming start
         maxRuns: -1
         useSpawnNodes: true
-        spawnNodeRanks: [4] # leader/commander nodes
-        mapBlockFilterType: 0 # all blocks, just go by node placement
+        spawnNodeRanks: [4]
         data:
-          - alienRank: 5
-            lowQty: 2
-            highQty: 2
-            dQty: 2
-            itemSets: *emptyItemSets
-          - alienRank: 4
-            lowQty: 0
-            highQty: 0
-            dQty: 1
-            itemSets: *emptyItemSets
           - alienRank: 3
             lowQty: 0
+            medQty: 0
             highQty: 0
             dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 4
+            lowQty: 1
+            medQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 5
+            lowQty: 1
+            medQty: 1
+            highQty: 1
+            dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 6
-            lowQty: 0
-            highQty: 0
+            lowQty: 1
+            medQty: 1
+            highQty: 1
             dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 7
-            lowQty: 0
-            highQty: 0
-            dQty: 0
             itemSets: *emptyItemSets
       - type: necronShipReinforcementEnd
         briefing:
@@ -567,32 +572,42 @@ alienDeployments:
         executionOdds: 100
         maxRuns: 1
         useSpawnNodes: true
-        spawnNodeRanks: [4] # leader/commander nodes
-        mapBlockFilterType: 0 # all blocks, just go by node placement
+        spawnNodeRanks: [4]
         data:
-          - alienRank: 5
-            lowQty: 1
-            highQty: 1
-            dQty: 2
-            itemSets: *emptyItemSets
-          - alienRank: 4
+          - alienRank: 2
             lowQty: 0
-            highQty: 0
+            medQty: 1
+            highQty: 1
             dQty: 1
             itemSets: *emptyItemSets
           - alienRank: 3
-            lowQty: 0
-            highQty: 0
+            lowQty: 1
+            medQty: 1
+            highQty: 1
             dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 4
+            lowQty: 2
+            medQty: 2
+            highQty: 2
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 5
+            lowQty: 1
+            medQty: 1
+            highQty: 1
+            dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 6
-            lowQty: 0
-            highQty: 0
-            dQty: 1
+            lowQty: 1
+            medQty: 1
+            highQty: 1
+            dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 7
-            lowQty: 0
-            highQty: 0
+            lowQty: 1
+            medQty: 1
+            highQty: 1
             dQty: 0
             itemSets: *emptyItemSets
 
@@ -604,47 +619,54 @@ alienDeployments:
      - BDAIRPORTMONO
      - URBANMONO
     data:
-      - alienRank: 5
-        lowQty: 2 #5
-        highQty: 2 #7
-        dQty: 2 # was 6
-        percentageOutsideUfo: 80
-        itemSets: *emptyItemSets
-      - alienRank: 4
-        lowQty: 1
-        highQty: 1 #2
-        dQty: 1 #0
-        percentageOutsideUfo: 60
-        itemSets: *emptyItemSets
-      - alienRank: 3
-        lowQty: 1
-        highQty: 1 #2
-        dQty: 1 #0
-        percentageOutsideUfo: 60
-        itemSets: *emptyItemSets
-      - alienRank: 2
-        lowQty: 1
-        highQty: 1 #2
-        dQty: 1 #0
-        percentageOutsideUfo: 60
-        itemSets: *emptyItemSets
       - alienRank: 1
-        lowQty: 1
-        highQty: 1
+        lowQty: 0
+        medQty: 0
+        highQty: 0
         dQty: 0
         percentageOutsideUfo: 0
         itemSets: *emptyItemSets
-      - alienRank: 6
-        lowQty: 2
-        highQty: 2 #2
-        dQty: 3 #2
+      - alienRank: 2
+        lowQty: 1
+        medQty: 1
+        highQty: 1
+        dQty: 0
+        percentageOutsideUfo: 20
+        itemSets: *emptyItemSets
+      - alienRank: 3
+        lowQty: 1
+        medQty: 1
+        highQty: 1
+        dQty: 1
         percentageOutsideUfo: 80
+        itemSets: *emptyItemSets
+      - alienRank: 4
+        lowQty: 3
+        medQty: 3
+        highQty: 3
+        dQty: 5
+        percentageOutsideUfo: 100
+        itemSets: *emptyItemSets
+      - alienRank: 5
+        lowQty: 2
+        medQty: 2
+        highQty: 2
+        dQty: 2
+        percentageOutsideUfo: 90
+        itemSets: *emptyItemSets
+      - alienRank: 6
+        lowQty: 3
+        medQty: 3
+        highQty: 3
+        dQty: 2
+        percentageOutsideUfo: 100
         itemSets: *emptyItemSets
       - alienRank: 7
         lowQty: 1
-        highQty: 1 #2
-        dQty: 3 #2
-        percentageOutsideUfo: 80
+        medQty: 1
+        highQty: 1
+        dQty: 1
+        percentageOutsideUfo: 10
         itemSets: *emptyItemSets
     reinforcements:
       - type: necronShipReinforcementStart
@@ -665,30 +687,29 @@ alienDeployments:
         #spawnNodeRanks: [4] # leader/commander nodes
         mapBlockFilterType: 1 # marked blocks - inside the monolith
         data:
-          - alienRank: 5
-            lowQty: 2
-            highQty: 2
-            dQty: 2
+          - alienRank: 3
+            lowQty: 0
+            medQty: 0
+            highQty: 0
+            dQty: 1
             itemSets: *emptyItemSets
           - alienRank: 4
             lowQty: 1
+            medQty: 1
             highQty: 1
             dQty: 1
             itemSets: *emptyItemSets
-          - alienRank: 3
-            lowQty: 0
-            highQty: 0
-            dQty: 1
+          - alienRank: 5
+            lowQty: 1
+            medQty: 1
+            highQty: 1
+            dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 6
-            lowQty: 0
-            highQty: 0
+            lowQty: 1
+            medQty: 1
+            highQty: 1
             dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 7
-            lowQty: 0
-            highQty: 0
-            dQty: 0
             itemSets: *emptyItemSets
       - type: necronShipReinforcementEnd
         briefing:
@@ -708,29 +729,40 @@ alienDeployments:
         #spawnNodeRanks: [4] # leader/commander nodes
         mapBlockFilterType: 1 # marked blocks - inside the monolith
         data:
-          - alienRank: 5
-            lowQty: 1
-            highQty: 1
-            dQty: 2
-            itemSets: *emptyItemSets
-          - alienRank: 4
+          - alienRank: 2
             lowQty: 0
-            highQty: 0
+            medQty: 1
+            highQty: 1
             dQty: 1
             itemSets: *emptyItemSets
           - alienRank: 3
-            lowQty: 0
-            highQty: 0
+            lowQty: 1
+            medQty: 1
+            highQty: 1
             dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 4
+            lowQty: 2
+            medQty: 2
+            highQty: 2
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 5
+            lowQty: 1
+            medQty: 1
+            highQty: 1
+            dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 6
-            lowQty: 0
-            highQty: 0
-            dQty: 1
+            lowQty: 1
+            medQty: 1
+            highQty: 1
+            dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 7
-            lowQty: 0
-            highQty: 0
+            lowQty: 1
+            medQty: 1
+            highQty: 1
             dQty: 0
             itemSets: *emptyItemSets
     missionBountyItem: STR_REQUISITION_BOUNTY_500K

@@ -21,6 +21,7 @@ extended:
       SMT_HEAL_WOUNDS_HP_CAP: int       # % healing cap based on max hp
       ITEM_CLOAKING_EFFECT: int         # cloaks unit for 1 turn - X = detection range
       ITEM_EFFECT_DURATION: int         # length of items effect
+      ITEM_SERVITOR_ENHANCER: int       # item buffs servitor units: x = firing/melee bonus given to servitors
       ## Weapon Ammo Sprites
       ITEM_AMMO_SKIP_BIGOBS: int        # ammo causes weapon sprite to change - X = size of index shift
       ## Heavy Weapons
@@ -63,8 +64,6 @@ extended:
       BOMBARD_TARGETER: int                     # marks unit as bombard target designator
       ## Buffs
       SMT_SIGNUM_ARMOR: int                     # check for if is unit wearing a signum
-      ## Captain
-      UNIT_TYPE_ASTARTES: int                   # is unit a Space Marine?
       ## Regeneration
       ARMOR_REGENERATE_HEALTH_FLAT: int         # special hp regen from armor - Flat values
       ARMOR_REGENERATE_HEALTH_PERCENT: int      # special hp regen from armor - Percentage of (Max HP - Lowest HP)
@@ -99,7 +98,8 @@ extended:
       ## Flight
       FLIGHT_MOVESPEED_MODIFIER: int            # set flying movespeed to this value
       ## Unit Types
-      UNIT_TYPE_SERVITOR: int                   # mark unit as servitor
+      UNIT_TYPE_ASTARTES: int                   # Space Marines
+      UNIT_TYPE_SERVITOR: int                   # Servitors
     RuleSoldier:
       ## Regeneration
       UNIT_REGENERATE_HEALTH_FLAT: int          # hp regen from soldier type - Flat values
@@ -138,6 +138,7 @@ extended:
       SMT_REFLEX_REACTION_BONUS: int    # stores units reaction bonus
       SMT_VULN_ENDTURN: int             # store debuff duration
       SMT_VULN_INTENSITY: int           # store debuff strength
+      SMT_SERVITOR_ENHANCED: int        # buff strength for servitor
       UNIT_MOVESPEED_MODIFIERS: int     # combined movespeed modifiers for a unit
       ## Rampage
       SMT_RAMPAGE_COUNT: int            # # of times unit has refunded TUs from kills

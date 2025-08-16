@@ -22,7 +22,7 @@ items:
     power: 70
     damageType: 1
     damageAlter:
-      RandomType: 1 # 0-200%
+      RandomType: 8 # 25-175%
       ArmorEffectiveness: 0.45 # was 0.5
       ToArmorPre: 0.02 # was 0.02
       ToArmor: 0.1 # was 0.05
@@ -2490,6 +2490,9 @@ items:
       ITEM_RECOIL: 100 # was 60, offset by bipod
       ITEM_HAS_BIPOD: 1
 
+  - type: STR_GENERIC_SERVITOR_HEAVYBOLTER  # Combat Servitor Heavy Bolter
+    refNode: *DMG_BOLTER_AMMO_STD
+
 ### Sniper Rifle
   - type: STR_HEAVY_CANNON                  # SM Sniper
     dropoff: 3 #scoped sniper rifle
@@ -2672,7 +2675,7 @@ items:
     damageAlter: # metalstorm/frag hybrid
       FixRadius: 6
       RadiusReduction: 5
-      RandomType: 6
+      RandomType: 9 # 50-150
       ArmorEffectiveness: 1.3
       ToHealth: 1.3 #
       ToArmorPre: 0.05 #
@@ -2693,7 +2696,7 @@ items:
     damageAlter: # krak grenade base
       ResistType: 1 # AP resist
       FixRadius: 1
-      RandomType: 6
+      RandomType: 9 # 50-150
       ArmorEffectiveness: 0.7
       ToHealth: 0.7
       ToArmorPre: 0.35
@@ -2711,9 +2714,9 @@ items:
     damageAlter: # Incendiary
       FixRadius: 3
       RadiusReduction: 5
-      RandomType: 6
+      RandomType: 9 # 50-150
       ResistType: 2
-      ArmorEffectiveness: 0.5
+      ArmorEffectiveness: 0.7
       ToHealth: 1.3
       ToArmorPre: 0.0
       ToArmor: 0.1
@@ -2754,7 +2757,7 @@ items:
     hitAnimation: {mod: 40k, index: 26}
     damageType: 1 # standard
     damageAlter:
-      RandomType: 6
+      RandomType: 8
       ArmorEffectiveness: 0.7 # normal .7
       ToHealth: 1.0 # normal 1.0
       ToStun: 0.3
@@ -2774,7 +2777,7 @@ items:
     hitAnimation: {mod: 40k, index: 26}
     damageType: 1
     damageAlter:
-      RandomType: 1
+      RandomType: 8 # 25-175%
       ArmorEffectiveness: 1.0 # normal 0.7
       ToHealth: 1.0
       ToArmorPre: 0.1
@@ -2785,6 +2788,10 @@ items:
     tags:
       ITEM_ENERGY_SHIELD_REDUCTION_PERCENT: 100 # shield buster ammo
       SMT_SHIELD_DAMAGE_AMP: 50
+
+  - type: STR_HEAVY_SNIPER_RIFLEG           # Guard Heavy Sniper
+    weight: 30 # was 50
+    noLOSAccuracyPenalty: 66 # default 50 - Sniper Rifle bonus
 
 ### Assault/Auto Cannons
   - type: STR_ASSC_CLIP                     # Assault Cannon Ammo
@@ -2862,7 +2869,7 @@ items:
     power: 120 # was 100
     damageType: 3
     damageAlter:  # high explosive
-      RandomType: 6
+      RandomType: 9 # 50-150
       ToArmorPre: 0.05
       ToArmor: 0.1
       ArmorEffectiveness: 1.0 # was 0.95
@@ -3138,7 +3145,7 @@ items:
       ToItem: 0.3
       ToMorale: 5.0
       ToTime: 0.2  # debilitating pain
-      RandomType: 6  # Gaussian
+      RandomType: 9 # 50-150
       ArmorEffectiveness: 0.6 # was 0.8
       ToArmorPre: 0.1 # was 0.2
     clipSize: 40
@@ -3150,12 +3157,13 @@ items:
     size: 0.05
     tags:
       SMT_ARMOR_TARGET_WEAKEST: 1
+      ITEM_IGNITES_TARGETS: 1
 
   - type: STR_FLAMETHROWER_PROMETHIUM_CLIP  # Flamer Fuel (Promethium)
     size: 0.05
     tags:
       SMT_ARMOR_TARGET_WEAKEST: 1
-      ITEM_IGNITES_TARGETS: 1
+      ITEM_IGNITES_TARGETS: 2
 
 ### Melta Guns
   - &DMG_MELTA_STD                          # Standard Melta Damage
@@ -3163,7 +3171,7 @@ items:
     armor: 300
     damageType: 11
     damageAlter:
-      RandomType: 2 # 50-150, was 0-200
+      RandomType: 8 # 25-175
       ToArmorPre: 1.0
       ToHealth: 1.6
       ToTile: 8.0 # was 6.0
@@ -3181,7 +3189,7 @@ items:
     armor: 300
     damageType: 11
     damageAlter:
-      RandomType: 6
+      RandomType: 9 # 50-150
       ToArmorPre: 1.0
       ToTile: 1.0
       ToItem: 1.0
@@ -3296,13 +3304,32 @@ items:
     tags:
       ITEM_AMMO_COLOR: 2
 
+  - type: STR_GENERICSERVITOR_MILAUNCHER    # Combat Servitor Melta Missiles
+    refNode: *DMG_MELTA_BLAST
+    power: 120
+    damageAlter:
+      FixRadius: 2 # was 3
+    accuracySnap: 60 # was 60
+    accuracyAimed: 90 
+    snapRange: 16 # was 7
+    aimRange: 24
+    costSnap:
+      time: 35 # was 33
+      mana: 1
+    costAimed:
+      time: 75
+      mana: 1
+    costAuto:
+      time: 0
+      mana: 0
+
 ### Plasma
   - &DMG_PLASMA_STD                         # Standard Plasma Damage
     type: STR_PLASMA_RIFLE_CLIP
     armor: 300
     damageType: 5
     damageAlter:
-      RandomType: 6
+      RandomType: 8
       ToArmorPre: 0.3 # was 0.1
       ToArmor: 0.2 # was 0.1
       ArmorEffectiveness: 0.6 # was 0.75
@@ -3340,6 +3367,7 @@ items:
 
   - type: STR_HEAVY_PLASMA_CLIP             # Heavy Plasma Ammo
     refNode: *DMG_PLASMA_STD
+    weight: 12 # was 20
     power: 120 # was 120
     damageAlter:
       FixRadius: 1
@@ -3358,10 +3386,11 @@ items:
   - type: STR_PLASMA_SPRAY_CLIP             # Plasma Carbine Ammo
     refNode: *DMG_PLASMA_STD
     power: 70
-    damageAlter:
-      RandomType: 3
     powerRangeReduction: 5
     powerRangeThreshold: 20.0 # was missing
+
+  - type: STR_PLASMA_PISTOL_TERRAN          # Plasma Pistol
+    weight: 9
 
   - type: STR_PRIMARIS_INCINERATOR_POWER_PACK   # Primaris Incinerator
     refNode: *DMG_PLASMA_STD
@@ -3608,69 +3637,79 @@ items:
     powerRangeReduction: 5
     powerRangeThreshold: 30.0 # was 35
 
+  - &REF_HEAVY_PLASMA_WEAPON                # Heavy Plasma Gun
+    type: STR_HEAVY_PLASMA_TERRAN
+    weight: 36 # was 40
+    tags:
+      ITEM_RECOIL: 60 # was 0
+
+  - type: STR_HEAVY_PLASMA_MC               # Heavy Plasma (Mastercrafted)
+    refNode: *REF_HEAVY_PLASMA_WEAPON
+
+  - type: STR_HEAVY_PLASMA                  # Heavy Plasma (Chaos)
+    refNode: *REF_HEAVY_PLASMA_WEAPON
+
   - type: AUX_HOVERTANK_PLASMA              # Dreadnought Plasma Cannon
     refNode: *DMG_PLASMA_STD
-    power: 120
+    power: 130 # was 120
+    powerForAnimation: 5
     damageAlter:
       FixRadius: 1
     powerRangeReduction: 5
     powerRangeThreshold: 30.0
     dropoff: 4
     autoRange: 0
-    snapRange: 24
-    aimRange: 33
+    snapRange: 20 # was 24
+    aimRange: 30 # was 33
     accuracyAuto: 0
     accuracySnap: 85
     accuracyAimed: 100
     tuAuto: 0
     tuSnap: 30
     tuAimed: 60
+    tags:
+      SMT_ARMOR_TARGET_WEAKEST: 1
 
-  - type: STR_DW_PLASMA_GRENADE             # Plasma Grenade
+  - type: STR_HEAVY_PLASMA_SENTINEL         # Sentinel Plasma Cannon
     refNode: *DMG_PLASMA_STD
-    fuseType: 0 # fixed 0 turn fuse
-    fuseTriggerEvents:
-      throwExplode: true
-    isExplodingInHands: true
-    noLOSAccuracyPenalty: 75 # indirect fire weapon
-    weight: 4
-    throwRange: 16
-    costThrow:
-      energy: 2
-      time: 55
-    costPrime:
-      time: 5
-    costUnprime:
-      time: 0 # can't unprime
-    flatPrime:
-      time: false
-      energy: true
-    power: 150 # overcharged plasma in a can
+    power: 130 # was 140
+    powerForAnimation: 5
+    damageAlter:
+      FixRadius: 1
+    powerRangeReduction: 5
+    powerRangeThreshold: 30.0
+    dropoff: 4
+    autoRange: 0
+    snapRange: 20 # was 24
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 85
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 30
+    tuAimed: 0
+    tags:
+      SMT_ARMOR_TARGET_WEAKEST: 1
+
+  - type: STR_EXECUTIONER_CANNON            # Tank Plasma Cannon
+    refNode: *DMG_PLASMA_STD
+    powerRangeReduction: 5
+    powerRangeThreshold: 40.0  # plasma decoheres at longer ranges; basically irrelevant for vehicle mounted weapons
+    power: 150
+    powerForAnimation: 5
+    damageAlter:
+      FixRadius: 1 # was 2
+    tags:
+      SMT_ARMOR_TARGET_WEAKEST: 1
+
+
+  - type: STR_GENERICSERVITOR_HEAVY_PLASMA  # Servitor Plasma Cannon
+    refNode: *DMG_PLASMA_STD
+    power: 120
     damageAlter:
       FixRadius: 1
     tags:
       SMT_ARMOR_TARGET_WEAKEST: 1
-
-  - type: STR_ELDAR_GRENADE                 # Eldar Plasma Grenade
-    refNode: *DMG_PLASMA_STD
-    costThrow:
-      time: 55
-      energy: 5
-    costPrime:
-      time: 5
-    costUnprime:
-      time: 5
-    unprimeActionName: STR_UNPRIME_GRENADE
-    flatThrow:
-      time: false
-      energy: true
-    flatPrime:
-      time: false
-      energy: true
-    damageType: 5
-    power: 130 # was 90
-    damageAlter:
-      FixRadius: 5
 
 ### Volkite
   - &REF_VOLKITE_DMG                        # Volkite Standard Damage
@@ -3986,7 +4025,7 @@ items:
     armor: 300
     damageType: 1 # standard
     damageAlter:
-      RandomType: 6  # gaussian
+      RandomType: 8
       ToArmorPre: 0.2
       ToHealth: 1.0
       ToArmor: 0.1
@@ -3999,7 +4038,7 @@ items:
     armor: 300
     damageType: 1 # standard
     damageAlter:
-      RandomType: 6  # gaussian
+      RandomType: 8
       ArmorEffectiveness: 0.75
       ToArmorPre: 0.2
       ToHealth: 1.0
@@ -4040,7 +4079,7 @@ items:
     power: 220
     damageType: 4
     damageAlter:
-      RandomType: 6  # gaussian
+      RandomType: 8
       ToArmorPre: 0.3 # was 0.4
       ToHealth: 1.0
       ToArmor: 0.1
@@ -4240,7 +4279,7 @@ items:
     powerRangeThreshold: 24
     powerRangeReduction: 2
     damageAlter:
-      RandomType: 1 # 0-200%
+      RandomType: 8 # 25-175%
       ArmorEffectiveness: 0.5 # was 0.5
       ToArmorPre: 0.02 # was 0
       ToArmor: 0.15 # was 0, decent destruction if it manages to pen
@@ -4379,7 +4418,7 @@ items:
     power: 135 # was 100
     damageType: 3
     damageAlter: #high explosive
-      RandomType: 6
+      RandomType: 9 # 50-150
       ArmorEffectiveness: 0.7 # was 0.9
       ToHealth: 1.0 # was 1.0
       ToArmorPre: 0.3
@@ -4452,7 +4491,7 @@ items:
     damageAlter: #high explosive
       ResistType: 1 # frags deal standard damage
       ToArmorPre: 0.1 # was 0.1
-      RandomType: 6
+      RandomType: 9 # 50-150
       ArmorEffectiveness: 0.9 # was 0.9
       ToHealth: 1.0 # was 1.0
       ToArmor: 0.2
@@ -4792,7 +4831,7 @@ items:
     loadOrder: 100
     damageType: 3 # Explosive
     damageAlter:
-      RandomType: 6
+      RandomType: 9 # 50-150
       ArmorEffectiveness: 0.9  # concussive
       ToArmorPre: 0.1
       ToArmor: 0.1
@@ -4814,7 +4853,7 @@ items:
     damageType: 3
     damageAlter:
       ResistType: 1 # Standard
-      RandomType: 6
+      RandomType: 9 # 50-150
       ArmorEffectiveness: 0.5
       ToArmorPre: 0.2
       ToArmor: 0.3
@@ -4837,7 +4876,7 @@ items:
       index: 88
     damageType: 2 # Incin
     damageAlter:
-      RandomType: 6
+      RandomType: 9 # 50-150
       FireBlastCalc: false
       IgnoreDirection: false
       FireThreshold: 1
@@ -4897,7 +4936,7 @@ items:
     damageAlter:
       ToArmorPre: 0.1 # was 0.2
       ToArmor: 0.2 # was 0.0
-      RandomType: 6
+      RandomType: 9 # 50-150
       ArmorEffectiveness: 0.9
       ToStun: 0.5
       ToEnergy: 0.3
@@ -5011,6 +5050,8 @@ items:
       - STR_MELTAGUN_TECH
     damageAlter:
       FixRadius: 1 # was 2
+    tags:
+      SMT_ARMOR_DAMAGE_ALL: 50 # weaker
 
   - type: STR_MORTAR_AMMO_ILLUMINATION_EXPLOSION # Mortar Flare
     spawnItem: STR_SUPERFLARE
@@ -5047,12 +5088,12 @@ items:
     weight: 3
     fuseType: -2
     costThrow:
-      time: 50
+      time: 40
       energy: 6
     costPrime:
-      time: 2
+      time: 10
     costUnprime:
-      time: 2
+      time: 1
     flatThrow:
       time: false
       energy: true
@@ -5084,9 +5125,9 @@ items:
       energy: 10 # was 40
       time: 40 # was 80!
     costPrime:
-      time: 5 # was 40!
+      time: 10 # was 40!
     costUnprime:
-      time: 5
+      time: 1
     power: 200  # deadly
     damageAlter:
       FixRadius: 8 # was 10
@@ -5100,12 +5141,12 @@ items:
     weight: 3  # Guardsmen should be able to throw these a reasonable distance
     fuseType: -2
     costThrow:
-      time: 50
+      time: 40
       energy: 6
     costPrime:
-      time: 2
+      time: 10
     costUnprime:
-      time: 2
+      time: 1
     flatThrow:
       time: false
       energy: true
@@ -5115,7 +5156,7 @@ items:
     damageType: 3
     damageAlter:
       ResistType: 1
-      RandomType: 6
+      RandomType: 9 # 50-150
       ToHealth: 0.8
       ToArmorPre: 0.2
       ToArmor: 0.2
@@ -5132,12 +5173,12 @@ items:
     weight: 2
     fuseType: -2
     costThrow:
-      time: 50
+      time: 40
       energy: 4
     costPrime:
-      time: 2
+      time: 10
     costUnprime:
-      time: 2
+      time: 1
     flatThrow:
       time: false
       energy: true
@@ -5170,12 +5211,12 @@ items:
     weight: 2
     fuseType: -2
     costThrow:
-      time: 50
+      time: 40
       energy: 4
     costPrime:
-      time: 2
+      time: 10
     costUnprime:
-      time: 2
+      time: 1
     flatThrow:
       time: false
       energy: true
@@ -5205,8 +5246,10 @@ items:
     fuseTriggerEvents:
       throwExplode: true
     costThrow:
-      time: 25 # was 55
+      time: 30 # was 55
       energy: 4
+    costPrime:
+      time: 10
 
   - type: STR_SMOKE_BOMB                    # Smoke Bomb
     weight: 12 # was 20
@@ -5215,9 +5258,9 @@ items:
       energy: 5 # was 40
       time: 40 # was 80!
     costPrime:
-      time: 5 # was 40!
+      time: 10 # was 40!
     costUnprime:
-      time: 5
+      time: 1
 
   - type: STR_PHOTON_GRENADE                # Photon Grenade
     fuseType: 0 # fixed 0 turn fuse
@@ -5226,12 +5269,12 @@ items:
     throwRange: 18
     weight: 2
     costThrow:
-      time: 50
+      time: 40
       energy: 4
     costPrime:
-      time: 2
+      time: 10
     costUnprime:
-      time: 2
+      time: 1
     flatThrow:
       time: false
       energy: true
@@ -5252,6 +5295,134 @@ items:
       ToWound: 0.00
       RandomWound: false
       FixRadius: 3
+
+  - type: STR_DW_PLASMA_GRENADE             # Plasma Grenade
+    refNode: *DMG_PLASMA_STD
+    fuseType: 0 # fixed 0 turn fuse
+    fuseTriggerEvents:
+      throwExplode: true
+    isExplodingInHands: true
+    noLOSAccuracyPenalty: 75 # indirect fire weapon
+    weight: 4
+    throwRange: 16
+    costThrow:
+      energy: 2
+      time: 40
+    costPrime:
+      time: 10
+    costUnprime:
+      time: 0 # can't unprime
+    flatPrime:
+      time: false
+      energy: true
+    power: 150 # overcharged plasma in a can
+    damageAlter:
+      FixRadius: 1
+    tags:
+      SMT_ARMOR_TARGET_WEAKEST: 1
+
+  - type: STR_ELDAR_GRENADE                 # Eldar Plasma Grenade
+    refNode: *DMG_PLASMA_STD
+    fuseType: 0 # fixed 0 turn fuse
+    fuseTriggerEvents:
+      throwExplode: true
+    costThrow:
+      time: 40
+      energy: 2
+    costPrime:
+      time: 10
+    costUnprime:
+      time: 1
+    unprimeActionName: STR_UNPRIME_GRENADE
+    flatThrow:
+      time: false
+      energy: true
+    flatPrime:
+      time: false
+      energy: true
+    power: 120 # was 90
+    damageAlter:
+      FixRadius: 4
+    tags:
+      SMT_ARMOR_TARGET_WEAKEST: 1
+
+  - type: STR_ELDAR_MGRENADE                # Eldar Melta Bomb
+    refNode: *DMG_MELTA_BLAST
+    fuseType: 0 # fixed 0 turn fuse
+    fuseTriggerEvents:
+      throwExplode: true
+    costThrow:
+      time: 40
+      energy: 2
+    costPrime:
+      time: 10
+    costUnprime:
+      time: 1
+    unprimeActionName: STR_UNPRIME_GRENADE
+    flatThrow:
+      time: false
+      energy: true
+    flatPrime:
+      time: false
+      energy: true
+    power: 180 # was 140
+    damageAlter:
+      FixRadius: 4
+
+  - type: STR_ANTIPLANT_BOMB                # Anti-Plant Bomb
+    categories: [ STR_CAT_GRENADES, STR_CAT_TACTICAL]
+    battleType: 4
+    invHeight: 2
+    invWidth: 2
+    bigSprite: 104
+    floorSprite: 104
+    handSprite: 536
+    listOrder: 13703
+    explosionHitSound: {mod: 40k, index: 792}
+    hitAnimation:
+      mod: 40k
+      index: 80
+    powerForAnimation: 160
+    primeSound: {mod: 40k_ROSIGMA_edits, index: 2425}
+    size: 0.05
+    armor: 300
+    requiresBuy:
+      - STR_LASER_WEAPONS
+    costBuy: 10000
+    costSell: 5000
+    fuseType: -1
+    noLOSAccuracyPenalty: 75
+    weight: 8
+    throwRange: 18
+    costThrow:
+      energy: 5
+      time: 35
+    costPrime:
+      time: 2
+    costUnprime:
+      time: 1
+    unprimeActionName: STR_UNPRIME_GRENADE
+    flatPrime:
+      time: true
+      energy: true
+    isFireExtinguisher: true
+    damageType: 8 # Acid
+    power: 400
+    damageAlter:
+      RandomType: 3 # fixed 100%
+      ArmorEffectiveness: 16.0 # anti-terrain, not a proper weapon
+      FireThreshold: 1000
+      SmokeThreshold: 1000
+      ToArmorPre: 0.0
+      ToArmor: 0.0
+      ToHealth: 0.05
+      RandomHealth: true
+      ToStun: 0.0
+      ToItem: 0.0
+      ToTile: 0.13 # 52 terrain dmg
+      TileDamageMethod: 2 # consistent tile damage
+      FixRadius: 9
+      RadiusReduction: 0
 
 ### Melee
   - type: STR_CHAINSWORD                    # Chainsword
@@ -5457,7 +5628,7 @@ items:
       # strength: 0.3 #
       # melee: 0.3 # was 0.25
     # meleeAlter:
-      # RandomType: 1
+      # RandomType: 8 # 25-175%
       # IgnoreDirection: false
       # ToStun: 0.5
       # ToHealth: 1.0
@@ -5595,7 +5766,7 @@ items:
       ArmorEffectiveness: 0.7
       ToArmorPre: 0.4
       ToHealth: 0.9
-      RandomType: 7 #TFTD [50% - 200%]
+      RandomType: 8 # 25-175%
       IgnoreSelfDestruct: false
     damageType: 5
     accuracyMelee: 80
@@ -5867,6 +6038,44 @@ items:
     tags:
       ITEM_IGNITES_TARGETS: 1
 
+  - type: STR_PSITOKEN_WALLBREAKER          # T1 Rend Landscape
+    refNode: *REF_SKILL_TOKEN
+    categories: [ STR_CAT_SPELLS]
+    #fireSound: {mod: 40k, index: 847} ###CHANGEME
+    hitSound: {mod: 40k, index: 830}
+    hitAnimation: 800
+    powerForAnimation: 12
+    bulletSpeed: 80
+    battleType: 1
+    experienceTrainingMode: 26
+    dropoff: 20
+    accuracyMultiplier:
+      psiStrength: 1.0
+    accuracyAimed: 150
+    noLOSAccuracyPenalty: 100
+    aimRange: 15
+    confAimed:
+      shots: 4
+    power: 40
+    powerRangeThreshold: 15
+    powerRangeReduction: 100 # loses all power outside of max range
+    damageType: 13 # warp
+    damageBonus:
+      psiStrength: 0.5
+    damageAlter:
+      RandomType: 3
+      ArmorEffectiveness: 1.2
+      ToArmorPre: 0.02
+      ToArmor: 0.0
+      ToHealth: 0.1
+      ToEnergy: 0.2
+      ToStun: 0.2
+      ToTile: 1.2
+      TileDamageMethod: 1
+      ToItem: 0.0
+      FixRadius: 1
+      RadiusReduction: 3
+
   - type: STR_PSITOKEN_TELEPATHY            # T1 Telepathy
     refNode: *REF_PSI_TOKEN
     categories: [ STR_CAT_SPELLS]
@@ -5902,15 +6111,15 @@ items:
     damageType: 13 # warp
     power: 20 # was 0
     damageBonus:
-      psiStrength: 0.5 # was 1.0
+      psiStrength: 0.75 # was 1.0
     damageAlter:
-      RandomType: 6
+      RandomType: 8 # 25-175%
       ArmorEffectiveness: 0.0 # was 0.25
       ToArmor: 0.0
       ToHealth: 0.0
       ToTime: 0.6 # was 1.0
       ToEnergy: 0.6
-      ToStun: 0.2
+      ToStun: 0.3
       ToMorale: 0.2
       ToWound: 0.0
       ToTile: 0.0
@@ -5979,44 +6188,6 @@ items:
       ITEM_IS_BUFF_WEAPON: 1
       SMT_VIGILIANCE_BUFF: 100
 
-  - type: STR_PSITOKEN_WALLBREAKER          # T2 Rend Landscape
-    refNode: *REF_SKILL_TOKEN
-    categories: [ STR_CAT_SPELLS]
-    #fireSound: {mod: 40k, index: 847} ###CHANGEME
-    hitSound: {mod: 40k, index: 830}
-    hitAnimation: 800
-    powerForAnimation: 12
-    bulletSpeed: 80
-    battleType: 1
-    experienceTrainingMode: 26
-    dropoff: 20
-    accuracyMultiplier:
-      psiStrength: 1.0
-    accuracyAimed: 150
-    noLOSAccuracyPenalty: 100
-    aimRange: 15
-    confAimed:
-      shots: 4
-    power: 40
-    powerRangeThreshold: 15
-    powerRangeReduction: 100 # loses all power outside of max range
-    damageType: 13 # warp
-    damageBonus:
-      psiStrength: 0.5
-    damageAlter:
-      RandomType: 3
-      ArmorEffectiveness: 1.2
-      ToArmorPre: 0.02
-      ToArmor: 0.0
-      ToHealth: 0.1
-      ToEnergy: 0.2
-      ToStun: 0.2
-      ToTile: 1.2
-      TileDamageMethod: 1
-      ToItem: 0.0
-      FixRadius: 1
-      RadiusReduction: 3
-
   - type: STR_PSITOKEN_SMITE                # T3 Smite
     refNode: *REF_PSI_TOKEN
     hitAnimation: {mod: 40k, index: 1110}
@@ -6035,10 +6206,10 @@ items:
     damageType: 1
     power: 5
     damageBonus:
-      psiStrength: 0.4 # was 0.002 psi
+      psiStrength: 0.5 # was 0.002 psi
     damageType: 13 # warp
     damageAlter:
-      RandomType: 6 # 0-100 x2 - was 2 (50-150)
+      RandomType: 8 # 25-175%
       ArmorEffectiveness: 0.0
       ToHealth: 1.0
       ToArmor: 0.0
@@ -6177,7 +6348,7 @@ items:
     blastRadius: -1
     damageType: 0
     damageAlter:
-      RandomType: 2 # 50-150%
+      RandomType: 5 # 0%
       ArmorEffectiveness: 0.0
       ToEnergy: 0.1
       ToHealth: 0.1
@@ -6213,15 +6384,20 @@ items:
     hitSound: {mod: 40k, index: 778}
     hitAnimation: {mod: 40k, index: 160}
     targetMatrix: 6
-    power: 15 # was 100
     maxRange: 15
     LOSRequired: true
-    damageAlter:
-      ToTime: 5.0 # was 10
+    power: 15 # was 100
     damageBonus:
       psiStrength: 0.8 # 40 Str = 47 power; 140 psiStr gives 127 power
+    damageType: 13 # warp
     damageAlter:
       RandomType: 2 # 50-150%
+      ArmorEffectiveness: 0.0
+      ToHealth: 0.0
+      ToStun: 0.0
+      ToWound: 0.0
+      ToArmor: 0.0
+      ToTime: 5.0 # was 10
     costUse:
       energy: 25
       stun: 10
@@ -6272,7 +6448,7 @@ items:
       psiStrength: 0.4
     damageType: 13 # warp
     damageAlter:
-      RandomType: 2 # 50-150%
+      RandomType: 8 # 25-175%
       ArmorEffectiveness: 0.0
       ToEnergy: 0.1
       ToHealth: 0.1
@@ -6374,7 +6550,7 @@ items:
       psiStrength: 0.8
     damageType: 13 # warp
     damageAlter:
-      RandomType: 6
+      RandomType: 8 # 25-175%
       ArmorEffectiveness: 0.0
       ToHealth: 1.0
       ToTime: 0.2
@@ -6446,7 +6622,7 @@ items:
       psiStrength: 0.4
     damageType: 13 # warp
     damageAlter:
-      RandomType: 6
+      RandomType: 8 # 25-175%
       FireBlastCalc: false
       IgnoreOverKill: false
       FireThreshold: 0
@@ -6603,6 +6779,66 @@ items:
       arcing: true
     costSell: 2000
 
+  - type: STR_TECH_SENTRY_SPAWNER           # Techmarine Tarantula Sentry
+    battleType: 1
+    categories: [ STR_CAT_TECHPRIEST, STR_CAT_EQUIPMENT]
+    bigSprite: {mod: 40k, index: 843}
+    floorSprite: {mod: 40k, index: 735}
+    handSprite: {mod: 40k, index: 1736}
+    explosionHitSound: {mod: 40k, index: 292}
+    hitAnimation: {mod: 40k, index: 216}
+    invWidth: 3
+    invHeight: 3
+    supportedInventorySections:
+      - STR_BACK_PACK
+      - STR_GROUND
+    inventoryMoveCost:
+      basePercent: 1000 # 10x movement cost, only move during loadout
+    spawnUnit: STR_T_BOLTER_TECH
+    spawnUnitFaction: 0
+    size: 0.05
+    weight: 40
+    power: 1
+    clipSize: 1
+    damageType: 0
+    blastRadius: 1
+    aimRange: 2
+    maxRange: 2
+    accuracyAimed: 200
+    confAimed:
+      arcing: true
+    costSell: 40000
+
+  - type: STR_TECH_TF_SPAWNER               # Techmarine Thunderfire Drone
+    battleType: 1
+    categories: [ STR_CAT_TECHPRIEST, STR_CAT_EQUIPMENT]
+    bigSprite: {mod: 40k, index: 842}
+    floorSprite: {mod: 40k, index: 734}
+    handSprite: {mod: 40k, index: 1728}
+    explosionHitSound: {mod: 40k, index: 293}
+    hitAnimation: {mod: 40k, index: 208}
+    invWidth: 3
+    invHeight: 3
+    supportedInventorySections:
+      - STR_BACK_PACK
+      - STR_GROUND
+    inventoryMoveCost:
+      basePercent: 1000 # 10x movement cost, only move during loadout
+    spawnUnit: STR_THUNDERFIRE_TECH
+    spawnUnitFaction: 0
+    size: 0.05
+    weight: 40
+    power: 1
+    clipSize: 1
+    damageType: 0
+    blastRadius: 1
+    aimRange: 2
+    maxRange: 2
+    accuracyAimed: 200
+    confAimed:
+      arcing: true
+    costSell: 40000
+
   - type: STR_TECH_REPAIRTOOL               # Techpriest Repair Tool
     refNode: *REF_SKILL_TOKEN
     weight: 0
@@ -6670,23 +6906,32 @@ items:
 
   - type: STR_TECH_TOOL_SERVITOR            # Techpriest Sanctus Canister
     refNode: *REF_TECH_SUPPORT
+    battleType: 9
     bigSprite: 317
     invHeight: 2
     invWidth: 1
-    battleType: 6
-    medikitType: 3
-    painKiller: 999
-    heal: 0
-    stimulant: 0
-    woundRecovery: 0
-    healthRecovery: 0
-    tuUse: 25
+    hitSound: {mod: 40k, index: 37} ###CHANGEME
+    hitAnimation: {mod: 40k, index: 170} ###CHANGEME
+    hitAnimFrames: 10
+    targetMatrix: 1
+    power: 50
+    LOSRequired: false
+    maxRange: 2
+    damageType: 0
+    damageAlter:
+      RandomType: 3 # 100%
+      ToHealth: 0.0
+      ToArmor: 0.0
+      ArmorEffectiveness: 0.0
+      ToTime: -1.0
     flatRate: false
-    medikitTargetSelf: false
-    medikitTargetMatrix: 31
-    # tags:
-      # ITEM_SERVITOR_ENHANCER: 30
-      # ITEM_SERVITOR_ENERGIZER: 40
+    tuUse: 25
+    accuracyUse: 400
+    accuracyMultiplier:
+      flatHundred: 1.0
+    psiAttackName: STR_SIGNUM_ENEMY
+    tags:
+      ITEM_SERVITOR_ENHANCER: 30
 
   - type: STR_TECH_TOOL_SHIELD              # Techpriest Shield
     refNode: *REF_TECH_SUPPORT
@@ -6722,7 +6967,7 @@ items:
     LOSRequired: true
     damageType: 0
     damageAlter:
-      RandomType: 3 # 50-150%
+      RandomType: 3 # 100%
       ToHealth: 0.0
       ToArmor: 0.0
       ArmorEffectiveness: 0.0
@@ -6733,7 +6978,7 @@ items:
       flatHundred: 1.0
     psiAttackName: STR_SIGNUM_ENEMY
     tags:
-      SMT_VULN_DEBUFF_FIXED: 20
+      SMT_VULN_DEBUFF_FIXED: 33
       ITEM_EFFECT_DURATION: 1
 
   - type: STR_SKULL_ANALYZE                 # Skull Analyzer
@@ -6783,7 +7028,7 @@ items:
       ToArmor: 0.1 # was 0.0
       ToMorale: 5.0
       ToTime: 0.2 #debilitating pain
-      RandomType: 6 #Gaussian
+      RandomType: 9 # 50-150
 
   - type: STR_GRAV_FLAMER_DW                # Gravis Flamestorm Gauntlet (DW)
     refNode: *REF_POWERFIST_TEMPLATE
@@ -6821,64 +7066,9 @@ items:
       ToArmor: 0.1 # was 0.0
       ToMorale: 5.0
       ToTime: 0.2 #debilitating pain
-      RandomType: 6 #Gaussian
+      RandomType: 9 # 50-150
 
 ### Utility
-  - type: STR_ANTIPLANT_BOMB                # Anti-Plant Bomb
-    categories: [ STR_CAT_GRENADES, STR_CAT_TACTICAL]
-    battleType: 4
-    invHeight: 2
-    invWidth: 2
-    bigSprite: 104
-    floorSprite: 104
-    handSprite: 536
-    listOrder: 13703
-    explosionHitSound: {mod: 40k, index: 792}
-    hitAnimation:
-      mod: 40k
-      index: 80
-    powerForAnimation: 160
-    primeSound: {mod: 40k_ROSIGMA_edits, index: 2425}
-    size: 0.05
-    armor: 300
-    requiresBuy:
-      - STR_LASER_WEAPONS
-    costBuy: 10000
-    costSell: 5000
-    fuseType: -1
-    noLOSAccuracyPenalty: 75
-    weight: 8
-    throwRange: 18
-    costThrow:
-      energy: 5
-      time: 35
-    costPrime:
-      time: 2
-    costUnprime:
-      time: 2
-    unprimeActionName: STR_UNPRIME_GRENADE
-    flatPrime:
-      time: true
-      energy: true
-    isFireExtinguisher: true
-    damageType: 8 # Acid
-    power: 400
-    damageAlter:
-      RandomType: 3 # fixed 100%
-      ArmorEffectiveness: 16.0 # anti-terrain, not a proper weapon
-      FireThreshold: 1000
-      SmokeThreshold: 1000
-      ToArmorPre: 0.0
-      ToArmor: 0.0
-      ToHealth: 0.05
-      RandomHealth: true
-      ToStun: 0.0
-      ToItem: 0.0
-      ToTile: 0.13 # 52 terrain dmg
-      TileDamageMethod: 2 # consistent tile damage
-      FixRadius: 9
-      RadiusReduction: 0
-
   - type: STR_SUPERFLARE                    # Flare (Mortar)
     battleType: 10 # electroflare
     weight: 999

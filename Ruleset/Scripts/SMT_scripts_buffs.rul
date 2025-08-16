@@ -80,7 +80,6 @@ extended:
           begin; ### Vigilance
             var ptr RuleArmor armorRule;
             var int vigilBonus;
-            var int vigilOverflow;
 
             damaging_item.getTag temp Tag.SMT_VIGILIANCE_BUFF;
             if gt temp 0; # skip if doesn't boost overwatch
@@ -96,9 +95,7 @@ extended:
               if gt vigilBonus 100; # if total >100, add overflow TUs
                 set temp vigilBonus;
                 sub temp 100;
-                unit.getTimeUnitsMax vigilOverflow;
-                muldiv vigilOverflow temp 100;
-                unit.setTag Tag.SMT_OVERWATCH_BUFF_EXCESS vigilOverflow;
+                unit.setTag Tag.SMT_OVERWATCH_BUFF_EXCESS temp;
               end;
               limit vigilBonus 0 100;
               unit.setTag Tag.SMT_OVERWATCH_BUFF vigilBonus;
@@ -227,6 +224,25 @@ extended:
               limit_upper healthRestored hpCap; # limit healing to cap
               limit_lower healthRestored temp; # don't reduce health if it's above cap
               unit.setHealthWithOverkill healthRestored;
+            end;
+          end;
+
+          begin; ### Servitor Enhancement
+            var ptr RuleArmor armorRule;
+            var int buffVal;
+
+            damaging_item.getTag buffVal Tag.ITEM_SERVITOR_ENHANCER;
+            if gt buffVal 0; # skip if not servitor enhancer
+              unit.getRuleArmor armorRule;
+              armorRule.getTag temp Tag.UNIT_TYPE_SERVITOR;
+              unit.getTag temp2 Tag.SMT_SERVITOR_ENHANCED;
+              if and gt temp 0 eq temp2 0; # only if unit is servitor and hasn't already been buffed
+                unit.setTag Tag.SMT_SERVITOR_ENHANCED buffVal;
+                unit.Stats.addFiring buffVal;
+                unit.Stats.addMelee buffVal;
+              else;
+                set to_time 0;
+              end;
             end;
           end;
 

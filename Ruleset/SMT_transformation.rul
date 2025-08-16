@@ -1001,6 +1001,7 @@ soldierTransformation:
       - STR_PSIUNLOCK_FLARE
       - STR_PSIUNLOCK_SHROUD
       - STR_PSIUNLOCK_TELEPATHY
+      - STR_PSIUNLOCK_WALLBREAKER
     transferTime: 0
     requiredMinStats: &Psyker_TierOne_MinStats
       psiStrength: 10 #
@@ -1037,6 +1038,21 @@ soldierTransformation:
     listOrder: 4010
     soldierBonusType: STR_PSIBONUS_TELEPATHY
 
+  - name: STR_PSIUNLOCK_WALLBREAKER     # Seismic Shift (Tier 1)
+    cost: 50000
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    transferTime: 0
+    requires: *Psyker_TierOne_Requires
+    requiredItems: *Psyker_TierOne_Cost
+    allowedSoldierTypes: *Psyker_TierOne_Soldiers
+    forbiddenPreviousTransformations: *Psyker_TierOne_TransformList
+    requiredMinStats: *Psyker_TierOne_MinStats
+    listOrder: 4025
+    soldierBonusType: STR_PSIBONUS_WALLBREAKER
+
 # Tier 2
   - name: STR_PSIUNLOCK_FLASH           # Thunderclap (Tier 2)
     requires: &Psyker_TierTwo_Requires
@@ -1058,7 +1074,6 @@ soldierTransformation:
     forbiddenPreviousTransformations: &Psyker_TierTwo_TransformList
       - STR_PSIUNLOCK_FLASH
       - STR_PSIUNLOCK_REFLEXES
-      - STR_PSIUNLOCK_WALLBREAKER
       - STR_PSIUNLOCK_VIGILANCE
     transferTime: 0
     requiredMinStats: &Psyker_TierTwo_MinStats
@@ -1081,21 +1096,6 @@ soldierTransformation:
     listOrder: 4020
     soldierBonusType: STR_PSIBONUS_REFLEXES
 
-  - name: STR_PSIUNLOCK_WALLBREAKER     # Seismic Shift (Tier 2)
-    cost: 50000
-    keepSoldierArmor: true
-    allowsDeadSoldiers: false
-    allowsLiveSoldiers: true
-    allowsWoundedSoldiers: true
-    transferTime: 0
-    requires: *Psyker_TierTwo_Requires
-    requiredItems: *Psyker_TierTwo_Cost
-    allowedSoldierTypes: *Psyker_TierTwo_Soldiers
-    forbiddenPreviousTransformations: *Psyker_TierTwo_TransformList
-    requiredMinStats: *Psyker_TierTwo_MinStats
-    listOrder: 4025
-    soldierBonusType: STR_PSIBONUS_WALLBREAKER
-
   - name: STR_PSIUNLOCK_VIGILANCE       # Vigilance (Tier 2)
     cost: 50000
     keepSoldierArmor: true
@@ -1117,7 +1117,7 @@ soldierTransformation:
       - STR_PSYKER_T3_UNLOCK
     cost: 50000
     requiredItems: &Psyker_TierThree_Cost
-      STR_KILLPOINT_TOKEN: 150 # 250 total (40+60+150)
+      STR_KILLPOINT_TOKEN: 80 # 180 total (40+60+80)
     keepSoldierArmor: true
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -1192,7 +1192,7 @@ soldierTransformation:
       - STR_PSYKER_T4_UNLOCK
     cost: 50000
     requiredItems: &Psyker_TierFour_Cost
-      STR_KILLPOINT_TOKEN: 200 # 450 total (40+60+150+200)
+      STR_KILLPOINT_TOKEN: 100 # 280 total (40+60+80+100)
     keepSoldierArmor: true
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -1265,7 +1265,7 @@ soldierTransformation:
       - STR_PSYKER_T5_UNLOCK
     cost: 50000
     requiredItems: &Psyker_TierFive_Cost
-      STR_KILLPOINT_TOKEN: 300 # 750 total (40+60+150+200+300)
+      STR_KILLPOINT_TOKEN: 120 # 400 total (40+60+80+100+120)
     keepSoldierArmor: true
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -1336,7 +1336,7 @@ soldierTransformation:
       - STR_PSYKER_T6_UNLOCK
     cost: 50000
     requiredItems: &Psyker_TierSix_Cost
-      STR_KILLPOINT_TOKEN: 500 # 1250 total (40+60+150+200+300+500)
+      STR_KILLPOINT_TOKEN: 200 # 600 total (40+60+80+100+120+200)
     keepSoldierArmor: true
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -1435,10 +1435,9 @@ soldierBonuses:
   - name: STR_PSIBONUS_TELEPATHY
     heatVision: 10
     visibilityAtDark: 10
-
+  - name: STR_PSIBONUS_WALLBREAKER
   - name: STR_PSIBONUS_FLASH
   - name: STR_PSIBONUS_REFLEXES
-  - name: STR_PSIBONUS_WALLBREAKER
   - name: STR_PSIBONUS_SENTRYWARD
   - name: STR_PSIBONUS_SMITE
   - name: STR_PSIBONUS_VIGILANCE

@@ -97,9 +97,9 @@ skills:
     flatUse:
       time: false
 
-  - type: STR_TECH_SKULL_SKILL          # Techmarine ServoSkull
+  - type: STR_TECH_UNIT_SKILL          # Techmarine Unit Deployment
     targetMode: 9
-    compatibleWeapons: [STR_TECH_SKULL_SPAWNER]
+    compatibleWeapons: [STR_TECH_SKULL_SPAWNER, STR_TECH_SENTRY_SPAWNER, STR_TECH_TF_SPAWNER]
     checkHandsOnly: false
     costUse:
       time: 30
@@ -149,6 +149,22 @@ skills:
       stun: true
       morale: true
 
+  - type: STR_PSISKILL_WALLBREAKER      # Psyker T1 - Rend Landscape
+    targetMode: 9
+    compatibleWeapons: [STR_PSITOKEN_WALLBREAKER]
+    requiredBonuses: [STR_PSIBONUS_WALLBREAKER]
+    checkHandsOnly: false
+    costUse:
+      time: 20
+      energy: 25
+      stun: 10
+      morale: 15
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
   - type: STR_PSISKILL_TELEPATHY        # Psyker T1 - Telepathy
     targetMode: 11
     compatibleWeapons: [STR_PSITOKEN_TELEPATHY]
@@ -174,7 +190,7 @@ skills:
       time: 24
       energy: 30
       stun: 15
-      morale: 10
+      morale: 15
     flatUse:
       time: false
       energy: false
@@ -190,7 +206,7 @@ skills:
       time: 24
       energy: 30
       stun: 15
-      morale: 10
+      morale: 15
     flatUse:
       time: false
       energy: false
@@ -206,23 +222,7 @@ skills:
       time: 24
       energy: 30
       stun: 15
-      morale: 10
-    flatUse:
-      time: false
-      energy: false
-      stun: true
-      morale: true
-
-  - type: STR_PSISKILL_WALLBREAKER      # Psyker T2 - Rend Landscape
-    targetMode: 9
-    compatibleWeapons: [STR_PSITOKEN_WALLBREAKER]
-    requiredBonuses: [STR_PSIBONUS_WALLBREAKER]
-    checkHandsOnly: false
-    costUse:
-      time: 24
-      energy: 30
-      stun: 15
-      morale: 10
+      morale: 15
     flatUse:
       time: false
       energy: false

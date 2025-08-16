@@ -31,6 +31,16 @@ extraStrings:
       STR_PSI_SENTRYWARD: Farsight Projection
       STR_SKULL_TECH: Servo Skull
       ### MISC
+      STR_AWARD_DECOR_0: "Awarded"
+      STR_AWARD_DECOR_1: "Second bronze pin"
+      STR_AWARD_DECOR_2: "Third bronze pin"
+      STR_AWARD_DECOR_3: "First silver pin"
+      STR_AWARD_DECOR_4: "Second silver pin"
+      STR_AWARD_DECOR_5: "Third silver pin"
+      STR_AWARD_DECOR_6: "First gold pin"
+      STR_AWARD_DECOR_7: "Second gold pin"
+      STR_AWARD_DECOR_8: "Third gold pin"
+      STR_AWARD_DECOR_9: "Imperial Cross"
       STR_TERMINATOR_CROSS_DESCRIPTION: Space Marines awarded with the Crux Terminatus are recognized as elites, allowing promotion to the highest ranks and access to rare relics including Terminator Armor. {NEWLINE}{NEWLINE} For this honor the Space Marine needs to have achieved 30 enemy kills, 15 successful missions and serve for three months.
       STR_HONOR_MEDAL: "Mark of Honor"
       STR_HONOR_MEDAL_DESCRIPTION: "Soldiers who participate in successful operations are awarded Marks of Honor, with more distinguished marks given to those with a long record of contributions to the Imperium.{NEWLINE}{NEWLINE} Marks of Honor are granted when a Soldiers total Score earned from missions reaches a certain level:{NEWLINE}{NEWLINE} Rank 1 - {ALT}2000{ALT}{NEWLINE} Rank 2 - {ALT}8000{ALT}{NEWLINE} Rank 3 - {ALT}24000{ALT}{NEWLINE} Rank 4 - {ALT}48000{ALT}"
@@ -468,7 +478,7 @@ extraStrings:
       STR_GRAV_MORTAR: Fragstorm Grenades
       STR_TECH_PRIMARY_SKILL: Servo Weapon
       STR_TECH_UTILITY_SKILL: Utility Tool
-      STR_TECH_SKULL_SKILL: Deploy Gear
+      STR_TECH_UNIT_SKILL: Deploy Gear
       STR_TECH_REPAIR_SKILL: Repair Armor
       ### Psykers
       STR_PSYKER_T1_UNLOCK: (Tier 1 Psyker Abilities)
@@ -483,14 +493,14 @@ extraStrings:
       STR_PSIBONUS_FLARE: Flare
       STR_PSIUNLOCK_TELEPATHY: T1 Psi - Telepathy
       STR_PSIBONUS_TELEPATHY: Telepathy
+      STR_PSIUNLOCK_WALLBREAKER: T1 Psi - Rend Landscape
+      STR_PSIBONUS_WALLBREAKER: Rend Landscape
       STR_PSIUNLOCK_FLASH: T2 Psi - Thunderclap
       STR_PSIBONUS_FLASH: Thunderclap
       STR_PSIUNLOCK_REFLEXES: T2 Psi - Lightning Reflexes
       STR_PSIBONUS_REFLEXES: Lightning Reflexes
       STR_PSIUNLOCK_VIGILANCE: T2 Psi - Vigilance
       STR_PSIBONUS_VIGILANCE: Vigilance
-      STR_PSIUNLOCK_WALLBREAKER: T2 Psi - Rend Landscape
-      STR_PSIBONUS_WALLBREAKER: Rend Landscape
       STR_PSIUNLOCK_HOLODUMMY: T3 Psi - Hallucination
       STR_PSIBONUS_HOLODUMMY: Hallucination
       STR_PSIUNLOCK_SMITE: T3 Psi - Smite
@@ -1283,6 +1293,8 @@ extraStrings:
       STR_SMT_NEOPHYTE_PROMOTION_CODEX: "{NEWLINE} Neophytes who have earned the Battle Tested medal with {ALT}60+ HP and 50+ Strength{ALT} can undergo the final transformation into true Marines using matured Geneseed, dramatically improving their combat abilities and allowing the use of power armor.{NEWLINE}{NEWLINE} Battle Tested requires 3 successful missions and 1 enemy kill{NEWLINE}HP and STR stats can be increased by gaining any type of experience in battles, as well as through passive training in base."
       STR_SMT_FIRSTBORN_PROMOTION: Promoting Marines
       STR_SMT_FIRSTBORN_PROMOTION_CODEX: "{NEWLINE}{NEWLINE} Marines who have earned the Crux Terminatus with {ALT}100+ Health, 100+ Firing, 80+ Melee, and 80+ Strength{ALT} can be further promoted to Veterans, increasing their stat limits and allowing use of rare relic armors.{NEWLINE}{NEWLINE} "
+      STR_SMT_PRIMARIS_PROMOTION_TREE: Primaris Promotions
+      STR_SMT_PROMOTION_CHAPLAINS_CODEX: "{NEWLINE} Marines which earn the right to become a Veteran with {ALT}100+ Devotion{ALT} can be promoted into Chaplains.{NEWLINE}{NEWLINE} Chaplains have the Bless ability which restores morale and purges chaos corruption from nearby units. It also applies a slowly-decaying buff that grants resistance to corrupting attacks, improves melee skill, and increases the chances of Heroic Save protecting a unit from death."
       STR_SMT_PRIMARIS_PROMOTION: Promoting Marines
       STR_SMT_PRIMARIS_PROMOTION_CODEX: "{NEWLINE} Primaris Marines can be promoted as they earn new Marks of Honor for successful missions.{NEWLINE} The standard progression is {ALT}Brother{ALT} > {ALT}Sergeant{ALT} > {ALT}Veteran{ALT} > {ALT}Lieutenant{ALT} > {ALT}Captain{ALT}{NEWLINE}{NEWLINE} New Battle Brothers can choose to become a Judiciar or Apothecary instead of following the standard promotion tree."
       STR_SMT_PRIMARIS_SPECIALIST: Specialist Marines
@@ -1367,6 +1379,9 @@ extraStrings:
       STR_PSISKILL_SHROUD: Shroud
       STR_PSITOKEN_SHROUD: Shroud
       STR_PSITOKEN_SHROUD_CODEX: "{NEWLINE} Shroud blankets an area in fog, reducing visibility and extinguishing fires.{NEWLINE}{NEWLINE} Shroud can be freely targeted, but accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Accuracy and Area of Effect scale with PsiStrength"
+      STR_PSISKILL_WALLBREAKER: Rend Landscape
+      STR_PSITOKEN_WALLBREAKER: Rend Landscape
+      STR_PSITOKEN_WALLBREAKER_CODEX: "{NEWLINE} Tears a hole through the battlefield by reshaping earth and bending plasteel. This ability does minor damage to enemies but effectively destroys terrain.{NEWLINE}{NEWLINE} Rend Landscape has a maximum range of 15 and requires line of sight.{NEWLINE}{NEWLINE} Power and Area of Effect scales with PsiStrength"
       #T2
       STR_PSISKILL_VIGILANCE: Vigilance
       STR_PSITOKEN_VIGILANCE: Vigilance
@@ -1374,9 +1389,6 @@ extraStrings:
       STR_PSISKILL_FLASH: Thunderclap
       STR_PSITOKEN_FLASH: Thunderclap
       STR_PSITOKEN_FLASH_CODEX: "{NEWLINE} Blasts a target and the surrounding area with light and noise, attempting to disorientate them. Thunderclap does minor stun damage and drains TUs in an area around the target.{NEWLINE}{NEWLINE} Thunderclap has a maximum range of 20 and requires line of sight.{NEWLINE}{NEWLINE} Stun, TU drain and Area of Effect scale with PsiStrength"
-      STR_PSISKILL_WALLBREAKER: Rend Landscape
-      STR_PSITOKEN_WALLBREAKER: Rend Landscape
-      STR_PSITOKEN_WALLBREAKER_CODEX: "{NEWLINE} Tears a hole through the battlefield by reshaping earth and bending plasteel. This ability does minor damage to enemies but effectively destroys terrain.{NEWLINE}{NEWLINE} Rend Landscape has a maximum range of 15 and requires line of sight.{NEWLINE}{NEWLINE} Power and Area of Effect scales with PsiStrength"
       STR_PSISKILL_REFLEXES: Lightning Reflexes
       STR_PSITOKEN_REFLEXES: Lightning Reflexes
       STR_PSITOKEN_REFLEXES_CODEX: "{NEWLINE} Enhances a friendly unit with unnatural reflexes, making it harder for enemies to react to them.{NEWLINE}{NEWLINE} Lightning Reflexes has a maximum range of 10 and does not require line of sight.{NEWLINE}{NEWLINE} Reaction bonus scales with PsiStrength"
@@ -1482,6 +1494,7 @@ extraStrings:
       STR_AUTOCANNON_HANDHELD_UFOPEDIA: "{NEWLINE} The Autocannon is the culmination of the Auto weapons, a self-loading heavy ballistic cannon capable of laying down rapid bursts of fire into advancing enemy troops or fortified positions. While an ancient design, it reliably deals with light vehicles and heavy infantry from long range.{NEWLINE}{NEWLINE}Recoil: {ALT}100{ALT} - {ALT}Heavy{ALT} - {ALT}Bipod{ALT}"
       STR_AUTOCANNON_HANDHELD_ANY: Autocannon
       STR_AUTOCANNON_HANDHELD_ANY_CODEX: "{NEWLINE} The Autocannon is the culmination of the Auto weapons, a self-loading heavy ballistic cannon capable of laying down rapid bursts of fire into advancing enemy troops or fortified positions. While an ancient design, it reliably deals with light vehicles and heavy infantry from long range.{NEWLINE}{NEWLINE}Recoil: {ALT}100{ALT} - {ALT}Heavy{ALT}"
+      STR_HEAVY_PLASMA_TERRAN_UFOPEDIA: "{NEWLINE} The Plasma Cannon, also sometimes called the Heavy Plasma Gun, fires lethal blasts of superheated matter at the target, melting flesh and armor alike.{NEWLINE}{NEWLINE}Recoil: {ALT}60{ALT} - {ALT}Heavy{ALT}"
       ## Armor
       STR_FLYING_SUIT_UFOPEDIA: "Assault Terminators teleport deep into enemy lines, striking at enemy commanders. Their Lightning Claws easily cut through any flesh or armor, tearing apart everything in their path."
       STR_MKX_TAC_UFOPEDIA: "The Mark X series power armor can be modified and upgraded to suit the needs of the battlefield. Tacticus is the most common variant, a flexible and reliable all-purpose combat armor."

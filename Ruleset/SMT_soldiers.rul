@@ -856,7 +856,7 @@ soldiers:
     skills:
       - STR_TECH_PRIMARY_SKILL
       - STR_TECH_UTILITY_SKILL
-      - STR_TECH_SKULL_SKILL
+      - STR_TECH_UNIT_SKILL
       - STR_TECH_REPAIR_SKILL
 
   - type: STR_SOLDIER_TECHVET           # Veteran Techmarine
@@ -936,7 +936,7 @@ soldiers:
     skills:
       - STR_TECH_PRIMARY_SKILL
       - STR_TECH_UTILITY_SKILL
-      - STR_TECH_SKULL_SKILL
+      - STR_TECH_UNIT_SKILL
       - STR_TECH_REPAIR_SKILL
 
   - type: STR_FALLEN                    # Dreadnought Pilot
@@ -1531,7 +1531,7 @@ soldiers:
     skills:
       - STR_TECH_PRIMARY_SKILL
       - STR_TECH_UTILITY_SKILL
-      - STR_TECH_SKULL_SKILL
+      - STR_TECH_UNIT_SKILL
       - STR_TECH_REPAIR_SKILL
 
   - type: STR_PRIMARIS_TECHMARINE       # Techmarine - Primaris lv4
@@ -1610,7 +1610,7 @@ soldiers:
     skills:
       - STR_TECH_PRIMARY_SKILL
       - STR_TECH_UTILITY_SKILL
-      - STR_TECH_SKULL_SKILL
+      - STR_TECH_UNIT_SKILL
       - STR_TECH_REPAIR_SKILL
 
   - type: STR_PRIMARIS_JUDICAR          # Judiciar - Primaris lv2
@@ -2820,24 +2820,24 @@ soldiers:
       tu: 60
       stamina: 70
       health: 60
-      bravery: 60
-      reactions: 60
+      bravery: 70
       firing: 70
+      reactions: 60
+      melee: 60
       throwing: 65
       strength: 45
       psiStrength: 40 # regular non-psionic human
       psiSkill: 25
-      melee: 60
     statCaps:
       tu: 75
       stamina: 120
       health: 80
+      bravery: 110
       firing: 130
+      reactions: 80
       melee: 120
       throwing: 80
-      strength: 65
-      health: 55
-      reactions: 80
+      strength: 75 # inbuilt bionics
       psiStrength: 45
       psiSkill: 100
     trainingStatCaps:
@@ -2877,7 +2877,7 @@ soldiers:
     skills:
       - STR_TECH_PRIMARY_SKILL
       - STR_TECH_UTILITY_SKILL
-      - STR_TECH_SKULL_SKILL
+      - STR_TECH_UNIT_SKILL
       - STR_TECH_REPAIR_SKILL
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 66 # inbuilt bionics

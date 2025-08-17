@@ -4,7 +4,7 @@ extended:
   tags:
   scripts:
     newTurnUnit:
-      - new: SMTS_turret_reload_check_ammo
+      - new: SMTS_turret_reload_check_ammo # edited to account for 1 turn reload timers
         offset: 10
         code: |
           var int temp;
@@ -58,9 +58,6 @@ extended:
           add temp TurretReloadTurnsRight;
           add temp TurretReloadTurnsSpecial;
 
-          if lt temp 1;
-          end;
-
           unit.getTag timer Tag.TURRET_RELOAD_TIMER; # set timer variable
 
           if le timer 0;
@@ -80,7 +77,6 @@ extended:
           end;
 
           sub timer 1;
-          #debug_log "Turret Reload Scripts; ROSIGMA_nTU_turret_reload_check_ammo, offset 10: Decrementing turret reload timer. New timer, timer:" timer;
 
           if gt timer 0;
             unit.setTag Tag.TURRET_RELOAD_TIMER timer;

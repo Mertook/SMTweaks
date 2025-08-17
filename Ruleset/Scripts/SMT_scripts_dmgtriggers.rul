@@ -104,7 +104,10 @@ extended:
 
           return;
 
+      - delete: ROSIGMA_dU_turret_reload # integrated into above
+      - delete: ROSIGMA_dU_alpha_infiltration
 
+    hitUnit:
       - override: ROSIGMA_hU_remove_flight # remove high power attacks disabling flight
         offset: 50
         code: |
@@ -139,7 +142,5 @@ extended:
           end;
           return power part side;
 
-      - delete: ROSIGMA_dU_turret_reload # integrated into above
-      - delete: ROSIGMA_dU_alpha_infiltration
 
 

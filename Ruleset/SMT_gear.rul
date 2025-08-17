@@ -4454,7 +4454,7 @@ items:
       melee: 0.7
       strength: 0.3
     tags:
-      TURRET_RELOAD_TURNS: 0
+      TURRET_RELOAD_TURNS: 1
 
   - type: STR_GRAV_MORTAR                   # Gravis Fragstorm Launcher
     battleType: 1
@@ -7024,6 +7024,8 @@ items:
       ToItem: 0.5
       FixRadius: 5
       ToHealth: 1.0
+    tags:
+      TURRET_RELOAD_TURNS: 1
 
   - type: STR_GRAV_FLAMER                   # Gravis Flamestorm Gauntlet
     refNode: *REF_POWERFIST_TEMPLATE

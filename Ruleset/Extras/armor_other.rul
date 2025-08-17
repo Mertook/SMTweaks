@@ -295,6 +295,46 @@ armors:
   - type: SERVITOR_ARMOR_UC
     refNode: *REF_SERVITOR
 
+  - type: STR_ELDAR_FARSEER_ARMOR           # Aeldari Farseer
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    antiCamouflageAtDay: 5
+    antiCamouflageAtDark: 5
+    psiVision: 0
+    spriteSheet: ELDARDR1.PCK
+    spriteInv: FARSEER_INV.SPK
+    storeItem: STR_NONE
+    corpseBattle:
+      - STR_FARSEER_CORPSE
+    frontArmor: 80
+    sideArmor: 60
+    rearArmor: 40
+    underArmor: 50
+    drawingRoutine: 1
+    damageModifier:  # ELDAR ARMOR
+      - 1.0  # none
+      - 1.0  # AP
+      - 0.5  # FLAMES
+      - 1.0  # HE
+      - 0.7  # LASCANON
+      - 0.7  # PLASMA
+      - 1.0  # STUN
+      - 1.0  # MELEE
+      - 0.5  # ACID
+      - 0.0  # SMOKE
+      - 1.0  # IMPACT
+      - 1.0  # MELTA
+    units:
+      - STR_ELDAR_FARSEER
+    specialWeapon: STR_ELDAR_LIGHT_PLAYER  # no snap shot Eldar psychic light with psi scaling
+    loftempsSet: [3]
+    tags:
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 75 # was 10/10
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_XENO: 1
+
 
 startingConditions: # Training Mission Armor Replacement
   - type: STR_GUARD_TRAINING_STARTING_CONDITION

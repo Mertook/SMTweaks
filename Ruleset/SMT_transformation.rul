@@ -973,6 +973,7 @@ soldierTransformation:
     allowedSoldierTypes: !add
       - STR_CATACHANVET_FIGHTER
       - STR_CATACHANTOP_FIGHTER
+      - STR_GUARD_TANITH
 
   - name: STR_BIONICS_OPERATION
     allowedSoldierTypes: !remove
@@ -1050,7 +1051,7 @@ soldierTransformation:
     allowedSoldierTypes: *Psyker_TierOne_Soldiers
     forbiddenPreviousTransformations: *Psyker_TierOne_TransformList
     requiredMinStats: *Psyker_TierOne_MinStats
-    listOrder: 4025
+    listOrder: 4015
     soldierBonusType: STR_PSIBONUS_WALLBREAKER
 
 # Tier 2
@@ -1078,7 +1079,7 @@ soldierTransformation:
     transferTime: 0
     requiredMinStats: &Psyker_TierTwo_MinStats
       psiStrength: 60
-    listOrder: 4015
+    listOrder: 4020
     soldierBonusType: STR_PSIBONUS_FLASH
 
   - name: STR_PSIUNLOCK_REFLEXES        # Lightning Reflexes (Tier 2)
@@ -1093,7 +1094,7 @@ soldierTransformation:
     allowedSoldierTypes: *Psyker_TierTwo_Soldiers
     forbiddenPreviousTransformations: *Psyker_TierTwo_TransformList
     requiredMinStats: *Psyker_TierTwo_MinStats
-    listOrder: 4020
+    listOrder: 4025
     soldierBonusType: STR_PSIBONUS_REFLEXES
 
   - name: STR_PSIUNLOCK_VIGILANCE       # Vigilance (Tier 2)

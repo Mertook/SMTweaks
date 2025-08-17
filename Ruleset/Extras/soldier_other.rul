@@ -4,6 +4,54 @@ soldiers:
     requires:
       - STR_ELDAR_ALLIANCE # "Eldar Negotiations", the tech called Eldar Alliance is STR_ELDAR_PATH - was Xeno Embrace
       - STR_ELDAR_SEER
+    minStats:
+      tu: 65
+      stamina: 80
+      health: 40
+      bravery: 80
+      reactions: 90
+      firing: 60
+      throwing: 50
+      strength: 30
+      psiStrength: 80
+      psiSkill: 0
+      melee: 75
+    maxStats:
+      tu: 85
+      stamina: 99
+      health: 50
+      bravery: 80
+      reactions: 90
+      firing: 80
+      throwing: 80
+      strength: 60
+      psiStrength: 120
+      psiSkill: 15
+      melee: 90
+    statCaps:
+      tu: 120
+      stamina: 120
+      health: 75
+      bravery: 110
+      reactions: 140
+      firing: 130
+      throwing: 120
+      strength: 80
+      psiStrength: 180
+      psiSkill: 100
+      melee: 130
+    trainingStatCaps:
+      tu: 60
+      stamina: 70
+      health: 30
+      firing: 80
+      throwing: 65
+      strength: 20
+      psiStrength: 180
+      psiSkill: 100
+      melee: 90
+    tags:
+      SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 5
 
 
 

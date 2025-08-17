@@ -2715,6 +2715,58 @@ soldiers:
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 90 # was 75
 
+  - type: STR_GUARD_TANITH              # Tanith Veteran
+    costSalary: 30000
+    minStats:
+      tu: 50
+      stamina: 60
+      health: 35
+      bravery: 50
+      reactions: 50
+      firing: 60
+      throwing: 50
+      strength: 20
+      psiStrength: 10
+      psiSkill: 0
+      melee: 50
+      mana: 0
+    maxStats:
+      tu: 60
+      stamina: 70
+      health: 40
+      bravery: 60
+      reactions: 60
+      firing: 70
+      throwing: 65
+      strength: 30
+      psiStrength: 40
+      psiSkill: 15
+      melee: 60
+      mana: 0
+    statCaps:
+      tu: 75
+      health: 55
+      stamina: 120
+      bravery: 60
+      firing: 130
+      throwing: 80
+      strength: 65
+      reactions: 80
+      melee: 100
+      mana: 0
+      psiStrength: 40
+      psiSkill: 100
+    trainingStatCaps:
+      tu: 60
+      stamina: 80
+      health: 40
+      firing: 80
+      throwing: 70
+      strength: 35
+      melee: 70
+      psiSkill: 100
+      mana: 0
+
   - type: STR_CATACHAN_FIGHTER
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 90
@@ -2723,6 +2775,9 @@ soldiers:
       UNIT_REGENERATE_HEALTH_BURN_TOGGLE: 1
 
   - type: STR_CATACHANVET_FIGHTER
+    skillIconSprite: 995
+    skills:
+      - STR_DIG_IN
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 85 # was 80
       UNIT_REGENERATE_HEALTH_FLAT: 1
@@ -2731,6 +2786,9 @@ soldiers:
       UNIT_REGENERATE_HEALTH_BURN_TOGGLE: 1
 
   - type: STR_CATACHANTOP_FIGHTER
+    skillIconSprite: 995
+    skills:
+      - STR_DIG_IN
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 80 # was 70
       UNIT_REGENERATE_HEALTH_FLAT: 2
@@ -2790,15 +2848,6 @@ soldiers:
 
   - type: STR_GUARDSL_OFFICER_VETERAN
     refNode: *STR_OFFICER
-
-  - type: STR_CATACHANTOP_FIGHTER
-    skillIconSprite: 995
-    skills:
-      - STR_DIG_IN
-  - type: STR_CATACHANVET_FIGHTER
-    skillIconSprite: 995
-    skills:
-      - STR_DIG_IN
 
   - type: STR_ENGINSEER                 # Techpriest Enginseer
     costSalary: 75000

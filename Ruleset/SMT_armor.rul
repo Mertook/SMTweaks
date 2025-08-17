@@ -4241,6 +4241,7 @@ armors:
     type: TARANTULA_ARBITES_BOLTER_ARMOR
     tags:
       UNIT_TYPE_SERVITOR: 1
+      STARTS_WITH_FULL_TUS: 1
 
   - type: TARANTULA_ARMOR
     refNode: *REF_TECHSUPPORT_ARMOR
@@ -4250,8 +4251,28 @@ armors:
     refNode: *REF_TECHSUPPORT_ARMOR
   - type: THUNDERFIRE_ARMOR_DW
     refNode: *REF_TECHSUPPORT_ARMOR
+    stats:
+      mana: 40
+    allowInv: false
+    builtInWeapons:
+      - STR_THUNDERFIRE_CANNON
+      - STR_GENERICSERVITOR_AMMO
+      - INV_NULL_3X3
+      - INV_NULL_TF_LL
+      - INV_NULL_TF_RL
+      - INV_NULL_4X2
   - type: THUNDERFIRE_ARMOR_P
     refNode: *REF_TECHSUPPORT_ARMOR
+    stats:
+      mana: 40
+    allowInv: false
+    builtInWeapons:
+      - STR_THUNDERFIRE_CANNON
+      - STR_GENERICSERVITOR_AMMO
+      - INV_NULL_3X3
+      - INV_NULL_TF_LL
+      - INV_NULL_TF_RL
+      - INV_NULL_4X2
 
 
 

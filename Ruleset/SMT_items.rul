@@ -808,6 +808,26 @@ items:
       time: 5 # was 90 (lol, lmao) - doesn't accelerate reload time at all, just makes you start reloading NEXT turn
       mana: 1  # need at least one mana to try
 
+  - type: STR_THUNDERFIRE_CANNON            # Thunderfire Drone Cannon
+    size: 0
+    transferTime: 96
+    weight: 1
+    bigSprite: {mod: 40k, index: 648}
+    floorSprite: 0
+    handSprite: 0
+    bulletSprite: {mod: 40k, index: 4}
+    fireSound: {mod: 40k, index: 12}
+    hitSound: {mod: 40k, index: 21}
+    explosionHitSound: {mod: 40k, index: 792}
+    hitAnimation: {mod: 40k, index: 104}
+    bulletSpeed: 50
+    clipSize: -1
+    battleType: 1
+    fixedWeapon: true
+    recover: false
+    invWidth: 2
+    invHeight: 3
+
   - type: STR_DREAD_STORMBOLTER             # Dread Stormbolter Fist
     bigSprite: 157
     bulletSprite: {mod: 40k, index: 6}

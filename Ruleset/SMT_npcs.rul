@@ -504,6 +504,7 @@ units: # Civ units
     deathSound: {mod: 40k, index: 23}
     moveSound: 14
     energyRecovery: 50
+    livingWeapon: true
     civilianRecoveryType: STR_TECH_SENTRY_SPAWNER
 
   - type: STR_THUNDERFIRE_TECH
@@ -511,10 +512,10 @@ units: # Civ units
     stats:
       tu: 70
       stamina: 100
-      health: 90
+      health: 120
       bravery: 110
       reactions: 20
-      firing: 60
+      firing: 70
       throwing: 0
       strength: 60
       psiStrength: 100
@@ -526,7 +527,9 @@ units: # Civ units
     deathSound: 23
     moveSound: 12
     energyRecovery: 50
+    deathSound: {mod: 40k, index: 23}
     civilianRecoveryType: STR_TECH_TF_SPAWNER
+    livingWeapon: true
 
 
 terrains:

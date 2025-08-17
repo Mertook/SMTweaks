@@ -6998,6 +6998,33 @@ items:
     specialUseEmptyHand: true
 
 ### Inbuilt Equipment - Guns
+  - type: STR_THUNDERFIRE_CANNON            # Thunderfire Drone Cannon
+    dropoff: 4
+    aimRange: 24
+    snapRange: 16
+    accuracyAimed: 100
+    accuracySnap: 66
+    costAimed:
+      time: 70
+      mana: 10
+    costSnap:
+      time: 35
+      mana: 10
+    damageType: 1
+    power: 130
+    damageAlter:
+      RandomType: 9 # 50-150
+      ArmorEffectiveness: 0.9  # concussive
+      ToArmorPre: 0.1
+      ToArmor: 0.1
+      ToStun: 0.3
+      ToEnergy: 0.3
+      ToTime: 0.2
+      ToTile: 0.5
+      ToItem: 0.5
+      FixRadius: 5
+      ToHealth: 1.0
+
   - type: STR_GRAV_FLAMER                   # Gravis Flamestorm Gauntlet
     refNode: *REF_POWERFIST_TEMPLATE
     defaultInventorySlot: STR_LEFT_HAND # was missing

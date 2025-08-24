@@ -226,7 +226,7 @@ items:
             #debug_log "Grav Armor: " i gravMult temp;
           end;
           #debug_log "Grav Armor Final: " gravMult;
-          muldiv gravMult 3 2;
+          muldiv gravMult 4 2;
           unit.getRuleArmor targetArmor;
           unit.getHealthMax temp;
           muldiv temp 2 3;

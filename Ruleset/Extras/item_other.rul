@@ -30,12 +30,14 @@ items:
   - type: STR_EXITUS_PISTOL     # Vindicare Pistol
     inventoryMoveCost:
       basePercent: 25
-    tags:
-      ITEM_STEALTH_ASSASSIN_WEAPON: 4 # pistol
+    # tags:
+      # ITEM_STEALTH_ASSASSIN_WEAPON: 4 # pistol
 
   - type: STR_NEURAL_SHREDDER   # Callidus Pistol
-    tags:
-      ITEM_STEALTH_ASSASSIN_WEAPON: 4 # pistol
+    inventoryMoveCost:
+      basePercent: 25
+    # tags:
+      # ITEM_STEALTH_ASSASSIN_WEAPON: 4 # pistol
 
   - type: STR_PHASE_BLADE       # Callidus Melee
     tags:
@@ -57,34 +59,6 @@ items:
     tags:
       ITEM_STEALTH_ASSASSIN_WEAPON: 2 # sniper
 
-  - type: STR_HOTSHOT_VOLLEY_GUN  # done  # Power Pack
-    dropoff: 5
-    autoRange: 9
-    snapRange: 16
-    aimRange: 0
-    accuracyAuto: 50
-    accuracySnap: 60
-    accuracyAimed: 0
-    costAuto:
-      time: 40
-      mana: 7 # was 3
-    confAuto:
-      shots: 7
-    costSnap:
-      time: 25
-      mana: 3 # was 7
-    confSnap:
-      shots: 3
-      name: STR_BURST_SNAP_SHOT
-    tuAimed: 0
-    power: 75  # 40k 75
-    damageType: 1  # AP instead of LAS
-    damageAlter:
-      ToArmorPre: 0.3
-      ArmorEffectiveness: 0.75
-      ToHealth: 1.0
-      ToArmor: 0.0
-      ToStun: 0.3
-      ToWound: 0.05
-      RandomWound: false
-
+  - type: STR_COMMISSAR_CARAPACE
+    requiresBuy:
+      - STR_GENERALLOCK

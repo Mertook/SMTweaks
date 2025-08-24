@@ -18,9 +18,8 @@ armors:
       ARMOR_RESTEALTH_TURN_REQUIREMENT: 0
       ARMOR_IMMEDIATE_KILL_CREDIT: 0
       ARMOR_IMMEDIATE_TURN_CREDIT: 0
-      ARMOR_CLOAKED_ASSASSIN_TYPE: 6 # sniper & pistol
+      ARMOR_CLOAKED_ASSASSIN_TYPE: 2 # sniper
       ARMOR_CLOAKED_ASSASSIN_RANGE: -1 # completely invisible, elite assassin
-
 
   - &REF_GUARD_ARMOR_TANITH
     type: STR_TANITH_CAMO_ARMOR
@@ -62,7 +61,7 @@ armors:
       ARMOR_IS_INFILTRATOR: 2  # 2 turns to infiltrate
       ARMOR_INFILTRATOR_RANGE: -1
       ARMOR_RESTEALTH_KILL_REQUIREMENT: 5
-      ARMOR_CLOAKED_ASSASSIN_TYPE: 5 # melee & pistol
+      ARMOR_CLOAKED_ASSASSIN_TYPE: 1 # melee
       ARMOR_CLOAKED_ASSASSIN_RANGE: -1 # temple assassin
 
   - type: STR_ASSASSINNEUTRAL_FEMSUIT_NPC
@@ -196,6 +195,9 @@ armors:
   - type: STR_STEELLEGION_FLAK_ARMOR_OFFICER
 
   - type: STR_OFFICER_FLAK_ARMOR
+
+  - type: STR_COMMISSAR_CARAPACE_UC
+    storeItem: STR_GUARD_ARMORH # commissars shouldn't need their own special armor item
 
   - type: STR_PSYKER_ARMOR              # Imperial Guard Psyker
     specialWeapon: STR_NONE

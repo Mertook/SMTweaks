@@ -563,7 +563,7 @@ manufacture:
     producedItems:
       STR_ASSC_CLIP: 5
 
-  - name: STR_ASSC_CLIP_AP
+  - delete: STR_ASSC_CLIP_AP
     category: STR_AMMUNITION
     requires:
       - STR_ASSC_CLIP_AP
@@ -577,7 +577,7 @@ manufacture:
     producedItems:
       STR_ASSC_CLIP_AP: 5
 
-  - name: STR_ASSC_CLIP_HE
+  - delete: STR_ASSC_CLIP_HE
     category: STR_AMMUNITION
     requires:
       - STR_ASSC_CLIP

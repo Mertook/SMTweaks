@@ -7,9 +7,9 @@ items:
     damageType: 1
     damageAlter:
       RandomType: 7 # 50-200%
-      ToArmorPre: 0.13 # was 0.1
+      ToArmorPre: 0.15 # was 0.1
       ArmorEffectiveness: 0.9
-      ToArmor: 0.12
+      ToArmor: 0.10
       ToHealth: 1.1
       ToStun: 0.5
       ToEnergy: 0.3
@@ -261,29 +261,6 @@ items:
     meleeMultiplier:
       melee: 0.7
       strength: 0.3
-
-  - &REF_POWERSWORD                         # Powersword Values
-    type: STR_POWER_SWORD
-    clipSize: -1
-    battleType: 3
-    armor: 300
-    damageType: 5 # plasma
-    damageAlter:
-      RandomType: 2 # 50-150
-      ArmorEffectiveness: 0.7
-      ToArmorPre: 0.2
-      ToHealth: 0.9
-    power: 100
-    damageBonus:
-      strength: 0.2
-      melee: 0.3
-    meleeMultiplier:
-      melee: 0.9
-      reactions: 0.1
-    flatMelee:
-      time: true
-      energy: true
-    experienceTrainingMode: 13
 
   - &REF_STEALTH_MED_TEMPLATE               # Stealth armor tool template
     type: STR_STEALTH_ADVSCOUT
@@ -711,7 +688,7 @@ items:
     dropoff: 8 # was 5
     autoRange: 11 # was 10
     snapRange: 16 # was 13
-    aimRange: 25 #underslung
+    aimRange: 20 # was 25
     accuracyAuto: 66 #
     accuracySnap: 80 #
     accuracyAimed: 50 #
@@ -724,6 +701,7 @@ items:
       ammoSlot: 0
       arcing: false
     confAuto: #Bolter
+      shots: 4
       ammoSlot: 0
       name: STR_AUTOFIRE
       arcing: false
@@ -732,7 +710,30 @@ items:
       name: STR_LAUNCH_GRENADE
       shortName: STR_LAUNCH_GRENADE_SHORT
       arcing: true
-    autoShots: 4 # was 6
+    tags:
+      ITEM_RECOIL: 40 # was 25, light bolter with high RoF
+
+  - type: STR_MC_UMBRA_GL
+    fireSound: {mod: 40k, index: 707} # light bolter gets light bolter sound
+    dropoff: 7 # was 5
+    autoRange: 11 # was 10
+    snapRange: 16 # was 13
+    aimRange: 20 # was 25
+    accuracySnap: 85 # +5
+    accuracyAimed: 55 # +5
+    tuSnap: 20 # was 25
+    tuAuto: 33 # was 33
+    tuAimed: 40
+    confSnap:
+      shots: 1 # was 2
+      name: STR_SNAP_SHOT
+      ammoSlot: 0
+      arcing: false
+    confAuto:
+      shots: 5
+      ammoSlot: 0
+      name: STR_AUTOFIRE
+      arcing: false
     tags:
       ITEM_RECOIL: 40 # was 25, light bolter with high RoF
 
@@ -2011,6 +2012,10 @@ items:
     shotgunBehavior: 1
     shotgunPellets: 2
 
+  - type: STR_STORMBOLTER_TURRET_DROPPOD    # Droppod Stormbolter
+    refNode: *DMG_BOLTER_AMMO_STD
+    power: 75 # was 80
+
 ### Heavy Bolters
   - type: STR_AC_AP_BELT                    # HB AP Ammo Belt
     refNode: *DMG_BOLTER_AMMO_STD
@@ -2026,7 +2031,7 @@ items:
       mod: 40k
       index: 120
     damageAlter:
-      ArmorEffectiveness: 0.7 #improved pen
+      ArmorEffectiveness: 0.8 #improved pen
     explosionSpeed: 3
     power: 85
     clipSize: 90
@@ -2045,7 +2050,7 @@ items:
     requiresBuy:
       - STR_HBOLTER_AMMO_PREREQ
     damageAlter:
-      ArmorEffectiveness: 0.7 #improved pen
+      ArmorEffectiveness: 0.8 #improved pen
     listOrder: 12021
     loadOrder: 200
 
@@ -2492,6 +2497,49 @@ items:
 
   - type: STR_GENERIC_SERVITOR_HEAVYBOLTER  # Combat Servitor Heavy Bolter
     refNode: *DMG_BOLTER_AMMO_STD
+    power: 85
+    damageAlter:
+      ArmorEffectiveness: 0.8
+
+  - type: STR_T_BOLTER_WEAPON               # Tarantula Sentry Heavy Bolter
+    refNode: *DMG_BOLTER_AMMO_STD
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for heavy bolters
+    accuracyAuto: 90 # was 40
+    power: 85
+    damageAlter:
+      ArmorEffectiveness: 0.8
+
+  - type: AUX_BOLTER                        # Vehicle Heavy Bolter
+    refNode: *DMG_BOLTER_AMMO_STD
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for heavy bolters
+    power: 85
+    damageAlter:
+      ArmorEffectiveness: 0.8
+
+  - type: AUX_BOLTERPD                      # Vehicle Heavy Bolter
+    refNode: *DMG_BOLTER_AMMO_STD
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for heavy bolters
+    power: 85
+    damageAlter:
+      ArmorEffectiveness: 0.8
+
+  - type: STR_CAS_CANNON                    # Valkyrie Heavy Bolter
+    refNode: *DMG_BOLTER_AMMO_STD
+    power: 85
+    damageAlter:
+      ArmorEffectiveness: 0.8
+
+  - type: STR_CASSIUM_BOLTER                # Crassus Heavy Bolter
+    refNode: *DMG_BOLTER_AMMO_STD
+    power: 85
+    damageAlter:
+      ArmorEffectiveness: 0.8
+
+  - type: STR_CCASSIUM_BOLTER               # Crassus Heavy Bolter
+    refNode: *DMG_BOLTER_AMMO_STD
+    power: 85
+    damageAlter:
+      ArmorEffectiveness: 0.8
 
 ### Sniper Rifle
   - type: STR_HEAVY_CANNON                  # SM Sniper
@@ -2818,18 +2866,18 @@ items:
     accuracySnap: 75 # was 70
     accuracyAuto: 45 # was 60
     accuracyAimed: 0
-    autoRange: 10 # was 15
+    autoRange: 12 # was 15
     snapRange: 15
     aimRange: 0
     tuAimed: 0
-    tuAuto: 50 # was 60
+    tuAuto: 60 # was 60
     tuSnap: 30 # was 33
     confSnap:
       shots: 4 # was 4
       shortName: STR_BURST_SNAP_SHOT
       followProjectiles: false
     confAuto:
-      shots: 16 # was 10
+      shots: 20 # was 10
       followProjectiles: false
     tags:
       ITEM_IS_HEAVY_WEAPON: 5 # harsh penalty, meant for terminators
@@ -3230,28 +3278,34 @@ items:
   - type: STR_BLASTER_BOMB                  # Multimelta Ammo
     refNode: *DMG_MELTA_STD
     size: 0.05
-    power: 16 # was 15
-    shotgunPellets: 20
+    weight: 6 # was 3
+    power: 18 # was 15
+    shotgunPellets: 15 # was 20
     powerRangeThreshold: 12.0 # multimelta
-    clipSize: 6 # was 3
+    clipSize: 4 # was 3
 
   - &STR_MULTIMELTA_TEMPLATE
     type: STR_BLASTER_LAUNCHER_TERRAN 
+    armor: 300
+    weight: 40 # was 50
     dropoff: 5
     autoRange: 12
     snapRange: 16 # was 15
     aimRange: 0
-    accuracyAuto: 80
+    accuracyAuto: 75
     accuracySnap: 80
     accuracyAimed: 0
-    tuAuto: 50
-    tuSnap: 33 # was 50 for 2
+    tuAuto: 40
+    tuSnap: 25 # was 50 for 2
     tuAimed: 0
     maxRange: 40
+    tuLoad: 30 # bulky
     confAuto:
       shots: 2
     confSnap:
       shots: 1 # was 2
+    tags:
+      ITEM_RECOIL: 60 # was 0
 
   - type: STR_BLASTER_LAUNCHER_TERRAN       # Multimelta
     refNode: *STR_MULTIMELTA_TEMPLATE
@@ -3346,12 +3400,14 @@ items:
 
   - type: STR_PLASMA_PISTOL_CLIP            # Plasma Pistol Ammo
     refNode: *DMG_PLASMA_STD
+    size: 0.05
     power: 90
     powerRangeReduction: 5
     powerRangeThreshold: 20.0
 
   - type: STR_PLASMA_PISTOL_CLIP_SLAAN      # Plasma Pistol Ammo (Slaanesh)
     refNode: *DMG_PLASMA_STD
+    size: 0.05
     power: 90
     damageAlter:
       ToMorale: 0.3 # unsettling
@@ -3360,18 +3416,21 @@ items:
 
   - type: STR_PLASMA_RIFLE_CLIP             # Plasma Rifle Ammo
     refNode: *DMG_PLASMA_STD
+    size: 0.05
     power: 100
     powerRangeReduction: 5
     powerRangeThreshold: 25.0
 
   - type: STR_PLASMA_TWINCORE_CLIP          # Twin Plasma Ammo
     refNode: *DMG_PLASMA_STD
+    size: 0.05
     power: 100 # was 110
     powerRangeReduction: 5
     powerRangeThreshold: 30.0
 
   - type: STR_HEAVY_PLASMA_CLIP             # Heavy Plasma Ammo
     refNode: *DMG_PLASMA_STD
+    size: 0.05
     weight: 12 # was 20
     power: 120 # was 120
     damageAlter:
@@ -3383,6 +3442,7 @@ items:
 
   - type: STR_BARRAGE_PLASMA_CLIP           # Barrage Plasma Ammo
     refNode: *DMG_PLASMA_STD
+    size: 0.05
     power: 120
     damageAlter:
       FixRadius: 1
@@ -3390,6 +3450,7 @@ items:
 
   - type: STR_PLASMA_SPRAY_CLIP             # Plasma Carbine Ammo
     refNode: *DMG_PLASMA_STD
+    size: 0.05
     power: 70
     powerRangeReduction: 5
     powerRangeThreshold: 20.0 # was missing
@@ -3638,9 +3699,15 @@ items:
       name: STR_MAXIMAL_SHOT
       spendPerShot: 4
     battleType: 1
-    power: 110 # was 120 - match twincore ammo
+    power: 100 # was 120 - match twincore ammo
     powerRangeReduction: 5
     powerRangeThreshold: 30.0 # was 35
+    tags:
+      ITEM_HEAT_MAX_LEVEL: 7
+      ITEM_HEAT_DISSIPATION_PER_TURN: 1
+      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2
+      ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 50
+      ITEM_OVERHEAT_DAMAGE: 50
 
   - &REF_HEAVY_PLASMA_WEAPON                # Heavy Plasma Gun
     type: STR_HEAVY_PLASMA_TERRAN
@@ -3825,33 +3892,36 @@ items:
   - type: STR_STUN_BOMB                     # Gravgun Ammo
     refNode: *DMG_GRAV_STD
     bigSprite: 318
-    power: 28 # was 40
+    size: 0.05
+    power: 25 # was 40
     tags:
-      SMT_GRAV_WEAPON: 120
+      SMT_GRAV_WEAPON: 150
 
   - type: STR_GRAVPISTOL_AMMO               # Gravpistol Ammo Cell
     refNode: *DMG_GRAV_STD
     bigSprite: 321
+    size: 0.05
     weight: 2 # was 3
     clipSize: 3 # was 8
-    power: 24 # was 35
+    power: 20 # was 35
     damageAlter:
       ToStun: 0.4 #
     powerRangeThreshold: 12 # pistol
     tags:
-      SMT_GRAV_WEAPON: 120
+      SMT_GRAV_WEAPON: 135
 
   - type: STR_GRAVGUN_AOE_AMMO              # Jupiter Gravgun Cell
     refNode: *DMG_GRAV_STD
-    clipSize: 4 # was 3
     bigSprite: 319
+    size: 0.05
+    clipSize: 4 # was 3
     powerForAnimation: 10
-    power: 24
+    power: 20
     damageAlter:
       FixRadius: 1
       RadiusReduction: 3
     tags:
-      SMT_GRAV_WEAPON: 90 # AoE
+      SMT_GRAV_WEAPON: 120 # AoE
 
   - type: STR_GRAVGUN_AOE_AMMO_SHOTGUN      # Grav Burst Cell
     refNode: *DMG_GRAV_STD
@@ -3859,6 +3929,7 @@ items:
     hitAnimation: {mod: 40k, index: 130}
     hitAnimFrames: -1
     bigSprite: 320
+    size: 0.05
     invWidth: 1
     invHeight: 1
     weight: 3
@@ -3872,7 +3943,7 @@ items:
       ToTile: 15.0
     powerRangeThreshold: 12
     tags:
-      SMT_GRAV_WEAPON: 120
+      SMT_GRAV_WEAPON: 135
 
   - type: STR_GRAVCANNON_AMMO               # Gravcannon Ammo
     refNode: *DMG_GRAV_STD
@@ -3883,6 +3954,7 @@ items:
       - STR_NURGLE_OPTIONS
       - STR_GRAVITON_TECH
     clipSize: 4
+    size: 0.05
     weight: 8
     power: 40 # was 50
     powerRangeThreshold: 24 #gravcannon bonus
@@ -3891,7 +3963,7 @@ items:
       RadiusReduction: 3
       ToTile: 3.5
     tags:
-      SMT_GRAV_WEAPON: 100
+      SMT_GRAV_WEAPON: 120
 
   - type: AUX_CENTURION_GRAVGUN             # Centurion Gravcannon
     refNode: *DMG_GRAV_STD
@@ -4032,8 +4104,8 @@ items:
     damageAlter:
       RandomType: 8
       ToArmorPre: 0.2
-      ToHealth: 1.0
       ToArmor: 0.1
+      ToHealth: 1.0
       ToStun: 0.05 # was 0.3
       ToWound: 0.05
       RandomWound: false
@@ -4044,13 +4116,28 @@ items:
     damageType: 1 # standard
     damageAlter:
       RandomType: 8
-      ArmorEffectiveness: 0.75
+      ArmorEffectiveness: 0.8 # was 0.75
       ToArmorPre: 0.2
-      ToHealth: 1.0
       ToArmor: 0.1
+      ToHealth: 1.0
       ToStun: 0.05 # was 0.3
       ToWound: 0.05
       RandomWound: false
+
+  - &DMG_LASGUN_HELL
+    type: STR_HOTSHOT_VOLLEY_GUN
+    armor: 300
+    power: 75
+    damageType: 1
+    damageAlter:
+      ArmorEffectiveness: 0.75
+      ToArmorPre: 0.3
+      ToArmor: 0.0
+      ToHealth: 1.0
+      ToStun: 0.05 # was .3
+      ToWound: 0.05
+      RandomWound: false
+
 
   - type: STR_LASPISTOL_CLIP                # Laspistol Ammo
     refNode: *DMG_LASGUN_STD
@@ -4076,6 +4163,37 @@ items:
 
   - type: STR_LASGUN_CLIP_HOTSHOT_CHAOS     # Lasgun Chaos HotshotAmmo
     refNode: *DMG_LASGUN_HOT
+
+  - type: STR_HOTSHOT_VOLLEY_GUN            # Hotshot Volley Gun
+    dropoff: 5
+    autoRange: 9
+    snapRange: 16
+    aimRange: 0
+    accuracyAuto: 50
+    accuracySnap: 60
+    accuracyAimed: 0
+    costAuto:
+      time: 40
+      mana: 7 # was 3
+    confAuto:
+      shots: 7
+    costSnap:
+      time: 25
+      mana: 3 # was 7
+    confSnap:
+      shots: 3
+      name: STR_BURST_SNAP_SHOT
+    tuAimed: 0
+    power: 75  # 40k 75
+    damageType: 1  # AP instead of LAS
+    damageAlter:
+      ToArmorPre: 0.3
+      ArmorEffectiveness: 0.75
+      ToHealth: 1.0
+      ToArmor: 0.0
+      ToStun: 0.3
+      ToWound: 0.05
+      RandomWound: false
 
 ### Lascannons
   - &DMG_LASCANNON_STD
@@ -4190,7 +4308,7 @@ items:
       REACTION_MULTIPLIER: 175 # 175% of normal - shotgun bonus
       ITEM_RECOIL: 45 # High recoil, marines or strong scouts
 
-  - type: STR_SHOTGUN_DW                    # Deathwatch Shotgun                        ## Restricted item
+  - type: STR_SHOTGUN_DW                    # Deathwatch Shotgun
     categories: [ STR_CAT_SHOTGUN, STR_CAT_SCOUT]
     battleType: 1
     invWidth: 1
@@ -5234,7 +5352,7 @@ items:
       ToMorale: 1.0
       ToWound: 0.2
       RandomWound: false
-      ToHealth: 0.7 # was 0.4
+      ToHealth: 0.9 # was 0.4
       ToStun: 0.4
       FireThreshold: 0
       FixRadius: 6 # was 5
@@ -5771,7 +5889,7 @@ items:
       ArmorEffectiveness: 0.7
       ToArmorPre: 0.4
       ToHealth: 0.9
-      RandomType: 8 # 25-175%
+      RandomType: 2 # 50-150%
       IgnoreSelfDestruct: false
     damageType: 5
     accuracyMelee: 80
@@ -5786,10 +5904,40 @@ items:
     strengthApplied: false
     listOrder: 13400
 
+  - &REF_POWERSWORD                         # Powersword Values
+    type: STR_POWER_SWORD
+    clipSize: -1
+    battleType: 3
+    armor: 300
+    damageType: 5 # plasma
+    damageAlter:
+      RandomType: 2 # 50-150
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.2
+      ToHealth: 0.9
+    power: 100
+    damageBonus:
+      strength: 0.2
+      melee: 0.3
+    meleeMultiplier:
+      melee: 0.9
+      reactions: 0.1
+    flatMelee:
+      time: true
+      energy: true
+    experienceTrainingMode: 13
+
   - type: STR_POWER_SWORD                   # Power Sword
     refNode: *REF_POWERSWORD
     costMelee:
       time: 15
+      energy: 2
+
+  - type: STR_POWER_SWORD_MC
+    refNode: *REF_POWERSWORD
+    weight: 15
+    costMelee:
+      time: 12
       energy: 2
 
 ### Force Weapons
@@ -6756,6 +6904,7 @@ items:
 
   - type: STR_TECH_SKULL_SPAWNER            # Techmarine Servoskull
     battleType: 1
+    armor: 300
     categories: [ STR_CAT_TECHPRIEST, STR_CAT_EQUIPMENT]
     bigSprite: 308
     floorSprite: {mod: 40k, index: 373}
@@ -6786,6 +6935,7 @@ items:
 
   - type: STR_TECH_SENTRY_SPAWNER           # Techmarine Tarantula Sentry
     battleType: 1
+    armor: 300
     categories: [ STR_CAT_TECHPRIEST, STR_CAT_EQUIPMENT]
     bigSprite: {mod: 40k, index: 843}
     floorSprite: {mod: 40k, index: 735}
@@ -6816,6 +6966,7 @@ items:
 
   - type: STR_TECH_TF_SPAWNER               # Techmarine Thunderfire Drone
     battleType: 1
+    armor: 300
     categories: [ STR_CAT_TECHPRIEST, STR_CAT_EQUIPMENT]
     bigSprite: {mod: 40k, index: 842}
     floorSprite: {mod: 40k, index: 734}
@@ -6956,7 +7107,7 @@ items:
     tags:
       ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 400
       ITEM_SETS_ENERGY_SHIELD_DECAY: 50
-      ITEM_EFFECT_DURATION: 4
+      ITEM_EFFECT_DURATION: 3 # four turns cooldown
 
   - type: STR_TECH_TOOL_SCANNER             # Techpriest Omnispex
     refNode: *REF_TECH_SUPPORT
@@ -6983,7 +7134,7 @@ items:
       flatHundred: 1.0
     psiAttackName: STR_SIGNUM_ENEMY
     tags:
-      SMT_VULN_DEBUFF_FIXED: 33
+      SMT_VULN_DEBUFF_FIXED: 25
       ITEM_EFFECT_DURATION: 1
 
   - type: STR_SKULL_ANALYZE                 # Skull Analyzer

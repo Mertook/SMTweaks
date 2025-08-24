@@ -27,44 +27,6 @@ research:
       - STR_DEFENSE_CORRIDORBR
       - STR_MARINE_CHAOS_PATH # not supported
 
-  - name: STR_POWER_SUIT            # Terminator Suit
-    cost: 500 # was 205
-    points: 20
-    dependencies:
-      - STR_ELERIUM_115
-      - STR_UFO_POWER_SOURCE # power source
-      - STR_UFO_NAVIGATION # warp drive
-      - STR_HIGHTIER_PREREQ #Was Midtier
-      - STR_PERSONAL_ARMOR
-    unlocks:
-      - STR_TERMINATOR_ARMOR_SM_CODEX
-
-  - name: STR_FLYING_SUIT           # Terminator Assault
-    cost: 150 # was 330
-    points: 20
-    dependencies:
-      - STR_MARINES_AND_DEATHWATCH
-      - STR_POWER_SUIT
-
-  - name: STR_TSARGENT              # Terminator Cyclone
-    cost: 150 # was 330
-    points: 20
-    dependencies:
-      - STR_MARINES_AND_DEATHWATCH
-      - STR_POWER_SUIT
-
-  - name: STR_CAPTAIN_SUIT          # Terminator Captain
-    cost: 205
-    points: 20
-    dependencies:
-      - STR_GENERALLOCK
-
-  - name: STR_SMOKE_BOMB_UNLOCK     # SmokeBomb requirement - Added to give SM access
-    cost: 0
-    points: 0
-    dependencies:
-      - STR_GENERALLOCK
-
   - name: STR_TATICAL               # Tactical Strat Chosen
     cost: 5
     points: 0
@@ -84,12 +46,14 @@ research:
       - STR_SMOKE
       - STR_SMOKE_BOMB_UNLOCK
       - STR_CRATED_DROPPODS
+      - STR_ADV_DROPPODS
       - STR_NOT_PRIMARIS
     disables:
       - STR_PRIMARIS
       - STR_ASSAULT
       - STR_DEVASTATOR
       - STR_SCOUT
+      - STR_SPACEWOLVES_STRATEGY
       - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
     spawnedEvent: STR_TACTICAL_CARE_PACKAGE
     getOneFree:
@@ -114,12 +78,14 @@ research:
       - STR_INFERNOPISTOL_REQ
       - STR_SMOKE
       - STR_CRATED_DROPPODS
+      - STR_ADV_DROPPODS
       - STR_NOT_PRIMARIS
     disables:
       - STR_PRIMARIS
       - STR_TATICAL
       - STR_DEVASTATOR
       - STR_SCOUT
+      - STR_SPACEWOLVES_STRATEGY
       - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
     spawnedEvent: STR_ASSAULT_CARE_PACKAGE
     getOneFree:
@@ -142,13 +108,14 @@ research:
       - STR_SMOKE
       - STR_CRATED_DROPPODS
       - STR_DEV_ARMOR
-      #- STR_GLAUNCHER_PREREQ
+      - STR_ADV_DROPPODS
       - STR_NOT_PRIMARIS
     disables:
       - STR_PRIMARIS
       - STR_ASSAULT
       - STR_TATICAL
       - STR_SCOUT
+      - STR_SPACEWOLVES_STRATEGY
       - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
     spawnedEvent: STR_DEVASTATOR_CARE_PACKAGE
     getOneFree:
@@ -171,13 +138,14 @@ research:
       #- STR_STORMHAWKR
       - STR_CRATED_DROPPODS
       - STR_TRAINFACILITYR
-      #- STR_GLAUNCHER_PREREQ
+      - STR_ADV_DROPPODS
       - STR_NOT_PRIMARIS
     disables:
       - STR_PRIMARIS
       - STR_ASSAULT
       - STR_DEVASTATOR
       - STR_TATICAL
+      - STR_SPACEWOLVES_STRATEGY
       - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
     spawnedEvent: STR_SCOUT_CARE_PACKAGE
     getOneFree:
@@ -215,6 +183,34 @@ research:
     spawnedEvent: STR_PRIMARIS_CARE_PACKAGE
     getOneFree:
       - STR_NEOPHYTE_REQUEST
+
+  - name: STR_SPACEWOLVES_STRATEGY  # Space Wolves Strat Chosen
+    cost: 5
+    points: 0
+    dependencies:
+      - STR_MARINES_STRATEGY
+    lookup: STR_CHOSEN_SPACEWOLVES
+    unlocks:
+      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      - STR_MOTION_SCANNER
+      - STR_LASER_WEAPONS
+      - STR_HOLOGRAM_GRENADE_REQUISITION
+      - STR_MARINE_CHAPEL
+      - STR_CRATED_SWRHINOS
+      - STR_CRATED_SWDROPPODS
+      - STR_SPACEWOLVES_BLOODCLAW_ARMOR
+      - STR_SWDROPPODS
+      - STR_SWRHINOS
+      - STR_MARINE_BOLTERS
+      - STR_HARDER_MISSIONS_SW
+    disables:
+      - STR_NOT_SPACEWOLVES
+      - STR_PRIMARIS
+      - STR_ASSAULT
+      - STR_DEVASTATOR
+      - STR_SCOUT
+      - STR_TATICAL
+    spawnedEvent: STR_SPACEWOLVES_INITIAL_SITREP
 
   - name: STR_NEOPHYTE_REQUEST      # Unlock Neophytes
     cost: 5
@@ -256,6 +252,48 @@ research:
       #- STR_HB_DEP1 # moved to High Quality Bolters research
       - STR_SIDEOPERATIONS
     cutscene: c2
+
+  - name: STR_POWER_SUIT            # Terminator Suit
+    cost: 500 # was 205
+    points: 20
+    dependencies:
+      - STR_ELERIUM_115
+      - STR_UFO_POWER_SOURCE # power source
+      - STR_UFO_NAVIGATION # warp drive
+      - STR_HIGHTIER_PREREQ #Was Midtier
+      - STR_PERSONAL_ARMOR
+    unlocks:
+      - STR_TERMINATOR_ARMOR_SM_CODEX
+
+  - name: STR_FLYING_SUIT           # Terminator Assault
+    cost: 150 # was 330
+    points: 20
+    dependencies:
+      - STR_MARINES_AND_DEATHWATCH
+      - STR_POWER_SUIT
+
+  - name: STR_TSARGENT              # Terminator Cyclone
+    cost: 150 # was 330
+    points: 20
+    dependencies:
+      - STR_MARINES_AND_DEATHWATCH
+      - STR_POWER_SUIT
+
+  - name: STR_CAPTAIN_SUIT          # Terminator Captain
+    cost: 205
+    points: 20
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_SMOKE_BOMB_UNLOCK     # SmokeBomb requirement - Added to give SM access
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_ADV_DROPPODS          # Firestorm Droppods
+    dependencies: !add
+      - STR_GENERALLOCK
 
   - name: STR_STORMHAWKR            # Stormhawks
     cost: 100 # was 150

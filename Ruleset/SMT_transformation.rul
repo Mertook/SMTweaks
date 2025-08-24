@@ -250,7 +250,7 @@ soldierTransformation:
     upperBoundAtStatCaps: true
     listOrder: 50
 
-  - name: STR_PROMOTE_APOTHECARY_VET     # Apothecary -> Veteran Apothecary
+  - name: STR_PROMOTE_APOTHECARY_VET    # Apothecary -> Veteran Apothecary
     requires:
       - STR_MARINES_STRATEGY
       - STR_NOT_PRIMARIS
@@ -307,7 +307,7 @@ soldierTransformation:
     upperBoundAtStatCaps: true
     listOrder: 50
 
-  - name: STR_PROMOTE_TECHMARINE_VET     # Techmarine -> Veteran Techmarine
+  - name: STR_PROMOTE_TECHMARINE_VET    # Techmarine -> Veteran Techmarine
     requires:
       - STR_MARINES_STRATEGY
       - STR_NOT_PRIMARIS
@@ -938,6 +938,7 @@ soldierTransformation:
     requiredMinStats:
       bravery: 60
       psiStrength: 1 # was 60 (why does an officer need to be psychic?)
+      psiSkill: 20 # was 40 - extremely difficult to get for a guardsman, even with SMT bonuses
       tu: 1
 
   - name: STR_PROMOTE_OFFICER
@@ -1439,8 +1440,8 @@ soldierBonuses:
   - name: STR_PSIBONUS_WALLBREAKER
   - name: STR_PSIBONUS_FLASH
   - name: STR_PSIBONUS_REFLEXES
-  - name: STR_PSIBONUS_SENTRYWARD
   - name: STR_PSIBONUS_SMITE
+  - name: STR_PSIBONUS_HOLODUMMY
   - name: STR_PSIBONUS_VIGILANCE
   - name: STR_PSIBONUS_MENDWOUNDS
   - name: STR_PSIBONUS_UNDYING
@@ -1466,7 +1467,7 @@ soldierBonuses:
       strength: 10
       firing: 30
   - name: STR_PSIBONUS_SHIELD
-  - name: STR_PSIBONUS_HOLODUMMY
+  - name: STR_PSIBONUS_SENTRYWARD
   - name: STR_PSIBONUS_LOCKDOWN
   - name: STR_PSIBONUS_TORMENT
   - name: STR_PSIBONUS_CLOAK

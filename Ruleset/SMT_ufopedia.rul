@@ -1157,6 +1157,76 @@ ufopaedia:
     image_id: AUTOCANNON.SPK
     text: STR_AUTOCANNON_HANDHELD_ANY_CODEX
 
+  - id: STR_TECHMARINE_FLAMER               # Servo Arm Flamer
+    text: STR_TECHMARINE_FLAMER_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    type_id: 14
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECHMARINE_MELTA                # Servo Arm Melta
+    text: STR_TECHMARINE_MELTA_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    type_id: 14
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECHMARINE_GRAV                 # Servo Arm Graviton
+    text: STR_TECHMARINE_GRAV_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    type_id: 14
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECHMARINE_PLASMA               # Servo Arm Plasma
+    text: STR_TECHMARINE_PLASMA_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    type_id: 14
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECH_SKULL_SPAWNER              # Servo Skull
+    text: STR_TECH_SKULL_SPAWNER_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    type_id: 10
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECH_SENTRY_SPAWNER             # Tarantula Sentry
+    text: STR_TECH_SENTRY_SPAWNER_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    type_id: 10
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECH_TF_SPAWNER                 # Thunderfire Drone
+    text: STR_TECH_TF_SPAWNER_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    type_id: 10
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECH_TOOL_SHIELD                # Refractor Field Amplifier
+    text: STR_TECH_TOOL_SHIELD_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    type_id: 10
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECH_TOOL_SCANNER               # Omnispex
+    text: STR_TECH_TOOL_SCANNER_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    type_id: 10
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECH_TOOL_SERVITOR              # Sanctus Canister
+    text: STR_TECH_TOOL_SERVITOR_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    type_id: 10
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
 ### 90000  - Imperium Armor
   - id: STR_ENGINSEER_ARMOR_UC              # Enginseer
     type_id: 15
@@ -1763,6 +1833,9 @@ ufopaedia:
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_MC_BOLTPISTOL_DEAZ_UFOPEDIA
 
+  - id: STR_MC_UMBRA_GL                     # Master Crafted Umbra Bolter/GL
+    text: STR_BOLTER_LIGHT_UMBRA_UNDERSLUNG_CODEX
+
   - id: STR_RIFLE                           # Bolter (Godwyn)
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
@@ -2128,6 +2201,8 @@ ufopaedia:
     section: STR_NOT_AVAILABLE
     requires:
       - STR_SHURIKEN_CLIP
-
+  - id: STR_BLASTER_BOMB
+    type_id: 14
+    section: STR_NOT_AVAILABLE
 
 

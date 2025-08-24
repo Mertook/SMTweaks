@@ -1,7 +1,7 @@
 armors:
   - type: STR_NECRON_ARCHITECT_ARMOR            # Architect
-    visibilityAtDay: 40
-    visibilityAtDark: 40
+    visibilityAtDay: 0
+    visibilityAtDark: 0
     heatVision: 50
     antiCamouflageAtDark: 20 # was 10 - sees all
     antiCamouflageAtDay: 20 # was 5 - sees all
@@ -34,10 +34,10 @@ armors:
       - 0.9  # MELEE
       - 0.4  # ACID
       - 0.0  # SMOKE
-      - 0.9  # IMPACT
+      - 1.0  # IMPACT
       - 1.0  # MELTA
       - 0.2  # GRAV - Compensate for boss health/armor, not actually a superheavy unit
-      - 1.0  # WARP
+      - 0.5  # WARP
     loftempsSet: [3]
     builtInWeapons: # make staff built in, can't drop it
       - STR_STAFF_OF_LIGHT
@@ -66,34 +66,35 @@ armors:
 
   - &REF_DEATHMARK_ARMOR                        # Deathmark (revives)
     type: STR_NECRON_DEATHMARK_ARMOR_REVIVES
-    visibilityAtDay: 40
-    visibilityAtDark: 40
+    visibilityAtDay: 0
+    visibilityAtDark: 0
     heatVision: 50
-    antiCamouflageAtDark: 15
     antiCamouflageAtDay: 15
-    camouflageAtDark: -15
-    camouflageAtDay: -10
-    frontArmor: 95 # was 60 - Deathmarks are elites (and are t5 with a 3+ save)
+    antiCamouflageAtDark: 15
+    camouflageAtDay: 0
+    camouflageAtDark: 15
+    frontArmor: 100 # was 60 - Deathmarks are elites (and are t5 with a 3+ save)
     sideArmor: 80 # was 50
-    rearArmor: 50 # was 40
+    rearArmor: 60 # was 40
     underArmor: 80 # was 50
     recovery:  # Living metal rapidly regenerates health
       health:
         healthCurrent: 0.5
-    damageModifier:  # NECRON ARMOR
-      - 1.0  # none
-      - 0.9  # AP
-      - 0.4  # FLAMES
-      - 1.0  # HE
-      - 1.1  # LASCANON
-      - 1.0  # PLASMA
-      - 1.0  # STUN
-      - 1.0  # MELEE
-      - 0.5  # ACID
-      - 0.0  # SMOKE
-      - 1.0  # IMPACT
-      - 1.1  # MELTA
-      - 1.0  # GRAV
+    damageModifier: &Ref_Necron_Resist_Std
+      - 1.0  # Support
+      - 0.9  # Standard
+      - 0.5  # Burning
+      - 1.0  # Explosive
+      - 1.0  # LASCANON
+      - 1.0  # Plasma
+      - 0.5  # Stun
+      - 1.0  # Melee
+      - 0.5  # Acid
+      - 0.0  # Smoke
+      - 1.0  # Impact
+      - 1.1  # Melta
+      - 0.9  # Graviton
+      - 0.6  # Warp
     loftempsSet: [3]
     builtInWeapons: []
     tags:
@@ -102,36 +103,210 @@ armors:
       UNIT_TYPE_XENO: 1
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_NECRON: 1
+      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
       ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
       ARMOR_OVERWATCH_TU_RESTORED: 50 # enough for 1 shot - blame Mechanicus
-
   - type: STR_NECRON_DEATHMARK_ARMOR            # Deathmark
     refNode: *REF_DEATHMARK_ARMOR
     tags:
       ARMOR_TENACIOUS_HP_MOD: 3 # was 2
       ARMOR_TENACIOUS_STUN_RECOVERY: 30 # was 20
 
+  - &REF_IMMORTAL_ARMOR                         # Necron Immortal (revives)
+    type: STR_NECRON_IMORTAL_ARMOR_REVIVES
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 10
+    bleedImmune: true
+    fearImmune: true
+    painImmune: true
+    zombiImmune: true
+    spriteSheet: NECRONDR2.PCK
+    spriteInv: NECRON2.SPK
+    corpseBattle:
+      - STR_NECRON_IMORTAL_CORPSE
+    frontArmor: 110
+    sideArmor: 90
+    rearArmor: 50
+    underArmor: 90
+    drawingRoutine: 0
+    damageModifier: *Ref_Necron_Resist_Std
+    loftempsSet: [3]
+    builtInWeapons: []
+    tags:
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      UNIT_TYPE_XENO: 1
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_NECRON: 1
+      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
+      ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
+  - type: STR_NECRON_IMORTAL_ARMOR              # Necron Immortal
+    refNode: *REF_IMMORTAL_ARMOR
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 3
+
+  - &REF_FLAYEDONE_ARMOR                        # Necron Flayed One (revives)
+    type: STR_NECRON_FLAYED_ONE_ARMOR_REVIVES
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    antiCamouflageAtDark: 10
+    antiCamouflageAtDay: 10
+    camouflageAtDay: -5 # was 5
+    camouflageAtDark: 5 # was 2
+    heatVision: 40
+    psiVision: 0 # was 10
+    bleedImmune: true
+    fearImmune: true
+    painImmune: true
+    zombiImmune: true
+    frontArmor: 75 # was 110 - Flayed ones are the same toughness as basic warriors (t4 4+ save)
+    sideArmor: 60 # was 100
+    rearArmor: 40 # was 70
+    underArmor: 70 # was 100
+    damageModifier: *Ref_Necron_Resist_Std
+    loftempsSet: [3]
+    builtInWeapons: []
+    tags:
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      UNIT_TYPE_XENO: 1
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_NECRON: 1
+      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
+      ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
+  - type: STR_NECRON_FLAYED_ONE_ARMOR           # Necron Flayed One
+    refNode: *REF_FLAYEDONE_ARMOR
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 2 # was 3
+
   - &REF_SCARAB_ARMOR                           # Canoptic Scarabs (Five)
     type: STR_NECRON_SCARAB_ARMOR5
-    damageModifier:
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 0
+    overKill: 1.0 # hard to vaporize, large swarm
+    psiVision: 0
+    damageModifier: # high resists to most things - dispersed swarm
       - 1.0  # none
       - 0.5  # AP
-      - 0.4  # FLAMES
-      - 1.0  # HE; only AoE does full damage due to being a dispersed swarm
-      - 0.6  # LASCANON; dispersed swarm, but weakness to lascannon
+      - 0.8  # FLAMES
+      - 1.0  # HE
+      - 0.6  # LASCANON
       - 0.5  # PLASMA
-      - 0.0  # STUN; they're automatons, they can't be stunned.
+      - 0.2  # STUN
       - 0.5  # MELEE
       - 0.5  # ACID
       - 0.0  # SMOKE
       - 0.5  # IMPACT
-      - 0.6  # MELTA; dispersed swarm, but weakness to melta
-      - 0.2  # GRAV; dispersed swarm, invidually small
-
+      - 0.6  # MELTA
+      - 0.2  # GRAV
+      - 0.5  # WARP
+    tags:
+      ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
+      DODGE_CHANCE: 0 # was 40
+      ARMOR_MAX_SUCCESSFUL_DODGES: 0 # was 4
   - type: STR_NECRON_SCARAB_ARMOR3              # Canoptic Scarabs (Three)
     refNode: *REF_SCARAB_ARMOR
+    overKill: 0.75 # hard to vaporize, swarm
+    tags:
+      DODGE_CHANCE: 25 # was 50
+      ARMOR_MAX_SUCCESSFUL_DODGES: 2 # was 4
   - type: STR_NECRON_SCARAB_ARMOR1              # Canoptic Scarabs (One)
     refNode: *REF_SCARAB_ARMOR
+    overKill: 0.5 # default value
+    loftempsSet: [2] # was 3
+    damageModifier:
+      - 1.0  # none
+      - 0.8  # AP
+      - 0.5  # FLAMES
+      - 1.0  # HE
+      - 0.8  # LASCANON
+      - 0.8  # PLASMA
+      - 0.2  # STUN
+      - 0.5  # MELEE
+      - 0.5  # ACID
+      - 0.0  # SMOKE
+      - 0.5  # IMPACT
+      - 0.8  # MELTA
+      - 0.2  # GRAV
+      - 0.5  # WARP
+    tags:
+      DODGE_CHANCE: 33 # was 70
+      ARMOR_MAX_SUCCESSFUL_DODGES: 3 # was 5
+
+  - type: STR_DESTROYER_ARMOR                   # Necron Destroyer
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    heatVision: 40
+    antiCamouflageAtDark: 10
+    antiCamouflageAtDay: 10
+    frontArmor: 140 # was 120
+    sideArmor: 120 # was 110
+    rearArmor: 80
+    underArmor: 130 # was 120
+    recovery:  # Living metal rapidly regenerates health
+      health:
+        healthCurrent: 0.5
+    damageModifier: # Large, higher general resists but bonus damage from Grav
+      - 1.0  # Support
+      - 0.8  # AP
+      - 0.33 # FLAMES
+      - 0.8  # HE
+      - 1.0  # LASCANON
+      - 1.0  # PLASMA
+      - 0.4  # STUN
+      - 0.9  # MELEE
+      - 0.5  # ACID
+      - 0.0  # SMOKE
+      - 0.2  # IMPACT
+      - 1.1  # MELTA
+      - 2.0  # GRAV
+      - 0.5  # WARP
+    tags:
+      ARMOR_TENACIOUS_HP_MOD: 4 # was 6 - immune to stun
+      ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
+
+  - &REF_MONOLITH_TURRET_ARMOR
+    type: STR_MONO_N_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    heatVision: 50
+    antiCamouflageAtDay: 5
+    antiCamouflageAtDark: 5
+    frontArmor: 130 # was 130
+    sideArmor: 130 # was 130
+    rearArmor: 130 # was 130
+    underArmor: 150 # was 150
+    recovery:
+      health:
+        healthCurrent: 0.5
+    damageModifier:
+      - 1.0  # Support
+      - 0.8  # AP
+      - 0.33 # FLAMES
+      - 0.8  # HE
+      - 1.0  # LASCANON
+      - 1.0  # PLASMA
+      - 0.0  # STUN
+      - 0.9  # MELEE
+      - 0.5  # ACID
+      - 0.0  # SMOKE
+      - 0.2  # IMPACT
+      - 1.1  # MELTA
+      - 2.0  # GRAV
+      - 0.5  # WARP
+    tags:
+      ARMOR_REGENERATE_DURABILITY: 40 # necrodermis self repair
+
+  - type: STR_MONO_S_ARMOR
+    refNode: *REF_MONOLITH_TURRET_ARMOR
+  - type: STR_MONO_W_ARMOR
+    refNode: *REF_MONOLITH_TURRET_ARMOR
+  - type: STR_MONO_E_ARMOR
+    refNode: *REF_MONOLITH_TURRET_ARMOR
 
 
   - type: STR_NECRON_WARRIOR_ARMOR_REVIVES      # Warrior (revives)
@@ -142,12 +317,165 @@ armors:
     tags:
       ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
 
-  - type: STR_NECRON_IMORTAL_ARMOR_REVIVES      # Immortal (revives)
+  - type: STR_NECRON_DESTROYER_LORD_ARMOR       # Destroyer Lord
+    damageModifier:
+      - 1.0  # Support
+      - 0.8  # AP
+      - 0.33 # FLAMES
+      - 0.8  # HE
+      - 1.0  # LASCANON
+      - 1.0  # PLASMA
+      - 0.4  # STUN
+      - 0.9  # MELEE
+      - 0.5  # ACID
+      - 0.0  # SMOKE
+      - 0.2  # IMPACT
+      - 1.1  # MELTA
+      - 2.0  # GRAV
+      - 0.5  # WARP
     tags:
-      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
+      ARMOR_TENACIOUS_HP_MOD: 4
+      ARMOR_OVERWATCH_TU_RESTORED: 0
 
-  - type: STR_NECRON_FLAYED_ONE_ARMOR_REVIVES   # Flayed One (revives)
+
+### Traitor Guard
+  - type: STR_CATACHAN_TRAITOR_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    camouflageAtDay: 20 # was -15
+    camouflageAtDark: 10 # was -10
+    heatVision: 0
+    psiVision: 0
+
+  - type: STR_CATACHAN_TRAITOR_ARMOR2
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    camouflageAtDay: 20 # was -15
+    camouflageAtDark: 10 # was -10
+    heatVision: 0
+    psiVision: 0
+
+  - type: STR_CATACHAN_TRAITORVET_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    camouflageAtDay: 20 # was -15
+    camouflageAtDark: 10 # was -10
+    heatVision: 0
+    psiVision: 0
+
+  - type: STR_CATACHAN_TRAITORTOP_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    camouflageAtDay: 20 # was -15
+    camouflageAtDark: 10 # was -10
+    heatVision: 0
+    psiVision: 0
     tags:
-      ARMOR_TENACIOUS_HP_MOD: 1 # doesn't provide necron revive bonuses, used to mark as target for Derevenant ammo
+      ARMOR_OVERWATCH_TU_RESTORED: 0
+
+### Chaos Marines
+  - type: STR_ALPHAterminator_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    camouflageAtDay: 0
+    camouflageAtDark: 0
+    damageModifier: &Ref_Terminator_Resists
+      - 1.0  # none
+      - 0.7  # AP;
+      - 0.3  # FLAMES;
+      - 0.7  # HE
+      - 0.9  # LASCANON
+      - 0.9  # PLASMA
+      - 0.6  # STUN
+      - 0.9  # MELEE
+      - 0.7  # ACID
+      - 0.0  # SMOKE
+      - 0.2  # IMPACT
+      - 1.0  # MELTA
+      - 1.3  # GRAV
+      - 1.0  # WARP
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 0
+
+
+  - type: STR_NIGHTLORDterminator_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    camouflageAtDay: 0
+    camouflageAtDark: 12
+    damageModifier: *Ref_Terminator_Resists
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 0
+
+  - type: STR_WORDBEARER_GALVWARRIOR_POSSARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    psiVision: 0
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 0
+
+  - type: STR_WORDBEARER_GALVWARRIORELITE_POSSARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    psiVision: 0
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 0
+
+  - type: STR_WORDBEARER_SCOUT_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    camouflageAtDay: 20
+    camouflageAtDark: 10
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 0
+
+  - type: STR_WORDBEARER_DEMONLORD_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    psiVision: 0
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 0
+
+
+
+
+
+### Tau
+
+  - type: STR_TAUFIREWARRIOR_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+
+  - type: STR_TAUFIREWARRIORPATHFINDER_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    camouflageAtDark: 20
+    camouflageAtDay: 15
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 0
+
+  - type: STR_TAUDRONE_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    psiVision: 0
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 0
+
+  - type: STR_TAUFIREWARRIORLEADER_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 0
+
+  - type: STR_TAUFIREWARRIORCAPTAIN_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 0
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 0
+
+  - type: STR_TAUGUEVESAFLAK_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 10
+
 
 

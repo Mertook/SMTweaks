@@ -171,9 +171,6 @@ soldiers:
     femaleFrequency: 15
     avatarOffsetX: 67
     avatarOffsetY: 42
-    soldierNames:
-      - delete
-      - MarineName/
     deathMale: [{mod: 40k, index: 713}, {mod: 40k, index: 714}, {mod: 40k, index: 715}, {mod: 40k, index: 716}, {mod: 40k, index: 717}, {mod: 40k, index: 718}, {mod: 40k, index: 719}, {mod: 40k, index: 720}, {mod: 40k, index: 721}, {mod: 40k, index: 722}]
     deathFemale: [{mod: 40k, index: 744}, {mod: 40k, index: 745}, {mod: 40k, index: 746}, {mod: 40k, index: 747}, {mod: 40k, index: 748}, {mod: 40k, index: 749}, {mod: 40k, index: 750}, {mod: 40k, index: 751}, {mod: 40k, index: 752}]
     value: 30
@@ -2717,31 +2714,31 @@ soldiers:
 
   - type: STR_GUARD_TANITH              # Tanith Veteran
     costSalary: 30000
-    minStats:
+    minStats: # veterans, get better starting stats
       tu: 50
-      stamina: 60
+      stamina: 70
       health: 35
       bravery: 50
       reactions: 50
-      firing: 60
+      firing: 75
       throwing: 50
       strength: 20
       psiStrength: 10
       psiSkill: 0
-      melee: 50
+      melee: 60
       mana: 0
     maxStats:
       tu: 60
-      stamina: 70
+      stamina: 90
       health: 40
       bravery: 60
       reactions: 60
-      firing: 70
+      firing: 95
       throwing: 65
       strength: 30
       psiStrength: 40
       psiSkill: 15
-      melee: 60
+      melee: 70
       mana: 0
     statCaps:
       tu: 75
@@ -2758,12 +2755,12 @@ soldiers:
       psiSkill: 100
     trainingStatCaps:
       tu: 60
-      stamina: 80
+      stamina: 90
       health: 40
-      firing: 80
+      firing: 95
       throwing: 70
       strength: 35
-      melee: 70
+      melee: 80
       psiSkill: 100
       mana: 0
 
@@ -2798,9 +2795,9 @@ soldiers:
 
   - type: STR_PSYKER                    # Imperial Guard Psyker
     minStats:
-      psiStrength: 35
+      psiStrength: 45
     maxStats:
-      psiStrength: 55
+      psiStrength: 65
     skills:
       - STR_PSISKILL_SHROUD
       - STR_PSISKILL_FLARE
@@ -2823,7 +2820,7 @@ soldiers:
 
   - type: STR_COMMISSAR
     tags:
-      SOLDIER_IS_PSISKILL_TEACHER: 2 # all units gain 1-2 devotion from battle
+      SOLDIER_IS_PSISKILL_TEACHER: 1 # all units gain 1 devotion from battle
 
   - &STR_OFFICER
     type: STR_GUARD_OFFICER
@@ -2869,7 +2866,7 @@ soldiers:
       tu: 60
       stamina: 70
       health: 60
-      bravery: 70
+      bravery: 80
       firing: 70
       reactions: 60
       melee: 60

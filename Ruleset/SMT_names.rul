@@ -364,19 +364,6 @@ extraStrings:
       STR_SYNAPTIC_DISINTEGRATOR_AI: Synaptic Disintegrator
       STR_SUPERFLARE: Flare
       STR_SUPERFLARE_SHORT: Flare
-      STR_TECHMARINE_FLAMER: Servo-Arm Flamer
-      STR_TECHMARINE_BOLTER: Servo-Arm Bolter
-      STR_TECHMARINE_MELTA: Servo-Arm Melta
-      STR_TECHMARINE_GRAV: Servo-Arm Gravgun
-      STR_TECHMARINE_PLASMA: Servo-Arm Plasmagun
-      STR_TECH_REPAIRTOOL: Repair
-      STR_TECH_TOOL_SERVITOR: Sanctus Canister
-      STR_TECH_TOOL_SHIELD: Refractor Field Projector
-      STR_TECH_TOOL_SCANNER: Omnispex
-      STR_TECH_MEDKIT: Curatio Claw
-      STR_TECH_SKULL_SPAWNER: Servo Skull
-      STR_TECH_SENTRY_SPAWNER: Tarantula Sentry
-      STR_TECH_TF_SPAWNER: Thunderfire Drone
       STR_SKULL_ANALYZE: Analyze
       STR_THUNDERFIRE_CANNON: Thunderfire Cannon
       STR_GENERICSERVITOR_AMMO: "Munitions Rack"
@@ -701,6 +688,8 @@ extraStrings:
       STR_SCRIPT_CMD_REACT: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Lightning Blitz"
       STR_SCRIPT_CMD_OVERWATCH: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Battle Drill"
       STR_HEAT_AMMO_SPENT_FOR_INCREASE: "Heat increase per X ammo"
+      STR_AIMED_ACCURACY_POWER_BONUS: "Aimed Shot Acc. Flat Power Bonus"
+      STR_AIMED_ACCURACY_POWER_BONUS_PERCENT: "Aimed Shot Acc. % Power Bonus"
       ### FACILITIES
       STR_OUTPOST_GK: "Outpost"
       STR_OUTPOST_INQ_HYPER: "Outpost w/ Decoder"
@@ -1492,7 +1481,7 @@ extraStrings:
       STR_GRAVGUN_BURST_TERRAN_CODEX: "{NEWLINE} This Jupiter-Pattern Gravgun is a variant of the standard Gravgun with a wider focus, increasing the area affected. This dispersed focus reduces the damage inflicted to smaller individuals but can crush larger foes and punch sizable holes in craft walls."
       STR_GRAVPISTOL_TERRAN: Gravpistol
       STR_GRAVPISTOL_TERRAN_CODEX: "{NEWLINE} The Gravpistol is based on the same ancient Graviton tech as the bigger Gravgun. Less potent, the Gravpistol sacrifices range to create similar gravity crushing fields against heavy armor wearers and fortifications, turning the targets weight against them."
-      STR_GRAVPISTOL_MC_TERRAN: Master-crafted Gravpistol
+      STR_GRAVPISTOL_MC_TERRAN: Master Crafted Gravpistol
       STR_GRAVPISTOL_MC_TERRAN_CODEX: "{NEWLINE} The Gravpistol is based on the same ancient Graviton tech as the bigger Gravgun. Less potent, the Gravpistol sacrifices range to create similar gravity crushing fields against heavy armor wearers and fortifications, turning the targets weight against them.{NEWLINE} This Master-crafted variant is more compact and accurate, making it an excellent sidearm against giant foes."
       STR_GRAVGUN_ADEPTAS_UFOPEDIA: "{NEWLINE} The Adeptas Jupiter-Pattern Grav-Gun is a variation on the ancient Gravgun technology. It manipulates the very gravity in a area to cause an gravimetric implosion, crushing targets under the weight of their own sins."
       STR_GRAVGUN_AOE_CHAOS_UFOPEDIA: "{NEWLINE} The Jupiter-Pattern Grav-Gun is a variation on the ancient Gravgun technology. It manipulates the very gravity in a area to cause an gravimetric implosion, crushing several targets with their own mass. It has less range and uses more power than the standard gravgun."
@@ -1501,6 +1490,30 @@ extraStrings:
       STR_AUTOCANNON_HANDHELD_ANY: Autocannon
       STR_AUTOCANNON_HANDHELD_ANY_CODEX: "{NEWLINE} The Autocannon is the culmination of the Auto weapons, a self-loading heavy ballistic cannon capable of laying down rapid bursts of fire into advancing enemy troops or fortified positions. While an ancient design, it reliably deals with light vehicles and heavy infantry from long range.{NEWLINE}{NEWLINE}Recoil: {ALT}100{ALT} - {ALT}Heavy{ALT}"
       STR_HEAVY_PLASMA_TERRAN_UFOPEDIA: "{NEWLINE} The Plasma Cannon, also sometimes called the Heavy Plasma Gun, fires lethal blasts of superheated matter at the target, melting flesh and armor alike.{NEWLINE}{NEWLINE}Recoil: {ALT}60{ALT} - {ALT}Heavy{ALT}"
+      STR_BLASTER_LAUNCHER_TERRAN_UFOPEDIA: "{NEWLINE} The Multimelta is a more powerful version of the standard Imperial Meltagun, deadlier and effective at longer ranges. The dual barrels allow it to cycle fire without overheating.{NEWLINE}{NEWLINE}Recoil: {ALT}60{ALT} - {ALT}Heavy{ALT}"
+      STR_TECHMARINE_FLAMER: Servo-Arm Flamer
+      STR_TECHMARINE_FLAMER_CODEX: "{NEWLINE} A Flamer mounted on a Servo-Arm, able to fire at targets while keeping the Techpriests hands free for other tasks."
+      STR_TECHMARINE_BOLTER: Servo-Arm Bolter
+      STR_TECHMARINE_MELTA: Servo-Arm Melta
+      STR_TECHMARINE_MELTA_CODEX: "{NEWLINE} A Meltagun mounted on a Servo-Arm, able to fire at targets while keeping the Techpriests hands free for other tasks."
+      STR_TECHMARINE_GRAV: Servo-Arm Gravgun
+      STR_TECHMARINE_GRAV_CODEX: "{NEWLINE} A Gravgun mounted on a Servo-Arm, able to fire at targets while keeping the Techpriests hands free for other tasks."
+      STR_TECHMARINE_PLASMA: Servo-Arm Plasmagun
+      STR_TECHMARINE_PLASMA_CODEX: "{NEWLINE} A Plasma Gun mounted on a Servo-Arm, able to fire at targets while keeping the Techpriests hands free for other tasks."
+      STR_TECH_REPAIRTOOL: Repair
+      STR_TECH_TOOL_SERVITOR: Sanctus Canister
+      STR_TECH_TOOL_SERVITOR_CODEX: "{NEWLINE} Sanctus Canisters are blessed tools used to inspire strength, bolstering the power of warmachines.{NEWLINE}{NEWLINE} Friendly {ALT}Servitors{ALT}, {ALT}Tarantula Sentries{ALT} or {ALT}Thunderfire Cannons{ALT} can be enhanced once per battle, restoring some time units and granting them {ALT}+30{ALT} firing and melee accuracy for the rest of the fight."
+      STR_TECH_TOOL_SHIELD: Refractor Field Amplifier
+      STR_TECH_TOOL_SHIELD_CODEX: "{NEWLINE} This Refractor Field Amplifier can be activated to provide a powerful temporary shield. This effect can be combined with an existing personal shield, and the shield power will fade over time even if not attacked.{NEWLINE}{NEWLINE} The shield has {ALT}400{ALT} hitpoints and a four turn cooldown."
+      STR_TECH_TOOL_SCANNER: Omnispex
+      STR_TECH_TOOL_SCANNER_CODEX: "{NEWLINE} Omnispex are advanced sensor devices equipped with powerful Machine Spirits, able to analyze enemies in depth and pinpoint weaknesses.{NEWLINE}{NEWLINE} Enemies marked by an Omnispex are made vulnerable, increasing the power of all incoming attacks by {ALT}25%{ALT} for the rest of the turn."
+      STR_TECH_MEDKIT: Curatio Claw
+      STR_TECH_SKULL_SPAWNER: Servo Skull
+      STR_TECH_SKULL_SPAWNER_CODEX: "{NEWLINE} Servo Skulls are valuable familiars used throughout the Imperium, able to assist with basic tasks. These Servo Skulls have been outfitted with basic scanners, able to identify the status of enemies and scout the battlefield without exposing the Techpriest to enemy fire."
+      STR_TECH_SENTRY_SPAWNER: Tarantula Sentry
+      STR_TECH_SENTRY_SPAWNER_CODEX: "{NEWLINE} Tarantula Sentries are automated weapons platforms, able to be deployed on the field. Equipped with Heavy Bolters, it provides powerful covering fire."
+      STR_TECH_TF_SPAWNER: Thunderfire Cannon
+      STR_TECH_TF_SPAWNER_CODEX: "{NEWLINE} The Thunderfire Cannon is a large multi-barreled cannon on treads, typically crewed by Techmarines. Its size and mobility allow it to be used in places where larger artillery is incabable of traversing, while still delivering devastating explosive ordinance."
       ## Armor
       STR_FLYING_SUIT_UFOPEDIA: "Assault Terminators teleport deep into enemy lines, striking at enemy commanders. Their Lightning Claws easily cut through any flesh or armor, tearing apart everything in their path."
       STR_MKX_TAC_UFOPEDIA: "The Mark X series power armor can be modified and upgraded to suit the needs of the battlefield. Tacticus is the most common variant, a flexible and reliable all-purpose combat armor."

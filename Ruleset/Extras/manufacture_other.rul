@@ -107,7 +107,7 @@ manufacture:
     requires:
       - STR_PSYKER_REQUISITION
     requiredItems:
-      STR_KILLPOINT_TOKEN: 50 # was 500, cost now split into psi abilities
+      STR_KILLPOINT_TOKEN: 40 # was 500, cost now split into psi abilities
     producedItems: {} # a laspistol is not worth mentioning
 
   - name: STR_ENGINSEER_REQUISITION                 # Enginseer Recruit
@@ -175,11 +175,13 @@ manufacture:
 
   - name: STR_WARPED_LOOT_SM                        # Ancient Vault (Marines)
     producedItems:
-      STR_VOLKITE_VAULT: 2
+      STR_VOLKITE_VAULT: 1
       STR_SMT_GENESEED_IMPURE: 45
       STR_ALIEN_ALLOYS: 400
       STR_ELERIUM_115: 400
-      STR_KILLPOINT_TOKEN: 4000
+      STR_saturnine_ARMOR: 1
+      STR_POWER_SUIT: 2
+      STR_KILLPOINT_TOKEN: 1500
 
   - name: STR_WARPED_LOOT_IG                        # Ancient Vault (Guard)
     producedItems: !add

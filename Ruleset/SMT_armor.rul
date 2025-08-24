@@ -806,6 +806,10 @@ armors:
 
   - update: STR_POWER_SUIT_UC               #TERMINATOR
     refNode: *STR_TERMINATOR_ARMOR
+    units: # allow Primaris from Ancient Vault
+      - STR_SOLDIER_TERMINATOR
+      - STR_PRIMARISLV3
+      - STR_PRIMARISLV4
 
   - update: STR_CAPTAIN_UC                  #TERMINATOR CAPTAIN
     refNode: *STR_TERMINATOR_ARMOR
@@ -1445,6 +1449,9 @@ armors:
       - STR_TERMINATOR_CORPSE
     storeItem: STR_POWER_SUIT
     corpseGeo: STR_FALLEN_CORPSE
+    units: # allow Primaris from Ancient Vault
+      - STR_SOLDIER_CAPTAIN
+      - STR_PRIMARISLV5
     visibilityAtDark: 40
     heatVision: 35 # +5 Captain bonus
     antiCamouflageAtDay: 16
@@ -4024,6 +4031,66 @@ armors:
       ARMOR_ENERGY_SHIELD_DECAY: 20
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 25
+
+  - type: STR_ULTRAcataphract_ARMORPLAYER
+    visibilityAtDay: 40
+    visibilityAtDark: 40
+    antiCamouflageAtDay: 9
+    antiCamouflageAtDark: 9
+    heatVision: 30
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 2.0 #discipline and resolve reinforces their faith (+50% terminator bonus)
+    units:
+      - STR_SOLDIER_TERMINATOR
+      - STR_PRIMARISLV3
+      - STR_PRIMARISLV4
+      - STR_PRIMARISLV5
+    stats:
+      tu: -10           # base -10
+      stamina: 20       # base 20
+      health: 80        # base 50
+      bravery: 10       # base 10
+      reactions: -10    # base -10
+      firing: 20        # base 20
+      throwing: 20      # base 20
+      strength: 90      # base 90
+      psiStrength: 0    # base 0
+      psiSkill: 0       # base 0
+      melee: 20         # base 20
+    frontArmor: 200
+    sideArmor: 170
+    rearArmor: 170
+    underArmor: 180
+    allowsKneeling: false
+    corpseBattle:
+      - STR_ULTRAcataphract_CORPSE_GEO
+    damageModifier:
+      - 1.0  # none
+      - 0.5  # AP; Cataphract reduces by 0.2
+      - 0.3  # FLAMES
+      - 0.5  # HE; Cataphract reduces by 0.2
+      - 1.0  # LASCANON; Cataphract increases by 0.2
+      - 1.0  # PLASMA
+      - 0.8  # STUN
+      - 0.8  # MELEE
+      - 1.0  # ACID
+      - 0.0  # SMOKE
+      - 0.2  # IMPACT
+      - 1.1  # MELTA; Cataphract increases by 0.1
+    specialWeapon: STR_MFIST
+    allowsRunning: false
+    tags:
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 60  # 50% better than standard terminator shielding
+      ARMOR_ENERGY_SHIELD_DECAY: 20
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalty
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 10
+      ARMOR_REGENERATE_HEALTH_BURN_TOGGLE: -1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_ASTARTES: 1
 
   - type: STR_STORMTALON_ARMOR
     visibilityAtDay: 40

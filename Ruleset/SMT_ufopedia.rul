@@ -90,6 +90,20 @@ ufopaedia:
       - STR_NEOPHYTE_CODEX
     text: STR_SMT_NEOPHYTE_PROMOTION_CODEX
     listOrder: 110 # was 21010
+  # - id: STR_SMT_FIRSTBORN_PROMOTION_TREE     #00115 - Promotion Tree Firstborn
+    # type_id: 10
+    # section: STR_STRATEGY
+    # image_id: FIRSTBORNTREE.SPK
+    # requires:
+      # - STR_FIRSTBORN_CODEX
+    # listOrder: 115
+  - id: STR_SMT_PRIMARIS_PROMOTION_TREE     #00116 - Promotion Tree Primaris
+    type_id: 10
+    section: STR_STRATEGY
+    image_id: PRIMARISTREE.SPK
+    requires:
+      - STR_PRIMARIS_CODEX
+    listOrder: 116
   - id: STR_SMT_FIRSTBORN_PROMOTION     #00120 - Marine Promotion Firstborn
     type_id: 10
     section: STR_STRATEGY
@@ -106,7 +120,7 @@ ufopaedia:
       - STR_PRIMARIS_CODEX
     text: STR_SMT_PRIMARIS_PROMOTION_CODEX
     listOrder: 120 # was 21010
-  - id: STR_SMT_PRIMARIS_SPECIALIST     #00120 - Specialist Promotion Primaris
+  - id: STR_SMT_PRIMARIS_SPECIALIST     #00121 - Specialist Promotion Primaris
     type_id: 10
     section: STR_STRATEGY
     image_id: TODO.SPK

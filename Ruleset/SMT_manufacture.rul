@@ -1154,7 +1154,7 @@ manufacture:
       - STR_POWER_SUIT
     space: 0
     time: 4800 #was 800
-    cost: 80000 #was 20k
+    cost: 100000 #was 20k
     requiresBaseFunc: [ARMO]
     requiredItems:
       STR_ALIEN_ALLOYS: 80 #was 75
@@ -1221,7 +1221,8 @@ manufacture:
       - STR_MARINES_STRATEGY
       - STR_CHAPTER_PURITY
       - STR_MEDI_KIT_PREREQ
-      - STR_NOT_PRIMARIS # SM Primaris don't get any regular marines anymore, this is useless for them
+      - STR_NOT_PRIMARIS
+      - STR_GENERALLOCK # now special class gear
     space: 0
     time: 800
     cost: 60000
@@ -1237,7 +1238,7 @@ manufacture:
       - STR_TEC_BAYR
       - STR_MARINES_AND_DEATHWATCH
       - STR_NOT_PRIMARIS
-      - STR_GENERALLOCK
+      - STR_GENERALLOCK # now special class gear
     space: 0
     time: 800
     cost: 60000 # was 30k

@@ -71,6 +71,7 @@ extraStrings:
       STR_TOGGLE_STEALTH: "Toggle Stealth Camo"
       STR_DAMAGE_12: "GRAVITON"
       STR_DAMAGE_13: "WARP"
+      STR_DAMAGE_14: "SONIC"
       STR_STRIKE_ORBITAL: Orbital Barrage
       STR_BOMBARD_SET_POSITION: Set Firing Position
       STR_CALL_ORBITAL: Orbital Barrage
@@ -1310,8 +1311,6 @@ extraStrings:
       STR_SMT_CMD_LB_CODEX: "{NEWLINE} The Astartes strike furiously and without warning, leaving their enemies in disarray {NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Do not trigger any enemy reactions{NEWLINE}> Increase the accuracy of melee attacks"
       STR_SMT_HEROICSAVE: Heroic Save
       STR_SMT_HEROICSAVE_CODEX: "{NEWLINE} When taking lethal damage Space Marines have a chance to heroically endure. Instead of dying they will be knocked unconcious and can be revived to fight on.{NEWLINE} This effect may also protect them from instant-death attacks, but can't prevent death from untreated fatal wounds, corruption or burning.{NEWLINE}{NEWLINE} The chance to endure increases with Health, Devotion, and Veterancy. Units blessed by a Chaplain have their bonus from Devotion doubled."
-      STR_SMT_REGENERATION: Marine Healing
-      STR_SMT_REGENERATION_CODEX: "{NEWLINE} Marines undergo extensive genetic modification, improving their ability to recover from injury far above that of regular humans. This allows them to heal fatal wounds and regenerate health even on the battlefield. Units can heal up to 80% of their max health, but lost health restored this way still incurs some post-mission recovery time."
       STR_SMT_PROMOTION_LIBRARIANS: Librarians
       STR_SMT_PROMOTION_LIBRARIANS_CODEX: "{NEWLINE} Neophytes with {ALT}35+ PsiStr{ALT} who qualify for Marinehood can be trained into Librarians instead of becoming regular Marines.{NEWLINE}{NEWLINE} Librarians can use powerful psyker abilities that depend on Psi Strength, which is improved through use in battle."
       STR_SMT_PROMOTION_CHAPLAINS: Chaplains
@@ -1347,7 +1346,11 @@ extraStrings:
       STR_JETPACK_MECHANIC: "Limited Flight Jetpacks"
       STR_JETPACK_MECHANIC_UFOPEDIA: "{NEWLINE} Most Jetpacks only provide temporary flight and must be activated before use. Once the flight ends the soldier will fall to the ground at the start of your next turn.{NEWLINE}{NEWLINE} Jetpacks can be activated multiple times per battle, but the flight duration and cooldown vary based on armor type."
       STR_HELP17: "Energy Shields"
-      STR_SHIELDPEDIA: "{NEWLINE} Energy Shields protect units from damage, and can be seen as a periodic blue shimmer. Shield HP is consumed to directly reduce incoming attack power 1:1, completely negating attacks if the shield is strong enough. {NEWLINE}{NEWLINE} Personal Shields recharge every turn. The amount recharged is strongest when the shield is completely depleted and slows down as it nears full, never reaching the maximum."
+      STR_SHIELDPEDIA: "{NEWLINE} Energy Shields protect units from damage, and can be seen as a periodic blue shimmer. Shield HP is consumed to directly reduce incoming attack power 1:1, completely negating attacks if the shield is strong enough. {NEWLINE}{NEWLINE} Personal Shields recharge at the start of each turn. The amount recharged is highest when the shield is completely depleted and slows down as it approaches the maximum."
+      STR_SMT_REGENERATION: Unit Regeneration
+      STR_SMT_REGENERATION_CODEX: "{NEWLINE} Whether through genetically enhanced constitutions, sinister Warp powers or twisted Xenos technology, some units have the ability to regenerate wounds during battle. Each turn these units regain lost health and heal fatal wounds,. {NEWLINE}{NEWLINE} Most units cannot regenerate while on fire."
+      STR_SMT_EXECUTIONS: Killing Downed Enemies
+      STR_SMT_EXECUTIONS_CODEX: "{NEWLINE} The Enemies of Man stubbornly resist meeting their just end, and even wounded soldiers may recover and rise to threaten your troops again. Unconcious enemies can be hurt by explosives or shot directly while on the ground.{NEWLINE}{NEWLINE} Firing at your feet while standing on an enemy body is the most reliable way to eliminate the threat."
       STR_ADVANCED_TURRETS: "Craft Battlefield Turrets"
       STR_ADVANCED_TURRETS_UFOPEDIA: "{NEWLINE} Some crafts require you to choose the turret types used for the ground battle, otherwise they'll have none. These crafts have a second page with the list of slots and supported armaments.{NEWLINE}{NEWLINE} You have to buy the supported armament(s), of the supported slot-type(s) (turret, hull, sponson), and put it(them) into the craft's inventory. All weapons will be spawned when the battle starts."
       STR_SMT_FIRESUPPORT: "Fire Support"
@@ -1450,6 +1453,11 @@ extraStrings:
       STR_STEALTH_ADVSCOUT: Elite Scout Stealth
       STR_STEALTH_REIVER: Reiver Stealth
       STR_STEALTH_ELIMINATOR: Eliminator Stealth
+      STR_BOLTPISTOL_FENRIS_CODEX: "{NEWLINE} The Icetooth pattern Boltpistol is standard issue for Bloodclaws. A variant of the Godwyn tweaked for close combat with a fully automatic firing mode. It is inscribed with Fenrisian runes and can fire Helfrost bolt pistol rounds.{NEWLINE}{NEWLINE}Recoil: {ALT}40{ALT}"
+      STR_BOLTPISTOL_FENRIS_MC_CODEX: "{NEWLINE} A Master Crafted version of the favored Icetooth pattern, inlaid with gold and even more runes, it operates perfectly and with ease - providing more accurate fire.{NEWLINE}{NEWLINE}Recoil: {ALT}40{ALT}"
+      STR_BOLTER_FENRIS_CODEX: "{NEWLINE} The Asaheim pattern boltgun is the standard boltgun of Fenris. Favored by the veteran Grey Hunter for its versatility and its ability to fire the specialized Helfrost bolter warheads. {NEWLINE}{NEWLINE}Recoil: {ALT}65{ALT}"
+      STR_BOLTER_FENRIS_MC_CODEX: "{NEWLINE} This Master Crafted version of the Ashaheim pattern is made to perfection and capable of firing Helfrost warhead rounds. It is the favored boltgun of the elite Wolf Guard.{NEWLINE}{NEWLINE}Recoil: {ALT}65{ALT}"
+      STR_HEAVYBOLTER_SW_MC_CODEX: "{NEWLINE} The Asgal Pattern Mark VI Heavy Bolter pattern is only utilised by the Space Wolves Chapter and made by their master Ironpriests to exact specifications, inscribed with runes and materials only found on Fenris, to be wielded by Long Fang Marines.{NEWLINE}{NEWLINE}Recoil: {ALT}100{ALT} - {ALT}Heavy{ALT}"
       STR_HB_DW: "¬ Storm Bolter"
       STR_HEAVY_BOLTER_SCOUT: Scout Heavy Bolter
       STR_HEAVY_BOLTER_SCOUT_CODEX: "{NEWLINE} This Heavy Bolter variant is lighter and equipped with a bipod, making it more portable than the standard MK4. Scout teams use these to set up ambushes, decimating enemies with heavy firepower from unexpected angles.{NEWLINE}{NEWLINE}Recoil: {ALT}100{ALT} - {ALT}Heavy{ALT} - {ALT}Bipod{ALT}"

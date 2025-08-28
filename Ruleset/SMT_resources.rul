@@ -223,6 +223,19 @@ extraSprites:
       319: Resources/ITEMS/GRAV/GravAmmoA_BigOb.png             # Gravgun Jupiter Ammo
       320: Resources/ITEMS/GRAV/GravAmmoB_BigOb.png             # Gravgun Burst Ammo
       321: Resources/ITEMS/GRAV/GravAmmoP_BigOb.png             # Gravpistol Ammo
+      322: Resources/ITEMS/BOLTER/LBolterGLM_0.png              # Light Bolter Umbra MC (unloaded)
+      323: Resources/ITEMS/BOLTER/LBolterGLM_1.png              # Light Bolter Umbra MC (boltpistol)
+      324: Resources/ITEMS/BOLTER/LBolterGLM_2.png              # Light Bolter Umbra MC (bolter)
+      325: Resources/ITEMS/BOLTER/rifleSWA_0.png                # Bolter Fenris (unloaded)
+      326: Resources/ITEMS/BOLTER/rifleSWA_1.png                # Bolter Fenris (boltpistol)
+      327: Resources/ITEMS/BOLTER/rifleSWA_2.png                # Bolter Fenris (bolter)
+      328: Resources/ITEMS/BOLTER/rifleSWB_0.png                # Bolter Fenris MC (unloaded)
+      329: Resources/ITEMS/BOLTER/rifleSWB_1.png                # Bolter Fenris MC (boltpistol)
+      330: Resources/ITEMS/BOLTER/rifleSWB_2.png                # Bolter Fenris MC (bolter)
+      331: Resources/ITEMS/BOLTPISTOL/pistolSW_0.png            # Boltpistol Fenris (unloaded)
+      332: Resources/ITEMS/BOLTPISTOL/pistolSW_1.png            # Boltpistol Fenris (boltpistol)
+      333: Resources/ITEMS/BOLTPISTOL/pistolSWM_0.png           # Boltpistol Fenris MC (unloaded)
+      334: Resources/ITEMS/BOLTPISTOL/pistolSWM_1.png           # Boltpistol Fenris MC (boltpistol)
 
       ### Corpses
       700: Resources/UNITS/DW/SCOUT/SCTDW_BigOb.png             # DW Scout Corpse
@@ -361,6 +374,7 @@ extraSprites:
     files:
       100: Resources/SPRITES/blankEx.png
       110: Resources/SPRITES/lock.png
+      120: Resources/SPRITES/sonicHit.png
 
   - type: X1.PCK  # small explosion 
     width: 320

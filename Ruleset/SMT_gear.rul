@@ -713,7 +713,8 @@ items:
     tags:
       ITEM_RECOIL: 40 # was 25, light bolter with high RoF
 
-  - type: STR_MC_UMBRA_GL
+  - type: STR_MC_UMBRA_GL                   # Light Bolter (Umbra MC)
+    bigSprite: 322
     fireSound: {mod: 40k, index: 707} # light bolter gets light bolter sound
     dropoff: 7 # was 5
     autoRange: 11 # was 10
@@ -894,6 +895,41 @@ items:
     weight: 3 # 1.5x weight
     clipSize: 12 # +20% clip size
 
+  - type: STR_BOLTPISTOL_HELFROST_CLIP      # Boltpistol Helfrost Ammo
+    armor: 300
+    power: 75
+    damageType: 1
+    damageAlter:
+      RandomType: 7 # 50-200%
+      ArmorEffectiveness: 0.9
+      ToArmorPre: 0.15
+      ToArmor: 0.20
+      ToHealth: 1.0
+      ToStun: 1.0
+      ToTime: 0.2
+      ToEnergy: 0.6
+      ToWound: 0.1
+      RandomWound: false
+
+  - type: STR_BOLTPISTOL_HELFROST_CLIP_MC   # Boltpistol Helfrost MC Ammo
+    armor: 300
+    power: 75
+    damageType: 1
+    damageAlter:
+      RandomType: 7 # 50-200%
+      ArmorEffectiveness: 0.8
+      ToArmorPre: 0.20
+      ToArmor: 0.20
+      ToHealth: 1.0
+      ToStun: 1.0
+      ToTime: 0.2
+      ToEnergy: 0.6
+      ToWound: 0.1
+      RandomWound: false
+    tags:
+      SMT_AMMO_BONUSDMG_FIRINGACC: 33
+      DAMAGE_RESIST_PENETRATION_PERCENT: 50
+
   - type: STR_RIFLE_CLIP                    # Bolter Ammo
     refNode: *DMG_BOLTER_AMMO_STD
     listOrder: 10410 #10410
@@ -938,7 +974,7 @@ items:
     weight: 6 # 2x weight
     clipSize: 30 # +50% clip size
 
-  - type: STR_RIFLE_CLIP_DEREV              # Derevenant Bolter ammo
+  - type: STR_RIFLE_CLIP_DEREV              # Bolter Derevenant ammo
     refNode: *REF_BOLTER_AMMO_DW
     bigSprite: 165
     listOrder: 10443
@@ -958,7 +994,7 @@ items:
     tags:
       ITEM_AMMO_COLOR: 3 # green 1
 
-  - type: STR_RIFLE_CLIP_FUSION             # Inertial Fusion Bolter ammo
+  - type: STR_RIFLE_CLIP_FUSION             # Bolter Inertial Fusion ammo
     refNode: *REF_BOLTER_AMMO_DW
     bigSprite: 167
     listOrder: 10442
@@ -983,7 +1019,7 @@ items:
       GravPercentage: 0
       SMT_GRAV_WEAPON: 30 # not pure grav weapon
 
-  - type: STR_RIFLE_CLIP_DRAGON             # Dragonfire Bolter ammo
+  - type: STR_RIFLE_CLIP_DRAGON             # Bolter Dragonfire ammo
     refNode: *REF_BOLTER_AMMO_DW
     bigSprite: 168
     listOrder: 10441
@@ -1000,7 +1036,7 @@ items:
       IgnoreDirection: false
       FireBlastCalc: false
       FireThreshold: 1
-      ArmorEffectiveness: 0.3
+      ArmorEffectiveness: 0.5
       ToArmorPre: 0.02
       ToArmor: 0.13
       ToMorale: 2.0
@@ -1015,6 +1051,41 @@ items:
       ITEM_AMMO_COLOR: 9 # gold
       SMT_ARMOR_TARGET_WEAKEST: 1
       ITEM_IGNITES_TARGETS: 1
+
+  - type: STR_BOLTER_HELFROST_CLIP          # Bolter Helfrost Ammo
+    armor: 300
+    power: 75
+    damageType: 1
+    damageAlter:
+      RandomType: 7 # 50-200%
+      ArmorEffectiveness: 0.9
+      ToArmorPre: 0.15
+      ToArmor: 0.20
+      ToHealth: 1.0
+      ToStun: 1.0
+      ToTime: 0.2
+      ToEnergy: 0.6
+      ToWound: 0.1
+      RandomWound: false
+
+  - type: STR_BOLTER_HELFROST_CLIP_MC       # Bolter Helfrost MC Ammo
+    armor: 300
+    power: 75
+    damageType: 1
+    damageAlter:
+      RandomType: 7 # 50-200%
+      ArmorEffectiveness: 0.8
+      ToArmorPre: 0.20
+      ToArmor: 0.20
+      ToHealth: 1.0
+      ToStun: 1.0
+      ToTime: 0.2
+      ToEnergy: 0.6
+      ToWound: 0.1
+      RandomWound: false
+    tags:
+      SMT_AMMO_BONUSDMG_FIRINGACC: 33
+      DAMAGE_RESIST_PENETRATION_PERCENT: 50
 
   - type: STR_BOLTRIFLE_DRUM
     refNode: *DMG_BOLTER_AMMO_STD
@@ -1303,6 +1374,66 @@ items:
       ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 15 # was 25
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
+  - type: STR_BOLTPISTOL_FENRIS             # BoltPistol (Fenris)
+    bigSprite: 331
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    costBuy: 75000 # was 150k
+    compatibleAmmo:
+      - STR_PISTOL_CLIP
+      - STR_PISTOL_CLIP_AP
+      - STR_PISTOL_CLIP_EX
+      - STR_PISTOL_CLIP_MC
+      - STR_BOLTPISTOL_HELFROST_CLIP
+      - STR_BOLTPISTOL_HELFROST_CLIP_MC
+    dropoff: 9
+    autoRange: 9
+    snapRange: 11
+    aimRange: 0
+    accuracyAuto: 66
+    accuracySnap: 90
+    accuracyAimed: 0
+    tuAuto: 24
+    tuSnap: 18
+    tuAimed: 0
+    autoShots: 2
+    tuLoad: 8 # pistol bonus
+    tuUnload: 4 # pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
+    requiresBuy:
+      - STR_BOLTPISTOL_ADV_REQ
+      - STR_SPACEWOLVES_STRATEGY
+    tags:
+      ITEM_RECOIL: 40
+
+  - type: STR_BOLTPISTOL_FENRIS_MC          # BoltPistol (Fenris MC)
+    bigSprite: 333
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    compatibleAmmo:
+      - STR_PISTOL_CLIP
+      - STR_PISTOL_CLIP_AP
+      - STR_PISTOL_CLIP_EX
+      - STR_PISTOL_CLIP_MC
+      - STR_BOLTPISTOL_HELFROST_CLIP
+      - STR_BOLTPISTOL_HELFROST_CLIP_MC
+    dropoff: 9
+    autoRange: 9
+    snapRange: 12
+    aimRange: 0
+    accuracyAuto: 66
+    accuracySnap: 105
+    accuracyAimed: 0
+    tuAuto: 24
+    tuSnap: 18
+    tuAimed: 0
+    autoShots: 3
+    tuLoad: 8 # pistol bonus
+    tuUnload: 4 # pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
+    tags:
+      ITEM_RECOIL: 40
+
   - type: STR_PRIMARIS_HEAVY_BOLT_PISTOL    # BoltPistol (Heavy)
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     requiresBuy:
@@ -1569,6 +1700,68 @@ items:
     tuSnap: 18 # was 25
     tuAuto: 26 # was 40
     tuAimed: 0
+    autoShots: 5 # was 3
+    sprayWaypoints: 2
+
+  - type: STR_BOLTER_FENRIS                 # Bolter (Fenris)
+    refNode: *REF_BOLTER
+    bigSprite: 325
+    costBuy: 200000
+    costSell: 50000
+    requiresBuy:
+      - STR_MARINE_BOLTERS_ADV
+      - STR_SPACEWOLVES_STRATEGY
+    compatibleAmmo:
+      - STR_RIFLE_CLIP
+      - STR_RIFLE_CLIP_MC
+      - STR_RIFLE_CLIP_AP
+      - STR_RIFLE_CLIP_EX
+      - STR_BOLTER_HELFROST_CLIP
+      - STR_BOLTER_HELFROST_CLIP_MC
+      - STR_PISTOL_CLIP
+      - STR_PISTOL_CLIP_AP
+      - STR_PISTOL_CLIP_EX
+      - STR_PISTOL_CLIP_MC
+      - STR_BOLTPISTOL_HELFROST_CLIP
+      - STR_BOLTPISTOL_HELFROST_CLIP_MC
+    autoRange: 13
+    snapRange: 16 # was 16
+    aimRange: 0
+    accuracyAuto: 75 # was 75
+    accuracySnap: 90 # was 90
+    accuracyAimed: 0
+    tuAimed: 0
+    tuSnap: 20 # was 22
+    tuAuto: 30 # was 33
+    autoShots: 4 # was 3
+    sprayWaypoints: 2
+
+  - type: STR_BOLTER_FENRIS_MC              # Bolter (Fenris MC)
+    refNode: *REF_BOLTER
+    bigSprite: 328
+    costSell: 50000
+    compatibleAmmo:
+      - STR_RIFLE_CLIP
+      - STR_RIFLE_CLIP_MC
+      - STR_RIFLE_CLIP_AP
+      - STR_RIFLE_CLIP_EX
+      - STR_BOLTER_HELFROST_CLIP
+      - STR_BOLTER_HELFROST_CLIP_MC
+      - STR_PISTOL_CLIP
+      - STR_PISTOL_CLIP_AP
+      - STR_PISTOL_CLIP_EX
+      - STR_PISTOL_CLIP_MC
+      - STR_BOLTPISTOL_HELFROST_CLIP
+      - STR_BOLTPISTOL_HELFROST_CLIP_MC
+    autoRange: 13
+    snapRange: 16 # was 16
+    aimRange: 0
+    accuracyAuto: 75
+    accuracySnap: 100
+    accuracyAimed: 0
+    tuAimed: 0
+    tuSnap: 20
+    tuAuto: 30
     autoShots: 5 # was 3
     sprayWaypoints: 2
 
@@ -2217,7 +2410,7 @@ items:
     costSell: 45000 #
     weight: 45 # was 50
     bulletSpeed: 50
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
     requiresBuy:
       - STR_HBOLTER_PREREQ
     dropoff: 4
@@ -2239,11 +2432,45 @@ items:
     confSnap:
       name: STR_BURST_SNAP_SHOT
       shots: 3
-    kneelBonus: 150
+    kneelBonus: 133
     tags:
       ITEM_RECOIL: 100 # harsh requirement, meant for specialist marines
       ITEM_IS_HEAVY_WEAPON: 1
-      REACTION_MULTIPLIER: 66 # bulky
+      REACTION_MULTIPLIER: 50 # bulky
+      REACTION_PENALTY_KNEELING_BYPASS: 1
+
+  - type: STR_HEAVYBOLTER_SW_MC             # Heavy Bolter (Fenris)
+    costBuy: 150000
+    costSell: 45000 #
+    weight: 45 # was 50
+    bulletSpeed: 50
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
+    requiresBuy:
+      - STR_HBOLTER_PREREQ
+    dropoff: 4
+    autoRange: 18 # was 17
+    snapRange: 22 # was 23
+    aimRange: 0
+    accuracyAuto: 50
+    accuracySnap: 70
+    accuracyAimed: 0
+    tuAuto: 65 # was 80 for 10
+    tuSnap: 33 # was 30 for 2 shot
+    tuAimed: 0
+    tuLoad: 30 # was 40
+    minRange: 6 #heavy weapon; cumbersome, not suited to CQC
+    sprayWaypoints: 2
+    confAuto:
+      shots: 9 # was 10
+      followProjectiles: false
+    confSnap:
+      name: STR_BURST_SNAP_SHOT
+      shots: 3
+    kneelBonus: 133
+    tags:
+      ITEM_RECOIL: 100 # harsh requirement, meant for specialist marines
+      ITEM_IS_HEAVY_WEAPON: 1
+      REACTION_MULTIPLIER: 50 # bulky
       REACTION_PENALTY_KNEELING_BYPASS: 1
 
   - type: STR_HEAVY_BOLTER_MARS             # Heavy Bolter Mars
@@ -2262,7 +2489,7 @@ items:
     handSprite: {mod: 40k, index: 1960}
     bulletSprite: {mod: 40k, index: 6}
     bulletSpeed: 50
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
     compatibleAmmo:
       - STR_AC_AP_AMMO
       - STR_AC_MC_AMMO
@@ -2298,7 +2525,7 @@ items:
       shortName: STR_FULL_AUTO_COUNT
       shots: 15
       followProjectiles: false
-    kneelBonus: 150
+    kneelBonus: 133
     tags:
       ITEM_RECOIL: 100 # harsh requirement, meant for specialist marines
       ITEM_IS_HEAVY_WEAPON: 3 # 20% additional penalty when firing with lowered TUs
@@ -2306,7 +2533,7 @@ items:
       REACTION_PENALTY_KNEELING_BYPASS: 1
 
   - type: STR_AUTO_CANNON_DW                # Heavy Bolter (Artifex DW)
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for marine bolters
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
     bulletSpeed: 50
     costBuy: 150000
     dropoff: 4 #
@@ -2346,7 +2573,7 @@ items:
       shortName: STR_FULL_AUTO_COUNT
       shots: 15
       followProjectiles: false
-    kneelBonus: 150
+    kneelBonus: 133
     tags:
       ITEM_RECOIL: 100 # harsh requirement, meant for specialist marines
       ITEM_IS_HEAVY_WEAPON: 1
@@ -2393,7 +2620,7 @@ items:
     handSprite: 472
     bulletSprite: {mod: 40k, index: 6}
     bulletSpeed: 50
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
     invWidth: 2
     invHeight: 3
     twoHanded: true
@@ -2413,7 +2640,7 @@ items:
     autoRange: 16
     snapRange: 20
     aimRange: 0
-    accuracyAuto: 50 # regular 50
+    accuracyAuto: 45 # regular 50
     accuracySnap: 60 # regular 65
     accuracyAimed: 0
     kneelBonus: 150
@@ -2440,6 +2667,7 @@ items:
     costBuy: 125000
     costSell: 30000
     armor: 300
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
     weight: 30 # was 40
     dropoff: 4
     autoRange: 17
@@ -2466,6 +2694,7 @@ items:
       ITEM_HAS_BIPOD: 1
 
   - type: STR_BOLTER_HEAVY_SOLAR            # IG Heavy Bolter (Solar)
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
     costBuy: 165000
     costSell: 40000
     requiresBuy:
@@ -2475,8 +2704,8 @@ items:
     autoRange: 15 # snapshot focused, better snap than Godwyn but worse autos
     snapRange: 25
     aimRange: 0
-    accuracyAuto: 40
-    accuracySnap: 65
+    accuracyAuto: 45
+    accuracySnap: 60
     accuracyAimed: 0
     tuAuto: 55
     tuSnap: 33 # was 40
@@ -2497,13 +2726,14 @@ items:
 
   - type: STR_GENERIC_SERVITOR_HEAVYBOLTER  # Combat Servitor Heavy Bolter
     refNode: *DMG_BOLTER_AMMO_STD
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
     power: 85
     damageAlter:
       ArmorEffectiveness: 0.8
 
   - type: STR_T_BOLTER_WEAPON               # Tarantula Sentry Heavy Bolter
     refNode: *DMG_BOLTER_AMMO_STD
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for heavy bolters
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138} # was 707, chonky sound for heavy bolters
     accuracyAuto: 90 # was 40
     power: 85
     damageAlter:
@@ -2511,14 +2741,14 @@ items:
 
   - type: AUX_BOLTER                        # Vehicle Heavy Bolter
     refNode: *DMG_BOLTER_AMMO_STD
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for heavy bolters
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138} # was 707, chonky sound for heavy bolters
     power: 85
     damageAlter:
       ArmorEffectiveness: 0.8
 
   - type: AUX_BOLTERPD                      # Vehicle Heavy Bolter
     refNode: *DMG_BOLTER_AMMO_STD
-    fireSound: {mod: 40k_ROSIGMA_edits, index: 2137} # was 707, chonky sound for heavy bolters
+    fireSound: {mod: 40k_ROSIGMA_edits, index: 2138} # was 707, chonky sound for heavy bolters
     power: 85
     damageAlter:
       ArmorEffectiveness: 0.8
@@ -3218,7 +3448,7 @@ items:
       ITEM_IGNITES_TARGETS: 2
 
 ### Melta Guns
-  - &DMG_MELTA_STD                          # Standard Melta Damage
+  - &DMG_MELTA_STD                          # Melta Standard Damage
     type: STR_MELTA_AMMO
     armor: 300
     damageType: 11
@@ -3383,7 +3613,7 @@ items:
       mana: 0
 
 ### Plasma
-  - &DMG_PLASMA_STD                         # Standard Plasma Damage
+  - &DMG_PLASMA_STD                         # Plasma Standard Damage
     type: STR_PLASMA_RIFLE_CLIP
     armor: 300
     damageType: 5
@@ -4097,7 +4327,7 @@ items:
       REACTION_MULTIPLIER: 200 # multiplies base reaction score by this amount divided by 100
 
 ### Lasguns
-  - &DMG_LASGUN_STD
+  - &DMG_LASGUN_STD                         # Lasgun Standard Damage
     type: STR_LASPISTOL_CLIP
     armor: 300
     damageType: 1 # standard
@@ -4110,7 +4340,7 @@ items:
       ToWound: 0.05
       RandomWound: false
 
-  - &DMG_LASGUN_HOT
+  - &DMG_LASGUN_HOT                         # Lasgun Hotshot Damage
     type: STR_LASPISTOL_CLIP_HOTSHOT
     armor: 300
     damageType: 1 # standard
@@ -4124,12 +4354,13 @@ items:
       ToWound: 0.05
       RandomWound: false
 
-  - &DMG_LASGUN_HELL
+  - &DMG_LASGUN_HELL                        # Hellgun Las Damage
     type: STR_HOTSHOT_VOLLEY_GUN
     armor: 300
     power: 75
     damageType: 1
     damageAlter:
+      RandomType: 8
       ArmorEffectiveness: 0.75
       ToArmorPre: 0.3
       ToArmor: 0.0
@@ -4137,7 +4368,6 @@ items:
       ToStun: 0.05 # was .3
       ToWound: 0.05
       RandomWound: false
-
 
   - type: STR_LASPISTOL_CLIP                # Laspistol Ammo
     refNode: *DMG_LASGUN_STD
@@ -4186,7 +4416,7 @@ items:
     tuAimed: 0
 
 ### Lascannons
-  - &DMG_LASCANNON_STD
+  - &DMG_LASCANNON_STD                      # Lascannon Standard Damage
     type: STR_LASCAN_CLIP  # LASCANON CLIP
     armor: 300
     power: 220
@@ -4249,6 +4479,159 @@ items:
     tuSnap: 30
     tuAimed: 0
     autoShots: 2
+
+### Sonic
+  - &DMG_SONIC_STD                          # Sonic Standard Damage
+    type: STR_CHOIR_GUN
+    hitAnimation: 120
+    explosionSpeed: 1
+    vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 13} # white
+    vaporDensitySurface: 1
+    vaporProbabilitySurface: 33
+    scripts: # give it a tighter beam that disappates quickly without spreading
+      vaporParticleAmmo: |
+        var int temp;
+        var int randMax;
+
+        set randMax subvoxel_scale;
+        muldiv randMax 2 3;
+        random.randomRangeSymmetric temp randMax;
+        subvoxel_offset.setX temp;
+        random.randomRangeSymmetric temp randMax;
+        subvoxel_offset.setY temp;
+        random.randomRangeSymmetric temp randMax;
+        subvoxel_offset.setZ temp;
+        set temp 240;
+        sub temp particle_density;
+        div temp 4;
+        subvoxel_velocity.setZ temp;
+        mod particle_lifetime 10;
+        add particle_lifetime 3;
+        return;
+    damageType: 14 # Sonic
+    damageAlter:
+      RandomType: 9 # 50-150%
+      ArmorEffectiveness: 0.1
+      ToArmorPre: 0.0
+      ToArmor: 0.1
+      ToHealth: 0.1
+      ToWound: 0.15
+      RandomWound: false
+      ToTime: 0.2
+      ToStun: 0.5
+      IgnorePainImmunity: true
+      RandomStun: false
+      ToEnergy: 0.5
+      ToMorale: 0.5
+      ToTile: 0.25
+      ToItem: 0.0
+    shotgunBehavior: 1
+    shotgunSpread: 66 # sizable spread
+    shotgunChoke: 33
+    powerRangeThreshold: 1.0
+    powerRangeReduction: 1.0
+    tags:
+      SMT_LETHAL_STUN: 100 # 100% of excess stun damage added to hpdmg
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 # ignores shields
+      DAMAGE_RESIST_PENETRATION_PERCENT: 0
+
+  - &DMG_SONIC_BLAST                        # Sonic Explosive Damage
+    type: STR_SONIC_GRENADE
+    damageType: 14 # Sonic
+    damageAlter:
+      RandomType: 9 # 50-150%
+      ArmorEffectiveness: 0.1
+      ToArmorPre: 0.0
+      ToArmor: 0.1
+      ToHealth: 0.2
+      ToWound: 0.1
+      RandomWound: false
+      ToTime: 0.2
+      ToStun: 0.7
+      IgnorePainImmunity: true
+      RandomStun: false
+      ToEnergy: 0.5
+      ToMorale: 0.5
+      ToTile: 0.25
+      ToItem: 0.5
+      FixRadius: -1
+      RadiusEffectiveness: 0.05
+    tags:
+      SMT_LETHAL_STUN: 100 # 100% of excess stun damage added to hpdmg
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 # ignores shields
+      DAMAGE_RESIST_PENETRATION_PERCENT: 0
+
+  - type: STR_BLASTMASTER                   # Blastmaster (NPC)
+    refNode: *DMG_SONIC_STD
+    tuAuto: 60
+    tuSnap: 35
+    power: 48
+    shotgunSpread: 50 # tighter cone
+    shotgunChoke: 50
+    shotgunPellets: 12
+    tags:
+      ITEM_SNAP_FLAT_POWER_BONUS: 0
+
+  - type: STR_BLASTMASTER_PLAYER            # Blastmaster (Player)
+    refNode: *DMG_SONIC_STD
+    tuAuto: 60
+    tuSnap: 35
+    power: 48
+    shotgunSpread: 50 # tighter cone
+    shotgunChoke: 50
+    shotgunPellets: 12
+    tags:
+      ITEM_SNAP_FLAT_POWER_BONUS: 0
+
+  - type: STR_SONIC_CANON                   # Sonic Blaster
+    refNode: *DMG_SONIC_STD
+    power: 32
+    shotgunSpread: 80 # higher dispersion
+    shotgunPellets: 18
+
+  - type: STR_FIXED_SONIC_CANNON            # Sonic Cannon
+    refNode: *DMG_SONIC_STD
+    power: 40
+    shotgunSpread: 80 # higher dispersion
+    shotgunPellets: 18
+    tags:
+      ITEM_SNAP_FLAT_POWER_BONUS: 0
+
+  - type: STR_SLAANESH_CHIMERA_WEAPON_SONIC_CANON   # Sonic Cannon (Turret)
+    refNode: *DMG_SONIC_STD
+    power: 40
+    shotgunPellets: 18
+    powerRangeReduction: 1.0 # reduced falloff
+    tags:
+      ITEM_SNAP_FLAT_POWER_BONUS: 0
+
+  - type: STR_SONIC_GUN                     # Sonic Gun
+    refNode: *DMG_SONIC_STD
+    power: 32
+    shotgunPellets: 12
+
+  - type: STR_CHOIR_GUN                     # Choir Projector
+    refNode: *DMG_SONIC_STD
+    power: 32
+    shotgunPellets: 12
+
+  - type: STR_SCREAMER_PISTOL               # Screamer Pistol
+    refNode: *DMG_SONIC_STD
+    power: 24
+    shotgunPellets: 8
+
+  - type: STR_SONICKOMBI_CHARGE             # CombiBolter Sonic Shot
+    refNode: *DMG_SONIC_STD
+    power: 24
+    shotgunPellets: 8
+
+  - type: STR_SONIC_GRENADE                 # Sonic Grenade
+    refNode: *DMG_SONIC_BLAST
+    power: 90
+
+  - type: STR_SONIC_MISSILE_PACK            # Sonic Missile
+    refNode: *DMG_SONIC_BLAST
+    power: 110
 
 ### Shotguns
   - type: STR_SHOTGUN_MARINE                # Astartes Shotgun
@@ -5536,6 +5919,29 @@ items:
       TileDamageMethod: 2 # consistent tile damage
       FixRadius: 9
       RadiusReduction: 0
+
+  - type: STR_HOLOGRAM_GRENADE              # Hologram Caster
+    unprimeActionName: STR_UNPRIME_GRENADE
+    throwRange: 18
+    weight: 2
+    fuseType: 0 # fixed 0 turn fuse
+    fuseTriggerEvents:
+      throwExplode: true
+    costThrow:
+      time: 40
+      energy: 4
+    costPrime:
+      time: 10
+    costUnprime:
+      time: 1
+    flatThrow:
+      time: false
+      energy: true
+    flatPrime:
+      time: false
+      energy: true
+    noLOSAccuracyPenalty: 75  # indirect fire weapon
+
 
 ### Melee
   - type: STR_CHAINSWORD                    # Chainsword
@@ -7557,6 +7963,10 @@ items:
     meleeMultiplier: # was missing (default is flat 0.5 + melee 0.5)
       melee: 0.9
       reactions: 0.1
+
+  - type: STR_TRAUMA_PACK                   # Medicae Kit
+    healthRecovery: 2 # was 0
+    experienceTrainingMode: 19
 
   - type: STR_JUDICAR_BLESS                 # Judiciar Bless + Fist
     refNode: *REF_FIST

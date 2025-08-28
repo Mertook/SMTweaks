@@ -49,6 +49,7 @@ extended:
       SMT_ARMOR_TARGET_WEAKEST: int     # Weapon targets weakest armor facing when dealing damage
       SMT_ARMOR_DAMAGE_ALL: int         # Weapon damages all armor facings by %
       ITEM_IGNITES_TARGETS: int         # Weapon increases fire duration by X on hit
+      SMT_LETHAL_STUN: int              # Weapon deals additional HP damage if stun is greater than units HP
       ## Plasma Heat
       ITEM_HEAT_SINK_COLOR: int # sprite color index for heatsink parts that glow, if not set defaults to 2 (red)
     RuleArmor:

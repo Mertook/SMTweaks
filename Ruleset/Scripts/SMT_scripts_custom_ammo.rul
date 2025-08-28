@@ -196,7 +196,7 @@ items:
         #debug_log "FriendlyFire Final Power " power;
         return power part side;
 
-  - type: STR_PSITOKEN_TORMENT            # Librarian Torment Spell
+  - type: STR_PSITOKEN_TORMENT          # Librarian Torment Spell
     refNode: *STR_NOFRIENDLYFIRE_AMMO
 
   - type: AUX_CROZIUS                   # Crozius
@@ -286,6 +286,51 @@ items:
   - type: STR_RIFLE_CLIP_FUSION         # Inertial Fusion Ammo
     refNode: *REF_GRAV_WEAPON
 
+  - &REF_LETHALSTUN_WEAPON              # Lethal Stun Weapon
+    type: STR_CHOIR_GUN
+    scripts:
+      damageUnitAmmo: |
+        var int stunMult;
+        var int stunVal;
+        var int temp;
+
+        damaging_item.getTag stunMult Tag.SMT_LETHAL_STUN;
+        if gt stunMult 0;
+          unit.getStun stunVal;
+          unit.getHealth temp;
+          debug_log "OverStun Init " to_health to_stun stunVal temp;
+          add stunVal to_stun;
+          sub stunVal temp;
+          if gt stunVal 0; # if unit is or will be knocked unconcious, add incoming stun damage to health damage
+            set stunVal to_stun;
+            muldiv stunVal stunMult 100;
+            add to_health stunVal;
+            debug_log "OverStun Val " to_health stunVal stunMult;
+          end;
+        end;
+
+        return;
+
+  - type: STR_SONIC_GUN                 # Sonic Gun
+    refNode: *REF_LETHALSTUN_WEAPON
+  - type: STR_BLASTMASTER               # BlastMaster (NPC)
+    refNode: *REF_LETHALSTUN_WEAPON
+  - type: STR_BLASTMASTER_PLAYER        # BlastMaster (Player)
+    refNode: *REF_LETHALSTUN_WEAPON
+  - type: STR_SCREAMER_PISTOL           # Screamer Pistol
+    refNode: *REF_LETHALSTUN_WEAPON
+  - type: STR_SONIC_CANON               # Sonic Blaster
+    refNode: *REF_LETHALSTUN_WEAPON
+  - type: STR_FIXED_SONIC_CANNON        # Sonic Blaster (Inbuilt)
+    refNode: *REF_LETHALSTUN_WEAPON
+  - type: STR_SLAANESH_CHIMERA_WEAPON_SONIC_CANON   # Sonic Cannon (Turret)
+    refNode: *REF_LETHALSTUN_WEAPON
+  - type: STR_SONICKOMBI_CHARGE         # Sonic CombiBolter
+    refNode: *REF_LETHALSTUN_WEAPON
+  - type: STR_SONIC_GRENADE             # Sonic Grenade
+    refNode: *REF_LETHALSTUN_WEAPON
+  - type: STR_SONIC_MISSILE_PACK        # Sonic Missile
+    refNode: *REF_LETHALSTUN_WEAPON
 
 
 

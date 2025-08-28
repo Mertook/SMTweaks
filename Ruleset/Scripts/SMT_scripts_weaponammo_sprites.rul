@@ -71,32 +71,6 @@ items:
 
         return sprite_index;
 
-  - &REF_WEAPON_PSYKER_SPRITE_SWAP
-    type: STR_RIFLE
-    scripts:
-      selectItemSprite: |
-        var ptr BattleItem ammoItem;
-        var ptr RuleItem ammoRuleset;
-        var int skipBigobs;
-
-        item.getAmmoItem ammoItem;
-        ammoItem.getRuleItem ammoRuleset;
-        ammoRuleset.getTag skipBigobs Tag.ITEM_AMMO_SKIP_BIGOBS;
-
-        if eq skipBigobs 0; # handle weapons with multiple ammo types
-          item.getAmmoForSlot ammoItem 1;
-          ammoItem.getRuleItem ammoRuleset;
-          ammoRuleset.getTag skipBigobs Tag.ITEM_AMMO_SKIP_BIGOBS;
-        end;
-
-        if and gt skipBigobs 0 eq blit_part blit_item_big;
-          add sprite_index skipBigobs;
-        else;
-          add sprite_index sprite_offset;
-        end;
-
-        return sprite_index;
-
 ### Relevant ammo needs the tag ITEM_AMMO_SKIP_BIGOBS
   - &REF_AMMO_SKIP_ONE
     type: STR_LIGHT_BOLTPISTOL_AMMO
@@ -124,6 +98,12 @@ items:
     refNode: *REF_AMMO_SKIP_ONE
   - type: STR_LIGHT_BOLTPISTOL_AMMO_EX
     refNode: *REF_AMMO_SKIP_ONE
+  - update: STR_PISTOL_CLIP_EX
+    refNode: *REF_AMMO_SKIP_ONE
+  - update: STR_BOLTPISTOL_HELFROST_CLIP
+    refNode: *REF_AMMO_SKIP_ONE
+  - update: STR_BOLTPISTOL_HELFROST_CLIP_MC
+    refNode: *REF_AMMO_SKIP_ONE
 ### Bolter Ammo
   - type: STR_RIFLE_CLIP
     refNode: *REF_AMMO_SKIP_TWO
@@ -150,6 +130,10 @@ items:
   - type: STR_RIFLE_CLIP_FUSION
     refNode: *REF_AMMO_SKIP_TWO
   - type: STR_RIFLE_CLIP_DRAGON
+    refNode: *REF_AMMO_SKIP_TWO
+  - type: STR_BOLTER_HELFROST_CLIP
+    refNode: *REF_AMMO_SKIP_TWO
+  - type: STR_BOLTER_HELFROST_CLIP_MC
     refNode: *REF_AMMO_SKIP_TWO
 ### Heavy Boltrifle Ammo
   - type: STR_BOLTRIFLE_DRUM
@@ -209,6 +193,10 @@ items:
     refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
   - type: STR_HEAVY_BOLTRIFLE_DW    # Heavy Bolt Rifle (DW Captain)
     refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+  - type: STR_BOLTER_FENRIS         # Bolter (Fenris)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+  - type: STR_BOLTER_FENRIS_MC      # Bolter (Fenris MC)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
   - type: STR_BOLTER_DOMINION       # Bolter (Dominion)
     refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
   - type: STR_BOLTER_ENFORCER       # Light Bolter (Enforcer)
@@ -222,6 +210,8 @@ items:
   - type: STR_BOLTER_LIGHT_UMBRA    # Light Bolter (Umbra)
     refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
   - type: STR_BOLTER_LIGHT_UMBRA_UNDERSLUNG # Light Bolter (Umbra GL)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+  - type: STR_MC_UMBRA_GL           # Light Bolter (Umbra MC)
     refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
   - type: STR_BOLTER_CANTUS         # Light Bolter (Cantus)
     refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
@@ -246,6 +236,10 @@ items:
   - type: STR_PISTOLS               # Boltpistol (Spectris)
     refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
   - type: STR_PISTOLH_SM            # Boltpistol (Tigrus)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+  - type: STR_BOLTPISTOL_FENRIS     # Boltpistol (Fenris)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+  - type: STR_BOLTPISTOL_FENRIS_MC  # Boltpistol (Fenris MC)
     refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
   - type: STR_BOLTPISTOL_DEAZ       # Light Boltpistol (Deaz)
     refNode: *REF_WEAPON_AMMO_SPRITE_SWAP

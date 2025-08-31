@@ -62,13 +62,6 @@ extended:
           muldiv unitStrength 100 itemRecoil;
 
           if lt unitStrength 100;
-
-            # autoshot gets twice the penalty (needs to reach 0 by half strength, not 50%)
-            if eq battle_action BA_AUTOSHOT;
-              sub unitStrength 50;
-              mul unitStrength 2;
-            end;
-
             muldiv bonus unitStrength 100;
             limit_lower bonus accuracyFloor;
 

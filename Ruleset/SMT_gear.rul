@@ -364,6 +364,11 @@ items:
     tags:
       SMT_AMMO_BONUSDMG_FIRINGACC: 15 # lowered precision bonus, higher base damage
 
+  - type: STR_CANTUS_BOLTER_AMMO            # Cantus Training Ammo
+    refNode: *DMG_BOLTER_AMMO_STD
+    power: 48
+    clipSize: 30
+
   - type: STR_LIGHT_BOLTER_AMMO_SHORT       # Light Bolter ShortMag
     refNode: *DMG_BOLTER_AMMO_STD
     size: 0.05
@@ -5227,7 +5232,7 @@ items:
     listOrder: 12101
     costBuy: 60000
     costSell: 30000
-    weight: 35 # shouldn't be extreme, gets a lot heavier with loaded ammo
+    weight: 40 # shouldn't be extreme, gets heavier with loaded ammo
     twoHanded: true
     blockBothHands: true
     ammo:
@@ -5236,19 +5241,18 @@ items:
       1:
         compatibleAmmo: [STR_CASTELLAN_HE, STR_CASTELLAN_KRAK, STR_CASTELLAN_INCIN, STR_CASTELLAN_DEFOREST]
     dropoff: 4
-    aimRange: 32
-    snapRange: 32
+    aimRange: 24
+    snapRange: 20
     autoRange: 16
     minRange: 5
-    accuracyAuto: 50
-    accuracySnap: 90
-    accuracyAimed: 90
+    accuracyAimed: 70
+    accuracySnap: 80
+    accuracyAuto: 60
     kneelBonus: 140
     noLOSAccuracyPenalty: 75
-    tuAimed: 55
-    tuSnap: 55
+    tuAimed: 80
+    tuSnap: 70
     tuAuto: 40
-    tuLoad: 5 # integrated Autoloader
     confAimed:
       ammoSlot: 0 # Missiles
       name: STR_ARCING_SHOT
@@ -5261,7 +5265,7 @@ items:
       name: STR_CASTELLAN_SHOT
       shots: 4
       arcing: false
-    sprayWaypoints: 2
+    sprayWaypoints: 4
     minRange: 5
     tags:
       ITEM_IS_HEAVY_WEAPON: 1
@@ -5354,7 +5358,7 @@ items:
       ToArmorPre: 0.2
       ToArmor: 0.3
       ToHealth: 0.7
-      ToTile: 1.0
+      ToTile: 0.75
       ToItem: 1.0
       FixRadius: 1
       RadiusReduction: 20 # high dropoff for indirect hits
@@ -5489,7 +5493,7 @@ items:
     loadOrder: 105
     costBuy: 16000 # was 80k!!
     costSell: 8000
-    power: 150 # was 150
+    power: 140 # was 150
     damageAlter:
       FixRadius: 2 # was 3
     requiresBuy:

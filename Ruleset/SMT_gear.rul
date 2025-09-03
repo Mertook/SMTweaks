@@ -4524,7 +4524,6 @@ items:
       RandomWound: false
       ToTime: 0.2
       ToStun: 0.5
-      IgnorePainImmunity: true
       RandomStun: false
       ToEnergy: 0.5
       ToMorale: 0.5
@@ -4536,7 +4535,7 @@ items:
     powerRangeThreshold: 1.0
     powerRangeReduction: 1.0
     tags:
-      SMT_LETHAL_STUN: 100 # 100% of excess stun damage added to hpdmg
+      SMT_LETHAL_STUN: 50 # 5.0x increased health damage against stun immune targets
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 # ignores shields
       DAMAGE_RESIST_PENETRATION_PERCENT: 0
 
@@ -4553,7 +4552,6 @@ items:
       RandomWound: false
       ToTime: 0.2
       ToStun: 0.7
-      IgnorePainImmunity: true
       RandomStun: false
       ToEnergy: 0.5
       ToMorale: 0.5
@@ -4562,7 +4560,7 @@ items:
       FixRadius: -1
       RadiusEffectiveness: 0.05
     tags:
-      SMT_LETHAL_STUN: 100 # 100% of excess stun damage added to hpdmg
+      SMT_LETHAL_STUN: 80 # 8.0x increased health damage against stun immune targets
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 # ignores shields
       DAMAGE_RESIST_PENETRATION_PERCENT: 0
 

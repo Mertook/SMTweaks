@@ -296,16 +296,21 @@ items:
 
         damaging_item.getTag stunMult Tag.SMT_LETHAL_STUN;
         if gt stunMult 0;
+          if eq to_stun 0; # if target is stun immune increase direct hpdmg
+            debug_log "LethalStun Val " to_health to_stun stunMult;
+            muldiv to_health stunMult 10;
+            return;
+          end;
           unit.getStun stunVal;
           unit.getHealth temp;
           debug_log "OverStun Init " to_health to_stun stunVal temp;
           add stunVal to_stun;
           sub stunVal temp;
           if gt stunVal 0; # if unit is or will be knocked unconcious, add incoming stun damage to health damage
-            set stunVal to_stun;
-            muldiv stunVal stunMult 100;
-            add to_health stunVal;
-            debug_log "OverStun Val " to_health stunVal stunMult;
+            set temp to_stun;
+            limit_upper temp stunVal;
+            add to_health temp;
+            debug_log "OverStun Val " to_health temp stunVal;
           end;
         end;
 

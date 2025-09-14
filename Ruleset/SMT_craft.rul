@@ -401,6 +401,29 @@ armors:
     refNode: *STR_THUNDERHAWK_TURRET_ARMOR
     spriteSheet: LTTGK.PCK
 
+  - &REF_CRASSUS_BOLTER                     # Crassus Bolter Turrets
+    type: STR_CASSIUM_BOLTER_LEFT1_ARMOR
+    frontArmor: 100 # was 50
+    sideArmor: 100 # was 50
+    rearArmor: 100 # was 50
+    underArmor: 100
+
+  - type: STR_CASSIUM_BOLTER_LEFT2_ARMOR
+    refNode: *REF_CRASSUS_BOLTER
+  - type: STR_CASSIUM_BOLTER_RIGHT1_ARMOR
+    refNode: *REF_CRASSUS_BOLTER
+  - type: STR_CASSIUM_BOLTER_RIGHT2_ARMOR
+    refNode: *REF_CRASSUS_BOLTER
+  - type: STR_CCASSIUM_BOLTER_LEFT1_ARMOR
+    refNode: *REF_CRASSUS_BOLTER
+  - type: STR_CCASSIUM_BOLTER_LEFT2_ARMOR
+    refNode: *REF_CRASSUS_BOLTER
+  - type: STR_CCASSIUM_BOLTER_RIGHT1_ARMOR
+    refNode: *REF_CRASSUS_BOLTER
+  - type: STR_CCASSIUM_BOLTER_RIGHT2_ARMOR
+    refNode: *REF_CRASSUS_BOLTER
+
+
 items:
   - &STR_TURRET_SPAWNER_BASE                # Turret Spawner Base
     type: STR_SMOKELAUNCHER_TURRET_SPAWNER
@@ -2499,6 +2522,7 @@ crafts:
   - type: STR_GORGONSL                      # Gorgon (Steel Legion)
     speedMax: 275 #was 150
     maxSkinIndex: 1 # allow roof
+    skinSprites: [200]
     battlescapeTerrainData:
       name: GORGON
       mapDataSets:

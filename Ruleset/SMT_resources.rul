@@ -416,6 +416,12 @@ extraSprites:
       46: Resources/DECALS/SPICON_STEALTH.png
       47: Resources/DECALS/SPICON_TECH.png
 
+###Base Sprites
+
+  - type: BASEBITS.PCK # base craft sprites are +33 index for some reason
+    files:
+      233: Resources/CRAFT/SLGorgontop_base.png #200 - Gorgon Camo1 (Steel Legion)
+
 ###Scout Sergeant
   - typeSingle: SCOUT__1__SCOUTSGTM
     fileSingle: Resources/UNITS/SCOUT/SCOUTSM_I.png

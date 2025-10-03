@@ -855,6 +855,7 @@ manufacture:
     category: STR_WEAPON
     requires:
       - STR_STORMBOLTER_SM
+      - STR_MARINE_BOLTERS_ADV
       - STR_IMPERIAL_WEAPONS
     space: 0
     time: 1000
@@ -867,6 +868,7 @@ manufacture:
     requires:
       - STR_MASTER_CRAFTING
       - STR_STORMBOLTER_SM
+      - STR_MARINE_BOLTERS_ADV
       - STR_IMPERIAL_WEAPONS
     space: 0
     time: 1000
@@ -1763,6 +1765,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 200
     spawnedPersonType: STR_GREYKNIGHT
     producedItems: {}
+
 
 ### REMOVAL
   - name: STR_BANNER                                # Chapter Banner

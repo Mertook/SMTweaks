@@ -1,0 +1,277 @@
+startingBase: # Space Marines
+  randomSoldiers:
+    STR_SOLDIER: 0 # gets all starting soldiers from events - starting with soldiers that have non-standard psistr values causes weirdness in OXCE
+  items:
+    STR_AVALANCHE_LAUNCHER: 1
+    STR_AVALANCHE_MISSILES: 10
+    STR_STINGRAY_LAUNCHER: 1
+    STR_STINGRAY_MISSILES: 25
+    STR_CANNON: 1 #craft bolter
+    STR_HWP_CANNON_SHELLS: 4
+    STR_SERVITOR: 1
+    #STR_BOLTPISTOL_DEAZ: 4 # light boltpistol
+    #STR_LIGHT_BOLTPISTOL_AMMO: 16
+    #STR_BOLTER_LOCKE: 8 # light bolter
+    #STR_LIGHT_BOLTER_AMMO: 24
+    #STR_SHOTGUN: 2
+    #STR_SHOTGUN_SHELLS: 6
+    #STR_HEAVY_CANNON: 1 #sniper
+    #STR_HC_AP_AMMO: 4 #sniper ammo
+    #STR_ROCKET_LAUNCHER: 1
+    #STR_SMALL_ROCKET: 8
+    #STR_FLAMETHROWER: 1
+    #STR_FLAMETHROWER_CLIP: 4
+    #STR_CHAINSWORD_LIGHTSM: 4
+    #STR_GRENADE: 8
+    #STR_SMOKE_GRENADE: 8 # was 5
+    STR_KILLPOINT_TOKEN: 200 # was 180 - for marine promotions
+
+startingBaseExperienced: # Chamber militant
+  scientists: 10
+  engineers: 10
+  randomSoldiers:
+    STR_ADEPTAS_FRATERIS_MILITIA_VETERAN: 8
+    STR_INQ_STORMTROOPER: 2
+    STR_IMPERIAL_INQUISITOR: 1
+  items:
+    STR_SERVITOR: 1
+    STR_AVALANCHE_LAUNCHER: 1
+    STR_AVALANCHE_MISSILES: 4
+    STR_CANNON: 2
+    STR_HWP_CANNON_SHELLS: 10
+    STR_STINGRAY_LAUNCHER: 1
+    STR_STINGRAY_MISSILES: 20
+    STR_KILLPOINT_TOKEN: 180
+    STR_PLASMA_PISTOL_TERRAN: 1
+    STR_PLASMA_PISTOL_CLIP: 6
+    STR_BOLTER_LIGHT_SOLO_DMR: 2
+    STR_LIGHT_BOLTER_AMMO_SHORT_PEN: 6
+    STR_SHOTGUN: 4
+    STR_SHOTGUN_SHELLS: 12
+    STR_KNIF: 6
+    STR_LASER_RIFLE_G_HIGH_GRADE: 4
+    STR_LASGUN_CLIP: 8
+    STR_LASGUN_CLIP_HOTSHOT: 4
+    STR_FLAMETHROWER: 1
+    STR_FLAMETHROWER_CLIP: 4
+    STR_GRENADE: 8
+    STR_SMOKE_GRENADE: 12
+    STR_ELECTRO_FLARE: 12
+    STR_TRAUMA_PACK: 4
+    #STR_LASGUN_TANITH: 1
+    #STR_LONGLAS_TANITH: 1
+    #STR_AUTOGUN_ADEPTAS_SCOPED: 1
+    #STR_AUTOGUN_CLIP: 4
+    #STR_BOLTER_DEAZ: 1
+    #STR_LIGHT_BOLTER_AMMO: 2
+    #STR_AC_AP_AMMO: 6
+    #STR_AUTO_CANNON: 1
+    #STR_OFFICERS_SWORD: 1
+
+events:
+  - name: STR_NEOPHYTE_STARTING_PACKAGE     # Initial group of Neophytes - given by every Marine strat
+    description: STR_NEOPHYTE_STARTING_PACKAGE_DESCRIPTION
+    timer: 90
+    everyMultiItemList:
+      STR_BOLTPISTOL_DEAZ: 4 # light boltpistol
+      STR_LIGHT_BOLTPISTOL_AMMO: 16
+      STR_BOLTER_LOCKE: 4 # light bolter (locke)
+      STR_BOLTER_ENFORCER: 4 # light bolter (enforcer)
+      STR_LIGHT_BOLTER_AMMO: 24
+      STR_SHOTGUN: 2
+      STR_SHOTGUN_SHELLS: 6
+      STR_HEAVY_CANNON: 1 #sniper
+      STR_HC_AP_AMMO: 4 #sniper ammo
+      STR_FLAMETHROWER: 1
+      STR_FLAMETHROWER_CLIP: 4
+      STR_CHAINSWORD_LIGHTSM: 4
+      STR_GRENADE: 12
+      STR_SMOKE_GRENADE: 12 # was 5
+      STR_ELECTRO_FLARE: 12
+      STR_TRAUMA_PACK: 4
+    spawnedPersons: 20
+    spawnedPersonType: STR_SOLDIER_NEOPHYTE
+
+  - name: STR_TACTICAL_CARE_PACKAGE         # Marine Tactical Starter Pack
+    spawnedCraftType: STR_SKYRANGER
+    everyMultiItemList:
+      STR_SMT_GENESEED_IMPURE: 6
+      STR_CRATED_RHINO: 1
+      STR_CRATED_LANDSPEEDER: 1
+      STR_TATICAL_ARMOR: 2 
+      STR_RIFLEB: 2
+      STR_RIFLE_CLIP: 30
+      STR_RIFLE_CLIP_AP: 10
+      STR_RIFLE_CLIP_EX: 10
+      STR_SMOKE_BOMB: 8
+    spawnedPersons: 2
+    spawnedPersonType: STR_SOLDIER
+
+  - name: STR_ASSAULT_CARE_PACKAGE          # Marine Assault Starter Pack
+    spawnedCraftType: STR_SKYRANGER
+    everyMultiItemList:
+      STR_SMT_GENESEED_IMPURE: 6
+      STR_CRATED_RHINO: 1
+      STR_CRATED_LANDSPEEDER: 1
+      STR_ASS_ARMOR: 2
+      STR_CHAINSWORD_MC: 1
+      STR_CHAINSWORD: 1
+      STR_PISTOLB: 2
+      STR_PISTOL_CLIP: 30
+      STR_PISTOL_CLIP_AP: 15
+      STR_PISTOL_CLIP_EX: 15
+      STR_MGRENADE: 8
+    spawnedPersons: 2
+    spawnedPersonType: STR_SOLDIER
+
+  - name: STR_DEVASTATOR_CARE_PACKAGE       # Marine Devastator Starter Pack
+    spawnedCraftType: STR_SKYRANGER
+    everyMultiItemList:
+      STR_SMT_GENESEED_IMPURE: 6
+      STR_CRATED_RHINO: 1
+      STR_CRATED_LANDSPEEDER: 1
+      STR_DEV_ARMOR: 2
+      STR_AUTO_CANNON: 1 # MK4 Heavy Bolter
+      STR_AC_AP_AMMO: 8
+      STR_AC_HE_AMMO: 4
+      STR_VENGOR_LAUNCHER: 1
+      STR_HEAVY_ROCKET_HE: 6
+      STR_HEAVY_ROCKET_KRAK: 6
+      STR_CASTELLAN_HE: 6
+    spawnedPersons: 2
+    spawnedPersonType: STR_SOLDIER
+
+  - name: STR_SCOUT_CARE_PACKAGE            # Marine Scout Starter Pack
+    spawnedCraftType: STR_SKYRANGER
+    everyMultiItemList:
+      STR_SMT_GENESEED_IMPURE: 6
+      STR_CRATED_RHINO: 1
+      STR_CRATED_LANDSPEEDER: 1
+      STR_SCOUT_SGT: 3 #Scout Sgt Armor
+      STR_RIFLEC: 1 # Stalker Bolter
+      STR_RIFLE_CLIP: 20
+      STR_PISTOLS: 2 # Spectris Pistol
+      STR_PISTOL_CLIP: 30
+      STR_SCOUT_BLADE: 2
+      STR_GRENADE_LAUNCHER_ASTARTES: 2
+      STR_FRAG_GRENADE_DRUM: 12
+    spawnedPersons: 3
+    spawnedPersonType: STR_SOLDIER
+
+  - name: STR_PRIMARIS_CARE_PACKAGE         # Marine Primaris Starter Pack
+    description: STR_PRIMARIS_CARE_PACKAGE_DESCRIPTION
+    spawnedCraftType: STR_IMPULSOR
+    everyMultiItemList:
+      STR_SMT_GENESEED_IMPURE: 8
+      STR_RIFLED: 1
+      STR_RIFLE_CLIP: 20
+      STR_BOLTER_CARBINE: 1
+      STR_LIGHT_BOLTER_AMMO: 20
+      STR_MKX_HELIX_ARMOR: 1
+      STR_PRIMARIS_HEAVY_BOLT_PISTOL: 1
+      STR_PISTOL_CLIP: 20
+    spawnedPersons: 2
+    spawnedPersonType: STR_PRIMARISLV1
+
+  - name: STR_GREYKNIGHTS_CARE_PACKAGE      # Grey Knights Starter Pack
+    description: STR_REINFORCEMENTS_GK_DESCRIPTION
+    #background: BACK13.SCR
+    spawnedCraftType: STR_ARVUS_GK
+    everyMultiItemList:
+      STR_HB_CLIP: 24
+      STR_KILLPOINT_TOKEN: 300
+    spawnedPersons: 4
+    spawnedPersonType: STR_GREYKNIGHT
+
+  - name: STR_DEATHWATCH_CARE_PACKAGE       # Deathwatch Starter Pack
+    description: STR_DEATHWATCH_REINFORCEMENTS
+    background: BACK13.SCR
+    spawnedCraftType: STR_CORVUS 
+    everyMultiItemList:
+      STR_DW_TOKEN: 1
+      STR_RIFLEA: 1
+      STR_RIFLE_CLIP: 10
+      STR_RIFLE_CLIP_DRAGON: 10
+      STR_SHOTGUN_DW: 1
+      STR_SHOTGUN_SHELLS_WYRM: 10
+      STR_CHAINSWORD_LIGHTSM: 1
+      STR_KILLPOINT_TOKEN: 300 # used to buy your first marine
+    spawnedPersons: 0
+    spawnedPersonType: STR_ULTRAMARINE
+
+  - name: STR_ASSASSINORUM_CARE_PACKAGE
+    description: STR_ASSASSINORUM_CARE_PACKAGE_DESCRIPTION
+    background: InquisitionBG2.SCR
+    timer: 60
+    timerRandom: 0
+    funds: 1200000
+    everyMultiItemList:
+      STR_TEMPLE_TOKEN: 4
+      STR_KILLPOINT_TOKEN: 1000
+      STR_TELEPORTARIUM_TOKEN: 1
+    spawnedPersons: 4
+    spawnedPersonType: STR_IMPERIAL_ASSASSINFEM
+
+  - name: STR_IMPERIALAGENTS_CARE_PACKAGE   # Imperial Agents Starter Pack
+    description: STR_REINFORCEMENTS_GK_DESCRIPTION ###CHANGEME
+    background: InquisitionBG2.SCR
+    spawnedCraftType: STR_VALKYRIE_INQ
+    everyMultiItemList:
+      STR_EVISCERATOR: 2
+      STR_AUTOGUN_ADEPTAS_SCOPED: 1
+      STR_AUTOGUN_CLIP: 4
+      STR_BOLTER_DEAZ: 1
+      STR_LIGHT_BOLTER_AMMO: 4
+      STR_SHOTGUNPD: 1
+      STR_SHOTGUN_SHELLS: 4
+      STR_SHOTGUN_SHELLS_AP: 2
+      STR_SHOTGUN_SHELLS_INC: 2
+      STR_OGRYN_CARAPACE: 1
+      STR_RIPPER_GUN: 1
+      STR_RIPPER_GUN_CLIP: 8
+      STR_LASGUN_TANITH: 1
+      STR_LASGUN_CLIP_HOTSHOT: 4
+      STR_TECHMARINE_FLAMER: 1
+      STR_FLAMETHROWER_CLIP: 2
+    everyMultiSoldierList:
+      STR_GUARDPD: 6
+      STR_GUARD_TANITH: 1
+      STR_ADEPTAS_VETERAN: 1
+      STR_JUDGE: 1
+      STR_GUARD_PRIEST: 1
+      STR_ENGINSEER: 1
+      STR_OGRYN: 1
+      STR_ADEPTAS_REPENTIA: 1
+      STR_IMPERIAL_ASSASSINFEM: 1
+      STR_ARBITES_MASTIFF: 1
+
+  - name: STR_HERETICALMEANS_CARE_PACKAGE   # Heretical Means Starter Pack
+    description: STR_REINFORCEMENTS_GK_DESCRIPTION ###CHANGEME
+    background: InquisitionBG2.SCR
+    spawnedCraftType: STR_VALKYRIE_INQ
+    everyMultiItemList:
+      STR_EVISCERATOR: 2
+      STR_AUTOGUN_ADEPTAS_SCOPED: 1
+      STR_AUTOGUN_CLIP: 4
+      STR_BOLTER_DEAZ: 1
+      STR_LIGHT_BOLTER_AMMO: 4
+      STR_SHOTGUNPD: 1
+      STR_SHOTGUN_SHELLS: 4
+      STR_SHOTGUN_SHELLS_AP: 2
+      STR_SHOTGUN_SHELLS_INC: 2
+      STR_OGRYN_CARAPACE: 1
+      STR_RIPPER_GUN: 1
+      STR_RIPPER_GUN_CLIP: 8
+      STR_LASGUN_TANITH: 1
+      STR_LASGUN_CLIP_HOTSHOT: 4
+      STR_TECHMARINE_FLAMER: 1
+      STR_FLAMETHROWER_CLIP: 2
+    everyMultiSoldierList:
+      STR_GUARDPD: 6
+      STR_GUARD_TANITH: 1
+      STR_GUARD_PRIEST: 1
+      STR_ENGINSEER: 1
+      STR_OGRYN: 1
+      STR_ARBITES_MASTIFF: 1
+
+

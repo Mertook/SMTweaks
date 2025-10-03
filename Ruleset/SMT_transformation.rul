@@ -1,33 +1,15 @@
-commendations:
-  - type: STR_TERMINATOR_CROSS # promote to terminator
-    description: STR_TERMINATOR_CROSS_DESCRIPTION
-    sprite: 5
-    criteria:
-      killsWithCriteriaCareer: [30] # was 30
-      totalWins: [15] # was 0
-      totalMonthlyService: [3] # was 0
-    killCriteria:
-       -
-         - [1, ["STATUS_DEAD", "FACTION_HOSTILE"]]
-
-  - type: STR_HONOR_MEDAL # used for Primaris promotions
-    description: STR_HONOR_MEDAL_DESCRIPTION
-    sprite: 5
-    criteria:
-      totalScore: [2000,8000,24000,48000]
-
 soldierTransformation:
 ### General
   - name: STR_HARVEST_GENESEED          # Recover Geneseed from Corpses
     requires:
       - STR_MARINES_STRATEGY
     cost: 5000
-    producedItem: STR_SMT_GENESEED
+    createsClone: true
     allowsDeadSoldiers: true
     allowsLiveSoldiers: false
     allowsWoundedSoldiers: false
     needsCorpseRecovered: true
-    createsClone: true
+    producedItem: STR_SMT_GENESEED
     transferTime: 0
     allowedSoldierTypes:
       - STR_SOLDIER
@@ -113,7 +95,7 @@ soldierTransformation:
       - STR_SOLDIER
     transferTime: 0
     requiredCommendations:
-      STR_HONOR_MEDAL: 1
+      STR_HONOR_MEDAL: 3
       STR_TERMINATOR_CROSS: 0
     flatOverallStatChange:
       tu: 5
@@ -167,6 +149,7 @@ soldierTransformation:
     cost: 100000
     requiredItems:
       STR_KILLPOINT_TOKEN: 2400
+      STR_CAPTAIN_TOKEN: 1
     producedSoldierType: STR_SOLDIER_CAPTAIN
     keepSoldierArmor: false
     allowsDeadSoldiers: false
@@ -176,28 +159,28 @@ soldierTransformation:
     allowedSoldierTypes:
       - STR_SOLDIER_TERMINATOR
     requiredCommendations:
-      STR_HONOR_MEDAL: 3
+      STR_HONOR_MEDAL: 9
       STR_HERO_TO_THE_IMPERIUM: 0
     listOrder: 55
 
-  - name: STR_PROMOTE_CAPTAIN_TACT           # Vet Marine -> Captain
+  - name: STR_PROMOTE_CAPTAIN_TACT      # Vet Marine -> Captain
     requires: !add
       - STR_TATICAL
     soldierBonusType: STR_BONUS_CAPTAIN_TACTICAL # AoC + LB + BD
 
-  - name: STR_PROMOTE_CAPTAIN_ASS           # Vet Marine -> Captain
+  - name: STR_PROMOTE_CAPTAIN_ASS       # Vet Marine -> Captain
     refNode: *REF_CAPTAIN_FIRSTBORN
     requires: !add
       - STR_ASSAULT
     soldierBonusType: STR_BONUS_CAPTAIN_ASSAULT # AoC + LB + RA
 
-  - name: STR_PROMOTE_CAPTAIN_DEV           # Vet Marine -> Captain
+  - name: STR_PROMOTE_CAPTAIN_DEV       # Vet Marine -> Captain
     refNode: *REF_CAPTAIN_FIRSTBORN
     requires: !add
       - STR_DEVASTATOR
     soldierBonusType: STR_BONUS_CAPTAIN_DEVASTATOR # AoC + BD + SoF
 
-  - name: STR_PROMOTE_CAPTAIN_SCT           # Vet Marine -> Captain
+  - name: STR_PROMOTE_CAPTAIN_SCT       # Vet Marine -> Captain
     refNode: *REF_CAPTAIN_FIRSTBORN
     requires: !add
       - STR_SCOUT
@@ -482,7 +465,7 @@ soldierTransformation:
     allowedSoldierTypes:
       - STR_PRIMARISLV2
     requiredCommendations:
-      STR_HONOR_MEDAL: 1
+      STR_HONOR_MEDAL: 3
       STR_TERMINATOR_CROSS: 0
     transferTime: 0
     recoveryTime: 0
@@ -514,7 +497,7 @@ soldierTransformation:
     allowedSoldierTypes:
       - STR_PRIMARISLV3
     requiredCommendations:
-      STR_HONOR_MEDAL: 2
+      STR_HONOR_MEDAL: 6
     flatOverallStatChange:
       tu: 5
       stamina: 5
@@ -546,7 +529,7 @@ soldierTransformation:
     allowedSoldierTypes:
       - STR_PRIMARISLV4
     requiredCommendations:
-      STR_HONOR_MEDAL: 3
+      STR_HONOR_MEDAL: 9
       STR_HERO_TO_THE_IMPERIUM: 0
     transferTime: 0
     recoveryTime: 0
@@ -601,7 +584,7 @@ soldierTransformation:
     allowedSoldierTypes:
       - STR_PRIMARIS_APOTH
     requiredCommendations:
-      STR_HONOR_MEDAL: 2
+      STR_HONOR_MEDAL: 6
     flatOverallStatChange:
       tu: 5
       stamina: 5
@@ -665,7 +648,7 @@ soldierTransformation:
     allowedSoldierTypes:
       - STR_PRIMARIS_TECHNOVICE
     requiredCommendations:
-      STR_HONOR_MEDAL: 2
+      STR_HONOR_MEDAL: 6
     flatOverallStatChange:
       tu: 5
       stamina: 5
@@ -732,7 +715,7 @@ soldierTransformation:
     allowedSoldierTypes:
       - STR_PRIMARIS_JUDICAR
     requiredCommendations:
-      STR_HONOR_MEDAL: 2
+      STR_HONOR_MEDAL: 6
     requiresBaseFunc: [PSI] #needs chapel
     transferTime: 0
     recoveryTime: 0
@@ -811,7 +794,7 @@ soldierTransformation:
     transferTime: 0
     recoveryTime: 0
     requiredCommendations:
-      STR_HONOR_MEDAL: 1
+      STR_HONOR_MEDAL: 3
     requiresBaseFunc: [LIB] #needs library
     requiredMinStats:
       psiStrength: 70
@@ -849,7 +832,7 @@ soldierTransformation:
     transferTime: 0
     recoveryTime: 0
     requiredCommendations:
-      STR_HONOR_MEDAL: 2
+      STR_HONOR_MEDAL: 6
     requiresBaseFunc: [LIB] #needs library
     requiredMinStats:
       psiStrength: 100
@@ -1417,18 +1400,22 @@ soldierBonuses:
 
   - name: STR_BONUS_CAPTAIN_TACTICAL
     tags:
+      SMT_BONUS_MORALE_RESISTANCE: 33
       BONUS_ENERGY_SHIELD_HP_PER_TURN: 90
       BONUS_ENERGY_SHIELD_DECAY: 75
   - name: STR_BONUS_CAPTAIN_DEVASTATOR
     tags:
+      SMT_BONUS_MORALE_RESISTANCE: 33
       BONUS_ENERGY_SHIELD_HP_PER_TURN: 90
       BONUS_ENERGY_SHIELD_DECAY: 75
   - name: STR_BONUS_CAPTAIN_ASSAULT
     tags:
+      SMT_BONUS_MORALE_RESISTANCE: 33
       BONUS_ENERGY_SHIELD_HP_PER_TURN: 90
       BONUS_ENERGY_SHIELD_DECAY: 75
   - name: STR_BONUS_CAPTAIN_SCOUT
     tags:
+      SMT_BONUS_MORALE_RESISTANCE: 33
       BONUS_ENERGY_SHIELD_HP_PER_TURN: 90
       BONUS_ENERGY_SHIELD_DECAY: 75
 ### Psi Bonuses

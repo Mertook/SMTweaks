@@ -1,5 +1,6 @@
 research:
-  - name: STR_MARINES_STRATEGY      # Picked Marines
+### Faction Selection
+  - name: STR_MARINES_STRATEGY          # Space Marine
     cost: 0
     points: 0
     lookup: STR_IMPERIUM_RESEARCH
@@ -27,27 +28,97 @@ research:
       - STR_DEFENSE_CORRIDORBR
       - STR_MARINE_CHAOS_PATH # not supported
 
-  - name: STR_TATICAL               # Tactical Strat Chosen
+  - name: STR_CHAMBERMILITANT           # Chamber Militant
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+    unlocks:
+      - STR_GREYKNIGHTS
+      - STR_DEATHWATCH
+      - STR_ASSASSINORUM
+      - STR_IMPERIAL_AGENTS
+      - STR_HERETICAL_MEANS
+      - STR_XIPHON
+      - STR_ADEPTAS_AND_INQUISITION
+      - STR_MARINES_AND_INQUISITION
+      - STR_ADEPTAS_MARINES_AND_INQUISITION
+      - STR_GUARD_AND_INQUISITION
+      - STR_NOT_STEEL_LEGION_STRATEGY
+      - STR_HARDER_MISSIONS
+      - STR_IMPERIUM_RESEARCH
+
+    disables:
+      - STR_NOT_CHAMBER
+      - STR_ARBITES
+      - STR_MARINES_STRATEGY
+      - STR_IMPERIAL_GUARD_OPERATIONS
+      - STR_ADEPTAS
+      - STR_GUARD_SUPORT
+
+  - name: STR_IMPERIAL_GUARD_OPERATIONS # Imperial Guard
+    unlocks: !add
+      - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
+      - STR_40MM_AMMO
+
+### Strategy Choice
+  - name: STR_PICKED_LOYALIST_STRATEGY  # Loyalist Strat Chosen
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+    unlocks:
+      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      - STR_MOTION_SCANNER
+      - STR_LASER_WEAPONS
+      - STR_SMOKE
+      - STR_HOLOGRAM_GRENADE_REQUISITION
+      - STR_SERVITOR_BASIC
+
+  - name: STR_PICKED_CHAOS_STRATEGY     # Chaos Strat Chosen
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+    unlocks:
+      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      - STR_SMOKE
+      - STR_SERVITOR_BASIC
+
+  - name: STR_PICKED_XENOS_STRATEGY     # Xenos Strat Chosen
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+    unlocks:
+      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      - STR_MOTION_SCANNER
+      - STR_LASER_WEAPONS
+      - STR_SMOKE
+      - STR_SERVITOR_BASIC
+
+  - name: STR_THE_EMPEROR_PROTECTS_RESEARCH # Easy Mode
+    listOrder: 1
+    dependencies:
+      - STR_PICKED_LOYALIST_STRATEGY
+
+## Space Marines
+  - name: STR_TATICAL                   # Tactical Strat
     cost: 5
     points: 0
     dependencies:
       - STR_MARINES_STRATEGY
     lookup: STR_CHOSEN_TATICAL
     unlocks:
-      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
-      - STR_MOTION_SCANNER
-      - STR_LASER_WEAPONS
       - STR_MARINE_CHAPEL
-      - STR_HOLOGRAM_GRENADE_REQUISITION
       - STR_THUNDERHAWKTYPE1
-      #- STR_STORMHAWKR
       - STR_PERSONAL_ARMOR
       - STR_MELTABOMB
-      - STR_SMOKE
       - STR_SMOKE_BOMB_UNLOCK
       - STR_CRATED_DROPPODS
       - STR_ADV_DROPPODS
       - STR_NOT_PRIMARIS
+      - STR_PICKED_LOYALIST_STRATEGY
     disables:
       - STR_PRIMARIS
       - STR_ASSAULT
@@ -59,27 +130,22 @@ research:
     getOneFree:
       - STR_NEOPHYTE_REQUEST
 
-  - name: STR_ASSAULT               # Assault Strat Chosen
+  - name: STR_ASSAULT                   # Assault Strat
     cost: 5
     points: 0
     dependencies:
       - STR_MARINES_STRATEGY
     lookup: STR_CHOSEN_ASSAULT
     unlocks:
-      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
-      - STR_MOTION_SCANNER
-      - STR_LASER_WEAPONS
       - STR_MARINE_CHAPEL
-      - STR_HOLOGRAM_GRENADE_REQUISITION
-      - STR_THUNDERHAWKTYPE1 # was type2
-      #- STR_STORMHAWKR
+      - STR_THUNDERHAWKTYPE1
       - STR_ASS_ARMOR
       - STR_HAND_FLAMETHROWER_REQUISITION
       - STR_INFERNOPISTOL_REQ
-      - STR_SMOKE
       - STR_CRATED_DROPPODS
       - STR_ADV_DROPPODS
       - STR_NOT_PRIMARIS
+      - STR_PICKED_LOYALIST_STRATEGY
     disables:
       - STR_PRIMARIS
       - STR_TATICAL
@@ -91,25 +157,20 @@ research:
     getOneFree:
       - STR_NEOPHYTE_REQUEST
 
-  - name: STR_DEVASTATOR            # Devastator Strat Chosen
+  - name: STR_DEVASTATOR                # Devastator Strat
     cost: 5
     points: 0
     dependencies:
       - STR_MARINES_STRATEGY
     lookup: STR_CHOSEN_DEVASTATOR
     unlocks:
-      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
-      - STR_MOTION_SCANNER
-      - STR_LASER_WEAPONS
       - STR_MARINE_CHAPEL
-      - STR_HOLOGRAM_GRENADE_REQUISITION
       - STR_THUNDERHAWKTYPE1
-      #- STR_STORMHAWKR
-      - STR_SMOKE
       - STR_CRATED_DROPPODS
       - STR_DEV_ARMOR
       - STR_ADV_DROPPODS
       - STR_NOT_PRIMARIS
+      - STR_PICKED_LOYALIST_STRATEGY
     disables:
       - STR_PRIMARIS
       - STR_ASSAULT
@@ -121,25 +182,20 @@ research:
     getOneFree:
       - STR_NEOPHYTE_REQUEST
 
-  - name: STR_SCOUT                 # Scout Strat Chosen
+  - name: STR_SCOUT                     # Scout Strat
     cost: 5
     points: 0
     dependencies:
       - STR_MARINES_STRATEGY
     lookup: STR_CHOSEN_SCOUT
     unlocks:
-      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
-      - STR_MOTION_SCANNER
-      - STR_LASER_WEAPONS
-      - STR_HOLOGRAM_GRENADE_REQUISITION
-      - STR_THUNDERHAWKTYPE1 # was type2
       - STR_MARINE_CHAPEL
-      - STR_SMOKE
-      #- STR_STORMHAWKR
+      - STR_THUNDERHAWKTYPE1
       - STR_CRATED_DROPPODS
       - STR_TRAINFACILITYR
       - STR_ADV_DROPPODS
       - STR_NOT_PRIMARIS
+      - STR_PICKED_LOYALIST_STRATEGY
     disables:
       - STR_PRIMARIS
       - STR_ASSAULT
@@ -151,28 +207,20 @@ research:
     getOneFree:
       - STR_NEOPHYTE_REQUEST
 
-  - name: STR_PRIMARIS              # Primaris Strat Chosen
+  - name: STR_PRIMARIS                  # Primaris Strat
     cost: 5
     points: 0
     dependencies:
       - STR_MARINES_STRATEGY
-      #- STR_GENERALLOCK # temporarily disabled, incomplete
     lookup: STR_CHOSEN_PRIMARIS
     unlocks:
-      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
-      - STR_MOTION_SCANNER
-      - STR_LASER_WEAPONS
-      #- STR_SPELLSR
       - STR_MARINE_CHAPEL
-      - STR_HOLOGRAM_GRENADE_REQUISITION
-      - STR_SMOKE
       - STR_SMOKE_BOMB_UNLOCK
       - STR_APOTHECARY
       - STR_TRAINFACILITYR
-      #- STR_GLAUNCHER_PREREQ
-      #- STR_STORMHAWKR
       - STR_PRIMARIS_AND_DEATHWATCH
       - STR_PRIMARIS_AND_ADEPTAS
+      - STR_PICKED_LOYALIST_STRATEGY
     disables:
       - STR_NOT_PRIMARIS
       - STR_TATICAL
@@ -184,17 +232,13 @@ research:
     getOneFree:
       - STR_NEOPHYTE_REQUEST
 
-  - name: STR_SPACEWOLVES_STRATEGY  # Space Wolves Strat Chosen
+  - name: STR_SPACEWOLVES_STRATEGY      # Space Wolves Strat
     cost: 5
     points: 0
     dependencies:
       - STR_MARINES_STRATEGY
     lookup: STR_CHOSEN_SPACEWOLVES
     unlocks:
-      - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
-      - STR_MOTION_SCANNER
-      - STR_LASER_WEAPONS
-      - STR_HOLOGRAM_GRENADE_REQUISITION
       - STR_MARINE_CHAPEL
       - STR_CRATED_SWRHINOS
       - STR_CRATED_SWDROPPODS
@@ -203,6 +247,7 @@ research:
       - STR_SWRHINOS
       - STR_MARINE_BOLTERS
       - STR_HARDER_MISSIONS_SW
+      - STR_PICKED_LOYALIST_STRATEGY
     disables:
       - STR_NOT_SPACEWOLVES
       - STR_PRIMARIS
@@ -212,7 +257,7 @@ research:
       - STR_TATICAL
     spawnedEvent: STR_SPACEWOLVES_INITIAL_SITREP
 
-  - name: STR_NEOPHYTE_REQUEST      # Unlock Neophytes
+  - name: STR_NEOPHYTE_REQUEST          # Unlock Neophytes
     cost: 5
     points: 0
     dependencies:
@@ -220,24 +265,201 @@ research:
       - STR_GENERALLOCK
     spawnedEvent: STR_NEOPHYTE_STARTING_PACKAGE
 
-  - name: STR_MARINE_CAPTAIN        # Unlock Captain promotion
-    cost: 400
-    points: 30
+## Chamber Militant
+  - name: STR_GREYKNIGHTS               # Grey Knights Strat
+    cost: 5
+    points: 0
+    listOrder: 2
     dependencies:
-      - STR_MARINES_STRATEGY
-      - STR_COMMANDER_PLUS
+      - STR_CHAMBERMILITANT
+    lookup: STR_CHOSEN_GREYKNIGHTS
+    getOneFree:
+      - STR_HB_DEP1
     unlocks:
-      - STR_CAPTAIN_CODEX
-      - STR_SMT_CAPTAIN_PROMOTION
-    lookup: STR_SMT_CAPTAIN_PROMOTION
-    listOrder: 10
-  - name: STR_SMT_CAPTAIN_PROMOTION # Captain Codex entry
+      - STR_INQUISITION
+      - STR_HARDER_MISSIONS
+      - STR_BOLTER_AMMO_PREREQ
+      - STR_STORMRAVEN_PREREQ
+      - STR_PICKED_LOYALIST_STRATEGY
+    disables:
+      - STR_NOT_GK
+      - STR_DEATHWATCH
+      - STR_ASSASSINORUM
+      - STR_IMPERIAL_AGENTS
+      - STR_HERETICAL_MEANS
+      - STR_DEFENSE_CORRIDORBR
+      - STR_PERSONAL_ARMOR
+      - STR_INQUISITION_VALKYRIE
+    spawnedEvent: STR_GREYKNIGHTS_CARE_PACKAGE
+
+  - name: STR_DEATHWATCH                # Deathwatch Strat
+    cost: 5
+    points: 0
+    listOrder: 3
+    dependencies:
+      - STR_CHAMBERMILITANT
+    lookup: STR_CHOSEN_DEATHWATCH
+    unlocks:
+      - STR_NOT_PRIMARIS
+      - STR_DEATHWATCH_AND_ADEPTAS
+      - STR_PRIMARIS_AND_DEATHWATCH
+      - STR_MARINES_AND_DEATHWATCH
+      - STR_CORVUS_RESEARCH
+      - STR_INQUISITION
+      - STR_XENO_WEAPONS
+      - STR_HARDER_MISSIONS
+      - STR_BOLTER_AMMO_PREREQ
+      - STR_BOLTER_ADV_AMMO
+      - STR_MARINE_WEAPONS
+      - STR_STORMRAVEN_PREREQ
+      - STR_PICKED_LOYALIST_STRATEGY
+    getOneFree:
+      - STR_SCT_MELEE_REQ
+    disables:
+      - STR_NOT_DEATHWATCH
+      - STR_GREYKNIGHTS
+      - STR_ASSASSINORUM
+      - STR_IMPERIAL_AGENTS
+      - STR_HERETICAL_MEANS
+      - STR_CYDONIA_OR_BUST # has their own version - STR_DEATHWATCH_BUST
+      - STR_INQUISITION_VALKYRIE
+    reenables: []
+    spawnedEvent: STR_DEATHWATCH_CARE_PACKAGE
+
+  - name: STR_ASSASSINORUM              # Assassinorum Strat
+    cost: 5
+    points: 0
+    listOrder: 4
+    dependencies:
+      - STR_CHAMBERMILITANT
+    lookup: STR_CHOSEN_ASSASSINORUM
+    unlocks:
+      - STR_EXITUS_AMMO_PREREQUISITE
+      - STR_NORMAL_INQUISITION
+      - STR_GUARD_BARRACKS
+      - STR_BALLISTIC_WEAPONS_HIGHGRADE
+      - STR_LASGUN_HOTSHOT
+      - STR_VINDICARE_CODEX
+      - STR_CALLIDUS_CODEX
+      - STR_IMPERIAL_ASSASSINS
+      - STR_REPRISALIA_ACCESS
+      - STR_PICKED_LOYALIST_STRATEGY
+    disables:
+      - STR_DEATHWATCH
+      - STR_GREYKNIGHTS
+      - STR_IMPERIAL_AGENTS
+      - STR_HERETICAL_MEANS
+      - STR_CHAOS_PATH
+      - STR_INQUISITION_VALKYRIE
+      - STR_INQ_STORMTROOPER_REQUISITION
+    spawnedEvent: STR_ASSASSINORUM_CARE_PACKAGE
+
+  - name: STR_IMPERIAL_AGENTS           # Imperial Agents Strat
+    cost: 5
+    points: 0
+    listOrder: 5
+    dependencies:
+      - STR_CHAMBERMILITANT
+    lookup: STR_CHOSEN_DEATHWATCH ###CHANGEME
+    unlocks:
+      - STR_INQUISITION
+      - STR_ARBITES_SOLDIERS
+      - STR_PICKED_LOYALIST_STRATEGY
+    disables:
+      - STR_DEATHWATCH
+      - STR_GREYKNIGHTS
+      - STR_ASSASSINORUM
+      - STR_HERETICAL_MEANS
+    spawnedEvent: STR_GREYKNIGHTS_CARE_PACKAGE ###CHANGEME
+
+  - name: STR_HERETICAL_MEANS           # Heretical Means Strat
+    cost: 5
+    points: 0
+    listOrder: 6
+    dependencies:
+      - STR_CHAMBERMILITANT
+    lookup: STR_CHOSEN_DEATHWATCH ###CHANGEME
+    unlocks:
+      - STR_INQUISITION
+      - STR_PICKED_LOYALIST_STRATEGY
+    disables:
+      - STR_DEATHWATCH
+      - STR_GREYKNIGHTS
+      - STR_ASSASSINORUM
+      - STR_IMPERIAL_AGENTS
+    spawnedEvent: STR_GREYKNIGHTS_CARE_PACKAGE ###CHANGEME
+
+  - name: STR_RADICAL_INQUISITOR_STRATEGY
+    dependencies:
+      - STR_GENERALLOCK
+    unlocks: []
+    disables: []
+
+  - name: STR_HERETICAL_INQUISITOR_STRATEGY
+    dependencies:
+      - STR_GENERALLOCK
+    unlocks: []
+    disables: []
+
+  - name: STR_INQUISITION               # lock generic Chamber Militant things behind picking a strategy
     cost: 0
     points: 0
     dependencies:
-      - STR_MARINE_CAPTAIN
+      - STR_GENERALLOCK
+    unlocks:
+      - STR_ADEPTAS_FRATERIS_MILITIA_RESEARCH
+      - STR_MEDI_KIT_PREREQ
+      - STR_LIGHT_BOLTERS
+      - STR_LIGHT_BOLTERS_LOWTIER
+      - STR_LIGHT_BOLTERS_MIDTIER
+      - STR_TRAINFACILITYR
+      - STR_IMPERIAL_CHURCH
+      - STR_INQ_STORMTROOPER_CODEX_UNLOCKER
 
-  - name: STR_MT                    # Marine Midtier
+## Imperial Guard
+  - name: STR_NORMAL_STRATEGY_IG                    # IG Standard Strategy
+    unlocks: !add
+      - STR_IMPERIAL_CHURCH
+      - STR_PICKED_LOYALIST_STRATEGY
+
+  - name: STR_ELITE_STRATEGY_IG                     # IG Scions Strategy
+    unlocks: !remove
+      - STR_SQUAT_GUARDSMEN
+
+  - name: STR_ELITE_STRATEGY_IG                     # IG Scions Strategy
+    unlocks: !add
+      - STR_IMPERIAL_CHURCH
+      - STR_PICKED_LOYALIST_STRATEGY
+
+  - name: STR_STEEL_LEGION_STRATEGY                 # IG Steel Legion Strategy
+    unlocks: !add
+      - STR_IMPERIAL_CHURCH
+      - STR_PICKED_LOYALIST_STRATEGY
+
+  - name: STR_ABHUMAN_STRATEGY_IG                   # Abhuman Strategy
+    unlocks: !remove
+      - STR_BIOMANCER
+
+  - name: STR_ABHUMAN_STRATEGY_IG                   # Abhuman Strategy
+    unlocks: !add
+      - STR_PSYKER_REQUISITION
+      - STR_PICKED_LOYALIST_STRATEGY
+
+## Sisters of Battle
+
+## Terra
+  - name: STR_THE_IMPERIAL_LAW_STRATEGY # Arbites Strategy
+    listOrder: 2
+    unlocks: !add
+      - STR_ARBITES_SOLDIERS
+      - STR_SHOTGUNS_ADV
+      - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
+      - STR_40MM_AMMO
+      - STR_IMPERIAL_CHURCH
+
+### Faction Mid-tier
+## Space Marine
+  - name: STR_MT                        # Marine Midtier
     cost: 200
     points: 200
     dependencies:
@@ -252,6 +474,166 @@ research:
       #- STR_HB_DEP1 # moved to High Quality Bolters research
       - STR_SIDEOPERATIONS
     cutscene: c2
+    listOrder: 1
+
+## Chamber Militant
+  - name: STR_MT_GK                     # Grey Knight Mid-tier
+    cost: 500
+    points: 200
+    dependencies:
+      - STR_MELTAGUN_TECH
+      - STR_ALIEN_ALLOYS
+      - STR_MOTION_SCANNER
+      - STR_GREYKNIGHTS
+    unlocks:
+      - STR_MIDTIER_PREREQ
+      - STR_CASS_R
+      - STR_SIDEOPERATIONS
+    getOneFree:
+      - STR_POWER_SWORD
+    cutscene: c2
+    spawnedEvent: "" # was STR_REINFORCEMENTS_GK_3
+    listOrder: 1
+
+  - name: STR_MT_DW                     # Deathwatch Mid tier
+    cost: 500
+    points: 200
+    dependencies:
+      - STR_DW_ASSAULT
+      - STR_DW_SNIPER
+      - STR_ALIEN_ALLOYS
+      - STR_MOTION_SCANNER
+      - STR_DEATHWATCH
+    unlocks:
+      - STR_MIDTIER_PREREQ
+      - STR_CASS_R
+      - STR_HB_DEP1
+      #- STR_NEW_FIGHTER_TRANSPORTER
+      - STR_SIDEOPERATIONS
+      - STR_INQ_STORMTROOPER_REQUISITION
+    cutscene: c2
+    listOrder: 1
+
+  - name: STR_OA_MIDTIER                # Assassinorum Mid-tier
+    cost: 500
+    points: 200
+    spawnedEvent: STR_ASSASSINORUM_MIDTIER_REINFORCEMENTS
+    lookup: STR_OA_MIDTIER_REPORT
+    dependencies:
+      - STR_MELTAGUN_TECH
+      - STR_ALIEN_ALLOYS
+      - STR_MOTION_SCANNER
+      - STR_MEDI_KIT_PREREQ
+      - STR_CHAMBERMILITANT
+      - STR_ASSASSINORUM
+      - STR_ALIEN_ORIGINS
+    unlocks:
+      - STR_MIDTIER_PREREQ
+      - STR_CASS_R
+      - STR_SIDEOPERATIONS
+      - STR_INQUISITION_DROPPODS
+      - STR_XENO_ONLY
+      - STR_ELDAR_PATH
+      - STR_INQ_STORMTROOPER_REQUISITION
+    cutscene: c2
+    listOrder: 1
+
+  - name: STR_MT_IMPAGENT               # Imperial Agents Mid-tier
+    cost: 500
+    points: 200
+    dependencies:
+      - STR_MELTAGUN_TECH
+      - STR_ALIEN_ALLOYS
+      - STR_MOTION_SCANNER
+      - STR_IMPERIAL_AGENTS
+    unlocks:
+      - STR_MIDTIER_PREREQ
+      - STR_SIDEOPERATIONS
+      - STR_INQ_STORMTROOPER_REQUISITION
+    cutscene: c2
+    listOrder: 1
+
+### Faction High-tier
+
+### Soldiers
+  - name: STR_ARBITES_SOLDIERS          # Allow buying Arbites soldiers
+    cost: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_REINFORCEMENT  # Reinforcements Requisition
+    dependencies:
+      - STR_GENERALLOCK
+
+### Craft
+  - name: STR_INQUISITION_VALKYRIE
+    dependencies:
+      - STR_ADEPTAS_AND_INQUISITION
+      - STR_PICKED_LOYALIST_STRATEGY
+    cost: 0
+    points: 0
+
+### Chamber Recruitment
+  - name: STR_INQ_SUMMON_IMPERIAL_AGENTS_RESEARCH  # Summon Agents of the Inquisition
+    cost: 250
+    dependencies:
+      - STR_CHAMBERMILITANT
+      - STR_PICKED_LOYALIST_STRATEGY
+    spawnedEvent: STR_INQ_REQUISITION_AGENTS_EVENT
+
+  - name: STR_INQ_REQUISITION_ARBITES_RESEARCH  # Requisition Arbites Support
+    cost: 250
+    dependencies:
+      - STR_CHAMBERMILITANT
+      - STR_PICKED_LOYALIST_STRATEGY
+    spawnedEvent: STR_INQ_REQUISITION_ARBITES_EVENT
+
+  - name: STR_INQ_REQUISITION_GUARD_RESEARCH  # Requisition Guard Veterans
+    cost: 250
+    dependencies:
+      - STR_CHAMBERMILITANT
+      - STR_PICKED_LOYALIST_STRATEGY
+    spawnedEvent: STR_INQ_REQUISITION_GUARD_EVENT
+
+  - name: STR_INQ_REQUISITION_SORORITAS_RESEARCH
+    cost: 400
+    dependencies:
+      - STR_CHAMBERMILITANT
+      - STR_PICKED_LOYALIST_STRATEGY
+    spawnedEvent: STR_INQ_REQUISITION_SORORITAS_EVENT
+
+  - name: STR_INQ_REQUISITION_ASSASSINS_RESEARCH  # Order Imperial Assassins
+    cost: 400
+    dependencies:
+      - STR_CHAMBERMILITANT
+      - STR_PICKED_LOYALIST_STRATEGY
+    spawnedEvent: STR_INQ_REQUISITION_ASSASSINS_EVENT
+
+### Other
+  - name: STR_SERVITOR_BASIC        # Support Servitors
+    cost: 50
+    points: 10
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_MARINE_CAPTAIN        # Unlock Captain promotion
+    cost: 400
+    points: 30
+    dependencies:
+      - STR_MARINES_STRATEGY
+      - STR_COMMANDER_PLUS
+    unlocks:
+      - STR_CAPTAIN_CODEX
+      - STR_SMT_CAPTAIN_PROMOTION
+    lookup: STR_SMT_CAPTAIN_PROMOTION
+    spawnedItem: STR_CAPTAIN_TOKEN
+    listOrder: 10
+
+  - name: STR_SMT_CAPTAIN_PROMOTION # Captain Codex entry
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_MARINE_CAPTAIN
 
   - name: STR_POWER_SUIT            # Terminator Suit
     cost: 500 # was 205
@@ -292,8 +674,9 @@ research:
       - STR_GENERALLOCK
 
   - name: STR_ADV_DROPPODS          # Firestorm Droppods
-    dependencies: !add
-      - STR_GENERALLOCK
+    dependencies:
+      - STR_MT
+      - STR_NOT_PRIMARIS
 
   - name: STR_STORMHAWKR            # Stormhawks
     cost: 100 # was 150
@@ -469,7 +852,7 @@ research:
     dependencies:
       - STR_NEOPHYTE_REQUEST # picked strategy
       - STR_MARINES_STRATEGY
-    getOneFree:
+    unlocks:
       - STR_GLAUNCHER_PREREQ
     listOrder: 2
 

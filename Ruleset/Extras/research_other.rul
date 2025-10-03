@@ -1,41 +1,5 @@
 research: # Research changes only made to maintain functionality for other factions
 
-  - name: STR_THE_IMPERIAL_LAW_STRATEGY             # Arbites Strategy
-    unlocks: !add
-      - STR_SHOTGUNS_ADV # added
-      - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
-      - STR_40MM_AMMO
-      - STR_IMPERIAL_CHURCH
-
-  - name: STR_IMPERIAL_GUARD_OPERATIONS             # Imperial Guard Faction
-    unlocks: !add
-      - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
-      - STR_40MM_AMMO
-
-  - name: STR_NORMAL_STRATEGY_IG                    # IG Standard Strategy
-    unlocks: !add
-      - STR_IMPERIAL_CHURCH
-
-  - name: STR_ELITE_STRATEGY_IG                     # IG Scions Strategy
-    unlocks: !remove
-      - STR_SQUAT_GUARDSMEN
-
-  - name: STR_ELITE_STRATEGY_IG                     # IG Scions Strategy
-    unlocks: !add
-      - STR_IMPERIAL_CHURCH
-
-  - name: STR_STEEL_LEGION_STRATEGY                 # IG Steel Legion Strategy
-    unlocks: !add
-      - STR_IMPERIAL_CHURCH
-
-  - name: STR_ABHUMAN_STRATEGY_IG                   # Abhuman Strategy
-    unlocks: !remove
-      - STR_BIOMANCER
-
-  - name: STR_ABHUMAN_STRATEGY_IG                   # Abhuman Strategy
-    unlocks: !add
-      - STR_PSYKER_REQUISITION
-
   - name: STR_MIDTIER_GUARDSMEN                     # Guardsmen Mid-tier Requisitions
     unlocks: !remove
       - STR_SQUAT_GUARDSMEN
@@ -146,32 +110,6 @@ research: # Research changes only made to maintain functionality for other facti
     dependencies:
       - STR_MULTIMELTA_PREREQ
     needItem: false # was true
-
-  # - name: STR_KHORNE_UNGOR                          # Khornugor (was missing)
-    # cost: 75
-    # points: 20
-    # needItem: true
-    # unlocks:
-      # - STR_INTERROGATION_COMPLETED
-      # - STR_THREAT_ONE
-    # getOneFree:
-      # - STR_KHORNEGOR_UNGOR
-    # destroyItem: true
-
-  # - name: STR_NURGLE_CULTIST_LEADER_RITUALIST       # Nurgle Cult Leader (was missing)
-    # cost: 75
-    # points: 20
-    # needItem: true
-    # unlocks:
-      # - STR_INTERROGATION_COMPLETED
-      # - STR_THREAT_ONE
-      # - STR_ALIEN_ORIGINS
-      # - STR_LEADER_PLUS
-      # - STR_CHAOS_PATH
-      # - STR_PSI_LAB
-    # getOneFree:
-      # - STR_NURGLE_CULTIST_LEADER
-    # destroyItem: true
 
   - name: STR_CHB                                   # Chaos Storm Bolter
     dependencies: !remove

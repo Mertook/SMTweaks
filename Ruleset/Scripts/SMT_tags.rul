@@ -72,7 +72,7 @@ extended:
       ARMOR_REGENERATE_HEALTH_BURN_TOGGLE: int  # does this unit regenerate when on fire? 0 = ignore, 1 = no regen on when fire, -1 = cancel out soldier penalty
       ARMOR_REGENERATE_DURABILITY: int          # Unit armor sides are restored by X each turn
       ## Heavy Weapons
-      SMT_ARMOR_HEAVY_WEAPON_USER: int # counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 2/3, 3 = 2/4, 4 = 2/5 etc
+      SMT_ARMOR_HEAVY_WEAPON_USER: int          # counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 2/3, 3 = 2/4, 4 = 2/5 etc
       ## Infiltrator
       ARMOR_IS_INFILTRATOR: int                 # at start of battle unit immediately enters stealth for X turns
       ARMOR_INFILTRATOR_RANGE: int              # detection range for infiltrator stealth
@@ -83,12 +83,16 @@ extended:
       ARMOR_CLOAKED_ASSASSIN_TYPE: int          # unit immediately enters stealth after killing with an appropriate weapon. X = Allowed weapon types
       ARMOR_CLOAKED_ASSASSIN_RANGE: int         # unit immediately enters stealth after killing with an appropriate weapon. X = Detection Range
       ## Overwatch
-      ARMOR_OVERWATCH_TU_RESTORED: int  # 0 to 100; what % of the unit's maximum TUs is restored at the start of each enemy/neutral turn?
-      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: int  # 1 or 0, True or False; Do we add the % of max TUs restored, or go with the highest value?
-      ## Armor Shred
+      ARMOR_OVERWATCH_TU_RESTORED: int          # 0 to 100; what % of the unit's maximum TUs is restored at the start of each enemy/neutral turn?
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: int  # 1 = True Do we add the % of max TUs restored, or go with the highest value?
+      ## Special Damage Resistance (Armor Bonus)
       SMT_ARMOR_SHRED_RESISTANCE: int           # Reduce armor damage by % (Generic damage sources)
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: int    # Reduce armor damage by % (Plasma damage)
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: int     # Reduce armor damage by % (Melta damage)
+      SMT_ARMOR_MORALE_RESISTANCE: int          # Reduce morale damage by %
+      SMT_ARMOR_STUN_RESISTANCE: int            # Reduce stun damage by %
+      SMT_ARMOR_STAGGER_RESISTANCE: int         # Reduce Stamina damage by %
+      SMT_ARMOR_IMMOBILIZE_RESISTANCE: int      # Reduce TU damage by %
       ## Experience Gain
       ARMOR_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: int # gain up to this much PsiStrength when earning experience in battles
       ## Objective Units
@@ -114,6 +118,14 @@ extended:
       SMT_HEROICSAVE_HP: int #% of currenthp left after heroic save triggers
       ## Restricted Items
       SMT_RESTRICTED_ITEM_USER: int # Key for restricted items (1 = Chaplain, 2 = DW Marine, 4 = DW Captain) Supports combined values (7 = Chaplain + DW Marine + DW Captain)
+      ## Special Damage Resistance (Soldier Innate)
+      SMT_SOLDIER_SHRED_RESISTANCE: int         # Reduce armor damage by % (Generic damage sources)
+      SMT_SOLDIER_SHRED_PLASMA_RESISTANCE: int  # Reduce armor damage by % (Plasma damage)
+      SMT_SOLDIER_SHRED_MELTA_RESISTANCE: int   # Reduce armor damage by % (Melta damage)
+      SMT_SOLDIER_MORALE_RESISTANCE: int        # Reduce morale damage by %
+      SMT_SOLDIER_STUN_RESISTANCE: int          # Reduce stun damage by %
+      SMT_SOLDIER_STAGGER_RESISTANCE: int       # Reduce Stamina damage by %
+      SMT_SOLDIER_IMMOBILIZE_RESISTANCE: int      # Reduce TU damage by %
       ## Alpha
       SMT_ALPHA_ATTACKER_MODIFIER: int
       ## Experience Gain
@@ -122,12 +134,21 @@ extended:
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: int   # gain up to this much PsiStrength when earning experience in battles
     RuleSkill:
       ## Captain
-      SKILL_SMT_COMMAND: int            # Command Type ( -1 - Check Commands, 1 - Armor of Contempt, 2 - Storm of Fire, 3 - Relentless Assault )
+      SKILL_SMT_COMMAND: int                    # Command Type ( -1 - Check Commands, 1 - Armor of Contempt, 2 - Storm of Fire, 3 - Relentless Assault )
       ## Infiltrator
       SKILL_STEALTH_RANGE: int                  # skill used to activate restealth - X = detection range
       SKILL_STEALTH_DURATION: int               # duration of stealth
       SKILL_STEALTH_MOVEPENALTY: int            # % modifier on movespeed while stealthed
       SKILL_STEALTH_CHECK: int                  # skill used to check stealth requirements (>0) or remove stealth (<0)
+    RuleSoldierBonus:
+      ## Special Damage Resistance (Unit Total)
+      SMT_BONUS_SHRED_RESISTANCE: int           # Reduce armor damage by % (Generic damage sources)
+      SMT_BONUS_SHRED_PLASMA_RESISTANCE: int    # Reduce armor damage by % (Plasma damage)
+      SMT_BONUS_SHRED_MELTA_RESISTANCE: int     # Reduce armor damage by % (Melta damage)
+      SMT_BONUS_MORALE_RESISTANCE: int          # Reduce morale damage by %
+      SMT_BONUS_STUN_RESISTANCE: int            # Reduce stun damage by %
+      SMT_BONUS_STAGGER_RESISTANCE: int         # Reduce Stamina damage by %
+      SMT_BONUS_IMMOBILIZE_RESISTANCE: int      # Reduce TU damage by %
     BattleUnit:
       ## Buffs
       SMT_OVERWATCH_BUFF_ENDTURN: int   # store buff duration
@@ -162,6 +183,14 @@ extended:
       ## Shields
       SMT_SHIELD_ENDTURN: int                   # store duration for shield from item/ability
       UNIT_SHIELD_COOLDOWN: int                 # limit for reusing shield items
+      ## Special Damage Resistance (Unit Total)
+      SMT_UNIT_SHRED_RESISTANCE: int            # Reduce armor damage by % (Generic damage sources)
+      SMT_UNIT_SHRED_PLASMA_RESISTANCE: int     # Reduce armor damage by % (Plasma damage)
+      SMT_UNIT_SHRED_MELTA_RESISTANCE: int      # Reduce armor damage by % (Melta damage)
+      SMT_UNIT_MORALE_RESISTANCE: int           # Reduce morale damage by %
+      SMT_UNIT_STUN_RESISTANCE: int             # Reduce stun damage by %
+      SMT_UNIT_STAGGER_RESISTANCE: int          # Reduce Stamina damage by %
+      SMT_UNIT_IMMOBILIZE_RESISTANCE: int       # Reduce TU damage by %
     BattleGame:
       ## Craft Turrets
       SMT_RAZOR_HBOLTER_COUNT: int  # number of Razorback HeavyBolter tokens

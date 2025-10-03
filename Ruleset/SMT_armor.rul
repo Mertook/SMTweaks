@@ -8,74 +8,158 @@ armors:
     underArmor: 60
 
   - &ARMOR_TACTICAL                         #TACTICAL ARMOR VALUES
-    update: STR_PERSONAL_ARMOR_UC
-    damageModifier: #MARINE ARMOR
-      - 1.0 #none
+    type: STR_PERSONAL_ARMOR_UC
+    visibilityAtDay: 0
+    visibilityAtDark: 20 # strong but not perfect
+    personalLight: 5 # adjust all new armors to the rosigma standard
+    heatVision: 20 #Add anti-smoke vision to all marine armour
+    antiCamouflageAtDay: 8
+    antiCamouflageAtDark: 8
+    psiCamouflage: -30
+    psiVision: 0
+    overKill: 1.0 # harder to melt
+    recovery:
+      energy:
+        stamina: 0.4 # default 0.33, marine bonus
+      stun:
+        flatOne: 1
+        health: 0.03 # 3% of health added as bonus stun recovery
+      morale:
+        flatOne: 5
+        psiSkill: 0.2 # 20% of devotion as additional morale recovery
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.02 # psyker strength barely helps
+      psiSkill: 1.5 #FAITH IS MY SHIELD
+      moraleCurrent: 1.5 #discipline and resolve reinforces faith
+    frontArmor: 120
+    sideArmor: 110
+    rearArmor: 90
+    underArmor: 120
+    stats:
+      health: 40
+    damageModifier:
+      - 1.0 #SUPPORT
       - 1.0 #AP
-      - 0.6 #FLAMES - was 0.8
+      - 0.6 #FLAMES
       - 0.7 #HE
-      - 0.8 #LASCANON
-      - 1.0 #PLASMA - was 1.1
-      - 1.0 #STUN - was 1.1
-      - 1.0 #MELEE - was 1.1
-      - 0.8 #ACID - was 1.0
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.8 #ACID
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
-    frontArmor: 120 # base 120
-    sideArmor: 110 # base 110
-    rearArmor: 100 # base 100
-    underArmor: 120 # base 120
+      - 1.0 #GRAV
+      - 1.0 #WARP
+      - 1.0 #SONIC
+    tags:
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_ASTARTES: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 33
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
+      INTIMIDATION_RESISTANCE: 50
+      SMT_ARMOR_STAGGER_RESISTANCE: 33         # Reduce Stamina damage by %
+      SMT_ARMOR_IMMOBILIZE_RESISTANCE: 33      # Reduce TU damage by %
+      INFECTION_RESIST: 10
 
   - &ARMOR_TERMINATOR                       #TERMINATOR ARMOR VALUES
-    update: STR_POWER_SUIT_UC
-    damageModifier: #TERMINATOR ARMOR 2.7 values
-      - 1.0 #none
-      - 0.7 #AP (was 0.6)
+    type: STR_POWER_SUIT_UC
+    visibilityAtDay: 0
+    visibilityAtDark: 25
+    personalLight: 5
+    heatVision: 33
+    antiCamouflageAtDay: 8
+    antiCamouflageAtDark: 8
+    psiCamouflage: -30
+    psiVision: 0
+    overKill: 1.0 # harder to melt
+    recovery:
+      energy:
+        stamina: 0.4
+      stun:
+        flatOne: 1
+        health: 0.03
+      morale:
+        flatOne: 5
+        psiSkill: 0.2
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.02 # psyker strength barely helps
+      psiSkill: 1.5 #FAITH IS MY SHIELD
+      moraleCurrent: 1.5 #discipline and resolve reinforces faith
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 0.8 #AP
       - 0.3 #FLAMES
-      - 0.6 #HE (was 0.4)
-      - 0.8 #LASCANON
+      - 0.6 #HE
+      - 1.0 #LASCANON
       - 0.8 #PLASMA
       - 1.0 #STUN
-      - 0.8 #MELEE (was 0.9)
-      - 0.6 #ACID (was 0.8)
+      - 1.0 #MELEE
+      - 0.6 #ACID
       - 0.0 #SMOKE
       - 0.2 #IMPACT
-      - 0.8 #MELTA (was 1.0)
+      - 1.0 #MELTA
+      - 1.2 #GRAV
+      - 1.0 #WARP
+      - 1.0 #SONIC
     frontArmor: 180 #was 150
     sideArmor: 175 #was 130
     rearArmor: 125 #was 100
-    underArmor: 175  #was 150
+    underArmor: 160  #was 150
+    tags:
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_ASTARTES: 1
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+      ARMOR_REGENERATE_HEALTH_BURN_TOGGLE: -1
+      SMT_ARMOR_SHRED_RESISTANCE: 66
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 50
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 33
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalty
+      INTIMIDATION_RESISTANCE: 66
+      SMT_ARMOR_STAGGER_RESISTANCE: 66
+      SMT_ARMOR_IMMOBILIZE_RESISTANCE: 66
+      INFECTION_RESIST: 10
 
 ### FIRSTBORN
   - &STR_MARINE_ARMOR                       #TACTICAL TEMPLATE
     update: STR_PERSONAL_ARMOR_UC           #TACTICAL
-    visibilityAtDay: 40
-    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
+    visibilityAtDay: 0
+    visibilityAtDark: 20 # strong but not perfect
+    personalLight: 5 # adjust all new armors to the rosigma standard
     heatVision: 20 #Add anti-smoke vision to all marine armour
     antiCamouflageAtDay: 8
     antiCamouflageAtDark: 8
+    psiCamouflage: -30
+    psiVision: 0
+    overKill: 1.0 # harder to melt
+    recovery:
+      energy:
+        stamina: 0.4 # default 0.33, marine bonus
+      stun:
+        flatOne: 1
+        health: 0.03 # 3% of health added as bonus stun recovery
+      morale:
+        flatOne: 5
+        psiSkill: 0.2 # 20% of devotion as additional morale recovery
     loftempsSet: [ 3 ]
     psiDefence:
-      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
-      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
-      moraleCurrent: 1.5 #discipline and resolve reinforces their faith
-    frontArmor: 120 # base 125
-    sideArmor: 110 # base 120
-    rearArmor: 100 # base 100
-    underArmor: 120 # base 125
-    # stats: # No values inherited from this, defined in each armor
-      # tu: 0             # base 10 
-      # stamina: 0        # base 20 
-      # health: 0         # base 10 
-      # bravery: 0        # base 0  
-      # reactions: 0      # base 10 
-      # firing: 0         # base 0  
-      # throwing: 0       # base 5  
-      # strength: 0       # base 10 
-      # psiStrength: 0    # base 0  
-      # psiSkill: 0       # base 0  
-      # melee: 0          # base 10 
+      psiStrength: 0.02 # psyker strength barely helps
+      psiSkill: 1.5 #FAITH IS MY SHIELD
+      moraleCurrent: 1.5 #discipline and resolve reinforces faith
+    frontArmor: 120
+    sideArmor: 110
+    rearArmor: 90
+    underArmor: 120
+    stats:
+      health: 40
     damageModifier: #MARINE ARMOR
       - 1.0 #none
       - 1.0 #AP
@@ -3755,6 +3839,61 @@ armors:
   - type: STR_MKX_BIKE_LV4_UC
     refNode: *REF_MKX_BIKE
 
+### Grey Knights
+  - type: STR_GK_TACTICAL_UC                # Grey Knight Tactical
+    refNode: *ARMOR_TACTICAL
+    corpseBattle:
+      - STR_GKTAC_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    storeItem: STR_NONE
+    zombiImmune: true
+    stats:
+      tu: 10
+      stamina: 0
+      strength: 10
+      reactions: 10
+      firing: 0
+      melee: 10
+      throwing: 10
+      psiStrength: 0
+      psiSkill: 0
+    builtInWeapons:
+      - INV_NULL_3X1_BACKPACK
+    units:
+      - STR_GREYKNIGHT
+    tags:
+      INFECTION_RESIST: 100 #corruption immune - Grey Knight bonus
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+  - type: STR_GK_TACTICAL_SB_UC             # Grey Knight Tactical (Stormbolter)
+    refNode: *ARMOR_TACTICAL
+    corpseBattle:
+      - STR_GKTAC_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    storeItem: STR_NONE
+    zombiImmune: true
+    stats:
+      tu: 10
+      stamina: 0
+      strength: 10
+      reactions: 10
+      firing: 0
+      melee: 10
+      throwing: 10
+      psiStrength: 0
+      psiSkill: 0
+    builtInWeapons:
+      - STR_GK_HB
+      - INV_NULL_3X1_BACKPACK
+    units:
+      - STR_GREYKNIGHT
+    tags:
+      INFECTION_RESIST: 100 #corruption immune - Grey Knight bonus
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
+      ARMOR_ENERGY_SHIELD_DECAY: 75
 ### Other Marines
   - update: STR_BLOODRAVENS_TACTICAL_ARMOR      # Bloodraven Tactical
     refNode: *STR_MARINE_ARMOR
@@ -3849,8 +3988,14 @@ armors:
     visibilityAtDay: 40
     visibilityAtDark: 25
     heatVision: 20
+    psiVision: 0
     antiCamouflageAtDay: 8
     antiCamouflageAtDark: 8
+    personalLight: 5
+    recovery:
+      energy:
+        stamina: 0.33
+        flatOne: 10 # built in bionics
     painImmune: true
     frontArmor: 90
     sideArmor: 80
@@ -3873,6 +4018,7 @@ armors:
       - 1.0 #MELTA
       - 0.8 #GRAV
       - 1.0 #WARP
+      - 1.0 #SONIC
     loftempsSet: [ 3 ]
     builtInWeapons:
       - STR_TECH_REPAIRTOOL

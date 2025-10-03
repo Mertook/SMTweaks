@@ -1801,16 +1801,30 @@ ufopaedia:
     text: STR_DW_PLASMA_GRENADE_UFOPEDIA
     listOrder: 21130
 
-  - id: STR_HEAVY_PLASMA_TERRAN  # Heavy Plasma
+  - id: STR_HEAVY_PLASMA_TERRAN             # Heavy Plasma
     requires:
       - STR_HEAVY_PLASMA_DEP1
-  - id: STR_HEAVY_PLASMA_MC  # Master Crafted Heavy Plasma
+  - id: STR_HEAVY_PLASMA_MC                 # Master Crafted Heavy Plasma
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1MCHP.SPK
+    text: STR_MASTER_UFOPEDIA
+    pages:
+      - title: STR_HEAVY_PLASMA_MC
+        text: STR_HEAVY_PLASMA_MC_CODEX
+      - title: STR_HEAVY_PLASMA_MC
+        text: STR_MAY_OVER_HEAT_IMPROVED_UFOPEDIA
     requires:
       - STR_HEAVY_PLASMA_DEP1
+      - STR_MASTER_CRAFTING
   - id: STR_HEAVY_PLASMA_CLIP
     requires:
       - STR_HEAVY_PLASMA_DEP1
 
+  - id: STR_ACCATRAN_ROCKET_LAUNCHER
+    requires:
+      - STR_GUARD_AND_INQUISITION
+      - STR_NOT_CHAOSCULT
 ###BOLTERS
   - id: STR_BOLTER_ENFORCER                 # Light Bolter (Locke)
     type_id: 14
@@ -1830,7 +1844,7 @@ ufopaedia:
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: 1MB.SPK
-    text: STR_LIGHT_BOLTERS_UFOPEDIA
+    text: STR_BOLTER_LIGHT_ULTRA_CODEX
 
   - id: STR_BOLTPISTOL_DEAZ                 # Light Boltpistol (Deaz)
     type_id: 14
@@ -1945,6 +1959,11 @@ ufopaedia:
     image_id: 1HB.SPK
     text: STR_AUTO_CANNON_UFOPEDIA
     listOrder: 350006
+
+
+  - id: STR_SERVITOR  # Support Servitor
+    requires:
+      - STR_SERVITOR_BASIC
 
 ### Stats for Nerds only
   - id: STR_SM_OFFICER_FIST                 # Officer Inspire

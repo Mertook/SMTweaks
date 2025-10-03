@@ -1,0 +1,85 @@
+commendations:
+  - type: STR_TERMINATOR_CROSS # Crux Terminatus
+    description: STR_TERMINATOR_CROSS_DESCRIPTION
+    sprite: 5
+    requires: [STR_PICKED_LOYALIST_STRATEGY]
+    units: [STR_SOLDIER, STR_SOLDIER_TERMINATOR, STR_SOLDIER_CAPTAIN, STR_SOLDIER_CHAPLAIN, STR_SOLDIER_LIBRARIAN, STR_SOLDIER_LIBRARIAN_TERM, STR_SOLDIER_APOTH, STR_SOLDIER_APOTHVET, STR_SOLDIER_TECH, STR_SOLDIER_TECHVET, STR_FALLEN, STR_PRIMARISLV1, STR_PRIMARISLV2, STR_PRIMARISLV3, STR_PRIMARISLV4, STR_PRIMARISLV5, STR_PRIMARIS_APOTH, STR_PRIMARIS_APOTH_BIO, STR_PRIMARIS_TECHNOVICE, STR_PRIMARIS_TECHMARINE, STR_PRIMARIS_JUDICAR, STR_PRIMARIS_CHAPLAIN, STR_PRIMARIS_LIBRARIANLV1, STR_PRIMARIS_LIBRARIANLV2, STR_PRIMARIS_LIBRARIANLV3, STR_BLOODRAVENS_MARINE, STR_GREYKNIGHT, STR_ULTRAMARINE, STR_ULTRAMARINE_PRIMARIS, STR_IMPERIALF, STR_IMPERIALF_PRIMARIS, STR_BLOODANGELS, STR_BLOODANGELS_PRIMARIS, STR_SALAMANDAR, STR_SALAMANDAR_PRIMARIS, STR_BLACKT, STR_BLACKT_PRIMARIS, STR_WHITES, STR_WHITES_PRIMARIS, STR_DARKANGELS, STR_DARKANGELS_PRIMARIS, STR_SPACEW, STR_SPACEW_PRIMARIS, STR_CRISMONF, STR_CRISMONF_PRIMARIS, STR_ULTRAMARINE_LEADER, STR_IMPERIALF_LEADER, STR_BLOODANGELS_LEADER, STR_SALAMANDAR_LEADER, STR_BLACKT_LEADER, STR_WHITES_LEADER, STR_DARKANGELS_LEADER, STR_SPACEW_LEADER, STR_CRISMONF_LEADER]
+    soldierBonusTypes: [STR_BONUS_TERMINATOR]
+    criteria:
+      killsWithCriteriaCareer: [30] # was 30
+      totalWins: [15] # was 0
+      totalMonthlyService: [3] # was 0
+    killCriteria:
+       -
+         - [1, ["STATUS_DEAD", "FACTION_HOSTILE"]]
+
+  - type: STR_HONOR_MEDAL # Mark of Honor
+    description: STR_HONOR_MEDAL_DESCRIPTION
+    sprite: 5
+    requires: [STR_PICKED_LOYALIST_STRATEGY]
+    criteria:
+      totalScore: [2000,4000,6000,8000,12000,16000,24000,32000,40000,48000]
+    soldierBonusTypes: [STR_BONUS_HONOR_1, STR_BONUS_HONOR_2, STR_BONUS_HONOR_3, STR_BONUS_HONOR_4, STR_BONUS_HONOR_5, STR_BONUS_HONOR_6, STR_BONUS_HONOR_7, STR_BONUS_HONOR_8, STR_BONUS_HONOR_9, STR_BONUS_HONOR_10]
+
+
+soldierBonuses:
+  - name: STR_BONUS_TERMINATOR
+    stats:
+      melee: 10
+      firing: 10
+      bravery: 10
+      psiSkill: 10
+    tags:
+      SMT_BONUS_MORALE_RESISTANCE: 33
+
+  - name: STR_BONUS_HONOR_1
+    stats:
+      melee: 1
+      psiSkill: 1
+  - name: STR_BONUS_HONOR_2
+    stats:
+      melee: 1
+      firing: 1
+      psiSkill: 2
+  - name: STR_BONUS_HONOR_3
+    stats:
+      melee: 2
+      firing: 1
+      psiSkill: 3
+  - name: STR_BONUS_HONOR_4
+    stats:
+      melee: 2
+      firing: 2
+      psiSkill: 4
+  - name: STR_BONUS_HONOR_5
+    stats:
+      melee: 3
+      firing: 2
+      psiSkill: 5
+  - name: STR_BONUS_HONOR_6
+    stats:
+      melee: 3
+      firing: 3
+      psiSkill: 6
+  - name: STR_BONUS_HONOR_7
+    stats:
+      melee: 4
+      firing: 3
+      psiSkill: 7
+  - name: STR_BONUS_HONOR_8
+    stats:
+      melee: 4
+      firing: 4
+      psiSkill: 8
+  - name: STR_BONUS_HONOR_9
+    stats:
+      melee: 5
+      firing: 4
+      psiSkill: 9
+  - name: STR_BONUS_HONOR_10
+    stats:
+      melee: 5
+      firing: 5
+      psiSkill: 10
+
+

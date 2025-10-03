@@ -9,7 +9,7 @@ items:
     invWidth: 0
     invHeight: 0
     recover: true
-    recoveryPoints: 20
+    recoveryPoints: 50
     ufopediaType: STR_GENESEED_DETAILS
 
   - type: STR_SMT_GENESEED_IMPURE           # Refined into Geneseed 10:1
@@ -22,8 +22,17 @@ items:
     invWidth: 0
     invHeight: 0
     recover: true
-    recoveryPoints: 2
+    recoveryPoints: 5
     ufopediaType: STR_GENESEED_DETAILS
+
+  - type: STR_CAPTAIN_TOKEN                 # geoscape item used for neophyte promotion
+    battleType: 0
+    size: 0
+    bigSprite: 99
+    invWidth: 0
+    invHeight: 0
+    recover: true
+    recoveryPoints: 20
 
   - type: STR_ALIEN_ALLOYS
     size: 0.1
@@ -1085,6 +1094,10 @@ items:
       mana: true
     tags:
       TURRET_RELOAD_TURNS: 2
+
+  - type: STR_SERVITOR                      # Support Servitor
+    requiresBuy:
+      - STR_SERVITOR_BASIC
 
   - type: STR_CRATED_RHINO                  # Boxed Razorback
     costSell: 400000 # was 0, set so that you don't have to unpack & then sell vehicle
@@ -2512,6 +2525,16 @@ items:
     invWidth: 2
     invHeight: 3
     armor: 80
+    battleType: 11
+    recover: false
+  - type: STR_GKTAC_CORPSE
+    name: STR_CORPSE
+    weight: 40
+    bigSprite: 702
+    floorSprite: 702
+    invWidth: 2
+    invHeight: 3
+    armor: 150
     battleType: 11
     recover: false
 

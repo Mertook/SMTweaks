@@ -1241,7 +1241,22 @@ ufopaedia:
     image_id: TECHPRIESTUFO.SPK #temp
     #listOrder: 2018
 
+  - id: STR_GK_HB
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_GK_HB_CODEX
+    image_id: 1SB.SPK
+    requires:
+      - STR_HB_DEP1
+
 ### 90000  - Imperium Armor
+  - id: STR_GK_TACTICAL_UC                  # Grey Knight Tactical
+    type_id: 15
+    section: STR_ARMORPEDIA
+    image_id: 0GK.SPK
+    text: STR_GK_TACTICAL_UC_CODEX
+    #listOrder: 5050
+
   - id: STR_ENGINSEER_ARMOR_UC              # Enginseer
     type_id: 15
     section: STR_ARMORPEDIA

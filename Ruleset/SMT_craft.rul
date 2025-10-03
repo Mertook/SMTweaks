@@ -1956,17 +1956,28 @@ crafts:
       - [5, 4, 2, 4]
 
   - type: STR_ARVUS_GK                      # Arvus (Grey Knight)
-    speedMax: 700 # was 600, worse than Valkyrie
+    speedMax: 650 # was 600
+    refuelRate: 20
     battlescapeTerrainData:
       name: ARVUSGK
       mapDataSets:
         - BLANKS
         - ARVUSGK
+        - ARVUS_DOORS
         - SMTBOMBARD
       mapBlocks:
         - name: ARVUSGK
           width: 10
           length: 20
+    deployment:
+      - [4, 7, 0, 0]
+      - [5, 7, 0, 0]
+      - [4, 8, 0, 0]
+      - [5, 8, 0, 0]
+      - [4, 9, 0, 0]
+      - [5, 9, 0, 0]
+      - [4, 10, 0, 6]
+      - [5, 10, 0, 2]
 
   - type: STR_STORMRAVEN_GK                 # GK Stormraven
     battlescapeTerrainData:

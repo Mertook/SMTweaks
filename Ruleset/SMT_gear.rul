@@ -2371,6 +2371,7 @@ items:
     autoShots: 3 # was 0
     tags:
       ITEM_IS_HEAVY_WEAPON: 1 # terminator handgun
+      ITEM_RECOIL: 50 # greatly reduced, inbuilt bonus
       REACTION_MULTIPLIER: 200 # +100% reactions, pistol grip
 
   - type: STR_HB_CLIP                       # Stormbolter Ammo
@@ -3842,6 +3843,7 @@ items:
 
   - type: STR_PLASMA_PISTOL_CLIP            # Plasma Pistol Ammo
     refNode: *DMG_PLASMA_STD
+    requires: []
     size: 0.05
     power: 90
     powerRangeReduction: 5
@@ -3860,6 +3862,7 @@ items:
 
   - type: STR_PLASMA_RIFLE_CLIP             # Plasma Rifle Ammo
     refNode: *DMG_PLASMA_STD
+    requires: []
     size: 0.05
     power: 100
     powerRangeReduction: 5
@@ -3874,6 +3877,7 @@ items:
 
   - type: STR_HEAVY_PLASMA_CLIP             # Heavy Plasma Ammo
     refNode: *DMG_PLASMA_STD
+    requires: []
     size: 0.05
     weight: 12 # was 20
     power: 120 # was 120
@@ -3892,6 +3896,7 @@ items:
 
   - type: STR_PLASMA_SPRAY_CLIP             # Plasma Carbine Ammo
     refNode: *DMG_PLASMA_STD
+    requires: []
     size: 0.05
     power: 70
     powerRangeReduction: 5

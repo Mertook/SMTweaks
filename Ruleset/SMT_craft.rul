@@ -72,6 +72,7 @@ units:
   - type: STR_SMT_RAZORBACK_BLANK           # Razorback Blank to be replaced by (Default)
     refNode: *STR_SMT_RAZORBACK_DEFAULT
     armor: STR_SMT_RAZOR_DEFAULT_ARMOR
+    cosmetic: true
 
   - type: STR_SMT_RAZORBACK_STORMBOLT       # Razorback with Stormbolter
     refNode: *STR_SMT_RAZORBACK_DEFAULT
@@ -3110,6 +3111,10 @@ crafts:
       - [4, 15, 2, 4]
       - [5, 15, 2, 4]
 
+
+craftWeapons:
+  - type: STR_ASSCANNON_UC                  # Craft Assault Cannon
+    rearmRate: 160
 ### ARBITES CRAFT
 
 ### FINAL MISSION CRAFT

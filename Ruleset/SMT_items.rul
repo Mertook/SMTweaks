@@ -693,6 +693,276 @@ items:
     invWidth: 1 # was 2x1
     invHeight: 2
 
+  - type: STR_AUTOGUN_BASIC                 # Autogun (Basic)
+    battleType: 1
+    categories: [STR_CAT_AUTO]
+    invWidth: 1
+    invHeight: 3
+    twoHanded: true
+    bigSprite: 335
+    floorSprite: 335
+    handSprite: 576
+    fireSound: {mod: 40k, index: 4}
+    bulletSprite: {mod: 40k, index: 2}
+    bulletSpeed: 25
+    armor: 300
+    attraction: 1
+    listOrder: 10740
+    tags:
+      ITEM_COLOR_CHANGES_WITH_AMMO: 2
+
+  - type: STR_AUTOGUN_ADV                   # Autogun (High Grade)
+    battleType: 1
+    categories: [STR_CAT_AUTO]
+    invWidth: 1
+    invHeight: 3
+    twoHanded: true
+    bigSprite: 338
+    floorSprite: 338
+    handSprite: 584
+    fireSound: {mod: 40k, index: 4}
+    bulletSprite: {mod: 40k, index: 2}
+    bulletSpeed: 25
+    armor: 300
+    attraction: 1
+    listOrder: 10740
+    tags:
+      ITEM_COLOR_CHANGES_WITH_AMMO: 2
+
+  - type: STR_AUTOGUN_ADVGL                 # Autogun (High Grade GL)
+    battleType: 1
+    categories: [STR_CAT_AUTO]
+    invWidth: 1
+    invHeight: 3
+    twoHanded: true
+    bigSprite: 341
+    floorSprite: 341
+    handSprite: 592
+    fireSound: {mod: 40k, index: 4}
+    bulletSprite: {mod: 40k, index: 2}
+    bulletSpeed: 25
+    armor: 300
+    attraction: 1
+    listOrder: 10740
+    tags:
+      ITEM_COLOR_CHANGES_WITH_AMMO: 2
+
+  - type: STR_AUTOGUN_AGRI                  # Autogun (Agripinaa Carbine)
+    battleType: 1
+    categories: [STR_CAT_AUTO]
+    invWidth: 1
+    invHeight: 3
+    twoHanded: true
+    bigSprite: 344
+    floorSprite: 344
+    handSprite: 600
+    fireSound: {mod: 40k, index: 4}
+    bulletSprite: {mod: 40k, index: 2}
+    bulletSpeed: 25
+    armor: 300
+    attraction: 1
+    listOrder: 10740
+    tags:
+      ITEM_COLOR_CHANGES_WITH_AMMO: 2
+
+  - type: STR_AUTOGUN_AGRI_B                # Autogun (Agripinaa Scoped Carbine)
+    battleType: 1
+    categories: [STR_CAT_AUTO]
+    invWidth: 1
+    invHeight: 3
+    twoHanded: true
+    bigSprite: 347
+    floorSprite: 347
+    handSprite: 608
+    fireSound: {mod: 40k, index: 4}
+    bulletSprite: {mod: 40k, index: 2}
+    bulletSpeed: 25
+    armor: 300
+    attraction: 1
+    listOrder: 10740
+    tags:
+      ITEM_COLOR_CHANGES_WITH_AMMO: 2
+
+  - type: STR_AUTOGUN_ARMA                  # Autogun (Armageddon)
+    battleType: 1
+    categories: [STR_CAT_AUTO]
+    invWidth: 1
+    invHeight: 3
+    twoHanded: true
+    bigSprite: 350
+    floorSprite: 350
+    handSprite: 616
+    fireSound: {mod: 40k, index: 4}
+    bulletSprite: {mod: 40k, index: 2}
+    bulletSpeed: 25
+    armor: 300
+    attraction: 1
+    listOrder: 10740
+    tags:
+      ITEM_COLOR_CHANGES_WITH_AMMO: 2
+
+  - type: STR_AUTOGUN_ARMA_B                # Autogun (Armageddon Bayonet)
+    battleType: 1
+    categories: [STR_CAT_AUTO]
+    invWidth: 1
+    invHeight: 3
+    twoHanded: true
+    bigSprite: 353
+    floorSprite: 353
+    handSprite: 624
+    fireSound: {mod: 40k, index: 4}
+    bulletSprite: {mod: 40k, index: 2}
+    bulletSpeed: 25
+    armor: 300
+    attraction: 1
+    listOrder: 10740
+    tags:
+      ITEM_COLOR_CHANGES_WITH_AMMO: 2
+
+  - type: STR_AUTOGUN_HEAD                  # Autogun (Headhunter)
+    battleType: 1
+    categories: [STR_CAT_AUTO]
+    invWidth: 2 # big gun
+    invHeight: 3
+    twoHanded: true
+    bigSprite: 356
+    floorSprite: 356
+    handSprite: 632
+    fireSound: {mod: 40k, index: 4}
+    bulletSprite: {mod: 40k, index: 2}
+    bulletSpeed: 25
+    armor: 300
+    attraction: 1
+    listOrder: 10740
+    tags:
+      ITEM_COLOR_CHANGES_WITH_AMMO: 2
+
+  - type: STR_AUTOGUN_CLIP                  # Autogun Ammo
+    battleType: 2
+    categories: [STR_CAT_AUTO]
+    requiresBuyBaseFunc: [IMPERIUM]
+    explosionSpeed: 5
+    invWidth: 1
+    invHeight: 1
+    bigSprite: 359
+    floorSprite: {mod: 40k, index: 1011}
+    handSprite: {mod: 40k, index: 1088}
+    hitSound: {mod: 40k, index: 22}
+    hitAnimation: {mod: 40k, index: 26}
+    armor: 300
+    attraction: 1
+    listOrder: 10750
+    tags:
+      ITEM_IS_PALETTE_SWAP: 1
+      ITEM_BASE_COLOR: 2
+      ITEM_SWAP_BASE_COLOR: 15
+      ITEM_AMMO_COLOR: 15
+
+  - type: STR_AUTOGUN_CLIP_AP               # Autogun AP Ammo
+    battleType: 2
+    categories: [STR_CAT_AUTO]
+    requiresBuyBaseFunc: [IMPERIUM]
+    explosionSpeed: 5
+    invWidth: 1
+    invHeight: 1
+    bigSprite: 359
+    floorSprite: {mod: 40k, index: 1011}
+    handSprite: {mod: 40k, index: 1088}
+    hitSound: {mod: 40k, index: 22}
+    hitAnimation: {mod: 40k, index: 26}
+    armor: 300
+    attraction: 1
+    listOrder: 10751
+    tags:
+      ITEM_IS_PALETTE_SWAP: 1
+      ITEM_BASE_COLOR: 2
+      ITEM_SWAP_BASE_COLOR: 1
+      ITEM_AMMO_COLOR: 1
+
+  - type: STR_AUTOGUN_CLIP_HP               # Autogun Expander Ammo
+    battleType: 2
+    categories: [STR_CAT_AUTO]
+    requiresBuyBaseFunc: [IMPERIUM]
+    explosionSpeed: 5
+    invWidth: 1
+    invHeight: 1
+    bigSprite: 359
+    floorSprite: {mod: 40k, index: 1011}
+    handSprite: {mod: 40k, index: 1088}
+    hitSound: {mod: 40k, index: 22}
+    hitAnimation: {mod: 40k, index: 26}
+    armor: 300
+    attraction: 1
+    listOrder: 10752
+    tags:
+      ITEM_AMMO_COLOR: 2
+
+  - type: STR_AUTOGUN_CLIP_DRUM             # Autogun Drum
+    battleType: 2
+    categories: [STR_CAT_AUTO]
+    requiresBuyBaseFunc: [IMPERIUM]
+    explosionSpeed: 5
+    invWidth: 1
+    invHeight: 1
+    bigSprite: 360
+    floorSprite: {mod: 40k, index: 1011}
+    handSprite: {mod: 40k, index: 1088}
+    hitSound: {mod: 40k, index: 22}
+    hitAnimation: {mod: 40k, index: 26}
+    armor: 300
+    attraction: 1
+    listOrder: 10753
+    tags:
+      ITEM_IS_PALETTE_SWAP: 1
+      ITEM_BASE_COLOR: 2
+      ITEM_SWAP_BASE_COLOR: 15
+      ITEM_AMMO_COLOR: 15
+      ITEM_GETS_FACTION_RECOLOR: 0
+      ITEM_GETS_ACCENT_RECOLOR: 0
+      ITEM_ACCENT_COLOR: 0
+
+  - type: STR_AUTOGUN_CLIP_DRUM_KRAKEN      # Autogun AP Drum
+    battleType: 2
+    categories: [STR_CAT_AUTO]
+    requiresBuyBaseFunc: [IMPERIUM]
+    explosionSpeed: 5
+    invWidth: 1
+    invHeight: 1
+    bigSprite: 360
+    floorSprite: {mod: 40k, index: 1011}
+    handSprite: {mod: 40k, index: 1088}
+    hitSound: {mod: 40k, index: 22}
+    hitAnimation: {mod: 40k, index: 26}
+    armor: 300
+    attraction: 1
+    listOrder: 10754
+    tags:
+      ITEM_IS_PALETTE_SWAP: 1
+      ITEM_BASE_COLOR: 2
+      ITEM_SWAP_BASE_COLOR: 1
+      ITEM_AMMO_COLOR: 1
+      ITEM_GETS_FACTION_RECOLOR: 0
+      ITEM_GETS_ACCENT_RECOLOR: 0
+      ITEM_ACCENT_COLOR: 0
+
+  - type: STR_AUTOGUN_CLIP_DRUM_HP          # Autogun Expander Drum
+    battleType: 2
+    categories: [STR_CAT_AUTO]
+    requiresBuyBaseFunc: [IMPERIUM]
+    explosionSpeed: 5
+    invWidth: 1
+    invHeight: 1
+    bigSprite: 360
+    floorSprite: {mod: 40k, index: 1011}
+    handSprite: {mod: 40k, index: 1088}
+    hitSound: {mod: 40k, index: 22}
+    hitAnimation: {mod: 40k, index: 26}
+    armor: 300
+    attraction: 1
+    listOrder: 10755
+    tags:
+      ITEM_AMMO_COLOR: 2
+
   - type: STR_BIKE_ARMOR                    # Bike Armor (Item)
     costBuy: 280000 # was 360k
     costSell: 140000 # was 140k

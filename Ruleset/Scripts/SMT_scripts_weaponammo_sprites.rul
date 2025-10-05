@@ -166,6 +166,19 @@ items:
     refNode: *REF_AMMO_SKIP_ONE
   - type: STR_CASTELLAN_DEFOREST
     refNode: *REF_AMMO_SKIP_ONE
+### Autogun Ammo
+  - type: STR_AUTOGUN_CLIP
+    refNode: *REF_AMMO_SKIP_ONE
+  - type: STR_AUTOGUN_CLIP_AP
+    refNode: *REF_AMMO_SKIP_ONE
+  - type: STR_AUTOGUN_CLIP_HP
+    refNode: *REF_AMMO_SKIP_ONE
+  - type: STR_AUTOGUN_CLIP_DRUM
+    refNode: *REF_AMMO_SKIP_TWO
+  - type: STR_AUTOGUN_CLIP_DRUM_KRAKEN
+    refNode: *REF_AMMO_SKIP_TWO
+  - type: STR_AUTOGUN_CLIP_DRUM_HP
+    refNode: *REF_AMMO_SKIP_TWO
 
 ### Weapons ###
 ### Bolters
@@ -256,6 +269,24 @@ items:
   - type: STR_BOLTPISTOL_SCOURGE    # Light Boltpistol (Scourge)
     refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
   - type: STR_BOLTPISTOL_SERAPHIM   # Light Boltpistol (Seraphim)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+
+### Autoguns
+  - type: STR_AUTOGUN_BASIC         # Autogun (Basic)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+  - type: STR_AUTOGUN_ADV           # Autogun (High Grade)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+  - type: STR_AUTOGUN_ADVGL         # Autogun (High Grade GL)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+  - type: STR_AUTOGUN_AGRI          # Autogun (Agripinaa Carbine)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+  - type: STR_AUTOGUN_AGRI_B        # Autogun (Agripinaa Carbine Scoped)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+  - type: STR_AUTOGUN_ARMA          # Autogun (Armageddon)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+  - type: STR_AUTOGUN_ARMA_B        # Autogun (Armageddon Bayonet)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+  - type: STR_AUTOGUN_HEAD          # Autogun (Headhunter)
     refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
 
 

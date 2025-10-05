@@ -47,6 +47,9 @@ research:
       - STR_NOT_STEEL_LEGION_STRATEGY
       - STR_HARDER_MISSIONS
       - STR_IMPERIUM_RESEARCH
+      - STR_STUBBERS_UNLOCK
+      - STR_AUTOGUNS_UNLOCK
+      - STR_LASGUNS_UNLOCK
 
     disables:
       - STR_NOT_CHAMBER
@@ -60,6 +63,9 @@ research:
     unlocks: !add
       - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
       - STR_40MM_AMMO
+      - STR_STUBBERS_UNLOCK
+      - STR_AUTOGUNS_UNLOCK
+      - STR_LASGUNS_UNLOCK
 
 ### Strategy Choice
   - name: STR_PICKED_LOYALIST_STRATEGY  # Loyalist Strat Chosen
@@ -456,6 +462,7 @@ research:
       - STR_SHOTGUNS_ADV
       - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
       - STR_40MM_AMMO
+      - STR_STUBBERS_UNLOCK
       - STR_IMPERIAL_CHURCH
 
 ### Faction Mid-tier
@@ -562,9 +569,32 @@ research:
     dependencies:
       - STR_GENERALLOCK
 
-  - name: STR_REINFORCEMENT  # Reinforcements Requisition
+  - name: STR_REINFORCEMENT             # Grey Knight Reinforcements Requisition
     dependencies:
       - STR_GENERALLOCK
+
+###Weapons
+  - name: STR_STUBBERS_UNLOCK           # Allow buying basic Stubbers
+    cost: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_AUTOGUNS_UNLOCK           # Allow buying Autoguns
+    cost: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_LASGUNS_UNLOCK            # Allow buying Lasguns
+    cost: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_HOTSHOT_AMMO              # Unlock Hotshot Ammo
+    cost: 280
+    points: 10
+    dependencies:
+      - STR_LASGUNS_UNLOCK
+      - STR_MIDTIER_PREREQ
 
 ### Craft
   - name: STR_INQUISITION_VALKYRIE

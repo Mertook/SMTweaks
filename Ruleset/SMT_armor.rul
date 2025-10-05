@@ -3848,6 +3848,26 @@ armors:
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     storeItem: STR_NONE
     zombiImmune: true
+    psiDefence: &Ref_GreyKnight_PsiDef
+      psiStrength: 0.5 # psyker training
+      psiSkill: 1.5
+      moraleCurrent: 1.5
+    damageModifier: &Ref_GreyKnight_Tac_DmgMod
+      - 1.0 #SUPPORT
+      - 1.0 #AP
+      - 0.6 #FLAMES
+      - 0.7 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.8 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.0 #MELTA
+      - 1.0 #GRAV
+      - 0.5 #WARP - Aegis Armor warding
+      - 1.0 #SONIC
     stats:
       tu: 10
       stamina: 0
@@ -3876,6 +3896,8 @@ armors:
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     storeItem: STR_NONE
     zombiImmune: true
+    psiDefence: *Ref_GreyKnight_PsiDef
+    damageModifier: *Ref_GreyKnight_Tac_DmgMod
     stats:
       tu: 10
       stamina: 0

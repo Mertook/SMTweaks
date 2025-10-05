@@ -743,6 +743,12 @@ items:
     ammo:
       0:
         compatibleAmmo: *Ref_Light_Bolter_Ammo
+      1:
+        compatibleAmmo: &Ref_Underslung_GL_Ammo
+          - STR_INCENDIARY_GRENADE40
+          - STR_KRAK_GRENADE40
+          - STR_MELTA_GRENADE40
+          - STR_PENITENCE_GRENADE40
     weight: 22 # was 25
     dropoff: 8 # was 5
     autoRange: 9 # was 10
@@ -778,6 +784,8 @@ items:
     ammo:
       0:
         compatibleAmmo: *Ref_Light_Bolter_Ammo
+      1:
+        compatibleAmmo: *Ref_Underslung_GL_Ammo
     dropoff: 7 # was 5
     autoRange: 11 # was 10
     snapRange: 16 # was 13
@@ -1690,7 +1698,7 @@ items:
     tuSnap: 20 #
     tuAimed: 0 #
     autoShots: 0
-    tuLoad: 10 # pistol bonus
+    tuLoad: 8 # pistol bonus
     tuUnload: 4 # pistol bonus
     inventoryMoveCost: # pistol
       basePercent: 75
@@ -1998,9 +2006,9 @@ items:
     tuAimed: 40
     ammo:
       0:
-        compatibleAmmo: [STR_RIFLE_CLIP, STR_RIFLE_CLIP_MC, STR_RIFLE_CLIP_AP, STR_RIFLE_CLIP_EX, STR_PISTOL_CLIP, STR_PISTOL_CLIP_AP, STR_PISTOL_CLIP_EX, STR_PISTOL_CLIP_MC]
+        compatibleAmmo: *Ref_Bolter_Ammo
       1:
-        compatibleAmmo: [STR_INCENDIARY_GRENADE40, STR_PENITENCE_GRENADE40, STR_KRAK_GRENADE40, STR_MELTA_GRENADE40]
+        compatibleAmmo: *Ref_Underslung_GL_Ammo
     confAimed:  # Grenade launcher 40mm
       ammoSlot: 1  # Grenades
       name: STR_LAUNCH_GRENADE
@@ -2360,7 +2368,7 @@ items:
     defaultInventorySlot: STR_LEFT_HAND
     dropoff: 8 # was 4
     autoRange: 8
-    snapRange: 14 # was 15
+    snapRange: 16 # was 15
     aimRange: 0
     accuracyAuto: 60
     accuracySnap: 80 # was 75
@@ -3290,8 +3298,9 @@ items:
 
 ### Assault/Auto Cannons
   - type: STR_ASSC_CLIP                     # Assault Cannon Ammo
+    weight: 25 # was 15
     power: 100
-    clipSize: 100
+    clipSize: 160 # was 100
     damageType: 1
     damageAlter: 
       ToArmorPre: 0.15 # was 0.1
@@ -3303,8 +3312,8 @@ items:
       RandomWound: false
 
   - type: STR_ASSC                          # Assault Cannon
-    weight: 90 # was 100 - +15 when loaded
-    sprayWaypoints: 4
+    weight: 80 # was 100 - +25 when loaded
+    sprayWaypoints: 6
     dropoff: 6 # was 4
     accuracySnap: 75 # was 70
     accuracyAuto: 45 # was 60
@@ -3313,7 +3322,7 @@ items:
     snapRange: 15
     aimRange: 0
     tuAimed: 0
-    tuAuto: 60 # was 60
+    tuAuto: 50 # was 60
     tuSnap: 30 # was 33
     confSnap:
       shots: 4 # was 4
@@ -3325,7 +3334,7 @@ items:
     tags:
       ITEM_IS_HEAVY_WEAPON: 5 # harsh penalty, meant for terminators
       ITEM_RECOIL: 130 # harsh requirement, meant for terminators
-      REACTION_MULTIPLIER: 75
+      REACTION_MULTIPLIER: 50
       REACTION_PENALTY_KNEELING_BYPASS: 0
 
   - &REF_AUTOCANNON_DMG_AP
@@ -3603,6 +3612,795 @@ items:
     tuSnap: 25
     tuAimed: 0
     compatibleAmmo: *Ref_Autocannon_Ammo_Mounted
+
+### Stubbers
+  - type: STR_STUB_GUN                      # Stubber Pistol
+    requiresBuy:
+      - STR_STUBBERS_UNLOCK
+      - STR_IMPERIAL_WEAPONS
+    size: 0.1
+    costBuy: 500
+    costSell: 360
+    weight: 5
+    compatibleAmmo: &Ref_Stubber_Ammo
+      - STR_STUB_GUN_AMMO
+      - STR_STUB_GUN_AMMO_AP
+      - STR_STUB_GUN_AMMO_WOUND
+      - STR_STUB_GUN_AMMO_HP
+      - STR_STUB_GUN_AMMO_INC
+    dropoff: 6
+    accuracySnap: 60
+    tuSnap: 20 # was 25
+    snapRange: 10
+    armor: 300
+    tuLoad: 8 # pistol bonus
+    tuUnload: 4 # pistol bonus
+    tags:
+      REACTION_MULTIPLIER: 200
+
+  - type: STR_STUB_RIFLE                    # Stubber Rifle
+    armor: 300
+    requiresBuy:
+      - STR_STUBBERS_UNLOCK
+      - STR_IMPERIAL_WEAPONS
+    size: 0.1
+    costBuy: 1500
+    costSell: 720
+    weight: 10
+    compatibleAmmo: *Ref_Stubber_Ammo
+    dropoff: 5
+    accuracySnap: 75
+    accuracyAimed: 110
+    tuSnap: 30
+    tuAimed: 70
+    snapRange: 18
+    aimRange: 25
+
+  - type: STR_SMG_STUB_GUN                  # Autostubber SMG
+    requiresBuy:
+      - STR_STUBBERS_UNLOCK
+      - STR_IMPERIAL_WEAPONS
+    size: 0.1
+    costBuy: 1000
+    costSell: 360
+    weight: 5
+    compatibleAmmo:
+      - STR_STUB_GUN_AMMO
+      - STR_STUB_GUN_AMMO_LONG
+      - STR_STUB_GUN_AMMO_AP
+      - STR_STUB_GUN_AMMO_WOUND
+      - STR_STUB_GUN_AMMO_HP
+      - STR_STUB_GUN_AMMO_INC
+    dropoff: 6
+    accuracySnap: 60
+    accuracyAuto: 45
+    tuSnap: 25
+    tuAuto: 33
+    autoShots: 6
+    confSnap:
+      shots: 3
+    snapRange: 10
+    autoRange: 6
+    armor: 300
+    inventoryMoveCost:
+      basePercent: 100 # was 50
+    tags:
+      REACTION_MULTIPLIER: 200
+
+  - &REF_STUBBER_AMMO                       # Stubber Ammo
+    type: STR_STUB_GUN_AMMO
+    size: 0.02
+    requiresBuy:
+      - STR_STUBBERS_UNLOCK
+    power: 42
+    damageType: 1
+    damageAlter:
+      ArmorEffectiveness: 1.2 # was 1.0
+      ToArmorPre: 0.05
+      ToArmor: 0.1
+    clipSize: 8
+
+  - type: STR_STUB_GUN_AMMO_LONG            # Stubber Extended Mag
+    refNode: *REF_STUBBER_AMMO
+    clipSize: 30 # 8 for normal clip
+
+  - type: STR_STUB_GUN_AMMO_AP              # Stubber AP Ammo
+    refNode: *REF_STUBBER_AMMO
+    requiresBuy:
+      - STR_STUBBERS_UNLOCK
+      - STR_ALIEN_ALLOYS
+    damageAlter:
+      ArmorEffectiveness: 0.6 # was 0.5
+      ToArmorPre: 0.02
+      ToArmor: 0.02
+      ToHealth: 0.9
+      ToStun: 0.1 # was 0.5
+
+  - type: STR_STUB_GUN_AMMO_WOUND           # Stubber Bleeder Ammo
+    refNode: *REF_STUBBER_AMMO
+    requiresBuy:
+      - STR_STUBBERS_UNLOCK
+      - STR_MEDI_KIT_PREREQ
+    damageAlter:
+      ArmorEffectiveness: 0.6 # was 0.5
+      ToArmorPre: 0
+      ToArmor: 0
+      ToHealth: 0.3 # was 0.2
+      ToStun: 0
+      ToWound: 0.3 # was 0.2
+      RandomWound: false
+
+  - type: STR_STUB_GUN_AMMO_HP              # Stubber Expander Ammo
+    refNode: *REF_STUBBER_AMMO
+    damageAlter:
+      ArmorEffectiveness: 1.5 # was 1.0
+      ToHealth: 2.0
+
+  - type: STR_STUB_GUN_AMMO_INC             # Stubber Tracer Ammo
+    refNode: *REF_STUBBER_AMMO
+    damageAlter:
+      ToArmorPre: 0.05
+      ResistType: 2  # inc
+      FireThreshold: 1
+      ToTile: 0
+    tags:
+      ITEM_IGNITES_TARGETS: 1
+
+### Autoguns
+  - type: STR_AUTOPISTOL                    # Autopistol
+    armor: 300
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+    size: 0.1
+    costBuy: 1500
+    costSell: 500
+    weight: 5
+    compatibleAmmo:
+      - STR_AUTOPISTOL_CLIP
+    experienceTrainingMode: 5 # 50% firing
+    dropoff: 6
+    autoRange: 6
+    snapRange: 12
+    aimRange: 0
+    accuracyAuto: 35
+    accuracySnap: 50
+    accuracyAimed: 0
+    tuSnap: 28
+    tuAuto: 34
+    tuAimed: 0
+    confSnap:
+      shots: 3
+      name: STR_BURST_SNAP_SHOT
+    confAuto:
+      shots: 6 # was 5
+    inventoryMoveCost: # pistol
+      basePercent: 75
+    tuLoad: 8 # pistol bonus
+    tuUnload: 4 # pistol bonus
+    tags:
+      ITEM_RECOIL: 12 # was 0
+      REACTION_MULTIPLIER: 200
+
+  - type: STR_AUTOPISTOL_HIGHGRADE          # Autopistol (High Grade)
+    categories: [STR_CAT_AUTO]
+    dropoff: 6  # pistol
+    weight: 7  # quite heavy for a pistol
+    requiresBuy:
+      - STR_BALLISTIC_WEAPONS_HIGHGRADE
+      - STR_AUTOGUNS_UNLOCK
+    compatibleAmmo:
+      - STR_AUTOGUN_CLIP
+      - STR_AUTOGUN_CLIP_DRUM
+      - STR_AUTOGUN_CLIP_DRUM_KRAKEN
+    snapRange: 10  # -5 vs rifle version
+    autoRange: 6  # -5 vs rifle version
+    aimRange: 0
+    accuracyAuto: 35  # -20 vs rifle
+    accuracySnap: 60  # -10 vs rifle
+    accuracyAimed: 0
+    tuSnap: 20  # -5, pistol
+    tuAuto: 33  #
+    tuAimed: 0
+    confSnap:
+      shots: 3
+      name: STR_BURST_SNAP_SHOT
+    autoShots: 6  # +1
+    experienceTrainingMode: 4
+    armor: 200
+    listOrder: 10740
+    tags:
+      ITEM_RECOIL: 12 # was 25
+      REACTION_MULTIPLIER: 200
+      ITEM_GETS_FACTION_RECOLOR: 1
+      ITEM_BASE_COLOR: 4
+
+      ITEM_GETS_ACCENT_RECOLOR: 1
+      ITEM_ACCENT_COLOR: 1
+
+  - type: STR_AUTOGUN_BASIC                 # Autogun (Basic)
+    requiresBuyBaseFunc: [IMPERIUM]
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+    size: 0.2
+    costBuy: 3500
+    costSell: 1000
+    weight: 10
+    compatibleAmmo: &Ref_Autogun_Ammo_Basic
+      - STR_AUTOGUN_CLIP
+      - STR_AUTOGUN_CLIP_AP
+      - STR_AUTOGUN_CLIP_HP
+    experienceTrainingMode: 5 # 50% firing
+    dropoff: 6 # was 5
+    aimRange: 0
+    snapRange: 14 # was 15
+    autoRange: 9 # was 8
+    accuracyAimed: 0
+    accuracySnap: 65
+    accuracyAuto: 45
+    tuAimed: 0
+    tuSnap: 27 # was 33
+    tuAuto: 36 # was 40
+    confSnap:
+      shots: 3
+      name: STR_BURST_SNAP_SHOT
+    confAuto:
+      shots: 6
+    tags:
+      ITEM_RECOIL: 20
+
+  - type: STR_AUTOGUN_ADV                   # Autogun (High Grade)
+    requiresBuyBaseFunc: [IMPERIUM]
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+      - STR_MIDTIER_PREREQ
+    size: 0.2
+    costBuy: 15000
+    costSell: 1500
+    weight: 10
+    compatibleAmmo: &Ref_Autogun_Ammo_Adv
+      - STR_AUTOGUN_CLIP
+      - STR_AUTOGUN_CLIP_AP
+      - STR_AUTOGUN_CLIP_HP
+      - STR_AUTOGUN_CLIP_DRUM
+      - STR_AUTOGUN_CLIP_DRUM_KRAKEN
+      - STR_AUTOGUN_CLIP_DRUM_HP
+    experienceTrainingMode: 5 # 50% firing
+    dropoff: 6 # was 5
+    aimRange: 0
+    snapRange: 14 # was 15
+    autoRange: 10 # was 11
+    accuracyAimed: 0
+    accuracySnap: 70
+    accuracyAuto: 55
+    tuAimed: 0
+    tuSnap: 25 # was 25
+    tuAuto: 33 # was 33
+    confSnap:
+      shots: 3
+      name: STR_BURST_SNAP_SHOT
+    confAuto:
+      shots: 6
+    tags:
+      ITEM_RECOIL: 20
+
+  - type: STR_AUTOGUN_ADVGL                 # Autogun (High Grade /w Grenade Launcher)
+    requiresBuyBaseFunc: [IMPERIUM]
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+      - STR_MIDTIER_PREREQ
+    size: 0.2
+    costBuy: 20000
+    costSell: 2000
+    weight: 15 # was 20
+    ammo:
+      0:
+        compatibleAmmo: *Ref_Autogun_Ammo_Adv
+      1:
+        compatibleAmmo: *Ref_Underslung_GL_Ammo
+    experienceTrainingMode: 5 # 50% firing
+    dropoff: 6 # was 5
+    aimRange: 14 # was 25
+    snapRange: 14 # was 15
+    autoRange: 10 # was 11
+    accuracyAimed: 40
+    accuracySnap: 70
+    accuracyAuto: 50
+    tuAimed: 40
+    tuSnap: 25 # was 25
+    tuAuto: 33 # was 33
+    confSnap:
+      shots: 3
+      ammoSlot: 0
+      name: STR_BURST_SNAP_SHOT
+      arcing: false
+    confAuto:
+      shots: 6
+      ammoSlot: 0
+      name: STR_AUTOFIRE
+      arcing: false
+    confAimed:
+      ammoSlot: 1 # Grenades
+      name: STR_LAUNCH_GRENADE
+      shortName: STR_LAUNCH_GRENADE_SHORT
+      arcing: true
+    tags:
+      ITEM_RECOIL: 20
+
+  - type: STR_AUTOGUN_AGRI                  # Autogun (Agripinaa Carbine)
+    requiresBuyBaseFunc: [TRADE]
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+    size: 0.2
+    costBuy: 10000
+    costSell: 1500
+    weight: 10
+    compatibleAmmo: *Ref_Autogun_Ammo_Adv
+    experienceTrainingMode: 5 # 50% firing
+    dropoff: 6 # was 5
+    aimRange: 0
+    snapRange: 14 # was 13
+    autoRange: 10 # was 12
+    accuracyAimed: 0
+    accuracySnap: 75
+    accuracyAuto: 55
+    tuAimed: 0
+    tuSnap: 20 # was 20
+    tuAuto: 33 # was 33
+    confSnap:
+      shots: 2
+      name: STR_BURST_SNAP_SHOT
+    confAuto:
+      shots: 4
+    tags:
+      ITEM_RECOIL: 20
+      REACTION_MULTIPLIER: 200
+
+  - type: STR_AUTOGUN_AGRI_B                # Autogun (Agripinaa Scoped Carbine)
+    requiresBuyBaseFunc: [TRADE]
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+      - STR_MIDTIER_PREREQ
+    size: 0.2
+    costBuy: 15000
+    costSell: 1500
+    weight: 13 # +3
+    compatibleAmmo: *Ref_Autogun_Ammo_Basic
+    experienceTrainingMode: 5 # 50% firing
+    dropoff: 6 # was 5
+    aimRange: 24
+    snapRange: 18 # +4
+    autoRange: 10
+    accuracyAimed: 105
+    accuracySnap: 80 # +5
+    accuracyAuto: 55
+    tuAimed: 36
+    tuSnap: 22 # +2
+    tuAuto: 33
+    confSnap:
+      shots: 2
+      name: STR_BURST_SNAP_SHOT
+    confAuto:
+      shots: 4
+    tags:
+      ITEM_RECOIL: 20
+      REACTION_MULTIPLIER: 150
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 25
+
+  - type: STR_AUTOGUN_ARMA                  # Autogun (Armageddon)
+    requiresBuyBaseFunc: [TRADE]
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+      - STR_MIDTIER_PREREQ
+    size: 0.2
+    costBuy: 12500
+    costSell: 1250
+    weight: 12
+    compatibleAmmo: *Ref_Autogun_Ammo_Adv
+    experienceTrainingMode: 5 # 50% firing
+    dropoff: 6
+    aimRange: 0
+    snapRange: 12 # -2
+    autoRange: 8 # -2
+    accuracyAimed: 0
+    accuracySnap: 70
+    accuracyAuto: 45
+    tuAimed: 0
+    tuSnap: 24
+    tuAuto: 33
+    confSnap:
+      shots: 4
+      name: STR_BURST_SNAP_SHOT
+    confAuto:
+      shots: 9
+    tags:
+      ITEM_RECOIL: 30
+
+  - type: STR_AUTOGUN_ARMA_B                # Autogun (Armageddon Bayonet)
+    requiresBuyBaseFunc: [TRADE]
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+      - STR_MIDTIER_PREREQ
+    size: 0.2
+    costBuy: 12500
+    costSell: 1250
+    weight: 12
+    compatibleAmmo: *Ref_Autogun_Ammo_Adv
+    experienceTrainingMode: 5 # 50% firing
+    dropoff: 6
+    aimRange: 0
+    snapRange: 11 # -1
+    autoRange: 8
+    accuracyAimed: 0
+    accuracySnap: 65 # -5
+    accuracyAuto: 45
+    tuAimed: 0
+    tuSnap: 22 # -2
+    tuAuto: 33
+    confSnap:
+      shots: 4
+      name: STR_BURST_SNAP_SHOT
+    confAuto:
+      shots: 9
+    meleeHitSound: {mod: 40k, index: 101}
+    meleeAnimation: 0
+    meleeType: 7
+    meleePower: 55
+    meleeBonus:
+      strength: 0.2
+      melee: 0.2
+    meleeAlter:
+      ArmorEffectiveness: 0.9
+      RandomType: 8
+    accuracyMelee: 100
+    meleeMultiplier:
+      flatHundred: 0.5
+      melee: 0.5
+    tuMelee: 12
+    costMelee:
+      energy: 2
+    flatMelee:
+      time: true
+    tags:
+      ITEM_RECOIL: 30
+      REACTION_MULTIPLIER: 150
+
+  - type: STR_AUTOGUN_HEAD                  # Autogun (Headhunter Scoped Rifle)
+    requiresBuyBaseFunc: [TRADE]
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+      - STR_MIDTIER_PREREQ
+      - STR_UFO_CONSTRUCTION
+    size: 0.2
+    costBuy: 20000
+    costSell: 2000
+    weight: 16 # +6
+    compatibleAmmo: *Ref_Autogun_Ammo_Basic
+    experienceTrainingMode: 4
+    dropoff: 6
+    noLOSAccuracyPenalty: 66 # default 50 - scoped rifle bonus
+    aimRange: 24
+    snapRange: 18
+    autoRange: 10
+    accuracyAimed: 105
+    accuracySnap: 80
+    accuracyAuto: 55
+    tuAimed: 36
+    tuSnap: 22
+    tuAuto: 33
+    ignoreAmmoPower: true
+    power: 60 # base 50
+    confSnap:
+      shots: 2
+      name: STR_BURST_SNAP_SHOT
+    confAuto:
+      shots: 4
+    tags:
+      ITEM_RECOIL: 30
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 30
+
+  - type: STR_AUTOGUN                       # Autogun (Old)
+    requiresBuy:
+      - STR_GENERALLOCK
+    recoveryTransformations:
+      STR_AUTOGUN_BASIC: [1]
+
+  - type: STR_AUTOGUN_CHAOS                 # Autogun (Chaos)
+    aimRange: 0
+    snapRange: 14 # was 15
+    autoRange: 9 # was 8
+    accuracyAimed: 0
+    accuracySnap: 65
+    accuracyAuto: 45
+    tuAimed: 0
+    tuSnap: 27 # was 33
+    tuAuto: 36 # was 40
+    confSnap:
+      shots: 3
+      name: STR_BURST_SNAP_SHOT
+    confAuto:
+      shots: 6
+
+  - type: STR_AUTOCARBINE_NAVY              # Autocarbine (Old)
+    requiresBuy:
+      - STR_GENERALLOCK
+    recoveryTransformations:
+      STR_AUTOGUN_AGRI: [1]
+
+  - type: STR_AUTOGUN_HIGHGRADE             # Autogun High Grade (Old)
+    requiresBuy:
+      - STR_GENERALLOCK
+    recoveryTransformations:
+      STR_AUTOGUN_ADV: [1]
+
+  - type: STR_AUTOGUN_HIGHGRADE_UNDERSLUNG  # Autogun High Grade GL (Old)
+    requiresBuy:
+      - STR_GENERALLOCK
+    recoveryTransformations:
+      STR_AUTOGUN_ADVGL: [1]
+
+  - &REF_AUTOGUN_AMMO                       # Autogun Ammo
+    type: STR_AUTOPISTOL_CLIP
+    armor: 300
+    size: 0.02
+    weight: 3
+    power: 50 # was 30-50
+    damageType: 1
+    damageAlter:
+      RandomType: 8
+      ToArmorPre: 0.05 # was 0.033
+      ArmorEffectiveness: 0.90
+      ToHealth: 1.0
+      ToArmor: 0.1
+      ToStun: 0.25
+      ToEnergy: 0.1
+
+  - type: STR_AUTOPISTOL_CLIP
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+    costBuy: 150
+    costSell: 75
+    weight: 1 # was 3
+    clipSize: 15 # was 20
+    listOrder: 10730
+
+  - type: STR_AUTOGUN_CLIP
+    refNode: *REF_AUTOGUN_AMMO
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+    costBuy: 300
+    costSell: 105
+    clipSize: 30
+    listOrder: 10750
+
+  - type: STR_AUTOGUN_CLIP_DRUM
+    refNode: *REF_AUTOGUN_AMMO
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+      - STR_UFO_CONSTRUCTION # Ceramite
+    costBuy: 1500
+    costSell: 100
+    weight: 5
+    clipSize: 45 # was 40
+
+  - type: STR_AUTOGUN_CLIP_AP
+    refNode: *REF_AUTOGUN_AMMO
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+    costBuy: 800
+    costSell: 105
+    clipSize: 30
+    damageAlter:
+      ToArmorPre: 0.02
+      ArmorEffectiveness: 0.5
+      ToHealth: 0.8
+    clipSize: 30
+
+  - type: STR_AUTOGUN_CLIP_DRUM_KRAKEN
+    refNode: *REF_AUTOGUN_AMMO
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+      - STR_UFO_CONSTRUCTION
+    costBuy: 6000
+    costSell: 500
+    weight: 5 # was 6
+    damageAlter:
+      ToArmorPre: 0.02
+      ArmorEffectiveness: 0.5
+      ToHealth: 0.8
+    clipSize: 45 # was 40
+
+  - type: STR_AUTOGUN_CLIP_HP
+    refNode: *REF_AUTOGUN_AMMO
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+    costBuy: 800
+    costSell: 105
+    damageAlter:
+      ToArmorPre: 0.02
+      ArmorEffectiveness: 1.2
+      ToHealth: 1.6
+      ToStun: 0.4
+      ToEnergy: 0.3
+      ToWound: 0.3
+      RandomWound: false
+    clipSize: 30
+
+  - type: STR_AUTOGUN_CLIP_DRUM_HP
+    refNode: *REF_AUTOGUN_AMMO
+    requiresBuy:
+      - STR_AUTOGUNS_UNLOCK
+      - STR_UFO_CONSTRUCTION
+    costBuy: 6000
+    costSell: 500
+    weight: 5
+    damageAlter:
+      ToArmorPre: 0.02
+      ArmorEffectiveness: 1.2
+      ToHealth: 1.6
+      ToStun: 0.4
+      ToEnergy: 0.3
+      ToWound: 0.3
+      RandomWound: false
+    clipSize: 45
+
+### Lasguns
+  - &DMG_LASGUN_STD                         # Lasgun Standard Damage
+    type: STR_LASPISTOL_CLIP
+    armor: 300
+    damageType: 1 # standard
+    damageAlter:
+      RandomType: 8
+      ToArmorPre: 0.2
+      ToArmor: 0.1
+      ToHealth: 1.0
+      ToStun: 0.05 # was 0.3
+      ToWound: 0.05
+      RandomWound: false
+
+  - &DMG_LASGUN_HOT                         # Lasgun Hotshot Damage
+    type: STR_LASPISTOL_CLIP_HOTSHOT
+    armor: 300
+    damageType: 1 # standard
+    damageAlter:
+      RandomType: 8
+      ArmorEffectiveness: 0.75 # was 0.75
+      ToArmorPre: 0.2
+      ToArmor: 0.1
+      ToHealth: 1.0
+      ToStun: 0.05 # was 0.3
+      ToWound: 0.05
+      RandomWound: false
+
+  - &DMG_LASGUN_HELL                        # Hellgun Las Damage
+    type: STR_HOTSHOT_VOLLEY_GUN
+    armor: 300
+    power: 75
+    damageType: 1
+    damageAlter:
+      RandomType: 8
+      ArmorEffectiveness: 0.75
+      ToArmorPre: 0.3
+      ToArmor: 0.0
+      ToHealth: 1.0
+      ToStun: 0.05 # was .3
+      ToWound: 0.05
+      RandomWound: false
+
+  - type: STR_LASPISTOL_CLIP                # Laspistol Ammo
+    refNode: *DMG_LASGUN_STD
+    size: 0.05
+
+  - type: STR_LASGUN_CLIP                   # Lasgun Ammo
+    refNode: *DMG_LASGUN_STD
+    size: 0.05
+
+  - type: STR_LASPISTOL_CLIP_HOTSHOT        # Laspistol Hotshot Ammo
+    refNode: *DMG_LASGUN_HOT
+    size: 0.05
+    requiresBuyBaseFunc: [IMPERIUM]
+    requiresBuy:
+      - STR_HOTSHOT_AMMO # was locked to mid tier mastercrafting?
+    clipSize: 12 # was 20
+
+  - type: STR_LASGUN_CLIP_HOTSHOT           # Lasgun Hotshot Ammo
+    refNode: *DMG_LASGUN_HOT
+    size: 0.05
+    requiresBuyBaseFunc: [IMPERIUM]
+    requiresBuy:
+      - STR_HOTSHOT_AMMO # was guard only
+    clipSize: 12 # was 20
+
+  - type: STR_LASGUN_CLIP_HOTSHOT_CHAOS     # Lasgun Chaos HotshotAmmo
+    refNode: *DMG_LASGUN_HOT
+
+  - type: STR_HOTSHOT_VOLLEY_GUN            # Hotshot Volley Gun
+    dropoff: 5
+    autoRange: 9
+    snapRange: 16
+    aimRange: 0
+    accuracyAuto: 50
+    accuracySnap: 60
+    accuracyAimed: 0
+    costAuto:
+      time: 40
+      mana: 7 # was 3
+    confAuto:
+      shots: 7
+    costSnap:
+      time: 25
+      mana: 3 # was 7
+    confSnap:
+      shots: 3
+      name: STR_BURST_SNAP_SHOT
+    tuAimed: 0
+
+### Lascannons
+  - &DMG_LASCANNON_STD                      # Lascannon Standard Damage
+    type: STR_LASCAN_CLIP  # LASCANON CLIP
+    armor: 300
+    power: 220
+    damageType: 4
+    damageAlter:
+      RandomType: 8
+      ToArmorPre: 0.3 # was 0.4
+      ToHealth: 1.0
+      ToArmor: 0.1
+      ToStun: 0.05 # was 0.3
+      ToWound: 0.05
+      RandomWound: false
+
+  - type: STR_LASCANNON_CLIP_MALTHUS        # Light Lascannon Ammo
+    refNode: *DMG_LASCANNON_STD
+    power: 140
+    clipSize: 4 # was 8
+    powerRangeThreshold: 0 # was 16
+    powerRangeReduction: 0 # was 5
+
+  - type: STR_LASCANNON_CLIP_SMALL
+    refNode: *DMG_LASCANNON_STD
+
+  - type: STR_LASCAN                        # SM Lascannon
+    tuAimed: 85 # was 90 - slightly easier to sidestep and fire without needing max TUs
+    armor: 300
+    tags:
+      ITEM_IS_HEAVY_WEAPON: 1
+      ITEM_RECOIL: 80 # bulky, devastator weapon
+
+  - type: STR_LASCAN_DW                     # Artifex Lascannon
+    dropoff: 4
+    autoRange: 0
+    snapRange: 22
+    aimRange: 33
+    accuracyAuto: 0
+    accuracySnap: 55
+    accuracyAimed: 80
+    kneelBonus: 130
+    minRange: 7
+    tuAuto: 0
+    tuSnap: 50
+    tuAimed: 80
+    tuLoad: 40
+    armor: 300
+    ignoreAmmoPower: true
+    power: 240 # regular 220
+    tags:
+      REACTION_MULTIPLIER: 50
+      REACTION_PENALTY_KNEELING_BYPASS: 1
+
+  - type: AUX_HOVERTANK_LASER               # Dreadnought Lascannon
+    refNode: *DMG_LASCANNON_STD
+    power: 220 # was 150, Sentinel numbers
+    dropoff: 3
+    autoRange: 16
+    snapRange: 25
+    aimRange: 0
+    accuracyAuto: 50
+    accuracySnap: 85
+    accuracyAimed: 0
+    tuAuto: 50
+    tuSnap: 30
+    tuAimed: 0
+    autoShots: 2
 
 ### Flamers
   - type: STR_HFLAMER                       # Heavy Flamer
@@ -4534,165 +5332,6 @@ items:
       basePercent: 75
     tags:
       REACTION_MULTIPLIER: 200 # multiplies base reaction score by this amount divided by 100
-
-### Lasguns
-  - &DMG_LASGUN_STD                         # Lasgun Standard Damage
-    type: STR_LASPISTOL_CLIP
-    armor: 300
-    damageType: 1 # standard
-    damageAlter:
-      RandomType: 8
-      ToArmorPre: 0.2
-      ToArmor: 0.1
-      ToHealth: 1.0
-      ToStun: 0.05 # was 0.3
-      ToWound: 0.05
-      RandomWound: false
-
-  - &DMG_LASGUN_HOT                         # Lasgun Hotshot Damage
-    type: STR_LASPISTOL_CLIP_HOTSHOT
-    armor: 300
-    damageType: 1 # standard
-    damageAlter:
-      RandomType: 8
-      ArmorEffectiveness: 0.8 # was 0.75
-      ToArmorPre: 0.2
-      ToArmor: 0.1
-      ToHealth: 1.0
-      ToStun: 0.05 # was 0.3
-      ToWound: 0.05
-      RandomWound: false
-
-  - &DMG_LASGUN_HELL                        # Hellgun Las Damage
-    type: STR_HOTSHOT_VOLLEY_GUN
-    armor: 300
-    power: 75
-    damageType: 1
-    damageAlter:
-      RandomType: 8
-      ArmorEffectiveness: 0.75
-      ToArmorPre: 0.3
-      ToArmor: 0.0
-      ToHealth: 1.0
-      ToStun: 0.05 # was .3
-      ToWound: 0.05
-      RandomWound: false
-
-  - type: STR_LASPISTOL_CLIP                # Laspistol Ammo
-    refNode: *DMG_LASGUN_STD
-    size: 0.05
-
-  - type: STR_LASGUN_CLIP                   # Lasgun Ammo
-    refNode: *DMG_LASGUN_STD
-    size: 0.05
-
-  - type: STR_LASPISTOL_CLIP_HOTSHOT        # Laspistol Hotshot Ammo
-    refNode: *DMG_LASGUN_HOT
-    size: 0.05
-    requiresBuyBaseFunc: [IMPERIUM]
-    requiresBuy:
-      - STR_MIDTIER_PREREQ # was locked to mid tier mastercrafting?
-    clipSize: 12 # was 20
-
-  - type: STR_LASGUN_CLIP_HOTSHOT           # Lasgun Hotshot Ammo
-    refNode: *DMG_LASGUN_HOT
-    size: 0.05
-    requiresBuyBaseFunc: [IMPERIUM]
-    requiresBuy:
-      - STR_MIDTIER_PREREQ # was guard only
-    clipSize: 12 # was 20
-
-  - type: STR_LASGUN_CLIP_HOTSHOT_CHAOS     # Lasgun Chaos HotshotAmmo
-    refNode: *DMG_LASGUN_HOT
-
-  - type: STR_HOTSHOT_VOLLEY_GUN            # Hotshot Volley Gun
-    dropoff: 5
-    autoRange: 9
-    snapRange: 16
-    aimRange: 0
-    accuracyAuto: 50
-    accuracySnap: 60
-    accuracyAimed: 0
-    costAuto:
-      time: 40
-      mana: 7 # was 3
-    confAuto:
-      shots: 7
-    costSnap:
-      time: 25
-      mana: 3 # was 7
-    confSnap:
-      shots: 3
-      name: STR_BURST_SNAP_SHOT
-    tuAimed: 0
-
-### Lascannons
-  - &DMG_LASCANNON_STD                      # Lascannon Standard Damage
-    type: STR_LASCAN_CLIP  # LASCANON CLIP
-    armor: 300
-    power: 220
-    damageType: 4
-    damageAlter:
-      RandomType: 8
-      ToArmorPre: 0.3 # was 0.4
-      ToHealth: 1.0
-      ToArmor: 0.1
-      ToStun: 0.05 # was 0.3
-      ToWound: 0.05
-      RandomWound: false
-
-  - type: STR_LASCANNON_CLIP_MALTHUS        # Light Lascannon Ammo
-    refNode: *DMG_LASCANNON_STD
-    power: 140
-    clipSize: 4 # was 8
-    powerRangeThreshold: 0 # was 16
-    powerRangeReduction: 0 # was 5
-
-  - type: STR_LASCANNON_CLIP_SMALL
-    refNode: *DMG_LASCANNON_STD
-
-  - type: STR_LASCAN                        # SM Lascannon
-    tuAimed: 85 # was 90 - slightly easier to sidestep and fire without needing max TUs
-    armor: 300
-    tags:
-      ITEM_IS_HEAVY_WEAPON: 1
-      ITEM_RECOIL: 80 # bulky, devastator weapon
-
-  - type: STR_LASCAN_DW                     # Artifex Lascannon
-    dropoff: 4
-    autoRange: 0
-    snapRange: 22
-    aimRange: 33
-    accuracyAuto: 0
-    accuracySnap: 55
-    accuracyAimed: 80
-    kneelBonus: 130
-    minRange: 7
-    tuAuto: 0
-    tuSnap: 50
-    tuAimed: 80
-    tuLoad: 40
-    armor: 300
-    ignoreAmmoPower: true
-    power: 240 # regular 220
-    tags:
-      REACTION_MULTIPLIER: 50
-      REACTION_PENALTY_KNEELING_BYPASS: 1
-
-  - type: AUX_HOVERTANK_LASER               # Dreadnought Lascannon
-    refNode: *DMG_LASCANNON_STD
-    power: 220 # was 150, Sentinel numbers
-    dropoff: 3
-    autoRange: 16
-    snapRange: 25
-    aimRange: 0
-    accuracyAuto: 50
-    accuracySnap: 85
-    accuracyAimed: 0
-    tuAuto: 50
-    tuSnap: 30
-    tuAimed: 0
-    autoShots: 2
 
 ### Sonic
   - &DMG_SONIC_STD                          # Sonic Standard Damage
@@ -8177,7 +8816,7 @@ items:
 
   - type: STR_TRAUMA_PACK                   # Medicae Kit
     costBuy: 50000 # was 5000
-    heal: 5
+    heal: 4 # was 3
     healthRecovery: 2 # was 0
     experienceTrainingMode: 19
 

@@ -311,6 +311,12 @@ extraStrings:
       STR_CROZIUS_AIMED: Sanctify
       STR_CHAINSWORD_LIGHTSM: Scout Chainsword
       STR_EXECUTIONER_BLADE: Executioner Blade
+      STR_AUTOGUN_CLIP: Autogun Magazine
+      STR_AUTOGUN_CLIP_AP: Autogun Penetrator Mag
+      STR_AUTOGUN_CLIP_HP: Autogun Expander Mag
+      STR_AUTOGUN_CLIP_DRUM: Autogun Ammo Drum
+      STR_AUTOGUN_CLIP_DRUM_KRAKEN: Autogun Penetrator Drum
+      STR_AUTOGUN_CLIP_DRUM_HP: Autogun Expander Drum
       STR_PISTOLH: Chaos Tigrus Boltpistol
       STR_PISTOLH_SM: Boltpistol Tigrus Pattern
       STR_ABSOLVOR_PISTOL: Absolvor Bolt Pistol
@@ -592,6 +598,7 @@ extraStrings:
       STR_MARINE_CHAPEL: Chapter Teachings
       STR_MARINE_CAPTAIN: Company Captains
       STR_CHAP_RELICS: Chaplain Relics
+      STR_HOTSHOT_AMMO: Hotshot Ammo
       STR_GLAUNCHER_PREREQ: Grenade Launchers
       STR_HBOLTER_PREREQ: MK. IV Heavy Bolter
       STR_HBOLTER_AMMO_PREREQ: Heavy Bolter Cases
@@ -622,6 +629,9 @@ extraStrings:
       STR_ABHUMAN_GUARD_RECRUITS: Abhuman Regiments
       STR_INFERNOPISTOL_REQ: Inferno Pistol Prerequisite
       STR_TECHMARINE_GEAR: Mechanicus Equipment
+      STR_STUBBERS_UNLOCK: (Stubber Weapons Unlocked)
+      STR_AUTOGUNS_UNLOCK: (Autogun Weapons Unlocked)
+      STR_LASGUNS_UNLOCK: (Lasgun Weapons Unlocked)
       STR_40MM_AMMO: (40mm Grenade Ammo)
       STR_BOLTPISTOL_REQ: (Boltpistols Unlocked)
       STR_BOLTPISTOL_ADV_REQ: (Advanced Boltpistols)
@@ -1237,6 +1247,22 @@ extraStrings:
       STR_PLASMA_RIFLE_ADEPTAS_UFOPEDIA: "{NEWLINE} The Adeptas Sororitas favor the light barrage type Plasma Gun, using a development of the Clovis pattern. Though it has less power than standard Plasma Weapons the Clovis type allows the user to spray more blasts without overheating, providing effective suppression and severely damaging armor."
       STR_PLASMA_CARBINE_ADEPTAS: "Plasma Carbine De'az pattern"
       STR_PLASMA_CARBINE_ADEPTAS_UFOPEDIA: "{NEWLINE} The Godwyn-De'az pattern plasma carbine was developed by joint-specification between the Ecclesiarchy and the Departmento Munitorum calling for a lightweight plasma gun design. This hybrid design has more power than regular carbine variants while achieving a higher fire rate than standard plasma guns."
+      STR_AUTOGUN_BASIC: Autogun
+      STR_AUTOGUN_BASIC_CODEX: "{NEWLINE} An Autogun is a fully automatic weapon that fires solid-slug ballistic rounds at the intended target in rapid succession. Cheap, rugged and reliable, it can be found throughout the Imperium, where it is appreciated for its decent damage and accuracy. {NEWLINE}{NEWLINE} Recoil: {ALT}20"
+      STR_AUTOGUN_ADV: High-Grade Autogun
+      STR_AUTOGUN_ADV_CODEX: "{NEWLINE}A heavy duty Autogun of ancient design based on the U90 Pattern and still manufactured on several Forge Worlds. The autogun is heavier to accommodate the weapon's .45 calibre round, offering phenomenal damage and can be fitted with several types of ammunition, including armour-piercing rounds in 40 rounds drum magazines.{NEWLINE}{NEWLINE} Recoil: {ALT}20"
+      STR_AUTOGUN_ADVGL: High-Grade Autogun /w GL
+      STR_AUTOGUN_ADVGL_CODEX:: "{NEWLINE}A heavy duty Autogun based on the U90 Pattern, combi-grenade launcher. The underslung version sacrifices the bayonet mount for a 40mm grenade launcher. Standard ammunition include both standard magazines and larger 40-round drum magazines, as well as an array of 40mm ammunition types.{NEWLINE}{NEWLINE} Recoil: {ALT}20"
+      STR_AUTOGUN_AGRI: Agripinaa Pattern Autocarbine
+      STR_AUTOGUN_AGRI_CODEX: "{NEWLINE} This Autocarbine design from the Agripinaa Forge World has been designed to counteract recoil while cutting as much weight as possible, allowing soldiers to quickly react and track new threats in close quarters.{NEWLINE}{NEWLINE} Recoil: {ALT}20"
+      STR_AUTOGUN_AGRI_B: Agripinaa Scoped Autocarbine
+      STR_AUTOGUN_AGRI_B_CODEX: "{NEWLINE} This Autocarbine design from the Agripinaa Forge World has been designed to counteract recoil while cutting as much weight as possible. It also comes with an attached scope, allowing soldiers to engage enemies at all ranges.{NEWLINE}{NEWLINE} Recoil: {ALT}20"
+      STR_AUTOGUN_ARMA: Armageddon Pattern Autogun
+      STR_AUTOGUN_ARMA_CODEX: "{NEWLINE} Loud, lethal and uncomplicated, Armageddon-pattern Autoguns can withstand incredible abuse and keep firing.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
+      STR_AUTOGUN_ARMA_B: Armageddon Assault Autogun
+      STR_AUTOGUN_ARMA_B_CODEX: "{NEWLINE} Loud, lethal and uncomplicated, Armageddon-pattern Autoguns can withstand incredible abuse and keep firing. This modified Assault pattern has a cut down stock and attached bayonet for charging into enemy lines guns blazing.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
+      STR_AUTOGUN_HEAD: Headhunter Pattern Autogun
+      STR_AUTOGUN_HEAD_CODEX: "{NEWLINE}With a longer barrel and precision rifling, Headhunter Pattern Autoguns are able to strike their targets harder, ripping through enemies at long ranges.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
       ### CRAFT
       STR_SPEED_UFOPEDIA: "{NEWLINE} The Land Speeder is a light anti-gravity vehicle which serves as the primary reconnaissance and fast attack vehicle of the Adeptus Astartes.{NEWLINE}{NEWLINE} Capacity: 12 Soldiers plus 8 Vehicle slots"
       ### SOLDIERS

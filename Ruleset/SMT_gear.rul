@@ -2387,7 +2387,6 @@ items:
     armor: 300
     size: 0.05
     loadOrder: 105
-    damageType: 1
     power: 75 # was 70
     clipSize: 24 # was 20
 
@@ -3822,8 +3821,8 @@ items:
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
     size: 0.2
-    costBuy: 3500
-    costSell: 1000
+    costBuy: 3000
+    costSell: 900
     weight: 10
     compatibleAmmo: &Ref_Autogun_Ammo_Basic
       - STR_AUTOGUN_CLIP
@@ -3891,7 +3890,7 @@ items:
     size: 0.2
     costBuy: 20000
     costSell: 2000
-    weight: 15 # was 20
+    weight: 16 # was 20
     ammo:
       0:
         compatibleAmmo: *Ref_Autogun_Ammo_Adv
@@ -3965,7 +3964,7 @@ items:
     costSell: 1500
     weight: 13 # +3
     compatibleAmmo: *Ref_Autogun_Ammo_Basic
-    experienceTrainingMode: 5 # 50% firing
+    experienceTrainingMode: 4
     dropoff: 6 # was 5
     aimRange: 24
     snapRange: 18 # +4
@@ -4071,9 +4070,9 @@ items:
       - STR_MIDTIER_PREREQ
       - STR_UFO_CONSTRUCTION
     size: 0.2
-    costBuy: 20000
-    costSell: 2000
-    weight: 16 # +6
+    costBuy: 25000
+    costSell: 2500
+    weight: 17 # +7
     compatibleAmmo: *Ref_Autogun_Ammo_Basic
     experienceTrainingMode: 4
     dropoff: 6
@@ -4093,7 +4092,7 @@ items:
       shots: 2
       name: STR_BURST_SNAP_SHOT
     confAuto:
-      shots: 4
+      shots: 6
     tags:
       ITEM_RECOIL: 30
       ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 30
@@ -4186,6 +4185,7 @@ items:
     refNode: *REF_AUTOGUN_AMMO
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
+      - STR_ALIEN_ALLOYS
     costBuy: 800
     costSell: 105
     clipSize: 30
@@ -4199,6 +4199,7 @@ items:
     refNode: *REF_AUTOGUN_AMMO
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
+      - STR_ALIEN_ALLOYS
       - STR_UFO_CONSTRUCTION
     costBuy: 6000
     costSell: 500
@@ -4213,6 +4214,7 @@ items:
     refNode: *REF_AUTOGUN_AMMO
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
+      - STR_ELERIUM_115
     costBuy: 800
     costSell: 105
     damageAlter:
@@ -4229,6 +4231,7 @@ items:
     refNode: *REF_AUTOGUN_AMMO
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
+      - STR_ELERIUM_115
       - STR_UFO_CONSTRUCTION
     costBuy: 6000
     costSell: 500

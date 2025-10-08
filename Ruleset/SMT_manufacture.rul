@@ -395,6 +395,18 @@ manufacture:
     category: STR_CAT_ARMOR
 
 #Grey Knights
+  - name: STR_GK_INTERCEPTOR                # Grey Knight Interceptor Armor
+    category: STR_CAT_ARMOR
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_GK_INTERCEPTOR_R
+      - STR_CHAPTER_PURITY
+    space: 0
+    time: 800
+    cost: 60000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 15
+      STR_ELERIUM_115: 10
 #Deathwatch
   - name: STR_DEV_ARMOR_DW                  # Devastator
     category: STR_CAT_ARMOR
@@ -1591,7 +1603,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 10
       STR_ELERIUM_115: 30
-      STR_KILLPOINT_TOKEN: 65
+      STR_KILLPOINT_TOKEN: 120
 
   - name: STR_ORBITAL_LANCE_AMMO                    # Orbital Lance ammo
     category: STR_CAT_FIRESUPPORT
@@ -1605,7 +1617,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 50
       STR_ELERIUM_115: 200
-      STR_KILLPOINT_TOKEN: 500
+      STR_KILLPOINT_TOKEN: 800
 
   - name: STR_ORBITAL_BEACON
     category: STR_HEAVY_WEAPONS_PLATFORM
@@ -1631,7 +1643,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 5
       STR_ELERIUM_115: 15
-      STR_KILLPOINT_TOKEN: 30
+      STR_KILLPOINT_TOKEN: 90
 
   - name: STR_WHIRLWIND_AMMO                        # Whirlwind Bombard ammo
     category: STR_CAT_FIRESUPPORT
@@ -1643,7 +1655,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 5
       STR_ELERIUM_115: 15
-      STR_KILLPOINT_TOKEN: 15
+      STR_KILLPOINT_TOKEN: 60
 
 ### OTHER
   - name: STR_SMT_GENESEED_REFINE                   # Geneseed refining recipe

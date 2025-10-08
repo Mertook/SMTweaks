@@ -17,7 +17,6 @@ research:
       - STR_MARINES_AND_INQUISITION
       - STR_ADEPTAS_MARINES_AND_INQUISITION
       - STR_IMPERIUM_RESEARCH
-      - STR_NOT_STEEL_LEGION_STRATEGY # needed to buy guard lasguns
       - STR_BOLTER_AMMO_PREREQ
       - STR_STORMRAVEN_PREREQ
     disables:
@@ -67,6 +66,27 @@ research:
       - STR_AUTOGUNS_UNLOCK
       - STR_LASGUNS_UNLOCK
 
+  - name: STR_ADEPTAS  # Sister of Battle
+    cost: 0
+    points: 0
+    lookup: STR_IMPERIUM_RESEARCH
+    # unlocks:
+      # - STR_DEATHWATCH_AND_ADEPTAS
+      # - STR_PRIMARIS_AND_ADEPTAS
+      # - STR_NOT_PRIMARIS
+      # - STR_MARINES_AND_ADEPTAS
+      # - STR_GUARD_SUPORT
+      # - STR_ADEPTAS_AND_INQUISITION
+      # - STR_ADEPTAS_MARINES_AND_INQUISITION
+      # - STR_IMPERIUM_RESEARCH
+    # disables:
+      # - STR_NOT_ADEPTAS
+      # - STR_ARBITES
+      # - STR_IMPERIAL_GUARD_OPERATIONS
+      # - STR_MARINES_STRATEGY
+    # dependencies:
+      # - STR_GENERALLOCK
+
 ### Strategy Choice
   - name: STR_PICKED_LOYALIST_STRATEGY  # Loyalist Strat Chosen
     cost: 0
@@ -78,7 +98,6 @@ research:
       - STR_MOTION_SCANNER
       - STR_LASER_WEAPONS
       - STR_SMOKE
-      - STR_HOLOGRAM_GRENADE_REQUISITION
       - STR_SERVITOR_BASIC
 
   - name: STR_PICKED_CHAOS_STRATEGY     # Chaos Strat Chosen
@@ -424,35 +443,183 @@ research:
       - STR_INQ_STORMTROOPER_CODEX_UNLOCKER
 
 ## Imperial Guard
-  - name: STR_NORMAL_STRATEGY_IG                    # IG Standard Strategy
+  - name: STR_NORMAL_STRATEGY_IG            # IG Standard Strategy
     unlocks: !add
       - STR_IMPERIAL_CHURCH
       - STR_PICKED_LOYALIST_STRATEGY
 
-  - name: STR_ELITE_STRATEGY_IG                     # IG Scions Strategy
+  - name: STR_ELITE_STRATEGY_IG         # IG Scions Strategy
     unlocks: !remove
       - STR_SQUAT_GUARDSMEN
 
-  - name: STR_ELITE_STRATEGY_IG                     # IG Scions Strategy
+  - name: STR_ELITE_STRATEGY_IG         # IG Scions Strategy
     unlocks: !add
       - STR_IMPERIAL_CHURCH
       - STR_PICKED_LOYALIST_STRATEGY
 
-  - name: STR_STEEL_LEGION_STRATEGY                 # IG Steel Legion Strategy
+  - name: STR_STEEL_LEGION_STRATEGY     # IG Steel Legion Strategy
     unlocks: !add
       - STR_IMPERIAL_CHURCH
       - STR_PICKED_LOYALIST_STRATEGY
 
-  - name: STR_ABHUMAN_STRATEGY_IG                   # Abhuman Strategy
+  - name: STR_ABHUMAN_STRATEGY_IG       # Abhuman Strategy
     unlocks: !remove
       - STR_BIOMANCER
 
-  - name: STR_ABHUMAN_STRATEGY_IG                   # Abhuman Strategy
+  - name: STR_ABHUMAN_STRATEGY_IG       # Abhuman Strategy
     unlocks: !add
       - STR_PSYKER_REQUISITION
       - STR_PICKED_LOYALIST_STRATEGY
 
 ## Sisters of Battle
+  - name: STR_REPENTIA_STRATEGY_ADEPTAS # Repentia Strategy
+    unlocks: !add
+      - STR_PICKED_LOYALIST_STRATEGY
+    # points: 0
+    # cost: 5
+    # dependencies:
+      # - STR_ADEPTAS
+    # spawnedEvent: STR_RECRUITS_REPENTIA_SUPERIOR_STRATEGY_ADEPTAS
+    # lookup: STR_CHOSEN_ADEPTAS
+    # unlocks:
+      # - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      # - STR_MEDICAE_RESEARCH  # see research40k.rul
+      # - STR_PHOSPHOR_GRENADE
+      # - STR_MOTION_SCANNER
+      # - STR_ADEPTAS_REPENTIA_RESEARCH  # direct recruitment
+      # - STR_ADEPTAS_REPENTIA_SUPERIOR_RESEARCH  # Repentia Superior research
+      # - STR_LIGHT_BOLTERS_LOWTIER_ADEPTAS
+      # - STR_MELTAGUN_TECH  # Meltagun Midtier requirement
+      # - STR_ADEPTAS_FRATERIS_MILITIA_RESEARCH
+      # - STR_PENITENT_ENGINE_RESEARCH
+      # - STR_ALIEN_ALLOYS
+      # - STR_NOT_NORMAL_STRATEGY_ADEPTAS
+      # - STR_NOT_ELITE_STRATEGY_ADEPTAS
+      # - STR_NOT_NOVICE_STRATEGY_ADEPTAS
+    # disables:
+      # - STR_NOT_REPENTIA_STRATEGY_ADEPTAS
+      # - STR_NOVICE_STRATEGY_ADEPTAS
+      # - STR_NORMAL_STRATEGY_ADEPTAS
+      # - STR_ELITE_STRATEGY_ADEPTAS
+      # - STR_SMOKE
+
+  - name: STR_NOVICE_STRATEGY_ADEPTAS   # Novice Strategy
+    unlocks: !add
+      - STR_PICKED_LOYALIST_STRATEGY
+    # points: 0
+    # cost: 5
+    # dependencies:
+      # - STR_ADEPTAS  # - STR_GENERALLOCK
+    # spawnedEvent: STR_RECRUITS_NOVITIATE_SUPERIOR_STRATEGY_ADEPTAS
+    # lookup: STR_CHOSEN_ADEPTAS
+    # unlocks:
+      # - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      # - STR_MEDICAE_RESEARCH  # see research40k.rul
+      # - STR_PHOSPHOR_GRENADE
+      # - STR_MOTION_SCANNER
+      # - STR_LASER_WEAPONS
+      # - STR_ADEPTAS_NOVICE_RESEARCH
+      # - STR_ADEPTAS_NOVITIATE_SUPERIOR_RESEARCH
+      # - STR_MELTAGUN_TECH  # Meltagun
+      # - STR_TRAINING_BOLTERS_ADEPTAS  # Starts with Autoguns only
+      # - STR_ADEPTAS_FRATERIS_MILITIA_RESEARCH  # recruitment
+      # - STR_PENITENT_ENGINE_RESEARCH
+      # - STR_ALIEN_ALLOYS
+      # # -  # Rhino option?
+      # - STR_NOT_ELITE_STRATEGY_ADEPTAS
+      # - STR_NOT_REPENTIA_STRATEGY_ADEPTAS
+      # - STR_NOT_NORMAL_STRATEGY_ADEPTAS
+    # disables:
+      # - STR_NOT_NOVICE_STRATEGY_ADEPTAS
+      # - STR_ELITE_STRATEGY_ADEPTAS
+      # - STR_REPENTIA_STRATEGY_ADEPTAS
+      # - STR_NORMAL_STRATEGY_ADEPTAS
+
+  - name: STR_NORMAL_STRATEGY_ADEPTAS   # Battle Sister Strategy
+    unlocks: !add
+      - STR_PICKED_LOYALIST_STRATEGY
+    # points: 0
+    # cost: 5
+    # dependencies:
+      # - STR_ADEPTAS  # - STR_GENERALLOCK
+    # lookup: STR_CHOSEN_ADEPTAS
+    # getOneFree:
+      # - STR_LIGHT_BOLTERS_LOWTIER_ADEPTAS
+      # - STR_MELTAGUN_TECH
+    # unlocks:
+      # - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      # - STR_MEDICAE_RESEARCH  # see research40k.rul
+      # - STR_PHOSPHOR_GRENADE
+      # - STR_HOLOGRAM_GRENADE_REQUISITION
+      # - STR_LASER_WEAPONS
+      # - STR_MELTAGUN_TECH
+      # - STR_MOTION_SCANNER
+      # - STR_ADEPTAS_NOVICE_RESEARCH
+      # - STR_CORVUS_RESEARCH
+      # - STR_FAITHFUL_ARMORY
+      # - STR_TRAINING_BOLTERS_ADEPTAS  # Starts with Autoguns only
+      # - STR_PENITENT_ENGINE_RESEARCH
+      # - STR_ALIEN_ALLOYS
+      # - STR_ADEPTAS_DROPPOD_RESEARCH
+      # - STR_ADEPTAS_ARMOR
+      # - STR_ADEPTAS_SOB_MOBILIZATION  # contains adeptas recruitment
+      # - STR_TRAINING_BOLTERS_ADEPTAS
+      # - STR_LIGHT_BOLTERS_LOWTIER_ADEPTAS
+      # - STR_ADEPTAS_FRATERIS_MILITIA_RESEARCH  # recruitment
+      # - STR_ADEPTAS_SUPERIOR_RESEARCH
+      # # - Repentia tech, or have that be just dependent on getting to Adeptas tier?
+      # # -  # Adeptas Sentinel
+      # # -  # Rhino option?
+      # - STR_NOT_ELITE_STRATEGY_ADEPTAS
+      # - STR_NOT_REPENTIA_STRATEGY_ADEPTAS
+      # - STR_NOT_NOVICE_STRATEGY_ADEPTAS
+    # disables:
+      # - STR_NOT_NORMAL_STRATEGY_ADEPTAS
+      # - STR_ELITE_STRATEGY_ADEPTAS
+      # - STR_REPENTIA_STRATEGY_ADEPTAS
+      # - STR_NOVICE_STRATEGY_ADEPTAS
+
+  - name: STR_ELITE_STRATEGY_ADEPTAS    # Dominion Strategy
+    unlocks: !add
+      - STR_PICKED_LOYALIST_STRATEGY
+    # points: 0
+    # cost: 5
+    # dependencies:
+      # - STR_ADEPTAS  # - STR_GENERALLOCK
+    # spawnedEvent: STR_RECRUITS_ELITE_SUPERIOR_STRATEGY_ADEPTAS
+    # lookup: STR_CHOSEN_ADEPTAS
+    # unlocks:
+      # - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
+      # - STR_DOMINION_ADEPTAS_RECRUITMENT_RESEARCH
+      # - STR_MEDICAE_RESEARCH  # see research40k.rul
+      # - STR_PHOSPHOR_GRENADE
+      # - STR_HOLOGRAM_GRENADE_REQUISITION
+      # - STR_HARDER_MISSIONS
+      # - STR_MOTION_SCANNER
+      # - STR_MELTAGUN_TECH  # Meltagun Tech
+      # - STR_LASER_WEAPONS
+      # - STR_LIGHT_BOLTERS_LOWTIER_ADEPTAS
+      # - STR_LIGHT_BOLTERS_MIDTIER_ADEPTAS  # ?
+      # - STR_FAITHFUL_ARMORY
+      # - STR_ADEPTAS_DROPPOD_RESEARCH
+      # - STR_ADEPTAS_ARMOR
+      # - STR_ADEPTAS_ARMORS
+      # - STR_TTA_RESEARCH  # Thunderhawk Convoy, needed to use the TTA Token
+      # - STR_ADEPTAS_SOB_MOBILIZATION  # ? Might change if limited recrutiment strategy
+      # - STR_HOSPITALLER  # hispitaller armor tech
+      # # - STR_STORMTROOPER_REQUISITION  # Dominion Recruitment?
+      # - STR_ADEPTAS_SUPERIOR_RESEARCH
+      # # - STR_TAUROX_IG  # Blackstar / Start with the Adeptas Armor Convoy
+      # # - STR_IMPERIAL_GUARD_MISSION_ELYSIAN_DROP_COMPLETE  # Drop Pods
+      # - STR_NOT_REPENTIA_STRATEGY_ADEPTAS
+      # - STR_NOT_NOVICE_STRATEGY_ADEPTAS
+      # - STR_NOT_NORMAL_STRATEGY_ADEPTAS
+      # - STR_INQ_STORMTROOPER_REQUISITION  # access to inquisitorial elites/stormtroopers
+    # disables:
+      # - STR_NOT_ELITE_STRATEGY_ADEPTAS
+      # - STR_REPENTIA_STRATEGY_ADEPTAS
+      # - STR_NOVICE_STRATEGY_ADEPTAS
+      # - STR_NORMAL_STRATEGY_ADEPTAS
 
 ## Terra
   - name: STR_THE_IMPERIAL_LAW_STRATEGY # Arbites Strategy
@@ -464,6 +631,7 @@ research:
       - STR_40MM_AMMO
       - STR_STUBBERS_UNLOCK
       - STR_IMPERIAL_CHURCH
+      - STR_PICKED_LOYALIST_STRATEGY
 
 ### Faction Mid-tier
 ## Space Marine
@@ -582,12 +750,18 @@ research:
   - name: STR_AUTOGUNS_UNLOCK           # Allow buying Autoguns
     cost: 0
     dependencies:
-      - STR_GENERALLOCK
+      - STR_LASER_WEAPONS
+      - STR_NOT_MARINES
+      - STR_NOT_ADEPTAS
+      - STR_NOT_CHAOSCULT
 
   - name: STR_LASGUNS_UNLOCK            # Allow buying Lasguns
     cost: 0
     dependencies:
-      - STR_GENERALLOCK
+      - STR_LASER_WEAPONS
+      - STR_NOT_MARINES
+      - STR_NOT_ADEPTAS
+      - STR_NOT_CHAOSCULT
 
   - name: STR_HOTSHOT_AMMO              # Unlock Hotshot Ammo
     cost: 280
@@ -595,6 +769,15 @@ research:
     dependencies:
       - STR_LASGUNS_UNLOCK
       - STR_MIDTIER_PREREQ
+
+###Armor
+  - name: STR_GK_INTERCEPTOR_R             # Grey Knight Interceptor Armor
+    cost: 335
+    points: 20
+    dependencies:
+      - STR_GREYKNIGHTS
+      - STR_ALIEN_ALLOYS
+      - STR_ELERIUM_115
 
 ### Craft
   - name: STR_INQUISITION_VALKYRIE
@@ -641,6 +824,41 @@ research:
     spawnedEvent: STR_INQ_REQUISITION_ASSASSINS_EVENT
 
 ### Other
+  - name: STR_HOLOGRAM_GRENADE_REQUISITION  # Hologram Caster Requisition
+    cost: 200
+    points: 50
+    dependencies:
+      - STR_PICKED_LOYALIST_STRATEGY
+      - STR_MIDTIER_PREREQ
+
+  - name: STR_MULTIMELTA_PREREQ                     # Let you research Multimeltas even if you don't find a chaos multimelta
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_HIGHTIER_PREREQ
+    listOrder: 2
+
+  - name: STR_BLASTER_LAUNCHER                      # Chaos Multimelta
+    cost: 750 # was 300
+    points: 15 # was 30
+    dependencies:
+      - STR_MELTAGUN_TECH
+    needItem: true
+    getOneFree:
+      - STR_FUSION_MISSILE
+
+  - name: STR_FUSION_MISSILE                        # Multimelta Requisition
+    cost: 880
+    points: 25
+    dependencies:
+      - STR_MULTIMELTA_PREREQ
+
+  - name: STR_MELTABOMB                             # Melta Bomb
+    cost: 100
+    points: 25
+    dependencies:
+      - STR_FUSION_MISSILE
+
   - name: STR_SERVITOR_BASIC        # Support Servitors
     cost: 50
     points: 10

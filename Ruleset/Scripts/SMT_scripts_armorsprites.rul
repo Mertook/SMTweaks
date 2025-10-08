@@ -1,0 +1,44 @@
+extended:
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
+
+  # scripts:
+    # applySoldierBonuses:
+      # - new: SMTS_apply_bonus_specialResist
+        # offset: 90
+        # code: |
+          # var int bonusVal;
+          # var int unitVal;
+
+          # soldier_bonus.getTag bonusVal Tag.SMT_BONUS_SHRED_RESISTANCE;
+          # unit.getTag unitVal Tag.SMT_UNIT_SHRED_RESISTANCE;
+          # add unitVal bonusVal;
+
+          # return;
+
+
+# armors:
+  # - &REF_ARMOR_RANK_UPGRADE
+    # type: STR_GK_TACTICAL_UC
+    # scripts:
+      # selectUnitSprite: |
+        # var int rankBonus;
+        # var int unitDirection;
+        # var int health;
+
+        # unit.getTag rankBonus Tag.SMT_UNIT_RANK_SPRITEMOD;
+        # unit.getHealth health;
+
+        # if and gt health 0 gt rankBonus 0;
+          # mul rankBonus 1000;
+          # add sprite_offset rankBonus;
+        # end;
+
+        # add sprite_index sprite_offset;
+        # return sprite_index;
+
+
+  # - type: STR_GK_TACTICAL_SB_UC
+    # refNode: *REF_ARMOR_RANK_UPGRADE
+
+
+

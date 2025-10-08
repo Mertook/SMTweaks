@@ -149,6 +149,8 @@ extended:
       SMT_BONUS_STUN_RESISTANCE: int            # Reduce stun damage by %
       SMT_BONUS_STAGGER_RESISTANCE: int         # Reduce Stamina damage by %
       SMT_BONUS_IMMOBILIZE_RESISTANCE: int      # Reduce TU damage by %
+      ## Rank Sprite Change
+      SMT_BONUS_RANK_SPRITEMOD: int             # Modify Sprite if unit has bonus
     BattleUnit:
       ## Buffs
       SMT_OVERWATCH_BUFF_ENDTURN: int   # store buff duration
@@ -191,6 +193,8 @@ extended:
       SMT_UNIT_STUN_RESISTANCE: int             # Reduce stun damage by %
       SMT_UNIT_STAGGER_RESISTANCE: int          # Reduce Stamina damage by %
       SMT_UNIT_IMMOBILIZE_RESISTANCE: int       # Reduce TU damage by %
+      ## Rank Sprite Change
+      SMT_UNIT_RANK_SPRITEMOD: int             # Modify Sprite if unit has bonus
     BattleGame:
       ## Craft Turrets
       SMT_RAZOR_HBOLTER_COUNT: int  # number of Razorback HeavyBolter tokens

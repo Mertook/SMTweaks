@@ -3929,11 +3929,12 @@ items:
     requiresBuyBaseFunc: [TRADE]
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
+      - STR_LASER_WEAPONS
     size: 0.2
     costBuy: 10000
     costSell: 1500
     weight: 10
-    compatibleAmmo: *Ref_Autogun_Ammo_Adv
+    compatibleAmmo: *Ref_Autogun_Ammo_Basic
     experienceTrainingMode: 5 # 50% firing
     dropoff: 6 # was 5
     aimRange: 0
@@ -3949,7 +3950,7 @@ items:
       shots: 2
       name: STR_BURST_SNAP_SHOT
     confAuto:
-      shots: 4
+      shots: 6
     tags:
       ITEM_RECOIL: 20
       REACTION_MULTIPLIER: 200
@@ -3958,7 +3959,7 @@ items:
     requiresBuyBaseFunc: [TRADE]
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
-      - STR_MIDTIER_PREREQ
+      - STR_LASER_WEAPONS
     size: 0.2
     costBuy: 15000
     costSell: 1500
@@ -3967,8 +3968,8 @@ items:
     experienceTrainingMode: 4
     dropoff: 6 # was 5
     aimRange: 24
-    snapRange: 18 # +4
-    autoRange: 10
+    snapRange: 16 # +2
+    autoRange: 9
     accuracyAimed: 105
     accuracySnap: 80 # +5
     accuracyAuto: 55
@@ -3979,7 +3980,7 @@ items:
       shots: 2
       name: STR_BURST_SNAP_SHOT
     confAuto:
-      shots: 4
+      shots: 6
     tags:
       ITEM_RECOIL: 20
       REACTION_MULTIPLIER: 150
@@ -4157,17 +4158,17 @@ items:
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
     costBuy: 150
-    costSell: 75
-    weight: 1 # was 3
-    clipSize: 15 # was 20
+    costSell: 40
+    weight: 2 # was 3
+    clipSize: 18 # was 20
     listOrder: 10730
 
   - type: STR_AUTOGUN_CLIP
     refNode: *REF_AUTOGUN_AMMO
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
-    costBuy: 300
-    costSell: 105
+    costBuy: 200
+    costSell: 75
     clipSize: 30
     listOrder: 10750
 
@@ -4215,12 +4216,12 @@ items:
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
       - STR_ELERIUM_115
-    costBuy: 800
+    costBuy: 600
     costSell: 105
     damageAlter:
       ToArmorPre: 0.02
       ArmorEffectiveness: 1.2
-      ToHealth: 1.6
+      ToHealth: 1.8
       ToStun: 0.4
       ToEnergy: 0.3
       ToWound: 0.3
@@ -4233,13 +4234,13 @@ items:
       - STR_AUTOGUNS_UNLOCK
       - STR_ELERIUM_115
       - STR_UFO_CONSTRUCTION
-    costBuy: 6000
+    costBuy: 4500
     costSell: 500
     weight: 5
     damageAlter:
       ToArmorPre: 0.02
       ArmorEffectiveness: 1.2
-      ToHealth: 1.6
+      ToHealth: 1.8
       ToStun: 0.4
       ToEnergy: 0.3
       ToWound: 0.3
@@ -4292,6 +4293,7 @@ items:
   - type: STR_LASPISTOL_CLIP                # Laspistol Ammo
     refNode: *DMG_LASGUN_STD
     size: 0.05
+    clipSize: 40 # was 30
 
   - type: STR_LASGUN_CLIP                   # Lasgun Ammo
     refNode: *DMG_LASGUN_STD
@@ -4303,7 +4305,8 @@ items:
     requiresBuyBaseFunc: [IMPERIUM]
     requiresBuy:
       - STR_HOTSHOT_AMMO # was locked to mid tier mastercrafting?
-    clipSize: 12 # was 20
+    costBuy: 2000 # was 3000
+    clipSize: 8 # was 10
 
   - type: STR_LASGUN_CLIP_HOTSHOT           # Lasgun Hotshot Ammo
     refNode: *DMG_LASGUN_HOT
@@ -6591,11 +6594,12 @@ items:
       ITEM_IGNITES_TARGETS: 3
 
   - type: STR_SMOKE_GRENADE                 # Smoke Grenade
+    costBuy: 15000 # was 1500
     fuseType: 0 # fixed 0 turn fuse
     fuseTriggerEvents:
       throwExplode: true
     costThrow:
-      time: 30 # was 55
+      time: 40 # was 55
       energy: 4
     costPrime:
       time: 10
@@ -7161,10 +7165,10 @@ items:
     damageType: 5 # plasma
     damageAlter:
       RandomType: 2 # 50-150
-      ArmorEffectiveness: 0.7
+      ArmorEffectiveness: 0.6 # was 0.7
       ToArmorPre: 0.2
       ToHealth: 0.9
-    power: 100
+    power: 80 # was 100
     damageBonus:
       strength: 0.2
       melee: 0.3
@@ -8892,12 +8896,12 @@ items:
 
   - type: STR_TELEPORT_CLAWS                # Terminator Teleport tool (Assault)
     refNode: *REF_POWERFIST_TEMPLATE
+    battleType: 6
     medikitTargetMatrix: 0
     medikitType: 3
     medikitActionName: STR_SCRIPT_TELEPORTER_TOGGLE
     medikitTargetSelf: true
-    painKiller: 999 #
-    battleType: 6 #
+    painKiller: 999
     tuUse: 5 # was 10
     flatRate: true
     fixedWeapon: true
@@ -8908,6 +8912,25 @@ items:
       ITEM_IS_TELEPORTER: 1
       ITEM_TELEPORTER_COOLDOWN: 1
       ITEM_TELEPORTER_ENERGY: 24 # was 10
+
+  - type: STR_TELEPORT_INTERCEPTOR          # Grey Knight Teleport tool (Interceptor)
+    refNode: *REF_FIST
+    battleType: 6
+    medikitTargetMatrix: 0
+    medikitType: 3
+    medikitActionName: STR_SCRIPT_TELEPORTER_TOGGLE
+    medikitTargetSelf: true
+    painKiller: 999
+    tuUse: 5 # was 10
+    flatRate: true
+    fixedWeapon: true
+    specialUseEmptyHand: true
+    hitSound: {mod: 40k, index: 788}
+    specialIconSprite: {mod: 40k, index: 220}
+    tags:
+      ITEM_IS_TELEPORTER: 1
+      ITEM_TELEPORTER_COOLDOWN: 1
+      ITEM_TELEPORTER_ENERGY: 24
 
   - type: STR_SMT_SIGNUM_VUL                # Devastator Signum
     refNode: *REF_FIST

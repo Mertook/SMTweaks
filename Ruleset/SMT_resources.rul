@@ -1604,7 +1604,7 @@ extraSprites:
       0: Resources/UNITS/DW/GRAV/GRVE_S_WS.png
 
 ###Grey Knights Tactical
-  - type: GKTACS.PCK
+  - type: GKTAC.PCK
     width: 512
     height: 720
     subX: 32
@@ -1612,8 +1612,34 @@ extraSprites:
     files:
       0: Resources/UNITS/GREY/TAC/GKTAC_S.png
 
+  - type: GKTACSB.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/GREY/TAC/GKTACSB_S.png
+
+  - type: GKINT.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/GREY/TAC/GKINTSB_S.png
+
+  - type: GKINTSB.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/GREY/TAC/GKINTSB_S.png
+
   - typeSingle: GKTAC__1__BASE
     fileSingle: Resources/UNITS/GREY/TAC/GKbase_tac.png
+  - typeSingle: GKINT__1__BASE
+    fileSingle: Resources/UNITS/GREY/TAC/GKbase_int.png
   - typeSingle: GKMK7__3__HOOD
     fileSingle: Resources/UNITS/GREY/TAC/hood.png
   - typeSingle: GKMK7__4__HELM1

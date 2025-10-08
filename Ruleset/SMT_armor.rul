@@ -3849,7 +3849,7 @@ armors:
     storeItem: STR_NONE
     zombiImmune: true
     psiDefence: &Ref_GreyKnight_PsiDef
-      psiStrength: 0.5 # psyker training
+      psiStrength: 1.0 # psyker training
       psiSkill: 1.5
       moraleCurrent: 1.5
     damageModifier: &Ref_GreyKnight_Tac_DmgMod
@@ -3885,7 +3885,7 @@ armors:
     tags:
       INFECTION_RESIST: 100 #corruption immune - Grey Knight bonus
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - type: STR_GK_TACTICAL_SB_UC             # Grey Knight Tactical (Stormbolter)
@@ -3917,8 +3917,71 @@ armors:
     tags:
       INFECTION_RESIST: 100 #corruption immune - Grey Knight bonus
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
+
+  - type: STR_GK_INTERCEPTOR_UC             # Grey Knight Interceptor
+    refNode: *ARMOR_TACTICAL
+    corpseBattle:
+      - STR_GKTAC_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_TELEPORT_INTERCEPTOR
+    storeItem: STR_GK_INTERCEPTOR
+    zombiImmune: true
+    psiDefence: *Ref_GreyKnight_PsiDef
+    damageModifier: *Ref_GreyKnight_Tac_DmgMod
+    stats:
+      tu: 10
+      stamina: 0
+      strength: 10
+      reactions: 10
+      firing: 0
+      melee: 10
+      throwing: 10
+      psiStrength: 0
+      psiSkill: 0
+    builtInWeapons:
+      - INV_NULL_3X3
+    units:
+      - STR_GREYKNIGHT
+    tags:
+      INFECTION_RESIST: 100 #corruption immune - Grey Knight bonus
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+  - type: STR_GK_INTERCEPTOR_SB_UC             # Grey Knight Interceptor
+    refNode: *ARMOR_TACTICAL
+    ufopediaType: STR_GK_INTERCEPTOR_UC
+    corpseBattle:
+      - STR_GKTAC_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_TELEPORT_INTERCEPTOR
+    storeItem: STR_GK_INTERCEPTOR
+    zombiImmune: true
+    psiDefence: *Ref_GreyKnight_PsiDef
+    damageModifier: *Ref_GreyKnight_Tac_DmgMod
+    stats:
+      tu: 10
+      stamina: 0
+      strength: 10
+      reactions: 10
+      firing: 0
+      melee: 10
+      throwing: 10
+      psiStrength: 0
+      psiSkill: 0
+    builtInWeapons:
+      - STR_GK_HB
+      - INV_NULL_3X3
+    units:
+      - STR_GREYKNIGHT
+    tags:
+      INFECTION_RESIST: 100 #corruption immune - Grey Knight bonus
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
 ### Other Marines
   - update: STR_BLOODRAVENS_TACTICAL_ARMOR      # Bloodraven Tactical
     refNode: *STR_MARINE_ARMOR
@@ -4055,6 +4118,207 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
 
+  - &REF_FLAK_ARMOR                             # Flak Armor defaults
+    type: STR_GUARD_ARMORSM
+    visibilityAtDay: 0
+    visibilityAtDark: 9
+    frontArmor: 30
+    sideArmor: 20
+    rearArmor: 15
+    underArmor: 20
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 1.0 #AP
+      - 1.2 #FLAMES
+      - 1.2 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.1 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 1.0 #IMPACT
+      - 1.0 #MELTA
+      - 0.8 #GRAV
+      - 1.0 #WARP
+      - 1.0 #SONIC
+    stats:
+      health: 5 # barely better than nothing
+
+  - &REF_CARAPACE_ARMOR                         # Carapace Armor defaults
+    type: STR_GUARD_ARMORH_UC
+    weight: 10
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 1.0 #AP
+      - 1.0 #FLAMES
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 1.0 #IMPACT
+      - 1.0 #MELTA
+      - 0.8 #GRAV
+      - 1.0 #WARP
+      - 1.0 #SONIC
+    stats:
+      health: 15
+
+  - type: STR_GUARD_ARMORH_UC                   # Guard Carapace
+    visibilityAtDay: 0
+    visibilityAtDark: 12
+    frontArmor: 70
+    sideArmor: 60
+    rearArmor: 30
+    underArmor: 60
+
+  - type: STR_MEDIC_CARAPACE_ARMOR              # Guard Carapace Medic
+    refNode: *REF_CARAPACE_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 12
+    frontArmor: 70
+    sideArmor: 60
+    rearArmor: 30
+    underArmor: 60
+    stats: # match carapace stats, just like carapace scanner and flak medic
+      tu: -5
+      stamina: -10
+      reactions: -5
+
+  - type: STR_OFFICER_CARAPACE_ARMOR                # Officer Carapace
+    refNode: *REF_CARAPACE_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 12
+    frontArmor: 70
+    sideArmor: 60
+    rearArmor: 30
+    underArmor: 60
+
+  - type: STR_COMMISSAR_CARAPACE_UC             # Commissar Carapace
+    refNode: *REF_CARAPACE_ARMOR
+    storeItem: STR_GUARD_ARMORH # commissars shouldn't need their own special armor item
+    visibilityAtDay: 0
+    visibilityAtDark: 12
+    frontArmor: 70
+    sideArmor: 60
+    rearArmor: 30
+    underArmor: 60
+
+  - type: STR_STORMTROOPER_CARAPACE_ARMOR       # Adv Vet Carapace
+    refNode: *REF_CARAPACE_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 16
+    frontArmor: 80
+    sideArmor: 60
+    rearArmor: 40
+    underArmor: 60
+    stats:
+      firing: 10
+      reactions: 10
+      bravery: 10
+
+  - type: STR_STORMTROOPER_MEDIC_CARAPACE_ARMOR # Adv Vet Carapace Medic
+    refNode: *REF_CARAPACE_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 16
+    frontArmor: 80
+    sideArmor: 60
+    rearArmor: 40
+    underArmor: 60
+    stats:
+      tu: -5
+      stamina: -5 # was -10
+      reactions: -5 # was -10
+
+  - type: STR_STORMTROOPER_CARAPACE_ARMOR_HELLGUN   # Adv Vet Carapace Hellgun
+    refNode: *REF_CARAPACE_ARMOR
+    weight: 15 # was 20
+    visibilityAtDay: 0
+    visibilityAtDark: 16
+    frontArmor: 80
+    sideArmor: 60
+    rearArmor: 40
+    underArmor: 60
+
+  - type: STR_STORMTROOPER_CARAPACE_ARMOR_VOLLEYGUN # Adv Vet Carapace Volleygun
+    refNode: *REF_CARAPACE_ARMOR
+    weight: 20
+    visibilityAtDay: 0
+    visibilityAtDark: 16
+    frontArmor: 80
+    sideArmor: 60
+    rearArmor: 40
+    underArmor: 60
+
+  - type: STR_STORMTROOPER_CARAPACE_ARMOR_HELLPISTOL    # Adv Vet Carapace Hellpistol
+    refNode: *REF_CARAPACE_ARMOR
+    weight: 10
+    visibilityAtDay: 0
+    visibilityAtDark: 16
+    frontArmor: 80
+    sideArmor: 60
+    rearArmor: 40
+    underArmor: 60
+
+  - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR   # Vet Officer Carapace
+    refNode: *REF_CARAPACE_ARMOR
+    visibilityAtDay: 0
+    visibilityAtDark: 16
+    frontArmor: 80
+    sideArmor: 60
+    rearArmor: 40
+    underArmor: 60
+
+  - type: STR_STEELLEGION_CARAPACE_ARMOR            # Steel Legion Carapace
+    refNode: *REF_CARAPACE_ARMOR
+    units: # make SL exclusive
+      - STR_GUARDSL
+      - STR_GUARDSL_VETERAN
+
+  - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR_HELLGUN
+    refNode: *REF_CARAPACE_ARMOR
+    weight: 15
+
+  - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR_VOLLEYGUN
+    refNode: *REF_CARAPACE_ARMOR
+    weight: 20
+
+  - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR_HELLPISTOL
+    refNode: *REF_CARAPACE_ARMOR
+    weight: 10
+
+  - type: STR_SCION_CARAPACE_ARMOR
+    refNode: *REF_CARAPACE_ARMOR
+
+  - type: STR_SCION_CARAPACE_ARMOR_HELLGUN
+    refNode: *REF_CARAPACE_ARMOR
+
+  - type: STR_SCION_CARAPACE_ARMOR_VOLLEYGUN
+    refNode: *REF_CARAPACE_ARMOR
+
+  - type: STR_STEELLEGION_CARAPACE_ARMOR_OFFICER
+    refNode: *REF_CARAPACE_ARMOR
+    units: # make SL Officer exclusive
+      - STR_GUARDSL_OFFICER_VETERAN
+
+  - type: STR_STEELLEGION_CARAPACE_ARMOR_VOX
+    refNode: *REF_CARAPACE_ARMOR
+    units: # make SL exclusive
+      - STR_GUARDSL
+      - STR_GUARDSL_VETERAN
+      #- STR_GUARDSL_OFFICER_VETERAN
+
+  - type: STR_STEELLEGION_CARAPACE_ARMOR_MEDIC
+    refNode: *REF_CARAPACE_ARMOR
+    units: # make SL exclusive
+      - STR_GUARDSL
+      - STR_GUARDSL_VETERAN
+      #- STR_GUARDSL_OFFICER_VETERAN
+
+
 ### BOMBARD
   - type: STR_DUMMY_TARGETER_UC                 # Target Designator (Dummy base)
     spriteSheet: BOMBARDSHELL.PCK
@@ -4076,7 +4340,7 @@ armors:
     tags:
       BOMBARD_DUMMY: 1
 
-  - &STR_BOMBARD_ARMOR                          # Target Designator (Shells)
+  - &REF_BOMBARD_ARMOR                          # Target Designator (Shells)
     type: STR_BOMBARD_ORBITAL_ARMOR
     spriteSheet: BOMBARDSHELL.PCK
     drawingRoutine: 16
@@ -4133,23 +4397,23 @@ armors:
       UNIT_TYPE_MECHANICAL: 1
 
   - type: STR_BOMBARD_PLANE_ARMOR               # Target Designator (Plane)
-    refNode: *STR_BOMBARD_ARMOR
+    refNode: *REF_BOMBARD_ARMOR
     spriteSheet: BOMBARDPLANE.PCK
 
   - type: STR_BOMBARD_NUKE_ARMOR                # Target Designator (Nuke)
-    refNode: *STR_BOMBARD_ARMOR
+    refNode: *REF_BOMBARD_ARMOR
     spriteSheet: BOMBARDNUKE.PCK
 
   - type: STR_BOMBARD_ROCKET_ARMOR              # Target Designator (Rocket)
-    refNode: *STR_BOMBARD_ARMOR
+    refNode: *REF_BOMBARD_ARMOR
     spriteSheet: BOMBARDROCKET.PCK
 
   - type: STR_BOMBARD_SOLDIER_ARMOR             # Target Designator (Soldier)
-    refNode: *STR_BOMBARD_ARMOR
+    refNode: *REF_BOMBARD_ARMOR
     spriteSheet: BOMBARDSOLDIER.PCK
 
   - type: STR_BOMBARD_TANK_ARMOR                # Target Designator (Tank)
-    refNode: *STR_BOMBARD_ARMOR
+    refNode: *REF_BOMBARD_ARMOR
     spriteSheet: BOMBARDTANK.PCK
 
 ### EXTRA
@@ -4451,21 +4715,22 @@ armors:
 
   - &REF_BATTLESERVITOR_ARMOR
     type: GENERIC_BATTLESERVITOR_HBARMOR
-    damageModifier:  # CSERVITOR ARMOR
-      - 1.0  # SUPPORT
-      - 1.0  # AP
-      - 0.6  # FLAMES
-      - 0.7  # HE
-      - 1.1  # LASCANON
-      - 1.2  # PLASMA
-      - 1.0  # STUN
-      - 1.2  # MELEE
-      - 1.0  # ACID
-      - 0.0  # SMOKE
-      - 1.0  # IMPACT
-      - 1.1  # MELTA
-      - 1.1  # GRAV
-      - 1.0  # WARP
+    damageModifier:
+      - 1.0  #SUPPORT
+      - 1.0  #AP
+      - 0.6  #FLAMES
+      - 0.7  #HE
+      - 1.1  #LASCANON
+      - 1.2  #PLASMA
+      - 1.0  #STUN
+      - 1.2  #MELEE
+      - 1.0  #ACID
+      - 0.0  #SMOKE
+      - 1.0  #IMPACT
+      - 1.1  #MELTA
+      - 1.1  #GRAV
+      - 1.0  #WARP
+      - 1.0  #SONIC
     loftempsSet: [3] # was 4
     tags:
       UNIT_TYPE_SERVITOR: 1

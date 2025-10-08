@@ -88,28 +88,19 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_FAITHFUL_ARMORY
       - STR_ADEPTAS_SOB_MOBILIZATION
       - STR_UFO_CONSTRUCTION
-      - STR_MULTIMELTA_PREREQ
+      - STR_FUSION_MISSILE
 
   - name: STR_FUSION_MISSILE                        # Multimelta stuff
     cost: 880
     points: 25
     dependencies:
       - STR_MULTIMELTA_PREREQ
-      - STR_BLASTER_BOMB
 
   - name: STR_MELTABOMB                             # Multimelta stuff
     cost: 100
     points: 25
     dependencies:
-      - STR_MIDTIER_PREREQ
-      - STR_MULTIMELTA_PREREQ
-
-  - name: STR_BLASTER_BOMB                          # Multimelta stuff
-    cost: 300
-    points: 30
-    dependencies:
-      - STR_MULTIMELTA_PREREQ
-    needItem: false # was true
+      - STR_FUSION_MISSILE
 
   - name: STR_CHB                                   # Chaos Storm Bolter
     dependencies: !remove

@@ -121,13 +121,13 @@ extended:
             var int rendVal 0;
             if eq damaging_type 5; #Plasma damage
               unit.getTag unitMod Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE;
-              #debug_log "Armor resist (Plasma): " unitMod damaging_type to_armor;
+              debug_log "Armor resist (Plasma): " unitMod damaging_type to_armor;
             else eq damaging_type 11; #Melta damage
               unit.getTag unitMod Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE;
-              #debug_log "Armor resist (Melta): " unitMod damaging_type to_armor;
+              debug_log "Armor resist (Melta): " unitMod damaging_type to_armor;
             else; # Generic damage
               unit.getTag unitMod Tag.SMT_UNIT_SHRED_RESISTANCE;
-              #debug_log "Armor resist (Regular): " unitMod damaging_type to_armor;
+              debug_log "Armor resist (Regular): " unitMod damaging_type to_armor;
             end;
 
             if and neq unitMod 0 gt to_armor 0; #Only run if the armor actually has resist (and damage is being dealt)
@@ -137,11 +137,11 @@ extended:
                 sub rendVal 100;
                 abs rendVal;
                 muldiv unitMod rendVal 100;
-                #debug_log "Armor Rend Adjustment: " rendVal unitMod;
+                debug_log "Armor Rend Adjustment: " rendVal unitMod;
               end;
               muldiv dmgReduction unitMod 100;
               sub to_armor dmgReduction;
-              #debug_log "Armor NewDmg: " dmgReduction to_armor;
+              debug_log "Armor NewDmg: " dmgReduction to_armor;
             end;
           end;
 

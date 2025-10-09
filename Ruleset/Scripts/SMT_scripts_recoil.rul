@@ -7,7 +7,7 @@ extended:
   scripts:
     accuracyMultiplierBonusStats:
       #*** recoil accuracy penalty on firing weapons with not enough strength ***
-      - override: 40k_aMBS_missing_strength_affects_accuracy #*** Overrides existing 40k script to add 1handed recoil penalty ***
+      - override: 40k_aMBS_missing_strength_affects_accuracy # Overrides existing 40k script to add 1handed recoil penalty
         offset: 50
         code: |
           var ptr RuleItem weaponRuleset;
@@ -64,7 +64,58 @@ extended:
           if lt unitStrength 100;
             muldiv bonus unitStrength 100;
             limit_lower bonus accuracyFloor;
+          end;
+
+          return bonus;
+
+    meleeMultiplierBonusStats:
+      #*** strength requirement penalty on melee weapons ***
+      - override: 40k_mMBS_missing_strength_affects_accuracy # Overrides 40k script to add variable 1h/2h penalties to melee
+        offset: 10
+        code: |
+          var ptr RuleItem weaponRuleset;
+          var ptr BattleItem otherWeapon;
+          var int itemStrengthRequirement;
+          var int unitStrength;
+          var int accuracyFloor;
+          var int temp;
+          var int temp2;
+
+          weapon.getRuleItem weaponRuleset;
+          weaponRuleset.getTag itemStrengthRequirement Tag.ITEM_STRENGTH_REQUIREMENT;
+
+          if eq 0 itemStrengthRequirement;
+            return bonus;
+          end;
+
+          unit.getLeftHandWeapon otherWeapon;
+          if eq weapon otherWeapon;
+            unit.getRightHandWeapon otherWeapon;
+          end;
+          if neq otherWeapon null;
+            weaponRuleset.getTag temp Tag.ITEM_STRENGTH_1H_REQUIREMENT;
+            unit.getTag temp2 Tag.SMT_ARMOR_IGNORE_1H_MELEE_PEN;
+            if and gt temp 0 eq temp2 0; # if weapon has a 1h penalty and unit armor doesn't negate penalty, change str requirement
+              set itemStrengthRequirement temp;
+            end;
+          end;
+
+          # lower limit for penalty is 50%
+          set accuracyFloor bonus;
+          div accuracyFloor 2;
+
+          # compare unit strength as percent of the strength requirement value
+          # less than 50% = full penalty
+          # 50% to 100% = scaling penalty
+          unit.Stats.getStrength unitStrength;
+          muldiv unitStrength 100 itemStrengthRequirement;
+
+          if lt unitStrength 100;
+
+            muldiv bonus unitStrength 100;
+            limit_lower bonus accuracyFloor;
 
           end;
 
           return bonus;
+

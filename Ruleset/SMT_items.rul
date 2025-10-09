@@ -963,6 +963,24 @@ items:
     tags:
       ITEM_AMMO_COLOR: 2
 
+  - type: STR_PSILENCER                     # Psilencer
+    categories: [STR_CAT_DEVASTATOR]
+    battleType: 1
+    invWidth: 2
+    invHeight: 3
+    listOrder: 11805
+    size: 0.2
+    armor: 300
+    bigSprite: 361
+    floorSprite: 361
+    handSprite: 640
+    bulletSprite: { mod: 40k, index: 12 }
+    hitAnimation: { mod: 40k, index: 100 }
+    bulletSpeed: 30
+    explosionSpeed: 3
+    fireSound: 102
+    clipSize: -1
+
   - type: STR_BIKE_ARMOR                    # Bike Armor (Item)
     costBuy: 280000 # was 360k
     costSell: 140000 # was 140k

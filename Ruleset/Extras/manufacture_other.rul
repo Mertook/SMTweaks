@@ -100,25 +100,6 @@ manufacture:
   - name: STR_OGRYN_CARAPACE
     category: STR_CAT_ARMOR
 
-  - name: STR_PSYKER_REQUISITION
-    requires:
-      - STR_PSYKER_REQUISITION
-    requiredItems:
-      STR_KILLPOINT_TOKEN: 40 # was 500, cost now split into psi abilities
-    producedItems: {} # a laspistol is not worth mentioning
-
-  - name: STR_ENGINSEER_REQUISITION                 # Enginseer Recruit
-    category: STR_CAT_TECHPRIEST
-    requires:
-      - STR_ENGINSEER_REQUISITION
-    space: 0
-    time: 200
-    cost: 100000
-    requiredItems:
-      STR_KILLPOINT_TOKEN: 200
-    producedItems: {}
-    spawnedPersonType: STR_ENGINSEER
-
   - name: STR_CONVERT_COMMISSION
     producedItems:
       STR_OFFICER_COMMISSION: 1

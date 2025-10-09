@@ -536,12 +536,18 @@ ufopaedia:
     image_id: 3BON.SPK
     text: STR_HWP_DETAILS_CODEX
     listOrder: 52101
+  - id: STR_MELEE_STR_PENALTY       #20110 - Melee Penalty
+    type_id: 10
+    section: STR_HELP_ADV
+    image_id: 1MCTH.SPK
+    text: STR_MELEE_STR_PENALTY_UFOPEDIA
+    listOrder: 52105
   - id: STR_RECOIL_PENALTY          #20110 - Recoil Penalty
     type_id: 10
     section: STR_HELP_ADV
     image_id: RECOIL_PENALTY.SPK
     text: STR_RECOIL_PENALTY_UFOPEDIA
-    listOrder: 52100
+    listOrder: 52110
   - id: STR_BIPOD_DETAILS           #20120 - Bipods
     type_id: 10
     section: STR_HELP_ADV
@@ -1328,6 +1334,15 @@ ufopaedia:
     text: STR_GK_TACTICAL_UC_CODEX
     #listOrder: 5050
 
+  - id: STR_GK_INTERCEPTOR_UC               # Grey Knight Interceptor
+    type_id: 15
+    section: STR_ARMORPEDIA
+    requires:
+      - STR_GK_INTERCEPTOR_R
+    image_id: 0GK.SPK ###CHANGEME
+    text: STR_GK_INTERCEPTOR_UC_CODEX
+    #listOrder: 5050
+
   - id: STR_ENGINSEER_ARMOR_UC              # Enginseer
     type_id: 15
     section: STR_ARMORPEDIA
@@ -1911,6 +1926,26 @@ ufopaedia:
     requires:
       - STR_GUARD_AND_INQUISITION
       - STR_NOT_CHAOSCULT
+
+  - id: STR_STUB_RIFLE
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: STUB_RIFLE.SPK
+    text: STR_STUB_RIFLE_UFOPEDIA
+
+  - id: STR_SMG_STUB_GUN                    # AutoStubber
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1CH.SPK
+    text: STR_SMG_STUB_GUN_CODEX
+
+  - id: STR_PSILENCER                       # Psilencer
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1HB.SPK ###CHANGEME
+    text: STR_PSILENCER_CODEX
+
+
 ###BOLTERS
   - id: STR_BOLTER_ENFORCER                 # Light Bolter (Locke)
     type_id: 14

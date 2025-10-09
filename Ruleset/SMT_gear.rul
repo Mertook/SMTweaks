@@ -2379,7 +2379,7 @@ items:
     autoShots: 3 # was 0
     tags:
       ITEM_IS_HEAVY_WEAPON: 1 # terminator handgun
-      ITEM_RECOIL: 50 # greatly reduced, inbuilt bonus
+      ITEM_RECOIL: 0 # inbuilt weapon
       REACTION_MULTIPLIER: 200 # +100% reactions, pistol grip
 
   - type: STR_HB_CLIP                       # Stormbolter Ammo
@@ -2422,6 +2422,21 @@ items:
     shotgunSpread: 1
     shotgunBehavior: 1
     shotgunPellets: 2
+
+  - type: STR_STORMBOLTER_PSI_MAG
+    refNode: *DMG_BOLTER_AMMO_STD
+    categories: [STR_CAT_TERMINATOR, STR_CAT_BOLTER]
+    armor: 300
+    size: 0.05
+    power: 75 # was 70
+    damageBonus:
+      psiStrength: 0.5
+      flatHundred: -0.4
+    damageAlter:
+      ArmorEffectiveness: 0.8
+    clipSize: 24 # was 20
+    tags:
+      DAMAGE_BONUS_PERCENT_DAEMONIC: 150
 
   - type: STR_STORMBOLTER_TURRET_DROPPOD    # Droppod Stormbolter
     refNode: *DMG_BOLTER_AMMO_STD
@@ -3672,7 +3687,7 @@ items:
       - STR_STUB_GUN_AMMO_INC
     dropoff: 6
     accuracySnap: 60
-    accuracyAuto: 45
+    accuracyAuto: 40
     tuSnap: 25
     tuAuto: 33
     autoShots: 6
@@ -3684,7 +3699,7 @@ items:
     inventoryMoveCost:
       basePercent: 100 # was 50
     tags:
-      REACTION_MULTIPLIER: 200
+      REACTION_MULTIPLIER: 150
 
   - &REF_STUBBER_AMMO                       # Stubber Ammo
     type: STR_STUB_GUN_AMMO
@@ -3694,7 +3709,7 @@ items:
     power: 42
     damageType: 1
     damageAlter:
-      ArmorEffectiveness: 1.2 # was 1.0
+      ArmorEffectiveness: 1.0
       ToArmorPre: 0.05
       ToArmor: 0.1
     clipSize: 8
@@ -3782,8 +3797,7 @@ items:
 
   - type: STR_AUTOPISTOL_HIGHGRADE          # Autopistol (High Grade)
     categories: [STR_CAT_AUTO]
-    dropoff: 6  # pistol
-    weight: 7  # quite heavy for a pistol
+    weight: 7
     requiresBuy:
       - STR_BALLISTIC_WEAPONS_HIGHGRADE
       - STR_AUTOGUNS_UNLOCK
@@ -3791,20 +3805,21 @@ items:
       - STR_AUTOGUN_CLIP
       - STR_AUTOGUN_CLIP_DRUM
       - STR_AUTOGUN_CLIP_DRUM_KRAKEN
-    snapRange: 10  # -5 vs rifle version
-    autoRange: 6  # -5 vs rifle version
+    dropoff: 6
+    snapRange: 10
+    autoRange: 6
     aimRange: 0
-    accuracyAuto: 35  # -20 vs rifle
-    accuracySnap: 60  # -10 vs rifle
+    accuracyAuto: 35
+    accuracySnap: 60
     accuracyAimed: 0
-    tuSnap: 20  # -5, pistol
-    tuAuto: 33  #
+    tuSnap: 20
+    tuAuto: 33
     tuAimed: 0
     confSnap:
       shots: 3
       name: STR_BURST_SNAP_SHOT
-    autoShots: 6  # +1
-    experienceTrainingMode: 4
+    autoShots: 6
+    experienceTrainingMode: 5
     armor: 200
     listOrder: 10740
     tags:
@@ -3823,7 +3838,7 @@ items:
     size: 0.2
     costBuy: 3000
     costSell: 900
-    weight: 10
+    weight: 11
     compatibleAmmo: &Ref_Autogun_Ammo_Basic
       - STR_AUTOGUN_CLIP
       - STR_AUTOGUN_CLIP_AP
@@ -3837,8 +3852,8 @@ items:
     accuracySnap: 65
     accuracyAuto: 45
     tuAimed: 0
-    tuSnap: 27 # was 33
-    tuAuto: 36 # was 40
+    tuSnap: 26 # was 33
+    tuAuto: 35 # was 40
     confSnap:
       shots: 3
       name: STR_BURST_SNAP_SHOT
@@ -3855,7 +3870,7 @@ items:
     size: 0.2
     costBuy: 15000
     costSell: 1500
-    weight: 10
+    weight: 11
     compatibleAmmo: &Ref_Autogun_Ammo_Adv
       - STR_AUTOGUN_CLIP
       - STR_AUTOGUN_CLIP_AP
@@ -3994,7 +4009,7 @@ items:
     size: 0.2
     costBuy: 12500
     costSell: 1250
-    weight: 12
+    weight: 13
     compatibleAmmo: *Ref_Autogun_Ammo_Adv
     experienceTrainingMode: 5 # 50% firing
     dropoff: 6
@@ -4005,10 +4020,10 @@ items:
     accuracySnap: 70
     accuracyAuto: 45
     tuAimed: 0
-    tuSnap: 24
+    tuSnap: 25
     tuAuto: 33
     confSnap:
-      shots: 4
+      shots: 5
       name: STR_BURST_SNAP_SHOT
     confAuto:
       shots: 9
@@ -4023,7 +4038,7 @@ items:
     size: 0.2
     costBuy: 12500
     costSell: 1250
-    weight: 12
+    weight: 13
     compatibleAmmo: *Ref_Autogun_Ammo_Adv
     experienceTrainingMode: 5 # 50% firing
     dropoff: 6
@@ -4037,7 +4052,7 @@ items:
     tuSnap: 22 # -2
     tuAuto: 33
     confSnap:
-      shots: 4
+      shots: 5
       name: STR_BURST_SNAP_SHOT
     confAuto:
       shots: 9
@@ -6799,6 +6814,42 @@ items:
       energy: true
     noLOSAccuracyPenalty: 75  # indirect fire weapon
 
+### Psyker Guns
+  - type: STR_PSILENCER                     # Psilencer
+    costSell: 40000
+    twoHanded: true
+    weight: 15
+    dropoff: 5
+    autoRange: 16
+    snapRange: 22
+    aimRange: 0
+    accuracyAuto: 66
+    accuracySnap: 80
+    accuracyAimed: 0
+    tuAuto: 50
+    tuSnap: 30
+    tuAimed: 0
+    sprayWaypoints: 2
+    power: 20
+    accuracyMultiplier:
+      firing: 0.4
+      psiStrength: 0.6
+    damageBonus:
+      psiStrength: 0.5
+    damageType: 13 # WARP
+    damageAlter:
+      RandomType: 8
+      ArmorEffectiveness: 0.4
+      ToArmorPre: 0.1
+      ToArmor: 0.1
+      ToHealth: 1.0
+      ToStun: 0.5
+    confSnap:
+      shots: 2
+    confAuto:
+      shots: 6
+    tags:
+      DAMAGE_BONUS_PERCENT_DAEMONIC: 150
 
 ### Melee
   - type: STR_CHAINSWORD                    # Chainsword
@@ -7038,8 +7089,6 @@ items:
       ToHealth: 1.0
       RandomWound: false
       ToWound: 0.1
-    tags:
-      ITEM_STEALTH_ASSASSIN_WEAPON: 1 # melee
 
   - type: STR_SCOUT_BLADE                   # Combat Blade
     categories: [STR_CAT_MELEE]
@@ -7087,10 +7136,15 @@ items:
       ITEM_STEALTH_ASSASSIN_WEAPON: 1 # melee
 
   - type: STR_EVISCERATOR                   # Eviscerator
+    twoHanded: true
+    oneHandedPenalty: 100
     costMelee:
-      time: 18 # was 20%
+      time: 20 # was 20%
       energy: 6 # was 8
     flatRate: true
+    tags:
+      ITEM_STRENGTH_REQUIREMENT: 40 # was 35
+      ITEM_STRENGTH_1H_REQUIREMENT: 90
 
   - type: STR_EXECUTIONER_BLADE             # Judicar Executioner Relic Blade
     categories: [STR_CAT_MELEE]
@@ -7165,10 +7219,10 @@ items:
     damageType: 5 # plasma
     damageAlter:
       RandomType: 2 # 50-150
-      ArmorEffectiveness: 0.6 # was 0.7
-      ToArmorPre: 0.2
-      ToHealth: 0.9
-    power: 80 # was 100
+      ArmorEffectiveness: 0.5 # was 0.7
+      ToArmorPre: 0.1 # was 0.2
+      ToHealth: 1.0
+    power: 75 # was 100
     damageBonus:
       strength: 0.2
       melee: 0.3
@@ -7192,6 +7246,39 @@ items:
     costMelee:
       time: 12
       energy: 2
+
+  - &REF_THUNDERHAMMER
+    type: STR_HAMMER
+    twoHanded: true
+    oneHandedPenalty: 100
+    costMelee:
+      time: 25
+      energy: 8
+    flatMelee: true
+    power: 120
+    damageBonus:
+      strength: 1.0
+      melee: 0.2
+    meleeAlter:
+      ArmorEffectiveness: 0.6
+      ToArmorPre: 0.3
+    meleeMultiplier:
+      melee: 0.6
+      strength: 0.4
+    accuracyMelee: 80
+    tags:
+      ITEM_STRENGTH_REQUIREMENT: 100
+      ITEM_STRENGTH_1H_REQUIREMENT: 200
+      ITEM_DOESNT_HURT_USER: 1
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 66
+
+  - type: STR_HAMMER_MC
+    refNode: *REF_THUNDERHAMMER
+    weight: 70
+    costMelee:
+      time: 22
+      energy: 8  # light melee weapon; light 1 energy, medium 2, heavy 4, very heavy 8
+    accuracyMelee: 90
 
 ### Force Weapons
   # - &DMG_FORCE_WEAPON

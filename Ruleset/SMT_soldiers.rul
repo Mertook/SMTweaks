@@ -2147,18 +2147,18 @@ soldiers:
       firing: 140
       melee: 140
       throwing: 120
-      psiStrength: 160
+      psiStrength: 120
       psiSkill: 160
     trainingStatCaps:
       tu: 80
       stamina: 100
       health: 80
-      firing: 100
-      throwing: 80
       strength: 80
-      psiStrength: 100
-      psiSkill: 100
+      firing: 100
       melee: 100
+      throwing: 80
+      psiStrength: 120
+      psiSkill: 160
     dogfightExperience:
       bravery: 10
       reactions: 30
@@ -2186,7 +2186,8 @@ soldiers:
     rankBattleSprite: {mod: 40k, index: 260}
     rankTinySprite: {mod: 40k, index: 175}
     tags:
-      SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 3
+      SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 2 # psyker
+      SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 3 # devout
 
 ### Deathwatch
   - &STR_SOLDIER_DEATHWATCH             # DW Marine Reference
@@ -3025,7 +3026,7 @@ soldiers:
       psiStrength: 65
       psiSkill: 30
     statCaps:
-      psiStrength: 100
+      psiStrength: 120
       psiSkill: 100
     skills:
       - STR_PSISKILL_SHROUD
@@ -3160,9 +3161,9 @@ soldiers:
     rankStrings:
       - STR_TECH_ENGINSEER_RANK_0
       - STR_TECH_ENGINSEER_RANK_0
-    rankSprite: {mod: 40k, index: 1000}
-    rankBattleSprite: {mod: 40k, index: 1000}
-    rankTinySprite: {mod: 40k, index: 1000}
+    rankSprite: 150
+    rankBattleSprite: 800
+    rankTinySprite: 300
     flagOffset: 42 # guard kill flags
     skillIconSprite: 47
     skills:

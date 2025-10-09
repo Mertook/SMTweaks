@@ -437,7 +437,6 @@ research:
       - STR_MEDI_KIT_PREREQ
       - STR_LIGHT_BOLTERS
       - STR_LIGHT_BOLTERS_LOWTIER
-      - STR_LIGHT_BOLTERS_MIDTIER
       - STR_TRAINFACILITYR
       - STR_IMPERIAL_CHURCH
       - STR_INQ_STORMTROOPER_CODEX_UNLOCKER
@@ -633,6 +632,13 @@ research:
       - STR_IMPERIAL_CHURCH
       - STR_PICKED_LOYALIST_STRATEGY
 
+  - name: STR_GREENEST_ORKZ             # Ork Strategy
+    unlocks: !add
+      - STR_40MM_AMMO
+      - STR_STUBBERS_UNLOCK
+      - STR_AUTOGUNS_UNLOCK
+      - STR_PICKED_LOYALIST_STRATEGY # don't ask questions
+
 ### Faction Mid-tier
 ## Space Marine
   - name: STR_MT                        # Marine Midtier
@@ -766,14 +772,35 @@ research:
   - name: STR_HOTSHOT_AMMO              # Unlock Hotshot Ammo
     cost: 280
     points: 10
+    listOrder: 20
     dependencies:
       - STR_LASGUNS_UNLOCK
       - STR_MIDTIER_PREREQ
+      - STR_PICKED_LOYALIST_STRATEGY
+
+  - name: STR_LIGHT_BOLTERS_MIDTIER
+    dependencies:
+      - STR_LIGHT_BOLTERS_LOWTIER
+      - STR_MIDTIER_PREREQ
+      - STR_PICKED_LOYALIST_STRATEGY
+    unlocks: !add
+      - STR_LIGHTBOLTER_ADV_AMMO
+      - STR_40MM_AMMO
+
+
+  - name: STR_PSILENCER_R               # Psilencer
+    cost: 335
+    points: 20
+    listOrder: 20
+    dependencies:
+      - STR_GREYKNIGHTS
+      - STR_MT_GK
 
 ###Armor
   - name: STR_GK_INTERCEPTOR_R             # Grey Knight Interceptor Armor
     cost: 335
     points: 20
+    listOrder: 20
     dependencies:
       - STR_GREYKNIGHTS
       - STR_ALIEN_ALLOYS

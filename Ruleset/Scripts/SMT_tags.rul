@@ -26,6 +26,7 @@ extended:
       ITEM_AMMO_SKIP_BIGOBS: int        # ammo causes weapon sprite to change - X = size of index shift
       ## Heavy Weapons
       ITEM_HWP_IGNORES_ARMOR_BONUS: int # does weapon ignore armor hwp bonus (see below) meant for snipers etc
+      ITEM_STRENGTH_1H_REQUIREMENT: int # item has non-standard strength penalty when used with both hands full
       ## Infiltrator
       ITEM_STEALTH_RANGE: int           # item used to activate restealth - X = detection range
       ITEM_STEALTH_MOVEPENALTY: int     # % modifier on movespeed while stealthed
@@ -73,6 +74,7 @@ extended:
       ARMOR_REGENERATE_DURABILITY: int          # Unit armor sides are restored by X each turn
       ## Heavy Weapons
       SMT_ARMOR_HEAVY_WEAPON_USER: int          # counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 2/3, 3 = 2/4, 4 = 2/5 etc
+      SMT_ARMOR_IGNORE_1H_MELEE_PEN: int        # counteracts the str penalty for melee when using with both hands full
       ## Infiltrator
       ARMOR_IS_INFILTRATOR: int                 # at start of battle unit immediately enters stealth for X turns
       ARMOR_INFILTRATOR_RANGE: int              # detection range for infiltrator stealth

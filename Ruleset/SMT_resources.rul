@@ -262,6 +262,7 @@ extraSprites:
       358: Resources/ITEMS/AUTOGUN/AutogunHead_1_BigOb.png      # Autogun Headhunter (Drum) - Missing
       359: Resources/ITEMS/AUTOGUN/AmmoClip_BigOb.png           # Autogun Ammo Clip
       360: Resources/ITEMS/AUTOGUN/AmmoDrum_BigOb.png           # Autogun Ammo Drum
+      361: Resources/ITEMS/GREY/Psilencer_BigOb.png             # Psilencer
 
       ### Corpses
       700: Resources/UNITS/DW/SCOUT/SCTDW_BigOb.png             # DW Scout Corpse
@@ -332,6 +333,7 @@ extraSprites:
       350: Resources/ITEMS/AUTOGUN/AutogunArma_FlrOb.png        # Autogun Armageddon
       353: Resources/ITEMS/AUTOGUN/AutogunArmaB_FlrOb.png       # Autogun Armageddon Bayonet
       356: Resources/ITEMS/AUTOGUN/AutogunHead_FlrOb.png        # Autogun Headhunter
+      361: Resources/ITEMS/GREY/Psilencer_FlrOb.png             # Psilencer
       ### Corpses
       700: Resources/UNITS/DW/SCOUT/SCTDW_FlrOb.png             # DW Scout Corpse
       701: Resources/UNITS/TECH/CorpseTech_FlrOb.png            # Enginseer Corpse
@@ -399,6 +401,7 @@ extraSprites:
       616: Resources/ITEMS/AUTOGUN/AutogunArma_HndOb.png        # Autogun Armageddon
       624: Resources/ITEMS/AUTOGUN/AutogunArmaB_HndOb.png       # Autogun Armageddon Bayonet
       632: Resources/ITEMS/AUTOGUN/AutogunHead_HndOb.png        # Autogun Headhunter
+      640: Resources/ITEMS/GREY/Psilencer_HndOb.png             # Psilencer
 
 
   - type: CustomArmorPreviews
@@ -464,7 +467,27 @@ extraSprites:
 
   - type: BASEBITS.PCK # base craft sprites are +33 index for some reason
     files:
-      233: Resources/CRAFT/SLGorgontop_base.png #200 - Gorgon Camo1 (Steel Legion)
+      #Ranks
+      150: Resources/RANKS/MechRank_B.png           # Mechanicus Rank 0
+      151: Resources/RANKS/MechRank_B.png           # Mechanicus Rank 1
+      #Craft
+      269: Resources/CRAFT/SLGorgontop_base.png     #236 - Gorgon Camo1 (Steel Legion)
+
+###Tiny Ranks - 6 slots per item
+  - type: TinyRanks
+    width: 42
+    height: 7
+    subX: 7
+    subY: 7
+    files:
+      300: Resources/RANKS/MechRank_Sm.png
+###Ranks
+  - type: SMOKE.PCK
+    width: 32
+    height: 40
+    files:
+      800: Resources/RANKS/MechRank_S.png           # Mechanicus Rank 0
+      801: Resources/RANKS/MechRank_S.png           # Mechanicus Rank 1
 
 ###Scout Sergeant
   - typeSingle: SCOUT__1__SCOUTSGTM
@@ -2091,3 +2114,4 @@ extraSounds:
     files:
       100: Resources/SOUND/ATTMM7.ogg
       101: Resources/SOUND/IDLE4.ogg
+      102: Resources/SOUND/zap102.wav

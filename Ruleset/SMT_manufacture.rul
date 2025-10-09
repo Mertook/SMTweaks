@@ -1590,6 +1590,19 @@ manufacture:
       STR_ALIEN_ALLOYS: 10
       STR_KILLPOINT_TOKEN: 10
 
+  - name: STR_PSILENCER
+    category: STR_WEAPON
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_PSILENCER_R
+    space: 0
+    time: 750
+    cost: 40000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+      STR_ELERIUM_115: 15
+      STR_KILLPOINT_TOKEN: 300
+
 ### BOMBARD
   - name: STR_ORBITAL_STRIKE_AMMO                   # Orbital Strike ammo
     category: STR_CAT_FIRESUPPORT
@@ -1781,6 +1794,24 @@ manufacture:
     spawnedPersonType: STR_GREYKNIGHT
     producedItems: {}
 
+  - name: STR_PSYKER_REQUISITION
+    requires:
+      - STR_PSYKER_REQUISITION
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 40 # was 500, cost now split into psi abilities
+    producedItems: {} # a laspistol is not worth mentioning
+
+  - name: STR_ENGINSEER_REQUISITION                 # Enginseer Recruit
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_ENGINSEER_REQUISITION
+    space: 0
+    time: 200
+    cost: 500000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 400
+    producedItems: {}
+    spawnedPersonType: STR_ENGINSEER
 
 ### REMOVAL
   - name: STR_BANNER                                # Chapter Banner

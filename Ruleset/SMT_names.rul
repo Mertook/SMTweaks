@@ -586,6 +586,7 @@ extraStrings:
       STR_IMPERIAL_AGENTS: "Imperial Agents"
       STR_HERETICAL_MEANS: "Heretical Means"
       STR_GK_INTERCEPTOR_R: "Interceptor Armor"
+      STR_PSILENCER_R: "Psilencer Requisition"
       STR_PERSONAL_ARMOR: MK7 Tactical Armor
       STR_SCOUTH_RESEARCH: "Elite Scout Requisition"
       STR_SMOKE_BOMB_UNLOCK: Smoke Bomb Requisition
@@ -1155,7 +1156,7 @@ extraStrings:
       ### ARMOR
       STR_TSARGENT_UFOPEDIA: "The immense strength of Terminator armor allows it to support heavy weaponry with ease, unleashing devastating missile barrages while leaving hands free to carry other weapons to fit any situation."
       STR_SCOUT_SGT_UC_UFOPEDIA: "Scout Sergeants are experienced marines who don scout armor in order to guide and train scout recruits. They pass down knowledge and skills off the battlefield and lead scout squads on infiltration missions to gather intelligence or sabotage strategic targets."
-      STR_SCOUTH_UC_UFOPEDIA: "Experts in stealth and infiltration, these veteran marines are peerless operatives capable of acting independently for long periods to carry out their missions.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Melee, Sniper{ALT})"
+      STR_SCOUTH_UC_UFOPEDIA: "Experts in stealth and infiltration, these veteran marines are peerless operatives capable of acting independently for long periods to carry out their missions.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Sniper{ALT})"
       STR_SIGNUM_DEV_CODEX: "MK7 Armor given to Sergeants of Devasator squads. Equipped with a Signum that allows the user to share battlefield data with squadmates, exposing a targets weakpoints and increasing the damage they take."
       STR_SIGNAL_ARMOR_UFOPEDIA: "MK7 Armor given to Sergeants of Devasator squads. Equipped with a Signum that allows the user to share battlefield data with squadmates, enhancing their accuracy."
       STR_SARGENT_ARMOR_UFOPEDIA: "A Sergeant is an Astartes non-commissioned officer who commands a squad of Space Marines. They can direct their Battle Brothers in combat and bolster morale."
@@ -1172,12 +1173,12 @@ extraStrings:
       STR_DW_APOTH_CODEX_TEXT: "Deathwatch Apothecaries act as field medics for the Kill-Team and preserve the geneseed of any fallen Brother."
       STR_DW_DEV_CODEX_TEXT: "Deployed when long range firepower is required, Deathwatch Devastators rain destruction from afar with heavy weaponry."
       STR_DW_ASS_CODEX_TEXT: "Used to rapidly raid key enemy positions, Deathwatch Assault teams make powerful shock troopers."
-      STR_DW_SCT_CODEX_TEXT: "Deathwatch Marines are sometimes expected to act independently for long periods of time, even operating without Power Armor. Their skills and experience make them excellent infiltrators and assassins.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Melee, Sniper{ALT})"
+      STR_DW_SCT_CODEX_TEXT: "Deathwatch Marines are sometimes expected to act independently for long periods of time, even operating without Power Armor. Their skills and experience make them excellent infiltrators and assassins.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Sniper{ALT})"
       STR_DW_TECH_CODEX_TEXT: "Deathwatch Techmarines are sent out to investigate Xenotech findings and are able to maintain their Battle-Brothers armor in the field.{NEWLINE}{NEWLINE} Firstborn >{ALT} Tarantula Sentry{ALT}{NEWLINE} Primaris >{ALT} Thunderfire Drone{ALT} "
       STR_DW_TERM_CODEX_TEXT: "Deathwatch Terminators are deployed to clear out Space Hulks and other high-threat engagements, using their immense bulk to carry heavy weaponry while shrugging off enemy attacks."
       STR_DW_TERM_CYC_CODEX_TEXT: "The immense strength provided by Terminator armor makes it a powerful heavy weapons platform, raining destruction down on hordes of Xenos."
       STR_DW_TERM_ASS_CODEX_TEXT: "Utilizing Teleport Beacons to strike deep into enemy formations, Assault Terminators are able to tear apart fearsome Xenos beasts with armor-rending Lightning Claws."
-      STR_DW_PHB_CODEX_TEXT: "Using the mobility and stealth of Phobos armor, Reivers strike terror into enemy forces with sudden violent melee assaults.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Melee{ALT})"
+      STR_DW_PHB_CODEX_TEXT: "Using the mobility and stealth of Phobos armor, Reivers strike terror into enemy forces with sudden violent melee assaults."
       STR_DW_PHBELIM_CODEX_TEXT: "Phobos-clad Eliminators are able to reposition and strike suddenly from the shadows, eliminating key threats from distance with an exotic range of custom ammunition tailored for their targets.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Sniper{ALT})"
       STR_DW_GRV_CODEX_TEXT: "Gravis Armor is a heavier variant of MKX Tacticus, wielding powerful fist-mounted weaponry.{NEWLINE}{NEWLINE} Weapon Options:{NEWLINE}{ALT} Boltstorm Gauntlet{NEWLINE} Flamer Gauntlet{NEWLINE} Twin Autocannon Gauntlets"
       STR_DW_INC_CODEX_TEXT: "A lighter variant of Gravis Armor capable of flight, Omnis Armor allows the user to unleash firepower from the skies.{NEWLINE}{NEWLINE} Weapon Options:{NEWLINE}{ALT} Accelerator Autocannon{NEWLINE} Twin Plasma Exterminators"
@@ -1227,7 +1228,7 @@ extraStrings:
       STR_LASCAN_DW_UFOPEDIA: "{NEWLINE} The Lascannon is the most formidable type of laser weapon, producing an energetic shot of coherent light capable of penetrating most armored vehicles. This Artifex variant is created specifically for Deathwatch Kill-Teams and boasts greater performance.{NEWLINE}{NEWLINE} Recoil: {ALT}80{ALT}{NEWLINE} Restricted ({ALT}Deathwatch{ALT})"
       STR_HB_UFOPEDIA: "{NEWLINE} The Storm Bolter is a double-barrelled version of the standard .75 caliber Bolter. Storm Bolters can be used one-handed with a pistol grip, but their weight and fierce recoil means they are generally only employed by Space Marine Terminators or as a vehicle-mounted weapon.{NEWLINE}{NEWLINE} Recoil: {ALT}80{ALT} - {ALT}Heavy"
       STR_HB_MC_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}80{ALT} - {ALT}Heavy"
-      STR_GK_HB_CODEX: "{NEWLINE} The Aegis Armor worn by Grey Knights typically has a Storm Bolter mounted on their wrist, allowing them to fire freely while wielding powerful Force Blades.{NEWLINE}{NEWLINE} Recoil: {ALT}50{ALT} - {ALT}Heavy"
+      STR_GK_HB_CODEX: "{NEWLINE} The Aegis Armor worn by Grey Knights typically has a Storm Bolter mounted on their wrist, allowing them to fire freely while wielding powerful Force Blades.{NEWLINE}{NEWLINE} A soldier using this weapon can use heavy melee weapons without incurring the strength penalty for using them with one hand."
       STR_CHAINSWORD_MC_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to attack more rapidly.{NEWLINE}{NEWLINE}Strength required: {ALT}25"
       STR_MC_BOLTPISTOL_DEAZ_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}16"
       STR_MC_BOLTER_DEAZ_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}25"
@@ -1269,8 +1270,12 @@ extraStrings:
       STR_AUTOGUN_ARMA_B_CODEX: "{NEWLINE} Loud, lethal and uncomplicated, Armageddon-pattern Autoguns can withstand incredible abuse and keep firing. This modified Assault version has a cut down stock and attached bayonet for charging into enemy lines guns blazing.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
       STR_AUTOGUN_HEAD: Headhunter Autogun
       STR_AUTOGUN_HEAD_CODEX: "{NEWLINE} The Headhunter pattern DMR is far bigger than standard autogun designs, functioning as a hybrid rifle/sniper weapon. Thanks to a longer barrel and precision rifling the Headhunter is able to strike targets harder and from further away, ripping through enemies at long ranges.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
+      STR_SMG_STUB_GUN_CODEX: "{NEWLINE} A cheap handheld autostubber that can be used with one hand. Although inaccurate and lacking power compared to even basic PDF gear it can still kill lightly armored targets and is commonly used by gangers and other hive city denizens."
+      STR_PSILENCER: Psilencer
+      STR_PSILENCER_CODEX: "{NEWLINE} Psilencers are mysterious weapons created with Xenos technology, channeling and amplifying the users psychic might into energy bolts.{NEWLINE}{NEWLINE} Its power depends on the users psychic skill and it is particularly effective against demons, disrupting their connection to reality."
       ### CRAFT
       STR_SPEED_UFOPEDIA: "{NEWLINE} The Land Speeder is a light anti-gravity vehicle which serves as the primary reconnaissance and fast attack vehicle of the Adeptus Astartes.{NEWLINE}{NEWLINE} Capacity: 12 Soldiers plus 8 Vehicle slots"
+      STR_EVISCERATOR_UFOPEDIA: "{NEWLINE} The Eviscerator is a massive version of the more common chainsword, capable of inflicting brutal wounds on the Emperor's foes and even shredding through hardened armor. The size of this weapon requires two-handed wielding by all but the strongest warriors to be effective on the battlefield.{NEWLINE}{NEWLINE}Strength required: 2H {ALT}40{ALT} / 1H {ALT}90{ALT}"
       ### SOLDIERS
       ### SKILLS
       ### TRANSFORMATIONS
@@ -1395,8 +1400,10 @@ extraStrings:
       STR_HELP_ADV: ADVANCED STRATEGY
       STR_HELP_ADV_INTRO: "Advanced Strategy Overview"
       STR_HELP_ADV_INTRO_CODEX: "{NEWLINE} This section of the Codex provides details on advanced tactics and special abilites for units and gear."
-      STR_RECOIL_PENALTY: "Recoil and Strength Requirements"
-      STR_RECOIL_PENALTY_UFOPEDIA: "{NEWLINE} The strongest weapons of the Imperium require an equally strong warrior. Ranged weapons with a {ALT}Recoil{ALT} value require that much strength to get full accuracy. {NEWLINE}If both hands are full, the effective recoil of weapons is increased by {ALT}50%{ALT}{NEWLINE}{NEWLINE} Soldiers below the required strength will lose accuracy, losing up to 75% on aimed/snap shots and up to 100% on auto shots. Kneeling with a weapon that has a bipod completely negates the recoil penalty.{NEWLINE}{NEWLINE} Melee weapons with {ALT}Strength Required{ALT} act similarly, but are not affected by dual-wielding or kneeling."
+      STR_MELEE_STR_PENALTY: "Melee Strength Requirements"
+      STR_MELEE_STR_PENALTY_UFOPEDIA: "{NEWLINE} The strongest weapons of the Imperium require an equally strong warrior. Some melee weapons have a {ALT}Strength Requirement{ALT} to use them effectively.{NEWLINE}{NEWLINE} Large two-handed weapons additionally may have a higher requirement in order to use them properly one-handed."
+      STR_RECOIL_PENALTY: "Weapon Recoil"
+      STR_RECOIL_PENALTY_UFOPEDIA: "{NEWLINE} Strong soldiers are needed to properly aim and fire the strongest guns. Ranged weapons with a {ALT}Recoil{ALT} value require that much strength to get full accuracy. {NEWLINE}If both hands are full, the effective recoil of weapons is increased by {ALT}50%{ALT}{NEWLINE}{NEWLINE} Soldiers below the required strength will lose accuracy, losing up to 75% on aimed/snap shots and up to 100% on auto shots. Kneeling with a weapon that has a bipod completely negates the recoil penalty."
       STR_HWP_DETAILS: Heavy Weapons
       STR_HWP_DETAILS_CODEX: "{NEWLINE} Weapons that are difficult to aim while moving or firing continuously are marked as {ALT}Heavy{ALT}. Heavy weapons have an accuracy penalty that starts increasing in intensity when the user has less than {ALT}80{ALT}% of their maximum TUs.{NEWLINE}{NEWLINE} This penalty can be reduced by kneeling, using a bipod, and by wearing certain armors."
       STR_BIPOD_DETAILS: Bipods
@@ -1507,7 +1514,7 @@ extraStrings:
       ## Weapons
       STR_PLASMA_AMMO: "Plasma Flasks"
       STR_PLASMA_AMMO_UFOPEDIA: "{NEWLINE} Plasma Flask damage details: {NEWLINE} Ignores armor: 40% {NEWLINE} Health damage: 100% {NEWLINE} Armor damage before piercing: 30%"
-      STR_KNIF_UFOPEDIA: "{NEWLINE} A Combat Knife is the ubiquitous back-up melee weapon for warriors all across the Imperium of Man, be they lowly hive city scum or the elite soldiers of a Planetary Governor.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Melee{ALT})"
+      STR_KNIF_UFOPEDIA: "{NEWLINE} A Combat Knife is the ubiquitous back-up melee weapon for warriors all across the Imperium of Man, be they lowly hive city scum or the elite soldiers of a Planetary Governor."
       STR_SCOUT_BLADE: Astartes Combat Blade
       STR_SCOUT_BLADE_CODEX: "{NEWLINE} Lightweight despite its size, this blade is used by Marines as a backup weapon or when silent kills are required. In the hands of a skilled user it is a quick and deadly tool.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Melee{ALT})"
       STR_HEAVY_CANNON_UFOPEDIA: "{NEWLINE} A Sniper Rifle is a high-powered and highly accurate projectile or directed energy weapon that is used to attack distant foes and lightly armored targets at extreme ranges with unerring accuracy. Capable of firing powerful shots with lethal precision.{NEWLINE}{NEWLINE}Recoil: {ALT}30{ALT} - {ALT}Heavy{ALT}{NEWLINE} Silent Killer ({ALT}Sniper{ALT})"
@@ -1595,7 +1602,7 @@ extraStrings:
       STR_MKX_INC_UFOPEDIA: "Lighter version of the Gravis Armor with jump pack, integrated thrusters and Grav-chutes for controlling low-orbit drop speeds.{NEWLINE}{NEWLINE}Has inbuilt Weapon options."
       STR_MKX_PHB_CODEX: MKX Phobos Armor
       STR_MKX_PHB_UFOPEDIA: "Mark X Phobos Power Armour is lighter and heavily streamlined. With greater mobility and servo-motors engineered to be silent, it is used most optimally in stealth and infiltration missions.{NEWLINE}{NEWLINE} Veterans upgrade to Reiver/Eliminator armor"
-      STR_MKX_PHB_R_CODEX: "Reivers are close combat experts, silently approaching before unleashing havoc within enemy lines.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Melee{ALT})"
+      STR_MKX_PHB_R_CODEX: "Reivers are close combat experts, silently approaching before unleashing havoc within enemy lines."
       STR_MKX_PHB_E_CODEX: "Silently moving across the battlefield, Eliminators snipe key targets from long range.{NEWLINE}{NEWLINE} Silent Killer ({ALT}Sniper{ALT})"
       STR_MKX_HELIX_UC_LV1_UFOPEDIA: "Helix Adepts are not full fledged Apothecaries, but are able to act as medics and maintain the health of their fellow battle brothers when operating behind enemy lines."
       STR_MKX_VETS_CODEX: "Veteran members of the First Company, Sternguard face down impossible odds with icy calm and precision bolter fire."

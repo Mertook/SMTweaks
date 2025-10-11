@@ -1573,7 +1573,7 @@ items:
       ITEM_RECOIL: 55 # harder requirement, hybrid weapon
       REACTION_MULTIPLIER: 150 # was 200 - carbine rather than pure pistol
       ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 0
-      ITEM_SNAP_ACCURACY_POWER_BONUS_PERCENTT: 0
+      ITEM_SNAP_ACCURACY_POWER_BONUS_PERCENT: 0
       ITEM_COLOR_CHANGES_WITH_AMMO: 15
 
   - type: STR_BOLTPISTOL_FENRIS             # BoltPistol (Fenris)
@@ -4211,7 +4211,7 @@ items:
     damageAlter:
       ToArmorPre: 0.02
       ArmorEffectiveness: 0.5
-      ToHealth: 0.8
+      ToHealth: 0.7
     clipSize: 30
 
   - type: STR_AUTOGUN_CLIP_DRUM_KRAKEN
@@ -4226,7 +4226,7 @@ items:
     damageAlter:
       ToArmorPre: 0.02
       ArmorEffectiveness: 0.5
-      ToHealth: 0.8
+      ToHealth: 0.7
     clipSize: 45 # was 40
 
   - type: STR_AUTOGUN_CLIP_HP
@@ -5664,7 +5664,7 @@ items:
       ArmorEffectiveness: 0.5 # was 0.5
       ToArmorPre: 0.02 # was 0
       ToArmor: 0.15 # was 0, decent destruction if it manages to pen
-      ToHealth: 1.0
+      ToHealth: 0.8
       ToStun: 0.1 # was 0.5; AP round rather than concussive
     shotgunPellets: 5 # was 6
 

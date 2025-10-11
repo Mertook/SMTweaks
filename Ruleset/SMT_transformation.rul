@@ -71,6 +71,7 @@ soldierTransformation:
     upperBoundAtStatCaps: true
     allowedSoldierTypes:
       - STR_GREYKNIGHT
+      - STR_SOLDIER
     soldierBonusType: STR_BONUS_APOTH_TRAINING
     listOrder: 20
 
@@ -1500,6 +1501,7 @@ soldierBonuses:
   - name: STR_BONUS_APOTH_TRAINING
     tags:
       SMT_BONUS_MORALE_RESISTANCE: 20
+      #SMT_BONUS_MEDIC_GLOBAL: 15 # given by armor instead
 
 ### Psi Bonuses
   - name: STR_PSIBONUS_SHROUD

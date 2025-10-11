@@ -34,11 +34,13 @@ extended:
             if gt bonusVal 0;
               battle_game.getTag initVal Tag.SMT_FAST_RECOVERY_TOTAL;
               add initVal bonusVal;
+              debug_log "MedicC Init " bonusVal initVal unit;
               battle_game.setTag Tag.SMT_FAST_RECOVERY_TOTAL initVal; # increase total val
               battle_game.getTag temp Tag.SMT_FAST_RECOVERY_PEAK;
               if gt bonusVal temp;
                 battle_game.setTag Tag.SMT_FAST_RECOVERY_PEAK bonusVal; # adjust highest value if bigger
               end;
+              debug_log "MedicC Final " bonusVal temp initVal;
             end;
           end;
 
@@ -103,24 +105,24 @@ extended:
           var int bonusVal;
           var int initVal;
           var int temp;
+          var ptr RuleSoldier unitSoldier;
 
           begin; ### Teachers
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_MEDIC_GLOBAL;
             if gt bonusVal 0;
-              battle_game.getTag initVal Tag.SMT_FAST_RECOVERY_TOTAL;
-              debug_log "Medic Init " bonusVal initVal unit;
+              save_game.getTag initVal Tag.SMT_FAST_RECOVERY_TOTAL;
+              debug_log "MedicB Init " bonusVal initVal unit;
               add initVal bonusVal;
-              battle_game.setTag Tag.SMT_FAST_RECOVERY_TOTAL initVal; # increase total val
+              save_game.setTag Tag.SMT_FAST_RECOVERY_TOTAL initVal; # increase total val
 
-              var ptr RuleSoldier unitSoldier;
               unit.getRuleSoldier unitSoldier;
               unitSoldier.getTag temp Tag.SMT_SOLDIER_IS_MEDIC; # combine all soldier medic bonuses when determining peak recovery
               add bonusVal temp;
-              battle_game.getTag temp Tag.SMT_FAST_RECOVERY_PEAK;
+              save_game.getTag temp Tag.SMT_FAST_RECOVERY_PEAK;
               if gt bonusVal temp;
-                battle_game.setTag Tag.SMT_FAST_RECOVERY_PEAK bonusVal; # adjust highest value if bigger
+                save_game.setTag Tag.SMT_FAST_RECOVERY_PEAK bonusVal; # adjust highest value if bigger
               end;
-              debug_log "Medic Final " bonusVal temp initVal;
+              debug_log "MedicB Final " bonusVal temp initVal;
             end;
           end;
 

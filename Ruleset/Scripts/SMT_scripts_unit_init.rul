@@ -1,0 +1,167 @@
+extended:
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
+
+  scripts:
+    createUnit:
+      - new: SMTS_CU_unit_init # Sets tags based on soldier/armor rulesets
+        offset: 1
+        code: |
+          var ptr RuleArmor unitArmor;
+          var ptr RuleSoldier unitSoldier;
+          var int bonusVal;
+          var int initVal;
+          var int temp;
+          var int temp2;
+
+          unit.getRuleSoldier unitSoldier;
+          unit.getRuleArmor unitArmor;
+
+          begin; ### Teachers
+            unitSoldier.getTag bonusVal Tag.SOLDIER_IS_PSISKILL_TEACHER;
+            if gt bonusVal 0;
+              battle_game.getTag initVal Tag.SMT_DEVOTION_TEACHER_TOTAL;
+              add initVal bonusVal;
+              battle_game.setTag Tag.SMT_DEVOTION_TEACHER_TOTAL initVal; # increase total val
+              battle_game.getTag temp Tag.SMT_DEVOTION_TEACHER_PEAK;
+              if gt bonusVal temp;
+                battle_game.setTag Tag.SMT_DEVOTION_TEACHER_PEAK bonusVal; # adjust highest value if bigger
+              end;
+            end;
+
+            unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_IS_MEDIC;
+            unitArmor.getTag temp Tag.SMT_ARMOR_IS_MEDIC;
+            add bonusVal temp;
+            if gt bonusVal 0;
+              battle_game.getTag initVal Tag.SMT_FAST_RECOVERY_TOTAL;
+              add initVal bonusVal;
+              battle_game.setTag Tag.SMT_FAST_RECOVERY_TOTAL initVal; # increase total val
+              battle_game.getTag temp Tag.SMT_FAST_RECOVERY_PEAK;
+              if gt bonusVal temp;
+                battle_game.setTag Tag.SMT_FAST_RECOVERY_PEAK bonusVal; # adjust highest value if bigger
+              end;
+            end;
+          end;
+
+          begin; ### Damage Resistance
+            unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_SHRED_RESISTANCE;
+            unitArmor.getTag temp Tag.SMT_ARMOR_SHRED_RESISTANCE;
+            add bonusVal temp;
+            unit.getTag initVal Tag.SMT_UNIT_SHRED_RESISTANCE;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_UNIT_SHRED_RESISTANCE initVal;
+
+            unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_SHRED_PLASMA_RESISTANCE;
+            unitArmor.getTag temp Tag.SMT_ARMOR_SHRED_PLASMA_RESISTANCE;
+            add bonusVal temp;
+            unit.getTag initVal Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE initVal;
+
+            unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_SHRED_MELTA_RESISTANCE;
+            unitArmor.getTag temp Tag.SMT_ARMOR_SHRED_MELTA_RESISTANCE;
+            add bonusVal temp;
+            unit.getTag initVal Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE initVal;
+
+            unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_MORALE_RESISTANCE;
+            unitArmor.getTag temp Tag.SMT_ARMOR_MORALE_RESISTANCE;
+            add bonusVal temp;
+            unit.getTag initVal Tag.SMT_UNIT_MORALE_RESISTANCE;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_UNIT_MORALE_RESISTANCE initVal;
+
+            unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_STUN_RESISTANCE;
+            unitArmor.getTag temp Tag.SMT_ARMOR_STUN_RESISTANCE;
+            add bonusVal temp;
+            unit.getTag initVal Tag.SMT_UNIT_STUN_RESISTANCE;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_UNIT_STUN_RESISTANCE initVal;
+
+            unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_STAGGER_RESISTANCE;
+            unitArmor.getTag temp Tag.SMT_ARMOR_STAGGER_RESISTANCE;
+            add bonusVal temp;
+            unit.getTag initVal Tag.SMT_UNIT_STAGGER_RESISTANCE;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_UNIT_STAGGER_RESISTANCE initVal;
+
+            unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_IMMOBILIZE_RESISTANCE;
+            unitArmor.getTag temp Tag.SMT_ARMOR_IMMOBILIZE_RESISTANCE;
+            add bonusVal temp;
+            unit.getTag initVal Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE initVal;
+          end;
+
+          return;
+
+
+    applySoldierBonuses:
+      - new: SMTS_apply_soldierBonus_tags
+        offset: 2
+        code: |
+          var int bonusVal;
+          var int initVal;
+          var int temp;
+
+          begin; ### Teachers
+            soldier_bonus.getTag bonusVal Tag.SMT_BONUS_MEDIC_GLOBAL;
+            if gt bonusVal 0;
+              battle_game.getTag initVal Tag.SMT_FAST_RECOVERY_TOTAL;
+              debug_log "Medic Init " bonusVal initVal unit;
+              add initVal bonusVal;
+              battle_game.setTag Tag.SMT_FAST_RECOVERY_TOTAL initVal; # increase total val
+
+              var ptr RuleSoldier unitSoldier;
+              unit.getRuleSoldier unitSoldier;
+              unitSoldier.getTag temp Tag.SMT_SOLDIER_IS_MEDIC; # combine all soldier medic bonuses when determining peak recovery
+              add bonusVal temp;
+              battle_game.getTag temp Tag.SMT_FAST_RECOVERY_PEAK;
+              if gt bonusVal temp;
+                battle_game.setTag Tag.SMT_FAST_RECOVERY_PEAK bonusVal; # adjust highest value if bigger
+              end;
+              debug_log "Medic Final " bonusVal temp initVal;
+            end;
+          end;
+
+          begin; ### Damage Resistance
+            soldier_bonus.getTag bonusVal Tag.SMT_BONUS_SHRED_RESISTANCE;
+            unit.getTag initVal Tag.SMT_UNIT_SHRED_RESISTANCE;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_UNIT_SHRED_RESISTANCE initVal;
+
+            soldier_bonus.getTag bonusVal Tag.SMT_BONUS_SHRED_PLASMA_RESISTANCE;
+            unit.getTag initVal Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE initVal;
+
+            soldier_bonus.getTag bonusVal Tag.SMT_BONUS_SHRED_MELTA_RESISTANCE;
+            unit.getTag initVal Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE initVal;
+
+            soldier_bonus.getTag bonusVal Tag.SMT_BONUS_MORALE_RESISTANCE;
+            unit.getTag initVal Tag.SMT_UNIT_MORALE_RESISTANCE;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_UNIT_MORALE_RESISTANCE initVal;
+
+            soldier_bonus.getTag bonusVal Tag.SMT_BONUS_STUN_RESISTANCE;
+            unit.getTag initVal Tag.SMT_UNIT_STUN_RESISTANCE;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_UNIT_STUN_RESISTANCE initVal;
+
+            soldier_bonus.getTag bonusVal Tag.SMT_BONUS_STAGGER_RESISTANCE;
+            unit.getTag initVal Tag.SMT_UNIT_STAGGER_RESISTANCE;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_UNIT_STAGGER_RESISTANCE initVal;
+
+            soldier_bonus.getTag bonusVal Tag.SMT_BONUS_IMMOBILIZE_RESISTANCE;
+            unit.getTag initVal Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE initVal;
+          end;
+
+          return;
+
+
+

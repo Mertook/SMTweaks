@@ -57,6 +57,7 @@ extraStrings:
       STR_BONUS_HONOR_8: "Mark of Honor"
       STR_BONUS_HONOR_9: "Mark of Honor"
       STR_BONUS_HONOR_10: "Mark of Honor"
+      STR_BONUS_APOTH_TRAINING: "Apothecary Training"
       STR_AUTO_SHOT_COUNT: "Auto (x{0})"
       STR_SNAP_SHOT_COUNT: "Snap (x{0})"
       STR_FULL_AUTO: "Full Auto"
@@ -229,8 +230,9 @@ extraStrings:
       STR_GK_TACTICAL_UC: Aegis Armor
       STR_GK_TACTICAL_SB_UC: Aegis Armor (Stormbolter)
       STR_GK_INTERCEPTOR: Interceptor Armor
-      STR_GK_INTERCEPTOR_UC: Interceptor
+      STR_GK_INTERCEPTOR_UC: Interceptor Armor
       STR_GK_INTERCEPTOR_SB_UC: Interceptor (Stormbolter)
+      STR_GK_TAC_APOTHECARY_UC: Apothecary Armor
       ### ITEMS
       STR_DWSCT_CORPSE: Deathwatch Corpse
       STR_MKX_DW_GRV_CORPSE: Deathwatch Corpse
@@ -310,6 +312,7 @@ extraStrings:
       STR_AUTOCANNON_HANDHELD: Guard Autocannon
       STR_APOTH_NARTH: Narthecium
       STR_APOTH_NARTH_ADV: Narthecium
+      STR_APOTH_NARTH_GK: Narthecium
       STR_HONOR_CORPSE: Veteran Corpse
       AUX_CROZIUS_PRIMARIS: Crozius Arcanum
       STR_CROZIUS_AIMED: Sanctify
@@ -523,6 +526,8 @@ extraStrings:
       STR_PSIBONUS_HOLODUMMY: Hallucination
       STR_PSIUNLOCK_SMITE: T3 Psi - Smite
       STR_PSIBONUS_SMITE: Smite
+      STR_PSIUNLOCK_FLAMES_GK: T3 Psi - Purifying Flame
+      STR_PSIBONUS_FLAMES_GK: Purifying Flame
       STR_PSIUNLOCK_MENDWOUNDS: T3 Psi - Mend Wounds
       STR_PSIBONUS_MENDWOUNDS: Mend Wounds
       STR_PSIUNLOCK_UNDYING: T3 Psi - Enduring Spirit
@@ -587,6 +592,7 @@ extraStrings:
       STR_HERETICAL_MEANS: "Heretical Means"
       STR_GK_INTERCEPTOR_R: "Interceptor Armor"
       STR_PSILENCER_R: "Psilencer Requisition"
+      STR_APOTHECARY_TRAINING: Apothecary Training
       STR_PERSONAL_ARMOR: MK7 Tactical Armor
       STR_SCOUTH_RESEARCH: "Elite Scout Requisition"
       STR_SMOKE_BOMB_UNLOCK: Smoke Bomb Requisition
@@ -616,6 +622,7 @@ extraStrings:
       STR_SCOUT_BOLT_RIFLE: Bolt Sniper Rifle
       STR_CHAINSWORD_R: Astartes Chainswords
       STR_VINDICARE_AMMO_REQ: Exitus Ammo
+      STR_PRIMARIS_PSYKER_R: Primaris Psykers
       STR_MULTIMELTA_PREREQ: Multimelta Technology
       STR_BOLT_RIFLE_AMMO: Bolt Sniper Ammo
       STR_SCOUT_SGT_R: Scout Sergeant Armor
@@ -751,7 +758,7 @@ extraStrings:
       STR_BASIC_SPAWN_TACTICAL_MARINES_DESC: "A pair of Astartes Tactical Marines have arrived, detached to support you."
       STR_BASIC_SPAWN_DEVASTATOR_MARINES_DESC: "A pair of Astartes Devastator Marines have arrived, detached to support you."
       STR_BASIC_SPAWN_ASSAULT_MARINES_DESC: "A pair of Astartes Assault Marines have arrived, detached to support you."
-      STR_GREYKNIGHTS_CARE_PACKAGE: "Grey Knight Strike Team"
+      STR_GREYKNIGHTS_CARE_PACKAGE: "Ordo Malleus Forces Arrive"
       STR_REINFORCEMENTS_GK_DESCRIPTION: " Your request for planetside support has been acknowledged, reinforcements have been dispatched from an Inquisition Battle Barge and will arrive in one day.{NEWLINE}{NEWLINE} Please have your administrative servitors log additional reinforcement requests as needed."
       ### DEATHWATCH SOLDIERS
       STR_ULTRAMARINE_LEADER: Deathwatch Captain ¥
@@ -1166,8 +1173,9 @@ extraStrings:
       STR_DREAD_ARMOR2_UC_UFOPEDIA: "Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Plasma and Stormbolter"
       STR_DREAD_ARMOR3_UC_UFOPEDIA: "Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Lascannon and Missiles"
       STR_DREAD_ARMOR4_UC_UFOPEDIA: "Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Assault Cannon and Flamer"
-      STR_GK_TACTICAL_UC_CODEX: "TODO"
-      STR_GK_INTERCEPTOR_UC_CODEX: "TODO"
+      STR_GK_TACTICAL_UC_CODEX: "Though all Grey Knights are trained in the use of Terminator Armor they will still don Aegis Power Armor at times, due to personal preference or when mobility is required.{NEWLINE} Ritually consecrated and imbued with the wearers psychic powers, it protects against the Immaterium and physical threats alike."
+      STR_GK_INTERCEPTOR_UC_CODEX: "Equipped with personal backpack teleporters, Interceptors are able to rapidly move across the battlefield by traveling through warpspace. Only Grey Knights could hope to use such a device, their minds trained and tempered to withstand the exposure to the Warp."
+      STR_GK_TAC_APOTHECARY_UC_CODEX: "TODO"
       ### ARMOR DEATHWATCH
       STR_DW_TAC_CODEX_TEXT: "Tactical Armor is the most common type of armor worn by Space Marines, adaptable to any battlefield situation."
       STR_DW_APOTH_CODEX_TEXT: "Deathwatch Apothecaries act as field medics for the Kill-Team and preserve the geneseed of any fallen Brother."
@@ -1254,6 +1262,9 @@ extraStrings:
       STR_PLASMA_RIFLE_ADEPTAS_UFOPEDIA: "{NEWLINE} The Adeptas Sororitas favor the light barrage type Plasma Gun, using a development of the Clovis pattern. Though it has less power than standard Plasma Weapons the Clovis type allows the user to spray more blasts without overheating, providing effective suppression and severely damaging armor."
       STR_PLASMA_CARBINE_ADEPTAS: "Plasma Carbine De'az pattern"
       STR_PLASMA_CARBINE_ADEPTAS_UFOPEDIA: "{NEWLINE} The Godwyn-De'az pattern plasma carbine was developed by joint-specification between the Ecclesiarchy and the Departmento Munitorum calling for a lightweight plasma gun design. This hybrid design has more power than regular carbine variants while achieving a higher fire rate than standard plasma guns."
+      STR_EVISCERATOR_UFOPEDIA: "{NEWLINE} The Eviscerator is a massive version of the more common chainsword, capable of inflicting brutal wounds on the Emperor's foes and even shredding through hardened armor. The size of this weapon requires two-handed wielding by all but the strongest warriors to be effective on the battlefield.{NEWLINE}{NEWLINE}Strength required: 2H {ALT}40{ALT} / 1H {ALT}90{ALT}"
+      STR_HAMMER_UFOPEDIA: "{NEWLINE} Thunder Hammers are primarily used by Space Marines clad in Terminator Armor. This large warhammer incorporates an energy field emitter within its head that activates only when the hammer strikes its target.{NEWLINE}{NEWLINE}Strength required: 2H {ALT}100{ALT} / 1H {ALT}200{ALT}"
+      STR_HAMMER_MC_UFOPEDIA: "{NEWLINE} A Master crafted weapon is used by all of the Imperial armies and can be requisitioned by an exchange of foes' corpses. Any weapon may be master-crafted and due to the improved design of the weapon, it is more likely that a target will be hit by attacks from this weapon.{NEWLINE}{NEWLINE}Strength required: 2H {ALT}100{ALT} / 1H {ALT}200{ALT}"
       STR_AUTOGUN_BASIC: Autogun
       STR_AUTOGUN_BASIC_CODEX: "{NEWLINE} An Autogun is a fully automatic weapon that fires solid-slug ballistic rounds at the intended target in rapid succession. Cheap, rugged and reliable, it can be found throughout the Imperium, where it is appreciated for its decent damage and accuracy. {NEWLINE}{NEWLINE} Recoil: {ALT}20"
       STR_AUTOGUN_ADV: High-Grade Autogun
@@ -1275,7 +1286,6 @@ extraStrings:
       STR_PSILENCER_CODEX: "{NEWLINE} Psilencers are mysterious weapons created with Xenos technology, channeling and amplifying the users psychic might into energy bolts.{NEWLINE}{NEWLINE} Its power depends on the users psychic skill and it is particularly effective against demons, disrupting their connection to reality."
       ### CRAFT
       STR_SPEED_UFOPEDIA: "{NEWLINE} The Land Speeder is a light anti-gravity vehicle which serves as the primary reconnaissance and fast attack vehicle of the Adeptus Astartes.{NEWLINE}{NEWLINE} Capacity: 12 Soldiers plus 8 Vehicle slots"
-      STR_EVISCERATOR_UFOPEDIA: "{NEWLINE} The Eviscerator is a massive version of the more common chainsword, capable of inflicting brutal wounds on the Emperor's foes and even shredding through hardened armor. The size of this weapon requires two-handed wielding by all but the strongest warriors to be effective on the battlefield.{NEWLINE}{NEWLINE}Strength required: 2H {ALT}40{ALT} / 1H {ALT}90{ALT}"
       ### SOLDIERS
       ### SKILLS
       ### TRANSFORMATIONS
@@ -1463,6 +1473,9 @@ extraStrings:
       STR_PSISKILL_SMITE: Smite
       STR_PSITOKEN_SMITE: Smite
       STR_PSITOKEN_SMITE_CODEX: "{NEWLINE} Smite attacks the targets mind directly, dealing armor-ignoring damage if successful.{NEWLINE}{NEWLINE} Smite can target any enemy visible to the Psyker.{NEWLINE}{NEWLINE} Success chance and Damage scales with PsiStrength"
+      STR_PSISKILL_FLAMES_GK: Purifying Flame
+      STR_PSITOKEN_FLAMES_GK: Purifying Flame
+      STR_PSITOKEN_SMITE_CODEX: "{NEWLINE} The Psykers pure spirit and psychic might manifest as consecrated flames, incinerating all but the user.{NEWLINE}{NEWLINE} Purifying Flame can target any space within 10 tiles of the Psyker.{NEWLINE}{NEWLINE} Power scales with PsiStrength"
       STR_PSISKILL_UNDYING: Enduring Spirit
       STR_PSITOKEN_UNDYING: Enduring Spirit
       STR_PSITOKEN_UNDYING_CODEX: "{NEWLINE} Steels the spirit of an ally, allowing them to fight through horrific injuries. If the target takes fatal damage while under its effects they will become invulnerable for a turn before falling.{NEWLINE}{NEWLINE} Enduring Spirit has a maximum range of 5 {NEWLINE}{NEWLINE}"

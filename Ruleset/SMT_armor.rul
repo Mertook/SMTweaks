@@ -32,10 +32,10 @@ armors:
       psiStrength: 0.02 # psyker strength barely helps
       psiSkill: 1.5 #FAITH IS MY SHIELD
       moraleCurrent: 1.5 #discipline and resolve reinforces faith
-    frontArmor: 120
+    frontArmor: 125
     sideArmor: 110
     rearArmor: 90
-    underArmor: 120
+    underArmor: 110
     stats:
       health: 40
     damageModifier:
@@ -3868,7 +3868,7 @@ armors:
       - 1.0 #GRAV
       - 0.5 #WARP - Aegis Armor warding
       - 1.0 #SONIC
-    stats:
+    stats: &Ref_GreyKnight_Tac_Stats
       tu: 10
       stamina: 0
       strength: 10
@@ -3879,11 +3879,22 @@ armors:
       psiStrength: 0
       psiSkill: 0
     builtInWeapons:
+      - STR_PSITOKEN_SHROUD
+      - STR_PSITOKEN_FLARE
+      - STR_PSITOKEN_TELEPATHY
+      - STR_PSITOKEN_FLASH
+      - STR_PSITOKEN_REFLEXES
+      - STR_PSITOKEN_VIGILANCE
+      - STR_PSITOKEN_WALLBREAKER
+      - STR_PSITOKEN_SMITE
+      - STR_PSITOKEN_FLAMES_GK
+      - STR_PSITOKEN_MENDWOUNDS
+      - STR_PSITOKEN_SENTRYWARD
       - INV_NULL_3X1_BACKPACK
     units:
       - STR_GREYKNIGHT
     tags:
-      INFECTION_RESIST: 100 #corruption immune - Grey Knight bonus
+      INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
@@ -3899,23 +3910,25 @@ armors:
     zombiImmune: true
     psiDefence: *Ref_GreyKnight_PsiDef
     damageModifier: *Ref_GreyKnight_Tac_DmgMod
-    stats:
-      tu: 10
-      stamina: 0
-      strength: 10
-      reactions: 10
-      firing: 0
-      melee: 10
-      throwing: 10
-      psiStrength: 0
-      psiSkill: 0
+    stats: *Ref_GreyKnight_Tac_Stats
     builtInWeapons:
+      - STR_PSITOKEN_SHROUD
+      - STR_PSITOKEN_FLARE
+      - STR_PSITOKEN_TELEPATHY
+      - STR_PSITOKEN_FLASH
+      - STR_PSITOKEN_REFLEXES
+      - STR_PSITOKEN_VIGILANCE
+      - STR_PSITOKEN_WALLBREAKER
+      - STR_PSITOKEN_SMITE
+      - STR_PSITOKEN_FLAMES_GK
+      - STR_PSITOKEN_MENDWOUNDS
+      - STR_PSITOKEN_SENTRYWARD
       - STR_GK_HB
       - INV_NULL_3X1_BACKPACK
     units:
       - STR_GREYKNIGHT
     tags:
-      INFECTION_RESIST: 100 #corruption immune - Grey Knight bonus
+      INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
@@ -3931,22 +3944,24 @@ armors:
     zombiImmune: true
     psiDefence: *Ref_GreyKnight_PsiDef
     damageModifier: *Ref_GreyKnight_Tac_DmgMod
-    stats:
-      tu: 10
-      stamina: 0
-      strength: 10
-      reactions: 10
-      firing: 0
-      melee: 10
-      throwing: 10
-      psiStrength: 0
-      psiSkill: 0
+    stats: *Ref_GreyKnight_Tac_Stats
     builtInWeapons:
+      - STR_PSITOKEN_SHROUD
+      - STR_PSITOKEN_FLARE
+      - STR_PSITOKEN_TELEPATHY
+      - STR_PSITOKEN_FLASH
+      - STR_PSITOKEN_REFLEXES
+      - STR_PSITOKEN_VIGILANCE
+      - STR_PSITOKEN_WALLBREAKER
+      - STR_PSITOKEN_SMITE
+      - STR_PSITOKEN_FLAMES_GK
+      - STR_PSITOKEN_MENDWOUNDS
+      - STR_PSITOKEN_SENTRYWARD
       - INV_NULL_3X3
     units:
       - STR_GREYKNIGHT
     tags:
-      INFECTION_RESIST: 100 #corruption immune - Grey Knight bonus
+      INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
@@ -3962,27 +3977,64 @@ armors:
     zombiImmune: true
     psiDefence: *Ref_GreyKnight_PsiDef
     damageModifier: *Ref_GreyKnight_Tac_DmgMod
-    stats:
-      tu: 10
-      stamina: 0
-      strength: 10
-      reactions: 10
-      firing: 0
-      melee: 10
-      throwing: 10
-      psiStrength: 0
-      psiSkill: 0
+    stats: *Ref_GreyKnight_Tac_Stats
     builtInWeapons:
+      - STR_PSITOKEN_SHROUD
+      - STR_PSITOKEN_FLARE
+      - STR_PSITOKEN_TELEPATHY
+      - STR_PSITOKEN_FLASH
+      - STR_PSITOKEN_REFLEXES
+      - STR_PSITOKEN_VIGILANCE
+      - STR_PSITOKEN_WALLBREAKER
+      - STR_PSITOKEN_SMITE
+      - STR_PSITOKEN_FLAMES_GK
+      - STR_PSITOKEN_MENDWOUNDS
+      - STR_PSITOKEN_SENTRYWARD
       - STR_GK_HB
       - INV_NULL_3X3
     units:
       - STR_GREYKNIGHT
     tags:
-      INFECTION_RESIST: 100 #corruption immune - Grey Knight bonus
+      INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
       SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
+
+  - type: STR_GK_TAC_APOTHECARY_UC          # Grey Knight Apothecary (Tactical)
+    refNode: *ARMOR_TACTICAL
+    corpseBattle:
+      - STR_GKTAC_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    storeItem: STR_NONE
+    requiresBonus: STR_BONUS_APOTH_TRAINING
+    zombiImmune: true
+    psiDefence: *Ref_GreyKnight_PsiDef
+    damageModifier: *Ref_GreyKnight_Tac_DmgMod
+    stats: *Ref_GreyKnight_Tac_Stats
+    builtInWeapons:
+      - STR_PSITOKEN_SHROUD
+      - STR_PSITOKEN_FLARE
+      - STR_PSITOKEN_TELEPATHY
+      - STR_PSITOKEN_FLASH
+      - STR_PSITOKEN_REFLEXES
+      - STR_PSITOKEN_VIGILANCE
+      - STR_PSITOKEN_WALLBREAKER
+      - STR_PSITOKEN_SMITE
+      - STR_PSITOKEN_FLAMES_GK
+      - STR_PSITOKEN_MENDWOUNDS
+      - STR_PSITOKEN_SENTRYWARD
+      - STR_APOTH_NARTH_GK
+      - INV_NULL_3X1_BACKPACK
+    units:
+      - STR_GREYKNIGHT
+    tags:
+      INFECTION_RESIST: 100
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+      SMT_ARMOR_IS_MEDIC: 25
 
 ### Other Marines
   - update: STR_BLOODRAVENS_TACTICAL_ARMOR      # Bloodraven Tactical

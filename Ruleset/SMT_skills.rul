@@ -245,6 +245,22 @@ skills:
       stun: true
       morale: true
 
+  - type: STR_PSISKILL_FLAMES_GK        # Psyker T3 - Purifying Flames
+    targetMode: 9
+    compatibleWeapons: [STR_PSITOKEN_FLAMES_GK]
+    requiredBonuses: [STR_PSIBONUS_FLAMES_GK]
+    checkHandsOnly: false
+    costUse:
+      time: 33
+      energy: 50
+      stun: 20
+      morale: 15
+    flatUse:
+      time: false
+      energy: false
+      stun: true
+      morale: true
+
   - type: STR_PSISKILL_MENDWOUNDS       # Psyker T3 - Mend Flesh
     targetMode: 11
     compatibleWeapons: [STR_PSITOKEN_MENDWOUNDS]

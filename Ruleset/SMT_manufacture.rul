@@ -403,10 +403,11 @@ manufacture:
       - STR_CHAPTER_PURITY
     space: 0
     time: 800
-    cost: 60000
+    cost: 400000
     requiredItems:
       STR_ALIEN_ALLOYS: 15
       STR_ELERIUM_115: 10
+      STR_KILLPOINT_TOKEN: 200
 #Deathwatch
   - name: STR_DEV_ARMOR_DW                  # Devastator
     category: STR_CAT_ARMOR
@@ -1597,11 +1598,11 @@ manufacture:
       - STR_PSILENCER_R
     space: 0
     time: 750
-    cost: 40000
+    cost: 250000
     requiredItems:
       STR_ALIEN_ALLOYS: 5
       STR_ELERIUM_115: 15
-      STR_KILLPOINT_TOKEN: 300
+      STR_KILLPOINT_TOKEN: 250
 
 ### BOMBARD
   - name: STR_ORBITAL_STRIKE_AMMO                   # Orbital Strike ammo

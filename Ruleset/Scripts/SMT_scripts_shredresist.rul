@@ -2,114 +2,6 @@ extended:
   tagsFile: Ruleset/Scripts/SMT_tags.rul
 
   scripts:
-    createUnit:
-      - new: SMTS_newUnit_specialResist
-        offset: 50
-        code: |
-          var ptr RuleArmor unitArmor;
-          var ptr RuleSoldier unitSoldier;
-          var int bonusVal;
-          var int unitVal;
-          var int temp;
-
-          unit.getRuleSoldier unitSoldier;
-          unit.getRuleArmor unitArmor;
-
-          unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_SHRED_RESISTANCE;
-          unitArmor.getTag temp Tag.SMT_ARMOR_SHRED_RESISTANCE;
-          add bonusVal temp;
-          unit.getTag unitVal Tag.SMT_UNIT_SHRED_RESISTANCE;
-          add unitVal bonusVal;
-          unit.setTag Tag.SMT_UNIT_SHRED_RESISTANCE unitVal;
-
-          unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_SHRED_PLASMA_RESISTANCE;
-          unitArmor.getTag temp Tag.SMT_ARMOR_SHRED_PLASMA_RESISTANCE;
-          add bonusVal temp;
-          unit.getTag unitVal Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE;
-          add unitVal bonusVal;
-          unit.setTag Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE unitVal;
-
-          unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_SHRED_MELTA_RESISTANCE;
-          unitArmor.getTag temp Tag.SMT_ARMOR_SHRED_MELTA_RESISTANCE;
-          add bonusVal temp;
-          unit.getTag unitVal Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE;
-          add unitVal bonusVal;
-          unit.setTag Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE unitVal;
-
-          unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_MORALE_RESISTANCE;
-          unitArmor.getTag temp Tag.SMT_ARMOR_MORALE_RESISTANCE;
-          add bonusVal temp;
-          unit.getTag unitVal Tag.SMT_UNIT_MORALE_RESISTANCE;
-          add unitVal bonusVal;
-          unit.setTag Tag.SMT_UNIT_MORALE_RESISTANCE unitVal;
-
-          unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_STUN_RESISTANCE;
-          unitArmor.getTag temp Tag.SMT_ARMOR_STUN_RESISTANCE;
-          add bonusVal temp;
-          unit.getTag unitVal Tag.SMT_UNIT_STUN_RESISTANCE;
-          add unitVal bonusVal;
-          unit.setTag Tag.SMT_UNIT_STUN_RESISTANCE unitVal;
-
-          unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_STAGGER_RESISTANCE;
-          unitArmor.getTag temp Tag.SMT_ARMOR_STAGGER_RESISTANCE;
-          add bonusVal temp;
-          unit.getTag unitVal Tag.SMT_UNIT_STAGGER_RESISTANCE;
-          add unitVal bonusVal;
-          unit.setTag Tag.SMT_UNIT_STAGGER_RESISTANCE unitVal;
-
-          unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_IMMOBILIZE_RESISTANCE;
-          unitArmor.getTag temp Tag.SMT_ARMOR_IMMOBILIZE_RESISTANCE;
-          add bonusVal temp;
-          unit.getTag unitVal Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE;
-          add unitVal bonusVal;
-          unit.setTag Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE unitVal;
-
-          return;
-
-    applySoldierBonuses:
-      - new: SMTS_apply_bonus_specialResist
-        offset: 51
-        code: |
-          var int bonusVal;
-          var int unitVal;
-
-          soldier_bonus.getTag bonusVal Tag.SMT_BONUS_SHRED_RESISTANCE;
-          unit.getTag unitVal Tag.SMT_UNIT_SHRED_RESISTANCE;
-          add unitVal bonusVal;
-          unit.setTag Tag.SMT_UNIT_SHRED_RESISTANCE unitVal;
-
-          soldier_bonus.getTag bonusVal Tag.SMT_BONUS_SHRED_PLASMA_RESISTANCE;
-          unit.getTag unitVal Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE;
-          add unitVal bonusVal;
-          unit.setTag Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE unitVal;
-
-          soldier_bonus.getTag bonusVal Tag.SMT_BONUS_SHRED_MELTA_RESISTANCE;
-          unit.getTag unitVal Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE;
-          add unitVal bonusVal;
-          unit.setTag Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE unitVal;
-
-          soldier_bonus.getTag bonusVal Tag.SMT_BONUS_MORALE_RESISTANCE;
-          unit.getTag unitVal Tag.SMT_UNIT_MORALE_RESISTANCE;
-          add unitVal bonusVal;
-          unit.setTag Tag.SMT_UNIT_MORALE_RESISTANCE unitVal;
-
-          soldier_bonus.getTag bonusVal Tag.SMT_BONUS_STUN_RESISTANCE;
-          unit.getTag unitVal Tag.SMT_UNIT_STUN_RESISTANCE;
-          add unitVal bonusVal;
-          unit.setTag Tag.SMT_UNIT_STUN_RESISTANCE unitVal;
-
-          soldier_bonus.getTag bonusVal Tag.SMT_BONUS_STAGGER_RESISTANCE;
-          unit.getTag unitVal Tag.SMT_UNIT_STAGGER_RESISTANCE;
-          add unitVal bonusVal;
-          unit.setTag Tag.SMT_UNIT_STAGGER_RESISTANCE unitVal;
-
-          soldier_bonus.getTag bonusVal Tag.SMT_BONUS_IMMOBILIZE_RESISTANCE;
-          unit.getTag unitVal Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE;
-          add unitVal bonusVal;
-          unit.setTag Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE unitVal;
-
-          return;
-
     damageUnit:
       - new: SMTS_damage_specialResist
         offset: 95
@@ -121,13 +13,13 @@ extended:
             var int rendVal 0;
             if eq damaging_type 5; #Plasma damage
               unit.getTag unitMod Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE;
-              debug_log "Armor resist (Plasma): " unitMod damaging_type to_armor;
+              #debug_log "Armor resist (Plasma): " unitMod damaging_type to_armor;
             else eq damaging_type 11; #Melta damage
               unit.getTag unitMod Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE;
-              debug_log "Armor resist (Melta): " unitMod damaging_type to_armor;
+              #debug_log "Armor resist (Melta): " unitMod damaging_type to_armor;
             else; # Generic damage
               unit.getTag unitMod Tag.SMT_UNIT_SHRED_RESISTANCE;
-              debug_log "Armor resist (Regular): " unitMod damaging_type to_armor;
+              #debug_log "Armor resist (Regular): " unitMod damaging_type to_armor;
             end;
 
             if and neq unitMod 0 gt to_armor 0; #Only run if the armor actually has resist (and damage is being dealt)
@@ -137,11 +29,11 @@ extended:
                 sub rendVal 100;
                 abs rendVal;
                 muldiv unitMod rendVal 100;
-                debug_log "Armor Rend Adjustment: " rendVal unitMod;
+                #debug_log "Armor Rend Adjustment: " rendVal unitMod;
               end;
               muldiv dmgReduction unitMod 100;
               sub to_armor dmgReduction;
-              debug_log "Armor NewDmg: " dmgReduction to_armor;
+              #debug_log "Armor NewDmg: " dmgReduction to_armor;
             end;
           end;
 
@@ -219,34 +111,34 @@ armors:
         var int dmgReduction;
         var int rendValue;
 
-        unit.getRuleArmor unitArmor;
-        #debug_log "Armor Dmg: " to_armor;
+        # unit.getRuleArmor unitArmor;
+        # #debug_log "Armor Dmg: " to_armor;
 
-        if eq damaging_type 5; #Plasma damage
-          unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_PLASMA_RESISTANCE;
-          #debug_log "Armor resist (Plasma): " armorResist damaging_type;
-        else eq damaging_type 11; #Melta damage
-          unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_MELTA_RESISTANCE;
-          #debug_log "Armor resist (Melta): " armorResist damaging_type;
-        else;
-          unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_RESISTANCE;
-          #debug_log "Armor resist (Regular): " armorResist damaging_type;
-        end;
+        # if eq damaging_type 5; #Plasma damage
+          # unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_PLASMA_RESISTANCE;
+          # #debug_log "Armor resist (Plasma): " armorResist damaging_type;
+        # else eq damaging_type 11; #Melta damage
+          # unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_MELTA_RESISTANCE;
+          # #debug_log "Armor resist (Melta): " armorResist damaging_type;
+        # else;
+          # unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_RESISTANCE;
+          # #debug_log "Armor resist (Regular): " armorResist damaging_type;
+        # end;
 
-        if and neq armorResist 0 gt to_armor 0; #Only run if the armor actually has resist (and damage is being dealt)
-          set dmgReduction to_armor;
-          weapon_item.getTag rendValue Tag.SMT_RENDING_WEAPON;
-          if gt rendValue 0;
-            sub rendValue 100;
-            abs rendValue;
-            muldiv armorResist rendValue 100;
-            #debug_log "Armor Rend Adjustment: " rendValue armorResist;
-          end;
-          muldiv dmgReduction armorResist 100;
-          #debug_log "Armor DmgReduction: " dmgReduction;
-          sub to_armor dmgReduction;
-          #debug_log "Armor NewDmg: " to_armor;
-        end;
+        # if and neq armorResist 0 gt to_armor 0; #Only run if the armor actually has resist (and damage is being dealt)
+          # set dmgReduction to_armor;
+          # weapon_item.getTag rendValue Tag.SMT_RENDING_WEAPON;
+          # if gt rendValue 0;
+            # sub rendValue 100;
+            # abs rendValue;
+            # muldiv armorResist rendValue 100;
+            # #debug_log "Armor Rend Adjustment: " rendValue armorResist;
+          # end;
+          # muldiv dmgReduction armorResist 100;
+          # #debug_log "Armor DmgReduction: " dmgReduction;
+          # sub to_armor dmgReduction;
+          # #debug_log "Armor NewDmg: " to_armor;
+        # end;
 
         return;
 
@@ -265,34 +157,34 @@ armors:
         var int dmgReduction;
         var int rendValue;
 
-        unit.getRuleArmor unitArmor;
-        #debug_log "Armor Dmg: " to_armor;
+        # unit.getRuleArmor unitArmor;
+        # #debug_log "Armor Dmg: " to_armor;
 
-        if eq damaging_type 5; #Plasma damage
-          unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_PLASMA_RESISTANCE;
-          #debug_log "Armor resist (Plasma): " armorResist damaging_type;
-        else eq damaging_type 11; #Melta damage
-          unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_MELTA_RESISTANCE;
-          #debug_log "Armor resist (Melta): " armorResist damaging_type;
-        else;
-          unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_RESISTANCE;
-          #debug_log "Armor resist (Regular): " armorResist damaging_type;
-        end;
+        # if eq damaging_type 5; #Plasma damage
+          # unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_PLASMA_RESISTANCE;
+          # #debug_log "Armor resist (Plasma): " armorResist damaging_type;
+        # else eq damaging_type 11; #Melta damage
+          # unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_MELTA_RESISTANCE;
+          # #debug_log "Armor resist (Melta): " armorResist damaging_type;
+        # else;
+          # unitArmor.getTag armorResist Tag.SMT_ARMOR_SHRED_RESISTANCE;
+          # #debug_log "Armor resist (Regular): " armorResist damaging_type;
+        # end;
 
-        if and neq armorResist 0 gt to_armor 0; #Only run if the armor actually has resist (and damage is being dealt)
-          set dmgReduction to_armor;
-          weapon_item.getTag rendValue Tag.SMT_RENDING_WEAPON;
-          if gt rendValue 0;
-            sub rendValue 100;
-            abs rendValue;
-            muldiv armorResist rendValue 100;
-            #debug_log "Armor Rend Adjustment: " rendValue armorResist;
-          end;
-          muldiv dmgReduction armorResist 100;
-          #debug_log "Armor DmgReduction: " dmgReduction;
-          sub to_armor dmgReduction;
-          #debug_log "Armor NewDmg: " to_armor;
-        end;
+        # if and neq armorResist 0 gt to_armor 0; #Only run if the armor actually has resist (and damage is being dealt)
+          # set dmgReduction to_armor;
+          # weapon_item.getTag rendValue Tag.SMT_RENDING_WEAPON;
+          # if gt rendValue 0;
+            # sub rendValue 100;
+            # abs rendValue;
+            # muldiv armorResist rendValue 100;
+            # #debug_log "Armor Rend Adjustment: " rendValue armorResist;
+          # end;
+          # muldiv dmgReduction armorResist 100;
+          # #debug_log "Armor DmgReduction: " dmgReduction;
+          # sub to_armor dmgReduction;
+          # #debug_log "Armor NewDmg: " to_armor;
+        # end;
 
         return;
 

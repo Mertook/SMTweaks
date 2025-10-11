@@ -700,7 +700,7 @@ soldiers:
       - STR_APOTHECARY_RANK_0
     tags:
       UNIT_REGENERATE_HEALTH_SOFTCAP: 75 # apoth bonus
-      SOLDIER_WOUNDTIME_RECOVERY_GLOBAL: 33 # reduce all wound times by 1/3 if soldier is present
+      SMT_SOLDIER_IS_MEDIC: 33 # reduce all wound times by 1/3 if soldier is present
 
   - type: STR_SOLDIER_APOTHVET          # Veteran Apothecary
     refNode: *REF_MARINE_VET_TAGS
@@ -776,7 +776,7 @@ soldiers:
       - STR_APOTHECARY_RANK_1
     tags:
       UNIT_REGENERATE_HEALTH_SOFTCAP: 75 # apoth bonus
-      SOLDIER_WOUNDTIME_RECOVERY_GLOBAL: 50 # reduce all wound times by 1/2 if soldier is present
+      SMT_SOLDIER_IS_MEDIC: 50 # reduce all wound times by 1/2 if soldier is present
 
   - type: STR_SOLDIER_TECH              # Firstborn Techmarine
     refNode: *REF_MARINE_TAGS
@@ -1375,7 +1375,7 @@ soldiers:
       - STR_PRIM_APOTH_RANK_0
     tags:
       UNIT_REGENERATE_HEALTH_SOFTCAP: 75
-      SOLDIER_WOUNDTIME_RECOVERY_GLOBAL: 33 # reduce all wound times by 1/3 if soldier is present
+      SMT_SOLDIER_IS_MEDIC: 33 # reduce all wound times by 1/3 if soldier is present
 
   - type: STR_PRIMARIS_APOTH_BIO        # Apothecary Biologis - Primaris lv4
     refNode: *REF_MARINE_VET_TAGS
@@ -1451,7 +1451,7 @@ soldiers:
       - STR_PRIM_APOTH_RANK_1
     tags:
       UNIT_REGENERATE_HEALTH_SOFTCAP: 75
-      SOLDIER_WOUNDTIME_RECOVERY_GLOBAL: 50 # reduce all wound times by 1/2 if soldier is present
+      SMT_SOLDIER_IS_MEDIC: 50 # reduce all wound times by 1/2 if soldier is present
 
   - type: STR_PRIMARIS_TECHNOVICE       # Tech Novitiate - Primaris lv2
     refNode: *REF_MARINE_TAGS
@@ -2734,7 +2734,7 @@ soldiers:
       UNIT_REGENERATE_HEALTH_BURN_TOGGLE: 0
       SMT_UNIT_REGEN_WOUND: 4
       SMT_HEROICSAVE_HP: 75
-      SOLDIER_WOUNDTIME_RECOVERY_GLOBAL: 50 # reduce all wound times by 1/2 if soldier is present
+      SMT_SOLDIER_IS_MEDIC: 50 # reduce all wound times by 1/2 if soldier is present
 
   - type: STR_CRISMONF_LEADER           # Crimson Fists Captain
     refNode: *STR_SOLDIER_DEATHWATCH_LEADER
@@ -3173,7 +3173,7 @@ soldiers:
       - STR_TECH_REPAIR_SKILL
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 66 # inbuilt bionics
-      SOLDIER_WOUNDTIME_RECOVERY_GLOBAL: 20 # reduce all wound times by 1/5 if soldier is present
+      SMT_SOLDIER_IS_MEDIC: 20 # reduce all wound times by 1/5 if soldier is present
 
 ###Other
 

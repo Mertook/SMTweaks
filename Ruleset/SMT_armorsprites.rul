@@ -1830,7 +1830,7 @@ armors:
     layersSpecificPrefix:
       1: GKTAC
       2: 0
-    layersDefinition:
+    layersDefinition: # cape body face mask helmet leg1 leg2 chest belt shoulder shield hand
       M0: ["", "BASE", "M0_FACE", "HOOD", "HELM1", "LEGL1", "LEGR1", "CHEST1", "BELT1", "SHOULDER1", "", "SBOLTER"]
       M1: ["", "BASE", "M0_FACE", "HOOD", "HELM4", "LEGL3", "LEGR6", "CHEST6", "BELT3", "SHOULDER1", "", "SBOLTER"]
       M2: ["", "BASE", "M1_FACE", "HOOD", "HELM2", "LEGL5", "LEGR3", "CHEST3", "BELT2", "SHOULDER1", "", "SBOLTER"]
@@ -1921,5 +1921,40 @@ armors:
       F9: ["", "BASE", "F6_FACE", "HOOD", "HELM4", "LEGL1", "LEGR6", "CHEST6", "BELT1", "SHOULDER1", "", "SBOLTER"]
       F10: ["", "BASE", "F7_FACE", "HOOD", "HELM1", "LEGL4", "LEGR5", "CHEST3", "BELT2", "SHOULDER1", "", "SBOLTER"]
       F11: ["", "BASE", "F7_FACE", "HOOD", "HELM2", "LEGL5", "LEGR4", "CHEST2", "BELT3", "SHOULDER1", "", "SBOLTER"]
+
+  - type: STR_GK_TAC_APOTHECARY_UC      # Grey Knight Apothecary (Tactical)
+    spriteSheet: GKINTSB.PCK
+    customArmorPreviewIndex: 212
+    layersDefaultPrefix: "GKMK7"
+    layersSpecificPrefix:
+      1: GKTAC
+      2: 0
+    layersDefinition:
+      M0: ["", "BASE", "M0_FACE", "HOOD", "HELM1", "LEGL1", "LEGR1", "CHEST1", "BELT1", "SHOULDER1", "", "APOTH"]
+      M1: ["", "BASE", "M0_FACE", "HOOD", "HELM4", "LEGL3", "LEGR6", "CHEST6", "BELT3", "SHOULDER1", "", "APOTH"]
+      M2: ["", "BASE", "M1_FACE", "HOOD", "HELM2", "LEGL5", "LEGR3", "CHEST3", "BELT2", "SHOULDER1", "", "APOTH"]
+      M3: ["", "BASE", "M1_FACE", "HOOD", "HELM3", "LEGL2", "LEGR2", "CHEST2", "BELT3", "SHOULDER1", "", "APOTH"]
+      M4: ["", "BASE", "M4_FACE", "HOOD", "HELM4", "LEGL4", "LEGR5", "CHEST6", "BELT2", "SHOULDER1", "", "APOTH"]
+      M5: ["", "BASE", "M4_FACE", "HOOD", "HELM2", "LEGL1", "LEGR6", "CHEST3", "BELT1", "SHOULDER1", "", "APOTH"]
+      M6: ["", "BASE", "M5_FACE", "HOOD", "HELM1", "LEGL3", "LEGR4", "CHEST1", "BELT1", "SHOULDER1", "", "APOTH"]
+      M7: ["", "BASE", "M5_FACE", "HOOD", "HELM3", "LEGL5", "LEGR3", "CHEST2", "BELT2", "SHOULDER1", "", "APOTH"]
+      M8: ["", "BASE", "M6_FACE", "HOOD", "HELM3", "LEGL4", "LEGR5", "CHEST6", "BELT3", "SHOULDER1", "", "APOTH"]
+      M9: ["", "BASE", "M6_FACE", "HOOD", "HELM4", "LEGL1", "LEGR6", "CHEST6", "BELT1", "SHOULDER1", "", "APOTH"]
+      M10: ["", "BASE", "M7_FACE", "HOOD", "HELM1", "LEGL4", "LEGR5", "CHEST3", "BELT2", "SHOULDER1", "", "APOTH"]
+      M11: ["", "BASE", "M7_FACE", "HOOD", "HELM2", "LEGL5", "LEGR4", "CHEST2", "BELT3", "SHOULDER1", "", "APOTH"]
+      F0: ["", "BASE", "F0_FACE", "HOOD", "HELM1", "LEGL1", "LEGR4", "CHEST1", "BELT1", "SHOULDER1", "", "APOTH"]
+      F1: ["", "BASE", "F0_FACE", "HOOD", "HELM4", "LEGL4", "LEGR5", "CHEST6", "BELT3", "SHOULDER1", "", "APOTH"]
+      F2: ["", "BASE", "F1_FACE", "HOOD", "HELM2", "LEGL5", "LEGR3", "CHEST3", "BELT2", "SHOULDER1", "", "APOTH"]
+      F3: ["", "BASE", "F1_FACE", "HOOD", "HELM3", "LEGL2", "LEGR2", "CHEST2", "BELT3", "SHOULDER1", "", "APOTH"]
+      F4: ["", "BASE", "F4_FACE", "HOOD", "HELM4", "LEGL4", "LEGR5", "CHEST6", "BELT2", "SHOULDER1", "", "APOTH"]
+      F5: ["", "BASE", "F4_FACE", "HOOD", "HELM2", "LEGL2", "LEGR6", "CHEST3", "BELT1", "SHOULDER1", "", "APOTH"]
+      F6: ["", "BASE", "F5_FACE", "HOOD", "HELM1", "LEGL3", "LEGR4", "CHEST1", "BELT1", "SHOULDER1", "", "APOTH"]
+      F7: ["", "BASE", "F5_FACE", "HOOD", "HELM3", "LEGL5", "LEGR3", "CHEST2", "BELT2", "SHOULDER1", "", "APOTH"]
+      F8: ["", "BASE", "F6_FACE", "HOOD", "HELM3", "LEGL4", "LEGR5", "CHEST6", "BELT3", "SHOULDER1", "", "APOTH"]
+      F9: ["", "BASE", "F6_FACE", "HOOD", "HELM4", "LEGL1", "LEGR6", "CHEST6", "BELT1", "SHOULDER1", "", "APOTH"]
+      F10: ["", "BASE", "F7_FACE", "HOOD", "HELM1", "LEGL4", "LEGR5", "CHEST3", "BELT2", "SHOULDER1", "", "APOTH"]
+      F11: ["", "BASE", "F7_FACE", "HOOD", "HELM2", "LEGL5", "LEGR4", "CHEST2", "BELT3", "SHOULDER1", "", "APOTH"]
+
+
 
 ### Deathwatch

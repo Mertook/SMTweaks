@@ -241,7 +241,6 @@ research:
     unlocks:
       - STR_MARINE_CHAPEL
       - STR_SMOKE_BOMB_UNLOCK
-      - STR_APOTHECARY
       - STR_TRAINFACILITYR
       - STR_PRIMARIS_AND_DEATHWATCH
       - STR_PRIMARIS_AND_ADEPTAS
@@ -307,6 +306,7 @@ research:
       - STR_BOLTER_AMMO_PREREQ
       - STR_HB_DEP1
       - STR_STORMRAVEN_PREREQ
+      - STR_PSYKER_T3_UNLOCK
     disables:
       - STR_NOT_GK
       - STR_DEATHWATCH
@@ -336,11 +336,13 @@ research:
       - STR_XENO_WEAPONS
       - STR_HARDER_MISSIONS
       - STR_BOLTER_AMMO_PREREQ
-      - STR_BOLTER_ADV_AMMO
       - STR_MARINE_WEAPONS
-      - STR_STORMRAVEN_PREREQ
-    getOneFree:
       - STR_SCT_MELEE_REQ
+      - STR_SHOTGUNS_ADV
+      - STR_STORMRAVEN_PREREQ
+      - STR_MEDI_KIT_PREREQ
+    getOneFree:
+      - STR_BOLTER_ADV_AMMO
     disables:
       - STR_NOT_DEATHWATCH
       - STR_GREYKNIGHTS
@@ -434,7 +436,6 @@ research:
       - STR_GENERALLOCK
     unlocks:
       - STR_ADEPTAS_FRATERIS_MILITIA_RESEARCH
-      - STR_MEDI_KIT_PREREQ
       - STR_LIGHT_BOLTERS
       - STR_LIGHT_BOLTERS_LOWTIER
       - STR_TRAINFACILITYR
@@ -442,7 +443,7 @@ research:
       - STR_INQ_STORMTROOPER_CODEX_UNLOCKER
 
 ## Imperial Guard
-  - name: STR_NORMAL_STRATEGY_IG            # IG Standard Strategy
+  - name: STR_NORMAL_STRATEGY_IG        # IG Standard Strategy
     unlocks: !add
       - STR_IMPERIAL_CHURCH
       - STR_PICKED_LOYALIST_STRATEGY
@@ -735,7 +736,57 @@ research:
     cutscene: c2
     listOrder: 1
 
+## Imperial Guard
+  - name: STR_MIDTIER_GUARDSMEN                     # Guardsmen Mid-tier Requisitions
+    unlocks: !remove
+      - STR_SQUAT_GUARDSMEN
+      - STR_FELINID_GUARDSMEN
+      - STR_BEASTMEN_GUARDSMEN
+      - STR_BASIC_PSYKERS_IG
+  - name: STR_MIDTIER_GUARDSMEN                     # Guardsmen Mid-tier Requisitions
+    unlocks: !add
+      - STR_PSYKER_REQUISITION
+
+  - name: STR_MIDTIER_ELITE                         # Scion Mid-tier Requisitions
+    unlocks: !remove
+      - STR_BASIC_PSYKERS_IG
+
+  - name: STR_MIDTIER_ABHUMAN                       # Abhuman Mid-tier Requisitions
+    unlocks: !remove
+      - STR_BASIC_PSYKERS_IG
+  - name: STR_MIDTIER_ABHUMAN                       # Abhuman Mid-tier Requisitions
+    unlocks: !add
+      - STR_PRIMARIS_PSYKER_R
+
+  - name: STR_STEEL_LEGION_STRATEGY_MIDTIER         # Steel Legion mid-tier
+    unlocks: !remove
+      - STR_BASIC_PSYKERS_IG
 ### Faction High-tier
+
+## Chamber Militant
+  - name: STR_DW_HIGHTIER               # Deathwatch High-tier
+    cost: 900
+    points: 30
+    dependencies:
+      - STR_DEATHWATCH
+      - STR_MIDTIER_PREREQ
+      - STR_DEATHWATCH_BUST
+    unlocks:
+      - STR_HIGHTIER_PREREQ
+
+  - name: STR_GK_HIGHTIER               # Grey Knights High-tier
+    cost: 900
+    points: 30
+    dependencies:
+      - STR_GREYKNIGHTS
+      - STR_MIDTIER_PREREQ
+      - STR_CYDONIA_OR_BUST
+    unlocks:
+      - STR_HIGHTIER_PREREQ
+    getOneFree:
+      - STR_HAMMER
+
+## Imperial Guard
 
 ### Soldiers
   - name: STR_ARBITES_SOLDIERS          # Allow buying Arbites soldiers
@@ -746,6 +797,45 @@ research:
   - name: STR_REINFORCEMENT             # Grey Knight Reinforcements Requisition
     dependencies:
       - STR_GENERALLOCK
+
+  - name: STR_ENGINSEER_REQUISITION     # Enginseer
+    cost: 400
+    points: 20
+    dependencies:
+      - STR_MIDTIER_PREREQ
+      - STR_IMPERIAL_GUARD_OPERATIONS
+    unlocks:
+      - STR_TECHMARINE_GEAR
+    listOrder: 20
+
+  - name: STR_ABHUMAN_GUARD_RECRUITS    # Abhuman Recruitments
+    cost: 180 # was free for Guardsmen Strat
+    points: 20
+    listOrder: 30
+    dependencies:
+      - STR_MIDTIER_GUARDSMEN
+    unlocks:
+      - STR_SQUAT_GUARDSMEN
+      - STR_FELINID_GUARDSMEN
+      - STR_BEASTMEN_GUARDSMEN
+
+  - name: STR_PSYKER_REQUISITION        # Sanctioned Psyker Requisition
+    unlocks:
+      - STR_PSYKER_T3_UNLOCK
+    dependencies:
+      - STR_IMPERIAL_GUARD_OPERATIONS
+      - STR_MIDTIER_GUARDSMEN
+    spawnedItem: STR_NONE
+
+  - name: STR_PRIMARIS_PSYKER_R         # Primaris Psyker Upgrade
+    cost: 400
+    points: 20
+    unlocks:
+      - STR_PSYKER_T5_UNLOCK
+    dependencies:
+      - STR_NORMAL_STRATEGY_IG
+      - STR_IMPERIAL_GUARD_HIGHTIER
+      - STR_PSYKER_REQUISITION
 
 ###Weapons
   - name: STR_STUBBERS_UNLOCK           # Allow buying basic Stubbers
@@ -797,7 +887,7 @@ research:
       - STR_MT_GK
 
 ###Armor
-  - name: STR_GK_INTERCEPTOR_R             # Grey Knight Interceptor Armor
+  - name: STR_GK_INTERCEPTOR_R          # Grey Knight Interceptor Armor
     cost: 335
     points: 20
     listOrder: 20
@@ -1081,21 +1171,36 @@ research:
     dependencies:
       - STR_NOT_PRIMARIS
       - STR_MARINES_STRATEGY
-      - STR_APOTHECARY_PREREQ
+      - STR_PICKED_LOYALIST_STRATEGY
     unlocks:
       - STR_MEDI_KIT_PREREQ
-      - STR_APOC_BAY # unlocks Apoth bay immediately
+      - STR_APOTHECARY_TRAINING
     lookup: STR_MEDI_KIT_PREREQ
 
-  - name: STR_APOTHECARY            # Apothecary Armor (Primaris)
+  - name: STR_APOTHECARY            # Apothecary (Primaris)
     cost: 210
     points: 20
     dependencies:
-      - STR_GENERALLOCK
       - STR_PRIMARIS
+      - STR_PICKED_LOYALIST_STRATEGY
     unlocks:
       - STR_MEDI_KIT_PREREQ
-      - STR_APOC_BAY # unlocks Apoth bay immediately
+      - STR_APOTHECARY_TRAINING
+
+  - name: STR_APOTHECARY_GK         # Apothecary (Grey Knights)
+    dependencies:
+      - STR_GREYKNIGHTS
+      - STR_PICKED_LOYALIST_STRATEGY
+    unlocks:
+      - STR_MEDI_KIT_PREREQ
+      - STR_APOTHECARY_TRAINING
+
+  - name: STR_APOTHECARY_TRAINING   # Apothecary Training
+    cost: 0
+    dependencies:
+      - STR_MEDI_KIT_PREREQ
+      - STR_MARINES_STRATEGY
+      - STR_GREYKNIGHTS
 
   - name: STR_40MM_AMMO             # 40mm underslung grenade ammo
     cost: 0

@@ -53,6 +53,27 @@ soldierTransformation:
     soldierBonusType: STR_BONUS_INQ_ROSARIUS
     listOrder: 90
 
+  - name: STR_APOTHECARY_TRAINING       # Apothecary Training
+    forbiddenPreviousTransformations:
+      - STR_APOTHECARY_TRAINING
+    requires:
+      - STR_APOTHECARY_TRAINING
+    cost: 60000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 100
+    transferTime: 0
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    flatOverallStatChange:
+      bravery: 10
+    upperBoundAtStatCaps: true
+    allowedSoldierTypes:
+      - STR_GREYKNIGHT
+    soldierBonusType: STR_BONUS_APOTH_TRAINING
+    listOrder: 20
+
 ### Firstborn
   - name: STR_PROMOTE_NEOPHYTE          # Neophyte -> Marine
     requires:
@@ -1008,6 +1029,7 @@ soldierTransformation:
     allowsWoundedSoldiers: true
     allowedSoldierTypes: &Psyker_TierOne_Soldiers
       - STR_PSYKER
+      - STR_GREYKNIGHT
       - STR_SOLDIER_LIBRARIAN
       - STR_SOLDIER_LIBRARIAN_TERM
       - STR_PRIMARIS_LIBRARIANLV1
@@ -1082,6 +1104,7 @@ soldierTransformation:
     allowsWoundedSoldiers: true
     allowedSoldierTypes: &Psyker_TierTwo_Soldiers
       - STR_PSYKER
+      - STR_GREYKNIGHT
       - STR_SOLDIER_LIBRARIAN
       - STR_SOLDIER_LIBRARIAN_TERM
       - STR_PRIMARIS_LIBRARIANLV1
@@ -1133,13 +1156,14 @@ soldierTransformation:
       - STR_PSYKER_T3_UNLOCK
     cost: 50000
     requiredItems: &Psyker_TierThree_Cost
-      STR_KILLPOINT_TOKEN: 80 # 180 total (40+60+80)
+      STR_KILLPOINT_TOKEN: 100 # 200 total (40+60+100)
     keepSoldierArmor: true
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
     allowsWoundedSoldiers: true
     allowedSoldierTypes: &Psyker_TierThree_Soldiers
       - STR_PSYKER
+      - STR_GREYKNIGHT
       - STR_SOLDIER_LIBRARIAN
       - STR_SOLDIER_LIBRARIAN_TERM
       - STR_PRIMARIS_LIBRARIANLV1
@@ -1147,6 +1171,7 @@ soldierTransformation:
       - STR_PRIMARIS_LIBRARIANLV3
     forbiddenPreviousTransformations: &Psyker_TierThree_TransformList
       - STR_PSIUNLOCK_SMITE
+      - STR_PSIUNLOCK_FLAMES_GK
       - STR_PSIUNLOCK_HOLODUMMY
       - STR_PSIUNLOCK_MENDWOUNDS
       - STR_PSIUNLOCK_UNDYING
@@ -1155,6 +1180,25 @@ soldierTransformation:
       psiStrength: 80
     listOrder: 4035
     soldierBonusType: STR_PSIBONUS_SMITE
+
+  - name: STR_PSIUNLOCK_FLAMES_GK       # Purifying Flames (Tier 3)
+    cost: 50000
+    requires:
+      - STR_PSYKER_T3_UNLOCK
+      - STR_GREYKNIGHTS
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    transferTime: 0
+    requires: *Psyker_TierThree_Requires
+    requiredItems: *Psyker_TierThree_Cost
+    allowedSoldierTypes:
+      - STR_GREYKNIGHT
+    forbiddenPreviousTransformations: *Psyker_TierThree_TransformList
+    requiredMinStats: *Psyker_TierThree_MinStats
+    listOrder: 4036
+    soldierBonusType: STR_PSIBONUS_FLAMES_GK
 
   - name: STR_PSIUNLOCK_HOLODUMMY       # Hallucination (Tier 3)
     cost: 50000
@@ -1208,7 +1252,7 @@ soldierTransformation:
       - STR_PSYKER_T4_UNLOCK
     cost: 50000
     requiredItems: &Psyker_TierFour_Cost
-      STR_KILLPOINT_TOKEN: 100 # 280 total (40+60+80+100)
+      STR_KILLPOINT_TOKEN: 140 # 340 total (40+60+100+140)
     keepSoldierArmor: true
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -1281,12 +1325,13 @@ soldierTransformation:
       - STR_PSYKER_T5_UNLOCK
     cost: 50000
     requiredItems: &Psyker_TierFive_Cost
-      STR_KILLPOINT_TOKEN: 120 # 400 total (40+60+80+100+120)
+      STR_KILLPOINT_TOKEN: 200 # 540 total (40+60+100+140+200)
     keepSoldierArmor: true
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
     allowsWoundedSoldiers: true
     allowedSoldierTypes: &Psyker_TierFive_Soldiers
+      - STR_PSYKER
       - STR_SOLDIER_LIBRARIAN_TERM
       - STR_PRIMARIS_LIBRARIANLV2
       - STR_PRIMARIS_LIBRARIANLV3
@@ -1352,7 +1397,7 @@ soldierTransformation:
       - STR_PSYKER_T6_UNLOCK
     cost: 50000
     requiredItems: &Psyker_TierSix_Cost
-      STR_KILLPOINT_TOKEN: 200 # 600 total (40+60+80+100+120+200)
+      STR_KILLPOINT_TOKEN: 460 # 1000 total (40+60+100+140+200+460)
     keepSoldierArmor: true
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -1403,12 +1448,15 @@ soldierTransformation:
 
   - name: STR_PSIUNLOCK_HOLOCAUST       # Holocaust (Tier 6)
     cost: 50000
+    requires:
+      - STR_PSYKER_T6_UNLOCK
+      - STR_GREYKNIGHTS
+      - STR_GENERALLOCK ###CHANGEME
     keepSoldierArmor: true
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
     allowsWoundedSoldiers: true
     transferTime: 0
-    requires: *Psyker_TierSix_Requires
     requiredItems: *Psyker_TierSix_Cost
     allowedSoldierTypes: *Psyker_TierSix_Soldiers
     forbiddenPreviousTransformations: *Psyker_TierSix_TransformList
@@ -1449,6 +1497,11 @@ soldierBonuses:
       SMT_BONUS_MORALE_RESISTANCE: 33
       BONUS_ENERGY_SHIELD_HP_PER_TURN: 90
       BONUS_ENERGY_SHIELD_DECAY: 75
+
+  - name: STR_BONUS_APOTH_TRAINING
+    tags:
+      SMT_BONUS_MORALE_RESISTANCE: 20
+
 ### Psi Bonuses
   - name: STR_PSIBONUS_SHROUD
   - name: STR_PSIBONUS_FLARE
@@ -1459,6 +1512,7 @@ soldierBonuses:
   - name: STR_PSIBONUS_FLASH
   - name: STR_PSIBONUS_REFLEXES
   - name: STR_PSIBONUS_SMITE
+  - name: STR_PSIBONUS_FLAMES_GK
   - name: STR_PSIBONUS_HOLODUMMY
   - name: STR_PSIBONUS_VIGILANCE
   - name: STR_PSIBONUS_MENDWOUNDS

@@ -72,6 +72,7 @@ extended:
       ARMOR_REGENERATE_HEALTH_SOFTCAP: int      # % of total missing HP unit can regenerate from special regen
       ARMOR_REGENERATE_HEALTH_BURN_TOGGLE: int  # does this unit regenerate when on fire? 0 = ignore, 1 = no regen on when fire, -1 = cancel out soldier penalty
       ARMOR_REGENERATE_DURABILITY: int          # Unit armor sides are restored by X each turn
+      SMT_ARMOR_IS_MEDIC: int                   # All units get % reduced medbay recovery time if this unit is present
       ## Heavy Weapons
       SMT_ARMOR_HEAVY_WEAPON_USER: int          # counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 2/3, 3 = 2/4, 4 = 2/5 etc
       SMT_ARMOR_IGNORE_1H_MELEE_PEN: int        # counteracts the str penalty for melee when using with both hands full
@@ -113,8 +114,8 @@ extended:
       UNIT_REGENERATE_HEALTH_PERCENT: int       # hp regen from soldier type - Percentage of (Max HP - Lowest HP)
       UNIT_REGENERATE_HEALTH_SOFTCAP: int       # % of total missing HP unit can regenerate from special regen
       UNIT_REGENERATE_HEALTH_BURN_TOGGLE: int   # does this unit regenerate when on fire? 0 = ignore, 1 = no regen on when fire, -1 = cancel out armor penalty
-      SMT_UNIT_REGEN_WOUND: int #passive wound regen from soldier type
-      SOLDIER_WOUNDTIME_RECOVERY_GLOBAL: int    # all units get up to this much bonus medbay recovery bonus if this unit is present
+      SMT_UNIT_REGEN_WOUND: int                 # passive wound regen from soldier type
+      SMT_SOLDIER_IS_MEDIC: int                 # All units get % reduced medbay recovery time if this unit is present
       ## Heroic Save
       SMT_HEROICSAVE_CHANCE: int #Modifier to chance to resist fatal damage
       SMT_HEROICSAVE_HP: int #% of currenthp left after heroic save triggers
@@ -127,7 +128,7 @@ extended:
       SMT_SOLDIER_MORALE_RESISTANCE: int        # Reduce morale damage by %
       SMT_SOLDIER_STUN_RESISTANCE: int          # Reduce stun damage by %
       SMT_SOLDIER_STAGGER_RESISTANCE: int       # Reduce Stamina damage by %
-      SMT_SOLDIER_IMMOBILIZE_RESISTANCE: int      # Reduce TU damage by %
+      SMT_SOLDIER_IMMOBILIZE_RESISTANCE: int    # Reduce TU damage by %
       ## Alpha
       SMT_ALPHA_ATTACKER_MODIFIER: int
       ## Experience Gain
@@ -143,7 +144,7 @@ extended:
       SKILL_STEALTH_MOVEPENALTY: int            # % modifier on movespeed while stealthed
       SKILL_STEALTH_CHECK: int                  # skill used to check stealth requirements (>0) or remove stealth (<0)
     RuleSoldierBonus:
-      ## Special Damage Resistance (Unit Total)
+      ## SoldierBonus Tag Boosts (Increase unit innate tag by X at the start of battles)
       SMT_BONUS_SHRED_RESISTANCE: int           # Reduce armor damage by % (Generic damage sources)
       SMT_BONUS_SHRED_PLASMA_RESISTANCE: int    # Reduce armor damage by % (Plasma damage)
       SMT_BONUS_SHRED_MELTA_RESISTANCE: int     # Reduce armor damage by % (Melta damage)
@@ -151,6 +152,7 @@ extended:
       SMT_BONUS_STUN_RESISTANCE: int            # Reduce stun damage by %
       SMT_BONUS_STAGGER_RESISTANCE: int         # Reduce Stamina damage by %
       SMT_BONUS_IMMOBILIZE_RESISTANCE: int      # Reduce TU damage by %
+      SMT_BONUS_MEDIC_GLOBAL: int               # All units get % reduced medbay recovery time if this unit is present
       ## Rank Sprite Change
       SMT_BONUS_RANK_SPRITEMOD: int             # Modify Sprite if unit has bonus
     BattleUnit:

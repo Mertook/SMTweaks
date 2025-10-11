@@ -1284,6 +1284,7 @@ ufopaedia:
   - id: STR_AUTOGUN_AGRI
     requires:
       - STR_AUTOGUNS_UNLOCK
+      - STR_LASER_WEAPONS
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: AUTOGUN_HIGH_GRADE_CODEX.SPK
@@ -1292,7 +1293,7 @@ ufopaedia:
   - id: STR_AUTOGUN_AGRI_B
     requires:
       - STR_AUTOGUNS_UNLOCK
-      - STR_MIDTIER_PREREQ
+      - STR_LASER_WEAPONS
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: AUTOGUN_HIGH_GRADE_CODEX.SPK
@@ -1341,6 +1342,15 @@ ufopaedia:
       - STR_GK_INTERCEPTOR_R
     image_id: 0GK.SPK ###CHANGEME
     text: STR_GK_INTERCEPTOR_UC_CODEX
+    #listOrder: 5050
+
+  - id: STR_GK_TAC_APOTHECARY_UC               # Grey Knight Interceptor
+    type_id: 15
+    section: STR_ARMORPEDIA
+    requires:
+      - STR_APOTHECARY_GK
+    image_id: 0GK.SPK ###CHANGEME
+    text: STR_GK_TAC_APOTHECARY_UC_CODEX
     #listOrder: 5050
 
   - id: STR_ENGINSEER_ARMOR_UC              # Enginseer

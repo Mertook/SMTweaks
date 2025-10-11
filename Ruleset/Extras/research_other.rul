@@ -202,29 +202,6 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_LIGHTBOLTER_ADV_AMMO
       - STR_40MM_AMMO
 
-  - name: STR_LIGHT_BOLTERS_MIDTIER
-    unlocks: !add
-      - STR_LIGHTBOLTER_ADV_AMMO
-      - STR_40MM_AMMO
-
-  - name: STR_ENGINSEER_REQUISITION                 # Enginseer
-    cost: 400
-    points: 20
-    dependencies:
-      - STR_MIDTIER_PREREQ
-      - STR_IMPERIAL_GUARD_OPERATIONS
-    unlocks:
-      - STR_TECHMARINE_GEAR
-    listOrder: 20
-
-  - name: STR_PSYKER_REQUISITION                    # Sanctioned Psyker Requisition
-    unlocks:
-      - STR_PSYKER_T4_UNLOCK
-    dependencies:
-      - STR_MIDTIER_PREREQ # was high tier
-      - STR_IMPERIAL_GUARD_OPERATIONS
-    spawnedItem: STR_NONE
-
   - name: STR_BIOMANCER  # Biomancer
     cost: 0
     points: 0

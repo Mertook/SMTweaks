@@ -34,13 +34,13 @@ extended:
             if gt bonusVal 0;
               battle_game.getTag initVal Tag.SMT_FAST_RECOVERY_TOTAL;
               add initVal bonusVal;
-              debug_log "MedicC Init " bonusVal initVal unit;
+              #debug_log "MedicC Init " bonusVal initVal unit;
               battle_game.setTag Tag.SMT_FAST_RECOVERY_TOTAL initVal; # increase total val
               battle_game.getTag temp Tag.SMT_FAST_RECOVERY_PEAK;
               if gt bonusVal temp;
                 battle_game.setTag Tag.SMT_FAST_RECOVERY_PEAK bonusVal; # adjust highest value if bigger
               end;
-              debug_log "MedicC Final " bonusVal temp initVal;
+              #debug_log "MedicC Final " bonusVal temp initVal;
             end;
           end;
 
@@ -111,7 +111,7 @@ extended:
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_MEDIC_GLOBAL;
             if gt bonusVal 0;
               save_game.getTag initVal Tag.SMT_FAST_RECOVERY_TOTAL;
-              debug_log "MedicB Init " bonusVal initVal unit;
+              #debug_log "MedicB Init " bonusVal initVal unit;
               add initVal bonusVal;
               save_game.setTag Tag.SMT_FAST_RECOVERY_TOTAL initVal; # increase total val
 
@@ -122,7 +122,7 @@ extended:
               if gt bonusVal temp;
                 save_game.setTag Tag.SMT_FAST_RECOVERY_PEAK bonusVal; # adjust highest value if bigger
               end;
-              debug_log "MedicB Final " bonusVal temp initVal;
+              #debug_log "MedicB Final " bonusVal temp initVal;
             end;
           end;
 

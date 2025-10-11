@@ -1,40 +1,5 @@
 research: # Research changes only made to maintain functionality for other factions
 
-  - name: STR_MIDTIER_GUARDSMEN                     # Guardsmen Mid-tier Requisitions
-    unlocks: !remove
-      - STR_SQUAT_GUARDSMEN
-      - STR_FELINID_GUARDSMEN
-      - STR_BEASTMEN_GUARDSMEN
-      - STR_BASIC_PSYKERS_IG
-
-  - name: STR_ABHUMAN_GUARD_RECRUITS                # Abhuman Recruitments
-    cost: 180 # was free for Guardsmen Strat
-    points: 20
-    listOrder: 30
-    dependencies:
-      - STR_MIDTIER_GUARDSMEN
-    unlocks:
-      - STR_SQUAT_GUARDSMEN
-      - STR_FELINID_GUARDSMEN
-      - STR_BEASTMEN_GUARDSMEN
-
-  - name: STR_MIDTIER_ELITE                         # Scion Mid-tier Requisitions
-    unlocks: !remove
-      - STR_BASIC_PSYKERS_IG
-
-  - name: STR_MIDTIER_ABHUMAN                       # Abhuman Mid-tier Requisitions
-    unlocks: !remove
-      - STR_BASIC_PSYKERS_IG
-
-  - name: STR_STEEL_LEGION_STRATEGY_MIDTIER         # Steel Legion mid-tier
-    unlocks: !remove
-      - STR_BASIC_PSYKERS_IG
-
-  - name: STR_ADEPTAS                               # Sisters of Battle Faction
-    unlocks: !add
-      - STR_STORMRAVEN_PREREQ
-      - STR_INFERNOPISTOL_REQ
-
   - name: STR_OGRYN_REQUISITION                     # Keep IG ability to buy smokebombs intact
     unlocks: !add
       - STR_SMOKE_BOMB_UNLOCK
@@ -106,38 +71,38 @@ research: # Research changes only made to maintain functionality for other facti
     spawnedEvent: STR_ELDAR_TREATY_FARSEER
     listOrder: 5
 
-  - name: STR_ELDAR_PATH #XENO ALLIANCE
-    cost: 1000
-    points: -1500 # was -500
-    dependencies:
-      #- STR_GUARD_AND_ARBITES
-      - STR_ELDAR_ALLIANCE
-    getOneFree:
-      - STR_ELDAR_WEAPONRY # was Eldar Platform ???
-    lookup: STR_CHOSEN_ELDAR
-    spawnedItemList:
-      - STR_ELDAR_PLAT
-      - STR_ELDAR_DAVENGER
-      - STR_ELDAR_SCORPION
-      - STR_ELDAR_REAPER
-      - STR_ELDAR_HEMLOCK_UFO_DATA
-      - STR_ELDAR_WAVESERPENT_UFO_DATA
-      - STR_ELDAR_COBRA_UFO_DATA
-      - STR_ELDAR_HORNET_UFO_DATA
-      - STR_CATAPULT_PISTOL
-      - STR_CATAPULT
-      - STR_SHURIKEN_CLIP
-      - STR_EPOWER_SWORD
-      - STR_ELDAR_MGRENADE
-      - STR_ELDAR_GRENADE
-      - STR_ELDAR_CHAINSWORD
-      - STR_WRAITHGUARD_CORPSE  # why?
-      - STR_PLAT_CORPSE         # why?
-      - STR_DAVENGER_CORPSE     # why?
-      - STR_SCORPION_CORPSE     # why?
-      - STR_GUARDIAN_CORPSE     # why?
-      - STR_ELDAR_REAPER_CORPSE # why?
-    spawnedItemCount: 1
+  # - name: STR_ELDAR_PATH #XENO ALLIANCE
+    # cost: 1000
+    # points: -1500 # was -500
+    # dependencies:
+      # #- STR_GUARD_AND_ARBITES
+      # - STR_ELDAR_ALLIANCE
+    # getOneFree:
+      # - STR_ELDAR_WEAPONRY # was Eldar Platform ???
+    # lookup: STR_CHOSEN_ELDAR
+    # spawnedItemList:
+      # - STR_ELDAR_PLAT
+      # - STR_ELDAR_DAVENGER
+      # - STR_ELDAR_SCORPION
+      # - STR_ELDAR_REAPER
+      # - STR_ELDAR_HEMLOCK_UFO_DATA
+      # - STR_ELDAR_WAVESERPENT_UFO_DATA
+      # - STR_ELDAR_COBRA_UFO_DATA
+      # - STR_ELDAR_HORNET_UFO_DATA
+      # - STR_CATAPULT_PISTOL
+      # - STR_CATAPULT
+      # - STR_SHURIKEN_CLIP
+      # - STR_EPOWER_SWORD
+      # - STR_ELDAR_MGRENADE
+      # - STR_ELDAR_GRENADE
+      # - STR_ELDAR_CHAINSWORD
+      # - STR_WRAITHGUARD_CORPSE  # why?
+      # - STR_PLAT_CORPSE         # why?
+      # - STR_DAVENGER_CORPSE     # why?
+      # - STR_SCORPION_CORPSE     # why?
+      # - STR_GUARDIAN_CORPSE     # why?
+      # - STR_ELDAR_REAPER_CORPSE # why?
+    # spawnedItemCount: 1
 
   - name: STR_ELDAR_DAVENGER
     cost: 150

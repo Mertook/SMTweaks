@@ -6839,10 +6839,9 @@ items:
     accuracyAuto: 66
     accuracySnap: 80
     accuracyAimed: 0
-    tuAuto: 50
+    tuAuto: 55
     tuSnap: 30
     tuAimed: 0
-    sprayWaypoints: 2
     power: 20
     accuracyMultiplier:
       firing: 0.4
@@ -6860,9 +6859,65 @@ items:
     confSnap:
       shots: 2
     confAuto:
-      shots: 6
+      shots: 8
+    sprayWaypoints: 4
     tags:
       DAMAGE_BONUS_PERCENT_DAEMONIC: 150
+
+  - type: STR_PSYCANNON                     # Psycannon
+    costSell: 40000
+    twoHanded: true
+    weight: 15
+    dropoff: 5
+    autoRange: 16
+    snapRange: 22
+    aimRange: 0
+    accuracyAuto: 66
+    accuracySnap: 80
+    accuracyAimed: 0
+    tuAuto: 50
+    tuSnap: 30
+    tuAimed: 0
+    sprayWaypoints: 2
+    accuracyMultiplier:
+      firing: 0.4
+      psiStrength: 0.6
+    compatibleAmmo:
+      - STR_PSYCANNON_AMMO
+    confSnap:
+      shots: 1
+    confAuto:
+      shots: 3
+    tags:
+      DAMAGE_BONUS_PERCENT_DAEMONIC: 150
+
+  - type: STR_PSYCANNON_AMMO                # Psycannon Bolts
+    categories: [STR_CAT_DEVASTATOR]
+    battleType: 2
+    bigSprite: {mod: 40k, index: 9} ###CHANGEME
+    floorSprite: {mod: 40k, index: 9} ###CHANGEME
+    handSprite: {mod: 40k, index: 456}
+    hitAnimation: {mod: 40k, index: 0}
+    bulletSpeed: 30
+    explosionSpeed: 1
+    size: 0.02
+    armor: 300
+    invWidth: 2
+    invHeight: 2
+    weight: 7
+    power: 80
+    damageBonus:
+      psiStrength: 0.5
+    damageType: 13 # WARP
+    damageAlter:
+      RandomType: 8
+      ArmorEffectiveness: 0.4
+      ToArmorPre: 0.1
+      ToArmor: 0.1
+      ToHealth: 1.0
+      ToStun: 0.5
+    clipSize: 16
+    listOrder: 12162 ###CHANGEME
 
 ### Melee
   - type: STR_CHAINSWORD                    # Chainsword
@@ -7257,16 +7312,16 @@ items:
       time: 15
       energy: 2
 
-  - type: STR_POWER_SWORD_MC
+  - type: STR_POWER_SWORD_MC                # Power Sword (Mastercrafted)
     refNode: *REF_POWERSWORD
     weight: 15
     costMelee:
       time: 12
       energy: 2
 
-  - &REF_THUNDERHAMMER
+  - &REF_THUNDERHAMMER                      # Thunder Hammer
     type: STR_HAMMER
-    twoHanded: true
+    twoHanded: false
     oneHandedPenalty: 100
     costMelee:
       time: 25
@@ -7274,8 +7329,8 @@ items:
     flatMelee: true
     power: 120
     damageBonus:
-      strength: 1.0
-      melee: 0.2
+      strength: 0.9 # was 1.0
+      melee: 0.25 # was 0.2
     meleeAlter:
       ArmorEffectiveness: 0.6
       ToArmorPre: 0.3
@@ -7289,7 +7344,7 @@ items:
       ITEM_DOESNT_HURT_USER: 1
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 66
 
-  - type: STR_HAMMER_MC
+  - type: STR_HAMMER_MC                     # Thunder Hammer (Mastercrafted)
     refNode: *REF_THUNDERHAMMER
     weight: 70
     costMelee:
@@ -7298,70 +7353,72 @@ items:
     accuracyMelee: 90
 
 ### Force Weapons
-  # - &DMG_FORCE_WEAPON
-    # type: STR_FORCE_SWORD
-    # damageBonus:
-      # strength: 0.2
-      # melee: 0.3
-      # psiStrength: 0.2
-      # psiSkill: 0.02
-    # meleeBonus:
-      # strength: 0.2
-      # melee: 0.3
-      # psiStrength: 0.2
-      # psiSkill: 0.02
-
-  # - type: STR_FORCE_SWORD                   # Force Blade
-    # costMelee:
-      # time: 15
-      # energy: 2
-
-  # - type: STR_HALLEBARD
-    # armor: 200
-    # fireSound: {mod: 40k, index: 753}
-    # explosionHitSound: {mod: 40k, index: 101}  # stabhit
-    # hitAnimation: 2040  # Bloodgush sprite, X1.pck for ranged attacks, was 1070  # AOEMELEEGENE.png
-    # hitAnimFrames: 8
-    # powerForAnimation: 10
-    # hitSound: {mod: 40k, index: 101}  # stabhit
-    # bulletSprite: 5
-    # clipSize: -1
-    # snapRange: 2
-    # maxRange: 2
-    # powerRangeThreshold: 3
-    # powerRangeReduction: 200
-    # power: 100  # lower base damage; compensated for by stat scaling
-    # meleePower: 100
-    # battleType: 1
-    # damageType: 11  # melta damage; more effective against daemons
-    # meleeType: 11  # melta damage; more effective against daemons
-    # confSnap:
-      # name: STR_HALLEBARD_SNAPSHOT_LUNGE
-      # shots: 1
-    # costSnap:
-      # time: 25  # lunge costs more TU and energy
-      # energy: 12
-    # accuracySnap: 90
-    # accuracyMelee: 90
-    # accuracyMultiplier:
-      # firing: 0.0
-      # melee: 0.8
-      # strength: 0.2
-    # meleeMultiplier:
-      # firing: 0.0
-      # melee: 0.8
-      # strength: 0.2
-    # skillApplied: false
-    # costMelee:
-      # time: 22
-      # energy: 8  # very heavy melee weapon; light 1 energy, medium 2, heavy 4, very heavy 8
-    # flatRate: true
-    # tags:
-      # ITEM_STRENGTH_REQUIREMENT: 100
-      # REACTION_MULTIPLIER: 200  # multiplies base reaction score by this amount divided by 100
-      # DAMAGE_BONUS_PERCENT_DAEMONIC: 150 #1.5x damage vs Daemons
-
-
+  - type: STR_HALLEBARD                     # Force Halberd
+    battleType: 1
+    oneHandedPenalty: 100
+    armor: 300
+    fireSound: {mod: 40k, index: 753}
+    explosionHitSound: {mod: 40k, index: 101}
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2040}  # Bloodgush sprite
+    hitAnimFrames: 8
+    hitSound: {mod: 40k, index: 101}  # stabhit
+    bulletSprite: {mod: 40k_ROSIGMA_edits, index: 5}
+    clipSize: -1
+    snapRange: 2
+    maxRange: 2
+    powerRangeThreshold: 3
+    powerRangeReduction: 200
+    power: 70
+    meleePower: 70
+    damageBonus:
+      psi: 0.01
+      strength: 0.1
+      melee: 0.3
+    meleeBonus:
+      psiStrength: 0.3
+      psiSkill: 0.05
+      strength: 0.2
+      melee: 0.25
+    damageType: 13
+    meleeType: 13
+    damageAlter: &Ref_ForceBlade_DmgAlt
+      RandomType: 2 # 50-150%
+      ArmorEffectiveness: 0.5
+      ToArmorPre: 0.1
+      ToArmor: 0.1
+      ToHealth: 1.0
+      ToMorale: 1.0
+      FireThreshold: 0
+      ToWound: 0.0
+      RandomWound: false
+      IgnoreSelfDestruct: true
+    meleeAlter: *Ref_ForceBlade_DmgAlt
+    confSnap:
+      name: STR_HALLEBARD_SNAPSHOT_LUNGE
+      shots: 1
+    costSnap:
+      time: 25
+      energy: 12
+    costMelee:
+      time: 18
+      energy: 6
+    accuracySnap: 90
+    accuracyMelee: 90
+    accuracyMultiplier:
+      firing: 0.0
+      melee: 0.8
+      strength: 0.2
+    meleeMultiplier:
+      firing: 0.0
+      melee: 0.8
+      strength: 0.2
+    skillApplied: false
+    flatRate: true
+    tags:
+      ITEM_STRENGTH_REQUIREMENT: 80
+      ITEM_STRENGTH_1H_REQUIREMENT: 160
+      REACTION_MULTIPLIER: 200
+      DAMAGE_BONUS_PERCENT_DAEMONIC: 150 #1.5x damage vs Daemons
 
 ### Skill Tokens
   - type: INV_BLESS_TOKEN                   # Chaplain Bless Token
@@ -7766,6 +7823,12 @@ items:
         return;
     bulletSpeed: 30
     explosionSpeed: 10
+    accuracyAimed: 35
+    accuracyMultiplier:
+      psiStrength: 1.0
+    aimRange: 11
+    maxRange: 12
+    dropoff: 5
     power: 30
     powerRangeReduction: 5.0
     powerRangeThreshold: 11.0
@@ -7799,17 +7862,11 @@ items:
       time: false
       energy: false
       stun: false
-    accuracyAimed: 100
-    aimRange: 25
-    dropoff: 5
     experienceTrainingMode: 26
-    accuracyMultiplier:
-      psiStrength: 1.0
     tags:
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 #ignores shields
-      SMT_VULN_DEBUFF_MOD: 100
-      ITEM_EFFECT_DURATION: 2
-      ITEM_DMGMOD_ALLIES: -1
+      ITEM_IGNITES_TARGETS: 2
+      ITEM_DOESNT_HURT_USER: 1
 
   - type: STR_PSITOKEN_MENDWOUNDS           # T3 Mend Flesh
     refNode: *REF_PSI_TOKEN
@@ -8725,18 +8782,18 @@ items:
       ITEM_PRIMED_AT_BATTLE_START: 3
 
   - type: AUX_SHIELD                        # Storm Shield
-    clipSize: 81 # Shield HP + 1
+    clipSize: 161 # Shield HP + 1
     tuMelee: 0
     tags:
-      ITEM_SHIELD_BLOCKING_STRENGTH: 20
+      ITEM_SHIELD_BLOCKING_STRENGTH: 80
       ITEM_SHIELD_RECHARGES: 1
 
   - type: AUX_SHIELD_DW                     # Storm Shield DW
     defaultInventorySlot: STR_LEFT_HAND
-    clipSize: 121 # Shield HP + 1
+    clipSize: 161 # Shield HP + 1
     tuMelee: 0
     tags:
-      ITEM_SHIELD_BLOCKING_STRENGTH: 20
+      ITEM_SHIELD_BLOCKING_STRENGTH: 80
       ITEM_SHIELD_RECHARGES: 1
 
   - type: STR_SM_OFFICER_FIST               # Officer SM Fist with Inspire
@@ -8838,7 +8895,7 @@ items:
     recover: false
     fixedWeapon: true
 
-  - type: STR_SM_APOTH_FIST_LV2             # Inbuilt Apothecary medkit + Marine fist (Apothecary)
+  - type: STR_SM_APOTH_FIST_LV2             # Inbuilt Apothecary medkit + Marine fist (Primaris Apothecary)
     refNode: *REF_FIST
     specialIconSprite: {mod: 40k, index: 100} # medkit icon
     battleType: 6
@@ -8895,7 +8952,7 @@ items:
     recover: false
     fixedWeapon: true
 
-  - &REF_APOTH_NARTH                       # Techmarine Utility Tools (Type 11 - Use)
+  - &REF_APOTH_NARTH                        # Inbuilt Apothecary medkit + Chainfist
     type: STR_APOTH_NARTH
     battleType: 6
     bigSprite: {mod: 40k, index: 24}
@@ -8932,7 +8989,7 @@ items:
       melee: 0.9
       reactions: 0.1
 
-  - type: STR_APOTH_NARTH                   # Inbuilt Apothecary medkit + Chainfist (Apothecary)
+  - type: STR_APOTH_NARTH                   # Inbuilt Apothecary medkit + Chainfist (Firstborn Apothecary)
     painKiller: 40
     moraleRecovery: 10
     heal: 40
@@ -9140,7 +9197,7 @@ items:
   - type: STR_STEALTH_ADVSCOUT              # Advanced Scout Stealth
     refNode: *REF_STEALTH_MED_TEMPLATE
     tags:
-      ITEM_STEALTH_RANGE: 3
+      ITEM_STEALTH_RANGE: 3 # ~3 tile detection range
       ITEM_EFFECT_DURATION: 2
       ITEM_STEALTH_MOVEPENALTY: 50 # 150% base movespeed
 
@@ -9148,10 +9205,11 @@ items:
     refNode: *REF_FIST
   - type: STR_STEALTH_REIVER                # Primaris Reiver Stealth
     refNode: *REF_STEALTH_MED_TEMPLATE
+    tuUse: 10
     tags:
-      ITEM_STEALTH_RANGE: 3
+      ITEM_STEALTH_RANGE: 4
       ITEM_EFFECT_DURATION: 2
-      ITEM_STEALTH_MOVEPENALTY: 50 # 150% base movespeed
+      ITEM_STEALTH_MOVEPENALTY: 0 # 100% base movespeed
 
   - type: STR_STEALTH_ELIMINATOR
     refNode: *REF_FIST

@@ -1,20 +1,6 @@
 research: ### For techs that don't directly touch DW but are needed to make Chamber Militant strategies work with the changes made
 
 
-  - name: STR_GK_HIGHTIER                   # GK and RR Hightier
-    cost: 900
-    points: 30
-    dependencies:
-      - STR_MIDTIER_PREREQ
-      # - STR_GREYKNIGHTS
-      - STR_CYDONIA_OR_BUST
-      - STR_CHAMBERMILITANT
-      - STR_NOT_DEATHWATCH
-    unlocks:
-      - STR_HIGHTIER_PREREQ
-    getOneFree:
-      - STR_HAMMER
-
   - name: STR_NOT_DEATHWATCH                # Tech to lock Chamber Militant techs that DW shouldn't get (because they have their own versions)
     cost: 0
     points: 0

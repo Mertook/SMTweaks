@@ -109,8 +109,9 @@ extended:
             sub rightShieldHP temp; # reduce HP
 
             unit.getRightHandWeapon battleItemShield;
-            battleItemShield.setAmmoQuantity rightShieldHP;
             battle_game.flashMessage "STR_SCRIPT_REMAINING_SHIELD_POINTS" rightShieldHP;
+            limit_lower rightShieldHP 1;
+            battleItemShield.setAmmoQuantity rightShieldHP;
             #debug_log "Shield: Remaining Shield Points" rightShieldHP;
             #debug_log "Shield: Remaining Weapon Power" power;
             return power part side;
@@ -128,8 +129,9 @@ extended:
             sub leftShieldHP temp; # reduce HP
 
             unit.getLeftHandWeapon battleItemShield;
-            battleItemShield.setAmmoQuantity leftShieldHP;
             battle_game.flashMessage "STR_SCRIPT_REMAINING_SHIELD_POINTS" leftShieldHP;
+            limit_lower leftShieldHP 1;
+            battleItemShield.setAmmoQuantity leftShieldHP;
             #debug_log "Shield: Remaining Weapon Power" power;
             return power part side;
           end;

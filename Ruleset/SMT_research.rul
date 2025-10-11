@@ -66,10 +66,13 @@ research:
       - STR_AUTOGUNS_UNLOCK
       - STR_LASGUNS_UNLOCK
 
-  - name: STR_ADEPTAS  # Sister of Battle
+  - name: STR_ADEPTAS                   # Sister of Battle
     cost: 0
     points: 0
     lookup: STR_IMPERIUM_RESEARCH
+    unlocks: !add
+      - STR_STORMRAVEN_PREREQ
+      - STR_INFERNOPISTOL_REQ
     # unlocks:
       # - STR_DEATHWATCH_AND_ADEPTAS
       # - STR_PRIMARIS_AND_ADEPTAS
@@ -86,6 +89,26 @@ research:
       # - STR_MARINES_STRATEGY
     # dependencies:
       # - STR_GENERALLOCK
+
+  - name: STR_ARBITES                   # Adeptus Terra
+    # cost: 0
+    # points: 0
+    # lookup: STR_IMPERIUM_RESEARCH
+    # dependencies:
+      # - STR_GENERALLOCK
+    # unlocks:
+      # - STR_IMPERIUM_RESEARCH
+      # - STR_THE_IMPERIAL_LAW_STRATEGY
+      # - STR_CHAOS_STRATEGY_ARBITES
+    # disables:
+      # - STR_NOT_ADEPTUS_TERRA
+      # - STR_CHAPTER_PURITY
+      # - STR_CYDONIA_OR_BUST
+      # - STR_MARINES_STRATEGY
+      # - STR_IMPERIAL_GUARD_OPERATIONS
+      # - STR_ADEPTAS
+      # - STR_GUARD_SUPORT
+      # - STR_THE_EMPEROR_PROTECTS_RESEARCH
 
 ### Strategy Choice
   - name: STR_PICKED_LOYALIST_STRATEGY  # Loyalist Strat Chosen
@@ -970,19 +993,19 @@ research:
     dependencies:
       - STR_MULTIMELTA_PREREQ
 
-  - name: STR_MELTABOMB                             # Melta Bomb
+  - name: STR_MELTABOMB                 # Melta Bomb
     cost: 100
     points: 25
     dependencies:
       - STR_FUSION_MISSILE
 
-  - name: STR_SERVITOR_BASIC        # Support Servitors
+  - name: STR_SERVITOR_BASIC            # Support Servitors
     cost: 50
     points: 10
     dependencies:
       - STR_GENERALLOCK
 
-  - name: STR_MARINE_CAPTAIN        # Unlock Captain promotion
+  - name: STR_MARINE_CAPTAIN            # Unlock Captain promotion
     cost: 400
     points: 30
     dependencies:
@@ -992,16 +1015,16 @@ research:
       - STR_CAPTAIN_CODEX
       - STR_SMT_CAPTAIN_PROMOTION
     lookup: STR_SMT_CAPTAIN_PROMOTION
-    spawnedItem: STR_CAPTAIN_TOKEN
+    #spawnedItem: STR_CAPTAIN_TOKEN
     listOrder: 10
 
-  - name: STR_SMT_CAPTAIN_PROMOTION # Captain Codex entry
+  - name: STR_SMT_CAPTAIN_PROMOTION     # Captain Codex entry
     cost: 0
     points: 0
     dependencies:
       - STR_MARINE_CAPTAIN
 
-  - name: STR_POWER_SUIT            # Terminator Suit
+  - name: STR_POWER_SUIT                # Terminator Suit
     cost: 500 # was 205
     points: 20
     dependencies:
@@ -1013,45 +1036,45 @@ research:
     unlocks:
       - STR_TERMINATOR_ARMOR_SM_CODEX
 
-  - name: STR_FLYING_SUIT           # Terminator Assault
+  - name: STR_FLYING_SUIT               # Terminator Assault
     cost: 150 # was 330
     points: 20
     dependencies:
       - STR_MARINES_AND_DEATHWATCH
       - STR_POWER_SUIT
 
-  - name: STR_TSARGENT              # Terminator Cyclone
+  - name: STR_TSARGENT                  # Terminator Cyclone
     cost: 150 # was 330
     points: 20
     dependencies:
       - STR_MARINES_AND_DEATHWATCH
       - STR_POWER_SUIT
 
-  - name: STR_CAPTAIN_SUIT          # Terminator Captain
+  - name: STR_CAPTAIN_SUIT              # Terminator Captain
     cost: 205
     points: 20
     dependencies:
       - STR_GENERALLOCK
 
-  - name: STR_SMOKE_BOMB_UNLOCK     # SmokeBomb requirement - Added to give SM access
+  - name: STR_SMOKE_BOMB_UNLOCK         # SmokeBomb requirement - Added to give SM access
     cost: 0
     points: 0
     dependencies:
       - STR_GENERALLOCK
 
-  - name: STR_ADV_DROPPODS          # Firestorm Droppods
+  - name: STR_ADV_DROPPODS              # Firestorm Droppods
     dependencies:
       - STR_MT
       - STR_NOT_PRIMARIS
 
-  - name: STR_STORMHAWKR            # Stormhawks
+  - name: STR_STORMHAWKR                # Stormhawks
     cost: 100 # was 150
     points: 10
     dependencies:
       - STR_MARINES_STRATEGY
       - STR_MOTION_SCANNER
 
-  - name: STR_NEW_FIGHTER_CRAFT     # StormRaven
+  - name: STR_NEW_FIGHTER_CRAFT         # StormRaven
     cost: 500 # was 600
     points: 30
     dependencies: # give it a slightly bigger window before the Stormeagle obsoletes it
@@ -1063,7 +1086,7 @@ research:
     unlocks: !add
       - STR_ASSC_CLIP
 
-  - name: STR_STORMRAVEN_PREREQ     # StormRaven Unlock for SM, SoB & CM
+  - name: STR_STORMRAVEN_PREREQ         # StormRaven Unlock for SM, SoB & CM
     cost: 0
     points: 0
     dependencies:

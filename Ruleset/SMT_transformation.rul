@@ -872,6 +872,33 @@ soldierTransformation:
     listOrder: 90
 
 ### Grey Knights
+  - name: STR_LIBRARIAN_GREYKNIGHT      # Grey Knight -> Librarian
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_LIBRARY
+    forbiddenPreviousTransformations:
+      - STR_APOTHECARY_TRAINING
+    producedSoldierType: STR_GREYKNIGHT_LIB
+    cost: 125000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 200
+    keepSoldierArmor: false
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_GREYKNIGHT
+    transferTime: 0
+    recoveryTime: 5
+    requiresBaseFunc: [LIB] #needs library
+    requiredMinStats:
+      psiStrength: 80
+    flatOverallStatChange:
+      psiStrength: 10
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 80
+
   - name: STR_LV1_TO_LV2_GK
     requires:
       - STR_GENERALLOCK

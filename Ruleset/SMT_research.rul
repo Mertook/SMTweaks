@@ -421,7 +421,7 @@ research:
       - STR_GREYKNIGHTS
       - STR_ASSASSINORUM
       - STR_HERETICAL_MEANS
-    spawnedEvent: STR_GREYKNIGHTS_CARE_PACKAGE ###CHANGEME
+    spawnedEvent: STR_IMPERIALAGENTS_CARE_PACKAGE
 
   - name: STR_HERETICAL_MEANS           # Heretical Means Strat
     cost: 5
@@ -438,7 +438,7 @@ research:
       - STR_GREYKNIGHTS
       - STR_ASSASSINORUM
       - STR_IMPERIAL_AGENTS
-    spawnedEvent: STR_GREYKNIGHTS_CARE_PACKAGE ###CHANGEME
+    spawnedEvent: STR_HERETICALMEANS_CARE_PACKAGE
 
   - name: STR_RADICAL_INQUISITOR_STRATEGY
     dependencies:
@@ -900,14 +900,22 @@ research:
       - STR_LIGHTBOLTER_ADV_AMMO
       - STR_40MM_AMMO
 
-
   - name: STR_PSILENCER_R               # Psilencer
-    cost: 335
+    cost: 385
     points: 20
     listOrder: 20
     dependencies:
       - STR_GREYKNIGHTS
       - STR_MT_GK
+
+  - name: STR_PSYCANNON_R               # PsyCannon
+    cost: 440
+    points: 20
+    listOrder: 20
+    dependencies:
+      - STR_GREYKNIGHTS
+      - STR_MT_GK
+      - STR_UFO_CONSTRUCTION
 
 ###Armor
   - name: STR_GK_INTERCEPTOR_R          # Grey Knight Interceptor Armor

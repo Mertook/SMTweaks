@@ -2425,7 +2425,7 @@ items:
     shotgunBehavior: 1
     shotgunPellets: 2
 
-  - type: STR_STORMBOLTER_PSI_MAG
+  - type: STR_STORMBOLTER_PSI_MAG           # Stormbolter Ammo (Psibolts)
     refNode: *DMG_BOLTER_AMMO_STD
     categories: [STR_CAT_TERMINATOR, STR_CAT_BOLTER]
     explosionSpeed: 2
@@ -2433,8 +2433,7 @@ items:
     size: 0.05 # was 0.2
     power: 75 # was 70
     damageBonus:
-      psiStrength: 0.5
-      flatHundred: -0.4
+      psiStrength: [-0.125, 0.00625, -0.000025] # s60 = p9, s80 = p17, s100 = p25, s120 = p31, s140 = p36; S-curve, sharpest slope at 80~85, starts losing power at 160+
     damageAlter:
       ArmorEffectiveness: 0.8
     clipSize: 24 # was 20
@@ -6831,7 +6830,7 @@ items:
   - type: STR_PSILENCER                     # Psilencer
     costSell: 40000
     twoHanded: true
-    weight: 15
+    weight: 40
     dropoff: 5
     autoRange: 16
     snapRange: 22
@@ -6839,15 +6838,15 @@ items:
     accuracyAuto: 66
     accuracySnap: 80
     accuracyAimed: 0
-    tuAuto: 55
+    tuAuto: 70
     tuSnap: 30
     tuAimed: 0
-    power: 20
+    power: 10
     accuracyMultiplier:
       firing: 0.4
       psiStrength: 0.6
     damageBonus:
-      psiStrength: 0.5
+      psiStrength: [-0.3, 0.015, -0.00006] # s60 = p23, s80 = p41, s100 = p60, s120 = p76, s140 = p87 ; S-curve, sharpest slope at 80~85, starts losing power at 160+
     damageType: 13 # WARP
     damageAlter:
       RandomType: 8
@@ -6862,26 +6861,27 @@ items:
       shots: 8
     sprayWaypoints: 4
     tags:
-      DAMAGE_BONUS_PERCENT_DAEMONIC: 150
+      ITEM_RECOIL: 70
+      DAMAGE_BONUS_PERCENT_DAEMONIC: 200
 
   - type: STR_PSYCANNON                     # Psycannon
     costSell: 40000
     twoHanded: true
-    weight: 15
+    weight: 48
     dropoff: 5
-    autoRange: 16
-    snapRange: 22
+    autoRange: 14
+    snapRange: 20
     aimRange: 0
     accuracyAuto: 66
     accuracySnap: 80
     accuracyAimed: 0
-    tuAuto: 50
-    tuSnap: 30
+    tuAuto: 60
+    tuSnap: 35
     tuAimed: 0
     sprayWaypoints: 2
     accuracyMultiplier:
-      firing: 0.4
-      psiStrength: 0.6
+      firing: 0.7
+      psiStrength: 0.3
     compatibleAmmo:
       - STR_PSYCANNON_AMMO
     confSnap:
@@ -6889,35 +6889,36 @@ items:
     confAuto:
       shots: 3
     tags:
-      DAMAGE_BONUS_PERCENT_DAEMONIC: 150
+      ITEM_RECOIL: 90
+      ITEM_IS_HEAVY_WEAPON: 1
 
   - type: STR_PSYCANNON_AMMO                # Psycannon Bolts
-    categories: [STR_CAT_DEVASTATOR]
-    battleType: 2
-    bigSprite: {mod: 40k, index: 9} ###CHANGEME
-    floorSprite: {mod: 40k, index: 9} ###CHANGEME
-    handSprite: {mod: 40k, index: 456}
-    hitAnimation: {mod: 40k, index: 0}
-    bulletSpeed: 30
-    explosionSpeed: 1
-    size: 0.02
-    armor: 300
-    invWidth: 2
-    invHeight: 2
-    weight: 7
+    weight: 12
     power: 80
     damageBonus:
-      psiStrength: 0.5
+      psiStrength: [-0.15, 0.0075, -0.00003] # s60 = p11, s80 = p20, s100 = p30, s120 = p38, s140 = p43; S-curve, sharpest slope at 80~85, starts losing power at 160+
+      flatHundred: -0.15
     damageType: 13 # WARP
     damageAlter:
-      RandomType: 8
-      ArmorEffectiveness: 0.4
-      ToArmorPre: 0.1
-      ToArmor: 0.1
+      RandomType: 8 # 25-175%
+      ArmorEffectiveness: 0.6
+      ToArmorPre: 0.15
+      ToArmor: 0.10
       ToHealth: 1.0
       ToStun: 0.5
-    clipSize: 16
-    listOrder: 12162 ###CHANGEME
+      ToEnergy: 0.3
+      ToMorale: 0.5
+      ToWound: 0.15
+      RandomWound: false
+      ToItem: 0.25
+      ToTile: 0.25
+      SmokeThreshold: 9999
+      IgnoreOverKill: false
+      FixRadius: 2
+    clipSize: 12
+    tags:
+      DAMAGE_BONUS_PERCENT_DAEMONIC: 200
+      ITEM_DOESNT_HURT_USER: 1
 
 ### Melee
   - type: STR_CHAINSWORD                    # Chainsword
@@ -7773,14 +7774,14 @@ items:
     damageType: 1
     power: 5
     damageBonus:
-      psiStrength: 0.5 # was 0.002 psi
+      psiStrength: [-0.3, 0.015, -0.00006] # s60 = p23, s80 = p41, s100 = p60, s120 = p76, s140 = p87 ; S-curve, sharpest slope at 80~85, starts losing power at 160+
     damageType: 13 # warp
     damageAlter:
       RandomType: 8 # 25-175%
       ArmorEffectiveness: 0.0
       ToHealth: 1.0
       ToArmor: 0.0
-      ToWound: 0.0 # brain blast, doesn't inflict flesh wounds
+      ToWound: 0.0
       ToStun: 0.0
       RandomWound: false
     costUse:
@@ -7829,7 +7830,7 @@ items:
     aimRange: 11
     maxRange: 12
     dropoff: 5
-    power: 30
+    power: 10
     powerRangeReduction: 5.0
     powerRangeThreshold: 11.0
     damageBonus:
@@ -7864,7 +7865,6 @@ items:
       stun: false
     experienceTrainingMode: 26
     tags:
-      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 #ignores shields
       ITEM_IGNITES_TARGETS: 2
       ITEM_DOESNT_HURT_USER: 1
 
@@ -8190,7 +8190,7 @@ items:
     targetMatrix: 2
     LOSRequired: true
     maxRange: 40
-    power: 0
+    power: 20
     damageBonus:
       psiStrength: 1.0
     damageType: 13 # warp
@@ -8206,7 +8206,7 @@ items:
       ToItem: 0.0
       IgnorePainImmunity: true
       FixRadius: 4
-      RadiusReduction: 5
+      RadiusReduction: 3
     accuracyUse: 200
     accuracyMultiplier:
       psiStrength: 1.0

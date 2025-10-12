@@ -981,6 +981,37 @@ items:
     fireSound: 102
     clipSize: -1
 
+  - type: STR_PSYCANNON                     # Psycannon
+    categories: [STR_CAT_DEVASTATOR]
+    battleType: 1
+    invWidth: 2
+    invHeight: 3
+    listOrder: 11805
+    size: 0.2
+    armor: 300
+    bigSprite: 362
+    floorSprite: 362
+    handSprite: 648
+    bulletSprite: { mod: 40k, index: 12 }
+    hitAnimation: { mod: 40k, index: 100 }
+    fireSound: {mod: 40k, index: 742}
+    bulletSpeed: 60
+    explosionSpeed: 1
+
+  - type: STR_PSYCANNON_AMMO                # Psycannon Bolts
+    categories: [STR_CAT_DEVASTATOR]
+    battleType: 2
+    bigSprite: 363
+    floorSprite: {mod: 40k, index: 116}
+    handSprite: {mod: 40k, index: 456}
+    hitAnimation: 624
+    powerForAnimation: 60
+    size: 0.02
+    armor: 300
+    invWidth: 2
+    invHeight: 1
+
+
   - type: STR_BIKE_ARMOR                    # Bike Armor (Item)
     costBuy: 280000 # was 360k
     costSell: 140000 # was 140k

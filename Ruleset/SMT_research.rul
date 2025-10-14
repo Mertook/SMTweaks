@@ -329,7 +329,7 @@ research:
       - STR_BOLTER_AMMO_PREREQ
       - STR_HB_DEP1
       - STR_STORMRAVEN_PREREQ
-      - STR_PSYKER_T3_UNLOCK
+      - STR_MARINE_CHAPEL
     disables:
       - STR_NOT_GK
       - STR_DEATHWATCH
@@ -339,6 +339,7 @@ research:
       - STR_DEFENSE_CORRIDORBR
       - STR_PERSONAL_ARMOR
       - STR_INQUISITION_VALKYRIE
+      - STR_IMPERIAL_CHURCH
     spawnedEvent: STR_GREYKNIGHTS_CARE_PACKAGE
 
   - name: STR_DEATHWATCH                # Deathwatch Strat
@@ -360,12 +361,12 @@ research:
       - STR_HARDER_MISSIONS
       - STR_BOLTER_AMMO_PREREQ
       - STR_MARINE_WEAPONS
+      - STR_BOLTER_ADV_AMMO
       - STR_SCT_MELEE_REQ
       - STR_SHOTGUNS_ADV
       - STR_STORMRAVEN_PREREQ
       - STR_MEDI_KIT_PREREQ
-    getOneFree:
-      - STR_BOLTER_ADV_AMMO
+    getOneFree: []
     disables:
       - STR_NOT_DEATHWATCH
       - STR_GREYKNIGHTS
@@ -927,6 +928,11 @@ research:
       - STR_ALIEN_ALLOYS
       - STR_ELERIUM_115
 
+  - name: STR_GK_CHP_ARMOR              # Aegis T. Chaplain Armor
+    cost: 205
+    points: 20
+    dependencies:
+      - STR_GENERALLOCK
 ### Craft
   - name: STR_INQUISITION_VALKYRIE
     dependencies:
@@ -1001,10 +1007,18 @@ research:
     dependencies:
       - STR_MULTIMELTA_PREREQ
 
+  - name: STR_MGRENADE                  # Melta Grenade
+    cost: 100
+    points: 25
+    dependencies:
+      - STR_MELTAGUN_TECH
+      - STR_MIDTIER_PREREQ
+
   - name: STR_MELTABOMB                 # Melta Bomb
     cost: 100
     points: 25
     dependencies:
+      - STR_MIDTIER_PREREQ
       - STR_FUSION_MISSILE
 
   - name: STR_SERVITOR_BASIC            # Support Servitors
@@ -1094,6 +1108,11 @@ research:
     unlocks: !add
       - STR_ASSC_CLIP
 
+  - name: STR_STORMRAVEN_DW  # STORMRAVEN Requesition
+    dependencies:
+      - STR_GENERALLOCK
+    getOneFree: []
+
   - name: STR_STORMRAVEN_PREREQ         # StormRaven Unlock for SM, SoB & CM
     cost: 0
     points: 0
@@ -1120,6 +1139,36 @@ research:
     cost: 650 # was 700
     points: 30
     dependencies:
+      - STR_MIDTIER_PREREQ
+      - STR_NEW_FIGHTER_CRAFT
+
+  - name: STR_STORMRAVEN_GK                 # Grey Knight Stormraven unlock
+    dependencies:
+      - STR_UFO_CONSTRUCTION
+      - STR_NOT_DEATHWATCH
+      - STR_CHAMBERMILITANT
+
+  - name: STR_STORMEAGLE_INTERCEPTOR_GK     # Grey Knight Stormeagle unlock
+    cost: 600
+    points: 25
+    listOrder: 5050
+    dependencies:
+      # - STR_GK_HIGHTIER
+      # - STR_GREYKNIGHTS
+      # - STR_HIGHTIER_PREREQ
+      - STR_CHAMBERMILITANT
+      - STR_MIDTIER_PREREQ
+      - STR_ELERIUM_115
+      - STR_NOT_DEATHWATCH
+    getOneFree:
+      - STR_STORMEAGLE_INTERCEPTOR
+
+  - name: STR_THUNDERHAWK_GK_REQ    # Thunderhawk (Grey Knights/CM)
+    cost: 900
+    points: 30
+    dependencies:
+      - STR_CHAMBERMILITANT
+      - STR_GREYKNIGHTS
       - STR_MIDTIER_PREREQ
       - STR_NEW_FIGHTER_CRAFT
 
@@ -1246,11 +1295,8 @@ research:
       - STR_CASS_R
 
   - name: STR_ASSC_CLIP_AP          # Assault Cannon AP Rounds
-    cost: 120
-    points: 10
     dependencies:
-      - STR_ASSC_CLIP
-      - STR_UFO_CONSTRUCTION
+      - STR_GENERALLOCK
 
   - name: STR_AUTOCANNON_AMMO_R     # Autocannon ammo
     cost: 0
@@ -1706,13 +1752,32 @@ research:
     unlocks:
       - STR_PSYKER_T6_UNLOCK
 
+  - name: STR_LIBRARY_GK # Make GK exclusive
+    cost: 100
+    points: 15
+    getOneFree:
+      - STR_LIBRARY
+    dependencies:
+      - STR_GREYKNIGHTS
+      - STR_MARINE_CHAPEL
+      - STR_GENERALLOCK
+
   - name: STR_TEC_BAYR              # Techmarine - removed Apoth requirement
     cost: 100
     points: 15
     dependencies:
       - STR_MARINES_AND_DEATHWATCH
       - STR_MIDTIER_PREREQ
-    getOneFree:
+    unlock:
+      - STR_TECHMARINE_GEAR
+
+  - name: STR_TEC_BAY_CHAMBER_R     # Techmarine (GK)
+    cost: 100
+    points: 15
+    dependencies:
+      - STR_GREYKNIGHTS
+      - STR_MIDTIER_PREREQ
+    unlock:
       - STR_TECHMARINE_GEAR
 
   - name: STR_TECHMARINE_GEAR              # Techmarine Gear

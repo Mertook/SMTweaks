@@ -1638,7 +1638,7 @@ extraSprites:
     subX: 32
     subY: 40
     files:
-      0: Resources/UNITS/GREY/TAC/GKTAC_S.png
+      0: Resources/UNITS/GREY/BattleSprites/GKTAC_S.png
 
   - type: GKTACSB.PCK
     width: 512
@@ -1646,7 +1646,7 @@ extraSprites:
     subX: 32
     subY: 40
     files:
-      0: Resources/UNITS/GREY/TAC/GKTACSB_S.png
+      0: Resources/UNITS/GREY/BattleSprites/GKTACSB_S.png
 
   - type: GKINT.PCK
     width: 512
@@ -1654,7 +1654,7 @@ extraSprites:
     subX: 32
     subY: 40
     files:
-      0: Resources/UNITS/GREY/TAC/GKINTSB_S.png
+      0: Resources/UNITS/GREY/BattleSprites/GKINTSB_S.png
 
   - type: GKINTSB.PCK
     width: 512
@@ -1662,12 +1662,70 @@ extraSprites:
     subX: 32
     subY: 40
     files:
-      0: Resources/UNITS/GREY/TAC/GKINTSB_S.png
+      0: Resources/UNITS/GREY/BattleSprites/GKINTSB_S.png
+
+  - type: GKAPO.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/GREY/BattleSprites/GKAPO_S.png
+
+  - type: GKCHP.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/GREY/BattleSprites/GKCHP_S.png
+
+  - type: GKCHPSB.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/GREY/BattleSprites/GKCHPSB_S.png
+
+  - type: GKLIB.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/GREY/BattleSprites/GKLIB_S.png
+
+  - type: GKLIBSB.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/GREY/BattleSprites/GKLIBSB_S.png
+
+  - type: GKTEC.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/GREY/BattleSprites/GKTEC_S.png
+
+  - type: GKTECSB.PCK
+    width: 512
+    height: 720
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/GREY/BattleSprites/GKTECSB_S.png
 
   - typeSingle: GKTAC__1__BASE
     fileSingle: Resources/UNITS/GREY/TAC/GKbase_tac.png
   - typeSingle: GKINT__1__BASE
     fileSingle: Resources/UNITS/GREY/TAC/GKbase_int.png
+  - typeSingle: GKTEC__1__BASE
+    fileSingle: Resources/UNITS/GREY/TAC/GKbase_tec.png
   - typeSingle: GKMK7__3__HOOD
     fileSingle: Resources/UNITS/GREY/TAC/hood.png
   - typeSingle: GKMK7__4__HELM1
@@ -1684,6 +1742,10 @@ extraSprites:
     fileSingle: Resources/UNITS/GREY/TAC/helm_6.png
   - typeSingle: GKMK7__4__HELM7
     fileSingle: Resources/UNITS/GREY/TAC/helm_7.png
+  - typeSingle: GKMK7__4__HELMC
+    fileSingle: Resources/UNITS/GREY/TAC/helm_C.png
+  - typeSingle: GKMK7__4__HELML
+    fileSingle: Resources/UNITS/GREY/TAC/helm_L.png
   - typeSingle: GKMK7__5__LEGL1
     fileSingle: Resources/UNITS/GREY/TAC/legL1.png
   - typeSingle: GKMK7__5__LEGL2
@@ -1694,6 +1756,8 @@ extraSprites:
     fileSingle: Resources/UNITS/GREY/TAC/legL4.png
   - typeSingle: GKMK7__5__LEGL5
     fileSingle: Resources/UNITS/GREY/TAC/legL5.png
+  - typeSingle: GKMK7__5__LEGL6
+    fileSingle: Resources/UNITS/GREY/TAC/legL6.png
   - typeSingle: GKMK7__6__LEGR1
     fileSingle: Resources/UNITS/GREY/TAC/legR1.png
   - typeSingle: GKMK7__6__LEGR2
@@ -1720,6 +1784,8 @@ extraSprites:
     fileSingle: Resources/UNITS/GREY/TAC/chest_6.png
   - typeSingle: GKMK7__7__CHEST7
     fileSingle: Resources/UNITS/GREY/TAC/chest_7.png
+  - typeSingle: GKMK7__7__CHESTL
+    fileSingle: Resources/UNITS/GREY/TAC/chest_L.png
   - typeSingle: GKMK7__8__BELT1
     fileSingle: Resources/UNITS/GREY/TAC/belt_1.png
   - typeSingle: GKMK7__8__BELT2
@@ -1734,6 +1800,8 @@ extraSprites:
     fileSingle: Resources/UNITS/GREY/TAC/belt_6.png
   - typeSingle: GKMK7__8__BELT7
     fileSingle: Resources/UNITS/GREY/TAC/belt_7.png
+  - typeSingle: GKMK7__8__BELT8
+    fileSingle: Resources/UNITS/GREY/TAC/belt_8.png
   - typeSingle: GKMK7__9__SHOULDER1
     fileSingle: Resources/UNITS/GREY/TAC/shoulder1.png
   - typeSingle: GKMK7__9__SHOULDER2
@@ -1752,6 +1820,10 @@ extraSprites:
     fileSingle: Resources/UNITS/GREY/TAC/shield4.png
   - typeSingle: GKMK7__10__SHIELD5
     fileSingle: Resources/UNITS/GREY/TAC/shield5.png
+  - typeSingle: GKMK7__10__CHAPLAIN
+    fileSingle: Resources/UNITS/GREY/TAC/tacChap.png
+  - typeSingle: GKMK7__10__TECH
+    fileSingle: Resources/UNITS/GREY/TAC/tecEye.png
   - typeSingle: GKMK7__11__SBOLTER
     fileSingle: Resources/UNITS/GREY/TAC/tacStormbolter.png
   - typeSingle: GKMK7__11__APOTH

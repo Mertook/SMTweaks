@@ -1344,13 +1344,40 @@ ufopaedia:
     text: STR_GK_INTERCEPTOR_UC_CODEX
     #listOrder: 5050
 
-  - id: STR_GK_TAC_APOTHECARY_UC               # Grey Knight Interceptor
+  - id: STR_GK_TAC_APOTHECARY_UC            # Grey Knight Apothecary
     type_id: 15
     section: STR_ARMORPEDIA
     requires:
       - STR_APOTHECARY_GK
     image_id: 0GK.SPK ###CHANGEME
     text: STR_GK_TAC_APOTHECARY_UC_CODEX
+    #listOrder: 5050
+
+  - id: STR_GK_TAC_LIBRARIAN_UC             # Grey Knight Librarian
+    type_id: 15
+    section: STR_ARMORPEDIA
+    requires:
+      - STR_APOTHECARY_GK
+    image_id: 0GK.SPK ###CHANGEME
+    text: STR_GK_TAC_LIBRARIAN_UC_CODEX
+    #listOrder: 5050
+
+  - id: STR_GK_TAC_CHAPLAIN_UC              # Grey Knight Chaplain
+    type_id: 15
+    section: STR_ARMORPEDIA
+    requires:
+      - STR_APOTHECARY_GK
+    image_id: 0GK.SPK ###CHANGEME
+    text: STR_GK_TAC_CHAPLAIN_UC_CODEX
+    #listOrder: 5050
+
+  - id: STR_GK_TAC_TECHMARINE_UC            # Grey Knight Techmarine
+    type_id: 15
+    section: STR_ARMORPEDIA
+    requires:
+      - STR_APOTHECARY_GK
+    image_id: 0GK.SPK ###CHANGEME
+    text: STR_GK_TAC_TECHMARINE_UC_CODEX
     #listOrder: 5050
 
   - id: STR_ENGINSEER_ARMOR_UC              # Enginseer
@@ -1814,6 +1841,14 @@ ufopaedia:
     image_id: orksnipercodex.SPK
     text: STR_BOLT_SNIPER_RIFLE_DW_UFOPEDIA
     listOrder: 21111
+
+  - id: STR_ASSC
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_ASSC_UFOPEDIA
+    image_id: 1AC.SPK
+    requires:
+      - STR_ASSC
 
   - id: STR_HEAVY_BOLTER_MARS               # Mars HBolter
     requires:

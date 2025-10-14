@@ -160,6 +160,11 @@ research: # Research changes only made to maintain functionality for other facti
       - STR_ELDAR_INTERROGATION
     destroyItem: true
 
+  - name: STR_INQOFF        # Inquisition Office
+    dependencies:
+      - STR_ADEPTAS
+      - STR_PSI_LAB # was psiamp
+
   - name: STR_LIGHT_BOLTERS_MIDTIER_ADEPTAS         # Sisters Midtier Bolters
     unlocks: !add
       - STR_BOLTER_AMMO_PREREQ # Jove uses marine bolter ammo

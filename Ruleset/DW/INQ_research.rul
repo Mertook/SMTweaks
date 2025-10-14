@@ -11,41 +11,6 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     dependencies:
       - STR_GENERALLOCK
 
-  - name: STR_THUNDERHAWK_GK_REQ            # Grey Knight Thunderhawk unlock
-    cost: 900
-    points: 30
-    dependencies:
-      # - STR_GK_HIGHTIER
-      # - STR_GREYKNIGHTS
-      # - STR_HIGHTIER_PREREQ
-      - STR_ELERIUM_115
-      - STR_MIDTIER_PREREQ
-      - STR_CHAMBERMILITANT
-      - STR_NOT_DEATHWATCH
-    getOneFree:
-      - STR_NEW_FIGHTER_TRANSPORTER
-
-  - name: STR_STORMRAVEN_GK                 # Grey Knight Stormraven unlock
-    dependencies:
-      - STR_UFO_CONSTRUCTION
-      - STR_NOT_DEATHWATCH
-      - STR_CHAMBERMILITANT
-
-  - name: STR_STORMEAGLE_INTERCEPTOR_GK     # Grey Knight Stormeagle unlock
-    cost: 600
-    points: 25
-    listOrder: 5050
-    dependencies:
-      # - STR_GK_HIGHTIER
-      # - STR_GREYKNIGHTS
-      # - STR_HIGHTIER_PREREQ
-      - STR_CHAMBERMILITANT
-      - STR_MIDTIER_PREREQ
-      - STR_ELERIUM_115
-      - STR_NOT_DEATHWATCH
-    getOneFree:
-      - STR_STORMEAGLE_INTERCEPTOR
-
   - name: STR_HALLEBARD                     # tech was given for free in rosigma, causes issue with GK strategy selection
     cost: 50
     points: 15
@@ -59,23 +24,6 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     points: 0
     dependencies:
       - STR_GENERALLOCK
-
-  - name: STR_LIBRARY_GK # Make GK exclusive
-    cost: 100
-    points: 15
-    getOneFree:
-      - STR_LIBRARY
-    dependencies:
-      - STR_GREYKNIGHTS
-      - STR_PSI_AMP
-
-  - name: STR_TEC_BAY_CHAMBER_R # Make GK exclusive
-    cost: 100
-    points: 15
-    dependencies:
-      - STR_MIDTIER_PREREQ
-      - STR_GREYKNIGHTS
-      - STR_APOC_BAY
 
 
   - name: STR_INQ_TROOP_REQS                # Tech to start Inquisition troop recruitment events

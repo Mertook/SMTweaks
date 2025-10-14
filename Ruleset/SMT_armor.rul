@@ -3842,6 +3842,7 @@ armors:
 ### Grey Knights
   - type: STR_GK_TACTICAL_UC                # Grey Knight Tactical
     refNode: *ARMOR_TACTICAL
+    forcedTorso: 1
     corpseBattle:
       - STR_GKTAC_CORPSE
     corpseGeo: STR_FALLEN_CORPSE
@@ -3879,17 +3880,7 @@ armors:
       psiStrength: 0
       psiSkill: 0
     builtInWeapons:
-      - STR_PSITOKEN_SHROUD
-      - STR_PSITOKEN_FLARE
-      - STR_PSITOKEN_TELEPATHY
-      - STR_PSITOKEN_FLASH
-      - STR_PSITOKEN_REFLEXES
-      - STR_PSITOKEN_VIGILANCE
-      - STR_PSITOKEN_WALLBREAKER
-      - STR_PSITOKEN_SMITE
       - STR_PSITOKEN_FLAMES_GK
-      - STR_PSITOKEN_MENDWOUNDS
-      - STR_PSITOKEN_SENTRYWARD
       - INV_NULL_3X1_BACKPACK
     units:
       - STR_GREYKNIGHT
@@ -3901,6 +3892,108 @@ armors:
 
   - type: STR_GK_TACTICAL_SB_UC             # Grey Knight Tactical (Stormbolter)
     refNode: *ARMOR_TACTICAL
+    forcedTorso: 1
+    ufopediaType: STR_GK_TACTICAL_UC
+    corpseBattle:
+      - STR_GKTAC_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    storeItem: STR_NONE
+    zombiImmune: true
+    psiDefence: *Ref_GreyKnight_PsiDef
+    damageModifier: *Ref_GreyKnight_Tac_DmgMod
+    stats: *Ref_GreyKnight_Tac_Stats
+    builtInWeapons:
+      - STR_PSITOKEN_FLAMES_GK
+      - STR_GK_HB
+      - INV_NULL_3X1_BACKPACK
+    units:
+      - STR_GREYKNIGHT
+    tags:
+      INFECTION_RESIST: 100
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+      SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
+
+  - type: STR_GK_INTERCEPTOR_UC             # Grey Knight Interceptor
+    refNode: *ARMOR_TACTICAL
+    forcedTorso: 1
+    corpseBattle:
+      - STR_GKTAC_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_TELEPORT_INTERCEPTOR
+    storeItem: STR_GK_INTERCEPTOR
+    zombiImmune: true
+    psiDefence: *Ref_GreyKnight_PsiDef
+    damageModifier: *Ref_GreyKnight_Tac_DmgMod
+    stats: *Ref_GreyKnight_Tac_Stats
+    builtInWeapons:
+      - STR_PSITOKEN_FLAMES_GK
+      - INV_NULL_3X3
+    units:
+      - STR_GREYKNIGHT
+    tags:
+      INFECTION_RESIST: 100
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+  - type: STR_GK_INTERCEPTOR_SB_UC          # Grey Knight Interceptor (Stormbolter)
+    refNode: *ARMOR_TACTICAL
+    forcedTorso: 1
+    ufopediaType: STR_GK_INTERCEPTOR_UC
+    corpseBattle:
+      - STR_GKTAC_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_TELEPORT_INTERCEPTOR
+    storeItem: STR_GK_INTERCEPTOR
+    zombiImmune: true
+    psiDefence: *Ref_GreyKnight_PsiDef
+    damageModifier: *Ref_GreyKnight_Tac_DmgMod
+    stats: *Ref_GreyKnight_Tac_Stats
+    builtInWeapons:
+      - STR_PSITOKEN_FLAMES_GK
+      - STR_GK_HB
+      - INV_NULL_3X3
+    units:
+      - STR_GREYKNIGHT
+    tags:
+      INFECTION_RESIST: 100
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+      SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
+
+  - type: STR_GK_TAC_APOTHECARY_UC          # Grey Knight Apothecary (Tactical)
+    refNode: *ARMOR_TACTICAL
+    forcedTorso: 1
+    corpseBattle:
+      - STR_GKTAC_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    storeItem: STR_NONE
+    requiresBonus: STR_BONUS_APOTH_TRAINING
+    zombiImmune: true
+    psiDefence: *Ref_GreyKnight_PsiDef
+    damageModifier: *Ref_GreyKnight_Tac_DmgMod
+    stats: *Ref_GreyKnight_Tac_Stats
+    builtInWeapons:
+      - STR_PSITOKEN_FLAMES_GK
+      - STR_APOTH_NARTH_GK
+      - INV_NULL_3X1_BACKPACK
+    units:
+      - STR_GREYKNIGHT
+    tags:
+      INFECTION_RESIST: 100
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+      SMT_ARMOR_IS_MEDIC: 25
+
+  - type: STR_GK_TAC_LIBRARIAN_UC           # Grey Knight Librarian (Tactical)
+    refNode: *ARMOR_TACTICAL
+    forcedTorso: 1
     ufopediaType: STR_GK_TACTICAL_UC
     corpseBattle:
       - STR_GKTAC_CORPSE
@@ -3920,95 +4013,35 @@ armors:
       - STR_PSITOKEN_VIGILANCE
       - STR_PSITOKEN_WALLBREAKER
       - STR_PSITOKEN_SMITE
-      - STR_PSITOKEN_FLAMES_GK
       - STR_PSITOKEN_MENDWOUNDS
       - STR_PSITOKEN_SENTRYWARD
-      - STR_GK_HB
+      - STR_PSITOKEN_FLAMES_GK
+      - STR_PSITOKEN_HOLODUMMY
+      - STR_PSITOKEN_LOCKDOWN
+      - STR_PSITOKEN_SHIELD
+      - STR_PSITOKEN_TORMENT
+      - STR_PSITOKEN_HASTE
+      - STR_PSITOKEN_CLOAK
+      - STR_PSITOKEN_SOULSTORM
+      - STR_PSITOKEN_HOLOCAUST
       - INV_NULL_3X1_BACKPACK
     units:
-      - STR_GREYKNIGHT
-    tags:
-      INFECTION_RESIST: 100
-      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
-      ARMOR_ENERGY_SHIELD_DECAY: 75
-      SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
-
-  - type: STR_GK_INTERCEPTOR_UC             # Grey Knight Interceptor
-    refNode: *ARMOR_TACTICAL
-    corpseBattle:
-      - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
-    specialWeapon: STR_TELEPORT_INTERCEPTOR
-    storeItem: STR_GK_INTERCEPTOR
-    zombiImmune: true
-    psiDefence: *Ref_GreyKnight_PsiDef
-    damageModifier: *Ref_GreyKnight_Tac_DmgMod
-    stats: *Ref_GreyKnight_Tac_Stats
-    builtInWeapons:
-      - STR_PSITOKEN_SHROUD
-      - STR_PSITOKEN_FLARE
-      - STR_PSITOKEN_TELEPATHY
-      - STR_PSITOKEN_FLASH
-      - STR_PSITOKEN_REFLEXES
-      - STR_PSITOKEN_VIGILANCE
-      - STR_PSITOKEN_WALLBREAKER
-      - STR_PSITOKEN_SMITE
-      - STR_PSITOKEN_FLAMES_GK
-      - STR_PSITOKEN_MENDWOUNDS
-      - STR_PSITOKEN_SENTRYWARD
-      - INV_NULL_3X3
-    units:
-      - STR_GREYKNIGHT
+      - STR_GREYKNIGHT_LIB
     tags:
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
 
-  - type: STR_GK_INTERCEPTOR_SB_UC          # Grey Knight Interceptor (Stormbolter)
+  - type: STR_GK_TAC_LIBRARIAN_SB_UC        # Grey Knight Librarian (Tactical Stormbolter)
     refNode: *ARMOR_TACTICAL
-    ufopediaType: STR_GK_INTERCEPTOR_UC
-    corpseBattle:
-      - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
-    specialWeapon: STR_TELEPORT_INTERCEPTOR
-    storeItem: STR_GK_INTERCEPTOR
-    zombiImmune: true
-    psiDefence: *Ref_GreyKnight_PsiDef
-    damageModifier: *Ref_GreyKnight_Tac_DmgMod
-    stats: *Ref_GreyKnight_Tac_Stats
-    builtInWeapons:
-      - STR_PSITOKEN_SHROUD
-      - STR_PSITOKEN_FLARE
-      - STR_PSITOKEN_TELEPATHY
-      - STR_PSITOKEN_FLASH
-      - STR_PSITOKEN_REFLEXES
-      - STR_PSITOKEN_VIGILANCE
-      - STR_PSITOKEN_WALLBREAKER
-      - STR_PSITOKEN_SMITE
-      - STR_PSITOKEN_FLAMES_GK
-      - STR_PSITOKEN_MENDWOUNDS
-      - STR_PSITOKEN_SENTRYWARD
-      - STR_GK_HB
-      - INV_NULL_3X3
-    units:
-      - STR_GREYKNIGHT
-    tags:
-      INFECTION_RESIST: 100
-      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
-      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
-      ARMOR_ENERGY_SHIELD_DECAY: 75
-      SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
-
-  - type: STR_GK_TAC_APOTHECARY_UC          # Grey Knight Apothecary (Tactical)
-    refNode: *ARMOR_TACTICAL
+    forcedTorso: 1
+    ufopediaType: STR_GK_TAC_LIBRARIAN_UC
     corpseBattle:
       - STR_GKTAC_CORPSE
     corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     storeItem: STR_NONE
-    requiresBonus: STR_BONUS_APOTH_TRAINING
     zombiImmune: true
     psiDefence: *Ref_GreyKnight_PsiDef
     damageModifier: *Ref_GreyKnight_Tac_DmgMod
@@ -4022,19 +4055,120 @@ armors:
       - STR_PSITOKEN_VIGILANCE
       - STR_PSITOKEN_WALLBREAKER
       - STR_PSITOKEN_SMITE
-      - STR_PSITOKEN_FLAMES_GK
       - STR_PSITOKEN_MENDWOUNDS
       - STR_PSITOKEN_SENTRYWARD
-      - STR_APOTH_NARTH_GK
+      - STR_PSITOKEN_FLAMES_GK
+      - STR_PSITOKEN_HOLODUMMY
+      - STR_PSITOKEN_LOCKDOWN
+      - STR_PSITOKEN_SHIELD
+      - STR_PSITOKEN_TORMENT
+      - STR_PSITOKEN_HASTE
+      - STR_PSITOKEN_CLOAK
+      - STR_PSITOKEN_SOULSTORM
+      - STR_PSITOKEN_HOLOCAUST
+      - STR_GK_HB
       - INV_NULL_3X1_BACKPACK
     units:
-      - STR_GREYKNIGHT
+      - STR_GREYKNIGHT_LIB
     tags:
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
-      SMT_ARMOR_IS_MEDIC: 25
+      SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
+
+  - type: STR_GK_TAC_TECHMARINE_UC          # Grey Knight Techmarine (Tactical)
+    refNode: *ARMOR_TACTICAL
+    forcedTorso: 1
+    corpseBattle:
+      - STR_GKTAC_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    storeItem: STR_NONE
+    zombiImmune: true
+    psiDefence: *Ref_GreyKnight_PsiDef
+    damageModifier: *Ref_GreyKnight_Tac_DmgMod
+    stats: *Ref_GreyKnight_Tac_Stats
+    builtInWeapons: []
+    units:
+      - STR_GREYKNIGHT_TECH
+    tags:
+      INFECTION_RESIST: 100
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+  - type: STR_GK_TAC_TECHMARINE_SB_UC       # Grey Knight Techmarine (Tactical Stormbolter)
+    refNode: *ARMOR_TACTICAL
+    forcedTorso: 1
+    ufopediaType: STR_GK_TAC_TECHMARINE_UC
+    corpseBattle:
+      - STR_GKTAC_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    storeItem: STR_NONE
+    zombiImmune: true
+    psiDefence: *Ref_GreyKnight_PsiDef
+    damageModifier: *Ref_GreyKnight_Tac_DmgMod
+    stats: *Ref_GreyKnight_Tac_Stats
+    builtInWeapons:
+      - STR_GK_HB
+    units:
+      - STR_GREYKNIGHT_TECH
+    tags:
+      INFECTION_RESIST: 100
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+      SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
+
+  - type: STR_GK_TAC_CHAPLAIN_UC            # Grey Knight Chaplain (Tactical)
+    refNode: *ARMOR_TACTICAL
+    forcedTorso: 1
+    corpseBattle:
+      - STR_GKTAC_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    storeItem: STR_NONE
+    zombiImmune: true
+    psiDefence: *Ref_GreyKnight_PsiDef
+    damageModifier: *Ref_GreyKnight_Tac_DmgMod
+    stats: *Ref_GreyKnight_Tac_Stats
+    builtInWeapons:
+      - INV_BLESS_TOKEN
+      - INV_NULL_3X1_BACKPACK
+    units:
+      - STR_GREYKNIGHT_CHAP
+    tags:
+      INFECTION_RESIST: 100
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+  - type: STR_GK_TAC_CHAPLAIN_SB_UC         # Grey Knight Chaplain (Tactical Stormbolter)
+    refNode: *ARMOR_TACTICAL
+    forcedTorso: 1
+    ufopediaType: STR_GK_TAC_CHAPLAIN_UC
+    corpseBattle:
+      - STR_GKTAC_CORPSE
+    corpseGeo: STR_FALLEN_CORPSE
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    storeItem: STR_NONE
+    zombiImmune: true
+    psiDefence: *Ref_GreyKnight_PsiDef
+    damageModifier: *Ref_GreyKnight_Tac_DmgMod
+    stats: *Ref_GreyKnight_Tac_Stats
+    builtInWeapons:
+      - STR_GK_HB
+      - INV_NULL_3X1_BACKPACK
+    units:
+      - STR_GREYKNIGHT_CHAP
+    tags:
+      INFECTION_RESIST: 100
+      SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+      SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
 
 ### Other Marines
   - update: STR_BLOODRAVENS_TACTICAL_ARMOR      # Bloodraven Tactical
@@ -4242,7 +4376,7 @@ armors:
       stamina: -10
       reactions: -5
 
-  - type: STR_OFFICER_CARAPACE_ARMOR                # Officer Carapace
+  - type: STR_OFFICER_CARAPACE_ARMOR            # Officer Carapace
     refNode: *REF_CARAPACE_ARMOR
     visibilityAtDay: 0
     visibilityAtDark: 12

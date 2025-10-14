@@ -232,7 +232,13 @@ extraStrings:
       STR_GK_INTERCEPTOR: Interceptor Armor
       STR_GK_INTERCEPTOR_UC: Interceptor Armor
       STR_GK_INTERCEPTOR_SB_UC: Interceptor (Stormbolter)
-      STR_GK_TAC_APOTHECARY_UC: Apothecary Armor
+      STR_GK_TAC_APOTHECARY_UC: Apothecary Aegis Armor
+      STR_GK_TAC_LIBRARIAN_UC: Librarian Aegis Armor
+      STR_GK_TAC_LIBRARIAN_SB_UC: Librarian (Stormbolter)
+      STR_GK_TAC_CHAPLAIN_UC: Chaplain Aegis Armor
+      STR_GK_TAC_CHAPLAIN_SB_UC: Chaplain (Stormbolter)
+      STR_GK_TAC_TECHMARINE_UC: Techmarine Aegis Armor
+      STR_GK_TAC_TECHMARINE_SB_UC: Techmarine (Stormbolter)
       ### ITEMS
       STR_DWSCT_CORPSE: Deathwatch Corpse
       STR_MKX_DW_GRV_CORPSE: Deathwatch Corpse
@@ -494,7 +500,7 @@ extraStrings:
       STR_CMD_FIRE_SKILL: Storm of Fire
       STR_CMD_MELEE_SKILL: Relentless Assault
       STR_CMD_REACT_SKILL: Lightning Blitz
-      STR_CMD_OVERWATCH_SKILL: Fire Discipline
+      STR_CMD_OVERWATCH_SKILL: Rigid Discipline
       STR_CMD_CHECK_SKILL: Check CMD Points
       STR_GRAV_MORTAR: Fragstorm Grenades
       STR_TECH_PRIMARY_SKILL: Servo Weapon
@@ -526,7 +532,8 @@ extraStrings:
       STR_PSIBONUS_HOLODUMMY: Hallucination
       STR_PSIUNLOCK_SMITE: T3 Psi - Smite
       STR_PSIBONUS_SMITE: Smite
-      STR_PSIUNLOCK_FLAMES_GK: T3 Psi - Purifying Flame
+      STR_PSIUNLOCK_FLAMES_GK: Purifier Training
+      STR_PSIUNLOCK_FLAMES_GKLIB: T3 Psi - Purifying Flame
       STR_PSIBONUS_FLAMES_GK: Purifying Flame
       STR_PSIUNLOCK_MENDWOUNDS: T3 Psi - Mend Wounds
       STR_PSIBONUS_MENDWOUNDS: Mend Wounds
@@ -582,6 +589,9 @@ extraStrings:
       STR_LIBRARIAN_PRIMARISLV1: Train Librarian
       STR_LIBRARIAN_PRIMARISLV2: Promote to Lexicanium
       STR_LIBRARIAN_PRIMARISLV3: Promote to Codicier
+      STR_GK_LIBRARIAN: Train Librarian
+      STR_GK_TECHMARINE: Train Techmarine
+      STR_GK_CHAPLAIN: Anoint Chaplain
       ###RESEARCH
       STR_THE_EMPEROR_PROTECTS_RESEARCH: The Emperor Protects (Easy Mode)
       STR_PICKED_LOYALIST_STRATEGY: (Picked Imperium Strategy)
@@ -1177,6 +1187,9 @@ extraStrings:
       STR_GK_TACTICAL_UC_CODEX: "Though all Grey Knights are trained in the use of Terminator Armor they will still don Aegis Power Armor at times, due to personal preference or when mobility is required.{NEWLINE} Ritually consecrated and imbued with the wearers psychic powers, it protects against the Immaterium and physical threats alike."
       STR_GK_INTERCEPTOR_UC_CODEX: "Equipped with personal backpack teleporters, Interceptors are able to rapidly move across the battlefield by traveling through warpspace. Only Grey Knights could hope to use such a device, their minds trained and tempered to withstand the exposure to the Warp."
       STR_GK_TAC_APOTHECARY_UC_CODEX: "TODO"
+      STR_GK_TAC_LIBRARIAN_UC_CODEX: "TODO"
+      STR_GK_TAC_CHAPLAIN_UC_CODEX: "TODO"
+      STR_GK_TAC_TECHMARINE_UC_CODEX: "TODO"
       ### ARMOR DEATHWATCH
       STR_DW_TAC_CODEX_TEXT: "Tactical Armor is the most common type of armor worn by Space Marines, adaptable to any battlefield situation."
       STR_DW_APOTH_CODEX_TEXT: "Deathwatch Apothecaries act as field medics for the Kill-Team and preserve the geneseed of any fallen Brother."
@@ -1293,6 +1306,10 @@ extraStrings:
       ### CRAFT
       STR_SPEED_UFOPEDIA: "{NEWLINE} The Land Speeder is a light anti-gravity vehicle which serves as the primary reconnaissance and fast attack vehicle of the Adeptus Astartes.{NEWLINE}{NEWLINE} Capacity: 12 Soldiers plus 8 Vehicle slots"
       ### SOLDIERS
+      STR_GREYKNIGHT: "Grey Knight"
+      STR_GREYKNIGHT_LIB: "GK Librarian"
+      STR_GREYKNIGHT_TECH: "GK Techmarine"
+      STR_GREYKNIGHT_CHAP: "GK Chaplain"
       ### SKILLS
       ### TRANSFORMATIONS
       ### RESEARCH
@@ -1301,17 +1318,17 @@ extraStrings:
       ### SCRIPTS
       ### FACILITIES
       STR_LIBRARY_UFOPEDIA: "{NEWLINE} This vast sealed chamber known as the Librarium is filled from floor to ceiling with books, scrolls, and data crystals. The Librarium is the repository of all the Chapter's knowledge and history. The Librarians of the Astartes are expected to record the great deeds of their Chapter and maintain the Chapter's storehouse of ancient lore. This facility allows the training of Librarians."
-      STR_TRAINFACILITY_UFOPEDIA: "{NEWLINE} This facility allows us to train up to 50 soldiers at a time."
+      STR_TRAINFACILITY_UFOPEDIA: "{NEWLINE} This facility allows us to train up to 40 soldiers at a time, as well as some additional storage."
       ### EVENTS
       ### DW HERALDRY
       STR_DW_CHAPTERS: "Deathwatch Heraldry"
       STR_DW_CHAPTERS_CODEX: "{NEWLINE} Deathwatch hail from many different Chapters, bringing the experiences and tactics of their Chapter with them. Each Deathwatch Marine has a unique bonus related to their Chapter.{NEWLINE}{NEWLINE} Deathwatch Captains also come with unique equipment in addition to their Chapter bonus."
       STR_ULTRAMARINES: "Ultramarines"
       STR_ULTRAMARINES_INFO_1: "{NEWLINE}Of all the thousand and more Space Marine Chapters, it is the blue-clad Ultramarines that, in the mind of the countless billions of the Emperor's subjects, personify everything that the Adeptus Astartes stand for.  Originally known as the War-Born, these superb soldiers are here to stem the tide of Chaos on this Planet.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Tactical experts, they recover some TUs on enemy turns for reaction fire."
-      STR_ULTRAMARINES_INFO_2: "{NEWLINE} The Ultramarines Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Mastercrafted Absolvor Pistol{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Lightning Blitz{ALT}{NEWLINE} > {ALT}Fire Discipline{ALT}"
+      STR_ULTRAMARINES_INFO_2: "{NEWLINE} The Ultramarines Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Mastercrafted Absolvor Pistol{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Lightning Blitz{ALT}{NEWLINE} > {ALT}Rigid Discipline{ALT}"
       STR_IF: "Imperial Fists"
       STR_IF_INFO_1: "{NEWLINE}One of the most valiant of all Chapters, held as paragons of the principles set down in the Codex Astartes. The Imperial Fists stand as the steadfast defenders of the Imperium and the Emperor's unwavering shield; for ten thousand standard years they have been the bulwark against which the armies of Traitors and aliens have shattered.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Experts in defense, they are less affected by Heavy Weapons and their armor is more durable."
-      STR_IF_INFO_2: "{NEWLINE} The Imperial Fists Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Mastercrafted Storm Bolter{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Fire Discipline{ALT}"
+      STR_IF_INFO_2: "{NEWLINE} The Imperial Fists Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Mastercrafted Storm Bolter{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Rigid Discipline{ALT}"
       STR_BA: "Blood Angels"
       STR_BA_INFO_1: "{NEWLINE}The sons of Sanguinius are experts in the use of all weapons and launching of army-shattering assaults. Their Forces are an inspiring sight in the ranks of the Emperor. {NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Bound in blood, they can regenerate by feeding greatly reducing the time spent recovering from wounds."
       STR_BA_INFO_2: "{NEWLINE} The Blood Angels Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Jetpack{ALT} (3 turn flight){NEWLINE} > {ALT}¬ Power Sword{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Lightning Blitz{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
@@ -1326,7 +1343,7 @@ extraStrings:
       STR_WS_INFO_2: "{NEWLINE} The White Scars Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Force Halberd{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Farsight{ALT}{NEWLINE} > {ALT}Lockdown{ALT}{NEWLINE} > {ALT}Project Shield{ALT}{NEWLINE} > {ALT}Accelerate{ALT}"
       STR_SW: "Space Wolves"
       STR_SW_INFO_1: "{NEWLINE}Renowned for their ferocity, courage and hot-blooded approach to warfare. They are masters of the hunt, upholding the savage honour of Lemon Russ.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Born in harsh Fenris, they quickly regenerate from injuries during battle."
-      STR_SW_INFO_2: "{NEWLINE} The Space Wolves Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Power Axe{ALT}{NEWLINE} > {ALT}Medikit{ALT}{NEWLINE} > {ALT}Bless Allies{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Lightning Blitz{ALT}{NEWLINE} > {ALT}Fire Discipline{ALT}"
+      STR_SW_INFO_2: "{NEWLINE} The Space Wolves Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Power Axe{ALT}{NEWLINE} > {ALT}Medikit{ALT}{NEWLINE} > {ALT}Bless Allies{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Lightning Blitz{ALT}{NEWLINE} > {ALT}Rigid Discipline{ALT}"
       STR_DA: "Dark Angels"
       STR_DA_INFO_1: "{NEWLINE}The first Chapter founded by the Emperor, Dark Angels are highly secretive and ritualistic. They are relentless in hunting down those who have betrayed them. {NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Mercilessly hunting their targets, their shots are almost impossible to dodge."
       STR_DA_INFO_2: "{NEWLINE} The Dark Angels Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Twincore Plasma Rifle{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Hallucination{ALT}{NEWLINE} > {ALT}Mend Flesh{ALT}{NEWLINE} > {ALT}Torment{ALT}{NEWLINE} > {ALT}Soul Storm{ALT}"
@@ -1381,13 +1398,13 @@ extraStrings:
       STR_SMT_CAPTAIN_PROMOTION: Company Captain
       STR_SMT_CAPTAIN_PROMOTION_CODEX: "{NEWLINE} The most experienced and battle hardened Marines can be promoted to the rank of Captain, leading your forces from the front lines. Captains are capable of using powerful Commands in battles to bolster all allied Space Marines.{NEWLINE}{NEWLINE} Marines need the highest Mark of Honor and Hero of the Imperium commendations to be promoted to Captain.{NEWLINE}{NEWLINE}                               {ALT}>>"
       STR_SMT_COMMANDS: Captain Commands
-      STR_SMT_COMMANDS_CODEX: "{NEWLINE} Captain Commands are powerful skills that affect all allied Marines until the start of your next turn. Each Command requires 250 command points. Command points are earned in battle by killing enemies, with tougher enemies earning more points.{NEWLINE}{NEWLINE} Command List:{NEWLINE} {ALT}>{ALT} Armor of Contempt{NEWLINE} {ALT}>{ALT} Storm of Fire{NEWLINE} {ALT}>{ALT} Fire Discipline{NEWLINE} {ALT}>{ALT} Relentless Assault{NEWLINE} {ALT}>{ALT} Lightning Blitz"
+      STR_SMT_COMMANDS_CODEX: "{NEWLINE} Captain Commands are powerful skills that affect all allied Marines until the start of your next turn. Each Command requires 250 command points. Command points are earned in battle by killing enemies, with tougher enemies earning more points.{NEWLINE}{NEWLINE} Command List:{NEWLINE} {ALT}>{ALT} Armor of Contempt{NEWLINE} {ALT}>{ALT} Storm of Fire{NEWLINE} {ALT}>{ALT} Rigid Discipline{NEWLINE} {ALT}>{ALT} Relentless Assault{NEWLINE} {ALT}>{ALT} Lightning Blitz"
       STR_SMT_CMD_AOC: Armor of Contempt
       STR_SMT_CMD_AOC_CODEX: "{NEWLINE} Unyielding in the face of any foe, the resilience of Space Marines is unmatched{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Reduce incoming damage by 20%{NEWLINE}> Greatly reduce damage to Armor{NEWLINE}> Use the strongest intact Armor facing to block attacks"
       STR_SMT_CMD_SOF: Storm of Fire
       STR_SMT_CMD_SOF_CODEX: "{NEWLINE} No enemy can stand against the Astartes, no shield can protect from their fury{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Increase the power of ranged attacks if they are weaker than the targets armor{NEWLINE}> Increase the armor destruction of all ranged attacks"
-      STR_SMT_CMD_FD: Fire Discipline
-      STR_SMT_CMD_FD_CODEX: "{NEWLINE} Honed by a lifetime of combat, Space Marines are always ready for battle{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Recover 100% TUs at the end of turn for reaction fire{NEWLINE}> Recover up to 50% more TUs upon successfully landing reaction shots"
+      STR_SMT_CMD_FD: Rigid Discipline
+      STR_SMT_CMD_FD_CODEX: "{NEWLINE} Space Marines battle with fierce determination and will exact a heavy toll on those trying to assault their formation{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Recover 100% TUs at the end of turn for reaction fire{NEWLINE}> Recover up to 50% more TUs upon successfully landing reaction shots"
       STR_SMT_CMD_RA: Relentless Assault
       STR_SMT_CMD_RA_CODEX: "{NEWLINE} The Angels of Death descend upon their enemies, cutting through them in a whirlwind of violence{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> When killing an enemy unit with melee regain 33% of Max TUs (Up to 4 times){NEWLINE}> Increase the power of melee attacks"
       STR_SMT_CMD_LB: Lightning Blitz

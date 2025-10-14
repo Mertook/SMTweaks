@@ -43,6 +43,7 @@ extended:
               set dmgReduction to_morale;
               muldiv dmgReduction unitMod 100;
               sub to_morale dmgReduction;
+              limit_lower to_morale 0;
               #debug_log "Morale NewDmg: " unitMod dmgReduction to_morale;
             end;
           end;
@@ -53,6 +54,7 @@ extended:
               set dmgReduction to_stun;
               muldiv dmgReduction unitMod 100;
               sub to_stun dmgReduction;
+              limit_lower to_stun 0;
               #debug_log "Stun NewDmg: " unitMod dmgReduction to_stun;
             end;
           end;
@@ -63,6 +65,7 @@ extended:
               set dmgReduction to_energy;
               muldiv dmgReduction unitMod 100;
               sub to_energy dmgReduction;
+              limit_lower to_energy 0;
               #debug_log "Energy NewDmg: " unitMod dmgReduction to_energy;
             end;
           end;
@@ -73,6 +76,7 @@ extended:
               set dmgReduction to_time;
               muldiv dmgReduction unitMod 100;
               sub to_time dmgReduction;
+              limit_lower to_time 0;
               #debug_log "TU NewDmg: " unitMod dmgReduction to_time;
             end;
           end;
@@ -104,12 +108,12 @@ armors:
     tags:
       ARMOR_ALPHA_ATTACKER_BONUS_MODIFIER: -1
       UNIT_TYPE_ASTARTES: 1
-    scripts:
-      damageUnit: |
-        var ptr RuleArmor unitArmor;
-        var int armorResist;
-        var int dmgReduction;
-        var int rendValue;
+    # scripts:
+      # damageUnit: |
+        # var ptr RuleArmor unitArmor;
+        # var int armorResist;
+        # var int dmgReduction;
+        # var int rendValue;
 
         # unit.getRuleArmor unitArmor;
         # #debug_log "Armor Dmg: " to_armor;
@@ -140,7 +144,7 @@ armors:
           # #debug_log "Armor NewDmg: " to_armor;
         # end;
 
-        return;
+        # return;
 
 
   - &STR_SHREDRESIST_ARMOR_NOTSM          #BASE
@@ -150,12 +154,12 @@ armors:
     recovery:
       energy:
         stamina: 0.33
-    scripts:
-      damageUnit: |
-        var ptr RuleArmor unitArmor;
-        var int armorResist;
-        var int dmgReduction;
-        var int rendValue;
+    # scripts:
+      # damageUnit: |
+        # var ptr RuleArmor unitArmor;
+        # var int armorResist;
+        # var int dmgReduction;
+        # var int rendValue;
 
         # unit.getRuleArmor unitArmor;
         # #debug_log "Armor Dmg: " to_armor;
@@ -186,7 +190,7 @@ armors:
           # #debug_log "Armor NewDmg: " to_armor;
         # end;
 
-        return;
+        # return;
 
   - type: STR_SCOUT_UC              #SCOUT (Neophyte)
     refNode: *STR_SHREDRESIST_ARMOR

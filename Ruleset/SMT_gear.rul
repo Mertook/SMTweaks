@@ -3323,9 +3323,27 @@ items:
       ArmorEffectiveness: 1.0 # was 0.9
       ToArmor: 0.15 # was 0.1
       ToHealth: 1.0
-      ToStun: 0.5
+      ToStun: 0.3 # was 0.5
       ToWound: 0.1
       RandomWound: false
+
+  - type: STR_ASSC_CLIP_HE                  # Assault Cannon Ammo (Explosive)
+    weight: 25 # was 15
+    clipSize: 160 # was 100
+    power: 90
+    damageType: 3
+    damageAlter:  # high explosive
+      RandomType: 8
+      ArmorEffectiveness: 0.9 # was 0.95
+      ToArmorPre: 0.05
+      ToArmor: 0.1
+      ToStun: 0.6
+      ToEnergy: 0.3 # was 0.4
+      ToTime: 0.2
+      ToTile: 0.75
+      ToItem: 0.75
+      FixRadius: 2
+    powerForAnimation: 40
 
   - type: STR_ASSC                          # Assault Cannon
     weight: 80 # was 100 - +25 when loaded
@@ -3338,14 +3356,14 @@ items:
     snapRange: 15
     aimRange: 0
     tuAimed: 0
-    tuAuto: 50 # was 60
-    tuSnap: 30 # was 33
+    tuAuto: 60 # was 60
+    tuSnap: 35 # was 33
     confSnap:
       shots: 4 # was 4
       shortName: STR_BURST_SNAP_SHOT
       followProjectiles: false
     confAuto:
-      shots: 20 # was 10
+      shots: 24 # was 10
       followProjectiles: false
     tags:
       ITEM_IS_HEAVY_WEAPON: 5 # harsh penalty, meant for terminators
@@ -5401,7 +5419,7 @@ items:
       ToArmorPre: 0.0
       ToArmor: 0.1
       ToHealth: 0.1
-      ToWound: 0.15
+      ToWound: 0.2
       RandomWound: false
       ToTime: 0.2
       ToStun: 0.5
@@ -5429,7 +5447,7 @@ items:
       ToArmorPre: 0.0
       ToArmor: 0.1
       ToHealth: 0.2
-      ToWound: 0.1
+      ToWound: 0.12
       RandomWound: false
       ToTime: 0.2
       ToStun: 0.7

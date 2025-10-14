@@ -65,7 +65,7 @@ extended:
           unit.getTag endTurn Tag.SMT_SHIELD_ENDTURN;
           #debug_log "Shield newTurn Ping (turn/endTurn/shields) " turn endTurn shieldHP;
           if eq turn 1;
-            set endTurn 0; # reset at the start for multi-stage missions
+            set endTurn -1; # reset at the start for multi-stage missions
           end;
           if and neq endTurn 0 ge turn endTurn; # if shield has an expiry turn and it has expired
             if gt shieldAdded 0;

@@ -1145,7 +1145,7 @@ manufacture:
   - name: STR_ASSC_CLIP
     category: STR_AMMUNITION
     requires:
-      - STR_ASSC_CLIP # make it available to players who don't have assault cannons but do have Stormravens/Omnis/whatever
+      - STR_ASSC_CLIP # make it available to players who don't have assault cannons but do have Stormravens/whatever
     space: 0
     time: 200
     cost: 1000
@@ -1154,6 +1154,19 @@ manufacture:
       STR_ELERIUM_115: 5
     producedItems:
       STR_ASSC_CLIP: 5
+
+  - name: STR_ASSC_CLIP_HE
+    category: STR_AMMUNITION
+    requires:
+      - STR_ASSC_CLIP
+    space: 0
+    time: 200
+    cost: 1000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+      STR_ELERIUM_115: 8
+    producedItems:
+      STR_ASSC_CLIP_HE: 5
 
   - delete: STR_ASSC_CLIP_AP
     category: STR_AMMUNITION
@@ -1168,20 +1181,6 @@ manufacture:
       STR_UFO_CONSTRUCTION: 2
     producedItems:
       STR_ASSC_CLIP_AP: 5
-
-  - delete: STR_ASSC_CLIP_HE
-    category: STR_AMMUNITION
-    requires:
-      - STR_ASSC_CLIP
-      - STR_UFO_CONSTRUCTION
-    space: 0
-    time: 200
-    cost: 1000
-    requiredItems:
-      STR_ALIEN_ALLOYS: 5
-      STR_ELERIUM_115: 10
-    producedItems:
-      STR_ASSC_CLIP_HE: 5
 
   - name: STR_AUTOCANNON_HANDHELD                   # Autocannon (Guard)
     category: STR_WEAPON
@@ -1631,6 +1630,21 @@ manufacture:
       STR_KILLPOINT_TOKEN: 25
     producedItems:
       STR_PSYCANNON_AMMO: 5
+
+  - name: STR_STORMBOLTER_PSI_MAG #psybolt ammo
+    time: 200
+    cost: 1000
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_MASTER_CRAFTING
+      - STR_UFO_CONSTRUCTION
+    requiredItems:
+      STR_ELERIUM_115: 15 # was 30
+      STR_ALIEN_ALLOYS: 10
+      STR_UFO_CONSTRUCTION: 5 # was 10
+      STR_KILLPOINT_TOKEN: 20
+    producedItems:
+      STR_STORMBOLTER_PSI_MAG: 5
 
 ### BOMBARD
   - name: STR_ORBITAL_STRIKE_AMMO                   # Orbital Strike ammo

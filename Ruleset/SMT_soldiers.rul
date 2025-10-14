@@ -221,11 +221,11 @@ soldiers:
       bravery: 110
       reactions: 120
       firing: 140
+      melee: 140
       throwing: 140
       strength: 100
       psiStrength: 100
       psiSkill: 120
-      melee: 140
     trainingStatCaps:
       tu: 80
       stamina: 100
@@ -2148,7 +2148,7 @@ soldiers:
       melee: 140
       throwing: 120
       psiStrength: 120
-      psiSkill: 160
+      psiSkill: 140
     trainingStatCaps:
       tu: 80
       stamina: 100
@@ -2158,7 +2158,7 @@ soldiers:
       melee: 100
       throwing: 80
       psiStrength: 120
-      psiSkill: 160
+      psiSkill: 140
     dogfightExperience:
       bravery: 10
       reactions: 30
@@ -2185,11 +2185,13 @@ soldiers:
     rankSprite: {mod: 40k, index: 877}
     rankBattleSprite: {mod: 40k, index: 260}
     rankTinySprite: {mod: 40k, index: 175}
+    skills:
+      - STR_PSISKILL_FLAMES_GK
     tags:
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 2 # psyker
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 3 # devout
 
-  - type: STR_GREYKNIGHT_LIB                # Grey Knight Librarian
+  - type: STR_GREYKNIGHT_LIB            # Grey Knight Librarian
     refNode: *REF_MARINE_VET_TAGS
     costSalary: 200000
     minStats:
@@ -2227,7 +2229,7 @@ soldiers:
       melee: 140
       throwing: 120
       psiStrength: 150
-      psiSkill: 160
+      psiSkill: 140
     trainingStatCaps:
       tu: 80
       stamina: 100
@@ -2237,13 +2239,13 @@ soldiers:
       melee: 100
       throwing: 80
       psiStrength: 120
-      psiSkill: 160
+      psiSkill: 140
     dogfightExperience:
       bravery: 10
       reactions: 30
       firing: 25
     allowPiloting: true
-    armor: STR_GK_TACTICAL_UC
+    armor: STR_GK_TAC_LIBRARIAN_UC
     standHeight: 22
     kneelHeight: 14
     avatarOffsetX: 67
@@ -2264,9 +2266,197 @@ soldiers:
     rankSprite: {mod: 40k, index: 877}
     rankBattleSprite: {mod: 40k, index: 260}
     rankTinySprite: {mod: 40k, index: 175}
+    skills:
+      - STR_PSISKILL_SHROUD
+      - STR_PSISKILL_FLARE
+      - STR_PSISKILL_TELEPATHY
+      - STR_PSISKILL_FLASH
+      - STR_PSISKILL_REFLEXES
+      - STR_PSISKILL_VIGILANCE
+      - STR_PSISKILL_WALLBREAKER
+      - STR_PSISKILL_SMITE
+      - STR_PSISKILL_MENDWOUNDS
+      - STR_PSISKILL_SENTRYWARD
+      - STR_PSISKILL_FLAMES_GK
+      - STR_PSISKILL_HOLODUMMY
+      - STR_PSISKILL_LOCKDOWN
+      - STR_PSISKILL_SHIELD
+      - STR_PSISKILL_TORMENT
+      - STR_PSISKILL_HASTE
+      - STR_PSISKILL_CLOAK
+      - STR_PSISKILL_SOULSTORM
+      - STR_PSISKILL_HOLOCAUST
+    tags:
+      SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 4 # dedicated psyker
+      SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 3 # devout
+
+  - type: STR_GREYKNIGHT_TECH           # Grey Knight Techmarine
+    refNode: *REF_MARINE_VET_TAGS
+    costSalary: 200000
+    minStats:
+      tu: 60
+      stamina: 60
+      health: 60
+      bravery: 70
+      strength: 50
+      reactions: 50
+      firing: 60
+      melee: 60
+      throwing: 60
+      psiStrength: 50
+      psiSkill: 60
+    maxStats:
+      tu: 70
+      stamina: 80
+      health: 70
+      bravery: 100
+      strength: 60
+      reactions: 70
+      firing: 80
+      melee: 80
+      throwing: 80
+      psiStrength: 70
+      psiSkill: 80
+    statCaps:
+      tu: 100
+      stamina: 120
+      health: 100
+      bravery: 110
+      strength: 120
+      reactions: 120
+      firing: 140
+      melee: 140
+      throwing: 120
+      psiStrength: 120
+      psiSkill: 140
+    trainingStatCaps:
+      tu: 80
+      stamina: 100
+      health: 80
+      strength: 80
+      firing: 100
+      melee: 100
+      throwing: 80
+      psiStrength: 120
+      psiSkill: 140
+    dogfightExperience:
+      bravery: 10
+      reactions: 30
+      firing: 25
+    allowPiloting: true
+    armor: STR_GK_TAC_TECHMARINE_UC
+    standHeight: 22
+    kneelHeight: 14
+    avatarOffsetX: 67
+    avatarOffsetY: 42
+    soldierNames:
+      - delete
+      - Names/chamber_greyknight.nam
+    deathMale: [{mod: 40k, index: 713}, {mod: 40k, index: 714}, {mod: 40k, index: 715}, {mod: 40k, index: 716}, {mod: 40k, index: 717}, {mod: 40k, index: 718}, {mod: 40k, index: 719}, {mod: 40k, index: 720}, {mod: 40k, index: 721}, {mod: 40k, index: 722}]
+    deathFemale: [{mod: 40k, index: 744}, {mod: 40k, index: 745}, {mod: 40k, index: 746}, {mod: 40k, index: 747}, {mod: 40k, index: 748}, {mod: 40k, index: 749}, {mod: 40k, index: 750}, {mod: 40k, index: 751}, {mod: 40k, index: 752}]
+    rankStrings:
+      - STR_GK_RANK_0
+      - STR_GK_RANK_1
+      - STR_GK_RANK_2
+      - STR_GK_RANK_3
+      - STR_GK_RANK_4
+      - STR_GK_RANK_5
+    allowPromotion: true
+    rankSprite: {mod: 40k, index: 877}
+    rankBattleSprite: {mod: 40k, index: 260}
+    rankTinySprite: {mod: 40k, index: 175}
+    skillIconSprite: 47
+    skills:
+      - STR_TECH_PRIMARY_SKILL
+      - STR_TECH_UTILITY_SKILL
+      - STR_TECH_UNIT_SKILL
+      - STR_TECH_REPAIR_SKILL
     tags:
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 2 # psyker
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 3 # devout
+
+  - type: STR_GREYKNIGHT_CHAP           # Grey Knight Chaplain
+    refNode: *REF_MARINE_VET_TAGS
+    costSalary: 200000
+    minStats:
+      tu: 60
+      stamina: 60
+      health: 60
+      bravery: 70
+      strength: 50
+      reactions: 50
+      firing: 60
+      melee: 60
+      throwing: 60
+      psiStrength: 50
+      psiSkill: 60
+    maxStats:
+      tu: 70
+      stamina: 80
+      health: 70
+      bravery: 100
+      strength: 60
+      reactions: 70
+      firing: 80
+      melee: 80
+      throwing: 80
+      psiStrength: 70
+      psiSkill: 80
+    statCaps:
+      tu: 100
+      stamina: 120
+      health: 100
+      bravery: 110
+      strength: 120
+      reactions: 120
+      firing: 140
+      melee: 140
+      throwing: 120
+      psiStrength: 120
+      psiSkill: 160
+    trainingStatCaps:
+      tu: 80
+      stamina: 100
+      health: 80
+      strength: 80
+      firing: 100
+      melee: 100
+      throwing: 80
+      psiStrength: 120
+      psiSkill: 160
+    dogfightExperience:
+      bravery: 10
+      reactions: 30
+      firing: 25
+    allowPiloting: true
+    armor: STR_GK_TAC_CHAPLAIN_UC
+    standHeight: 22
+    kneelHeight: 14
+    avatarOffsetX: 67
+    avatarOffsetY: 42
+    soldierNames:
+      - delete
+      - Names/chamber_greyknight.nam
+    deathMale: [{mod: 40k, index: 713}, {mod: 40k, index: 714}, {mod: 40k, index: 715}, {mod: 40k, index: 716}, {mod: 40k, index: 717}, {mod: 40k, index: 718}, {mod: 40k, index: 719}, {mod: 40k, index: 720}, {mod: 40k, index: 721}, {mod: 40k, index: 722}]
+    deathFemale: [{mod: 40k, index: 744}, {mod: 40k, index: 745}, {mod: 40k, index: 746}, {mod: 40k, index: 747}, {mod: 40k, index: 748}, {mod: 40k, index: 749}, {mod: 40k, index: 750}, {mod: 40k, index: 751}, {mod: 40k, index: 752}]
+    rankStrings:
+      - STR_GK_RANK_0
+      - STR_GK_RANK_1
+      - STR_GK_RANK_2
+      - STR_GK_RANK_3
+      - STR_GK_RANK_4
+      - STR_GK_RANK_5
+    allowPromotion: true
+    rankSprite: {mod: 40k, index: 877}
+    rankBattleSprite: {mod: 40k, index: 260}
+    rankTinySprite: {mod: 40k, index: 175}
+    skillIconSprite: {mod: 40k, index: 8}
+    skills:
+      - STR_BLESS_SKILL
+    tags:
+      SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 2 # psyker
+      SOLDIER_IS_PSISKILL_TEACHER: 4 # chaplain
+      SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6
 
 ### Deathwatch
   - &STR_SOLDIER_DEATHWATCH             # DW Marine Reference

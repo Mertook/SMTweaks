@@ -7,8 +7,8 @@ facilities:
     psiLabs: 5 # +5 to chapel space, -5 to library
 
   - type: STR_TRAINFACILITY
-    trainingRooms: 50 # was 20 - 2x2 space for 20 is pretty awful compared to other training options
-    storage: 150 # provides additional storage
+    trainingRooms: 40 # was 20 - 2x2 space for 20 is pretty awful compared to other training options
+    storage: 200 # provides additional storage
     rightClickActionType: 4 # training menu
 
   - type: STR_GUARD_BARRACKS
@@ -19,10 +19,16 @@ facilities:
     provideBaseFunc: [TEC, MANU] # counts as a workshop
     rightClickActionType: 2 # manufacturing menu
 
+  - type: STR_TEC_BAY_CHAMBER
+    workshops: 25 # was 10
+    provideBaseFunc: [TEC, MANU] # counts as a workshop
+    rightClickActionType: 2 # manufacturing menu
+
   - type: STR_ARMORY
     storage: 75 # was 25 - general stores is 100
 
   - type: STR_STEELMILL
+    storage: 150 # was 50
     rightClickActionType: 2 # manufacturing menu
 
   - type: STR_APOC_BAY

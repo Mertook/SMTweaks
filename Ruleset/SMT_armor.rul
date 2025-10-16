@@ -131,7 +131,7 @@ armors:
       - 1.0 #WARP
       - 0.9 #SONIC
     frontArmor: 190 #was 150
-    sideArmor: 170 #was 130
+    sideArmor: 165 #was 130
     rearArmor: 125 #was 100
     underArmor: 160  #was 150
     tags:
@@ -4182,7 +4182,7 @@ armors:
       - 0.9 #PLASMA
       - 0.9 #STUN
       - 1.0 #MELEE
-      - 0.6 #ACID
+      - 0.5 #ACID
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
@@ -5133,6 +5133,10 @@ armors:
       UNIT_TYPE_MECHANICAL: 1
 
   - type: TARGET_GUARDSMAN                      # Hologram Guardsman
+    corpseBattle:
+      - STR_BLANK_CORPSE
+
+  - type: DECAYING_TARGET_GUARDSMAN             # Hologram Guardsman
     corpseBattle:
       - STR_BLANK_CORPSE
 

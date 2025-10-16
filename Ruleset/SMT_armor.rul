@@ -71,9 +71,9 @@ armors:
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
-      INTIMIDATION_RESISTANCE: 50
+      INTIMIDATION_RESISTANCE: 33
       SMT_ARMOR_STAGGER_RESISTANCE: 33         # Reduce Stamina damage by %
-      SMT_ARMOR_IMMOBILIZE_RESISTANCE: 33      # Reduce TU damage by %
+      SMT_ARMOR_IMMOBILIZE_RESISTANCE: 20      # Reduce TU damage by %
       INFECTION_RESIST: 10
 
   - &ARMOR_TERMINATOR                       #TERMINATOR ARMOR VALUES
@@ -123,7 +123,7 @@ armors:
       - 0.9 #PLASMA
       - 0.9 #STUN
       - 1.0 #MELEE
-      - 0.6 #ACID
+      - 0.5 #ACID
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
@@ -133,19 +133,19 @@ armors:
     frontArmor: 190 #was 150
     sideArmor: 170 #was 130
     rearArmor: 125 #was 100
-    underArmor: 170  #was 150
+    underArmor: 160  #was 150
     tags:
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_ASTARTES: 1
       ARMOR_REGENERATE_HEALTH_BURN_TOGGLE: -1
+      SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalty
       SMT_ARMOR_SHRED_RESISTANCE: 70
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 50
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 33
-      SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalty
-      INTIMIDATION_RESISTANCE: 66
       SMT_ARMOR_STAGGER_RESISTANCE: 66
       SMT_ARMOR_IMMOBILIZE_RESISTANCE: 66
+      INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 10
 
 ### FIRSTBORN

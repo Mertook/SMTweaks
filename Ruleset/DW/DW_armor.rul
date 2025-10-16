@@ -797,6 +797,7 @@ armors:
     antiCamouflageAtDark: 11 # +1 over regular Terminators - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
+    requiresAward: ""
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -911,7 +912,8 @@ armors:
     loftempsSet: [ 4 ]
     forcedTorso: 1
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
-    requires: STR_FLYING_SUIT
+    requires: ""
+    requiresAward: ""
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -1026,7 +1028,8 @@ armors:
     loftempsSet: [ 4 ]
     forcedTorso: 1
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
-    requires: STR_FLYING_SUIT
+    requires: ""
+    requiresAward: ""
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -1308,7 +1311,8 @@ armors:
     loftempsSet: [ 4 ]
     forcedTorso: 1
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
-    requires: STR_TSARGENT
+    requires: ""
+    requiresAward: ""
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)

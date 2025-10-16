@@ -1331,6 +1331,8 @@ ufopaedia:
   - id: STR_GK_TACTICAL_UC                  # Grey Knight Tactical
     type_id: 15
     section: STR_ARMORPEDIA
+    requires:
+      - STR_GREYKNIGHTS
     image_id: 0GK.SPK
     text: STR_GK_TACTICAL_UC_CODEX
     #listOrder: 5050
@@ -1339,6 +1341,7 @@ ufopaedia:
     type_id: 15
     section: STR_ARMORPEDIA
     requires:
+      - STR_GREYKNIGHTS
       - STR_GK_INTERCEPTOR_R
     image_id: 0GK.SPK ###CHANGEME
     text: STR_GK_INTERCEPTOR_UC_CODEX
@@ -1348,6 +1351,7 @@ ufopaedia:
     type_id: 15
     section: STR_ARMORPEDIA
     requires:
+      - STR_GREYKNIGHTS
       - STR_APOTHECARY_GK
     image_id: 0GK.SPK ###CHANGEME
     text: STR_GK_TAC_APOTHECARY_UC_CODEX
@@ -1357,7 +1361,8 @@ ufopaedia:
     type_id: 15
     section: STR_ARMORPEDIA
     requires:
-      - STR_APOTHECARY_GK
+      - STR_GREYKNIGHTS
+      - STR_LIBRARY_GK
     image_id: 0GK.SPK ###CHANGEME
     text: STR_GK_TAC_LIBRARIAN_UC_CODEX
     #listOrder: 5050
@@ -1366,7 +1371,8 @@ ufopaedia:
     type_id: 15
     section: STR_ARMORPEDIA
     requires:
-      - STR_APOTHECARY_GK
+      - STR_GREYKNIGHTS
+      - STR_PSI_LAB
     image_id: 0GK.SPK ###CHANGEME
     text: STR_GK_TAC_CHAPLAIN_UC_CODEX
     #listOrder: 5050
@@ -1375,9 +1381,64 @@ ufopaedia:
     type_id: 15
     section: STR_ARMORPEDIA
     requires:
-      - STR_APOTHECARY_GK
+      - STR_GREYKNIGHTS
+      - STR_TEC_BAY_CHAMBER_R
     image_id: 0GK.SPK ###CHANGEME
     text: STR_GK_TAC_TECHMARINE_UC_CODEX
+    #listOrder: 5050
+
+  - id: STR_GK_TERMINATOR_UC                # Grey Knight Terminator
+    type_id: 15
+    section: STR_ARMORPEDIA
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_GK_TERMINATOR_R
+    image_id: 0GK.SPK ###CHANGEME
+    text: STR_GK_TERMINATOR_UC_CODEX
+    #listOrder: 5050
+
+  - id: STR_GK_TERM_APOTHECARY_UC           # Grey Knight Terminator Apothecary
+    type_id: 15
+    section: STR_ARMORPEDIA
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_GK_TERMINATOR_R
+      - STR_APOTHECARY_GK
+    image_id: 0GK.SPK ###CHANGEME
+    text: STR_GK_TERM_APOTHECARY_UC_CODEX
+    #listOrder: 5050
+
+  - id: STR_GK_TERM_CHAPLAIN_UC             # Grey Knight Terminator Chaplain
+    type_id: 15
+    section: STR_ARMORPEDIA
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_GK_TERMINATOR_R
+      - STR_PSI_LAB
+    image_id: 0GK.SPK ###CHANGEME
+    text: STR_GK_TERM_CHAPLAIN_UC_CODEX
+    #listOrder: 5050
+
+  - id: STR_GK_TERM_TECHMARINE_UC           # Grey Knight Terminator Techmarine
+    type_id: 15
+    section: STR_ARMORPEDIA
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_GK_TERMINATOR_R
+      - STR_TEC_BAY_CHAMBER_R
+    image_id: 0GK.SPK ###CHANGEME
+    text: STR_GK_TERM_TECHMARINE_UC_CODEX
+    #listOrder: 5050
+
+  - id: STR_GK_TERM_LIBRARIAN_UC            # Grey Knight Terminator Librarian
+    type_id: 15
+    section: STR_ARMORPEDIA
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_GK_TERMINATOR_R
+      - STR_LIBRARY_GK
+    image_id: 0GK.SPK ###CHANGEME
+    text: STR_GK_TERM_LIBRARIAN_UC_CODEX
     #listOrder: 5050
 
   - id: STR_ENGINSEER_ARMOR_UC              # Enginseer
@@ -2368,6 +2429,10 @@ ufopaedia:
     section: STR_NOT_AVAILABLE
     text: STR_ABSOLVOR_PISTOL_DW
   - id: STR_ABSOLVOR_AMMO_MC                # Absolvor Ammo (DW Captain)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_ABSOLVOR_AMMO_MC
+  - id: STR_ABSOLVOR_AMMO_MC_DW             # Absolvor Ammo (DW Captain)
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_ABSOLVOR_AMMO_MC

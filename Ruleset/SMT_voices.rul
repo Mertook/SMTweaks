@@ -51,7 +51,7 @@ armors:
     deathMale:     [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
     deathFemale:   [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
 
-  - &VOICE_APOTH_MALE  # Apothecary Voice (Primaris - Male Only)
+  - &VOICE_APOTH_MALE  # Apothecary Voice (Male Only)
     type: STR_MKX_APO_UC_LV1
     selectUnitMale:     [{mod: 40k, index: 1276}, {mod: 40k, index: 1277}, {mod: 40k, index: 1278}, {mod: 40k, index: 1279}, {mod: 40k, index: 1280}]
     selectUnitFemale:   [{mod: 40k, index: 1276}, {mod: 40k, index: 1277}, {mod: 40k, index: 1278}, {mod: 40k, index: 1279}, {mod: 40k, index: 1280}]
@@ -64,7 +64,21 @@ armors:
     deathMale:     [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
     deathFemale:   [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
 
-  - &VOICE_CHAPLAIN_MALE  # Chaplain Voice (Primaris - Male Only)
+  - &VOICE_TECH_MALE  # Techmarine Voice (Male Only)
+    type: STR_GK_TAC_TECHMARINE_UC
+    selectUnitMale:     [{mod: 40k, index: 1296}, {mod: 40k, index: 1297}, {mod: 40k, index: 1298}, {mod: 40k, index: 1299}, {mod: 40k, index: 1300}]
+    selectUnitFemale:   [{mod: 40k, index: 1296}, {mod: 40k, index: 1297}, {mod: 40k, index: 1298}, {mod: 40k, index: 1299}, {mod: 40k, index: 1300}]
+    startMovingMale:    [{mod: 40k, index: 1291}, {mod: 40k, index: 1292}, {mod: 40k, index: 1293}, {mod: 40k, index: 1294}, {mod: 40k, index: 1295}]
+    startMovingFemale:  [{mod: 40k, index: 1291}, {mod: 40k, index: 1292}, {mod: 40k, index: 1293}, {mod: 40k, index: 1294}, {mod: 40k, index: 1295}]
+    selectWeaponMale:   [{mod: 40k, index: 1286}, {mod: 40k, index: 1287}, {mod: 40k, index: 1288}, {mod: 40k, index: 1289}, {mod: 40k, index: 1290}]
+    selectWeaponFemale: [{mod: 40k, index: 1286}, {mod: 40k, index: 1287}, {mod: 40k, index: 1288}, {mod: 40k, index: 1289}, {mod: 40k, index: 1290}]
+    annoyedMale:        [{mod: 40k, index: 1301}, {mod: 40k, index: 1302}, {mod: 40k, index: 1303}, {mod: 40k, index: 1304}, {mod: 40k, index: 1305}]
+    annoyedFemale:      [{mod: 40k, index: 1301}, {mod: 40k, index: 1302}, {mod: 40k, index: 1303}, {mod: 40k, index: 1304}, {mod: 40k, index: 1305}]
+    deathMale:     [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
+    deathFemale:   [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
+
+
+  - &VOICE_CHAPLAIN_MALE  # Chaplain Voice (Male Only)
     type: STR_MKX_JUDICAR_UC
     selectUnitMale:     [{mod: 40k, index: 1256}, {mod: 40k, index: 1257}, {mod: 40k, index: 1258}, {mod: 40k, index: 1259}, {mod: 40k, index: 1260}]
     selectUnitFemale:   [{mod: 40k, index: 1256}, {mod: 40k, index: 1257}, {mod: 40k, index: 1258}, {mod: 40k, index: 1259}, {mod: 40k, index: 1260}]
@@ -166,7 +180,40 @@ armors:
     refNode: *VOICE_CHAPLAIN_MALE
   - type: STR_GK_TACTICAL_SB_UC
     refNode: *VOICE_GREYK_MALE
-
-
-
+  - type: STR_GK_INTERCEPTOR_UC
+    refNode: *VOICE_GREYK_MALE
+  - type: STR_GK_INTERCEPTOR_SB_UC
+    refNode: *VOICE_GREYK_MALE
+  - type: STR_GK_TAC_APOTHECARY_UC
+    refNode: *VOICE_APOTH_MALE
+  - type: STR_GK_TAC_LIBRARIAN_UC
+    refNode: *VOICE_LIBRARIAN
+  - type: STR_GK_TAC_LIBRARIAN_SB_UC
+    refNode: *VOICE_LIBRARIAN
+  - type: STR_GK_TAC_TECHMARINE_UC
+    refNode: *VOICE_TECH_MALE
+  - type: STR_GK_TAC_TECHMARINE_SB_UC
+    refNode: *VOICE_TECH_MALE
+  - type: STR_GK_TAC_CHAPLAIN_UC
+    refNode: *VOICE_CHAPLAIN_MALE
+  - type: STR_GK_TAC_CHAPLAIN_SB_UC
+    refNode: *VOICE_CHAPLAIN_MALE
+  - type: STR_GK_TERMINATOR_UC
+    refNode: *VOICE_GREYK_MALE
+  - type: STR_GK_TERMINATOR_SB_UC
+    refNode: *VOICE_GREYK_MALE
+  - type: STR_GK_TERM_APOTHECARY_UC
+    refNode: *VOICE_APOTH_MALE
+  - type: STR_GK_TERM_CHAPLAIN_UC
+    refNode: *VOICE_CHAPLAIN_MALE
+  - type: STR_GK_TERM_CHAPLAIN_SB_UC
+    refNode: *VOICE_CHAPLAIN_MALE
+  - type: STR_GK_TERM_TECHMARINE_UC
+    refNode: *VOICE_TECH_MALE
+  - type: STR_GK_TERM_TECHMARINE_SB_UC
+    refNode: *VOICE_TECH_MALE
+  - type: STR_GK_TERM_LIBRARIAN_UC
+    refNode: *VOICE_LIBRARIAN
+  - type: STR_GK_TERM_LIBRARIAN_SB_UC
+    refNode: *VOICE_LIBRARIAN
 

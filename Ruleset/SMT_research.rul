@@ -340,6 +340,7 @@ research:
       - STR_PERSONAL_ARMOR
       - STR_INQUISITION_VALKYRIE
       - STR_IMPERIAL_CHURCH
+      - STR_INQ_TROOP_REQS
     spawnedEvent: STR_GREYKNIGHTS_CARE_PACKAGE
 
   - name: STR_DEATHWATCH                # Deathwatch Strat
@@ -927,6 +928,17 @@ research:
       - STR_GREYKNIGHTS
       - STR_ALIEN_ALLOYS
       - STR_ELERIUM_115
+
+  - name: STR_GK_TERMINATOR_R           # Grey Knight Terminator Unlock
+    cost: 660
+    points: 20
+    listOrder: 20
+    dependencies:
+      - STR_GREYKNIGHTS
+      - STR_MIDTIER_PREREQ
+      - STR_UFO_CONSTRUCTION
+      - STR_UFO_POWER_SOURCE
+      - STR_UFO_NAVIGATION
 
   - name: STR_GK_CHP_ARMOR              # Aegis T. Chaplain Armor
     cost: 205

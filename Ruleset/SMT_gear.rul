@@ -2350,15 +2350,17 @@ items:
     recover: false
     dropoff: 7
     autoRange: 10
-    snapRange: 18 # was 15
+    snapRange: 18
     aimRange: 0
-    accuracyAuto: 90
-    accuracySnap: 90
+    accuracyAuto: 85
+    accuracySnap: 95
     accuracyAimed: 0
     tuAuto: 24
-    tuSnap: 18 # was 25
+    tuSnap: 16 # was 25
     tuAimed: 0
-    autoShots: 2 # was 0
+    autoShots: 3 # was 0
+    inventoryMoveCost: # pistol
+      basePercent: 75
     tags:
       ITEM_IS_HEAVY_WEAPON: 1 # terminator handgun
       ITEM_RECOIL: 80 # +5 - harsh requirement, terminator handgun
@@ -9139,7 +9141,8 @@ items:
     refNode: *REF_POWERFIST_TEMPLATE # add punch
     tuUse: 5 # was 10
     tags:
-      ITEM_TELEPORTER_ENERGY: 8 # was 10
+      ITEM_TELEPORTER_ENERGY: 12 # was 10
+      ITEM_TELEPORTER_COOLDOWN: 3 # was 1
 
   - type: STR_TELEPORT_CLAWS                # Terminator Teleport tool (Assault)
     refNode: *REF_POWERFIST_TEMPLATE
@@ -9157,8 +9160,27 @@ items:
     specialIconSprite: {mod: 40k, index: 220}
     tags:
       ITEM_IS_TELEPORTER: 1
-      ITEM_TELEPORTER_COOLDOWN: 1
+      ITEM_TELEPORTER_COOLDOWN: 2 # was 1
       ITEM_TELEPORTER_ENERGY: 24 # was 10
+
+  - type: STR_TELEPORT_GK                   # Grey Knight Teleport tool (Tactical)
+    refNode: *REF_FIST
+    battleType: 6
+    medikitTargetMatrix: 0
+    medikitType: 3
+    medikitActionName: STR_SCRIPT_TELEPORTER_TOGGLE
+    medikitTargetSelf: true
+    painKiller: 999
+    tuUse: 5
+    flatRate: true
+    fixedWeapon: true
+    specialUseEmptyHand: true
+    hitSound: {mod: 40k, index: 788}
+    specialIconSprite: {mod: 40k, index: 220}
+    tags:
+      ITEM_IS_TELEPORTER: 1
+      ITEM_TELEPORTER_COOLDOWN: 3
+      ITEM_TELEPORTER_ENERGY: 12
 
   - type: STR_TELEPORT_INTERCEPTOR          # Grey Knight Teleport tool (Interceptor)
     refNode: *REF_FIST
@@ -9168,7 +9190,7 @@ items:
     medikitActionName: STR_SCRIPT_TELEPORTER_TOGGLE
     medikitTargetSelf: true
     painKiller: 999
-    tuUse: 5 # was 10
+    tuUse: 5
     flatRate: true
     fixedWeapon: true
     specialUseEmptyHand: true

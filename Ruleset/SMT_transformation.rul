@@ -876,7 +876,7 @@ soldierTransformation:
     listOrder: 90
 
 ### Grey Knights
-  - name: STR_GK_LIBRARIAN      # Grey Knight -> Librarian
+  - name: STR_GK_LIBRARIAN              # Grey Knight -> Librarian
     requires:
       - STR_GREYKNIGHTS
       - STR_LIBRARY
@@ -904,7 +904,7 @@ soldierTransformation:
     upperBoundAtStatCaps: true
     listOrder: 80
 
-  - name: STR_GK_TECHMARINE      # Grey Knight -> Techmarine
+  - name: STR_GK_TECHMARINE             # Grey Knight -> Techmarine
     requires:
       - STR_GREYKNIGHTS
       - STR_TEC_BAY_CHAMBER_R
@@ -926,7 +926,7 @@ soldierTransformation:
     requiresBaseFunc: [TEC] # needs techmarine bay
     listOrder: 80
 
-  - name: STR_GK_CHAPLAIN      # Grey Knight -> Chaplain
+  - name: STR_GK_CHAPLAIN               # Grey Knight -> Chaplain
     requires:
       - STR_GREYKNIGHTS
       - STR_PSI_LAB
@@ -1265,8 +1265,8 @@ soldierTransformation:
   - name: STR_PSIUNLOCK_FLAMES_GKLIB    # Purifying Flames (Tier 3)
     cost: 50000
     requires:
-      - STR_PSYKER_T3_UNLOCK
       - STR_GREYKNIGHTS
+      - STR_PSYKER_T3_UNLOCK
     keepSoldierArmor: true
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -1284,8 +1284,8 @@ soldierTransformation:
   - name: STR_PSIUNLOCK_FLAMES_GK       # Purifying Flames (Tier 3) - Purifer
     cost: 50000
     requires:
-      - STR_PSYKER_T3_UNLOCK
       - STR_GREYKNIGHTS
+      - STR_MIDTIER_PREREQ
     keepSoldierArmor: true
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true

@@ -2047,15 +2047,26 @@ ufopaedia:
 
   - id: STR_PSILENCER                       # Psilencer
     type_id: 14
+    requires:
+      - STR_PSILENCER_R
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: 1HB.SPK ###CHANGEME
     text: STR_PSILENCER_CODEX
 
   - id: STR_PSYCANNON                       # Psycannon
     type_id: 14
+    requires:
+      - STR_PSYCANNON_R
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: 1HB.SPK ###CHANGEME
     text: STR_PSYCANNON_CODEX
+  - id: STR_INCINERATOR                     # Incinerator
+    type_id: 14
+    requires:
+      - STR_INCINERATOR_R
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1HF.SPK ###CHANGEME
+    text: STR_INCINERATOR_CODEX
 
 ###BOLTERS
   - id: STR_BOLTER_ENFORCER                 # Light Bolter (Locke)
@@ -2501,4 +2512,9 @@ ufopaedia:
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_PSYCANNON_AMMO
+  - id: STR_PSYFLAME_AMMO                   # Incinerator Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_PSYFLAME_AMMO
+
 

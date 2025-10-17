@@ -1979,7 +1979,7 @@ items:
     accuracySnap: 80 # was 80
     accuracyAimed: 0
     tuAuto: 40 # was 40
-    tuSnap: 22 # was 25
+    tuSnap: 24 # was 25
     tuAimed: 0
     autoShots: 4 # was 5
 
@@ -2033,8 +2033,8 @@ items:
     accuracyAuto: 70 # cawl 60
     accuracySnap: 85 # cawl 80
     accuracyAimed: 0
-    tuAuto: 35 # cawl 40 for 4
-    tuSnap: 20
+    tuAuto: 36 # cawl 40 for 4
+    tuSnap: 22
     tuAimed: 0
     ignoreAmmoPower: true
     power: 85 # regular boltrifle 80
@@ -2052,8 +2052,8 @@ items:
     accuracyAuto: 70
     accuracySnap: 85
     accuracyAimed: 0
-    tuAuto: 35 # cawl 40
-    tuSnap: 20 # cawl 22
+    tuAuto: 36 # cawl 40
+    tuSnap: 22 # cawl 22
     tuAimed: 0
     ignoreAmmoPower: true
     power: 85 # regular boltrifle 80
@@ -2082,7 +2082,7 @@ items:
     tuSnap: 22 # cawl 22
     tuAimed: 40
     tags:
-      ITEM_SNAP_ACCURACY_POWER_BONUS_PERCENT: 20
+      ITEM_SNAP_ACCURACY_POWER_BONUS_PERCENT: 0
       ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 50 # scoped weapon aimed shot bonus
       REACTION_MULTIPLIER: 70 # scope penalty
 
@@ -2095,14 +2095,14 @@ items:
     invHeight: 3
     costSell: 30000
     listOrder: 10450
-    minRange: 3 # MC bonus
+    minRange: 0 # MC bonus
     autoRange: 14 # cawl 11
     snapRange: 19 # cawl 17
     aimRange: 0
     accuracyAuto: 75 # cawl 66
     accuracySnap: 90 # cawl 80
     accuracyAimed: 0
-    tuAuto: 28 # cawl 33 for 4
+    tuAuto: 30
     tuSnap: 20
     tuAimed: 0
     ignoreAmmoPower: true
@@ -2684,6 +2684,7 @@ items:
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
     requiresBuy:
       - STR_HBOLTER_PREREQ
+      - STR_SPACEWOLVES_STRATEGY
     dropoff: 4
     autoRange: 18 # was 17
     snapRange: 22 # was 23
@@ -4447,26 +4448,59 @@ items:
 
 ### Flamers
   - type: STR_HFLAMER                       # Heavy Flamer
+    weight: 65 # was 100
     dropoff: 4
     autoRange: 8
     snapRange: 15
     aimRange: 0
-    accuracyAuto: 30  # 40k 20
-    accuracySnap: 60  # was 40
+    accuracyAuto: 25 # was 30
+    accuracySnap: 50 # was 40
     accuracyAimed: 0
-    tuAuto: 33 # was 45
+    tuAuto: 35 # was 45
     tuSnap: 15
     tuAimed: 0
-    maxRange: 20
+    maxRange: 18 # was 20
     autoShots: 4
     arcingShot: true
     noLOSAccuracyPenalty: 75
     kneelBonus: 100
+    experienceTrainingMode: 5 # firing 50% (was 6 firing 33%)
     tags:
-      ITEM_RECOIL: 60 # was 100
+      ITEM_RECOIL: 100 # was 100
 
+  - type: STR_INCINERATOR                   # Incinerator
+    weight: 65
+    costSell: 30000
+    dropoff: 4
+    autoRange: 8
+    snapRange: 15
+    aimRange: 0
+    accuracyAuto: 20
+    accuracySnap: 40
+    accuracyAimed: 0
+    tuAuto: 35
+    tuSnap: 18
+    tuAimed: 0
+    maxRange: 16
+    confSnap:
+      shots: 2
+      arcing: true
+    confAuto:
+      shots: 5
+      arcing: true
+    compatibleAmmo:
+      - STR_HFLAMER_CLIP
+      - STR_PSYFLAME_AMMO
+    noLOSAccuracyPenalty: 75
+    kneelBonus: 100
+    experienceTrainingMode: 5
+    tags:
+      ITEM_RECOIL: 90
+
+### Flamer Ammo
   - type: STR_HFLAMER_CLIP                  # Heavy Flamer Fuel
-    size: 0.05
+    size: 0.02
+    weight: 25
     power: 80
     powerRangeReduction: 15
     powerRangeThreshold: 22
@@ -4479,15 +4513,44 @@ items:
       ToStun: 0.4
       ToTile: 0.3
       ToItem: 0.3
-      ToMorale: 5.0
+      ToMorale: 1.5
       ToTime: 0.2  # debilitating pain
       RandomType: 9 # 50-150
-      ArmorEffectiveness: 0.6 # was 0.8
+      ArmorEffectiveness: 0.7 # was 0.8
       ToArmorPre: 0.1 # was 0.2
     clipSize: 40
     tags:
       SMT_ARMOR_TARGET_WEAKEST: 1
-      ITEM_IGNITES_TARGETS: 1
+      ITEM_IGNITES_TARGETS: 2
+
+  - type: STR_PSYFLAME_AMMO                 # Psyflame Canister
+    weight: 25
+    power: 80
+    powerRangeReduction: 15
+    powerRangeThreshold: 22
+    damageBonus:
+      psiStrength: [-0.15, 0.0075, -0.00003] # s60 = p11, s80 = p20, s100 = p30, s120 = p38, s140 = p43; S-curve, sharpest slope at 80~85, starts losing power at 160+
+      flatHundred: -0.15
+    damageType: 13 # WARP
+    damageAlter:
+      RandomType: 9 # 50-150%
+      ArmorEffectiveness: 0.5
+      ToArmorPre: 0.05
+      ToArmor: 0.05
+      ToHealth: 1.4
+      ToStun: 0.5
+      ToTime: 0.2
+      ToEnergy: 0.3
+      ToMorale: 2.0
+      ToItem: 0.25
+      ToTile: 0.33
+      FireThreshold: 1
+      FixRadius: 3
+    clipSize: 40
+    tags:
+      DAMAGE_BONUS_PERCENT_DAEMONIC: 200
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 # ignores shields
+      ITEM_IGNITES_TARGETS: 2
 
   - type: STR_FLAMETHROWER_CLIP             # Flamer Fuel
     size: 0.05
@@ -6850,7 +6913,7 @@ items:
   - type: STR_PSILENCER                     # Psilencer
     costSell: 40000
     twoHanded: true
-    weight: 40
+    weight: 60
     dropoff: 5
     autoRange: 16
     snapRange: 22
@@ -6881,8 +6944,9 @@ items:
       shots: 8
     sprayWaypoints: 4
     tags:
-      ITEM_RECOIL: 70
+      ITEM_RECOIL: 80
       DAMAGE_BONUS_PERCENT_DAEMONIC: 200
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 # ignores shields
 
   - type: STR_PSYCANNON                     # Psycannon
     costSell: 40000
@@ -6917,7 +6981,7 @@ items:
     power: 80
     damageBonus:
       psiStrength: [-0.15, 0.0075, -0.00003] # s60 = p11, s80 = p20, s100 = p30, s120 = p38, s140 = p43; S-curve, sharpest slope at 80~85, starts losing power at 160+
-      flatHundred: -0.15
+      flatHundred: 0
     damageType: 13 # WARP
     damageAlter:
       RandomType: 8 # 25-175%
@@ -6938,6 +7002,7 @@ items:
     clipSize: 12
     tags:
       DAMAGE_BONUS_PERCENT_DAEMONIC: 200
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 # ignores shields
       ITEM_DOESNT_HURT_USER: 1
 
 ### Melee
@@ -6946,24 +7011,31 @@ items:
     requiresBuyBaseFunc: [IMPERIUM]
     requiresBuy:
       - STR_CHAINSWORD_R
+      - STR_MARINE_WEAPONS
     size: 0.2
     costBuy: 12000 # was 5000
     costSell: 4000 # was 2500
     weight: 15
     power: 70 # was 60
+    damageType: 7
     damageBonus:
       melee: 0.3 # was 0.2 - 0.3 is standard for regular melee
       strength: 0.3
-    damageAlter:
-      ToArmorPre: 0.3
-      ToHealth: 1.0
+    damageAlter: &Ref_Chainsword_Dmg
       RandomType: 2
-      ToWound: 0.3
+      ArmorEffectiveness: 1.1
+      ToArmorPre: 0.3
+      ToArmor: 0.1
+      ToHealth: 1.0
       ToEnergy: 0.5
-      ToTile: 0.7 # wall destruction
+      ToWound: 0.3
       RandomWound: false
+      ToTile: 0.7 # wall destruction
     accuracyMelee: 90
-    tuMelee: 12 # was 15
+    costMelee:
+      time: 12 # was 15
+      energy: 2
+    flatRate: true
     armor: 300
 
   - type: STR_CHAINSWORD_MC                 # MC Chainsword
@@ -6978,18 +7050,20 @@ items:
       melee: [0.2, 0.002] # was 0.2
       strength: 0.3
     damageAlter:
-      ArmorEffectiveness: 0.85
-      ToArmorPre: 0.35
-      ToHealth: 1.0
       RandomType: 2
-      ToWound: 0.3
+      ArmorEffectiveness: 1.0
+      ToArmorPre: 0.4
+      ToArmor: 0.2
+      ToHealth: 1.0
       ToEnergy: 0.5
-      ToTile: 0.7 # wall destruction
+      ToWound: 0.3
       RandomWound: false
+      ToTile: 0.7 # wall destruction
 
   - type: STR_CHAINSWORD_LIGHTSM            # SM Light Chainsword
     requiresBuy:
-      - STR_SCT_MELEE_REQ
+      - STR_CHAINSWORD_R
+      - STR_MARINE_WEAPONS
     categories: [STR_CAT_MELEE]
     size: 0.2
     costBuy: 4000
@@ -7001,19 +7075,12 @@ items:
     meleeSound: {mod: 40k, index: 753}
     meleeHitSound: {mod: 40k, index: 709}
     meleeAnimation: {mod: 40k, index: 44}
-    damageType: 7
     power: 45
+    damageType: 7
     damageBonus:
       melee: 0.3
       strength: 0.1
-    damageAlter:
-      ToArmorPre: 0.3
-      ToHealth: 0.9
-      RandomType: 2
-      ToWound: 0.3
-      ToEnergy: 0.5
-      ToTile: 0.7 # wall destruction
-      RandomWound: false
+    damageAlter: *Ref_Chainsword_Dmg
     accuracyMelee: 100
     meleeMultiplier:
       melee: 0.9
@@ -7031,9 +7098,36 @@ items:
     experienceTrainingMode: 13
     listOrder: 12399 # just above regular chainswords
 
+  - type: STR_CHAINSWORD_GUARD
+    requiresBuy:
+      - STR_CHAINSWORD_R
+      - STR_GUARD_WEAPONS
+      - STR_NOT_STEEL_LEGION_STRATEGY
+    power: 45
+    damageBonus:
+      melee: 0.3
+      strength: 0.1
+    damageType: 7
+    damageAlter: *Ref_Chainsword_Dmg
+    accuracyMelee: 100
+    costMelee:
+      time: 12
+      energy: 2
+    flatMelee:
+      time: true
+      energy: true
+    meleeMultiplier:
+      melee: 1.0
+      flatHundred: 0.0
+    experienceTrainingMode: 13
+
   - type: STR_CHAINSWORD_STEEL_LEGION       # Light Chainsword (Steel Legion)
     damageType: 7 # was support
     power: 45
+    requiresBuy:
+      - STR_CHAINSWORD_R
+      - STR_GUARD_WEAPONS
+      - STR_STEEL_LEGION_STRATEGY
     damageBonus:
       melee: 0.3
       strength: 0.1
@@ -7043,7 +7137,7 @@ items:
       RandomType: 2
       ToWound: 0.3
       ToEnergy: 0.5
-      ToTile: 0.7 # wall destruction
+      ToTile: 0.7
       RandomWound: false
 
   - type: STR_CLAWS                         # Lightning Claw (Terminator)
@@ -7225,6 +7319,16 @@ items:
       ITEM_STEALTH_ASSASSIN_WEAPON: 1 # melee
 
   - type: STR_EVISCERATOR                   # Eviscerator
+    requiresBuy: # Sisters, Assault Marines, Chamber
+      - STR_CHAINSWORD_R
+      - STR_NOT_GUARD
+      - STR_NOT_DEVASTATOR
+      - STR_NOT_PRIMARIS
+      - STR_NOT_SCOUT
+      - STR_NOT_TACTICAL
+      - STR_NOT_SPACEWOLVES
+      - STR_NOT_WORDBEARERS
+      - STR_NOT_ADEPTUS_TERRA
     twoHanded: true
     oneHandedPenalty: 100
     accuracyMelee: 75 # was 70

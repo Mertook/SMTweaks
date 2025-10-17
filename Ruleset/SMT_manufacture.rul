@@ -1611,12 +1611,12 @@ manufacture:
       - STR_GREYKNIGHTS
       - STR_PSILENCER_R
     space: 0
-    time: 760
-    cost: 500000
+    time: 960
+    cost: 700000
     requiredItems:
       STR_ALIEN_ALLOYS: 15
       STR_ELERIUM_115: 15
-      STR_KILLPOINT_TOKEN: 400
+      STR_KILLPOINT_TOKEN: 450
 
   - name: STR_PSYCANNON
     category: STR_WEAPON
@@ -1645,6 +1645,33 @@ manufacture:
       STR_KILLPOINT_TOKEN: 25
     producedItems:
       STR_PSYCANNON_AMMO: 5
+
+  - name: STR_INCINERATOR
+    category: STR_WEAPON
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_INCINERATOR_R
+    space: 0
+    time: 820
+    cost: 450000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 16
+      STR_ELERIUM_115: 5
+      STR_KILLPOINT_TOKEN: 200
+
+  - name: STR_PSYFLAME_AMMO
+    category: STR_AMMUNITION
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_INCINERATOR_R
+    space: 0
+    time: 280
+    cost: 20000
+    requiredItems:
+      STR_ELERIUM_115: 15
+      STR_KILLPOINT_TOKEN: 15
+    producedItems:
+      STR_PSYFLAME_AMMO: 5
 
   - name: STR_STORMBOLTER_PSI_MAG #psybolt ammo
     time: 200

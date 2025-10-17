@@ -484,22 +484,6 @@ events:
       STR_ELDAR_MGRENADE: 8
 
 eventScripts:
-  - type: STR_INQ_ASSASSIN_TOKEN_RECCURING
-    eventWeights:
-      0:
-       STR_INQ_ASSASSIN_TOKEN_EVENT: 95
-       STR_INQ_ASSASSIN_TOKEN_EVENT_RARE: 5
-      5:
-       STR_INQ_ASSASSIN_TOKEN_EVENT: 85
-       STR_INQ_ASSASSIN_TOKEN_EVENT_RARE: 15
-    firstMonth: 0
-    executionOdds: 100
-    minScore: -5000 #always trigger
-    maxScore: 50000
-    researchTriggers:
-      STR_INQ_ASSASSIN_RECRUITMENT: true
-
-
   - type: STR_INQ_REINFORCEMENTS_BASIC_1 # T0 - Lowest tier of unit reinforcements: basic only, high chance of low quality generic soldiers
     eventWeights:
       0: # base values

@@ -130,7 +130,6 @@ research:
       - STR_GENERALLOCK
     unlocks:
       - STR_SCIENTISTS_AND_ENGINEERS_AVAILABLE
-      - STR_SMOKE
       - STR_SERVITOR_BASIC
 
   - name: STR_PICKED_XENOS_STRATEGY     # Xenos Strat Chosen
@@ -167,12 +166,7 @@ research:
       - STR_ADV_DROPPODS
       - STR_NOT_PRIMARIS
       - STR_PICKED_LOYALIST_STRATEGY
-    disables:
-      - STR_PRIMARIS
-      - STR_ASSAULT
-      - STR_DEVASTATOR
-      - STR_SCOUT
-      - STR_SPACEWOLVES_STRATEGY
+    disables: !add
       - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
     spawnedEvent: STR_TACTICAL_CARE_PACKAGE
     getOneFree:
@@ -194,12 +188,7 @@ research:
       - STR_ADV_DROPPODS
       - STR_NOT_PRIMARIS
       - STR_PICKED_LOYALIST_STRATEGY
-    disables:
-      - STR_PRIMARIS
-      - STR_TATICAL
-      - STR_DEVASTATOR
-      - STR_SCOUT
-      - STR_SPACEWOLVES_STRATEGY
+    disables: !add
       - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
     spawnedEvent: STR_ASSAULT_CARE_PACKAGE
     getOneFree:
@@ -219,12 +208,7 @@ research:
       - STR_ADV_DROPPODS
       - STR_NOT_PRIMARIS
       - STR_PICKED_LOYALIST_STRATEGY
-    disables:
-      - STR_PRIMARIS
-      - STR_ASSAULT
-      - STR_TATICAL
-      - STR_SCOUT
-      - STR_SPACEWOLVES_STRATEGY
+    disables: !add
       - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
     spawnedEvent: STR_DEVASTATOR_CARE_PACKAGE
     getOneFree:
@@ -244,12 +228,7 @@ research:
       - STR_ADV_DROPPODS
       - STR_NOT_PRIMARIS
       - STR_PICKED_LOYALIST_STRATEGY
-    disables:
-      - STR_PRIMARIS
-      - STR_ASSAULT
-      - STR_DEVASTATOR
-      - STR_TATICAL
-      - STR_SPACEWOLVES_STRATEGY
+    disables: !add
       - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
     spawnedEvent: STR_SCOUT_CARE_PACKAGE
     getOneFree:
@@ -268,12 +247,7 @@ research:
       - STR_PRIMARIS_AND_DEATHWATCH
       - STR_PRIMARIS_AND_ADEPTAS
       - STR_PICKED_LOYALIST_STRATEGY
-    disables:
-      - STR_NOT_PRIMARIS
-      - STR_TATICAL
-      - STR_ASSAULT
-      - STR_DEVASTATOR
-      - STR_SCOUT
+    disables: !add
       - STR_CHAOS_PATH # Chaos path not accounted for and probably just causes weirdness/bugs
     spawnedEvent: STR_PRIMARIS_CARE_PACKAGE
     getOneFree:
@@ -295,14 +269,10 @@ research:
       - STR_MARINE_BOLTERS
       - STR_HARDER_MISSIONS_SW
       - STR_PICKED_LOYALIST_STRATEGY
-    disables:
-      - STR_NOT_SPACEWOLVES
-      - STR_PRIMARIS
-      - STR_ASSAULT
-      - STR_DEVASTATOR
-      - STR_SCOUT
-      - STR_TATICAL
-    spawnedEvent: STR_SPACEWOLVES_INITIAL_SITREP
+
+  - name: STR_WORDBEARERS_STRATEGY      # Word Bearers Strat
+    unlocks: !add
+      - STR_PICKED_CHAOS_STRATEGY
 
   - name: STR_NEOPHYTE_REQUEST          # Unlock Neophytes
     cost: 5
@@ -679,6 +649,7 @@ research:
     unlocks:
       - STR_MIDTIER_PREREQ
       - STR_CASS_R
+      - STR_HFLAMERR
       #- STR_HB_DEP1 # moved to High Quality Bolters research
       - STR_SIDEOPERATIONS
     cutscene: c2
@@ -716,6 +687,7 @@ research:
       - STR_MIDTIER_PREREQ
       - STR_CASS_R
       - STR_HB_DEP1
+      - STR_HFLAMERR
       #- STR_NEW_FIGHTER_TRANSPORTER
       - STR_SIDEOPERATIONS
       - STR_INQ_STORMTROOPER_REQUISITION
@@ -798,6 +770,9 @@ research:
       - STR_DEATHWATCH_BUST
     unlocks:
       - STR_HIGHTIER_PREREQ
+      - STR_HAMMER # thunderhammer
+      - STR_POWER_SWORD # power swords
+    listOrder: 5
 
   - name: STR_GK_HIGHTIER               # Grey Knights High-tier
     cost: 900
@@ -863,6 +838,27 @@ research:
       - STR_PSYKER_REQUISITION
 
 ###Weapons
+  - name: STR_MARINE_WEAPONS            # Space Marine Weaponry
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_PICKED_LOYALIST_STRATEGY
+      - STR_MARINES_STRATEGY
+
+  - name: STR_GUARD_WEAPONS             # Human Weaponry
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_PICKED_LOYALIST_STRATEGY
+      - STR_IMPERIAL_GUARD_OPERATIONS
+
+  - name: STR_ADEPTAS_WEAPONS           # Sisters Weaponry
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_PICKED_LOYALIST_STRATEGY
+      - STR_ADEPTAS
+
   - name: STR_STUBBERS_UNLOCK           # Allow buying basic Stubbers
     cost: 0
     dependencies:
@@ -883,6 +879,14 @@ research:
       - STR_NOT_MARINES
       - STR_NOT_ADEPTAS
       - STR_NOT_CHAOSCULT
+
+  - name: STR_CHAINSWORD_R              # Chainswords
+    cost: 120
+    points: 10
+    dependencies:
+      - STR_PICKED_LOYALIST_STRATEGY
+      - STR_MARINE_WEAPONS
+    listOrder: 5
 
   - name: STR_HOTSHOT_AMMO              # Unlock Hotshot Ammo
     cost: 280
@@ -909,9 +913,21 @@ research:
     dependencies:
       - STR_GREYKNIGHTS
       - STR_MT_GK
+      - STR_LIBRARY_GK
+
+  - name: STR_INCINERATOR_R             # Grey Knights Incinerator
+    cost: 300
+    points: 20
+    listOrder: 20
+    dependencies:
+      - STR_GREYKNIGHTS
+      - STR_MT_GK
+      - STR_ELERIUM_115
+    unlocks:
+      - STR_HFLAMER_FUEL_MANUFACTURING
 
   - name: STR_PSYCANNON_R               # PsyCannon
-    cost: 440
+    cost: 560
     points: 20
     listOrder: 20
     dependencies:
@@ -1336,26 +1352,11 @@ research:
       - STR_HBOLTER_AMMO_PREREQ
     listOrder: 5
 
-  - name: STR_MARINE_WEAPONS        # Astartes Weaponry
-    cost: 100
-    points: 10
-    dependencies:
-      - STR_NEOPHYTE_REQUEST # picked strategy
-      - STR_MARINES_STRATEGY
-    listOrder: 3
-
   - name: STR_SCT_MELEE_REQ         # Scout Blades/Chainswords
     cost: 0
     points: 0
     dependencies:
       - STR_SCOUT_WEAPONS
-
-  - name: STR_CHAINSWORD_R          # Marine Chainswords
-    cost: 30
-    points: 10
-    dependencies:
-      - STR_MARINE_WEAPONS
-    listOrder: 5
 
   - name: STR_CHAINSWORD_MC         # MC Chainswords (Assault)
     cost: 60

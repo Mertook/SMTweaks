@@ -1010,7 +1010,41 @@ items:
     armor: 300
     invWidth: 2
     invHeight: 1
+    listOrder: 11806
 
+  - type: STR_INCINERATOR                   # Incinerator
+    categories: [STR_CAT_FLAMER]
+    battleType: 1
+    invWidth: 2
+    invHeight: 3
+    twoHanded: true
+    listOrder: 13305
+    size: 0.2
+    armor: 300
+    bigSprite: 364
+    floorSprite: 364
+    handSprite: 656
+    bulletSprite: {mod: 40k, index: 5}
+    fireSound: {mod: 40k, index: 706}
+    bulletSpeed: 30
+    explosionSpeed: 2
+
+  - type: STR_PSYFLAME_AMMO                 # Psyflame Canister
+    categories: [STR_CAT_FLAMER]
+    battleType: 2
+    bigSprite: 365
+    floorSprite: 365
+    powerForAnimation: 60
+    hitAnimation: 632
+    explosionHitSound: {mod: 40k, index: 771}
+    vaporColorSurface: 0
+    vaporDensitySurface: 3
+    vaporProbabilitySurface: 85
+    size: 0.02
+    armor: 300
+    invWidth: 2
+    invHeight: 1
+    listOrder: 13311
 
   - type: STR_BIKE_ARMOR                    # Bike Armor (Item)
     costBuy: 280000 # was 360k

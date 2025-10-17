@@ -616,12 +616,15 @@ extraStrings:
       STR_GK_TERMINATOR_R: "Aegis Terminator Armor"
       STR_PSILENCER_R: "Psilencer Requisition"
       STR_PSYCANNON_R: "Psycannon Requisition"
+      STR_INCINERATOR_R: "Incinerator Requition"
       STR_APOTHECARY_TRAINING: Apothecary Training
       STR_PERSONAL_ARMOR: MK7 Tactical Armor
       STR_SCOUTH_RESEARCH: "Elite Scout Requisition"
       STR_SMOKE_BOMB_UNLOCK: Smoke Bomb Requisition
-      STR_SCOUT_WEAPONS: Scout Weaponry
       STR_MARINE_WEAPONS: Space Marine Armory
+      STR_GUARD_WEAPONS: Astra Militarum Armory
+      STR_ADEPTAS_WEAPONS: Sisters of Battle Armory
+      STR_SCOUT_WEAPONS: Scout Weaponry
       STR_SCT_MELEE_REQ: "(Scout Melee Weapons)"
       STR_MARINE_BOLTERS: Astartes Bolters
       STR_SERVITOR_BASIC: Support Servitors
@@ -880,9 +883,6 @@ extraStrings:
       STR_DWCRIMSON_L: Recruit ¼ Leader
       STR_RECYCLE_DW: Report Fallen Marine
       STR_RECYCLE_DW_LEADER: Report Fallen Captain
-      STR_INQ_RECRUIT_TEMPLE_ASSASSIN: Request Imperial Assassin
-      STR_INQ_RECRUIT_VINDICARE_ASSASSIN: Request Vindicare Assassin
-      STR_INQ_RECRUIT_CALLIDUS_ASSASSIN: Request Callidus Assassin
       ### DEATHWATCH ARMOR
       STR_MKX_DW_ASS_BA_UC: MKX Assault Armor
       STR_MKX_DW_ASS_BT_UC: MKX Assault Armor
@@ -1087,8 +1087,6 @@ extraStrings:
       STR_GUARD_AND_INQUISITION: "(Guard or Inquisition)"
       STR_DW_PRIMARIS: "Primaris Craft Requisition"
       STR_RADICAL_RECRUITMENT_INQ: "Radical Recruitment"
-      STR_INQ_ASSASSIN_RECRUITMENT: Contact Temple Assassins
-      STR_INQ_ASSASSIN_RECRUITMENT_T2: Advanced Assassin Requisitions
       ### DEATHWATCH EVENTS
       STR_FINAL_TOMB_: "TOMB OF THE ARCHITECT"
       STR_DEATHWATCH_REINFORCEMENTS: "Contact with Deathwatch forces has been established. Requisition authorization for a Deathwatch Kill-Marine has been granted, they will arrive once our Servitors complete the formal requests.{NEWLINE}{NEWLINE} Learning more about the severity of the threat on this planet should allow us to request additional Marines."
@@ -1316,11 +1314,14 @@ extraStrings:
       STR_AUTOGUN_HEAD: Headhunter Autogun
       STR_AUTOGUN_HEAD_CODEX: "{NEWLINE} The Headhunter pattern DMR is far bigger than standard autogun designs, functioning as a hybrid rifle/sniper weapon. Thanks to a longer barrel and precision rifling the Headhunter is able to strike targets harder and from further away, ripping through enemies at long ranges.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
       STR_SMG_STUB_GUN_CODEX: "{NEWLINE} A cheap handheld autostubber that can be used with one hand. Although inaccurate and lacking power compared to even basic PDF gear it can still kill lightly armored targets and is commonly used by gangers and other hive city denizens."
-      STR_PSILENCER: Psilencer
+      STR_PSILENCER: ¬ Psilencer
       STR_PSILENCER_CODEX: "{NEWLINE} Psilencers are mysterious weapons created with Xenos technology, channeling and amplifying the users psychic might into energy bolts.{NEWLINE} Its power depends on the users psychic skill and is particularly effective against demons, disrupting their connection to reality.{NEWLINE}{NEWLINE} Recoil: {ALT}70{ALT}"
-      STR_PSYCANNON: Psycannon
+      STR_PSYCANNON: ¬ Psycannon
       STR_PSYCANNON_AMMO: Psycannon Bolts
       STR_PSYCANNON_CODEX: "{NEWLINE} Psycannons fire bolter rounds imbued with the wielders psychic power.{NEWLINE}These charged bolts crackle with negative psionic energy and launch with incredible force, shredding physical matter and devastating daemonic foes.{NEWLINE}{NEWLINE} Recoil: {ALT}90{ALT} - {ALT}Heavy{ALT}"
+      STR_INCINERATOR: ¬ Incinerator
+      STR_PSYFLAME_AMMO: Psyflame Canister
+      STR_INCINERATOR_CODEX: "{NEWLINE} Incinerators are powerful heavy flamers fueled by Psyflame, a special mix of psychically charged and blessed promethium. This white-hot flame cuts through psykers defenses and ravages demonic flesh, empowered by the users own psychic ability.{NEWLINE}{NEWLINE} Recoil: {ALT}90{ALT} - {ALT}Heavy{ALT}"
       ### CRAFT
       STR_SPEED_UFOPEDIA: "{NEWLINE} The Land Speeder is a light anti-gravity vehicle which serves as the primary reconnaissance and fast attack vehicle of the Adeptus Astartes.{NEWLINE}{NEWLINE} Capacity: 12 Soldiers plus 8 Vehicle slots"
       ### SOLDIERS
@@ -1418,7 +1419,7 @@ extraStrings:
       STR_SMT_COMMANDS: Captain Commands
       STR_SMT_COMMANDS_CODEX: "{NEWLINE} Captain Commands are powerful skills that affect all allied Marines until the start of your next turn. Each Command requires 250 command points. Command points are earned in battle by killing enemies, with tougher enemies earning more points.{NEWLINE}{NEWLINE} Command List:{NEWLINE} {ALT}>{ALT} Armor of Contempt{NEWLINE} {ALT}>{ALT} Storm of Fire{NEWLINE} {ALT}>{ALT} Rigid Discipline{NEWLINE} {ALT}>{ALT} Relentless Assault{NEWLINE} {ALT}>{ALT} Lightning Blitz"
       STR_SMT_CMD_AOC: Armor of Contempt
-      STR_SMT_CMD_AOC_CODEX: "{NEWLINE} Unyielding in the face of any foe, the resilience of Space Marines is unmatched{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Reduce incoming damage by 20%{NEWLINE}> Greatly reduce damage to Armor{NEWLINE}> Use the strongest intact Armor facing to block attacks"
+      STR_SMT_CMD_AOC_CODEX: "{NEWLINE} Unyielding in the face of any foe, the resilience of Space Marines is unmatched{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Reduce incoming damage by 20%{NEWLINE}> Reduce damage dealt to Armor{NEWLINE}> Use the strongest intact Armor facing to block attacks"
       STR_SMT_CMD_SOF: Storm of Fire
       STR_SMT_CMD_SOF_CODEX: "{NEWLINE} No enemy can stand against the Astartes, no shield can protect from their fury{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Increase the power of ranged attacks if they are weaker than the targets armor{NEWLINE}> Increase the armor destruction of all ranged attacks"
       STR_SMT_CMD_FD: Rigid Discipline

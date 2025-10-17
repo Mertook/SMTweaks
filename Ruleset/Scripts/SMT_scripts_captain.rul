@@ -217,7 +217,7 @@ extended:
             unit.getTag temp Tag.UNIT_TYPE_ASTARTES;
             #debug_log "AoC Ping" temp to_armor;
             if and gt temp 0 gt to_armor 0;
-              muldiv to_armor 10 100; # negate 90% of armor destruction
+              muldiv to_armor 80 100; # negate 20% of armor destruction
               #debug_log "AoC Trigger" temp to_armor;
             end;
 
@@ -289,7 +289,7 @@ extended:
           var int temp2;
 
           action_target.getFaction temp; # only affects player units
-          #debug_log "Lightning Ping " action_target;
+          debug_log "Lightning Ping " action_target reaction_unit reaction_chance;
           if neq temp FACTION_PLAYER;
             return reaction_chance;
           end;
@@ -299,7 +299,8 @@ extended:
             return reaction_chance;
           end;
 
-          battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Relentless Assault
+          battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Lighting
+          debug_log "Lightning Ping " temp;
           if neq temp 4;
             return reaction_chance;
           end;
@@ -310,7 +311,7 @@ extended:
             return reaction_chance;
           end;
 
-          #debug_log "Lightning Success " temp temp2;
+          debug_log "Lightning Success " temp temp2;
           return 0;
 
     tryMeleeAttackItem:

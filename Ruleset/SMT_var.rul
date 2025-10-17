@@ -35,6 +35,15 @@ constants:
   explosiveDamageRange: 50
   extendedMeleeReactions: 1
 
+transparencyLUTs:
+  - colors:  # R, G, B, Opacity, 0-16 values
+      - [12, 12, 16, 6]  # 0 - GK fire but more transparent & more blue
+      - [12, 12, 16, 6]  # 1 - GK fire but more transparent & more blue
+      - [12, 12, 16, 6]  # 2 - GK fire but more transparent & more blue
+      - [12, 12, 16, 6]  # 3 - GK fire but more transparent & more blue
+      - [12, 12, 16, 6]  # 4 - GK fire but more transparent & more blue
+      - [12, 12, 16, 6]  # 5 - GK fire but more transparent & more blue
+
 interfaces:
   - type: soldierInfo # highlight max stats in blue
     palette: PAL_BASESCAPE

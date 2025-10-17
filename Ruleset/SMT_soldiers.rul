@@ -3444,8 +3444,61 @@ soldiers:
       SOLDIER_WOUND_TIME_MULTIPLIER: 66 # inbuilt bionics
       SMT_SOLDIER_IS_MEDIC: 20 # reduce all wound times by 1/5 if soldier is present
 
-###Other
+  - type: STR_IMPERIAL_INQUISITOR
+    minStats:
+      tu: 60
+      stamina: 50
+      health: 40
+      bravery: 70
+      strength: 30
+      reactions: 40
+      firing: 50
+      melee: 50
+      throwing: 40
+      psiStrength: 15
+      psiSkill: 50
+    maxStats:
+      tu: 70
+      stamina: 80
+      health: 70
+      bravery: 100
+      strength: 50
+      reactions: 70
+      firing: 80
+      melee: 80
+      throwing: 70
+      psiStrength: 60
+      psiSkill: 70
+    statCaps:
+      tu: 90
+      stamina: 120
+      health: 90
+      bravery: 110
+      strength: 100
+      reactions: 100
+      firing: 110
+      melee: 130
+      throwing: 80
+      psiStrength: 120
+      psiSkill: 120
+    trainingStatCaps:
+      tu: 60
+      stamina: 80
+      health: 60
+      strength: 50
+      firing: 80
+      throwing: 65
+      melee: 80
+      psiStrength: 100
+      psiSkill: 120
+    dogfightExperience:
+      bravery: 10
+      reactions: 30
+      firing: 25
+    armor: STR_ADEPTAS_ARMORI_UC
 
+
+###Other
   - type: STR_ADEPTAS_FRATERIS_MILITIA
     refNode: *REF_HUMAN_STATS
     requires:
@@ -3454,11 +3507,14 @@ soldiers:
     costSalary: 2000 # was 2500
     minStats:
       bravery: 30
+      health: 20 # was 25
       firing: 35
-      strength: 12
+      strength: 10 # was 13
       psiSkill: 20
     maxStats:
       bravery: 80
+      health: 30 # was 35
+      strength: 25 # was 35
       psiSkill: 60
     statCaps:
       psiSkill: 100

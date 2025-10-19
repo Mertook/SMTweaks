@@ -616,7 +616,8 @@ extraStrings:
       STR_GK_TERMINATOR_R: "Aegis Terminator Armor"
       STR_PSILENCER_R: "Psilencer Requisition"
       STR_PSYCANNON_R: "Psycannon Requisition"
-      STR_INCINERATOR_R: "Incinerator Requition"
+      STR_INCINERATOR_R: "Incinerator Requisition"
+      STR_FORCE_WEAPONS: "Force Weapons Requisition"
       STR_APOTHECARY_TRAINING: Apothecary Training
       STR_PERSONAL_ARMOR: MK7 Tactical Armor
       STR_SCOUTH_RESEARCH: "Elite Scout Requisition"
@@ -730,7 +731,7 @@ extraStrings:
       ITEM_EFFECT_DURATION: "Effect Duration"
       SMT_RESTRICTED_ACCURACY_PEN: "Restricted Acc. Penalty%"
       SMT_RESTRICTED_DAMAGE_PEN: "Restricted Dmg. Penalty%"
-      SMT_RESTRICTED_ITEM_MELEE: "Restricted Melee Penalty%"
+      SMT_RESTRICTED_DAMAGE_MELEE: "Restricted Melee Penalty%"
       BOMBARD_COOLDOWN: Fire Support Cooldown
       ARMOR_REGENERATE_HEALTH_FLAT: "Health Regeneration"
       SMT_ARMOR_HEAVY_WEAPON_USER: "HWP Penalty Reduction%"
@@ -1197,11 +1198,11 @@ extraStrings:
       STR_DREAD_ARMOR4_UC_UFOPEDIA: "Dreadnoughts are cybernetic combat walkers that house the mortal remains of a fallen Space Marine hero, so that he may continue fighting for the Emperor and his Chapter even after his body has been crippled.{NEWLINE}Arms: Assault Cannon and Flamer"
       STR_GK_TACTICAL_UC_CODEX: "Though all Grey Knights are trained in the use of Terminator Armor they will still don Aegis Power Armor at times, due to personal preference or when mobility is required.{NEWLINE} Ritually consecrated and imbued with the wearers psychic powers, it protects against the Immaterium and physical threats alike."
       STR_GK_INTERCEPTOR_UC_CODEX: "Equipped with personal backpack teleporters, Interceptors are able to rapidly move across the battlefield by traveling through warpspace. Only Grey Knights could hope to use such a device, their minds trained and tempered to withstand the exposure to the Warp."
-      STR_GK_TAC_APOTHECARY_UC_CODEX: "TODO"
-      STR_GK_TAC_LIBRARIAN_UC_CODEX: "TODO"
-      STR_GK_TAC_CHAPLAIN_UC_CODEX: "TODO"
-      STR_GK_TAC_TECHMARINE_UC_CODEX: "TODO"
-      STR_GK_TERMINATOR_UC_CODEX: "TODO"
+      STR_GK_TAC_APOTHECARY_UC_CODEX: "Apothecaries are tasked with keeping their fellow battle-brothers healthy. Trained in advanced combat triage and the recovery of gene-seed from fallen warriors, they are fiercely protected by squadmates to ensure they can carry out their work."
+      STR_GK_TAC_LIBRARIAN_UC_CODEX: "Although all Grey Knights have psychic talent few of them exorcise these abilities freely, typically only focusing it through their weaponry. Those with the strongest minds and iron wills join the ranks of the Librarians, supporting their battle-brothers with raw psychic might."
+      STR_GK_TAC_CHAPLAIN_UC_CODEX: "Chaplains physically embody the sacred duty of the Grey Knights. They maintain mental discipline by communing psychically with their followers, ensuring their minds will not waver and fall prey to daemons."
+      STR_GK_TAC_TECHMARINE_UC_CODEX: "Techmarines stand apart from other Grey Knights, their training with the Adeptus Mechanicus giving them different traditions and rituals. They must balance this doctrine with the ideals of the Chapter for the sake its sacred mission."
+      STR_GK_TERMINATOR_UC_CODEX: "Grey Knights have far greater access to Terminator Armor than other chapters, with each member trained in its use. Inlaid with complex wards and ritually consecrated, it provides even greater protection than standard Terminator suits."
       STR_GK_TERM_APOTHECARY_UC_CODEX: "TODO"
       STR_GK_TERM_CHAPLAIN_UC_CODEX: "TODO"
       STR_GK_TERM_TECHMARINE_UC_CODEX: "TODO"
@@ -1296,7 +1297,9 @@ extraStrings:
       STR_HAMMER_UFOPEDIA: "{NEWLINE} Thunder Hammers are primarily used by Space Marines clad in Terminator Armor. This large warhammer incorporates an energy field emitter within its head that activates only when the hammer strikes its target.{NEWLINE}{NEWLINE}Strength required: 2H {ALT}100{ALT} / 1H {ALT}200{ALT}"
       STR_HAMMER_MC_UFOPEDIA: "{NEWLINE} A Master crafted weapon is used by all of the Imperial armies and can be requisitioned by an exchange of foes' corpses. Any weapon may be master-crafted and due to the improved design of the weapon, it is more likely that a target will be hit by attacks from this weapon.{NEWLINE}{NEWLINE}Strength required: 2H {ALT}100{ALT} / 1H {ALT}200{ALT}"
       STR_HALLEBARD_UFOPEDIA: "{NEWLINE} A Nemesis Force Halberd is a two-handed weapon that consists of a long adamantium haft with an iron and silver blade set upon the top. This extra reach often allows a Grey Knight to land a fatal blow, killing the enemy before coming within reach of its weapons.{NEWLINE}{NEWLINE}Strength required: 2H {ALT}80{ALT} / 1H {ALT}160{ALT}"
-      STR_STORMSHIELD_CODEX: "{NEWLINE} Named for the crackling lightning that erupts when they are stuck, Storm Shields are powerful charged shields able to deflect melee and ranged attacks alike. Storm Shields reduce the power of incoming attacks from the front, and recharge each turn.{NEWLINE}{NEWLINE} Storm Shields cannot be used while using two-handed weapons, unless the user is wearing Terminator Armor."
+      STR_FORCE_BLADE: Force Blade
+      STR_FORCE_BLADE_CODEX: "{NEWLINE} Force Weapons are psychically attuned close combat weapons that channel deadly warp energies into the target when struck.{NEWLINE} They can tear apart even demons and monstrous beasts with the unearthly power of the Immaterium, but are only effective when held by a trained psyker.{NEWLINE}{NEWLINE}Strength required: 2H {ALT}60{ALT} / 1H {ALT}90{ALT}"
+      STR_STORMSHIELD_CODEX: "{NEWLINE} Named for the crackling lightning that erupts when they are stuck, Storm Shields are powerful charged shields able to deflect melee and ranged attacks alike. Storm Shields reduce the power of incoming attacks from the front, and recharge each turn.{NEWLINE}{NEWLINE} Storm Shields cannot be used while carrying two-handed weapons unless the user is wearing Terminator Armor."
       STR_AUTOGUN_BASIC: Autogun
       STR_AUTOGUN_BASIC_CODEX: "{NEWLINE} An Autogun is a fully automatic weapon that fires solid-slug ballistic rounds at the intended target in rapid succession. Cheap, rugged and reliable, it can be found throughout the Imperium, where it is appreciated for its decent damage and accuracy. {NEWLINE}{NEWLINE} Recoil: {ALT}20"
       STR_AUTOGUN_ADV: High-Grade Autogun
@@ -1326,9 +1329,9 @@ extraStrings:
       STR_SPEED_UFOPEDIA: "{NEWLINE} The Land Speeder is a light anti-gravity vehicle which serves as the primary reconnaissance and fast attack vehicle of the Adeptus Astartes.{NEWLINE}{NEWLINE} Capacity: 12 Soldiers plus 8 Vehicle slots"
       ### SOLDIERS
       STR_GREYKNIGHT: "Grey Knight"
-      STR_GREYKNIGHT_LIB: "GK Librarian"
-      STR_GREYKNIGHT_TECH: "GK Techmarine"
-      STR_GREYKNIGHT_CHAP: "GK Chaplain"
+      STR_GREYKNIGHT_LIBRARIAN: "GK Librarian"
+      STR_GREYKNIGHT_TECHMARINE: "GK Techmarine"
+      STR_GREYKNIGHT_CHAPLAIN: "GK Chaplain"
       ### SKILLS
       ### TRANSFORMATIONS
       ### RESEARCH

@@ -163,11 +163,6 @@ extended:
           var int temp;
           var int temp2;
 
-          skill.getTag stealthRange Tag.SKILL_STEALTH_RANGE;
-          if eq stealthRange 0;
-            return;
-          end;
-
           actor.getTag temp Tag.UNIT_STEALTH_IS_ACTIVE; # handle decloaking
           skill.getTag temp2 Tag.SKILL_STEALTH_CHECK;
           if or gt temp 0 eq temp2 -1;
@@ -189,6 +184,11 @@ extended:
               end;
             end;
             set spend_tu 0; # no TU cost for decloaking
+            return;
+          end;
+
+          skill.getTag stealthRange Tag.SKILL_STEALTH_RANGE;
+          if eq stealthRange 0;
             return;
           end;
 

@@ -3894,6 +3894,7 @@ armors:
     units:
       - STR_GREYKNIGHT
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
@@ -3917,6 +3918,7 @@ armors:
     units:
       - STR_GREYKNIGHT
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
@@ -3939,6 +3941,7 @@ armors:
     units:
       - STR_GREYKNIGHT
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
@@ -3962,6 +3965,7 @@ armors:
     units:
       - STR_GREYKNIGHT
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
@@ -3986,6 +3990,7 @@ armors:
     units:
       - STR_GREYKNIGHT
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
@@ -4024,8 +4029,9 @@ armors:
       - STR_PSITOKEN_HOLOCAUST
       - INV_NULL_3X1_BACKPACK
     units:
-      - STR_GREYKNIGHT_LIB
+      - STR_GREYKNIGHT_LIBRARIAN
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
@@ -4065,8 +4071,9 @@ armors:
       - STR_GK_HB
       - INV_NULL_3X1_BACKPACK
     units:
-      - STR_GREYKNIGHT_LIB
+      - STR_GREYKNIGHT_LIBRARIAN
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
@@ -4086,8 +4093,9 @@ armors:
     builtInWeapons:
       - STR_TECH_REPAIRTOOL
     units:
-      - STR_GREYKNIGHT_TECH
+      - STR_GREYKNIGHT_TECHMARINE
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
@@ -4108,8 +4116,9 @@ armors:
       - STR_TECH_REPAIRTOOL
       - STR_GK_HB
     units:
-      - STR_GREYKNIGHT_TECH
+      - STR_GREYKNIGHT_TECHMARINE
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
@@ -4131,8 +4140,9 @@ armors:
       - STR_PSITOKEN_FLAMES_GK
       - INV_NULL_3X1_BACKPACK
     units:
-      - STR_GREYKNIGHT_CHAP
+      - STR_GREYKNIGHT_CHAPLAIN
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
@@ -4155,8 +4165,9 @@ armors:
       - STR_GK_HB
       - INV_NULL_3X1_BACKPACK
     units:
-      - STR_GREYKNIGHT_CHAP
+      - STR_GREYKNIGHT_CHAPLAIN
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
@@ -4197,6 +4208,7 @@ armors:
     units:
       - STR_GREYKNIGHT
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
@@ -4222,15 +4234,18 @@ armors:
     units:
       - STR_GREYKNIGHT
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
+      SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
 
   - type: STR_GK_TERM_APOTHECARY_UC         # Grey Knight Apothecary (Terminator)
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE
     corpseGeo: STR_FALLEN_CORPSE
+    ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
     requires: STR_GK_TERMINATOR_R
@@ -4247,15 +4262,18 @@ armors:
     units:
       - STR_GREYKNIGHT
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
+      SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
 
   - type: STR_GK_TERM_LIBRARIAN_UC          # Grey Knight Librarian (Terminator)
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE
     corpseGeo: STR_FALLEN_CORPSE
+    ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
     requires: STR_GK_TERMINATOR_R
@@ -4286,8 +4304,9 @@ armors:
       - INV_NULL_2X1_RL
       - INV_NULL_2X1_LL
     units:
-      - STR_GREYKNIGHT_LIB
+      - STR_GREYKNIGHT_LIBRARIAN
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
@@ -4297,7 +4316,7 @@ armors:
     corpseBattle:
       - STR_GKTAC_CORPSE
     corpseGeo: STR_FALLEN_CORPSE
-    ufopediaType: STR_GK_TERM_LIBRARIAN_UC
+    ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
     requires: STR_GK_TERMINATOR_R
@@ -4329,17 +4348,20 @@ armors:
       - INV_NULL_2X1_RL
       - INV_NULL_2X1_LL
     units:
-      - STR_GREYKNIGHT_LIB
+      - STR_GREYKNIGHT_LIBRARIAN
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
+      SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
 
   - type: STR_GK_TERM_CHAPLAIN_UC           # Grey Knight Chaplain (Terminator)
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE
     corpseGeo: STR_FALLEN_CORPSE
+    ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
     requires: STR_GK_TERMINATOR_R
@@ -4353,8 +4375,9 @@ armors:
       - INV_NULL_2X1_RL
       - INV_NULL_2X1_LL
     units:
-      - STR_GREYKNIGHT_CHAP
+      - STR_GREYKNIGHT_CHAPLAIN
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
@@ -4364,7 +4387,7 @@ armors:
     corpseBattle:
       - STR_GKTAC_CORPSE
     corpseGeo: STR_FALLEN_CORPSE
-    ufopediaType: STR_GK_TERM_CHAPLAIN_UC
+    ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
     requires: STR_GK_TERMINATOR_R
@@ -4379,17 +4402,20 @@ armors:
       - INV_NULL_2X1_RL
       - INV_NULL_2X1_LL
     units:
-      - STR_GREYKNIGHT_CHAP
+      - STR_GREYKNIGHT_CHAPLAIN
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
+      SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
 
   - type: STR_GK_TERM_TECHMARINE_UC         # Grey Knight Techmarine (Terminator)
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE
     corpseGeo: STR_FALLEN_CORPSE
+    ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
     requires: STR_GK_TERMINATOR_R
@@ -4401,8 +4427,9 @@ armors:
       - INV_NULL_2X1_RL
       - INV_NULL_2X1_LL
     units:
-      - STR_GREYKNIGHT_TECH
+      - STR_GREYKNIGHT_TECHMARINE
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
@@ -4412,7 +4439,7 @@ armors:
     corpseBattle:
       - STR_GKTAC_CORPSE
     corpseGeo: STR_FALLEN_CORPSE
-    ufopediaType: STR_GK_TERM_TECHMARINE_UC
+    ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
     requires: STR_GK_TERMINATOR_R
@@ -4425,11 +4452,13 @@ armors:
       - INV_NULL_2X1_RL
       - INV_NULL_2X1_LL
     units:
-      - STR_GREYKNIGHT_TECH
+      - STR_GREYKNIGHT_TECHMARINE
     tags:
+      UNIT_TYPE_PSYKER: 1
       INFECTION_RESIST: 100
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
+      SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
 
 ### Other Marines
   - update: STR_BLOODRAVENS_TACTICAL_ARMOR      # Bloodraven Tactical

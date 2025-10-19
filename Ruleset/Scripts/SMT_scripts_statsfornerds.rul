@@ -102,10 +102,10 @@ extended:
             rule.getTag temp Tag.SMT_RESTRICTED_DAMAGE_PEN;           # Damage
             sub temp 100;
             stats_state.addIntRow "SMT_RESTRICTED_DAMAGE_PEN" temp;
-            rule.getTag temp Tag.SMT_RESTRICTED_ITEM_MELEE;           # Melee
+            rule.getTag temp Tag.SMT_RESTRICTED_DAMAGE_MELEE;           # Melee
             if gt temp 0;
               mul temp -1;
-              stats_state.addIntRow "SMT_RESTRICTED_ITEM_MELEE" temp;
+              stats_state.addIntRow "SMT_RESTRICTED_DAMAGE_MELEE" temp;
             end;
           end;
 

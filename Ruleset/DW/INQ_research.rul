@@ -11,14 +11,6 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     dependencies:
       - STR_GENERALLOCK
 
-  - name: STR_HALLEBARD                     # tech was given for free in rosigma, causes issue with GK strategy selection
-    cost: 50
-    points: 15
-    dependencies:
-      - STR_GREYKNIGHTS
-      - STR_MASTER_CRAFTING_AMMO # item manufacture is locked behind this tech anyway
-    needItem: false
-
   - name: STR_HAND_MULTILASER_RESEARCH_INQUISITION  # Multilaser?
     cost: 0
     points: 0

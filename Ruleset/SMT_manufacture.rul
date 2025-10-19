@@ -1611,7 +1611,7 @@ manufacture:
       - STR_GREYKNIGHTS
       - STR_PSILENCER_R
     space: 0
-    time: 960
+    time: 1380
     cost: 700000
     requiredItems:
       STR_ALIEN_ALLOYS: 15
@@ -1624,12 +1624,12 @@ manufacture:
       - STR_GREYKNIGHTS
       - STR_PSYCANNON_R
     space: 0
-    time: 820
+    time: 1020
     cost: 600000
     requiredItems:
       STR_ALIEN_ALLOYS: 20
       STR_ELERIUM_115: 5
-      STR_KILLPOINT_TOKEN: 300
+      STR_KILLPOINT_TOKEN: 250
 
   - name: STR_PSYCANNON_AMMO
     category: STR_AMMUNITION
@@ -1637,7 +1637,7 @@ manufacture:
       - STR_GREYKNIGHTS
       - STR_PSYCANNON_R
     space: 0
-    time: 280
+    time: 320
     cost: 20000
     requiredItems:
       STR_ALIEN_ALLOYS: 4
@@ -1657,7 +1657,7 @@ manufacture:
     requiredItems:
       STR_ALIEN_ALLOYS: 16
       STR_ELERIUM_115: 5
-      STR_KILLPOINT_TOKEN: 200
+      STR_KILLPOINT_TOKEN: 150
 
   - name: STR_PSYFLAME_AMMO
     category: STR_AMMUNITION
@@ -1665,7 +1665,7 @@ manufacture:
       - STR_GREYKNIGHTS
       - STR_INCINERATOR_R
     space: 0
-    time: 280
+    time: 320
     cost: 20000
     requiredItems:
       STR_ELERIUM_115: 15
@@ -1687,6 +1687,26 @@ manufacture:
       STR_KILLPOINT_TOKEN: 20
     producedItems:
       STR_STORMBOLTER_PSI_MAG: 5
+
+  - name: STR_HALLEBARD
+    space: 0
+    time: 1200
+    cost: 100000
+    requires:
+      - STR_HALLEBARD
+    requiredItems:
+      STR_ALIEN_ALLOYS: 30
+      STR_KILLPOINT_TOKEN: 200
+
+  - name: STR_FORCE_BLADE
+    space: 0
+    time: 1200
+    cost: 100000
+    requires:
+      - STR_FORCE_WEAPONS
+    requiredItems:
+      STR_ALIEN_ALLOYS: 30
+      STR_KILLPOINT_TOKEN: 200
 
 ### BOMBARD
   - name: STR_ORBITAL_STRIKE_AMMO                   # Orbital Strike ammo

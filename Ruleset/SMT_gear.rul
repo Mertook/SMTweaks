@@ -7071,7 +7071,7 @@ items:
     weight: 10
     bigSprite: 135
     floorSprite: {mod: 40k, index: 110}
-    handSprite: {mod: 40k, index: 248}
+    handSprite: 664
     meleeSound: {mod: 40k, index: 753}
     meleeHitSound: {mod: 40k, index: 709}
     meleeAnimation: {mod: 40k, index: 44}
@@ -7103,6 +7103,8 @@ items:
       - STR_CHAINSWORD_R
       - STR_GUARD_WEAPONS
       - STR_NOT_STEEL_LEGION_STRATEGY
+      - STR_NOT_DEATHWATCH
+      - STR_NOT_GK
     power: 45
     damageBonus:
       melee: 0.3
@@ -7131,14 +7133,7 @@ items:
     damageBonus:
       melee: 0.3
       strength: 0.1
-    damageAlter:
-      ToArmorPre: 0.3
-      ToHealth: 0.9
-      RandomType: 2
-      ToWound: 0.3
-      ToEnergy: 0.5
-      ToTile: 0.7
-      RandomWound: false
+    damageAlter: *Ref_Chainsword_Dmg
 
   - type: STR_CLAWS                         # Lightning Claw (Terminator)
     refNode: *STR_CLAW_DMG
@@ -7417,12 +7412,15 @@ items:
     damageAlter:
       RandomType: 2 # 50-150
       ArmorEffectiveness: 0.5 # was 0.7
-      ToArmorPre: 0.1 # was 0.2
+      ToArmorPre: 0.05 # was 0.2
+      ToArmor: 0.1
       ToHealth: 1.0
+      RandomWound: true
+      IgnoreSelfDestruct: true
     power: 75 # was 100
     damageBonus:
-      strength: 0.2
       melee: 0.3
+      strength: 0.2
     meleeMultiplier:
       melee: 0.9
       reactions: 0.1
@@ -7482,51 +7480,44 @@ items:
     battleType: 1
     oneHandedPenalty: 100
     armor: 300
-    fireSound: {mod: 40k, index: 753}
-    explosionHitSound: {mod: 40k, index: 101}
-    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 2040}  # Bloodgush sprite
-    hitAnimFrames: 8
-    hitSound: {mod: 40k, index: 101}  # stabhit
-    bulletSprite: {mod: 40k_ROSIGMA_edits, index: 5}
     clipSize: -1
     snapRange: 2
     maxRange: 2
     powerRangeThreshold: 3
     powerRangeReduction: 200
-    power: 70
-    meleePower: 70
+    power: 80
+    meleePower: 80
     damageBonus:
-      psi: 0.01
-      strength: 0.1
+      psiStrength: [-0.4, 0.02, -0.00008] # s60 = p30, s80 = p55, s100 = p80, s120 = p101, s140 = p116; S-curve, sharpest slope at 80~85, starts losing power at 160+
+      flatHundred: -0.35 # 64 psiStr tipping point
+      strength: 0.3
       melee: 0.3
     meleeBonus:
-      psiStrength: 0.3
-      psiSkill: 0.05
-      strength: 0.2
-      melee: 0.25
+      psiStrength: [-0.4, 0.02, -0.00008] # s60 = p30, s80 = p55, s100 = p80, s120 = p101, s140 = p116; S-curve, sharpest slope at 80~85, starts losing power at 160+
+      flatHundred: -0.35 # 64 psiStr tipping point
+      strength: 0.3
+      melee: 0.3
     damageType: 13
     meleeType: 13
     damageAlter: &Ref_ForceBlade_DmgAlt
       RandomType: 2 # 50-150%
       ArmorEffectiveness: 0.5
-      ToArmorPre: 0.1
+      ToArmorPre: 0.05
       ToArmor: 0.1
-      ToHealth: 1.0
+      ToHealth: 1.4
       ToMorale: 1.0
-      FireThreshold: 0
-      ToWound: 0.0
-      RandomWound: false
+      RandomWound: true
       IgnoreSelfDestruct: true
     meleeAlter: *Ref_ForceBlade_DmgAlt
     confSnap:
       name: STR_HALLEBARD_SNAPSHOT_LUNGE
       shots: 1
     costSnap:
-      time: 25
-      energy: 12
+      time: 24
+      energy: 8
     costMelee:
-      time: 18
-      energy: 6
+      time: 16
+      energy: 4
     accuracySnap: 90
     accuracyMelee: 90
     accuracyMultiplier:
@@ -7543,6 +7534,46 @@ items:
       ITEM_STRENGTH_REQUIREMENT: 80
       ITEM_STRENGTH_1H_REQUIREMENT: 160
       REACTION_MULTIPLIER: 200
+      DAMAGE_BONUS_PERCENT_DAEMONIC: 150 #1.5x damage vs Daemons
+
+  - type: STR_FORCE_BLADE                   # Nemesis Force Blade
+    categories: [STR_CAT_MELEE]
+    size: 0.2
+    costSell: 20000
+    weight: 10
+    bigSprite: 366
+    floorSprite: {mod: 40k, index: 606}
+    handSprite: {mod: 40k_ROSIGMA_edits, index: 2840}
+    meleeSound: {mod: 40k, index: 753}
+    meleeHitSound: {mod: 40k, index: 754}
+    meleeAnimation: {mod: 40k, index: 4}
+    listOrder: 12399
+    power: 75
+    damageType: 13 # WARP
+    damageBonus:
+      melee: 0.3
+      strength: 0.2
+      psiStrength: [-0.4, 0.02, -0.00008] # s60 = p30, s80 = p55, s100 = p80, s120 = p101, s140 = p116; S-curve, sharpest slope at 80~85, starts losing power at 160+
+      flatHundred: -0.35 # 64 psiStr tipping point
+    damageAlter: *Ref_ForceBlade_DmgAlt
+    accuracyMelee: 100
+    meleeMultiplier:
+      melee: 0.9
+      strength: 0.1
+    costMelee:
+      time: 15
+      energy: 2
+    flatRate: true
+    clipSize: -1
+    battleType: 3
+    invWidth: 2
+    invHeight: 3
+    armor: 300
+    skillApplied: true
+    experienceTrainingMode: 13
+    tags:
+      ITEM_STRENGTH_REQUIREMENT: 60
+      ITEM_STRENGTH_1H_REQUIREMENT: 90
       DAMAGE_BONUS_PERCENT_DAEMONIC: 150 #1.5x damage vs Daemons
 
 ### Skill Tokens
@@ -9244,6 +9275,7 @@ items:
   - type: STR_TELEPORT                      # Terminator Teleport tool (Regular)
     refNode: *REF_POWERFIST_TEMPLATE # add punch
     tuUse: 5 # was 10
+    experienceTrainingMode: 1 # melee
     tags:
       ITEM_TELEPORTER_ENERGY: 12 # was 10
       ITEM_TELEPORTER_COOLDOWN: 3 # was 1
@@ -9262,6 +9294,7 @@ items:
     specialUseEmptyHand: true
     hitSound: {mod: 40k, index: 788}
     specialIconSprite: {mod: 40k, index: 220}
+    experienceTrainingMode: 1 # melee
     tags:
       ITEM_IS_TELEPORTER: 1
       ITEM_TELEPORTER_COOLDOWN: 2 # was 1
@@ -9281,6 +9314,7 @@ items:
     specialUseEmptyHand: true
     hitSound: {mod: 40k, index: 788}
     specialIconSprite: {mod: 40k, index: 220}
+    experienceTrainingMode: 13 # melee & reactions
     tags:
       ITEM_IS_TELEPORTER: 1
       ITEM_TELEPORTER_COOLDOWN: 3
@@ -9300,6 +9334,7 @@ items:
     specialUseEmptyHand: true
     hitSound: {mod: 40k, index: 788}
     specialIconSprite: {mod: 40k, index: 220}
+    experienceTrainingMode: 13 # melee & reactions
     tags:
       ITEM_IS_TELEPORTER: 1
       ITEM_TELEPORTER_COOLDOWN: 2
@@ -9331,6 +9366,7 @@ items:
     accuracyMultiplier:
       firing: 2.0
     psiAttackName: STR_SIGNUM_ENEMY
+    experienceTrainingMode: 13 # melee & reactions
     tags:
       SMT_VULN_DEBUFF_MOD: 100
       ITEM_EFFECT_DURATION: 1
@@ -9347,6 +9383,7 @@ items:
 
   - type: STR_STEALTH_REIVER
     refNode: *REF_FIST
+    experienceTrainingMode: 13 # melee & reactions
   - type: STR_STEALTH_REIVER                # Primaris Reiver Stealth
     refNode: *REF_STEALTH_MED_TEMPLATE
     tuUse: 10
@@ -9357,6 +9394,7 @@ items:
 
   - type: STR_STEALTH_ELIMINATOR
     refNode: *REF_FIST
+    experienceTrainingMode: 13 # melee & reactions
   - type: STR_STEALTH_ELIMINATOR            # Primaris Eliminator Stealth
     refNode: *REF_STEALTH_MED_TEMPLATE
     tags:

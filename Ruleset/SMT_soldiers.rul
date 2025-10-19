@@ -526,6 +526,7 @@ soldiers:
       - STR_PSISKILL_TORMENT
     skillIconSprite:  {mod: 40k, index: 11}
     tags:
+      SMT_RESTRICTED_ITEM_USER: 4 # able to use force weapons
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 5 # gain 1-5 psistrength from battles
 
   - type: STR_SOLDIER_LIBRARIAN_TERM    # Librarian Terminator
@@ -624,6 +625,7 @@ soldiers:
       - STR_PSISKILL_SOULSTORM
     skillIconSprite:  {mod: 40k, index: 11}
     tags:
+      SMT_RESTRICTED_ITEM_USER: 4 # able to use force weapons
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 5 # gain 1-5 psistrength from battles
 
   - type: STR_SOLDIER_APOTH             # Firstborn Apothecary
@@ -1791,7 +1793,7 @@ soldiers:
       reactions: 80
       firing: 80
       throwing: 85
-      strength: 60
+      strength: 70
       psiStrength: 100
       psiSkill: 30
       melee: 120
@@ -1850,6 +1852,7 @@ soldiers:
       - STR_PSISKILL_UNDYING
     skillIconSprite:  {mod: 40k, index: 11}
     tags:
+      SMT_RESTRICTED_ITEM_USER: 4 # able to use force weapons
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 5 # gain 1-5 psistrength from battles
 
   - type: STR_PRIMARIS_LIBRARIANLV2     # Primaris Librarian lv2
@@ -1879,7 +1882,7 @@ soldiers:
       reactions: 80
       firing: 80
       throwing: 85
-      strength: 60
+      strength: 75
       psiStrength: 100
       psiSkill: 30
       melee: 120
@@ -1942,6 +1945,7 @@ soldiers:
       - STR_PSISKILL_TORMENT
     skillIconSprite:  {mod: 40k, index: 11}
     tags:
+      SMT_RESTRICTED_ITEM_USER: 4 # able to use force weapons
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 5 # gain 1-5 psistrength from battles
 
   - type: STR_PRIMARIS_LIBRARIANLV3     # Primaris Librarian lv3
@@ -1971,7 +1975,7 @@ soldiers:
       reactions: 80
       firing: 80
       throwing: 85
-      strength: 60
+      strength: 80
       psiStrength: 100
       psiSkill: 30
       melee: 120
@@ -2037,6 +2041,7 @@ soldiers:
       - STR_PSISKILL_SOULSTORM
     skillIconSprite: {mod: 40k, index: 11}
     tags:
+      SMT_RESTRICTED_ITEM_USER: 4 # able to use force weapons
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 5 # gain 1-5 psistrength from battles
 
 ### Other Marines
@@ -2188,10 +2193,11 @@ soldiers:
     skills:
       - STR_PSISKILL_FLAMES_GK
     tags:
+      SMT_RESTRICTED_ITEM_USER: 4 # able to use force weapons
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 2 # psyker
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 3 # devout
 
-  - type: STR_GREYKNIGHT_LIB            # Grey Knight Librarian
+  - type: STR_GREYKNIGHT_LIBRARIAN      # Grey Knight Librarian
     refNode: *REF_MARINE_VET_TAGS
     costSalary: 200000
     minStats:
@@ -2287,10 +2293,11 @@ soldiers:
       - STR_PSISKILL_SOULSTORM
       - STR_PSISKILL_HOLOCAUST
     tags:
+      SMT_RESTRICTED_ITEM_USER: 4 # able to use force weapons
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 4 # dedicated psyker
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 3 # devout
 
-  - type: STR_GREYKNIGHT_TECH           # Grey Knight Techmarine
+  - type: STR_GREYKNIGHT_TECHMARINE     # Grey Knight Techmarine
     refNode: *REF_MARINE_VET_TAGS
     costSalary: 200000
     minStats:
@@ -2372,10 +2379,11 @@ soldiers:
       - STR_TECH_UNIT_SKILL
       - STR_TECH_REPAIR_SKILL
     tags:
+      SMT_RESTRICTED_ITEM_USER: 4 # able to use force weapons
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 2 # psyker
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 3 # devout
 
-  - type: STR_GREYKNIGHT_CHAP           # Grey Knight Chaplain
+  - type: STR_GREYKNIGHT_CHAPLAIN       # Grey Knight Chaplain
     refNode: *REF_MARINE_VET_TAGS
     costSalary: 200000
     minStats:
@@ -2454,6 +2462,7 @@ soldiers:
     skills:
       - STR_BLESS_SKILL
     tags:
+      SMT_RESTRICTED_ITEM_USER: 5 # able to use force weapons and crozius
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 2 # psyker
       SOLDIER_IS_PSISKILL_TEACHER: 4 # chaplain
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6
@@ -2817,7 +2826,7 @@ soldiers:
       - STR_CMD_OVERWATCH_SKILL
       - STR_CMD_CHECK_SKILL
     tags:
-      SMT_RESTRICTED_ITEM_USER: 6 # can use DW gear and DW captain gear
+      SMT_RESTRICTED_ITEM_USER: 2 # can use DW gear
       SOLDIER_WOUND_TIME_MULTIPLIER: 40 # DW Captain bonus
       UNIT_REGENERATE_HEALTH_FLAT: 3
       UNIT_REGENERATE_HEALTH_PERCENT: 5
@@ -2917,7 +2926,7 @@ soldiers:
       - STR_CMD_MELEE_SKILL
       - STR_CMD_CHECK_SKILL
     tags:
-      SMT_RESTRICTED_ITEM_USER: 7 # can use Crozius and DW gear
+      SMT_RESTRICTED_ITEM_USER: 3 # can use Crozius and DW gear
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 6 # chaplain
       SOLDIER_IS_PSISKILL_TEACHER: 4 # chaplain
 
@@ -2945,6 +2954,7 @@ soldiers:
       - STR_PSISKILL_HASTE_FREE
     skillIconSprite: {mod: 40k, index: 11}
     tags:
+      SMT_RESTRICTED_ITEM_USER: 6 # also able to use force weapons
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 5 # gain 1-5 psistrength from battles
 
   - type: STR_DARKANGELS_LEADER         # Dark Angels Captain
@@ -2971,6 +2981,7 @@ soldiers:
       - STR_PSISKILL_SOULSTORM_FREE
     skillIconSprite: {mod: 40k, index: 11}
     tags:
+      SMT_RESTRICTED_ITEM_USER: 6 # also able to use force weapons
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 5 # gain 1-5 psistrength from battles
 
   - type: STR_SPACEW_LEADER             # Space Wolves Captain

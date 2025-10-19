@@ -2067,6 +2067,13 @@ ufopaedia:
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: 1HF.SPK ###CHANGEME
     text: STR_INCINERATOR_CODEX
+  - id: STR_FORCE_BLADE                     # Force Blade
+    type_id: 14
+    requires:
+      - STR_FORCE_WEAPONS
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1MCPS.SPK ###CHANGEME
+    text: STR_FORCE_BLADE_CODEX
 
 ###BOLTERS
   - id: STR_BOLTER_ENFORCER                 # Light Bolter (Locke)

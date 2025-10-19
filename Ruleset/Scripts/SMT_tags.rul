@@ -36,7 +36,7 @@ extended:
       SMT_RESTRICTED_ITEM: int          # Item should only be usable by certain units (1 = Crozius, 2 = Deathwatch Weapons, 4 = DW Captain Gear)
       SMT_RESTRICTED_ACCURACY_PEN: int  # Percentage of weapon accuracy when used by incorrect units
       SMT_RESTRICTED_DAMAGE_PEN: int    # Percentage of weapon power when used by incorrect units
-      SMT_RESTRICTED_ITEM_MELEE: int    # if !0, reduce melee power % by this much when used by incorrect units
+      SMT_RESTRICTED_DAMAGE_MELEE: int  # if !0, reduce melee power % by this much when used by incorrect units
       ## Shields
       ## Custom Ammo
       SMT_AMMO_BONUSDMG_FIRINGACC: int  # % bonus damage granted from units Firing Accuracy: (FA - 100) * Tag / 100
@@ -52,7 +52,7 @@ extended:
       ITEM_IGNITES_TARGETS: int         # Weapon increases fire duration by X on hit
       SMT_LETHAL_STUN: int              # Weapon deals additional HP damage if stun is greater than units HP
       ## Plasma Heat
-      ITEM_HEAT_SINK_COLOR: int # sprite color index for heatsink parts that glow, if not set defaults to 2 (red)
+      ITEM_HEAT_SINK_COLOR: int         # sprite color index for heatsink parts that glow, if not set defaults to 2 (red)
     RuleArmor:
       ## Craft Turrets
       STARTS_WITH_FULL_TUS: int     # make sure unit has full starting TUs regardless of other scripts
@@ -120,7 +120,7 @@ extended:
       SMT_HEROICSAVE_CHANCE: int #Modifier to chance to resist fatal damage
       SMT_HEROICSAVE_HP: int #% of currenthp left after heroic save triggers
       ## Restricted Items
-      SMT_RESTRICTED_ITEM_USER: int # Key for restricted items (1 = Chaplain, 2 = DW Marine, 4 = DW Captain) Supports combined values (7 = Chaplain + DW Marine + DW Captain)
+      SMT_RESTRICTED_ITEM_USER: int # Key for restricted items (1 = Chaplain, 2 = DW Marine, 4 = Psyker) Supports combined values
       ## Special Damage Resistance (Soldier Innate)
       SMT_SOLDIER_SHRED_RESISTANCE: int         # Reduce armor damage by % (Generic damage sources)
       SMT_SOLDIER_SHRED_PLASMA_RESISTANCE: int  # Reduce armor damage by % (Plasma damage)

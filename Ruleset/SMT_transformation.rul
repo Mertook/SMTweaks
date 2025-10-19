@@ -50,6 +50,7 @@ soldierTransformation:
     allowedSoldierTypes:
       - STR_SOLDIER_CHAPLAIN
       - STR_PRIMARIS_CHAPLAIN
+      - STR_GREYKNIGHT_CHAPLAIN
     soldierBonusType: STR_BONUS_INQ_ROSARIUS
     listOrder: 90
 
@@ -883,7 +884,7 @@ soldierTransformation:
     forbiddenPreviousTransformations:
       - STR_APOTHECARY_TRAINING
       - STR_PSIUNLOCK_FLAMES_GK
-    producedSoldierType: STR_GREYKNIGHT_LIB
+    producedSoldierType: STR_GREYKNIGHT_LIBRARIAN
     cost: 125000
     requiredItems:
       STR_KILLPOINT_TOKEN: 200
@@ -911,7 +912,7 @@ soldierTransformation:
     forbiddenPreviousTransformations:
       - STR_APOTHECARY_TRAINING
       - STR_PSIUNLOCK_FLAMES_GK
-    producedSoldierType: STR_GREYKNIGHT_TECH
+    producedSoldierType: STR_GREYKNIGHT_TECHMARINE
     cost: 125000
     requiredItems:
       STR_KILLPOINT_TOKEN: 300
@@ -932,7 +933,7 @@ soldierTransformation:
       - STR_PSI_LAB
     forbiddenPreviousTransformations:
       - STR_APOTHECARY_TRAINING
-    producedSoldierType: STR_GREYKNIGHT_CHAP
+    producedSoldierType: STR_GREYKNIGHT_CHAPLAIN
     cost: 125000
     requiredItems:
       STR_KILLPOINT_TOKEN: 300
@@ -1109,7 +1110,7 @@ soldierTransformation:
     allowsWoundedSoldiers: true
     allowedSoldierTypes: &Psyker_TierOne_Soldiers
       - STR_PSYKER
-      - STR_GREYKNIGHT_LIB
+      - STR_GREYKNIGHT_LIBRARIAN
       - STR_SOLDIER_LIBRARIAN
       - STR_SOLDIER_LIBRARIAN_TERM
       - STR_PRIMARIS_LIBRARIANLV1
@@ -1184,7 +1185,7 @@ soldierTransformation:
     allowsWoundedSoldiers: true
     allowedSoldierTypes: &Psyker_TierTwo_Soldiers
       - STR_PSYKER
-      - STR_GREYKNIGHT_LIB
+      - STR_GREYKNIGHT_LIBRARIAN
       - STR_SOLDIER_LIBRARIAN
       - STR_SOLDIER_LIBRARIAN_TERM
       - STR_PRIMARIS_LIBRARIANLV1
@@ -1243,7 +1244,7 @@ soldierTransformation:
     allowsWoundedSoldiers: true
     allowedSoldierTypes: &Psyker_TierThree_Soldiers
       - STR_PSYKER
-      - STR_GREYKNIGHT_LIB
+      - STR_GREYKNIGHT_LIBRARIAN
       - STR_SOLDIER_LIBRARIAN
       - STR_SOLDIER_LIBRARIAN_TERM
       - STR_PRIMARIS_LIBRARIANLV1
@@ -1275,7 +1276,7 @@ soldierTransformation:
     requires: *Psyker_TierThree_Requires
     requiredItems: *Psyker_TierThree_Cost
     allowedSoldierTypes:
-      - STR_GREYKNIGHT_LIB
+      - STR_GREYKNIGHT_LIBRARIAN
     forbiddenPreviousTransformations: *Psyker_TierThree_TransformList
     requiredMinStats: *Psyker_TierThree_MinStats
     listOrder: 4036
@@ -1296,7 +1297,7 @@ soldierTransformation:
     requiredItems: *Psyker_TierThree_Cost
     allowedSoldierTypes:
       - STR_GREYKNIGHT
-      - STR_GREYKNIGHT_CHAP
+      - STR_GREYKNIGHT_CHAPLAIN
     forbiddenPreviousTransformations: *Psyker_TierThree_TransformList
     requiredMinStats: *Psyker_TierThree_MinStats
     listOrder: 3995
@@ -1361,7 +1362,7 @@ soldierTransformation:
     allowsWoundedSoldiers: true
     allowedSoldierTypes: &Psyker_TierFour_Soldiers
       - STR_PSYKER
-      - STR_GREYKNIGHT_LIB
+      - STR_GREYKNIGHT_LIBRARIAN
       - STR_SOLDIER_LIBRARIAN
       - STR_SOLDIER_LIBRARIAN_TERM
       - STR_PRIMARIS_LIBRARIANLV2
@@ -1438,7 +1439,7 @@ soldierTransformation:
       - STR_SOLDIER_LIBRARIAN_TERM
       - STR_PRIMARIS_LIBRARIANLV2
       - STR_PRIMARIS_LIBRARIANLV3
-      - STR_GREYKNIGHT_LIB
+      - STR_GREYKNIGHT_LIBRARIAN
     forbiddenPreviousTransformations: &Psyker_TierFive_TransformList
       - STR_PSIUNLOCK_SHIELD
       - STR_PSIUNLOCK_SENTRYWARD
@@ -1509,7 +1510,7 @@ soldierTransformation:
     allowedSoldierTypes: &Psyker_TierSix_Soldiers
       - STR_SOLDIER_LIBRARIAN_TERM
       - STR_PRIMARIS_LIBRARIANLV3
-      - STR_GREYKNIGHT_LIB
+      - STR_GREYKNIGHT_LIBRARIAN
     forbiddenPreviousTransformations: &Psyker_TierSix_TransformList
       - STR_PSIUNLOCK_CLOAK
       - STR_PSIUNLOCK_HASTE
@@ -1564,7 +1565,7 @@ soldierTransformation:
     transferTime: 0
     requiredItems: *Psyker_TierSix_Cost
     allowedSoldierTypes:
-      - STR_GREYKNIGHT_LIB
+      - STR_GREYKNIGHT_LIBRARIAN
     forbiddenPreviousTransformations: *Psyker_TierSix_TransformList
     requiredMinStats: *Psyker_TierSix_MinStats
     listOrder: 4105

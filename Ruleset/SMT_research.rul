@@ -935,6 +935,23 @@ research:
       - STR_MT_GK
       - STR_UFO_CONSTRUCTION
 
+  - name: STR_FORCE_WEAPONS             # Force Weapons
+    cost: 600
+    points: 20
+    listOrder: 20
+    dependencies:
+      - STR_PSYKER_T6_UNLOCK
+      - STR_MASTER_CRAFTING_AMMO
+    needItem: false
+
+  - name: STR_HALLEBARD                 # Force Halberd
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GREYKNIGHTS
+      - STR_FORCE_WEAPONS
+    needItem: false
+
 ###Armor
   - name: STR_GK_INTERCEPTOR_R          # Grey Knight Interceptor Armor
     cost: 335
@@ -1765,14 +1782,11 @@ research:
     unlocks:
       - STR_PSYKER_T6_UNLOCK
 
-  - name: STR_LIBRARY_GK # Make GK exclusive
+  - name: STR_LIBRARY_GK            # GK Library - Disabled
     cost: 100
     points: 15
-    getOneFree:
-      - STR_LIBRARY
+    getOneFree: []
     dependencies:
-      - STR_GREYKNIGHTS
-      - STR_MARINE_CHAPEL
       - STR_GENERALLOCK
 
   - name: STR_TEC_BAYR              # Techmarine - removed Apoth requirement

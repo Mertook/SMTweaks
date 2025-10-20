@@ -98,10 +98,14 @@ extended:
           if gt temp 0;
             rule.getTag temp Tag.SMT_RESTRICTED_ACCURACY_PEN;         # Accuracy
             sub temp 100;
-            stats_state.addIntRow "SMT_RESTRICTED_ACCURACY_PEN" temp;
+            if lt temp 0;
+              stats_state.addIntRow "SMT_RESTRICTED_ACCURACY_PEN" temp;
+            end;
             rule.getTag temp Tag.SMT_RESTRICTED_DAMAGE_PEN;           # Damage
             sub temp 100;
-            stats_state.addIntRow "SMT_RESTRICTED_DAMAGE_PEN" temp;
+            if lt temp 0;
+              stats_state.addIntRow "SMT_RESTRICTED_DAMAGE_PEN" temp;
+            end;
             rule.getTag temp Tag.SMT_RESTRICTED_DAMAGE_MELEE;           # Melee
             if gt temp 0;
               mul temp -1;

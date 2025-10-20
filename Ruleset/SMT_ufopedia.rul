@@ -635,7 +635,7 @@ ufopaedia:
   - id: STR_SMT_MASTERCRAFTED_AMMO          # MC Ammo Bonus
     type_id: 10
     requires:
-      - STR_SMT_MASTERCRAFTED_AMMO
+      - STR_MC_BOLTER_AMMO
     section: STR_HELP_ADV
     image_id: 1AMMO.SPK
     text: STR_SMT_MASTERCRAFTED_AMMO_CODEX
@@ -922,7 +922,8 @@ ufopaedia:
 ### 80000  - Imperium Weapons
   - id: STR_HEAVY_BOLTER_SCOUT              # Scout Heavy Bolter
     requires:
-      - STR_HEAVY_BOLTER_SCOUT
+      - STR_SCOUT_WEAPONS
+      - STR_MARINE_HEAVY_BOLTERS
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: 1HB.SPK
@@ -976,7 +977,7 @@ ufopaedia:
     text: STR_PRIMARIS_HEAVY_BOLT_PISTOL_CODEX
     requires:
       - STR_PRIMARIS
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_GENERALLOCK
     listOrder: 11540
 
   - id: STR_ABSOLVOR_PISTOL                 # Absolvor Pistol
@@ -1016,7 +1017,7 @@ ufopaedia:
     image_id: STR_PRIMARIS_CAWL_UNDERSLUNG_CODEX.SPK
     text: STR_BOLTRIFLE_GL_CODEX
     requires:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTRIFLES_ADV
     listOrder: 10405
 
   - id: STR_BOLTRIFLE_STERNGUARD            # Bolt Rifle (Sternguard)
@@ -1025,7 +1026,7 @@ ufopaedia:
     image_id: 1MB2.SPK
     text: STR_BOLTRIFLE_STERNGUARD_UFOPEDIA
     requires:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTRIFLES_ADV
     listOrder: 10406
 
   - id: STR_BOLTRIFLE_SCOPE                 # Bolt Rifle (Stalker)
@@ -1034,7 +1035,7 @@ ufopaedia:
     image_id: STR_PRIMARIS_STALKER_BOLTER_CODEX.SPK
     text: STR_BOLTRIFLE_SCOPE_UFOPEDIA
     requires:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTRIFLES_ADV
     listOrder: 10408
 
   - id: STR_BOLTRIFLE_MC                    # Bolt Rifle (Mastercrafted)
@@ -1043,7 +1044,7 @@ ufopaedia:
     image_id: 1MB2.SPK
     text: STR_BOLTRIFLE_MC_UFOPEDIA
     requires:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTRIFLES_ADV
     listOrder: 10410
 
   - id: STR_HEAVY_BOLTRIFLE                 # Heavy Bolt Rifle
@@ -1052,7 +1053,8 @@ ufopaedia:
     image_id: STR_PRIMARIS_HEAVY_BOLTRIFLE_CODEX.SPK
     text: STR_HEAVY_BOLTRIFLE_UFOPEDIA
     requires:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTRIFLES_ADV
+      - STR_MARINE_HEAVY_BOLTERS
     listOrder: 11551
 
   - id: STR_PRIMARIS_HEAVY_BOLT_RIFLE
@@ -2215,6 +2217,40 @@ ufopaedia:
     requires:
       - STR_SERVITOR_BASIC
 
+  - id: STR_FUELTANK_UC                 #1850  40K craft weapon
+    type_id: 10
+    section: STR_XCOM_CRAFT_ARMAMENT
+    requires:
+      - STR_CRAFTADD_BASIC
+    image_id: CC07.SPK ###CHANGEME
+    text: STR_FUELTANK_CODEX
+    listOrder: 1851
+  - id: STR_TARGETER_UC
+    requires:
+      - STR_CRAFTADD_BASIC
+  - id: STR_HULL_PLATING_UC
+    requires:
+      - STR_CRAFTADD_BASIC
+  - id: STR_FLARE_LAUNCH_UC
+    requires:
+      - STR_CRAFTADD_BASIC
+  - id: STR_THRUSTER_UC
+    requires:
+      - STR_CRAFTADD
+  - id: STR_SCANNER_UC
+    requires:
+      - STR_CRAFTADD
+  - id: STR_RETICULE_UC
+    requires:
+      - STR_CRAFTADD
+  - id: STR_CRAFT_SHIELD_UC                 #1850  40K craft weapon
+    type_id: 10
+    section: STR_XCOM_CRAFT_ARMAMENT
+    requires:
+      - STR_CRAFTADD
+    image_id: CC14.SPK
+    text: STR_CRAFT_SHIELD_UFOPEDIA
+    listOrder: 1850
 ### Stats for Nerds only
   - id: STR_SM_OFFICER_FIST                 # Officer Inspire
     type_id: 14

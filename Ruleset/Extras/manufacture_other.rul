@@ -19,9 +19,9 @@ manufacture:
       - STR_HEAVY_SENTINEL
 
   - name: STR_COMMISSAR_REQUISITION
-    producedItems:
-      STR_CHAINSWORD: 1
-      STR_BOLTPISTOL_LIGHT_ULTRA: 1 # was godwyn, way too much recoil for a starting commissar
+    producedItems: # guard-sized gear instead of SM weapons
+      STR_CHAINSWORD_GUARD: 1
+      STR_BOLTPISTOL_LIGHT_ULTRA: 1
       STR_LIGHT_BOLTPISTOL_AMMO: 2
 
   - name: STR_AIRSTRIKE_AMMO                        # Lightning CAS ammo

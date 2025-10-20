@@ -96,18 +96,6 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       # - STR_RADICAL_INQUISITOR
     # spawnedEvent: STR_REINFORCEMENTS_DCA
 
-  - name: STR_MARINE_BOLTERS_INQ    # Radical path unlock for marine bolters
-    cost: 150
-    points: -250
-    dependencies:
-      - STR_RADICAL_INQUISITOR_STRATEGY
-    unlocks:
-      - STR_MARINE_BOLTERS
-      - STR_PRIMARIS_BOLTERS
-      - STR_HBOLTER_PREREQ
-    spawnedItem: STR_PISTOLB
-    listOrder: 15
-
   - name: STR_XENO_WEAPONS          # Inquisitor Xeno weapon tech
     cost: 160
     points: 20

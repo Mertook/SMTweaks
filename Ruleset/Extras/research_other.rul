@@ -18,6 +18,7 @@ research: # Research changes only made to maintain functionality for other facti
     unlocks: !add
       - STR_HBOLTER_AMMO_PREREQ
       - STR_GLAUNCHER_PREREQ
+      - STR_ROCKETS_UNLOCK
 
   - name: STR_CASSC                                 # Reaper Autocannon
     getOneFree:
@@ -169,8 +170,11 @@ research: # Research changes only made to maintain functionality for other facti
     unlocks: !add
       - STR_BOLTER_AMMO_PREREQ # Jove uses marine bolter ammo
       - STR_BOLTER_ADV_AMMO
-      - STR_LIGHTBOLTER_ADV_AMMO
       - STR_40MM_AMMO
+
+  - name: STR_FAITHFUL_ARMORY  # Arsenal of Faith
+    unlocks: !add
+      - STR_ROCKETS_UNLOCK
 
   - name: STR_BIOMANCER  # Biomancer
     cost: 0

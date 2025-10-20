@@ -627,12 +627,12 @@ extraStrings:
       STR_ADEPTAS_WEAPONS: Sisters of Battle Armory
       STR_SCOUT_WEAPONS: Scout Weaponry
       STR_SCT_MELEE_REQ: "(Scout Melee Weapons)"
-      STR_MARINE_BOLTERS: Astartes Bolters
       STR_SERVITOR_BASIC: Support Servitors
       STR_ARBITES_SOLDIERS: "(Arbites Recruits)"
+      STR_MARINE_BOLTERS: Astartes Bolters
       STR_MARINE_BOLTERS_ADV: Advanced Astartes Bolters
-      STR_PRIMARIS_BOLTERS: Primaris Bolters
-      STR_PRIMARIS_BOLTERS_ADV: Advanced Primaris Bolters
+      STR_MARINE_BOLTRIFLES: Astartes Boltrifles
+      STR_MARINE_BOLTRIFLES_ADV: Advanced Boltrilfes
       STR_STORMBOLTER_SM: Storm Bolters
       STR_SHOTGUNS_ADV: Advanced Shotguns
       STR_MARINE_CHAPEL: Chapter Teachings
@@ -640,7 +640,7 @@ extraStrings:
       STR_CHAP_RELICS: Chaplain Relics
       STR_HOTSHOT_AMMO: Hotshot Ammo
       STR_GLAUNCHER_PREREQ: Grenade Launchers
-      STR_HBOLTER_PREREQ: MK. IV Heavy Bolter
+      STR_MARINE_HEAVY_BOLTERS: Astartes Heavy Bolters
       STR_HBOLTER_AMMO_PREREQ: Heavy Bolter Cases
       STR_DEV_MARS_BOLTER: Mars Pattern Heavy Bolter
       STR_HBOLTER_AMMO_BELTS: Heavy Bolter Ammobelts
@@ -648,13 +648,16 @@ extraStrings:
       STR_AUTOCANNON_CLIP: "Mounted Autocannon Case"
       STR_HONOR_ARMOR_RESEARCH: "MK7 Vanguard Armor"
       STR_SCOUT_BOLT_RIFLE: Bolt Sniper Rifle
-      STR_CHAINSWORD_R: Astartes Chainswords
+      STR_CHAINSWORD_R: Chainsword Requisition
       STR_VINDICARE_AMMO_REQ: Exitus Ammo
       STR_PRIMARIS_PSYKER_R: Primaris Psykers
       STR_MULTIMELTA_PREREQ: Multimelta Technology
       STR_BOLT_RIFLE_AMMO: Bolt Sniper Ammo
       STR_SCOUT_SGT_R: Scout Sergeant Armor
       STR_VOLKITE: Volkite Weaponry
+      STR_VENGOR_R: Vengor Missile Launcher
+      STR_CRAFTADD: "Advanced Auxiliary Systems"
+      STR_CRAFTADD_BASIC: "Craft Auxiliary Systems"
       STR_PRIMARIS_BACKPACKS: Primaris Integrated Weaponry
       STR_PRIMARIS_MELTAPACK: MKX Tacticus Meltarifle
       STR_PRIMARIS_PLASMAPACK: MKX Tacticus Plasma Incinerator
@@ -673,17 +676,16 @@ extraStrings:
       STR_STUBBERS_UNLOCK: (Stubber Weapons Unlocked)
       STR_AUTOGUNS_UNLOCK: (Autogun Weapons Unlocked)
       STR_LASGUNS_UNLOCK: (Lasgun Weapons Unlocked)
+      STR_LIGHT_BOLTERS_UNLOCK: (Light Bolters Unlocked)
+      STR_BOLTERS_UNLOCK: (Bolters Unlocked)
       STR_40MM_AMMO: (40mm Grenade Ammo)
-      STR_BOLTPISTOL_REQ: (Boltpistols Unlocked)
-      STR_BOLTPISTOL_ADV_REQ: (Advanced Boltpistols)
-      STR_LIGHTBOLTER_ADV_AMMO: (Adv Light Bolter Ammo)
+      STR_ROCKETS_UNLOCK: (Large Rockets)
       STR_BOLTER_AMMO_PREREQ: (Bolter Ammo)
-      STR_BOLTER_ADV_AMMO: (Advanced Bolter Ammo)
+      STR_BOLTER_ADV_AMMO: Custom Bolter Ammo
       STR_MC_BOLTER_AMMO: Master Crafted Bolter Ammo
       STR_ADEPTAS_GRAVGUN_DEP1: Jupiter-Pattern Gravguns
       STR_GRAVCANNON_REQ: (Grav-Cannon Unlock)
       STR_GRAVCANNON_TECH: Grav-Cannon Requisition
-      STR_MC_LIGHTBOLTER_AMMO: Master Crafted Light Bolter Ammo
       STR_NEOPHYTE_GEAR_REQ: (Neophyte Gear Unlock)
       STR_NEOPHYTE_REQUEST: (Neophytes Unlocked)
       STR_STORMRAVEN_PREREQ: (Stormraven Prerequisite)
@@ -1074,7 +1076,6 @@ extraStrings:
       STR_RADICAL_INQUISITOR_UNLOCK: Embrace Radical Means
       STR_RADICAL_INQUISITOR: "(Radical Path)"
       STR_INQ_TROOP_REQS: Troop Requisitions
-      STR_MARINE_BOLTERS_INQ: Marine Bolter Blackmarket Contacts
       STR_ELDAR_INTERROGATION: "(Eldar Interrogated)"
       STR_ELDAR_WEAPONRY: Eldar Xenotech
       STR_XENO_ONLY: Ork Weaponry
@@ -1327,6 +1328,14 @@ extraStrings:
       STR_INCINERATOR_CODEX: "{NEWLINE} Incinerators are powerful heavy flamers fueled by Psyflame, a special mix of psychically charged and blessed promethium. This white-hot flame cuts through psykers defenses and ravages demonic flesh, empowered by the users own psychic ability.{NEWLINE}{NEWLINE} Recoil: {ALT}90{ALT} - {ALT}Heavy{ALT}"
       ### CRAFT
       STR_SPEED_UFOPEDIA: "{NEWLINE} The Land Speeder is a light anti-gravity vehicle which serves as the primary reconnaissance and fast attack vehicle of the Adeptus Astartes.{NEWLINE}{NEWLINE} Capacity: 12 Soldiers plus 8 Vehicle slots"
+      STR_FUELTANK_UC: "RESERVE FUELTANK"
+      STR_FUELTANK: "Reserve Fueltank"
+      STR_FUELTANK_CODEX: "{NEWLINE} High capacity fuel tanks allow fighters to extend their operating range as well as maintain escorts and patrols for longer.{NEWLINE}{NEWLINE}Slot: Auxiliary{NEWLINE}Fuel Capacity: 750"
+      STR_CRAFT_SHIELD_UFOPEDIA: "{NEWLINE} The shield dome contains an refractor field emitter that can generate a protective force field around the craft.{NEWLINE}{NEWLINE}Slot: Auxiliary{NEWLINE}Shield Capacity: 250"
+      STR_TARGETER_UFOPEDIA: "{NEWLINE} The complex systems of an Imperial craft are controlled by an M33 'Cygnus' class Machine Spirit. Using an upgraded version improves the craft's detection and target-tracking abilities.{NEWLINE}{NEWLINE}Slot: Auxiliary{NEWLINE}Radar Range Bonus: 100 NM{NEWLINE}Accuracy Bonus: 15%{NEWLINE}{NEWLINE}Ability:{NEWLINE}Identifies Craft and its Mission"
+      STR_RETICULE_UFOPEDIA: "{NEWLINE} The Advanced Graticule system allows more precise targeting of weapons systems, striking vulnerable locations and increasing damage for all locked on weapons systems.{NEWLINE}{NEWLINE}Slot: Auxiliary{NEWLINE}Damage Bonus: 20%"
+      STR_HULL_PLATING_UFOPEDIA: "{NEWLINE} Adds an extra layer of plates composed of titanium, thermoplas fibre mesh, and ceramite.{NEWLINE}{NEWLINE}Slot: Auxiliary{NEWLINE}Damage Capacity Bonus: 250{NEWLINE}Armor Bonus: 5"
+      STR_FLARE_LAUNCH_UFOPEDIA: "{NEWLINE} In addition to its armor, craft can be equipped with this flare launcher located in the lower rear fuselage. Flares are automatically released in combat, confusing enemy scanners and decreasing the chances the Imperial craft is hit by hostile fire.{NEWLINE}{NEWLINE}Slot: Auxiliary{NEWLINE}Dodge Bonus: 15%"
       ### SOLDIERS
       STR_GREYKNIGHT: "Grey Knight"
       STR_GREYKNIGHT_LIBRARIAN: "GK Librarian"

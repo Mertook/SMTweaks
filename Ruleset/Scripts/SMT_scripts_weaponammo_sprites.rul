@@ -358,11 +358,15 @@ items:
         var int temp;
         var ptr BattleItem heldItem;
         var ptr BattleUnit user;
+        var ptr RuleSoldier unitSoldier;
 
         if eq blit_part blit_item_big;
 
           item.getOwner user;
-          user.getTag temp Tag.UNIT_TYPE_PSYKER;
+          user.getRuleSoldier unitSoldier;
+          unitSoldier.getTag temp Tag.SMT_RESTRICTED_ITEM_USER;
+          div temp 4; # psyker
+          mod temp 2;
           if eq temp 0;
             return new_pixel;
           end;

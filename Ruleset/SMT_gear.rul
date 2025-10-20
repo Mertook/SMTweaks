@@ -299,7 +299,8 @@ items:
     loadOrder: 210
     size: 0.05
     requiresBuy:
-      - STR_LIGHTBOLTER_ADV_AMMO
+      - STR_LIGHT_BOLTERS_UNLOCK
+      - STR_BOLTER_ADV_AMMO
 
   - type: STR_LIGHT_BOLTPISTOL_AMMO_EX      # LBoltPistol Metalstorm Ammo
     refNode: *DMG_BOLTER_AMMO_FRAG
@@ -309,7 +310,8 @@ items:
     size: 0.05
     power: 60
     requiresBuy:
-      - STR_LIGHTBOLTER_ADV_AMMO
+      - STR_LIGHT_BOLTERS_UNLOCK
+      - STR_BOLTER_ADV_AMMO
     damageAlter:
       FixRadius: 2 # light ammo has smaller aoe
 
@@ -337,7 +339,8 @@ items:
     size: 0.05
     power: 60
     requiresBuy:
-      - STR_LIGHTBOLTER_ADV_AMMO
+      - STR_LIGHT_BOLTERS_UNLOCK
+      - STR_BOLTER_ADV_AMMO
 
   - type: STR_LIGHT_BOLTER_AMMO_EX          # Light Bolter Metalstorm Ammo
     refNode: *DMG_BOLTER_AMMO_FRAG
@@ -347,7 +350,8 @@ items:
     size: 0.05
     power: 60
     requiresBuy:
-      - STR_LIGHTBOLTER_ADV_AMMO
+      - STR_LIGHT_BOLTERS_UNLOCK
+      - STR_BOLTER_ADV_AMMO
     damageAlter:
       FixRadius: 2 # light ammo has smaller aoe
 
@@ -948,7 +952,7 @@ items:
     categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
     requiresBuyBaseFunc: [IMPERIUM]
     requiresBuy:
-      - STR_PRIMARIS_BOLTERS
+      - STR_MARINE_BOLTERS
     battleType: 1
     size: 0.2
     costBuy: 40000
@@ -993,7 +997,7 @@ items:
     categories: [STR_CAT_BOLTER, STR_CAT_TACTICAL]
     requiresBuyBaseFunc: [IMPERIUM]
     requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTERS_ADV
     battleType: 1
     bigSprite: 208
     floorSprite: 208
@@ -1294,7 +1298,8 @@ items:
     floorSprite: 186
     costBuy: 6500
     requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTRIFLES_ADV
+      - STR_MARINE_HEAVY_BOLTERS
     tags:
       ITEM_AMMO_COLOR: 15
 
@@ -1309,7 +1314,8 @@ items:
     costBuy: 8000
     requiresBuyBaseFunc: [TRADE]
     requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTRIFLES_ADV
+      - STR_MARINE_HEAVY_BOLTERS
     tags:
       ITEM_AMMO_COLOR: 8
 
@@ -1329,7 +1335,8 @@ items:
     costBuy: 8000
     requiresBuyBaseFunc: [TRADE]
     requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTRIFLES_ADV
+      - STR_MARINE_HEAVY_BOLTERS
     tags:
       ITEM_AMMO_COLOR: 2
 
@@ -1364,7 +1371,7 @@ items:
     costBuy: 1000
     costSell: 500
     requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTERS_ADV
     weight: 3
     armor: 300
     listOrder: 10101
@@ -1455,7 +1462,7 @@ items:
     inventoryMoveCost: # pistol
       basePercent: 75
     requiresBuy:
-      - STR_BOLTPISTOL_REQ
+      - STR_BOLTERS_UNLOCK
 
   - type: STR_PISTOLB                       # BoltPistol (Ultra)
     bigSprite: 275
@@ -1477,7 +1484,7 @@ items:
     inventoryMoveCost: # pistol
       basePercent: 75
     requiresBuy:
-      - STR_BOLTPISTOL_ADV_REQ
+      - STR_MARINE_BOLTERS_ADV
 
   - type: STR_MCPISTOL                      # BoltPistol (MC) - Now AssStrat exclusive
     bigSprite: 281
@@ -1603,7 +1610,7 @@ items:
     inventoryMoveCost: # pistol
       basePercent: 75
     requiresBuy:
-      - STR_BOLTPISTOL_ADV_REQ
+      - STR_MARINE_BOLTERS_ADV
       - STR_SPACEWOLVES_STRATEGY
     tags:
       ITEM_RECOIL: 40
@@ -1639,7 +1646,7 @@ items:
   - type: STR_PRIMARIS_HEAVY_BOLT_PISTOL    # BoltPistol (Heavy)
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2137}
     requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_GENERALLOCK # this thing has no purpose currently
     compatibleAmmo:
       - STR_PISTOL_CLIP
       - STR_PISTOL_CLIP_AP
@@ -1668,7 +1675,7 @@ items:
     battleType: 1
     size: 0.2
     requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTERS_ADV
     costBuy: 90000
     costSell: 30000
     armor: 300
@@ -1970,7 +1977,7 @@ items:
     floorSprite: 148
     handSprite: 288
     requiresBuy:
-      - STR_PRIMARIS_BOLTERS
+      - STR_MARINE_BOLTRIFLES
     costBuy: 40000 # was 30000
     autoRange: 10 # was 7
     snapRange: 18 # was 16
@@ -1989,7 +1996,7 @@ items:
     floorSprite: 213
     handSprite: 416
     requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTRIFLES_ADV
     costBuy: 120000
     costSell: 30000
     listOrder: 10450
@@ -2023,7 +2030,7 @@ items:
     floorSprite: {mod: 40k, index: 204}
     handSprite: {mod: 40k, index: 1576}
     requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTRIFLES_ADV
     costBuy: 120000
     costSell: 30000
     listOrder: 10450
@@ -2044,7 +2051,7 @@ items:
     bigSprite: 151
     costBuy: 50000
     requiresBuy:
-      - STR_PRIMARIS_BOLTERS
+      - STR_MARINE_BOLTRIFLES
       - STR_DEATHWATCH
     compatibleAmmo: *Ref_Bolter_DW_Ammo
     autoRange: 12 #
@@ -2064,7 +2071,7 @@ items:
     floorSprite: 199
     handSprite: 304
     requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTRIFLES_ADV
     costBuy: 120000
     costSell: 30000
     listOrder: 10450
@@ -2154,7 +2161,8 @@ items:
     costSell: 50000
     listOrder: 10450
     requiresBuy:
-      - STR_PRIMARIS_BOLTERS_ADV
+      - STR_MARINE_BOLTRIFLES_ADV
+      - STR_MARINE_HEAVY_BOLTERS
     clipSize: 0
     compatibleAmmo: # can only load heavy boltrifle drums
       - STR_BOLTRIFLE_DRUM
@@ -2649,7 +2657,7 @@ items:
     bulletSpeed: 50
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
     requiresBuy:
-      - STR_HBOLTER_PREREQ
+      - STR_MARINE_HEAVY_BOLTERS
     dropoff: 4
     autoRange: 18 # was 17
     snapRange: 22 # was 23
@@ -2677,13 +2685,11 @@ items:
       REACTION_PENALTY_KNEELING_BYPASS: 1
 
   - type: STR_HEAVYBOLTER_SW_MC             # Heavy Bolter (Fenris)
-    costBuy: 150000
-    costSell: 45000 #
     weight: 55 # was 50
     bulletSpeed: 50
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2138}
     requiresBuy:
-      - STR_HBOLTER_PREREQ
+      - STR_MARINE_HEAVY_BOLTERS
       - STR_SPACEWOLVES_STRATEGY
     dropoff: 4
     autoRange: 18 # was 17
@@ -2825,7 +2831,7 @@ items:
     costSell: 10125
     requiresBuy:
       - STR_PRIMARIS
-      - STR_HBOLTER_PREREQ
+      - STR_MARINE_HEAVY_BOLTERS
     compatibleAmmo:
       - STR_AC_AP_AMMO
       - STR_AC_MC_AMMO
@@ -2865,7 +2871,8 @@ items:
     twoHanded: true
     blockBothHands: true
     requiresBuy:
-      - STR_HEAVY_BOLTER_SCOUT
+      - STR_SCOUT_WEAPONS
+      - STR_MARINE_HEAVY_BOLTERS
     costBuy: 125000
     costSell: 30000
     listOrder: 11999
@@ -6080,6 +6087,7 @@ items:
   - type: STR_MISSILE_LAUNCHER_GUARD        # IG Missile Launcher
     requiresBuy:
       - STR_HEAVY_WEAPONS_IG
+      - STR_ROCKETS_UNLOCK
     requiresBuyBaseFunc: [IMPERIUM]
     categories: [ STR_CAT_ROCKETL, STR_CAT_DEVASTATOR]
     battleType: 1
@@ -6130,6 +6138,7 @@ items:
   - type: STR_MISSILE_LAUNCHER_SCOUT        # Scout Missile Launcher
     requiresBuy:
       - STR_SCOUT_WEAPONS
+      - STR_ROCKETS_UNLOCK
     requiresBuyBaseFunc: [IMPERIUM]
     categories: [ STR_CAT_ROCKETL, STR_CAT_DEVASTATOR]
     battleType: 1
@@ -6178,7 +6187,8 @@ items:
 
   - type: STR_VENGOR_LAUNCHER               # Vengor Missile Launcher
     requiresBuy:
-      - STR_MARINE_WEAPONS
+      - STR_VENGOR_R
+      - STR_ROCKETS_UNLOCK
     requiresBuyBaseFunc: [IMPERIUM]
     categories: [ STR_CAT_ROCKETL, STR_CAT_DEVASTATOR]
     battleType: 1
@@ -6281,7 +6291,7 @@ items:
     invWidth: 2
     invHeight: 1
     requiresBuy:
-      - STR_MARINE_WEAPONS
+      - STR_VENGOR_R
     costBuy: 4500
     costSell: 1500
     weight: 7
@@ -6434,6 +6444,8 @@ items:
     loadOrder: 110
     costBuy: 6000 # was 20k
     costSell: 3000
+    requiresBuy:
+      - STR_ROCKETS_UNLOCK
     damageAlter:
       ToItem: 0.15 # shrapnel
       ToTile: 0.15 # shrapnel
@@ -6447,6 +6459,7 @@ items:
     costSell: 4000
     requiresBuy:
       - STR_LASER_WEAPONS #Weapon Req - was Midtier
+      - STR_ROCKETS_UNLOCK
 
   - type: STR_HEAVY_ROCKET                  # Melta Missile
     refNode: *DMG_MELTA_BLAST
@@ -6461,6 +6474,7 @@ items:
     requiresBuy:
       - STR_MELTAGUN_TECH
       - STR_MIDTIER_PREREQ
+      - STR_ROCKETS_UNLOCK
 
   - type: STR_FRAG_GRENADE_DRUM             # GL Frag Rounds
     power: 70 # was 60
@@ -7098,7 +7112,7 @@ items:
     experienceTrainingMode: 13
     listOrder: 12399 # just above regular chainswords
 
-  - type: STR_CHAINSWORD_GUARD
+  - type: STR_CHAINSWORD_GUARD              # Guard Light Chainsword
     requiresBuy:
       - STR_CHAINSWORD_R
       - STR_GUARD_WEAPONS
@@ -9278,7 +9292,7 @@ items:
     experienceTrainingMode: 1 # melee
     tags:
       ITEM_TELEPORTER_ENERGY: 12 # was 10
-      ITEM_TELEPORTER_COOLDOWN: 3 # was 1
+      ITEM_TELEPORTER_COOLDOWN: 4 # was 1
 
   - type: STR_TELEPORT_CLAWS                # Terminator Teleport tool (Assault)
     refNode: *REF_POWERFIST_TEMPLATE
@@ -9317,7 +9331,7 @@ items:
     experienceTrainingMode: 13 # melee & reactions
     tags:
       ITEM_IS_TELEPORTER: 1
-      ITEM_TELEPORTER_COOLDOWN: 3
+      ITEM_TELEPORTER_COOLDOWN: 4
       ITEM_TELEPORTER_ENERGY: 12
 
   - type: STR_TELEPORT_INTERCEPTOR          # Grey Knight Teleport tool (Interceptor)

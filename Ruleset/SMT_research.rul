@@ -297,6 +297,7 @@ research:
       - STR_INQUISITION
       - STR_HARDER_MISSIONS
       - STR_BOLTER_AMMO_PREREQ
+      - STR_MARINE_WEAPONS
       - STR_HB_DEP1
       - STR_STORMRAVEN_PREREQ
       - STR_MARINE_CHAPEL
@@ -332,7 +333,7 @@ research:
       - STR_HARDER_MISSIONS
       - STR_BOLTER_AMMO_PREREQ
       - STR_MARINE_WEAPONS
-      - STR_BOLTER_ADV_AMMO
+      - STR_BOLTERS_UNLOCK
       - STR_SCT_MELEE_REQ
       - STR_SHOTGUNS_ADV
       - STR_STORMRAVEN_PREREQ
@@ -641,7 +642,7 @@ research:
     cost: 200
     points: 200
     dependencies:
-      - STR_BOLTER_ADV_AMMO # unlocked via Astartes or Primaris Bolters - was melta
+      - STR_MARINE_BOLTERS
       - STR_ALIEN_ALLOYS
       - STR_MOTION_SCANNER
       - STR_MEDI_KIT_PREREQ
@@ -859,12 +860,12 @@ research:
       - STR_PICKED_LOYALIST_STRATEGY
       - STR_ADEPTAS
 
-  - name: STR_STUBBERS_UNLOCK           # Allow buying basic Stubbers
+  - name: STR_STUBBERS_UNLOCK           # Allow buying/researching Stubbers
     cost: 0
     dependencies:
       - STR_GENERALLOCK
 
-  - name: STR_AUTOGUNS_UNLOCK           # Allow buying Autoguns
+  - name: STR_AUTOGUNS_UNLOCK           # Allow buying/researching Autoguns
     cost: 0
     dependencies:
       - STR_LASER_WEAPONS
@@ -872,13 +873,41 @@ research:
       - STR_NOT_ADEPTAS
       - STR_NOT_CHAOSCULT
 
-  - name: STR_LASGUNS_UNLOCK            # Allow buying Lasguns
+  - name: STR_LASGUNS_UNLOCK            # Allow buying/researching Lasguns
     cost: 0
     dependencies:
       - STR_LASER_WEAPONS
       - STR_NOT_MARINES
       - STR_NOT_ADEPTAS
       - STR_NOT_CHAOSCULT
+
+  - name: STR_LIGHT_BOLTERS_UNLOCK      # Allow buying/researching Light Bolters
+    cost: 0
+    dependencies:
+      - STR_PICKED_LOYALIST_STRATEGY
+
+  - name: STR_BOLTERS_UNLOCK            # Allow buying/researching Astartes Bolters
+    cost: 0
+    dependencies:
+      - STR_PICKED_LOYALIST_STRATEGY
+      - STR_MARINE_WEAPONS
+
+  - name: STR_ROCKETS_UNLOCK            # Allow buying/researching Large Rocket weapons
+    cost: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_VENGOR_R                  # Vengor Launcher Research
+    cost: 420
+    points: 10
+    dependencies:
+      - STR_PICKED_LOYALIST_STRATEGY
+      - STR_NOT_GK
+      - STR_MARINE_WEAPONS
+      - STR_LASER_WEAPONS
+    unlocks:
+      - STR_ROCKETS_UNLOCK
+    listOrder: 5
 
   - name: STR_CHAINSWORD_R              # Chainswords
     cost: 120
@@ -887,6 +916,148 @@ research:
       - STR_PICKED_LOYALIST_STRATEGY
       - STR_MARINE_WEAPONS
     listOrder: 5
+
+  - name: STR_SCOUT_WEAPONS             # Scout Weaponry
+    cost: 30
+    points: 10
+    dependencies:
+      - STR_NEOPHYTE_REQUEST # picked strategy
+      - STR_MARINES_STRATEGY
+    unlocks:
+      - STR_GLAUNCHER_PREREQ
+      - STR_ROCKETS_UNLOCK
+    listOrder: 2
+
+##BOLTERS
+  - name: STR_BOLTER_AMMO_PREREQ        # Bolter ammo
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_BOLTERS_UNLOCK
+
+  - name: STR_BOLTER_ADV_AMMO           # Non-standard Bolter ammo
+    cost: 270
+    points: 10
+    dependencies:
+      - STR_BOLTERS_UNLOCK
+      - STR_LIGHT_BOLTERS_UNLOCK
+      - STR_MIDTIER_PREREQ
+
+  - name: STR_MC_BOLTER_AMMO            # Mastercrafted Bolter Ammo
+    cost: 550
+    points: 20
+    dependencies:
+      - STR_HIGHTIER_PREREQ
+      - STR_MASTER_CRAFTING
+      - STR_BOLTER_ADV_AMMO
+    listOrder: 20
+
+  - name: STR_MARINE_BOLTERS            # Astartes Bolters Unlock
+    cost: 320
+    points: 10
+    dependencies:
+      - STR_MARINE_WEAPONS
+      - STR_BOLTERS_UNLOCK
+      - STR_NOT_GK
+    unlocks:
+      - STR_BOLTER_AMMO_PREREQ
+    listOrder: 9 # push above corpses/etc
+
+  - name: STR_MARINE_BOLTERS_ADV        # Special Astartes Bolters Unlock
+    cost: 420
+    points: 20
+    dependencies:
+      - STR_UFO_CONSTRUCTION # ceramite
+      - STR_MIDTIER_PREREQ
+      - STR_MARINE_BOLTERS
+      - STR_THREAT_ONE
+    unlocks:
+      - STR_HB_DEP1 # storm bolter unlock
+    listOrder: 9 # push above corpses/etc
+
+  - name: STR_MARINE_BOLTRIFLES         # Astartes Boltrifles Unlock
+    cost: 360
+    points: 10
+    dependencies:
+      - STR_MARINE_WEAPONS
+      - STR_MARINE_BOLTERS
+      - STR_BOLTERS_UNLOCK
+    unlocks:
+      - STR_BOLTER_AMMO_PREREQ
+    listOrder: 9 # push above corpses/etc
+
+  - name: STR_MARINE_BOLTRIFLES_ADV     # Special Boltrifles Unlock
+    cost: 580
+    points: 20
+    dependencies:
+      - STR_UFO_CONSTRUCTION # ceramite
+      - STR_MIDTIER_PREREQ
+      - STR_MARINE_BOLTRIFLES
+      - STR_THREAT_ONE
+    unlocks:
+      - STR_MARINE_HEAVY_BOLTERS
+      - STR_40MM_AMMO
+    listOrder: 9 # push above corpses/etc
+
+  - name: STR_HB_DEP1                   # Storm Bolter Unlock
+    cost: 0 # was 1250
+    points: 0 # was 45
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_STORMBOLTER_SM            # Marine Stormbolters
+    cost: 680 # was 860
+    points: 20
+    dependencies:
+      - STR_HB_DEP1
+      - STR_MARINES_AND_INQUISITION
+      - STR_MIDTIER_PREREQ
+      - STR_MARINE_BOLTERS_ADV
+    listOrder: 20
+
+  - name: STR_MARINE_HEAVY_BOLTERS      # MK4 Heavy Bolter unlock
+    cost: 660
+    points: 20
+    dependencies:
+      - STR_MARINE_BOLTERS_ADV
+      - STR_NOT_ASSAULT
+    unlocks:
+      - STR_HBOLTER_AMMO_PREREQ
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_HEAVY_BOLTER_SCOUT    # Scout Heavy Bolter
+    cost: 120
+    points: 10
+    dependencies:
+      - STR_SCOUT_WEAPONS
+      - STR_MARINE_HEAVY_BOLTERS
+    unlocks:
+      - STR_HBOLTER_AMMO_PREREQ
+    listOrder: 5
+
+  - name: STR_HBOLTER_AMMO_PREREQ       # Heavy Bolter Ammo unlock
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_DEV_MARS_BOLTER           # Mars Heavy Bolter unlock
+    cost: 100
+    points: 20
+    dependencies:
+      - STR_DEVASTATOR
+      - STR_UFO_CONSTRUCTION # ceramite
+      - STR_MARINE_HEAVY_BOLTERS
+    unlocks:
+      - STR_HBOLTER_AMMO_BELTS
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_HBOLTER_AMMO_BELTS        # Heavy Bolter Ammobelts unlock
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
 
   - name: STR_HOTSHOT_AMMO              # Unlock Hotshot Ammo
     cost: 280
@@ -903,7 +1074,6 @@ research:
       - STR_MIDTIER_PREREQ
       - STR_PICKED_LOYALIST_STRATEGY
     unlocks: !add
-      - STR_LIGHTBOLTER_ADV_AMMO
       - STR_40MM_AMMO
 
   - name: STR_PSILENCER_R               # Psilencer
@@ -942,6 +1112,7 @@ research:
     dependencies:
       - STR_PSYKER_T6_UNLOCK
       - STR_MASTER_CRAFTING_AMMO
+      - STR_POWER_SWORD
     needItem: false
 
   - name: STR_HALLEBARD                 # Force Halberd
@@ -979,6 +1150,22 @@ research:
     dependencies:
       - STR_GENERALLOCK
 ### Craft
+  - name: STR_CRAFTADD  # Advanced Auxiliary Systems
+    cost: 360
+    points: 30
+    dependencies:
+      - STR_MIDTIER_PREREQ
+      - STR_CRAFTADD_BASIC
+      - STR_UFO_CONSTRUCTION
+    spawnedItem: STR_NONE
+
+  - name: STR_CRAFTADD_BASIC  # Craft Auxiliary Systems
+    cost: 140
+    points: 15
+    listOrder: 25
+    dependencies:
+      - STR_MOTION_SCANNER
+
   - name: STR_INQUISITION_VALKYRIE
     dependencies:
       - STR_ADEPTAS_AND_INQUISITION
@@ -1349,26 +1536,6 @@ research:
     dependencies:
       - STR_AUTOCANNON_TECH
 
-  - name: STR_SCOUT_WEAPONS         # Scout Weaponry
-    cost: 30
-    points: 10
-    dependencies:
-      - STR_NEOPHYTE_REQUEST # picked strategy
-      - STR_MARINES_STRATEGY
-    unlocks:
-      - STR_GLAUNCHER_PREREQ
-    listOrder: 2
-
-  - name: STR_HEAVY_BOLTER_SCOUT    # Scout Heavy Bolter
-    cost: 120
-    points: 10
-    dependencies:
-      - STR_SCOUT_WEAPONS
-      - STR_BOLTER_ADV_AMMO # Astartes or Primaris Bolters researched
-    unlocks:
-      - STR_HBOLTER_AMMO_PREREQ
-    listOrder: 5
-
   - name: STR_SCT_MELEE_REQ         # Scout Blades/Chainswords
     cost: 0
     points: 0
@@ -1396,153 +1563,7 @@ research:
     dependencies:
       - STR_GENERALLOCK
 
-  - name: STR_BOLTER_AMMO_PREREQ    # Marine Bolter ammo
-    cost: 0
-    points: 0
-    dependencies:
-      - STR_HIGHTIER_PREREQ # everyone gets it at high tier if they don't have it already
-
-  - name: STR_BOLTER_ADV_AMMO       # Non-standard Bolter ammo
-    cost: 0
-    points: 0
-    dependencies:
-      - STR_HIGHTIER_PREREQ # everyone gets it at high tier if they don't have it already
-
-  - name: STR_LIGHTBOLTER_ADV_AMMO  # Non-standard Light Bolter ammo (Can be unlocked by IG as well)
-    cost: 0
-    points: 0
-    dependencies:
-      - STR_HIGHTIER_PREREQ # everyone gets it at high tier if they don't have it already
-
-  - name: STR_MC_BOLTER_AMMO        # Mastercrafted Bolter Ammo
-    cost: 350
-    points: 20
-    dependencies:
-      - STR_HIGHTIER_PREREQ
-      - STR_MASTER_CRAFTING
-      - STR_BOLTER_ADV_AMMO
-    getOneFree:
-      - STR_MC_LIGHTBOLTER_AMMO
-    lookup: STR_SMT_MASTERCRAFTED_AMMO
-    listOrder: 20
-
-  - name: STR_MC_LIGHTBOLTER_AMMO   # Mastercrafted Light Bolter Ammo
-    cost: 350
-    points: 20
-    dependencies:
-      - STR_HIGHTIER_PREREQ
-      - STR_MASTER_CRAFTING
-      - STR_LIGHTBOLTER_ADV_AMMO
-      - STR_GUARD_AND_ARBITES
-    lookup: STR_SMT_MASTERCRAFTED_AMMO
-    listOrder: 20
-
-  - name: STR_SMT_MASTERCRAFTED_AMMO    # Mastercrafted Bolts Codex entry
-    cost: 0
-    points: 0
-
-  - name: STR_BOLTPISTOL_REQ        # Boltpistol Unlock (for Boltpistols used by both Firstborn and Primaris)
-    cost: 0
-    points: 0
-    dependencies:
-      - STR_GENERALLOCK
-
-  - name: STR_BOLTPISTOL_ADV_REQ    # Advanced Boltpistol Unlock
-    cost: 0
-    points: 0
-    dependencies:
-      - STR_GENERALLOCK
-
-  - name: STR_MARINE_BOLTERS        # Astartes Bolters Unlock
-    cost: 320
-    points: 10
-    dependencies:
-      - STR_NOT_PRIMARIS
-      - STR_MARINE_WEAPONS
-    unlocks:
-      - STR_BOLTPISTOL_REQ
-      - STR_BOLTER_AMMO_PREREQ
-      - STR_BOLTER_ADV_AMMO
-      - STR_LIGHTBOLTER_ADV_AMMO
-    listOrder: 9 # push above corpses/etc
-    spawnedItem: STR_RIFLEB
-
-  - name: STR_MARINE_BOLTERS_ADV    # Special Astartes Bolters Unlock
-    cost: 400
-    points: 20
-    dependencies:
-      - STR_UFO_CONSTRUCTION # ceramite
-      - STR_MIDTIER_PREREQ
-      - STR_MARINE_BOLTERS
-      - STR_THREAT_ONE
-    unlocks:
-      - STR_BOLTPISTOL_ADV_REQ
-      - STR_HB_DEP1 # storm bolter unlock
-    listOrder: 9 # push above corpses/etc
-
-  - name: STR_HB_DEP1               # Storm Bolter Unlock
-    cost: 0 # was 1250
-    points: 0 # was 45
-    dependencies:
-      - STR_GENERALLOCK
-
-  - name: STR_STORMBOLTER_SM        # Marine Stormbolters
-    cost: 380 # was 860
-    points: 20
-    dependencies:
-      - STR_HB_DEP1
-      - STR_MARINES_AND_INQUISITION
-      - STR_MIDTIER_PREREQ
-      - STR_MARINE_BOLTERS_ADV
-    listOrder: 20
-
-  - name: STR_PRIMARIS_BOLTERS      # Primaris Bolters Unlock
-    cost: 320
-    points: 10
-    dependencies:
-      - STR_PRIMARIS_AND_DEATHWATCH
-      - STR_MARINE_WEAPONS
-    unlocks:
-      - STR_BOLTPISTOL_REQ
-      - STR_BOLTER_AMMO_PREREQ
-      - STR_BOLTER_ADV_AMMO
-      - STR_LIGHTBOLTER_ADV_AMMO
-    listOrder: 9 # push above corpses/etc
-    spawnedItem: STR_BOLTRIFLE_STERNGUARD
-
-  - name: STR_PRIMARIS_BOLTERS_ADV  # Special Primaris Bolters Unlock
-    cost: 400
-    points: 20
-    dependencies:
-      - STR_UFO_CONSTRUCTION # ceramite
-      - STR_MIDTIER_PREREQ
-      - STR_PRIMARIS_BOLTERS
-      - STR_THREAT_ONE
-    unlocks:
-      - STR_BOLTPISTOL_ADV_REQ
-      - STR_SCOUT_BOLT_RIFLE
-      - STR_HBOLTER_PREREQ
-      - STR_40MM_AMMO
-    listOrder: 9 # push above corpses/etc
-
   - name: STR_GLAUNCHER_PREREQ      # Grenade Launcher + Ammo Unlock
-    cost: 0
-    points: 0
-    dependencies:
-      - STR_GENERALLOCK
-
-  - name: STR_HBOLTER_PREREQ        # MK4 Heavy Bolter unlock
-    cost: 100
-    points: 20
-    dependencies:
-      - STR_MARINE_BOLTERS
-      - STR_MIDTIER_PREREQ # Devastator strat still needs to wait for midtier
-      - STR_DEV_ARMOR
-    unlocks:
-      - STR_HBOLTER_AMMO_PREREQ
-    listOrder: 10 # push above corpses/etc
-
-  - name: STR_HBOLTER_AMMO_PREREQ   # Heavy Bolter Ammo unlock
     cost: 0
     points: 0
     dependencies:
@@ -1556,24 +1577,6 @@ research:
     unlocks:
       - STR_40MM_AMMO
     listOrder: 10 # push above corpses/etc
-
-  - name: STR_DEV_MARS_BOLTER       # Mars Heavy Bolter unlock
-    cost: 100
-    points: 20
-    dependencies:
-      - STR_DEVASTATOR
-      - STR_UFO_CONSTRUCTION # ceramite
-      - STR_HBOLTER_PREREQ
-      - STR_MARINE_BOLTERS_ADV
-    unlocks:
-      - STR_HBOLTER_AMMO_BELTS
-    listOrder: 10 # push above corpses/etc
-
-  - name: STR_HBOLTER_AMMO_BELTS    # Heavy Bolter Ammobelts unlock
-    cost: 0
-    points: 0
-    dependencies:
-      - STR_GENERALLOCK
 
   - name: STR_SCOUT_BOLT_RIFLE      # Bolt Sniper Rifle unlock
     cost: 100

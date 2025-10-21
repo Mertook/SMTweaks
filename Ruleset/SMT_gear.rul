@@ -6013,6 +6013,10 @@ items:
     noLOSAccuracyPenalty: 75
 
   - type: STR_GRENADE_LAUNCHER              # IG Grenade Launcher
+    requiresBuy:
+      - STR_GLAUNCHER_PREREQ
+      - STR_NOT_ADEPTAS
+      - STR_NOT_MARINES
     dropoff: 4
     autoRange: 0
     snapRange: 21
@@ -6086,7 +6090,7 @@ items:
 
   - type: STR_MISSILE_LAUNCHER_GUARD        # IG Missile Launcher
     requiresBuy:
-      - STR_HEAVY_WEAPONS_IG
+      - STR_GUARD_WEAPONS
       - STR_ROCKETS_UNLOCK
     requiresBuyBaseFunc: [IMPERIUM]
     categories: [ STR_CAT_ROCKETL, STR_CAT_DEVASTATOR]
@@ -6529,11 +6533,46 @@ items:
     tags:
       SMT_ARMOR_DAMAGE_ALL: 50 # weaker
 
-  - type: STR_MORTAR_AMMO_ILLUMINATION_EXPLOSION # Mortar Flare
+  - type: STR_MORTAR_AMMO_HE                # Mortar HE
+    requiresBuy:
+      - STR_IMPERIAL_GUARD_OPERATIONS
+      - STR_HEAVY_WEAPONS_IG
+
+  - type: STR_MORTAR_AMMO_FRAG              # Mortar Frag
+    requiresBuy:
+      - STR_IMPERIAL_GUARD_OPERATIONS
+      - STR_HEAVY_WEAPONS_IG
+
+  - type: STR_MORTAR_AMMO_KRAK              # Mortar Krak
+    requiresBuy:
+      - STR_IMPERIAL_GUARD_OPERATIONS
+      - STR_HEAVY_WEAPONS_IG
+
+  - type: STR_MORTAR_AMMO_PHOSPHOR          # Mortar Phosphor
+    requiresBuy:
+      - STR_IMPERIAL_GUARD_OPERATIONS
+      - STR_HEAVY_WEAPONS_IG
+
+  - type: STR_MORTAR_AMMO_SMOKE             # Mortar Smoke
+    requiresBuy:
+      - STR_IMPERIAL_GUARD_OPERATIONS
+      - STR_HEAVY_WEAPONS_IG
+
+  - type: STR_MORTAR_AMMO_ILLUMINATION      # Mortar Flare
+    requiresBuy:
+      - STR_IMPERIAL_GUARD_OPERATIONS
+      - STR_HEAVY_WEAPONS_IG
+
+  - type: STR_MORTAR_AMMO_PHOTON            # Mortar Photon
+    requiresBuy:
+      - STR_IMPERIAL_GUARD_OPERATIONS
+      - STR_HEAVY_WEAPONS_IG
+
+  - type: STR_MORTAR_AMMO_ILLUMINATION_EXPLOSION # Mortar Explosion Flare
     spawnItem: STR_SUPERFLARE
     spawnItemChance: 100
 
-  - type: STR_MORTAR_AMMO_PHOSPHOR_EXPLOSION    # Mortar Phosphor
+  - type: STR_MORTAR_AMMO_PHOSPHOR_EXPLOSION    # Mortar Explosion Phosphor
     power: 120
     damageType: 2 # incin, was 8 - acid
     damageAlter:

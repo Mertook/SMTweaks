@@ -288,19 +288,19 @@ extended:
           var int temp;
           var int temp2;
 
-          action_target.getFaction temp; # only affects player units
-          debug_log "Lightning Ping " action_target reaction_unit reaction_chance;
+          action_unit.getFaction temp; # only affects player units
+          #debug_log "Lightning Ping " action_target action_unit reaction_unit reaction_chance;
           if neq temp FACTION_PLAYER;
             return reaction_chance;
           end;
 
-          action_target.getTag temp Tag.UNIT_TYPE_ASTARTES; # only affects Space Marines
+          action_unit.getTag temp Tag.UNIT_TYPE_ASTARTES; # only affects Space Marines
           if le temp 0;
             return reaction_chance;
           end;
 
           battle_game.getTag temp Tag.SMT_COMMAND_TYPE; # only if current command is Lighting
-          debug_log "Lightning Ping " temp;
+          #debug_log "Lightning Ping " temp;
           if neq temp 4;
             return reaction_chance;
           end;
@@ -311,7 +311,7 @@ extended:
             return reaction_chance;
           end;
 
-          debug_log "Lightning Success " temp temp2;
+          #debug_log "Lightning Success " temp temp2;
           return 0;
 
     tryMeleeAttackItem:

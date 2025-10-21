@@ -1,4 +1,6 @@
 research:
+### Utility
+  - name: STR_NOT_ASSASSINORUM  # (Not Assassinorum Strategy)
 ### Faction Selection
   - name: STR_MARINES_STRATEGY          # Space Marine
     cost: 0
@@ -368,6 +370,7 @@ research:
       - STR_REPRISALIA_ACCESS
       - STR_PICKED_LOYALIST_STRATEGY
     disables:
+      - STR_NOT_ASSASSINORUM
       - STR_DEATHWATCH
       - STR_GREYKNIGHTS
       - STR_IMPERIAL_AGENTS
@@ -433,6 +436,7 @@ research:
       - STR_ADEPTAS_FRATERIS_MILITIA_RESEARCH
       - STR_LIGHT_BOLTERS
       - STR_LIGHT_BOLTERS_LOWTIER
+      - STR_GUARD_WEAPONS
       - STR_TRAINFACILITYR
       - STR_IMPERIAL_CHURCH
       - STR_INQ_STORMTROOPER_CODEX_UNLOCKER
@@ -917,12 +921,25 @@ research:
     listOrder: 5
 
   - name: STR_SCOUT_WEAPONS             # Scout Weaponry
-    cost: 30
+    cost: 60
     points: 10
     dependencies:
       - STR_NEOPHYTE_REQUEST # picked strategy
       - STR_MARINES_STRATEGY
     unlocks:
+      - STR_GLAUNCHER_PREREQ
+      - STR_ROCKETS_UNLOCK
+    listOrder: 2
+
+  - name: STR_MILITIA_WEAPONS           # CM Militia Weaponry
+    cost: 60
+    points: 10
+    dependencies:
+      - STR_INQUISITION # picked strategy
+      - STR_NOT_ASSASSINORUM
+    unlocks:
+      - STR_AUTOGUNS_UNLOCK
+      - STR_LASGUNS_UNLOCK
       - STR_GLAUNCHER_PREREQ
       - STR_ROCKETS_UNLOCK
     listOrder: 2
@@ -1617,7 +1634,7 @@ research:
     cost: 800 # was 500
     points: 20
     dependencies:
-      - STR_ADEPTAS_MIDTIER
+      - STR_MIDTIER_PREREQ # was adeptas only
 
   - name: STR_GRAVCANNON_REQ        # Gravcannon Requirement
     cost: 0

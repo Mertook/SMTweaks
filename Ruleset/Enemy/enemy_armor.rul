@@ -1,10 +1,5 @@
 armors:
   - type: STR_NECRON_ARCHITECT_ARMOR            # Architect
-    visibilityAtDay: 0
-    visibilityAtDark: 0
-    heatVision: 50
-    antiCamouflageAtDark: 20 # was 10 - sees all
-    antiCamouflageAtDay: 20 # was 5 - sees all
     bleedImmune: true
     fearImmune: true
     painImmune: false # don't block stun from tenacious
@@ -66,11 +61,6 @@ armors:
 
   - &REF_DEATHMARK_ARMOR                        # Deathmark (revives)
     type: STR_NECRON_DEATHMARK_ARMOR_REVIVES
-    visibilityAtDay: 0
-    visibilityAtDark: 0
-    heatVision: 50
-    antiCamouflageAtDay: 15
-    antiCamouflageAtDark: 15
     camouflageAtDay: 0
     camouflageAtDark: 15
     frontArmor: 100 # was 60 - Deathmarks are elites (and are t5 with a 3+ save)
@@ -114,10 +104,6 @@ armors:
 
   - &REF_IMMORTAL_ARMOR                         # Necron Immortal (revives)
     type: STR_NECRON_IMORTAL_ARMOR_REVIVES
-    visibilityAtDay: 0
-    visibilityAtDark: 0
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     bleedImmune: true
     fearImmune: true
     painImmune: true
@@ -149,14 +135,8 @@ armors:
 
   - &REF_FLAYEDONE_ARMOR                        # Necron Flayed One (revives)
     type: STR_NECRON_FLAYED_ONE_ARMOR_REVIVES
-    visibilityAtDay: 0
-    visibilityAtDark: 0
-    antiCamouflageAtDark: 10
-    antiCamouflageAtDay: 10
     camouflageAtDay: -5 # was 5
     camouflageAtDark: 5 # was 2
-    heatVision: 40
-    psiVision: 0 # was 10
     bleedImmune: true
     fearImmune: true
     painImmune: true
@@ -183,10 +163,6 @@ armors:
 
   - &REF_SCARAB_ARMOR                           # Canoptic Scarabs (Five)
     type: STR_NECRON_SCARAB_ARMOR5
-    visibilityAtDay: 0
-    visibilityAtDark: 0
-    antiCamouflageAtDay: 0
-    antiCamouflageAtDark: 0
     overKill: 1.0 # hard to vaporize, large swarm
     psiVision: 0
     damageModifier: # high resists to most things - dispersed swarm
@@ -238,11 +214,6 @@ armors:
       ARMOR_MAX_SUCCESSFUL_DODGES: 3 # was 5
 
   - type: STR_DESTROYER_ARMOR                   # Necron Destroyer
-    visibilityAtDay: 0
-    visibilityAtDark: 0
-    heatVision: 40
-    antiCamouflageAtDark: 10
-    antiCamouflageAtDay: 10
     frontArmor: 140 # was 120
     sideArmor: 120 # was 110
     rearArmor: 80
@@ -271,11 +242,6 @@ armors:
 
   - &REF_MONOLITH_TURRET_ARMOR
     type: STR_MONO_N_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
-    heatVision: 50
-    antiCamouflageAtDay: 5
-    antiCamouflageAtDark: 5
     frontArmor: 130 # was 130
     sideArmor: 130 # was 130
     rearArmor: 130 # was 130
@@ -340,45 +306,27 @@ armors:
 
 ### Traitor Guard
   - type: STR_CATACHAN_TRAITOR_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
     camouflageAtDay: 20 # was -15
     camouflageAtDark: 10 # was -10
-    heatVision: 0
-    psiVision: 0
 
   - type: STR_CATACHAN_TRAITOR_ARMOR2
-    visibilityAtDay: 0
-    visibilityAtDark: 0
     camouflageAtDay: 20 # was -15
     camouflageAtDark: 10 # was -10
-    heatVision: 0
-    psiVision: 0
 
   - type: STR_CATACHAN_TRAITORVET_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
     camouflageAtDay: 20 # was -15
     camouflageAtDark: 10 # was -10
-    heatVision: 0
-    psiVision: 0
 
   - type: STR_CATACHAN_TRAITORTOP_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
     camouflageAtDay: 20 # was -15
     camouflageAtDark: 10 # was -10
-    heatVision: 0
-    psiVision: 0
     tags:
       ARMOR_OVERWATCH_TU_RESTORED: 0
 
 ### Chaos Marines
   - type: STR_ALPHAterminator_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
     camouflageAtDay: 0
-    camouflageAtDark: 0
+    camouflageAtDark: 18
     damageModifier: &Ref_Terminator_Resists
       - 1.0  # none
       - 0.7  # AP;
@@ -399,8 +347,6 @@ armors:
 
 
   - type: STR_NIGHTLORDterminator_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
     camouflageAtDay: 0
     camouflageAtDark: 12
     damageModifier: *Ref_Terminator_Resists
@@ -408,74 +354,47 @@ armors:
       ARMOR_OVERWATCH_TU_RESTORED: 0
 
   - type: STR_WORDBEARER_GALVWARRIOR_POSSARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
-    psiVision: 0
     tags:
       ARMOR_OVERWATCH_TU_RESTORED: 0
 
   - type: STR_WORDBEARER_GALVWARRIORELITE_POSSARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
-    psiVision: 0
     tags:
       ARMOR_OVERWATCH_TU_RESTORED: 0
 
   - type: STR_WORDBEARER_SCOUT_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
     camouflageAtDay: 20
-    camouflageAtDark: 10
+    camouflageAtDark: 12
     tags:
       ARMOR_OVERWATCH_TU_RESTORED: 0
 
   - type: STR_WORDBEARER_DEMONLORD_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
-    psiVision: 0
     tags:
       ARMOR_OVERWATCH_TU_RESTORED: 0
-
-
-
 
 
 ### Tau
 
   - type: STR_TAUFIREWARRIOR_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
 
   - type: STR_TAUFIREWARRIORPATHFINDER_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
-    camouflageAtDark: 20
-    camouflageAtDay: 15
+    camouflageAtDay: 22
+    camouflageAtDark: 16
     tags:
       ARMOR_OVERWATCH_TU_RESTORED: 0
 
   - type: STR_TAUDRONE_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
-    psiVision: 0
     tags:
       ARMOR_OVERWATCH_TU_RESTORED: 0
 
   - type: STR_TAUFIREWARRIORLEADER_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
     tags:
       ARMOR_OVERWATCH_TU_RESTORED: 0
 
   - type: STR_TAUFIREWARRIORCAPTAIN_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 0
     tags:
       ARMOR_OVERWATCH_TU_RESTORED: 0
 
   - type: STR_TAUGUEVESAFLAK_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 10
 
 
 

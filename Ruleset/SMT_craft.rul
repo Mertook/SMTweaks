@@ -165,11 +165,6 @@ armors:
     type: STR_SMT_SMOKEL_ARMOR
     spriteSheet: SLT.PCK
     spriteInv: NOTDONEIMP
-    visibilityAtDay: 40
-    visibilityAtDark: 40
-    antiCamouflageAtDay: 5
-    antiCamouflageAtDark: 5
-    heatVision: 30 # vehicle standard
     personalLight: 5
     frontArmor: 150
     sideArmor: 150
@@ -218,11 +213,6 @@ armors:
 
   - &STR_SMT_RB_TURRET_BASE                 # Razorback Turret defaults
     type: STR_SMT_RAZOR_DEFAULT_ARMOR
-    visibilityAtDay: 40
-    visibilityAtDark: 40
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
-    heatVision: 30 # vehicle standard
     personalLight: 5
     frontArmor: 150
     sideArmor: 150
@@ -341,11 +331,6 @@ armors:
         add sprite_index sprite_offset;
 
         return sprite_index;
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # was 30
-    heatVision: 50 # vehicle
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     personalLight: 5
     frontArmor: 150
     sideArmor: 150

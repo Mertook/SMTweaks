@@ -19,7 +19,7 @@ extended:
 
           rule.getTag temp Tag.ARMOR_REGENERATE_HEALTH_FLAT;        # Health Regeneration
           if gt temp 0;
-            stats_state.addIntRow "ARMOR_REGENERATE_HEALTH" temp;
+            stats_state.addIntRow "ARMOR_REGENERATE_HEALTH_FLAT" temp;
           end;
 
           rule.getTag temp Tag.ARMOR_REGENERATES_WOUNDS;            # Wound Regeneration

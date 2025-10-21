@@ -2,11 +2,6 @@ armors:
   - &STR_DW_TAC_MK7                         #Tactical Armor (Firstborn)
     type: STR_DW_TAC_ARMOR_BA_UC
     ufopediaType: STR_DW_TAC_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -109,11 +104,6 @@ armors:
   - &STR_DW_APOTH_MK7                       #Apothecary Armor (Firstborn)
     type: STR_DW_APOT_ARMOR_BA_UC
     ufopediaType: STR_DW_APOTH_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -221,11 +211,6 @@ armors:
   - &STR_DW_DEV_MK7                         #Devastator Armor (Firstborn)
     type: STR_DW_DEV_ARMOR_BA_UC
     ufopediaType: STR_DW_DEV_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -330,11 +315,6 @@ armors:
   - &STR_DW_ASS_MK7                         #Assault Armor (Firstborn)
     type: STR_DW_ASS_ARMOR_BA_UC
     ufopediaType: STR_DW_ASS_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -446,11 +426,6 @@ armors:
   - &STR_DW_TECH_MK7                        #Techmarine Armor (Firstborn)
     type: STR_DW_TECH_ARMOR_BA_UC
     ufopediaType: STR_DW_TECH_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40
-    heatVision: 50 # Techmarine Standard
-    antiCamouflageAtDay: 14 # +2 over Techmarine Standard
-    antiCamouflageAtDark: 14 # +2 over Techmarine Standard
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -577,13 +552,8 @@ armors:
       F3: ["CAPEW", "SCOUT", "F3_FACE", "GOGGLES"]
       F4: ["CAPEW", "SCOUT", "F4_FACE", "GOGGLES"]
       F5: ["CAPEW", "SCOUT", "F5_FACE", "GOGGLES"]
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 35 # +15 - DW bonus + Phobos bonus
-    antiCamouflageAtDay: 12 # +2 over regular Officers - DW bonus + Phobos bonus
-    antiCamouflageAtDark: 12 # +2 over regular Officers - DW bonus + Phobos bonus
-    camouflageAtDay: -15 # stealth bonus
-    camouflageAtDark: -15 # stealth bonus
+    camouflageAtDay: -8 # stealth bonus
+    camouflageAtDark: -8 # stealth bonus
     forcedTorso: 1
     loftempsSet: [ 3 ]
     psiDefence:
@@ -790,11 +760,6 @@ armors:
   - &STR_DW_TERM_MK7                        #Terminator Armor (Firstborn)
     type: STR_DW_TER_ARMOR_BA_UC
     ufopediaType: STR_DW_TERM_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 35 # +5 - DW bonus
-    antiCamouflageAtDay: 11 # +1 over regular Terminators - DW bonus
-    antiCamouflageAtDark: 11 # +1 over regular Terminators - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     requiresAward: ""
@@ -904,11 +869,6 @@ armors:
   - &STR_DW_TERM_ASS_SHIELD_MK7             #Terminator Armor (Assault Shield)
     type: STR_DW_TASS_ARMOR_BA_UC
     ufopediaType: STR_DW_TERM_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 35 # +5 - DW bonus
-    antiCamouflageAtDay: 11 # +1 over regular Terminators - DW bonus
-    antiCamouflageAtDark: 11 # +1 over regular Terminators - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
@@ -1020,11 +980,6 @@ armors:
   - &STR_DW_TERM_ASS_CLAWS_MK7              #Terminator Armor (Assault Claws)
     type: STR_DW_TASS_ARMOR_BA_CLAWS_UC
     ufopediaType: STR_DW_TERM_ASS_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 35 # +5 - DW bonus
-    antiCamouflageAtDay: 11 # +1 over regular Terminators - DW bonus
-    antiCamouflageAtDark: 11 # +1 over regular Terminators - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
@@ -1303,11 +1258,6 @@ armors:
   - &STR_DW_TERM_CYCLONE_MK7                #Terminator Armor (Cyclone)
     type: STR_DW_TSARGENT_ARMOR_BA_UC
     ufopediaType: STR_DW_TERM_CYC_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 35 # +5 - DW bonus
-    antiCamouflageAtDay: 11 # +1 over regular Terminators - DW bonus
-    antiCamouflageAtDark: 11 # +1 over regular Terminators - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
@@ -1585,11 +1535,6 @@ armors:
   - &STR_DW_TAC_MKX                         #Tactical Armor (Primaris)
     type: STR_MKX_DW_TAC_BA_UC
     ufopediaType: STR_DW_TAC_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -1712,11 +1657,6 @@ armors:
       F3: ["0", "MKXASS", "M3_FACE"]
       F4: ["0", "MKXASS", "M4_FACE"]
       F5: ["0", "MKXASS", "M5_FACE"]
-    visibilityAtDay: 40
-    visibilityAtDark: 35
-    heatVision: 25
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     forcedTorso: 1
     loftempsSet: [ 3 ]
     psiDefence:
@@ -1889,11 +1829,6 @@ armors:
   - &STR_DW_APOTH_MKX                       #Apothecary Armor (Primaris)
     type: STR_MKX_DW_APO_BA_UC
     ufopediaType: STR_DW_APOTH_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -2003,11 +1938,6 @@ armors:
   - &STR_DW_TECH_MKX                       #Techmarine Armor (Primaris)
     type: STR_MKX_DW_TEC_BA_UC
     ufopediaType: STR_DW_TECH_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40
-    heatVision: 50
-    antiCamouflageAtDay: 14 # +2 over regular - DW bonus
-    antiCamouflageAtDark: 14 # +2 over regular - DW bonus
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -2112,13 +2042,8 @@ armors:
   - &STR_DW_PHB_MKX                         #Phobos Armor (Reiver)
     type: STR_MKX_DW_PHB_BA_UC
     ufopediaType: STR_DW_PHB_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 35 # +15 - DW bonus + Phobos bonus
-    antiCamouflageAtDay: 12 # +2 over regular Officers - DW bonus + Phobos bonus
-    antiCamouflageAtDark: 12 # +2 over regular Officers - DW bonus + Phobos bonus
-    camouflageAtDay: -12
-    camouflageAtDark: -12
+    camouflageAtDay: -8
+    camouflageAtDark: -8
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -2255,13 +2180,8 @@ armors:
       F3: ["0", "MKXPHB", "M3_FACE", "GOGGLES", "MASK1"]
       F4: ["0", "MKXPHB", "M4_FACE", "GOGGLES", "MASK4"]
       F5: ["0", "MKXPHB", "M5_FACE", "GOGGLES", "MASK3"]
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 35 # +15 - DW bonus + Phobos bonus
-    antiCamouflageAtDay: 12 # +2 over regular Officers - DW bonus + Phobos bonus
-    antiCamouflageAtDark: 12 # +2 over regular Officers - DW bonus + Phobos bonus
-    camouflageAtDay: -15 # stealth bonus
-    camouflageAtDark: -15 # stealth bonus
+    camouflageAtDay: -8 # stealth bonus
+    camouflageAtDark: -8 # stealth bonus
     forcedTorso: 1
     loftempsSet: [ 3 ]
     psiDefence:
@@ -2455,11 +2375,6 @@ armors:
   - &STR_DW_GRV_MKX_EH                      #Gravis Armor (Primaris) - Empty Hands
     type: STR_MKX_DW_GRV_BA_UC
     ufopediaType: STR_DW_GRV_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     corpseBattle:
@@ -2740,11 +2655,6 @@ armors:
   - &STR_DW_GRV_MKX_BS                      #Gravis Armor (Primaris) - Boltstorm Gauntlet
     type: STR_MKX_DW_GRVBS_BA_UC
     ufopediaType: STR_DW_GRV_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     corpseBattle:
@@ -3035,11 +2945,6 @@ armors:
   - &STR_DW_GRV_MKX_AC                      #Gravis Armor (Primaris) - Autocannon Gauntlet
     type: STR_MKX_DW_GRVAC_BA_UC
     ufopediaType: STR_DW_GRV_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     corpseBattle:
@@ -3330,11 +3235,6 @@ armors:
   - &STR_DW_GRV_MKX_FS                      #Gravis Armor (Primaris) - Flamestorm Gauntlet
     type: STR_MKX_DW_GRVFS_BA_UC
     ufopediaType: STR_DW_GRV_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     corpseBattle:
@@ -3625,11 +3525,6 @@ armors:
   - &STR_DW_INC_MKX                         #Omnis Armor (Primaris)
     type: STR_MKX_DW_INC_BA_UC
     ufopediaType: STR_DW_INC_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     corpseBattle:
@@ -3757,11 +3652,6 @@ armors:
   - &STR_DW_INC_MKX_AC                      #Omnis Armor (Primaris) - Accelerator Autocannon
     type: STR_MKX_DW_INCAC_BA_UC
     ufopediaType: STR_DW_INC_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     corpseBattle:
@@ -4057,11 +3947,6 @@ armors:
   - &STR_DW_INC_MKX_PE                      #Omnis Armor (Primaris) - Plasma Exterminators x2
     type: STR_MKX_DW_INCPE_BA_UC
     ufopediaType: STR_DW_INC_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 25 # +5 - DW bonus
-    antiCamouflageAtDay: 10 # +1 over regular Officers - DW bonus
-    antiCamouflageAtDark: 10 # +1 over regular Officers - DW bonus
     loftempsSet: [ 4 ]
     forcedTorso: 1
     ufopediaType: STR_MKX_INC_LV1_UC
@@ -4358,11 +4243,6 @@ armors:
   - &STR_DW_LEADER_ARMOR                    #DW Captain Armor template
     type: STR_DW_LEADER_BA_UC
     ufopediaType: STR_DW_CAP_CODEX_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Improved Sensors - DW bonus
-    heatVision: 30 # +10 - DW bonus + leader bonus
-    antiCamouflageAtDay: 10 # +3 over regular Officers - DW bonus + leader bonus
-    antiCamouflageAtDark: 10 # +3 over regular Officers - DW bonus + leader bonus
     loftempsSet: [ 3 ]
     forcedTorso: 1
     spriteSheet: DWCAPTAIN.PCK

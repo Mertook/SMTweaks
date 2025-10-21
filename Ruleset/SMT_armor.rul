@@ -9,14 +9,7 @@ armors:
 
   - &ARMOR_TACTICAL                         #TACTICAL ARMOR VALUES
     type: STR_PERSONAL_ARMOR_UC
-    visibilityAtDay: 0
-    visibilityAtDark: 20 # strong but not perfect
     personalLight: 5 # adjust all new armors to the rosigma standard
-    heatVision: 20 #Add anti-smoke vision to all marine armour
-    antiCamouflageAtDay: 8
-    antiCamouflageAtDark: 8
-    psiCamouflage: -30
-    psiVision: 0
     overKill: 1.0 # harder to melt
     recovery:
       energy:
@@ -78,14 +71,7 @@ armors:
 
   - &ARMOR_TERMINATOR                       #TERMINATOR ARMOR VALUES
     type: STR_POWER_SUIT_UC
-    visibilityAtDay: 0
-    visibilityAtDark: 20 # strong but not perfect
     personalLight: 5
-    heatVision: 33
-    antiCamouflageAtDay: 8
-    antiCamouflageAtDark: 8
-    psiCamouflage: -30
-    psiVision: 0
     overKill: 1.0 # harder to melt
     recovery:
       energy:
@@ -151,14 +137,7 @@ armors:
 ### FIRSTBORN
   - &STR_MARINE_ARMOR                       #TACTICAL TEMPLATE
     update: STR_PERSONAL_ARMOR_UC           #TACTICAL
-    visibilityAtDay: 0
-    visibilityAtDark: 20 # strong but not perfect
-    personalLight: 5 # adjust all new armors to the rosigma standard
-    heatVision: 20 #Add anti-smoke vision to all marine armour
-    antiCamouflageAtDay: 8
-    antiCamouflageAtDark: 8
-    psiCamouflage: -30
-    psiVision: 0
+    personalLight: 5
     overKill: 1.0 # harder to melt
     recovery:
       energy:
@@ -206,11 +185,6 @@ armors:
 
   - &STR_MARINE_OFFICER_ARMOR               #SPECIALIST TEMPLATE
     update: STR_SIGNALFALSE_ARMOR_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
-    heatVision: 20 #Add anti-smoke vision to all marine armour
-    antiCamouflageAtDay: 9 # slight officer bonus
-    antiCamouflageAtDark: 9
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -243,11 +217,7 @@ armors:
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_ASTARTES: 1
 
-  - update: STR_SCOUT_UC                    #SCOUT (Neophytes)
-    visibilityAtDay: 40
-    visibilityAtDark: 25 # nerfed scout nightvision, armor meant for novices rather than expert rangers
-    antiCamouflageAtDay: 2
-    antiCamouflageAtDark: 2
+  - type: STR_SCOUT_UC                      #SCOUT (Neophytes)
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD
@@ -295,10 +265,6 @@ armors:
     ufopediaType: STR_SCOUT_UC
     corpseBattle:
       - STR_SCOUT_CORPSE
-    visibilityAtDay: 40
-    visibilityAtDark: 30
-    antiCamouflageAtDay: 5 # reduced anticamo, lacks optics of proper power armor
-    antiCamouflageAtDark: 5
     camouflageAtDay: -7
     camouflageAtDark: -5
     frontArmor: 80
@@ -437,10 +403,6 @@ armors:
   - update: STR_TECH_ARMOR_UC               #TECHMARINE
     refNode: *STR_MARINE_OFFICER_ARMOR
     storeItem: STR_NONE
-    visibilityAtDark: 40 # signum equipment provides advanced vision
-    heatVision: 50 # techmarines get advanced sensors
-    antiCamouflageAtDay: 16
-    antiCamouflageAtDark: 16 # techmarines get advanced sensors
     stats:
       tu: 10            # base 10 
       stamina: 10       # base 20 -10
@@ -613,10 +575,6 @@ armors:
 
   - type: STR_SIGNUM_DEV_UC                 #DEVASTATOR HONOR (Signum)
     refNode: *STR_MARINE_OFFICER_ARMOR
-    visibilityAtDark: 40 # signum equipment provides advanced vision
-    heatVision: 30 # signum equipment provides advanced vision
-    antiCamouflageAtDay: 14 # signum equipment provides strong detection
-    antiCamouflageAtDark: 14
     spriteSheet: DEVH.PCK
     customArmorPreviewIndex: 48
     corpseBattle:
@@ -649,10 +607,6 @@ armors:
 
   - update: STR_SIGNAL_ARMOR_UC             #DEVASTATOR HONOR (Signum - Old)
     refNode: *STR_MARINE_OFFICER_ARMOR
-    visibilityAtDark: 40 # signum equipment provides advanced vision
-    heatVision: 30 # signum equipment provides advanced vision
-    antiCamouflageAtDay: 14 # signum equipment provides strong detection
-    antiCamouflageAtDark: 14
     spriteSheet: DEVH.PCK
     requires: STR_GENERALLOCK
     frontArmor: 125 # base 125
@@ -677,10 +631,6 @@ armors:
 
   - update: STR_SIGNALFALSE_ARMOR_UC        #DEVASTATOR HONOR (Signum - Old)
     refNode: *STR_MARINE_OFFICER_ARMOR
-    visibilityAtDark: 40 # signum equipment provides advanced vision
-    heatVision: 30 # signum equipment provides advanced vision
-    antiCamouflageAtDay: 14 # signum equipment provides strong detection
-    antiCamouflageAtDark: 14
     spriteSheet: DEVH.PCK
     frontArmor: 125 # base 125
     sideArmor: 120 # base 120
@@ -710,11 +660,6 @@ armors:
     ufopediaType: STR_SCOUT_SGT_UC
     corpseBattle:
       - STR_SCOUT_CORPSE
-    visibilityAtDay: 40
-    visibilityAtDark: 35
-    heatVision: 20
-    antiCamouflageAtDay: 8
-    antiCamouflageAtDark: 8
     camouflageAtDay: -8
     camouflageAtDark: -8
     frontArmor: 90
@@ -770,13 +715,8 @@ armors:
 
   - &STR_ADVANCED_SCOUT_ARMOR               #SCOUT HONOR BROWN (Advanced Scout)
     update: STR_SCOUTH_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # infiltrator equipment
-    heatVision: 40 # improved smoke vision
     camouflageAtDay: -18
     camouflageAtDark: -18
-    antiCamouflageAtDay: 18 # advanced detection
-    antiCamouflageAtDark: 18
     customArmorPreviewIndex: 46
     ufopediaType: STR_SCOUTH_UC
     psiDefence:
@@ -854,11 +794,6 @@ armors:
 
   - &STR_TERMINATOR_ARMOR                   #TERMINATOR TEMPLATE
     update: STR_POWER_SUIT_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # Terminators get full nightvision
-    heatVision: 30 # Terminators get better sensors
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -918,10 +853,6 @@ armors:
 
   - update: STR_CAPTAIN_UC                  #TERMINATOR CAPTAIN
     refNode: *STR_TERMINATOR_ARMOR
-    visibilityAtDark: 40
-    heatVision: 35 # +5 Captain bonus
-    antiCamouflageAtDay: 16
-    antiCamouflageAtDark: 16
     frontArmor: 185
     sideArmor: 180
     rearArmor: 130
@@ -1155,9 +1086,6 @@ armors:
     corpseGeo: STR_FALLEN_CORPSE
     storeItem: STR_NONE # Default to Librarians
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS # doesn't get confuse anymore, just regular punch
-    heatVision: 33 # psyker powers aid detection
-    antiCamouflageAtDay: 12 # psyker powers aid detection
-    antiCamouflageAtDark: 12
     frontArmor: 125 # base 125
     sideArmor: 120 # base 120
     rearArmor: 100 # base 100
@@ -1215,9 +1143,6 @@ armors:
       - STR_LIB_CORPSE
     storeItem: STR_POWER_SUIT
     corpseGeo: STR_FALLEN_CORPSE
-    antiCamouflageAtDay: 12 # psyker powers aid detection
-    antiCamouflageAtDark: 12
-    heatVision: 40 # psyker powers + terminator bonus
     stats:
       tu: -10           # base -10
       stamina: 20       # base 20
@@ -1267,10 +1192,6 @@ armors:
 
   - &REF_CAPTAIN_DEFAULTS
     type: STR_CAPTAIN_TAC
-    visibilityAtDark: 40
-    heatVision: 25
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
     units:
       - STR_SOLDIER_CAPTAIN
     tags:
@@ -1427,10 +1348,6 @@ armors:
       - STR_SIGNAL_CORPSE
     storeItem: STR_SIGNAL_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
-    visibilityAtDark: 40
-    heatVision: 35 # +5 Captain bonus
-    antiCamouflageAtDay: 16
-    antiCamouflageAtDark: 16
     frontArmor: 140 # base 135
     sideArmor: 130 # base 125
     rearArmor: 105 # base 100
@@ -1496,11 +1413,8 @@ armors:
       - STR_SCOUTH_CORPSE
     storeItem: STR_SCOUTH
     corpseGeo: STR_FALLEN_CORPSE
-    heatVision: 45 # improved smoke vision
-    camouflageAtDay: -20
-    camouflageAtDark: -20
-    antiCamouflageAtDay: 20
-    antiCamouflageAtDark: 20
+    camouflageAtDay: -10
+    camouflageAtDark: -10
     frontArmor: 100
     sideArmor: 90
     rearArmor: 60
@@ -1557,10 +1471,6 @@ armors:
     units: # allow Primaris from Ancient Vault
       - STR_SOLDIER_CAPTAIN
       - STR_PRIMARISLV5
-    visibilityAtDark: 40
-    heatVision: 35 # +5 Captain bonus
-    antiCamouflageAtDay: 16
-    antiCamouflageAtDark: 16
     frontArmor: 185
     sideArmor: 180
     rearArmor: 130
@@ -1602,11 +1512,6 @@ armors:
       ARMOR_ENERGY_SHIELD_DECAY: 75
 
   - update: BIKE_ARMOR_UC                   #BIKE
-    visibilityAtDay: 40
-    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
-    heatVision: 20 #Add anti-smoke vision to all marine armour
-    antiCamouflageAtDay: 8 # advanced senses and inbuilt armor sensors
-    antiCamouflageAtDark: 8
     frontArmor: 150 # was 160
     sideArmor: 140  # was 150
     rearArmor: 100  # was 85
@@ -1661,11 +1566,6 @@ armors:
 
   - &STR_DREADNOUGHT_ARMOR                  #DREAD ARMOR TEMPLATE
     update: DREAD_ARMOR_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 40
-    heatVision: 40 # Vehicle sensors
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     frontArmor: 200 # was 240
     sideArmor: 190 # was 230
     rearArmor: 180 # was 180
@@ -1768,11 +1668,6 @@ armors:
     corpseGeo: STR_FALLEN_CORPSE
     loftempsSet: [ 3 ]
     forcedTorso: 1
-    visibilityAtDay: 40
-    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
-    heatVision: 20 #Add anti-smoke vision to all marine armour
-    antiCamouflageAtDay: 8
-    antiCamouflageAtDark: 8
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -1825,21 +1720,15 @@ armors:
 
   - type: STR_MKX_TAC_LV3_UC
     refNode: *STR_MKX_TAC_UC
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
 
   - type: STR_MKX_TAC_LV4_UC
     refNode: *STR_MKX_TAC_UC
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     builtInWeapons:
       - INV_INSPIRE_TOKEN
       - INV_NULL_3X1_BACKPACK
 
   - type: STR_MKX_TAC_LV5_UC
     refNode: *STR_MKX_TAC_UC
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
     frontArmor: 130
     sideArmor: 115
     rearArmor: 105
@@ -1877,8 +1766,6 @@ armors:
   - type: STR_MKX_TAC_MELT_LV3_UC
     refNode: *STR_MKX_TAC_UC
     customArmorPreviewIndex: {mod: 40k, index: 272}
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     spriteSheet: PRIMTACLV3.PCK
     storeItem: STR_PRIMARIS_MELTAPACK
     units:
@@ -1890,8 +1777,6 @@ armors:
   - type: STR_MKX_TAC_MELT_LV4_UC
     refNode: *STR_MKX_TAC_UC
     customArmorPreviewIndex: {mod: 40k, index: 273}
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     spriteSheet: PRIMTACLV4.PCK
     storeItem: STR_PRIMARIS_MELTAPACK
     units:
@@ -1904,8 +1789,6 @@ armors:
   - type: STR_MKX_TAC_MELT_LV5_UC
     refNode: *STR_MKX_TAC_UC
     customArmorPreviewIndex: {mod: 40k, index: 274}
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
     frontArmor: 130
     sideArmor: 115
     rearArmor: 105
@@ -1950,8 +1833,6 @@ armors:
   - type: STR_MKX_TAC_PLAS_LV3_UC
     refNode: *STR_MKX_TAC_UC
     customArmorPreviewIndex: {mod: 40k, index: 272}
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     spriteSheet: PRIMTACLV3.PCK
     storeItem: STR_PRIMARIS_PLASMAPACK
     units:
@@ -1963,8 +1844,6 @@ armors:
   - type: STR_MKX_TAC_PLAS_LV4_UC
     refNode: *STR_MKX_TAC_UC
     customArmorPreviewIndex: {mod: 40k, index: 273}
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     spriteSheet: PRIMTACLV4.PCK
     storeItem: STR_PRIMARIS_PLASMAPACK
     units:
@@ -1977,8 +1856,6 @@ armors:
   - type: STR_MKX_TAC_PLAS_LV5_UC
     refNode: *STR_MKX_TAC_UC
     customArmorPreviewIndex: {mod: 40k, index: 274}
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
     frontArmor: 130
     sideArmor: 115
     rearArmor: 105
@@ -2004,8 +1881,6 @@ armors:
     spriteSheet: PRIMVETLV3.PCK
     storeItem: STR_PRIMARIS_VETARMOR
     ufopediaType: STR_MKX_VETS_LV3_UC
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV3
     frontArmor: 130 # base 120
@@ -2031,8 +1906,6 @@ armors:
     spriteSheet: PRIMVETLV4.PCK
     storeItem: STR_PRIMARIS_VETARMOR
     ufopediaType: STR_MKX_VETS_LV3_UC
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV4
     frontArmor: 130 # base 120
@@ -2061,8 +1934,6 @@ armors:
     spriteSheet: PRIMVETLV5.PCK
     storeItem: STR_PRIMARIS_VETARMOR
     ufopediaType: STR_MKX_VETS_LV3_UC
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
     units:
       - STR_PRIMARISLV5
     frontArmor: 135 # base 120
@@ -2097,8 +1968,6 @@ armors:
     spriteSheet: PRIMVETLV3.PCK
     storeItem: STR_PRIMARIS_VETARMOR
     ufopediaType: STR_MKX_VETB_LV3_UC
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV3
     frontArmor: 125 # base 120
@@ -2127,8 +1996,6 @@ armors:
     spriteSheet: PRIMVETLV4.PCK
     storeItem: STR_PRIMARIS_VETARMOR
     ufopediaType: STR_MKX_VETB_LV3_UC
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     frontArmor: 125 # base 120
     sideArmor: 120 # base 110
     rearArmor: 115 # base 100
@@ -2158,8 +2025,6 @@ armors:
     spriteSheet: PRIMVETLV5.PCK
     storeItem: STR_PRIMARIS_VETARMOR
     ufopediaType: STR_MKX_VETB_LV3_UC
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
     frontArmor: 130 # base 125
     sideArmor: 125 # base 120
     rearArmor: 120 # base 115
@@ -2198,11 +2063,6 @@ armors:
     corpseGeo: STR_FALLEN_CORPSE
     loftempsSet: [ 3 ]
     forcedTorso: 1
-    visibilityAtDay: 40
-    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
-    heatVision: 20 #Add anti-smoke vision to all marine armour
-    antiCamouflageAtDay: 8
-    antiCamouflageAtDark: 8
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -2324,11 +2184,6 @@ armors:
 
   - &STR_MKX_PHB_UC                         #PRIMARIS PHOBOS
     type: STR_MKX_PHB_LV1_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
-    heatVision: 20 #Add anti-smoke vision to all marine armour
-    antiCamouflageAtDay: 10 # recon bonus
-    antiCamouflageAtDark: 10 # recon bonus
     camouflageAtDay: -5
     camouflageAtDark: -5
     psiDefence:
@@ -2393,10 +2248,6 @@ armors:
 
   - type: STR_MKX_PHB_LV3_UC                #PHOBOS REIVER LV3
     refNode: *STR_MKX_PHB_UC
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
-    camouflageAtDay: -8
-    camouflageAtDark: -8
     ufopediaType: STR_MKX_PHB_LV3_UC
     stats:
       tu: 30            # base 25
@@ -2423,10 +2274,6 @@ armors:
 
   - type: STR_MKX_PHB_LV4_UC                #PHOBOS REIVER LV4
     refNode: *STR_MKX_PHB_UC
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
-    camouflageAtDay: -12
-    camouflageAtDark: -12
     ufopediaType: STR_MKX_PHB_LV3_UC
     stats:
       tu: 30            # base 25
@@ -2455,10 +2302,8 @@ armors:
 
   - type: STR_MKX_PHB_LV5_UC                #PHOBOS REIVER LV5
     refNode: *STR_MKX_PHB_UC
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
-    camouflageAtDay: -12
-    camouflageAtDark: -12
+    camouflageAtDay: -10
+    camouflageAtDark: -10
     ufopediaType: STR_MKX_PHB_LV3_UC
     stats:
       tu: 30            # base 25
@@ -2492,11 +2337,6 @@ armors:
 
   - type: STR_MKX_ELIM_LV3_UC               #PHOBOS ELIMINATOR LV3
     refNode: *STR_MKX_PHB_UC
-    heatVision: 30 # Scout bonus
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
-    camouflageAtDay: -12
-    camouflageAtDark: -12
     ufopediaType: STR_MKX_ELIM_LV3_UC
     units:
       - STR_PRIMARISLV3
@@ -2525,11 +2365,6 @@ armors:
     refNode: *STR_MKX_PHB_UC
     customArmorPreviewIndex: 21
     spriteSheet: ELIML4.PCK
-    heatVision: 30 # Scout bonus
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
-    camouflageAtDay: -16
-    camouflageAtDark: -16
     ufopediaType: STR_MKX_ELIM_LV3_UC
     units:
       - STR_PRIMARISLV4
@@ -2562,11 +2397,8 @@ armors:
     refNode: *STR_MKX_PHB_UC
     customArmorPreviewIndex: 22
     spriteSheet: ELIML5.PCK
-    heatVision: 30 # Scout bonus
-    antiCamouflageAtDay: 14
-    antiCamouflageAtDark: 14
-    camouflageAtDay: -16
-    camouflageAtDark: -16
+    camouflageAtDay: -10
+    camouflageAtDark: -10
     ufopediaType: STR_MKX_ELIM_LV3_UC
     units:
       - STR_PRIMARISLV5
@@ -2604,11 +2436,6 @@ armors:
     type: STR_MKX_GRV_LV1_UC
     ufopediaType: STR_MKX_GRV_CODEX
     customArmorPreviewIndex: {mod: 40k, index: 280}
-    visibilityAtDay: 40
-    visibilityAtDark: 35
-    heatVision: 20 #Add anti-smoke vision to all marine armour
-    antiCamouflageAtDay: 8
-    antiCamouflageAtDark: 8
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -2723,8 +2550,6 @@ armors:
     refNode: *STR_MKX_GRV_UC
     customArmorPreviewIndex: {mod: 40k, index: 282}
     spriteSheet: GRAV3AUTO.PCK
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV3
     specialWeapon: STR_MFIST
@@ -2737,8 +2562,6 @@ armors:
     refNode: *STR_MKX_GRV_UC
     customArmorPreviewIndex: {mod: 40k, index: 282}
     spriteSheet: GRAV3BOLT.PCK
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV3
     specialWeapon: STR_MFIST
@@ -2751,8 +2574,6 @@ armors:
     refNode: *STR_MKX_GRV_UC
     customArmorPreviewIndex: {mod: 40k, index: 282}
     spriteSheet: GRAV3FLAME.PCK
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV3
     specialWeapon: STR_MFIST
@@ -2765,8 +2586,6 @@ armors:
     refNode: *STR_MKX_GRV_UC
     customArmorPreviewIndex: {mod: 40k, index: 282}
     spriteSheet: GRAV3HAND.PCK
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV3
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
@@ -2777,8 +2596,6 @@ armors:
     refNode: *STR_MKX_GRV_UC
     customArmorPreviewIndex: {mod: 40k, index: 283}
     spriteSheet: GRAV4AUTO.PCK
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV4
     specialWeapon: STR_GRAV_MORTAR
@@ -2792,8 +2609,6 @@ armors:
     refNode: *STR_MKX_GRV_UC
     customArmorPreviewIndex: {mod: 40k, index: 283}
     spriteSheet: GRAV4BOLT.PCK
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV4
     specialWeapon: STR_GRAV_MORTAR
@@ -2807,8 +2622,6 @@ armors:
     refNode: *STR_MKX_GRV_UC
     customArmorPreviewIndex: {mod: 40k, index: 283}
     spriteSheet: GRAV4FLAME.PCK
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV4
     specialWeapon: STR_GRAV_MORTAR
@@ -2822,8 +2635,6 @@ armors:
     refNode: *STR_MKX_GRV_UC
     customArmorPreviewIndex: {mod: 40k, index: 283}
     spriteSheet: GRAV4HAND.PCK
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     units:
       - STR_PRIMARISLV4
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
@@ -2835,8 +2646,6 @@ armors:
     refNode: *STR_MKX_GRV_UC
     customArmorPreviewIndex: {mod: 40k, index: 284}
     spriteSheet: GRAV5BOLT.PCK
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
     units:
       - STR_PRIMARISLV5
     specialWeapon: STR_GRAV_MORTAR
@@ -2855,8 +2664,6 @@ armors:
     refNode: *STR_MKX_GRV_UC
     customArmorPreviewIndex: {mod: 40k, index: 284}
     spriteSheet: GRAV5AUTO.PCK
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
     units:
       - STR_PRIMARISLV5
     specialWeapon: STR_GRAV_MORTAR
@@ -2875,8 +2682,6 @@ armors:
     refNode: *STR_MKX_GRV_UC
     customArmorPreviewIndex: {mod: 40k, index: 284}
     spriteSheet: GRAV5FLAME.PCK
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
     units:
       - STR_PRIMARISLV5
     specialWeapon: STR_GRAV_MORTAR
@@ -2895,8 +2700,6 @@ armors:
     refNode: *STR_MKX_GRV_UC
     customArmorPreviewIndex: {mod: 40k, index: 284}
     spriteSheet: GRAV5HAND.PCK
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
     units:
       - STR_PRIMARISLV5
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS
@@ -2929,11 +2732,6 @@ armors:
     loftempsSet: [ 4 ]
     forcedTorso: 1
     storeItem: STR_MKX_INC_ARMOR
-    visibilityAtDay: 40
-    visibilityAtDark: 35
-    heatVision: 20 #Add anti-smoke vision to all marine armour
-    antiCamouflageAtDay: 8
-    antiCamouflageAtDark: 8
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -3177,19 +2975,12 @@ armors:
   - &STR_MKX_APO                            #PRIMARIS APOTHECARY
     type: STR_MKX_HELIX_UC_LV1
     ufopediaType: STR_MKX_APO_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 30
     corpseBattle:
       - STR_MKX_APO_CORPSE
     corpseGeo: STR_FALLEN_CORPSE
     customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 290}
     loftempsSet: [ 3 ]
     forcedTorso: 1
-    visibilityAtDay: 40
-    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
-    heatVision: 20 #Add anti-smoke vision to all marine armour
-    antiCamouflageAtDay: 8
-    antiCamouflageAtDark: 8
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -3297,8 +3088,6 @@ armors:
     spriteSheet: HELIXLV3.PCK
     ufopediaType: STR_MKX_HELIX_UC_LV1
     storeItem: STR_MKX_HELIX_ARMOR
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     stats:
       tu: 0             # base 10 
       stamina: 10       # base 20 
@@ -3323,8 +3112,6 @@ armors:
     customArmorPreviewIndex: 6
     spriteSheet: APOTACLV1.PCK
     storeItem: STR_NONE
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     stats:
       tu: 0
       stamina: 10
@@ -3353,8 +3140,6 @@ armors:
     storeItem: STR_MKX_GRV_ARMOR
     ufopediaType: STR_MKX_GRV_CODEX
     loftempsSet: [ 4 ]
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     frontArmor: 150
     sideArmor: 140
     rearArmor: 120
@@ -3400,8 +3185,6 @@ armors:
     refNode: *STR_MKX_APO
     customArmorPreviewIndex: 8
     storeItem: STR_NONE
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     stats:
       tu: 10
       stamina: 10
@@ -3430,8 +3213,6 @@ armors:
     storeItem: STR_MKX_GRV_ARMOR
     ufopediaType: STR_MKX_GRV_CODEX
     loftempsSet: [ 4 ]
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     frontArmor: 150
     sideArmor: 140
     rearArmor: 120
@@ -3476,11 +3257,6 @@ armors:
   - &STR_MKX_TEC_UC                         #PRIMARIS TECHMARINE
     type: STR_MKX_TEC_LV1_UC
     storeItem: STR_NONE
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # signum equipment provides advanced vision
-    heatVision: 50 # techmarines get advanced sensors
-    antiCamouflageAtDay: 16
-    antiCamouflageAtDark: 16 # techmarines get advanced sensors
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -3553,11 +3329,6 @@ armors:
     customArmorPreviewIndex: 10
     ufopediaType: STR_MKX_CHP_UC ###CHANGEME
     customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 292}
-    visibilityAtDay: 40
-    visibilityAtDark: 35
-    heatVision: 20
-    antiCamouflageAtDay: 8
-    antiCamouflageAtDark: 8
     zombiImmune: true
     loftempsSet: [ 3 ]
     forcedTorso: 1
@@ -3612,11 +3383,6 @@ armors:
 
   - type: STR_MKX_CHP_UC                    #PRIMARIS CHAPLAIN
     ufopediaType: STR_MKX_CHP_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 35
-    heatVision: 20
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     zombiImmune: true
     corpseBattle:
       - STR_MKX_CHP_CORPSE
@@ -3671,11 +3437,6 @@ armors:
       - STR_MKX_LIB_CORPSE
     storeItem: STR_NONE
     corpseGeo: STR_FALLEN_CORPSE
-    visibilityAtDay: 40
-    visibilityAtDark: 35
-    heatVision: 33
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
     psiDefence:
       psiStrength: 1.0 # psyker
       psiSkill: 0.2 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
@@ -3743,8 +3504,6 @@ armors:
   - type: STR_MKX_LIB_LV2_UC
     refNode: *STR_MKX_LIB_UC
     spriteSheet: PRIMLIBLV2.PCK
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
     units:
       - STR_PRIMARIS_LIBRARIANLV2
     builtInWeapons:
@@ -3768,8 +3527,6 @@ armors:
   - type: STR_MKX_LIB_LV3_UC
     refNode: *STR_MKX_LIB_UC
     spriteSheet: PRIMLIBLV3.PCK
-    antiCamouflageAtDay: 14
-    antiCamouflageAtDark: 14
     units:
       - STR_PRIMARIS_LIBRARIANLV3
     builtInWeapons:
@@ -3795,11 +3552,6 @@ armors:
 
   - &REF_MKX_BIKE
     type: STR_MKX_BIKE_UC
-    visibilityAtDay: 40
-    visibilityAtDark: 35 # improved night vision but still has minor benefit from lighting
-    heatVision: 20 #Add anti-smoke vision to all marine armour
-    antiCamouflageAtDay: 8 # advanced senses and inbuilt armor sensors
-    antiCamouflageAtDark: 8
     frontArmor: 150
     sideArmor: 140
     rearArmor: 100
@@ -4479,11 +4231,6 @@ armors:
   - &REF_NPC_MARINE_ARMOR                       # NPC Marine Tactical
     type: STR_PERSONAL_ARMOR_CIVILIAN
     loftempsSet: [ 3 ]
-    visibilityAtDay: 40
-    visibilityAtDark: 40
-    heatVision: 30
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 12
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 2.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -4542,7 +4289,6 @@ armors:
 ### Non-Marines
 ## Guard
   - type: STR_ENGINSEER_ARMOR_UC                # Enginseer
-    antiCamouflageAtDark: 8
     spriteSheet: ENGINSEER.PCK
     spriteInv: ENGINSEER.SPK
     customArmorPreviewIndex: 181
@@ -4552,12 +4298,6 @@ armors:
     storeItem: STR_NONE
     units:
       - STR_ENGINSEER
-    visibilityAtDay: 40
-    visibilityAtDark: 25
-    heatVision: 20
-    psiVision: 0
-    antiCamouflageAtDay: 8
-    antiCamouflageAtDark: 8
     personalLight: 5
     recovery:
       energy:
@@ -4599,8 +4339,6 @@ armors:
 
   - &REF_FLAK_ARMOR                             # Flak Armor defaults
     type: STR_GUARD_ARMORSM
-    visibilityAtDay: 0
-    visibilityAtDark: 9
     frontArmor: 30
     sideArmor: 20
     rearArmor: 15
@@ -4647,8 +4385,6 @@ armors:
       health: 15
 
   - type: STR_GUARD_ARMORH_UC                   # Guard Carapace
-    visibilityAtDay: 0
-    visibilityAtDark: 12
     frontArmor: 70
     sideArmor: 60
     rearArmor: 30
@@ -4656,8 +4392,6 @@ armors:
 
   - type: STR_MEDIC_CARAPACE_ARMOR              # Guard Carapace Medic
     refNode: *REF_CARAPACE_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 12
     frontArmor: 70
     sideArmor: 60
     rearArmor: 30
@@ -4669,8 +4403,6 @@ armors:
 
   - type: STR_OFFICER_CARAPACE_ARMOR            # Officer Carapace
     refNode: *REF_CARAPACE_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 12
     frontArmor: 70
     sideArmor: 60
     rearArmor: 30
@@ -4679,8 +4411,6 @@ armors:
   - type: STR_COMMISSAR_CARAPACE_UC             # Commissar Carapace
     refNode: *REF_CARAPACE_ARMOR
     storeItem: STR_GUARD_ARMORH # commissars shouldn't need their own special armor item
-    visibilityAtDay: 0
-    visibilityAtDark: 12
     frontArmor: 70
     sideArmor: 60
     rearArmor: 30
@@ -4688,8 +4418,6 @@ armors:
 
   - type: STR_STORMTROOPER_CARAPACE_ARMOR       # Adv Vet Carapace
     refNode: *REF_CARAPACE_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 16
     frontArmor: 80
     sideArmor: 60
     rearArmor: 40
@@ -4701,8 +4429,6 @@ armors:
 
   - type: STR_STORMTROOPER_MEDIC_CARAPACE_ARMOR # Adv Vet Carapace Medic
     refNode: *REF_CARAPACE_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 16
     frontArmor: 80
     sideArmor: 60
     rearArmor: 40
@@ -4715,8 +4441,6 @@ armors:
   - type: STR_STORMTROOPER_CARAPACE_ARMOR_HELLGUN   # Adv Vet Carapace Hellgun
     refNode: *REF_CARAPACE_ARMOR
     weight: 15 # was 20
-    visibilityAtDay: 0
-    visibilityAtDark: 16
     frontArmor: 80
     sideArmor: 60
     rearArmor: 40
@@ -4725,8 +4449,6 @@ armors:
   - type: STR_STORMTROOPER_CARAPACE_ARMOR_VOLLEYGUN # Adv Vet Carapace Volleygun
     refNode: *REF_CARAPACE_ARMOR
     weight: 20
-    visibilityAtDay: 0
-    visibilityAtDark: 16
     frontArmor: 80
     sideArmor: 60
     rearArmor: 40
@@ -4735,8 +4457,6 @@ armors:
   - type: STR_STORMTROOPER_CARAPACE_ARMOR_HELLPISTOL    # Adv Vet Carapace Hellpistol
     refNode: *REF_CARAPACE_ARMOR
     weight: 10
-    visibilityAtDay: 0
-    visibilityAtDark: 16
     frontArmor: 80
     sideArmor: 60
     rearArmor: 40
@@ -4744,8 +4464,6 @@ armors:
 
   - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR   # Vet Officer Carapace
     refNode: *REF_CARAPACE_ARMOR
-    visibilityAtDay: 0
-    visibilityAtDark: 16
     frontArmor: 80
     sideArmor: 60
     rearArmor: 40
@@ -4822,10 +4540,6 @@ armors:
 
   - &REF_INQUISITOR
     type: STR_ADEPTAS_ARMORI_UC    # Inquisitor (used in Chamber Militant and Adeptas)
-    visibilityAtDay: 0
-    visibilityAtDark: 20
-    antiCamouflageAtDay: 12
-    antiCamouflageAtDark: 15
     stats:
       tu: 10 # was 20
       stamina: 25
@@ -4892,8 +4606,8 @@ armors:
     spriteInv: NOTDONEIMP
     visibilityAtDay: 1 # can't see
     visibilityAtDark: 1
-    camouflageAtDay: -50 # should be invisible to enemies
-    camouflageAtDark: -50
+    camouflageAtDay: -80 # should be invisible to enemies
+    camouflageAtDark: -80
     personalLight: 1
     frontArmor: 200
     sideArmor: 200
@@ -4983,11 +4697,7 @@ armors:
     spriteSheet: BOMBARDTANK.PCK
 
 ### EXTRA
-  - update: STR_SIGNAL_ARMOR_UC_HULK        #SUPERHULK REWARD ARMOR
-    visibilityAtDay: 40
-    visibilityAtDark: 40 # was 30
-    antiCamouflageAtDay: 9 # was 5
-    antiCamouflageAtDark: 9 # was 5
+  - type: STR_SIGNAL_ARMOR_UC_HULK        #SUPERHULK REWARD ARMOR
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -5035,11 +4745,6 @@ armors:
       INFECTION_RESIST: 25
 
   - type: STR_ULTRAcataphract_ARMORPLAYER
-    visibilityAtDay: 40
-    visibilityAtDark: 40
-    antiCamouflageAtDay: 9
-    antiCamouflageAtDark: 9
-    heatVision: 30
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -5095,19 +4800,9 @@ armors:
       UNIT_TYPE_ASTARTES: 1
 
   - type: STR_STORMTALON_ARMOR
-    visibilityAtDay: 40
-    visibilityAtDark: 40
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
-    heatVision: 60
     allowsMoving: false
     specialWeapon: STR_TURRET_RELOAD
   - type: LTS_ARMOR                         #STORMTALON TURRET LEFT
-    visibilityAtDay: 40
-    visibilityAtDark: 40
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
-    heatVision: 60
     frontArmor: 80 # was 50 all over
     sideArmor: 80
     rearArmor: 80
@@ -5130,11 +4825,6 @@ armors:
       - 1.2 #MELTA
     specialWeapon: STR_TURRET_RELOAD
   - type: RTS_ARMOR                         #STORMTALON TURRET RIGHT
-    visibilityAtDay: 40
-    visibilityAtDark: 40
-    antiCamouflageAtDay: 10
-    antiCamouflageAtDark: 10
-    heatVision: 60
     frontArmor: 80 # was 50 all over
     sideArmor: 80
     rearArmor: 80
@@ -5158,11 +4848,6 @@ armors:
     specialWeapon: STR_TURRET_RELOAD
 
   - type: STR_SCION_ARMOR_AI                    # NPC Scion Armor
-    visibilityAtDay: 40
-    visibilityAtDark: 30
-    antiCamouflageAtDay: 8
-    antiCamouflageAtDark: 8
-    heatVision: 30
     spriteSheet: SCION_CARAPACE.PCK
     spriteInv: SCIONHEAVY_33M0.SPK
     corpseBattle:
@@ -5204,10 +4889,6 @@ armors:
     spriteSheet: SENTRYWARD.PCK
     drawingRoutine: 16
     spriteInv: NOTDONEIMP
-    visibilityAtDay: 30 # limited vision
-    visibilityAtDark: 30 # limited vision
-    antiCamouflageAtDay: 5
-    antiCamouflageAtDark: 5
     camouflageAtDay: -80 # should be invisible to enemies
     camouflageAtDark: -80
     psiCamouflage: -80

@@ -1,5 +1,4 @@
 manufacture:
-
   - name: STR_LASGUN_CLIP_HOTSHOT
     requires:
       - STR_HOTSHOT_AMMO
@@ -175,18 +174,39 @@ manufacture:
 
   - name: STR_WARPED_LOOT_DEATH                     # Ancient Vault (Deathwatch)
     producedItems:
-      STR_VOLKITE_VAULT: 2
+      STR_VOLKITE_VAULT: 1
       #STR_SATURNINE_ARMOR_HULK: 4
-      STR_LE10_POWER_ARMOR_HULK: 5
+      STR_EXPULSUM_ARMOR_HULK: 2
+      STR_LE10_POWER_ARMOR_HULK: 6
       STR_REQUISITION_BOUNTY_500K: 4
       STR_ALIEN_ALLOYS: 400
       STR_ELERIUM_115: 400
       STR_KILLPOINT_TOKEN: 3000
 
   - name: STR_WARPED_LOOT_CHAMB                     # Ancient Vault (Grey Knights)
-    producedItems: !add
+    producedItems:
       STR_VOLKITE_VAULT: 1
+      STR_EXPULSUM_ARMOR_HULK: 2
+      STR_LE10_POWER_ARMOR_HULK: 6
+      STR_REQUISITION_BOUNTY_500K: 4
+      STR_ALIEN_ALLOYS: 400
+      STR_ELERIUM_115: 400
+      STR_KILLPOINT_TOKEN: 3000
 
+  - name: STR_WARPED_LOOT_RAD                       # Ancient Vault (Other Chamber Strats)
+    requires:
+      - STR_RES_WARPED_HULK_LOOT
+      - STR_CHAMBERMILITANT
+      - STR_NOT_GK
+      - STR_NOT_DEATHWATCH
+    producedItems:
+      STR_VOLKITE_VAULT: 1
+      STR_EXPULSUM_ARMOR_HULK: 3
+      STR_LE10_POWER_ARMOR_HULK: 8
+      STR_REQUISITION_BOUNTY_500K: 4
+      STR_ALIEN_ALLOYS: 400
+      STR_ELERIUM_115: 400
+      STR_KILLPOINT_TOKEN: 3000
 
 
 

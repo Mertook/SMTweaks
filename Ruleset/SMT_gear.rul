@@ -8007,10 +8007,11 @@ items:
     bulletSprite: {mod: 40k, index: 5}
     fireSound: {mod: 40k, index: 706}
     hitSound: {mod: 40k, index: 12}
-    hitAnimation: {mod: 40k, index: 88}
-    vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 13}
+    hitAnimation: 632
+    explosionHitSound: {mod: 40k, index: 771}
+    vaporColorSurface: 0
     vaporDensitySurface: 3
-    vaporProbabilitySurface: 100
+    vaporProbabilitySurface: 85
     scripts: # faster disappation
       vaporParticleAmmo: |
         var int temp;
@@ -8027,11 +8028,11 @@ items:
         set temp 320;
         sub temp particle_density;
         subvoxel_velocity.setZ temp;
-        div particle_lifetime 4;
+        div particle_lifetime 3;
 
         return;
-    bulletSpeed: 30
-    explosionSpeed: 10
+    bulletSpeed: 20
+    explosionSpeed: 2
     accuracyAimed: 35
     accuracyMultiplier:
       psiStrength: 1.0
@@ -8049,7 +8050,7 @@ items:
       IgnoreDirection: false
       FireBlastCalc: false
       IgnoreOverKill: false
-      ArmorEffectiveness: 0.5
+      ArmorEffectiveness: 0.4
       ToArmorPre: 0.1
       ToArmor: 0.0
       ToHealth: 1.25
@@ -8058,10 +8059,12 @@ items:
       ToTime: 0.2
       ToItem: 0.3
       ToTile: 0.25
+      FireThreshold: 1
       FixRadius: 3
     confAimed:
       shots: 6
       followProjectiles: false
+      arcing: true
     flatRate: true
     costAimed:
       time: 50
@@ -8471,7 +8474,7 @@ items:
       followProjectiles: false
     power: 20
     powerRangeReduction: 5.0
-    powerRangeThreshold: 11.0
+    powerRangeThreshold: 10.0
     damageBonus:
       psiStrength: 0.4
     damageType: 13 # warp

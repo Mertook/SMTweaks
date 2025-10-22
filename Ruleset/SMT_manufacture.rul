@@ -1728,6 +1728,7 @@ manufacture:
       STR_PSYFLAME_AMMO: 5
 
   - name: STR_STORMBOLTER_PSI_MAG #psybolt ammo
+    category: STR_AMMUNITION
     time: 200
     cost: 1000
     requires:
@@ -1753,6 +1754,7 @@ manufacture:
       STR_KILLPOINT_TOKEN: 200
 
   - name: STR_FORCE_BLADE
+    category: STR_WEAPON
     space: 0
     time: 1200
     cost: 100000

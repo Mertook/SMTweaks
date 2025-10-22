@@ -952,6 +952,7 @@ research:
   - name: STR_BOLTER_ADV_AMMO           # Non-standard Bolter ammo
     cost: 270
     points: 10
+    listOrder: 25
     dependencies:
       - STR_BOLTERS_UNLOCK
       - STR_LIGHT_BOLTERS_UNLOCK
@@ -1097,7 +1098,7 @@ research:
     dependencies:
       - STR_GREYKNIGHTS
       - STR_MT_GK
-      - STR_LIBRARY_GK
+      - STR_LIBRARY
 
   - name: STR_INCINERATOR_R             # Grey Knights Incinerator
     cost: 300
@@ -1354,7 +1355,12 @@ research:
     unlocks: !add
       - STR_ASSC_CLIP
 
-  - name: STR_STORMRAVEN_DW  # STORMRAVEN Requesition
+  - name: STR_STORMRAVEN_DW             # Stormraven DW
+    dependencies:
+      - STR_GENERALLOCK
+    getOneFree: []
+
+  - name: STR_STORMRAVEN_GK                 # Grey Knight Stormraven unlock
     dependencies:
       - STR_GENERALLOCK
     getOneFree: []
@@ -1388,26 +1394,13 @@ research:
       - STR_MIDTIER_PREREQ
       - STR_NEW_FIGHTER_CRAFT
 
-  - name: STR_STORMRAVEN_GK                 # Grey Knight Stormraven unlock
-    dependencies:
-      - STR_UFO_CONSTRUCTION
-      - STR_NOT_DEATHWATCH
-      - STR_CHAMBERMILITANT
-
   - name: STR_STORMEAGLE_INTERCEPTOR_GK     # Grey Knight Stormeagle unlock
     cost: 600
     points: 25
     listOrder: 5050
     dependencies:
-      # - STR_GK_HIGHTIER
-      # - STR_GREYKNIGHTS
-      # - STR_HIGHTIER_PREREQ
-      - STR_CHAMBERMILITANT
-      - STR_MIDTIER_PREREQ
-      - STR_ELERIUM_115
-      - STR_NOT_DEATHWATCH
-    getOneFree:
-      - STR_STORMEAGLE_INTERCEPTOR
+      - STR_GENERALLOCK
+    getOneFree: []
 
   - name: STR_THUNDERHAWK_GK_REQ    # Thunderhawk (Grey Knights/CM)
     cost: 900
@@ -1563,6 +1556,14 @@ research:
       - STR_ASSAULT
       - STR_MIDTIER_PREREQ # midtier instead of needing mid or high tier mastercrafting - gets powercrept by vanguard/power weapons quickly
       - STR_CHAINSWORD_R
+
+  - name: STR_PENITENT_ENGINE_RESEARCH  # Penitent Engines
+    cost: 400
+    points: 10
+    dependencies:
+      - STR_ADEPTAS
+      - STR_PICKED_LOYALIST_STRATEGY
+      - STR_ALIEN_ALLOYS
 
   # - name: STR_HEAVY_LASER           # Meltagun
     # cost: 320 # was 460

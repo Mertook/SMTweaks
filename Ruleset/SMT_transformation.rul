@@ -627,7 +627,7 @@ soldierTransformation:
   - name: STR_PROMOTE_TECHNOVICE_PRIM   # Primaris Lv1 -> Tech Novitiate (Lv2)
     requires:
       - STR_PRIMARIS
-      - STR_MEDI_KIT_PREREQ
+      - STR_TEC_BAYR
     cost: 50000 # was 100k
     requiredItems:
       STR_KILLPOINT_TOKEN: 200
@@ -660,7 +660,7 @@ soldierTransformation:
   - name: STR_PROMOTE_TECHMARINE_PRIM   # Tech Novitiate (Lv2) -> Techmarine (Lv4)
     requires:
       - STR_PRIMARIS
-      - STR_APOC_BAY
+      - STR_TEC_BAYR
     cost: 50000 # was 100k
     requiredItems:
       STR_KILLPOINT_TOKEN: 700
@@ -894,8 +894,8 @@ soldierTransformation:
     allowsWoundedSoldiers: true
     allowedSoldierTypes:
       - STR_GREYKNIGHT
-    transferTime: 0
-    recoveryTime: 5
+    transferTime: 72
+    recoveryTime: 0
     requiresBaseFunc: [LIB] #needs library
     requiredMinStats:
       psiStrength: 80

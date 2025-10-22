@@ -1,5 +1,45 @@
 manufacture:
 ### Craft
+  - name: STR_STORMRAVEN_GK
+    category: STR_CRAFT
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_NEW_FIGHTER_CRAFT
+    space: 30
+    time: 14000
+    cost: 400000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 450
+      STR_UFO_POWER_SOURCE: 2
+      STR_UFO_NAVIGATION: 2
+
+  - name: STR_STORMEAGLE_GK
+    category: STR_CRAFT
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_STORMEAGLE_INTERCEPTOR
+    space: 30
+    time: 20000
+    cost: 800000
+    listOrder: 3350
+    requiredItems:
+      STR_ALIEN_ALLOYS: 600
+      STR_UFO_POWER_SOURCE: 4
+      STR_UFO_NAVIGATION: 2
+
+  - name: STR_THUNDERHAWNK_GK
+    category: STR_CRAFT
+    requires:
+      - STR_THUNDERHAWK_GK_REQ
+    space: 34
+    time: 18000
+    cost: 600000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 850
+      STR_UFO_POWER_SOURCE: 4
+      STR_UFO_NAVIGATION: 4
+    producedItems:
+      STR_THUNDERHAWNK_GK: 1
 ### Craft Weapons
 ### Armor
 #Space Marines
@@ -700,6 +740,7 @@ manufacture:
     requires:
       - STR_MARINE_BOLTRIFLES_ADV
       - STR_MARINE_HEAVY_BOLTERS
+      - STR_BOLTER_ADV_AMMO
     space: 0
     time: 150 # was 100
     cost: 25000
@@ -767,6 +808,7 @@ manufacture:
     requires:
       - STR_MARINE_BOLTRIFLES_ADV
       - STR_MARINE_HEAVY_BOLTERS
+      - STR_BOLTER_ADV_AMMO
     space: 0
     time: 150 # was 100
     cost: 25000

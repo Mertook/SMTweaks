@@ -1944,6 +1944,9 @@ crafts:
   - type: STR_ARVUS_GK                      # Arvus (Grey Knight)
     speedMax: 650 # was 600
     refuelRate: 150
+    weapons: 1 # add aux slot
+    weaponTypes:
+      - [4, 5, 13]      #slot 1 accepts weapons with type 4, 5 and 13.
     battlescapeTerrainData:
       name: ARVUSGK
       mapDataSets:

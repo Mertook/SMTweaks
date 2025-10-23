@@ -2016,6 +2016,33 @@ manufacture:
     requires:
       - STR_GENERALLOCK
 
+  - name: STR_STORMRAVEN_GK
+    category: STR_CRAFT
+    requires:
+      - STR_CHAMBERMILITANT
+      - STR_GREYKNIGHTS
+      - STR_NEW_FIGHTER_CRAFT
+    space: 30
+    time: 14000
+    cost: 400000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 400
+      STR_UFO_POWER_SOURCE: 1
+      STR_UFO_NAVIGATION: 1
+
+  - name: STR_THUNDERHAWNK_GK
+    category: STR_CRAFT
+    requires:
+      - STR_CHAMBERMILITANT
+      - STR_GREYKNIGHTS
+      - STR_THUNDERHAWK_GK_REQ
+
+  - name: STR_STORMEAGLE_GK                 # Grey Knight Stormeagle
+    requires: 
+      - STR_CHAMBERMILITANT
+      - STR_GREYKNIGHTS
+      - STR_STORMEAGLE_INTERCEPTOR
+
 ###Soldiers
   - name: STR_GREY_KNIGHT_REQUISITION
     category: STR_ADVANCEMENT

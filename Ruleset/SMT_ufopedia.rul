@@ -753,6 +753,25 @@ ufopaedia:
 ### 30000  - General Research
 ### 40000  - Base Facilities
 ### 50000  - Craft
+  - id: STR_STORMEAGLE_GK
+    requires:
+      - STR_STORMEAGLE_INTERCEPTOR_GK
+      - STR_GREYKNIGHTS
+
+  - id: STR_STORMRAVEN_GK
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_STORMRAVEN_GK
+
+  - id: STR_THUNDERHAWNK_GK
+    type_id: 11
+    section: STR_XCOM_CRAFT_ARMAMENT
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_THUNDERHAWK_GK_REQ
+    image_id: THUNDERHAWK.SPK
+    text: STR_THUNDERHAWK_UFOPEDIA
+
 ### 60000  - Spells
   - id: STR_SMT_LIBRARIAN_SPELLS            # Psyker Abilities
     type_id: 10

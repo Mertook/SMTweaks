@@ -3832,7 +3832,7 @@ items:
       - STR_BALLISTIC_WEAPONS_HIGHGRADE
       - STR_AUTOGUNS_UNLOCK
     compatibleAmmo:
-      - STR_AUTOGUN_CLIP
+      - STR_AUTOPISTOL_CLIP
       - STR_AUTOGUN_CLIP_DRUM
       - STR_AUTOGUN_CLIP_DRUM_KRAKEN
     dropoff: 6
@@ -8036,12 +8036,12 @@ items:
     accuracyAimed: 35
     accuracyMultiplier:
       psiStrength: 1.0
-    aimRange: 11
-    maxRange: 12
+    aimRange: 13
+    maxRange: 15
     dropoff: 5
     power: 10
     powerRangeReduction: 5.0
-    powerRangeThreshold: 11.0
+    powerRangeThreshold: 16.0
     damageBonus:
       psiStrength: 0.4
     damageType: 13 # warp

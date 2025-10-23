@@ -783,6 +783,7 @@ research:
       - STR_GREYKNIGHTS
       - STR_MIDTIER_PREREQ
       - STR_CYDONIA_OR_BUST
+      - STR_THUNDERHAWK_GK_REQ
     unlocks:
       - STR_HIGHTIER_PREREQ
     getOneFree:
@@ -1349,8 +1350,6 @@ research:
     dependencies: # give it a slightly bigger window before the Stormeagle obsoletes it
       - STR_ALIEN_ALLOYS # adamantium
       - STR_ELERIUM_115 # promethium
-      #- STR_UFO_CONSTRUCTION
-      #- STR_MARINES_AND_ADEPTAS
       - STR_STORMRAVEN_PREREQ # simplify for all factions that can get StormRaven & Thunderhawk
     unlocks: !add
       - STR_ASSC_CLIP
@@ -1376,7 +1375,7 @@ research:
     points: 25
     listOrder: 5050
     dependencies:
-      - STR_MARINES_AND_ADEPTAS
+      - STR_NEW_FIGHTER_CRAFT
       - STR_MIDTIER_PREREQ
       - STR_UFO_POWER_SOURCE
       - STR_UFO_NAVIGATION
@@ -1387,13 +1386,6 @@ research:
       #- STR_HARVESTER
       #- STR_SUPPLY_SHIP
 
-  - name: STR_NEW_FIGHTER_TRANSPORTER   # Thunderhawk
-    cost: 650 # was 700
-    points: 30
-    dependencies:
-      - STR_MIDTIER_PREREQ
-      - STR_NEW_FIGHTER_CRAFT
-
   - name: STR_STORMEAGLE_INTERCEPTOR_GK     # Grey Knight Stormeagle unlock
     cost: 600
     points: 25
@@ -1402,14 +1394,26 @@ research:
       - STR_GENERALLOCK
     getOneFree: []
 
+  - name: STR_NEW_FIGHTER_TRANSPORTER   # Thunderhawk
+    cost: 650 # was 700
+    points: 30
+    dependencies:
+      - STR_MIDTIER_PREREQ
+      - STR_NEW_FIGHTER_CRAFT
+      - STR_NOT_GK
+
   - name: STR_THUNDERHAWK_GK_REQ    # Thunderhawk (Grey Knights/CM)
     cost: 900
     points: 30
     dependencies:
       - STR_CHAMBERMILITANT
       - STR_GREYKNIGHTS
-      - STR_MIDTIER_PREREQ
-      - STR_NEW_FIGHTER_CRAFT
+      - STR_THE_MARTIAN_SOLUTION
+      - STR_COMMANDER_PLUS
+      - STR_UFO_POWER_SOURCE
+      - STR_UFO_NAVIGATION
+      - STR_UFO_CONSTRUCTION
+    getOneFree: []
 
   - name: STR_CHAPTERARMYR          # Landraider 1st Company
     cost: 900
@@ -1813,7 +1817,7 @@ research:
     dependencies:
       - STR_MARINES_AND_DEATHWATCH
       - STR_MIDTIER_PREREQ
-    unlock:
+    unlocks:
       - STR_TECHMARINE_GEAR
 
   - name: STR_TEC_BAY_CHAMBER_R     # Techmarine (GK)
@@ -1822,7 +1826,7 @@ research:
     dependencies:
       - STR_GREYKNIGHTS
       - STR_MIDTIER_PREREQ
-    unlock:
+    unlocks:
       - STR_TECHMARINE_GEAR
 
   - name: STR_TECHMARINE_GEAR              # Techmarine Gear

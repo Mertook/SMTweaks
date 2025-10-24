@@ -894,13 +894,14 @@ soldierTransformation:
     allowsWoundedSoldiers: true
     allowedSoldierTypes:
       - STR_GREYKNIGHT
+    soldierBonusType: STR_BONUS_LIBRARIAN_TRAINING
     transferTime: 72
     recoveryTime: 0
     requiresBaseFunc: [LIB] #needs library
     requiredMinStats:
       psiStrength: 80
     flatOverallStatChange:
-      psiStrength: 10
+      psiStrength: 15
     lowerBoundAtMinStats: true
     upperBoundAtStatCaps: true
     listOrder: 80
@@ -1609,6 +1610,11 @@ soldierBonuses:
       SMT_BONUS_MORALE_RESISTANCE: 20
       #SMT_BONUS_MEDIC_GLOBAL: 15 # given by armor instead
 
+  - name: STR_BONUS_LIBRARIAN_TRAINING
+    stats:
+      melee: -25
+      firing: -25
+
 ### Psi Bonuses
   - name: STR_PSIBONUS_SHROUD
   - name: STR_PSIBONUS_FLARE
@@ -1642,9 +1648,9 @@ soldierBonuses:
     psiVision: 4
   - name: STR_PSIBONUS_WARRIOR
     stats:
-      melee: 30
+      melee: 40
       strength: 10
-      firing: 30
+      firing: 40
   - name: STR_PSIBONUS_SHIELD
   - name: STR_PSIBONUS_SENTRYWARD
   - name: STR_PSIBONUS_LOCKDOWN

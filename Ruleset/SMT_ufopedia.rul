@@ -837,6 +837,14 @@ ufopaedia:
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_PSYKER_T3_UNLOCK
+  - id: STR_PSITOKEN_FLAMES_GK                  # Smite
+    type_id: 14
+    section: STR_BOOKS
+    text: STR_PSITOKEN_FLAMES_GK_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T3_UNLOCK
+      - STR_GREYKNIGHTS
   - id: STR_PSITOKEN_HOLODUMMY              # Hallucination
     type_id: 10
     section: STR_BOOKS

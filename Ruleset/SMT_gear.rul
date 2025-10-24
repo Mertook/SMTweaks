@@ -6577,6 +6577,9 @@ items:
     damageType: 2 # incin, was 8 - acid
     damageAlter:
       RandomType: 2 # 50-150%
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.1
+      ToArmor: 0.05
       ToMorale: 1.0
       ToWound: 0.2
       RandomWound: false
@@ -6720,7 +6723,6 @@ items:
     fuseType: 0 # fixed 0 turn fuse
     fuseTriggerEvents:
       throwExplode: true
-    power: 90 # was 80
     noLOSAccuracyPenalty: 75
     throwRange: 18
     weight: 2
@@ -6738,9 +6740,13 @@ items:
     flatPrime:
       time: false
       energy: true
+    power: 90 # was 80
     damageType: 2 # incin - was 8, acid
     damageAlter:
       RandomType: 2 # 50-150%
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.1
+      ToArmor: 0.05
       ToMorale: 1.0
       ToWound: 0.2
       RandomWound: false

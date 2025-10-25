@@ -4553,6 +4553,7 @@ items:
       ToTile: 0.33
       FireThreshold: 1
       FixRadius: 3
+      IgnoreOverKill: false
     clipSize: 40
     tags:
       DAMAGE_BONUS_PERCENT_DAEMONIC: 200
@@ -8068,7 +8069,7 @@ items:
       FireThreshold: 1
       FixRadius: 3
     confAimed:
-      shots: 6
+      shots: 4
       followProjectiles: false
       arcing: true
     flatRate: true
@@ -8815,7 +8816,7 @@ items:
     flatRate: false
     medikitTargetSelf: true
     tags:
-      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 400
+      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 300
       ITEM_SETS_ENERGY_SHIELD_DECAY: 50
       ITEM_EFFECT_DURATION: 3 # four turns cooldown
 

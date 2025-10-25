@@ -887,7 +887,7 @@ soldierTransformation:
     producedSoldierType: STR_GREYKNIGHT_LIBRARIAN
     cost: 125000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 200
+      STR_KILLPOINT_TOKEN: 150
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -916,7 +916,7 @@ soldierTransformation:
     producedSoldierType: STR_GREYKNIGHT_TECHMARINE
     cost: 125000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 300
+      STR_KILLPOINT_TOKEN: 200
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -926,7 +926,7 @@ soldierTransformation:
     transferTime: 72
     recoveryTime: 0
     requiresBaseFunc: [TEC] # needs techmarine bay
-    listOrder: 80
+    listOrder: 81
 
   - name: STR_GK_CHAPLAIN               # Grey Knight -> Chaplain
     requires:
@@ -937,7 +937,7 @@ soldierTransformation:
     producedSoldierType: STR_GREYKNIGHT_CHAPLAIN
     cost: 125000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 300
+      STR_KILLPOINT_TOKEN: 100
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -953,7 +953,7 @@ soldierTransformation:
       psiSkill: 10
     lowerBoundAtMinStats: true
     upperBoundAtStatCaps: true
-    listOrder: 80
+    listOrder: 82
 
   - name: STR_LV1_TO_LV2_GK
     requires:

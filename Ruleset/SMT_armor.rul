@@ -3837,6 +3837,7 @@ armors:
     zombiImmune: true
     psiDefence: *Ref_GreyKnight_PsiDef
     damageModifier: *Ref_GreyKnight_Tac_DmgMod
+    weight: -15
     builtInWeapons:
       - STR_TECH_REPAIRTOOL
     units:
@@ -3847,6 +3848,7 @@ armors:
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
+      ARMOR_REGENERATE_DURABILITY: 20 # techmarine repair
 
   - type: STR_GK_TAC_TECHMARINE_SB_UC       # Grey Knight Techmarine (Tactical Stormbolter)
     refNode: *ARMOR_TACTICAL
@@ -3859,6 +3861,7 @@ armors:
     zombiImmune: true
     psiDefence: *Ref_GreyKnight_PsiDef
     damageModifier: *Ref_GreyKnight_Tac_DmgMod
+    weight: -15
     builtInWeapons:
       - STR_TECH_REPAIRTOOL
       - STR_GK_HB
@@ -3871,6 +3874,7 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
       SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
+      ARMOR_REGENERATE_DURABILITY: 20 # techmarine repair
 
   - type: STR_GK_TAC_CHAPLAIN_UC            # Grey Knight Chaplain (Tactical)
     refNode: *ARMOR_TACTICAL
@@ -4173,6 +4177,7 @@ armors:
       INFECTION_RESIST: 100
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
+      ARMOR_REGENERATE_DURABILITY: 20 # techmarine repair
 
   - type: STR_GK_TERM_TECHMARINE_SB_UC      # Grey Knight Techmarine (Terminator Stormbolter)
     refNode: *ARMOR_TERMINATOR
@@ -4199,6 +4204,7 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 45
       ARMOR_ENERGY_SHIELD_DECAY: 75
       SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
+      ARMOR_REGENERATE_DURABILITY: 20 # techmarine repair
 
 ### Other Marines
   - update: STR_BLOODRAVENS_TACTICAL_ARMOR      # Bloodraven Tactical

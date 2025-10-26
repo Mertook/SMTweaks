@@ -82,6 +82,27 @@ events:
     timer: 720 # 1/2 day
     timerRandom: 6480 # +4.5~ days
 
+  - name: STR_REWARD_IMPERIAL_TOKENS_1      # Monthly Imperial Tokens Reward - 150
+    description: STR_TOKEN_REWARD_DESCRIPTION_1
+    everyMultiItemList:
+      STR_KILLPOINT_TOKEN: 150
+    timer: 720 # 1/2 day
+    timerRandom: 6480 # +4.5~ days
+
+  - name: STR_REWARD_IMPERIAL_TOKENS_2      # Monthly Imperial Tokens Reward - 300
+    description: STR_TOKEN_REWARD_DESCRIPTION_2
+    everyMultiItemList:
+      STR_KILLPOINT_TOKEN: 300
+    timer: 720 # 1/2 day
+    timerRandom: 6480 # +4.5~ days
+
+  - name: STR_REWARD_IMPERIAL_TOKENS_3      # Monthly Imperial Tokens Reward - 400
+    description: STR_TOKEN_REWARD_DESCRIPTION_2
+    everyMultiItemList:
+      STR_KILLPOINT_TOKEN: 400
+    timer: 720 # 1/2 day
+    timerRandom: 6480 # +4.5~ days
+
 eventScripts:
   - type: STR_GENESEED_MONTHLY_PACKAGE_SCRIPT
     eventWeights:
@@ -114,3 +135,39 @@ eventScripts:
        STR_MARINES_STRATEGY: true
        STR_NEOPHYTE_REQUEST: true
 
+
+  - type: STR_REWARD_MONTHLY_TOKENS_MINOR
+    eventWeights:
+      0:
+       STR_REWARD_IMPERIAL_TOKENS_1: 100
+    firstMonth: 1
+    executionOdds: 100
+    minScore: -1000
+    maxScore: 999
+    minFunds: -500000
+    researchTriggers:
+      STR_PICKED_LOYALIST_STRATEGY: true
+
+  - type: STR_REWARD_MONTHLY_TOKENS_REGULAR
+    eventWeights:
+      0:
+       STR_REWARD_IMPERIAL_TOKENS_2: 100
+    firstMonth: 1
+    executionOdds: 100
+    minScore: 1000
+    maxScore: 3999
+    minFunds: -500000
+    researchTriggers:
+      STR_PICKED_LOYALIST_STRATEGY: true
+
+  - type: STR_REWARD_MONTHLY_TOKENS_MAJOR
+    eventWeights:
+      0:
+       STR_REWARD_IMPERIAL_TOKENS_3: 100
+    firstMonth: 1
+    executionOdds: 100
+    minScore: 4000
+    maxScore: 50000
+    minFunds: -500000
+    researchTriggers:
+      STR_PICKED_LOYALIST_STRATEGY: true

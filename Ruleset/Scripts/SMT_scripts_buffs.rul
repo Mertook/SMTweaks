@@ -125,7 +125,7 @@ extended:
                   unit.getTag baseMove Tag.UNIT_MOVESPEED_MODIFIERS;
                   sub baseMove temp; # remove old modifier
                   add baseMove temp2; # add new modifier
-                  unit.setTag Tag.UNIT_STEALTH_MOVEPENALTY temp2;
+                  unit.setTag Tag.SMT_HASTE_SPEED_BONUS temp2;
                   unit.setTag Tag.UNIT_MOVESPEED_MODIFIERS baseMove; # apply movement modifier
                   add baseMove 100;
                   limit_lower baseMove 25;

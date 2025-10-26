@@ -4513,19 +4513,20 @@ items:
     powerRangeReduction: 15
     powerRangeThreshold: 22
     damageAlter:
-      FireBlastCalc: false
-      IgnoreOverKill: false
-      IgnoreDirection: false
-      FixRadius: 3
+      RandomType: 9 # 50-150
+      ArmorEffectiveness: 0.7 # was 0.8
+      ToArmorPre: 0.1 # was 0.2
+      ToArmor: 0.05
       ToHealth: 1.7
       ToStun: 0.4
       ToTile: 0.3
       ToItem: 0.3
       ToMorale: 1.5
-      ToTime: 0.2  # debilitating pain
-      RandomType: 9 # 50-150
-      ArmorEffectiveness: 0.7 # was 0.8
-      ToArmorPre: 0.1 # was 0.2
+      ToTime: 0.2
+      FixRadius: 3
+      FireBlastCalc: false
+      IgnoreOverKill: false
+      IgnoreDirection: false
     clipSize: 40
     tags:
       SMT_ARMOR_TARGET_WEAKEST: 1
@@ -4538,12 +4539,12 @@ items:
     powerRangeThreshold: 22
     damageBonus:
       psiStrength: [-0.15, 0.0075, -0.00003] # s60 = p11, s80 = p20, s100 = p30, s120 = p38, s140 = p43; S-curve, sharpest slope at 80~85, starts losing power at 160+
-      flatHundred: -0.15
+      flatHundred: -0.10
     damageType: 13 # WARP
     damageAlter:
       RandomType: 9 # 50-150%
       ArmorEffectiveness: 0.7
-      ToArmorPre: 0.05
+      ToArmorPre: 0.1
       ToArmor: 0.05
       ToHealth: 1.4
       ToStun: 0.5

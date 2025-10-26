@@ -69,14 +69,13 @@ extended:
           #debug_log "HeroSave ping (turn|health|starthealth|damage|baseChance) - " turnSide currentHealth saveChance to_health unitSaveMod;
           muldiv saveChance 100 maxHealth; #get hp as % of maxHP
           mul saveChance 2; #double value from hp
-          unit.Stats.getPsiSkill temp;
-          div temp 2; # half devotion as bonus
           unit.getTag temp2 Tag.SOLDIER_IS_FANATIC;
-          if eq temp2 0;
-            div temp 2; # divide bonus from devotion by 2 again if unit isn't blessed
+          if eq temp2 1; # if unit is blessed add devotion to save chance
+            unit.Stats.getPsiSkill temp;
+            div temp 3; # 1/3 devotion as bonus
+            add saveChance temp;
           end;
           #debug_log "HeroSave Devotion Bonus - " temp temp2;
-          add saveChance temp; #add devotion to base
           muldiv saveChance unitSaveMod 100; # reduce by soldier save % chance
           unit.getTag saveCount Tag.SMT_HEROICSAVE_TRIGGERS;
           add saveCount 1;

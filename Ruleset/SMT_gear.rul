@@ -3366,14 +3366,17 @@ items:
     snapRange: 15
     aimRange: 0
     tuAimed: 0
-    tuAuto: 60 # was 60
+    tuAuto: 55 # was 60
     tuSnap: 35 # was 33
+    compatibleAmmo: # no AP ammo
+      - STR_ASSC_CLIP
+      - STR_ASSC_CLIP_HE
     confSnap:
       shots: 4 # was 4
       shortName: STR_BURST_SNAP_SHOT
       followProjectiles: false
     confAuto:
-      shots: 24 # was 10
+      shots: 20 # was 10
       followProjectiles: false
     tags:
       ITEM_IS_HEAVY_WEAPON: 5 # harsh penalty, meant for terminators

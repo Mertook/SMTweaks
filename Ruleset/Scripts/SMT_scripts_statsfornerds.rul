@@ -65,6 +65,11 @@ extended:
         code: |
           var int temp;
 
+          rule.getTag temp Tag.ITEM_STRENGTH_1H_REQUIREMENT;        # 1H Str requirement
+          if gt temp 0;
+            stats_state.addIntRow "ITEM_STRENGTH_1H_REQUIREMENT" temp;
+          end;
+
           rule.getTag temp Tag.SMT_AMMO_BONUSDMG_FIRINGACC;         # MC Precision bonus
           if gt temp 0;
             stats_state.addIntRow "SMT_AMMO_BONUSDMG_FIRINGACC" temp;

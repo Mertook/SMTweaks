@@ -27,11 +27,11 @@ eventScripts:
        STR_REWARD_INQUISITION_STORMTROOPERS: 50
        STR_REINFORCEMENTS_DCA_LONE: 5
     firstMonth: 1
-    executionOdds: 100
-    minScore: 4000 # Big Success
+    executionOdds: 0
+    minScore: 4000
     maxScore: 20000
     researchTriggers:
-      STR_CHAOS_PATH: false
+      STR_GENERALLOCK: true # disabled
 
   - type: STR_REINFORCEMENTS_DCA_SCRIPT_GENERAL
     eventWeights:

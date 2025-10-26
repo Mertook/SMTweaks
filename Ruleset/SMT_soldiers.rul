@@ -98,7 +98,7 @@ soldiers:
       SMT_HEROICSAVE_HP: 33
 
   - &REF_MARINE_VET_TAGS                # Veteran Marine Tags
-    type: STR_SOLDIER_TERMINATOR
+    type: STR_SOLDIER_CAPTAIN
     femaleFrequency: 0
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 50 # vet bonus
@@ -185,6 +185,7 @@ soldiers:
       - STR_COLONEL
 
   - type: STR_SOLDIER_TERMINATOR        # Vet Marine
+    refNode: *REF_MARINE_TAGS
     costSalary: 75000
     requires:
       - STR_GENERALLOCK # shouldn't be able to buy marines directly
@@ -260,7 +261,6 @@ soldiers:
       - STR_TERMINATOR_RANK_4
 
   - type: STR_SOLDIER_CAPTAIN           # Company Captain
-    refNode: *REF_MARINE_VET_TAGS
     costSalary: 150000
     requires:
       - STR_GENERALLOCK # shouldn't be able to buy marines directly
@@ -350,7 +350,7 @@ soldiers:
       SMT_HEROICSAVE_HP: 45
 
   - type: STR_SOLDIER_CHAPLAIN          # Chaplain
-    refNode: *REF_MARINE_VET_TAGS
+    refNode: *REF_MARINE_TAGS
     costSalary: 80000
     requires:
       - STR_GENERALLOCK # shouldn't be able to buy marines directly
@@ -530,7 +530,7 @@ soldiers:
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 5 # gain 1-5 psistrength from battles
 
   - type: STR_SOLDIER_LIBRARIAN_TERM    # Librarian Terminator
-    refNode: *REF_MARINE_VET_TAGS
+    refNode: *REF_MARINE_TAGS
     costSalary: 90000
     requires:
       - STR_GENERALLOCK # shouldn't be able to buy marines directly
@@ -705,7 +705,7 @@ soldiers:
       SMT_SOLDIER_IS_MEDIC: 33 # reduce all wound times by 1/3 if soldier is present
 
   - type: STR_SOLDIER_APOTHVET          # Veteran Apothecary
-    refNode: *REF_MARINE_VET_TAGS
+    refNode: *REF_MARINE_TAGS
     costSalary: 75000
     requires:
       - STR_GENERALLOCK # shouldn't be able to buy marines directly
@@ -860,7 +860,7 @@ soldiers:
       - STR_TECH_REPAIR_SKILL
 
   - type: STR_SOLDIER_TECHVET           # Veteran Techmarine
-    refNode: *REF_MARINE_VET_TAGS
+    refNode: *REF_MARINE_TAGS
     costSalary: 75000
     requires:
       - STR_GENERALLOCK # shouldn't be able to buy marines directly
@@ -1106,7 +1106,7 @@ soldiers:
     value: 35
 
   - type: STR_PRIMARISLV3               # Primaris Marine Lv3
-    refNode: *REF_MARINE_VET_TAGS
+    refNode: *REF_MARINE_TAGS
     costSalary: 65000
     requires:
       - STR_GENERALLOCK # shouldn't be able to buy marines directly
@@ -1167,7 +1167,7 @@ soldiers:
     value: 40
 
   - type: STR_PRIMARISLV4               # Primaris Marine Lv4
-    refNode: *REF_MARINE_VET_TAGS
+    refNode: *REF_MARINE_TAGS
     costSalary: 90000
     requires:
       - STR_GENERALLOCK # shouldn't be able to buy marines directly
@@ -1380,7 +1380,7 @@ soldiers:
       SMT_SOLDIER_IS_MEDIC: 33 # reduce all wound times by 1/3 if soldier is present
 
   - type: STR_PRIMARIS_APOTH_BIO        # Apothecary Biologis - Primaris lv4
-    refNode: *REF_MARINE_VET_TAGS
+    refNode: *REF_MARINE_TAGS
     costSalary: 100000
     requires:
       - STR_GENERALLOCK # shouldn't be able to buy marines directly
@@ -1535,7 +1535,7 @@ soldiers:
       - STR_TECH_REPAIR_SKILL
 
   - type: STR_PRIMARIS_TECHMARINE       # Techmarine - Primaris lv4
-    refNode: *REF_MARINE_VET_TAGS
+    refNode: *REF_MARINE_TAGS
     costSalary: 100000
     requires:
       - STR_GENERALLOCK # shouldn't be able to buy marines directly
@@ -1687,7 +1687,7 @@ soldiers:
       SOLDIER_IS_PSISKILL_TEACHER: 3 # all units gain 1-3 devotion from battle
 
   - type: STR_PRIMARIS_CHAPLAIN         # Chaplain - Primaris Lv4
-    refNode: *REF_MARINE_VET_TAGS
+    refNode: *REF_MARINE_TAGS
     costSalary: 90000
     requires:
       - STR_GENERALLOCK # shouldn't be able to buy marines directly
@@ -1949,7 +1949,7 @@ soldiers:
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: 5 # gain 1-5 psistrength from battles
 
   - type: STR_PRIMARIS_LIBRARIANLV3     # Primaris Librarian lv3
-    refNode: *REF_MARINE_VET_TAGS
+    refNode: *REF_MARINE_TAGS
     costSalary: 100000
     requires:
       - STR_GENERALLOCK # shouldn't be able to buy marines directly
@@ -2116,7 +2116,7 @@ soldiers:
 
 ### Grey Knights
   - type: STR_GREYKNIGHT                # Grey Knight
-    refNode: *REF_MARINE_VET_TAGS
+    refNode: *REF_MARINE_TAGS
     costSalary: 200000
     minStats:
       tu: 60
@@ -2198,7 +2198,7 @@ soldiers:
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 3 # devout
 
   - type: STR_GREYKNIGHT_LIBRARIAN      # Grey Knight Librarian
-    refNode: *REF_MARINE_VET_TAGS
+    refNode: *REF_MARINE_TAGS
     costSalary: 200000
     minStats:
       tu: 60
@@ -2298,7 +2298,7 @@ soldiers:
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 3 # devout
 
   - type: STR_GREYKNIGHT_TECHMARINE     # Grey Knight Techmarine
-    refNode: *REF_MARINE_VET_TAGS
+    refNode: *REF_MARINE_TAGS
     costSalary: 200000
     minStats:
       tu: 60
@@ -2384,7 +2384,7 @@ soldiers:
       SOLDIER_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 3 # devout
 
   - type: STR_GREYKNIGHT_CHAPLAIN       # Grey Knight Chaplain
-    refNode: *REF_MARINE_VET_TAGS
+    refNode: *REF_MARINE_TAGS
     costSalary: 200000
     minStats:
       tu: 60

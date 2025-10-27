@@ -70,7 +70,7 @@ extended:
           muldiv saveChance 100 maxHealth; #get hp as % of maxHP
           mul saveChance 2; #double value from hp
           unit.getTag temp2 Tag.SOLDIER_IS_FANATIC;
-          if eq temp2 1; # if unit is blessed add devotion to save chance
+          if gt temp2 0; # if unit is blessed add devotion to save chance
             unit.Stats.getPsiSkill temp;
             div temp 3; # 1/3 devotion as bonus
             add saveChance temp;

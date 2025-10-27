@@ -6983,7 +6983,7 @@ items:
     accuracyAuto: 66
     accuracySnap: 80
     accuracyAimed: 0
-    tuAuto: 70
+    tuAuto: 60
     tuSnap: 30
     tuAimed: 0
     power: 10
@@ -6996,7 +6996,7 @@ items:
     damageAlter:
       RandomType: 8
       ArmorEffectiveness: 0.4
-      ToArmorPre: 0.1
+      ToArmorPre: 0.3
       ToArmor: 0.1
       ToHealth: 1.0
       ToStun: 0.5
@@ -7017,13 +7017,13 @@ items:
     dropoff: 5
     autoRange: 14
     snapRange: 20
-    aimRange: 0
+    aimRange: 30
     accuracyAuto: 66
     accuracySnap: 80
-    accuracyAimed: 0
+    accuracyAimed: 100
     tuAuto: 60
-    tuSnap: 35
-    tuAimed: 0
+    tuSnap: 36
+    tuAimed: 52
     sprayWaypoints: 2
     accuracyMultiplier:
       firing: 0.7
@@ -7042,13 +7042,13 @@ items:
     weight: 12
     power: 80
     damageBonus:
-      psiStrength: [-0.15, 0.0075, -0.00003] # s60 = p11, s80 = p20, s100 = p30, s120 = p38, s140 = p43; S-curve, sharpest slope at 80~85, starts losing power at 160+
+      psiStrength: [-0.2, 0.01, -0.00004] # s60 = p15, s80 = p27, s100 = p40, s120 = p50, s140 = p58; S-curve, sharpest slope at 80~85, starts losing power at 160+
       flatHundred: 0
     damageType: 13 # WARP
     damageAlter:
       RandomType: 8 # 25-175%
-      ArmorEffectiveness: 0.6
-      ToArmorPre: 0.2
+      ArmorEffectiveness: 0.5
+      ToArmorPre: 0.3
       ToArmor: 0.10
       ToHealth: 1.0
       ToStun: 0.5

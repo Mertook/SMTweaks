@@ -4,7 +4,7 @@ armors:
     type: STR_PERSONAL_ARMOR_UC
     visibilityAtDay: 25
     visibilityAtDark: 20 # strong but not perfect
-    heatVision: 20 #Add anti-smoke vision to all marine armour
+    heatVision: 0
     antiCamouflageAtDay: 2
     antiCamouflageAtDark: 2
     camouflageAtDay: 0
@@ -16,7 +16,7 @@ armors:
     type: STR_PERSONAL_ARMOR_UC
     visibilityAtDay: 25
     visibilityAtDark: 20
-    heatVision: 25
+    heatVision: 15
     antiCamouflageAtDay: 5
     antiCamouflageAtDark: 5
     camouflageAtDay: 0
@@ -28,7 +28,7 @@ armors:
     type: STR_POWER_SUIT_UC
     visibilityAtDay: 25
     visibilityAtDark: 20
-    heatVision: 30 # improved
+    heatVision: 15
     antiCamouflageAtDay: 3 # improved
     antiCamouflageAtDark: 3
     camouflageAtDay: 0
@@ -40,7 +40,7 @@ armors:
     type: STR_TECH_ARMOR_UC
     visibilityAtDay: 25
     visibilityAtDark: 25 # advanced scanners
-    heatVision: 30 # improved
+    heatVision: 20 # improved
     antiCamouflageAtDay: 4 # improved
     antiCamouflageAtDark: 4
     camouflageAtDay: 0
@@ -52,7 +52,7 @@ armors:
     type: STR_SCOUT_SGT_UC
     visibilityAtDay: 25
     visibilityAtDark: 20
-    heatVision: 20
+    heatVision: 0
     antiCamouflageAtDay: 3
     antiCamouflageAtDark: 3
     camouflageAtDay: 0
@@ -64,7 +64,7 @@ armors:
     type: STR_SCOUTH_UC
     visibilityAtDay: 25
     visibilityAtDark: 25
-    heatVision: 40
+    heatVision: 30
     antiCamouflageAtDay: 5
     antiCamouflageAtDark: 5
     camouflageAtDay: -5
@@ -112,7 +112,7 @@ armors:
     type: DREAD_ARMOR_UC
     visibilityAtDay: 25
     visibilityAtDark: 25
-    heatVision: 40
+    heatVision: 25
     antiCamouflageAtDay: 3
     antiCamouflageAtDark: 3
     camouflageAtDay: 0
@@ -124,7 +124,7 @@ armors:
     type: SERVITOR_ARMOR_UC
     visibilityAtDay: 25
     visibilityAtDark: 20
-    heatVision: 20
+    heatVision: 10
     antiCamouflageAtDay: 0
     antiCamouflageAtDark: 0
     camouflageAtDay: 0
@@ -148,7 +148,7 @@ armors:
     type: STR_STORMTALON_ARMOR
     visibilityAtDay: 25
     visibilityAtDark: 25
-    heatVision: 60
+    heatVision: 50
     antiCamouflageAtDay: 6
     antiCamouflageAtDark: 6
     camouflageAtDay: 0
@@ -172,7 +172,7 @@ armors:
     type: STR_SCION_ARMOR_AI
     visibilityAtDay: 25
     visibilityAtDark: 25 # AI bonus
-    heatVision: 10 # AI bonus
+    heatVision: 20 # AI bonus
     antiCamouflageAtDay: 0
     antiCamouflageAtDark: 0
     camouflageAtDay: 0
@@ -247,7 +247,7 @@ armors:
     type: STR_TAUFIREWARRIOR_ARMOR
     visibilityAtDay: 25
     visibilityAtDark: 25
-    heatVision: 30
+    heatVision: 20
     antiCamouflageAtDay: 2
     antiCamouflageAtDark: 2
     psiVision: 0
@@ -256,7 +256,7 @@ armors:
     type: STR_TAUFIREWARRIORPATHFINDER_ARMOR
     visibilityAtDay: 25
     visibilityAtDark: 25
-    heatVision: 40
+    heatVision: 30
     antiCamouflageAtDay: 5
     antiCamouflageAtDark: 5
     psiVision: 0

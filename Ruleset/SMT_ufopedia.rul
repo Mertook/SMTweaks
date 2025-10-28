@@ -1205,9 +1205,17 @@ ufopaedia:
     text: STR_ANTIPLANT_BOMB_CODEX
     listOrder: 14080
 
+  - id: STR_AUTOCANNON_HANDHELD
+    requires:
+      - STR_AUTOCANNON_TECH
+      - STR_IMPERIAL_GUARD_OPERATIONS
+
   - id: STR_AUTOCANNON_HANDHELD_ANY
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_AUTOCANNON_TECH
+      - STR_NOT_GUARD
     image_id: AUTOCANNON.SPK
     text: STR_AUTOCANNON_HANDHELD_ANY_CODEX
 

@@ -2302,7 +2302,7 @@ items:
     accuracySnap: 80
     accuracyAimed: 0
     tuAuto: 24
-    tuSnap: 16 # was 25
+    tuSnap: 18 # was 25
     tuAimed: 0
     autoShots: 3 # was 0
     inventoryMoveCost: # pistol
@@ -2322,7 +2322,7 @@ items:
     accuracySnap: 95
     accuracyAimed: 0
     tuAuto: 24
-    tuSnap: 16 # was 25
+    tuSnap: 18 # was 25
     tuAimed: 0
     autoShots: 3 # was 0
     inventoryMoveCost: # pistol
@@ -2364,7 +2364,7 @@ items:
     accuracySnap: 95
     accuracyAimed: 0
     tuAuto: 24
-    tuSnap: 16 # was 25
+    tuSnap: 18 # was 25
     tuAimed: 0
     autoShots: 3 # was 0
     inventoryMoveCost: # pistol
@@ -3377,7 +3377,8 @@ items:
       - STR_ASSC_CLIP_HE
     confSnap:
       shots: 4 # was 4
-      shortName: STR_BURST_SNAP_SHOT
+      name: STR_SNAP_SHOT
+      shortName: STR_SHOT_TYPE_SNAP
       followProjectiles: false
     confAuto:
       shots: 20 # was 10
@@ -3395,8 +3396,8 @@ items:
     damageType: 1
     damageAlter:
       ArmorEffectiveness: 0.80 # was 0.9
-      ToArmorPre: 0.02 # was 0.05
-      ToArmor: 0.05 # was 0.1
+      ToArmorPre: 0.03 # was 0.05
+      ToArmor: 0.1 # was 0.1
       ToHealth: 1.0 # was 1.0
       ToStun: 0.3 # was 0.5
     armor: 300
@@ -3421,11 +3422,11 @@ items:
   - type: STR_AUTOCANNON_HE_AMMO            # Autocannon HE Ammo
     size: 0.05
     weight: 12 # was 15
-    power: 120 # was 100
+    power: 100 # was 100
     damageType: 3
     damageAlter:  # high explosive
       RandomType: 9 # 50-150
-      ToArmorPre: 0.05
+      ToArmorPre: 0.1
       ToArmor: 0.1
       ArmorEffectiveness: 1.0 # was 0.95
       ToStun: 0.6
@@ -3437,7 +3438,7 @@ items:
 
   - type: STR_AUTOCANNON_AP_AMMO            # Autocannon Ammo (AP)
     recoveryTransformations:
-      STR_AUTOCANNON_CLIP: [1]
+      STR_AUTOCANNON_BOX_AMMO: [1]
     requires:
      - STR_GENERALLOCK
 
@@ -3584,11 +3585,12 @@ items:
     accuracyAuto: 65
     accuracySnap: 70
     accuracyAimed: 0
-    tuAuto: 55 # was 60
-    tuSnap: 25 # was 40
+    tuAuto: 54 # was 60
+    tuSnap: 28 # was 40
     tuAimed: 0
     autoShots: 3
     weight: 40 # was 70!
+    kneelBonus: 150
     compatibleAmmo: # no AP ammo, no large ammo box for non-mounted guns
       - STR_AUTOCANNON_AMMO
       - STR_AUTOCANNON_HE_AMMO
@@ -3601,6 +3603,9 @@ items:
 
   - type: STR_AUTOCANNON_HANDHELD_ANY       # Autocannon (Generic)
     refNode: *STR_AUTOCANNON_TEMPLATE
+    autoRange: 18
+    oneHandedPenalty: 100
+    blockBothHands: false
     ufopediaType: STR_AUTOCANNON_HANDHELD_ANY
 
   - type: STR_AUTOCANNON_KALIBRAX           # Kalibrax Autocannon
@@ -4138,10 +4143,10 @@ items:
     noLOSAccuracyPenalty: 66 # default 50 - scoped rifle bonus
     aimRange: 24
     snapRange: 18
-    autoRange: 10
+    autoRange: 9
     accuracyAimed: 105
     accuracySnap: 80
-    accuracyAuto: 55
+    accuracyAuto: 50
     tuAimed: 36
     tuSnap: 22
     tuAuto: 33
@@ -8992,9 +8997,20 @@ items:
       RandomType: 9 # 50-150
 
 ### Utility
+  - type: STR_PERSONAL_LIGHT                # Personal Light
+    battleType: 10 # electroflare
+    weight: 4
+    bigSprite: 99
+    floorSprite: 72
+    power: 16
+    fuseType: -2
+    armor: 300
+    invWidth: 2
+    invHeight: 1
+    clipSize: -1
+
   - type: STR_SUPERFLARE                    # Flare (Mortar)
     battleType: 10 # electroflare
-    weight: 999
     bigSprite: 99
     floorSprite: 72
     power: 30
@@ -9011,7 +9027,6 @@ items:
 
   - type: STR_SUPERFLARE_SHORT              # Flare (Psi power)
     battleType: 10 # electroflare
-    weight: 999
     bigSprite: 99
     floorSprite: 72
     power: 25

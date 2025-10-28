@@ -3586,7 +3586,7 @@ items:
     accuracySnap: 70
     accuracyAimed: 0
     tuAuto: 54 # was 60
-    tuSnap: 28 # was 40
+    tuSnap: 32 # was 40
     tuAimed: 0
     autoShots: 3
     weight: 40 # was 70!
@@ -7025,7 +7025,7 @@ items:
     sprayWaypoints: 4
     tags:
       ITEM_RECOIL: 80
-      DAMAGE_BONUS_PERCENT_DAEMONIC: 200
+      DAMAGE_BONUS_PERCENT_DAEMONIC: 150
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 # ignores shields
 
   - type: STR_PSYCANNON                     # Psycannon
@@ -7081,7 +7081,7 @@ items:
       FixRadius: 2
     clipSize: 12
     tags:
-      DAMAGE_BONUS_PERCENT_DAEMONIC: 200
+      DAMAGE_BONUS_PERCENT_DAEMONIC: 150
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 # ignores shields
       ITEM_DOESNT_HURT_USER: 1
 

@@ -1986,7 +1986,8 @@ ufopaedia:
 
   - id: STR_CHAINSWORD_LIGHTSM              # Light Chainsword
     requires:
-      - STR_MARINES_AND_DEATHWATCH
+      - STR_CHAINSWORD_R
+      - STR_MARINE_WEAPONS
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: 1CS.SPK
@@ -2008,7 +2009,7 @@ ufopaedia:
     image_id: 1PC.SPK
     text: STR_CLAWS_UFOPEDIA
     requires: 
-      - STR_MARINES_STRATEGY
+      - STR_MARINES_AND_DEATHWATCH
     listOrder: 12700
 
   - id: STR_LASCAN_DW                       # Artifex Lascannon

@@ -126,9 +126,9 @@ armors:
       UNIT_TYPE_ASTARTES: 1
       ARMOR_REGENERATE_HEALTH_BURN_TOGGLE: -1
       SMT_ARMOR_HEAVY_WEAPON_USER: 1 # no HWP penalty
-      SMT_ARMOR_SHRED_RESISTANCE: 70
-      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 50
-      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 33
+      SMT_ARMOR_SHRED_RESISTANCE: 75
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 60
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 35
       SMT_ARMOR_STAGGER_RESISTANCE: 66
       SMT_ARMOR_IMMOBILIZE_RESISTANCE: 66
       INTIMIDATION_RESISTANCE: 66
@@ -4166,6 +4166,7 @@ armors:
     zombiImmune: true
     psiDefence: *Ref_GreyKnight_PsiDef
     damageModifier: *Ref_GreyKnight_Term_DmgMod
+    weight: -15
     builtInWeapons:
       - STR_TECH_REPAIRTOOL
       - INV_NULL_2X1_RL
@@ -4191,6 +4192,7 @@ armors:
     zombiImmune: true
     psiDefence: *Ref_GreyKnight_PsiDef
     damageModifier: *Ref_GreyKnight_Term_DmgMod
+    weight: -15
     builtInWeapons:
       - STR_TECH_REPAIRTOOL
       - STR_GK_HB

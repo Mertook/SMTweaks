@@ -4491,15 +4491,16 @@ items:
   - type: STR_INCINERATOR                   # Incinerator
     weight: 55
     costSell: 30000
+    oneHandedPenalty: 75
     dropoff: 4
-    autoRange: 8
+    autoRange: 12
     snapRange: 15
     aimRange: 0
     accuracyAuto: 20
     accuracySnap: 40
     accuracyAimed: 0
-    tuAuto: 35
-    tuSnap: 18
+    tuAuto: 36
+    tuSnap: 19
     tuAimed: 0
     maxRange: 16
     confSnap:
@@ -7093,11 +7094,11 @@ items:
     power: 70 # was 60
     damageType: 7
     damageBonus:
-      melee: 0.3 # was 0.2 - 0.3 is standard for regular melee
+      melee: 0.3
       strength: 0.3
     damageAlter: &Ref_Chainsword_Dmg
       RandomType: 2
-      ArmorEffectiveness: 1.1
+      ArmorEffectiveness: 1.2
       ToArmorPre: 0.3
       ToArmor: 0.1
       ToHealth: 1.0
@@ -7111,11 +7112,14 @@ items:
       energy: 2
     flatRate: true
     armor: 300
+    tags:
+      ITEM_STRENGTH_REQUIREMENT: 40 # was 25
+      ITEM_STRENGTH_1H_REQUIREMENT: 60
 
   - type: STR_CHAINSWORD_MC                 # MC Chainsword
     armor: 300
     power: 70 # was 70
-    accuracyMelee: 90 # was 110 - make it stronger for experts instead of easier for novices
+    accuracyMelee: 110 # was 110
     meleeMultiplier:
       melee: 1.0
       reactions: 0.2
@@ -7132,7 +7136,10 @@ items:
       ToEnergy: 0.5
       ToWound: 0.3
       RandomWound: false
-      ToTile: 0.7 # wall destruction
+      ToTile: 0.7
+    tags:
+      ITEM_STRENGTH_REQUIREMENT: 40 # was 25
+      ITEM_STRENGTH_1H_REQUIREMENT: 60
 
   - type: STR_CHAINSWORD_LIGHTSM            # SM Light Chainsword
     requiresBuy:
@@ -7409,8 +7416,8 @@ items:
       energy: 6 # was 8
     flatRate: true
     tags:
-      ITEM_STRENGTH_REQUIREMENT: 40 # was 35
-      ITEM_STRENGTH_1H_REQUIREMENT: 90
+      ITEM_STRENGTH_REQUIREMENT: 50 # was 35
+      ITEM_STRENGTH_1H_REQUIREMENT: 100
 
   - type: STR_EXECUTIONER_BLADE             # Judicar Executioner Relic Blade
     categories: [STR_CAT_MELEE]
@@ -7451,7 +7458,7 @@ items:
 
         add sprite_index sprite_offset; # add direction
         return sprite_index;
-    power: 120 # melee
+    power: 100 # melee
     damageBonus:
       strength: 0.5
       melee: 0.3
@@ -7464,7 +7471,7 @@ items:
       ToHealth: 0.9
       RandomType: 2 # 50-150%
       IgnoreSelfDestruct: false
-    damageType: 5
+    damageType: 5 # PLASMA
     accuracyMelee: 80
     flatRate: true
     costMelee:
@@ -7476,6 +7483,9 @@ items:
     skillApplied: true
     strengthApplied: false
     listOrder: 13400
+    tags:
+      ITEM_STRENGTH_REQUIREMENT: 60
+      ITEM_STRENGTH_1H_REQUIREMENT: 120
 
   - &REF_POWERSWORD                         # Powersword Values
     type: STR_POWER_SWORD
@@ -7502,6 +7512,9 @@ items:
       time: true
       energy: true
     experienceTrainingMode: 13
+    tags:
+      ITEM_STRENGTH_REQUIREMENT: 60
+      ITEM_STRENGTH_1H_REQUIREMENT: 90
 
   - type: STR_POWER_SWORD                   # Power Sword
     refNode: *REF_POWERSWORD

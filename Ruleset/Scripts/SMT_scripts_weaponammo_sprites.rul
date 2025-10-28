@@ -339,7 +339,7 @@ items:
           end;
           add sprite_index 1;
 
-          user.Stats.getPsiSkill temp;
+          user.Stats.getPsiStrength temp;
           if ge temp 100; #overcharged
             add sprite_index 1;
           end;

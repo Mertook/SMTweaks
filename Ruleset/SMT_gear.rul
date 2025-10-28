@@ -3329,7 +3329,7 @@ items:
     damageAlter: 
       ToArmorPre: 0.15 # was 0.1
       ArmorEffectiveness: 1.0 # was 0.9
-      ToArmor: 0.15 # was 0.1
+      ToArmor: 0.1 # was 0.1
       ToHealth: 1.0
       ToStun: 0.3 # was 0.5
       ToWound: 0.1
@@ -3352,6 +3352,12 @@ items:
       ToItem: 0.75
       FixRadius: 2
     powerForAnimation: 40
+
+  - type: STR_ASSC_CLIP_AP                  # Assault Cannon Ammo (AP)
+    recoveryTransformations:
+      STR_ASSC_CLIP: [1]
+    requires:
+     - STR_GENERALLOCK
 
   - type: STR_ASSC                          # Assault Cannon
     weight: 80 # was 100 - +25 when loaded
@@ -3428,6 +3434,12 @@ items:
       ToTile: 0.75
       ToItem: 0.75
       FixRadius: 2
+
+  - type: STR_AUTOCANNON_AP_AMMO            # Autocannon Ammo (AP)
+    recoveryTransformations:
+      STR_AUTOCANNON_CLIP: [1]
+    requires:
+     - STR_GENERALLOCK
 
   - type: STR_GRAV_AUTOC                    # Gravis Autocannon Gauntlet
     refNode: *REF_POWERFIST_TEMPLATE
@@ -7482,7 +7494,7 @@ items:
     power: 75 # was 100
     damageBonus:
       melee: 0.3
-      strength: 0.2
+      strength: 0.3
     meleeMultiplier:
       melee: 0.9
       reactions: 0.1
@@ -7552,7 +7564,7 @@ items:
     damageBonus:
       psiStrength: [-0.4, 0.02, -0.00008] # s60 = p30, s80 = p55, s100 = p80, s120 = p101, s140 = p116; S-curve, sharpest slope at 80~85, starts losing power at 160+
       flatHundred: -0.35 # 64 psiStr tipping point
-      strength: 0.3
+      strength: 0.4
       melee: 0.3
     meleeBonus:
       psiStrength: [-0.4, 0.02, -0.00008] # s60 = p30, s80 = p55, s100 = p80, s120 = p101, s140 = p116; S-curve, sharpest slope at 80~85, starts losing power at 160+
@@ -7614,7 +7626,7 @@ items:
     damageType: 13 # WARP
     damageBonus:
       melee: 0.3
-      strength: 0.2
+      strength: 0.3
       psiStrength: [-0.4, 0.02, -0.00008] # s60 = p30, s80 = p55, s100 = p80, s120 = p101, s140 = p116; S-curve, sharpest slope at 80~85, starts losing power at 160+
       flatHundred: -0.35 # 64 psiStr tipping point
     damageAlter: *Ref_ForceBlade_DmgAlt

@@ -148,7 +148,7 @@ extended:
             #debug_log "RegenArmor Pre  " i temp temp2 armorRecovery;
             add temp armorRecovery;
             limit_upper temp temp2;
-            unit.setArmor temp i;
+            unit.setArmor i temp;
             #debug_log "RegenArmor Post " i temp temp2 armorRecovery;
           end;
 

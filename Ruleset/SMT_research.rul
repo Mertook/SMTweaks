@@ -367,15 +367,10 @@ research:
       - STR_IMPERIAL_ASSASSINS
       - STR_REPRISALIA_ACCESS
       - STR_PICKED_LOYALIST_STRATEGY
-    disables:
+    disables: !add
       - STR_NOT_ASSASSINORUM
-      - STR_DEATHWATCH
-      - STR_GREYKNIGHTS
       - STR_IMPERIAL_AGENTS
       - STR_HERETICAL_MEANS
-      - STR_CHAOS_PATH
-      - STR_INQUISITION_VALKYRIE
-      - STR_INQ_STORMTROOPER_REQUISITION
     spawnedEvent: STR_ASSASSINORUM_CARE_PACKAGE
 
   - name: STR_IMPERIAL_AGENTS           # Imperial Agents Strat
@@ -437,6 +432,7 @@ research:
       - STR_GUARD_WEAPONS
       - STR_TRAINFACILITYR
       - STR_IMPERIAL_CHURCH
+      - STR_INQ_STORMTROOPER_REQUISITION
       - STR_INQ_STORMTROOPER_CODEX_UNLOCKER
 
 ## Imperial Guard
@@ -801,6 +797,15 @@ research:
   - name: STR_REINFORCEMENT             # Grey Knight Reinforcements Requisition
     dependencies:
       - STR_GENERALLOCK
+
+  - name: STR_INQ_STORMTROOPER_REQUISITION #Inquisition Stormtrooper
+    cost: 300 # was 200
+    points: 15
+    dependencies:
+      - STR_GENERALLOCK
+      - STR_INQUISITION
+      - STR_ELITE_STRATEGY_ADEPTAS
+    getOneFree: []
 
   - name: STR_ENGINSEER_REQUISITION     # Enginseer
     cost: 400

@@ -12,6 +12,11 @@ extended:
           var int penalty;
           var int checkVal;
 
+          unit.getFaction unitVal;
+          if neq unitVal FACTION_PLAYER; # AI ignores restricted rules
+            return bonus;
+          end;
+
           weapon.getTag itemVal Tag.SMT_RESTRICTED_ITEM;
           if eq itemVal 0;
             return bonus;
@@ -49,6 +54,11 @@ items:
         var int unitVal;
         var int penalty;
         var int checkVal;
+
+        attacker.getFaction unitVal;
+        if neq unitVal FACTION_PLAYER; # AI ignores restricted rules
+          return power part side;
+        end;
 
         weapon_item.getTag itemVal Tag.SMT_RESTRICTED_ITEM;
         attacker.getRuleSoldier unitSoldier;

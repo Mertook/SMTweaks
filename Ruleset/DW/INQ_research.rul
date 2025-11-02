@@ -1,16 +1,5 @@
 research: ### For techs that don't directly touch DW but are needed to make Chamber Militant strategies work with the changes made
 
-
-  - name: STR_NOT_DEATHWATCH                # Tech to lock Chamber Militant techs that DW shouldn't get (because they have their own versions)
-    cost: 0
-    points: 0
-
-  - name: STR_GUARD_AND_INQUISITION         # Tech for things that should be available to Chamber Militant and Imperial Guard
-    cost: 0
-    points: 0
-    dependencies:
-      - STR_GENERALLOCK
-
   - name: STR_HAND_MULTILASER_RESEARCH_INQUISITION  # Multilaser?
     cost: 0
     points: 0
@@ -35,14 +24,6 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_GENERALLOCK
     spawnedEvent: STR_REINFORCEMENTS_FRATERIS_INQ
 
-  - name: STR_REQUEST_GUARD_RESEARCH    # Start recurring IG recruitment
-    cost: 150
-    points: -50
-    dependencies:
-      - STR_GENERALLOCK
-    spawnedEvent: STR_REINFORCEMENTS_GUARD_REGULAR_INQ
-    listOrder: 15
-
   - name: STR_IMPERIAL_INQUISITOR_REQUISITION #To recruit Inquisitors
     cost: 800 # was 1000
     points: 10
@@ -51,13 +32,6 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
       - STR_MIDTIER_PREREQ
     getOneFree:
       - STR_IMPERIAL_INQUISITOR
-
-  - name: STR_IMPERIAL_INQUISITOR #For other nonGK factions to unlock manufacture recruitment of Inquisitors?
-    cost: 800 # was 1500
-    points: 10
-    dependencies:
-      - STR_GENERALLOCK
-      - STR_IMPERIAL_INQUISITOR_REQUISITION
 
   - name: STR_XENO_WEAPONS          # Inquisitor Xeno weapon tech
     cost: 160
@@ -88,12 +62,3 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     unlocks:
       - STR_ELDAR_ALLIANCE
     listOrder: 15 # push above corpses/etc
-
-  - name: STR_ELDAR_WEAPON_REQ      # Activates monthly events that delivers Eldar weapons/ammo
-    cost: 1000
-    points: -1000
-    dependencies:
-      - STR_GENERALLOCK
-    spawnedEvent: STR_ELDAR_WEAPON_SUPPLY_RECCUR
-    listOrder: 15 # push above corpses/etc
-

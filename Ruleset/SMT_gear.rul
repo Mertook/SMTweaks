@@ -3577,7 +3577,7 @@ items:
     type: STR_AUTOCANNON_HANDHELD
     costBuy: 0 # have to manufacture it
     dropoff: 3
-    minRange: 7
+    minRange: 6
     sprayWaypoints: 2
     autoRange: 20
     snapRange: 25
@@ -3585,10 +3585,13 @@ items:
     accuracyAuto: 65
     accuracySnap: 70
     accuracyAimed: 0
-    tuAuto: 54 # was 60
-    tuSnap: 32 # was 40
+    tuAuto: 55 # was 60
+    tuSnap: 35 # was 40
     tuAimed: 0
-    autoShots: 3
+    confSnap:
+      shots: 2 # was 1
+    confAuto:
+      shots: 4 # was 3
     weight: 40 # was 70!
     kneelBonus: 150
     compatibleAmmo: # no AP ammo, no large ammo box for non-mounted guns
@@ -7085,7 +7088,148 @@ items:
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 # ignores shields
       ITEM_DOESNT_HURT_USER: 1
 
-### Melee
+### Fists
+  - type: STR_UNARMED_GAUNTLET_PLUS         # Regular Marine Armor Punch
+    twoHanded: false
+    fixedWeapon: true
+    recover: false
+    clipSize: -1
+    #*** Marine Punch
+    specialUseEmptyHand: true
+    meleeSound: {mod: 40k, index: 100}
+    meleeAnimation: {mod: 40k, index: 0}
+    meleeType: 7
+    power: 20 #
+    damageBonus:
+      strength: 0.25 #
+      melee: 0.25 #
+    damageAlter:
+      RandomType: 2
+      IgnoreDirection: false
+      ArmorEffectiveness: 1.2 # not effective against armor
+      ToStun: 0.5
+      ToHealth: 1.0
+      ToTile: 1.25 #koolaid man punch through walls
+      RandomWound: false
+      ToWound: 0.0
+    accuracyMelee: 90
+    meleeMultiplier:
+      reactions: 0.25
+      melee: 0.75
+    costMelee:
+      time: 10
+      energy: 1
+    flatMelee:
+      time: true
+      energy: true
+    experienceTrainingMode: 13
+
+  - type: STR_MARINE_NPC_FIST               # NPC Marine Armor Punch
+    twoHanded: false
+    fixedWeapon: true
+    recover: false
+    clipSize: -1
+    #*** Marine Punch
+    specialUseEmptyHand: true
+    meleeSound: {mod: 40k, index: 100}
+    meleeAnimation: {mod: 40k, index: 0}
+    meleeType: 7
+    power: 120 # fixed power
+    damageAlter:
+      RandomType: 2 # 50-150
+      IgnoreDirection: false
+      ArmorEffectiveness: 1.0 # better pen
+      ToArmorPre: 0.15 # let them achieve something even if it doesn't pen
+      ToStun: 0.4
+      ToHealth: 0.5 # reduced damage, discourage use over guns
+      RandomWound: false
+      ToWound: 0.0
+    accuracyMelee: 90
+    meleeMultiplier:
+      reactions: 0.25
+      melee: 0.75
+    costMelee:
+      time: 15 # higher cost
+      energy: 1
+    flatMelee:
+      time: true
+      energy: true
+
+  - type: STR_JUMP_GAUNTLET_PLUS            # Jumpsuit Punch
+    refNode: *REF_FIST
+
+### Knives
+  - type: STR_KNIF                          # Combat Knife
+    bigSprite: 195 # 1x2 sprite
+    invHeight: 2
+    invWidth: 1
+    weight: 3 # was 5
+    inventoryMoveCost:
+      basePercent: 25 # reduced costs for moving into hands etc
+    accuracyMelee: 110 #was 90
+    meleeMultiplier:
+      melee: 0.7
+      reactions: 0.3
+    power: 40 # was 20 - pathetic, worse than SM/IG built in melee attacks - made enemy cultists especially sad
+    damageBonus: # make it worse at scaling but less awful early
+      melee: 0.3 # was 0.4
+      strength: 0.1 # was 0.1
+    damageAlter:
+      RandomType: 2
+      IgnoreDirection: false
+      ToArmorPre: 0.03
+      ArmorEffectiveness: 1.0
+      ToHealth: 1.0
+      RandomWound: false
+      ToWound: 0.1
+
+  - type: STR_SCOUT_BLADE                   # Combat Blade
+    categories: [STR_CAT_MELEE]
+    battleType: 3
+    requiresBuy:
+      - STR_SCT_MELEE_REQ
+    size: 0.2
+    listOrder: 12901 # just after regular knives
+    meleeSound: {mod: 40k, index: 754}
+    meleeHitSound: {mod: 40k, index: 773}
+    meleeAnimation: {mod: 40k, index: 4}
+    costBuy: 4000
+    costSell: 2000
+    weight: 6
+    bigSprite: 286
+    floorSprite: 286
+    handSprite: {mod: 40k, index: 304}
+    invHeight: 3
+    invWidth: 1
+    clipSize: -1
+    inventoryMoveCost:
+      basePercent: 25 # reduced costs for moving into hands etc
+    costMelee:
+      time: 10
+      energy: 1
+    flatMelee: true
+    accuracyMelee: 110
+    meleeMultiplier:
+      melee: 0.7
+      reactions: 0.3
+    damageType: 7 # melee
+    power: 45
+    damageBonus:
+      melee: [0.3, 0.001]
+      strength: 0.1
+    damageAlter:
+      RandomType: 2
+      IgnoreDirection: false
+      ToArmorPre: 0.03
+      ArmorEffectiveness: 1.0
+      ToHealth: 1.0
+      RandomWound: true
+      ToWound: 0.1
+    tags:
+      ITEM_STEALTH_ASSASSIN_WEAPON: 1 # melee
+
+
+### Chainswords
   - type: STR_CHAINSWORD                    # Chainsword
     categories: [STR_CAT_MELEE, STR_CAT_ASSAULT]
     requiresBuyBaseFunc: [IMPERIUM]
@@ -7221,184 +7365,6 @@ items:
       strength: 0.1
     damageAlter: *Ref_Chainsword_Dmg
 
-  - type: STR_CLAWS                         # Lightning Claw (Terminator)
-    refNode: *STR_CLAW_DMG
-
-  - type: STR_CLAWS_DW                      # Lightning Claw (DW Terminator)
-    refNode: *STR_CLAW_DMG
-    ufopediaType: STR_CLAWS
-
-  - type: STR_CLAWS_ASS                     # Lightning Claw (Vanguard)
-    refNode: *STR_CLAW_DMG
-    bigSprite: { mod: 40k, index: 261 }
-    meleeSound: { mod: 40k, index: 753 }
-    meleeHitSound: { mod: 40k, index: 754 }
-    meleeAnimation: { mod: 40k, index: 12 }
-    armor: 300
-    ufopediaType: STR_CLAWS
-    twoHanded: false
-    fixedWeapon: true
-    battleType: 3
-    clipSize: -1
-    invWidth: 2
-    invHeight: 3
-    defaultInventorySlot: STR_LEFT_HAND
-    recover: false
-
-  - type: STR_UNARMED_GAUNTLET_PLUS         # Regular Marine Armor Punch
-    twoHanded: false
-    fixedWeapon: true
-    recover: false
-    clipSize: -1
-    #*** Marine Punch
-    specialUseEmptyHand: true
-    meleeSound: {mod: 40k, index: 100}
-    meleeAnimation: {mod: 40k, index: 0}
-    meleeType: 7
-    power: 20 #
-    damageBonus:
-      strength: 0.25 #
-      melee: 0.25 #
-    damageAlter:
-      RandomType: 2
-      IgnoreDirection: false
-      ArmorEffectiveness: 1.2 # not effective against armor
-      ToStun: 0.5
-      ToHealth: 1.0
-      ToTile: 1.25 #koolaid man punch through walls
-      RandomWound: false
-      ToWound: 0.0
-    accuracyMelee: 90
-    meleeMultiplier:
-      reactions: 0.25
-      melee: 0.75
-    costMelee:
-      time: 10
-      energy: 1
-    flatMelee:
-      time: true
-      energy: true
-    experienceTrainingMode: 13
-
-  - type: STR_MARINE_NPC_FIST               # NPC Marine Armor Punch
-    twoHanded: false
-    fixedWeapon: true
-    recover: false
-    clipSize: -1
-    #*** Marine Punch
-    specialUseEmptyHand: true
-    meleeSound: {mod: 40k, index: 100}
-    meleeAnimation: {mod: 40k, index: 0}
-    meleeType: 7
-    power: 120 # fixed power
-    damageAlter:
-      RandomType: 2 # 50-150
-      IgnoreDirection: false
-      ArmorEffectiveness: 1.0 # better pen
-      ToArmorPre: 0.15 # let them achieve something even if it doesn't pen
-      ToStun: 0.4
-      ToHealth: 0.5 # reduced damage, discourage use over guns
-      RandomWound: false
-      ToWound: 0.0
-    accuracyMelee: 90
-    meleeMultiplier:
-      reactions: 0.25
-      melee: 0.75
-    costMelee:
-      time: 15 # higher cost
-      energy: 1
-    flatMelee:
-      time: true
-      energy: true
-
-  - type: STR_JUMP_GAUNTLET_PLUS            # Jumpsuit Punch
-    refNode: *REF_FIST
-    
-    # meleePower: 20
-    # meleeBonus:
-      # strength: 0.3 #
-      # melee: 0.3 # was 0.25
-    # meleeAlter:
-      # RandomType: 8 # 25-175%
-      # IgnoreDirection: false
-      # ToStun: 0.5
-      # ToHealth: 1.0
-      # ToTile: 1.50 #coolaid man punch through walls
-    # accuracyMelee: 90
-    # meleeMultiplier:
-      # reactions: 0.25
-      # melee: 0.75
-    # experienceTrainingMode: 13
-
-  - type: STR_KNIF                          # Combat Knife
-    bigSprite: 195 # 1x2 sprite
-    invHeight: 2
-    invWidth: 1
-    weight: 3 # was 5
-    inventoryMoveCost:
-      basePercent: 25 # reduced costs for moving into hands etc
-    accuracyMelee: 110 #was 90
-    meleeMultiplier:
-      melee: 0.7
-      reactions: 0.3
-    power: 40 # was 20 - pathetic, worse than SM/IG built in melee attacks - made enemy cultists especially sad
-    damageBonus: # make it worse at scaling but less awful early
-      melee: 0.3 # was 0.4
-      strength: 0.1 # was 0.1
-    damageAlter:
-      RandomType: 2
-      IgnoreDirection: false
-      ToArmorPre: 0.03
-      ArmorEffectiveness: 1.0
-      ToHealth: 1.0
-      RandomWound: false
-      ToWound: 0.1
-
-  - type: STR_SCOUT_BLADE                   # Combat Blade
-    categories: [STR_CAT_MELEE]
-    battleType: 3
-    requiresBuy:
-      - STR_SCT_MELEE_REQ
-    size: 0.2
-    listOrder: 12901 # just after regular knives
-    meleeSound: {mod: 40k, index: 754}
-    meleeHitSound: {mod: 40k, index: 773}
-    meleeAnimation: {mod: 40k, index: 4}
-    costBuy: 4000
-    costSell: 2000
-    weight: 6
-    bigSprite: 286
-    floorSprite: 286
-    handSprite: {mod: 40k, index: 304}
-    invHeight: 3
-    invWidth: 1
-    clipSize: -1
-    inventoryMoveCost:
-      basePercent: 25 # reduced costs for moving into hands etc
-    costMelee:
-      time: 10
-      energy: 1
-    flatMelee: true
-    accuracyMelee: 110
-    meleeMultiplier:
-      melee: 0.7
-      reactions: 0.3
-    damageType: 7 # melee
-    power: 45
-    damageBonus:
-      melee: [0.3, 0.001]
-      strength: 0.1
-    damageAlter:
-      RandomType: 2
-      IgnoreDirection: false
-      ToArmorPre: 0.03
-      ArmorEffectiveness: 1.0
-      ToHealth: 1.0
-      RandomWound: true
-      ToWound: 0.1
-    tags:
-      ITEM_STEALTH_ASSASSIN_WEAPON: 1 # melee
-
   - type: STR_EVISCERATOR                   # Eviscerator
     requiresBuy: # Sisters, Assault Marines, Chamber
       - STR_CHAINSWORD_R
@@ -7423,6 +7389,31 @@ items:
     tags:
       ITEM_STRENGTH_REQUIREMENT: 50 # was 35
       ITEM_STRENGTH_1H_REQUIREMENT: 100
+
+### Power Blades
+  - type: STR_CLAWS                         # Lightning Claw (Terminator)
+    refNode: *STR_CLAW_DMG
+
+  - type: STR_CLAWS_DW                      # Lightning Claw (DW Terminator)
+    refNode: *STR_CLAW_DMG
+    ufopediaType: STR_CLAWS
+
+  - type: STR_CLAWS_ASS                     # Lightning Claw (Vanguard)
+    refNode: *STR_CLAW_DMG
+    bigSprite: { mod: 40k, index: 261 }
+    meleeSound: { mod: 40k, index: 753 }
+    meleeHitSound: { mod: 40k, index: 754 }
+    meleeAnimation: { mod: 40k, index: 12 }
+    armor: 300
+    ufopediaType: STR_CLAWS
+    twoHanded: false
+    fixedWeapon: true
+    battleType: 3
+    clipSize: -1
+    invWidth: 2
+    invHeight: 3
+    defaultInventorySlot: STR_LEFT_HAND
+    recover: false
 
   - type: STR_EXECUTIONER_BLADE             # Judicar Executioner Relic Blade
     categories: [STR_CAT_MELEE]
@@ -7667,6 +7658,219 @@ items:
       ITEM_STRENGTH_REQUIREMENT: 60
       ITEM_STRENGTH_1H_REQUIREMENT: 90
       DAMAGE_BONUS_PERCENT_DAEMONIC: 150 #1.5x damage vs Daemons
+
+### Crozius
+  - type: AUX_CROZIUS                       # Crozius
+    weight: 15
+    recover: true
+    dropoff: 4
+    maxRange: 20 # was unlimited (but with power reduction after 20)
+    powerRangeThreshold: 0
+    powerRangeReduction: 0
+    aimRange: 15 # was 20
+    costAimed:
+      time: 40 # was 20/40 flat for snap/aimed
+      energy: 20 # was 40
+      morale: 20 # was 20
+    flatAimed:
+      time: false # 40% TU
+      energy: false # 20% energy
+    confAimed:
+      name: STR_CROZIUS_AIMED
+      shortName: STR_CROZIUS_AIMED_COUNT
+    costSnap:
+      time: 0 # remove snapshot
+      energy: 0 #
+      morale: 0 #
+    costAuto:
+      time: 0 # remove auto
+      energy: 0 #
+      morale: 0 #
+    snapRange: 0
+    accuracySnap: 0
+    accuracyAimed: 60
+    accuracyMultiplier:
+      bravery: 0.5
+      psiSkill: 1.0
+    power: 10 # was 10
+    damageType: 2 # Fire
+    damageAlter: &Ref_Crozius_Dmg
+      ResistType: 11 # Melta
+      RandomType: 2 # 50-150
+      FireBlastCalc: false
+      IgnoreOverKill: false
+      IgnoreSelfDestruct: false # default true for HE, fire, smoke, stun, mel
+      IgnoreDirection: false
+      ToHealth: 0.2 # was 1.0
+      ToArmorPre: 0.7 # was 0
+      ToArmor: 0.3 # was 0
+      ToTile: 0.1
+      ToMorale: 5.0 # was 5.0
+      ArmorEffectiveness: 0.2 # was 0.5
+      RadiusReduction: 5.0 # minor power dropoff from center
+      FixRadius: -1
+      RadiusEffectiveness: 0.03 # 3% of power as radius
+    damageBonus:
+      bravery: 0.3 # was 0.5
+      psiSkill: 0.7 # was 0.5
+    meleePower: 100
+    meleeBonus: # normal power weapons are 0.2 str 0.3 melee
+      strength: 0.1 # was 0.2
+      melee: 0.3 # was 0.2
+      psiSkill: 0.2 # was 0
+    meleeMultiplier:
+      melee: 0.8
+      psiSkill: 0.2
+    costMelee:
+      time: 15 # was 20, is a regular Power Weapon rather than something heavier
+      energy: 2 #light melee weapon; light 1 energy, medium 2, heavy 4, very heavy 8
+    experienceTrainingMode: 19 # Trains Bravery when used
+    tags:
+      ITEM_DOESNT_HURT_USER: 1
+      #ITEM_DMGMOD_IMPERIUM: -1
+      ITEM_DMGMOD_ALLIES: -1
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
+      SMT_ARMOR_DAMAGE_ALL: 66
+      SMT_ARMOR_TARGET_WEAKEST: 1
+
+  - type: AUX_CROZIUS_PRIMARIS              # Crozius (Primaris Chaplain)
+    weight: 15
+    clipSize: -1
+    recover: false # generated item
+    ufopediaType: AUX_CROZIUS
+    dropoff: 4
+    maxRange: 20 #
+    powerRangeThreshold: 20
+    powerRangeReduction: 5
+    confAimed:
+      name: STR_CROZIUS_AIMED
+      shortName: STR_CROZIUS_AIMED_COUNT
+    costAimed:
+      time: 50 # normal 40
+      energy: 20 #
+      morale: 20 # normal 20
+    flatAimed:
+      time: false # 35% TU
+      energy: false # 20% energy
+    accuracySnap: 0
+    accuracyAimed: 100
+    accuracyAuto: 0
+    snapRange: 0
+    aimRange: 15 #
+    autoRange: 0
+    accuracyMultiplier:
+      bravery: 0.5
+      psiSkill: 1.0
+    power: 10 #
+    damageType: 2 # Fire
+    damageAlter: *Ref_Crozius_Dmg
+    damageBonus:
+      bravery: 0.3 # was 0.5
+      psiSkill: 0.65 # was 0.5
+    meleePower: 100
+    meleeType: 5
+    meleeBonus:
+      strength: 0.3
+      melee: 0.3
+    meleeAlter:
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.2
+      ToHealth: 0.9
+      RandomType: 2
+    accuracyMelee: 90
+    meleeMultiplier:
+      melee: 0.8
+      psiSkill: 0.2
+    costMelee:
+      time: 15 #
+      energy: 2 #
+    experienceTrainingMode: 19 #
+    tags:
+      ITEM_DOESNT_HURT_USER: 1
+      #ITEM_DMGMOD_IMPERIUM: -1
+      ITEM_DMGMOD_ALLIES: -1
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
+      SMT_ARMOR_DAMAGE_ALL: 66
+      SMT_ARMOR_TARGET_WEAKEST: 1
+
+  - type: AUX_CROZIUS_DW                    # Crozius (Black Templar Captain)
+    weight: 15
+    clipSize: -1
+    recover: false # generated item
+    ufopediaType: AUX_CROZIUS
+    dropoff: 4
+    maxRange: 20 #
+    powerRangeThreshold: 20
+    powerRangeReduction: 5
+    confAimed:
+      name: STR_CROZIUS_AIMED
+      shortName: STR_CROZIUS_AIMED_COUNT
+    costAimed:
+      time: 35 # normal 40
+      energy: 20 #
+      morale: 15 # normal 20
+    flatAimed:
+      time: false # 35% TU
+      energy: false # 20% energy
+    accuracySnap: 0
+    accuracyAimed: 100
+    accuracyAuto: 0
+    snapRange: 0
+    aimRange: 10 #
+    autoRange: 0
+    tuAimed: 35
+    tuSnap: 0
+    tuAuto: 0
+    accuracyMultiplier:
+      bravery: 0.5
+      psiSkill: 1.0
+    power: 10 #
+    damageType: 2 # Fire
+    damageAlter:
+      ResistType: 11 # Melta
+      RandomType: 2 #
+      FireBlastCalc: false
+      IgnoreOverKill: false
+      IgnoreSelfDestruct: false #
+      IgnoreDirection: true #
+      ToHealth: 0.4 #
+      ToArmorPre: 0.4 #
+      ToArmor: 0.6 #
+      ToTile: 0.1
+      ToMorale: 5.0 #
+      ArmorEffectiveness: 0.2 #
+      RadiusReduction: 3.0 #
+      FixRadius: -1
+      RadiusEffectiveness: 0.04
+    damageBonus:
+      bravery: 0.3 #
+      psiSkill: 0.7 #
+    meleePower: 100
+    meleeType: 5
+    meleeBonus: #
+      strength: 0.1
+      melee: 0.3
+      psiSkill: 0.3
+    meleeAlter:
+      ArmorEffectiveness: 0.7
+      ToArmorPre: 0.2
+      ToHealth: 0.9
+      RandomType: 2
+    accuracyMelee: 90
+    meleeMultiplier:
+      melee: 0.8
+      psiSkill: 0.2
+    costMelee:
+      time: 15 #
+      energy: 2 #
+    experienceTrainingMode: 19
+    tags:
+      ITEM_DOESNT_HURT_USER: 1
+      #ITEM_DMGMOD_IMPERIUM: -1
+      ITEM_DMGMOD_ALLIES: -1
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
+      SMT_ARMOR_DAMAGE_ALL: 66
+      SMT_ARMOR_TARGET_WEAKEST: 1
 
 ### Skill Tokens
   - type: INV_BLESS_TOKEN                   # Chaplain Bless Token
@@ -9063,9 +9267,9 @@ items:
     fireSound: {mod: 40k, index: 787}
     hitSound: [100, 101]
     hitAnimation: {mod: 40k, index: 1100}
-    power: 0
-    damageType: 0
     bulletSpeed: 30
+    damageType: 0
+    power: 0
     damageBonus:
       tu: 0.5
       bravery: 0.1

@@ -95,9 +95,11 @@ extended:
           if neq otherWeapon null;
             weaponRuleset.getTag temp Tag.ITEM_STRENGTH_1H_REQUIREMENT;
             unit.getTag temp2 Tag.SMT_ARMOR_IGNORE_1H_MELEE_PEN;
+            #debug_log "Melee Str Init " temp temp2 itemStrengthRequirement;
             if and gt temp 0 eq temp2 0; # if weapon has a 1h penalty and unit armor doesn't negate penalty, change str requirement
               set itemStrengthRequirement temp;
             end;
+            #debug_log "Melee Str " temp temp2 itemStrengthRequirement;
           end;
 
           # lower limit for penalty is 50%

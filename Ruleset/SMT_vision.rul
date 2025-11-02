@@ -4,11 +4,19 @@ armors:
     type: STR_PERSONAL_ARMOR_UC
     visibilityAtDay: 25
     visibilityAtDark: 20 # strong but not perfect
-    heatVision: 0
+    heatVision: 10
     antiCamouflageAtDay: 2
     antiCamouflageAtDark: 2
-    camouflageAtDay: 0
-    camouflageAtDark: 0
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_TACTICAL_ADV                     # Power Armor (High tier)
+    type: STR_SIGNAL_ARMOR_UC_HULK
+    visibilityAtDay: 25
+    visibilityAtDark: 20
+    heatVision: 10
+    antiCamouflageAtDay: 3
+    antiCamouflageAtDark: 3
     psiCamouflage: -30
     psiVision: 0
 
@@ -19,8 +27,6 @@ armors:
     heatVision: 15
     antiCamouflageAtDay: 5
     antiCamouflageAtDark: 5
-    camouflageAtDay: 0
-    camouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
 
@@ -31,8 +37,6 @@ armors:
     heatVision: 15
     antiCamouflageAtDay: 3 # improved
     antiCamouflageAtDark: 3
-    camouflageAtDay: 0
-    camouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
 
@@ -43,8 +47,6 @@ armors:
     heatVision: 20 # improved
     antiCamouflageAtDay: 4 # improved
     antiCamouflageAtDark: 4
-    camouflageAtDay: 0
-    camouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
 
@@ -55,8 +57,6 @@ armors:
     heatVision: 0
     antiCamouflageAtDay: 3
     antiCamouflageAtDark: 3
-    camouflageAtDay: 0
-    camouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
 
@@ -67,20 +67,36 @@ armors:
     heatVision: 30
     antiCamouflageAtDay: 5
     antiCamouflageAtDark: 5
-    camouflageAtDay: -5
-    camouflageAtDark: -5
     psiCamouflage: -30
     psiVision: 0
 
-  - &ARMOR_BASIC                            # Robes/Flak
+  - &ARMOR_DREADNOUGHT                      # Dreadnought
+    type: DREAD_ARMOR_UC
+    visibilityAtDay: 25
+    visibilityAtDark: 22
+    heatVision: 25
+    antiCamouflageAtDay: 3
+    antiCamouflageAtDark: 3
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_ROBE                             # Robes
+    type: STR_GUARD_ARMORS_PRIEST_UC
+    visibilityAtDay: 25
+    visibilityAtDark: 9
+    heatVision: 0
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 0
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_FLAK                             # Flak
     type: STR_GUARD_ARMORSM
     visibilityAtDay: 25
     visibilityAtDark: 9
     heatVision: 0
     antiCamouflageAtDay: 0
     antiCamouflageAtDark: 0
-    camouflageAtDay: 0
-    camouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
 
@@ -91,32 +107,126 @@ armors:
     heatVision: 0
     antiCamouflageAtDay: 0
     antiCamouflageAtDark: 0
-    camouflageAtDay: 0
-    camouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
 
-  - &ARMOR_STORMTROOPER                     # Advanced Carapace/Scion
-    type: STR_GUARD_ARMORH_UC
+  - &ARMOR_STORMTROOPER_STD                 # Advanced Carapace/Scion
+    type: STR_SCION_CARAPACE_ARMOR
     visibilityAtDay: 25
     visibilityAtDark: 16
     heatVision: 0
     antiCamouflageAtDay: 2
     antiCamouflageAtDark: 2
-    camouflageAtDay: 0
-    camouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
 
-  - &ARMOR_DREADNOUGHT                      # Dreadnought
-    type: DREAD_ARMOR_UC
+  - &ARMOR_STORMTROOPER_ELITE               # Stormtrooper Elites
+    type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR
     visibilityAtDay: 25
-    visibilityAtDark: 25
-    heatVision: 25
+    visibilityAtDark: 20
+    heatVision: 10
+    antiCamouflageAtDay: 2
+    antiCamouflageAtDark: 2
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_SENTINEL                         # Sentinel Walker
+    type: STR_SENTINEL_ARMOR_UC
+    visibilityAtDay: 25
+    visibilityAtDark: 22
+    heatVision: 30
     antiCamouflageAtDay: 3
     antiCamouflageAtDark: 3
-    camouflageAtDay: 0
-    camouflageAtDark: 0
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_ABHUMAN_STD                      # Abhuman
+    type: STR_BEASTGUARD_FLAK_ARMOR
+    visibilityAtDay: 25
+    visibilityAtDark: 14
+    heatVision: 0
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 1
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_ABHUMAN_NIGHT                    # Abhuman (Night vision)
+    type: STR_FELINIDGUARD_FLAK_ARMOR
+    visibilityAtDay: 25
+    visibilityAtDark: 20
+    heatVision: 0
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 2
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_ABHUMAN_ELITE                    # Felinid (Scanner)
+    type: STR_FELINIDGUARD_CARAPACE_SENSORS
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 0
+    antiCamouflageAtDay: 3
+    antiCamouflageAtDark: 3
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_ASSASSIN_STD                     # Assassin
+    type: STR_GUARD_IMPERIAL_ASSASSIN_UC
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 20
+    antiCamouflageAtDay: 3
+    antiCamouflageAtDark: 3
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_ASSASSIN_SCOUT                   # Assassin Spotter
+    type: STR_VANUS_ASSASSIN_UNARMED
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 20
+    antiCamouflageAtDay: 3
+    antiCamouflageAtDark: 3
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_SISTER_BASIC                     # Adeptas Light Armor
+    type: STR_ADEPTAS_ARMORR_UC
+    visibilityAtDay: 25
+    visibilityAtDark: 9
+    heatVision: 0
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 0
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_SISTER_POWER                     # Adeptas Power Armor
+    type: STR_ADEPTAS_ARMOR_UC
+    visibilityAtDay: 25
+    visibilityAtDark: 15
+    heatVision: 0
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 0
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_SISTER_ELITE                     # Adeptas Elite Power
+    type: STR_ADEPTAS_ARMORI_UC
+    visibilityAtDay: 25
+    visibilityAtDark: 20
+    heatVision: 10
+    antiCamouflageAtDay: 2
+    antiCamouflageAtDark: 2
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_SISTER_SAINT                     # Adeptas Living Saint
+    type: STR_ADEPTAS_ARMORSUP_UC
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 20
+    antiCamouflageAtDay: 4
+    antiCamouflageAtDark: 4
     psiCamouflage: -30
     psiVision: 0
 
@@ -127,8 +237,6 @@ armors:
     heatVision: 10
     antiCamouflageAtDay: 0
     antiCamouflageAtDark: 0
-    camouflageAtDay: 0
-    camouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
 
@@ -139,48 +247,50 @@ armors:
     heatVision: 30
     antiCamouflageAtDay: 0
     antiCamouflageAtDark: 0
-    camouflageAtDay: 0
-    camouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
 
-  - &ARMOR_AIRCRAFT                         # Aircraft Vehicles
+  - &ARMOR_AIRCRAFT                         # Aircraft Turrets
     type: STR_STORMTALON_ARMOR
     visibilityAtDay: 25
     visibilityAtDark: 25
     heatVision: 50
     antiCamouflageAtDay: 6
     antiCamouflageAtDark: 6
-    camouflageAtDay: 0
-    camouflageAtDark: 0
     psiCamouflage: -30
-    psiVision: 0
-
-  - &NPC_MARINE                             # NPC Marine Tactical
-    type: STR_PERSONAL_ARMOR_CIVILIAN
-    visibilityAtDay: 25
-    visibilityAtDark: 25 # AI bonus
-    heatVision: 30 # AI bonus
-    antiCamouflageAtDay: 0
-    antiCamouflageAtDark: 0
-    camouflageAtDay: 0
-    camouflageAtDark: 20
-    psiCamouflage: 0
     psiVision: 0
 
   - &NPC_CARAPACE                           # NPC Guard Carapace
     type: STR_SCION_ARMOR_AI
     visibilityAtDay: 25
-    visibilityAtDark: 25 # AI bonus
-    heatVision: 20 # AI bonus
+    visibilityAtDark: 25
+    heatVision: 20
     antiCamouflageAtDay: 0
     antiCamouflageAtDark: 0
-    camouflageAtDay: 0
-    camouflageAtDark: 0
     psiCamouflage: 0
     psiVision: 0
 
-  - &ENEMY_NECRON_STD                       # Enemy Basic Necrons
+  - &NPC_MARINE                             # NPC Marine
+    type: STR_PERSONAL_ARMOR_CIVILIAN
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 30
+    antiCamouflageAtDay: 5
+    antiCamouflageAtDark: 5
+    psiCamouflage: 0
+    psiVision: 0
+
+  - &NPC_ELITE                              # NPC Elite
+    type: STR_ASSASSINNEUTRAL_FEMSUIT_NPC
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 30
+    antiCamouflageAtDay: 5
+    antiCamouflageAtDark: 5
+    psiCamouflage: 0
+    psiVision: 0
+
+  - &ENEMY_NECRON_STD                       # Enemy Necron
     type: STR_NECRON_FLAYED_ONE_ARMOR
     visibilityAtDay: 25
     visibilityAtDark: 25
@@ -189,7 +299,16 @@ armors:
     antiCamouflageAtDark: 0
     psiVision: 0
 
-  - &ENEMY_NECRON_ELITE                     # Enemy Elite Necrons
+  - &ENEMY_NECRON_TURRET                    # Enemy Necron Turrets
+    type: STR_MONO_N_ARMOR
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 60
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 0
+    psiVision: 0
+
+  - &ENEMY_NECRON_ELITE                     # Enemy Necron Elite
     type: STR_NECRON_DEATHMARK_ARMOR
     visibilityAtDay: 25
     visibilityAtDark: 25
@@ -198,11 +317,56 @@ armors:
     antiCamouflageAtDark: 5
     psiVision: 0
 
-  - &ENEMY_CARAPACE_ELITE                   # Enemy Elite Guard
+  - &ENEMY_CULT_STD                         # Enemy Cultists
+    type: SLAANESH_DEMIMONDE_ARMOR
+    visibilityAtDay: 25
+    visibilityAtDark: 20
+    heatVision: 0
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 0
+    psiVision: 0
+
+  - &ENEMY_CULT_ELITE                       # Enemy Cultist Elite
+    type: SNAKEMAN_ARMOR0
+    visibilityAtDay: 25
+    visibilityAtDark: 20
+    heatVision: 0
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 0
+    psiVision: 0
+
+  - &ENEMY_GUARD_STD                        # Enemy Guard
+    type: SNAKEMAN_ARMOR0
+    visibilityAtDay: 25
+    visibilityAtDark: 20
+    heatVision: 0
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 0
+    psiVision: 0
+
+  - &ENEMY_GUARD_ELITE                      # Enemy Guard Elite
     type: STR_CATACHAN_TRAITOR_ARMOR
     visibilityAtDay: 25
     visibilityAtDark: 25
     heatVision: 20
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 0
+    psiVision: 0
+
+  - &ENEMY_BEAST_STD                        # Enemy Beastmen
+    type: SNAKEMAN_ARMOR0
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 0
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 0
+    psiVision: 0
+
+  - &ENEMY_SISTER_STD                       # Enemy Heretic Sister
+    type: STR_ADEPTAS_ARMORREDWHITE
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 0
     antiCamouflageAtDay: 0
     antiCamouflageAtDark: 0
     psiVision: 0
@@ -225,6 +389,15 @@ armors:
     antiCamouflageAtDark: 0
     psiVision: 0
 
+  - &ENEMY_CHAOS_TURRET                           # Enemy Chaos Turrets
+    type: STR_CCASSIUM_BOLTER_LEFT1_ARMOR
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 40
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 0
+    psiVision: 0
+
   - &ENEMY_DEMON                            # Enemy Demons
     type: STR_WORDBEARER_DEMONLORD_ARMOR
     visibilityAtDay: 25
@@ -243,7 +416,7 @@ armors:
     antiCamouflageAtDark: 0
     psiVision: 0
 
-  - &ENEMY_TAU_BASIC                        # Enemy Standard Tau
+  - &ENEMY_TAU_STD                          # Enemy Tau
     type: STR_TAUFIREWARRIOR_ARMOR
     visibilityAtDay: 25
     visibilityAtDark: 25
@@ -252,13 +425,22 @@ armors:
     antiCamouflageAtDark: 2
     psiVision: 0
 
-  - &ENEMY_TAU_ELITE                        # Enemy Elite Tau
+  - &ENEMY_TAU_ELITE                        # Enemy Tau Elite
     type: STR_TAUFIREWARRIORPATHFINDER_ARMOR
     visibilityAtDay: 25
     visibilityAtDark: 25
     heatVision: 30
     antiCamouflageAtDay: 5
     antiCamouflageAtDark: 5
+    psiVision: 0
+
+  - &ENEMY_ZOMBIE                           # Enemy Zombies
+    type: STR_ADEPTAS_ZOMBIE_ARMOR
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 0
+    antiCamouflageAtDay: 0
+    antiCamouflageAtDark: 0
     psiVision: 0
 
 ###UNIQUE
@@ -277,8 +459,6 @@ armors:
     heatVision: 0
     antiCamouflageAtDay: 0
     antiCamouflageAtDark: 0
-    camouflageAtDay: 0
-    camouflageAtDark: 0
     psiCamouflage: 0
     psiVision: 0
 
@@ -535,295 +715,294 @@ armors:
     refNode: *ARMOR_TACTICAL
   - type: STR_MKX_BIKE_LV4_UC
     refNode: *ARMOR_TACTICAL
-  - type: STR_GK_TACTICAL_UC
-    refNode: *ARMOR_TACTICAL
-  - type: STR_GK_TACTICAL_SB_UC
-    refNode: *ARMOR_TACTICAL
-  - type: STR_GK_INTERCEPTOR_UC
-    refNode: *ARMOR_TACTICAL
-  - type: STR_GK_INTERCEPTOR_SB_UC
-    refNode: *ARMOR_TACTICAL
-  - type: STR_GK_TAC_APOTHECARY_UC
-    refNode: *ARMOR_TACTICAL
-  - type: STR_GK_TAC_LIBRARIAN_UC
-    refNode: *ARMOR_TACTICAL
-  - type: STR_GK_TAC_LIBRARIAN_SB_UC
-    refNode: *ARMOR_TACTICAL
-  - type: STR_GK_TAC_CHAPLAIN_UC
-    refNode: *ARMOR_TACTICAL
-  - type: STR_GK_TAC_CHAPLAIN_SB_UC
-    refNode: *ARMOR_TACTICAL
   - type: STR_BLOODRAVENS_TACTICAL_ARMOR
     refNode: *ARMOR_TACTICAL
+###TACTICAL ADVANCED
   - type: STR_SIGNAL_ARMOR_UC_HULK
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
+  - type: STR_GK_TACTICAL_UC
+    refNode: *ARMOR_TACTICAL_ADV
+  - type: STR_GK_TACTICAL_SB_UC
+    refNode: *ARMOR_TACTICAL_ADV
+  - type: STR_GK_INTERCEPTOR_UC
+    refNode: *ARMOR_TACTICAL_ADV
+  - type: STR_GK_INTERCEPTOR_SB_UC
+    refNode: *ARMOR_TACTICAL_ADV
+  - type: STR_GK_TAC_APOTHECARY_UC
+    refNode: *ARMOR_TACTICAL_ADV
+  - type: STR_GK_TAC_LIBRARIAN_UC
+    refNode: *ARMOR_TACTICAL_ADV
+  - type: STR_GK_TAC_LIBRARIAN_SB_UC
+    refNode: *ARMOR_TACTICAL_ADV
+  - type: STR_GK_TAC_CHAPLAIN_UC
+    refNode: *ARMOR_TACTICAL_ADV
+  - type: STR_GK_TAC_CHAPLAIN_SB_UC
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_TAC_ARMOR_BA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_TAC_ARMOR_BT_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_TAC_ARMOR_CF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_TAC_ARMOR_DA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_TAC_ARMOR_IF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_TAC_ARMOR_SALA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_TAC_ARMOR_SW_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_TAC_ARMOR_ULTRA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_TAC_ARMOR_WS_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_APOT_ARMOR_BA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_APOT_ARMOR_BT_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_APOT_ARMOR_CF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_APOT_ARMOR_DA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_APOT_ARMOR_IF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_APOT_ARMOR_SALA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_APOT_ARMOR_SW_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_APOT_ARMOR_ULTRA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_APOT_ARMOR_WS_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_DEV_ARMOR_BA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_DEV_ARMOR_BT_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_DEV_ARMOR_CF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_DEV_ARMOR_DA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_DEV_ARMOR_IF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_DEV_ARMOR_SALA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_DEV_ARMOR_SW_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_DEV_ARMOR_ULTRA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_DEV_ARMOR_WS_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_ASS_ARMOR_BA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_ASS_ARMOR_BT_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_ASS_ARMOR_CF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_ASS_ARMOR_DA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_ASS_ARMOR_IF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_ASS_ARMOR_SALA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_ASS_ARMOR_SW_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_ASS_ARMOR_ULTRA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_ASS_ARMOR_WS_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_TAC_BA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_TAC_BT_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_TAC_CF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_TAC_DA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_TAC_IF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_TAC_SALA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_TAC_SW_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_TAC_ULTRA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_TAC_WS_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_ASS_BA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_ASS_BT_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_ASS_CF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_ASS_DA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_ASS_IF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_ASS_SALA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_ASS_SW_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_ASS_ULTRA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_ASS_WS_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_APO_BA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_APO_BT_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_APO_CF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_APO_DA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_APO_SALA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_APO_SW_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_APO_ULTRA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_APO_WS_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRV_BA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRV_BT_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRV_CF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRV_DA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRV_IF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRV_SALA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRV_SW_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRV_ULTRA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRV_WS_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVBS_BA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVBS_BT_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVBS_CF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVBS_DA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVBS_IF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVBS_SALA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVBS_SW_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVBS_ULTRA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVBS_WS_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVAC_BA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVAC_BT_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVAC_CF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVAC_DA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVAC_IF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVAC_SALA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVAC_SW_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVAC_ULTRA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVAC_WS_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVFS_BA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVFS_BT_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVFS_CF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVFS_DA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVFS_IF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVFS_SALA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVFS_SW_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVFS_ULTRA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_GRVFS_WS_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INC_BA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INC_BT_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INC_CF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INC_DA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INC_IF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INC_SALA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INC_SW_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INC_ULTRA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INC_WS_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCAC_BA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCAC_BT_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCAC_CF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCAC_DA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCAC_IF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCAC_SALA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCAC_SW_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCAC_ULTRA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCAC_WS_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCPE_BA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCPE_BT_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCPE_CF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCPE_DA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCPE_IF_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCPE_SALA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCPE_SW_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCPE_ULTRA_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_MKX_DW_INCPE_WS_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_TAC_CODEX_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_APOTH_CODEX_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_DEV_CODEX_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_ASS_CODEX_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_ASS_MKX_CODEX_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_GRV_CODEX_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
   - type: STR_DW_INC_CODEX_UC
-    refNode: *ARMOR_TACTICAL
+    refNode: *ARMOR_TACTICAL_ADV
 ###TACTICAL ELITE
-  - type: STR_ADEPTAS_ARMORI_UC
-    refNode: *ARMOR_TACTICAL_ELITE
   - type: STR_CAPTAIN_TAC
     refNode: *ARMOR_TACTICAL_ELITE
   - type: STR_CAPTAIN_ASS
@@ -1047,11 +1226,24 @@ armors:
     refNode: *ARMOR_TERMINATOR
   - type: STR_DW_TERM_ASS_CODEX_UC
     refNode: *ARMOR_TERMINATOR
+###ROBES
+  - type: STR_GUARD_ARMORS_PRIEST_UC
+    refNode: *ARMOR_ROBE
 ###FLAK
   - type: STR_FRATERIS_MILITIA_HEAVY
-    refNode: *ARMOR_BASIC
+    refNode: *ARMOR_FLAK
   - type: STR_FRATERIS_MILITIA_HEAVY_VETERAN_ARMOR
-    refNode: *ARMOR_BASIC
+    refNode: *ARMOR_FLAK
+  - type: STR_STEELLEGION_FLAK_ARMOR
+    refNode: *ARMOR_FLAK
+  - type: STR_STEELLEGION_FLAK_ARMOR_MEDIC
+    refNode: *ARMOR_FLAK
+  - type: STR_STEELLEGION_FLAK_ARMOR_VOX
+    refNode: *ARMOR_FLAK
+  - type: STR_STEELLEGION_FLAK_ARMOR_VOX_NOAIRSTRIKE
+    refNode: *ARMOR_FLAK
+  - type: STR_STEELLEGION_FLAK_ARMOR_OFFICER
+    refNode: *ARMOR_FLAK
 
 ###CARAPACE
   - type: STR_MEDIC_CARAPACE_ARMOR
@@ -1072,28 +1264,268 @@ armors:
     refNode: *ARMOR_CARAPACE
   - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR
     refNode: *ARMOR_CARAPACE
-  - type: STR_STEELLEGION_CARAPACE_ARMOR
-    refNode: *ARMOR_CARAPACE
   - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR_HELLGUN
     refNode: *ARMOR_CARAPACE
   - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR_VOLLEYGUN
     refNode: *ARMOR_CARAPACE
   - type: STR_STORMTROOPER_OFFICER_CARAPACE_ARMOR_HELLPISTOL
     refNode: *ARMOR_CARAPACE
+  - type: STR_STEELLEGION_CARAPACE_ARMOR
+    refNode: *ARMOR_CARAPACE
   - type: STR_STEELLEGION_CARAPACE_ARMOR_OFFICER
     refNode: *ARMOR_CARAPACE
   - type: STR_STEELLEGION_CARAPACE_ARMOR_VOX
     refNode: *ARMOR_CARAPACE
+  - type: STR_STEELLEGION_CARAPACE_ARMOR_VOX_NOAIRSTRIKE
+    refNode: *ARMOR_CARAPACE
   - type: STR_STEELLEGION_CARAPACE_ARMOR_MEDIC
+    refNode: *ARMOR_CARAPACE
+  - type: STR_STEELLEGION_STORMTROOPER_ARMOR_VOLLEYGUN
+    refNode: *ARMOR_CARAPACE
+  - type: STR_STEELLEGION_STORMTROOPER_ARMOR_HELLGUN
     refNode: *ARMOR_CARAPACE
 
 ###STORMTROOPER
   - type: STR_SCION_CARAPACE_ARMOR
-    refNode: *ARMOR_STORMTROOPER
+    refNode: *ARMOR_STORMTROOPER_STD
   - type: STR_SCION_CARAPACE_ARMOR_HELLGUN
-    refNode: *ARMOR_STORMTROOPER
+    refNode: *ARMOR_STORMTROOPER_STD
   - type: STR_SCION_CARAPACE_ARMOR_VOLLEYGUN
-    refNode: *ARMOR_STORMTROOPER
+    refNode: *ARMOR_STORMTROOPER_STD
+  - type: STR_SCION_OFFICER_CARAPACE_ARMOR
+    refNode: *ARMOR_STORMTROOPER_STD
+  - type: STR_SCION_OFFICER_CARAPACE_ARMOR_HELLGUN
+    refNode: *ARMOR_STORMTROOPER_STD
+  - type: STR_SCION_OFFICER_CARAPACE_ARMOR_VOLLEYGUN
+    refNode: *ARMOR_STORMTROOPER_STD
+  - type: STR_SCION_OFFICER_CARAPACE_ARMOR_HELLPISTOL
+    refNode: *ARMOR_STORMTROOPER_STD
+  - type: STR_SCION_CARAPACE_ARMOR_HELLPISTOL
+    refNode: *ARMOR_STORMTROOPER_STD
+  - type: STR_SCION_MEDIC_CARAPACE_ARMOR
+    refNode: *ARMOR_STORMTROOPER_STD
+  - type: STR_SCION_HEAVYCARAPACE_ARMOR
+    refNode: *ARMOR_STORMTROOPER_STD
+
+###INQ STORMTROOPER
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR
+    refNode: *ARMOR_STORMTROOPER_ELITE
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_HELLGUN
+    refNode: *ARMOR_STORMTROOPER_ELITE
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_MULTILAS
+    refNode: *ARMOR_STORMTROOPER_ELITE
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_FLAMER
+    refNode: *ARMOR_STORMTROOPER_ELITE
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_PLASMA
+    refNode: *ARMOR_STORMTROOPER_ELITE
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_MULTIMELTA
+    refNode: *ARMOR_STORMTROOPER_ELITE
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_LONGLAS
+    refNode: *ARMOR_STORMTROOPER_ELITE
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_JUMPPACK
+    refNode: *ARMOR_STORMTROOPER_ELITE
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_MEDICAE
+    refNode: *ARMOR_STORMTROOPER_ELITE
+  - type: STR_INQ_STORMTROOPER_POWER_ARMOR
+    refNode: *ARMOR_STORMTROOPER_ELITE
+  - type: STR_INQ_POWER_ARMOR_AUTOCANNON
+    refNode: *ARMOR_STORMTROOPER_ELITE
+  - type: STR_INQ_POWER_ARMOR_LASCANNON
+    refNode: *ARMOR_STORMTROOPER_ELITE
+  - type: STR_INQ_POWER_ARMOR_BREACHER
+    refNode: *ARMOR_STORMTROOPER_ELITE
+
+###GUARD SENTINEL
+  - type: STR_SENTINEL_ARMOR_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_GUARD_ARMORS_SENTINEL_MULTILASER_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_GUARD_ARMORS_SENTINEL_MISSILE_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_GUARD_ARMORS_SENTINEL_AUTOCANNON_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_GUARD_ARMORS_SENTINEL_HEAVY_FLAMER_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_GUARD_ARMORS_SENTINEL_MULTIMELTA_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_GUARD_ARMORS_SENTINEL_HEAVY_PLASMA_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_STEELLEGION_ARMORS_LSENTINEL_MISSILE_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_STEELLEGION_ARMORS_LSENTINEL_LASC_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_STEELLEGION_ARMORS_LSENTINEL_MULTIMELTA_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_STEELLEGION_ARMORS_HSENTINEL_MISSILE_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_STEELLEGION_ARMORS_HSENTINEL_LASC_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_STEELLEGION_ARMORS_HSENTINEL_MULTIMELTA_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_ADEPTAS_SENTINEL_LANCE_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_ADEPTAS_SENTINEL_HBOLTER_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_SENTINELPD_ARMOR_UC
+    refNode: *ARMOR_SENTINEL
+  - type: STR_SENTINELPD_ARMOR_MISSILE_UC
+    refNode: *ARMOR_SENTINEL
+
+###ABHUMAN - REGULAR
+  - type: STR_BEASTGUARD_FLAK_ARMOR
+    refNode: *ARMOR_ABHUMAN_STD
+  - type: STR_BEASTGUARD_FLAK_ARMOR_MEDIC
+    refNode: *ARMOR_ABHUMAN_STD
+  - type: STR_BEASTGUARD_CARAPACE_ARMOR
+    refNode: *ARMOR_ABHUMAN_STD
+  - type: STR_BEASTGUARD_HEAVY_ARMOR
+    refNode: *ARMOR_ABHUMAN_STD
+  - type: STR_BEASTGUARD_HEAVY_ARMOR_SLAB
+    refNode: *ARMOR_ABHUMAN_STD
+  - type: STR_SLAANGOR_ARMOR_PLAYER
+    refNode: *ARMOR_ABHUMAN_STD
+
+###ABHUMAN - NIGHT VISION
+  - type: STR_FELINIDGUARD_FLAK_ARMOR
+    refNode: *ARMOR_ABHUMAN_NIGHT
+  - type: STR_FELINIDGUARD_FLAK_ARMOR_MEDIC
+    refNode: *ARMOR_ABHUMAN_NIGHT
+  - type: STR_FELINID_JUMP_ARMOR
+    refNode: *ARMOR_ABHUMAN_NIGHT
+  - type: STR_FELINIDGUARD_CARAPACE_ARMOR
+    refNode: *ARMOR_ABHUMAN_NIGHT
+  - type: STR_FELINIDGUARD_MEDIC_CARAPACE_ARMOR
+    refNode: *ARMOR_ABHUMAN_NIGHT
+  - type: STR_FELINIDGUARD_ADVANCED_CARAPACE_ARMOR
+    refNode: *ARMOR_ABHUMAN_NIGHT
+  - type: STR_FELINIDGUARD_ADVANCED_MEDIC_CARAPACE_ARMOR
+    refNode: *ARMOR_ABHUMAN_NIGHT
+  - type: STR_FELINIDGUARD_JUMP_CARAPACE
+    refNode: *ARMOR_ABHUMAN_NIGHT
+###ABHUMAN - ELITE NIGHT VISION
+  - type: STR_FELINIDGUARD_CARAPACE_SENSORS
+    refNode: *ARMOR_ABHUMAN_ELITE
+  - type: STR_FELINIDGUARD_ADVANCED_SENSORS
+    refNode: *ARMOR_ABHUMAN_ELITE
+  - type: STR_FELINIDGUARD_ASSASSIN
+    refNode: *ARMOR_ABHUMAN_ELITE
+###ASSASSIN
+  - type: STR_ASSASSINNEUTRAL_FEMSUIT
+    refNode: *ARMOR_ASSASSIN_STD
+  - type: STR_DEATHCULT_ASSASSIN_ARMOR
+    refNode: *ARMOR_ASSASSIN_STD
+  - type: STR_GUARD_IMPERIAL_ASSASSIN_UC
+    refNode: *ARMOR_ASSASSIN_STD
+  - type: STR_CALLIDUS_ASSASSIN_UNARMED
+    refNode: *ARMOR_ASSASSIN_STD
+  - type: STR_CALLIDUS_ASSASSIN_ARMOR
+    refNode: *ARMOR_ASSASSIN_STD
+  - type: STR_CALLIDUS_TRICKSTER_ARMOR
+    refNode: *ARMOR_ASSASSIN_STD
+  - type: STR_CULEXUS_ASSASSIN_UNARMED
+    refNode: *ARMOR_ASSASSIN_STD
+  - type: STR_CULEXUS_WITCHKILLER_ARMOR
+    refNode: *ARMOR_ASSASSIN_STD
+  - type: STR_CULEXUS_PURIFIER_ARMOR
+    refNode: *ARMOR_ASSASSIN_STD
+  - type: STR_CULEXUS_LIQUIDATOR_ARMOR
+    refNode: *ARMOR_ASSASSIN_STD
+  - type: STR_EVERSOR_ASSASSIN_UNARMED
+    refNode: *ARMOR_ASSASSIN_STD
+  - type: STR_EVERSOR_ASSASSIN_ARMOR
+    refNode: *ARMOR_ASSASSIN_STD
+  - type: STR_EVERSOR_EXTERMINATOR_ARMOR
+    refNode: *ARMOR_ASSASSIN_STD
+  - type: STR_EVERSOR_BREAKER_ARMOR
+    refNode: *ARMOR_ASSASSIN_STD
+  - type: STR_EVERSOR_DESTROYER_ARMOR
+    refNode: *ARMOR_ASSASSIN_STD
+
+###ASSASSIN (SPOTTER)
+  - type: STR_VANUS_ASSASSIN_UNARMED
+    refNode: *ARMOR_ASSASSIN_SCOUT
+  - type: STR_VANUS_ASSASSIN_ARMOR
+    refNode: *ARMOR_ASSASSIN_SCOUT
+  - type: STR_VANUS_NETRUNNER_ARMOR
+    refNode: *ARMOR_ASSASSIN_SCOUT
+  - type: STR_VINDICARE_ASSASSIN_UNARMED
+    refNode: *ARMOR_ASSASSIN_SCOUT
+  - type: STR_VINDICARE_GUNSLINGER_ARMOR
+    refNode: *ARMOR_ASSASSIN_SCOUT
+  - type: STR_VINDICARE_LANCER_ARMOR
+    refNode: *ARMOR_ASSASSIN_SCOUT
+  - type: STR_VINDICARE_DEATHMARK_ARMOR
+    refNode: *ARMOR_ASSASSIN_SCOUT
+
+###ADEPTAS ROBES
+  - type: STR_ADEPTAS_NOVICEHABIT
+    refNode: *ARMOR_SISTER_BASIC
+  - type: STR_ADEPTAS_PILOT_ARMOR
+    refNode: *ARMOR_SISTER_BASIC
+  - type: STR_ADEPTAS_CANTUSArmor
+    refNode: *ARMOR_SISTER_BASIC
+  - type: STR_ADEPTAS_MEDICAE_ARMOR
+    refNode: *ARMOR_SISTER_BASIC
+  - type: STR_ADEPTAS_ARMORR_UC
+    refNode: *ARMOR_SISTER_BASIC
+  - type: STR_ADEPTAS_ARMORR_FIXED_UC
+    refNode: *ARMOR_SISTER_BASIC
+###ADEPTAS POWER
+  - type: STR_ADEPTAS_ARMOR_UC
+    refNode: *ARMOR_SISTER_POWER
+  - type: STR_ADEPTAS_ARMORH_UC
+    refNode: *ARMOR_SISTER_POWER
+  - type: STR_ADEPTAS_ARMOR_UC_ALTDRED
+    refNode: *ARMOR_SISTER_POWER
+  - type: STR_ADEPTAS_BLOODYROSE
+    refNode: *ARMOR_SISTER_POWER
+  - type: STR_ADEPTAS_ARMORA_UC
+    refNode: *ARMOR_SISTER_POWER
+  - type: STR_ADEPTAS_ARMORS_UC
+    refNode: *ARMOR_SISTER_POWER
+  - type: STR_ADEPTAS_ARMORB_UC
+    refNode: *ARMOR_SISTER_POWER
+  - type: STR_ADEPTAS_ARMOR_ELOHIM
+    refNode: *ARMOR_SISTER_POWER
+  - type: STR_ADEPTAS_BLOODYROSE_ELOHIM
+    refNode: *ARMOR_SISTER_POWER
+  - type: STR_ADEPTAS_ARMOR_RETRIBUTOR
+    refNode: *ARMOR_SISTER_POWER
+  - type: STR_ADEPTAS_ARMOR_HONOR_UC
+    refNode: *ARMOR_SISTER_POWER
+###ADEPTAS ELITE
+  - type: STR_ADEPTAS_ARMORD_UC
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_ADEPTAS_ARMOR_SUPERIOR
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_ADEPTAS_ARMOR_REPSUPERIOR
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_ADEPTAS_ARMOR_NOVSUPERIOR
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_ADEPTAS_ARMORI_UC
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_INQ_INQUISITOR_ARMOR_BIOMANCER
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_INQ_INQUISITOR_ARMOR_DIVINER
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_INQ_INQUISITOR_ARMOR_PYROMANCER
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_INQ_INQUISITOR_ARMOR_TELEKINE
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_INQ_INQUISITOR_ARMOR_TELEPATH
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_ADEPTAS_ARMORCEL_UC
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_ADEPTAS_ARMOR_CELESTIAN_SACRESANT
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_ADEPTAS_ARMOR_CELESTIAN_ELITE
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_ADEPTAS_ARMORC_UC
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_INTERITUS_ARMOR_HULK
+    refNode: *ARMOR_SISTER_ELITE
+  - type: STR_ADEPTAS_ARMORSUP_UC
+    refNode: *ARMOR_SISTER_SAINT
 
 ###VEHICLE
   - type: DREAD_ARMOR_UC
@@ -1106,17 +1538,27 @@ armors:
     refNode: *ARMOR_DREADNOUGHT
   - type: DREAD_ARMOR5_UC
     refNode: *ARMOR_DREADNOUGHT
-
-###TURRET
+  - type: STR_DREAD_GK_ARMOR_UC
+    refNode: *ARMOR_DREADNOUGHT
+###AIRCRAFT
   - type: STR_STORMTALON_ARMOR
     refNode: *ARMOR_AIRCRAFT
   - type: LTS_ARMOR
     refNode: *ARMOR_AIRCRAFT
   - type: RTS_ARMOR
     refNode: *ARMOR_AIRCRAFT
-  - type: TARANTULA_ARBITES_BOLTER_ARMOR
+  - type: STR_CAS_MISSILE_POD_ARMOR
+    refNode: *ARMOR_AIRCRAFT
+  - type: STR_CAS_CANNON_ARMOR
+    refNode: *ARMOR_AIRCRAFT
+  - type: STR_CAS_DROP_VALKYRIE_STRIKE_ARMOR
+    refNode: *ARMOR_AIRCRAFT
+###TURRET
+  - type: TARANTULA_ARMOR
     refNode: *ARMOR_TURRET
   - type: TARANTULA_BOLTER_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: TARANTULA_ARBITES_BOLTER_ARMOR
     refNode: *ARMOR_TURRET
   - type: TARANTULA_BOLTER_ARMOR_I
     refNode: *ARMOR_TURRET
@@ -1154,6 +1596,10 @@ armors:
     refNode: *ARMOR_TURRET
   - type: LTT_GK_ARMOR
     refNode: *ARMOR_TURRET
+  - type: STORMRAVEN_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STORMRAVEN_ARMORGK
+    refNode: *ARMOR_TURRET
   - type: STR_CASSIUM_BOLTER_LEFT1_ARMOR
     refNode: *ARMOR_TURRET
   - type: STR_CASSIUM_BOLTER_LEFT2_ARMOR
@@ -1162,15 +1608,22 @@ armors:
     refNode: *ARMOR_TURRET
   - type: STR_CASSIUM_BOLTER_RIGHT2_ARMOR
     refNode: *ARMOR_TURRET
-  - type: STR_CCASSIUM_BOLTER_LEFT1_ARMOR
+  - type: STORMRAVEN_ADEPTAS_ARMOR
     refNode: *ARMOR_TURRET
-  - type: STR_CCASSIUM_BOLTER_LEFT2_ARMOR
+  - type: EXORCIST_ARMOR
     refNode: *ARMOR_TURRET
-  - type: STR_CCASSIUM_BOLTER_RIGHT1_ARMOR
+  - type: IMMOLATOR_ARMOR
     refNode: *ARMOR_TURRET
-  - type: STR_CCASSIUM_BOLTER_RIGHT2_ARMOR
+  - type: CASTIGATOR_AC_ARMOR
     refNode: *ARMOR_TURRET
-
+  - type: VINDICATOR_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: VINDICATOR_ARMOR2
+    refNode: *ARMOR_TURRET
+  - type: RAZORBACK_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: GENERATOR_ARMOR
+    refNode: *ARMOR_TURRET
 ###SERVITOR
   - type: SERVITOR_ARMOR_UC
     refNode: *ARMOR_SERVITOR
@@ -1181,9 +1634,26 @@ armors:
   - type: GENERIC_BATTLESERVITOR_PLARMOR
     refNode: *ARMOR_SERVITOR
 
-###NPC ALLIES
+###NPC CIVILIAN
+
+###NPC GUARD
+  - type: STR_SCION_ARMOR_AI
+    refNode: *NPC_CARAPACE
+###NPC MARINE
+  - type: STR_PERSONAL_ARMOR_CIVILIAN
+    refNode: *NPC_MARINE
   - type: STR_DEV_ARMOR_ULTRA
     refNode: *NPC_MARINE
+
+###NPC ELITE
+  - type: STR_ASSASSINNEUTRAL_FEMSUIT_NPC
+    refNode: *NPC_ELITE
+  - type: STR_DEATHCULT_ASSASSIN_ARMOR_NPC
+    refNode: *NPC_ELITE
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_AI
+    refNode: *NPC_ELITE
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_AI_ELITE
+    refNode: *NPC_ELITE
 
 ###ENEMIES - NECRON UNIQUE
   - type: STR_NECRON_ARCHITECT_ARMOR
@@ -1193,6 +1663,30 @@ armors:
     antiCamouflageAtDay: 20
     antiCamouflageAtDark: 20
     psiVision: 0
+
+###ENEMIES - NECRON BASIC
+  - type: STR_NECRON_SCARAB_ARMOR5
+    refNode: *ENEMY_NECRON_STD
+  - type: STR_NECRON_SCARAB_ARMOR3              # Canoptic Scarabs (Three)
+    refNode: *ENEMY_NECRON_STD
+  - type: STR_NECRON_SCARAB_ARMOR1              # Canoptic Scarabs (One)
+    refNode: *ENEMY_NECRON_STD
+  - type: STR_NECRON_FLAYED_ONE_ARMOR           # Necron Flayed One
+    refNode: *ENEMY_NECRON_STD
+  - type: STR_NECRON_FLAYED_ONE_ARMOR_REVIVES
+    refNode: *ENEMY_NECRON_STD
+  - type: STR_NECRON_WARRIOR_ARMOR_REVIVES      # Warrior (revives)
+    refNode: *ENEMY_NECRON_STD
+
+###ENEMIES - NECRON TURRET
+  - type: STR_MONO_N_ARMOR
+    refNode: *ENEMY_NECRON_TURRET
+  - type: STR_MONO_S_ARMOR
+    refNode: *ENEMY_NECRON_TURRET
+  - type: STR_MONO_W_ARMOR
+    refNode: *ENEMY_NECRON_TURRET
+  - type: STR_MONO_E_ARMOR
+    refNode: *ENEMY_NECRON_TURRET
 
 ###ENEMIES - NECRON ELITE
   - type: STR_NECRON_DEATHMARK_ARMOR
@@ -1209,38 +1703,85 @@ armors:
     refNode: *ENEMY_NECRON_ELITE
   - type: STR_NECRON_DESTROYER_LORD_ARMOR
     refNode: *ENEMY_NECRON_ELITE
-  - type: STR_MONO_N_ARMOR
-    refNode: *ENEMY_NECRON_ELITE
-  - type: STR_MONO_S_ARMOR
-    refNode: *ENEMY_NECRON_ELITE
-  - type: STR_MONO_W_ARMOR
-    refNode: *ENEMY_NECRON_ELITE
-  - type: STR_MONO_E_ARMOR
-    refNode: *ENEMY_NECRON_ELITE
 
-###ENEMIES - NECRON BASIC
-  - type: STR_NECRON_SCARAB_ARMOR5
-    refNode: *ENEMY_NECRON_STD
-  - type: STR_NECRON_SCARAB_ARMOR3              # Canoptic Scarabs (Three)
-    refNode: *ENEMY_NECRON_STD
-  - type: STR_NECRON_SCARAB_ARMOR1              # Canoptic Scarabs (One)
-    refNode: *ENEMY_NECRON_STD
-  - type: STR_NECRON_FLAYED_ONE_ARMOR           # Necron Flayed One
-    refNode: *ENEMY_NECRON_STD
-  - type: STR_NECRON_FLAYED_ONE_ARMOR_REVIVES
-    refNode: *ENEMY_NECRON_STD
-  - type: STR_NECRON_WARRIOR_ARMOR_REVIVES      # Warrior (revives)
-    refNode: *ENEMY_NECRON_STD
+###ENEMIES - CULTISTS
+  - type: SLAANESH_DEMIMONDE_ARMOR
+    refNode: *ENEMY_CULT_STD
+  - type: SLAANESH_DEMIMONDE_ARMOR_RITUALIST
+    refNode: *ENEMY_CULT_STD
+  - type: SLAANESH_DEMIMONDE_ARMOR_BLESSED
+    refNode: *ENEMY_CULT_STD
+  - type: SLAANESH_DEMIMONDE_ARMOR_BLESSED_RITUALIST
+    refNode: *ENEMY_CULT_STD
+  - type: SLAANESH_DEMIMONDE_ARMOR_SACRIFICE
+    refNode: *ENEMY_CULT_STD
+  - type: SLAANESH_DEMIMONDE_ARMOR_BLESSED_SACRIFICE
+    refNode: *ENEMY_CULT_STD
+  - type: STR_NURGLE_CULTIST_LIGHT_ARMOR
+    refNode: *ENEMY_CULT_STD
+  - type: STR_NURGLE_CULTIST_ARMOR
+    refNode: *ENEMY_CULT_STD
+  - type: STR_NURGLE_CULTIST_FEM_ARMOR
+    refNode: *ENEMY_CULT_STD
+  - type: STR_NURGLE_CULTIST_HEAVY_ARMOR
+    refNode: *ENEMY_CULT_STD
 
-###ENEMIES - CATACHAN
+###ENEMIES - CULTIST ELITE
+  - type: STR_NURGLE_CULTIST_LEADER_ARMOR
+    refNode: *ENEMY_CULT_ELITE
+
+###ENEMIES - TRAITOR GUARD
+  - type: SNAKEMAN_ARMOR0
+    refNode: *ENEMY_GUARD_STD
+  - type: SNAKEMAN_ARMOR1
+    refNode: *ENEMY_GUARD_STD
+  - type: STR_SNAKEMAN_ARMOR2
+    refNode: *ENEMY_GUARD_STD
+  - type: SNAKEMAN_ARMORC
+    refNode: *ENEMY_GUARD_STD
+  - type: SNAKEMAN_ARMORH
+    refNode: *ENEMY_GUARD_STD
+  - type: SNAKEMAN_ARMORN
+    refNode: *ENEMY_GUARD_STD
+  - type: STR_SLAANESH_FLAK_M_ARMOR
+    refNode: *ENEMY_GUARD_STD
+  - type: STR_SLAANESH_FLAK_F_ARMOR
+    refNode: *ENEMY_GUARD_STD
+  - type: STR_SLAANESH_CARAPACE_ARMOR
+    refNode: *ENEMY_GUARD_STD
+  - type: STR_SLAANESH_OFFICER_ARMOR
+    refNode: *ENEMY_GUARD_STD
+  - type: STR_SLAANESH_COMMISSAR_ARMOR
+    refNode: *ENEMY_GUARD_STD
+###ENEMIES - GUARD ELITE
   - type: STR_CATACHAN_TRAITOR_ARMOR
-    refNode: *ENEMY_CARAPACE_ELITE
+    refNode: *ENEMY_GUARD_ELITE
   - type: STR_CATACHAN_TRAITOR_ARMOR2
-    refNode: *ENEMY_CARAPACE_ELITE
+    refNode: *ENEMY_GUARD_ELITE
   - type: STR_CATACHAN_TRAITORVET_ARMOR
-    refNode: *ENEMY_CARAPACE_ELITE
+    refNode: *ENEMY_GUARD_ELITE
   - type: STR_CATACHAN_TRAITORTOP_ARMOR
-    refNode: *ENEMY_CARAPACE_ELITE
+    refNode: *ENEMY_GUARD_ELITE
+
+###ENEMIES - BEASTMEN
+  - type: STR_SLAANGOR_BULLGOR_ARMOR_RITUALIST
+    refNode: *ENEMY_BEAST_STD
+  - type: STR_SLAANGOR_BULLGOR_ARMOR
+    refNode: *ENEMY_BEAST_STD
+  - type: STR_SLAANGOR_GOR_ARMORMEDIUM
+    refNode: *ENEMY_BEAST_STD
+  - type: STR_SLAANGOR_UNGOR_ARMORLIGHT
+    refNode: *ENEMY_BEAST_STD
+  - type: STR_SLAANGOR_BRAY_ARMORLIGHT
+    refNode: *ENEMY_BEAST_STD
+  - type: STR_SLAANGOR_FIENDGOR_ARMOR
+    refNode: *ENEMY_BEAST_STD
+
+###ENEMIES - HERETIC SISTER
+  - type: STR_ADEPTAS_ARMORREDWHITE
+    refNode: *ENEMY_SISTER_STD
+  - type: STR_ADEPTAS_ARMORREDBLACK
+    refNode: *ENEMY_SISTER_STD
 
 ###ENEMIES - CHAOS MARINE
   - type: STR_WORDBEARER_SCOUT_ARMOR
@@ -1252,6 +1793,16 @@ armors:
   - type: STR_NIGHTLORDterminator_ARMOR
     refNode: *ENEMY_CHAOSTERMINATOR
 
+###ENEMIES - CHAOS TURRETS
+  - type: STR_CCASSIUM_BOLTER_LEFT1_ARMOR
+    refNode: *ENEMY_CHAOS_TURRET
+  - type: STR_CCASSIUM_BOLTER_LEFT2_ARMOR
+    refNode: *ENEMY_CHAOS_TURRET
+  - type: STR_CCASSIUM_BOLTER_RIGHT1_ARMOR
+    refNode: *ENEMY_CHAOS_TURRET
+  - type: STR_CCASSIUM_BOLTER_RIGHT2_ARMOR
+    refNode: *ENEMY_CHAOS_TURRET
+
 ###ENEMIES - DEMONS
   - type: STR_WORDBEARER_GALVWARRIOR_POSSARMOR
     refNode: *ENEMY_DEMON
@@ -1260,24 +1811,1379 @@ armors:
   - type: STR_WORDBEARER_DEMONLORD_ARMOR
     refNode: *ENEMY_DEMON
 
-###ENEMIES - TAU
+###ENEMIES - TAU AUX
   - type: STR_TAUGUEVESAFLAK_ARMOR
     refNode: *ENEMY_TAU_AUX
+###ENEMIES - TAU
   - type: STR_TAUFIREWARRIOR_ARMOR
-    refNode: *ENEMY_TAU_BASIC
+    refNode: *ENEMY_TAU_STD
   - type: STR_TAUDRONE_ARMOR
-    refNode: *ENEMY_TAU_BASIC
-  - type: STR_TAUFIREWARRIORPATHFINDER_ARMOR
-    refNode: *ENEMY_TAU_ELITE
+    refNode: *ENEMY_TAU_STD
   - type: STR_TAUFIREWARRIORLEADER_ARMOR
+    refNode: *ENEMY_TAU_STD
+###ENEMIES - TAU ELITE
+  - type: STR_TAUFIREWARRIORPATHFINDER_ARMOR
     refNode: *ENEMY_TAU_ELITE
   - type: STR_TAUFIREWARRIORCAPTAIN_ARMOR
     refNode: *ENEMY_TAU_ELITE
 
+###ENEMIES - ZOMBIES
+  - type: STR_ADEPTAS_ZOMBIE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_CELESTIAN_ZOMBIE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_ADEPTAS_ELOHIM_ZOMBIE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_ADEPTAS_MEDICAE_ZOMBIE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_ADEPTAS_PILOT_ZOMBIE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_ADEPTAS_ASSASSIN_ZOMBIE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_ADEPTAS_REPENTIA_ZOMBIE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_ADEPTAS_NOVICE_ZOMBIE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_FRATERIS_MILITIA_HEAVY_ZOMBIE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_GSC_ZOMBIE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_SQUAT_FLAK_ZOMBIE_MALE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_SQUAT_FLAK_ZOMBIE_FEMALE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_SQUAT_CARAPACE_ZOMBIE_MALE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_SQUAT_CARAPACE_ZOMBIE_FEMALE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_MKX_DW_TAC_ZOMBIE
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_MKX_DW_PHB_ZOMBIE
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_MKX_DW_GRV_ZOMBIE
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_MKX_DW_INC_ZOMBIE
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_MARINE_ZOMBIE_DW_TAC_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_MARINE_ZOMBIE_DW_TER_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_MARINE_ZOMBIE_TACTICAL_M_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_MARINE_ZOMBIE_TACTICAL_F_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_MARINE_ZOMBIE_SCOUT_M_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_MARINE_ZOMBIE_SCOUT_F_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_MARINE_ZOMBIE_TER_M_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_MARINE_ZOMBIE_TER_F_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_ADEPTAS_ZOMBIE_ARMOR
+    refNode: *ENEMY_ZOMBIE
+  - type: STR_CELESTIAN_ZOMBIE_ARMOR
+    refNode: *ENEMY_ZOMBIE
 
 ###UNSORTED
 
-
+  - type: STR_GREYKNIGHT_ADEPTAS_ARMOR
+  - type: STR_PENITENT_ARMOR
+  - type: STR_DEV_ARMOR_ULTRA
+  - type: STR_GK_DREAD_ARMOR_AI
+  - type: STR_ORBITAL_ARMOR
+  - type: STR_ORBITAL_ARMOR_NOORBITALSTRIKE
+  - type: SERVITOR_ARMOR_UC
+  - type: STR_OBJECTIVE_TARGET_ARMOR
+  - type: SACRIFICE_F0
+  - type: SACRIFICE_F1
+  - type: SACRIFICE_M0
+  - type: SACRIFICE_M1
+  - type: STR_GUARDPD_ARMOR_UC
+  - type: STR_NPC_GUARDPD_ARMOR_UC
+  - type: STR_GUARDPDMEDIC_ARMOR_UC
+  - type: STR_PENAL_ARMOR_UC
+  - type: STR_ENFORCER_ARMOR_UC
+  - type: STR_ENFORCER_MEDIC_ARMOR_UC
+  - type: STR_ENFORCER_SIGNAL_ARMOR_UC
+  - type: STR_ENFORCER_SIGNALFALSE_ARMOR_UC
+  - type: STR_ENFORCER_SIGNALFALSE_ARMOR_UC
+  - type: STR_ENFORCER_HEAVY_ARMOR_UC
+  - type: STR_ENFORCER_SHIELD_ARMOR_UC
+  - type: STR_JUDGE_ARMOR_UC
+  - type: STR_ARBITOR_ARMOR_UC
+  - type: STR_MARSHAL_ARMOR_UC
+  - type: STR_CMAS_ARMOR
+  - type: STR_CHIMERA_PD_ARMOR
+  - type: STR_CHIMERA_PDH_ARMOR
+  - type: WHIRLWINDPD_ARMOR
+  - type: DAMOCLESPD_ARMOR
+  - type: TAUROXPD_ARMOR
+  - type: STR_GUARDPD_ARMOR_UC
+  - type: STR_GUARDPDMEDIC_ARMOR_UC
+  - type: STR_ENFORCER_HEAVY_ARMOR_UC
+  - type: STR_ENFORCER_SHIELD_ARMOR_UC
+  - type: STR_PILOT_ARBITES_ARMOR_UC
+  - type: STR_ARLE10_POWER_ARMOR_HULK
+  - type: STR_ELDAR_FARSEER_ARMOR
+  - type: STR_EXPULSUM_ARMOR_HULK
+  - type: STR_SATURNINE_ARMOR_HULK
+  - type: STR_REPRISALIA_ARMOR
+  - type: STR_REPRISALIA_MEDIC_ARMOR
+  - type: STR_TELEPORTARIUM_GRENADE_TURRET_ARMOR
+  - type: DECAYING_TARGET_GUARDSMAN
+  - type: STR_NETFLY_ARMOR
+  - type: STR_GREYKNIGHT_ARMOR
+  - type: STR_GREYKNIGHT_ARMOR_BA
+  - type: STR_GREYKNIGHT_ARMOR_NS
+  - type: STR_SATURNINEGK_ARMOR_HULK
+  - type: STR_CULTIST_ARMORLV1PLAYER
+  - type: STR_CULTIST_ARMORLV2PLAYER
+  - type: STR_CULTIST_ARMORPILOTPLAYER
+  - type: STR_CULTIST_ARMOROGRYNPLAYER
+  - type: STR_CULTIST_ARMORPRIESTLV1PLAYER
+  - type: STR_CULTIST_ARMORPRIESTLV2PLAYER
+  - type: STR_CULTIST_GUARDFLAKARMORPLAYER
+  - type: STR_CULTIST_GUARDCARAPARMORPLAYER
+  - type: STR_CULTIST_ARMOROGRYNDEFENSEPLAYER
+  - type: STR_CULTIST_ARMOROGRYNBERSERKPLAYER
+  - type: STR_CULTIST_ARMORPRIESTLV3PLAYER
+  - type: STR_CULTIST_LEGIONSCOUTARMORPLAYER
+  - type: STR_CULTIST_LEGIONARIEARMORPLAYER
+  - type: STR_CULTIST_ARMORPRIESTLV4PLAYER
+  - type: STR_CULTIST_RAPTORARMORPLAYER
+  - type: STR_CULTIST_WARPTALONARMORPLAYER
+  - type: STR_CULTIST_TERMINATORARMORPLAYER
+  - type: STR_CULTIST_OBLITERATORARMORPLAYER
+  - type: STR_CULTIST_OBLITERATORARMORPLAYERALT
+  - type: STR_CULTIST_OBLITERATORARMORPLAYERALT2
+  - type: STR_CULTIST_CHAOSLORDARMORPLAYER
+  - type: STR_CHAOSCULT_SENTINEL_ARMOR_LSC
+  - type: STR_CHAOSCULT_SENTINEL_ARMOR_RKT
+  - type: STR_CULTIST_ARMORCHAOSBEASTPLAYER
+  - type: STR_CULTIST_CHAOSSLIMEARMORPLAYER
+  - type: STR_CULTIST_CHAOSSLIMEARMORPLAYER2
+  - type: STR_CULTIST_DEMONLORDARMORPLAYER
+  - type: STR_CULTIST_HELBRUTE_ARMORPLAYER
+  - type: STR_CULTIST_MUTILATORARMORPLAYER
+  - type: STR_CHAOSBIKE_LEGIOARMORPLAYER
+  - type: STR_CHAOSBIKE_GUARDARMORPLAYER
+  - type: STR_BLACKLEGcataphract_ARMORPLAYER
+  - type: STR_BLACKLEGsaturn_ARMORPLAYER
+  - type: STR_COMMAND_TURRET_ARMORCHAOS
+  - type: STR_LEMAN_TURRET_ARMORCHAOS
+  - type: STR_CHIMERA_BOLTER_TURRET_ARMORCHAOS
+  - type: STR_CHIMERA_FLAMER_TURRET_ARMORCHAOS
+  - type: STR_CHIMERA_TWIN_HB_TURRET_ARMORCHAOS
+  - type: STR_CHIMERA_MULTILAS_TURRET_ARMORCHAOS
+  - type: STR_CHIMERA_AC_TURRET_ARMORCHAOS
+  - type: STR_CHIMERA_TURRET_ARMORCHAOS
+  - type: STR_EXECUTIONER_ARMORCHAOS
+  - type: STR_PUNISHER_ARMORCHAOS
+  - type: STR_LASCANNON_ARMORCHAOS
+  - type: LEMONRUSS_ARMORCHAOS
+  - type: STR_FLAMER_SPONSON_ARMORCHAOS
+  - type: STR_BOLTER_SPONSON_ARMORCHAOS
+  - type: STR_MULTIMELTA_SPONSON_ARMORCHAOS
+  - type: STR_FLAMER_SPONSON_ARMORCHAOSRHINO
+  - type: STR_BOLTER_SPONSON_ARMORCHAOSRHINO
+  - type: STR_MULTIMELTA_SPONSON_ARMORCHAOSRHINO
+  - type: STR_CHIMERA_HULL_BOLTER_ARMORCHAOS
+  - type: STR_LEMAN_HULL_BOLTER_ARMORCHAOS
+  - type: STR_LEMAN_HULL_LAS_ARMORCHAOS
+  - type: STR_SPONSON_ARMORCHAOS
+  - type: STR_SPONSON_ARMORCHAOSRHINO
+  - type: STR_CHIMERA_HULL_ARMORCHAOS
+  - type: STR_LEMAN_HULL_ARMORCHAOS
+  - type: STR_CHIMEDON_ARMORCHAOS
+  - type: STR_CHAOSTRUCK_SMALL_TURRET_ARMOR
+  - type: STR_CHAOSBOWL_ARMORPLAYER
+  - type: STR_CHAOSBOWL_ARMORTEAMB
+  - type: STR_CHAOSBOWL_ARMORTEAMC
+  - type: STR_CHAOSBOWL_ARMORTEAMD
+  - type: STR_CHAOSBOWL_ARMORTEAME
+  - type: STR_SECTOID_ARMOR0
+  - type: STR_CULTIST_ARMOR
+  - type: STR_SECTOID_ARMORP
+  - type: STR_CULTIST_ASPIRING_ARMOR
+  - type: STR_FEM_CULTIST_ARMOR
+  - type: STR_DARK_DISCIPLE_ARMOR
+  - type: STR_DARK_DISCIPLE_ARMOR_ALPHA
+  - type: STR_DARK_DISCIPLE_ARMOR_DAEMONETTE
+  - type: STR_DARK_DISCIPLE_ARMOR_NEVERBORN
+  - type: STR_DARK_DISCIPLE_ARMOR_NEVERBORN_RITUALIST
+  - type: STR_DARK_APOSTLE_ALPHA_RITUALIST_ARMOR
+  - type: STR_DARK_APOSTLE_ALPHA_ARMOR
+  - type: STR_CULTIST_ARMORMLV1
+  - type: STR_CULTIST_ARMORMLV2
+  - type: STR_CULTIST_ARMORFLV1
+  - type: STR_CULTIST_ARMORFLV2
+  - type: STR_CULTIST_ARMOROGRYN
+  - type: STR_CULTIST_ARMORPILOTM
+  - type: STR_CULTIST_ARMORPILOTF
+  - type: STR_CULTIST_ARMORPRIESTMLV1
+  - type: STR_CULTIST_ARMORPRIESTMLV2
+  - type: STR_CULTIST_ARMORPRIESTFLV1
+  - type: STR_CULTIST_ARMORPRIESTFLV2
+  - type: STR_CULTIST_GUARDFLAKARMORM
+  - type: STR_CULTIST_GUARDFLAKARMORF
+  - type: STR_CULTIST_GUARDCARAPARMORM
+  - type: STR_CULTIST_GUARDCARAPARMORF
+  - type: STR_CULTIST_ARMOROGRYNDEFENSE
+  - type: STR_CULTIST_ARMOROGRYNBERSERK
+  - type: STR_CULTIST_ARMORPRIESTMLV3
+  - type: STR_CULTIST_ARMORPRIESTFLV3
+  - type: STR_CULTIST_LEGIONSCOUTARMOR
+  - type: STR_CULTIST_LEGIONSCOUTARMORF
+  - type: STR_CULTIST_LEGIONARIEARMOR
+  - type: STR_CULTIST_LEGIONARIEARMORF
+  - type: STR_CULTIST_ARMORPRIESTLV4
+  - type: STR_CULTIST_ARMORPRIESTLV4F
+  - type: STR_CULTIST_TERMINATORARMOR
+  - type: STR_CULTIST_CHAOSLORDARMOR
+  - type: STR_CULTIST_RAPTORARMOR
+  - type: STR_CULTIST_WARPTALONARMOR
+  - type: STR_GANGERBASE_ARMORSOLDIERF0
+  - type: STR_GANGERBASE_ARMORSOLDIERF1
+  - type: STR_GANGERBASE_ARMORSOLDIERF2
+  - type: STR_GANGERBASE_ARMORSOLDIERM0
+  - type: STR_GANGERBASE_ARMORSOLDIERM1
+  - type: STR_GANGEROUS_ARMOR
+  - type: STR_GANGERGOLIATH_ARMOR
+  - type: STR_GSC_MINER_ARMOR
+  - type: STR_GC_ARMOR
+  - type: STR_GC2_ARMOR
+  - type: STR_GC3_ARMOR
+  - type: STR_SAB_ARMOR
+  - type: STR_GSC_KELER_ARMOR
+  - type: STR_LOCUS_CLOAKED
+  - type: STR_LOCUS_FRENZIED
+  - type: STR_GSC_ABERRANT_ARMOR
+  - type: STR_GENE_HYBRID_ACOLYTE_ARMOR
+  - type: STR_GENE_HYBRID_ACOLYTE_LEADER_ARMOR
+  - type: STR_HORMAGAUNT_ARMOR
+  - type: STR_TERMAGANT_ARMOR
+  - type: STR_DEVOURER_TERMAGANT_ARMOR
+  - type: STR_TYRANID_WARRIOR_ARMOR
+  - type: STR_TYRANID_WARRIOR_CLAWS_ARMOR
+  - type: STR_TYRANID_WARRIOR_SWORD_ARMOR
+  - type: STR_TYRANID_PRIME_ARMOR
+  - type: STR_TYRANID_PRIME_CLAWS_ARMOR
+  - type: STR_TYRANID_PRIME_SWORD_ARMOR
+  - type: STR_RIPPERSWARM_ARMOR
+  - type: STR_RIPPERSWARM_1_ARMOR
+  - type: STR_RIPPERSWARM_2_ARMOR
+  - type: STR_RIPPERSWARM_4_ARMOR
+  - type: STR_RIPPERSWARM_16_ARMOR
+  - type: STR_SPOREMINE_ARMOR
+  - type: STR_ACID_SPOREMINE_ARMOR
+  - type: STR_FRAG_SPOREMINE_ARMOR
+  - type: STR_POISON_SPOREMINE_ARMOR
+  - type: STR_BIOVORE_ARMOR
+  - type: CARNI_ARMOR
+  - type: GENE_ARMOR
+  - type: GENE_ARMOR2
+  - type: GENE_ARMOR3
+  - type: GSC_CLOAKED_WOMAN_ARMOR
+  - type: GSC_CLOAKED_WOMAN2_ARMOR
+  - type: GSC_CLOAKED_WOMAN_ORANGE_ARMOR
+  - type: GSC_CIVILIAN_F0_ARMOR
+  - type: GSC_CIVILIAN_M0_ARMOR
+  - type: GSC_CIVILIAN_F1_ARMOR
+  - type: GSC_CIVILIAN_M1_ARMOR
+  - type: GSC_CIVILIAN_FSPACER_ARMOR
+  - type: GSC_CIVILIAN_MSPACER_ARMOR
+  - type: STR_GSC_PENETANTE_ARMOR_FEMALE
+  - type: STR_GSC_PENETANTE_ARMOR
+  - type: STR_GSC_ENFORCER_MEDIC_ARMOR
+  - type: STR_GSC_ENFORCER_HEAVY_ARMOR
+  - type: STR_GSC_ENFORCER_SHIELD_ARMOR
+  - type: STR_GSC_JUDGEF_ARMOR
+  - type: STR_GSC_JUDGEM_ARMOR
+  - type: STR_GSC_ARBITOR_ARMOR
+  - type: STR_GSC_WARDEN_ARMOR
+  - type: STR_GSC_JUDGE_BIKE_ARMOR
+  - type: STR_GSC_SENTINELPD_ARMOR
+  - type: GSC_HB_ARMOR
+  - type: GSC_AUTOCANNON_ARMOR
+  - type: STR_GSC_PDF_ARMOR
+  - type: STR_GSC_PDF_ARMOR1
+  - type: STR_GSC_PDF_MEDIC_ARMOR
+  - type: STR_GSC_OGRYN_ARMOR
+  - type: STR_GSC_OGRYN_ORANGE_ARMOR
+  - type: GSC_ARMORED_CAR_ARMOR
+  - type: STR_GSC_GUARD_FLAK_ARMOR_FEMALE
+  - type: STR_GSC_GUARD_FLAK_ARMOR_MALE
+  - type: STR_GSC_KRIEG_ARMOR
+  - type: STR_GSC_GUARD_MEDIC_ARMOR
+  - type: STR_GSC_GUARD_CARAPACE_ARMOR
+  - type: STR_GSC_GUARD_CARAPACE_MEDIC_ARMOR
+  - type: STR_GSC_GUARD_SCION_ARMOR
+  - type: STR_GSC_TANITH_ARMOR
+  - type: STR_GSC_GUARD_FLAK_ARMOR_OFFICER
+  - type: STR_GSC_GUARD_CARAPACE_ARMOR_OFFICER
+  - type: STR_GSC_COMMISSAR_ARMOR
+  - type: STR_GSC_COMMISSAR_CARAPACE_ARMOR
+  - type: STR_GSC_PSYKER_ARMOR
+  - type: STR_GSC_MEDICAE_ARMOR
+  - type: STR_GSC_REPENTIA_ARMOR
+  - type: STR_GSC_INFECTED_ADEPTAS_ARMOR
+  - type: STR_HULKERCARNI_ARMOR
+  - type: STR_HULKERGENE_ARMOR2
+  - type: STR_HULKERGENE_ARMOR2a
+  - type: STR_HULKERGENE_ARMOR4
+  - type: STR_HULKERGENE_ARMOR4a
+  - type: STR_HULKERGENE_ARMOR6
+  - type: STR_HULKERGENE_ARMOR6a
+  - type: TYRANID_GENESTEALER_ARMOR
+  - type: STR_PATRIARCH_ARMOR
+  - type: STR_BROODLORD_ARMOR
+  - type: STR_PATRIARCHREAL_ARMOR
+  - type: STR_TYRANID_BROODNEST_SPAWNER_SMALL_ARMOR
+  - type: STR_TYRANID_BROODNEST_SPAWNER_LARGE_ARMOR
+  - type: STR_TYRANID_BROODNEST_SPAWNER_ARMORED_ARMOR
+  - type: STR_BROODHUNTER_ARMOR
+  - type: STR_HERETIC_CANONESS_ARMOR
+  - type: STR_ADEPTAS_HERETIC_HOSPITALLER_ARMOR
+  - type: STR_ADEPTAS_HERETIC_ARMOR
+  - type: STR_HERETIC_SERAPHIM_ARMOR
+  - type: STR_IRON_MAIDEN_ARMOR
+  - type: STR_NIGHT_LORDS_SISTER_ARMOR
+  - type: STR_NIGHT_LORDS_SISTER_SUPERIOR_ARMOR
+  - type: GUARD_ARMOR_M_LV1_AI
+  - type: GUARD_ARMOR_OFF_M_LV1_AI
+  - type: GUARD_ARMOR_M_LV2
+  - type: GUARD_ARMOR_OFF_M_LV2
+  - type: STR_SPACEMARINEARMOR_SCOUT
+  - type: STR_SPACEMARINEARMOR_TAC
+  - type: STR_SPACEMARINEARMOR_DEV
+  - type: STR_SPACEMARINEARMOR_ASS
+  - type: STR_SPACEMARINEARMOR_SARG
+  - type: STR_SPACEMARINEARMOR_HONOR
+  - type: STR_SPACEMARINEARMOR_TERMI
+  - type: STR_SPACEMARINEARMOR_TECH
+  - type: STR_SPACEMARINEARMOR_CHAP
+  - type: STR_SPACEMARINEARMOR_CAPTAIN
+  - type: STR_BLACKTEMPLARARMOR_SCOUT
+  - type: STR_BLACKTEMPLARARMOR_TAC
+  - type: STR_BLACKTEMPLARARMOR_ASS
+  - type: STR_BLACKTEMPLARARMOR_HONOR
+  - type: STR_BLACKTEMPLARARMOR_TERMI
+  - type: STR_BLACKTEMPLARARMOR_CAPTAIN
+  - type: STR_BLACKTEMPLARARMOR_CHAP
+  - type: STR_BLACKTEMPLARARMOR_TECH
+  - type: STR_SPACEWOLVESARMOR_SCOUT
+  - type: STR_SPACEWOLVESARMOR_ASS
+  - type: STR_SPACEWOLVESARMOR_TAC
+  - type: STR_SPACEWOLVESARMOR_DEV
+  - type: STR_FENRISWOLFY_ARMOR
+  - type: STR_SPACEWOLVESARMOR_TERMI
+  - type: STR_SPACEWOLVESARMOR_CHAP
+  - type: STR_SPACEWOLVESARMOR_TECH
+  - type: STR_SPACEWOLVESARMOR_HONOR
+  - type: STR_SPACEWOLVESARMOR_CAPTAIN
+  - type: STR_CRIMSONFISTARMOR_SCOUT
+  - type: STR_CRIMSONFISTARMOR_TAC
+  - type: STR_CRIMSONFISTARMOR_DEV
+  - type: STR_CRIMSONFISTARMOR_SARG
+  - type: STR_CRIMSONFISTARMOR_HONOR
+  - type: STR_CRIMSONFISTARMOR_TERMI
+  - type: STR_CRIMSONFISTARMOR_CAPTAIN
+  - type: FINALGATEDOWN_ARMOR
+  - type: FINALGATEUP_ARMOR
+  - type: STR_LEGIONDAMNED_MARINE_ARMOR
+  - type: STR_DEATHCOMPANY_MARINE_ARMOR
+  - type: STR_WHITESCARSARMOR_TAC
+  - type: STR_WHITESCARSARMOR_SARG
+  - type: STR_WHITESCARSARMOR_TERMI
+  - type: STR_WHITESCARSARMOR_CAPTAIN
+  - type: STR_WHITESCARSBIKE_ARMOR_UC
+  - type: STR_WHITESCARSARMOR_ASS
+  - type: STR_ADEPTAS_KHORNE
+  - type: STR_KHORNE_REVENGEANCE_SUIT
+  - type: STR_ADEPTAS_ARMOR_KHORNE_REPENTIA
+  - type: STR_KHORNE_REPENTIA_LIGHT
+  - type: STR_KHORNE_RETRIBUTOR_ARMOR_SUPERIOR
+  - type: STR_KHORNE_RETRIBUTOR_ARMOR_SUPERIOR_BLESSED
+  - type: STR_KHORNE_RETRIBUTOR_ARMOR
+  - type: STR_KHORNE_RETRIBUTOR_ARMOR_BLESSED
+  - type: STR_ADEPTAS_KHORNEPARMOR
+  - type: STR_ADEPTAS_KHORNEPARMOR_BLESSED
+  - type: STR_ADEPTAS_KHORNEPARMOR_BLESSED2
+  - type: STR_ADEPTAS_KHORNENOVICEARMOR
+  - type: STR_KHORNESISTER_VALKIA_ARMOR
+  - type: STR_KHORNE_VALKIA_ARMORBASIC
+  - type: STR_KHORNE_VALKIA_ARMORRETRIBUTOR
+  - type: STR_KHORNE_VALKIA_ARMORSUPERIOR
+  - type: STR_MUTON_ARMORB
+  - type: STR_KHORNE_CHAMPION_ARMOR
+  - type: STR_KHORNECHAMP_ARMOR
+  - type: STR_KHORNE_UNGOR_ARMOR
+  - type: STR_KHORNE_GOR_ARMOR
+  - type: STR_KHORNEterminator_ARMOR
+  - type: STR_KHORNE_DREADNOUGHT_ARMOR
+  - type: STR_KHARN_ARMOR
+  - type: STR_KHARN_ARMOR2
+  - type: STR_KHARN_ARMOR3
+  - type: STR_KHORNEcataphract_ARMOR
+  - type: STR_NECRON_WARRIOR_ARMOR
+  - type: STR_NECRON_WARRIOR_ARMOR_REVIVES
+  - type: STR_NECRON_LYCHGUARD_ARMOR
+  - type: STR_NECRON_LYCHGUARD_ARMOR_REVIVES
+  - type: STR_NECRON_IMORTAL_ARMOR
+  - type: STR_NECRON_IMORTAL_ARMOR_REVIVES
+  - type: STR_NECRON_DEATHMARK_ARMOR
+  - type: STR_NECRON_DEATHMARK_ARMOR_REVIVES
+  - type: STR_DESTROYER_ARMOR
+  - type: STR_NECRON_DESTROYER_LORD_ARMOR
+  - type: STR_NECRON_DESTROYER_LORD_SCYTHE_ARMOR
+  - type: STR_NECRON_SCARAB_ARMOR3
+  - type: STR_NECRON_SCARAB_ARMOR5
+  - type: STR_NECRON_SCARAB_ARMOR1
+  - type: STR_NECRON_ARCHITECT_ARMOR
+  - type: STR_NECRON_LORD_ARMOR
+  - type: STR_NECRON_LORD_ARMOR_REVIVES
+  - type: STR_MONO_N_ARMOR
+  - type: STR_MONO_S_ARMOR
+  - type: STR_MONO_W_ARMOR
+  - type: STR_MONO_E_ARMOR
+  - type: STR_NECRON_FLAYED_ONE_ARMOR
+  - type: STR_NECRON_FLAYED_ONE_ARMOR_REVIVES
+  - type: STR_NECRON_PORTAL_ARMOR
+  - type: GREEN_ROBE_ARMOR
+  - type: NURGLE_CULTIST_GREENROBE_ARMOR_RITUALIST
+  - type: NURGLE_CULTIST_GREENROBE_ARMOR_RITUALIST_BLESSED
+  - type: STR_NURGLE_CULTIST_LEADER_ARMOR_RITUALIST
+  - type: NURGLE_CULTIST_GREENROBE_ARMOR
+  - type: NURGLE_CULTIST_GREENROBE_BLESSED_ARMOR
+  - type: STR_NURGLE_ZOMBIE_ARMOR
+  - type: STR_NURGLE_BOOMER_ARMOR
+  - type: STR_NURGLE_DAEMONETTE_ARMOR
+  - type: STR_NURGLE_OGRYN_ARMOR
+  - type: STR_ADEPTAS_NURGLE
+  - type: STR_ADEPTAS_NURGLE_BLESSED
+  - type: STR_ADEPTAS_NURGLE_BLESSED2
+  - type: STR_ADEPTAS_NURGLE_BLESSED_ARMOR_MIDWIFE
+  - type: STR_NURGLE_HOSPITALERARMOR
+  - type: STR_NURGLECHEM_SUIT
+  - type: STR_NURGLE_ADEPTAS_FILTHY_ARMOR
+  - type: STR_NURGLE_ADEPTAS_FILTHY_ARMOR_BLESSED
+  - type: MUTON_ARMORNURGLE
+  - type: MUTON_ARMORNURGLEA
+  - type: STR_DEATHGUARD_SPEWER_ARMOR
+  - type: MUTON_ARMORNURGLEA_BLESSED
+  - type: MUTON_ARMORHAVOCN
+  - type: STR_MUTON_ARMORNURGLE
+  - type: STR_MUTON_ARMORNURGLEC
+  - type: NURGLE_BLIGHT_HAULER_ARMOR
+  - type: STR_NURGLE_PLAGUE_MONK_ARMOR
+  - type: STR_NURGLE_VERMIN_MONK_ARMOR
+  - type: STR_HRUD_VERMINKIN_ARMOR
+  - type: STR_HRUD_FESTERKIN_ARMOR
+  - type: STR_HRUD_WARRIOR_ARMOR
+  - type: STR_HRUD_ARMORED_WARRIOR_ARMOR
+  - type: STR_HRUD_SNIPER_ARMOR
+  - type: STR_HRUD_STORMVERMIN_ARMOR
+  - type: STR_HRUD_STORMVERMIN_OFFICER_ARMOR
+  - type: STR_NURGLcataphract_ARMOR
+  - type: STR_SATURNINEnurgle_ARMOR
+  - type: STR_PESTIGOR_ARMOR
+  - type: ORK_TURRET_ARMOR
+  - type: ORK_TURRET2_ARMOR
+  - type: STR_ORK_KILLA_ARMOR
+  - type: STR_GROTS_ARMOR
+  - type: STR_ORK_ARMORL
+  - type: STR_ORK_ARMORL_BADMOONS_BOYZ
+  - type: STR_ORK_ARMORM_BADMOONS_BIGBOYZ
+  - type: STR_ORK_ARMORH_BADMOONS_NOBZ
+  - type: STR_ORK_ARMOR_BURNA
+  - type: STR_ORK_FLASHGITZ_ARMOR
+  - type: STR_ORK_ARMOR_MEKBOY
+  - type: STR_ORK_STORM_ARMOR
+  - type: STR_ORK_BIKE_ARMOR
+  - type: STR_ORK_ARMORM
+  - type: STR_ORK_TANKBUSTA_ARMOR
+  - type: STR_ORK_ARMORH
+  - type: STR_ORK_ARDEST_ARMOR
+  - type: STR_ORK_ARMORKommando
+  - type: STR_ORK_ARMOR_KOMMANDO_SNIPER
+  - type: STR_ORK_ARMORMEGA
+  - type: STR_SQUIG
+  - type: STR_WEIRDORK_ARMOR
+  - type: STR_ORK_ARMOR_MEGAWARBOSS
+  - type: STR_ORK_ARMOR_DEATHSKULL_MEKBOY
+  - type: STR_ORK_ARMOR_DEFFKOPTER
+  - type: STR_DEATHSKULL_ORK_BOY_ARMOR
+  - type: STR_DEATHSKULL_ORK_KAP_ARMOR
+  - type: STR_DEATHSKULL_ORK_NOB_ARMOR
+  - type: STR_DEATHSKULL_ORK_ARDNOB_ARMOR
+  - type: STR_DEATHSKULL_ORK_MEGANOB_ARMOR
+  - type: STR_PLAYER_SHOOTA_TURRET_ARMOR
+  - type: STR_PLAYER_GREY_SHOOTA_TURRET_ARMOR
+  - type: STR_BLOODAXE_CAPFLAK_PLAYER_ARMOR
+  - type: STR_GUARD_ORK_FLAK_ARMOR
+  - type: STR_BLOODAXE_KARAPACE_PLAYER_ARMOR
+  - type: STR_BLOODAXE_ARDBOY_KARAPACE_PLAYER_ARMOR
+  - type: STR_BLOODAXE_NOB_ARMOR_PLAYER
+  - type: STR_OFFICORK_NOB_ARMOR
+  - type: STR_BLOODAXE_MEGANOB_PLAYER_ARMOR
+  - type: STR_ASSAULT_MEGA_ARMOR
+  - type: STR_PLAYER_ORK_MEGAWARBOSS_ARMOR
+  - type: STR_PLAYER_ORK_MEKBOY_ARMOR
+  - type: STR_PLAYER_ORK_KILLA_ARMOR
+  - type: STR_BLOODAXE_STORM_PLAYER_ARMOR
+  - type: STR_PLAYER_ORK_BIKE_ARMOR
+  - type: STR_PLAYER_ORK_DEFFKOPTER_ARMOR
+  - type: STR_PLAYER_ORK_TANKBUSTA_ARMOR
+  - type: STR_PLAYER_ORK_KOMMANDO_ARMOR
+  - type: STR_PLAYER_WEIRDORK_ARMOR
+  - type: STR_PLAYER_ORK_FLASHGITZ_ARMOR
+  - type: STR_PLAYER_ORK_ARMOR_BURNA
+  - type: BEHEMOTH_ARMOR
+  - type: BASIC_BEHEMOTH_ARMOR
+  - type: SLAANESH_SACRIFICE_M_ARMOR
+  - type: SLAANESH_SACRIFICE_F_ARMOR
+  - type: CIVILIAN_HEDONITE_ARMOR_SACRIFICE
+  - type: CIVILIAN_HEDONITE_ARMOR_BLESSED_SACRIFICE
+  - type: CIVILIAN_HEDONITE_ARMOR_BLESSED_ALPHA_SACRIFICE
+  - type: STR_SLAANESH_DEMONPRINCESSARMOR
+  - type: STR_SLAANCELESTIAN_ARMOR
+  - type: STR_ADEPTAS_SLAANESH
+  - type: STR_ADEPTAS_SLAANESH_BLESSED_ARMOR
+  - type: STR_SLAANCHOSEN_ASS
+  - type: STR_ADEPTAS_SLAANASSASSINARMOR
+  - type: STR_SLAAN_DEVOTED_SUIT
+  - type: STR_CHAOS_SERAPHIM
+  - type: STR_SLAANESH_CANTUSArmor
+  - type: STR_SLAANESH_NOVICEHABIT
+  - type: STR_SLAANESH_PALATINE_ARMOR
+  - type: STR_ADEPTAS_SLAANDOM
+  - type: STR_ADEPTAS_SLAANDOM_BLESSED
+  - type: STR_ADEPTAS_ARMORPURPLE
+  - type: STR_SLAAN_ADEPTAS_CORRUPTED_ARMOR
+  - type: STR_SLAAN_ADEPTAS_CORRUPTED_ARMOR_BLESSED
+  - type: STR_ADEPTAS_HERETIC_ARMOR_BLESSED
+  - type: MUTON_ARMORSLAANESH
+  - type: MUTON_ARMORSLAANESH_BLESSED
+  - type: MUTON_ARMORHAVOCS
+  - type: STR_SLAANESH_ANOINTED_ARMOR
+  - type: STR_SLAANESH_PLAT_ARMOR_P
+  - type: STR_SLAANESHcataphract_ARMOR
+  - type: STR_TAUFIREWARRIOR_ARMOR
+  - type: STR_TAUFIREWARRIORPATHFINDER_ARMOR
+  - type: STR_TAUDRONE_ARMOR
+  - type: STR_TAUFIREWARRIORLEADER_ARMOR
+  - type: STR_TAUFIREWARRIORCAPTAIN_ARMOR
+  - type: STR_TAUGUEVESAFLAK_ARMOR
+  - type: STR_TAUGUEVESACARAP_ARMOR
+  - type: STR_SLAANESH_CHIMERA_TURRET_ARMOR
+  - type: STR_TZEENTCH_CHIMERA_TURRET_ARMOR
+  - type: STR_CHAOS_HERETEK_ARMOR
+  - type: STR_CHAOS_PENETANTE_ARMOR
+  - type: STR_DESERTER_SOLDIER_FEM_ARMOR
+  - type: STR_IRON_GUARD_ARMOR
+  - type: STR_DESERTER_SCOUT_FEMALE_ARMOR
+  - type: STR_DESERTER_GUARD_BASIC_FLAKARMOR
+  - type: STR_DESERTER_GUARD_BASIC_GREENSHIRT
+  - type: STR_DESERTER_GUARD_OFFICER_ARMOR
+  - type: STR_DESERTER_PSYKER_ARMOR
+  - type: TG_BATTLESERVITOR_HBARMOR
+  - type: TG_BATTLESERVITOR_MIARMOR
+  - type: STR_TRAITOR_CHIMERA_TURRET_ARMOR
+  - type: SNAKEMAN_TURRET
+  - type: STR_CHAOS_SENTINEL_ARMOR
+  - type: STR_TRAITORGUARD_OGRYN_ARMOR
+  - type: STR_TRAITORGUARD_OGRYN_REDBLACK_ARMOR
+  - type: STR_BLACKSTONE_ARMOR
+  - type: STR_BLACKSTONE_JUMP_ARMOR
+  - type: STR_BLACKSTONE_ARMOR_SNIPER
+  - type: STR_TZEENTCH_TRAITORGUARD_BASIC_ARMOR
+  - type: STR_TZEENTCH_TRAITORGUARD_HEAVY_ARMOR
+  - type: STR_TZEENTCH_TRAITORGUARD_CARAPACE_ARMOR
+  - type: STR_TZEENTCH_TRAITORGUARD_SCOUT_ARMOR
+  - type: STR_TZEENTCH_TRAITORGUARD_COMMANDO_ARMOR
+  - type: STR_TZEENTCH_TRAITORGUARD_OFFICER_ARMOR
+  - type: STR_CATACHAN_TRAITOR_ARMOR
+  - type: STR_CATACHAN_TRAITOR_ARMOR2
+  - type: STR_CATACHAN_TRAITORVET_ARMOR
+  - type: STR_CATACHAN_TRAITORTOP_ARMOR
+  - type: STR_ADEPTAS_TZEENTCHAMP
+  - type: STR_TZEENTCH_INQUISITOR_ARMOR
+  - type: STR_ADEPTAS_TZEENTCHNASSASSINARMOR
+  - type: STR_TZEENTCH_SORCERESS_ARMOR
+  - type: STR_ADEPTAS_TZEENTCH_TWISTED_ARMOR
+  - type: STR_ADEPTAS_TZEENTCH
+  - type: MUTON_ARMORTZEENTCH
+  - type: MUTON_ARMORTZEENTCH_BLESSED
+  - type: MUTON_ARMORTZS
+  - type: MUTON_ARMORHAVOCT
+  - type: STR_TZAANGOR_ARMOR
+  - type: STR_TZEENTCH_COMBAT_SERVITOR_ARMOR
+  - type: STR_TZEENTCH_BATTLE_SERVITOR_PLASMA_ARMOR
+  - type: STR_TZEENTCH_WARP_THRALL_ARMOR
+  - type: STR_TZEENTCH_MUTANT_ARMOR
+  - type: STR_TZCULTIST_FEM_ARMOR
+  - type: STR_TZCULTIST_THRALL_ARMOR
+  - type: STR_TZCULTIST_THRALL_RITUALIST_ARMOR
+  - type: STR_TZEENTCH_ACOLYTE_ARMOR
+  - type: STR_TZEENTCH_ACOLYTE_FLAMER_ARMOR
+  - type: STR_TZEENTCH_CULT_WITCH_ARMOR
+  - type: STR_TZEENTCH_CULT_WITCH_RITUALIST_ARMOR
+  - type: STR_TZEENTCH_CULT_LEADER_ARMOR
+  - type: STR_TZEENTCH_CULT_LEADER_ASSASSIN_ARMOR
+  - type: STR_TZEENTCH_CULT_LEADER_SPAWN_ARMOR
+  - type: STR_TZEENTCH_CULT_POSSESSED_ARMOR
+  - type: STR_TZEENTCH_CULT_SUMMONER_ARMOR
+  - type: STR_SATURNINErubric_ARMOR
+  - type: STR_TZEENTCHterminator_ARMOR
+  - type: STR_TZEENTCHcataphract_ARMOR
+  - type: STR_IRON_WARRIOR_ARMOR
+  - type: STR_IRON_WARRIOR_ARMOR_BREACHER
+  - type: STR_IRON_BERSERKER_ARMOR
+  - type: STR_IRON_TERMINATOR_ARMOR
+  - type: STR_IRON_WARRIOR_WARSMITH_ARMOR
+  - type: OBLITERATOR_ARMOR
+  - type: STR_MUTON_ARMOR0
+  - type: STR_MUTON_ARMOR1
+  - type: MUTON_ARMORHAVOC
+  - type: STR_MUTON_ARMOR2
+  - type: MUTON_ARMOR5
+  - type: MUTON_ARMOR4
+  - type: MUTON_ARMOR3
+  - type: STR_FLOATER_ARMOR0
+  - type: FLOATER_ARMOR1
+  - type: FLOATER_ARMOR2
+  - type: STR_WARPTALON_ARMOR
+  - type: SECTOPOD_ARMOR
+  - type: SECTOPOD_ARMOR2
+  - type: STR_CHAOS_MARINE_LEADER_ARMOR
+  - type: STR_BLACK_LEGION_CSM_ARMOR
+  - type: STR_CULTIST_SQUATS_ARMOR
+  - type: STR_CULTIST_SQUATS_ARMOR_LEADER
+  - type: STR_TRAITOR_SQUATS_ARMOR
+  - type: STR_CHAOS_SQUATS_ARMOR
+  - type: STR_CHAOS_SQUATS_ARMOR_HEAVY
+  - type: STR_CHAOS_SQUATS_EXOARMOR
+  - type: STR_CHAOS_SQUATS_ARMOR_LEADER
+  - type: STR_ALPHA_ARMOR
+  - type: STR_ALPHAOFF_ARMOR
+  - type: STR_ALPHA_ARMOR_POSSESSED
+  - type: STR_ALPHAterminator_ARMOR
+  - type: STR_ALPHA_CORVUS_ARMOR
+  - type: STR_ALPHA_ARMOR_CORVUS_POSSESSED
+  - type: STR_DEATHSKULL_ORK_KAP_ARMOR_ALPHA
+  - type: STR_ALPHA_ARMOR_ULTRA
+  - type: STR_ALPHA_SCOUT_ARMOR_ULTRA
+  - type: STR_ALPHA_SARGE_ARMOR_ULTRA
+  - type: STR_ALPHA_DEV_ARMOR_ULTRA
+  - type: STR_ALPHA_ARMOR_ELOHIM
+  - type: STR_ALPHA_ARMOR_DAEMONETTE
+  - type: STR_ALPHA_ARMOR_DAEMONETTE_RITUALIST
+  - type: STR_NIGHTLORD_CSM_ARMOR
+  - type: STR_NIGHTLORD_CSM_LEADER_ARMOR
+  - type: STR_NIGHTLORD_RAPTOR_ARMOR0
+  - type: STR_NIGHTLORD_RAPTOR_ARMOR2
+  - type: STR_NIGHTLORDS_WARPTALON_ARMOR
+  - type: STR_NIGHTLORDterminator_ARMOR
+  - type: STR_NIGHTLORDcataphract_ARMOR
+  - type: STR_ALPHA_GREYKNIGHT_ARMOR
+  - type: STR_ALPHA_GREYKNIGHT_ARMOR_CATAPHRACT
+  - type: MUTON_ARMORTZEENTCH
+  - type: STR_ALPHAcataphract_ARMOR
+  - type: STR_BLACKLEGcataphract_ARMOR
+  - type: STR_BLACKLEGsaturn_ARMOR
+  - type: STR_WORDBEARER_GALVWARRIOR_ARMOR
+  - type: STR_WORDBEARER_GALVWARRIOR_POSSARMOR
+  - type: STR_WORDBEARER_GALVWARRIORELITE_ARMOR
+  - type: STR_WORDBEARER_GALVWARRIORELITE_POSSARMOR
+  - type: STR_WORDBEARER_DARKAPOSTLE_ARMOR
+  - type: STR_WORDBEARER_TERMINATOR_ARMOR
+  - type: STR_WORDBEARER_SCOUT_ARMOR
+  - type: STR_DAEMON_PORTAL_ARMOR
+  - type: STR_DAEMON_PORTAL_ARMOR_LESSER
+  - type: STR_DAEMON_PORTAL_ARMOR_MINOR
+  - type: STR_WORDBEARER_TERMINATORELITE_ARMOR
+  - type: STR_WORDBEARER_DEMONLORD_ARMOR
+  - type: STR_WORDBEARER_DIABOLIST_ARMOR
+  - type: STR_WORDBEARER_DIABOLISTELITE_ARMOR
+  - type: STR_SILACOID_ARMORT
+  - type: STR_BLOODREAPER_ARMOR
+  - type: STR_KHORNELING_ARMOR
+  - type: STR_REAPER_ARMOR
+  - type: STR_LESSER_PLAGUE_TOAD_ARMOR
+  - type: STR_GREATER_PLAGUE_TOAD_ARMOR
+  - type: STR_NURGLE_ROTBEARER_ARMOR
+  - type: STR_CELATID_ARMOR
+  - type: NURGLINGS_ARMOR
+  - type: STR_LESSER_ROTFLY_ARMOR
+  - type: STR_CHRYSSALID_ARMOR
+  - type: STR_CHRYSSALID_ARMORSELENE
+  - type: STR_CHRYSSALID_ARMOR_DIRE
+  - type: STR_DEMI_DAEMONETTE_ARMOR
+  - type: STR_DEMI_DAEMONETTE_ARMOR_BLESSED
+  - type: STR_SCREAMER_ARMOR
+  - type: STR_FLAMER_ARMOR
+  - type: STR_EXALTED_FLAMER_ARMOR
+  - type: STR_TZEENTCH_LESSER_DAEMON_ARMOR
+  - type: STR_PINKHORROR_ARMOR
+  - type: STR_BLUEHORROR_ARMOR
+  - type: STR_BRIMSTONE_HORROR_ARMOR
+  - type: STR_NEVERBORN_TERRORIST_ARMOR
+  - type: CYBERDISC_ARMOR
+  - type: STR_CHAOSFURY_ARMOR
+  - type: STR_MEDIC_CARAPACE_ARMOR
+  - type: STR_SCION_HEAVYCARAPACE_ARMOR
+  - type: STR_SCION_OFFICER_HEAVYCARAPACE_ARMOR
+  - type: STR_SCION_JUMP_ARMOR
+  - type: STR_STEELLEGION_STORMTROOPER_ARMOR
+  - type: STR_STEELLEGION_STORMTROOPER_ARMOR_MEDIC
+  - type: STR_GUARD_ARMORSM
+  - type: STR_GUARD_ARMORSM
+  - type: STR_SQUAT_FLAK_ARMOR
+  - type: STR_GUARD_ARMORH_UC
+  - type: STR_HARAKONI_JUMP_CARAPACE
+  - type: STR_GUARD_CARAPACE_SENSORS
+  - type: STR_SQUAT_CARAPACE_ARMOR
+  - type: STR_GUARD_ARMORP_UC
+  - type: STR_GUARD_ARMORP_UC
+  - type: GUARD_ARMOR
+  - type: GUARD_ARMOROF
+  - type: GUARD_ARMORM
+  - type: GUARD_ARMORF
+  - type: STR_GUARD_ARMORS_MEDIC_UC
+  - type: STR_TANITH_CAMO_ARMOR
+  - type: STR_TANITH_MEDIC_ARMOR
+  - type: STR_GUARD_ARMORS_MOUNTED_LASCANNON_UC
+  - type: STR_GUARD_ARMORS_MOUNTED_HEAVY_LASCANNON_UC
+  - type: STR_GUARD_ARMORS_MOUNTED_AUTOCANNON_UC
+  - type: STR_GUARD_ARMORS_MOUNTED_HEAVY_BOLTER_UC
+  - type: STR_GUARD_KRIEG_ARMORS_MOUNTED_HEAVY_BOLTER_UC
+  - type: STR_GUARD_KRIEG_ARMORS_MOUNTED_LASCANNON_UC
+  - type: STR_GUARD_KRIEG_ARMORS_MOUNTED_AUTOCANNON_UC
+  - type: STR_GUARD_KRIEG_ARMORS_MOUNTED_MORTAR_UC
+  - type: STR_STEELLEGION_ARMORS_MOUNTED_HEAVY_BOLTER_UC
+  - type: STR_STEELLEGION_ARMORS_MOUNTED_LASCANNON_UC
+  - type: STR_STEELLEGION_ARMORS_MOUNTED_AUTOCANNON_UC
+  - type: STR_OFFICER_FLAK_ARMOR
+  - type: STR_OFFICER_CARAPACE_ARMOR
+  - type: STR_OFFICER_FLAK_ARMOR_NOAIRSTRIKE
+  - type: STR_OFFICER_CARAPACE_ARMOR_NOAIRSTRIKE
+  - type: STR_OGRYN_UC
+  - type: STR_OGRYN_CARAPACE_BASIC
+  - type: STR_OGRYN_CARAPACE
+  - type: STR_BULLGRYN_SLAB
+  - type: STR_BULLGRYN_BUCKLER
+  - type: STR_BULLGRYN_SLAB_RIOT
+  - type: STR_BULLGRYN_BUCKLER_RIOT
+  - type: STR_PDF_PILOT
+  - type: STR_HEAVY_GUARDSMAN_FEMALE
+  - type: STR_HEAVY_GUARDSMAN_MALE
+  - type: STR_TANITH_SCOUT_FEMALE
+  - type: STR_TANITH_SCOUT_MALE
+  - type: STR_BIOMANCER
+  - type: STR_DIVINER
+  - type: STR_PYROMANCER
+  - type: STR_TELEKINE
+  - type: STR_TELEPATH
+  - type: STR_PENAL_ARMOR_BROWN_UC
+  - type: STR_PENAL_ARMOR_BEASTMAN
+  - type: STR_GUARD_KRIEG_ENGINEER_ARMOR
+  - type: STR_GUARD_KRIEG_ARMOR
+  - type: STR_GUARD_KRIEG_GRENADIER_ARMOR
+  - type: STR_GUARD_KRIEG_GRENADIER_ARMOR_LUCIUS
+  - type: STR_ELYSIAN_JUMP_ARMOR
+  - type: STR_ELYSIAN_JUMP_MEDIC_ARMOR
+  - type: STR_COMMISSAR_UC
+  - type: STR_COMMISSAR_CARAPACE_UC
+  - type: STR_COMMISSAR_CLAW_UC
+  - type: STR_COMMISSAR_YARRICK_UC
+  - type: STR_GUARD_FLAK_VOX
+  - type: STR_GUARD_CARAPACE_VOX
+  - type: STR_GUARD_VETERAN_VOX
+  - type: STR_GUARD_SCION_VOX
+  - type: STR_GUARD_FLAK_VOX_NOAIRSTRIKE
+  - type: STR_GUARD_CARAPACE_VOX_NOAIRSTRIKE
+  - type: STR_GUARD_VETERAN_VOX_NOAIRSTRIKE
+  - type: STR_GUARD_SCION_VOX_NOAIRSTRIKE
+  - type: STR_CHIMERA_TURRET_ARMOR
+  - type: STR_TAUROX_TURRET_ARMOR
+  - type: STR_TAUROS_TURRET_ARMOR
+  - type: STR_TAUROS_SMALL_TURRET_ARMOR
+  - type: LEMONRUSS_ARMOR
+  - type: LEMONRUSS_ARMORB
+  - type: STR_EMPLACEMENT_ARMOR
+  - type: STR_GORGON_HEAVY_STUBBER_LEFT_ARMOR
+  - type: STR_GORGON_HEAVY_STUBBER_RIGHT_ARMOR
+  - type: STR_VALK_CANNON_ARMOR
+  - type: STR_CORVUS_LEFT_CANNON_ARMOR
+  - type: STR_CORVUS_RIGHT_CANNON_ARMOR
+  - type: STR_CORVUS_LEFT_CIV_ARMOR
+  - type: STR_CORVUS_RIGHT_CIV_ARMOR
+  - type: STR_GUARD_POWER_ARMOR
+  - type: STR_GUARD_POWER_ARMOR_MULTILAS
+  - type: STR_KRIEG_POWER_ARMOR
+  - type: STR_KRIEG_POWER_ARMOR_MULTILAS
+  - type: STR_GUARD_POWER_ARMOR_MEDIC
+  - type: STR_GUARD_POWER_ARMOR_OFFICER_NO_VOX
+  - type: STR_GUARD_POWER_ARMOR_OFFICER_VOX
+  - type: STR_GUARD_POWER_ARMOR_COMMISSAR
+  - type: STR_GUARD_POWER_ARMOR_HULK
+  - type: STR_GUARD_POWER_ARMOR_OFFICER_VOX_HULK
+  - type: STR_KRIEG_POWER_ARMOR_HULK
+  - type: STR_GUARD_POWER_ARMOR_COMMISSAR_HULK
+  - type: STR_LE10_POWER_ARMOR_HULK
+  - type: STR_LE10_POWER_ARMOR_HULK_BEASTMAN
+  - type: STR_LE10_POWER_ARMOR_HULK_CATACHAN
+  - type: STR_LE10_POWER_ARMOR_HULK_FELINID
+  - type: STR_LE10_POWER_ARMOR_HULK_OGRYN
+  - type: STR_LE10_POWER_ARMOR_HULK_SQUAT
+  - type: STR_LE10_POWER_ARMOR_HULK_ORK
+  - type: STR_LE10_POWER_ARMOR_HULK_CHAOS
+  - type: STR_CHIMEDON_ARMOR
+  - type: STR_CHIMERA_TWIN_HB_TURRET_ARMOR
+  - type: STR_CHIMERASL_TWIN_HB_TURRET_ARMOR
+  - type: STR_CHIMERASL_MULTILAS_TURRET_ARMOR
+  - type: STR_GORGONSL_HEAVY_FLAMER_FRONT_LEFT_ARMOR
+  - type: STR_GORGONSL_HEAVY_FLAMER_BACK_LEFT_ARMOR
+  - type: STR_GORGONSL_HEAVY_FLAMER_FRONT_RIGHT_ARMOR
+  - type: STR_GORGONSL_HEAVY_FLAMER_BACK_RIGHT_ARMOR
+  - type: STR_GORGONSL_HEAVY_STUBBER_LEFT_ARMOR
+  - type: STR_GORGONSL_HEAVY_STUBBER_RIGHT_ARMOR
+  - type: STR_GUARD_ARMORS_TAUROS_HEAVY_STUBBER
+  - type: STR_GUARD_ARMORS_TAUROS_HEAVY_FLAMER
+  - type: STR_OGRYN_BONEHEAD_CARAPACE_ARMOR
+  - type: STR_OGRYN_BONEHEAD_SLAB_SHIELD_ARMOR
+  - type: 4X4_ARMOR
+  - type: 4X4_ARMOR_SURROUND
+  - type: STR_BANE_BOLTER_RIGHT_ARMOR
+  - type: STR_BANE_BOLTER_LEFT_ARMOR
+  - type: STR_BANE_BOLTER_ARMOR
+  - type: STR_BANE_LAS_ARMOR
+  - type: STR_SLY_MARBO_ARMOR
+  - type: STR_CATACHAN_FIGHTER_ARMOR
+  - type: STR_CATACHAN_FIGHTER_ARMOR_AI
+  - type: STR_CATACHANVET_FIGHTER_ARMOR
+  - type: STR_CATACHANVET_FIGHTER_ARMOR_AI
+  - type: STR_CATACHANTOP_FIGHTER_ARMOR
+  - type: STR_CATACHANTOP_FIGHTER_ARMOR_AI
+  - type: STR_SLY_MARBOM1_ARMOR
+  - type: STR_SLY_MARBOM2_ARMOR
+  - type: STR_SLY_MARBOM3_ARMOR
+  - type: STR_SLY_MARBOEND_ARMOR
+  - type: STR_ENGINSEER_ARMOR_UC
+  - type: CLOAKED_WOMAN_ARMOR
+  - type: CLOAKED_WOMAN2_ARMOR
+  - type: CLOAKED_WOMAN_ORANGE_ARMOR
+  - type: STR_CHAOS_MARINE_ARMOR
+  - type: STR_CHAOS_MARINE_ARMOR
+  - type: STR_CHAOS_SERGEANT_ARMOR
+  - type: STR_CHAOS_HAVOC_ARMOR
+  - type: STR_CHAOS_RAPTOR_ARMOR
+  - type: STR_CHAOS_SORC_ARMOR
+  - type: STR_CHAOS_TERMINATOR_ARMOR
+  - type: STR_CHAOS_TERMINATOR_ARMOR
+  - type: STR_CHAOS_LORD_ARMOR
+  - type: STR_UNDIVIDED_CATAPHRACT_ARMOR_PLAYER
+  - type: STR_UNDIVIDEDCHAOSBIKE_LEGIOARMORPLAYER
+  - type: DREAD_ARMOR_CHAOS_PLAYER
+  - type: DREAD_ARMOR_CHAOS_PLASMA_PLAYER
+  - type: DREAD_ARMOR_CHAOS_MISSILE_PLAYER
+  - type: DREAD_ARMOR_CHAOS_LASCAN_PLAYER
+  - type: STR_ALPHA_ARMOR_PLAYER
+  - type: STR_IRON_WARRIOR_ARMOR_PLAYER
+  - type: STR_IRON_BERSERKER_ARMOR_PLAYER
+  - type: STR_IRON_TERMINATOR_ARMOR_PLAYER
+  - type: STR_NIGHTLORD_CSM_ARMOR_PLAYER
+  - type: STR_KHORNE_ARMOR_PLAYER
+  - type: STR_KHORNE_WARPTALON_ARMOR_PLAYER
+  - type: STR_KHORNE_SERGEANT_ARMOR
+  - type: STR_KHORNE_TERMINATOR_ARMOR
+  - type: STR_KHORNEcataphract_ARMOR_PLAYER
+  - type: STR_KHORNECHAOSBIKE_LEGIOARMORPLAYER
+  - type: MUTON_ARMORNURGLEA_PLAYER
+  - type: MUTON_ARMORNURGLEA_PLAYER
+  - type: STR_NURGLE_HAVOC_ARMOR
+  - type: STR_NURGLE_SERGEANT_ARMOR
+  - type: STR_NURGLE_TERMINATOR_ARMOR
+  - type: STR_NURGLcataphract_ARMOR_PLAYER
+  - type: STR_NURGLECHAOSBIKE_LEGIOARMORPLAYER
+  - type: MUTON_ARMORSLAANESH_PLAYER
+  - type: STR_SLAANESH_HAVOC_ARMOR
+  - type: STR_SLAANESH_SERGEANT_ARMOR
+  - type: STR_SLAANESH_TERMINATOR_ARMOR_PLAYER
+  - type: STR_CHAOS_BEHEMOTH_ARMOR
+  - type: STR_CHAOS_BEHEMOTH_ARMOR
+  - type: STR_SLAANESHcataphract_ARMOR_PLAYER
+  - type: STR_SLAANESHCHAOSBIKE_LEGIOARMORPLAYER
+  - type: MUTON_ARMORTZEENTCH_PLAYER
+  - type: STR_TZEENTCH_SERGEANT_ARMOR
+  - type: STR_TZEENTCH_TERMINATOR_ARMOR
+  - type: STR_TZEENTCH_SORCERER_ARMOR
+  - type: STR_TZEENTCHcataphract_ARMOR_PLAYER
+  - type: STR_TZEENTCHCHAOSBIKE_LEGIOARMORPLAYER
+  - type: STR_CHAOS_FANATIC_ARMOR
+  - type: STR_DARK_DISCIPLE_ARMOR_PLAYER
+  - type: STR_KHORNE_NOVICE_ARMOR_PLAYER
+  - type: STR_NURGLE_NOVICE_ARMOR_PLAYER
+  - type: STR_SLAANESH_NOVICE_ARMOR_PLAYER
+  - type: STR_TZEENTCH_NOVICE_ARMOR_PLAYER
+  - type: STR_ADEPTAS_HERETIC_MEDICAE_ARMOR_PLAYER
+  - type: STR_CHAOS_ADEPTAS_UNDIVIDED_ARMOR
+  - type: STR_CHAOS_NIGHTLORDS_SISTER_ARMOR
+  - type: STR_CHAOS_ADEPTAS_IRON_MAIDEN_ARMOR
+  - type: STR_CHAOS_ADEPTAS_KHORNE_ARMOR
+  - type: STR_CHAOS_ADEPTAS_NURGLE_ARMOR
+  - type: STR_CHAOS_ADEPTAS_SLAANESH_ARMOR
+  - type: STR_CHAOS_ADEPTAS_TZEENTCH_ARMOR
+  - type: STR_HERETIC_SUPERIOR_ARMOR_PLAYER
+  - type: STR_KHORNE_SUPERIOR_ARMOR_PLAYER
+  - type: STR_NURGLE_SUPERIOR_ARMOR_PLAYER
+  - type: STR_SLAANESH_SUPERIOR_ARMOR_PLAYER
+  - type: STR_TZEENTCH_SUPERIOR_ARMOR_PLAYER
+  - type: STR_KHORNE_CULTIST_ARMOR_PLAYER
+  - type: STR_KHORNE_FLAK_PLAYER
+  - type: STR_KHORNE_CARA_PLAYER
+  - type: STR_KHORNE_CARA_OFF_PLAYER
+  - type: STR_KHORNE_MOUNTED_LASCANNON_PLAYER
+  - type: STR_KHORNE_MOUNTED_AUTOCANNON_PLAYER
+  - type: STR_KHORNE_MOUNTED_BOLTER_PLAYER
+  - type: STR_KHORNECHAOSBIKE_GUARDARMORPLAYER
+  - type: STR_KHORNGOR_ARMOR_PLAYER
+  - type: STR_KHORNE_OGRYN_ARMOR_PLAYER
+  - type: STR_NURGLE_CULTIST_ARMOR_PLAYER
+  - type: STR_NURGLE_FLAK_PLAYER
+  - type: STR_NURGLE_CARA_PLAYER
+  - type: STR_NURGLE_CARA_OFF_PLAYER
+  - type: STR_NURGLE_MOUNTED_LASCANNON_PLAYER
+  - type: STR_NURGLE_MOUNTED_AUTOCANNON_PLAYER
+  - type: STR_NURGLE_MOUNTED_BOLTER_PLAYER
+  - type: STR_NURGLECHAOSBIKE_GUARDARMORPLAYER
+  - type: STR_PESTIGOR_ARMOR_PLAYER
+  - type: STR_NURGLE_OGRYN_ARMOR_PLAYER
+  - type: STR_HRUD_ARMOR_PLAYER
+  - type: STR_STORMVERMIN_ARMOR_PLAYER
+  - type: STR_VERMIN_MONK_ARMOR_PLAYER
+  - type: STR_GREATER_PLAGUE_TOAD_ARMOR_PLAYER
+  - type: STR_SLAANESH_CULTIST_ARMOR_PLAYER
+  - type: STR_SLAANESH_FLAK_PLAYER
+  - type: STR_SLAANESH_CARA_PLAYER
+  - type: STR_SLAANESH_CARA_OFF_PLAYER
+  - type: STR_SLAANESH_COMMISSAR_ARMOR_PLAYER
+  - type: STR_SLAANESH_MOUNTED_LASCANNON_PLAYER
+  - type: STR_SLAANESH_MOUNTED_AUTOCANNON_PLAYER
+  - type: STR_SLAANESH_MOUNTED_BOLTER_PLAYER
+  - type: STR_SLAANESCHAOSBIKE_GUARDARMORPLAYER
+  - type: STR_TZEENTCH_CULTIST_ARMOR_PLAYER
+  - type: STR_TZEENTCH_FLAK_PLAYER
+  - type: STR_TZEENTCH_CARA_PLAYER
+  - type: STR_TZEENTCH_OFF_FATIGUES_PLAYER
+  - type: STR_TZEENTCH_MOUNTED_LASCANNON_PLAYER
+  - type: STR_TZEENTCH_MOUNTED_AUTOCANNON_PLAYER
+  - type: STR_TZEENTCH_MOUNTED_BOLTER_PLAYER
+  - type: STR_TZEENTCHCHAOSBIKE_GUARDARMORPLAYER
+  - type: STR_TZAANGOR_ARMOR_PLAYER
+  - type: STR_TZEENTCH_CULT_WITCH_ARMOR_PLAYER
+  - type: STR_BLACKSTONE_ARMOR_PLAYER
+  - type: STR_BLACKSTONE_STORMTROOPER_ARMOR_PLAYER
+  - type: STR_BLACKSTONE_STORMTROOPER_ARMOR_PLAYER_HELLGUN
+  - type: STR_BLACKSTONE_STORMTROOPER_ARMOR_PLAYER_VOLLEYGUN
+  - type: STR_BLACKSTONE_JUMP_ARMOR_PLAYER
+  - type: STR_UNDIVIDEDCHAOSBIKE_GUARDARMORPLAYER
+  - type: STR_IRON_GUARD_ARMOR_PLAYER
+  - type: STR_IRON_GUARD_FLAK_ARMOR_PLAYER
+  - type: STR_BLACKGUARD_FLAK_ARMOR_PLAYER
+  - type: STR_IRON_GUARD_CARA_ARMOR_PLAYER
+  - type: STR_BLACKGUARD_CARA_ARMOR_PLAYER
+  - type: STR_IRON_GUARD_STORMTROOPER_ARMOR
+  - type: STR_IRON_GUARD_STORMTROOPER_ARMOR_HELLGUN
+  - type: STR_IRON_GUARD_STORMTROOPER_ARMOR_VOLLEYGUN
+  - type: STR_IRON_GUARD_SERVITOR_ARMOR
+  - type: STR_IRON_GUARD_ARMOR_MOUNTED_AUTOCANNON
+  - type: STR_IRON_GUARD_ARMOR_MOUNTED_LASCANNON
+  - type: CHAOSLTT_ARMOR
+  - type: CHAOSRTT_ARMOR
+  - type: STR_OBELISK_ARMOR
+  - type: STR_PC_CHAOSLORDARMORPLAYER
+  - type: STR_NEVERBORN_ARMOR_PLAYER
+  - type: STR_BLOODREAPER_ARMOR_PLAYER
+  - type: STR_BLOODLETTER_ARMOR_PLAYER
+  - type: KHORNELING_ARMOR_PLAYER
+  - type: STR_NURGLE_MIDWIFE_ARMOR_PLAYER
+  - type: STR_PLAGUEBEARER_ARMOR_PLAYER
+  - type: NURGLING_ARMOR_PLAYER
+  - type: STR_CORRUPT_SISTER_ARMOR_PLAYER
+  - type: STR_DIRE_DAEMONETTE_ARMOR_PLAYER
+  - type: STR_DAEMONETTE_ARMOR_PLAYER
+  - type: STR_EXALTED_FLAMER_ARMOR_PLAYER
+  - type: STR_FLAMER_ARMOR_PLAYER
+  - type: STR_PINKHORROR_ARMOR_PLAYER
+  - type: STR_BLUEHORROR_ARMOR_PLAYER
+  - type: STR_PERSONAL_ARMOR_CIVILIAN
+  - type: STR_PERSONAL_ARMOR_UC
+  - type: STR_BLOODRAVENS_TACTICAL_ARMOR
+  - type: STR_SIGNALFALSE_ARMOR_UC
+  - type: STR_SIGNAL_ARMOR_UC
+  - type: STR_SIGNAL_ARMOR_UC_HULK
+  - type: STR_LIB_ARMOR_UC
+  - type: STR_DEV_ARMOR_UC
+  - type: STR_HONOR_ARMOR_UC
+  - type: STR_ASS_ARMOR_UC
+  - type: STR_ASS_ARMOR_HONOR_UC
+  - type: STR_APOT_ARMOR_UC
+  - type: STR_TECH_ARMOR_UC
+  - type: STR_SARGENT_ARMOR_UC
+  - type: STR_CHAP_ARMOR_UC
+  - type: STR_CAPTAIN_UC
+  - type: STR_CAPTAIN_UC
+  - type: STR_GREYKNIGHT_UC
+  - type: STR_JUDGE_BIKE_ARMOR_UC
+  - type: STR_STORMBOLTER_TURRET_ARMOR
+  - type: STR_DROPPOD_ARMOR
+  - type: STR_ULTRAcataphract_ARMOR
+  - type: STR_ULTRAcataphract_ARMORPLAYER
+  - type: STR_ULTRAsaturnine_ARMORPLAYER
+  - type: STR_SPACEWOLVES_BLOODCLAW_ARMOR
+  - type: STR_SPACEWOLVES_GREYHUNTER_ARMOR
+  - type: STR_SPACEWOLVES_VETERANSCOUT_ARMOR
+  - type: STR_SPACEWOLVES_SKYCLAW_ARMOR
+  - type: STR_SPACEWOLVES_LONGFANG_ARMOR
+  - type: STR_SPACEWOLVES_WOLFPRIEST_ARMOR
+  - type: STR_SPACEWOLVES_IRONPRIEST_ARMOR
+  - type: STR_SPACEWOLVES_SERGEANT_ARMOR
+  - type: STR_SPACEWOLVES_WOLFGUARD_ARMOR
+  - type: STR_SPACEWOLVES_TERMINATOR_ARMOR
+  - type: STR_SPACEWOLVES_WOLFLORD_ARMOR
+  - type: STR_SPACEWOLVEScataphract_ARMORPLAYER
+  - type: STR_SPACEWOLVES_RUNEPRIEST_ARMOR
+  - type: STR_SPACEWOLVES_RUNEPRIEST_ARMOR_TEMPEST
+  - type: STR_SPACEWOLVES_RUNEPRIEST_ARMOR_MELEE_INSPIRE
+  - type: STR_SPACEWOLVES_RUNEPRIEST_ARMOR_SHIELD
+  - type: STR_SPACEWOLVES_RUNEPRIEST_ARMOR_LIGHTNING
+  - type: STR_SPACEWOLVES_RUNEPRIEST_ARMOR_BLIZZARD
+  - type: STR_SPACEWOLVESsaturnine_ARMORPLAYER
+  - type: STR_SPACEWOLVES_WULFEN_ARMORPLAYER
+  - type: SWDREAD_ARMOR_UC
+  - type: SWDREAD_ARMOR2_UC
+  - type: SWDREAD_ARMOR3_UC
+  - type: SWDREAD_ARMOR4_UC
+  - type: SWDREAD_ARMOR5_UC
+  - type: STR_SPACEWOLVES_WULFEN_TERMIPLAYER
+  - type: STR_TAUDRONE_ARMOR_GV
+  - type: STR_TAUDRONE_GUN_ARMOR_GV
+  - type: STR_TAUDRONE_MARKER_ARMOR_GV
+  - type: STR_TAU_BASIC_ARMOR_GV
+  - type: STR_TAU_STRIKE_ARMOR_GV
+  - type: STR_TAU_BREACHER_ARMOR_GV
+  - type: STR_TAU_PATHFINDER_ARMOR_GV
+  - type: STR_TAU_STRIKE_LEADER_ARMOR_GV
+  - type: STR_TAU_BREACHER_LEADER_ARMOR_GV
+  - type: STR_TAU_PATHFINDER_LEADER_ARMOR_GV
+  - type: STR_ENGRAVED_ARMORS_GV
+  - type: STR_ENGRAVED_STRIKE_ARMOR_GV
+  - type: STR_ENGRAVED_BREACHER_ARMOR_GV
+  - type: STR_ENGRAVED_PATHFINDER_ARMOR_GV
+  - type: STR_TAUFIREBLADE_ARMOR_GV
+  - type: STR_XV25_STEALTH_SUIT_GV
+  - type: STR_XV26_STEALTH_SUIT_GV
+  - type: STR_STARSCYTHE_TEMPLATE_GV
+  - type: STR_STARSCYTHE_CRISIS_SUIT_BC2X_GV
+  - type: STR_STARSCYTHE_CRISIS_SUIT_BCFL_GV
+  - type: STR_STARSCYTHE_CRISIS_SUIT_FL2X_GV
+  - type: STR_TAUGUEVESAFLAK_PC_ARMOR_GV
+  - type: STR_TAUGUEVESACARAP_ARMOR_GV
+  - type: STR_TAUGUEVESACARAP_LEADER_ARMOR_GV
+  - type: STR_TAUGUEVESACARAP_VETERAN_ARMOR_GV
+  - type: STR_GUEVESA_LIGHT_ARMOR_TEMPLATE_GV
+  - type: STR_TAUGUEVESA_IMPROVARMOR_T0_GV
+  - type: STR_PENITENT_ARMOR_NERFED
+  - type: STR_REDEEMED_T1_ARMOR_GV
+  - type: STR_IW_GUARD_FLAK_HAZARD_GV
+  - type: STR_IW_GUARD_FLAK_HAZARD_SERGEANT_GV
+  - type: STR_IW_GUARD_FLAK_HAZARD_SAPPER_GV
+  - type: STR_IW_GUARD_FLAK_HAZARD_OFFICER_GV
+  - type: STR_WBSSCOUT_ARMORPLAYER
+  - type: STR_WBMARINE_ARMORPLAYER
+  - type: STR_WBRAPTOR_ARMORPLAYER
+  - type: STR_WBMARINEELITE_ARMORPLAYER
+  - type: STR_WBAPOTHECARY_ARMORPLAYER
+  - type: STR_WBTERMINATOR_ARMORPLAYER
+  - type: STR_WBTERMINATORELITE_ARMORPLAYER
+  - type: STR_WBDIABOLIST_ARMORPLAYER
+  - type: STR_WBARCHDIABOLIST_ARMORPLAYER
+  - type: STR_WBDARKAPOSTLE_ARMORPLAYER
+  - type: STR_WORDBEARER_TECHMARINE_ARMORPLAYER
+  - type: STR_WORDBEARER_POSSESSEDLV1_POSSARMOR
+  - type: STR_WORDBEARER_POSSESSEDLV2_POSSARMOR
+  - type: STR_WORDBEARER_POSSESSEDLV3_POSSARMOR
+  - type: STR_WORDBEARER_CULTIST_ARMOR
+  - type: STR_WORDBEARER_DREADNOUGHT_ARMORPLAYER
+  - type: STR_WORDBEARER_HELBRUTE_ARMOR
+  - type: STR_WORDBEARER_HULKRELIC_ARMORPLAYER
+  - type: STR_WORDBEARERcataphract_ARMORPLAYER
+  - type: STR_WORDBEARERsaturnine_ARMORPLAYER
+  - type: STR_COMMAND_TURRET_ARMOR
+  - type: STR_CHIMERASL_COMMAND_TURRET_ARMOR
+  - type: STR_LEMAN_TURRET_ARMOR
+  - type: STR_LEMANSL_COMMAND_TURRET_ARMOR
+  - type: STR_CHIMERA_BOLTER_TURRET_ARMOR
+  - type: STR_CHIMERASL_TWIN_HB_TURRET_ARMOR
+  - type: STR_CHIMERASL_MULTILAS_TURRET_ARMOR
+  - type: STR_CHIMERA_FLAMER_TURRET_ARMOR
+  - type: STR_CHIMERA_AC_TURRET_ARMOR
+  - type: STR_CHIMERASL_AC_TURRET_ARMOR
+  - type: STR_EXECUTIONER_ARMOR
+  - type: STR_LEMANSL_EXECUTIONER_ARMOR
+  - type: STR_PUNISHER_ARMOR
+  - type: STR_LASCANNON_ARMOR
+  - type: STR_LEMANSL_BATTLECANNON_TURRET_ARMOR
+  - type: STR_FLAMER_SPONSON_ARMOR
+  - type: STR_SL_SPONSON_FLAMER_ARMOR
+  - type: STR_BOLTER_SPONSON_ARMOR
+  - type: STR_SL_SPONSON_BOLTER_ARMOR
+  - type: STR_MULTIMELTA_SPONSON_ARMOR
+  - type: STR_CHIMERA_HULL_BOLTER_ARMOR
+  - type: STR_CHIMERASL_HULL_BOLTER_ARMOR
+  - type: STR_LEMAN_HULL_BOLTER_ARMOR
+  - type: STR_LEMANSL_HULL_BOLTER_ARMOR
+  - type: STR_LEMAN_HULL_LAS_ARMOR
+  - type: STR_LEMANSL_HULL_LAS_ARMOR
+  - type: STR_SPONSON_ARMOR
+  - type: STR_LEMANSL_SPONSON_ARMOR
+  - type: STR_CHIMERA_HULL_ARMOR
+  - type: STR_CHIMERASL_HULL_ARMOR
+  - type: STR_LEMAN_HULL_ARMOR
+  - type: STR_LEMANSL_HULL_ARMOR
+  - type: GENERIC_BATTLESERVITOR_HBARMOR
+  - type: GENERIC_BATTLESERVITOR_MIARMOR
+  - type: GENERIC_BATTLESERVITOR_PLARMOR
+  - type: STR_CULTDEFILERGUNARMOR
+  - type: CULTDEFILER_ARMOR_R
+  - type: CULTDEFILER_ARMOR_L
+  - type: STR_FINALSTORMTALONENGINE_ARMOR
+  - type: STR_FINALSTORMTALON_ARMOR
+  - type: FINALLTS_ARMOR
+  - type: FINALRTS_ARMOR
+  - type: FINALVINDICATOR_ARMOR2
+  - type: STR_WRAITHGUARD_ARMOR_P
+  - type: STR_WRAITHGUARD_ARMOR_P_SHIELD
+  - type: STR_ELDAR_ARMOR_M
+  - type: STR_ELDAR_ARMOR_M_SHIELD
+  - type: STR_ELDAR_ARMOR_F
+  - type: STR_ELDAR_ARMOR_FH
+  - type: STR_ELDAR_ARMOR_F_SHIELD
+  - type: STR_ELDAR_ARMOR2_P
+  - type: STR_ELDAR_ARMOR2_P_SHIELD
+  - type: STR_ELDAR_ARMOR3_P
+  - type: STR_ELDAR_ARMOR3_P_SHIELD
+  - type: STR_ELDAR_ARMOR5_P
+  - type: STR_ELDAR_ARMOR5_P_SHIELD
+  - type: STR_ELDAR_ARMOR4_P
+  - type: STR_ELDAR_ARMOR4_P_SHIELD
+  - type: STR_ELDAR_ARMOR6_P
+  - type: STR_ELDAR_ARMOR6_P_LAUNCHER
+  - type: STR_ELDAR_ARMOR6_P_SHIELD
+  - type: STR_ELDAR_PLAT_ARMOR_P
+  - type: ELDAR_TURRET_ARMOR_P
+  - type: STR_ELDAR_ARMOR
+  - type: STR_ELDAR_ARMOR2
+  - type: STR_ELDAR_ARMOR5
+  - type: STR_ELDAR_ARMOR4
+  - type: STR_ELDAR_ARMOR6
+  - type: STR_ELDAR_ARMOR3
+  - type: STR_ELDAR_PLAT_ARMOR
+  - type: STR_WRAITHGUARD_ARMOR
+  - type: SWRAZORBACK_ARMOR
+  - type: STR_SWLASCANNONLOW_ARMOR
+  - type: STR_SWLASCANNONUP_ARMOR
+  - type: SWLSCsponson_ARMOR_R
+  - type: SWLSCsponson_ARMOR_L
+  - type: SWLTT_ARMOR
+  - type: SWRTT_ARMOR
+  - type: STR_SWBATTLECANNON_ARMOR
+  - type: WBRAZORBACK_ARMOR
+  - type: TARGET_INVINCIBLE
+  - type: CULTIST_RITUAL_SUMMONING_ARMOR
+  - type: MONK_ARMOR_1
+  - type: MONK_ARMOR_2
+  - type: STR_ADEPTAS_SLAANESH
+  - type: STR_ADEPTAS_TZEENTCH
+  - type: STR_ADEPTAS_KHORNE
+  - type: STR_ADEPTAS_NURGLE
+  - type: IMPULSOR_SHIELD_ARMOR
+  - type: GENERATOR_ARMOR
+  - type: MUNITORIUM_ARMOR
+  - type: GATEDOWN_ARMOR
+  - type: GATEUP_ARMOR
+  - type: RADAR_ARMOR
+  - type: FIELD_ARMOR
+  - type: SHIELD_ARMOR
+  - type: STR_STORMTALONENGINE_ARMOR
+  - type: STR_STORMTALON_ARMOR
+  - type: LTS_ARMOR
+  - type: RTS_ARMOR
+  - type: WHIRLWIND_ARMOR
+  - type: DAMOCLES_ARMOR
+  - type: LTT_ARMOR
+  - type: RTT_ARMOR
+  - type: PREDATOR_SIDE_ARMOR
+  - type: PREDATOR_ARMOR
+  - type: PREDATOR_ARMORBASE
+  - type: DEFILER_ARMOR_R
+  - type: DEFILER_ARMOR_L
+  - type: ELDAR_TURRET_ARMOR
+  - type: STR_GENE_TURRET_ARMOR
+  - type: STR_LEMONRUSS_BOLTER_ARMOR
+  - type: STR_GORGON_HEAVY_FLAMER_FRONT_LEFT_ARMOR
+  - type: STR_GORGON_HEAVY_FLAMER_BACK_LEFT_ARMOR
+  - type: STR_GORGON_HEAVY_FLAMER_FRONT_RIGHT_ARMOR
+  - type: STR_GORGON_HEAVY_FLAMER_BACK_RIGHT_ARMOR
+  - type: TARGETA
+  - type: TARGET_GUARDSMAN
+  - type: SUPORTFA
+  - type: OBLITERATOR_ARMOR
+  - type: MONK_ARMOR_UC
+  - type: SERVITOR_ARMOR_UC
+  - type: STR_GUARD_ARMORSM
+  - type: STR_GUARD_ARMORH_UC
+  - type: STR_GUARD_ARMORP_UC
+  - type: STR_MUTON_ARMOR0
+  - type: STR_MUTON_ARMOR1
+  - type: STR_MUTON_ARMORB
+  - type: MUTON_ARMORSLAANESH
+  - type: MUTON_ARMORNURGLE
+  - type: MUTON_ARMORNURGLEA
+  - type: MUTON_ARMORTZEENTCH
+  - type: MUTON_ARMORTZS
+  - type: MUTON_ARMORHAVOC
+  - type: MUTON_ARMORHAVOCS
+  - type: MUTON_ARMORHAVOCN
+  - type: MUTON_ARMORHAVOCT
+  - type: STR_MUTON_ARMOR2
+  - type: MUTON_ARMOR5
+  - type: MUTON_ARMOR4
+  - type: MUTON_ARMOR3
+  - type: STR_MUTON_ARMORNURGLE
+  - type: STR_MUTON_ARMORNURGLEC
+  - type: STR_GREYKNIGHT_ARMOR
+  - type: STR_GREYKNIGHT_ARMOR_BA
+  - type: STR_GREYKNIGHT_ARMOR_NS
+  - type: STR_CHAOS_BEHEMOTH_ARMOR
+  - type: STR_CHAOS_SORC_ARMOR
+  - type: STR_CHAOS_HAVOC_ARMOR
+  - type: STR_CHAOS_MARINE_ARMOR
+  - type: STR_CHAOS_SERGEANT_ARMOR
+  - type: STR_CHAOS_TERMINATOR_ARMOR
+  - type: STR_CHAOS_LORD_ARMOR
+  - type: STR_SIGNALFALSE_ARMOR_UC
+  - type: STR_SIGNAL_ARMOR_UC
+  - type: STR_HONOR_ARMOR_UC
+  - type: STR_ASS_ARMOR_UC
+  - type: STR_ASS_ARMOR_HONOR_UC
+  - type: STR_CHAP_ARMOR_UC
+  - type: STR_CAPTAIN_UC
+  - type: STR_GREYKNIGHT_UC
+  - type: STR_PERSONAL_ARMOR_UC
+  - type: STR_PERSONAL_ARMOR_CIVILIAN
+  - type: STR_SCOUT_UC
+  - type: STR_SCOUTH_UC
+  - type: STR_SCOUTHW_UC
+  - type: STR_SCOUTHB_UC
+  - type: STR_SCOUTHR_UC
+  - type: STR_SCOUTHY_UC
+  - type: STR_SCOUTHG_UC
+  - type: STR_POWER_SUIT_UC
+  - type: STR_TSARGENT_UC
+  - type: STR_FLYING_SUIT_UC
+  - type: CENT_ARMOR_UC
+  - type: BIKE_ARMOR_UC
+  - type: DREAD_ARMOR_UC
+  - type: DREAD_ARMOR2_UC
+  - type: DREAD_ARMOR3_UC
+  - type: DREAD_ARMOR5_UC
+  - type: ORBITAL_ARMOR
+  - type: CENT_ARMOR
+  - type: BEHEMOTH_ARMOR
+  - type: CYBERDISC_ARMOR
+  - type: STR_REAPER_ARMOR
+  - type: SECTOPOD_ARMOR
+  - type: SECTOPOD_ARMOR2
+  - type: STR_CHAOS_SENTINEL_ARMOR
+  - type: STR_SILACOID_ARMORT
+  - type: STR_CELATID_ARMOR
+  - type: STR_CHRYSSALID_ARMOR
+  - type: STR_FLAMER_ARMOR
+  - type: STR_SCREAMER_ARMOR
+  - type: STR_JARMOR_UC
+  - type: STR_JARMORH_UC
+  - type: STR_JARMOR_UCM
+  - type: STR_NECRON_ARCHITECT_ARMOR
+  - type: STR_NECRON_WARRIOR_ARMOR
+  - type: STR_NECRON_LYCHGUARD_ARMOR
+  - type: STR_NECRON_IMORTAL_ARMOR
+  - type: STR_NECRON_DEATHMARK_ARMOR
+  - type: STR_DESTROYER_ARMOR
+  - type: STR_NECRON_SCARAB_ARMOR3
+  - type: STR_NECRON_SCARAB_ARMOR5
+  - type: STR_NECRON_SCARAB_ARMOR1
+  - type: STR_ELDAR_ARMOR
+  - type: STR_ELDAR_ARMOR2
+  - type: STR_ELDAR_ARMOR5
+  - type: STR_ELDAR_ARMOR4
+  - type: STR_ELDAR_ARMOR6
+  - type: STR_ELDAR_ARMOR3
+  - type: STR_ELDAR_PLAT_ARMOR
+  - type: STR_WRAITHGUARD_ARMOR
+  - type: STR_ORK_KILLA_ARMOR
+  - type: STR_SAB_ARMOR
+  - type: CARNI_ARMOR
+  - type: GENE_ARMOR3
+  - type: STR_GENETANK_ARMOR
+  - type: PIPELINE_ARMOR
+  - type: VOSS_ENGINE_NORTH_ARMOR
+  - type: VOSS_ENGINE_SOUTH_ARMOR
+  - type: BARREL_ARMOR
+  - type: STR_GREYKNIGHT_ADEPTAS_ARMOR
+  - type: STR_PENITENT_ARMOR
+  - type: STR_JUDGE_BIKE_ARMOR_UC
+  - type: THUNDERFIRE_ARMOR
+  - type: STR_SENTINELPD_ARMOR_UC
+  - type: STR_PENAL_ARMOR_UC
+  - type: STR_GUARDPD_ARMOR_UC
+  - type: STR_GUARDPDMEDIC_ARMOR_UC
+  - type: STR_ENFORCER_ARMOR_UC
+  - type: STR_ENFORCER_MEDIC_ARMOR_UC
+  - type: STR_ENFORCER_SIGNAL_ARMOR_UC
+  - type: STR_ENFORCER_SIGNALFALSE_ARMOR_UC
+  - type: STR_ENFORCER_HEAVY_ARMOR_UC
+  - type: STR_ENFORCER_SHIELD_ARMOR_UC
+  - type: STR_JUDGE_ARMOR_UC
+  - type: STR_ARBITOR_ARMOR_UC
+  - type: STR_MARSHAL_ARMOR_UC
+  - type: STR_PSYKER_ARMOR
+  - type: CIVILIAN_F0
+  - type: CIVILIAN_M0
+  - type: CIVILIAN_F1
+  - type: CIVILIAN_M1
+  - type: STR_DREAD_GK_ARMOR_UC
+  - type: STR_GK_APO_ARMOR_UC
+  - type: STR_WRAITHGUARD_ARMOR_P
+  - type: STR_WRAITHGUARD_ARMOR_P_SHIELD
+  - type: STR_ELDAR_ARMOR_M
+  - type: STR_ELDAR_ARMOR_M_SHIELD
+  - type: STR_ELDAR_ARMOR_F
+  - type: STR_ELDAR_ARMOR_F_SHIELD
+  - type: STR_ELDAR_ARMOR_FH
+  - type: STR_ELDAR_ARMOR2_P
+  - type: STR_ELDAR_ARMOR2_P_SHIELD
+  - type: STR_ELDAR_ARMOR3_P
+  - type: STR_ELDAR_ARMOR3_P_SHIELD
+  - type: STR_ELDAR_ARMOR5_P
+  - type: STR_ELDAR_ARMOR5_P_SHIELD
+  - type: STR_ELDAR_ARMOR4_P
+  - type: STR_ELDAR_ARMOR4_P_SHIELD
+  - type: STR_ELDAR_ARMOR6_P
+  - type: STR_ELDAR_ARMOR6_P_SHIELD
+  - type: STR_ELDAR_PLAT_ARMOR_P
 
 
 

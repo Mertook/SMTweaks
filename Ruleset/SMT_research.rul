@@ -1,6 +1,10 @@
 research:
 ### Utility
   - name: STR_NOT_ASSASSINORUM  # (Not Assassinorum Strategy)
+  - name: STR_GUARD_AND_INQUISITION         # Tech for things that should be available to Chamber Militant and Imperial Guard
+    dependencies:
+      - STR_GENERALLOCK
+
 ### Faction Selection
   - name: STR_MARINES_STRATEGY          # Space Marine
     cost: 0

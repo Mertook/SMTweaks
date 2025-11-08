@@ -5,7 +5,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 20 # strong but not perfect
     heatVision: 10
-    antiCamouflageAtDay: 2
+    antiCamouflageAtDay: 8
     antiCamouflageAtDark: 2
     psiCamouflage: -30
     psiVision: 0
@@ -15,7 +15,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 20
     heatVision: 10
-    antiCamouflageAtDay: 3
+    antiCamouflageAtDay: 10
     antiCamouflageAtDark: 3
     psiCamouflage: -30
     psiVision: 0
@@ -25,7 +25,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 20
     heatVision: 15
-    antiCamouflageAtDay: 5
+    antiCamouflageAtDay: 15
     antiCamouflageAtDark: 5
     psiCamouflage: -30
     psiVision: 0
@@ -35,7 +35,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 20
     heatVision: 15
-    antiCamouflageAtDay: 3 # improved
+    antiCamouflageAtDay: 10
     antiCamouflageAtDark: 3
     psiCamouflage: -30
     psiVision: 0
@@ -45,7 +45,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 25 # advanced scanners
     heatVision: 20 # improved
-    antiCamouflageAtDay: 4 # improved
+    antiCamouflageAtDay: 14
     antiCamouflageAtDark: 4
     psiCamouflage: -30
     psiVision: 0
@@ -55,7 +55,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 20
     heatVision: 0
-    antiCamouflageAtDay: 3
+    antiCamouflageAtDay: 8
     antiCamouflageAtDark: 3
     psiCamouflage: -30
     psiVision: 0
@@ -65,7 +65,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 25
     heatVision: 30
-    antiCamouflageAtDay: 5
+    antiCamouflageAtDay: 15
     antiCamouflageAtDark: 5
     psiCamouflage: -30
     psiVision: 0
@@ -75,7 +75,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 22
     heatVision: 25
-    antiCamouflageAtDay: 3
+    antiCamouflageAtDay: 10
     antiCamouflageAtDark: 3
     psiCamouflage: -30
     psiVision: 0
@@ -85,7 +85,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 9
     heatVision: 0
-    antiCamouflageAtDay: 0
+    antiCamouflageAtDay: 4
     antiCamouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
@@ -95,7 +95,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 9
     heatVision: 0
-    antiCamouflageAtDay: 0
+    antiCamouflageAtDay: 4
     antiCamouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
@@ -105,7 +105,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 12
     heatVision: 0
-    antiCamouflageAtDay: 0
+    antiCamouflageAtDay: 6
     antiCamouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
@@ -115,7 +115,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 16
     heatVision: 0
-    antiCamouflageAtDay: 2
+    antiCamouflageAtDay: 8
     antiCamouflageAtDark: 2
     psiCamouflage: -30
     psiVision: 0
@@ -125,8 +125,18 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 20
     heatVision: 10
-    antiCamouflageAtDay: 2
+    antiCamouflageAtDay: 10
     antiCamouflageAtDark: 2
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_LE10                             # LE10 Guard Armor
+    type: STR_LE10_POWER_ARMOR_HULK
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 20
+    antiCamouflageAtDay: 10
+    antiCamouflageAtDark: 3
     psiCamouflage: -30
     psiVision: 0
 
@@ -135,7 +145,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 22
     heatVision: 30
-    antiCamouflageAtDay: 3
+    antiCamouflageAtDay: 10
     antiCamouflageAtDark: 3
     psiCamouflage: -30
     psiVision: 0
@@ -145,7 +155,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 14
     heatVision: 0
-    antiCamouflageAtDay: 0
+    antiCamouflageAtDay: 4
     antiCamouflageAtDark: 1
     psiCamouflage: -30
     psiVision: 0
@@ -155,7 +165,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 20
     heatVision: 0
-    antiCamouflageAtDay: 0
+    antiCamouflageAtDay: 4
     antiCamouflageAtDark: 2
     psiCamouflage: -30
     psiVision: 0
@@ -165,7 +175,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 25
     heatVision: 0
-    antiCamouflageAtDay: 3
+    antiCamouflageAtDay: 8
     antiCamouflageAtDark: 3
     psiCamouflage: -30
     psiVision: 0
@@ -175,7 +185,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 25
     heatVision: 20
-    antiCamouflageAtDay: 3
+    antiCamouflageAtDay: 12
     antiCamouflageAtDark: 3
     psiCamouflage: -30
     psiVision: 0
@@ -185,7 +195,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 25
     heatVision: 20
-    antiCamouflageAtDay: 3
+    antiCamouflageAtDay: 15
     antiCamouflageAtDark: 3
     psiCamouflage: -30
     psiVision: 0
@@ -195,7 +205,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 9
     heatVision: 0
-    antiCamouflageAtDay: 0
+    antiCamouflageAtDay: 4
     antiCamouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
@@ -205,7 +215,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 15
     heatVision: 0
-    antiCamouflageAtDay: 0
+    antiCamouflageAtDay: 6
     antiCamouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
@@ -215,7 +225,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 20
     heatVision: 10
-    antiCamouflageAtDay: 2
+    antiCamouflageAtDay: 8
     antiCamouflageAtDark: 2
     psiCamouflage: -30
     psiVision: 0
@@ -225,8 +235,38 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 25
     heatVision: 20
-    antiCamouflageAtDay: 4
+    antiCamouflageAtDay: 12
     antiCamouflageAtDark: 4
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_ELDAR_STD                        # Eldar
+    type: STR_ELDAR_ARMOR_M
+    visibilityAtDay: 25
+    visibilityAtDark: 20
+    heatVision: 0
+    antiCamouflageAtDay: 14
+    antiCamouflageAtDark: 4
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_ELDAR_ELITE                      # Eldar Farseer
+    type: STR_ELDAR_ARMOR3_P
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 15
+    antiCamouflageAtDay: 16
+    antiCamouflageAtDark: 6
+    psiCamouflage: -30
+    psiVision: 0
+
+  - &ARMOR_ELDAR_CRAFT                      # Eldar Mechanical
+    type: STR_WRAITHGUARD_ARMOR_P
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 30
+    antiCamouflageAtDay: 4
+    antiCamouflageAtDark: 0
     psiCamouflage: -30
     psiVision: 0
 
@@ -255,7 +295,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 25
     heatVision: 50
-    antiCamouflageAtDay: 6
+    antiCamouflageAtDay: 12
     antiCamouflageAtDark: 6
     psiCamouflage: -30
     psiVision: 0
@@ -265,7 +305,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 25
     heatVision: 20
-    antiCamouflageAtDay: 0
+    antiCamouflageAtDay: 8
     antiCamouflageAtDark: 0
     psiCamouflage: 0
     psiVision: 0
@@ -275,7 +315,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 25
     heatVision: 30
-    antiCamouflageAtDay: 5
+    antiCamouflageAtDay: 15
     antiCamouflageAtDark: 5
     psiCamouflage: 0
     psiVision: 0
@@ -285,7 +325,7 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 25
     heatVision: 30
-    antiCamouflageAtDay: 5
+    antiCamouflageAtDay: 20
     antiCamouflageAtDark: 5
     psiCamouflage: 0
     psiVision: 0
@@ -313,6 +353,33 @@ armors:
     visibilityAtDay: 25
     visibilityAtDark: 25
     heatVision: 60
+    antiCamouflageAtDay: 5
+    antiCamouflageAtDark: 5
+    psiVision: 0
+
+  - &ENEMY_ELDAR_STD                        # Enemy Eldar
+    type: STR_ELDAR_ARMOR
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 10
+    antiCamouflageAtDay: 3
+    antiCamouflageAtDark: 3
+    psiVision: 0
+
+  - &ENEMY_ELDAR_CRAFT                      # Enemy Eldar Vehicles
+    type: ELDAR_TURRET_ARMOR
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 25
+    antiCamouflageAtDay: 3
+    antiCamouflageAtDark: 3
+    psiVision: 0
+
+  - &ENEMY_ELDAR_ELITE                      # Enemy Eldar Elite
+    type: STR_ELDAR_ARMOR3
+    visibilityAtDay: 25
+    visibilityAtDark: 25
+    heatVision: 40
     antiCamouflageAtDay: 5
     antiCamouflageAtDark: 5
     psiVision: 0
@@ -1335,6 +1402,24 @@ armors:
   - type: STR_INQ_POWER_ARMOR_BREACHER
     refNode: *ARMOR_STORMTROOPER_ELITE
 
+###LE10
+  - type: STR_LE10_POWER_ARMOR_HULK
+    refNode: *ARMOR_LE10
+  - type: STR_LE10_POWER_ARMOR_HULK_BEASTMAN
+    refNode: *ARMOR_LE10
+  - type: STR_LE10_POWER_ARMOR_HULK_CATACHAN
+    refNode: *ARMOR_LE10
+  - type: STR_LE10_POWER_ARMOR_HULK_FELINID
+    refNode: *ARMOR_LE10
+  - type: STR_LE10_POWER_ARMOR_HULK_OGRYN
+    refNode: *ARMOR_LE10
+  - type: STR_LE10_POWER_ARMOR_HULK_SQUAT
+    refNode: *ARMOR_LE10
+  - type: STR_LE10_POWER_ARMOR_HULK_ORK
+    refNode: *ARMOR_LE10
+  - type: STR_LE10_POWER_ARMOR_HULK_CHAOS
+    refNode: *ARMOR_LE10
+
 ###GUARD SENTINEL
   - type: STR_SENTINEL_ARMOR_UC
     refNode: *ARMOR_SENTINEL
@@ -1527,6 +1612,52 @@ armors:
   - type: STR_ADEPTAS_ARMORSUP_UC
     refNode: *ARMOR_SISTER_SAINT
 
+###ELDAR PLAYER
+  - type: STR_ELDAR_ARMOR_M
+    refNode: *ARMOR_ELDAR_STD
+  - type: STR_ELDAR_ARMOR_M_SHIELD
+    refNode: *ARMOR_ELDAR_STD
+  - type: STR_ELDAR_ARMOR_F
+    refNode: *ARMOR_ELDAR_STD
+  - type: STR_ELDAR_ARMOR_F_SHIELD
+    refNode: *ARMOR_ELDAR_STD
+  - type: STR_ELDAR_ARMOR_FH
+    refNode: *ARMOR_ELDAR_STD
+  - type: STR_ELDAR_ARMOR2_P
+    refNode: *ARMOR_ELDAR_STD
+  - type: STR_ELDAR_ARMOR2_P_SHIELD
+    refNode: *ARMOR_ELDAR_STD
+  - type: STR_ELDAR_ARMOR4_P
+    refNode: *ARMOR_ELDAR_STD
+  - type: STR_ELDAR_ARMOR4_P_SHIELD
+    refNode: *ARMOR_ELDAR_STD
+  - type: STR_ELDAR_ARMOR5_P
+    refNode: *ARMOR_ELDAR_STD
+  - type: STR_ELDAR_ARMOR5_P_SHIELD
+    refNode: *ARMOR_ELDAR_STD
+  - type: STR_ELDAR_ARMOR6_P
+    refNode: *ARMOR_ELDAR_STD
+  - type: STR_ELDAR_ARMOR6_P_SHIELD
+    refNode: *ARMOR_ELDAR_STD
+  - type: STR_ELDAR_ARMOR6_P_LAUNCHER
+    refNode: *ARMOR_ELDAR_STD
+###ELDAR PLAYER ELITE
+  - type: STR_ELDAR_ARMOR3_P
+    refNode: *ARMOR_ELDAR_ELITE
+  - type: STR_ELDAR_ARMOR3_P_SHIELD
+    refNode: *ARMOR_ELDAR_ELITE
+  - type: STR_ELDAR_FARSEER_ARMOR
+    refNode: *ARMOR_ELDAR_ELITE
+###ELDAR PLAYER CRAFT
+  - type: STR_WRAITHGUARD_ARMOR_P
+    refNode: *ARMOR_ELDAR_CRAFT
+  - type: STR_WRAITHGUARD_ARMOR_P_SHIELD
+    refNode: *ARMOR_ELDAR_CRAFT
+  - type: STR_ELDAR_PLAT_ARMOR_P
+    refNode: *ARMOR_ELDAR_CRAFT
+  - type: ELDAR_TURRET_ARMOR_P
+    refNode: *ARMOR_ELDAR_CRAFT
+
 ###VEHICLE
   - type: DREAD_ARMOR_UC
     refNode: *ARMOR_DREADNOUGHT
@@ -1624,6 +1755,71 @@ armors:
     refNode: *ARMOR_TURRET
   - type: GENERATOR_ARMOR
     refNode: *ARMOR_TURRET
+  - type: STR_COMMAND_TURRET_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_CHIMERASL_COMMAND_TURRET_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_LEMAN_TURRET_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_LEMANSL_COMMAND_TURRET_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_CHIMERA_BOLTER_TURRET_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_CHIMERASL_TWIN_HB_TURRET_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_CHIMERASL_MULTILAS_TURRET_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_CHIMERA_FLAMER_TURRET_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_CHIMERA_AC_TURRET_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_CHIMERASL_AC_TURRET_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_EXECUTIONER_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_LEMANSL_EXECUTIONER_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_PUNISHER_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_LASCANNON_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_LEMANSL_BATTLECANNON_TURRET_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_FLAMER_SPONSON_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_SL_SPONSON_FLAMER_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_BOLTER_SPONSON_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_SL_SPONSON_BOLTER_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_MULTIMELTA_SPONSON_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_CHIMERA_HULL_BOLTER_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_CHIMERASL_HULL_BOLTER_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_LEMAN_HULL_BOLTER_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_LEMANSL_HULL_BOLTER_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_LEMAN_HULL_LAS_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_LEMANSL_HULL_LAS_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_SPONSON_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_LEMANSL_SPONSON_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_CHIMERA_HULL_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_CHIMERASL_HULL_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_LEMAN_HULL_ARMOR
+    refNode: *ARMOR_TURRET
+  - type: STR_LEMANSL_HULL_ARMOR
+    refNode: *ARMOR_TURRET
+
 ###SERVITOR
   - type: SERVITOR_ARMOR_UC
     refNode: *ARMOR_SERVITOR
@@ -1667,15 +1863,17 @@ armors:
 ###ENEMIES - NECRON BASIC
   - type: STR_NECRON_SCARAB_ARMOR5
     refNode: *ENEMY_NECRON_STD
-  - type: STR_NECRON_SCARAB_ARMOR3              # Canoptic Scarabs (Three)
+  - type: STR_NECRON_SCARAB_ARMOR3
     refNode: *ENEMY_NECRON_STD
-  - type: STR_NECRON_SCARAB_ARMOR1              # Canoptic Scarabs (One)
+  - type: STR_NECRON_SCARAB_ARMOR1
     refNode: *ENEMY_NECRON_STD
-  - type: STR_NECRON_FLAYED_ONE_ARMOR           # Necron Flayed One
+  - type: STR_NECRON_FLAYED_ONE_ARMOR
     refNode: *ENEMY_NECRON_STD
   - type: STR_NECRON_FLAYED_ONE_ARMOR_REVIVES
     refNode: *ENEMY_NECRON_STD
-  - type: STR_NECRON_WARRIOR_ARMOR_REVIVES      # Warrior (revives)
+  - type: STR_NECRON_WARRIOR_ARMOR
+    refNode: *ENEMY_NECRON_STD
+  - type: STR_NECRON_WARRIOR_ARMOR_REVIVES
     refNode: *ENEMY_NECRON_STD
 
 ###ENEMIES - NECRON TURRET
@@ -1686,6 +1884,8 @@ armors:
   - type: STR_MONO_W_ARMOR
     refNode: *ENEMY_NECRON_TURRET
   - type: STR_MONO_E_ARMOR
+    refNode: *ENEMY_NECRON_TURRET
+  - type: STR_NECRON_PORTAL_ARMOR
     refNode: *ENEMY_NECRON_TURRET
 
 ###ENEMIES - NECRON ELITE
@@ -1699,10 +1899,44 @@ armors:
     refNode: *ENEMY_NECRON_ELITE
   - type: STR_DESTROYER_ARMOR
     refNode: *ENEMY_NECRON_ELITE
+  - type: STR_NECRON_LYCHGUARD_ARMOR
+    refNode: *ENEMY_NECRON_ELITE
   - type: STR_NECRON_LYCHGUARD_ARMOR_REVIVES
     refNode: *ENEMY_NECRON_ELITE
   - type: STR_NECRON_DESTROYER_LORD_ARMOR
     refNode: *ENEMY_NECRON_ELITE
+  - type: STR_NECRON_DESTROYER_LORD_ARMOR
+    refNode: *ENEMY_NECRON_ELITE
+  - type: STR_NECRON_DESTROYER_LORD_SCYTHE_ARMOR
+    refNode: *ENEMY_NECRON_ELITE
+  - type: STR_NECRON_LORD_ARMOR
+    refNode: *ENEMY_NECRON_ELITE
+  - type: STR_NECRON_LORD_ARMOR_REVIVES
+    refNode: *ENEMY_NECRON_ELITE
+
+###ENEMIES - ELDAR
+  - type: STR_ELDAR_ARMOR
+    refNode: *ENEMY_ELDAR_STD
+  - type: STR_ELDAR_ARMOR2
+    refNode: *ENEMY_ELDAR_STD
+  - type: STR_ELDAR_ARMOR4
+    refNode: *ENEMY_ELDAR_STD
+  - type: STR_ELDAR_ARMOR5
+    refNode: *ENEMY_ELDAR_STD
+  - type: STR_ELDAR_ARMOR6
+    refNode: *ENEMY_ELDAR_STD
+  - type: STR_ELDAR_PLAT_ARMOR
+    refNode: *ENEMY_ELDAR_STD
+
+###ENEMIES - ELDAR VEHICLES
+  - type: ELDAR_TURRET_ARMOR
+    refNode: *ENEMY_ELDAR_CRAFT
+  - type: STR_WRAITHGUARD_ARMOR
+    refNode: *ENEMY_ELDAR_CRAFT
+
+###ENEMIES - ELDAR ELITE
+  - type: STR_ELDAR_ARMOR3
+    refNode: *ENEMY_ELDAR_ELITE
 
 ###ENEMIES - CULTISTS
   - type: SLAANESH_DEMIMONDE_ARMOR
@@ -1753,6 +1987,18 @@ armors:
     refNode: *ENEMY_GUARD_STD
   - type: STR_SLAANESH_COMMISSAR_ARMOR
     refNode: *ENEMY_GUARD_STD
+  - type: STR_TZEENTCH_TRAITORGUARD_BASIC_ARMOR
+    refNode: *ENEMY_GUARD_STD
+  - type: STR_TZEENTCH_TRAITORGUARD_HEAVY_ARMOR
+    refNode: *ENEMY_GUARD_STD
+  - type: STR_TZEENTCH_TRAITORGUARD_CARAPACE_ARMOR
+    refNode: *ENEMY_GUARD_STD
+  - type: STR_TZEENTCH_TRAITORGUARD_SCOUT_ARMOR
+    refNode: *ENEMY_GUARD_STD
+  - type: STR_TZEENTCH_TRAITORGUARD_COMMANDO_ARMOR
+    refNode: *ENEMY_GUARD_STD
+  - type: STR_TZEENTCH_TRAITORGUARD_OFFICER_ARMOR
+    refNode: *ENEMY_GUARD_STD
 ###ENEMIES - GUARD ELITE
   - type: STR_CATACHAN_TRAITOR_ARMOR
     refNode: *ENEMY_GUARD_ELITE
@@ -1761,6 +2007,12 @@ armors:
   - type: STR_CATACHAN_TRAITORVET_ARMOR
     refNode: *ENEMY_GUARD_ELITE
   - type: STR_CATACHAN_TRAITORTOP_ARMOR
+    refNode: *ENEMY_GUARD_ELITE
+  - type: STR_BLACKSTONE_ARMOR
+    refNode: *ENEMY_GUARD_ELITE
+  - type: STR_BLACKSTONE_JUMP_ARMOR
+    refNode: *ENEMY_GUARD_ELITE
+  - type: STR_BLACKSTONE_ARMOR_SNIPER
     refNode: *ENEMY_GUARD_ELITE
 
 ###ENEMIES - BEASTMEN
@@ -1786,11 +2038,69 @@ armors:
 ###ENEMIES - CHAOS MARINE
   - type: STR_WORDBEARER_SCOUT_ARMOR
     refNode: *ENEMY_CHAOSMARINE
+  - type: STR_WORDBEARER_GALVWARRIOR_ARMOR
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_WORDBEARER_GALVWARRIORELITE_ARMOR
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_WORDBEARER_DARKAPOSTLE_ARMOR
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_ALPHA_ARMOR
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_ALPHAOFF_ARMOR
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_ALPHA_ARMOR_POSSESSED
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_ALPHA_CORVUS_ARMOR
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_ALPHA_ARMOR_CORVUS_POSSESSED
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_DEATHSKULL_ORK_KAP_ARMOR_ALPHA
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_ALPHA_ARMOR_ULTRA
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_ALPHA_SCOUT_ARMOR_ULTRA
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_ALPHA_SARGE_ARMOR_ULTRA
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_ALPHA_DEV_ARMOR_ULTRA
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_ALPHA_ARMOR_ELOHIM
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_ALPHA_ARMOR_DAEMONETTE
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_ALPHA_ARMOR_DAEMONETTE_RITUALIST
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_NIGHTLORD_CSM_ARMOR
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_NIGHTLORD_CSM_LEADER_ARMOR
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_NIGHTLORD_RAPTOR_ARMOR0
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_NIGHTLORD_RAPTOR_ARMOR2
+    refNode: *ENEMY_CHAOSMARINE
+  - type: STR_NIGHTLORDS_WARPTALON_ARMOR
+    refNode: *ENEMY_CHAOSMARINE
+  - type: MUTON_ARMORTZEENTCH
+    refNode: *ENEMY_CHAOSMARINE
 
 ###ENEMIES - CHAOS TERMINATOR
   - type: STR_ALPHAterminator_ARMOR
     refNode: *ENEMY_CHAOSTERMINATOR
+  - type: STR_ALPHAcataphract_ARMOR
+    refNode: *ENEMY_CHAOSTERMINATOR
   - type: STR_NIGHTLORDterminator_ARMOR
+    refNode: *ENEMY_CHAOSTERMINATOR
+  - type: STR_NIGHTLORDcataphract_ARMOR
+    refNode: *ENEMY_CHAOSTERMINATOR
+  - type: STR_WORDBEARER_TERMINATOR_ARMOR
+    refNode: *ENEMY_CHAOSTERMINATOR
+  - type: STR_BLACKLEGcataphract_ARMOR
+    refNode: *ENEMY_CHAOSTERMINATOR
+  - type: STR_BLACKLEGsaturn_ARMOR
+    refNode: *ENEMY_CHAOSTERMINATOR
+  - type: STR_ALPHA_GREYKNIGHT_ARMOR
+    refNode: *ENEMY_CHAOSTERMINATOR
+  - type: STR_ALPHA_GREYKNIGHT_ARMOR_CATAPHRACT
     refNode: *ENEMY_CHAOSTERMINATOR
 
 ###ENEMIES - CHAOS TURRETS
@@ -1809,6 +2119,56 @@ armors:
   - type: STR_WORDBEARER_GALVWARRIORELITE_POSSARMOR
     refNode: *ENEMY_DEMON
   - type: STR_WORDBEARER_DEMONLORD_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_SILACOID_ARMORT
+    refNode: *ENEMY_DEMON
+  - type: STR_BLOODREAPER_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_KHORNELING_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_REAPER_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_LESSER_PLAGUE_TOAD_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_GREATER_PLAGUE_TOAD_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_NURGLE_ROTBEARER_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_CELATID_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: NURGLINGS_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_LESSER_ROTFLY_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_CHRYSSALID_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_CHRYSSALID_ARMORSELENE
+    refNode: *ENEMY_DEMON
+  - type: STR_CHRYSSALID_ARMOR_DIRE
+    refNode: *ENEMY_DEMON
+  - type: STR_DEMI_DAEMONETTE_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_DEMI_DAEMONETTE_ARMOR_BLESSED
+    refNode: *ENEMY_DEMON
+  - type: STR_SCREAMER_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_FLAMER_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_EXALTED_FLAMER_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_TZEENTCH_LESSER_DAEMON_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_PINKHORROR_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_BLUEHORROR_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_BRIMSTONE_HORROR_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_NEVERBORN_TERRORIST_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: CYBERDISC_ARMOR
+    refNode: *ENEMY_DEMON
+  - type: STR_CHAOSFURY_ARMOR
     refNode: *ENEMY_DEMON
 
 ###ENEMIES - TAU AUX
@@ -1925,7 +2285,6 @@ armors:
   - type: STR_ENFORCER_SHIELD_ARMOR_UC
   - type: STR_PILOT_ARBITES_ARMOR_UC
   - type: STR_ARLE10_POWER_ARMOR_HULK
-  - type: STR_ELDAR_FARSEER_ARMOR
   - type: STR_EXPULSUM_ARMOR_HULK
   - type: STR_SATURNINE_ARMOR_HULK
   - type: STR_REPRISALIA_ARMOR
@@ -2226,30 +2585,6 @@ armors:
   - type: STR_KHARN_ARMOR2
   - type: STR_KHARN_ARMOR3
   - type: STR_KHORNEcataphract_ARMOR
-  - type: STR_NECRON_WARRIOR_ARMOR
-  - type: STR_NECRON_WARRIOR_ARMOR_REVIVES
-  - type: STR_NECRON_LYCHGUARD_ARMOR
-  - type: STR_NECRON_LYCHGUARD_ARMOR_REVIVES
-  - type: STR_NECRON_IMORTAL_ARMOR
-  - type: STR_NECRON_IMORTAL_ARMOR_REVIVES
-  - type: STR_NECRON_DEATHMARK_ARMOR
-  - type: STR_NECRON_DEATHMARK_ARMOR_REVIVES
-  - type: STR_DESTROYER_ARMOR
-  - type: STR_NECRON_DESTROYER_LORD_ARMOR
-  - type: STR_NECRON_DESTROYER_LORD_SCYTHE_ARMOR
-  - type: STR_NECRON_SCARAB_ARMOR3
-  - type: STR_NECRON_SCARAB_ARMOR5
-  - type: STR_NECRON_SCARAB_ARMOR1
-  - type: STR_NECRON_ARCHITECT_ARMOR
-  - type: STR_NECRON_LORD_ARMOR
-  - type: STR_NECRON_LORD_ARMOR_REVIVES
-  - type: STR_MONO_N_ARMOR
-  - type: STR_MONO_S_ARMOR
-  - type: STR_MONO_W_ARMOR
-  - type: STR_MONO_E_ARMOR
-  - type: STR_NECRON_FLAYED_ONE_ARMOR
-  - type: STR_NECRON_FLAYED_ONE_ARMOR_REVIVES
-  - type: STR_NECRON_PORTAL_ARMOR
   - type: GREEN_ROBE_ARMOR
   - type: NURGLE_CULTIST_GREENROBE_ARMOR_RITUALIST
   - type: NURGLE_CULTIST_GREENROBE_ARMOR_RITUALIST_BLESSED
@@ -2394,19 +2729,6 @@ armors:
   - type: STR_CHAOS_SENTINEL_ARMOR
   - type: STR_TRAITORGUARD_OGRYN_ARMOR
   - type: STR_TRAITORGUARD_OGRYN_REDBLACK_ARMOR
-  - type: STR_BLACKSTONE_ARMOR
-  - type: STR_BLACKSTONE_JUMP_ARMOR
-  - type: STR_BLACKSTONE_ARMOR_SNIPER
-  - type: STR_TZEENTCH_TRAITORGUARD_BASIC_ARMOR
-  - type: STR_TZEENTCH_TRAITORGUARD_HEAVY_ARMOR
-  - type: STR_TZEENTCH_TRAITORGUARD_CARAPACE_ARMOR
-  - type: STR_TZEENTCH_TRAITORGUARD_SCOUT_ARMOR
-  - type: STR_TZEENTCH_TRAITORGUARD_COMMANDO_ARMOR
-  - type: STR_TZEENTCH_TRAITORGUARD_OFFICER_ARMOR
-  - type: STR_CATACHAN_TRAITOR_ARMOR
-  - type: STR_CATACHAN_TRAITOR_ARMOR2
-  - type: STR_CATACHAN_TRAITORVET_ARMOR
-  - type: STR_CATACHAN_TRAITORTOP_ARMOR
   - type: STR_ADEPTAS_TZEENTCHAMP
   - type: STR_TZEENTCH_INQUISITOR_ARMOR
   - type: STR_ADEPTAS_TZEENTCHNASSASSINARMOR
@@ -2465,79 +2787,18 @@ armors:
   - type: STR_CHAOS_SQUATS_ARMOR_HEAVY
   - type: STR_CHAOS_SQUATS_EXOARMOR
   - type: STR_CHAOS_SQUATS_ARMOR_LEADER
-  - type: STR_ALPHA_ARMOR
-  - type: STR_ALPHAOFF_ARMOR
-  - type: STR_ALPHA_ARMOR_POSSESSED
-  - type: STR_ALPHAterminator_ARMOR
-  - type: STR_ALPHA_CORVUS_ARMOR
-  - type: STR_ALPHA_ARMOR_CORVUS_POSSESSED
-  - type: STR_DEATHSKULL_ORK_KAP_ARMOR_ALPHA
-  - type: STR_ALPHA_ARMOR_ULTRA
-  - type: STR_ALPHA_SCOUT_ARMOR_ULTRA
-  - type: STR_ALPHA_SARGE_ARMOR_ULTRA
-  - type: STR_ALPHA_DEV_ARMOR_ULTRA
-  - type: STR_ALPHA_ARMOR_ELOHIM
-  - type: STR_ALPHA_ARMOR_DAEMONETTE
-  - type: STR_ALPHA_ARMOR_DAEMONETTE_RITUALIST
-  - type: STR_NIGHTLORD_CSM_ARMOR
-  - type: STR_NIGHTLORD_CSM_LEADER_ARMOR
-  - type: STR_NIGHTLORD_RAPTOR_ARMOR0
-  - type: STR_NIGHTLORD_RAPTOR_ARMOR2
-  - type: STR_NIGHTLORDS_WARPTALON_ARMOR
-  - type: STR_NIGHTLORDterminator_ARMOR
-  - type: STR_NIGHTLORDcataphract_ARMOR
-  - type: STR_ALPHA_GREYKNIGHT_ARMOR
-  - type: STR_ALPHA_GREYKNIGHT_ARMOR_CATAPHRACT
-  - type: MUTON_ARMORTZEENTCH
-  - type: STR_ALPHAcataphract_ARMOR
-  - type: STR_BLACKLEGcataphract_ARMOR
-  - type: STR_BLACKLEGsaturn_ARMOR
-  - type: STR_WORDBEARER_GALVWARRIOR_ARMOR
-  - type: STR_WORDBEARER_GALVWARRIOR_POSSARMOR
-  - type: STR_WORDBEARER_GALVWARRIORELITE_ARMOR
-  - type: STR_WORDBEARER_GALVWARRIORELITE_POSSARMOR
-  - type: STR_WORDBEARER_DARKAPOSTLE_ARMOR
-  - type: STR_WORDBEARER_TERMINATOR_ARMOR
-  - type: STR_WORDBEARER_SCOUT_ARMOR
   - type: STR_DAEMON_PORTAL_ARMOR
   - type: STR_DAEMON_PORTAL_ARMOR_LESSER
   - type: STR_DAEMON_PORTAL_ARMOR_MINOR
   - type: STR_WORDBEARER_TERMINATORELITE_ARMOR
-  - type: STR_WORDBEARER_DEMONLORD_ARMOR
   - type: STR_WORDBEARER_DIABOLIST_ARMOR
   - type: STR_WORDBEARER_DIABOLISTELITE_ARMOR
-  - type: STR_SILACOID_ARMORT
-  - type: STR_BLOODREAPER_ARMOR
-  - type: STR_KHORNELING_ARMOR
-  - type: STR_REAPER_ARMOR
-  - type: STR_LESSER_PLAGUE_TOAD_ARMOR
-  - type: STR_GREATER_PLAGUE_TOAD_ARMOR
-  - type: STR_NURGLE_ROTBEARER_ARMOR
-  - type: STR_CELATID_ARMOR
-  - type: NURGLINGS_ARMOR
-  - type: STR_LESSER_ROTFLY_ARMOR
-  - type: STR_CHRYSSALID_ARMOR
-  - type: STR_CHRYSSALID_ARMORSELENE
-  - type: STR_CHRYSSALID_ARMOR_DIRE
-  - type: STR_DEMI_DAEMONETTE_ARMOR
-  - type: STR_DEMI_DAEMONETTE_ARMOR_BLESSED
-  - type: STR_SCREAMER_ARMOR
-  - type: STR_FLAMER_ARMOR
-  - type: STR_EXALTED_FLAMER_ARMOR
-  - type: STR_TZEENTCH_LESSER_DAEMON_ARMOR
-  - type: STR_PINKHORROR_ARMOR
-  - type: STR_BLUEHORROR_ARMOR
-  - type: STR_BRIMSTONE_HORROR_ARMOR
-  - type: STR_NEVERBORN_TERRORIST_ARMOR
-  - type: CYBERDISC_ARMOR
-  - type: STR_CHAOSFURY_ARMOR
   - type: STR_MEDIC_CARAPACE_ARMOR
   - type: STR_SCION_HEAVYCARAPACE_ARMOR
   - type: STR_SCION_OFFICER_HEAVYCARAPACE_ARMOR
   - type: STR_SCION_JUMP_ARMOR
   - type: STR_STEELLEGION_STORMTROOPER_ARMOR
   - type: STR_STEELLEGION_STORMTROOPER_ARMOR_MEDIC
-  - type: STR_GUARD_ARMORSM
   - type: STR_GUARD_ARMORSM
   - type: STR_SQUAT_FLAK_ARMOR
   - type: STR_GUARD_ARMORH_UC
@@ -2631,14 +2892,6 @@ armors:
   - type: STR_GUARD_POWER_ARMOR_OFFICER_VOX_HULK
   - type: STR_KRIEG_POWER_ARMOR_HULK
   - type: STR_GUARD_POWER_ARMOR_COMMISSAR_HULK
-  - type: STR_LE10_POWER_ARMOR_HULK
-  - type: STR_LE10_POWER_ARMOR_HULK_BEASTMAN
-  - type: STR_LE10_POWER_ARMOR_HULK_CATACHAN
-  - type: STR_LE10_POWER_ARMOR_HULK_FELINID
-  - type: STR_LE10_POWER_ARMOR_HULK_OGRYN
-  - type: STR_LE10_POWER_ARMOR_HULK_SQUAT
-  - type: STR_LE10_POWER_ARMOR_HULK_ORK
-  - type: STR_LE10_POWER_ARMOR_HULK_CHAOS
   - type: STR_CHIMEDON_ARMOR
   - type: STR_CHIMERA_TWIN_HB_TURRET_ARMOR
   - type: STR_CHIMERASL_TWIN_HB_TURRET_ARMOR
@@ -2921,38 +3174,6 @@ armors:
   - type: STR_WORDBEARER_HULKRELIC_ARMORPLAYER
   - type: STR_WORDBEARERcataphract_ARMORPLAYER
   - type: STR_WORDBEARERsaturnine_ARMORPLAYER
-  - type: STR_COMMAND_TURRET_ARMOR
-  - type: STR_CHIMERASL_COMMAND_TURRET_ARMOR
-  - type: STR_LEMAN_TURRET_ARMOR
-  - type: STR_LEMANSL_COMMAND_TURRET_ARMOR
-  - type: STR_CHIMERA_BOLTER_TURRET_ARMOR
-  - type: STR_CHIMERASL_TWIN_HB_TURRET_ARMOR
-  - type: STR_CHIMERASL_MULTILAS_TURRET_ARMOR
-  - type: STR_CHIMERA_FLAMER_TURRET_ARMOR
-  - type: STR_CHIMERA_AC_TURRET_ARMOR
-  - type: STR_CHIMERASL_AC_TURRET_ARMOR
-  - type: STR_EXECUTIONER_ARMOR
-  - type: STR_LEMANSL_EXECUTIONER_ARMOR
-  - type: STR_PUNISHER_ARMOR
-  - type: STR_LASCANNON_ARMOR
-  - type: STR_LEMANSL_BATTLECANNON_TURRET_ARMOR
-  - type: STR_FLAMER_SPONSON_ARMOR
-  - type: STR_SL_SPONSON_FLAMER_ARMOR
-  - type: STR_BOLTER_SPONSON_ARMOR
-  - type: STR_SL_SPONSON_BOLTER_ARMOR
-  - type: STR_MULTIMELTA_SPONSON_ARMOR
-  - type: STR_CHIMERA_HULL_BOLTER_ARMOR
-  - type: STR_CHIMERASL_HULL_BOLTER_ARMOR
-  - type: STR_LEMAN_HULL_BOLTER_ARMOR
-  - type: STR_LEMANSL_HULL_BOLTER_ARMOR
-  - type: STR_LEMAN_HULL_LAS_ARMOR
-  - type: STR_LEMANSL_HULL_LAS_ARMOR
-  - type: STR_SPONSON_ARMOR
-  - type: STR_LEMANSL_SPONSON_ARMOR
-  - type: STR_CHIMERA_HULL_ARMOR
-  - type: STR_CHIMERASL_HULL_ARMOR
-  - type: STR_LEMAN_HULL_ARMOR
-  - type: STR_LEMANSL_HULL_ARMOR
   - type: GENERIC_BATTLESERVITOR_HBARMOR
   - type: GENERIC_BATTLESERVITOR_MIARMOR
   - type: GENERIC_BATTLESERVITOR_PLARMOR
@@ -2964,34 +3185,6 @@ armors:
   - type: FINALLTS_ARMOR
   - type: FINALRTS_ARMOR
   - type: FINALVINDICATOR_ARMOR2
-  - type: STR_WRAITHGUARD_ARMOR_P
-  - type: STR_WRAITHGUARD_ARMOR_P_SHIELD
-  - type: STR_ELDAR_ARMOR_M
-  - type: STR_ELDAR_ARMOR_M_SHIELD
-  - type: STR_ELDAR_ARMOR_F
-  - type: STR_ELDAR_ARMOR_FH
-  - type: STR_ELDAR_ARMOR_F_SHIELD
-  - type: STR_ELDAR_ARMOR2_P
-  - type: STR_ELDAR_ARMOR2_P_SHIELD
-  - type: STR_ELDAR_ARMOR3_P
-  - type: STR_ELDAR_ARMOR3_P_SHIELD
-  - type: STR_ELDAR_ARMOR5_P
-  - type: STR_ELDAR_ARMOR5_P_SHIELD
-  - type: STR_ELDAR_ARMOR4_P
-  - type: STR_ELDAR_ARMOR4_P_SHIELD
-  - type: STR_ELDAR_ARMOR6_P
-  - type: STR_ELDAR_ARMOR6_P_LAUNCHER
-  - type: STR_ELDAR_ARMOR6_P_SHIELD
-  - type: STR_ELDAR_PLAT_ARMOR_P
-  - type: ELDAR_TURRET_ARMOR_P
-  - type: STR_ELDAR_ARMOR
-  - type: STR_ELDAR_ARMOR2
-  - type: STR_ELDAR_ARMOR5
-  - type: STR_ELDAR_ARMOR4
-  - type: STR_ELDAR_ARMOR6
-  - type: STR_ELDAR_ARMOR3
-  - type: STR_ELDAR_PLAT_ARMOR
-  - type: STR_WRAITHGUARD_ARMOR
   - type: SWRAZORBACK_ARMOR
   - type: STR_SWLASCANNONLOW_ARMOR
   - type: STR_SWLASCANNONUP_ARMOR
@@ -3030,7 +3223,6 @@ armors:
   - type: PREDATOR_ARMORBASE
   - type: DEFILER_ARMOR_R
   - type: DEFILER_ARMOR_L
-  - type: ELDAR_TURRET_ARMOR
   - type: STR_GENE_TURRET_ARMOR
   - type: STR_LEMONRUSS_BOLTER_ARMOR
   - type: STR_GORGON_HEAVY_FLAMER_FRONT_LEFT_ARMOR
@@ -3074,65 +3266,19 @@ armors:
   - type: STR_CHAOS_SERGEANT_ARMOR
   - type: STR_CHAOS_TERMINATOR_ARMOR
   - type: STR_CHAOS_LORD_ARMOR
-  - type: STR_SIGNALFALSE_ARMOR_UC
-  - type: STR_SIGNAL_ARMOR_UC
-  - type: STR_HONOR_ARMOR_UC
-  - type: STR_ASS_ARMOR_UC
-  - type: STR_ASS_ARMOR_HONOR_UC
-  - type: STR_CHAP_ARMOR_UC
   - type: STR_CAPTAIN_UC
   - type: STR_GREYKNIGHT_UC
   - type: STR_PERSONAL_ARMOR_UC
   - type: STR_PERSONAL_ARMOR_CIVILIAN
-  - type: STR_SCOUT_UC
-  - type: STR_SCOUTH_UC
-  - type: STR_SCOUTHW_UC
-  - type: STR_SCOUTHB_UC
-  - type: STR_SCOUTHR_UC
-  - type: STR_SCOUTHY_UC
-  - type: STR_SCOUTHG_UC
-  - type: STR_POWER_SUIT_UC
-  - type: STR_TSARGENT_UC
-  - type: STR_FLYING_SUIT_UC
-  - type: CENT_ARMOR_UC
-  - type: BIKE_ARMOR_UC
-  - type: DREAD_ARMOR_UC
-  - type: DREAD_ARMOR2_UC
-  - type: DREAD_ARMOR3_UC
-  - type: DREAD_ARMOR5_UC
   - type: ORBITAL_ARMOR
   - type: CENT_ARMOR
   - type: BEHEMOTH_ARMOR
-  - type: CYBERDISC_ARMOR
-  - type: STR_REAPER_ARMOR
   - type: SECTOPOD_ARMOR
   - type: SECTOPOD_ARMOR2
   - type: STR_CHAOS_SENTINEL_ARMOR
-  - type: STR_SILACOID_ARMORT
-  - type: STR_CELATID_ARMOR
-  - type: STR_CHRYSSALID_ARMOR
-  - type: STR_FLAMER_ARMOR
-  - type: STR_SCREAMER_ARMOR
   - type: STR_JARMOR_UC
   - type: STR_JARMORH_UC
   - type: STR_JARMOR_UCM
-  - type: STR_NECRON_ARCHITECT_ARMOR
-  - type: STR_NECRON_WARRIOR_ARMOR
-  - type: STR_NECRON_LYCHGUARD_ARMOR
-  - type: STR_NECRON_IMORTAL_ARMOR
-  - type: STR_NECRON_DEATHMARK_ARMOR
-  - type: STR_DESTROYER_ARMOR
-  - type: STR_NECRON_SCARAB_ARMOR3
-  - type: STR_NECRON_SCARAB_ARMOR5
-  - type: STR_NECRON_SCARAB_ARMOR1
-  - type: STR_ELDAR_ARMOR
-  - type: STR_ELDAR_ARMOR2
-  - type: STR_ELDAR_ARMOR5
-  - type: STR_ELDAR_ARMOR4
-  - type: STR_ELDAR_ARMOR6
-  - type: STR_ELDAR_ARMOR3
-  - type: STR_ELDAR_PLAT_ARMOR
-  - type: STR_WRAITHGUARD_ARMOR
   - type: STR_ORK_KILLA_ARMOR
   - type: STR_SAB_ARMOR
   - type: CARNI_ARMOR
@@ -3166,24 +3312,6 @@ armors:
   - type: CIVILIAN_M1
   - type: STR_DREAD_GK_ARMOR_UC
   - type: STR_GK_APO_ARMOR_UC
-  - type: STR_WRAITHGUARD_ARMOR_P
-  - type: STR_WRAITHGUARD_ARMOR_P_SHIELD
-  - type: STR_ELDAR_ARMOR_M
-  - type: STR_ELDAR_ARMOR_M_SHIELD
-  - type: STR_ELDAR_ARMOR_F
-  - type: STR_ELDAR_ARMOR_F_SHIELD
-  - type: STR_ELDAR_ARMOR_FH
-  - type: STR_ELDAR_ARMOR2_P
-  - type: STR_ELDAR_ARMOR2_P_SHIELD
-  - type: STR_ELDAR_ARMOR3_P
-  - type: STR_ELDAR_ARMOR3_P_SHIELD
-  - type: STR_ELDAR_ARMOR5_P
-  - type: STR_ELDAR_ARMOR5_P_SHIELD
-  - type: STR_ELDAR_ARMOR4_P
-  - type: STR_ELDAR_ARMOR4_P_SHIELD
-  - type: STR_ELDAR_ARMOR6_P
-  - type: STR_ELDAR_ARMOR6_P_SHIELD
-  - type: STR_ELDAR_PLAT_ARMOR_P
 
 
 

@@ -90,6 +90,7 @@ extended:
           var ptr RuleSoldier unitSoldier;
           var int woundRecovery;
           var int temp;
+          var int temp2;
 
           unit.getFaction temp;
           if neq side temp; # don't trigger on others' turns
@@ -104,6 +105,14 @@ extended:
           unit.getRuleSoldier unitSoldier;
           unitSoldier.getTag woundRecovery Tag.SMT_UNIT_REGEN_WOUND;
           if eq woundRecovery 0; # skip if unit doesn't regen wounds
+            return;
+          end;
+
+          unitSoldier.getTag temp Tag.UNIT_REGENERATE_HEALTH_BURN_TOGGLE;
+          unit.getTag temp2 Tag.ARMOR_REGENERATE_HEALTH_BURN_TOGGLE;
+          add temp temp2;
+          unit.getFire temp2;
+          if and gt temp 0 gt temp2 0; # skip if fire is disabling regeneration
             return;
           end;
 
@@ -161,20 +170,15 @@ extended:
         code: |
           var ptr RuleSoldier soldierRuleset;
           var ptr RuleArmor unitArmor;
-          var int woundTimeMultiplier;
+          var int recoveryMult;
           var int recoveryHealth;
           var int temp;
           var int temp2;
 
-          # if and gt health_loss 0 eq recovery_time 0; # skip if the unit was hurt but instantly recovers because of armor tag
-            # #debug_log "Recovery Aborted - Armor Tag?: " health_loss final_health_loss recovery_time;
-            # return;
-          # end;
-
           unit.getRuleSoldier soldierRuleset;
-          soldierRuleset.getTag woundTimeMultiplier Tag.SOLDIER_WOUND_TIME_MULTIPLIER;
-          if lt woundTimeMultiplier 0; # skip if the unit ignores recovery
-            #debug_log "Recovery Aborted - Soldier Tag: " woundTimeMultiplier health_loss recovery_time;
+          soldierRuleset.getTag recoveryMult Tag.SOLDIER_WOUND_TIME_MULTIPLIER;
+          if lt recoveryMult 0; # skip if the unit ignores recovery
+            #debug_log "Recovery Aborted - Soldier Tag: " recoveryMult health_loss recovery_time;
             set recovery_time 0;
             return;
           end;
@@ -214,23 +218,25 @@ extended:
           unit.getTag temp Tag.SMT_RECOVERY_PENALTY;
           add recoveryHealth temp; # add recovery penalty time
 
-          if gt woundTimeMultiplier 0; #adjust based on soldier recovery speed
-            muldiv recoveryHealth woundTimeMultiplier 100;
-            #debug_log "RecoveryTime -  Soldier Bonus: " recoveryHealth woundTimeMultiplier;
+          if gt recoveryMult 0; #adjust based on soldier recovery speed
+            muldiv recoveryHealth recoveryMult 100;
+            #debug_log "RecoveryTime -  Soldier Bonus: " recoveryHealth recoveryMult;
           end;
 
-          unit.getTag temp Tag.UNIT_BIONICS; # adjust for bionics bonus
-          if eq temp 1;
-            muldiv recoveryHealth 2 3; # 2/3 recovery time for bionics (original 1/2)
-            #debug_log "RecoveryTime -  Bionics Bonus: " recoveryHealth temp;
+          unit.getTag recoveryMult Tag.SMT_UNIT_MEDBAY_RECOVERY; # adjust for unit bonuses
+          if gt recoveryMult 0;
+            sub recoveryMult 100;
+            abs recoveryMult;
+            muldiv recoveryHealth recoveryMult 100;
+            #debug_log "RecoveryTime -  Unit Bonus: " recoveryHealth recoveryMult;
           end;
 
-          battle_game.getTag temp Tag.SMT_FAST_RECOVERY_PEAK; # adjust for apoth bonus
-          if gt temp 0;
-            sub temp 100;
-            abs temp;
-            muldiv recoveryHealth temp 100;
-            #debug_log "RecoveryTime -  Bionics Bonus: " recoveryHealth temp;
+          battle_game.getTag recoveryMult Tag.SMT_FAST_RECOVERY_PEAK; # adjust for apoth bonus
+          if gt recoveryMult 0;
+            sub recoveryMult 100;
+            abs recoveryMult;
+            muldiv recoveryHealth recoveryMult 100;
+            #debug_log "RecoveryTime -  Medic Bonus: " recoveryHealth recoveryMult;
           end;
 
           set recovery_time recoveryHealth;

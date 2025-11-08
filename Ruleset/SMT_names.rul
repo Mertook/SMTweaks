@@ -47,6 +47,7 @@ extraStrings:
       STR_HONOR_MEDAL: "Mark of Honor"
       STR_HONOR_MEDAL_DESCRIPTION: "Soldiers who participate in successful operations are awarded Marks of Honor, with more distinguished marks given to those with a long record of contributions to the Imperium.{NEWLINE}{NEWLINE} Marks of Honor are granted when a Soldiers total Score earned from missions reaches a certain level.{NEWLINE}{NEWLINE} Bronze Ranks: {ALT}2000{ALT}, {ALT}4000{ALT}, {ALT}6000{ALT}{NEWLINE} Silver Ranks: {ALT}8000{ALT}, {ALT}12000{ALT}, {ALT}16000{ALT}{NEWLINE} Gold Ranks: {ALT}24000{ALT}, {ALT}32000{ALT}, {ALT}40000{ALT}{NEWLINE} Imperial Cross: {ALT}48000{ALT}"
       STR_BONUS_TERMINATOR: "Crux Terminatus"
+      STR_BONUS_HERO: "Hero to the Imperium"
       STR_BONUS_HONOR_1: "Mark of Honor"
       STR_BONUS_HONOR_2: "Mark of Honor"
       STR_BONUS_HONOR_3: "Mark of Honor"
@@ -727,6 +728,7 @@ extraStrings:
       STR_SCRIPT_FLIGHT_DURATION_LEFT: "Flight is already active!{NEWLINE}Duration Left: {0}"
       STR_SCRIPT_COOLDOWN_DURATION_LEFT: "Ability is on cooldown!{NEWLINE}Turns Left: {0}"
       STR_SCRIPT_SHIELD_ACTIVE: "Shield Active!{NEWLINE}Shield Health: {0}"
+      STR_STIMULANT_FAILED: "Unit cannot be given Stims!"
       SMT_AMMO_BONUSDMG_FIRINGACC: "Precision %"
       SMT_ARMOR_SHRED_RESISTANCE: "Shred Resist (Standard)"
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: "Shred Resist (Plasma)"
@@ -1663,9 +1665,9 @@ extraStrings:
       STR_TECHMARINE_PLASMA_CODEX: "{NEWLINE} A Plasma Gun mounted on a Servo-Arm, able to fire at targets while keeping the Techpriests hands free for other tasks."
       STR_TECH_REPAIRTOOL: Repair
       STR_TECH_TOOL_SERVITOR: Sanctus Canister
-      STR_TECH_TOOL_SERVITOR_CODEX: "{NEWLINE} Sanctus Canisters are blessed tools used to inspire strength, bolstering the power of warmachines.{NEWLINE}{NEWLINE} Friendly {ALT}Servitors{ALT}, {ALT}Tarantula Sentries{ALT} or {ALT}Thunderfire Cannons{ALT} can be enhanced once per battle, restoring some time units and granting them {ALT}+30{ALT} firing and melee accuracy for the rest of the fight."
+      STR_TECH_TOOL_SERVITOR_CODEX: "{NEWLINE} Sanctus Canisters are blessed tools used to inspire strength, bolstering the power of warmachines.{NEWLINE}{NEWLINE} Friendly {ALT}Servitors{ALT}, {ALT}Tarantula Sentries{ALT} or {ALT}Thunderfire Cannons{ALT} can be enhanced once per battle, restoring some time units and granting them {ALT}+30{ALT} firing and melee accuracy for the rest of the battle."
       STR_TECH_TOOL_SHIELD: Refractor Field Amplifier
-      STR_TECH_TOOL_SHIELD_CODEX: "{NEWLINE} This Refractor Field Amplifier can be activated to provide a powerful temporary shield. This effect can be combined with an existing personal shield, and the shield power will fade over time even if not attacked.{NEWLINE}{NEWLINE} The shield has {ALT}400{ALT} hitpoints and a four turn cooldown."
+      STR_TECH_TOOL_SHIELD_CODEX: "{NEWLINE} This Refractor Field Amplifier can be activated to provide a powerful temporary shield. This effect can be combined with an existing personal shield, and the shield power will fade over time even if not attacked.{NEWLINE}{NEWLINE} The shield has {ALT}300{ALT} hitpoints and a four turn cooldown."
       STR_TECH_TOOL_SCANNER: Omnispex
       STR_TECH_TOOL_SCANNER_CODEX: "{NEWLINE} Omnispex are advanced sensor devices equipped with powerful Machine Spirits, able to analyze enemies in depth and pinpoint weaknesses.{NEWLINE}{NEWLINE} Enemies marked by an Omnispex are made vulnerable, increasing the power of all incoming attacks by {ALT}25%{ALT} for the rest of the turn."
       STR_TECH_MEDKIT: Curatio Claw

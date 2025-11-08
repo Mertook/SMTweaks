@@ -20,6 +20,17 @@ commendations:
       totalScore: [2000,4000,6000,8000,12000,16000,24000,32000,40000,48000]
     soldierBonusTypes: [STR_BONUS_HONOR_1, STR_BONUS_HONOR_2, STR_BONUS_HONOR_3, STR_BONUS_HONOR_4, STR_BONUS_HONOR_5, STR_BONUS_HONOR_6, STR_BONUS_HONOR_7, STR_BONUS_HONOR_8, STR_BONUS_HONOR_9, STR_BONUS_HONOR_10]
 
+  - type: STR_HERO_TO_THE_IMPERIUM
+    description: STR_HERO_TO_THE_IMPERIUM_DESCRIPTION
+    sprite: 5
+    criteria:
+      killsWithCriteriaCareer: [100,100,100,100,100,100,100,100,100,100]
+      totalWins: [50,50,50,50,50,50,50,50,50,50]
+    soldierBonusTypes: [STR_BONUS_HERO]
+    killCriteria:
+      -
+        - [1, ["STATUS_DEAD", "FACTION_HOSTILE"]]
+
 
 soldierBonuses:
   - name: STR_BONUS_TERMINATOR
@@ -28,6 +39,12 @@ soldierBonuses:
       firing: 10
       bravery: 10
       psiSkill: 10
+    tags:
+      SMT_BONUS_MORALE_RESISTANCE: 33
+
+  - name: STR_BONUS_HERO
+    stats:
+      bravery: 10
     tags:
       SMT_BONUS_MORALE_RESISTANCE: 33
 

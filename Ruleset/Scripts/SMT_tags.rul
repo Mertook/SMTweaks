@@ -47,8 +47,9 @@ extended:
       #ITEM_DMGMOD_IMPERIUM: int         # deal reduced damage to allied units with armor tag `UNIT_TYPE_IMPERIUM: 1` X = % dealt, -1 = no damage
       SMT_GRAV_WEAPON: int              # weapon scales power with weight (armor+hp+size) and scales stun inversely with strength
       SMT_RENDING_WEAPON: int           # Negate effect of shred resistance by %
-      SMT_ARMOR_TARGET_WEAKEST: int     # Weapon targets weakest armor facing when dealing damage
-      SMT_ARMOR_DAMAGE_ALL: int         # Weapon damages all armor facings by %
+      ITEM_ARMOR_TARGET_FACE: int        # AoE Weapon hits relative facing instead of under armor on direct hits
+      ITEM_ARMOR_TARGET_WEAKEST: int     # Weapon targets weakest armor facing when dealing damage
+      ITEM_ARMOR_DAMAGE_ALL: int         # Weapon damages all armor facings by %
       ITEM_IGNITES_TARGETS: int         # Weapon increases fire duration by X on hit
       SMT_LETHAL_STUN: int              # Weapon deals additional HP damage if stun is greater than units HP
       ## Plasma Heat
@@ -153,6 +154,7 @@ extended:
       SMT_BONUS_STAGGER_RESISTANCE: int         # Reduce Stamina damage by %
       SMT_BONUS_IMMOBILIZE_RESISTANCE: int      # Reduce TU damage by %
       SMT_BONUS_MEDIC_GLOBAL: int               # All units get % reduced medbay recovery time if this unit is present
+      SMT_BONUS_MEDBAY_RECOVERY: int            # This unit has reduced medbay recovery time if injured
       ## Rank Sprite Change
       SMT_BONUS_RANK_SPRITEMOD: int             # Modify Sprite if unit has bonus
     BattleUnit:
@@ -184,6 +186,7 @@ extended:
       UNIT_LIKE_A_SHADOW_COUNTER: int           # store restealth kill counter
       UNIT_STEALTH_MOVEPENALTY: int             # store movement modifier for being stealthed
       UNIT_MOVESPEED_MODIFIERS: int             # combined movespeed modifiers for a unit
+      UNIT_ENERGY_MODIFIERS: int                # combined energy cost modifiers for a unit
       UNIT_CAMO_CLOAK_MOVE_COST_MULTIPLIER: int # for compat with Dig In
       UNIT_DIG_IN_MOVE_PENALTY: int             # for compat with Dig In
       ## Shields
@@ -197,8 +200,9 @@ extended:
       SMT_UNIT_STUN_RESISTANCE: int             # Reduce stun damage by %
       SMT_UNIT_STAGGER_RESISTANCE: int          # Reduce Stamina damage by %
       SMT_UNIT_IMMOBILIZE_RESISTANCE: int       # Reduce TU damage by %
+      SMT_UNIT_MEDBAY_RECOVERY: int             # This unit has reduced medbay recovery time if injured
       ## Rank Sprite Change
-      SMT_UNIT_RANK_SPRITEMOD: int             # Modify Sprite if unit has bonus
+      SMT_UNIT_RANK_SPRITEMOD: int              # Modify Sprite if unit has bonus
     BattleGame:
       ## Craft Turrets
       SMT_RAZOR_HBOLTER_COUNT: int  # number of Razorback HeavyBolter tokens

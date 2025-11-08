@@ -61,6 +61,8 @@ extended:
                 battle_game.setTag Tag.SMT_DEVOTION_TEACHER_PEAK temp;
               end;
               soldierRuleset.getTag temp Tag.SMT_SOLDIER_IS_MEDIC; # Medical Expert
+              unit.getTag temp2 Tag.SMT_ARMOR_IS_MEDIC;
+              add temp temp2;
               if gt temp 0;
                 battle_game.getTag temp2 Tag.SMT_FAST_RECOVERY_TOTAL;
                 sub temp2 temp;

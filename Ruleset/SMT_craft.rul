@@ -198,8 +198,12 @@ armors:
     loftempsSet: [ 3 ]
     specialWeapon: STR_TURRET_RELOAD
     tags:
-      INFECTION_RESIST: 100 #infection immune
-      INTIMIDATION_RESISTANCE: 100 #intimidation immune
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      SMT_ARMOR_MORALE_RESISTANCE: 100
+      SMT_ARMOR_STUN_RESISTANCE: 100
+      SMT_ARMOR_STAGGER_RESISTANCE: 100
+      SMT_ARMOR_IMMOBILIZE_RESISTANCE: 100
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_IMPERIUM: 1
 
@@ -269,8 +273,12 @@ armors:
     specialWeapon: STR_TURRET_RELOAD
     tags:
       STARTS_WITH_FULL_TUS: 1
-      INFECTION_RESIST: 100 #infection immune
-      INTIMIDATION_RESISTANCE: 100 #intimidation immune
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      SMT_ARMOR_MORALE_RESISTANCE: 100
+      SMT_ARMOR_STUN_RESISTANCE: 100
+      SMT_ARMOR_STAGGER_RESISTANCE: 100
+      SMT_ARMOR_IMMOBILIZE_RESISTANCE: 100
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_IMPERIUM: 1
 
@@ -347,7 +355,7 @@ armors:
     corpseBattle:
       - STR_BLANK_CORPSE
     damageModifier:
-      - 1.0 #none
+      - 1.0 #SUPPORT
       - 1.0 #AP
       - 0.8 #FLAMES
       - 1.0 #HE
@@ -359,11 +367,18 @@ armors:
       - 0.0 #SMOKE
       - 1.0 #IMPACT
       - 1.0 #MELTA
+      - 1.2 #GRAV
+      - 0.8 #WARP
+      - 1.0 #SONIC
     loftempsSet: [ 4 ]
     specialWeapon: STR_TURRET_RELOAD
     tags:
-      INFECTION_RESIST: 100  # infection immune
-      INTIMIDATION_RESISTANCE: 100  # intimidation immune
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      SMT_ARMOR_MORALE_RESISTANCE: 100
+      SMT_ARMOR_STUN_RESISTANCE: 100
+      SMT_ARMOR_STAGGER_RESISTANCE: 100
+      SMT_ARMOR_IMMOBILIZE_RESISTANCE: 100
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_IMPERIUM: 1
 
@@ -393,6 +408,13 @@ armors:
     sideArmor: 100 # was 50
     rearArmor: 100 # was 50
     underArmor: 100
+    tags:
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      SMT_ARMOR_MORALE_RESISTANCE: 100
+      SMT_ARMOR_STUN_RESISTANCE: 100
+      SMT_ARMOR_STAGGER_RESISTANCE: 100
+      SMT_ARMOR_IMMOBILIZE_RESISTANCE: 100
 
   - type: STR_CASSIUM_BOLTER_LEFT2_ARMOR
     refNode: *REF_CRASSUS_BOLTER

@@ -378,20 +378,22 @@ extended:
           end;
 
           begin; ### Teleport
-            var int flightTime;
-            var int cooldownTime;
 
             actor.getTag temp Tag.UNIT_IS_TELEPORTING;
             item.getTag temp2 Tag.ITEM_IS_TELEPORTER;
             if ge temp 1; # unit already teleporting
               actor.setTag Tag.UNIT_IS_TELEPORTING 0;
-              actor.MoveCost.setBaseTimePercent 100;
-              actor.MoveCost.setBaseClimbEnergyPercent 100;
-              actor.MoveCost.setBaseNormalEnergyPercent 100;
-              actor.MoveCost.setBaseFlyEnergyPercent 100;
+              actor.getTag temp Tag.UNIT_MOVESPEED_MODIFIERS;
+              add temp 100;
+              actor.MoveCost.setBaseTimePercent temp; # preserve any movement modifiers after teleporting
+              actor.getTag temp2 Tag.UNIT_ENERGY_MODIFIERS;
+              #debug_log "Teleport End1 " temp2;
+              offset temp2 -1 50;
+              actor.MoveCost.setBaseEnergyPercent temp2; # preserve units previous energy costs
+              #debug_log "Teleport End2 " temp temp2;
               actor.getOriginalMovementType temp;
               actor.setMovementType temp;
-              actor.getTag temp Tag.UNIT_ENERGY_BEFORE_TELEPORT; # this assumes no weapon requires energy
+              actor.getTag temp Tag.UNIT_ENERGY_BEFORE_TELEPORT;
               actor.setEnergy temp;
               abs tuCost; # refund TUs
               battle_game.flashMessage "STR_SCRIPT_TELEPORTER_SHUTTING_DOWN";
@@ -402,10 +404,13 @@ extended:
                 actor.setTag Tag.UNIT_ENERGY_BEFORE_TELEPORT temp;
                 item.getTag temp Tag.ITEM_TELEPORTER_ENERGY;
                 actor.setEnergy temp;
+                actor.MoveCost.getBaseEnergyPercent temp2;
+                #debug_log "Teleport Start1 " temp2;
+                offset temp2 -1 50;
+                actor.setTag Tag.UNIT_ENERGY_MODIFIERS temp2;
+                #debug_log "Teleport Start2 " temp2;
                 actor.MoveCost.setBaseTimePercent 0;
-                actor.MoveCost.setBaseClimbEnergyPercent 100;
-                actor.MoveCost.setBaseNormalEnergyPercent 50;
-                actor.MoveCost.setBaseFlyEnergyPercent 50;
+                actor.MoveCost.setBaseEnergyPercent 50;
                 actor.setMovementType movement_type_fly;
                 battle_game.flashMessage "STR_SCRIPT_TELEPORTER_STARTING_UP";
                 actor.setTag Tag.UNIT_IS_TELEPORTING 1;
@@ -456,6 +461,33 @@ extended:
 
           if gt tuCost 0;
             actor.addTimeUnits tuCost; # refund cost if effect failed
+          end;
+
+          return;
+
+      - new: SMTS_medkit_stamina_lock # Prevent units from gaining stamina from medkits while teleporting
+        offset: 10
+        code: |
+          var int tuCost;
+          var int temp;
+
+          if neq medikit_action_type medikit_action_stimulant;
+            #debug_log "StaminaBlock Fail " medikit_action_type;
+            return;
+          end;
+
+          target.getTag temp Tag.UNIT_IS_TELEPORTING;
+          #debug_log "StaminaBlock Ping " temp;
+          if gt temp 0; # unit teleporting
+            set energy_recovery 0; #negate stimulant
+            set stun_recovery 0;
+            item.getStimulantQuantity temp;
+            add temp 1;
+            item.setStimulantQuantity temp; # refund medkit usage
+            item.getActionCost.getTimeUnits temp actor battle_action_use;
+            actor.addTimeUnits temp; # refund TU cost
+            battle_game.flashMessage "STR_STIMULANT_FAILED";
+            #debug_log "StaminaBlock Final " temp;
           end;
 
           return;

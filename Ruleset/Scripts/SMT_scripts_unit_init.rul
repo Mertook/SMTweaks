@@ -163,6 +163,22 @@ extended:
             unit.setTag Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE initVal;
           end;
 
+          begin; ### Recovery Speed
+            soldier_bonus.getTag bonusVal Tag.SMT_BONUS_MEDBAY_RECOVERY;
+            unit.getTag initVal Tag.SMT_UNIT_MEDBAY_RECOVERY;
+            if gt initVal 0;
+              sub initVal 100;
+              sub bonusVal 100;
+              muldiv initVal bonusVal 100;
+              sub initVal 100;
+              abs initVal;
+            else;
+              set initVal bonusVal;
+            end;
+            limit_upper initVal 100;
+            unit.setTag Tag.SMT_UNIT_MEDBAY_RECOVERY initVal;
+          end;
+
           return;
 
 

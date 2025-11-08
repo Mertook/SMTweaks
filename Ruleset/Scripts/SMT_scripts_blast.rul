@@ -8,7 +8,7 @@ extended:
         code: |
           var int temp;
 
-          damaging_item.getTag temp Tag.SMT_ARMOR_DAMAGE_ALL;
+          damaging_item.getTag temp Tag.ITEM_ARMOR_DAMAGE_ALL;
           if eq temp 0;
             return;
           end;
@@ -31,25 +31,58 @@ extended:
           return;
 
     hitUnit:
-      - new: SMTS_blast_pick_weakest_side
+      - new: SMTS_blast_pick_side
         offset: 1.9 # before AoC etc
         code: |
+          var int facing;
           var int temp;
-          var int temp2;
 
-          damaging_item.getTag temp Tag.SMT_ARMOR_TARGET_WEAKEST;
-          if eq temp 0;
+          damaging_item.getTag temp Tag.ITEM_ARMOR_TARGET_FACE;
+          if and gt temp 0 eq side SIDE_UNDER;
+            unit.getDirection facing;
+            attacker.getDirection temp;
+            #debug_log "Blast PickFaceInit " side facing temp;
+            sub facing temp; # get relative angle
+            if lt facing 0;
+              add facing 8; # normalize negative values
+            end;
+            set temp facing;
+            mod temp 2;
+            #debug_log "Blast PickFacing " facing temp;
+            if eq temp 1; # if on a diagonal, pick randomly which side to hit
+              set temp 50;
+              battle_game.randomChance temp;
+              offset temp 2 -1; # turn 0/1 into -1/1
+              #debug_log "Blast PickFaceRand " temp;
+              add facing temp;
+              mod facing 8;
+            end;
+            if eq facing 4;
+              set side SIDE_FRONT;
+            else eq facing 6;
+              set side SIDE_LEFT;
+            else eq facing 2;
+              set side SIDE_RIGHT;
+            else eq facing 0;
+              set side SIDE_REAR;
+            end;
+            #debug_log "Blast PickFaceFinal " facing side;
             return power part side;
           end;
 
-          unit.getArmor temp side;
-          loop var i 5; #cycle through the armor sides
-            unit.getArmor temp2 i;
-            if gt temp temp2;
-              set side i;
-              set temp temp2;
+          damaging_item.getTag temp Tag.ITEM_ARMOR_TARGET_WEAKEST;
+          if gt temp 0;
+            unit.getArmor facing side;
+            loop var i 5; #cycle through the armor sides
+              unit.getArmor temp i;
+              if gt facing temp;
+                set side i;
+                set facing temp;
+              end;
+              #debug_log "Blast PickArmor " i side facing temp;
             end;
-            #debug_log "Blast PickArmor " i side temp temp2;
+
+            return power part side;
           end;
 
           return power part side;

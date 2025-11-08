@@ -65,7 +65,7 @@ items:
     damageAlter:
       RandomType: 2  # TFTD [50% - 150%]
       IgnoreSelfDestruct: false
-      ArmorEffectiveness: 0.8 # was 0.4
+      ArmorEffectiveness: 1.0 # was 0.4
       ToArmorPre: 0.5 # was 0.8
       ToWound: 0.2
       ToHealth: 1.0 # was 0.9
@@ -76,7 +76,7 @@ items:
       melee: 1.0
       flatHundred: 0.0
     tags:
-      SMT_RENDING_WEAPON: 90 # ignore 90% of shredresist
+      SMT_RENDING_WEAPON: 80 # ignore 80% of shredresist
 
   - type: CTHULHU_GENE_WEAK         # Ancient Genestealer Ranged L1
     power: 80

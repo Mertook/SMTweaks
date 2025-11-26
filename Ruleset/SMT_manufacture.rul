@@ -1138,6 +1138,45 @@ manufacture:
     producedItems:
       STR_BOLT_SNIPER_AMMO_MC: 10
 
+  - name: STR_SHOTGUN_SHELLS_MC
+    space: 0
+    time: 200
+    cost: 20000
+    requires:
+      - STR_MASTER_CRAFTING_AMMO
+      - STR_SHOTGUNS_ADV
+    requiredItems:
+      STR_ALIEN_ALLOYS: 5
+      STR_UFO_CONSTRUCTION: 5
+    producedItems:
+      STR_SHOTGUN_SHELLS_MC: 20
+
+  - name: STR_SHOTGUN_SHELLS_HEAVY
+    space: 0
+    time: 200
+    cost: 20000
+    requires:
+      - STR_MASTER_CRAFTING_AMMO
+      - STR_HEAVY_SHOTGUN_SHELLS
+    requiredItems:
+      STR_ALIEN_ALLOYS: 6
+      STR_UFO_CONSTRUCTION: 4
+    producedItems:
+      STR_SHOTGUN_SHELLS_HEAVY: 20
+
+  - name: STR_RIPPER_GUN_CLIP_MC
+    space: 0
+    time: 200
+    cost: 20000
+    requires:
+      - STR_MASTER_CRAFTING_AMMO
+      - STR_HEAVY_SHOTGUN_DRUMS
+    requiredItems:
+      STR_ALIEN_ALLOYS: 8
+      STR_UFO_CONSTRUCTION: 5
+    producedItems:
+      STR_RIPPER_GUN_CLIP_MC: 10
+
   - name: STR_MCRIFLE                               # MC Bolter
     category: STR_WEAPON
     space: 0
@@ -1176,11 +1215,10 @@ manufacture:
       STR_ALIEN_ALLOYS: 2 # was 1
       STR_KILLPOINT_TOKEN: 120 # was 180
 
-  - name: STR_MCSHOTGUN                             # MC Shotgun
+  - name: STR_MCSHOTGUN                             # MC Shotgun - disabled
     category: STR_WEAPON
     requires:
-      - STR_MASTER_CRAFTING_AMMO
-      - STR_SHOTGUNS_ADV
+      - STR_GENERALLOCK
     requiredItems:
       STR_ALIEN_ALLOYS: 2 # was 1
       STR_KILLPOINT_TOKEN: 120 # was 180
@@ -1764,6 +1802,84 @@ manufacture:
       STR_ALIEN_ALLOYS: 30
       STR_KILLPOINT_TOKEN: 200
 
+  - name: STR_GAUSS_FLAYER_ARMOR
+    category: STR_CAT_NECRON
+    space: 0
+    time: 1200
+    cost: 100000
+    requires:
+      - STR_NECRONTECH_RESEARCH
+      - STR_GAUSS_FLAYER
+    requiredItems:
+      STR_GAUSS_FLAYER_TOKEN: 1
+      STR_ALIEN_ALLOYS: 12
+      STR_KILLPOINT_TOKEN: 160
+
+  - name: STR_GAUSS_REAPER_ARMOR
+    category: STR_CAT_NECRON
+    space: 0
+    time: 1200
+    cost: 100000
+    requires:
+      - STR_NECRONTECH_RESEARCH
+      - STR_GAUSS_REAPER
+    requiredItems:
+      STR_GAUSS_REAPER_TOKEN: 1
+      STR_ALIEN_ALLOYS: 12
+      STR_KILLPOINT_TOKEN: 160
+
+  - name: STR_GAUSS_BLASTER_ARMOR
+    category: STR_CAT_NECRON
+    space: 0
+    time: 1200
+    cost: 100000
+    requires:
+      - STR_NECRONTECH_RESEARCH
+      - STR_GAUSS_BLASTER
+    requiredItems:
+      STR_GAUSS_BLASTER_TOKEN: 1
+      STR_ALIEN_ALLOYS: 24
+      STR_KILLPOINT_TOKEN: 320
+
+  - name: STR_SYNAPTIC_DISINTEGRATOR_ARMOR
+    category: STR_CAT_NECRON
+    space: 0
+    time: 1200
+    cost: 100000
+    requires:
+      - STR_NECRONTECH_RESEARCH
+      - STR_SYNAPTIC_DISINTEGRATOR
+    requiredItems:
+      STR_SYNAPTIC_DISINTEGRATOR_TOKEN: 1
+      STR_ALIEN_ALLOYS: 18
+      STR_KILLPOINT_TOKEN: 240
+
+  - name: STR_HYPERPHASESWORD_PLAYER
+    category: STR_CAT_NECRON
+    space: 0
+    time: 1200
+    cost: 100000
+    requires:
+      - STR_NECRONTECH_RESEARCH
+      - STR_HYPERPHASESWORD
+    requiredItems:
+      STR_HYPERPHASESWORD_TOKEN: 1
+      STR_ALIEN_ALLOYS: 30
+      STR_KILLPOINT_TOKEN: 200
+
+  - name: STR_NECRON_WARSCYTHE_PLAYER
+    category: STR_CAT_NECRON
+    space: 0
+    time: 1200
+    cost: 100000
+    requires:
+      - STR_NECRONTECH_RESEARCH
+      - STR_NECRON_WARSCYTHE
+    requiredItems:
+      STR_NECRON_WARSCYTHE_TOKEN: 1
+      STR_ALIEN_ALLOYS: 30
+      STR_KILLPOINT_TOKEN: 200
+
 ### BOMBARD
   - name: STR_ORBITAL_STRIKE_AMMO                   # Orbital Strike ammo
     category: STR_CAT_FIRESUPPORT
@@ -1911,6 +2027,7 @@ manufacture:
     requires:
       - STR_CHAPTER_PURITY
       - STR_MARINES_STRATEGY
+      - STR_NEOPHYTE_REQUEST
     space: 0
     time: 1200
     cost: 10000
@@ -1930,9 +2047,25 @@ manufacture:
     time: 2400 #slow, 1 day with 100 engineers
     cost: 20000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 60 # 200 tokens total for a Mature Geneseed
+      STR_KILLPOINT_TOKEN: 60 # 200 tokens total for a mature Geneseed
     producedItems:
       STR_SMT_GENESEED_IMPURE: 3
+    listOrder: 4
+
+  - name: STR_SMT_GENESEED_RECLAIM                  # Geneseed reclamation
+    category: STR_SMT_GENESEED
+    requires:
+      - STR_NOT_MARINES
+      - STR_NOT_GUARD
+      - STR_NOT_ADEPTAS
+      - STR_NOT_ADEPTUS_TERRA
+    space: 0
+    time: 480
+    cost: 1000
+    requiredItems:
+      STR_SMT_GENESEED: 1
+    producedItems:
+      STR_KILLPOINT_TOKEN: 200
     listOrder: 4
 
   # - name: STR_CRATED_DROPPODS                      # Unpackage Starter Droppods (not used)
@@ -2046,13 +2179,14 @@ manufacture:
 ###Soldiers
   - name: STR_GREY_KNIGHT_REQUISITION
     category: STR_ADVANCEMENT
+    listOrder: 5
     requires:
       - STR_GREYKNIGHTS
     space: 0
     time: 1000
     cost: 1000000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 200
+      STR_KILLPOINT_TOKEN: 250
     spawnedPersonType: STR_GREYKNIGHT
     producedItems: {}
 

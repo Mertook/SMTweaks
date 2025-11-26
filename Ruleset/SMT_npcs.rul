@@ -42,10 +42,12 @@ items:
     invWidth: 0
     invHeight: 0
     battleType: 4
+    explodeInventory: 2
+    supportedInventorySections:
+      - STR_GROUND
     recover: false
 
   - type: STR_NPCSPAWNER_MARINE_TAC         # NPC Tactical Marine
-    refNode: *REF_UNIT_SPAWNER
     spawnUnitFaction: 2 # Civilian
     spawnUnit: STR_MARINETAC_SMT
 
@@ -58,6 +60,11 @@ items:
     refNode: *REF_UNIT_SPAWNER
     spawnUnitFaction: 2 # Civilian
     spawnUnit: STR_SCIONAI_SMT
+
+  - type: STR_SPAWNER_TARANTULA_MB          # Ally Tarantula Missile (Black)
+    refNode: *REF_UNIT_SPAWNER
+    spawnUnitFaction: 0 # Player
+    spawnUnit: STR_T_MISSILE_BLACK
 
   - &REF_NPC_WEAPON                         # NPC Weapon Reference
     type: STR_RIFLEB_AI
@@ -455,6 +462,31 @@ units: # Civ units
     aggression: 1
     energyRecovery: 40
 
+  - type: STR_DECAYING_HOLOGRAM_TARGET_GUARDSMAN  # Hologram that dies after 2 turns.
+    race: STR_TARGET_GUARD
+    rank: STR_LIVE_SOLDIER
+    stats:
+      tu: 1
+      stamina: 1
+      health: 1
+      bravery: 110
+      reactions: 0
+      firing: 0
+      throwing: 0
+      strength: 0
+      psiStrength: 200
+      psiSkill: 0
+      melee: 0
+    armor: DECAYING_TARGET_GUARDSMAN
+    standHeight: 21
+    kneelHeight: 16
+    value: 0
+    deathSound: [{mod: 40k, index: 788}]
+    intelligence: 1
+    aggression: 1
+    energyRecovery: 40
+    builtInWeaponSets: []
+
   - type: STR_SKULL_TECH                    # Techpriest Servoskull
     race: STR_SKULL
     stats:
@@ -484,15 +516,15 @@ units: # Civ units
     livingWeapon: true
     civilianRecoveryType: STR_TECH_SKULL_SPAWNER
 
-  - type: STR_T_BOLTER_TECH              # Techpriest Tarantula Sentry
+  - type: STR_T_BOLTER_TECH                 # Techpriest Tarantula Sentry
     race: STR_T_BOLTER
     stats:
       tu: 100
       stamina: 10
-      health: 90
+      health: 150
       bravery: 110
       reactions: 120
-      firing: 50
+      firing: 60
       throwing: 0
       strength: 60
       psiStrength: 100
@@ -533,6 +565,33 @@ units: # Civ units
     civilianRecoveryType: STR_TECH_TF_SPAWNER
     livingWeapon: true
 
+  - type: STR_T_MISSILE_BLACK               # Tarantula Hyperios Turret (Black Paint)
+    race: STR_T_BOLTER
+    stats:
+      tu: 20
+      stamina: 10
+      health: 150
+      bravery: 110
+      reactions: 120
+      firing: 60
+      throwing: 0
+      strength: 60
+      psiStrength: 100
+      psiSkill: 0
+      melee: 0
+      mana: 100
+    armor: TARANTULA_MISSILE_BLACK_ARMOR
+    standHeight: 14
+    kneelHeight: 14
+    value: 10
+    deathSound: {mod: 40k, index: 23}
+    energyRecovery: 50
+    intelligence: 4
+    aggression: 5
+    sniper: 50
+    spotter: 1
+    moraleLossWhenKilled: 1
+    liveAlien: ""
 
 terrains:
   - name: ALLIED_MARINE_DEPLOYMENT          # IG Marine Reinforcement block

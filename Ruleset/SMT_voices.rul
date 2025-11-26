@@ -104,6 +104,20 @@ armors:
     deathMale:     [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
     deathFemale:   [{mod: 40k, index: 380}, {mod: 40k, index: 381}, {mod: 40k, index: 382}, {mod: 40k, index: 383}, {mod: 40k, index: 384}]
 
+  - &VOICE_INQ_STORMTROOPER
+    type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR
+    selectUnitMale:     [{mod: 40k, index: 953}, {mod: 40k, index: 954}, {mod: 40k, index: 955}, {mod: 40k_ROSIGMA_edits, index: 3944}, {mod: 40k_ROSIGMA_edits, index: 3945}, {mod: 40k_ROSIGMA_edits, index: 3946}, {mod: 40k_ROSIGMA_edits, index: 3947}, {mod: 40k_ROSIGMA_edits, index: 3948}]
+    selectUnitFemale:   [{mod: 40k_ROSIGMA_edits, index: 2764}, {mod: 40k_ROSIGMA_edits, index: 2765}, {mod: 40k_ROSIGMA_edits, index: 2766}, {mod: 40k_ROSIGMA_edits, index: 2767}, {mod: 40k_ROSIGMA_edits, index: 2768}, {mod: 40k_ROSIGMA_edits, index: 2769}, {mod: 40k_ROSIGMA_edits, index: 2770}, {mod: 40k_ROSIGMA_edits, index: 2771}, {mod: 40k_ROSIGMA_edits, index: 2772}]
+    startMovingMale:    [{mod: 40k, index: 946}, {mod: 40k, index: 947}, {mod: 40k, index: 948}, {mod: 40k, index: 949}, {mod: 40k, index: 950}, {mod: 40k_ROSIGMA_edits, index: 3953}, {mod: 40k_ROSIGMA_edits, index: 3954}]
+    startMovingFemale:  [{mod: 40k_ROSIGMA_edits, index: 2773}, {mod: 40k_ROSIGMA_edits, index: 2774}, {mod: 40k_ROSIGMA_edits, index: 2775}, {mod: 40k_ROSIGMA_edits, index: 2776}, {mod: 40k_ROSIGMA_edits, index: 2777}, {mod: 40k_ROSIGMA_edits, index: 2778}]
+    selectWeaponMale:   [{mod: 40k, index: 945}, {mod: 40k, index: 942}, {mod: 40k, index: 943}, {mod: 40k, index: 944}, {mod: 40k_ROSIGMA_edits, index: 3955}]
+    selectWeaponFemale: [{mod: 40k_ROSIGMA_edits, index: 2779}, {mod: 40k_ROSIGMA_edits, index: 2780}, {mod: 40k_ROSIGMA_edits, index: 2781}, {mod: 40k_ROSIGMA_edits, index: 2782}, {mod: 40k_ROSIGMA_edits, index: 2783}, {mod: 40k_ROSIGMA_edits, index: 2784}, {mod: 40k_ROSIGMA_edits, index: 2785}]
+    annoyedMale:        [{mod: 40k, index: 956}, {mod: 40k, index: 957}, {mod: 40k, index: 958}, {mod: 40k, index: 959}, {mod: 40k, index: 960}, {mod: 40k_ROSIGMA_edits, index: 3949}, {mod: 40k_ROSIGMA_edits, index: 3950}, {mod: 40k_ROSIGMA_edits, index: 3951}, {mod: 40k_ROSIGMA_edits, index: 3952}]
+    annoyedFemale:     [{mod: 40k_ROSIGMA_edits, index: 2786}, {mod: 40k_ROSIGMA_edits, index: 2787}, {mod: 40k_ROSIGMA_edits, index: 2788}]
+    deathMale:          [{mod: 40k, index: 385}, {mod: 40k, index: 386}, {mod: 40k, index: 387}, {mod: 40k, index: 388}]
+    deathFemale:        [{mod: 40k_ROSIGMA_edits, index: 2789}, {mod: 40k_ROSIGMA_edits, index: 2790}, {mod: 40k_ROSIGMA_edits, index: 2791}, {mod: 40k_ROSIGMA_edits, index: 2792}, {mod: 40k_ROSIGMA_edits, index: 2793}]
+
+
   - type: STR_ASS_ARMOR_HONOR_CLAW  # Vanguard (Claw)
     refNode: *VOICE_MARINE
   - type: STR_SCOUT_SMT_UC          # Scout (Marine)

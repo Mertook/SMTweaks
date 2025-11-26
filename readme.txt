@@ -12,4 +12,4 @@ New Features:
 - Smoke Launchers for Craft
 - Customizable Turrets for Razorbacks; Heavy Bolters, Heavy Flamers & Lascannons
 - A complete rework of how Deathwatch Marines are hired, build a small super-elite Kill-Team
-- 6 new custom ammo types just for Deathwatch
+- New armor and weapons for Grey Knights

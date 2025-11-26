@@ -157,54 +157,6 @@ items:
   - type: STR_BOLT_SNIPER_AMMO_HELS     # Bolt Sniper Helspear ammo
     refNode: *REF_SHIELDBREAKER_AMMO
 
-  - &STR_NOFRIENDLYFIRE_AMMO            # Friend-safe Template
-    type: STR_PSITOKEN_TORMENT
-    scripts:
-      hitUnitAmmo: |
-        var int dmgCheck;
-        var int temp;
-        var int temp2;
-
-        # damaging_item.getTag dmgCheck Tag.ITEM_DMGMOD_IMPERIUM; #check if target is Imperium
-        # if neq dmgCheck 0;
-          # unit.getTag temp Tag.UNIT_TYPE_IMPERIUM;
-          # #debug_log "FriendlyFire Imperium " dmgCheck temp;
-          # if le temp 0;
-            # set dmgCheck 0;
-            # if lt dmgCheck 0;
-              # set power 0; # if -1 negate all damage
-            # else;
-              # muldiv power dmgCheck 100; # otherwise reduce to %
-            # end;
-          # end;
-        # end;
-
-        damaging_item.getTag dmgCheck Tag.ITEM_DMGMOD_ALLIES; # check if target is allied
-        if neq dmgCheck 0;
-          attacker.getFaction temp;
-          unit.getFaction temp2;
-          #debug_log "FriendlyFire Ping " dmgCheck temp temp2 power;
-          if eq temp temp2;
-            if lt dmgCheck 0;
-              set power 0; # if -1 negate all damage
-            else;
-              muldiv power dmgCheck 100; # otherwise reduce to %
-            end;
-          end;
-        end;
-
-        #debug_log "FriendlyFire Final Power " power;
-        return power part side;
-
-  - type: STR_PSITOKEN_TORMENT          # Librarian Torment Spell
-    refNode: *STR_NOFRIENDLYFIRE_AMMO
-
-  - type: AUX_CROZIUS                   # Crozius
-    refNode: *STR_NOFRIENDLYFIRE_AMMO
-
-  - type: AUX_CROZIUS_DW                # Crozius (DW)
-    refNode: *STR_NOFRIENDLYFIRE_AMMO
-
   - &REF_GRAV_WEAPON                    # Grav Weapon
     type: STR_STUN_BOMB
     tags:
@@ -296,9 +248,16 @@ items:
 
         damaging_item.getTag stunMult Tag.SMT_LETHAL_STUN;
         if gt stunMult 0;
-          if eq to_stun 0; # if target is stun immune increase direct hpdmg
-            #debug_log "LethalStun Val " to_health to_stun stunMult;
+          unit.getTag temp Tag.SMT_UNIT_STUN_RESISTANCE;
+          if eq to_stun 0; # if target is stun immune increase direct hpdmg by stunMult
+            #debug_log "LethalStun Val " to_health to_stun stunMult temp;
             muldiv to_health stunMult 10;
+            return;
+          else gt temp 0; # if target is partially resistant, add the future resisted stun to damage
+            set stunVal to_stun;
+            muldiv stunVal temp 100;
+            #debug_log "LethalStun Val " to_health to_stun stunVal temp;
+            add to_health stunVal;
             return;
           end;
           unit.getStun stunVal;
@@ -306,7 +265,7 @@ items:
           #debug_log "OverStun Init " to_health to_stun stunVal temp;
           add stunVal to_stun;
           sub stunVal temp;
-          if gt stunVal 0; # if unit is or will be knocked unconcious, add incoming stun damage to health damage
+          if gt stunVal 0; # if unit is or will be knocked unconcious, add overflow stun damage to health damage
             set temp to_stun;
             limit_upper temp stunVal;
             add to_health temp;
@@ -335,6 +294,10 @@ items:
   - type: STR_SONIC_GRENADE             # Sonic Grenade
     refNode: *REF_LETHALSTUN_WEAPON
   - type: STR_SONIC_MISSILE_PACK        # Sonic Missile
+    refNode: *REF_LETHALSTUN_WEAPON
+  - type: STR_SYNAPTIC_DISINTEGRATOR    # Synaptic Disintegrator
+    refNode: *REF_LETHALSTUN_WEAPON
+  - type: STR_SYNAPTIC_DISINTEGRATOR_PLAYER # Synaptic Disintegrator
     refNode: *REF_LETHALSTUN_WEAPON
 
 

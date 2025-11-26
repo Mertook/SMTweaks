@@ -85,8 +85,11 @@ armors:
       - 1.1  # Melta
       - 0.9  # Graviton
       - 0.6  # Warp
+      - 1.0  # Sonic
+      - 0.7  # Gauss
     loftempsSet: [3]
-    builtInWeapons: []
+    builtInWeapons: # make staff built in, can't drop it
+      - STR_SYNAPTIC_DISINTEGRATOR
     tags:
       INFECTION_RESIST: 100
       INTIMIDATION_RESISTANCE: 100

@@ -2,16 +2,20 @@ armors:
 ### Templates
   - &ARMOR_SCOUT                            #SCOUT ARMOR VALUES
     update: STR_SCOUT_UC
+    personalLight: 5 # adjust all new armors to the rosigma standard
+    overKill: 1.0 # harder to melt
     frontArmor: 80
     sideArmor: 60
     rearArmor: 40
     underArmor: 60
+    stats:
+      health: 10
 
   - &ARMOR_TACTICAL                         #TACTICAL ARMOR VALUES
     type: STR_PERSONAL_ARMOR_UC
     personalLight: 5 # adjust all new armors to the rosigma standard
     overKill: 1.0 # harder to melt
-    recovery:
+    recovery: &Ref_Marine_Recovery
       energy:
         stamina: 0.4 # default 0.33, marine bonus
       stun:
@@ -21,6 +25,7 @@ armors:
         flatOne: 5
         psiSkill: 0.2 # 20% of devotion as additional morale recovery
     loftempsSet: [ 3 ]
+    corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
       psiStrength: 0.02 # psyker strength barely helps
       psiSkill: 1.5 #FAITH IS MY SHIELD
@@ -44,7 +49,7 @@ armors:
       - 1.0 #SUPPORT
       - 0.9 #AP
       - 0.4 #FLAMES
-      - 1.0 #HE
+      - 0.9 #HE
       - 1.0 #LASCANON
       - 1.0 #PLASMA
       - 1.0 #STUN
@@ -56,6 +61,7 @@ armors:
       - 1.0 #GRAV
       - 1.0 #WARP
       - 1.0 #SONIC
+      - 1.0 #GAUSS
     tags:
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
@@ -73,15 +79,8 @@ armors:
     type: STR_POWER_SUIT_UC
     personalLight: 5
     overKill: 1.0 # harder to melt
-    recovery:
-      energy:
-        stamina: 0.4
-      stun:
-        flatOne: 1
-        health: 0.03
-      morale:
-        flatOne: 5
-        psiSkill: 0.2
+    recovery: *Ref_Marine_Recovery
+    corpseGeo: STR_SMT_GENESEED
     loftempsSet: [ 4 ]
     allowsRunning: false
     allowsKneeling: false
@@ -104,10 +103,10 @@ armors:
       - 1.0 #SUPPORT
       - 0.8 #AP
       - 0.2 #FLAMES
-      - 0.9 #HE
+      - 0.8 #HE
       - 0.9 #LASCANON
       - 0.9 #PLASMA
-      - 0.9 #STUN
+      - 0.8 #STUN
       - 1.0 #MELEE
       - 0.5 #ACID
       - 0.0 #SMOKE
@@ -116,6 +115,7 @@ armors:
       - 1.2 #GRAV
       - 1.0 #WARP
       - 0.9 #SONIC
+      - 1.0 #GAUSS
     frontArmor: 180 #was 150
     sideArmor: 165 #was 130
     rearArmor: 125 #was 100
@@ -133,6 +133,66 @@ armors:
       SMT_ARMOR_IMMOBILIZE_RESISTANCE: 66
       INTIMIDATION_RESISTANCE: 66
       INFECTION_RESIST: 10
+
+  - &ARMOR_DREADNOUGHT                      #DREADNOUGHT ARMOR VALUES
+    update: DREAD_ARMOR_UC
+    allowsKneeling: false
+    allowsRunning: false
+    frontArmor: 220 # was 240
+    sideArmor: 190 # was 230
+    rearArmor: 180 # was 180
+    underArmor: 240 # was 240
+    psiDefence: # does this matter for 2x2 units?
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 2.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 2.5 #discipline and resolve reinforces their faith (dread bonus)
+    personalLight: 5
+    psiVision: 0
+    recovery:
+      energy:
+        stamina: 0.66
+    stats:
+      tu: 20
+      stamina: 20
+      health: 200
+      bravery: 0
+      strength: 100
+      reactions: 20
+      firing: 20
+      melee: 20
+      throwing: 0
+      psiStrength: 0
+      psiSkill: 0
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 0.8 #AP
+      - 0.1 #FLAMES
+      - 0.8 #HE
+      - 0.9 #LASCANON
+      - 0.9 #PLASMA
+      - 0.5 #STUN
+      - 1.0 #MELEE
+      - 0.5 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.1 #MELTA
+      - 1.4 #GRAV
+      - 0.8 #WARP
+      - 0.9 #SONIC
+      - 1.0 #GAUSS
+    specialWeapon: AUX_STOMP_SMT
+    tags:
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      SMT_ARMOR_SHRED_RESISTANCE: 75
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 60
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 35
+      SMT_ARMOR_STAGGER_RESISTANCE: 66
+      SMT_ARMOR_IMMOBILIZE_RESISTANCE: 66
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_ASTARTES: 1
 
 ### FIRSTBORN
   - &STR_MARINE_ARMOR                       #TACTICAL TEMPLATE
@@ -224,17 +284,17 @@ armors:
       moraleCurrent: 1.5 #discipline and resolve reinforces their faith
     loftempsSet: [ 3 ]
     stats:
-      tu: 15            # base 10 +10
-      stamina: 10       # base 20 -10
-      health: 0         # base 10 -10
-      bravery: 0        # base 0  
-      reactions: 15     # base 10 +5
-      firing: 0         # base 0  
-      throwing: 10      # base 5  +5
-      strength: 0       # base 10 -10
-      psiStrength: 0    # base 0  
-      psiSkill: 0       # base 0  
-      melee: 0          # base 10 -10
+      tu: 10
+      stamina: 10
+      health: 10
+      bravery: 0
+      reactions: 15
+      firing: 0
+      melee: 0
+      throwing: 10
+      strength: 0
+      psiStrength: 0
+      psiSkill: 0
     damageModifier:
       - 1.0 #SUPPORT
       - 1.0 #AP
@@ -250,6 +310,8 @@ armors:
       - 1.0 #MELTA
       - 0.75 #GRAV
       - 1.0 #WARP
+      - 1.0 #SONIC
+      - 1.0 #GAUSS
     units:
       - STR_SOLDIER_NEOPHYTE
     tags:
@@ -261,7 +323,7 @@ armors:
     customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 0}
     spriteSheet: XCOM_0.PCK
     storeItem: STR_NONE
-    corpseGeo: STR_FALLEN_CORPSE
+    corpseGeo: STR_SMT_GENESEED
     ufopediaType: STR_SCOUT_UC
     corpseBattle:
       - STR_SCOUT_CORPSE
@@ -277,17 +339,17 @@ armors:
       moraleCurrent: 1.5 #discipline and resolve reinforces their faith
     loftempsSet: [ 3 ]
     stats:
-      tu: 20            # base 10 +10
-      stamina: 20       # base 20
-      health: 0         # base 10 -10
-      bravery: 0        # base 0  
-      reactions: 20     # base 10 +10
-      firing: 5         # base 0  
-      throwing: 10      # base 5  +5
-      strength: 0       # base 10 -10
-      psiStrength: 0    # base 0  
-      psiSkill: 0       # base 0  
-      melee: 5          # base 10 -5
+      tu: 10
+      stamina: 10
+      health: 10
+      bravery: 0
+      reactions: 15
+      firing: 0
+      melee: 0
+      throwing: 10
+      strength: 0
+      psiStrength: 0
+      psiSkill: 0
     damageModifier:
       - 1.0 #SUPPORT
       - 1.0 #AP
@@ -421,7 +483,7 @@ armors:
       - STR_SOLDIER_TECH
       - STR_SOLDIER_TECHVET
     tags:
-      ARMOR_REGENERATE_DURABILITY: 20 # techmarine repair
+      ARMOR_REGENERATE_DURABILITY: 15 # techmarine repair
 
   - update: STR_SARGENT_ARMOR_UC            #SERGEANT
     refNode: *STR_MARINE_OFFICER_ARMOR
@@ -675,17 +737,17 @@ armors:
     moveCost:
       basePercent: [100, 75] # Reduced energy cost - Scout bonus
     stats:
-      tu: 25            # base 10 +15
-      stamina: 30       # base 20
-      health: 5         # base 10 -5
-      bravery: 0        # base 0  
-      reactions: 25     # base 10 +15
-      firing: 5         # base 5  
-      throwing: 10      # base 5  +5
-      strength: 0       # base 10 -10
-      psiStrength: 0    # base 0  
-      psiSkill: 0       # base 0  
-      melee: 15         # base 10 +5
+      tu: 20
+      stamina: 25
+      health: 15
+      bravery: 0
+      reactions: 25
+      firing: 0
+      melee: 10
+      throwing: 10
+      strength: 0
+      psiStrength: 0
+      psiSkill: 0
     damageModifier:
       - 1.0 #SUPPORT
       - 1.0 #AP
@@ -701,6 +763,8 @@ armors:
       - 1.0 #MELTA
       - 0.75 #GRAV
       - 1.0 #WARP
+      - 1.0 #SONIC
+      - 1.0 #GAUSS
     units:
       - STR_SOLDIER
       - STR_SOLDIER_TERMINATOR
@@ -742,13 +806,13 @@ armors:
       - 1.0 #MELTA
       - 0.75 #GRAV
       - 1.0 #WARP
-    specialWeapon: STR_STEALTH_ADVSCOUT # motion scanner
+    specialWeapon: STR_STEALTH_ADVSCOUT
     moveCost:
       basePercent: [100, 75] # Reduced energy cost - Scout bonus
     stats:
-      tu: 35            # base 10 +10 scout +10 elite
+      tu: 35
       stamina: 40       # base 20 -10 scout +30 elite
-      health: 10        # base 10 -10 scout +10 elite
+      health: 15
       bravery: 10       # base 0  +10 elite
       reactions: 30     # base 10 +5  scout +15  elite
       firing: 20        # base 0  +20 elite
@@ -1564,54 +1628,8 @@ armors:
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_ASTARTES: 1
 
-  - &STR_DREADNOUGHT_ARMOR                  #DREAD ARMOR TEMPLATE
-    update: DREAD_ARMOR_UC
-    frontArmor: 200 # was 240
-    sideArmor: 190 # was 230
-    rearArmor: 180 # was 180
-    underArmor: 240 # was 240
-    psiDefence: # does this matter for 2x2 units?
-      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
-      psiSkill: 2.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
-      moraleCurrent: 2.5 #discipline and resolve reinforces their faith (dread bonus)
-    stats: #
-      tu: 30            # base 30 
-      stamina: 20       # base 20 
-      health: 150       # base 150 
-      bravery: 0        # base 0 - dreads are immune to most morale effects anyway
-      reactions: 20     # base 20 
-      firing: 20        # base 20 
-      throwing: 0       # base 0  
-      strength: 100     # base 100 
-      psiStrength: 0    # base 0  
-      psiSkill: 0       # base 0  
-      melee: 20         # base 20 
-    damageModifier: # Moved closer to Terminator Values
-      - 1.0 #none
-      - 0.8 #AP - was 0.8
-      - 0.2 #FLAMES
-      - 0.6 #HE - was 0.7
-      - 1.1 #LASCANON
-      - 1.0 #PLASMA
-      - 0.0 #STUN
-      - 0.8 #MELEE
-      - 0.7 #ACID
-      - 0.0 #SMOKE
-      - 0.0 #IMPACT
-      - 1.1 #MELTA - was 1.2
-      - 1.2 #GRAV
-      - 1.0 #WARP
-    specialWeapon: AUX_STOMP_SMT
-    tags:
-      INFECTION_RESIST: 100
-      INTIMIDATION_RESISTANCE: 100
-      UNIT_TYPE_IMPERIUM: 1
-      UNIT_TYPE_MECHANICAL: 1
-      UNIT_TYPE_LIVING: 1 # allow Inspire
-      UNIT_TYPE_ASTARTES: 1
-
   - update: DREAD_ARMOR_UC                  #DREAD ARMOR DOUBLE FIST
-    refNode: *STR_DREADNOUGHT_ARMOR
+    refNode: *ARMOR_DREADNOUGHT
     builtInWeapons:
       - AUX_DREAD_FLAMER
       - STR_DREAD_STORMBOLTER
@@ -1621,7 +1639,7 @@ armors:
       - INV_NULL_4X2
 
   - update: DREAD_ARMOR2_UC                 #DREAD ARMOR PLASMA
-    refNode: *STR_DREADNOUGHT_ARMOR
+    refNode: *ARMOR_DREADNOUGHT
     builtInWeapons:
       - AUX_HOVERTANK_PLASMA
       - STR_DREAD_STORMBOLTER
@@ -1631,7 +1649,7 @@ armors:
       - INV_NULL_4X2
 
   - update: DREAD_ARMOR3_UC                 #DREAD ARMOR LAS+MISSILE (Formerly Missile)
-    refNode: *STR_DREADNOUGHT_ARMOR
+    refNode: *ARMOR_DREADNOUGHT
     customArmorPreviewIndex: [34, 35, 36]
     spriteInv: DREADINVHF
     spriteSheet: DREADSHF.PCK
@@ -1644,7 +1662,7 @@ armors:
       - INV_NULL_4X2
 
   - update: DREAD_ARMOR4_UC                 #DREAD ARMOR ASSAULT (Formerly Lascannon)
-    refNode: *STR_DREADNOUGHT_ARMOR
+    refNode: *ARMOR_DREADNOUGHT
     spriteInv: DREADINVASC
     spriteSheet: DREADSASC.PCK
     builtInWeapons:
@@ -1656,7 +1674,7 @@ armors:
       - INV_NULL_4X2
 
   - update: DREAD_ARMOR5_UC                 #DREAD ARMOR VENERABLE
-    refNode: *STR_DREADNOUGHT_ARMOR
+    refNode: *ARMOR_DREADNOUGHT
 
 ### PRIMARIS
   - &STR_MKX_TAC_UC                         #PRIMARIS TACTICAL
@@ -3301,7 +3319,7 @@ armors:
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 10
-      ARMOR_REGENERATE_DURABILITY: 20 # techmarine repair
+      ARMOR_REGENERATE_DURABILITY: 15 # techmarine repair
 
   - type: STR_MKX_TEC_LV1_UC
     refNode: *STR_MKX_TEC_UC
@@ -3616,7 +3634,6 @@ armors:
     refNode: *ARMOR_TACTICAL
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3640,6 +3657,7 @@ armors:
       - 1.0 #GRAV
       - 0.5 #WARP - Aegis Armor warding
       - 1.0 #SONIC
+      - 1.0 #GAUSS
     builtInWeapons:
       - INV_NULL_3X1_BACKPACK
     units:
@@ -3656,7 +3674,6 @@ armors:
     ufopediaType: STR_GK_TACTICAL_UC
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3679,7 +3696,6 @@ armors:
     refNode: *ARMOR_TACTICAL
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_TELEPORT_INTERCEPTOR
     storeItem: STR_GK_INTERCEPTOR
     zombiImmune: true
@@ -3701,7 +3717,6 @@ armors:
     ufopediaType: STR_GK_INTERCEPTOR_UC
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_TELEPORT_INTERCEPTOR
     storeItem: STR_GK_INTERCEPTOR
     zombiImmune: true
@@ -3724,7 +3739,6 @@ armors:
     refNode: *ARMOR_TACTICAL
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     requiresBonus: STR_BONUS_APOTH_TRAINING
@@ -3748,7 +3762,6 @@ armors:
     refNode: *ARMOR_TACTICAL
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3789,7 +3802,6 @@ armors:
     ufopediaType: STR_GK_TAC_LIBRARIAN_UC
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3831,7 +3843,6 @@ armors:
     refNode: *ARMOR_TACTICAL
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3848,14 +3859,13 @@ armors:
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 75
-      ARMOR_REGENERATE_DURABILITY: 20 # techmarine repair
+      ARMOR_REGENERATE_DURABILITY: 15 # techmarine repair
 
   - type: STR_GK_TAC_TECHMARINE_SB_UC       # Grey Knight Techmarine (Tactical Stormbolter)
     refNode: *ARMOR_TACTICAL
     ufopediaType: STR_GK_TAC_TECHMARINE_UC
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3874,13 +3884,12 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 75
       SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
-      ARMOR_REGENERATE_DURABILITY: 20 # techmarine repair
+      ARMOR_REGENERATE_DURABILITY: 15 # techmarine repair
 
   - type: STR_GK_TAC_CHAPLAIN_UC            # Grey Knight Chaplain (Tactical)
     refNode: *ARMOR_TACTICAL
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3903,7 +3912,6 @@ armors:
     ufopediaType: STR_GK_TAC_CHAPLAIN_UC
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3927,7 +3935,6 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
     requires: STR_GK_TERMINATOR_R
@@ -3949,6 +3956,7 @@ armors:
       - 1.2 #GRAV
       - 0.5 #WARP - Aegis Armor warding
       - 0.9 #SONIC
+      - 1.0 #GAUSS
     builtInWeapons:
       - INV_NULL_3X3
       - INV_NULL_2X1_RL
@@ -3965,7 +3973,6 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -3991,7 +3998,6 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -4018,7 +4024,6 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -4061,7 +4066,6 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -4106,7 +4110,6 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -4131,7 +4134,6 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -4158,7 +4160,6 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -4178,13 +4179,12 @@ armors:
       INFECTION_RESIST: 100
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 75
-      ARMOR_REGENERATE_DURABILITY: 20 # techmarine repair
+      ARMOR_REGENERATE_DURABILITY: 15 # techmarine repair
 
   - type: STR_GK_TERM_TECHMARINE_SB_UC      # Grey Knight Techmarine (Terminator Stormbolter)
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE
-    corpseGeo: STR_FALLEN_CORPSE
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -4206,7 +4206,974 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 75
       SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
-      ARMOR_REGENERATE_DURABILITY: 20 # techmarine repair
+      ARMOR_REGENERATE_DURABILITY: 15 # techmarine repair
+
+  - type: STR_DREAD_GK_ARMOR_UC
+    refNode: *ARMOR_DREADNOUGHT
+    tags:
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
+      ARMOR_ENERGY_SHIELD_DECAY: 75
+
+### Deathwatch
+  - &REF_DW_MKX_FLAYER                        #DW MKX Gauss Flayer
+    type: STR_DW_MKX_FLAYER_BA_UC
+    refNode: *ARMOR_TACTICAL
+    ufopediaType: STR_DW_TAC_CODEX_UC
+    corpseBattle:
+      - STR_MKX_DW_TAC_CORPSE
+    storeItem: STR_GAUSS_FLAYER_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125
+    sideArmor: 120
+    rearArmor: 100
+    underArmor: 125
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatHundred: 0.2
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_GAUSS_BACKPACK
+      - STR_GAUSS_FLAYER_PLAYER
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
+      INFECTION_RESIST_TYPE: 0
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_ASTARTES: 1
+
+  - type: STR_DW_MKX_FLAYER_BA_UC
+    refNode: *REF_DW_MKX_FLAYER
+    units:
+      - STR_BLOODANGELS_PRIMARIS
+
+  - type: STR_DW_MKX_FLAYER_BT_UC
+    refNode: *REF_DW_MKX_FLAYER
+    units:
+      - STR_BLACKT_PRIMARIS
+    zombiImmune: true
+    tags:
+      INFECTION_RESIST: 100 # immune to corruption
+
+  - type: STR_DW_MKX_FLAYER_CF_UC
+    refNode: *REF_DW_MKX_FLAYER
+    units:
+      - STR_CRISMONF_PRIMARIS
+
+  - type: STR_DW_MKX_FLAYER_DA_UC
+    refNode: *REF_DW_MKX_FLAYER
+    units:
+      - STR_DARKANGELS_PRIMARIS
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
+
+  - type: STR_DW_MKX_FLAYER_IF_UC
+    refNode: *REF_DW_MKX_FLAYER
+    units:
+      - STR_IMPERIALF_PRIMARIS
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
+
+  - type: STR_DW_MKX_FLAYER_SALA_UC
+    refNode: *REF_DW_MKX_FLAYER
+    units:
+      - STR_SALAMANDAR_PRIMARIS
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 0.9 #AP
+      - 0.0 #FLAMES (default 0.4, Salamander bonus)
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.6 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA
+      - 1.0 #GRAV
+      - 1.0 #WARP
+      - 1.0 #SONIC
+      - 1.0 #GAUSS
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+
+  - type: STR_DW_MKX_FLAYER_SW_UC
+    refNode: *REF_DW_MKX_FLAYER
+    units:
+      - STR_SPACEW_PRIMARIS
+
+  - type: STR_DW_MKX_FLAYER_ULTRA_UC
+    refNode: *REF_DW_MKX_FLAYER
+    units:
+      - STR_ULTRAMARINE_PRIMARIS
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 40
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+
+  - type: STR_DW_MKX_FLAYER_WS_UC
+    refNode: *REF_DW_MKX_FLAYER
+    units:
+      - STR_WHITES_PRIMARIS
+    moveCost:
+      basePercent: [100, 50]
+
+  - &REF_DW_MKX_REAPER                        #DW MKX Gauss Reaper
+    type: STR_DW_MKX_REAPER_BA_UC
+    refNode: *ARMOR_TACTICAL
+    ufopediaType: STR_DW_TAC_CODEX_UC
+    corpseBattle:
+      - STR_MKX_DW_TAC_CORPSE
+    storeItem: STR_GAUSS_REAPER_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125
+    sideArmor: 120
+    rearArmor: 100
+    underArmor: 125
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatHundred: 0.2
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_GAUSS_BACKPACK
+      - STR_GAUSS_REAPER_PLAYER
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
+      INFECTION_RESIST_TYPE: 0
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_ASTARTES: 1
+
+  - type: STR_DW_MKX_REAPER_BA_UC
+    refNode: *REF_DW_MKX_REAPER
+    units:
+      - STR_BLOODANGELS_PRIMARIS
+
+  - type: STR_DW_MKX_REAPER_BT_UC
+    refNode: *REF_DW_MKX_REAPER
+    units:
+      - STR_BLACKT_PRIMARIS
+    zombiImmune: true
+    tags:
+      INFECTION_RESIST: 100 # immune to corruption
+
+  - type: STR_DW_MKX_REAPER_CF_UC
+    refNode: *REF_DW_MKX_REAPER
+    units:
+      - STR_CRISMONF_PRIMARIS
+
+  - type: STR_DW_MKX_REAPER_DA_UC
+    refNode: *REF_DW_MKX_REAPER
+    units:
+      - STR_DARKANGELS_PRIMARIS
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
+
+  - type: STR_DW_MKX_REAPER_IF_UC
+    refNode: *REF_DW_MKX_REAPER
+    units:
+      - STR_IMPERIALF_PRIMARIS
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
+
+  - type: STR_DW_MKX_REAPER_SALA_UC
+    refNode: *REF_DW_MKX_REAPER
+    units:
+      - STR_SALAMANDAR_PRIMARIS
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 0.9 #AP
+      - 0.0 #FLAMES (default 0.4, Salamander bonus)
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.6 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA
+      - 1.0 #GRAV
+      - 1.0 #WARP
+      - 1.0 #SONIC
+      - 1.0 #GAUSS
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+
+  - type: STR_DW_MKX_REAPER_SW_UC
+    refNode: *REF_DW_MKX_REAPER
+    units:
+      - STR_SPACEW_PRIMARIS
+
+  - type: STR_DW_MKX_REAPER_ULTRA_UC
+    refNode: *REF_DW_MKX_REAPER
+    units:
+      - STR_ULTRAMARINE_PRIMARIS
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 40
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+
+  - type: STR_DW_MKX_REAPER_WS_UC
+    refNode: *REF_DW_MKX_REAPER
+    units:
+      - STR_WHITES_PRIMARIS
+    moveCost:
+      basePercent: [100, 50]
+
+  - &REF_DW_MKX_BLASTER                        #DW MKX Gauss Blaster
+    type: STR_DW_MKX_BLASTER_BA_UC
+    refNode: *ARMOR_TACTICAL
+    ufopediaType: STR_DW_TAC_CODEX_UC
+    corpseBattle:
+      - STR_MKX_DW_TAC_CORPSE
+    storeItem: STR_GAUSS_BLASTER_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125
+    sideArmor: 120
+    rearArmor: 100
+    underArmor: 125
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatHundred: 0.2
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_GAUSS_BACKPACK
+      - STR_GAUSS_BLASTER_PLAYER
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
+      INFECTION_RESIST_TYPE: 0
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_ASTARTES: 1
+
+  - type: STR_DW_MKX_BLASTER_BA_UC
+    refNode: *REF_DW_MKX_BLASTER
+    units:
+      - STR_BLOODANGELS_PRIMARIS
+
+  - type: STR_DW_MKX_BLASTER_BT_UC
+    refNode: *REF_DW_MKX_BLASTER
+    units:
+      - STR_BLACKT_PRIMARIS
+    zombiImmune: true
+    tags:
+      INFECTION_RESIST: 100 # immune to corruption
+
+  - type: STR_DW_MKX_BLASTER_CF_UC
+    refNode: *REF_DW_MKX_BLASTER
+    units:
+      - STR_CRISMONF_PRIMARIS
+
+  - type: STR_DW_MKX_BLASTER_DA_UC
+    refNode: *REF_DW_MKX_BLASTER
+    units:
+      - STR_DARKANGELS_PRIMARIS
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
+
+  - type: STR_DW_MKX_BLASTER_IF_UC
+    refNode: *REF_DW_MKX_BLASTER
+    units:
+      - STR_IMPERIALF_PRIMARIS
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
+
+  - type: STR_DW_MKX_BLASTER_SALA_UC
+    refNode: *REF_DW_MKX_BLASTER
+    units:
+      - STR_SALAMANDAR_PRIMARIS
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 0.9 #AP
+      - 0.0 #FLAMES (default 0.4, Salamander bonus)
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.6 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA
+      - 1.0 #GRAV
+      - 1.0 #WARP
+      - 1.0 #SONIC
+      - 1.0 #GAUSS
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+
+  - type: STR_DW_MKX_BLASTER_SW_UC
+    refNode: *REF_DW_MKX_BLASTER
+    units:
+      - STR_SPACEW_PRIMARIS
+
+  - type: STR_DW_MKX_BLASTER_ULTRA_UC
+    refNode: *REF_DW_MKX_BLASTER
+    units:
+      - STR_ULTRAMARINE_PRIMARIS
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 40
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+
+  - type: STR_DW_MKX_BLASTER_WS_UC
+    refNode: *REF_DW_MKX_BLASTER
+    units:
+      - STR_WHITES_PRIMARIS
+    moveCost:
+      basePercent: [100, 50]
+
+  - &REF_DW_MKX_NEURAL                        #DW MKX Synaptic Disintegrator
+    type: STR_DW_MKX_NEURAL_BA_UC
+    refNode: *ARMOR_TACTICAL
+    ufopediaType: STR_DW_TAC_CODEX_UC
+    corpseBattle:
+      - STR_MKX_DW_TAC_CORPSE
+    storeItem: STR_SYNAPTIC_DISINTEGRATOR_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125
+    sideArmor: 120
+    rearArmor: 100
+    underArmor: 125
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatHundred: 0.2
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_GAUSS_BACKPACK
+      - STR_SYNAPTIC_DISINTEGRATOR_PLAYER
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
+      INFECTION_RESIST_TYPE: 0
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_ASTARTES: 1
+
+  - type: STR_DW_MKX_NEURAL_BA_UC
+    refNode: *REF_DW_MKX_NEURAL
+    units:
+      - STR_BLOODANGELS_PRIMARIS
+
+  - type: STR_DW_MKX_NEURAL_BT_UC
+    refNode: *REF_DW_MKX_NEURAL
+    units:
+      - STR_BLACKT_PRIMARIS
+    zombiImmune: true
+    tags:
+      INFECTION_RESIST: 100 # immune to corruption
+
+  - type: STR_DW_MKX_NEURAL_CF_UC
+    refNode: *REF_DW_MKX_NEURAL
+    units:
+      - STR_CRISMONF_PRIMARIS
+
+  - type: STR_DW_MKX_NEURAL_DA_UC
+    refNode: *REF_DW_MKX_NEURAL
+    units:
+      - STR_DARKANGELS_PRIMARIS
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
+
+  - type: STR_DW_MKX_NEURAL_IF_UC
+    refNode: *REF_DW_MKX_NEURAL
+    units:
+      - STR_IMPERIALF_PRIMARIS
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
+
+  - type: STR_DW_MKX_NEURAL_SALA_UC
+    refNode: *REF_DW_MKX_NEURAL
+    units:
+      - STR_SALAMANDAR_PRIMARIS
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 0.9 #AP
+      - 0.0 #FLAMES (default 0.4, Salamander bonus)
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.6 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA
+      - 1.0 #GRAV
+      - 1.0 #WARP
+      - 1.0 #SONIC
+      - 1.0 #GAUSS
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+
+  - type: STR_DW_MKX_NEURAL_SW_UC
+    refNode: *REF_DW_MKX_NEURAL
+    units:
+      - STR_SPACEW_PRIMARIS
+
+  - type: STR_DW_MKX_NEURAL_ULTRA_UC
+    refNode: *REF_DW_MKX_NEURAL
+    units:
+      - STR_ULTRAMARINE_PRIMARIS
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 40
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+
+  - type: STR_DW_MKX_NEURAL_WS_UC
+    refNode: *REF_DW_MKX_NEURAL
+    units:
+      - STR_WHITES_PRIMARIS
+    moveCost:
+      basePercent: [100, 50]
+
+  - &REF_DW_MK7_FLAYER                        #DW MK7 Gauss Flayer
+    type: STR_DW_MK7_FLAYER_BA_UC
+    refNode: *ARMOR_TACTICAL
+    ufopediaType: STR_DW_TAC_CODEX_UC
+    corpseBattle:
+      - STR_MK7_DW_CORPSE
+    storeItem: STR_GAUSS_FLAYER_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125
+    sideArmor: 120
+    rearArmor: 100
+    underArmor: 125
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatHundred: 0.2
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_GAUSS_BACKPACK
+      - STR_GAUSS_FLAYER_PLAYER
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
+      INFECTION_RESIST_TYPE: 0
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_ASTARTES: 1
+
+  - type: STR_DW_MK7_FLAYER_BA_UC
+    refNode: *REF_DW_MK7_FLAYER
+    units:
+      - STR_BLOODANGELS
+
+  - type: STR_DW_MK7_FLAYER_BT_UC
+    refNode: *REF_DW_MK7_FLAYER
+    units:
+      - STR_BLACKT
+    zombiImmune: true
+    tags:
+      INFECTION_RESIST: 100 # immune to corruption
+
+  - type: STR_DW_MK7_FLAYER_CF_UC
+    refNode: *REF_DW_MK7_FLAYER
+    units:
+      - STR_CRISMONF
+
+  - type: STR_DW_MK7_FLAYER_DA_UC
+    refNode: *REF_DW_MK7_FLAYER
+    units:
+      - STR_DARKANGELS
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
+
+  - type: STR_DW_MK7_FLAYER_IF_UC
+    refNode: *REF_DW_MK7_FLAYER
+    units:
+      - STR_IMPERIALF
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
+
+  - type: STR_DW_MK7_FLAYER_SALA_UC
+    refNode: *REF_DW_MK7_FLAYER
+    units:
+      - STR_SALAMANDAR
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 0.9 #AP
+      - 0.0 #FLAMES (default 0.4, Salamander bonus)
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.6 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA
+      - 1.0 #GRAV
+      - 1.0 #WARP
+      - 1.0 #SONIC
+      - 1.0 #GAUSS
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+
+  - type: STR_DW_MK7_FLAYER_SW_UC
+    refNode: *REF_DW_MK7_FLAYER
+    units:
+      - STR_SPACEW
+
+  - type: STR_DW_MK7_FLAYER_ULTRA_UC
+    refNode: *REF_DW_MK7_FLAYER
+    units:
+      - STR_ULTRAMARINE
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 40
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+
+  - type: STR_DW_MK7_FLAYER_WS_UC
+    refNode: *REF_DW_MK7_FLAYER
+    units:
+      - STR_WHITES
+    moveCost:
+      basePercent: [100, 50]
+
+  - &REF_DW_MK7_REAPER                        #DW MK7 Gauss Reaper
+    type: STR_DW_MK7_REAPER_BA_UC
+    refNode: *ARMOR_TACTICAL
+    ufopediaType: STR_DW_TAC_CODEX_UC
+    corpseBattle:
+      - STR_MK7_DW_CORPSE
+    storeItem: STR_GAUSS_REAPER_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125
+    sideArmor: 120
+    rearArmor: 100
+    underArmor: 125
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatHundred: 0.2
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_GAUSS_BACKPACK
+      - STR_GAUSS_REAPER_PLAYER
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
+      INFECTION_RESIST_TYPE: 0
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_ASTARTES: 1
+
+  - type: STR_DW_MK7_REAPER_BA_UC
+    refNode: *REF_DW_MK7_REAPER
+    units:
+      - STR_BLOODANGELS
+
+  - type: STR_DW_MK7_REAPER_BT_UC
+    refNode: *REF_DW_MK7_REAPER
+    units:
+      - STR_BLACKT
+    zombiImmune: true
+    tags:
+      INFECTION_RESIST: 100 # immune to corruption
+
+  - type: STR_DW_MK7_REAPER_CF_UC
+    refNode: *REF_DW_MK7_REAPER
+    units:
+      - STR_CRISMONF
+
+  - type: STR_DW_MK7_REAPER_DA_UC
+    refNode: *REF_DW_MK7_REAPER
+    units:
+      - STR_DARKANGELS
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
+
+  - type: STR_DW_MK7_REAPER_IF_UC
+    refNode: *REF_DW_MK7_REAPER
+    units:
+      - STR_IMPERIALF
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
+
+  - type: STR_DW_MK7_REAPER_SALA_UC
+    refNode: *REF_DW_MK7_REAPER
+    units:
+      - STR_SALAMANDAR
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 0.9 #AP
+      - 0.0 #FLAMES (default 0.4, Salamander bonus)
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.6 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA
+      - 1.0 #GRAV
+      - 1.0 #WARP
+      - 1.0 #SONIC
+      - 1.0 #GAUSS
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+
+  - type: STR_DW_MK7_REAPER_SW_UC
+    refNode: *REF_DW_MK7_REAPER
+    units:
+      - STR_SPACEW
+
+  - type: STR_DW_MK7_REAPER_ULTRA_UC
+    refNode: *REF_DW_MK7_REAPER
+    units:
+      - STR_ULTRAMARINE
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 40
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+
+  - type: STR_DW_MK7_REAPER_WS_UC
+    refNode: *REF_DW_MK7_REAPER
+    units:
+      - STR_WHITES
+    moveCost:
+      basePercent: [100, 50]
+
+  - &REF_DW_MK7_BLASTER                        #DW MK7 Gauss Blaster
+    type: STR_DW_MK7_BLASTER_BA_UC
+    refNode: *ARMOR_TACTICAL
+    ufopediaType: STR_DW_TAC_CODEX_UC
+    corpseBattle:
+      - STR_MK7_DW_CORPSE
+    storeItem: STR_GAUSS_BLASTER_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125
+    sideArmor: 120
+    rearArmor: 100
+    underArmor: 125
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatHundred: 0.2
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_GAUSS_BACKPACK
+      - STR_GAUSS_BLASTER_PLAYER
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
+      INFECTION_RESIST_TYPE: 0
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_ASTARTES: 1
+
+  - type: STR_DW_MK7_BLASTER_BA_UC
+    refNode: *REF_DW_MK7_BLASTER
+    units:
+      - STR_BLOODANGELS
+
+  - type: STR_DW_MK7_BLASTER_BT_UC
+    refNode: *REF_DW_MK7_BLASTER
+    units:
+      - STR_BLACKT
+    zombiImmune: true
+    tags:
+      INFECTION_RESIST: 100 # immune to corruption
+
+  - type: STR_DW_MK7_BLASTER_CF_UC
+    refNode: *REF_DW_MK7_BLASTER
+    units:
+      - STR_CRISMONF
+
+  - type: STR_DW_MK7_BLASTER_DA_UC
+    refNode: *REF_DW_MK7_BLASTER
+    units:
+      - STR_DARKANGELS
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
+
+  - type: STR_DW_MK7_BLASTER_IF_UC
+    refNode: *REF_DW_MK7_BLASTER
+    units:
+      - STR_IMPERIALF
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
+
+  - type: STR_DW_MK7_BLASTER_SALA_UC
+    refNode: *REF_DW_MK7_BLASTER
+    units:
+      - STR_SALAMANDAR
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 0.9 #AP
+      - 0.0 #FLAMES (default 0.4, Salamander bonus)
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.6 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA
+      - 1.0 #GRAV
+      - 1.0 #WARP
+      - 1.0 #SONIC
+      - 1.0 #GAUSS
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+
+  - type: STR_DW_MK7_BLASTER_SW_UC
+    refNode: *REF_DW_MK7_BLASTER
+    units:
+      - STR_SPACEW
+
+  - type: STR_DW_MK7_BLASTER_ULTRA_UC
+    refNode: *REF_DW_MK7_BLASTER
+    units:
+      - STR_ULTRAMARINE
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 40
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+
+  - type: STR_DW_MK7_BLASTER_WS_UC
+    refNode: *REF_DW_MK7_BLASTER
+    units:
+      - STR_WHITES
+    moveCost:
+      basePercent: [100, 50]
+
+  - &REF_DW_MK7_NEURAL                        #DW MK7 Synaptic Disintegrator
+    type: STR_DW_MK7_NEURAL_BA_UC
+    refNode: *ARMOR_TACTICAL
+    ufopediaType: STR_DW_TAC_CODEX_UC
+    corpseBattle:
+      - STR_MK7_DW_CORPSE
+    storeItem: STR_SYNAPTIC_DISINTEGRATOR_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
+    loftempsSet: [ 3 ]
+    psiDefence:
+      psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
+      psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
+      moraleCurrent: 1.75 #discipline and resolve reinforces their faith (+25% officer bonus)
+    frontArmor: 125
+    sideArmor: 120
+    rearArmor: 100
+    underArmor: 125
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatHundred: 0.2
+    bleedImmune: false
+    painImmune: false
+    fearImmune: false
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
+    builtInWeapons:
+      - INV_NULL_GAUSS_BACKPACK
+      - STR_SYNAPTIC_DISINTEGRATOR_PLAYER
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 45 #elite Marine values
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 25
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 15
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
+      INTIMIDATION_RESISTANCE: 66
+      INFECTION_RESIST: 33
+      INFECTION_RESIST_TYPE: 0
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_ASTARTES: 1
+
+  - type: STR_DW_MK7_NEURAL_BA_UC
+    refNode: *REF_DW_MK7_NEURAL
+    units:
+      - STR_BLOODANGELS
+
+  - type: STR_DW_MK7_NEURAL_BT_UC
+    refNode: *REF_DW_MK7_NEURAL
+    units:
+      - STR_BLACKT
+    zombiImmune: true
+    tags:
+      INFECTION_RESIST: 100 # immune to corruption
+
+  - type: STR_DW_MK7_NEURAL_CF_UC
+    refNode: *REF_DW_MK7_NEURAL
+    units:
+      - STR_CRISMONF
+
+  - type: STR_DW_MK7_NEURAL_DA_UC
+    refNode: *REF_DW_MK7_NEURAL
+    units:
+      - STR_DARKANGELS
+    tags:
+      ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
+
+  - type: STR_DW_MK7_NEURAL_IF_UC
+    refNode: *REF_DW_MK7_NEURAL
+    units:
+      - STR_IMPERIALF
+    tags:
+      SMT_ARMOR_SHRED_RESISTANCE: 55
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+      SMT_ARMOR_HEAVY_WEAPON_USER: 5
+
+  - type: STR_DW_MK7_NEURAL_SALA_UC
+    refNode: *REF_DW_MK7_NEURAL
+    units:
+      - STR_SALAMANDAR
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 0.9 #AP
+      - 0.0 #FLAMES (default 0.4, Salamander bonus)
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.0 #MELEE
+      - 0.6 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 0.8 #MELTA
+      - 1.0 #GRAV
+      - 1.0 #WARP
+      - 1.0 #SONIC
+      - 1.0 #GAUSS
+    tags:
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 25
+
+  - type: STR_DW_MK7_NEURAL_SW_UC
+    refNode: *REF_DW_MK7_NEURAL
+    units:
+      - STR_SPACEW
+
+  - type: STR_DW_MK7_NEURAL_ULTRA_UC
+    refNode: *REF_DW_MK7_NEURAL
+    units:
+      - STR_ULTRAMARINE
+    tags:
+      ARMOR_OVERWATCH_TU_RESTORED: 40
+      ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
+
+  - type: STR_DW_MK7_NEURAL_WS_UC
+    refNode: *REF_DW_MK7_NEURAL
+    units:
+      - STR_WHITES
+    moveCost:
+      basePercent: [100, 50]
 
 ### Other Marines
   - update: STR_BLOODRAVENS_TACTICAL_ARMOR      # Bloodraven Tactical
@@ -4319,16 +5286,17 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 1.0 #MELTA
-      - 0.8 #GRAV
+      - 0.9 #GRAV
       - 1.0 #WARP
       - 1.0 #SONIC
+      - 1.0 #GAUSS
     loftempsSet: [ 3 ]
     builtInWeapons:
       - STR_TECH_REPAIRTOOL
     tags:
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
-      ARMOR_REGENERATE_DURABILITY: 20 # techpriest repair
+      ARMOR_REGENERATE_DURABILITY: 15 # techpriest repair
       SMT_ARMOR_SHRED_RESISTANCE: 35
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: 10
@@ -4349,12 +5317,13 @@ armors:
       - 1.0 #STUN
       - 1.1 #MELEE
       - 1.0 #ACID
-      - 0.0 #SMOKE
+      - 0.8 #SMOKE
       - 1.0 #IMPACT
       - 1.0 #MELTA
-      - 0.8 #GRAV
+      - 0.7 #GRAV
       - 1.0 #WARP
       - 1.0 #SONIC
+      - 1.0 #GAUSS
     stats:
       health: 5 # barely better than nothing
 
@@ -4371,12 +5340,13 @@ armors:
       - 1.0 #STUN
       - 1.0 #MELEE
       - 1.0 #ACID
-      - 0.0 #SMOKE
+      - 0.2 #SMOKE
       - 1.0 #IMPACT
       - 1.0 #MELTA
-      - 0.8 #GRAV
+      - 0.9 #GRAV
       - 1.0 #WARP
       - 1.0 #SONIC
+      - 1.0 #GAUSS
     stats:
       health: 15
 
@@ -4534,8 +5504,8 @@ armors:
       stamina: 10 # was 5
       bravery: 10
 
-  - &REF_INQUISITOR
-    type: STR_ADEPTAS_ARMORI_UC    # Inquisitor (used in Chamber Militant and Adeptas)
+  - &REF_INQUISITOR                             # Inquisitor
+    type: STR_ADEPTAS_ARMORI_UC
     stats:
       tu: 10 # was 20
       stamina: 25
@@ -4568,6 +5538,7 @@ armors:
       - 1.0 #GRAV
       - 1.0 #WARP
       - 1.0 #SONIC
+      - 1.0 #GAUSS
     units:
       - STR_CANONESS
       - STR_ADEPTAS_SUPERIOR
@@ -4577,23 +5548,333 @@ armors:
     builtInWeapons:
       - INV_NULL_3X1_BACKPACK
 
-  - type: STR_INQ_INQUISITOR_ARMOR_BIOMANCER
-    refNode: *REF_INQUISITOR
-    requires: STR_GENERALLOCK
-  - type: STR_INQ_INQUISITOR_ARMOR_DIVINER
-    refNode: *REF_INQUISITOR
-    requires: STR_GENERALLOCK
-  - type: STR_INQ_INQUISITOR_ARMOR_PYROMANCER
-    refNode: *REF_INQUISITOR
-    requires: STR_GENERALLOCK
-  - type: STR_INQ_INQUISITOR_ARMOR_TELEKINE
-    refNode: *REF_INQUISITOR
-    requires: STR_GENERALLOCK
-  - type: STR_INQ_INQUISITOR_ARMOR_TELEPATH
-    refNode: *REF_INQUISITOR
-    requires: STR_GENERALLOCK
+  # - type: STR_INQ_INQUISITOR_ARMOR_BIOMANCER
+    # refNode: *REF_INQUISITOR
+    # requires: STR_GENERALLOCK
+  # - type: STR_INQ_INQUISITOR_ARMOR_DIVINER
+    # refNode: *REF_INQUISITOR
+    # requires: STR_GENERALLOCK
+  # - type: STR_INQ_INQUISITOR_ARMOR_PYROMANCER
+    # refNode: *REF_INQUISITOR
+    # requires: STR_GENERALLOCK
+  # - type: STR_INQ_INQUISITOR_ARMOR_TELEKINE
+    # refNode: *REF_INQUISITOR
+    # requires: STR_GENERALLOCK
+  # - type: STR_INQ_INQUISITOR_ARMOR_TELEPATH
+    # refNode: *REF_INQUISITOR
+    # requires: STR_GENERALLOCK
+
+  - &REF_INQ_STORMTROOPER_CARAPACE              # Inq Stormtrooper
+    type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR
+    spriteSheet: INQ_STORMTROOPER_BS.PCK
+    spriteInv: INQ_STORMTROOPER_INV_
+    drawingRoutine: 0
+    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 875}
+    storeItem: STR_NONE
+    corpseBattle:
+      - STR_INQ_STORMTROOPER_CORPSE_GEO
+    personalLight: 5
+    personalLightHostile: 5
+    personalLightNeutral: 5
+    recovery:
+      energy:
+        stamina: 0.33
+    frontArmor: 80
+    sideArmor: 65
+    rearArmor: 40
+    underArmor: 60
+    zombiImmune: true
+    psiDefence:
+      flatHundred: 0.5
+      psiSkill: 1.0
+      moraleCurrent: 1.0
+    damageModifier:
+      - 1.0  #SUPPORT
+      - 1.0  #AP
+      - 0.8  #FLAMES
+      - 1.0  #HE
+      - 1.0  #LASCANON
+      - 1.0  #PLASMA
+      - 1.0  #STUN
+      - 1.0  #MELEE
+      - 0.9  #ACID
+      - 0.2  #SMOKE
+      - 0.2  #IMPACT
+      - 1.0  #MELTA
+      - 0.9  #GRAV
+      - 1.0  #WARP
+      - 1.0  #SONIC
+      - 1.0  #GAUSS
+    units:
+      - STR_INQ_STORMTROOPER
+    loftempsSet: [3]
+    stats:
+      health: 20
+      firing: 10
+      reactions: 10
+      bravery: 10
+    tags:
+      INFECTION_RESIST: 50  # infection resistant
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 20
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 10
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 0
+
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_HELLGUN
+    refNode: *REF_INQ_STORMTROOPER_CARAPACE
+    builtInWeapons:
+      - STR_INQ_HELLGUN
+      - INV_NULL_INQUISITION_BACKPACK
+
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_MULTILAS
+    refNode: *REF_INQ_STORMTROOPER_CARAPACE
+    builtInWeapons:
+      - STR_HAND_MULTILASER_PAI
+      - INV_NULL_INQUISITION_BACKPACK
+
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_FLAMER
+    refNode: *REF_INQ_STORMTROOPER_CARAPACE
+    builtInWeapons:
+      - STR_INQ_FLAMER
+      - INV_NULL_STORM_TROOPER_BACKPACK_FLAMER
+
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_PLASMA
+    refNode: *REF_INQ_STORMTROOPER_CARAPACE
+    builtInWeapons:
+      - STR_INQ_PLASMA
+      - INV_NULL_INQUISITION_BACKPACK
+
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_MULTIMELTA
+    refNode: *REF_INQ_STORMTROOPER_CARAPACE
+    builtInWeapons:
+      - STR_INQ_MULTIMELTA
+      - INV_NULL_INQUISITION_BACKPACK
+
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_LONGLAS
+    refNode: *REF_INQ_STORMTROOPER_CARAPACE
+    specialWeapon: AUX_ADEPTAS_PROBE
+    builtInWeapons:
+      - STR_INQ_LONGLAS
+      - INV_NULL_INQUISITION_BACKPACK
+
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_JUMPPACK
+    refNode: *REF_INQ_STORMTROOPER_CARAPACE
+    spriteSheet: INQ_JUMPTROOPER_BS.PCK
+    builtInWeapons:
+      - INV_NULL_3X3
+    tags:
+      DODGE_CHANCE: 0
+      FLIGHT_DODGE_CHANCE: 20
+      ARMOR_MAX_SUCCESSFUL_DODGES: 1
+    scripts:
+      selectUnitSprite: |
+        # https://openxcom.org/forum/index.php/topic, 4322.msg75634.html# msg75634
+        # and power pack for veterans/scions
+        var int temp;
+        var int walking;
+        var int floating;
+        var int isFemale;
+
+        var int numOfFrames;
+
+        unit.isWalking walking;
+        unit.isFloating floating;
+        unit.getGender isFemale;
+
+        set numOfFrames 6;
 
 
+        unit.getId temp;
+
+        add temp anim_frame;
+        mod temp numOfFrames;
+        mul temp 8;
+
+
+        if eq blit_part blit_torso; # if torso to be drawn
+            if and eq walking 0 eq floating 1;
+              set sprite_index 288; # position after female and flying legs (8+8 + some extra offset so it's multiple of 16)
+              add sprite_index temp;
+              if neq 0 isFemale;
+                # using isFemale differently for now;
+                set isFemale 8;
+                mul isFemale numOfFrames;
+                add sprite_index isFemale;
+              end;
+            end;
+        end;
+
+        add sprite_index sprite_offset; # add direction
+
+        return sprite_index;
+
+  - type: STR_INQ_STORMTROOPER_CARAPACE_ARMOR_MEDICAE
+    refNode: *REF_INQ_STORMTROOPER_CARAPACE
+    stats:
+      tu: -10
+      stamina: -10
+      bravery: 20
+    frontArmor: 100
+    sideArmor: 85
+    rearArmor: 45
+    underArmor: 80
+    damageModifier:
+      - 1.0  # none
+      - 0.8  # AP
+      - 0.8  # FLAMES
+      - 0.8  # HE
+      - 0.7  # LASCANON
+      - 0.8  # PLASMA
+      - 0.9  # STUN
+      - 0.7  # MELEE; has a shield
+      - 0.8  # ACID INQ prepped
+      - 0.0  # SMOKE
+      - 0.2  # IMPACT
+      - 1.0  # MELTA
+    specialWeapon: STR_INQ_MEDI_KIT
+    builtInWeapons:
+      - INV_NULL_MEDI_KIT
+      - STR_INQ_HELLPISTOL
+      - STR_INQ_SHIELD
+
+  - type: STR_INQSTORM_CARAPACE_FLAYER_UC
+    refNode: *REF_INQ_STORMTROOPER_CARAPACE
+    #storeItem: STR_GAUSS_FLAYER_ARMOR
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatHundred: 0.2
+    builtInWeapons:
+      - INV_NULL_GAUSS_BACKPACK
+      - STR_GAUSS_FLAYER_PLAYER
+
+  - type: STR_INQSTORM_CARAPACE_REAPER_UC
+    refNode: *REF_INQ_STORMTROOPER_CARAPACE
+    #storeItem: STR_GAUSS_REAPER_ARMOR
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatHundred: 0.2
+    builtInWeapons:
+      - INV_NULL_GAUSS_BACKPACK
+      - STR_GAUSS_REAPER_PLAYER
+
+  - type: STR_INQSTORM_CARAPACE_SYNAPTIC_UC
+    refNode: *REF_INQ_STORMTROOPER_CARAPACE
+    #storeItem: STR_SYNAPTIC_DISINTEGRATOR_ARMOR
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatHundred: 0.2
+    builtInWeapons:
+      - INV_NULL_GAUSS_BACKPACK
+      - STR_SYNAPTIC_DISINTEGRATOR_PLAYER
+
+  - &REF_INQ_STORMTROOPER_POWER
+    type: STR_INQ_STORMTROOPER_POWER_ARMOR
+    spriteSheet: INQ_POWER_ARMOR_BS.PCK
+    spriteInv: INQ_PA_INV_
+    drawingRoutine: 0
+    customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 877}
+    storeItem: STR_NONE
+    corpseBattle:
+      - STR_INQ_STORMTROOPER_CORPSE_GEO
+    frontArmor: 100
+    sideArmor: 90
+    rearArmor: 65
+    underArmor: 90
+    zombiImmune: true
+    psiDefence:
+      flatHundred: 0.5
+      psiSkill: 1.0
+      moraleCurrent: 1.0
+    damageModifier:
+      - 1.0  # SUPPORT
+      - 0.95 # STANDARD
+      - 0.5  # FLAMES
+      - 1.0  # HE
+      - 1.0  # LASCANON
+      - 1.0  # PLASMA
+      - 1.0  # STUN
+      - 1.0  # MELEE
+      - 0.5  # ACID
+      - 0.1  # SMOKE
+      - 0.2  # IMPACT
+      - 1.0  # MELTA
+      - 1.0  # GRAV
+      - 1.0  # WARP
+      - 1.0  # SONIC
+      - 1.0  # GAUSS
+    loftempsSet: [4]
+    units:
+      - STR_INQ_STORMTROOPER
+    stats:
+      health: 30
+      tu: -10
+      stamina: 20
+      firing: 10
+      reactions: -5
+      bravery: 10
+      strength: 15 # was 20
+    tags:
+      INFECTION_RESIST: 50
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_LIVING: 1
+      SMT_ARMOR_SHRED_RESISTANCE: 25
+      SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 15
+      SMT_ARMOR_SHRED_MELTA_RESISTANCE: 0
+      SMT_ARMOR_HEAVY_WEAPON_USER: 9
+
+  - type: STR_INQ_POWER_ARMOR_AUTOCANNON
+    refNode: *REF_INQ_STORMTROOPER_POWER
+    builtInWeapons:
+      - STR_INQ_AUTOCANNON
+      - STR_AUTOCANNON_AMMO
+
+  - type: STR_INQ_POWER_ARMOR_LASCANNON
+    refNode: *REF_INQ_STORMTROOPER_POWER
+    builtInWeapons:
+      - STR_INQ_LIGHT_LASCANNON
+      - INV_NULL_INQUISITION_BACKPACK
+
+  - type: STR_INQ_POWER_ARMOR_BREACHER
+    refNode: *REF_INQ_STORMTROOPER_POWER
+    frontArmor: 110  # +20 from heavier armor + shield
+    sideArmor: 100  # +20 from heavier armor + shield
+    rearArmor: 65  # +10 from heavier armor
+    underArmor: 70  # +20 from heavier armor
+    stats:
+      tu: -10
+      stamina: 20
+      reactions: -5
+      bravery: 20
+      strength: 20
+      firing: -20
+      melee: 10
+    specialWeapon: STR_CARAPACE_AUSPEX
+    builtInWeapons:
+      - STR_INQ_MELTACUTTER
+      - STR_INQ_SHIELD
+      - INV_NULL_INQUISITION_BACKPACK
+    tags:
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 8
+      ARMOR_ENERGY_SHIELD_DECAY: 10
+
+  - type: STR_INQSTORM_POWER_GAUSSBLASTER_UC
+    refNode: *REF_INQ_STORMTROOPER_POWER
+    #storeItem: STR_GAUSS_BLASTER_ARMOR
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatHundred: 0.2
+    builtInWeapons:
+      - INV_NULL_GAUSS_BACKPACK
+      - STR_GAUSS_BLASTER_PLAYER
 
 ### BOMBARD
   - type: STR_DUMMY_TARGETER_UC                 # Target Designator (Dummy base)
@@ -4668,9 +5949,14 @@ armors:
     specialWeapon: STR_STRIKE_AMMOLOADER
     tags:
       BOMBARD_TARGETER: 1 # adjusts starting mana and kills it at the end of turn
-      INFECTION_RESIST: 100 #infection immune
-      INTIMIDATION_RESISTANCE: 100 #intimidation immune
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      SMT_ARMOR_MORALE_RESISTANCE: 100
+      SMT_ARMOR_STUN_RESISTANCE: 100
+      SMT_ARMOR_STAGGER_RESISTANCE: 100
+      SMT_ARMOR_IMMOBILIZE_RESISTANCE: 100
       UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_IMPERIUM: 1
 
   - type: STR_BOMBARD_PLANE_ARMOR               # Target Designator (Plane)
     refNode: *REF_BOMBARD_ARMOR
@@ -4798,6 +6084,15 @@ armors:
   - type: STR_STORMTALON_ARMOR
     allowsMoving: false
     specialWeapon: STR_TURRET_RELOAD
+    tags:
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      SMT_ARMOR_MORALE_RESISTANCE: 100
+      SMT_ARMOR_STUN_RESISTANCE: 100
+      SMT_ARMOR_STAGGER_RESISTANCE: 100
+      SMT_ARMOR_IMMOBILIZE_RESISTANCE: 100
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_IMPERIUM: 1
   - type: LTS_ARMOR                         #STORMTALON TURRET LEFT
     frontArmor: 80 # was 50 all over
     sideArmor: 80
@@ -4820,6 +6115,15 @@ armors:
       - 3.0 #IMPACT
       - 1.2 #MELTA
     specialWeapon: STR_TURRET_RELOAD
+    tags:
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      SMT_ARMOR_MORALE_RESISTANCE: 100
+      SMT_ARMOR_STUN_RESISTANCE: 100
+      SMT_ARMOR_STAGGER_RESISTANCE: 100
+      SMT_ARMOR_IMMOBILIZE_RESISTANCE: 100
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_IMPERIUM: 1
   - type: RTS_ARMOR                         #STORMTALON TURRET RIGHT
     frontArmor: 80 # was 50 all over
     sideArmor: 80
@@ -4842,6 +6146,15 @@ armors:
       - 3.0 #IMPACT
       - 1.2 #MELTA
     specialWeapon: STR_TURRET_RELOAD
+    tags:
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      SMT_ARMOR_MORALE_RESISTANCE: 100
+      SMT_ARMOR_STUN_RESISTANCE: 100
+      SMT_ARMOR_STAGGER_RESISTANCE: 100
+      SMT_ARMOR_IMMOBILIZE_RESISTANCE: 100
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_IMPERIUM: 1
 
   - type: STR_SCION_ARMOR_AI                    # NPC Scion Armor
     spriteSheet: SCION_CARAPACE.PCK
@@ -4931,8 +6244,48 @@ armors:
       - STR_BLANK_CORPSE
 
   - type: DECAYING_TARGET_GUARDSMAN             # Hologram Guardsman
+    spriteSheet: TARGET_GUARDSMAN.PCK
+    spriteInv: TARGET_GUARDSMAN
+    allowInv: false
+    zombiImmune: true
+    bleedImmune: true
+    fearImmune: true
+    painImmune: true
     corpseBattle:
       - STR_BLANK_CORPSE
+    frontArmor: 10
+    sideArmor: 10
+    rearArmor: 10
+    underArmor: 10
+    size: 1
+    damageModifier: #TARGET ARMOR
+      - 1.0 #none
+      - 1.0 #AP
+      - 1.0 #FLAMES
+      - 1.0 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 0.0 #STUN
+      - 1.0 #MELEE
+      - 1.0 #ACID
+      - 0.0 #SMOKE
+      - 1.0 #IMPACT
+      - 1.0 #MELTA
+      - 1.0 #GRAV
+      - 1.0 #WARP
+      - 1.0 #SONIC
+      - 1.0 #GAUSS
+    loftempsSet: [3]
+    drawingRoutine: 16
+    constantAnimation: true
+    movementType: 2
+    allowsMoving: false
+    tags:
+      INFECTION_RESIST: 100  # infection immune
+      INTIMIDATION_RESISTANCE: 100  # intimidation immune
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TURNS_UNTIL_DEATH: 6 # vanish after 2 turns
 
   - type: SKULL_ARMOR                           # Servoskull
     specialWeapon: STR_SKULL_ANALYZE
@@ -4958,29 +6311,30 @@ armors:
     loftempsSet: [ 3 ]
     size: 1
     tags:
-      UNIT_TYPE_SERVITOR: 1
+      UNIT_TYPE_TECHSPIRIT: 1
 
   - &REF_BATTLESERVITOR_ARMOR
     type: GENERIC_BATTLESERVITOR_HBARMOR
     damageModifier:
       - 1.0  #SUPPORT
-      - 1.0  #AP
+      - 0.9  #AP
       - 0.6  #FLAMES
-      - 0.7  #HE
-      - 1.1  #LASCANON
-      - 1.2  #PLASMA
+      - 1.1  #HE
+      - 1.0  #LASCANON
+      - 1.0  #PLASMA
       - 1.0  #STUN
-      - 1.2  #MELEE
-      - 1.0  #ACID
+      - 1.5  #MELEE
+      - 0.75 #ACID
       - 0.0  #SMOKE
       - 1.0  #IMPACT
       - 1.1  #MELTA
       - 1.1  #GRAV
-      - 1.0  #WARP
+      - 0.9  #WARP
       - 1.0  #SONIC
+      - 1.0  #GAUSS
     loftempsSet: [3] # was 4
     tags:
-      UNIT_TYPE_SERVITOR: 1
+      UNIT_TYPE_TECHSPIRIT: 1
 
   - type: GENERIC_BATTLESERVITOR_MIARMOR
     refNode: *REF_BATTLESERVITOR_ARMOR
@@ -4990,16 +6344,80 @@ armors:
 
   - &REF_TECHSUPPORT_ARMOR
     type: TARANTULA_ARBITES_BOLTER_ARMOR
+    personalLight: 5
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 0.8 #AP
+      - 0.3 #FLAMES
+      - 1.2 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 0.0 #STUN
+      - 2.0 #MELEE
+      - 0.5 #ACID
+      - 0.0 #SMOKE
+      - 0.2 #IMPACT
+      - 1.2 #MELTA
+      - 0.7 #WARP
+      - 1.4 #GRAV
+      - 0.9 #SONIC
+      - 1.0 #GAUSS
     tags:
-      UNIT_TYPE_SERVITOR: 1
+      INFECTION_RESIST: 100
+      INTIMIDATION_RESISTANCE: 100
+      SMT_ARMOR_MORALE_RESISTANCE: 100
+      SMT_ARMOR_STUN_RESISTANCE: 100
+      SMT_ARMOR_STAGGER_RESISTANCE: 100
+      SMT_ARMOR_IMMOBILIZE_RESISTANCE: 100
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_TECHSPIRIT: 1
       STARTS_WITH_FULL_TUS: 1
 
   - type: TARANTULA_ARMOR
     refNode: *REF_TECHSUPPORT_ARMOR
+    frontArmor: 100
+    sideArmor: 100
+    rearArmor: 100
+    underArmor: 100
   - type: TARANTULA_BOLTER_ARMOR
     refNode: *REF_TECHSUPPORT_ARMOR
+    frontArmor: 100
+    sideArmor: 100
+    rearArmor: 100
+    underArmor: 100
   - type: TARANTULA_BOLTER_ARMOR_I
     refNode: *REF_TECHSUPPORT_ARMOR
+    frontArmor: 100
+    sideArmor: 100
+    rearArmor: 100
+    underArmor: 100
+  - type: TARANTULA_MISSILE_BLACK_ARMOR
+    refNode: *REF_TECHSUPPORT_ARMOR
+    spriteSheet: TARANTULABLACK.PCK
+    spriteInv: TARANTULABLACK
+    allowInv: false
+    allowsMoving: false
+    allowsKneeling: false
+    corpseGeo: STR_DREAD_CORPSE
+    corpseBattle:
+      - TA_CORPSE1
+      - TA_CORPSE2
+      - TA_CORPSE3
+      - TA_CORPSE4
+    frontArmor: 100
+    sideArmor: 100
+    rearArmor: 100
+    underArmor: 100
+    size: 2
+    loftempsSet: [ 92, 89, 90, 91 ]
+    drawingRoutine: 20
+    specialWeapon: STR_TURRET_RELOAD
+    builtInWeapons:
+      - STR_TB_MISSILE_L
+      - STR_TB_MISSILE_R
+      - INV_NULL_3X3
+      - INV_NULL_4X2
   - type: THUNDERFIRE_ARMOR_DW
     refNode: *REF_TECHSUPPORT_ARMOR
     stats:
@@ -5022,6 +6440,7 @@ armors:
       - INV_NULL_TF_LL
       - INV_NULL_TF_RL
       - INV_NULL_4X2
+
 
 
 

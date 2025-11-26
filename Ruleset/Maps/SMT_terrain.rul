@@ -19,7 +19,7 @@ terrains:
           - position: [9, 4, 1]
             amount: 3
             mixed: true
-            itemList: [STR_GAUSS_FLAYER, STR_GAUSS_REAPER, STR_GAUSS_BLASTER, STR_SYNAPTIC_DISINTEGRATOR]
+            itemList: [STR_ALIEN_ALLOYS, STR_ALIEN_ALLOYS, STR_ALIEN_ALLOYS, STR_GAUSS_FLAYER_TOKEN, STR_GAUSS_FLAYER_TOKEN, STR_GAUSS_REAPER_TOKEN, STR_GAUSS_REAPER_TOKEN, STR_GAUSS_BLASTER_TOKEN, STR_SYNAPTIC_DISINTEGRATOR_TOKEN]
         items:
           STR_REQUISITION_BOUNTY_500K:
             - [0, 0, 0]
@@ -61,7 +61,7 @@ terrains:
           - position: [9, 4, 1]
             amount: 3
             mixed: true
-            itemList: [STR_GAUSS_FLAYER, STR_GAUSS_FLAYER, STR_GAUSS_REAPER, STR_GAUSS_REAPER, STR_GAUSS_BLASTER, STR_SYNAPTIC_DISINTEGRATOR]
+            itemList: [STR_ALIEN_ALLOYS, STR_ALIEN_ALLOYS, STR_ALIEN_ALLOYS, STR_GAUSS_FLAYER_TOKEN, STR_GAUSS_FLAYER_TOKEN, STR_GAUSS_REAPER_TOKEN, STR_GAUSS_REAPER_TOKEN, STR_GAUSS_BLASTER_TOKEN, STR_SYNAPTIC_DISINTEGRATOR_TOKEN]
         items:
           STR_REQUISITION_BOUNTY_500K:
             - [0, 0, 0]
@@ -83,8 +83,1031 @@ terrains:
           STR_MONON_SPAWNER: [0, 0]
           STR_MONOS_SPAWNER: [0, 0]
 
+  - name: MARSGUARD_SL  # part 2
+    ambience: {mod: 40k, index: 896}  # cave
+    ambientVolume: 0.25
+    script: FINAL02S
+    mapDataSets:
+      - BLANKS
+      - MARS
+      - CHAOSWALLS
+      - CHAOSDOOR
+      - OUTPOSTCHAOS
+      - CHAOSFORT
+      - CHAOSROOF
+      - CHAOSPIECES
+      - LEMON
+    mapBlocks:
+      - name: MARS00
+        width: 10
+        length: 10
+      - name: MARS01
+        width: 10
+        length: 10
+        items:
+          STR_DEATHSKULL_ORK_KAP3_ALPHA_SPAWNER:
+            - [5, 5, 0]
+            - [4, 4, 0]
+            - [3, 3, 0]
+            - [3, 4, 0]
+          STR_DEATHSKULL_ORK_BOY_SPAWNER:
+            - [6, 6, 0]
+            - [6, 2, 0]
+            - [3, 2, 0]
+            - [2, 9, 0]
+          STR_DEATHSKULL_ORK_NOB_SPAWNER:
+            - [7, 3, 0]
+        fuseTimers:
+          STR_DEATHSKULL_ORK_KAP3_ALPHA_SPAWNER: [4, 4]
+          STR_DEATHSKULL_ORK_BOY_SPAWNER: [0, 0]
+          STR_DEATHSKULL_ORK_NOB_SPAWNER: [0, 0]
+      - name: MARS02
+        width: 10
+        length: 10
+      - name: MARS03
+        width: 10
+        length: 10
+        items:
+          STR_DEATHSKULL_ORK_KAP3_ALPHA_SPAWNER:
+            - [2, 7, 0]
+            - [6, 7, 0]
+            - [4, 3, 0]
+            - [4, 7, 0]
+          STR_DEATHSKULL_ORK_KAP_SPAWNER:
+            - [4, 2, 0]
+            - [0, 6, 0]
+            - [2, 9, 0]
+          STR_DEATHSKULL_ORK_ARDNOB_SPAWNER:
+            - [5, 3, 0]
+        fuseTimers:
+          STR_DEATHSKULL_ORK_KAP3_ALPHA_SPAWNER: [4, 4]
+          STR_DEATHSKULL_ORK_KAP_SPAWNER: [0, 0]
+          STR_DEATHSKULL_ORK_ARDNOB_SPAWNER: [0, 0]
+      - name: MARS04
+        width: 10
+        length: 10
+      - name: MARS05
+        width: 10
+        length: 10
+      - name: MARS06
+        width: 10
+        length: 10
+        items:
+          STR_DEATHSKULL_ORK_KAP3_ALPHA_SPAWNER:
+            - [5, 5, 0]
+            - [4, 4, 0]
+            - [4, 5, 0]
+            - [5, 4, 0]
+          STR_ORK2_SPAWNER:
+            - [5, 1, 0]
+            - [9, 3, 0]
+            - [2, 8, 0]
+          STR_ORK_NOBBURLY_SPAWNER:
+            - [3, 2, 0]
+            - [4, 7, 0]
+        fuseTimers:
+          STR_DEATHSKULL_ORK_KAP3_ALPHA_SPAWNER: [4, 4]
+          STR_ORK2_SPAWNER: [0, 0]
+          STR_ORK_NOBBURLY_SPAWNER: [0, 0]
+      - name: MARS07
+        width: 10
+        length: 10
+        items:
+          STR_ORK_FLASHGITZ2_SPAWNER:
+            - [3, 5, 0]
+          STR_DEATHSKULL_ORK_ARDNOB_SPAWNER:
+            - [3, 5, 0]
+            - [0, 0, 0]
+        fuseTimers:
+          STR_ORK_FLASHGITZ2_SPAWNER: [0, 0]
+          STR_DEATHSKULL_ORK_ARDNOB_SPAWNER: [0, 0]
+      - name: MARS08
+        width: 10
+        length: 10
+        items:
+          STR_DEATHSKULL_ORK_KAP3_ALPHA_SPAWNER:
+            - [5, 5, 0]
+            - [4, 4, 0]
+            - [9, 1, 0]
+          STR_ORK_KOMMANDOZ_SPAWNER:
+            - [4, 4, 0]
+            - [9, 1, 0]
+          STR_ORK_FLASHGITZ_SPAWNER:
+            - [5, 9, 0]
+        fuseTimers:
+          STR_DEATHSKULL_ORK_KAP3_ALPHA_SPAWNER: [4, 4]
+          STR_ORK_FLASHGITZ_SPAWNER: [0, 0]
+          STR_ORK_KOMMANDOZ_SPAWNER: [0, 0]
+      - name: MARS09
+        width: 10
+        length: 10
+      - name: MARS10
+        width: 10
+        length: 10
+        groups: 2
+        items:
+          STR_ORK_MEGANOB_SPAWNER:
+            - [6, 2, 0]
+          STR_ORK_TANKBUSTAZ_SPAWNER:
+            - [6, 4, 0]
+            - [9, 0, 0]
+          STR_BURNABOYZ_SPAWNER:
+            - [3, 6, 0]
+            - [8, 4, 0]
+          STR_WEIRDBOYZ_SPAWNER:
+            - [3, 4, 1]
+        fuseTimers:
+          STR_ORK_MEGANOB_SPAWNER: [0, 0]
+          STR_WEIRDBOYZ_SPAWNER: [4, 8]
+          STR_ORK_TANKBUSTAZ_SPAWNER: [0, 0]
+          STR_BURNABOYZ_SPAWNER: [0, 0]
+      - name: MARS11
+        width: 50
+        length: 20
+        items:
+          STR_BADMOONS_ORK_BOYZ_SPAWNER:
+            - [11, 1, 2]
+            - [5, 12, 0]
+            - [37, 8, 0]
+            - [42, 14, 0]
+            - [12, 14, 0]
+            - [48, 8, 0]
+          STR_DEAMON_SPAWNER:
+            - [8, 16, 0]
+            - [32, 1, 0]
+          STR_BADMOONS_ORK_NOBZ_SPAWNER:
+            - [7, 9, 0]
+            - [2, 17, 0]
+          STR_BADMOONS_ORK_BIGBOYZ_SPAWNER:
+            - [12, 1, 1]
+            - [44, 1, 2]
+            - [35, 1, 1]
+            - [45, 14, 0]
+            - [5, 3, 2]
+            - [21, 1, 0]
+          STR_KILLA_SPAWNER:
+            - [45, 13, 0]
+        fuseTimers:
+          STR_DEAMON_SPAWNER: [4, 4]
+          STR_BADMOONS_ORK_BOYZ_SPAWNER: [0, 0]
+          STR_BADMOONS_ORK_NOBZ_SPAWNER: [0, 0]
+          STR_BADMOONS_ORK_BIGBOYZ_SPAWNER: [0, 0]
+          STR_KILLA_SPAWNER: [0, 0]
+      - name: MARS12
+        width: 10
+        length: 20
+      - name: MARS13
+        width: 20
+        length: 20
+        items:
+          STR_DEAMON_SPAWNER:
+            - [3, 18, 0]
+            - [3, 14, 0]
+          STR_BADMOONS_ORK_BOYZ_SPAWNER:
+            - [12, 14, 0]
+            - [12, 7, 0]
+            - [11, 18, 0]
+            - [15, 8, 0]
+            - [7, 6, 0]
+            - [11, 3, 2]
+          STR_BURNABOYZ_SPAWNER:
+            - [17, 2, 2]
+            - [3, 2, 2]
+          STR_ORK_TANKBUSTAZ_SPAWNER:
+            - [13, 0, 2]
+            - [17, 3, 2]
+          STR_ORK_MEGANOB_SPAWNER:
+            - [4, 3, 2]
+            - [12, 1, 2]
+          STR_BADMOONS_ORK_BIGBOYZ_SPAWNER:
+            - [13, 2, 1]
+            - [14, 1, 1]
+            - [17, 1, 1]
+            - [18, 1, 2]
+          STR_KILLA_SPAWNER:
+            - [6, 11, 0]
+            - [10, 16, 0]
+        fuseTimers:
+          STR_DEAMON_SPAWNER: [6, 10]
+          STR_BADMOONS_ORK_BOYZ_SPAWNER: [0, 0]
+          STR_ORK_MEGANOB_SPAWNER: [0, 0]
+          STR_BADMOONS_ORK_BIGBOYZ_SPAWNER: [0, 0]
+          STR_BURNABOYZ_SPAWNER: [0, 0]
+          STR_KILLA_SPAWNER: [0, 0]
+          STR_ORK_TANKBUSTAZ_SPAWNER: [0, 0]
+      - name: MARS14
+        width: 10
+        length: 20
+      - name: MARS15
+        width: 20
+        length: 20
+        items:
+          STR_VINDICATOR_SPAWNER:
+            - [4, 12, 0]
+          STR_ORK3_SPAWNER:
+            - [11, 3, 2]
+            - [17, 6, 0]
+          STR_ORK2_SPAWNER:
+            - [9, 1, 0]
+            - [18, 8, 0]
+            - [9, 1, 1]
+            - [1, 3, 2]
+            - [14, 2, 2]
+          STR_ORK1_SPAWNER:
+            - [17, 17, 0]
+            - [7, 3, 2]
+            - [16, 3, 2]
+            - [12, 0, 2]
+            - [17, 0, 2]
+            - [15, 1, 2]
+          STR_KILLA_SPAWNER:
+            - [15, 16, 0]
+            - [17, 12, 0]
+        fuseTimers:
+          STR_VINDICATOR_SPAWNER: [0, 0]
+          STR_KILLA_SPAWNER: [0, 0]
+          STR_ORK2_SPAWNER: [0, 0]
+          STR_ORK1_SPAWNER: [0, 0]
+          STR_ORK3_SPAWNER: [0, 0]
+      - name: MARS16
+        width: 20
+        length: 20
+        items:
+          STR_LEMONRUSS_SPAWNER_FINAL:
+            - [5, 12, 1]
+          STR_LEMONRUSS_SPONSON_SPAWNER_FINAL:
+            - [3, 12, 0]
+            - [8, 12, 0]
+          STR_ORK3_SPAWNER:
+            - [11, 3, 2]
+            - [17, 6, 0]
+          STR_ORK2_SPAWNER:
+            - [9, 1, 0]
+            - [18, 8, 0]
+            - [9, 1, 1]
+          STR_ORK1_SPAWNER:
+            - [17, 17, 0]
+            - [7, 3, 2]
+            - [16, 3, 2]
+            - [5, 3, 1]
+            - [8, 1, 1]
+          STR_KILLA_SPAWNER:
+            - [15, 16, 0]
+        fuseTimers:
+          STR_LEMONRUSS_SPAWNER_FINAL: [0, 0]
+          STR_LEMONRUSS_SPONSON_SPAWNER_FINAL: [0, 0]
+          STR_KILLA_SPAWNER: [0, 0]
+          STR_ORK1_SPAWNER: [0, 0]
+          STR_ORK2_SPAWNER: [0, 0]
+          STR_ORK3_SPAWNER: [0, 0]
 
+  - name: MARSGUARD
+    ambience: {mod: 40k, index: 896}  # cave
+    ambientVolume: 0.25
+    script: FINAL02S
+    mapDataSets:
+      - BLANKS
+      - MARS
+      - CHAOSWALLS
+      - CHAOSDOOR
+      - OUTPOSTCHAOS
+      - CHAOSFORT
+      - CHAOSROOF
+      - CHAOSPIECES
+      - LEMON
+    mapBlocks:
+      - name: MARS00
+        width: 10
+        length: 10
+      - name: MARS01
+        width: 10
+        length: 10
+        items:
+          STR_DEAMON_SPAWNER:
+            - [5, 5, 0]
+            - [4, 4, 0]
+            - [3, 3, 0]
+            - [3, 4, 0]
+          STR_KHORNE_VALKIA_SPAWNER:
+            - [8, 6, 0]
+          STR_KHORNE_UNGOR_SPAWNER:
+            - [6, 6, 0]
+            - [6, 2, 0]
+            - [3, 2, 0]
+            - [2, 9, 0]
+          STR_KHORNE_GOR_SPAWNER:
+            - [7, 3, 0]
+        fuseTimers:
+          STR_DEAMON_SPAWNER: [3, 4]
+          STR_KHORNE_VALKIA_SPAWNER: [3, 4]
+          STR_KHORNE_UNGOR_SPAWNER: [0, 0]
+          STR_KHORNE_GOR_SPAWNER: [0, 0]
+      - name: MARS02
+        width: 10
+        length: 10
+      - name: MARS03
+        width: 10
+        length: 10
+        items:
+          STR_DEAMON_SPAWNER:
+            - [2, 7, 0]
+            - [6, 7, 0]
+            - [4, 3, 0]
+            - [4, 7, 0]
+          STR_KHORNE_VALKIA_SPAWNER:
+            - [6, 5, 1]  # drops down
+          STR_KHORNE_UNGOR_SPAWNER:
+            - [4, 2, 0]
+            - [0, 6, 0]
+            - [2, 9, 0]
+          STR_KHORNE_GOR_SPAWNER:
+            - [5, 3, 0]
+        fuseTimers:
+          STR_DEAMON_SPAWNER: [3, 4]
+          STR_KHORNE_VALKIA_SPAWNER: [4, 4]
+          STR_KHORNE_UNGOR_SPAWNER: [0, 0]
+          STR_KHORNE_GOR_SPAWNER: [0, 0]
+      - name: MARS04
+        width: 10
+        length: 10
+      - name: MARS05
+        width: 10
+        length: 10
+      - name: MARS06
+        width: 10
+        length: 10
+        items:
+          STR_DEAMON_SPAWNER:
+            - [5, 5, 0]
+            - [4, 4, 0]
+            - [4, 5, 0]
+            - [5, 4, 0]
+          STR_KHORNE_UNGOR_SPAWNER:
+            - [5, 1, 0]
+            - [9, 3, 0]
+            - [2, 8, 0]
+          STR_KHORNE_GOR_SPAWNER:
+            - [3, 2, 0]
+            - [4, 7, 0]
+        fuseTimers:
+          STR_DEAMON_SPAWNER: [5, 6]
+          STR_KHORNE_UNGOR_SPAWNER: [0, 0]
+          STR_KHORNE_GOR_SPAWNER: [0, 0]
+      - name: MARS07
+        width: 10
+        length: 10
+        items:
+          STR_DEAMONETTE_SPAWNER:
+            - [3, 5, 0]
+          STR_SLAANGOR_GOR_SPAWNER:
+            - [3, 5, 0]
+            - [0, 0, 0]
+        fuseTimers:
+          STR_DEAMONETTE_SPAWNER: [0, 0]
+          STR_SLAANGOR_GOR_SPAWNER: [0, 0]
+      - name: MARS08
+        width: 10
+        length: 10
+        items:
+          STR_DEAMONETTE_SPAWNER:
+            - [5, 5, 0]
+          STR_SLAANGOR_GOR_SPAWNER:
+            - [4, 4, 0]
+            - [9, 1, 0]
+          STR_SLAANESH_ANOINTED_MISSILE_SPAWNER:
+            - [5, 9, 0]
+        fuseTimers:
+          STR_DEAMONETTE_SPAWNER: [3, 4]
+          STR_SLAANESH_ANOINTED_MISSILE_SPAWNER: [0, 0]
+          STR_SLAANGOR_GOR_SPAWNER: [0, 0]
+      - name: MARS09
+        width: 10
+        length: 10
+      - name: MARS10
+        width: 10
+        length: 10
+        groups: 2
+        items:
+          STR_DEAMONETTE_SPAWNER:
+            - [6, 2, 0]
+          STR_CHAOS_PENETANTE_LEEROY_SPAWNER:
+            - [6, 4, 0]
+            - [9, 0, 0]
+          STR_SLAANGOR_GOR_SPAWNER:
+            - [3, 6, 0]
+            - [8, 4, 0]
+          STR_SLAANESH_ANOINTED:
+            - [3, 4, 1]
+        fuseTimers:
+          STR_DEAMONETTE_SPAWNER: [0, 0]
+          STR_SLAANESH_ANOINTED: [4, 8]
+          STR_CHAOS_PENETANTE_LEEROY_SPAWNER: [0, 0]
+          STR_SLAANGOR_GOR_SPAWNER: [0, 0]
+      - name: MARS11
+        width: 50
+        length: 20
+        items:
+          STR_SNAKEMAN_SOLDIER_SPAWNER:
+            - [11, 1, 2]
+            - [5, 12, 0]
+            - [37, 8, 0]
+            - [42, 14, 0]
+            - [12, 14, 0]
+            - [48, 8, 0]
+          STR_DEAMON_SPAWNER:
+            - [8, 16, 0]
+            - [5, 18, 0]
+            - [5, 13, 0]
+            - [32, 1, 0]
+          STR_BLACKSTONE_STORMTROOPER_SPAWNER:
+            - [7, 9, 0]
+            - [2, 17, 0]
+          STR_IRON_GUARD_SOLDIER_SPAWNER:
+            - [12, 1, 1]
+            - [44, 1, 2]
+            - [35, 1, 1]
+            - [45, 14, 0]
+            - [5, 3, 2]
+            - [21, 1, 0]
+          STR_SNAKEMAN_SENTINEL_SPAWNER:
+            - [45, 13, 0]
+        fuseTimers:
+          STR_DEAMON_SPAWNER: [3, 4]
+          STR_SNAKEMAN_SOLDIER_SPAWNER: [0, 0]
+          STR_BLACKSTONE_STORMTROOPER_SPAWNER: [0, 0]
+          STR_SNAKEMAN_SENTINEL_SPAWNER: [0, 0]
+      - name: MARS12
+        width: 10
+        length: 20
+      - name: MARS13
+        width: 20
+        length: 20
+        items:
+          STR_CHAOS_STAND_FIGHT:
+            - [2, 18, 0]
+          STR_DEAMON_SPAWNER:
+            - [3, 18, 0]
+            - [3, 14, 0]
+            - [7, 14, 0]
+          STR_SNAKEMAN_SOLDIER_SPAWNER:
+            - [12, 14, 0]
+            - [12, 7, 0]
+            - [11, 18, 0]
+            - [15, 8, 0]
+            - [7, 6, 0]
+            - [11, 3, 2]
+          STR_SNAKEMAN_ENGINEER_SPAWNER:
+            - [17, 2, 2]
+            - [3, 2, 2]
+          STR_CHAOS_PENETANTE_LEEROY_SPAWNER:
+            - [13, 0, 2]
+            - [17, 3, 2]
+          STR_BLACKSTONE_STORMTROOPER_SPAWNER:
+            - [4, 3, 2]
+            - [12, 1, 2]
+          STR_IRON_GUARD_SOLDIER_SPAWNER:
+            - [13, 2, 1]
+            - [14, 1, 1]
+            - [17, 1, 1]
+            - [18, 1, 2]
+          STR_SNAKEMAN_SENTINEL_SPAWNER:
+            - [6, 11, 0]
+          STR_GUARD_TURRET_SPAWNER:
+            - [10, 16, 0]
+        fuseTimers:
+          STR_CHAOS_STAND_FIGHT: [3, 3]
+          STR_DEAMON_SPAWNER: [6, 10]
+          STR_SNAKEMAN_SOLDIER_SPAWNER: [0, 0]
+          STR_BLACKSTONE_STORMTROOPER_SPAWNER: [0, 0]
+          STR_IRON_GUARD_SOLDIER_SPAWNER: [0, 0]
+          STR_SNAKEMAN_ENGINEER_SPAWNER: [0, 0]
+          STR_SNAKEMAN_SENTINEL_SPAWNER: [0, 0]
+          STR_CHAOS_PENETANTE_LEEROY_SPAWNER: [0, 0]
+          STR_GUARD_TURRET_SPAWNER: [0, 0]
+      - name: MARS14
+        width: 10
+        length: 20
+      - name: MARS15
+        width: 20
+        length: 20
+        items:
+          STR_VINDICATOR_SPAWNER:
+            - [4, 12, 0]
+          STR_IRON_GUARD_SOLDIER_SPAWNER:
+            - [9, 1, 0]
+            - [18, 8, 0]
+            - [9, 1, 1]
+          STR_SNAKEMAN_SOLDIER_SPAWNER:
+            - [17, 17, 0]
+            - [7, 3, 2]
+            - [16, 3, 2]
+          STR_SNAKEMAN_SENTINEL_SPAWNER:
+            - [15, 16, 0]
+        fuseTimers:
+          STR_VINDICATOR_SPAWNER: [0, 0]
+          STR_IRON_GUARD_SOLDIER_SPAWNER: [0, 0]
+          STR_SNAKEMAN_SENTINEL_SPAWNER: [0, 0]
+          STR_SNAKEMAN_SOLDIER_SPAWNER: [0, 0]
+      - name: MARS16
+        width: 20
+        length: 20
+        items:
+          STR_LEMONRUSS_SPAWNER_FINAL:
+            - [5, 12, 1]
+          STR_LEMONRUSS_SPONSON_SPAWNER_FINAL:
+            - [3, 12, 0]
+            - [8, 12, 0]
+          STR_DEAMON_SPAWNER:
+            - [2, 1, 0]
+          STR_IRON_GUARD_SOLDIER_SPAWNER:
+            - [9, 1, 0]
+            - [18, 8, 0]
+            - [9, 1, 1]
+          STR_SNAKEMAN_SOLDIER_SPAWNER:
+            - [17, 17, 0]
+            - [7, 3, 2]
+            - [16, 3, 2]
+          STR_SNAKEMAN_SENTINEL_SPAWNER:
+            - [15, 16, 0]
+        fuseTimers:
+          STR_LEMONRUSS_SPAWNER_FINAL: [0, 0]
+          STR_LEMONRUSS_SPONSON_SPAWNER_FINAL: [0, 0]
+          STR_DEAMON_SPAWNER: [6, 10]
+          STR_IRON_GUARD_SOLDIER_SPAWNER: [0, 0]
+          STR_SNAKEMAN_SENTINEL_SPAWNER: [0, 0]
+          STR_SNAKEMAN_SOLDIER_SPAWNER: [0, 0]
+  - name: FINALCHAMBER
+    mapDataSets:
+      - BLANKS
+      - BATTLE
+      - OUTPOSTCHAOS
+      - CHAOSFORT
+      - LEMON
+      - CHAOSROOF
+      - SUPORTPIECES
+      - DEBRIS
+    script: FINAL01S
+    mapBlocks:
+      - name: FINAL03
+        width: 70
+        length: 50
+        items:
+          STR_CHAOS_STAND_GROUND:
+            - [0, 22, 1]
+          STR_TRAITOR_SPAWNER:
+            - [51, 43, 1]
+            - [38, 46, 1]
+            - [19, 27, 2]
+            - [23, 21, 1]
+          STR_NURGLE_CSM_SPAWNER:
+            - [40, 18, 1]
+            - [30, 17, 1]
+            - [36, 23, 1]
+            - [43, 22, 1]
+            - [25, 20, 1]
+          STR_HAVOC_SLAANESH_SPAWNER:
+            - [51, 45, 1]
+            - [51, 44, 1]
+          STR_SLAANESH_CSM_SPAWNER:
+            - [38, 44, 1]
+            - [40, 43, 1]
+            - [37, 27, 1]
+            - [44, 32, 1]
+            - [31, 34, 1]
+          STR_HAVOC_TZEENTCH_SPAWNER:  # comes in after turn 2
+            - [2, 13, 3]
+            - [2, 32, 3]
+          STR_TZEENTCH_BLESSED_SPAWNER:  # starts at turn 0, nuked by orbital strike they spawn flamers in the flames
+            - [15, 27, 1]
+            - [9, 18, 1]
+            - [20, 15, 1]
+          STR_TZEENTCH_CSM_SPAWNER:  # comes in after turn 1
+            - [8, 17, 1]
+            - [2, 10, 2]
+            - [1, 11, 3]
+          STR_PINKHORROR_SPAWNER:  # Turn 1-5
+            - [6, 16, 1]
+            - [8, 14, 1]
+          STR_BLUEHORROR_SPAWNER:  # Turn 1-5
+            - [7, 12, 1]
+            - [4, 11, 1]
+          STR_IRON_WARSMITH_SPAWNER:  # teleports in after turn 1
+            - [2, 30, 3]
+          STR_KHORNE_JUGG_SPAWNER:  # turn 1
+            - [45, 46, 1]
+          STR_CHAOS_DREAD2_SPAWNER:  # turn 0
+            - [21, 18, 1]
+          STR_OBL_SPAWNER:  # teleports in turn 1-4
+            - [51, 44, 1]
+            - [41, 41, 1]
+            - [38, 47, 1]
+          STR_IRON_TERMINATOR_SPAWNER:  # teleports in turn 1-4
+            - [43, 48, 1]
+            - [49, 45, 1]
+            - [48, 44, 1]
+            - [41, 42, 1]
+          STR_NURGLE_TERMINATOR_SPAWNER:  # teleports in turn 1-4
+            - [38, 46, 1]
+            - [42, 45, 1]
+          STR_IRON_BERSERKER_SPAWNER:  # turn 1-4
+            - [51, 45, 1]
+            - [41, 43, 1]
+            - [43, 47, 1]
+            - [43, 49, 1]
+          STR_NIGHTLORDS_CSM_SPAWNER:  # turn 6-7
+            - [67, 46, 1]
+            - [64, 47, 1]
+            - [68, 42, 1]
+            - [65, 4, 1]
+            - [55, 2, 1]
+            - [64, 1, 1]
+          STR_NIGHTLORDS_RAPTOR_SPAWNER:  # turn 6-7
+            - [56, 3, 3]
+            - [52, 5, 3]
+            - [46, 6, 3]
+            - [48, 5, 4]
+          STR_NIGHTLORDS_WARPTALON_SPAWNER:  # turn 6-7
+            - [39, 3, 4]
+            - [36, 5, 4]
+          STR_ALPHA_SCOUT_ULTRA_SPAWNER:  # turn 0
+            - [42, 6, 1]
+            - [45, 10, 1]
+            - [31, 9, 1]
+          STR_ALPHA_SOLDIER_ULTRA_SPAWNER:  # turn 4
+            - [40, 4, 1]
+            - [43, 2, 0]
+            - [29, 3, 1]
+          STR_ALPHA_DEV_ULTRA_SPAWNER:  # turn 4
+            - [33, 3, 1]
+            - [40, 3, 1]
+          STR_ALPHA_SARGE_ULTRA_SPAWNER:  # turn 4
+            - [36, 4, 0]
+          STR_VINDICATOR2_SPAWNER:
+            - [59, 6, 1]
+            - [60, 31, 1]
+          STR_GATEDOWN_SPAWNER:
+            - [2, 18, 1]
+            - [2, 20, 1]
+            - [2, 22, 1]
+            - [2, 24, 1]
+          STR_GATEUP_SPAWNER:
+            - [2, 18, 2]
+            - [2, 20, 2]
+            - [2, 22, 2]
+            - [2, 24, 2]
+          STR_CHAOSTURRET_SPAWNER:
+            - [23, 37, 1]
+            - [21, 9, 1]
+            - [19, 4, 1]
+            - [6, 10, 2]
+            - [6, 32, 2]
+          STR_LEMONRUSS_SPAWNER_FINAL:
+            - [62, 31, 2]
+            - [60, 6, 2]
+          STR_LEMONRUSS_SPONSON_SPAWNER_FINAL:
+            - [60, 31, 1]
+            - [65, 31, 1]
+            - [58, 6, 1]
+            - [63, 6, 1]
+        fuseTimers:
+          STR_LEMONRUSS_SPAWNER_FINAL: [0, 0]
+          STR_LEMONRUSS_SPONSON_SPAWNER_FINAL: [0, 0]
+          STR_ALPHA_SCOUT_ULTRA_SPAWNER: [4, 8]
+          STR_ALPHA_SOLDIER_ULTRA_SPAWNER: [8, 8]
+          STR_ALPHA_DEV_ULTRA_SPAWNER: [8, 8]
+          STR_ALPHA_SARGE_ULTRA_SPAWNER: [8, 8]
+          STR_CHAOS_STAND_GROUND: [6, 6]
+          STR_GATEDOWN_SPAWNER: [0, 0]
+          STR_GATEUP_SPAWNER: [0, 0]
+          STR_CHAOSTURRET_SPAWNER: [0, 0]
+          STR_OBL_SPAWNER: [2, 4]
+          STR_KHORNE_JUGG_SPAWNER: [2, 2]
+          STR_IRON_BERSERKER_SPAWNER: [2, 4]
+          STR_IRON_TERMINATOR_SPAWNER: [2, 4]
+          STR_IRON_WARSMITH_SPAWNER: [1, 2]
+          STR_TRAITOR_SPAWNER: [0, 0]
+          STR_NIGHTLORDS_CSM_SPAWNER: [8, 10]
+          STR_NIGHTLORDS_RAPTOR_SPAWNER: [8, 10]
+          STR_NIGHTLORDS_WARPTALON_SPAWNER: [8, 10]
+          STR_PINKHORROR_SPAWNER: [2, 10]
+          STR_BLUEHORROR_SPAWNER: [2, 10]
+          STR_NURGLE_CSM_SPAWNER: [0, 0]
+          STR_NURGLE_TERMINATOR_SPAWNER: [4, 8]
+          STR_HAVOC_TZEENTCH_SPAWNER: [6, 8]
+          STR_TZEENTCH_BLESSED_SPAWNER: [0, 0]
+          STR_TZEENTCH_CSM_SPAWNER: [2, 4]
+          STR_HAVOC_SLAANESH_SPAWNER: [0, 0]
+          STR_SLAANESH_CSM_SPAWNER: [0, 0]
+          STR_CHAOS_DREAD2_SPAWNER: [0, 0]
 
+  - name: MARSCHAMBER
+    ambience: {mod: 40k, index: 896}
+    ambientVolume: 0.25
+    script: FINAL02S_CHAMBER
+    mapDataSets:
+      - BLANKS
+      - MARS
+      - CHAOSWALLS
+      - CHAOSDOOR
+      - OUTPOSTCHAOS
+      - CHAOSFORT
+      - CHAOSROOF
+      - CHAOSPIECES
+      - LEMON
+    mapBlocks:
+      - name: MARS00
+        width: 10
+        length: 10
+      - name: MARS01
+        width: 10
+        length: 10
+        items:
+          STR_DEAMON_SPAWNER:
+            - [5, 5, 0]
+            - [4, 4, 0]
+            - [3, 3, 0]
+            - [5, 6, 0]
+            - [3, 4, 0]
+          STR_KHORNE_WARPTALON_SPAWNER:
+            - [3, 3, 1]
+            - [7, 7, 1]
+            - [4, 4, 1]
+          STR_KHORNE_CHAMP_SPAWNER:
+            - [8, 5, 0]
+          STR_KHORNE_BERSERKER_SPAWNER:
+            - [3, 2, 0]
+            - [6, 4, 0]
+          STR_KHORNE_VALKIA_SPAWNER:
+            - [8, 6, 0]
+            - [2, 3, 0]
+            - [2, 6, 0]
+        fuseTimers:
+          STR_DEAMON_SPAWNER: [4, 6]
+          STR_KHORNE_WARPTALON_SPAWNER: [4, 6]
+          STR_KHORNE_CHAMP_SPAWNER: [0, 0]
+          STR_KHORNE_BERSERKER_SPAWNER: [0, 0]
+          STR_KHORNE_VALKIA_SPAWNER: [2, 4]
+      - name: MARS02
+        width: 10
+        length: 10
+      - name: MARS03
+        width: 10
+        length: 10
+        items:
+          STR_DEAMON_SPAWNER:
+            - [2, 7, 0]
+            - [6, 7, 0]
+            - [7, 6, 0]
+            - [4, 3, 0]
+            - [4, 7, 0]
+          STR_KHORNE_VALKIA_SPAWNER:
+            - [6, 5, 1]  # drops down
+        fuseTimers:
+          STR_DEAMON_SPAWNER: [6, 8]
+          STR_KHORNE_VALKIA_SPAWNER: [8, 8]
+      - name: MARS04
+        width: 10
+        length: 10
+        items:
+          STR_TZEENTCH_CSM_SPAWNER:
+            - [9, 4, 0]
+            - [5, 9, 0]
+          STR_HAVOC_TZEENTCH_SPAWNER:
+            - [2, 1, 1]
+            - [7, 1, 1]
+          STR_IRON_TERMINATOR_SPAWNER:
+            - [4, 2, 1]
+            - [1, 1, 1]
+        fuseTimers:
+          STR_TZEENTCH_CSM_SPAWNER: [4, 4]
+          STR_HAVOC_TZEENTCH_SPAWNER: [4, 4]
+          STR_IRON_TERMINATOR_SPAWNER: [8, 8]
+      - name: MARS05
+        width: 10
+        length: 10
+      - name: MARS06
+        width: 10
+        length: 10
+        items:
+          STR_DEAMON_SPAWNER:
+            - [5, 5, 0]
+            - [4, 4, 0]
+            - [5, 4, 0]
+          STR_KHORNE_WARPTALON_SPAWNER:
+            - [4, 4, 1]
+          STR_KHORNE_CHAMP_SPAWNER:
+            - [4, 2, 0]
+          STR_KHORNE_BERSERKER_SPAWNER:
+            - [1, 0, 0]
+            - [4, 6, 0]
+        fuseTimers:
+          STR_DEAMON_SPAWNER: [10, 12]
+          STR_KHORNE_WARPTALON_SPAWNER: [2, 4]
+          STR_KHORNE_CHAMP_SPAWNER: [2, 2]
+          STR_KHORNE_BERSERKER_SPAWNER: [0, 0]
+      - name: MARS07
+        width: 10
+        length: 10
+        items:
+          STR_DEAMONETTE_SPAWNER:
+            - [5, 5, 0]
+            - [4, 4, 0]
+          STR_HAVOC_SLAANESH_SPAWNER:
+            - [5, 5, 3]
+            - [7, 5, 3]
+        fuseTimers:
+          STR_DEAMONETTE_SPAWNER: [2, 2]
+          STR_HAVOC_SLAANESH_SPAWNER: [0, 0]
+      - name: MARS08
+        width: 10
+        length: 10
+        items:
+          STR_DEAMONETTE_SPAWNER:
+            - [5, 5, 0]
+            - [4, 4, 0]
+          STR_HAVOC_SLAANESH_SPAWNER:
+            - [9, 0, 0]
+            - [0, 0, 0]
+          STR_SLAANESH_ANOINTED_MISSILE_SPAWNER:
+            - [4, 4, 3]
+            - [5, 9, 0]
+        fuseTimers:
+          STR_DEAMONETTE_SPAWNER: [2, 2]
+          STR_HAVOC_SLAANESH_SPAWNER: [0, 0]
+          STR_SLAANESH_ANOINTED_MISSILE_SPAWNER: [0, 0]
+      - name: MARS09
+        width: 10
+        length: 10
+      - name: MARS10
+        width: 10
+        length: 10
+        groups: 2
+        items:
+          STR_DEAMONETTE_SPAWNER:
+            - [6, 2, 0]
+          STR_HAVOC_SLAANESH_SPAWNER:
+            - [4, 2, 2]
+            - [6, 4, 2]
+          STR_SLAANESH_ANOINTED:
+            - [3, 4, 1]
+            - [5, 7, 0]
+          STR_SLAANESH_ANOINTED_MISSILE_SPAWNER:
+            - [5, 2, 2]
+        fuseTimers:
+          STR_DEAMONETTE_SPAWNER: [2, 2]
+          STR_HAVOC_SLAANESH_SPAWNER: [0, 0]
+          STR_SLAANESH_ANOINTED: [2, 2]
+          STR_SLAANESH_ANOINTED_MISSILE_SPAWNER: [2, 2]
+      - name: MARS11
+        width: 50
+        length: 20
+        items:
+          STR_KHORNE_BERSERKER_SPAWNER:
+            - [11, 1, 2]
+            - [32, 1, 0]
+          STR_DEAMON_SPAWNER:
+            - [8, 16, 0]
+            - [5, 18, 0]
+          STR_KHORNE_VALKIA_SPAWNER:
+            - [7, 16, 0]
+            - [3, 16, 0]
+            - [5, 19, 0]
+            - [5, 14, 0]
+          STR_SLAANESH_CSM_SPAWNER:
+            - [5, 3, 2]
+            - [1, 1, 2]
+            - [21, 1, 0]
+          STR_NURGLE_CSM_SPAWNER:
+            - [12, 1, 1]
+            - [14, 1, 2]
+            - [38, 3, 2]
+            - [44, 1, 2]
+          STR_NIGHTLORDS_CSM_SPAWNER:
+            - [35, 1, 1]
+            - [38, 1, 2]
+            - [45, 14, 0]
+            - [45, 17, 0]
+          STR_TZEENTCH_CSM_SPAWNER:
+            - [9, 5, 4]
+            - [13, 3, 2]
+            - [48, 8, 0]
+        fuseTimers:
+          STR_DEAMON_SPAWNER: [6, 8]
+          STR_KHORNE_BERSERKER_SPAWNER: [0, 0]
+          STR_KHORNE_VALKIA_SPAWNER: [4, 8]
+          STR_SLAANESH_CSM_SPAWNER: [0, 0]
+          STR_NURGLE_CSM_SPAWNER: [0, 0]
+          STR_NIGHTLORDS_CSM_SPAWNER: [0, 0]
+          STR_TZEENTCH_CSM_SPAWNER: [0, 0]
+      - name: MARS12
+        width: 10
+        length: 20
+      - name: MARS13
+        width: 20
+        length: 20
+        items:
+          STR_CHAOS_STAND_FIGHT:
+            - [2, 18, 0]
+          STR_DEAMON_SPAWNER:
+            - [3, 18, 0]
+            - [3, 14, 0]
+            - [7, 14, 0]
+          STR_KHORNE_BERSERKER_SPAWNER:
+            - [2, 10, 0]
+            - [3, 2, 2]
+          STR_KHORNE_VALKIA_SPAWNER:
+            - [7, 16, 0]
+            - [3, 16, 0]
+            - [5, 19, 0]
+            - [5, 14, 0]
+          STR_SLAANESH_CSM_SPAWNER:
+            - [4, 3, 2]
+            - [12, 1, 2]
+          STR_NURGLE_CSM_SPAWNER:
+            - [13, 2, 1]
+            - [14, 1, 1]
+          STR_NIGHTLORDS_CSM_SPAWNER:
+            - [17, 1, 1]
+            - [18, 1, 2]
+          STR_TZEENTCH_CSM_SPAWNER:
+            - [9, 5, 4]
+            - [13, 3, 2]
+        fuseTimers:
+          STR_CHAOS_STAND_FIGHT: [4, 4]
+          STR_DEAMON_SPAWNER: [6, 8]
+          STR_KHORNE_BERSERKER_SPAWNER: [6, 8]
+          STR_KHORNE_VALKIA_SPAWNER: [4, 6]
+          STR_SLAANESH_CSM_SPAWNER: [0, 0]
+          STR_NURGLE_CSM_SPAWNER: [0, 0]
+          STR_NIGHTLORDS_CSM_SPAWNER: [0, 0]
+          STR_TZEENTCH_CSM_SPAWNER: [0, 0]
+      - name: MARS14
+        width: 10
+        length: 20
+      - name: MARS15
+        width: 20
+        length: 20
+        items:
+          STR_VINDICATOR_SPAWNER:
+            - [4, 12, 0]
+          STR_NIGHTLORDS_CSM_SPAWNER:
+            - [9, 1, 0]
+            - [18, 8, 0]
+            - [9, 1, 1]
+          STR_TZAANGOR_SPAWNER:
+            - [17, 17, 0]
+            - [7, 3, 2]
+            - [16, 3, 2]
+        fuseTimers:
+          STR_VINDICATOR_SPAWNER: [0, 0]
+          STR_NIGHTLORDS_CSM_SPAWNER: [0, 0]
+          STR_TZAANGOR_SPAWNER: [0, 0]
+      - name: MARS18
+        width: 20
+        length: 20
+        items:
+          STR_EXORCIST_SPAWNER:
+            - [4, 11, 1]
+          STR_DEAMON_SPAWNER:
+            - [2, 1, 0]
+          STR_NIGHTLORDS_CSM_SPAWNER:
+            - [9, 1, 0]
+            - [18, 8, 0]
+            - [9, 1, 1]
+          STR_TZAANGOR_SPAWNER:
+            - [17, 17, 0]
+            - [7, 3, 2]
+            - [16, 3, 2]
+        fuseTimers:
+          STR_EXORCIST_SPAWNER: [0, 0]
+          STR_DEAMON_SPAWNER: [3, 4]
+          STR_NIGHTLORDS_CSM_SPAWNER: [0, 0]
+          STR_TZAANGOR_SPAWNER: [0, 0]
+      - name: MARS16
+        width: 20
+        length: 20
+        items:
+          STR_LEMONRUSS_SPAWNER_FINAL:
+            - [5, 12, 1]
+          STR_LEMONRUSS_SPONSON_SPAWNER_FINAL:
+            - [3, 12, 0]
+            - [8, 12, 0]
+          STR_DEAMON_SPAWNER:
+            - [2, 1, 0]
+          STR_NIGHTLORDS_CSM_SPAWNER:
+            - [9, 1, 0]
+            - [18, 8, 0]
+            - [9, 1, 1]
+          STR_TZAANGOR_SPAWNER:
+            - [17, 17, 0]
+            - [7, 3, 2]
+            - [16, 3, 2]
+        fuseTimers:
+          STR_LEMONRUSS_SPAWNER_FINAL: [0, 0]
+          STR_LEMONRUSS_SPONSON_SPAWNER_FINAL: [0, 0]
+          STR_DEAMON_SPAWNER: [4, 4]
+          STR_NIGHTLORDS_CSM_SPAWNER: [0, 0]
+          STR_TZAANGOR_SPAWNER: [0, 0]
 
 
 

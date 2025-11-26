@@ -1,7 +1,7 @@
 research:
 ### Utility
-  - name: STR_NOT_ASSASSINORUM  # (Not Assassinorum Strategy)
-  - name: STR_GUARD_AND_INQUISITION         # Tech for things that should be available to Chamber Militant and Imperial Guard
+  - name: STR_NOT_ASSASSINORUM          # (Not Assassinorum Strategy)
+  - name: STR_GUARD_AND_INQUISITION     # Tech for things that should be available to Chamber Militant and Imperial Guard
     dependencies:
       - STR_GENERALLOCK
 
@@ -42,8 +42,8 @@ research:
       - STR_GREYKNIGHTS
       - STR_DEATHWATCH
       - STR_ASSASSINORUM
-      - STR_IMPERIAL_AGENTS
-      - STR_HERETICAL_MEANS
+      #- STR_IMPERIAL_AGENTS
+      #- STR_HERETICAL_MEANS
       - STR_XIPHON
       - STR_ADEPTAS_AND_INQUISITION
       - STR_MARINES_AND_INQUISITION
@@ -53,7 +53,6 @@ research:
       - STR_HARDER_MISSIONS
       - STR_IMPERIUM_RESEARCH
       - STR_STUBBERS_UNLOCK
-
     disables:
       - STR_NOT_CHAMBER
       - STR_ARBITES
@@ -61,6 +60,9 @@ research:
       - STR_IMPERIAL_GUARD_OPERATIONS
       - STR_ADEPTAS
       - STR_GUARD_SUPORT
+      - STR_DREADNOUGHT_MARINE
+      - STR_HEAVY_SHOTGUN_MARINE
+      - STR_HEAVY_SHOTGUN_ARBITES
 
   - name: STR_IMPERIAL_GUARD_OPERATIONS # Imperial Guard
     unlocks: !add
@@ -95,24 +97,17 @@ research:
       # - STR_GENERALLOCK
 
   - name: STR_ARBITES                   # Adeptus Terra
-    # cost: 0
-    # points: 0
-    # lookup: STR_IMPERIUM_RESEARCH
+    cost: 0
+    points: 0
+    lookup: STR_IMPERIUM_RESEARCH
     # dependencies:
       # - STR_GENERALLOCK
     # unlocks:
       # - STR_IMPERIUM_RESEARCH
       # - STR_THE_IMPERIAL_LAW_STRATEGY
       # - STR_CHAOS_STRATEGY_ARBITES
-    # disables:
-      # - STR_NOT_ADEPTUS_TERRA
-      # - STR_CHAPTER_PURITY
-      # - STR_CYDONIA_OR_BUST
-      # - STR_MARINES_STRATEGY
-      # - STR_IMPERIAL_GUARD_OPERATIONS
-      # - STR_ADEPTAS
-      # - STR_GUARD_SUPORT
-      # - STR_THE_EMPEROR_PROTECTS_RESEARCH
+    disables: !add
+      - STR_HEAVY_SHOTGUN_ARBITES
 
 ### Strategy Choice
   - name: STR_PICKED_LOYALIST_STRATEGY  # Loyalist Strat Chosen
@@ -275,6 +270,8 @@ research:
       - STR_PICKED_LOYALIST_STRATEGY
 
   - name: STR_WORDBEARERS_STRATEGY      # Word Bearers Strat
+    dependencies:
+      - STR_GENERALLOCK ###CHANGEME - modio compat
     unlocks: !add
       - STR_PICKED_CHAOS_STRATEGY
 
@@ -315,7 +312,6 @@ research:
       - STR_PERSONAL_ARMOR
       - STR_INQUISITION_VALKYRIE
       - STR_IMPERIAL_CHURCH
-      - STR_INQ_TROOP_REQS
     spawnedEvent: STR_GREYKNIGHTS_CARE_PACKAGE
 
   - name: STR_DEATHWATCH                # Deathwatch Strat
@@ -338,7 +334,6 @@ research:
       - STR_BOLTER_AMMO_PREREQ
       - STR_MARINE_WEAPONS
       - STR_SCT_MELEE_REQ
-      - STR_SHOTGUNS_ADV
       - STR_STORMRAVEN_PREREQ
       - STR_MEDI_KIT_PREREQ
     getOneFree: []
@@ -350,7 +345,8 @@ research:
       - STR_HERETICAL_MEANS
       - STR_CYDONIA_OR_BUST # has their own version - STR_DEATHWATCH_BUST
       - STR_INQUISITION_VALKYRIE
-    reenables: []
+    reenables:
+      - STR_HEAVY_SHOTGUN_MARINE
     spawnedEvent: STR_DEATHWATCH_CARE_PACKAGE
 
   - name: STR_ASSASSINORUM              # Assassinorum Strat
@@ -383,6 +379,7 @@ research:
     listOrder: 5
     dependencies:
       - STR_CHAMBERMILITANT
+      - STR_GENERALLOCK ###Unimplemented
     lookup: STR_CHOSEN_DEATHWATCH ###CHANGEME
     unlocks:
       - STR_INQUISITION
@@ -393,6 +390,8 @@ research:
       - STR_GREYKNIGHTS
       - STR_ASSASSINORUM
       - STR_HERETICAL_MEANS
+    reenables:
+      - STR_HEAVY_SHOTGUN_ARBITES
     spawnedEvent: STR_IMPERIALAGENTS_CARE_PACKAGE
 
   - name: STR_HERETICAL_MEANS           # Heretical Means Strat
@@ -401,6 +400,7 @@ research:
     listOrder: 6
     dependencies:
       - STR_CHAMBERMILITANT
+      - STR_GENERALLOCK ###Unimplemented
     lookup: STR_CHOSEN_DEATHWATCH ###CHANGEME
     unlocks:
       - STR_INQUISITION
@@ -623,14 +623,17 @@ research:
     listOrder: 2
     unlocks: !add
       - STR_ARBITES_SOLDIERS
-      - STR_SHOTGUNS_ADV
       - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
       - STR_40MM_AMMO
       - STR_STUBBERS_UNLOCK
       - STR_IMPERIAL_CHURCH
       - STR_PICKED_LOYALIST_STRATEGY
+    reenables:
+      - STR_HEAVY_SHOTGUN_ARBITES
 
   - name: STR_GREENEST_ORKZ             # Ork Strategy
+    dependencies:
+      - STR_GENERALLOCK ###CHANGEME - modio compat
     unlocks: !add
       - STR_40MM_AMMO
       - STR_STUBBERS_UNLOCK
@@ -953,7 +956,7 @@ research:
       - STR_ROCKETS_UNLOCK
     listOrder: 2
 
-##BOLTERS
+##Bolters
   - name: STR_BOLTER_AMMO_PREREQ        # Bolter ammo
     cost: 0
     points: 0
@@ -1102,6 +1105,70 @@ research:
     unlocks: !add
       - STR_40MM_AMMO
 
+##Shotguns
+  - name: STR_SHOTGUNS_ADV          # Shotgun unlocks special ammo types
+    cost: 65
+    points: 10
+    dependencies:
+      - STR_LASER_WEAPONS
+      - STR_IMPERIAL_WEAPONS
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_HEAVY_SHOTGUN_OGRYN   # Rippergun Unlock
+    cost: 325
+    points: 15
+    dependencies:
+      - STR_OGRYN_REQUISITION
+      - STR_SHOTGUNS_ADV
+    unlocks:
+      - STR_HEAVY_SHOTGUN_DRUMS
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_HEAVY_SHOTGUN_MARINE  # Marine Shotgun Unlock
+    cost: 465
+    points: 15
+    dependencies:
+      - STR_SHOTGUNS_ADV
+      - STR_NOT_ADEPTAS
+      - STR_NOT_ADEPTUS_TERRA
+      - STR_NOT_GUARD
+    unlocks:
+      - STR_HEAVY_SHOTGUN_SHELLS
+      - STR_HEAVY_SHOTGUN_DRUMS
+      - STR_40MM_AMMO
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_HEAVY_SHOTGUN_ARBITES # Lawbringer Unlock
+    cost: 465
+    points: 15
+    dependencies:
+      - STR_SHOTGUNS_ADV
+      - STR_NOT_ADEPTAS
+      - STR_NOT_GUARD
+      - STR_NOT_MARINES
+    unlocks:
+      - STR_HEAVY_SHOTGUN_SHELLS
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_HEAVY_SHOTGUN_SHELLS  # Heavy Shotgun Shells
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+      - STR_HEAVY_SHOTGUN_MARINE
+      - STR_HEAVY_SHOTGUN_ARBITES
+    listOrder: 10 # push above corpses/etc
+
+  - name: STR_HEAVY_SHOTGUN_DRUMS   # Heavy Shotgun Ammo Drums
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+      - STR_HEAVY_SHOTGUN_MARINE
+      - STR_HEAVY_SHOTGUN_OGRYN
+    listOrder: 10 # push above corpses/etc
+
+##Grey Knights
   - name: STR_PSILENCER_R               # Psilencer
     cost: 385
     points: 20
@@ -1128,7 +1195,7 @@ research:
     listOrder: 20
     dependencies:
       - STR_GREYKNIGHTS
-      - STR_MT_GK
+      - STR_GK_HIGHTIER
       - STR_UFO_CONSTRUCTION
 
   - name: STR_FORCE_WEAPONS             # Force Weapons
@@ -1200,45 +1267,87 @@ research:
     points: 0
 
 ### Chamber Recruitment
-  - name: STR_INQ_SUMMON_IMPERIAL_AGENTS_RESEARCH  # Summon Agents of the Inquisition
-    cost: 250
-    dependencies:
-      - STR_CHAMBERMILITANT
-      - STR_PICKED_LOYALIST_STRATEGY
-    spawnedEvent: STR_INQ_REQUISITION_AGENTS_EVENT
+  # - name: STR_INQ_SUMMON_IMPERIAL_AGENTS_RESEARCH  # Summon Agents of the Inquisition
+    # cost: 250
+    # dependencies:
+      # - STR_CHAMBERMILITANT
+      # - STR_PICKED_LOYALIST_STRATEGY
+    # spawnedEvent: STR_INQ_REQUISITION_AGENTS_EVENT
 
-  - name: STR_INQ_REQUISITION_ARBITES_RESEARCH  # Requisition Arbites Support
-    cost: 250
-    dependencies:
-      - STR_CHAMBERMILITANT
-      - STR_PICKED_LOYALIST_STRATEGY
-    spawnedEvent: STR_INQ_REQUISITION_ARBITES_EVENT
+  # - name: STR_INQ_REQUISITION_ARBITES_RESEARCH  # Requisition Arbites Support
+    # cost: 250
+    # dependencies:
+      # - STR_CHAMBERMILITANT
+      # - STR_PICKED_LOYALIST_STRATEGY
+    # spawnedEvent: STR_INQ_REQUISITION_ARBITES_EVENT
 
-  - name: STR_INQ_REQUISITION_GUARD_RESEARCH  # Requisition Guard Veterans
-    cost: 250
-    dependencies:
-      - STR_CHAMBERMILITANT
-      - STR_PICKED_LOYALIST_STRATEGY
-    spawnedEvent: STR_INQ_REQUISITION_GUARD_EVENT
+  # - name: STR_INQ_REQUISITION_GUARD_RESEARCH  # Requisition Guard Veterans
+    # cost: 250
+    # dependencies:
+      # - STR_CHAMBERMILITANT
+      # - STR_PICKED_LOYALIST_STRATEGY
+    # spawnedEvent: STR_INQ_REQUISITION_GUARD_EVENT
 
-  - name: STR_INQ_REQUISITION_SORORITAS_RESEARCH
-    cost: 400
-    dependencies:
-      - STR_CHAMBERMILITANT
-      - STR_PICKED_LOYALIST_STRATEGY
-    spawnedEvent: STR_INQ_REQUISITION_SORORITAS_EVENT
+  # - name: STR_INQ_REQUISITION_SORORITAS_RESEARCH
+    # cost: 400
+    # dependencies:
+      # - STR_CHAMBERMILITANT
+      # - STR_PICKED_LOYALIST_STRATEGY
+    # spawnedEvent: STR_INQ_REQUISITION_SORORITAS_EVENT
 
-  - name: STR_INQ_REQUISITION_ASSASSINS_RESEARCH  # Order Imperial Assassins
-    cost: 400
-    dependencies:
-      - STR_CHAMBERMILITANT
-      - STR_PICKED_LOYALIST_STRATEGY
-    spawnedEvent: STR_INQ_REQUISITION_ASSASSINS_EVENT
+  # - name: STR_INQ_REQUISITION_ASSASSINS_RESEARCH  # Order Imperial Assassins
+    # cost: 400
+    # dependencies:
+      # - STR_CHAMBERMILITANT
+      # - STR_PICKED_LOYALIST_STRATEGY
+    # spawnedEvent: STR_INQ_REQUISITION_ASSASSINS_EVENT
 
 ### Other
+  - name: STR_GAUSS_FLAYER_TOKEN            # Gauss Flayer
+    cost: 200
+    points: 10
+    needItem: true
+    unlocks:
+      - STR_GAUSS_FLAYER
+
+  - name: STR_GAUSS_REAPER_TOKEN            # Gauss Reaper
+    cost: 200
+    points: 10
+    needItem: true
+    unlocks:
+      - STR_GAUSS_REAPER
+
+  - name: STR_GAUSS_BLASTER_TOKEN           # Gauss Blaster
+    cost: 200
+    points: 10
+    needItem: true
+    unlocks:
+      - STR_GAUSS_BLASTER
+
+  - name: STR_SYNAPTIC_DISINTEGRATOR_TOKEN  # Synaptic Disintegrator
+    cost: 200
+    points: 10
+    needItem: true
+    unlocks:
+      - STR_SYNAPTIC_DISINTEGRATOR
+
+  - name: STR_HYPERPHASESWORD_TOKEN         # Hyperphase Sword
+    cost: 200
+    points: 10
+    needItem: true
+    unlocks:
+      - STR_HYPERPHASESWORD
+
+  - name: STR_NECRON_WARSCYTHE_TOKEN        # Necron Warscythe
+    cost: 200
+    points: 10
+    needItem: true
+    unlocks:
+      - STR_NECRON_WARSCYTHE
+
   - name: STR_HOLOGRAM_GRENADE_REQUISITION  # Hologram Caster Requisition
     cost: 200
-    points: 50
+    points: 10
     dependencies:
       - STR_PICKED_LOYALIST_STRATEGY
       - STR_MIDTIER_PREREQ
@@ -1598,15 +1707,6 @@ research:
     dependencies:
       - STR_GENERALLOCK
 
-  - name: STR_SHOTGUNS_ADV          # Shotgun research for SM/Arbites - unlocks krak/incin ammo
-    cost: 65
-    points: 10
-    dependencies:
-      - STR_SCOUT_WEAPONS
-    unlocks:
-      - STR_40MM_AMMO
-    listOrder: 10 # push above corpses/etc
-
   - name: STR_SCOUT_BOLT_RIFLE      # Bolt Sniper Rifle unlock
     cost: 100
     points: 20
@@ -1888,9 +1988,13 @@ research:
     cost: 400 # was 200
     points: 20
     dependencies:
-      - STR_MARINES_STRATEGY
+      - STR_NOT_ADEPTUS_TERRA
+      - STR_NOT_ADEPTAS
+      - STR_NOT_GUARD
       - STR_NOT_PRIMARIS
+      - STR_NOT_ASSASSINORUM
       - STR_UFO_CONSTRUCTION
+      - STR_HIGHTIER_PREREQ
 
   - name: STR_SMT_GENESEED_REQ      # Geneseed Requisition
     cost: 100

@@ -32,6 +32,8 @@ extraStrings:
       STR_SKULL_TECH: Servo Skull
       STR_T_BOLTER_TECH: Tarantula Sentry
       STR_THUNDERFIRE_TECH: Thunderfire Drone
+      STR_T_MISSILE_BLACK: Tarantula Sentry
+      TARANTULA_MISSILE_BLACK_ARMOR: Tarantula Sentry
       ### MISC
       STR_AWARD_DECOR_0: "Awarded"
       STR_AWARD_DECOR_1: "Second bronze pin"
@@ -64,10 +66,19 @@ extraStrings:
       STR_SNAP_SHOT_COUNT: "Snap (x{0})"
       STR_FULL_AUTO: "Full Auto"
       STR_FULL_AUTO_COUNT: "Full Auto (x{0})"
+      STR_REACT_SHOT: "Reaction Fire"
       STR_DIRECT_SHOT: "Direct Shot"
       STR_ARCING_SHOT: "Arcing Shot"
       STR_ARCING_SHOT_SHORT: "Arcing Shot (x{0})"
       STR_CASTELLAN_SHOT: "Castellan Burst"
+      STR_STANDARD_SHOT: "Standard Shot"
+      STR_STANDARD_SHOT_SHORT: "Standard Ammo (x{0})"
+      STR_AP_SHOT: "AP/Conc Shot"
+      STR_AP_SHOT_SHORT: "AP/Stun Ammo (x{0})"
+      STR_INC_SHOT: "Incen/Frag Shot"
+      STR_INC_SHOT_SHORT: "Incen/Frag Ammo (x{0})"
+      STR_ALT_FIRE: "Alt Ammo Shot"
+      STR_REDEEMER_SHOT: "Regular/Krak Shot"
       STR_FIRESUPPORT_STRIKE_COUNT: "Orb. Strike (x{0})"
       STR_FIRESUPPORT_LANCE_COUNT: "Orb. Lance (x{0})"
       STR_FIRESUPPORT_BOLTER_COUNT: "CAS Bolter (x{0})"
@@ -86,6 +97,7 @@ extraStrings:
       STR_DAMAGE_12: "GRAVITON"
       STR_DAMAGE_13: "WARP"
       STR_DAMAGE_14: "SONIC"
+      STR_DAMAGE_15: "GAUSS"
       STR_STRIKE_ORBITAL: Orbital Barrage
       STR_BOMBARD_SET_POSITION: Set Firing Position
       STR_CALL_ORBITAL: Orbital Barrage
@@ -251,6 +263,10 @@ extraStrings:
       STR_GK_TERM_TECHMARINE_SB_UC: "Terminator (Stormbolter)"
       STR_GK_TERM_LIBRARIAN_UC: "Aegis Terminator Armor"
       STR_GK_TERM_LIBRARIAN_SB_UC: "Terminator (Stormbolter)"
+      STR_INQSTORM_CARAPACE_FLAYER_UC: Inq Gauss Rifle
+      STR_INQSTORM_CARAPACE_REAPER_UC: Inq Gauss Carbine
+      STR_INQSTORM_CARAPACE_SYNAPTIC_UC: Inq Neural Sniper
+      STR_INQSTORM_POWER_GAUSSBLASTER_UC: Inq Gauss Cannon
       ### ITEMS
       STR_DWSCT_CORPSE: Deathwatch Corpse
       STR_MKX_DW_GRV_CORPSE: Deathwatch Corpse
@@ -324,11 +340,30 @@ extraStrings:
       STR_BOLT_SNIPER_AMMO_SHRED: Shredder Sniper Bolt
       STR_BOLT_SNIPER_AMMO_MC: Master Crafted Sniper Bolt
       STR_HEAVY_BOLTER_MARS: Mars-Pattern Heavy Bolter
-      STR_AC_AP_BELT: AP Heavy Bolter Belt
-      STR_AC_HE_BELT: HE Heavy Bolter Belt
-      STR_AC_I_BELT: I Heavy Bolter Belt
-      STR_AC_MC_BELT: MC Heavy Bolter Belt # 'Master Crafted' is too long, gets cut off
-      STR_AC_MC_AMMO: MC Heavy Bolter Case # 'Master Crafted' is too long, gets cut off
+      STR_AC_AP_BELT: "AP Heavy Bolter Belt"
+      STR_AC_HE_BELT: "HE Heavy Bolter Belt"
+      STR_AC_I_BELT: "I Heavy Bolter Belt"
+      STR_AC_MC_BELT: "MC Heavy Bolter Belt" # 'Master Crafted' is too long, gets cut off
+      STR_AC_MC_AMMO: "MC Heavy Bolter Case" # 'Master Crafted' is too long, gets cut off
+      STR_SHOTGUN_SHELLS_MC: "High Grade Shotgun Shells"
+      STR_SHOTGUN_SHELLS_AP: "Shotgun AP Shells"
+      STR_SHOTGUN_SHELLS_INC: "Shotgun Incendiary Shells"
+      STR_STUN_SHELLS: "Shotgun Stun Shells"
+      STR_STUN_GAS_SHELLS: "Shotgun Gas Shells"
+      STR_REDEEMER_SHELLS: "Redeemer Shotgun Shells"
+      STR_SHOTGUN_SHELLS_HEAVY: "Heavy Shotgun Shells"
+      STR_RIPPER_GUN_CLIP: "Heavy Shotgun Drum Mag"
+      STR_SHOTGUN_SHELLS_HEAVY_MC: "High Grade H.Shotgun Shells"
+      STR_RIPPER_GUN_CLIP_MC: "High Grade H.Shotgun Drum"
+      STR_SHOTGUN_SHELLS_H_AP: "H.Shotgun AP Shells"
+      STR_RIPPER_GUN_CLIP_AP: "H.Shotgun AP Drum"
+      STR_SHOTGUN_SHELLS_H_INC: "H.Shotgun Incendiary Shells"
+      STR_RIPPER_GUN_CLIP_INC: "H.Shotgun Incendiary Drum"
+      STR_SHOTGUN_SHELLS_H_FRAG: "H.Shotgun Frag Shells"
+      STR_RIPPER_GUN_CLIP_FRAG: "H.Shotgun Frag Drum"
+      STR_STUN_SHELLS_HEAVY: "H.Shotgun Concussive Shells"
+      STR_SHOTGUN_SHELLS_WYRM: "H.Shotgun Wyrmsbreath Shells"
+      STR_RIPPER_GUN_CLIP_WYRM: "H.Shotgun Wyrmsbreath Drum"
       STR_GRENADE_LAUNCHER_ASTARTES: Astartes Grenade Launcher
       STR_AUTOCANNON_HANDHELD: Guard Autocannon
       STR_APOTH_NARTH: Narthecium
@@ -410,11 +445,29 @@ extraStrings:
       STR_BOMBARD_LASCANNON: Laser Destroyer
       STR_PISTOLB_AI: Boltpistol Ultra Pattern
       STR_RIFLEB_AI: Bolter Ultra Pattern
-      STR_SYNAPTIC_DISINTEGRATOR_AI: Synaptic Disintegrator
+      INV_NULL_GAUSS_BACKPACK: ""
+      STR_GAUSS_FLAYER_TOKEN: Gauss Flayer
+      STR_GAUSS_FLAYER_PLAYER: Xenarite Gauss Rifle
+      STR_GAUSS_FLAYER_ARMOR: Xenarite Gauss Rifle
+      STR_GAUSS_REAPER_TOKEN: Gauss Reaper
+      STR_GAUSS_REAPER_PLAYER: Xenarite Gauss Carbine 
+      STR_GAUSS_REAPER_ARMOR: Xenarite Gauss Carbine 
+      STR_GAUSS_BLASTER_TOKEN: Gauss Blaster
+      STR_GAUSS_BLASTER_PLAYER: Xenarite Gauss Cannon
+      STR_GAUSS_BLASTER_ARMOR: Xenarite Gauss Cannon
+      STR_SYNAPTIC_DISINTEGRATOR_TOKEN: Synaptic Disintegrator
+      STR_SYNAPTIC_DISINTEGRATOR_PLAYER: Xenarite Neural Sniper
+      STR_SYNAPTIC_DISINTEGRATOR_ARMOR: Xenarite Neural Sniper
+      STR_HYPERPHASESWORD_PLAYER: Xenophase Blade
+      STR_HYPERPHASESWORD_TOKEN: Xenophase Blade
+      STR_NECRON_WARSCYTHE_PLAYER: Xenophase Scythe
+      STR_NECRON_WARSCYTHE_TOKEN: Xenophase Scythe
       STR_SUPERFLARE: Flare
       STR_SUPERFLARE_SHORT: Flare
       STR_SKULL_ANALYZE: Analyze
       STR_THUNDERFIRE_CANNON: Thunderfire Cannon
+      STR_TB_MISSILE_L: Hyperios Missiles
+      STR_TB_MISSILE_R: Hyperios Missiles
       STR_GENERICSERVITOR_AMMO: "Munitions Rack"
       ### CRAFT
       STR_AVENGER: "THUNDERHAWK T."
@@ -638,7 +691,12 @@ extraStrings:
       STR_MARINE_BOLTRIFLES: Astartes Boltrifles
       STR_MARINE_BOLTRIFLES_ADV: Advanced Boltrifles
       STR_STORMBOLTER_SM: Storm Bolters
-      STR_SHOTGUNS_ADV: Advanced Shotguns
+      STR_SHOTGUNS_ADV: Advanced Shotgun Ammo
+      STR_HEAVY_SHOTGUN_OGRYN: Ripper Guns
+      STR_HEAVY_SHOTGUN_MARINE: Astartes Shotguns
+      STR_HEAVY_SHOTGUN_ARBITES: Lawbringer Shotguns
+      STR_HEAVY_SHOTGUN_SHELLS: Heavy Shotgun Shells
+      STR_HEAVY_SHOTGUN_DRUMS: Heavy Shotgun Ammo Drums
       STR_MARINE_CHAPEL: Chapter Teachings
       STR_MARINE_CAPTAIN: Company Captains
       STR_CHAP_RELICS: Chaplain Relics
@@ -705,6 +763,7 @@ extraStrings:
       STR_GENESEED: Geneseed
       STR_SMT_GENESEED_REQ: Requisition Geneseed
       STR_SMT_GENESEED_REFINE: Refine Geneseed
+      STR_SMT_GENESEED_RECLAIM: Reclaim Geneseed
       STR_DEV_ARMOR_DW: MK7 Devastator Armor
       STR_ASS_ARMOR_DW: MK7 Assault Armor
       STR_APOT_ARMOR_DW: MK7 Apothecary Armor
@@ -728,7 +787,7 @@ extraStrings:
       STR_SCRIPT_FLIGHT_DURATION_LEFT: "Flight is already active!{NEWLINE}Duration Left: {0}"
       STR_SCRIPT_COOLDOWN_DURATION_LEFT: "Ability is on cooldown!{NEWLINE}Turns Left: {0}"
       STR_SCRIPT_SHIELD_ACTIVE: "Shield Active!{NEWLINE}Shield Health: {0}"
-      STR_STIMULANT_FAILED: "Unit cannot be given Stims!"
+      STR_STIMULANT_FAILED: "Unit cannot be given stims right now!"
       SMT_AMMO_BONUSDMG_FIRINGACC: "Precision %"
       SMT_ARMOR_SHRED_RESISTANCE: "Shred Resist (Standard)"
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: "Shred Resist (Plasma)"
@@ -903,6 +962,78 @@ extraStrings:
       STR_RECYCLE_DW: Report Fallen Marine
       STR_RECYCLE_DW_LEADER: Report Fallen Captain
       ### DEATHWATCH ARMOR
+      STR_DW_MKX_FLAYER_BA_UC: MKX Gauss Rifle
+      STR_DW_MKX_FLAYER_BT_UC: MKX Gauss Rifle
+      STR_DW_MKX_FLAYER_CF_UC: MKX Gauss Rifle
+      STR_DW_MKX_FLAYER_DA_UC: MKX Gauss Rifle
+      STR_DW_MKX_FLAYER_IF_UC: MKX Gauss Rifle
+      STR_DW_MKX_FLAYER_SALA_UC: MKX Gauss Rifle
+      STR_DW_MKX_FLAYER_SW_UC: MKX Gauss Rifle
+      STR_DW_MKX_FLAYER_ULTRA_UC: MKX Gauss Rifle
+      STR_DW_MKX_FLAYER_WS_UC: MKX Gauss Rifle
+      STR_DW_MK7_FLAYER_BA_UC: MK7 Gauss Rifle
+      STR_DW_MK7_FLAYER_BT_UC: MK7 Gauss Rifle
+      STR_DW_MK7_FLAYER_CF_UC: MK7 Gauss Rifle
+      STR_DW_MK7_FLAYER_DA_UC: MK7 Gauss Rifle
+      STR_DW_MK7_FLAYER_IF_UC: MK7 Gauss Rifle
+      STR_DW_MK7_FLAYER_SALA_UC: MK7 Gauss Rifle
+      STR_DW_MK7_FLAYER_SW_UC: MK7 Gauss Rifle
+      STR_DW_MK7_FLAYER_ULTRA_UC: MK7 Gauss Rifle
+      STR_DW_MK7_FLAYER_WS_UC: MK7 Gauss Rifle
+      STR_DW_MKX_REAPER_BA_UC: MKX Gauss Carbine
+      STR_DW_MKX_REAPER_BT_UC: MKX Gauss Carbine
+      STR_DW_MKX_REAPER_CF_UC: MKX Gauss Carbine
+      STR_DW_MKX_REAPER_DA_UC: MKX Gauss Carbine
+      STR_DW_MKX_REAPER_IF_UC: MKX Gauss Carbine
+      STR_DW_MKX_REAPER_SALA_UC: MKX Gauss Carbine
+      STR_DW_MKX_REAPER_SW_UC: MKX Gauss Carbine
+      STR_DW_MKX_REAPER_ULTRA_UC: MKX Gauss Carbine
+      STR_DW_MKX_REAPER_WS_UC: MKX Gauss Carbine
+      STR_DW_MK7_REAPER_BA_UC: MK7 Gauss Carbine
+      STR_DW_MK7_REAPER_BT_UC: MK7 Gauss Carbine
+      STR_DW_MK7_REAPER_CF_UC: MK7 Gauss Carbine
+      STR_DW_MK7_REAPER_DA_UC: MK7 Gauss Carbine
+      STR_DW_MK7_REAPER_IF_UC: MK7 Gauss Carbine
+      STR_DW_MK7_REAPER_SALA_UC: MK7 Gauss Carbine
+      STR_DW_MK7_REAPER_SW_UC: MK7 Gauss Carbine
+      STR_DW_MK7_REAPER_ULTRA_UC: MK7 Gauss Carbine
+      STR_DW_MK7_REAPER_WS_UC: MK7 Gauss Carbine
+      STR_DW_MKX_BLASTER_BA_UC: MKX Gauss Cannon
+      STR_DW_MKX_BLASTER_BT_UC: MKX Gauss Cannon
+      STR_DW_MKX_BLASTER_CF_UC: MKX Gauss Cannon
+      STR_DW_MKX_BLASTER_DA_UC: MKX Gauss Cannon
+      STR_DW_MKX_BLASTER_IF_UC: MKX Gauss Cannon
+      STR_DW_MKX_BLASTER_SALA_UC: MKX Gauss Cannon
+      STR_DW_MKX_BLASTER_SW_UC: MKX Gauss Cannon
+      STR_DW_MKX_BLASTER_ULTRA_UC: MKX Gauss Cannon
+      STR_DW_MKX_BLASTER_WS_UC: MKX Gauss Cannon
+      STR_DW_MK7_BLASTER_BA_UC: MK7 Gauss Cannon
+      STR_DW_MK7_BLASTER_BT_UC: MK7 Gauss Cannon
+      STR_DW_MK7_BLASTER_CF_UC: MK7 Gauss Cannon
+      STR_DW_MK7_BLASTER_DA_UC: MK7 Gauss Cannon
+      STR_DW_MK7_BLASTER_IF_UC: MK7 Gauss Cannon
+      STR_DW_MK7_BLASTER_SALA_UC: MK7 Gauss Cannon
+      STR_DW_MK7_BLASTER_SW_UC: MK7 Gauss Cannon
+      STR_DW_MK7_BLASTER_ULTRA_UC: MK7 Gauss Cannon
+      STR_DW_MK7_BLASTER_WS_UC: MK7 Gauss Cannon
+      STR_DW_MKX_NEURAL_BA_UC: MKX Neural Sniper
+      STR_DW_MKX_NEURAL_BT_UC: MKX Neural Sniper
+      STR_DW_MKX_NEURAL_CF_UC: MKX Neural Sniper
+      STR_DW_MKX_NEURAL_DA_UC: MKX Neural Sniper
+      STR_DW_MKX_NEURAL_IF_UC: MKX Neural Sniper
+      STR_DW_MKX_NEURAL_SALA_UC: MKX Neural Sniper
+      STR_DW_MKX_NEURAL_SW_UC: MKX Neural Sniper
+      STR_DW_MKX_NEURAL_ULTRA_UC: MKX Neural Sniper
+      STR_DW_MKX_NEURAL_WS_UC: MKX Neural Sniper
+      STR_DW_MK7_NEURAL_BA_UC: MK7 Neural Sniper
+      STR_DW_MK7_NEURAL_BT_UC: MK7 Neural Sniper
+      STR_DW_MK7_NEURAL_CF_UC: MK7 Neural Sniper
+      STR_DW_MK7_NEURAL_DA_UC: MK7 Neural Sniper
+      STR_DW_MK7_NEURAL_IF_UC: MK7 Neural Sniper
+      STR_DW_MK7_NEURAL_SALA_UC: MK7 Neural Sniper
+      STR_DW_MK7_NEURAL_SW_UC: MK7 Neural Sniper
+      STR_DW_MK7_NEURAL_ULTRA_UC: MK7 Neural Sniper
+      STR_DW_MK7_NEURAL_WS_UC: MK7 Neural Sniper
       STR_MKX_DW_ASS_BA_UC: MKX Assault Armor
       STR_MKX_DW_ASS_BT_UC: MKX Assault Armor
       STR_MKX_DW_ASS_CF_UC: MKX Assault Armor
@@ -1063,7 +1194,6 @@ extraStrings:
       STR_BOLT_SNIPER_AMMO_DEREV: Derevenant Bolt
       STR_BOLT_SNIPER_AMMO_HELS: Helspear Bolt
       STR_SHOTGUN_DW: Deathwatch Shotgun
-      STR_SHOTGUN_SHELLS_WYRM: Wyrmsbreath Shells
       AUX_CROZIUS_DW: "¬ Crozius Arcanum"
       STR_DW_PLASMA_GRENADE: ¬ Plasma Grenade
       STR_VOLKITE_DW: ¬ Volkite Caliver
@@ -1592,7 +1722,7 @@ extraStrings:
       STR_PSISKILL_SOULSTORM: Soul Storm
       STR_PSISKILL_SOULSTORM_FREE: Soul Storm
       STR_PSITOKEN_SOULSTORM: Soul Storm
-      STR_PSITOKEN_SOULSTORM_CODEX: "{NEWLINE} Engulfs the area in warp energy, tearing apart anything caught in the storm.{NEWLINE}{NEWLINE} Soul Storm can target any enemy visible to the Psyker.{NEWLINE}{NEWLINE} Damage and Area of Effect scale with PsiStrength"
+      STR_PSITOKEN_SOULSTORM_CODEX: "{NEWLINE} Engulfs the area in warp energy, tearing apart anything caught in the storm.{NEWLINE}{NEWLINE} Soul Storm can target any enemy within 20 tiles of the Psyker.{NEWLINE}{NEWLINE} Damage and Area of Effect scale with PsiStrength"
       STR_PSISKILL_HOLOCAUST: Holocaust
       STR_PSITOKEN_HOLOCAUST: Holocaust
       STR_PSITOKEN_HOLOCAUST_CODEX: "{NEWLINE} Concentrates the psykers power into white hot flames that melt through armor and banish demons.{NEWLINE}{NEWLINE} Holocaust has a maximum range of 15 and requires line of sight.{NEWLINE}{NEWLINE} Damage and Accuracy scale with PsiStrength"

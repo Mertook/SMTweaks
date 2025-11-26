@@ -1421,10 +1421,10 @@ items:
     floorSprite: -1
     hitAnimation: -1
     ignoreInCraftEquip: false
-    hiddenOnMinimap: true
     fuseType: 0 # fixed 0 turn fuse
-    isExplodingInHands: true
+    explodeInventory: 2
     isConsumable: true
+    hiddenOnMinimap: true
     supportedInventorySections:
       - STR_GROUND
     power: 0
@@ -1503,8 +1503,9 @@ items:
     healthRecovery: 0
     medikitType: 3
     medikitTargetSelf: true
-    heal: 0
     painKiller: 10
+    stimulant: 0
+    heal: 0
     tuUse: 10
     flatUse: true
     invWidth: 2
@@ -1528,6 +1529,8 @@ items:
       - STR_CHAPTER_PURITY
       - STR_ORBITAL_STRIKE_R
     medikitActionName: STR_CALL_ORBITAL
+    # medikitBackground: BOMBVOXBLACK
+    # medikitType: 0
     weight: 40
     tuUse: 60
     flatUse: false
@@ -2705,12 +2708,560 @@ items:
       ToTile: 0.3
     clipSize: 2
 
-  - type: STR_FUELTANK
+  - type: STR_FUELTANK                      # Craft Reserve Fueltank
     categories: [ STR_CRAFT_WEAPONS]
     size: 0.5
     costSell: 25000
     transferTime: 48
     listOrder: 1852
+
+  - &FORCEBLADE_GLOW
+    type: STR_FORCE_BLADE
+    scripts: # blade shine
+      recolorItemSprite: |
+        var int origColor;
+        var int origShade;
+        var int waveVal;
+        var int newShade;
+        var int temp;
+        var ptr BattleItem heldItem;
+        var ptr BattleUnit user;
+        var ptr RuleSoldier unitSoldier;
+
+        if eq blit_part blit_item_big;
+
+          item.getOwner user;
+          user.getRuleSoldier unitSoldier;
+          unitSoldier.getTag temp Tag.SMT_RESTRICTED_ITEM_USER;
+          bit_and temp 4; # psyker
+          if eq temp 0;
+            return new_pixel;
+          end;
+
+          user.getLeftHandWeapon heldItem;
+          if neq heldItem item;
+            user.getRightHandWeapon heldItem;
+            if neq heldItem item;
+              return new_pixel;
+            end;
+          end;
+
+          get_color origColor new_pixel;
+          get_shade origShade new_pixel;
+
+          begin; # handle lightning animation
+            var int maskColor 4; # light green
+            var int sparkColor 14; # light purple
+            if eq origColor maskColor;
+              set waveVal anim_frame;
+              mod waveVal 4;
+              set temp 1;
+              shl temp waveVal;
+              set newShade origShade;
+              add newShade 1;
+              bit_and newShade temp;
+              if gt newShade 0;
+                set_color new_pixel sparkColor;
+                set_shade new_pixel 0;
+              else;
+                set_color new_pixel 0;
+                set_shade new_pixel 0;
+              end;
+            end;
+          end;
+
+          begin; # handle power core
+            var int maskColor 13; # bright blue
+            if eq origColor maskColor;
+              set waveVal anim_frame;
+              mod waveVal 32;
+              sub waveVal 16;
+              abs waveVal;
+              set newShade origShade;
+              sub newShade waveVal;
+              set temp origShade;
+              add temp 6;
+              if and le waveVal origShade gt waveVal temp;
+                div newShade 2;
+                limit newShade 0 2;
+              else;
+                abs newShade;
+                limit newShade 6 10;
+              end;
+              set_shade new_pixel newShade;
+            end;
+          end;
+
+          begin; # handle blade
+            var int maskColor 7; # light blue
+            set temp 8; # normal blue
+            if or eq origColor maskColor eq origColor temp;
+              set waveVal anim_frame;
+              wavegen_tri waveVal 16 8 8;
+              div waveVal 2;
+              set newShade origShade;
+              add newShade waveVal;
+              limit_lower newShade 0;
+              set_shade new_pixel newShade;
+            end;
+          end;
+
+        end;
+
+        return new_pixel;
+
+  - type: STR_FORCE_BLADE                   # Force Blade
+    categories: [STR_CAT_MELEE]
+    bigSprite: 366
+    floorSprite: {mod: 40k, index: 606}
+    handSprite: {mod: 40k_ROSIGMA_edits, index: 2840}
+    meleeSound: {mod: 40k, index: 753}
+    meleeHitSound: {mod: 40k, index: 754}
+    meleeAnimation: {mod: 40k, index: 4}
+    listOrder: 12399
+    clipSize: -1
+    battleType: 3
+    invWidth: 2
+    invHeight: 3
+    scripts: # blade swap
+      selectItemSprite: |
+        var ptr BattleItem heldItem;
+        var ptr BattleUnit user;
+        var ptr RuleSoldier unitSoldier;
+        var int temp;
+
+        if or eq blit_part blit_item_lefthand eq blit_part blit_item_righthand; # handob animation
+            add temp anim_frame;
+            mod temp 4;
+            mul temp 8;
+            add sprite_index temp;
+        end;
+
+        if eq blit_part blit_item_big; # if bigob, check if held in hands by valid user
+          item.getOwner user;
+          user.getRuleSoldier unitSoldier;
+          unitSoldier.getTag temp Tag.SMT_RESTRICTED_ITEM_USER;
+          bit_and temp 4; # psyker
+          if eq temp 0;
+            return sprite_index;
+          end;
+
+          user.getLeftHandWeapon heldItem;
+          if neq heldItem item;
+            user.getRightHandWeapon heldItem;
+            if neq heldItem item;
+              return sprite_index;
+            end;
+          end;
+          add sprite_index 1;
+
+          user.Stats.getPsiStrength temp;
+          if ge temp 100; #overcharged
+            add sprite_index 1;
+          end;
+
+        end;
+
+        add sprite_index sprite_offset;
+        return sprite_index;
+    size: 0.2
+
+
+  - type: STR_HALLEBARD                     # Force Halberd
+    refNode: *FORCEBLADE_GLOW
+    bigSprite: 380
+    explosionHitSound: {mod: 40k_ROSIGMA_edits, index: 2171}
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 1050}
+    hitAnimFrames: 8
+    powerForAnimation: 60
+    scripts: # blade swap
+      selectItemSprite: |
+        var ptr BattleItem heldItem;
+        var ptr BattleUnit user;
+        var ptr RuleSoldier unitSoldier;
+        var int temp;
+
+        if eq blit_part blit_item_big; # if bigob, check if held in hands by valid user
+          item.getOwner user;
+          user.getRuleSoldier unitSoldier;
+          unitSoldier.getTag temp Tag.SMT_RESTRICTED_ITEM_USER;
+          bit_and temp 4; # psyker
+          if eq temp 0;
+            return sprite_index;
+          end;
+
+          user.getLeftHandWeapon heldItem;
+          if neq heldItem item;
+            user.getRightHandWeapon heldItem;
+            if neq heldItem item;
+              return sprite_index;
+            end;
+          end;
+          add sprite_index 1;
+
+          user.Stats.getPsiStrength temp;
+          if ge temp 100; #overcharged
+            add sprite_index 1;
+          end;
+
+        end;
+
+        add sprite_index sprite_offset;
+        return sprite_index;
+    size: 0.2
+
+  - type: INV_NULL_GAUSS_BACKPACK           # Necron Powerpack
+    weight: 0
+    bigSprite: 369
+    invWidth: 3
+    invHeight: 3
+    fixedWeapon: true
+    defaultInventorySlot: STR_BACK_PACK
+    defaultInvSlotX: 0
+    defaultInvSlotY: 0
+    recover: false
+
+  - &NECRON_GAUSS                           # Standard Gauss Weapon
+    type: STR_STAFF_OF_LIGHT
+    fireSound: [{mod: 40k, index: 802}, {mod: 40k, index: 803}]
+    hitSound: {mod: 40k, index: 801}
+    hitAnimation: {mod: 40k, index: 26}
+    vaporColorSurface: {mod: 40k, index: 3}
+    vaporDensitySurface: 6
+    vaporProbabilitySurface: 30
+    bulletSprite: {mod: 40k, index: 23}
+    bulletSpeed: 60
+    explosionSpeed: 5
+    recover: false
+    fixedWeapon: true
+    fixedWeaponShow: true
+    battleType: 1
+    invWidth: 2
+    invHeight: 3
+    clipSize: -1
+
+  - type: STR_GAUSS_FLAYER_PLAYER           # Gauss Flayer
+    refNode: *NECRON_GAUSS
+    bigSprite: 370
+    floorSprite: {mod: 40k, index: 700}
+    handSprite: {mod: 40k, index: 88}
+    ufopediaType: STR_GAUSS_FLAYER_PLAYER
+
+  - type: STR_GAUSS_REAPER_PLAYER           # Gauss Reaper
+    refNode: *NECRON_GAUSS
+    bigSprite: 371
+    floorSprite: {mod: 40k_ROSIGMA_edits, index: 945}
+    handSprite: {mod: 40k_ROSIGMA_edits, index: 832}
+    ufopediaType: STR_GAUSS_REAPER_PLAYER
+
+  - type: STR_GAUSS_BLASTER_PLAYER          # Gauss Blaster
+    refNode: *NECRON_GAUSS
+    bigSprite: 372
+    floorSprite: {mod: 40k, index: 701}
+    handSprite: {mod: 40k, index: 96}
+    ufopediaType: STR_GAUSS_BLASTER_PLAYER
+
+  - type: STR_SYNAPTIC_DISINTEGRATOR_PLAYER # Synaptic Disintegrator
+    refNode: *NECRON_GAUSS
+    bigSprite: 373
+    floorSprite: {mod: 40k, index: 702}
+    handSprite: {mod: 40k, index: 32}
+    ufopediaType: STR_SYNAPTIC_DISINTEGRATOR_PLAYER
+
+  - &HYPERPHASE_GLOW
+    type: STR_HYPERPHASESWORD_PLAYER
+    scripts: # blade shine
+      selectItemSprite: |
+        var ptr BattleItem heldItem;
+        var ptr BattleUnit user;
+        var int temp;
+
+        if eq blit_part blit_item_big; # if bigob, check if held in hands
+          item.getOwner user;
+          user.getLeftHandWeapon heldItem;
+          if neq heldItem item;
+            user.getRightHandWeapon heldItem;
+            if neq heldItem item;
+              return sprite_index;
+            end;
+          end;
+          add sprite_index 1;
+        end;
+
+        add sprite_index sprite_offset;
+        return sprite_index;
+
+      recolorItemSprite: |
+        var int origColor;
+        var int origShade;
+        var int waveVal;
+        var int waveVal2;
+        var int newShade;
+        var int temp;
+        var ptr BattleUnit user;
+        var ptr BattleItem heldItem;
+
+        if eq blit_part blit_item_big;
+
+          item.getOwner user;
+          user.getLeftHandWeapon heldItem;
+          if neq heldItem item;
+            user.getRightHandWeapon heldItem;
+            if neq heldItem item;
+              return new_pixel;
+            end;
+          end;
+
+          get_color origColor new_pixel;
+          get_shade origShade new_pixel;
+
+          begin; # handle power core
+            var int maskColor COLOR_X1_GREEN0; # 3 - dark green
+            if eq origColor maskColor;
+              set waveVal anim_frame;
+              wavegen_tri waveVal 32 32 31;
+              abs waveVal;
+              set newShade origShade;
+              sub newShade waveVal;
+              set temp origShade;
+              add temp 16;
+              if and le waveVal origShade ge waveVal temp;
+                div newShade 2;
+                limit newShade 0 2;
+              else;
+                abs newShade;
+                limit newShade 4 8;
+              end;
+              set_shade new_pixel newShade;
+            end;
+          end;
+
+          begin; # handle blade
+            var int maskColor COLOR_X1_GREEN1; # 4 - light green
+            if eq origColor maskColor;
+              set newShade origShade;
+              set waveVal anim_frame;
+              mod waveVal 33;
+              sub waveVal 16;
+              abs waveVal;
+              if ge origShade waveVal;
+                set temp origShade;
+                sub temp waveVal;
+                limit_upper temp 3;
+                sub newShade temp;
+              end;
+              limit newShade 0 15;
+              set_shade new_pixel newShade;
+            end;
+          end;
+        end;
+
+        return new_pixel;
+
+  - type: STR_HYPERPHASESWORD_PLAYER        # Hyperphase Sword
+    categories: [STR_CAT_NECRON, STR_CAT_ASSAULT]
+    meleeAnimation: {mod: 40k_ROSIGMA_edits, index: 4}
+    meleeSound: {mod: 40k, index: 753}
+    meleeHitSound: {mod: 40k, index: 754}
+    bigSprite: 374
+    floorSprite: 374
+    handSprite: 672
+    battleType: 3
+    clipSize: -1
+    invWidth: 2
+    invHeight: 3
+    ufopediaType: STR_HYPERPHASESWORD
+
+  - type: STR_NECRON_WARSCYTHE_PLAYER       # Hyperphase Warscythe
+    refNode: *HYPERPHASE_GLOW
+    categories: [STR_CAT_NECRON, STR_CAT_ASSAULT]
+    hitSound: {mod: 40k, index: 754}
+    bigSprite: 376
+    floorSprite: 376
+    handSprite: 680
+    bulletSpeed: 5
+    explosionHitSound: {mod: 40k_ROSIGMA_edits, index: 2171}
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 1050}
+    hitAnimFrames: 8
+    bulletSprite: 5
+    fireSound: {mod: 40k, index: 753}
+    meleeAnimation: {mod: 40k_ROSIGMA_edits, index: 4}
+    meleeSound: {mod: 40k, index: 753}
+    meleeHitSound: {mod: 40k, index: 754}
+    ufopediaType: STR_NECRON_WARSCYTHE
+    size: 0.4
+    battleType: 1
+    clipSize: -1
+    invHeight: 3
+    invWidth: 2
+
+  - type: STR_GAUSS_FLAYER_TOKEN            # Gauss Flayer Recover Token
+    categories: [STR_CAT_NECRON]
+    battleType: 0
+    invHeight: 3
+    invWidth: 2
+    size: 0.2
+    costSell: 40000
+    requires:
+      - STR_GENERALLOCK
+    bigSprite: {mod: 40k, index: 700}
+    floorSprite: {mod: 40k, index: 700}
+    handSprite: {mod: 40k, index: 88}
+    ufopediaType: STR_GAUSS_FLAYER
+
+  - type: STR_GAUSS_REAPER_TOKEN            # Gauss Reaper Recover Token
+    categories: [STR_CAT_NECRON]
+    battleType: 0
+    invHeight: 3
+    invWidth: 2
+    size: 0.2
+    costSell: 40000
+    requires:
+      - STR_GENERALLOCK
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 1030}
+    floorSprite: {mod: 40k_ROSIGMA_edits, index: 945}
+    handSprite: {mod: 40k_ROSIGMA_edits, index: 832}
+    ufopediaType: STR_GAUSS_REAPER
+
+  - type: STR_GAUSS_BLASTER_TOKEN           # Gauss Blaster Recover Token
+    categories: [STR_CAT_NECRON]
+    battleType: 0
+    invHeight: 3
+    invWidth: 2
+    size: 0.2
+    costSell: 60000
+    requires:
+      - STR_GENERALLOCK
+    bigSprite: {mod: 40k, index: 701}
+    floorSprite: {mod: 40k, index: 701}
+    handSprite: {mod: 40k, index: 96}
+    ufopediaType: STR_GAUSS_BLASTER
+
+  - type: STR_SYNAPTIC_DISINTEGRATOR_TOKEN  # Synaptic Disintegrator Recover Token
+    categories: [STR_CAT_NECRON]
+    battleType: 0
+    invHeight: 3
+    invWidth: 2
+    size: 0.2
+    costSell: 60000
+    requires:
+      - STR_GENERALLOCK
+    bigSprite: {mod: 40k, index: 702}
+    floorSprite: {mod: 40k, index: 702}
+    handSprite: {mod: 40k, index: 32}
+    ufopediaType: STR_SYNAPTIC_DISINTEGRATOR
+
+  - type: STR_HYPERPHASESWORD_TOKEN         # Hyperphase Sword Recover Token
+    categories: [STR_CAT_NECRON]
+    battleType: 0
+    invHeight: 3
+    invWidth: 2
+    size: 0.2
+    costSell: 60000
+    requires:
+      - STR_GENERALLOCK
+    bigSprite: {mod: 40k, index: 703}
+    floorSprite: {mod: 40k, index: 703}
+    handSprite: {mod: 40k, index: 312}
+    ufopediaType: STR_HYPERPHASESWORD
+
+  - type: STR_NECRON_WARSCYTHE_TOKEN        # Hyperphase Warscythe Recover Token
+    categories: [STR_CAT_NECRON]
+    battleType: 0
+    invHeight: 3
+    invWidth: 2
+    size: 0.2
+    costSell: 60000
+    requires:
+      - STR_GENERALLOCK
+    bigSprite: {mod: 40k_ROSIGMA_edits, index: 3301}
+    floorSprite: {mod: 40k_ROSIGMA_edits, index: 3242}
+    handSprite: {mod: 40k_ROSIGMA_edits, index: 1342}
+    ufopediaType: STR_NECRON_WARSCYTHE
+
+  - type: STR_GAUSS_FLAYER_ARMOR            # Gauss Flayer Armor Item
+    categories: [STR_CAT_NECRON]
+    battleType: 0
+    size: 0.2
+    costSell: 60000
+    ufopediaType: STR_GAUSS_FLAYER_PLAYER
+
+  - type: STR_GAUSS_REAPER_ARMOR            # Gauss Reaper Armor Item
+    categories: [STR_CAT_NECRON]
+    battleType: 0
+    size: 0.2
+    costSell: 60000
+    ufopediaType: STR_GAUSS_REAPER_PLAYER
+
+  - type: STR_GAUSS_BLASTER_ARMOR           # Gauss Blaster Armor Item
+    categories: [STR_CAT_NECRON]
+    battleType: 0
+    size: 0.2
+    costSell: 80000
+    ufopediaType: STR_GAUSS_BLASTER_PLAYER
+
+  - type: STR_SYNAPTIC_DISINTEGRATOR_ARMOR  # Synaptic Disintegrator Armor Item
+    categories: [STR_CAT_NECRON]
+    battleType: 0
+    size: 0.2
+    costSell: 80000
+    ufopediaType: STR_SYNAPTIC_DISINTEGRATOR_PLAYER
+
+  - type: STR_STAFF_OF_LIGHT                # Staff of Light (Architect)
+    refNode: *NECRON_GAUSS
+    requires:
+      - STR_GENERALLOCK
+
+  - type: STR_GAUSS_CANNON                  # Gauss Cannon (Destroyer)
+    refNode: *NECRON_GAUSS
+    recoveryTransformations: []
+    requires:
+      - STR_GENERALLOCK
+
+  - type: STR_GAUSS_FLAYER                  # Gauss Flayer (Rifle)
+    refNode: *NECRON_GAUSS
+    recoveryTransformations: []
+    requires:
+      - STR_GENERALLOCK
+
+  - type: STR_GAUSS_REAPER                  # Gauss Reaper (Carbine)
+    refNode: *NECRON_GAUSS
+    recoveryTransformations: []
+    requires:
+      - STR_GENERALLOCK
+
+  - type: STR_GAUSS_BLASTER                 # Gauss Blaster (Immortal)
+    refNode: *NECRON_GAUSS
+    recoveryTransformations: []
+    requires:
+      - STR_GENERALLOCK
+
+  - type: STR_SYNAPTIC_DISINTEGRATOR        # Synaptic Disintegrator
+    refNode: *NECRON_GAUSS
+    recoveryTransformations: []
+    requires:
+      - STR_GENERALLOCK
+
+  - type: STR_TRIPLE_GAUSS_CANNON           # Gauss Turret
+    refNode: *NECRON_GAUSS
+    requires:
+      - STR_GENERALLOCK
+
+  - type: STR_HYPERPHASESWORD               # Hyperphase Sword
+    recover: false
+    fixedWeapon: true
+    fixedWeaponShow: true
+    recoveryTransformations: []
+    requires:
+      - STR_GENERALLOCK
+
+  - type: STR_NECRON_WARSCYTHE              # Hyperphase Warscythe
+    recover: false
+    fixedWeapon: true
+    fixedWeaponShow: true
+    recoveryTransformations: []
+    requires:
+      - STR_GENERALLOCK
 
   - type: STR_BLANK_CORPSE                  # Blank Corpse Object
     size: 0.0
@@ -2808,5 +3359,7 @@ items:
     invHeight: 3
     armor: 150
     battleType: 11
-    recover: false
+    recover: true
+    recoveryTransformations:
+      STR_SMT_GENESEED: [1]
 

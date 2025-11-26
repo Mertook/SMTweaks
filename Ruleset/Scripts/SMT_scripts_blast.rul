@@ -71,7 +71,10 @@ extended:
           end;
 
           damaging_item.getTag temp Tag.ITEM_ARMOR_TARGET_WEAKEST;
-          if gt temp 0;
+          if eq side SIDE_UNDER;
+            add temp 1;
+          end;
+          if gt temp 1; # if value 2 or if 1 & targeting under armor
             unit.getArmor facing side;
             loop var i 5; #cycle through the armor sides
               unit.getArmor temp i;

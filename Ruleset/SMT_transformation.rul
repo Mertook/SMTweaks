@@ -954,6 +954,27 @@ soldierTransformation:
     upperBoundAtStatCaps: true
     listOrder: 82
 
+  - name: STR_RESURRECT_MARINE_GK
+    requires:
+      - STR_DREADNOUGHT_MARINE
+      - STR_GREYKNIGHTS
+    cost: 850000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 30
+      STR_ELERIUM_115: 30
+      STR_UFO_CONSTRUCTION: 10
+      STR_KILLPOINT_TOKEN: 300
+    producedSoldierType: STR_FALLEN_GK
+    producedSoldierArmor: STR_DREAD_GK_ARMOR_UC
+    allowsDeadSoldiers: true
+    allowsLiveSoldiers: false
+    needsCorpseRecovered: true
+    allowedSoldierTypes:
+      - STR_GREYKNIGHT
+    transferTime: 24
+    recoveryTime: 0
+    lowerBoundAtMinStats: true
+
   - name: STR_LV1_TO_LV2_GK
     requires:
       - STR_GENERALLOCK

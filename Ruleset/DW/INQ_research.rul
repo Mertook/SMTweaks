@@ -1,37 +1,11 @@
-research: ### For techs that don't directly touch DW but are needed to make Chamber Militant strategies work with the changes made
+research:
 
-  - name: STR_HAND_MULTILASER_RESEARCH_INQUISITION  # Multilaser?
-    cost: 0
-    points: 0
-    dependencies:
-      - STR_GENERALLOCK
-
-
-  - name: STR_INQ_TROOP_REQS                # Tech to start Inquisition troop recruitment events
-    cost: 150
-    points: 15
-    dependencies:
-      - STR_INQUISITION
-    unlocks:
-      - STR_INQ_STORMTROOPER_REQUISITION
-    listOrder: 2 # push above corpses/etc
-    spawnedEvent: STR_REINFORCEMENTS_FRATERIS_INQ
-
-  - name: STR_SUMMON_IMPERIAL_AGENTS_RESEARCH #also triggers a eventscript that sends monthly random agents
-    cost: 150 # was 500
-    points: 10
-    dependencies:
-      - STR_GENERALLOCK
-    spawnedEvent: STR_REINFORCEMENTS_FRATERIS_INQ
-
+  - delete: STR_HAND_MULTILASER_RESEARCH_INQUISITION  # Multilaser?
+  - delete: STR_INQ_TROOP_REQS                # Tech to start Inquisition troop recruitment events
+  - delete: STR_SUMMON_IMPERIAL_AGENTS_RESEARCH #also triggers a eventscript that sends monthly random agents
   - name: STR_IMPERIAL_INQUISITOR_REQUISITION #To recruit Inquisitors
-    cost: 800 # was 1000
-    points: 10
     dependencies:
-      - STR_INQUISITION
-      - STR_MIDTIER_PREREQ
-    getOneFree:
-      - STR_IMPERIAL_INQUISITOR
+      - STR_GENERALLOCK
 
   - name: STR_XENO_WEAPONS          # Inquisitor Xeno weapon tech
     cost: 160
@@ -62,3 +36,43 @@ research: ### For techs that don't directly touch DW but are needed to make Cham
     unlocks:
       - STR_ELDAR_ALLIANCE
     listOrder: 15 # push above corpses/etc
+
+
+  - delete: STR_REQUEST_ARBITES_RESEARCH  # Requisition Arbites Support
+  - delete: STR_REQUEST_JUDGES_RESEARCH  # Requisition Judges
+  - delete: STR_REQUEST_GUARD_PILOTS_RESEARCH  # Requisition Guard Pilots
+  - delete: STR_REQUEST_ADEPTAS_PILOTS_RESEARCH  # Requisition Adeptas Pilots
+  - delete: STR_REQUEST_KRIEG_KILLTEAM_RESEARCH  # Requisition Krieg Kill Team
+  - delete: STR_REQUEST_KRIEG_GRENADIER_KILLTEAM_RESEARCH  # Requisition Krieg Grenadier Kill Team
+  - delete: STR_REQUEST_KRIEG_PANZERGRENADIER_KILLTEAM_RESEARCH  # Requisition Krieg Panzergrenadier Kill Team
+  - delete: STR_REQUEST_ADEPTAS_AID_RESEARCH  # Requisition Adeptas Sororitas
+  - delete: STR_REQUEST_ADEPTAS_AID_RESEARCH_2  # Requisition Further Adeptas Sororitas
+  - delete: STR_REQUEST_OGRYN_AID_RESEARCH  # Request Ogryn Bodyguards
+  - delete: STR_REQUEST_OGRYN_AID_RESEARCH_2  # Request More Ogryn Bodyguards
+  - delete: STR_REQUEST_GUARD_AID_RESEARCH  # Requisition Guard Veterans
+  - delete: STR_REQUEST_POWER_GUARD_AID_RESEARCH  # Requisition Heavy Guard
+  - delete: STR_CONTACT_THE_ABHUMANS_RESEARCH  # Contact the Abhuman Community
+  - delete: STR_RECRUIT_OGRYN_RESEARCH  # Recruit Local Ogryn
+  - delete: STR_A_DEAL_WITH_THE_SQUATS_RESEARCH  # A Deal With The Squats
+  - delete: STR_REQUISITION_IMPERIAL_ASSASSINS_RESEARCH  # Order Imperial Assassins
+  - delete: STR_REQUISITION_IMPERIAL_ASSASSINS_RESEARCH_2
+  - delete: STR_REQUISITION_IMPERIAL_ASSASSINS_RESEARCH_3  # Order Imperial Assassins
+  - delete: STR_REQUISITION_IMPERIAL_ASSASSINS_RESEARCH_4  # Order Imperial Assassins
+  - delete: STR_REQUISITION_IMPERIAL_ASSASSINS_RESEARCH_5  # Order Imperial Assassins
+  - delete: STR_REQUISITION_IMPERIAL_ASSASSINS_RESEARCH_6  # Order Imperial Assassins
+  - delete: STR_REQUISITION_IMPERIAL_ASSASSINS_RESEARCH_7  # Order Imperial Assassins
+
+  - name: STR_INQ_STORMTROOPER_CODEX_UNLOCKER
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+  - name: STR_NOT_WORDBEARERS
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+
+
+

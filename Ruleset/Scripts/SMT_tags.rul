@@ -33,25 +33,25 @@ extended:
       ITEM_STEALTH_ASSASSIN_WEAPON: int # weapon can activate cloaked assassin on kills: X = type (1- Melee, 2- Sniper)
       ITEM_STEALTH_ASSASSIN_RANGE: int  # X = detection range when activating assassin cloak
       ## Restricted Items
-      SMT_RESTRICTED_ITEM: int          # Item should only be usable by certain units (1 = Crozius, 2 = Deathwatch Weapons, 4 = DW Captain Gear)
+      SMT_RESTRICTED_ITEM: int          # Item should only be usable by certain units (1 = Crozius, 2 = Deathwatch Weapons, 4 = Psykers)
       SMT_RESTRICTED_ACCURACY_PEN: int  # Percentage of weapon accuracy when used by incorrect units
       SMT_RESTRICTED_DAMAGE_PEN: int    # Percentage of weapon power when used by incorrect units
       SMT_RESTRICTED_DAMAGE_MELEE: int  # if !0, reduce melee power % by this much when used by incorrect units
       ## Shields
       ## Custom Ammo
       SMT_AMMO_BONUSDMG_FIRINGACC: int  # % bonus damage granted from units Firing Accuracy: (FA - 100) * Tag / 100
-      SMT_DEREVENANT_AMMO: int          # Instantly kills Necrons that are or will be knocked unconcious - value = % bonus damage added against 2x2 Necrons that can't be stunned
+      SMT_DEREVENANT_AMMO: int          # Instantly kills Necrons that are or will be knocked unconcious - value = % bonus damage added against 2x2 Necrons
       SMT_AMMO_HP_PREDMG: int           # % of power directly added to health damage ignoring armor
       SMT_SHIELD_DAMAGE_AMP: int        # % power increase based on targets shield
-      ITEM_DMGMOD_ALLIES: int           # deal reduced damage to units belonging to users faction X = % dealt, -1 = no damage
       #ITEM_DMGMOD_IMPERIUM: int         # deal reduced damage to allied units with armor tag `UNIT_TYPE_IMPERIUM: 1` X = % dealt, -1 = no damage
       SMT_GRAV_WEAPON: int              # weapon scales power with weight (armor+hp+size) and scales stun inversely with strength
       SMT_RENDING_WEAPON: int           # Negate effect of shred resistance by %
-      ITEM_ARMOR_TARGET_FACE: int        # AoE Weapon hits relative facing instead of under armor on direct hits
-      ITEM_ARMOR_TARGET_WEAKEST: int     # Weapon targets weakest armor facing when dealing damage
-      ITEM_ARMOR_DAMAGE_ALL: int         # Weapon damages all armor facings by %
+      ITEM_ARMOR_TARGET_FACE: int       # AoE Weapon hits relative facing instead of under armor on direct hits
+      ITEM_ARMOR_TARGET_WEAKEST: int    # Weapon targets weakest armor facing when dealing damage 1 = only on under armor hits, 2 = always
+      ITEM_ARMOR_DAMAGE_ALL: int        # Weapon damages all armor facings by % of base
       ITEM_IGNITES_TARGETS: int         # Weapon increases fire duration by X on hit
       SMT_LETHAL_STUN: int              # Weapon deals additional HP damage if stun is greater than units HP
+      ITEM_IGNORES_2X2_REDUCTION: int
       ## Plasma Heat
       ITEM_HEAT_SINK_COLOR: int         # sprite color index for heatsink parts that glow, if not set defaults to 2 (red)
     RuleArmor:
@@ -108,7 +108,8 @@ extended:
       FLIGHT_MOVESPEED_MODIFIER: int            # set flying movespeed to this value
       ## Unit Types
       UNIT_TYPE_ASTARTES: int                   # Space Marines
-      UNIT_TYPE_SERVITOR: int                   # Servitors
+      UNIT_TYPE_TECHSPIRIT: int                 # Valid Techmarine buff targets (servitors, vehicles etc)
+      UNIT_TYPE_SWARM: int
     RuleSoldier:
       ## Regeneration
       UNIT_REGENERATE_HEALTH_FLAT: int          # hp regen from soldier type - Flat values

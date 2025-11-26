@@ -82,29 +82,29 @@ items:
       ITEM_AMMO_SKIP_BIGOBS: 2
 
 ### Boltpistol Ammo
-  - update: STR_PISTOL_CLIP
+  - type: STR_PISTOL_CLIP
     refNode: *REF_AMMO_SKIP_ONE
   - type: STR_LIGHT_BOLTPISTOL_AMMO
     refNode: *REF_AMMO_SKIP_ONE
-  - update: STR_PISTOL_CLIP_AP
+  - type: STR_PISTOL_CLIP_AP
     refNode: *REF_AMMO_SKIP_ONE
   - type: STR_LIGHT_BOLTPISTOL_AMMO_AP
     refNode: *REF_AMMO_SKIP_ONE
-  - update: STR_PISTOL_CLIP_MC
+  - type: STR_PISTOL_CLIP_MC
     refNode: *REF_AMMO_SKIP_ONE
   - type: STR_LIGHT_BOLTPISTOL_AMMO_MC
     refNode: *REF_AMMO_SKIP_ONE
-  - update: STR_PISTOL_CLIP_EX
+  - type: STR_PISTOL_CLIP_EX
     refNode: *REF_AMMO_SKIP_ONE
   - type: STR_LIGHT_BOLTPISTOL_AMMO_EX
     refNode: *REF_AMMO_SKIP_ONE
-  - update: STR_PISTOL_CLIP_EX
+  - type: STR_PISTOL_CLIP_EX
     refNode: *REF_AMMO_SKIP_ONE
-  - update: STR_BOLTPISTOL_HELFROST_CLIP
+  - type: STR_BOLTPISTOL_HELFROST_CLIP
     refNode: *REF_AMMO_SKIP_ONE
-  - update: STR_BOLTPISTOL_HELFROST_CLIP_MC
+  - type: STR_BOLTPISTOL_HELFROST_CLIP_MC
     refNode: *REF_AMMO_SKIP_ONE
-  - update: STR_LIGHT_BOLTPISTOL_SERAPHIM_AMMO
+  - type: STR_LIGHT_BOLTPISTOL_SERAPHIM_AMMO
     refNode: *REF_AMMO_SKIP_ONE
 ### Bolter Ammo
   - type: STR_RIFLE_CLIP
@@ -179,6 +179,19 @@ items:
     refNode: *REF_AMMO_SKIP_TWO
   - type: STR_AUTOGUN_CLIP_DRUM_HP
     refNode: *REF_AMMO_SKIP_TWO
+### Shotgun Drum Ammo
+  - type: STR_RIPPER_GUN_CLIP
+    refNode: *REF_AMMO_SKIP_ONE
+  - type: STR_RIPPER_GUN_CLIP_MC
+    refNode: *REF_AMMO_SKIP_ONE
+  - type: STR_RIPPER_GUN_CLIP_AP
+    refNode: *REF_AMMO_SKIP_ONE
+  - type: STR_RIPPER_GUN_CLIP_INC
+    refNode: *REF_AMMO_SKIP_ONE
+  - type: STR_RIPPER_GUN_CLIP_FRAG
+    refNode: *REF_AMMO_SKIP_ONE
+  - type: STR_RIPPER_GUN_CLIP_WYRM
+    refNode: *REF_AMMO_SKIP_ONE
 
 ### Weapons ###
 ### Bolters
@@ -289,6 +302,13 @@ items:
   - type: STR_AUTOGUN_HEAD          # Autogun (Headhunter)
     refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
 
+### Shotguns
+  - type: STR_SHOTGUN_MARINE        # Shotgun (Marine)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+  - type: STR_SHOTGUN_DW            # Shotgun (Deathwatch)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
+  - type: STR_RIPPER_GUN            # Shotgun (Ripper)
+    refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
 
   - type: AUX_HOVERTANK_LAUNCHER    # Dreadnought Missile Launcher
     refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
@@ -296,151 +316,3 @@ items:
   - type: STR_VENGOR_LAUNCHER       # Vengor Missile Launcher
     refNode: *REF_WEAPON_AMMO_SPRITE_SWAP
 
-
-  - type: STR_FORCE_BLADE            # Force Blade
-    scripts: # blade shine
-      selectItemSprite: |
-        var int temp;
-        var int currentHeat;
-        var int maxHeat;
-        var ptr BattleItem heldItem;
-        var ptr BattleUnit user;
-        var ptr RuleSoldier unitSoldier;
-
-
-        battle_game.getTurn temp;
-        if eq temp 0;
-          return sprite_index;
-        end;
-
-        if or eq blit_part blit_item_lefthand eq blit_part blit_item_righthand; # handob animation
-            add temp anim_frame;
-            mod temp 4;
-            mul temp 8;
-            add sprite_index temp;
-        end;
-
-        if eq blit_part blit_item_big; # if bigob, check if held in hands by valid user
-          item.getOwner user;
-          user.getRuleSoldier unitSoldier;
-          unitSoldier.getTag temp Tag.SMT_RESTRICTED_ITEM_USER;
-          div temp 4; # psyker
-          mod temp 2;
-          if eq temp 0;
-            return sprite_index;
-          end;
-
-          user.getLeftHandWeapon heldItem;
-          if neq heldItem item;
-            user.getRightHandWeapon heldItem;
-            if neq heldItem item;
-              return sprite_index;
-            end;
-          end;
-          add sprite_index 1;
-
-          user.Stats.getPsiStrength temp;
-          if ge temp 100; #overcharged
-            add sprite_index 1;
-          end;
-
-        end;
-
-        add sprite_index sprite_offset;
-        return sprite_index;
-
-
-      recolorItemSprite: |
-        var int origColor;
-        var int origShade;
-        var int waveVal;
-        var int newShade;
-        var int temp;
-        var ptr BattleItem heldItem;
-        var ptr BattleUnit user;
-        var ptr RuleSoldier unitSoldier;
-
-        if eq blit_part blit_item_big;
-
-          item.getOwner user;
-          user.getRuleSoldier unitSoldier;
-          unitSoldier.getTag temp Tag.SMT_RESTRICTED_ITEM_USER;
-          div temp 4; # psyker
-          mod temp 2;
-          if eq temp 0;
-            return new_pixel;
-          end;
-
-          user.getLeftHandWeapon heldItem;
-          if neq heldItem item;
-            user.getRightHandWeapon heldItem;
-            if neq heldItem item;
-              return new_pixel;
-            end;
-          end;
-
-          get_color origColor new_pixel;
-          get_shade origShade new_pixel;
-
-          begin; # handle lightning animation
-            var int maskColor 4; # light green
-            var int sparkColor 14; # light purple
-            if eq origColor maskColor;
-              set waveVal anim_frame;
-              mod waveVal 4;
-              set temp 1;
-              shl temp waveVal;
-              set newShade origShade;
-              add newShade 1;
-              div newShade temp;
-              mod newShade 2;
-              if eq newShade 1;
-                set_color new_pixel sparkColor;
-                #battle_game.randomRange newShade 0 3;
-                set_shade new_pixel 0;
-              else;
-                set_color new_pixel 0;
-                set_shade new_pixel 0;
-              end;
-            end;
-          end;
-
-          begin; # handle power core
-            var int maskColor 13; # bright blue
-            if eq origColor maskColor;
-              set waveVal anim_frame;
-              wavegen_tri waveVal 32 32 31;
-              abs waveVal;
-              set newShade origShade;
-              sub newShade waveVal;
-              set temp origShade;
-              add temp 16;
-              if and le waveVal origShade ge waveVal temp;
-                div newShade 2;
-                limit newShade 0 2;
-              else;
-                abs newShade;
-                limit newShade 4 8;
-              end;
-              set_shade new_pixel newShade;
-            end;
-          end;
-
-          begin; # handle blade
-            var int maskColor 7; # light blue
-            set temp maskColor;
-            add temp 1; # normal blue
-            if or eq origColor maskColor eq origColor temp;
-              set waveVal anim_frame;
-              wavegen_tri waveVal 16 8 8;
-              div waveVal 2;
-              set newShade origShade;
-              add newShade waveVal;
-              limit_lower newShade 0;
-              set_shade new_pixel newShade;
-            end;
-          end;
-
-        end;
-
-        return new_pixel;

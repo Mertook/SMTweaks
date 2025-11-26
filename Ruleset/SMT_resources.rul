@@ -10,7 +10,7 @@ extraSprites:
       104: Resources/ITEMS/GRENADE/AntiPBomb_BigOb.png          # AntiPlant Bomb
       105: Resources/ITEMS/book2.png                            # Lib Book sprite
       106: Resources/ITEMS/BOMBARD/OrbitalShell.png             # Orbital Strike Weapon
-      107: Resources/ITEMS/SHOTGUN/shotgun_BigOb.png            # Astartes Shotgun
+      #107: Resources/ITEMS/SHOTGUN/shotgun_BigOb.png            # Astartes Shotgun
       108: Resources/ITEMS/HBOLTER/hbolterAP.png                # Mars HBolter Ammo AP
       109: Resources/ITEMS/HBOLTER/hbolterHE.png                # Mars HBolter Ammo HE
       110: Resources/ITEMS/HBOLTER/hbolterI.png                 # Mars HBolter Ammo I
@@ -63,8 +63,8 @@ extraSprites:
       159: Resources/ITEMS/DREAD/WDREAD_MISSILE1.png            # Dreadnought Hellfire Launcher (loaded)
       #160: Resources/UNITS/DREAD/WDREAD_MISSILE2.png            # Dreadnought Hellfire Launcher (hellfire)
       161: Resources/ITEMS/DREAD/DREADMISSILE_BigOb.png         # Dreadnought Missile (regular ammo)
-      162: Resources/ITEMS/SHOTGUN/shells_MC.png                # MC Shotgun Shells
-      163: Resources/ITEMS/SHOTGUN/shotgunDW_BigOb.png          # DW Shotgun 
+      #162: Resources/ITEMS/SHOTGUN/shells_MC.png                # MC Shotgun Shells
+      #163: Resources/ITEMS/SHOTGUN/shotgunDW_BigOb.png          # DW Shotgun 
       164: Resources/ITEMS/BSNIPER/HeavySniperDW_BigOb.png      # DW Bolt Sniper
       165: Resources/ITEMS/BOLTER/ammoDW_3.png                  # Derevenant Bolter Ammo
       166: Resources/ITEMS/BOLTER/ammoDW_4.png                  # Unused (Green 2) Bolter Ammo
@@ -74,7 +74,7 @@ extraSprites:
       170: Resources/ITEMS/BSNIPER/SniperBoltHelspear.png       # Helspear Sniper Ammo
       171: Resources/ITEMS/PRIMARIS/Absolvor_BigOb.png          # Absolvor Bolt Pistol
       172: Resources/ITEMS/PRIMARIS/AbsolvorClip_BigOb.png      # Absolvor Bolt Pistol Ammo
-      173: Resources/ITEMS/SHOTGUN/shells_Krak.png              # AP Shotgun Shells
+      #173: Resources/ITEMS/SHOTGUN/shells_Krak.png              # AP Shotgun Shells
       174: Resources/ITEMS/PRIMARIS/GEXTERMINATOR_BIGOB.png     # Interceptor Plasma Exterminator
       175: Resources/ITEMS/PRIMARIS/GEXTERMINATOR2_BIGOB.png    # Interceptor Plasma Exterminator (Dual-wielding)
       176: Resources/ITEMS/PLASMA/plasgrenade_BigOb.png         # DW Plasma Grenade
@@ -270,6 +270,45 @@ extraSprites:
       366: Resources/ITEMS/MELEE/ForceSword0_BigOb.png          # Nemesis Force Blade (uncharged)
       367: Resources/ITEMS/MELEE/ForceSword1_BigOb.png          # Nemesis Force Blade (charged)
       368: Resources/ITEMS/MELEE/ForceSword2_BigOb.png          # Nemesis Force Blade (overcharged)
+      369: Resources/ITEMS/NECRON/Gauss_Powerpack_BigOb.png     # Gauss Backpack
+      370: Resources/ITEMS/NECRON/Gauss_Flayer_BigOb.png        # Gauss Flayer
+      371: Resources/ITEMS/NECRON/Gauss_Reaper_BigOb.png        # Gauss Reaper
+      372: Resources/ITEMS/NECRON/Gauss_Blaster_BigOb.png       # Gauss Blaster
+      373: Resources/ITEMS/NECRON/Deathmark_Rifle_BigOb.png     # Synaptic Disintergrator
+      374: Resources/ITEMS/NECRON/Phaseblade0_BigOb.png         # Xenophase Sword
+      375: Resources/ITEMS/NECRON/Phaseblade1_BigOb.png         # Xenophase Sword
+      376: Resources/ITEMS/NECRON/Warscythe0_BigOb.png          # Xenophase Scythe
+      377: Resources/ITEMS/NECRON/Warscythe1_BigOb.png          # Xenophase Scythe
+      378: Resources/UNITS/SENTRY/missileL_BigOb.png            # Hyperios Missile Launcher (Black Left)
+      379: Resources/UNITS/SENTRY/missileR_BigOb.png            # Hyperios Missile Launcher (Black Right)
+      380: Resources/ITEMS/MELEE/ForceHalberd0_BigOb.png        # Nemesis Force Halberd (uncharged)
+      381: Resources/ITEMS/MELEE/ForceHalberd1_BigOb.png        # Nemesis Force Halberd (charged)
+      382: Resources/ITEMS/MELEE/ForceHalberd2_BigOb.png        # Nemesis Force Halberd (overcharged)
+      383: Resources/ITEMS/SHOTGUN/shells_STD_BigOb.png         # Shotgun Ammo (Standard)
+      384: Resources/ITEMS/SHOTGUN/shells_HGA_BigOb.png         # Shotgun Ammo (High Grade)
+      385: Resources/ITEMS/SHOTGUN/shells_PEN_BigOb.png         # Shotgun Ammo (Flechettes)
+      386: Resources/ITEMS/SHOTGUN/shells_INC_BigOb.png         # Shotgun Ammo (Incendiary)
+      387: Resources/ITEMS/SHOTGUN/shells_STN_BigOb.png         # Shotgun Ammo (Concussive)
+      388: Resources/ITEMS/SHOTGUN/shells_GAS_BigOb.png         # Shotgun Ammo (Gas)
+      389: Resources/ITEMS/SHOTGUN/shellH_STD_BigOb.png         # Heavy Shotgun Ammo (Standard)
+      390: Resources/ITEMS/SHOTGUN/shellH_HGA_BigOb.png         # Heavy Shotgun Ammo (High Grade)
+      391: Resources/ITEMS/SHOTGUN/shellH_PEN_BigOb.png         # Heavy Shotgun Ammo (Flechettes)
+      392: Resources/ITEMS/SHOTGUN/shellH_INC_BigOb.png         # Heavy Shotgun Ammo (Incendiary)
+      393: Resources/ITEMS/SHOTGUN/shellH_FRG_BigOb.png         # Heavy Shotgun Ammo (Fragmentation)
+      394: Resources/ITEMS/SHOTGUN/shellH_STN_BigOb.png         # Heavy Shotgun Ammo (Concussive)
+      395: Resources/ITEMS/SHOTGUN/shellH_WYR_BigOb.png         # Heavy Shotgun Ammo (Wyrmbreath)
+      396: Resources/ITEMS/SHOTGUN/shellD_STD_BigOb.png         # Heavy Shotgun Ammo Drum (Standard)
+      397: Resources/ITEMS/SHOTGUN/shellD_HGA_BigOb.png         # Heavy Shotgun Ammo Drum (High Grade)
+      398: Resources/ITEMS/SHOTGUN/shellD_PEN_BigOb.png         # Heavy Shotgun Ammo Drum (Flechettes)
+      399: Resources/ITEMS/SHOTGUN/shellD_INC_BigOb.png         # Heavy Shotgun Ammo Drum (Incendiary)
+      400: Resources/ITEMS/SHOTGUN/shellD_FRG_BigOb.png         # Heavy Shotgun Ammo Drum (Fragmentation)
+      401: Resources/ITEMS/SHOTGUN/shellD_WYR_BigOb.png         # Heavy Shotgun Ammo Drum (Wyrmbreath)
+      402: Resources/ITEMS/SHOTGUN/ripper0_BigOb.png            # Ripper Gun (Unloaded)
+      403: Resources/ITEMS/SHOTGUN/ripper1_BigOb.png            # Ripper Gun (Loaded)
+      404: Resources/ITEMS/SHOTGUN/shotgun0_BigOb.png           # Marine Shotgun (Unloaded)
+      405: Resources/ITEMS/SHOTGUN/shotgun2_BigOb.png           # Marine Shotgun (Loaded)
+      406: Resources/ITEMS/SHOTGUN/shotgunDW0_BigOb.png         # Deathwatch Shotgun (Unloaded)
+      407: Resources/ITEMS/SHOTGUN/shotgunDW2_BigOb.png         # Deathwatch Shotgun (Loaded)
 
       ### Corpses
       700: Resources/UNITS/DW/SCOUT/SCTDW_BigOb.png             # DW Scout Corpse
@@ -344,6 +383,8 @@ extraSprites:
       362: Resources/ITEMS/GREY/Psycannon_FlrOb.png             # Psycannon
       364: Resources/ITEMS/FLAMER/Incinerator_FlrOb.png         # Incinerator
       365: Resources/ITEMS/FLAMER/IncineratorAmmo_FlrOb.png     # Psyflame Ammo
+      374: Resources/ITEMS/NECRON/Phaseblade_FlrOb.png          # Xenophase Sword
+      376: Resources/ITEMS/NECRON/Warscythe_FlrOb.png           # Xenophase Scythe
       ### Corpses
       700: Resources/UNITS/DW/SCOUT/SCTDW_FlrOb.png             # DW Scout Corpse
       701: Resources/UNITS/TECH/CorpseTech_FlrOb.png            # Enginseer Corpse
@@ -415,6 +456,8 @@ extraSprites:
       648: Resources/ITEMS/GREY/Psycannon_HndOb.png             # Psycannon
       656: Resources/ITEMS/FLAMER/Incinerator_HndOb.png         # Incinerator
       664: Resources/ITEMS/MELEE/LChainSM_HndOb.png             # Light Chainsword
+      672: Resources/ITEMS/NECRON/Phaseblade_HndOb.png          # Xenophase Sword
+      680: Resources/ITEMS/NECRON/Warscythe_HndOb.png           # Xenophase Scythe
 
 
   - type: CustomArmorPreviews
@@ -2065,6 +2108,17 @@ extraSprites:
     files:
       0: Resources/CRAFT/GKRTT.png
 
+###Tarantula Sentry
+  - typeSingle: TARANTULABLACK.SPK
+    fileSingle: Resources/UNITS/SENTRY/TarantulaM_I.png
+  - type: TARANTULABLACK.PCK 
+    width: 256
+    height: 840
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/SENTRY/TarantulaM_S.png
+
 ###Bombard Units
   - type: BOMBARDSHELL.PCK
     subX: 32
@@ -2109,6 +2163,24 @@ extraSprites:
     files:
       0: Resources/UNITS/BOMBARD/BombardTank.png
 
+  - type: BOMBVOXBLACK
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/ITEMS/BOMBARD/VoxBoard_Black.png
+  - type: BOMBVOXBLUE
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/ITEMS/BOMBARD/VoxBoard_Blue.png
+  - type: BOMBVOXGREEN
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/ITEMS/BOMBARD/VoxBoard_Green.png
 ### Psi Ability
   - type: SENTRYWARD.PCK
     subX: 32

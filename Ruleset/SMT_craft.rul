@@ -128,7 +128,7 @@ units:
     standHeight: 16
     kneelHeight: 16
     value: 10 # was 25
-    deathSound: 23
+    deathSound: {mod: 40k, index: 23}
     intelligence: 4
     aggression: 5
     sniper: 50
@@ -182,19 +182,23 @@ armors:
       - STR_BLANK_CORPSE
     drawingRoutine: 19
     constantAnimation: false
-    damageModifier:
-      - 1.0 #none
+    damageModifier: &Ref_Vehicle_Resists
+      - 1.0 #SUPPORT
       - 1.0 #AP
-      - 0.8 #FLAMES
-      - 1.0 #HE
+      - 0.3 #FLAMES
+      - 0.8 #HE
       - 1.0 #LASCANON
       - 1.0 #PLASMA
       - 0.0 #STUN
-      - 0.8 #MELEE
-      - 1.0 #ACID
+      - 2.0 #MELEE
+      - 0.5 #ACID
       - 0.0 #SMOKE
-      - 1.0 #IMPACT
-      - 1.0 #MELTA
+      - 0.2 #IMPACT
+      - 1.2 #MELTA
+      - 0.7 #WARP
+      - 2.0 #GRAV
+      - 0.9 #SONIC
+      - 1.0 #GAUSS
     loftempsSet: [ 3 ]
     specialWeapon: STR_TURRET_RELOAD
     tags:
@@ -256,19 +260,7 @@ armors:
       - O_CORPSE
       - O_CORPSE
       - O_CORPSE
-    damageModifier:
-      - 1.0 #none
-      - 1.0 #AP
-      - 0.8 #FLAMES
-      - 1.0 #HE
-      - 1.0 #LASCANON
-      - 1.0 #PLASMA
-      - 0.0 #STUN
-      - 0.8 #MELEE
-      - 1.0 #ACID
-      - 0.0 #SMOKE
-      - 1.0 #IMPACT
-      - 1.0 #MELTA
+    damageModifier: *Ref_Vehicle_Resists
     loftempsSet: [ 92, 89, 90, 91 ]
     specialWeapon: STR_TURRET_RELOAD
     tags:
@@ -354,33 +346,18 @@ armors:
     painImmune: true
     corpseBattle:
       - STR_BLANK_CORPSE
-    damageModifier:
-      - 1.0 #SUPPORT
-      - 1.0 #AP
-      - 0.8 #FLAMES
-      - 1.0 #HE
-      - 1.0 #LASCANON
-      - 1.0 #PLASMA
-      - 0.0 #STUN
-      - 0.8 #MELEE
-      - 1.0 #ACID
-      - 0.0 #SMOKE
-      - 1.0 #IMPACT
-      - 1.0 #MELTA
-      - 1.2 #GRAV
-      - 0.8 #WARP
-      - 1.0 #SONIC
+    damageModifier: *Ref_Vehicle_Resists
     loftempsSet: [ 4 ]
     specialWeapon: STR_TURRET_RELOAD
     tags:
       INFECTION_RESIST: 100
       INTIMIDATION_RESISTANCE: 100
       SMT_ARMOR_MORALE_RESISTANCE: 100
-      SMT_ARMOR_STUN_RESISTANCE: 100
       SMT_ARMOR_STAGGER_RESISTANCE: 100
       SMT_ARMOR_IMMOBILIZE_RESISTANCE: 100
       UNIT_TYPE_MECHANICAL: 1
       UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_TECHSPIRIT: 1
 
   - type: LTT_ARMOR
     refNode: *STR_THUNDERHAWK_TURRET_ARMOR
@@ -408,13 +385,17 @@ armors:
     sideArmor: 100 # was 50
     rearArmor: 100 # was 50
     underArmor: 100
+    painImmune: true
+    damageModifier: *Ref_Vehicle_Resists
     tags:
       INFECTION_RESIST: 100
       INTIMIDATION_RESISTANCE: 100
       SMT_ARMOR_MORALE_RESISTANCE: 100
-      SMT_ARMOR_STUN_RESISTANCE: 100
       SMT_ARMOR_STAGGER_RESISTANCE: 100
       SMT_ARMOR_IMMOBILIZE_RESISTANCE: 100
+      UNIT_TYPE_MECHANICAL: 1
+      UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_TECHSPIRIT: 1
 
   - type: STR_CASSIUM_BOLTER_LEFT2_ARMOR
     refNode: *REF_CRASSUS_BOLTER
@@ -484,11 +465,11 @@ items:
     recover: true
     armor: 255
     fuseType: 0
-    isExplodingInHands: true
     bigSprite: 99
     floorSprite: -1
     invWidth: 0
     invHeight: 0
+    explodeInventory: 2
     supportedInventorySections:
       - STR_GROUND #shouldn't be able to pick this up
     costPrime:
@@ -661,55 +642,6 @@ items:
     powerForAnimation: 1
     tags:
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
-
-  # - type: STR_SMT_CRAFT_HBOLTER             # Craft Heavy Bolter weapon
-    # refNode: *STR_SMT_TURRET_GUN_DEFAULT
-    # bigSprite: {mod: 40k, index:  640}
-    # fireSound: {mod: 40k, index: 707}
-    # hitSound: {mod: 40k, index: 708}
-    # hitAnimation: {mod: 40k, index: 26}
-    # bulletSprite: 6
-    # bulletSpeed: 50
-    # costAuto:
-      # energy: 5
-      # time: 1
-      # mana: 10
-    # flatAuto:
-      # time: true
-      # energy: true
-      # mana: true
-    # costSnap:
-      # energy: 5
-      # time: 1
-      # mana: 10
-    # confSnap:
-      # shortName: STR_SNAP_SHOT_COUNT
-      # shots: 5 # half shots, meant to be used for reactions
-    # flatSnap:
-      # time: true
-      # energy: true
-      # mana: true
-    # dropoff: 4
-    # autoRange: 18
-    # snapRange: 18
-    # aimRange: 0
-    # accuracyAuto: 50 # was 40
-    # accuracySnap: 40
-    # accuracyAimed: 0
-    # tuSnap: 0
-    # tuAimed: 0
-    # power: 80 # was 80
-    # damageType: 1
-    # damageAlter:
-      # ToArmorPre: 0.1
-      # ArmorEffectiveness: 0.9
-      # ToArmor: 0.15
-      # ToHealth: 1.1
-      # ToStun: 0.5
-      # ToEnergy: 0.3
-      # ToWound: 0.2
-      # RandomWound: false
-    # autoShots: 10
 
 crafts:
 ### SPACE MARINE CRAFT
@@ -1929,8 +1861,12 @@ crafts:
               - [6, 12, 1]
             STR_BOMBARD_CANNON_SPAWNER:
               - [0, 0, 5]
-            STR_BOMBARD_SPAWNER: # 12 strikes
+            STR_BOMBARD_SPAWNER: # 16 strikes
               - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
               - [0, 0, 5]
               - [0, 0, 5]
               - [0, 0, 5]
@@ -3195,7 +3131,6 @@ craftWeapons:
       fuelMax: 750
 
 ### FINAL MISSION CRAFT
-
 terrains:
   - name: ARMYUFO                           # Space Marine Final Mission P2
     mapDataSets:
@@ -3220,22 +3155,22 @@ terrains:
             - [7, 7, 1]
             - [8, 7, 1]
           STR_BOMBARD_SPAWNER: # 16 strikes
-            - [9, 19, 5] # Bombard Platform
-            - [9, 19, 5]
-            - [9, 19, 5]
-            - [9, 19, 5]
-            - [9, 19, 5]
-            - [9, 19, 5]
-            - [9, 19, 5]
-            - [9, 19, 5]
-            - [9, 19, 5]
-            - [9, 19, 5]
-            - [9, 19, 5]
-            - [9, 19, 5]
-            - [9, 19, 5]
-            - [9, 19, 5]
-            - [9, 19, 5]
-            - [9, 19, 5]
+            - [0, 19, 5] # Bombard Platform
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
         fuseTimers:
           STR_RAZORBACK_TURRET_SPAWNER: [0, 0]
           STR_SMOKELAUNCHER_TURRET_SPAWNER: [0, 0]
@@ -3300,6 +3235,12 @@ terrains:
         width: 10
         length: 20
         items:
+          STR_IMMOLATOR_SPAWNER:
+            - [1, 15, 1]
+          STR_EXORCIST_SPAWNER:
+            - [7, 7, 1]
+          STR_CASTIGATOR_AC_SPAWNER:
+            - [7, 15, 1]
           STR_BOMBARD_SPAWNER: # 16 strikes
             - [0, 19, 5] # Bombard Platform
             - [0, 19, 5]
@@ -3317,4 +3258,44 @@ terrains:
             - [0, 19, 5]
             - [0, 19, 5]
             - [0, 19, 5]
+        fuseTimers:
+          STR_IMMOLATOR_SPAWNER: [0, 0]
+          STR_CASTIGATOR_AC_SPAWNER: [0, 0]
+          STR_EXORCIST_SPAWNER: [0, 0]
+
+  - name: CHAMBERUFO
+    mapDataSets:
+      - BLANKS
+      - CMBUFO
+    mapBlocks:
+      - name: CMBUFO
+        width: 10
+        length: 20
+        items:
+          STR_TARANTULAA_SPAWNER:
+            - [2, 15, 0]
+            - [6, 15, 0]
+          STR_SPAWNER_TARANTULA_MB:
+            - [1, 9, 0]
+            - [7, 9, 0]
+          STR_BOMBARD_SPAWNER: # 16 strikes
+            - [0, 19, 5] # Bombard Platform
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+            - [0, 19, 5]
+        fuseTimers:
+          STR_TARANTULAA_SPAWNER: [0, 0]
+          STR_SPAWNER_TARANTULA_MB: [0, 0]
 

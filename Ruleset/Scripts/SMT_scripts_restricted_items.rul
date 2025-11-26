@@ -10,7 +10,6 @@ extended:
           var int itemVal;
           var int unitVal;
           var int penalty;
-          var int checkVal;
 
           unit.getFaction unitVal;
           if neq unitVal FACTION_PLAYER; # AI ignores restricted rules
@@ -25,10 +24,8 @@ extended:
           unit.getRuleSoldier unitSoldier;
           unitSoldier.getTag unitVal Tag.SMT_RESTRICTED_ITEM_USER;
 
-          set checkVal unitVal;
-          div checkVal itemVal;
-          mod checkVal 2;
-          if eq checkVal 1;
+          bit_and unitVal itemVal;
+          if eq unitVal itemVal; # if unit has all restricted flags required by item
             return bonus;
           end;
 
@@ -53,7 +50,6 @@ items:
         var int itemVal;
         var int unitVal;
         var int penalty;
-        var int checkVal;
 
         attacker.getFaction unitVal;
         if neq unitVal FACTION_PLAYER; # AI ignores restricted rules
@@ -65,10 +61,8 @@ items:
         unitSoldier.getTag unitVal Tag.SMT_RESTRICTED_ITEM_USER;
         #debug_log "Restricted Item Dmg Ping - " itemVal unitVal power;
 
-        set checkVal unitVal;
-        div checkVal itemVal;
-        mod checkVal 2;
-        if eq checkVal 1;
+        bit_and unitVal itemVal;
+        if eq unitVal itemVal;
           return power part side;
         end;
 

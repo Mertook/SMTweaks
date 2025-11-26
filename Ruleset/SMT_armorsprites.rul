@@ -1791,7 +1791,6 @@ armors:
 
 ### Grey Knights
   - type: STR_GK_TACTICAL_UC            # Grey Knight Tactical
-    forcedTorso: 1
     spriteSheet: GK7TAC.PCK
     customArmorPreviewIndex: 211
     layersDefaultPrefix: "GKMK7"
@@ -1823,9 +1822,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "HOOD", "HELM4", "CHEST6", "LEGL6", "LEGR6", "BELT8", "SHOULDER1"]
       F10: ["", "BASE", "F7_FACE", "HOOD", "HELM1", "CHEST3", "LEGL4", "LEGR5", "BELT6", "SHOULDER1"]
       F11: ["", "BASE", "F7_FACE", "HOOD", "HELM2", "CHEST2", "LEGL5", "LEGR4", "BELT5", "SHOULDER1"]
+    forcedTorso: 1
 
   - type: STR_GK_TACTICAL_SB_UC         # Grey Knight Tactical (Stormbolter)
-    forcedTorso: 1
     spriteSheet: GK7TACSB.PCK
     customArmorPreviewIndex: 211
     layersDefaultPrefix: "GKMK7"
@@ -1857,9 +1856,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "HOOD", "HELM4", "CHEST6", "LEGL6", "LEGR6", "BELT8", "SHOULDER1", "", "SBOLTER"]
       F10: ["", "BASE", "F7_FACE", "HOOD", "HELM1", "CHEST3", "LEGL4", "LEGR5", "BELT6", "SHOULDER1", "", "SBOLTER"]
       F11: ["", "BASE", "F7_FACE", "HOOD", "HELM2", "CHEST2", "LEGL5", "LEGR4", "BELT5", "SHOULDER1", "", "SBOLTER"]
+    forcedTorso: 1
 
   - type: STR_GK_INTERCEPTOR_UC         # Grey Knight Interceptor
-    forcedTorso: 1
     spriteSheet: GK7INT.PCK
     customArmorPreviewIndex: 212
     layersDefaultPrefix: "GKMK7"
@@ -1891,9 +1890,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "HOOD", "HELM4", "CHEST6", "LEGL6", "LEGR6", "BELT8", "SHOULDER1"]
       F10: ["", "BASE", "F7_FACE", "HOOD", "HELM1", "CHEST3", "LEGL4", "LEGR5", "BELT6", "SHOULDER1"]
       F11: ["", "BASE", "F7_FACE", "HOOD", "HELM2", "CHEST2", "LEGL5", "LEGR4", "BELT5", "SHOULDER1"]
+    forcedTorso: 1
 
   - type: STR_GK_INTERCEPTOR_SB_UC      # Grey Knight Interceptor (Stormbolter)
-    forcedTorso: 1
     spriteSheet: GK7INTSB.PCK
     customArmorPreviewIndex: 212
     layersDefaultPrefix: "GKMK7"
@@ -1925,9 +1924,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "HOOD", "HELM4", "CHEST6", "LEGL6", "LEGR6", "BELT8", "SHOULDER1", "", "SBOLTER"]
       F10: ["", "BASE", "F7_FACE", "HOOD", "HELM1", "CHEST3", "LEGL4", "LEGR5", "BELT6", "SHOULDER1", "", "SBOLTER"]
       F11: ["", "BASE", "F7_FACE", "HOOD", "HELM2", "CHEST2", "LEGL5", "LEGR4", "BELT5", "SHOULDER1", "", "SBOLTER"]
+    forcedTorso: 1
 
   - type: STR_GK_TAC_APOTHECARY_UC      # Grey Knight Apothecary (Tactical)
-    forcedTorso: 1
     spriteSheet: GK7APO.PCK
     customArmorPreviewIndex: 213
     layersDefaultPrefix: "GKMK7"
@@ -1959,9 +1958,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "HOOD", "HELM4", "CHEST6", "LEGL1", "LEGR6", "BELT8", "SHOULDER1", "", "APOTH"]
       F10: ["", "BASE", "F7_FACE", "HOOD", "HELM1", "CHEST3", "LEGL4", "LEGR5", "BELT7", "SHOULDER1", "", "APOTH"]
       F11: ["", "BASE", "F7_FACE", "HOOD", "HELM2", "CHEST2", "LEGL5", "LEGR4", "BELT5", "SHOULDER1", "", "APOTH"]
+    forcedTorso: 1
 
   - type: STR_GK_TAC_LIBRARIAN_UC       # Grey Knight Librarian (Tactical)
-    forcedTorso: 1
     spriteSheet: GK7LIB.PCK
     customArmorPreviewIndex: 214
     layersDefaultPrefix: "GKMK7"
@@ -1993,9 +1992,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "HOOD", "HELML", "CHESTL", "LEGL1", "LEGR6", "", "SHOULDER3"]
       F10: ["", "BASE", "F7_FACE", "HOOD", "HELML", "CHESTL", "LEGL4", "LEGR5", "", "SHOULDER3"]
       F11: ["", "BASE", "F7_FACE", "HOOD", "HELML", "CHESTL", "LEGL5", "LEGR4", "", "SHOULDER3"]
+    forcedTorso: 1
 
   - type: STR_GK_TAC_LIBRARIAN_SB_UC    # Grey Knight Librarian (Tactical Stormbolter)
-    forcedTorso: 1
     spriteSheet: GK7LIBSB.PCK
     customArmorPreviewIndex: 214
     layersDefaultPrefix: "GKMK7"
@@ -2027,9 +2026,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "HOOD", "HELML", "CHESTL", "LEGL1", "LEGR6", "", "SHOULDER3", "", "SBOLTER"]
       F10: ["", "BASE", "F7_FACE", "HOOD", "HELML", "CHESTL", "LEGL4", "LEGR5", "", "SHOULDER3", "", "SBOLTER"]
       F11: ["", "BASE", "F7_FACE", "HOOD", "HELML", "CHESTL", "LEGL5", "LEGR4", "", "SHOULDER3", "", "SBOLTER"]
+    forcedTorso: 1
 
   - type: STR_GK_TAC_CHAPLAIN_UC        # Grey Knight Chaplain (Tactical)
-    forcedTorso: 1
     spriteSheet: GK7CHP.PCK
     customArmorPreviewIndex: 215
     layersDefaultPrefix: "GKMK7"
@@ -2061,16 +2060,16 @@ armors:
       F9: ["", "BASE", "F6_FACE", "HOOD", "HELMC", "CHEST6", "LEGL1", "LEGR1", "BELT8", "SHOULDER4", "CHAPLAIN"]
       F10: ["", "BASE", "F7_FACE", "HOOD", "HELMC", "CHEST4", "LEGL4", "LEGR5", "BELT6", "SHOULDER4", "CHAPLAIN"]
       F11: ["", "BASE", "F7_FACE", "HOOD", "HELMC", "CHEST5", "LEGL5", "LEGR1", "BELT5", "SHOULDER4", "CHAPLAIN"]
+    forcedTorso: 1
 
   - type: STR_GK_TAC_CHAPLAIN_SB_UC     # Grey Knight Chaplain (Tactical Stormbolter)
-    forcedTorso: 1
     spriteSheet: GK7CHPSB.PCK
     customArmorPreviewIndex: 215
     layersDefaultPrefix: "GKMK7"
     layersSpecificPrefix:
       1: GKTAC
       2: 0
-    layersDefinition: # cape body face mask helmet leg1 leg2 chest belt shoulder shield hand
+    layersDefinition:
       M0: ["", "BASE", "M0_FACE", "HOOD", "HELMC", "CHEST5", "LEGL1", "LEGR1", "BELT1", "SHOULDER4", "CHAPLAIN", "SBOLTER"]
       M1: ["", "BASE", "M0_FACE", "HOOD", "HELMC", "CHEST6", "LEGL3", "LEGR2", "BELT3", "SHOULDER4", "CHAPLAIN", "SBOLTER"]
       M2: ["", "BASE", "M1_FACE", "HOOD", "HELMC", "CHEST4", "LEGL5", "LEGR3", "BELT2", "SHOULDER4", "CHAPLAIN", "SBOLTER"]
@@ -2095,9 +2094,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "HOOD", "HELMC", "CHEST6", "LEGL1", "LEGR1", "BELT8", "SHOULDER4", "CHAPLAIN", "SBOLTER"]
       F10: ["", "BASE", "F7_FACE", "HOOD", "HELMC", "CHEST4", "LEGL4", "LEGR5", "BELT6", "SHOULDER4", "CHAPLAIN", "SBOLTER"]
       F11: ["", "BASE", "F7_FACE", "HOOD", "HELMC", "CHEST5", "LEGL5", "LEGR1", "BELT5", "SHOULDER4", "CHAPLAIN", "SBOLTER"]
+    forcedTorso: 1
 
   - type: STR_GK_TAC_TECHMARINE_UC      # Grey Knight Techmarine (Tactical)
-    forcedTorso: 1
     spriteSheet: GK7TEC.PCK
     customArmorPreviewIndex: 216
     layersDefaultPrefix: "GKMK7"
@@ -2129,9 +2128,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "HOOD", "HELM4", "CHEST6", "LEGL6", "LEGR6", "BELT8", "SHOULDER1", "TECH"]
       F10: ["", "BASE", "F7_FACE", "HOOD", "HELM1", "CHEST3", "LEGL4", "LEGR5", "BELT6", "SHOULDER1", "TECH"]
       F11: ["", "BASE", "F7_FACE", "HOOD", "HELM2", "CHEST2", "LEGL5", "LEGR4", "BELT5", "SHOULDER1", "TECH"]
+    forcedTorso: 1
 
   - type: STR_GK_TAC_TECHMARINE_SB_UC   # Grey Knight Techmarine (Tactical Stormbolter)
-    forcedTorso: 1
     spriteSheet: GK7TECSB.PCK
     customArmorPreviewIndex: 216
     layersDefaultPrefix: "GKMK7"
@@ -2163,9 +2162,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "HOOD", "HELM4", "CHEST6", "LEGL6", "LEGR6", "BELT8", "SHOULDER1", "TECH", "SBOLTER"]
       F10: ["", "BASE", "F7_FACE", "HOOD", "HELM1", "CHEST3", "LEGL4", "LEGR5", "BELT6", "SHOULDER1", "TECH", "SBOLTER"]
       F11: ["", "BASE", "F7_FACE", "HOOD", "HELM2", "CHEST2", "LEGL5", "LEGR4", "BELT5", "SHOULDER1", "TECH", "SBOLTER"]
+    forcedTorso: 1
 
   - type: STR_GK_TERMINATOR_UC          # Grey Knight Terminator
-    forcedTorso: 1
     spriteSheet: GKTERM.PCK
     customArmorPreviewIndex: {mod: 40k, index: 196}
     layersDefaultPrefix: "GKTERM"
@@ -2196,9 +2195,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "", "", "CHEST7", "LEGL1", "LEGR3", "BELT2", "", "SHIELD5"]
       F10: ["", "BASE", "F7_FACE", "", "", "CHEST5", "LEGL3", "LEGR2", "BELT5", "", "SHIELD3"]
       F11: ["", "BASE", "F7_FACE", "", "", "CHEST4", "LEGL2", "LEGR1", "BELT3", "", "SHIELD1"]
+    forcedTorso: 1
 
   - type: STR_GK_TERMINATOR_SB_UC       # Grey Knight Terminator (Stormbolter)
-    forcedTorso: 1
     spriteSheet: GKTERM.PCK
     customArmorPreviewIndex: {mod: 40k, index: 196}
     layersDefaultPrefix: "GKTERM"
@@ -2229,9 +2228,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "", "", "CHEST7", "LEGL1", "LEGR3", "BELT2", "", "SHIELD5"]
       F10: ["", "BASE", "F7_FACE", "", "", "CHEST5", "LEGL3", "LEGR2", "BELT5", "", "SHIELD3"]
       F11: ["", "BASE", "F7_FACE", "", "", "CHEST4", "LEGL2", "LEGR1", "BELT3", "", "SHIELD1"]
+    forcedTorso: 1
 
   - type: STR_GK_TERM_APOTHECARY_UC     # Grey Knight Apothecary (Terminator)
-    forcedTorso: 1
     spriteSheet: GKAPO.PCK
     customArmorPreviewIndex: {mod: 40k, index: 198}
     layersDefaultPrefix: "GKTERM"
@@ -2263,9 +2262,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "", "", "CHEST7", "LEGL1", "LEGR3", "BELT2", "", "SHIELD5"]
       F10: ["", "BASE", "F7_FACE", "", "", "CHEST5", "LEGL3", "LEGR2", "BELT5", "", "SHIELD3"]
       F11: ["", "BASE", "F7_FACE", "", "", "CHEST4", "LEGL2", "LEGR1", "BELT3", "", "SHIELD1"]
+    forcedTorso: 1
 
   - type: STR_GK_TERM_CHAPLAIN_UC       # Grey Knight Chaplain (Terminator)
-    forcedTorso: 1
     spriteSheet: GKTCHA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 202}
     layersDefaultPrefix: "GKTERM"
@@ -2297,9 +2296,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "", "", "CHEST7", "LEGL1", "LEGR3", "BELT2", "", "SHIELD5"]
       F10: ["", "BASE", "F7_FACE", "", "", "CHEST5", "LEGL3", "LEGR2", "BELT5", "", "SHIELD3"]
       F11: ["", "BASE", "F7_FACE", "", "", "CHEST4", "LEGL2", "LEGR1", "BELT3", "", "SHIELD1"]
+    forcedTorso: 1
 
   - type: STR_GK_TERM_CHAPLAIN_SB_UC    # Grey Knight Chaplain (Terminator Stormbolter)
-    forcedTorso: 1
     spriteSheet: GKTCHA.PCK
     customArmorPreviewIndex: {mod: 40k, index: 202}
     layersDefaultPrefix: "GKTERM"
@@ -2331,9 +2330,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "", "", "CHEST7", "LEGL1", "LEGR3", "BELT2", "", "SHIELD5"]
       F10: ["", "BASE", "F7_FACE", "", "", "CHEST5", "LEGL3", "LEGR2", "BELT5", "", "SHIELD3"]
       F11: ["", "BASE", "F7_FACE", "", "", "CHEST4", "LEGL2", "LEGR1", "BELT3", "", "SHIELD1"]
+    forcedTorso: 1
 
   - type: STR_GK_TERM_TECHMARINE_UC     # Grey Knight Techmarine (Terminator)
-    forcedTorso: 1
     spriteSheet: GKTTEC.PCK
     customArmorPreviewIndex: {mod: 40k, index: 200}
     layersDefaultPrefix: "GKTERM"
@@ -2365,9 +2364,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "", "", "CHEST7", "LEGL1", "LEGR3", "BELT2", "", "SHIELD5"]
       F10: ["", "BASE", "F7_FACE", "", "", "CHEST5", "LEGL3", "LEGR2", "BELT5", "", "SHIELD3"]
       F11: ["", "BASE", "F7_FACE", "", "", "CHEST4", "LEGL2", "LEGR1", "BELT3", "", "SHIELD1"]
+    forcedTorso: 1
 
   - type: STR_GK_TERM_TECHMARINE_SB_UC  # Grey Knight Techmarine (Terminator Stormbolter)
-    forcedTorso: 1
     spriteSheet: GKTTEC.PCK
     customArmorPreviewIndex: {mod: 40k, index: 200}
     layersDefaultPrefix: "GKTERM"
@@ -2399,9 +2398,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "", "", "CHEST7", "LEGL1", "LEGR3", "BELT2", "", "SHIELD5"]
       F10: ["", "BASE", "F7_FACE", "", "", "CHEST5", "LEGL3", "LEGR2", "BELT5", "", "SHIELD3"]
       F11: ["", "BASE", "F7_FACE", "", "", "CHEST4", "LEGL2", "LEGR1", "BELT3", "", "SHIELD1"]
+    forcedTorso: 1
 
   - type: STR_GK_TERM_LIBRARIAN_UC      # Grey Knight Librarian (Terminator)
-    forcedTorso: 1
     spriteSheet: GKTLIB.PCK
     customArmorPreviewIndex: {mod: 40k, index: 204}
     layersDefaultPrefix: "GKTERM"
@@ -2434,9 +2433,9 @@ armors:
       F9: ["", "BASE", "F6_FACE", "EYES", "", "", "", "LEGR3"]
       F10: ["", "BASE", "F7_FACE", "EYES", "", "", "LEGL2", "LEGR3"]
       F11: ["", "BASE", "F7_FACE", "EYES", "", "", "LEGL3", ""]
+    forcedTorso: 1
 
   - type: STR_GK_TERM_LIBRARIAN_SB_UC   # Grey Knight Librarian (Terminator Stormbolter)
-    forcedTorso: 1
     spriteSheet: GKTLIB.PCK
     customArmorPreviewIndex: {mod: 40k, index: 204}
     layersDefaultPrefix: "GKTERM"
@@ -2469,13 +2468,496 @@ armors:
       F9: ["", "BASE", "F6_FACE", "EYES", "", "", "", "LEGR3"]
       F10: ["", "BASE", "F7_FACE", "EYES", "", "", "LEGL2", "LEGR3"]
       F11: ["", "BASE", "F7_FACE", "EYES", "", "", "LEGL3", ""]
-
-
-
-
-
-
-
-
+    forcedTorso: 1
 
 ### Deathwatch
+  - &REF_DW_MKX_BA                      # DW MKX Blood Angel
+    type: STR_DW_MKX_FLAYER_BA_UC
+    spriteSheet: MKXTACDWBA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 422}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "MKXDWBA", "M0_FACE"]
+      M1: ["0", "MKXDWBA", "M1_FACE"]
+      M2: ["0", "MKXDWBA", "M4_FACE"]
+      M3: ["0", "MKXDWBA", "M5_FACE"]
+      M4: ["0", "MKXDWBA", "M6_FACE"]
+      M5: ["0", "MKXDWBA", "M7_FACE"]
+      F0: ["0", "MKXDWBA", "F0_FACE"]
+      F1: ["0", "MKXDWBA", "F1_FACE"]
+      F2: ["0", "MKXDWBA", "F4_FACE"]
+      F3: ["0", "MKXDWBA", "F5_FACE"]
+      F4: ["0", "MKXDWBA", "F6_FACE"]
+      F5: ["0", "MKXDWBA", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MKX_REAPER_BA_UC
+    refNode: *REF_DW_MKX_BA
+  - type: STR_DW_MKX_BLASTER_BA_UC
+    refNode: *REF_DW_MKX_BA
+  - type: STR_DW_MKX_NEURAL_BA_UC
+    refNode: *REF_DW_MKX_BA
+
+  - &REF_DW_MKX_BT                      # DW MKX Black Templar
+    type: STR_DW_MKX_FLAYER_BT_UC
+    spriteSheet: MKXTACDWBT.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 424}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "MKXDWBT", "M0_FACE"]
+      M1: ["0", "MKXDWBT", "M1_FACE"]
+      M2: ["0", "MKXDWBT", "M4_FACE"]
+      M3: ["0", "MKXDWBT", "M5_FACE"]
+      M4: ["0", "MKXDWBT", "M6_FACE"]
+      M5: ["0", "MKXDWBT", "M7_FACE"]
+      F0: ["0", "MKXDWBT", "F0_FACE"]
+      F1: ["0", "MKXDWBT", "F1_FACE"]
+      F2: ["0", "MKXDWBT", "F4_FACE"]
+      F3: ["0", "MKXDWBT", "F5_FACE"]
+      F4: ["0", "MKXDWBT", "F6_FACE"]
+      F5: ["0", "MKXDWBT", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MKX_REAPER_BT_UC
+    refNode: *REF_DW_MKX_BT
+  - type: STR_DW_MKX_BLASTER_BT_UC
+    refNode: *REF_DW_MKX_BT
+  - type: STR_DW_MKX_NEURAL_BT_UC
+    refNode: *REF_DW_MKX_BT
+
+  - &REF_DW_MKX_CF                      # DW MKX Crimson Fist
+    type: STR_DW_MKX_FLAYER_CF_UC
+    spriteSheet: MKXTACDWCF.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 420}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "MKXDWCF", "M0_FACE"]
+      M1: ["0", "MKXDWCF", "M1_FACE"]
+      M2: ["0", "MKXDWCF", "M4_FACE"]
+      M3: ["0", "MKXDWCF", "M5_FACE"]
+      M4: ["0", "MKXDWCF", "M6_FACE"]
+      M5: ["0", "MKXDWCF", "M7_FACE"]
+      F0: ["0", "MKXDWCF", "F0_FACE"]
+      F1: ["0", "MKXDWCF", "F1_FACE"]
+      F2: ["0", "MKXDWCF", "F4_FACE"]
+      F3: ["0", "MKXDWCF", "F5_FACE"]
+      F4: ["0", "MKXDWCF", "F6_FACE"]
+      F5: ["0", "MKXDWCF", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MKX_REAPER_CF_UC
+    refNode: *REF_DW_MKX_CF
+  - type: STR_DW_MKX_BLASTER_CF_UC
+    refNode: *REF_DW_MKX_CF
+  - type: STR_DW_MKX_NEURAL_CF_UC
+    refNode: *REF_DW_MKX_CF
+
+  - &REF_DW_MKX_DA                      # DW MKX Dark Angel
+    type: STR_DW_MKX_FLAYER_DA_UC
+    spriteSheet: MKXTACDWDA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 423}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "MKXDWDA", "M0_FACE"]
+      M1: ["0", "MKXDWDA", "M1_FACE"]
+      M2: ["0", "MKXDWDA", "M4_FACE"]
+      M3: ["0", "MKXDWDA", "M5_FACE"]
+      M4: ["0", "MKXDWDA", "M6_FACE"]
+      M5: ["0", "MKXDWDA", "M7_FACE"]
+      F0: ["0", "MKXDWDA", "F0_FACE"]
+      F1: ["0", "MKXDWDA", "F1_FACE"]
+      F2: ["0", "MKXDWDA", "F4_FACE"]
+      F3: ["0", "MKXDWDA", "F5_FACE"]
+      F4: ["0", "MKXDWDA", "F6_FACE"]
+      F5: ["0", "MKXDWDA", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MKX_REAPER_DA_UC
+    refNode: *REF_DW_MKX_DA
+  - type: STR_DW_MKX_BLASTER_DA_UC
+    refNode: *REF_DW_MKX_DA
+  - type: STR_DW_MKX_NEURAL_DA_UC
+    refNode: *REF_DW_MKX_DA
+
+  - &REF_DW_MKX_IF                      # DW MKX Imperial Fist
+    type: STR_DW_MKX_FLAYER_IF_UC
+    spriteSheet: MKXTACDWIF.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 421}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "MKXDWIF", "M0_FACE"]
+      M1: ["0", "MKXDWIF", "M1_FACE"]
+      M2: ["0", "MKXDWIF", "M4_FACE"]
+      M3: ["0", "MKXDWIF", "M5_FACE"]
+      M4: ["0", "MKXDWIF", "M6_FACE"]
+      M5: ["0", "MKXDWIF", "M7_FACE"]
+      F0: ["0", "MKXDWIF", "F0_FACE"]
+      F1: ["0", "MKXDWIF", "F1_FACE"]
+      F2: ["0", "MKXDWIF", "F4_FACE"]
+      F3: ["0", "MKXDWIF", "F5_FACE"]
+      F4: ["0", "MKXDWIF", "F6_FACE"]
+      F5: ["0", "MKXDWIF", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MKX_REAPER_IF_UC
+    refNode: *REF_DW_MKX_IF
+  - type: STR_DW_MKX_BLASTER_IF_UC
+    refNode: *REF_DW_MKX_IF
+  - type: STR_DW_MKX_NEURAL_IF_UC
+    refNode: *REF_DW_MKX_IF
+
+  - &REF_DW_MKX_SALA                    # DW MKX Salamander
+    type: STR_DW_MKX_FLAYER_SALA_UC
+    spriteSheet: MKXTACDWSALA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 423}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "MKXDWSALA", "M0_FACE"]
+      M1: ["0", "MKXDWSALA", "M1_FACE"]
+      M2: ["0", "MKXDWSALA", "M4_FACE"]
+      M3: ["0", "MKXDWSALA", "M5_FACE"]
+      M4: ["0", "MKXDWSALA", "M6_FACE"]
+      M5: ["0", "MKXDWSALA", "M7_FACE"]
+      F0: ["0", "MKXDWSALA", "F0_FACE"]
+      F1: ["0", "MKXDWSALA", "F1_FACE"]
+      F2: ["0", "MKXDWSALA", "F4_FACE"]
+      F3: ["0", "MKXDWSALA", "F5_FACE"]
+      F4: ["0", "MKXDWSALA", "F6_FACE"]
+      F5: ["0", "MKXDWSALA", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MKX_REAPER_SALA_UC
+    refNode: *REF_DW_MKX_SALA
+  - type: STR_DW_MKX_BLASTER_SALA_UC
+    refNode: *REF_DW_MKX_SALA
+  - type: STR_DW_MKX_NEURAL_SALA_UC
+    refNode: *REF_DW_MKX_SALA
+
+  - &REF_DW_MKX_SW                      # DW MKX Space Wolf
+    type: STR_DW_MKX_FLAYER_SW_UC
+    spriteSheet: MKXTACDWSW.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 421}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "MKXDWSW", "M0_FACE"]
+      M1: ["0", "MKXDWSW", "M1_FACE"]
+      M2: ["0", "MKXDWSW", "M4_FACE"]
+      M3: ["0", "MKXDWSW", "M5_FACE"]
+      M4: ["0", "MKXDWSW", "M6_FACE"]
+      M5: ["0", "MKXDWSW", "M7_FACE"]
+      F0: ["0", "MKXDWSW", "F0_FACE"]
+      F1: ["0", "MKXDWSW", "F1_FACE"]
+      F2: ["0", "MKXDWSW", "F4_FACE"]
+      F3: ["0", "MKXDWSW", "F5_FACE"]
+      F4: ["0", "MKXDWSW", "F6_FACE"]
+      F5: ["0", "MKXDWSW", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MKX_REAPER_SW_UC
+    refNode: *REF_DW_MKX_SW
+  - type: STR_DW_MKX_BLASTER_SW_UC
+    refNode: *REF_DW_MKX_SW
+  - type: STR_DW_MKX_NEURAL_SW_UC
+    refNode: *REF_DW_MKX_SW
+
+  - &REF_DW_MKX_ULTRA                   # DW MKX Ultramarine
+    type: STR_DW_MKX_FLAYER_ULTRA_UC
+    spriteSheet: MKXTACDWULTRA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 420}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "MKXDWULTRA", "M0_FACE"]
+      M1: ["0", "MKXDWULTRA", "M1_FACE"]
+      M2: ["0", "MKXDWULTRA", "M4_FACE"]
+      M3: ["0", "MKXDWULTRA", "M5_FACE"]
+      M4: ["0", "MKXDWULTRA", "M6_FACE"]
+      M5: ["0", "MKXDWULTRA", "M7_FACE"]
+      F0: ["0", "MKXDWULTRA", "F0_FACE"]
+      F1: ["0", "MKXDWULTRA", "F1_FACE"]
+      F2: ["0", "MKXDWULTRA", "F4_FACE"]
+      F3: ["0", "MKXDWULTRA", "F5_FACE"]
+      F4: ["0", "MKXDWULTRA", "F6_FACE"]
+      F5: ["0", "MKXDWULTRA", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MKX_REAPER_ULTRA_UC
+    refNode: *REF_DW_MKX_ULTRA
+  - type: STR_DW_MKX_BLASTER_ULTRA_UC
+    refNode: *REF_DW_MKX_ULTRA
+  - type: STR_DW_MKX_NEURAL_ULTRA_UC
+    refNode: *REF_DW_MKX_ULTRA
+
+  - &REF_DW_MKX_WS                      # DW MKX White Scar
+    type: STR_DW_MKX_FLAYER_WS_UC
+    spriteSheet: MKXTACDWWS.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 425}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "MKXDWWS", "M0_FACE"]
+      M1: ["0", "MKXDWWS", "M1_FACE"]
+      M2: ["0", "MKXDWWS", "M4_FACE"]
+      M3: ["0", "MKXDWWS", "M5_FACE"]
+      M4: ["0", "MKXDWWS", "M6_FACE"]
+      M5: ["0", "MKXDWWS", "M7_FACE"]
+      F0: ["0", "MKXDWWS", "F0_FACE"]
+      F1: ["0", "MKXDWWS", "F1_FACE"]
+      F2: ["0", "MKXDWWS", "F4_FACE"]
+      F3: ["0", "MKXDWWS", "F5_FACE"]
+      F4: ["0", "MKXDWWS", "F6_FACE"]
+      F5: ["0", "MKXDWWS", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MKX_REAPER_WS_UC
+    refNode: *REF_DW_MKX_WS
+  - type: STR_DW_MKX_BLASTER_WS_UC
+    refNode: *REF_DW_MKX_WS
+  - type: STR_DW_MKX_NEURAL_WS_UC
+    refNode: *REF_DW_MKX_WS
+
+
+
+  - &REF_DW_MK7_BA                      # DW MK7 Blood Angel
+    type: STR_DW_MK7_FLAYER_BA_UC
+    spriteSheet: TACDWBA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 542}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "TACDWBA", "M0_FACE"]
+      M1: ["0", "TACDWBA", "M1_FACE"]
+      M2: ["0", "TACDWBA", "M4_FACE"]
+      M3: ["0", "TACDWBA", "M5_FACE"]
+      M4: ["0", "TACDWBA", "M6_FACE"]
+      M5: ["0", "TACDWBA", "M7_FACE"]
+      F0: ["0", "TACDWBA", "F0_FACE"]
+      F1: ["0", "TACDWBA", "F1_FACE"]
+      F2: ["0", "TACDWBA", "F4_FACE"]
+      F3: ["0", "TACDWBA", "F5_FACE"]
+      F4: ["0", "TACDWBA", "F6_FACE"]
+      F5: ["0", "TACDWBA", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MK7_REAPER_BA_UC
+    refNode: *REF_DW_MK7_BA
+  - type: STR_DW_MK7_BLASTER_BA_UC
+    refNode: *REF_DW_MK7_BA
+  - type: STR_DW_MK7_NEURAL_BA_UC
+    refNode: *REF_DW_MK7_BA
+
+  - &REF_DW_MK7_BT                      # DW MK7 Black Templar
+    type: STR_DW_MK7_FLAYER_BT_UC
+    spriteSheet: TACDWBT.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 544}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "TACDWBT", "M0_FACE"]
+      M1: ["0", "TACDWBT", "M1_FACE"]
+      M2: ["0", "TACDWBT", "M4_FACE"]
+      M3: ["0", "TACDWBT", "M5_FACE"]
+      M4: ["0", "TACDWBT", "M6_FACE"]
+      M5: ["0", "TACDWBT", "M7_FACE"]
+      F0: ["0", "TACDWBT", "F0_FACE"]
+      F1: ["0", "TACDWBT", "F1_FACE"]
+      F2: ["0", "TACDWBT", "F4_FACE"]
+      F3: ["0", "TACDWBT", "F5_FACE"]
+      F4: ["0", "TACDWBT", "F6_FACE"]
+      F5: ["0", "TACDWBT", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MK7_REAPER_BT_UC
+    refNode: *REF_DW_MK7_BT
+  - type: STR_DW_MK7_BLASTER_BT_UC
+    refNode: *REF_DW_MK7_BT
+  - type: STR_DW_MK7_NEURAL_BT_UC
+    refNode: *REF_DW_MK7_BT
+
+  - &REF_DW_MK7_CF                      # DW MK7 Crimson Fist
+    type: STR_DW_MK7_FLAYER_CF_UC
+    spriteSheet: TACDWCF.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 540}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "TACDWCF", "M0_FACE"]
+      M1: ["0", "TACDWCF", "M1_FACE"]
+      M2: ["0", "TACDWCF", "M4_FACE"]
+      M3: ["0", "TACDWCF", "M5_FACE"]
+      M4: ["0", "TACDWCF", "M6_FACE"]
+      M5: ["0", "TACDWCF", "M7_FACE"]
+      F0: ["0", "TACDWCF", "F0_FACE"]
+      F1: ["0", "TACDWCF", "F1_FACE"]
+      F2: ["0", "TACDWCF", "F4_FACE"]
+      F3: ["0", "TACDWCF", "F5_FACE"]
+      F4: ["0", "TACDWCF", "F6_FACE"]
+      F5: ["0", "TACDWCF", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MK7_REAPER_CF_UC
+    refNode: *REF_DW_MK7_CF
+  - type: STR_DW_MK7_BLASTER_CF_UC
+    refNode: *REF_DW_MK7_CF
+  - type: STR_DW_MK7_NEURAL_CF_UC
+    refNode: *REF_DW_MK7_CF
+
+  - &REF_DW_MK7_DA                      # DW MK7 Dark Angel
+    type: STR_DW_MK7_FLAYER_DA_UC
+    spriteSheet: TACDWDA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 543}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "TACDWDA", "M0_FACE"]
+      M1: ["0", "TACDWDA", "M1_FACE"]
+      M2: ["0", "TACDWDA", "M4_FACE"]
+      M3: ["0", "TACDWDA", "M5_FACE"]
+      M4: ["0", "TACDWDA", "M6_FACE"]
+      M5: ["0", "TACDWDA", "M7_FACE"]
+      F0: ["0", "TACDWDA", "F0_FACE"]
+      F1: ["0", "TACDWDA", "F1_FACE"]
+      F2: ["0", "TACDWDA", "F4_FACE"]
+      F3: ["0", "TACDWDA", "F5_FACE"]
+      F4: ["0", "TACDWDA", "F6_FACE"]
+      F5: ["0", "TACDWDA", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MK7_REAPER_DA_UC
+    refNode: *REF_DW_MK7_DA
+  - type: STR_DW_MK7_BLASTER_DA_UC
+    refNode: *REF_DW_MK7_DA
+  - type: STR_DW_MK7_NEURAL_DA_UC
+    refNode: *REF_DW_MK7_DA
+
+  - &REF_DW_MK7_IF                      # DW MK7 Imperial Fist
+    type: STR_DW_MK7_FLAYER_IF_UC
+    spriteSheet: TACDWIF.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 541}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "TACDWIF", "M0_FACE"]
+      M1: ["0", "TACDWIF", "M1_FACE"]
+      M2: ["0", "TACDWIF", "M4_FACE"]
+      M3: ["0", "TACDWIF", "M5_FACE"]
+      M4: ["0", "TACDWIF", "M6_FACE"]
+      M5: ["0", "TACDWIF", "M7_FACE"]
+      F0: ["0", "TACDWIF", "F0_FACE"]
+      F1: ["0", "TACDWIF", "F1_FACE"]
+      F2: ["0", "TACDWIF", "F4_FACE"]
+      F3: ["0", "TACDWIF", "F5_FACE"]
+      F4: ["0", "TACDWIF", "F6_FACE"]
+      F5: ["0", "TACDWIF", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MK7_REAPER_IF_UC
+    refNode: *REF_DW_MK7_IF
+  - type: STR_DW_MK7_BLASTER_IF_UC
+    refNode: *REF_DW_MK7_IF
+  - type: STR_DW_MK7_NEURAL_IF_UC
+    refNode: *REF_DW_MK7_IF
+
+  - &REF_DW_MK7_SALA                    # DW MK7 Salamander
+    type: STR_DW_MK7_FLAYER_SALA_UC
+    spriteSheet: TACDWSALA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 543}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "TACDWSALA", "M0_FACE"]
+      M1: ["0", "TACDWSALA", "M1_FACE"]
+      M2: ["0", "TACDWSALA", "M4_FACE"]
+      M3: ["0", "TACDWSALA", "M5_FACE"]
+      M4: ["0", "TACDWSALA", "M6_FACE"]
+      M5: ["0", "TACDWSALA", "M7_FACE"]
+      F0: ["0", "TACDWSALA", "F0_FACE"]
+      F1: ["0", "TACDWSALA", "F1_FACE"]
+      F2: ["0", "TACDWSALA", "F4_FACE"]
+      F3: ["0", "TACDWSALA", "F5_FACE"]
+      F4: ["0", "TACDWSALA", "F6_FACE"]
+      F5: ["0", "TACDWSALA", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MK7_REAPER_SALA_UC
+    refNode: *REF_DW_MK7_SALA
+  - type: STR_DW_MK7_BLASTER_SALA_UC
+    refNode: *REF_DW_MK7_SALA
+  - type: STR_DW_MK7_NEURAL_SALA_UC
+    refNode: *REF_DW_MK7_SALA
+
+  - &REF_DW_MK7_SW                      # DW MK7 Space Wolf
+    type: STR_DW_MK7_FLAYER_SW_UC
+    spriteSheet: TACDWSW.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 541}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "TACDWSW", "M0_FACE"]
+      M1: ["0", "TACDWSW", "M1_FACE"]
+      M2: ["0", "TACDWSW", "M4_FACE"]
+      M3: ["0", "TACDWSW", "M5_FACE"]
+      M4: ["0", "TACDWSW", "M6_FACE"]
+      M5: ["0", "TACDWSW", "M7_FACE"]
+      F0: ["0", "TACDWSW", "F0_FACE"]
+      F1: ["0", "TACDWSW", "F1_FACE"]
+      F2: ["0", "TACDWSW", "F4_FACE"]
+      F3: ["0", "TACDWSW", "F5_FACE"]
+      F4: ["0", "TACDWSW", "F6_FACE"]
+      F5: ["0", "TACDWSW", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MK7_REAPER_SW_UC
+    refNode: *REF_DW_MK7_SW
+  - type: STR_DW_MK7_BLASTER_SW_UC
+    refNode: *REF_DW_MK7_SW
+  - type: STR_DW_MK7_NEURAL_SW_UC
+    refNode: *REF_DW_MK7_SW
+
+  - &REF_DW_MK7_ULTRA                   # DW MK7 Ultramarine
+    type: STR_DW_MK7_FLAYER_ULTRA_UC
+    spriteSheet: TACDWULTRA.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 540}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "TACDWULTRA", "M0_FACE"]
+      M1: ["0", "TACDWULTRA", "M1_FACE"]
+      M2: ["0", "TACDWULTRA", "M4_FACE"]
+      M3: ["0", "TACDWULTRA", "M5_FACE"]
+      M4: ["0", "TACDWULTRA", "M6_FACE"]
+      M5: ["0", "TACDWULTRA", "M7_FACE"]
+      F0: ["0", "TACDWULTRA", "F0_FACE"]
+      F1: ["0", "TACDWULTRA", "F1_FACE"]
+      F2: ["0", "TACDWULTRA", "F4_FACE"]
+      F3: ["0", "TACDWULTRA", "F5_FACE"]
+      F4: ["0", "TACDWULTRA", "F6_FACE"]
+      F5: ["0", "TACDWULTRA", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MK7_REAPER_ULTRA_UC
+    refNode: *REF_DW_MK7_ULTRA
+  - type: STR_DW_MK7_BLASTER_ULTRA_UC
+    refNode: *REF_DW_MK7_ULTRA
+  - type: STR_DW_MK7_NEURAL_ULTRA_UC
+    refNode: *REF_DW_MK7_ULTRA
+
+  - &REF_DW_MK7_WS                      # DW MK7 White Scar
+    type: STR_DW_MK7_FLAYER_WS_UC
+    spriteSheet: TACDWWS.PCK
+    customArmorPreviewIndex: {mod: 40k, index: 545}
+    layersDefaultPrefix: 0
+    layersDefinition:
+      M0: ["0", "TACDWWS", "M0_FACE"]
+      M1: ["0", "TACDWWS", "M1_FACE"]
+      M2: ["0", "TACDWWS", "M4_FACE"]
+      M3: ["0", "TACDWWS", "M5_FACE"]
+      M4: ["0", "TACDWWS", "M6_FACE"]
+      M5: ["0", "TACDWWS", "M7_FACE"]
+      F0: ["0", "TACDWWS", "F0_FACE"]
+      F1: ["0", "TACDWWS", "F1_FACE"]
+      F2: ["0", "TACDWWS", "F4_FACE"]
+      F3: ["0", "TACDWWS", "F5_FACE"]
+      F4: ["0", "TACDWWS", "F6_FACE"]
+      F5: ["0", "TACDWWS", "F7_FACE"]
+    forcedTorso: 1
+
+  - type: STR_DW_MK7_REAPER_WS_UC
+    refNode: *REF_DW_MK7_WS
+  - type: STR_DW_MK7_BLASTER_WS_UC
+    refNode: *REF_DW_MK7_WS
+  - type: STR_DW_MK7_NEURAL_WS_UC
+    refNode: *REF_DW_MK7_WS
+
+
+

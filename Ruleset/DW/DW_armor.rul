@@ -755,7 +755,7 @@ armors:
     units:
       - STR_WHITES
     moveCost:
-      basePercent: [100, 25] # Whitescar + Scout bonus
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_TERM_MK7                        #Terminator Armor (Firstborn)
     type: STR_DW_TER_ARMOR_BA_UC
@@ -1638,7 +1638,7 @@ armors:
     type: STR_MKX_DW_ASS_BA_UC
     ufopediaType: STR_DW_ASS_CODEX_UC
     corpseBattle:
-      - STR_MKX_DW_PHB_CORPSE
+      - STR_MKX_DW_TAC_CORPSE
     storeItem: STR_MKX_ASS_ARMOR
     corpseGeo: STR_FALLEN_CORPSE
     layersDefaultPrefix: "21"
@@ -1697,7 +1697,7 @@ armors:
       - 0.0 #SMOKE
       - 0.2 #IMPACT
       - 0.9 #MELTA
-    specialWeapon: STR_JUMP_GAUNTLET_PLUS # camo cloak stealth
+    specialWeapon: STR_JUMP_GAUNTLET_PLUS
     builtInWeapons:
       - INV_NULL_3X3
     tags:
@@ -1824,7 +1824,7 @@ armors:
     units:
       - STR_WHITES_PRIMARIS
     moveCost:
-      basePercent: [100, 25] # Whitescar + Phobos bonus
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_APOTH_MKX                       #Apothecary Armor (Primaris)
     type: STR_MKX_DW_APO_BA_UC
@@ -2153,7 +2153,7 @@ armors:
   - type: STR_MKX_DW_PHB_WS_UC
     refNode: *STR_DW_PHB_MKX
     moveCost:
-      basePercent: [100, 25] # Whitescar + Phobos bonus
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_PHB_ELIM                        #Phobos Armor (Eliminator)
     type: STR_MKX_DW_PHBELIM_BA_UC
@@ -2370,7 +2370,7 @@ armors:
     units:
       - STR_WHITES_PRIMARIS
     moveCost:
-      basePercent: [100, 25] # Whitescar + Phobos bonus
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_GRV_MKX_EH                      #Gravis Armor (Primaris) - Empty Hands
     type: STR_MKX_DW_GRV_BA_UC
@@ -2650,7 +2650,7 @@ armors:
       F4: ["0", "GRVNWWS", "F4_FACE", "GOLA"]
       F5: ["0", "GRVNWWS", "F5_FACE", "GOLA"]
     moveCost:
-      basePercent: [100, 25] # was 100, 25
+      basePercent: [100, 50] # was 100, 25
 
   - &STR_DW_GRV_MKX_BS                      #Gravis Armor (Primaris) - Boltstorm Gauntlet
     type: STR_MKX_DW_GRVBS_BA_UC

@@ -234,7 +234,7 @@ extended:
             damaging_item.getTag buffVal Tag.ITEM_SERVITOR_ENHANCER;
             if gt buffVal 0; # skip if not servitor enhancer
               unit.getRuleArmor armorRule;
-              armorRule.getTag temp Tag.UNIT_TYPE_SERVITOR;
+              armorRule.getTag temp Tag.UNIT_TYPE_TECHSPIRIT;
               unit.getTag temp2 Tag.SMT_SERVITOR_ENHANCED;
               if and gt temp 0 eq temp2 0; # only if unit is servitor and hasn't already been buffed
                 unit.setTag Tag.SMT_SERVITOR_ENHANCED buffVal;
@@ -242,6 +242,7 @@ extended:
                 unit.Stats.addMelee buffVal;
               else;
                 set to_time 0;
+                set to_energy 0;
               end;
             end;
           end;
@@ -468,7 +469,7 @@ extended:
       - new: SMTS_medkit_stamina_lock # Prevent units from gaining stamina from medkits while teleporting
         offset: 10
         code: |
-          var int tuCost;
+          var int blockCheck;
           var int temp;
 
           if neq medikit_action_type medikit_action_stimulant;
@@ -476,9 +477,11 @@ extended:
             return;
           end;
 
-          target.getTag temp Tag.UNIT_IS_TELEPORTING;
+          target.getTag blockCheck Tag.UNIT_IS_TELEPORTING; # teleport
+          target.getTag temp Tag.UNIT_IS_DEPLOYED; # heavy weapons bipod
+          add blockCheck temp;
           #debug_log "StaminaBlock Ping " temp;
-          if gt temp 0; # unit teleporting
+          if and gt blockCheck 0 gt energy_recovery 0;
             set energy_recovery 0; #negate stimulant
             set stun_recovery 0;
             item.getStimulantQuantity temp;
@@ -494,6 +497,7 @@ extended:
 
       - delete: ROSIGMA_healU_limited_flight
       - delete: ROSIGMA_healU_start_teleport
+      - delete: ROSIGMA_healU_heavy_weapons_team
 
 
     reactionUnitAction:

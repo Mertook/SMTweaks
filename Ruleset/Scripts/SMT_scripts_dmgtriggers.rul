@@ -106,8 +106,45 @@ extended:
 
           return;
 
-      - delete: ROSIGMA_dU_turret_reload # integrated into above
+      - new: SMTS_reduce_2x2_aoe
+        offset: -1
+        code: |
+          var int checkVal;
+          var int checkVal2;
+          var ptr RuleArmor unitArmor;
+          var ptr RuleItem damagingItem;
+          var ptr RuleDamageType damageType;
+
+          unit.getRuleArmor unitArmor;
+          unitArmor.getSize checkVal;
+          unitArmor.getTag checkVal2 Tag.UNIT_TYPE_SWARM;
+          if or neq checkVal 2 neq checkVal2 0; # is unit 2x2 and not a 'swarm' type unit?
+            return;
+          end;
+
+          damageType.isAreaOfEffect checkVal;
+          damaging_item.getRuleItem damagingItem;
+          damagingItem.getDamageType damageType;
+          damagingItem.getTag checkVal2 Tag.ITEM_IGNORES_2X2_REDUCTION;
+          if or neq checkVal 1 neq checkVal2 0; # is weapon aoe and not ignore the 2x2 reduction?
+            return;
+          end;
+
+          muldiv to_health 2 3;
+          muldiv to_armor 2 3;
+          muldiv to_stun 2 3;
+          muldiv to_time 2 3;
+          muldiv to_energy 2 3;
+          muldiv to_morale 2 3;
+          muldiv to_wound 2 3;
+          muldiv to_mana 2 3;
+
+          return;
+
+      - delete: ROSIGMA_dU_turret_reload
       - delete: ROSIGMA_dU_alpha_infiltration
+      - delete: ROSIGMA_dU_item_does_not_hurt_friends
+      - delete: ROSIGMA_reduce_2x2_aoe
 
     hitUnit:
       - override: ROSIGMA_hU_remove_flight # remove high power attacks disabling flight
@@ -144,5 +181,30 @@ extended:
           end;
           return power part side;
 
+      - new: SMTS_friendly_fire_weapons
+        offset: 22
+        code: |
+          var ptr RuleItem ruleItem;
+          var int checkVal;
+          var int sideAttacker;
+          var int sideDefender;
+
+          damaging_item.getRuleItem ruleItem;
+          ruleItem.getTag checkVal Tag.ITEM_DOESNT_HURT_USER;
+
+          if and eq unit attacker eq checkVal 1;
+            set power 0;
+          end;
+
+          ruleItem.getTag checkVal Tag.ITEM_DOESNT_HURT_FRIENDS;
+
+          unit.getFaction sideDefender;
+          attacker.getFaction sideAttacker;
+
+          if and eq sideDefender sideAttacker eq checkVal 1;
+            set power 0;
+          end;
+
+          return power part side;
 
 

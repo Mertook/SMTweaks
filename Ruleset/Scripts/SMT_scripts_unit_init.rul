@@ -50,6 +50,7 @@ extended:
             add bonusVal temp;
             unit.getTag initVal Tag.SMT_UNIT_SHRED_RESISTANCE;
             add initVal bonusVal;
+            limit_upper initVal 100;
             unit.setTag Tag.SMT_UNIT_SHRED_RESISTANCE initVal;
 
             unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_SHRED_PLASMA_RESISTANCE;
@@ -57,6 +58,7 @@ extended:
             add bonusVal temp;
             unit.getTag initVal Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE;
             add initVal bonusVal;
+            limit_upper initVal 100;
             unit.setTag Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE initVal;
 
             unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_SHRED_MELTA_RESISTANCE;
@@ -64,6 +66,7 @@ extended:
             add bonusVal temp;
             unit.getTag initVal Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE;
             add initVal bonusVal;
+            limit_upper initVal 100;
             unit.setTag Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE initVal;
 
             unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_MORALE_RESISTANCE;
@@ -71,6 +74,7 @@ extended:
             add bonusVal temp;
             unit.getTag initVal Tag.SMT_UNIT_MORALE_RESISTANCE;
             add initVal bonusVal;
+            limit_upper initVal 100;
             unit.setTag Tag.SMT_UNIT_MORALE_RESISTANCE initVal;
 
             unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_STUN_RESISTANCE;
@@ -78,6 +82,7 @@ extended:
             add bonusVal temp;
             unit.getTag initVal Tag.SMT_UNIT_STUN_RESISTANCE;
             add initVal bonusVal;
+            limit_upper initVal 100;
             unit.setTag Tag.SMT_UNIT_STUN_RESISTANCE initVal;
 
             unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_STAGGER_RESISTANCE;
@@ -85,6 +90,7 @@ extended:
             add bonusVal temp;
             unit.getTag initVal Tag.SMT_UNIT_STAGGER_RESISTANCE;
             add initVal bonusVal;
+            limit_upper initVal 100;
             unit.setTag Tag.SMT_UNIT_STAGGER_RESISTANCE initVal;
 
             unitSoldier.getTag bonusVal Tag.SMT_SOLDIER_IMMOBILIZE_RESISTANCE;
@@ -92,6 +98,7 @@ extended:
             add bonusVal temp;
             unit.getTag initVal Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE;
             add initVal bonusVal;
+            limit_upper initVal 100;
             unit.setTag Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE initVal;
           end;
 
@@ -130,36 +137,43 @@ extended:
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_SHRED_RESISTANCE;
             unit.getTag initVal Tag.SMT_UNIT_SHRED_RESISTANCE;
             add initVal bonusVal;
+            limit_upper initVal 100;
             unit.setTag Tag.SMT_UNIT_SHRED_RESISTANCE initVal;
 
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_SHRED_PLASMA_RESISTANCE;
             unit.getTag initVal Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE;
             add initVal bonusVal;
+            limit_upper initVal 100;
             unit.setTag Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE initVal;
 
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_SHRED_MELTA_RESISTANCE;
             unit.getTag initVal Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE;
             add initVal bonusVal;
+            limit_upper initVal 100;
             unit.setTag Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE initVal;
 
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_MORALE_RESISTANCE;
             unit.getTag initVal Tag.SMT_UNIT_MORALE_RESISTANCE;
             add initVal bonusVal;
+            limit_upper initVal 100;
             unit.setTag Tag.SMT_UNIT_MORALE_RESISTANCE initVal;
 
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_STUN_RESISTANCE;
             unit.getTag initVal Tag.SMT_UNIT_STUN_RESISTANCE;
             add initVal bonusVal;
+            limit_upper initVal 100;
             unit.setTag Tag.SMT_UNIT_STUN_RESISTANCE initVal;
 
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_STAGGER_RESISTANCE;
             unit.getTag initVal Tag.SMT_UNIT_STAGGER_RESISTANCE;
             add initVal bonusVal;
+            limit_upper initVal 100;
             unit.setTag Tag.SMT_UNIT_STAGGER_RESISTANCE initVal;
 
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_IMMOBILIZE_RESISTANCE;
             unit.getTag initVal Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE;
             add initVal bonusVal;
+            limit_upper initVal 100;
             unit.setTag Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE initVal;
           end;
 

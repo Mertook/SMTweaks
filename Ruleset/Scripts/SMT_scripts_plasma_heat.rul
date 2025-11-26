@@ -66,8 +66,9 @@ extended:
 items:
   - &STR_OVERHEATING_PLASMA
     type: STR_PLASMA_GUN_TWINCORE_DW
-    tuUnload: 999 # DO NOT UNLOAD WEAPONS, THEY ARE LIKELY TO BE HOT
-    isExplodingInHands: true # won't explode though as it's not a grenade
+    tuUnload: 999
+    isExplodingInHands: true
+    explodeInventory: 2
     isConsumable: true
 
     scripts:

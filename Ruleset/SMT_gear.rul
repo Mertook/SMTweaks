@@ -6091,6 +6091,8 @@ items:
   - type: STR_STUN_SHELLS                   # Shotgun Concussive Ammo
     refNode: *REF_SHOTGUN_AMMO_STANDARD
     bigSprite: 387
+    hitSound: {mod: 40k_ROSIGMA_edits, index: 22}
+    hitAnimation: {mod: 40k_ROSIGMA_edits, index: 26}
     costBuy: 1500
     costSell: 150
     requiresBuy:
@@ -7729,9 +7731,9 @@ items:
     accuracyAuto: 66
     accuracySnap: 80
     accuracyAimed: 100
-    tuAuto: 60
-    tuSnap: 36
-    tuAimed: 52
+    tuAuto: 55
+    tuSnap: 30
+    tuAimed: 45
     sprayWaypoints: 2
     accuracyMultiplier:
       firing: 0.7
@@ -9993,6 +9995,7 @@ items:
       ToArmor: 0.0
       ArmorEffectiveness: 0.0
       ToTime: -1.0
+      ToEnergy: -1.0
     flatRate: false
     tuUse: 25
     accuracyUse: 400

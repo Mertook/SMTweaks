@@ -110,6 +110,7 @@ extended:
       UNIT_TYPE_ASTARTES: int                   # Space Marines
       UNIT_TYPE_TECHSPIRIT: int                 # Valid Techmarine buff targets (servitors, vehicles etc)
       UNIT_TYPE_SWARM: int
+      UNIT_TURNS_UNTIL_DEATH: int
     RuleSoldier:
       ## Regeneration
       UNIT_REGENERATE_HEALTH_FLAT: int          # hp regen from soldier type - Flat values

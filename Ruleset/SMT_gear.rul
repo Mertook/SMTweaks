@@ -3287,11 +3287,11 @@ items:
     clipSize: 160 # was 100
     damageType: 1 # STANDARD
     damageAlter: 
-      ToArmorPre: 0.15 # was 0.1
       ArmorEffectiveness: 1.0 # was 0.9
+      ToArmorPre: 0.1 # was 0.1
       ToArmor: 0.1 # was 0.1
       ToHealth: 1.0
-      ToStun: 0.3 # was 0.5
+      ToStun: 0.2 # was 0.5
       ToWound: 0.1
       RandomWound: false
 
@@ -3302,8 +3302,8 @@ items:
     damageType: 3 # HE
     damageAlter:  # high explosive
       RandomType: 8
-      ArmorEffectiveness: 0.9 # was 0.95
-      ToArmorPre: 0.05
+      ArmorEffectiveness: 1.1 # was 0.95
+      ToArmorPre: 0.15
       ToArmor: 0.1
       ToStun: 0.6
       ToEnergy: 0.3 # was 0.4
@@ -3312,6 +3312,8 @@ items:
       ToItem: 0.75
       FixRadius: 2
     powerForAnimation: 40
+    tags:
+      ITEM_ARMOR_TARGET_FACE: 1
 
   - type: STR_ASSC_CLIP_AP                  # Assault Cannon Ammo (AP)
     recoveryTransformations:
@@ -3352,7 +3354,7 @@ items:
   - &REF_AUTOCANNON_DMG_AP
     type: STR_AUTOCANNON_AMMO
     costBuy: 0 # have to manufacture it
-    power: 120
+    power: 100
     damageType: 1 # STANDARD
     damageAlter:
       ArmorEffectiveness: 0.80 # was 0.9
@@ -3386,15 +3388,17 @@ items:
     damageType: 3 # HE
     damageAlter:  # high explosive
       RandomType: 9 # 50-150
-      ToArmorPre: 0.1
-      ToArmor: 0.1
-      ArmorEffectiveness: 1.0 # was 0.95
+      ToArmorPre: 0.15
+      ToArmor: 0.05
+      ArmorEffectiveness: 1.1 # was 0.95
       ToStun: 0.6
       ToEnergy: 0.4
       ToTime: 0.2
-      ToTile: 0.75
-      ToItem: 0.75
+      ToTile: 0.5
+      ToItem: 0.5
       FixRadius: 2
+    tags:
+      ITEM_ARMOR_TARGET_FACE: 1
 
   - type: STR_AUTOCANNON_AP_AMMO            # Autocannon Ammo (AP)
     recoveryTransformations:
@@ -3411,17 +3415,18 @@ items:
     accuracyAuto: 60 # was 50
     accuracySnap: 80 # was 75
     accuracyAimed: 0
-    tuAuto: 40 # was 30
-    tuSnap: 28 # was 20
+    tuAuto: 35 # was 30
+    tuSnap: 25 # was 20
     tuAimed: 0
     autoShots: 3
-    power: 120
+    power: 100
+    damageType: 1 # STANDARD
     damageAlter:
-      ToArmorPre: 0.02
-      ArmorEffectiveness: 0.8
-      ToArmor: 0.05
-      ToHealth: 1.0
-      ToStun: 0.3
+      ArmorEffectiveness: 0.80 # was 0.9
+      ToArmorPre: 0.03 # was 0.05
+      ToArmor: 0.1 # was 0.1
+      ToHealth: 1.0 # was 1.0
+      ToStun: 0.3 # was 0.5
 
   - type: STR_GRAV_AUTOC_DW                 # Gravis Autocannon Gauntlet (DW)
     refNode: *REF_POWERFIST_TEMPLATE
@@ -3435,17 +3440,18 @@ items:
     accuracyAuto: 60 # was 50
     accuracySnap: 80 # was 75
     accuracyAimed: 0
-    tuAuto: 40 # was 30
-    tuSnap: 28 # was 20
+    tuAuto: 35 # was 30
+    tuSnap: 25 # was 20
     tuAimed: 0
     autoShots: 3
-    power: 120
+    power: 100
+    damageType: 1 # STANDARD
     damageAlter:
-      ToArmorPre: 0.02
-      ArmorEffectiveness: 0.8
-      ToArmor: 0.05
-      ToHealth: 1.0
-      ToStun: 0.3
+      ArmorEffectiveness: 0.80 # was 0.9
+      ToArmorPre: 0.03 # was 0.05
+      ToArmor: 0.1 # was 0.1
+      ToHealth: 1.0 # was 1.0
+      ToStun: 0.3 # was 0.5
 
   - type: STR_ACCEL_AUTOCANNON_FIXED        # Accelerator Autocannon (Omnis Armor)
     categories: [STR_CAT_AUTO]
@@ -3471,18 +3477,18 @@ items:
       - STR_AUTOCANNON_HE_AMMO
     dropoff: 3
     autoRange: 16
-    snapRange: 28
+    snapRange: 24
     aimRange: 0
     accuracySnap: 80
     accuracyAuto: 70
     accuracyAimed: 0
-    tuAuto: 45
-    tuSnap: 25
+    tuAuto: 50
+    tuSnap: 30
     tuAimed: 0
     confSnap:
-      shots: 1 # was 1
+      shots: 2
     confAuto:
-      shots: 3
+      shots: 4
       followProjectiles: false
     bulletSpeed: 20
     explosionSpeed: 1
@@ -3514,16 +3520,16 @@ items:
       - STR_AUTOCANNON_HE_AMMO
     dropoff: 3
     autoRange: 16
-    snapRange: 28
+    snapRange: 24
     aimRange: 0
     accuracySnap: 80
     accuracyAuto: 70
     accuracyAimed: 0
-    tuAuto: 45
-    tuSnap: 25
+    tuAuto: 50
+    tuSnap: 30
     tuAimed: 0
     confSnap:
-      shots: 1
+      shots: 2
     confAuto:
       shots: 4
       followProjectiles: false
@@ -3539,8 +3545,8 @@ items:
     dropoff: 3
     minRange: 6
     sprayWaypoints: 2
-    autoRange: 20
-    snapRange: 25
+    autoRange: 16
+    snapRange: 20
     aimRange: 0
     accuracyAuto: 65
     accuracySnap: 70
@@ -5141,7 +5147,7 @@ items:
       ITEM_ARMOR_TARGET_FACE: 1
 
 ### Volkite
-  - &REF_VOLKITE_DMG                        # Volkite Standard Damage
+  - &DMG_VOLKITE_STD                        # Volkite Standard Damage
     type: STR_NEOVOLKITE_PISTOL
     shotgunPellets: 1 # instant beam rather than projectile
     damageType: 11 # MELTA
@@ -5162,7 +5168,7 @@ items:
       ITEM_IGNITES_TARGETS: 1
 
   - type: STR_NEOVOLKITE_PISTOL             # Neo-Volkite Pistol
-    refNode: *REF_VOLKITE_DMG
+    refNode: *DMG_VOLKITE_STD
     costSell: 100000
     weight: 22
     clipSize: -1
@@ -5186,7 +5192,7 @@ items:
       REACTION_MULTIPLIER: 200 # pistol
 
   - type: STR_VOLKITE_VAULT                 # Volkite Rifle (Ancient Vault Reward)
-    refNode: *REF_VOLKITE_DMG
+    refNode: *DMG_VOLKITE_STD
     costSell: 100000
     weight: 22
     clipSize: -1
@@ -5206,7 +5212,7 @@ items:
     power: 120 #
 
   - type: STR_VOLKITE_DW                    # Volkite Rifle (Deathwatch Captain)
-    refNode: *REF_VOLKITE_DMG
+    refNode: *DMG_VOLKITE_STD
     weight: 22
     clipSize: -1
     twoHanded: true
@@ -7723,6 +7729,7 @@ items:
   - type: STR_PSYCANNON                     # Psycannon
     costSell: 40000
     twoHanded: true
+    oneHandedPenalty: 100
     weight: 48
     dropoff: 5
     autoRange: 14
@@ -7745,7 +7752,7 @@ items:
     confAuto:
       shots: 3
     tags:
-      ITEM_RECOIL: 90
+      ITEM_RECOIL: 100
       ITEM_IS_HEAVY_WEAPON: 1
 
   - type: STR_PSYCANNON_AMMO                # Psycannon Bolts
@@ -8566,6 +8573,7 @@ items:
       FixRadius: 1
       RandomWound: true
       IgnoreSelfDestruct: true
+      IgnoreOverKill: false
     meleeAlter: &Ref_ForceBlade_DmgAlt
       RandomType: 2 # 50-150%
       ArmorEffectiveness: 0.6
@@ -8575,6 +8583,7 @@ items:
       ToMorale: 1.0
       RandomWound: true
       IgnoreSelfDestruct: true
+      IgnoreOverKill: false
     confSnap:
       name: STR_SWEEPING_STRIKE
       shots: 1

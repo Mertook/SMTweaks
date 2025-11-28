@@ -3350,11 +3350,9 @@ items:
     armor: 80
     battleType: 11
     recover: false
-  - type: STR_GKTAC_CORPSE
+  - &REF_CORPSE_GENE
+    type: STR_GKTAC_CORPSE_GENE
     name: STR_CORPSE
-    weight: 40
-    bigSprite: 702
-    floorSprite: 702
     invWidth: 2
     invHeight: 3
     armor: 150
@@ -3362,4 +3360,122 @@ items:
     recover: true
     recoveryTransformations:
       STR_SMT_GENESEED: [1]
+
+  - type: STR_GKTAC_CORPSE_GENE
+    weight: 40
+    bigSprite: 702
+    floorSprite: 702
+  - type: STR_TERMINATOR_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 50
+    bigSprite: {mod: 40k, index: 207}
+    floorSprite: {mod: 40k, index: 95}
+  - type: STR_MK7_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 209}
+    floorSprite: {mod: 40k, index: 97}
+  - type: STR_SIGNAL_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 903}
+    floorSprite: {mod: 40k, index: 903}
+  - type: STR_SCOUT_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 25
+    bigSprite: {mod: 40k, index: 208}
+    floorSprite: {mod: 40k, index: 96}
+  - type: STR_SCOUTH_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 25
+    bigSprite: {mod: 40k, index: 456}
+    floorSprite: {mod: 40k, index: 299}
+  - type: STR_CAPTAIN_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 50
+    bigSprite: {mod: 40k, index: 210}
+    floorSprite: {mod: 40k, index: 98}
+  - type: STR_SARGENT_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 211}
+    floorSprite: {mod: 40k, index: 99}
+  - type: STR_CHAP_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 254}
+    floorSprite: {mod: 40k, index: 135}
+  - type: STR_APOT_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 212}
+    floorSprite: {mod: 40k, index: 100}
+  - type: STR_TECH_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 269}
+    floorSprite: {mod: 40k, index: 151}
+  - type: STR_HONOR_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 255}
+    floorSprite: {mod: 40k, index: 136}
+  - type: STR_LIB_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 231}
+    floorSprite: {mod: 40k, index: 117}
+  - type: BIKE_CORPSE1_GENE
+    refNode: *REF_CORPSE_GENE
+    floorSprite: {mod: 40k, index: 82}
+    invWidth: 0
+    invHeight: 0
+  - type: STR_MKX_BIKE_CORPSE1_GENE
+    refNode: *REF_CORPSE_GENE
+    floorSprite: {mod: 40k, index: 912}
+    invWidth: 0
+    invHeight: 0
+  - type: STR_MKX_CHP_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 910}
+    floorSprite: {mod: 40k, index: 910}
+  - type: STR_MKX_LIB_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 911}
+    floorSprite: {mod: 40k, index: 911}
+  - type: STR_MKX_TEC_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 909}
+    floorSprite: {mod: 40k, index: 909}
+  - type: STR_MKX_APO_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 908}
+    floorSprite: {mod: 40k, index: 908}
+  - type: STR_MKX_TAC_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 905}
+    floorSprite: {mod: 40k, index: 905}
+  - type: STR_MKX_INC_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 907}
+    floorSprite: {mod: 40k, index: 907}
+  - type: STR_MKX_PHB_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 906}
+    floorSprite: {mod: 40k, index: 905}
+  - type: STR_MKX_GRV_CORPSE_GENE
+    refNode: *REF_CORPSE_GENE
+    weight: 40
+    bigSprite: {mod: 40k, index: 907}
+    floorSprite: {mod: 40k, index: 906}
+
+
+
 

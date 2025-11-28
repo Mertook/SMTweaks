@@ -4,7 +4,7 @@ units:
     race: STR_SMT_SMOKEL
     stats:
       tu: 100
-      stamina: 6 # 3 shots a round
+      stamina: 9 # 3 shots a round
       health: 60
       bravery: 110
       reactions: 200 # conceal with smoke rather than draw reactions
@@ -114,16 +114,16 @@ units:
     race: STR_RTT
     stats:
       tu: 20
-      stamina: 12
+      stamina: 10
       health: 150
       bravery: 110
       reactions: 20
-      firing: 120
+      firing: 70
+      melee: 0
       throwing: 0
       strength: 90
       psiStrength: 250
       psiSkill: 0
-      melee: 0
       mana: 100
     standHeight: 16
     kneelHeight: 16
@@ -535,9 +535,9 @@ items:
     explosionHitSound: {mod: 40k, index: 792} #792 Smoke
     hitAnimation: {mod: 40k, index: 104} #XSmoke
     damageType: 9
-    power: 75 # was 80
-    maxRange: 30 # was 40
-    aimRange: 15 # was 30 - can't easily smoke the world anymore :(
+    power: 75
+    maxRange: 30
+    aimRange: 15
     dropoff: 7
     accuracyAimed: 100
     accuracyMultiplier:
@@ -555,7 +555,7 @@ items:
     tuThrow: 0
     costAimed:
       time: 1
-      energy: 2
+      energy: 3
       mana: 2
     tags:
       TURRET_RELOAD_TURNS: 1

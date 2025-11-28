@@ -189,6 +189,10 @@ extended:
           var int sideAttacker;
           var int sideDefender;
 
+          if eq battle_action battle_action_hit; # ignore melee swings
+            return power part side;
+          end;
+
           damaging_item.getRuleItem ruleItem;
           ruleItem.getTag checkVal Tag.ITEM_DOESNT_HURT_USER;
 

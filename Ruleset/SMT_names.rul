@@ -50,16 +50,16 @@ extraStrings:
       STR_HONOR_MEDAL_DESCRIPTION: "Soldiers who participate in successful operations are awarded Marks of Honor, with more distinguished marks given to those with a long record of contributions to the Imperium.{NEWLINE}{NEWLINE} Marks of Honor are granted when a Soldiers total Score earned from missions reaches a certain level.{NEWLINE}{NEWLINE} Bronze Ranks: {ALT}2000{ALT}, {ALT}4000{ALT}, {ALT}6000{ALT}{NEWLINE} Silver Ranks: {ALT}8000{ALT}, {ALT}12000{ALT}, {ALT}16000{ALT}{NEWLINE} Gold Ranks: {ALT}24000{ALT}, {ALT}32000{ALT}, {ALT}40000{ALT}{NEWLINE} Imperial Cross: {ALT}48000{ALT}"
       STR_BONUS_TERMINATOR: "Crux Terminatus"
       STR_BONUS_HERO: "Hero to the Imperium"
-      STR_BONUS_HONOR_1: "Mark of Honor"
-      STR_BONUS_HONOR_2: "Mark of Honor"
-      STR_BONUS_HONOR_3: "Mark of Honor"
-      STR_BONUS_HONOR_4: "Mark of Honor"
-      STR_BONUS_HONOR_5: "Mark of Honor"
-      STR_BONUS_HONOR_6: "Mark of Honor"
-      STR_BONUS_HONOR_7: "Mark of Honor"
-      STR_BONUS_HONOR_8: "Mark of Honor"
-      STR_BONUS_HONOR_9: "Mark of Honor"
-      STR_BONUS_HONOR_10: "Mark of Honor"
+      STR_BONUS_HONOR_1: "Mark of Honor I"
+      STR_BONUS_HONOR_2: "Mark of Honor II"
+      STR_BONUS_HONOR_3: "Mark of Honor III"
+      STR_BONUS_HONOR_4: "Mark of Honor IV"
+      STR_BONUS_HONOR_5: "Mark of Honor V"
+      STR_BONUS_HONOR_6: "Mark of Honor VI"
+      STR_BONUS_HONOR_7: "Mark of Honor VII"
+      STR_BONUS_HONOR_8: "Mark of Honor VIII"
+      STR_BONUS_HONOR_9: "Mark of Honor IX"
+      STR_BONUS_HONOR_10: "Mark of Honor X"
       STR_BONUS_APOTH_TRAINING: "Apothecary Training"
       STR_BONUS_LIBRARIAN_TRAINING: "Librarian Training"
       STR_AUTO_SHOT_COUNT: "Auto (x{0})"
@@ -263,10 +263,10 @@ extraStrings:
       STR_GK_TERM_TECHMARINE_SB_UC: "Terminator (Stormbolter)"
       STR_GK_TERM_LIBRARIAN_UC: "Aegis Terminator Armor"
       STR_GK_TERM_LIBRARIAN_SB_UC: "Terminator (Stormbolter)"
-      STR_INQSTORM_CARAPACE_FLAYER_UC: Inq Gauss Rifle
-      STR_INQSTORM_CARAPACE_REAPER_UC: Inq Gauss Carbine
-      STR_INQSTORM_CARAPACE_SYNAPTIC_UC: Inq Neural Sniper
-      STR_INQSTORM_POWER_GAUSSBLASTER_UC: Inq Gauss Cannon
+      STR_INQSTORM_CARAPACE_FLAYER_UC: Inquisition Gauss Rifle
+      STR_INQSTORM_CARAPACE_REAPER_UC: Inquisition Gauss Carbine
+      STR_INQSTORM_CARAPACE_SYNAPTIC_UC: Inquisition Neural Sniper
+      STR_INQSTORM_POWER_GAUSSBLASTER_UC: Inquisition Gauss Cannon
       ### ITEMS
       STR_DWSCT_CORPSE: Deathwatch Corpse
       STR_MKX_DW_GRV_CORPSE: Deathwatch Corpse
@@ -283,7 +283,7 @@ extraStrings:
       STR_TERMINATOR_DW_CORPSE: Deathwatch Corpse
       STR_MK7_DW_CORPSE: Deathwatch Corpse
       STR_ENGINSEER_CORPSE: Enginseer Corpse
-      STR_GKTAC_CORPSE: Grey Knight Corpse
+      STR_GKTAC_CORPSE_GENE: Grey Knight Corpse
       STR_TELEPORT: Power Fist
       STR_TELEPORT_CLAWS: Power Fist
       STR_TELEPORT_GK: Marine Fist
@@ -292,6 +292,7 @@ extraStrings:
       STR_CYCLONE_LAUNCHER: Cyclone Missiles
       STR_DREAD_MISSILES: Dreadnought Missiles
       STR_DREAD_STORMBOLTER: Stormbolter Fist
+      STR_SHOTGUN: Combat Shotgun
       STR_SHOTGUN_MARINE: Astartes Shotgun
       STR_SM_SCOUT_SCANNER: Scout Auspex
       STR_CLAWS_ASS: Lightning Claw
@@ -1470,7 +1471,7 @@ extraStrings:
       STR_PSILENCER_CODEX: "{NEWLINE} Psilencers are mysterious weapons created with Xenos technology, channeling and amplifying the users psychic might into energy bolts.{NEWLINE} Its power depends on the users psychic skill and is particularly effective against demons, disrupting their connection to reality.{NEWLINE}{NEWLINE} Recoil: {ALT}70{ALT}"
       STR_PSYCANNON: ¬ Psycannon
       STR_PSYCANNON_AMMO: Psycannon Bolts
-      STR_PSYCANNON_CODEX: "{NEWLINE} Psycannons fire bolter rounds imbued with the wielders psychic power. These charged bolts crackle with negative psionic energy and launch with incredible force, shredding physical matter and devastating daemonic foes.{NEWLINE}{NEWLINE} Recoil: {ALT}90{ALT} - {ALT}Heavy{ALT}"
+      STR_PSYCANNON_CODEX: "{NEWLINE} Psycannons fire bolter rounds imbued with the wielders psychic power. These charged bolts crackle with negative psionic energy and launch with incredible force, shredding physical matter and devastating daemonic foes.{NEWLINE}{NEWLINE} Recoil: {ALT}100{ALT} - {ALT}Heavy{ALT}"
       STR_INCINERATOR: ¬ Incinerator
       STR_PSYFLAME_AMMO: Psyflame Canister
       STR_INCINERATOR_CODEX: "{NEWLINE} Incinerators are powerful heavy flamers fueled by Psyflame, a special mix of psychically charged and blessed promethium. This {NEWLINE}white-hot flame cuts through psykers defenses and ravages demonic flesh, empowered by the users own psychic ability.{NEWLINE}{NEWLINE} Recoil: {ALT}90{ALT} - {ALT}Heavy{ALT}"

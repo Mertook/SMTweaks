@@ -2125,6 +2125,15 @@ ufopaedia:
     image_id: 1MCPS.SPK ###CHANGEME
     text: STR_FORCE_BLADE_CODEX
 
+  - delete: STR_SHOTGUNPD
+  - id: STR_SHOTGUNPD  # Lawbringer
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_HEAVY_SHOTGUN_ARBITES
+    image_id: 1LB.SPK
+    text: STR_SHOTGUN_UFOPEDIA
+
 ###BOLTERS
   - id: STR_BOLTER_ENFORCER                 # Light Bolter (Locke)
     type_id: 14
@@ -2608,5 +2617,118 @@ ufopaedia:
     type_id: 14
     section: STR_NOT_AVAILABLE
     text: STR_PSYFLAME_AMMO
+  - id: STR_SHOTGUN_SHELLS                  # Shotgun Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_SHOTGUN_SHELLS
+  - id: STR_SHOTGUN_SHELLS_MC               # Shotgun Ammo (MC)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_SHOTGUN_SHELLS_MC
+  - id: STR_SHOTGUN_DRUM                    # Shotgun Drum Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_SHOTGUN_DRUM
+  - id: STR_SHOTGUN_SHELLS_AP               # Shotgun Ammo (AP)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_SHOTGUN_SHELLS_AP
+  - id: STR_STUN_SHELLS                     # Shotgun Ammo (Stun)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_STUN_SHELLS
+  - id: STR_STUN_GAS_SHELLS                 # Shotgun Ammo (Gas)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_STUN_GAS_SHELLS
+  - id: STR_SHOTGUN_SHELLS_INC              # Shotgun Ammo (Incen)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_SHOTGUN_SHELLS_INC
+  - id: STR_REDEEMER_SHELLS                 # Redeemer Shotgun Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_REDEEMER_SHELLS
+  - id: STR_REDEEMER_SHELLS_KRAK            # Redeemer Shotgun Ammo (AP)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_REDEEMER_SHELLS_KRAK
+  - id: STR_REDEEMER_SHELLS_INC             # Redeemer Shotgun Ammo (Incen)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_REDEEMER_SHELLS_INC
+  - id: STR_REDEEMER_PENITENCE_SHELLS       # Redeemer Shotgun Ammo (Conc)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_REDEEMER_PENITENCE_SHELLS
+  - id: STR_SHOTGUN_SHELLS_HEAVY            # H.Shotgun Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_SHOTGUN_SHELLS_HEAVY
+  - id: STR_RIPPER_GUN_CLIP                 # H.Shotgun Drum Ammo
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_RIPPER_GUN_CLIP
+  - id: STR_SHOTGUN_SHELLS_HEAVY_MC         # H.Shotgun Ammo (MC)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_SHOTGUN_SHELLS_HEAVY_MC
+  - id: STR_RIPPER_GUN_CLIP_MC              # H.Shotgun Drum Ammo (MC)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_RIPPER_GUN_CLIP_MC
+  - id: STR_SHOTGUN_SHELLS_H_AP             # H.Shotgun Ammo (AP)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_SHOTGUN_SHELLS_H_AP
+  - id: STR_RIPPER_GUN_CLIP_AP              # H.Shotgun Drum Ammo (AP)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_RIPPER_GUN_CLIP_AP
+  - id: STR_SHOTGUN_SHELLS_H_INC            # H.Shotgun Ammo (Incen)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_SHOTGUN_SHELLS_H_INC
+  - id: STR_RIPPER_GUN_CLIP_INC             # H.Shotgun Drum Ammo (Incen)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_RIPPER_GUN_CLIP_INC
+  - id: STR_SHOTGUN_SHELLS_H_FRAG           # H.Shotgun Ammo (Frag)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_SHOTGUN_SHELLS_H_FRAG
+  - id: STR_RIPPER_GUN_CLIP_FRAG            # H.Shotgun Drum Ammo (Frag)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_RIPPER_GUN_CLIP_FRAG
+  - id: STR_STUN_SHELLS_HEAVY               # H.Shotgun Ammo (Stun)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_STUN_SHELLS_HEAVY
+  - id: STR_SHOTGUN_SHELLS_WYRM             # H.Shotgun Ammo (Wyrm)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_SHOTGUN_SHELLS_WYRM
+  - id: STR_RIPPER_GUN_CLIP_WYRM            # H.Shotgun Drum Ammo (Wyrm)
+    type_id: 14
+    section: STR_NOT_AVAILABLE
+    text: STR_RIPPER_GUN_CLIP_WYRM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

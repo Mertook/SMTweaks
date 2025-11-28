@@ -270,8 +270,6 @@ research:
       - STR_PICKED_LOYALIST_STRATEGY
 
   - name: STR_WORDBEARERS_STRATEGY      # Word Bearers Strat
-    dependencies:
-      - STR_GENERALLOCK ###CHANGEME - modio compat
     unlocks: !add
       - STR_PICKED_CHAOS_STRATEGY
 
@@ -632,8 +630,6 @@ research:
       - STR_HEAVY_SHOTGUN_ARBITES
 
   - name: STR_GREENEST_ORKZ             # Ork Strategy
-    dependencies:
-      - STR_GENERALLOCK ###CHANGEME - modio compat
     unlocks: !add
       - STR_40MM_AMMO
       - STR_STUBBERS_UNLOCK
@@ -1927,8 +1923,6 @@ research:
     dependencies:
       - STR_MARINES_AND_DEATHWATCH
       - STR_MIDTIER_PREREQ
-    unlocks:
-      - STR_TECHMARINE_GEAR
 
   - name: STR_TEC_BAY_CHAMBER_R     # Techmarine (GK)
     cost: 100
@@ -1939,11 +1933,11 @@ research:
     unlocks:
       - STR_TECHMARINE_GEAR
 
-  - name: STR_TECHMARINE_GEAR              # Techmarine Gear
+  - name: STR_TECHMARINE_GEAR       # Techmarine Gear
     cost: 0
     points: 0
     dependencies:
-      - STR_GENERALLOCK
+      - STR_MARINES_STRATEGY
       - STR_TEC_BAYR
 
   - name: STR_GRAV_SHIELD  # Grave Shield

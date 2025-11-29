@@ -25,7 +25,7 @@ armors:
         flatOne: 5
         psiSkill: 0.2 # 20% of devotion as additional morale recovery
     loftempsSet: [ 3 ]
-    corpseGeo: STR_FALLEN_CORPSE
+    corpseGeo: STR_SMT_GENESEED
     psiDefence:
       psiStrength: 0.02 # psyker strength barely helps
       psiSkill: 1.5 #FAITH IS MY SHIELD
@@ -246,6 +246,7 @@ armors:
   - &STR_MARINE_OFFICER_ARMOR               #SPECIALIST TEMPLATE
     update: STR_SIGNALFALSE_ARMOR_UC
     loftempsSet: [ 3 ]
+    corpseGeo: STR_SMT_GENESEED
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD
@@ -323,10 +324,10 @@ armors:
     customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 0}
     spriteSheet: XCOM_0.PCK
     storeItem: STR_NONE
-    corpseGeo: STR_SMT_GENESEED
     ufopediaType: STR_SCOUT_UC
     corpseBattle:
       - STR_SCOUT_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     camouflageAtDay: -7
     camouflageAtDark: -5
     frontArmor: 80
@@ -381,6 +382,7 @@ armors:
     refNode: *STR_MARINE_ARMOR
     corpseBattle:
       - STR_MK7_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     stats:
       tu: 10            # base 10
       stamina: 20       # base 20 
@@ -398,6 +400,7 @@ armors:
     refNode: *STR_MARINE_ARMOR
     corpseBattle:
       - STR_MK7_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     frontArmor: 125 # base 120
     sideArmor: 115 # base 110
     rearArmor: 95 # base 100
@@ -423,6 +426,7 @@ armors:
     refNode: *STR_MARINE_ARMOR
     corpseBattle:
       - STR_MK7_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     frontArmor: 125 # base 120
     sideArmor: 105 # base 110
     rearArmor: 100 # base 100
@@ -447,6 +451,7 @@ armors:
     refNode: *STR_MARINE_ARMOR
     corpseBattle:
       - STR_APOT_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     stats:
       tu: 5             # base 10 -5
       stamina: 20       # base 20 
@@ -474,6 +479,7 @@ armors:
     refNode: *STR_MARINE_OFFICER_ARMOR
     corpseBattle:
       - STR_TECH_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     storeItem: STR_NONE
     stats:
       tu: 10            # base 10 
@@ -499,6 +505,7 @@ armors:
     refNode: *STR_MARINE_OFFICER_ARMOR
     corpseBattle:
       - STR_SARGENT_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     stats:
       tu: 10            # base 10 
       stamina: 20       # base 20 
@@ -519,6 +526,7 @@ armors:
     refNode: *STR_MARINE_OFFICER_ARMOR
     corpseBattle:
       - STR_SARGENT_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     stats:
       tu: 10            # base 10
       stamina: 20       # base 20
@@ -547,6 +555,7 @@ armors:
     refNode: *STR_MARINE_OFFICER_ARMOR
     corpseBattle:
       - STR_HONOR_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     stats:
       tu: 30            # base 10 +15 ass +5 elite
       stamina: 30       # base 20 +10 elite
@@ -580,7 +589,7 @@ armors:
     customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 15}
     corpseBattle:
       - STR_HONOR_CORPSE_GENE
-    corpseGeo: STR_FALLEN_CORPSE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     storeItem: STR_ASS_ARMOR_HONOR
     frontArmor: 130 # base 125
@@ -619,7 +628,7 @@ armors:
     customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 15}
     corpseBattle:
       - STR_HONOR_CORPSE_GENE
-    corpseGeo: STR_FALLEN_CORPSE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     storeItem: STR_ASS_ARMOR_HONOR
     frontArmor: 130 # base 125
@@ -656,9 +665,9 @@ armors:
     spriteSheet: DEVH.PCK
     customArmorPreviewIndex: 48
     corpseBattle:
-      - STR_SIGNAL_CORPSE_GENE
+      - STR_HONOR_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     storeItem: STR_SIGNAL_ARMOR
-    corpseGeo: STR_FALLEN_CORPSE
     frontArmor: 130 # base 125
     sideArmor: 110 # base 105
     rearArmor: 105 # base 100
@@ -734,10 +743,10 @@ armors:
     customArmorPreviewIndex: 45
     spriteSheet: SCOUTSGT.PCK
     storeItem: STR_SCOUT_SGT
-    corpseGeo: STR_FALLEN_CORPSE
     ufopediaType: STR_SCOUT_SGT_UC
     corpseBattle:
       - STR_SCOUT_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     camouflageAtDay: -8
     camouflageAtDark: -8
     frontArmor: 90
@@ -801,6 +810,7 @@ armors:
     ufopediaType: STR_SCOUTH_UC
     corpseBattle:
       - STR_SCOUTH_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -878,6 +888,7 @@ armors:
     update: STR_POWER_SUIT_UC
     corpseBattle:
       - STR_TERMINATOR_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -1045,6 +1056,7 @@ armors:
     refNode: *STR_MARINE_OFFICER_ARMOR
     corpseBattle:
       - STR_CHAP_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     storeItem: STR_NONE # Now default to Chaplain type soldiers
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -1083,8 +1095,8 @@ armors:
     customArmorPreviewIndex: 39
     corpseBattle:
       - STR_CHAP_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     storeItem: STR_POWER_SUIT
-    corpseGeo: STR_FALLEN_CORPSE
     zombiImmune: true
     stats:
       tu: -10           # base -10
@@ -1123,7 +1135,7 @@ armors:
     customArmorPreviewIndex: 38
     corpseBattle:
       - STR_CHAP_CORPSE_GENE
-    corpseGeo: STR_FALLEN_CORPSE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_JUMP_GAUNTLET_PLUS
     storeItem: STR_ASS_ARMOR_HONOR
     zombiImmune: true
@@ -1169,7 +1181,7 @@ armors:
     customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 12}
     corpseBattle:
       - STR_LIB_CORPSE_GENE
-    corpseGeo: STR_FALLEN_CORPSE
+    corpseGeo: STR_SMT_GENESEED
     storeItem: STR_NONE # Default to Librarians
     specialWeapon: STR_UNARMED_GAUNTLET_PLUS # doesn't get confuse anymore, just regular punch
     frontArmor: 125 # base 125
@@ -1227,8 +1239,8 @@ armors:
     customArmorPreviewIndex: 42
     corpseBattle:
       - STR_LIB_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     storeItem: STR_POWER_SUIT
-    corpseGeo: STR_FALLEN_CORPSE
     stats:
       tu: -10           # base -10
       stamina: 20       # base 20
@@ -1280,6 +1292,7 @@ armors:
     type: STR_CAPTAIN_TAC
     corpseBattle:
       - STR_CAPTAIN_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     units:
       - STR_SOLDIER_CAPTAIN
     tags:
@@ -1289,7 +1302,6 @@ armors:
   - type: STR_CAPTAIN_TAC                   # Captain (Tactical)
     refNode: *STR_MARINE_OFFICER_ARMOR
     ufopediaType: STR_PERSONAL_ARMOR_UC
-    corpseGeo: STR_FALLEN_CORPSE
     storeItem: STR_NONE
     frontArmor: 130 # base 125
     sideArmor: 125 # base 120
@@ -1317,7 +1329,6 @@ armors:
   - type: STR_CAPTAIN_ASS                   # Captain (Vanguard Basic)
     refNode: *STR_MARINE_OFFICER_ARMOR
     ufopediaType: STR_ASS_ARMOR_HONOR_UC
-    corpseGeo: STR_FALLEN_CORPSE
     storeItem: STR_ASS_ARMOR_HONOR
     frontArmor: 140 # base 135 +5
     sideArmor: 135  # base 130 +5
@@ -1352,7 +1363,6 @@ armors:
   - type: STR_CAPTAIN_ASS_CLAW              # Captain (Vanguard Claw)
     refNode: *STR_MARINE_OFFICER_ARMOR
     ufopediaType: STR_ASS_ARMOR_HONOR_UC
-    corpseGeo: STR_FALLEN_CORPSE
     storeItem: STR_ASS_ARMOR_HONOR
     frontArmor: 140 # base 135 +5
     sideArmor: 135  # base 130 +5
@@ -1388,7 +1398,6 @@ armors:
   - type: STR_CAPTAIN_ASS_SHIELD            # Captain (Vanguard Stormshield)
     refNode: *STR_MARINE_OFFICER_ARMOR
     ufopediaType: STR_ASS_ARMOR_HONOR_UC
-    corpseGeo: STR_FALLEN_CORPSE
     storeItem: STR_ASS_ARMOR_HONOR
     frontArmor: 140 # base 135 +5
     sideArmor: 135  # base 130 +5
@@ -1425,7 +1434,6 @@ armors:
     refNode: *STR_MARINE_OFFICER_ARMOR
     ufopediaType: STR_SIGNUM_DEV_UC
     storeItem: STR_SIGNAL_ARMOR
-    corpseGeo: STR_FALLEN_CORPSE
     frontArmor: 140 # base 135
     sideArmor: 130 # base 125
     rearArmor: 105 # base 100
@@ -1455,7 +1463,6 @@ armors:
     refNode: *STR_MARINE_OFFICER_ARMOR
     ufopediaType: STR_HONOR_ARMOR_UC
     storeItem: STR_HONOR_ARMOR
-    corpseGeo: STR_FALLEN_CORPSE
     frontArmor: 140
     sideArmor: 135
     rearArmor: 115
@@ -1488,7 +1495,7 @@ armors:
     storeItem: STR_SCOUTH
     corpseBattle:
       - STR_SCOUTH_CORPSE_GENE
-    corpseGeo: STR_FALLEN_CORPSE
+    corpseGeo: STR_SMT_GENESEED
     camouflageAtDay: -10
     camouflageAtDark: -10
     frontArmor: 100
@@ -1540,10 +1547,7 @@ armors:
   - type: STR_CAPTAIN_TERM                  # Captain (Terminator)
     refNode: *STR_TERMINATOR_ARMOR
     ufopediaType: STR_CAPTAIN_UC
-    corpseBattle:
-      - STR_TERMINATOR_CORPSE
     storeItem: STR_POWER_SUIT
-    corpseGeo: STR_FALLEN_CORPSE
     units: # allow Primaris from Ancient Vault
       - STR_SOLDIER_CAPTAIN
       - STR_PRIMARISLV5
@@ -1597,6 +1601,7 @@ armors:
       - BIKE_CORPSE2
       - BIKE_CORPSE3
       - BIKE_CORPSE4
+    corpseGeo: STR_SMT_GENESEED
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -1699,8 +1704,8 @@ armors:
     ufopediaType: STR_MKX_TAC_LV1_UC
     corpseBattle:
       - STR_MKX_TAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     storeItem: STR_NONE
-    corpseGeo: STR_FALLEN_CORPSE
     loftempsSet: [ 3 ]
     forcedTorso: 1
     psiDefence:
@@ -2094,8 +2099,8 @@ armors:
     ufopediaType: STR_MKX_ASS_LV1_UC
     corpseBattle:
       - STR_MKX_TAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     storeItem: STR_MKX_ASS_ARMOR
-    corpseGeo: STR_FALLEN_CORPSE
     loftempsSet: [ 3 ]
     forcedTorso: 1
     psiDefence:
@@ -2231,8 +2236,8 @@ armors:
     underArmor: 100
     corpseBattle:
       - STR_MKX_PHB_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     storeItem: STR_MKX_PHB_ARMOR
-    corpseGeo: STR_FALLEN_CORPSE
     ufopediaType: STR_MKX_PHB_LV1_UC
     damageModifier:
       - 1.0 #none
@@ -2477,8 +2482,8 @@ armors:
       moraleCurrent: 1.5 #discipline and resolve reinforces their faith
     corpseBattle:
       - STR_MKX_GRV_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     storeItem: STR_MKX_GRV_ARMOR
-    corpseGeo: STR_FALLEN_CORPSE
     loftempsSet: [ 4 ]
     forcedTorso: 1
     frontArmor: 150
@@ -2763,7 +2768,7 @@ armors:
     ufopediaType: STR_MKX_INC_CODEX
     corpseBattle:
       - STR_MKX_INC_CORPSE_GENE
-    corpseGeo: STR_FALLEN_CORPSE
+    corpseGeo: STR_SMT_GENESEED
     loftempsSet: [ 4 ]
     forcedTorso: 1
     storeItem: STR_MKX_INC_ARMOR
@@ -3012,7 +3017,7 @@ armors:
     ufopediaType: STR_MKX_APO_UC
     corpseBattle:
       - STR_MKX_APO_CORPSE_GENE
-    corpseGeo: STR_FALLEN_CORPSE
+    corpseGeo: STR_SMT_GENESEED
     customArmorPreviewIndex: {mod: 40k_ROSIGMA_edits, index: 290}
     loftempsSet: [ 3 ]
     forcedTorso: 1
@@ -3371,8 +3376,8 @@ armors:
     forcedTorso: 1
     corpseBattle:
       - STR_MKX_CHP_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     storeItem: STR_NONE
-    corpseGeo: STR_FALLEN_CORPSE
     stats:
       tu: 10            # base 20 
       stamina: 10       # base 15 
@@ -3423,8 +3428,8 @@ armors:
     zombiImmune: true
     corpseBattle:
       - STR_MKX_CHP_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     storeItem: STR_NONE
-    corpseGeo: STR_FALLEN_CORPSE
     stats:
       tu: 10
       stamina: 10
@@ -3472,8 +3477,8 @@ armors:
     ufopediaType: STR_MKX_LIB_LV1_UC
     corpseBattle:
       - STR_MKX_LIB_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     storeItem: STR_NONE
-    corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
       psiStrength: 1.0 # psyker
       psiSkill: 0.2 # untrained librarians are vulnerable to warp powers and can't rely on FAITH to protect them
@@ -3598,6 +3603,7 @@ armors:
       - STR_MKX_BIKE_CORPSE2
       - STR_MKX_BIKE_CORPSE3
       - STR_MKX_BIKE_CORPSE4
+    corpseGeo: STR_SMT_GENESEED
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.0 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -3658,6 +3664,7 @@ armors:
     refNode: *ARMOR_TACTICAL
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3698,6 +3705,7 @@ armors:
     ufopediaType: STR_GK_TACTICAL_UC
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3720,6 +3728,7 @@ armors:
     refNode: *ARMOR_TACTICAL
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_TELEPORT_INTERCEPTOR
     storeItem: STR_GK_INTERCEPTOR
     zombiImmune: true
@@ -3741,6 +3750,7 @@ armors:
     ufopediaType: STR_GK_INTERCEPTOR_UC
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_TELEPORT_INTERCEPTOR
     storeItem: STR_GK_INTERCEPTOR
     zombiImmune: true
@@ -3763,6 +3773,7 @@ armors:
     refNode: *ARMOR_TACTICAL
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     requiresBonus: STR_BONUS_APOTH_TRAINING
@@ -3786,6 +3797,7 @@ armors:
     refNode: *ARMOR_TACTICAL
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3826,6 +3838,7 @@ armors:
     ufopediaType: STR_GK_TAC_LIBRARIAN_UC
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3867,6 +3880,7 @@ armors:
     refNode: *ARMOR_TACTICAL
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3890,6 +3904,7 @@ armors:
     ufopediaType: STR_GK_TAC_TECHMARINE_UC
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3914,6 +3929,7 @@ armors:
     refNode: *ARMOR_TACTICAL
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3936,6 +3952,7 @@ armors:
     ufopediaType: STR_GK_TAC_CHAPLAIN_UC
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_TELEPORT_GK
     storeItem: STR_NONE
     zombiImmune: true
@@ -3959,6 +3976,7 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
     requires: STR_GK_TERMINATOR_R
@@ -3997,6 +4015,7 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -4022,6 +4041,7 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -4048,6 +4068,7 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -4090,6 +4111,7 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -4134,6 +4156,7 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -4158,6 +4181,7 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -4184,6 +4208,7 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -4209,6 +4234,7 @@ armors:
     refNode: *ARMOR_TERMINATOR
     corpseBattle:
       - STR_GKTAC_CORPSE_GENE
+    corpseGeo: STR_SMT_GENESEED
     ufopediaType: STR_GK_TERMINATOR_UC
     specialWeapon: STR_TELEPORT
     storeItem: STR_GK_TERMINATOR
@@ -5202,6 +5228,7 @@ armors:
 ### Other Marines
   - update: STR_BLOODRAVENS_TACTICAL_ARMOR      # Bloodraven Tactical
     refNode: *STR_MARINE_ARMOR
+    corpseGeo: STR_FALLEN_CORPSE
     stats: # tac stats
       tu: 10            # base 10
       stamina: 20       # base 20 

@@ -2,7 +2,7 @@ soldierTransformation:
 ### General
   - name: STR_HARVEST_GENESEED          # Recover Geneseed from Corpses
     requires:
-      - STR_MARINES_STRATEGY
+      - STR_GENERALLOCK # replaced with corpse recovery system
     cost: 5000
     createsClone: true
     allowsDeadSoldiers: true

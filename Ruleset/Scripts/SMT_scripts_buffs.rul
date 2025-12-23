@@ -248,9 +248,8 @@ extended:
           end;
 
           begin; ### Cloaking
-
             damaging_item.getTag temp Tag.ITEM_CLOAKING_EFFECT;
-            if gt temp 0;
+            if neq temp 0;
               unit.getTag temp2 Tag.UNIT_STEALTH_IS_ACTIVE;
               #debug_log "Cloaking Ping 2" temp temp2;
               if eq temp2 0; # only activate if unit is not already stealthed

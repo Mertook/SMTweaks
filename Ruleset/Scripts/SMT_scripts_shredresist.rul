@@ -22,7 +22,7 @@ extended:
               #debug_log "Armor resist (Regular): " unitMod damaging_type to_armor;
             end;
 
-            if and neq unitMod 0 gt to_armor 0; #Only run if the armor actually has resist (and damage is being dealt)
+            if and neq unitMod 0 gt to_armor 0; #Only run if the armor actually has resist and damage is being dealt
               set dmgReduction to_armor;
               weapon_item.getTag rendVal Tag.SMT_RENDING_WEAPON;
               if gt rendVal 0; # if weapon partially ignores armor resist

@@ -1151,7 +1151,7 @@ manufacture:
     producedItems:
       STR_SHOTGUN_SHELLS_MC: 20
 
-  - name: STR_SHOTGUN_SHELLS_HEAVY
+  - name: STR_SHOTGUN_SHELLS_HEAVY_MC
     space: 0
     time: 200
     cost: 20000
@@ -1162,7 +1162,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 6
       STR_UFO_CONSTRUCTION: 4
     producedItems:
-      STR_SHOTGUN_SHELLS_HEAVY: 20
+      STR_SHOTGUN_SHELLS_HEAVY_MC: 20
 
   - name: STR_RIPPER_GUN_CLIP_MC
     space: 0
@@ -1230,6 +1230,7 @@ manufacture:
 
   - name: STR_HWP_FUSION_BOMB                       # Dreadnought Hellfire Missiles
     requires: !add
+      - STR_MARINES_STRATEGY
       - STR_DREADNOUGHT_MARINE
 
   - name: STR_BLASTER_BOMB
@@ -1444,11 +1445,11 @@ manufacture:
       - STR_GRAVCANNON_TECH
       - STR_IMPERIAL_WEAPONS
     space: 0
-    time: 1250
+    time: 1750
     cost: 125000
     requiredItems:
-      STR_ELERIUM_115: 5
-      STR_UFO_CONSTRUCTION: 2
+      STR_ALIEN_ALLOYS: 30
+      STR_UFO_CONSTRUCTION: 5
 
   - name: STR_GRAVCANNON_AMMO
     category: STR_AMMUNITION
@@ -1527,7 +1528,7 @@ manufacture:
       - STR_GRAVITON_TECH
       - STR_IMPERIAL_WEAPONS
     space: 0
-    time: 750
+    time: 1250
     cost: 60000
     requiredItems:
       STR_ALIEN_ALLOYS: 4
@@ -1539,7 +1540,7 @@ manufacture:
       - STR_MASTER_CRAFTING
       - STR_IMPERIAL_WEAPONS
     space: 0
-    time: 900
+    time: 2200
     cost: 125000
     requiredItems:
       STR_ALIEN_ALLOYS: 4

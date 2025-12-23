@@ -2427,6 +2427,8 @@ items:
       RadiusReduction: 4.5
       IgnoreOverKill: false  # leave no trace; this is the end of days
     clipSize: 1
+    tags:
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100
 
   - type: STR_CAS_STRIKE_DUMMY              # Lightning CAS Vox Codex
     battleType: 1
@@ -2619,14 +2621,14 @@ items:
     bulletSpeed: 50
     autoRange: 0
     snapRange: 0
-    aimRange: 40
+    aimRange: 15
     accuracyAuto: 0
     accuracySnap: 0
     accuracyAimed: 90
     costAimed:
       time: 1
       mana: 5
-    clipSize: 2
+    clipSize: 1
     damageType: 1
     power: 280
     powerForAnimation: 50
@@ -2637,6 +2639,8 @@ items:
       ToHealth: 1.0
       FixRadius: 8
       ToTile: 0.3
+    tags:
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 50
 
   - type: STR_BOMBARD_ROCKET                # Preator Rockets
     refNode: *STR_STRIKE_WEAPON_DEFAULTS
@@ -2667,6 +2671,8 @@ items:
       ToTile: 0.60
       ToItem: 0.5
     clipSize: 4
+    tags:
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 50
 
   - type: STR_BOMBARD_LASCANNON             # Laser Destroyer
     refNode: *STR_STRIKE_WEAPON_DEFAULTS

@@ -3122,7 +3122,7 @@ items:
     hitSound: {mod: 40k, index: 712}
     hitAnimation: {mod: 40k, index: 26}
     damageAlter:
-      RandomType: 7
+      RandomType: 7 # 50-200%
       ArmorEffectiveness: 0.5
       ToHealth: 1.0
       ToArmorPre: 0.1
@@ -3139,7 +3139,7 @@ items:
     hitSound: {mod: 40k, index: 712}
     hitAnimation: {mod: 40k, index: 26}
     damageAlter:
-      RandomType: 7
+      RandomType: 7 # 50-200%
       ArmorEffectiveness: 0.5
       ToHealth: 1.0
       ToArmorPre: 0.2
@@ -3303,13 +3303,13 @@ items:
     damageAlter:  # high explosive
       RandomType: 8
       ArmorEffectiveness: 1.1 # was 0.95
-      ToArmorPre: 0.15
+      ToArmorPre: 0.2
       ToArmor: 0.1
-      ToStun: 0.6
-      ToEnergy: 0.3 # was 0.4
-      ToTime: 0.2
-      ToTile: 0.75
-      ToItem: 0.75
+      ToStun: 0.3 # was 0.6
+      ToEnergy: 0.2 # was 0.4
+      ToTime: 0.0 # was 0.2
+      ToTile: 0.5
+      ToItem: 0.5
       FixRadius: 2
     powerForAnimation: 40
     tags:
@@ -3357,7 +3357,7 @@ items:
     power: 100
     damageType: 1 # STANDARD
     damageAlter:
-      ArmorEffectiveness: 0.80 # was 0.9
+      ArmorEffectiveness: 0.70 # was 0.9
       ToArmorPre: 0.03 # was 0.05
       ToArmor: 0.1 # was 0.1
       ToHealth: 1.0 # was 1.0
@@ -3422,7 +3422,7 @@ items:
     power: 100
     damageType: 1 # STANDARD
     damageAlter:
-      ArmorEffectiveness: 0.80 # was 0.9
+      ArmorEffectiveness: 0.70 # was 0.9
       ToArmorPre: 0.03 # was 0.05
       ToArmor: 0.1 # was 0.1
       ToHealth: 1.0 # was 1.0
@@ -3447,7 +3447,7 @@ items:
     power: 100
     damageType: 1 # STANDARD
     damageAlter:
-      ArmorEffectiveness: 0.80 # was 0.9
+      ArmorEffectiveness: 0.70 # was 0.9
       ToArmorPre: 0.03 # was 0.05
       ToArmor: 0.1 # was 0.1
       ToHealth: 1.0 # was 1.0
@@ -5002,8 +5002,8 @@ items:
       name: STR_MAXIMAL_SHOT
     tags:
       ITEM_HEAT_MAX_LEVEL: 7
-      ITEM_HEAT_DISSIPATION_PER_TURN: 1
-      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2
+      ITEM_HEAT_DISSIPATION_PER_TURN: 2
+      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 1
       ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 50
       ITEM_OVERHEAT_DAMAGE: 50
 
@@ -5034,8 +5034,8 @@ items:
       name: STR_MAXIMAL_SHOT
     tags:
       ITEM_HEAT_MAX_LEVEL: 7
-      ITEM_HEAT_DISSIPATION_PER_TURN: 2 # high quality
-      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2
+      ITEM_HEAT_DISSIPATION_PER_TURN: 2
+      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2 # high quality
       ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 50
       ITEM_OVERHEAT_DAMAGE: 50
       ITEM_HEAT_SINK_COLOR: 15
@@ -5068,8 +5068,8 @@ items:
     powerRangeThreshold: 30.0 # was 35
     tags:
       ITEM_HEAT_MAX_LEVEL: 7
-      ITEM_HEAT_DISSIPATION_PER_TURN: 1
-      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 2
+      ITEM_HEAT_DISSIPATION_PER_TURN: 2
+      ITEM_HEAT_AMMO_SPENT_FOR_INCREASE: 1
       ITEM_AIMED_FLAT_POWER_BONUS_PERCENT: 50
       ITEM_OVERHEAT_DAMAGE: 50
 
@@ -5282,7 +5282,7 @@ items:
     power: 20
     damageAlter:
       FixRadius: 1
-      RadiusReduction: 5
+      RadiusReduction: 8
     tags:
       SMT_GRAV_WEAPON: 120 # AoE
 
@@ -5310,6 +5310,7 @@ items:
 
   - type: STR_GRAVCANNON_AMMO               # Gravcannon Ammo
     refNode: *DMG_GRAV_STD
+    bigSprite: 285
     hitAnimation: {mod: 40k_ROSIGMA_edits, index: 1150} #was 2200, broken
     hitAnimFrames: 16
     powerForAnimation: 20
@@ -5323,7 +5324,7 @@ items:
     powerRangeThreshold: 24 #gravcannon bonus
     damageAlter:
       FixRadius: 2
-      RadiusReduction: 5
+      RadiusReduction: 8
       ToTile: 3.5
     tags:
       SMT_GRAV_WEAPON: 120
@@ -7372,6 +7373,7 @@ items:
     damageAlter:
       FixRadius: 8 # was 10
     tags:
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 50
       ITEM_ARMOR_DAMAGE_ALL: 100 # boosted
 
   - type: STR_KRAK_GRENADE                  # Krak Grenade
@@ -7712,7 +7714,7 @@ items:
     damageAlter:
       RandomType: 8
       ArmorEffectiveness: 0.4
-      ToArmorPre: 0.3
+      ToArmorPre: 0.1
       ToArmor: 0.0
       ToHealth: 0.8
       ToStun: 0.2
@@ -7730,10 +7732,10 @@ items:
     costSell: 40000
     twoHanded: true
     oneHandedPenalty: 100
-    weight: 48
+    weight: 58
     dropoff: 5
-    autoRange: 14
-    snapRange: 20
+    autoRange: 12
+    snapRange: 18
     aimRange: 30
     accuracyAuto: 66
     accuracySnap: 80
@@ -7760,10 +7762,9 @@ items:
     power: 90
     damageBonus:
       psiStrength: [-0.2, 0.01, -0.00004] # s60 = p15, s80 = p27, s100 = p40, s120 = p50, s140 = p58; S-curve, sharpest slope at 80~85, starts losing power at 160+
-      flatHundred: 0
-    damageType: 13 # WARP
+    damageType: 1 # STANDARD
     damageAlter:
-      RandomType: 8 # 25-175%
+      RandomType: 7 # 50-200%
       ArmorEffectiveness: 0.5
       ToArmorPre: 0.3
       ToArmor: 0.10
@@ -7781,7 +7782,7 @@ items:
       RadiusReduction: 5
     clipSize: 12
     tags:
-      DAMAGE_BONUS_PERCENT_DAEMONIC: 150
+      DAMAGE_BONUS_PERCENT_DAEMONIC: 200
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 # ignores shields
       ITEM_DOESNT_HURT_USER: 1
       ITEM_ARMOR_TARGET_FACE: 1
@@ -8513,12 +8514,23 @@ items:
       energy: 8
     flatMelee: true
     power: 120
+    damageType: 5 # PLASMA
     damageBonus:
       strength: 0.9 # was 1.0
       melee: 0.25 # was 0.2
-    meleeAlter:
-      ArmorEffectiveness: 0.6
-      ToArmorPre: 0.3
+    damageAlter:
+      RandomType: 2 # 50-150
+      ArmorEffectiveness: 0.5 # was 0.7
+      ToArmorPre: 0.5 # was 0.2
+      ToArmor: 0.1
+      ToHealth: 1.0 # was 0.9
+      ToStun: 0.3
+      ToEnergy: 0.3
+      ToTime: 0.3
+      ToTile: 0.75
+      RandomWound: true
+      IgnoreSelfDestruct: true
+      IgnoreOverKill: false
     meleeMultiplier:
       melee: 0.6
       strength: 0.4
@@ -9065,11 +9077,11 @@ items:
       ToHealth: 0.1
       ToEnergy: 0.2
       ToStun: 0.2
-      ToTile: 1.2
+      ToTile: 2.0
       TileDamageMethod: 1
       ToItem: 0.0
       FixRadius: 1
-      RadiusReduction: 3
+      RadiusReduction: 1
 
   - type: STR_PSITOKEN_TELEPATHY            # T1 Telepathy
     refNode: *REF_PSI_TOKEN
@@ -9605,7 +9617,7 @@ items:
     tags:
       ITEM_IS_BUFF_WEAPON: 1
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
-      ITEM_CLOAKING_EFFECT: 5
+      ITEM_CLOAKING_EFFECT: 3
 
   - type: STR_PSITOKEN_SOULSTORM            # T6 Soul Storm
     refNode: *REF_PSI_TOKEN
@@ -10181,11 +10193,14 @@ items:
 ###Utility
   - type: STR_PERSONAL_LIGHT                # Personal Light
     battleType: 10 # electroflare
+    costBuy: 2000
+    costSell: 500
     weight: 4
-    bigSprite: 99
+    bigSprite: 134 ###CHANGEME
     floorSprite: 72
     power: 16
     fuseType: -2
+    throwRange: 4
     armor: 300
     invWidth: 2
     invHeight: 1
@@ -10617,8 +10632,8 @@ items:
     experienceTrainingMode: 13 # melee & reactions
     tags:
       ITEM_IS_TELEPORTER: 1
-      ITEM_TELEPORTER_COOLDOWN: 4
-      ITEM_TELEPORTER_ENERGY: 12
+      ITEM_TELEPORTER_COOLDOWN: 5
+      ITEM_TELEPORTER_ENERGY: 10
 
   - type: STR_TELEPORT_INTERCEPTOR          # Grey Knight Teleport tool (Interceptor)
     refNode: *REF_FIST
@@ -10637,8 +10652,8 @@ items:
     experienceTrainingMode: 13 # melee & reactions
     tags:
       ITEM_IS_TELEPORTER: 1
-      ITEM_TELEPORTER_COOLDOWN: 2
-      ITEM_TELEPORTER_ENERGY: 24
+      ITEM_TELEPORTER_COOLDOWN: 3
+      ITEM_TELEPORTER_ENERGY: 20
 
   - type: STR_SMT_SIGNUM_VUL                # Devastator Signum
     refNode: *REF_FIST
@@ -10715,7 +10730,7 @@ items:
     autoRange: 17
     snapRange: 17
     accuracyAuto: 70 # was 40
-    accuracySnap: 60
+    accuracySnap: 50
     confSnap:
       shots: 6
       name: STR_REACT_SHOT
@@ -10736,7 +10751,7 @@ items:
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2138} # was 707, chonky sound for heavy bolters
     snapRange: 17
     accuracyAuto: 70 # was 40
-    accuracySnap: 60
+    accuracySnap: 50
     confSnap:
       shots: 6
       name: STR_REACT_SHOT
@@ -10753,7 +10768,7 @@ items:
     fireSound: {mod: 40k_ROSIGMA_edits, index: 2138} # was 707, chonky sound for heavy bolters
     snapRange: 17
     accuracyAuto: 70 # was 40
-    accuracySnap: 60
+    accuracySnap: 50
     confSnap:
       shots: 6
       name: STR_REACT_SHOT
@@ -10810,12 +10825,48 @@ items:
 
   - type: STR_CHIMERA_HB                    # Hull Heavy Bolter
     refNode: *DMG_BOLTER_AMMO_STD
+    accuracyAuto: 50
+    accuracySnap: 33
+    costAuto:
+      time: 1
+      energy: 10
+      mana: 10
+    costSnap:
+      time: 1
+      energy: 10
+      mana: 10
+    flatUse:
+      time: true
+      energy: true
+      mana: true
+    confSnap:
+      shots: 3
+      name: STR_REACT_SHOT
+    autoShots: 6
     power: 85
     damageAlter:
       ArmorEffectiveness: 0.8
 
   - type: STR_SPONSON_HB                    # Sponson Heavy Bolter
     refNode: *DMG_BOLTER_AMMO_STD
+    accuracyAuto: 50
+    accuracySnap: 33
+    costAuto:
+      time: 1
+      energy: 10
+      mana: 10
+    costSnap:
+      time: 1
+      energy: 10
+      mana: 10
+    flatUse:
+      time: true
+      energy: true
+      mana: true
+    confSnap:
+      shots: 3
+      name: STR_REACT_SHOT
+    autoShots: 6
     power: 85
     damageAlter:
       ArmorEffectiveness: 0.8

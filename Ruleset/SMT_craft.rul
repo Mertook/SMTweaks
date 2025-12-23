@@ -3141,6 +3141,7 @@ terrains:
       - name: ARMYUFO
         width: 10
         length: 20
+        revealedFloors: [0, 1, 2, 3, 4, 5]
         items:
           STR_RAZORBACK_TURRET_SPAWNER:
             - [1, 12, 1]
@@ -3187,7 +3188,7 @@ terrains:
       - name: GORGON_BLOCK
         width: 10
         length: 20
-        revealedFloors: [0, 1, 2, 3]
+        revealedFloors: [0, 1, 2, 3, 4, 5]
         items:
           STR_GORGON_HEAVY_FLAMER_FRONT_LEFT_SPAWNER:
             - [8, 15, 1]
@@ -3234,6 +3235,7 @@ terrains:
       - name: LANDRAIDER
         width: 10
         length: 20
+        revealedFloors: [0, 1, 2, 3, 4, 5]
         items:
           STR_IMMOLATOR_SPAWNER:
             - [1, 15, 1]
@@ -3271,6 +3273,7 @@ terrains:
       - name: CMBUFO
         width: 10
         length: 20
+        revealedFloors: [0, 1, 2, 3, 4, 5]
         items:
           STR_TARANTULAA_SPAWNER:
             - [2, 15, 0]

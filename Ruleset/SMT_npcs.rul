@@ -309,6 +309,7 @@ units: # Civ units
     type: STR_DUMMY_TARGETER
     race: STR_BOMBARD_TARGETER
     cosmetic: true
+    ignoredByAI: true
     stats:
       tu: 200
       stamina: 200
@@ -440,6 +441,7 @@ units: # Civ units
     race: STR_PSI_UNIT
     rank: STR_LIVE_SOLDIER
     cosmetic: true
+    ignoredByAI: true
     stats:
       tu: 50
       stamina: 1
@@ -465,6 +467,7 @@ units: # Civ units
   - type: STR_DECAYING_HOLOGRAM_TARGET_GUARDSMAN  # Hologram that dies after 2 turns.
     race: STR_TARGET_GUARD
     rank: STR_LIVE_SOLDIER
+    cosmetic: true
     stats:
       tu: 1
       stamina: 1

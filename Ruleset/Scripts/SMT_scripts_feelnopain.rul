@@ -97,7 +97,7 @@ extended:
           end;
 
           unit.getTag triggerCap Tag.UNIT_IS_DIEHARD;
-          if eq temp 0;
+          if eq triggerCap 0;
             return;
           end;
 

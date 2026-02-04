@@ -478,7 +478,7 @@ extended:
 
           return 0 visibility_mode;
 
-      - new: SMTS_invisibility_detection # modified for custom detection ranges
+      - new: SMTS_invisibility_detection
         offset: 95
         code: |
           var int temp;

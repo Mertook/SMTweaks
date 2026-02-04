@@ -8,6 +8,14 @@ bughuntTimeUnitsLeft: 0
 # Viewdistance
 maxViewDistance: 25 # rosigma 40
 
+recommendedUserOptions:
+  oxcePediaSortResistances: 1
+  ### Rosigma values
+  oxceAutomaticPromotions: true
+  nightVisionColor: 4
+  fullNightVision: false
+  playBriefingMusicDuringEquipment: true
+
 statGrowthMultipliers: # difficulty is repurposed to pick faction, don't scale enemies based on it
   tu: 0
   stamina: 0
@@ -26,7 +34,7 @@ difficultyCoefficientOverrides: # override and normalize difficulty values for U
   monthlyRatingThresholds: [-500, -500, -500, -500, -500]
   ufoFiringRateCoefficients: [100, 100, 100, 100, 100]
   ufoEscapeCountdownCoefficients: [100, 100, 100, 100, 100]
-  retaliationTriggerOdds: [4, 4, 4, 4, 4]
+  retaliationTriggerOdds: [2, 2, 2, 2, 2]
   retaliationBaseRegionOdds: [50, 50, 50, 50, 50]
   aliensFacingCraftOdds: [50, 50, 50, 50, 50]
 

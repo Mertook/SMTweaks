@@ -1,0 +1,120 @@
+extended:
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
+
+  scripts:
+    accuracyMultiplierBonusStats:
+      - new: SMTS_aMBS_repeated_accuracy_penalty
+        offset: 10
+        code: |
+          var int temp;
+          var int temp2;
+          var int multiplier;
+          var int weaponHeat;
+          var int weaponQuality;
+
+          weapon.getTag weaponHeat Tag.ITEM_AMMO_REPEATED_ACCURACY_FALLOFF_TOTAL;
+          weapon.getTag multiplier Tag.ITEM_WEAPON_REPEATED_ACCURACY_FALLOFF_MULTIPLIER;
+          ammo.getTag temp Tag.ITEM_AMMO_REPEATED_ACCURACY_FALLOFF_MULTIPLIER;
+          add multiplier temp; # add the weapon and ammo multipliers
+
+          if and lt multiplier 1 lt weaponHeat 1; # ammo and weapon both lack accuracy penalties
+            return bonus; # final accuracy
+          end;
+
+          ammo.getTag temp Tag.ITEM_AMMO_REPEATED_ACCURACY_FALLOFF_PRIOR_AMMO_COUNT;
+          ammo.getAmmoQuantity temp2;
+          sub temp temp2;
+          mul temp multiplier;
+          add weaponHeat temp;
+
+          weapon.getTag weaponQuality Tag.ITEM_HEAT_ACCURACY_PEN;
+          if lt weaponQuality 0;
+            debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | No Penalty:" weaponQuality;
+            return bonus;
+          end;
+
+          add weaponQuality 3;
+          muldiv weaponHeat 3 weaponQuality;
+
+          if lt weaponHeat 1;
+            debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | No Penalty:" weaponHeat;
+            return bonus;
+          end;
+
+          debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | Accuracy penalty, weaponHeat:" weaponHeat;
+          debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | Original accuracy, bonus:" bonus;
+          sub bonus weaponHeat;
+          debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | New accuracy set, bonus:" bonus;
+          return bonus; # final accuracy
+
+      - delete: ROSIGMA_aMBS_repeated_accuracy_penalty
+
+
+    newTurnItem:
+      - new: SMTS_nTI_repeated_accuracy_penalty_weapon  # handles accuracy falloff cooldown/removal
+        offset: 5
+        code: |
+          var int temp;
+          var int temp2;
+          var int ammoSpent;
+          var int heatMult;
+          var int weaponHeat;
+          var ptre BattleItem ammoItem;
+
+          if neq side FACTION_PLAYER;
+            return;
+          end;
+
+          item.getTag weaponHeat Tag.ITEM_AMMO_REPEATED_ACCURACY_FALLOFF_TOTAL;
+          item.getAmmoItem ammoItem;
+          ammoItem.getTag heatMult Tag.ITEM_AMMO_REPEATED_ACCURACY_FALLOFF_MULTIPLIER;
+
+          if and lt weaponHeat 1 lt heatMult 1;
+            return; # return if no existing heat and ammo doesn't cause heat
+          end;
+
+          item.getTag temp Tag.ITEM_WEAPON_REPEATED_ACCURACY_FALLOFF_MULTIPLIER; # handle heat buildup
+          add heatMult temp;
+          ammoItem.getTag ammoSpent Tag.ITEM_AMMO_REPEATED_ACCURACY_FALLOFF_PRIOR_AMMO_COUNT;
+          ammoItem.getAmmoQuantity temp;
+          sub ammoSpent temp;
+          limit_lower ammoSpent 0;
+          aggregate weaponHeat ammoSpent heatMult; # existing heat + ( ammo spent * heat per ammo )
+
+          set temp weaponHeat; # handle weapon cooling
+          div temp 2;
+          limit_lower temp 10;
+          sub weaponHeat temp;
+          limit_lower weaponHeat 0; # each turn half current heat (or subtract 10, whichever is bigger)
+
+          item.setTag Tag.ITEM_AMMO_REPEATED_ACCURACY_FALLOFF_TOTAL weaponHeat;
+
+          return;
+
+      - new: SMTS_nTI_ammoCount  # handles ammo count for heat tracking and limited 'infinite' ammo guns
+        offset: 6
+        code: |
+          var int temp;
+          var int ammoCount;
+
+          if neq side FACTION_PLAYER;
+            return;
+          end;
+
+          item.getTag temp Tag.ITEM_AMMO_REPEATED_ACCURACY_FALLOFF_MULTIPLIER;
+          item.getAmmoQuantity ammoCount;
+
+          if gt temp 0;
+            item.setTag Tag.ITEM_AMMO_REPEATED_ACCURACY_FALLOFF_PRIOR_AMMO_COUNT ammoCount;
+          end;
+          if gt ammoCount 900;
+            item.setAmmoQuantity 999;
+          end;
+
+          return;
+
+
+
+      - delete: ROSIGMA_nTI_repeated_accuracy_penalty_ammo
+      - delete: ROSIGMA_nTI_repeated_accuracy_penalty_weapon
+

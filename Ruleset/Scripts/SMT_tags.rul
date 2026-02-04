@@ -22,6 +22,8 @@ extended:
       ITEM_CLOAKING_EFFECT: int         # cloaks unit for 1 turn - X = detection range
       ITEM_EFFECT_DURATION: int         # length of items effect
       ITEM_SERVITOR_ENHANCER: int       # item buffs servitor units: x = firing/melee bonus given to servitors
+      ## Passive Bonus
+      ITEM_TECHMARINE_PASSIVE: int      # Techmarine items that give passive bonuses while held
       ## Weapon Ammo Sprites
       ITEM_AMMO_SKIP_BIGOBS: int        # ammo causes weapon sprite to change - X = size of index shift
       ## Heavy Weapons
@@ -51,17 +53,18 @@ extended:
       ITEM_ARMOR_DAMAGE_ALL: int        # Weapon damages all armor facings by % of base
       ITEM_IGNITES_TARGETS: int         # Weapon increases fire duration by X on hit
       SMT_LETHAL_STUN: int              # Weapon deals additional HP damage if stun is greater than units HP
-      ITEM_IGNORES_2X2_REDUCTION: int
+      SMT_MORTAL_WOUNDS: int            # Weapon ignores special damage resistances (Feel No Pain, Heroic Save, etc)
       ## Plasma Heat
       ITEM_HEAT_SINK_COLOR: int         # sprite color index for heatsink parts that glow, if not set defaults to 2 (red)
+      ITEM_HEAT_ACCURACY_PEN: int       # how much is this item affected by accuracy penalties from overheating? 0 = 100%, 1 = 3/4, 2 = 3/5, 3 = 3/6, 4 = 3/7
     RuleArmor:
       ## Craft Turrets
-      STARTS_WITH_FULL_TUS: int     # make sure unit has full starting TUs regardless of other scripts
-      SMT_RAZORBACK_TURRET: int     # marks unit as Razorback default turret that can be replaced
-      SMT_RAZOR_SBOLTER_TURRET: int # marks unit as Razorback Stormbolter turret
-      SMT_RAZOR_HBOLTER_TURRET: int # marks unit as Razorback Heavy Bolter turret
-      SMT_RAZOR_LAS_TURRET: int     # marks unit as Razorback Lascannon turret
-      SMT_RAZOR_HFLAME_TURRET: int  # marks unit as Razorback Heavy Flamer turret
+      STARTS_WITH_FULL_TUS: int         # make sure unit has full starting TUs regardless of other scripts
+      SMT_RAZORBACK_TURRET: int         # marks unit as Razorback default turret that can be replaced
+      SMT_RAZOR_SBOLTER_TURRET: int     # marks unit as Razorback Stormbolter turret
+      SMT_RAZOR_HBOLTER_TURRET: int     # marks unit as Razorback Heavy Bolter turret
+      SMT_RAZOR_LAS_TURRET: int         # marks unit as Razorback Lascannon turret
+      SMT_RAZOR_HFLAME_TURRET: int      # marks unit as Razorback Heavy Flamer turret
       ## Bombard
       BOMBARD_DUMMY: int                        # marks unit as dummy spawn unit for designators
       BOMBARD_TARGETER: int                     # marks unit as bombard target designator
@@ -108,7 +111,8 @@ extended:
       FLIGHT_MOVESPEED_MODIFIER: int            # set flying movespeed to this value
       ## Unit Types
       UNIT_TYPE_ASTARTES: int                   # Space Marines
-      UNIT_TYPE_TECHSPIRIT: int                 # Valid Techmarine buff targets (servitors, vehicles etc)
+      UNIT_TYPE_TECHPRIEST: int                 # Valid Techpriest armor (for techpriest passive items)
+      UNIT_TYPE_TECHSPIRIT: int                 # Valid Techpriest buff targets (servitors, vehicles etc)
       UNIT_TYPE_SWARM: int
       UNIT_TURNS_UNTIL_DEATH: int
     RuleSoldier:

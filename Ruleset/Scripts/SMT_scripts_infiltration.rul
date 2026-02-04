@@ -478,19 +478,37 @@ extended:
 
           return 0 visibility_mode;
 
+      - new: SMTS_invisibility_detection # modified for custom detection ranges
+        offset: 95
+        code: |
+          var int temp;
+
+          target_unit.getTag temp Tag.UNIT_IS_INVISIBLE;
+          if eq temp 0;
+            return current_visibility visibility_mode;
+          end;
+
+          return 0 visibility_mode;
+
       - delete: ROSIGMA_vU_infiltration_proximity_detection
 
     reactionUnitAction:
       - new: SMTS_stealth_no_reactions # modified to account for detection range and not bother negating enemy reactions (they're already negated by not being visible)
         offset: 10
         code: |
+          var int range;
           var int temp;
 
-          reaction_unit.getTag temp Tag.UNIT_STEALTH_RANGE;
-          #debug_log "Stealth ReactCheckUA" temp distance;
-          if neq temp 0;
-            mul temp 15; # 1 tile ~= 15.75
-            if gt distance temp; # prevent reactions if enemy is out of detection range
+          reaction_unit.getTag range Tag.UNIT_STEALTH_RANGE;
+          #debug_log "Stealth ReactCheckUA" range distance reaction_unit;
+          if neq range 0;
+            reaction_unit.getFaction temp;
+            if eq temp FACTION_PLAYER;
+              mul range 15; # 1 tile ~= 15.75
+            else;
+              mul range 20; # increased reaction range for enemy infiltrators - reduce AI exploitation
+            end;
+            if gt distance range; # prevent reactions if enemy is out of detection range
               return 0;
             end;
           end;

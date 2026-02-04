@@ -279,6 +279,8 @@ research:
     dependencies:
       - STR_MARINES_STRATEGY
       - STR_GENERALLOCK
+    unlocks:
+      - STR_MARINESCHOICEDONE
     spawnedEvent: STR_NEOPHYTE_STARTING_PACKAGE
 
 ## Chamber Militant
@@ -877,7 +879,7 @@ research:
       - STR_GENERALLOCK
 
   - name: STR_AUTOGUNS_UNLOCK           # Allow buying/researching Autoguns
-    cost: 0
+    cost: 25
     dependencies:
       - STR_LASER_WEAPONS
       - STR_NOT_MARINES
@@ -885,7 +887,7 @@ research:
       - STR_NOT_CHAOSCULT
 
   - name: STR_LASGUNS_UNLOCK            # Allow buying/researching Lasguns
-    cost: 0
+    cost: 25
     dependencies:
       - STR_LASER_WEAPONS
       - STR_NOT_MARINES
@@ -1451,6 +1453,8 @@ research:
     dependencies:
       - STR_MT
       - STR_NOT_PRIMARIS
+      - STR_NOT_SPACEWOLVES
+      - STR_NOT_WORDBEARERS
 
   - name: STR_STORMHAWKR                # Stormhawks
     cost: 100 # was 150

@@ -750,6 +750,13 @@ ufopaedia:
     text: STR_HONOR_MEDAL_DESCRIPTION
     listOrder: 100060
 
+  - id: STR_FACTION_KILLER_MEDAL            # Slayer Commendation
+    type_id: 10
+    section: STR_COMMENDATIONS_SECTION
+    image_id: COMMENDATION_TERMINATOR.SPK ###CHANGEME
+    text: STR_FACTION_KILLER_MEDAL_DESCRIPTION
+    listOrder: 100065
+
 ### 30000  - General Research
 ### 40000  - Base Facilities
 ### 50000  - Craft
@@ -1350,14 +1357,14 @@ ufopaedia:
     image_id: AUTOGUN_HIGH_GRADE_CODEX.SPK
     text: STR_AUTOGUN_ARMA_CODEX
 
-  - id: STR_AUTOGUN_ARMA_B
+  - id: STR_AUTOGUN_CATA
     requires:
       - STR_AUTOGUNS_UNLOCK
       - STR_MIDTIER_PREREQ
     type_id: 14
     section: STR_WEAPONS_AND_EQUIPMENT
     image_id: AUTOGUN_HIGH_GRADE_CODEX.SPK
-    text: STR_AUTOGUN_ARMA_B_CODEX
+    text: STR_AUTOGUN_CATA_CODEX
 
   - id: STR_AUTOGUN_HEAD
     requires:

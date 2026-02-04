@@ -481,6 +481,7 @@ armors:
       - STR_TECH_CORPSE_GENE
     corpseGeo: STR_SMT_GENESEED
     storeItem: STR_NONE
+    weight: -50
     stats:
       tu: 10            # base 10 
       stamina: 10       # base 20 -10
@@ -499,7 +500,7 @@ armors:
       - STR_SOLDIER_TECH
       - STR_SOLDIER_TECHVET
     tags:
-      ARMOR_REGENERATE_DURABILITY: 15 # techmarine repair
+      UNIT_TYPE_TECHPRIEST: 1
 
   - update: STR_SARGENT_ARMOR_UC            #SERGEANT
     refNode: *STR_MARINE_OFFICER_ARMOR
@@ -3309,6 +3310,7 @@ armors:
     sideArmor: 110 # base 110
     rearArmor: 100 # base 100
     underArmor: 120 # base 120
+    weight: -50
     damageModifier: #2.7 values for officers
       - 1.0 #none
       - 0.9 #AP (was 0.8)
@@ -3344,7 +3346,7 @@ armors:
       SMT_ARMOR_HEAVY_WEAPON_USER: 9 # 4/5 HWP penalties
       INTIMIDATION_RESISTANCE: 50
       INFECTION_RESIST: 10
-      ARMOR_REGENERATE_DURABILITY: 15 # techmarine repair
+      UNIT_TYPE_TECHPRIEST: 1
 
   - type: STR_MKX_TEC_LV1_UC
     refNode: *STR_MKX_TEC_UC
@@ -3894,11 +3896,11 @@ armors:
       - STR_GREYKNIGHT_TECHMARINE
     tags:
       UNIT_TYPE_PSYKER: 1
+      UNIT_TYPE_TECHPRIEST: 1
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 75
-      ARMOR_REGENERATE_DURABILITY: 15 # techmarine repair
 
   - type: STR_GK_TAC_TECHMARINE_SB_UC       # Grey Knight Techmarine (Tactical Stormbolter)
     refNode: *ARMOR_TACTICAL
@@ -3919,12 +3921,12 @@ armors:
       - STR_GREYKNIGHT_TECHMARINE
     tags:
       UNIT_TYPE_PSYKER: 1
+      UNIT_TYPE_TECHPRIEST: 1
       INFECTION_RESIST: 100
       SMT_ARMOR_HEAVY_WEAPON_USER: 4 # 40%
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 75
       SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
-      ARMOR_REGENERATE_DURABILITY: 15 # techmarine repair
 
   - type: STR_GK_TAC_CHAPLAIN_UC            # Grey Knight Chaplain (Tactical)
     refNode: *ARMOR_TACTICAL
@@ -4226,10 +4228,10 @@ armors:
       - STR_GREYKNIGHT_TECHMARINE
     tags:
       UNIT_TYPE_PSYKER: 1
+      UNIT_TYPE_TECHPRIEST: 1
       INFECTION_RESIST: 100
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 75
-      ARMOR_REGENERATE_DURABILITY: 15 # techmarine repair
 
   - type: STR_GK_TERM_TECHMARINE_SB_UC      # Grey Knight Techmarine (Terminator Stormbolter)
     refNode: *ARMOR_TERMINATOR
@@ -4253,11 +4255,11 @@ armors:
       - STR_GREYKNIGHT_TECHMARINE
     tags:
       UNIT_TYPE_PSYKER: 1
+      UNIT_TYPE_TECHPRIEST: 1
       INFECTION_RESIST: 100
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 30
       ARMOR_ENERGY_SHIELD_DECAY: 75
       SMT_ARMOR_IGNORE_1H_MELEE_PEN: 1 # inbuilt stormbolter
-      ARMOR_REGENERATE_DURABILITY: 15 # techmarine repair
 
   - type: STR_DREAD_GK_ARMOR_UC
     refNode: *ARMOR_DREADNOUGHT
@@ -5323,7 +5325,7 @@ armors:
     sideArmor: 80
     rearArmor: 60
     underArmor: 80
-    weight: -15 # partially negate servo arm
+    weight: -50
     drawingRoutine: 0
     damageModifier:
       - 1.0 #SUPPORT
@@ -5348,6 +5350,7 @@ armors:
     tags:
       UNIT_TYPE_LIVING: 1
       UNIT_TYPE_IMPERIUM: 1
+      UNIT_TYPE_TECHPRIEST: 1
       ARMOR_REGENERATE_DURABILITY: 15 # techpriest repair
       SMT_ARMOR_SHRED_RESISTANCE: 35
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 20

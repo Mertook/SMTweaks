@@ -102,6 +102,11 @@ extended:
             unit.setTag Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE initVal;
           end;
 
+          begin; ### Feel No Pain
+            unitArmor.getTag initVal Tag.UNIT_IS_DIEHARD;
+            unit.setTag Tag.DIEHARD_TEMP_MODIFIER initVal;
+          end;
+
           return;
 
 

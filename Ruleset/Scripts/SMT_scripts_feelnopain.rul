@@ -1,0 +1,115 @@
+extended:
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
+
+  scripts:
+    damageUnit:
+      - new: SMTS_dU_feel_no_pain
+        offset: 89
+        code: |
+          var int currentHealth;
+          var int diehardTriggers;
+          var int randomNumber;
+          var int temp;
+          var int temp2;
+          var ptr RuleArmor armorRule;
+
+          if lt to_health 1; # ignore if no damage dealt
+            return;
+          end;
+
+          unit.getTag temp Tag.UNIT_MARKED_FOR_EXECUTION;
+          if eq temp 1;
+            return;
+          end;
+
+          unit.getTag diehardTriggers Tag.DIEHARD_TEMP_MODIFIER;
+          if lt diehardTriggers 1;
+            return;
+          end;
+
+          damaging_item.getTag temp Tag.SMT_MORTAL_WOUNDS;
+          debug_log "FeelNoPain Ping " damaging_item temp;
+          if eq temp -1;
+            return;
+          else gt temp 0;
+            battle_game.randomRange randomNumber 0 100;
+            if gt temp randomNumber;
+              return;
+            end;
+          end;
+
+          unit.getHealth currentHealth;
+          set temp currentHealth;
+          div temp 10;
+          limit temp 1 20;
+          if gt temp to_health; # threshold for triggering is 10% of current health, with a ceiling of 20
+            return;
+          end;
+
+          set temp2 to_health;
+          muldiv temp2 10 temp; # damage * 10 / 10% of current health is added to base chance to proc FNP - chance proportional to DMG/HP%
+
+          unit.getRuleArmor armorRule;
+          armorRule.getTag temp Tag.DIEHARD_MODIFIER;
+          if eq temp 0;
+            set temp 10; # default base 10% trigger chance
+          end;
+          add temp temp2;
+          battle_game.randomRange randomNumber 0 100;
+          if ge randomNumber temp;
+            debug_log "Feel No Pain RNG " temp randomNumber;
+            return;
+          end;
+
+          set temp to_health;
+          div temp 10;
+          limit_lower temp 1;
+          if ge temp currentHealth; # damage is too high for FNP to save the target
+            return;
+          end;
+
+          set to_health temp;
+          div to_wound 10;
+          div to_stun 10;
+          sub diehardTriggers 1;
+          unit.setTag Tag.DIEHARD_TEMP_MODIFIER diehardTriggers;
+
+          battle_game.flashMessage "STR_SCRIPT_DIEHARD_ACTIVATED";
+
+          return;
+
+      - delete: ROSIGMA_dU_diehard
+
+
+    newTurnUnit:
+      - new: SMTS_nTU_feel_no_pain
+        offset: 22
+        code: |
+          var int triggerCap;
+          var int temp;
+          var int temp2;
+          var ptr RuleArmor armorRule;
+
+          unit.getFaction temp;
+          battle_game.getTurnSide temp2;
+          if neq temp temp2;
+            return;
+          end;
+
+          unit.getTag triggerCap Tag.UNIT_IS_DIEHARD;
+          if eq temp 0;
+            return;
+          end;
+
+          unit.getTag temp Tag.DIEHARD_TEMP_MODIFIER;
+          set temp2 triggerCap;
+          div temp2 3;
+          limit_lower temp2 1;
+          add temp temp2;
+          limit_upper temp triggerCap;
+          unit.setTag Tag.DIEHARD_TEMP_MODIFIER temp; # recover 33% of max stocked FNP triggers each turn
+
+          return;
+
+      - delete: ROSIGMA_nTU_diehard
+

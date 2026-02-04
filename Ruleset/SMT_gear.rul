@@ -7,10 +7,10 @@ items:
     damageType: 1 # STANDARD
     damageAlter: &Ref_Bolter_Std_Damage
       RandomType: 7 # 50-200%
-      ToArmorPre: 0.15 # was 0.1
       ArmorEffectiveness: 1.0 # was 0.9
+      ToArmorPre: 0.15 # was 0.1
       ToArmor: 0.10
-      ToHealth: 1.1
+      ToHealth: 1.2
       ToStun: 0.5
       ToEnergy: 0.3
       ToWound: 0.25
@@ -26,7 +26,7 @@ items:
       ArmorEffectiveness: 0.5 # was 0.5
       ToArmorPre: 0.02 # was 0.02
       ToArmor: 0.1 # was 0.05
-      ToHealth: 0.9 # was 0.9
+      ToHealth: 0.8 # was 0.9
       ToStun: 0.05 # was 0.3; solid AP round rather than concussive
       ToEnergy: 0.0 # was 0.1
       ToWound: 0.05
@@ -41,18 +41,19 @@ items:
     damageAlter: &Ref_Bolter_Frag_Damage
       RandomType: 7 # 50-200%
       ToArmorPre: 0.02
-      ArmorEffectiveness: 1.2 # was 1.2 (regular 0.9)
+      ArmorEffectiveness: 1.2 # was 1.2 (regular 1.0)
       ToArmor: 0.10
-      ToHealth: 1.5
+      ToHealth: 1.8
       ToStun: 0.2 # was 0.6 (regular 0.5)
       ToEnergy: 0.5
       ToWound: 0.4
       RandomWound: false
-      ToTile: 0.0 #shrapnel, not explosive
-      ToItem: 0.0 #shrapnel, not explosive
+      ToTile: 0.10 #shrapnel, not explosive
+      ToItem: 0.10 #shrapnel, not explosive
       IgnoreOverKill: true #shrapnel, not explosive
       IgnoreSelfDestruct: false #shrapnel, not explosive
       FixRadius: 3
+      RadiusReduction: 7
 
   - &DMG_BOLTER_AMMO_MASTER                 # Bolter MC Ammo Defaults
     type: STR_PISTOL_CLIP_MC
@@ -3156,12 +3157,10 @@ items:
     bigSprite: 132
     listOrder: 11934
     damageAlter: # metalstorm/frag hybrid
-      FixRadius: 6
-      RadiusReduction: 5
       RandomType: 9 # 50-150
       ArmorEffectiveness: 1.3
-      ToHealth: 1.3 #
-      ToArmorPre: 0.05 #
+      ToHealth: 1.6 #
+      ToArmorPre: 0.02 #
       ToArmor: 0.1
       ToStun: 0.2 #
       ToEnergy: 0.4 #
@@ -3169,6 +3168,8 @@ items:
       RandomWound: false
       ToTile: 0.10 # shrapnel round
       ToItem: 0.25
+      FixRadius: 6
+      RadiusReduction: 5
 
   - type: STR_BOLT_SNIPER_AMMO_KRAK         # Bolt Sniper Krak Ammo
     refNode: *REF_SNIPER_BOLT_AMMO
@@ -3660,12 +3661,14 @@ items:
       - STR_STUB_GUN_AMMO_HP
       - STR_STUB_GUN_AMMO_INC
     dropoff: 6
-    accuracySnap: 60
-    tuSnap: 20 # was 25
     snapRange: 10
+    accuracySnap: 75
+    tuSnap: 20 # was 25
     armor: 300
     tuLoad: 8 # pistol bonus
     tuUnload: 4 # pistol bonus
+    inventoryMoveCost: # pistol
+      basePercent: 75
     tags:
       REACTION_MULTIPLIER: 200
 
@@ -3680,12 +3683,12 @@ items:
     weight: 10
     compatibleAmmo: *Ref_Stubber_Ammo
     dropoff: 5
+    snapRange: 18
+    aimRange: 25
     accuracySnap: 75
     accuracyAimed: 110
     tuSnap: 30
-    tuAimed: 70
-    snapRange: 18
-    aimRange: 25
+    tuAimed: 60 # was 70
 
   - type: STR_SMG_STUB_GUN                  # Autostubber SMG
     requiresBuy:
@@ -3706,10 +3709,10 @@ items:
     accuracySnap: 60
     accuracyAuto: 40
     tuSnap: 25
-    tuAuto: 33
+    tuAuto: 35
     autoShots: 6
     confSnap:
-      shots: 3
+      shots: 2
     snapRange: 10
     autoRange: 6
     armor: 300
@@ -3723,7 +3726,7 @@ items:
     size: 0.02
     requiresBuy:
       - STR_STUBBERS_UNLOCK
-    power: 42
+    power: 40 # was 42
     damageType: 1 # STANDARD
     damageAlter:
       ArmorEffectiveness: 1.0
@@ -3741,7 +3744,7 @@ items:
       - STR_STUBBERS_UNLOCK
       - STR_ALIEN_ALLOYS
     damageAlter:
-      ArmorEffectiveness: 0.6 # was 0.5
+      ArmorEffectiveness: 0.5 # was 0.5
       ToArmorPre: 0.02
       ToArmor: 0.02
       ToHealth: 0.9
@@ -3750,22 +3753,26 @@ items:
   - type: STR_STUB_GUN_AMMO_WOUND           # Stubber Bleeder Ammo
     refNode: *REF_STUBBER_AMMO
     requiresBuy:
-      - STR_STUBBERS_UNLOCK
-      - STR_MEDI_KIT_PREREQ
+      - STR_GENERALLOCK
+    recoveryTransformations: # disabled, is just a weird vestigal ammo type in general
+      STR_STUB_GUN_AMMO_HP: [1]
     damageAlter:
       ArmorEffectiveness: 0.6 # was 0.5
       ToArmorPre: 0
       ToArmor: 0
       ToHealth: 0.3 # was 0.2
-      ToStun: 0
+      ToStun: 0.3
       ToWound: 0.3 # was 0.2
       RandomWound: false
 
   - type: STR_STUB_GUN_AMMO_HP              # Stubber Expander Ammo
     refNode: *REF_STUBBER_AMMO
     damageAlter:
-      ArmorEffectiveness: 1.5 # was 1.0
-      ToHealth: 2.0
+      ArmorEffectiveness: 1.2 # was 1.0
+      ToHealth: 1.6 # was 2.0
+      ToStun: 0.3
+      ToWound: 0.3 # was 0
+      RandomWound: false
 
   - type: STR_STUB_GUN_AMMO_INC             # Stubber Tracer Ammo
     refNode: *REF_STUBBER_AMMO
@@ -3786,12 +3793,14 @@ items:
     costBuy: 1500
     costSell: 500
     weight: 5
-    compatibleAmmo:
-      - STR_AUTOPISTOL_CLIP
+    compatibleAmmo: &Ref_Autogun_Ammo_Basic
+      - STR_AUTOGUN_CLIP
+      - STR_AUTOGUN_CLIP_AP
+      - STR_AUTOGUN_CLIP_HP
     experienceTrainingMode: 5 # 50% firing
     dropoff: 6
     autoRange: 6
-    snapRange: 12
+    snapRange: 11
     aimRange: 0
     accuracyAuto: 35
     accuracySnap: 50
@@ -3819,9 +3828,14 @@ items:
       - STR_BALLISTIC_WEAPONS_HIGHGRADE
       - STR_AUTOGUNS_UNLOCK
     compatibleAmmo:
-      - STR_AUTOPISTOL_CLIP
+      - STR_AUTOGUN_CLIP
+      - STR_AUTOGUN_CLIP
+      - STR_AUTOGUN_CLIP_AP
+      - STR_AUTOGUN_CLIP_HP
       - STR_AUTOGUN_CLIP_DRUM
       - STR_AUTOGUN_CLIP_DRUM_KRAKEN
+      - STR_AUTOGUN_CLIP_DRUM_HP
+      - STR_AUTOPISTOL_CLIP
     dropoff: 6
     snapRange: 10
     autoRange: 6
@@ -3856,10 +3870,7 @@ items:
     costBuy: 3000
     costSell: 900
     weight: 11
-    compatibleAmmo: &Ref_Autogun_Ammo_Basic
-      - STR_AUTOGUN_CLIP
-      - STR_AUTOGUN_CLIP_AP
-      - STR_AUTOGUN_CLIP_HP
+    compatibleAmmo: *Ref_Autogun_Ammo_Basic
     experienceTrainingMode: 5 # 50% firing
     dropoff: 6 # was 5
     aimRange: 0
@@ -3870,12 +3881,12 @@ items:
     accuracyAuto: 45
     tuAimed: 0
     tuSnap: 26 # was 33
-    tuAuto: 35 # was 40
+    tuAuto: 40 # was 40
     confSnap:
       shots: 3
       name: STR_BURST_SNAP_SHOT
     confAuto:
-      shots: 6
+      shots: 7
     tags:
       ITEM_RECOIL: 20
 
@@ -3905,12 +3916,12 @@ items:
     accuracyAuto: 55
     tuAimed: 0
     tuSnap: 25 # was 25
-    tuAuto: 33 # was 33
+    tuAuto: 40 # was 33
     confSnap:
       shots: 3
       name: STR_BURST_SNAP_SHOT
     confAuto:
-      shots: 6
+      shots: 9
     tags:
       ITEM_RECOIL: 20
 
@@ -3934,18 +3945,18 @@ items:
     snapRange: 14 # was 15
     autoRange: 10 # was 11
     accuracyAimed: 40
-    accuracySnap: 70
-    accuracyAuto: 50
+    accuracySnap: 65
+    accuracyAuto: 45
     tuAimed: 40
     tuSnap: 25 # was 25
-    tuAuto: 33 # was 33
+    tuAuto: 40 # was 33
     confSnap:
       shots: 3
       ammoSlot: 0
       name: STR_BURST_SNAP_SHOT
       arcing: false
     confAuto:
-      shots: 6
+      shots: 7
       ammoSlot: 0
       name: STR_AUTOFIRE
       arcing: false
@@ -3968,21 +3979,21 @@ items:
     weight: 10
     compatibleAmmo: *Ref_Autogun_Ammo_Basic
     experienceTrainingMode: 5 # 50% firing
-    dropoff: 6 # was 5
+    dropoff: 6
     aimRange: 0
     snapRange: 13 # was 13
     autoRange: 10 # was 12
     accuracyAimed: 0
     accuracySnap: 75
-    accuracyAuto: 55
+    accuracyAuto: 50
     tuAimed: 0
     tuSnap: 22 # was 20
-    tuAuto: 33 # was 33
+    tuAuto: 36 # was 33
     confSnap:
       shots: 2
       name: STR_BURST_SNAP_SHOT
     confAuto:
-      shots: 5
+      shots: 6
     tags:
       ITEM_RECOIL: 20
       REACTION_MULTIPLIER: 200
@@ -3995,24 +4006,24 @@ items:
     size: 0.2
     costBuy: 15000
     costSell: 1500
-    weight: 13 # +3
+    weight: 14 # +4
     compatibleAmmo: *Ref_Autogun_Ammo_Basic
     experienceTrainingMode: 4
-    dropoff: 6 # was 5
+    dropoff: 6
     aimRange: 24
     snapRange: 14 # +2
     autoRange: 9
-    accuracyAimed: 105
-    accuracySnap: 80 # +5
-    accuracyAuto: 55
+    accuracyAimed: 100
+    accuracySnap: 75
+    accuracyAuto: 50
     tuAimed: 36
     tuSnap: 22
-    tuAuto: 33
+    tuAuto: 36
     confSnap:
       shots: 2
       name: STR_BURST_SNAP_SHOT
     confAuto:
-      shots: 5
+      shots: 6
     tags:
       ITEM_RECOIL: 20
       REACTION_MULTIPLIER: 150
@@ -4026,28 +4037,28 @@ items:
     size: 0.2
     costBuy: 12500
     costSell: 1250
-    weight: 13
+    weight: 14
     compatibleAmmo: *Ref_Autogun_Ammo_Adv
     experienceTrainingMode: 5 # 50% firing
     dropoff: 6
     aimRange: 0
-    snapRange: 12 # -2
-    autoRange: 8 # -2
+    snapRange: 14
+    autoRange: 10
     accuracyAimed: 0
     accuracySnap: 70
-    accuracyAuto: 45
+    accuracyAuto: 50
     tuAimed: 0
-    tuSnap: 25
-    tuAuto: 33
+    tuSnap: 26
+    tuAuto: 35
     confSnap:
-      shots: 5
+      shots: 3
       name: STR_BURST_SNAP_SHOT
     confAuto:
-      shots: 9
+      shots: 12
     tags:
       ITEM_RECOIL: 30
 
-  - type: STR_AUTOGUN_ARMA_B                # Autogun (Armageddon Bayonet)
+  - type: STR_AUTOGUN_CATA                  # Autogun (Catachan Bayonet)
     requiresBuyBaseFunc: [TRADE]
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
@@ -4055,7 +4066,7 @@ items:
     size: 0.2
     costBuy: 12500
     costSell: 1250
-    weight: 13
+    weight: 16
     compatibleAmmo: *Ref_Autogun_Ammo_Adv
     experienceTrainingMode: 5 # 50% firing
     dropoff: 6
@@ -4066,13 +4077,13 @@ items:
     accuracySnap: 65 # -5
     accuracyAuto: 45
     tuAimed: 0
-    tuSnap: 22 # -2
-    tuAuto: 33
+    tuSnap: 25
+    tuAuto: 40
     confSnap:
-      shots: 5
+      shots: 4
       name: STR_BURST_SNAP_SHOT
     confAuto:
-      shots: 9
+      shots: 12
     meleeHitSound: {mod: 40k, index: 101}
     meleeAnimation: 0
     meleeType: 7
@@ -4120,7 +4131,7 @@ items:
     tuSnap: 22
     tuAuto: 33
     ignoreAmmoPower: true
-    power: 60 # base 50
+    power: 60 # base 48
     confSnap:
       shots: 2
       name: STR_BURST_SNAP_SHOT
@@ -4145,12 +4156,12 @@ items:
     accuracyAuto: 45
     tuAimed: 0
     tuSnap: 27 # was 33
-    tuAuto: 36 # was 40
+    tuAuto: 40
     confSnap:
       shots: 3
       name: STR_BURST_SNAP_SHOT
     confAuto:
-      shots: 6
+      shots: 9
 
   - type: STR_AUTOCARBINE_NAVY              # Autocarbine (Old)
     requiresBuy:
@@ -4171,11 +4182,12 @@ items:
       STR_AUTOGUN_ADVGL: [1]
 
   - &REF_AUTOGUN_AMMO                       # Autogun Ammo
-    type: STR_AUTOPISTOL_CLIP
+    type: STR_AUTOGUN_CLIP
     armor: 300
     size: 0.02
-    weight: 3
-    power: 50 # was 30-50
+    weight: 3 # was 3
+    clipSize: 24
+    power: 48 # was 30-50
     damageType: 1 # STANDARD
     damageAlter:
       RandomType: 8
@@ -4187,21 +4199,22 @@ items:
       ToEnergy: 0.1
 
   - type: STR_AUTOPISTOL_CLIP
+    refNode: *REF_AUTOGUN_AMMO
     requiresBuy:
-      - STR_AUTOGUNS_UNLOCK
-    costBuy: 150
-    costSell: 40
-    weight: 2 # was 3
-    clipSize: 18 # was 20
+      - STR_GENERALLOCK
+    recoveryTransformations:
+      STR_AUTOGUN_CLIP: [1]
+    costBuy: 0
+    costSell: 0
+    weight: 2
+    clipSize: 18
     listOrder: 10730
 
   - type: STR_AUTOGUN_CLIP
-    refNode: *REF_AUTOGUN_AMMO
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
     costBuy: 200
     costSell: 75
-    clipSize: 30
     listOrder: 10750
 
   - type: STR_AUTOGUN_CLIP_DRUM
@@ -4211,8 +4224,8 @@ items:
       - STR_UFO_CONSTRUCTION # Ceramite
     costBuy: 1500
     costSell: 100
-    weight: 5
-    clipSize: 45 # was 40
+    weight: 6
+    clipSize: 48 # was 40
 
   - type: STR_AUTOGUN_CLIP_AP
     refNode: *REF_AUTOGUN_AMMO
@@ -4221,7 +4234,6 @@ items:
       - STR_ALIEN_ALLOYS
     costBuy: 2000
     costSell: 105
-    clipSize: 30
     damageAlter:
       ToArmorPre: 0.02
       ArmorEffectiveness: 0.5
@@ -4236,12 +4248,12 @@ items:
       - STR_UFO_CONSTRUCTION
     costBuy: 8000
     costSell: 500
-    weight: 5 # was 6
+    weight: 6
     damageAlter:
       ToArmorPre: 0.02
       ArmorEffectiveness: 0.5
       ToHealth: 0.7
-    clipSize: 45 # was 40
+    clipSize: 48 # was 40
 
   - type: STR_AUTOGUN_CLIP_HP
     refNode: *REF_AUTOGUN_AMMO
@@ -4253,12 +4265,11 @@ items:
     damageAlter:
       ToArmorPre: 0.02
       ArmorEffectiveness: 1.2
-      ToHealth: 1.8
+      ToHealth: 1.6
       ToStun: 0.4
       ToEnergy: 0.3
       ToWound: 0.3
       RandomWound: false
-    clipSize: 30
 
   - type: STR_AUTOGUN_CLIP_DRUM_HP
     refNode: *REF_AUTOGUN_AMMO
@@ -4268,26 +4279,28 @@ items:
       - STR_UFO_CONSTRUCTION
     costBuy: 4000
     costSell: 500
-    weight: 5
+    weight: 6
     damageAlter:
       ToArmorPre: 0.02
       ArmorEffectiveness: 1.2
-      ToHealth: 1.8
+      ToHealth: 1.6
       ToStun: 0.4
       ToEnergy: 0.3
       ToWound: 0.3
       RandomWound: false
-    clipSize: 45
+    clipSize: 48
 
 ### Lasguns
   - &DMG_LASGUN_STD                         # Lasgun Standard Damage
     type: STR_LASPISTOL_CLIP
     armor: 300
-    damageType: 1 # STANDARD
+    power: 50
+    damageType: 4 # LAS
     damageAlter:
-      RandomType: 8
-      ToArmorPre: 0.2
-      ToArmor: 0.1
+      RandomType: 8 # 25-175%
+      ArmorEffectiveness: 1.0
+      ToArmorPre: 0.15 # was 0.2
+      ToArmor: 0.05
       ToHealth: 1.0
       ToStun: 0.05 # was 0.3
       ToWound: 0.05
@@ -4296,27 +4309,28 @@ items:
   - &DMG_LASGUN_HOT                         # Lasgun Hotshot Damage
     type: STR_LASPISTOL_CLIP_HOTSHOT
     armor: 300
-    damageType: 1 # STANDARD
+    power: 75
+    damageType: 4 # LAS
     damageAlter:
-      RandomType: 8
+      RandomType: 8 # 25-175%
       ArmorEffectiveness: 0.75 # was 0.75
-      ToArmorPre: 0.2
-      ToArmor: 0.1
+      ToArmorPre: 0.15 # was 0.2
+      ToArmor: 0.05
       ToHealth: 1.0
       ToStun: 0.05 # was 0.3
       ToWound: 0.05
       RandomWound: false
 
   - &DMG_LASGUN_HELL                        # Hellgun Las Damage
-    type: STR_HOTSHOT_VOLLEY_GUN
+    type: STR_HELLPISTOL
     armor: 300
-    power: 75
-    damageType: 1 # STANDARD
+    power: 80
+    damageType: 4 # LAS
     damageAlter:
-      RandomType: 8
+      RandomType: 8 # 25-175%
       ArmorEffectiveness: 0.75
-      ToArmorPre: 0.3
-      ToArmor: 0.0
+      ToArmorPre: 0.2
+      ToArmor: 0.05
       ToHealth: 1.0
       ToStun: 0.05 # was .3
       ToWound: 0.05
@@ -4338,7 +4352,9 @@ items:
     requiresBuy:
       - STR_HOTSHOT_AMMO # was locked to mid tier mastercrafting?
     costBuy: 2000 # was 3000
-    clipSize: 8 # was 10
+    clipSize: 20 # was 10
+    tags:
+      ITEM_AMMO_REPEATED_ACCURACY_FALLOFF_MULTIPLIER: 15 # was 5
 
   - type: STR_LASGUN_CLIP_HOTSHOT           # Lasgun Hotshot Ammo
     refNode: *DMG_LASGUN_HOT
@@ -4346,99 +4362,1190 @@ items:
     requiresBuyBaseFunc: [IMPERIUM]
     requiresBuy:
       - STR_HOTSHOT_AMMO # was guard only
-    clipSize: 12 # was 20
+    clipSize: 30 # was 20
+    tags:
+      ITEM_AMMO_REPEATED_ACCURACY_FALLOFF_MULTIPLIER: 15 # was 5
 
-  - type: STR_LASGUN_CLIP_HOTSHOT_CHAOS     # Lasgun Chaos HotshotAmmo
+  - type: STR_LASGUN_CLIP_HOTSHOT_CHAOS     # Lasgun Chaos HotshotAmmo (AI)
     refNode: *DMG_LASGUN_HOT
+    costBuy: 0
+    clipSize: 40
+    recoveryTransformations:
+      STR_LASGUN_CLIP_HOTSHOT: [1]
+    tags:
+      ITEM_AMMO_REPEATED_ACCURACY_FALLOFF_MULTIPLIER: 0
 
-  - type: STR_HOTSHOT_VOLLEY_GUN            # Hotshot Volley Gun
-    dropoff: 5
-    autoRange: 9
-    snapRange: 16
-    aimRange: 0
-    accuracyAuto: 50
-    accuracySnap: 60
-    accuracyAimed: 0
-    costAuto:
-      time: 40
-      mana: 7 # was 3
-    confAuto:
-      shots: 7
+  - type: STR_HOTSHOT_VOLLEY_GUN            # Volley Gun (Guard)
+    refNode: *DMG_LASGUN_HELL
+    power: 70
+    dropoff: 6
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    snapRange: 16 # was 16
+    autoRange: 10 # was 9
+    accuracySnap: 60 # was 60
+    accuracyAuto: 50 # was 50
+    tuAimed: 0
     costSnap:
       time: 25
       mana: 3 # was 7
+    flatSnap:
+      time: false
+      mana: true
     confSnap:
       shots: 3
       name: STR_BURST_SNAP_SHOT
+    costAuto:
+      time: 40
+      mana: 7 # was 3
+    flatAuto:
+      time: false
+      mana: true
+    confAuto:
+      shots: 7
+    tags:
+      TURRET_RELOAD_TURNS: 1
+
+  - type: STR_VOLLEYGUN_STEEL_LEGION        # Volley Gun (Steel Legion)
+    refNode: *DMG_LASGUN_HELL
+    power: 70
+    dropoff: 6
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    accuracySnap: 60 # was 65
+    accuracyAuto: 50
+    snapRange: 16 # was 13
+    autoRange: 10 # was 13
+    costSnap:
+      time: 25
+      mana: 3
+    flatSnap:
+      time: false
+      mana: true
+    confSnap:
+      shots: 3
+      name: STR_BURST_SNAP_SHOT
+    costAuto:
+      time: 40
+      mana: 10
+    flatAuto:
+      time: false
+      mana: true
+    confAuto:
+      shots: 10
+    tags:
+      TURRET_RELOAD_TURNS: 1
+
+  - type: STR_CHAOS_VOLLEYGUN               # Volley Gun (Chaos)
+    refNode: *DMG_LASGUN_HELL
+    power: 70
+
+  - type: STR_SHOTLAS                       # Volley Gun (Shotlas)
+    size: 0.2
+    requiresBuyBaseFunc: [TRADE]
+    requiresBuy:
+      - STR_MIDTIER_PREREQ
+      - STR_IMPERIAL_GUARD_OPERATIONS
+    costBuy: 250000
+    costSell: 25000
+    weight: 22 # was 30
+    armor: 300
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    dropoff: 5 # was 7
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    powerRangeThreshold: 0
+    powerRangeReduction: 0
+    aimRange: 0
+    snapRange: 14 # was 12
+    autoRange: 10 # was 8
+    accuracyAimed: 0
+    accuracySnap: 65 # was 65
+    accuracyAuto: 60 # was 60
     tuAimed: 0
+    tuSnap: 30
+    tuAuto: 45
+    confSnap:
+      shots: 3
+      spendPerShot: 2
+    confAuto:
+      shots: 7
+      spendPerShot: 2
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 3 # 50% hotshot penalty - double ammo consumption
+      ITEM_SNAP_FLAT_POWER_BONUS: 0 # was 20
+      ITEM_AUTO_FLAT_POWER_BONUS: 0 # was 15
+      ITEM_AIMED_FLAT_POWER_BONUS: 0
+
+  - type: STR_HELLPISTOL_BUILTIN            # Hellpistol
+    refNode: *DMG_LASGUN_HELL
+    power: 75
+    dropoff: 5
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    autoRange: 0
+    snapRange: 16 # was 13
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 80 # was 70
+    accuracyAimed: 0
+    tuAuto: 0
+    tuAimed: 0
+    costSnap:
+      time: 23 # was 20
+      mana: 1
+    flatSnap:
+      time: false
+      mana: true
+    inventoryMoveCost:
+      basePercent: 75
+    tags:
+      TURRET_RELOAD_TURNS: 1
+
+  - type: STR_INQ_HELLPISTOL                # Hellpistol (Inq Stormtrooper)
+    refNode: *DMG_LASGUN_HELL
+    power: 75
+    dropoff: 5
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    weight: 5
+    snapRange: 18 # was 15
+    accuracySnap: 80 # was 80
+    tuSnap: 22 # was 20
+    tags:
+      ITEM_CHANGES_SPRITE_WITH_ARMOR: 1
+
+  - type: STR_HELLGUN                       # Hellgun (Guard)
+    refNode: *DMG_LASGUN_HELL
+    dropoff: 5 # was 4
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    autoRange: 14 # was 9
+    snapRange: 20 # was 16
+    aimRange: 0
+    accuracyAuto: 66 # was 60
+    accuracySnap: 80 # was 80
+    accuracyAimed: 0
+    tuAimed: 0
+    costSnap:
+      time: 25
+      mana: 1
+    flatSnap:
+      time: false
+      mana: true
+    costAuto:
+      time: 36 # was 33
+      mana: 3
+    flatAuto:
+      time: false
+      mana: true
+    tags:
+      TURRET_RELOAD_TURNS: 1
+
+  - type: STR_HELLGUN_STEEL_LEGION          # Hellgun (Steel Legion)
+    refNode: *DMG_LASGUN_HELL
+    weight: 16 # was 9
+    dropoff: 5 # was 3
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    accuracyAuto: 66 # was 70
+    accuracySnap: 80 # was 75
+    accuracyAimed: 100 # was 90
+    aimRange: 24 # was 25
+    snapRange: 18 # was 14
+    autoRange: 15 # was 14
+    autoShots: 5
+    costAuto:
+      time: 40 # was 35
+      mana: 3
+    costSnap:
+      time: 25
+      mana: 1
+    costAimed:
+      time: 70
+      mana: 1
+    flatAuto:
+      time: false
+      mana: true
+    flatSnap:
+      time: false
+      mana: true
+    flatAimed:
+      time: false
+      mana: true
+    tags:
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 25
+      TURRET_RELOAD_TURNS: 1
+
+  - type: STR_INQ_HELLGUN                   # Hellgun (Inq Stormtrooper)
+    refNode: *DMG_LASGUN_HELL
+    weight: 16 # was 20
+    dropoff: 5 # was 4
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    aimRange: 30 # was 25
+    snapRange: 22 # was 18
+    autoRange: 12 # was 9
+    accuracyAimed: 100 # was 90
+    accuracySnap: 85
+    accuracyAuto: 66 # was 60
+    tuAimed: 65 # was 85
+    tuSnap: 28 # was 30
+    tuAuto: 40 # was 35
+    autoShots: 4
+    meleeType: 7 #MELEE
+    meleePower: 50
+    meleeBonus:
+      strength: 0.2
+      melee: 0.2
+    meleeAlter:
+      ArmorEffectiveness: 0.9
+      RandomType: 9 # 50-150%
+    accuracyMelee: 100
+    meleeMultiplier:
+      flatHundred: 0.5
+      melee: 0.5
+    tuMelee: 14
+    flatMelee:
+      time: true
+    tags:
+      ITEM_SNAP_FLAT_POWER_BONUS: 0
+      ITEM_AIMED_FLAT_POWER_BONUS: 20
+
+  - type: STR_CHAOS_HELLGUN                 # Hellgun (Chaos)
+    refNode: *DMG_LASGUN_HELL
+
+  - type: STR_HEAVY_LASGUN_LUCIUS_XIV       # Hellgun (Lucius)
+    refNode: *DMG_LASGUN_HELL
+    dropoff: 5 # was 4
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    aimRange: 18 # was 18
+    snapRange: 22 # was 18
+    autoRange: 22 # was 18
+    accuracyAimed: 90 # was 70
+    accuracySnap: 90 # was 70
+    accuracyAuto: 90 # was 70
+    tuAimed: 33
+    tuSnap: 25 # was 33
+    tuAuto: 25 # was 33
+    confAimed:
+      shots: 1
+      spendPerShot: 20
+      name: STR_POWER_SHOT_2
+      shortName: STR_POWER_SHOT_2_COUNT
+    confSnap:
+      shots: 1
+      spendPerShot: 1
+    confAuto:
+      shots: 1
+      spendPerShot: 5
+      name: STR_POWER_SHOT
+      shortName: STR_POWER_SHOT_COUNT
+    clipSize: 999
+    kneelBonus: 120
+    tags:
+      ITEM_AIMED_FLAT_POWER_BONUS: 80 # was 60
+      ITEM_AUTO_FLAT_POWER_BONUS: 20
+
+  - type: STR_LASER_PISTOL                  # Laspistol (Basic)
+    dropoff: 5
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    autoRange: 0
+    snapRange: 16 # was 13
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 80 # was 70
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 23 # was 20
+    tuAimed: 0
+    inventoryMoveCost: # pistol
+      basePercent: 75
+    tuLoad: 8
+    tuUnload: 4
+    compatibleAmmo:
+      - STR_LASPISTOL_CLIP
+      - STR_LASPISTOL_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 0
+      REACTION_MULTIPLIER: 200 # multiplies base reaction score by this amount divided by 100
+
+  - type: STR_LASER_PISTOLC                 # Laspistol (Chaos)
+    dropoff: 5
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+
+  - type: STR_LASER_PISTOLG                 # Laspistol (PDF)
+    dropoff: 5
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    autoRange: 0
+    snapRange: 16 # was 13
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 75 # was 60
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 24 # was 20
+    tuAimed: 0
+    inventoryMoveCost: # pistol
+      basePercent: 75
+    tuLoad: 8
+    tuUnload: 4
+    compatibleAmmo:
+      - STR_LASPISTOL_CLIP
+      - STR_LASPISTOL_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 0
+      REACTION_MULTIPLIER: 200 # multiplies base reaction score by this amount divided by 100
+
+  - type: STR_HELLPISTOL                    # Laspistol (Mastercrafted)
+    dropoff: 5
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    autoRange: 0
+    snapRange: 18 # was 14
+    aimRange: 0
+    accuracyAuto: 0
+    accuracySnap: 100 # was 80
+    accuracyAimed: 0
+    tuAuto: 0
+    tuSnap: 20
+    tuAimed: 0
+    inventoryMoveCost: # pistol
+      basePercent: 75
+    tuLoad: 8
+    tuUnload: 4
+    compatibleAmmo:
+      - STR_LASPISTOL_CLIP
+      - STR_LASPISTOL_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: -1 # no hotshot penalty
+      REACTION_MULTIPLIER: 200 # multiplies base reaction score by this amount divided by 100
+
+  - type: STR_LASER_RIFLE                   # Lasgun (Basic)
+    dropoff: 5 # was 4
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    aimRange: 0
+    snapRange: 18 # was 16
+    autoRange: 14 # was 9
+    accuracyAimed: 0
+    accuracySnap: 80 # was 80
+    accuracyAuto: 60 # was 55
+    tuAimed: 0
+    tuSnap: 25
+    tuAuto: 40 # was 33
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 0
+
+  - type: STR_LASER_RIFLEG                  # Lasgun (PDF)
+    dropoff: 5 # was 4
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    aimRange: 0
+    snapRange: 18 # was 16
+    autoRange: 12 # was 9
+    accuracyAimed: 0
+    accuracySnap: 75 # was 70
+    accuracyAuto: 55 # was 50
+    tuAimed: 0
+    tuSnap: 25
+    tuAuto: 40 # was 33
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 0
+
+  - type: STR_LASER_RIFLE_G_HIGH_GRADE      # Lasgun (High Grade)
+    dropoff: 5 # was 4
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    aimRange: 0
+    snapRange: 21 # was 17
+    autoRange: 15 # was 10
+    accuracyAimed: 0
+    accuracySnap: 90 # was 75
+    accuracyAuto: 70 # was 60
+    tuAimed: 0
+    tuSnap: 25
+    tuAuto: 40 # was 33
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 3 # 50% hotshot penalty
+
+  - type: STR_LASGUN_ESCHER                 # Lasgun (Escher)
+    dropoff: 5 # was 4
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    aimRange: 0
+    snapRange: 20 # was 18
+    autoRange: 15
+    accuracyAimed: 0 # was 85
+    accuracySnap: 90 # was 75
+    accuracyAuto: 75 # was 0
+    tuAimed: 0 # was 65
+    tuSnap: 25 # was 33
+    tuAuto: 33 # was 0
+    confSnap:
+      shots: 1 # was 2
+      name: STR_SNAP_SHOT
+    autoShots: 2
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 3 # 50% hotshot penalty
+
+  - type: STR_LASCARBINE                    # Lascarbine
+    dropoff: 5
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    aimRange: 0
+    snapRange: 16 # was 13
+    autoRange: 11 # was 7
+    accuracyAimed: 0
+    accuracySnap: 80 # was 60
+    accuracyAuto: 60 # was 50
+    tuAimed: 0
+    tuSnap: 30 # was 30
+    tuAuto: 0 # was 35
+    confSnap:
+      shots: 2
+      name: STR_BURST_SNAP_SHOT
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 0
+      REACTION_MULTIPLIER: 150
+
+  - type: STR_LASGUN_VOSS                   # Lascarbine (Voss)
+    dropoff: 5 # was 6
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    aimRange: 0
+    snapRange: 11 # was 10
+    autoRange: 7 # was 5
+    accuracyAimed: 0
+    accuracySnap: 70  # was 55
+    accuracyAuto: 50 # was 40
+    tuAimed: 0
+    tuSnap: 25 # was 25
+    tuAuto: 33 # was 33
+    confSnap:
+      shots: 2 # was 3
+      name: STR_BURST_SNAP_SHOT
+    autoShots: 4 # was 6
+    inventoryMoveCost:
+      basePercent: 75
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 0
+      REACTION_MULTIPLIER: 150 # was 175
+
+  - type: STR_LASGUN_TANITH                 # Lasgun (Tanith)
+    dropoff: 5 # was 3
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    aimRange: 26 # was 22
+    snapRange: 20 # was 18
+    autoRange: 14 # was 9
+    accuracyAimed: 120 # was 90
+    accuracySnap: 85 # was 85
+    accuracyAuto: 66 # was 60
+    tuAimed: 50 # was 60
+    tuSnap: 25 # was 25
+    tuAuto: 40 # was 33
+    autoShots: 3 # was 2
+    minRange: 0 # was 5
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 3 # 50% hotshot penalty
+      ITEM_AIMED_FLAT_POWER_BONUS: 20
+
+  - type: STR_LASGUN_ACCATRAN               # Lascarbine (Accatran)
+    dropoff: 5
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    aimRange: 0
+    snapRange: 16 # was 13
+    autoRange: 12 # was 8
+    accuracyAimed: 0
+    accuracySnap: 80 # was 80
+    accuracyAuto: 66 # was 55
+    tuAimed: 0
+    tuSnap: 25 # was 22
+    tuAuto: 36 # was 33
+    confSnap:
+      shots: 2
+      name: STR_BURST_SNAP_SHOT
+    autoShots: 4
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 2 # 60% hotshot penalty
+      REACTION_MULTIPLIER: 150
+
+  - type: STR_LASGUN_VOSTROYA               # Lasgun (Vostroya)
+    dropoff: 5 # was 3
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    aimRange: 26 # was 30
+    snapRange: 18 # was 22
+    autoRange: 13 # was 9
+    accuracyAimed: 110 # was 95
+    accuracySnap: 80 # was 80
+    accuracyAuto: 60 # was 60
+    tuAimed: 50 # was 65
+    tuSnap: 30 # was 30
+    tuAuto: 40 # was 40
+    autoShots: 2
+    minRange: 7 # was 7
+    oneHandedPenalty: 50 # was 25
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 3 # 50% hotshot penalty
+      REACTION_MULTIPLIER: 75
+      REACTION_PENALTY_KNEELING_BYPASS: 1
+
+  - type: STR_LASGUN_LUCIUS                 # Lasgun (Lucius)
+    dropoff: 5 # was 4
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    aimRange: 18 # was 16
+    snapRange: 18 # was 16
+    autoRange: 14 # was 0
+    accuracyAimed: 80 # was 70
+    accuracySnap: 80 # was 70
+    accuracyAuto: 60 # was 0
+    tuAimed: 30 # was 33
+    tuSnap: 25 # was 25
+    tuAuto: 40 # was 0
+    confAimed:
+      shots: 1
+      spendPerShot: 10
+      name: STR_POWER_SHOT
+      shortName: STR_POWER_SHOT_COUNT
+    confSnap:
+      shots: 1
+      spendPerShot: 2
+    confAimed:
+      shots: 3
+      spendPerShot: 2
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 1 # 75% hotshot penalty
+      ITEM_AUTO_FLAT_POWER_BONUS: 10
+      ITEM_SNAP_FLAT_POWER_BONUS: 10
+      ITEM_AIMED_FLAT_POWER_BONUS: 50
+      ITEM_WEAPON_REPEATED_ACCURACY_FALLOFF_MULTIPLIER: 1
+
+  - type: STR_LASGUN_STEEL_LEGION           # Lasgun (Steel Legion)
+    dropoff: 5 # was 4
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    accuracyAimed: 0
+    accuracySnap: 80 # was 60
+    accuracyAuto: 50 # was 45
+    snapRange: 17 # was 14
+    autoRange: 14 # was 11
+    tuAimed: 0
+    tuSnap: 25
+    tuAuto: 40 # was 33
+    autoShots: 5 # was 5
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 1 # 75% hotshot penalty
+
+  - type: STR_LASCARBINE_STEEL_LEGION       # Lascarbine (Steel Legion)
+    dropoff: 5
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    accuracySnap: 80 # was 55
+    accuracyAuto: 60 # was 40
+    snapRange: 16 # was 12
+    autoRange: 12 # was 7
+    tuSnap: 30 # was 25
+    tuAuto: 40 # was 33
+    oneHandedPenalty: 50 # was 75
+    confSnap:
+      shots: 2
+      name: STR_BURST_SNAP_SHOT
+    autoShots: 4 # was 5
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 1 # 75% hotshot penalty
+      REACTION_MULTIPLIER: 150
+
+  - type: STR_LASCARBINE_STEEL_LEGION_MID   # Lascarbine (Steel Legion Midtier)
+    dropoff: 5
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    snapRange: 16 # was 13
+    autoRange: 13 # was 9
+    accuracySnap: 80 # was 60
+    accuracyAuto: 66 # was 50
+    tuSnap: 26 # was 25
+    tuAuto: 36 # was 33
+    confSnap:
+      shots: 2
+      name: STR_BURST_SNAP_SHOT
+    autoShots: 4 # was 5
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 1 # 75% hotshot penalty
+      REACTION_MULTIPLIER: 150
+
+  - type: STR_LASGUN_STEEL_LEGION_MID       # Lasgun (Steel Legion Midtier)
+    dropoff: 5 # was 4
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    accuracyAimed: 0
+    accuracySnap: 85 # was 65
+    accuracyAuto: 60 # was 55
+    snapRange: 18 # was 15
+    autoRange: 15 # was 13
+    tuAimed: 0
+    tuSnap: 25
+    tuAuto: 40 # was 33
+    autoShots: 5 # was 5
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 2 # 60% hotshot penalty
+
+  - type: STR_LASGUN_STEEL_LEGION_HIGH      # Lasgun (Steel Legion Hightier)
+    dropoff: 5 # was 4
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    accuracyAimed: 110 # was 100
+    accuracySnap: 100 # was 75
+    accuracyAuto: 80 # was 70
+    aimRange: 25 # was 20
+    snapRange: 20 # was 16
+    autoRange: 16 # was 15
+    tuAimed: 50 # was 60
+    tuSnap: 25
+    tuAuto: 40 # was 33
+    autoShots: 5 # was 5
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 3 # 50% hotshot penalty
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 25
+
+  - type: STR_MCLASER_RIFLE                 # Lasgun (Mastercrafted)
+    dropoff: 5 # was 4
+    accuracyMultiplier: # lasgun modifier
+      firing: 0.5
+      flatHundred: 0.5
+    aimRange: 0
+    snapRange: 22 # was 18
+    autoRange: 16 # was 11
+    accuracyAimed: 0
+    accuracySnap: 110 # was 90
+    accuracyAuto: 80 # was 65
+    tuAimed: 0
+    tuSnap: 25 # was 25
+    tuAuto: 33 # was 33
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: -1 # no hotshot penalty
+
+  - type: STR_LONGLAS                       # Longlas
+    size: 0.2
+    weight: 8
+    dropoff: 5 # was 2
+    accuracyMultiplier: # lasgun sniper
+      firing: [0.0, 0.005]
+      flatHundred: 0.5
+    kneelBonus: 140
+    accuracySnap: 80 # was 50
+    accuracyAimed: 100 # was 85
+    tuAimed: 65 # was 65
+    tuSnap: 35 # was 35
+    aimRange: 35
+    snapRange: 20 # was 22
+    minRange: 7 # was 7
+    noLOSAccuracyPenalty: 66 # default 50 - Sniper Rifle bonus
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 3 # 50% hotshot penalty
+      REACTION_MULTIPLIER: 25 # sniper
+      REACTION_PENALTY_KNEELING_BYPASS: 1
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 50
+      ITEM_IS_HEAVY_WEAPON: 1
+
+  - type: STR_LONGLAS_TANITH                # Longlas (Tanith)
+    size: 0.2
+    weight: 10
+    dropoff: 5 # was 2
+    accuracyMultiplier: # lasgun sniper
+      firing: [0.0, 0.005]
+      flatHundred: 0.5
+    kneelBonus: 140
+    accuracyAimed: 120 # was 95
+    accuracySnap: 60 # was 40
+    aimRange: 35 # was 35
+    snapRange: 20 # was 25
+    tuAimed: 70 # was 70
+    tuSnap: 40 # was 45
+    noLOSAccuracyPenalty: 75 # default 50 - High quality sniper bonus
+    compatibleAmmo:
+      - STR_LASGUN_CLIP
+      - STR_LASGUN_CLIP_HOTSHOT
+    tags:
+      ITEM_HEAT_ACCURACY_PEN: 5 # 37% hotshot penalty
+      REACTION_MULTIPLIER: 25 # sniper
+      REACTION_PENALTY_KNEELING_BYPASS: 1
+      ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 50
+      ITEM_IS_HEAVY_WEAPON: 1
+
+### Multilas
+  - type: STR_PORTABLE_MULTILASER_BATTERY   # Multilas Ammo Pack
+    refNode: *DMG_LASGUN_STD
+    size: 0.05
+    costBuy: 30000
+    costSell: 5000
+    weight: 20 # was 20
+    armor: 300
+    clipSize: 300 # was 200
+    power: 60
+    powerRangeThreshold: 0 # was 16
+    powerRangeReduction: 0 # was 5
+
+  - type: STR_HAND_MULTILASER               # Multilaser
+    size: 0.2
+    dropoff: 5
+    costBuy: 250000 # was 500k
+    costSell: 50000 # was 100k
+    weight: 40 # was 45
+    explosionSpeed: 2
+    compatibleAmmo:
+      - STR_PORTABLE_MULTILASER_BATTERY
+    armor: 200
+    accuracyAimed: 0
+    accuracySnap: 0  # 60  # 40k 70
+    accuracyAuto: 50 # was 45
+    tuAimed: 0
+    tuSnap: 0
+    tuAuto: 50 # was 70
+    aimRange: 0
+    snapRange: 0
+    autoRange: 16 # was 11
+    confAuto:
+      shots: 15 # was 12
+      followProjectiles: false
+    sprayWaypoints: 2
+
+  - type: STR_HAND_MULTILASER_PA            # Multilaser (Inq Stormtrooper)
+    refNode: *DMG_LASGUN_STD
+    power: 60 
+    weight: 50
+    explosionSpeed: 2
+    dropoff: 5
+    aimRange: 0
+    snapRange: 0
+    autoRange: 16 # was 11
+    accuracyAimed: 0
+    accuracySnap: 0
+    accuracyAuto: 50 # was 45
+    tuAimed: 0
+    tuSnap: 0
+    tuAuto: 50 # was 70
+    confAuto:
+      shots: 15 # was 12
+      followProjectiles: false
+    sprayWaypoints: 2
+
+  - type: STR_MULTI_LASER_SENTINEL          # Multilas (Sentinel)
+    refNode: *DMG_LASGUN_STD
+    power: 70 # was 60
+    explosionSpeed: 2
+    dropoff: 5 # was 3
+    aimRange: 0
+    snapRange: 0
+    autoRange: 20 # was 16
+    accuracyAimed: 0
+    accuracySnap: 0
+    accuracyAuto: 50 # was 35
+    tuAimed: 0
+    tuSnap: 0
+    tuAuto: 40
+    confAuto:
+      shots: 8 # was 5
+      followProjectiles: false
 
 ### Lascannons
   - &DMG_LASCANNON_STD                      # Lascannon Standard Damage
     type: STR_LASCAN_CLIP  # LASCANON CLIP
     armor: 300
-    power: 220
-    damageType: 4 # LASER
+    power: 220 # was 220
+    damageType: 4 # LAS
     damageAlter:
-      RandomType: 8
-      ToArmorPre: 0.3 # was 0.4
+      RandomType: 7 # 50-200
+      ArmorEffectiveness: 0.75 # was 1.0
+      ToArmorPre: 0.2 # was 0.4
       ToHealth: 1.0
-      ToArmor: 0.1
+      ToArmor: 0.3 # was 0.1
       ToStun: 0.05 # was 0.3
       ToWound: 0.05
       RandomWound: false
+    tags:
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 50 # punches through shields
+
+  - type: STR_LASCANNON_CLIP_SMALL          # Lascannon Ammo
+    refNode: *DMG_LASCANNON_STD
 
   - type: STR_LASCANNON_CLIP_MALTHUS        # Light Lascannon Ammo
     refNode: *DMG_LASCANNON_STD
-    power: 140
+    power: 120 # was 140
     clipSize: 4 # was 8
     powerRangeThreshold: 0 # was 16
     powerRangeReduction: 0 # was 5
+    damageAlter:
+      RandomType: 8 # 25-175
+    tags:
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 0
 
-  - type: STR_LASCANNON_CLIP_SMALL
-    refNode: *DMG_LASCANNON_STD
-
-  - type: STR_LASCAN                        # SM Lascannon
-    tuAimed: 85 # was 90 - slightly easier to sidestep and fire without needing max TUs
+  - type: STR_LASCAN                        # Lascannon (Astartes)
     armor: 300
+    dropoff: 4
+    minRange: 7
+    aimRange: 25 # was 30
+    snapRange: 0
+    autoRange: 0
+    accuracyAimed: 85 # was 75
+    accuracySnap: 0
+    accuracyAuto: 0
+    tuAimed: 70 # was 90
+    tuSnap: 0 # was 55
+    tuAuto: 0
+    tuLoad: 40
+    kneelBonus: 130
+    compatibleAmmo:
+      - STR_LASCANNON_CLIP_SMALL
+      - STR_LASCAN_CLIP
     tags:
       ITEM_IS_HEAVY_WEAPON: 1
-      ITEM_RECOIL: 80 # bulky, devastator weapon
+      ITEM_RECOIL: 90 # bulky, devastator weapon
+      REACTION_MULTIPLIER: 0 # no reaction fire
+      REACTION_PENALTY_KNEELING_BYPASS: 0
 
-  - type: STR_LASCAN_DW                     # Artifex Lascannon
-    dropoff: 4
-    autoRange: 0
-    snapRange: 22
-    aimRange: 33
-    accuracyAuto: 0
-    accuracySnap: 55
-    accuracyAimed: 80
-    kneelBonus: 130
-    minRange: 7
-    tuAuto: 0
-    tuSnap: 50
-    tuAimed: 80
-    tuLoad: 40
+  - type: STR_LASCAN_DW                     # Lascannon (Artifex)
     armor: 300
+    dropoff: 4
+    minRange: 7
+    aimRange: 30
+    snapRange: 0
+    autoRange: 0
+    accuracyAimed: 95
+    accuracySnap: 0
+    accuracyAuto: 0
+    tuAimed: 70 # was 85
+    tuSnap: 0 # was 55
+    tuAuto: 0
+    tuLoad: 40
+    kneelBonus: 130
     ignoreAmmoPower: true
     power: 240 # regular 220
+    compatibleAmmo:
+      - STR_LASCANNON_CLIP_SMALL
+      - STR_LASCAN_CLIP
     tags:
+      ITEM_IS_HEAVY_WEAPON: 1
+      ITEM_RECOIL: 90 # bulky, devastator weapon
+      REACTION_MULTIPLIER: 0
+      REACTION_PENALTY_KNEELING_BYPASS: 0
+
+  - type: STR_LASCANNON_HANDHELD            # Lascannon (Bipod)
+    armor: 300
+    dropoff: 4
+    minRange: 7
+    aimRange: 25 # was 30
+    snapRange: 0 # was 20
+    autoRange: 0
+    accuracyAimed: 85 # was 85
+    accuracySnap: 0 # was 45
+    accuracyAuto: 0
+    tuAimed: 75 # was 85
+    tuSnap: 0 # was 50
+    tuAuto: 0
+    tuLoad: 40
+    kneelBonus: 130
+    compatibleAmmo:
+      - STR_LASCANNON_CLIP_SMALL
+      - STR_LASCAN_CLIP
+    tags:
+      ITEM_IS_HEAVY_WEAPON: 1
+      ITEM_RECOIL: 90
+      REACTION_MULTIPLIER: 0
+      REACTION_PENALTY_KNEELING_BYPASS: 0
+
+  - type: STR_LASCAN_MALTHUS                # Light Lascannon
+    armor: 300
+    dropoff: 4
+    minRange: 5
+    maxRange: 200
+    aimRange: 30 # was 28
+    snapRange: 15 # was 24
+    autoRange: 0
+    accuracyAimed: 80 # was 80
+    accuracySnap: 65 # was 65
+    accuracyAuto: 0
+    tuAimed: 70 # was 80
+    tuSnap: 45 # was 40
+    tuAuto: 0
+    kneelBonus: 120
+    tuLoad: 30
+
+  - type: STR_INQ_LIGHT_LASCANNON           # Light Lascannon (Inq Stormtrooper)
+    refNode: *DMG_LASCANNON_STD
+    power: 120 # was 140
+    damageAlter:
+      RandomType: 8 # 25-175
+    weight: 35
+    powerRangeThreshold: 0 # was 20
+    powerRangeReduction: 0 # was 5
+    dropoff: 4
+    aimRange: 32
+    snapRange: 16 # was 22
+    autoRange: 0
+    accuracyAimed: 90
+    accuracySnap: 70
+    accuracyAuto: 0
+    tuAimed: 70 # was 80
+    tuSnap: 45
+    tuAuto: 0
+    minRange: 5  # light lascannon
+    kneelBonus: 120
+    tags:
+      ITEM_IS_HEAVY_WEAPON: 0
       REACTION_MULTIPLIER: 50
       REACTION_PENALTY_KNEELING_BYPASS: 1
+      ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 0
+
+  - type: STR_MOUNTED_LASCANNON             # Lascannon (Mounted)
+    dropoff: 4 # was 3
+    aimRange: 35
+    snapRange: 25
+    autoRange: 0
+    accuracyAimed: 120 # was 140
+    accuracySnap: 90
+    accuracyAuto: 0
+    tuAimed: 70
+    tuSnap: 50 # was 40
+    tuAuto: 0
+
+  - type: STR_MOUNTED_HEAVY_LASCANNON       # Lascannon (Mounted Heavy)
+    dropoff: 4 # was 3
+    aimRange: 35 # was 38
+    snapRange: 25 # was 27
+    accuracyAimed: 130 # was 150
+    accuracySnap: 95
+    tuAimed: 80 # was 85
+    tuSnap: 60
+    confAimed:
+      spendPerShot: 2
+    confSnap:
+      spendPerShot: 2
+    ignoreAmmoPower: true
+    power: 280 # regular 220
+    tags:
+      ITEM_SNAP_FLAT_POWER_BONUS: 0 # was 100
+      ITEM_AIMED_FLAT_POWER_BONUS: 0
+
+  - type: STR_SLASCAN                       # Lascannon (Sentinel Guard)
+    refNode: *DMG_LASCANNON_STD
+    power: 150
+    dropoff: 4 # was 3
+    aimRange: 30 # was 34
+    snapRange: 15 # was 25
+    autoRange: 0
+    accuracyAimed: 90 # was 94
+    accuracySnap: 65 # was 60
+    accuracyAuto: 0
+    tuAimed: 70
+    tuSnap: 45 # was 40
+    tuAuto: 0
+
+  - type: STR_SLASCANPD                     # Lascannon (Sentinel Arbites)
+    refNode: *DMG_LASCANNON_STD
+    power: 150
+    dropoff: 4 # was 3
+    aimRange: 30 # was 34
+    snapRange: 15 # was 25
+    autoRange: 0
+    accuracyAimed: 90 # was 94
+    accuracySnap: 65 # was 60
+    accuracyAuto: 0
+    tuAimed: 70
+    tuSnap: 45 # was 40
+    tuAuto: 0
 
   - type: AUX_HOVERTANK_LASER               # Dreadnought Lascannon
     refNode: *DMG_LASCANNON_STD
-    power: 220 # was 150, Sentinel numbers
-    dropoff: 3
-    autoRange: 16
-    snapRange: 25
+    power: 220 # was 150
+    dropoff: 4
     aimRange: 0
-    accuracyAuto: 50
-    accuracySnap: 85
+    snapRange: 25
+    autoRange: 16
     accuracyAimed: 0
-    tuAuto: 50
-    tuSnap: 30
+    accuracySnap: 90
+    accuracyAuto: 60
     tuAimed: 0
+    tuSnap: 50 # was 30
+    tuAuto: 50
     autoShots: 2
+
+  - type: AUX_DW_DREAD_LASER                # Dreadnought Lascannon (Deathwatch)
+    refNode: *DMG_LASCANNON_STD
+    power: 220 # was 150
+    dropoff: 4
+    aimRange: 0
+    snapRange: 25
+    autoRange: 16
+    accuracyAimed: 0
+    accuracySnap: 90
+    accuracyAuto: 60
+    tuAimed: 0
+    tuSnap: 50 # was 30
+    tuAuto: 50
+    autoShots: 2
+
+  - type: STR_TWIN_LINK_LASCANNON           # Lascannon Turret (Guard Twin-linked)
+    refNode: *DMG_LASCANNON_STD
+    power: 150 # doubled shot
+    dropoff: 3
+    autoRange: 25
+    snapRange: 25
+    aimRange: 35
+    accuracyAuto: 60
+    accuracySnap: 60
+    accuracyAimed: 90
+    shotgunPellets: 2
+    shotgunChoke: 2
+    shotgunBehavior: 1
+
+  - type: STR_HULL_LASCANNON                # Lascannon Turret (Hull)
+    refNode: *DMG_LASCANNON_STD
+    dropoff: 3
+    autoRange: 25
+    snapRange: 25
+    aimRange: 35
+    accuracyAuto: 60
+    accuracySnap: 60
+    accuracyAimed: 90
+
+  - type: STR_CLASCAN                       # Chaos Lascannon (AI Mounted Gun)
+    refNode: *DMG_LASCANNON_STD
+    power: 220 # was 150
+    weight: 30 # was 50
+    powerRangeThreshold: 0 # was 18
+    powerRangeReduction: 0 # was 5
+    accuracyAimed: 75 # was 94
+    accuracySnap: 60 # was 60
+    aimRange: 30 # was 200
+    snapRange: 15 # was 15
+    tuAimed: 70
+    tuSnap: 60 # was 40
+
+  - type: STR_CHAOS_LASCANNON_HANDHELD      # Chaos Light Lascannon (AI)
+    refNode: *DMG_LASCANNON_STD
+    weight: 30 # was 50
+    power: 120
+    damageAlter:
+      RandomType: 8 # 25-175
+    armor: 300
+    dropoff: 4
+    aimRange: 0 # was 28
+    snapRange: 25 # was 24
+    autoRange: 0
+    accuracyAimed: 0 # was 80
+    accuracySnap: 80 # was 70
+    accuracyAuto: 0
+    kneelBonus: 120
+    tuAimed: 0
+    tuSnap: 50 # was 40
+    tuAuto: 0
+    minRange: 0 # was 5
+    recoveryTransformations:
+      STR_LASCAN_MALTHUS: [1]
+
+  - type: STR_CHAOS_LASCANNON_BIPOD         # Chaos Light Lascannon (Bipod (Unused))
+    refNode: *DMG_LASCANNON_STD
+    power: 120
+    armor: 300 # was 30
+    weight: 30 # was 50
+    powerRangeThreshold: 0 # was 18
+    powerRangeReduction: 0 # was 5
+    dropoff: 4 # was 3
+    snapRange: 25
+    accuracyAimed: 95
+    accuracySnap: 60
+    accuracyAuto: 50
+    tuAimed: 85
+    tuSnap: 55
+    tuAuto: 0
+    recoveryTransformations:
+      STR_LASCAN_MALTHUS: [1]
 
 ### Flamers
   - type: STR_HFLAMER                       # Heavy Flamer
@@ -9752,7 +10859,7 @@ items:
     tuSnap: 0
     tuAuto: 0
     tuLoad: 20 # slow
-    weight: 15 # normalized, carried by servo arm
+    weight: 35
     kneelBonus: 100 # servo arm
 
   - type: STR_TECHMARINE_FLAMER             # Techmarine Flamer
@@ -9964,12 +11071,11 @@ items:
       energy: true
     tags:
       ITEM_REPAIRS_ARMOR: 1
-      ITEM_IGNORES_2X2_REDUCTION: 1
 
   - &REF_TECH_SUPPORT                       # Techmarine Utility Tools (Type 11 - Use)
     type: STR_TECH_MEDKIT
     categories: [ STR_CAT_TECHPRIEST, STR_CAT_EQUIPMENT]
-    weight: 8
+    weight: 12
     size: 0.05
     armor: 600
     floorSprite: {mod: 40k, index: 168}
@@ -10026,7 +11132,7 @@ items:
     tags:
       ITEM_SERVITOR_ENHANCER: 30
 
-  - type: STR_TECH_TOOL_SHIELD              # Techpriest Shield
+  - type: STR_TECH_TOOL_SHIELD              # Techpriest Shield Overcharge
     refNode: *REF_TECH_SUPPORT
     bigSprite: 316
     invHeight: 2
@@ -10073,6 +11179,56 @@ items:
     tags:
       SMT_VULN_DEBUFF_FIXED: 25
       ITEM_EFFECT_DURATION: 1
+
+
+  - &REF_TECH_BONUS                         # Techmarine Passive Tools
+    type: STR_TECH_PASSIVE_REPAIR
+    categories: [ STR_CAT_TECHPRIEST, STR_CAT_EQUIPMENT]
+    weight: 8
+    size: 0.02
+    armor: 600
+    floorSprite: {mod: 40k, index: 168}
+    costSell: 20000
+    supportedInventorySections:
+      - STR_BACK_PACK
+      - STR_GROUND
+    inventoryMoveCost:
+      basePercent: 1000 # 10x movement cost, only move during loadout
+
+  - type: STR_TECH_PASSIVE_REPAIR           # Techpriest Self Repair
+    refNode: *REF_TECH_BONUS
+    tags:
+      ITEM_TECHMARINE_PASSIVE: 1
+
+  - type: STR_TECH_PASSIVE_SCANNER          # Techpriest Radar
+    refNode: *REF_TECH_BONUS
+    tags:
+      ITEM_TECHMARINE_PASSIVE: 2
+
+  - type: STR_TECH_PASSIVE_SHIELD           # Techpriest Passive Shield
+    refNode: *REF_TECH_BONUS
+    tags:
+      ITEM_TECHMARINE_PASSIVE: 3
+
+  - type: STR_TECH_PASSIVE_OVERWATCH        # Techpriest Reaction Booster
+    refNode: *REF_TECH_BONUS
+    tags:
+      ITEM_TECHMARINE_PASSIVE: 4
+
+  - type: STR_TECH_PASSIVE_STAMINA          # Techpriest Motive Enhancer
+    refNode: *REF_TECH_BONUS
+    tags:
+      ITEM_TECHMARINE_PASSIVE: 5
+
+  - type: STR_TECH_PASSIVE_REACTIONBOOST    # Techpriest Reaction Booster
+    refNode: *REF_TECH_BONUS
+    tags:
+      ITEM_TECHMARINE_PASSIVE: 6
+
+  - type: STR_TECH_PASSIVE_DEFENSE          # Techpriest FeelNoPain
+    refNode: *REF_TECH_BONUS
+    tags:
+      ITEM_TECHMARINE_PASSIVE: 7
 
   - type: STR_SKULL_ANALYZE                 # Skull Analyzer
     battleType: 8 # mind probe
@@ -10575,17 +11731,14 @@ items:
     flatRate: true #was false
     tags:
       ITEM_REPAIRS_ARMOR: 1
-      ITEM_IGNORES_2X2_REDUCTION: 1
 
   - type: AUX_REPAIR                        # Repair Tool
     tags:
       ITEM_REPAIRS_ARMOR: 1
-      ITEM_IGNORES_2X2_REDUCTION: 1
 
   - type: STR_SERVITOR                      # Servitor Repair
     tags:
       ITEM_REPAIRS_ARMOR: 1
-      ITEM_IGNORES_2X2_REDUCTION: 1
 
   - type: STR_TELEPORT                      # Terminator Teleport tool (Regular)
     refNode: *REF_POWERFIST_TEMPLATE # add punch

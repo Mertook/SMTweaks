@@ -1,0 +1,50 @@
+extended:
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
+
+  scripts:
+    hitUnit:
+      - delete: ROSIGMA_hU_damage_feedback # doesn't do anything?
+
+    damageUnit:
+      - update: ROSIGMA_dU_damage_feedback # fix broken hit effects
+        offset: 98 # was 20, trigger after all damage modifiers take place so that it more accurately represents actual damage taken
+        code: |
+          var int temp;
+          var int hits_to_kill;
+
+          battle_game.getAnimFrame temp;
+          unit.getHealth hits_to_kill;
+
+          unit.setTag Tag.LAST_HIT_POWER 0;
+          unit.setTag Tag.LAST_HIT_TYPE 0;
+          unit.setTag Tag.LAST_HIT_FRAME temp;
+
+          if eq to_health 0;
+            if neq to_armor 0; # was greater, flash white for armor repair
+              unit.setTag Tag.LAST_HIT_TYPE 1;
+              return;
+            else;
+              if gt to_stun 0;
+                unit.setTag Tag.LAST_HIT_TYPE 3;
+                return;
+              else or gt to_morale 0 gt to_time 0; # include TU draining attacks
+                unit.setTag Tag.LAST_HIT_TYPE 4;
+                return;
+              end;
+            end;
+          else gt to_health 0;
+            unit.setTag Tag.LAST_HIT_TYPE 2;
+            div hits_to_kill to_health;
+            # if unit would die in 3 or fewer hits
+            if lt hits_to_kill 4;
+              unit.setTag Tag.LAST_HIT_POWER 1;
+              return;
+            end;
+            set temp to_stun;
+            mul temp 2;
+            if gt temp to_health; # if incoming stun is >2x hp damage and unit won't die in <4 hits use stun effect instead
+              unit.setTag Tag.LAST_HIT_TYPE 3;
+            end;
+          end;
+          return;
+

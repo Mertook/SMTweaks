@@ -56,6 +56,7 @@ soldierTransformation:
   - name: STR_APOTHECARY_TRAINING       # Apothecary Training
     forbiddenPreviousTransformations:
       - STR_APOTHECARY_TRAINING
+      - STR_TECHMARINE_TRAINING
     requires:
       - STR_APOTHECARY_TRAINING
     cost: 60000
@@ -73,6 +74,63 @@ soldierTransformation:
       - STR_GREYKNIGHT
     soldierBonusType: STR_BONUS_APOTH_TRAINING
     listOrder: 20
+
+  - name: STR_TECHMARINE_TRAINING       # Techmarine Training
+    forbiddenPreviousTransformations:
+      - STR_APOTHECARY_TRAINING
+      - STR_TECHMARINE_TRAINING
+    requires:
+      - STR_DEATHWATCH
+      - STR_TEC_BAYR
+    cost: 60000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 100
+    transferTime: 0
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    flatOverallStatChange:
+      bravery: 10
+    upperBoundAtStatCaps: true
+    allowedSoldierTypes:
+      - STR_GREYKNIGHT
+    soldierBonusType: STR_BONUS_TECH_TRAINING
+    listOrder: 20
+
+  - name: STR_PROMOTE_VETMARINE         # Marine -> Vet Marine
+    requires:
+      - STR_GENERALLOCK # temp disable
+      - STR_NOT_PRIMARIS
+    forbiddenPreviousTransformations:
+      - STR_APOTHECARY_TRAINING
+    cost: 25000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 100
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    allowedSoldierTypes:
+      - STR_SOLDIER
+    transferTime: 0
+    requiredCommendations:
+      STR_HONOR_MEDAL: 3
+      STR_TERMINATOR_CROSS: 0
+    flatOverallStatChange:
+      tu: 5
+      stamina: 5
+      health: 5
+      reactions: 5
+      firing: 5
+      throwing: 5
+      strength: 5
+      melee: 5
+      bravery: 10
+    lowerBoundAtMinStats: true
+    upperBoundAtStatCaps: true
+    listOrder: 50
+
 
 ### Firstborn
   - name: STR_PROMOTE_NEOPHYTE          # Neophyte -> Marine

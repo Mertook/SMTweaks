@@ -11,6 +11,23 @@ itemCategories:
 extraStrings:
   - type: en-US
     strings:
+      ### Race
+      RACE_CULTIST: Heretic Cultist
+      RACE_TRAITOR: Traitor Guard
+      RACE_CHAOSSISTER: Heretic Adeptas
+      RACE_CSM: Heretic Astartes
+      RACE_DEMON: Demon
+      RACE_GSC: Genestealer Cult
+      RACE_TYRANID: Tyranid
+      RACE_ORK: Ork
+      RACE_ELDAR: Eldar
+      RACE_NECRON: Necron
+      RACE_TAU: Tau
+      RACE_GUARD: Imperial Guard
+      RACE_SISTER: Adeptas Sororitas
+      RACE_MARINE: Space Marine
+      RACE_GK: Grey Knight
+      RACE_INQ: Inquisition
       ### Units
       STR_BOMBARD_TARGETER: Target Designator
       STR_ORBITAL_STRIKE_TARGETER: Orbital Barrage Designator
@@ -60,6 +77,8 @@ extraStrings:
       STR_BONUS_HONOR_8: "Mark of Honor VIII"
       STR_BONUS_HONOR_9: "Mark of Honor IX"
       STR_BONUS_HONOR_10: "Mark of Honor X"
+      STR_FACTION_KILLER_MEDAL: "{0} Slayer"
+      STR_FACTION_KILLER_MEDAL_DESCRIPTION: "Awarded to soldiers for repeatedly facing and killing a particular foe.{NEWLINE}{NEWLINE}{NEWLINE} Bronze Ranks: {ALT}10{ALT}, {ALT}20{ALT}, {ALT}30{ALT}{NEWLINE} Silver Ranks: {ALT}45{ALT}, {ALT}60{ALT}, {ALT}75{ALT}{NEWLINE} Gold Ranks: {ALT}100{ALT}, {ALT}125{ALT}, {ALT}150{ALT}{NEWLINE} Imperial Cross: {ALT}200{ALT}"
       STR_BONUS_APOTH_TRAINING: "Apothecary Training"
       STR_BONUS_LIBRARIAN_TRAINING: "Librarian Training"
       STR_AUTO_SHOT_COUNT: "Auto (x{0})"
@@ -470,6 +489,7 @@ extraStrings:
       STR_TB_MISSILE_L: Hyperios Missiles
       STR_TB_MISSILE_R: Hyperios Missiles
       STR_GENERICSERVITOR_AMMO: "Munitions Rack"
+      STR_CLASCAN: Lascannon
       ### CRAFT
       STR_AVENGER: "THUNDERHAWK T."
       AUX_BOLTER: Mounted Heavy Bolter
@@ -1453,7 +1473,7 @@ extraStrings:
       STR_AUTOGUN_BASIC: Autogun
       STR_AUTOGUN_BASIC_CODEX: "{NEWLINE} An Autogun is a fully automatic weapon that fires solid-slug ballistic rounds at the intended target in rapid succession. Cheap, rugged and reliable, it can be found throughout the Imperium, where it is appreciated for its decent damage and accuracy. {NEWLINE}{NEWLINE} Recoil: {ALT}20"
       STR_AUTOGUN_ADV: High-Grade Autogun
-      STR_AUTOGUN_ADV_CODEX: "{NEWLINE}A heavy duty Autogun of ancient design based on the U90 Pattern and still manufactured on several Forge Worlds. The autogun is heavier to accommodate the weapon's .45 calibre round, offering phenomenal damage and can be fitted with several types of ammunition including drum magazines.{NEWLINE}{NEWLINE} Recoil: {ALT}20"
+      STR_AUTOGUN_ADV_CODEX: "{NEWLINE}A heavy duty Autogun of ancient design based on the U90 Pattern and still manufactured on several Forge Worlds. The autogun is heavier to accommodate the weapon's .45 calibre round and can be fitted with drum magazines.{NEWLINE}{NEWLINE} Recoil: {ALT}20"
       STR_AUTOGUN_ADVGL: High-Grade Autogun /w GL
       STR_AUTOGUN_ADVGL_CODEX: "{NEWLINE}A heavy duty Autogun based on the U90 Pattern with an underslug attachment, sacrificing some stability for a 40mm grenade launcher. Standard ammunition include both standard magazines and larger drum magazines, as well as an array of 40mm ammunition types.{NEWLINE}{NEWLINE} Recoil: {ALT}20"
       STR_AUTOGUN_AGRI: Agripinaa Autocarbine
@@ -1461,9 +1481,9 @@ extraStrings:
       STR_AUTOGUN_AGRI_B: Agripinaa Scoped Autocarbine
       STR_AUTOGUN_AGRI_B_CODEX: "{NEWLINE} This Autocarbine design from the Agripinaa Forge World has been designed to counteract recoil while cutting as much weight as possible. It also comes with an attached scope, allowing soldiers to engage enemies at all ranges.{NEWLINE}{NEWLINE} Recoil: {ALT}20"
       STR_AUTOGUN_ARMA: Armageddon Autogun
-      STR_AUTOGUN_ARMA_CODEX: "{NEWLINE} Loud, lethal and uncomplicated, Armageddon-pattern Autoguns can withstand incredible abuse and keep firing. Harder to control and less accurate than standard autoguns, the Armageddon pattern makes up for it with an exceptional rate of fire.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
-      STR_AUTOGUN_ARMA_B: Armageddon Assault Autogun
-      STR_AUTOGUN_ARMA_B_CODEX: "{NEWLINE} Loud, lethal and uncomplicated, Armageddon-pattern Autoguns can withstand incredible abuse and keep firing. This modified Assault version has a cut down stock and attached bayonet for charging into enemy lines guns blazing.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
+      STR_AUTOGUN_ARMA_CODEX: "{NEWLINE} Loud, lethal and uncomplicated, Armageddon-pattern Autoguns can withstand incredible abuse and keep firing. Harder to control than standard autoguns, the Armageddon pattern makes up for it with an exceptional rate of fire.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
+      STR_AUTOGUN_CATA: Catachan Autogun
+      STR_AUTOGUN_CATA_CODEX: "{NEWLINE} Modified to suit the needs of Catachan Jungle Fighters, this Assault Autogun has a cut down stock and attached bayonet for charging into enemy lines guns blazing.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
       STR_AUTOGUN_HEAD: Headhunter Autogun
       STR_AUTOGUN_HEAD_CODEX: "{NEWLINE} The Headhunter pattern DMR is far bigger than standard autogun designs, functioning as a hybrid rifle/sniper weapon. Thanks to a longer barrel and precision rifling the Headhunter is able to strike targets harder and from further away, ripping through enemies at long ranges.{NEWLINE}{NEWLINE} Recoil: {ALT}30"
       STR_SMG_STUB_GUN_CODEX: "{NEWLINE} A cheap handheld autostubber that can be used with one hand. Although inaccurate and lacking power compared to even basic PDF gear it can still kill lightly armored targets and is commonly used by gangers and other hive city denizens."

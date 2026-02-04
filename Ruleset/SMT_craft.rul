@@ -647,8 +647,11 @@ crafts:
 ### SPACE MARINE CRAFT
   - type: STR_SKYRANGER                     # Droppods
     requires:
-      - STR_NOT_PRIMARIS
       - STR_MARINES_STRATEGY
+      - STR_PICKED_LOYALIST_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_NOT_SPACEWOLVES
+      - STR_NOT_WORDBEARERS
     battlescapeTerrainData:
       name: DROPPOD_GUARD
       mapDataSets:
@@ -690,9 +693,12 @@ crafts:
 
   - type: STR_DROPPODS                      # Firestorm Droppods
     requires:
-      - STR_NOT_PRIMARIS
-      - STR_ADV_DROPPODS
       - STR_MARINES_STRATEGY
+      - STR_PICKED_LOYALIST_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_NOT_SPACEWOLVES
+      - STR_NOT_WORDBEARERS
+      - STR_ADV_DROPPODS
     battlescapeTerrainData:
       name: DROPPOD_GUARD
       mapDataSets:
@@ -734,8 +740,11 @@ crafts:
 
   - type: STR_DROP                          # Droppod
     requires:
-      - STR_NOT_PRIMARIS
       - STR_MARINES_STRATEGY
+      - STR_PICKED_LOYALIST_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_NOT_SPACEWOLVES
+      - STR_NOT_WORDBEARERS
     battlescapeTerrainData:
       name: DROP_GUARD
       mapDataSets:
@@ -1100,6 +1109,12 @@ crafts:
     costBuy: 500000 # was 900k - droppods 200k, landspeeder 600k
     costRent: 400000 # was 480k - droppods are 200k, landspeeder 400k
     costSell: 400000 # was 0 - landspeeder 400k
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_PICKED_LOYALIST_STRATEGY
+      - STR_NOT_PRIMARIS
+      - STR_NOT_SPACEWOLVES
+      - STR_NOT_WORDBEARERS
     fuelMax: 1600 # was 1000
     refuelRate: 900
     requiresBuyBaseFunc: [HANGAR] # was missing?
@@ -1240,9 +1255,13 @@ crafts:
 
   - type: STR_INTERCEPTOR                   # Stormtalon
     repairRate: 5 # was 1
+    requires:
+      - STR_MARINES_STRATEGY
+      - STR_PICKED_LOYALIST_STRATEGY
+      - STR_NOT_WORDBEARERS
 
   - type: STR_STORMHAWK                     # Stormhawk
-    speedMax: 2200 # was 2100
+    speedMax: 2100 # was 2100
     fuelMax: 1200 # was 1000
     refuelRate: 200 # was 200
     repairRate: 5 # was 1
@@ -2245,6 +2264,31 @@ crafts:
           fuseTimers:
             STR_CHIMERA_COMMAND_TURRET_SPAWNER: [0, 0]
             STR_CHIMERA_HULL_SPAWNER: [0, 0]
+    deployment:
+      - [1, 3, 0, 0] # first chimera front
+      - [2, 3, 0, 0]
+      - [1, 4, 0, 0]
+      - [2, 4, 0, 0]
+      - [2, 14, 0, 0] # third chimera front
+      - [3, 14, 0, 0]
+      - [2, 15, 0, 0]
+      - [3, 15, 0, 0]
+      - [7, 7, 0, 0] # second chimera front
+      - [8, 7, 0, 0]
+      - [7, 8, 0, 0]
+      - [8, 8, 0, 0]
+      - [1, 5, 0, 0] # first chimera back
+      - [2, 5, 0, 0]
+      - [1, 6, 0, 0]
+      - [2, 6, 0, 0]
+      - [2, 16, 0, 0] # third chimera back
+      - [3, 16, 0, 0]
+      - [2, 17, 0, 0]
+      - [3, 17, 0, 0]
+      - [7, 9, 0, 0] # second chimera back
+      - [8, 9, 0, 0]
+      - [7, 10, 0, 0]
+      - [8, 10, 0, 0]
 
   - type: STR_CHIMERASL                     # Chimera (Steel Legion)
     speedMax: 300 #was 250
@@ -2286,6 +2330,31 @@ crafts:
           fuseTimers:
             STR_CHIMERASL_COMMAND_TURRET_SPAWNER: [0, 0]
             STR_CHIMERASL_HULL_SPAWNER: [0, 0]
+    deployment:
+      - [1, 3, 0, 0] # first chimera front
+      - [2, 3, 0, 0]
+      - [1, 4, 0, 0]
+      - [2, 4, 0, 0]
+      - [2, 14, 0, 0] # third chimera front
+      - [3, 14, 0, 0]
+      - [2, 15, 0, 0]
+      - [3, 15, 0, 0]
+      - [7, 7, 0, 0] # second chimera front
+      - [8, 7, 0, 0]
+      - [7, 8, 0, 0]
+      - [8, 8, 0, 0]
+      - [1, 5, 0, 0] # first chimera back
+      - [2, 5, 0, 0]
+      - [1, 6, 0, 0]
+      - [2, 6, 0, 0]
+      - [2, 16, 0, 0] # third chimera back
+      - [3, 16, 0, 0]
+      - [2, 17, 0, 0]
+      - [3, 17, 0, 0]
+      - [7, 9, 0, 0] # second chimera back
+      - [8, 9, 0, 0]
+      - [7, 10, 0, 0]
+      - [8, 10, 0, 0]
 
   - type: STR_CASSIUM                       # Crassus
     speedMax: 250 #was 75
@@ -2590,6 +2659,35 @@ crafts:
             STR_LEMONRUSS_SPONSON_SPAWNER: [0, 0]
             STR_LEMONRUSS_HULL_SPAWNER: [0, 0]
             STR_CHIMERA_HULL_SPAWNER: [0, 0]
+    deployment:
+      - [1, 3, 0, 0] # first chimera front
+      - [2, 3, 0, 0]
+      - [1, 4, 0, 0]
+      - [2, 4, 0, 0]
+      - [7, 7, 0, 0] # second chimera front
+      - [8, 7, 0, 0]
+      - [7, 8, 0, 0]
+      - [8, 8, 0, 0]
+      - [1, 5, 0, 0] # first chimera back
+      - [2, 5, 0, 0]
+      - [1, 6, 0, 0]
+      - [2, 6, 0, 0]
+      - [7, 9, 0, 0] # second chimera back
+      - [8, 9, 0, 0]
+      - [7, 10, 0, 0]
+      - [8, 10, 0, 0]
+      - [5, 8, 0, 0] # side of second chimera
+      - [5, 9, 0, 0]
+      - [2, 13, 0, 0] # back of leman
+      - [3, 13, 0, 0]
+      - [1, 3, 1, 0] # first chimera roof
+      - [2, 3, 1, 0]
+      - [1, 4, 1, 0]
+      - [2, 4, 1, 0]
+      - [7, 7, 0, 0] # second chimera roof
+      - [8, 7, 0, 0]
+      - [7, 8, 0, 0]
+      - [8, 8, 0, 0]
 
   - type: STR_ARMOR_COLUMNSL_NORIDERS       # Leman Russ (Steel Legion)
     speedMax: 275 #was 200
@@ -2639,6 +2737,27 @@ crafts:
             STR_LEMANSL_SPONSON_SPAWNER: [0, 0]
             STR_LEMANSL_HULL_SPAWNER: [0, 0]
             STR_CHIMERASL_HULL_SPAWNER: [0, 0]
+    deployment:
+      - [1, 3, 0, 0] # first chimera front
+      - [2, 3, 0, 0]
+      - [1, 4, 0, 0]
+      - [2, 4, 0, 0]
+      - [7, 7, 0, 0] # second chimera front
+      - [8, 7, 0, 0]
+      - [7, 8, 0, 0]
+      - [8, 8, 0, 0]
+      - [1, 5, 0, 0] # first chimera back
+      - [2, 5, 0, 0]
+      - [1, 6, 0, 0]
+      - [2, 6, 0, 0]
+      - [7, 9, 0, 0] # second chimera back
+      - [8, 9, 0, 0]
+      - [7, 10, 0, 0]
+      - [8, 10, 0, 0]
+      - [5, 8, 0, 0] # side of second chimera
+      - [5, 9, 0, 0]
+      - [2, 13, 0, 0] # back of leman
+      - [3, 13, 0, 0]
 
   - type: STR_ARMOR_COLUMNSL                # Leman Russ (Steel Legion)
     speedMax: 275 #was 200
@@ -2688,6 +2807,35 @@ crafts:
             STR_LEMANSL_SPONSON_SPAWNER: [0, 0]
             STR_LEMANSL_HULL_SPAWNER: [0, 0]
             STR_CHIMERASL_HULL_SPAWNER: [0, 0]
+    deployment:
+      - [1, 3, 0, 0] # first chimera front
+      - [2, 3, 0, 0]
+      - [1, 4, 0, 0]
+      - [2, 4, 0, 0]
+      - [7, 7, 0, 0] # second chimera front
+      - [8, 7, 0, 0]
+      - [7, 8, 0, 0]
+      - [8, 8, 0, 0]
+      - [1, 5, 0, 0] # first chimera back
+      - [2, 5, 0, 0]
+      - [1, 6, 0, 0]
+      - [2, 6, 0, 0]
+      - [7, 9, 0, 0] # second chimera back
+      - [8, 9, 0, 0]
+      - [7, 10, 0, 0]
+      - [8, 10, 0, 0]
+      - [5, 8, 0, 0] # side of second chimera
+      - [5, 9, 0, 0]
+      - [2, 13, 0, 0] # back of leman
+      - [3, 13, 0, 0]
+      - [1, 3, 1, 0] # first chimera roof
+      - [2, 3, 1, 0]
+      - [1, 4, 1, 0]
+      - [2, 4, 1, 0]
+      - [7, 7, 0, 0] # second chimera roof
+      - [8, 7, 0, 0]
+      - [7, 8, 0, 0]
+      - [8, 8, 0, 0]
 
   - type: STR_BANEBLADE                     # Baneblade
     battlescapeTerrainData:

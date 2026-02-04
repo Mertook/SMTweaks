@@ -1069,17 +1069,18 @@ items:
 
   - type: STR_TURRET_RELOAD                 # Vehicle turret reload tool
     costUse:
-      energy: 0 # was 100 (lmao) - doesn't accelerate reload time at all, just makes you start reloading NEXT turn
+      energy: 2 # was 100 (lmao)
       mana: 1  # need at least one mana to try
 
   - type: STR_RELOAD_WEAPONS                # Soldier backpack weapon reload tool
     costUse:
-      time: 5 # was 100 (lol, lmao) - doesn't accelerate reload time at all, just makes you start reloading NEXT turn
+      time: 50 # was 100!
       mana: 1  # need at least one mana to try
 
   - type: STR_GENERICSERVITOR_AMMO          # Generic Servitor Reload Item
+    weight: 10 # was 30
     costUse:
-      time: 5 # was 90 (lol, lmao) - doesn't accelerate reload time at all, just makes you start reloading NEXT turn
+      time: 50 # was 90!
       mana: 1  # need at least one mana to try
 
   - type: STR_THUNDERFIRE_CANNON            # Thunderfire Drone Cannon
@@ -1901,7 +1902,7 @@ items:
       FireThreshold: 1  # incinerate the sea
       FixRadius: 200  # melt the map
       ToMorale: 5  # mash the mind
-      RadiusReduction: 4.5
+      RadiusReduction: 5
       IgnoreOverKill: false  # leave no trace; this is the end of days
     clipSize: 1
     recover: false
@@ -1909,6 +1910,7 @@ items:
       ITEM_PRIMED_AT_BATTLE_START: 1
       DAMAGE_RESIST_PENETRATION_PERCENT: 100 # there is NO defense
       ITEM_ENERGY_SHIELD_REDUCTION_PERCENT: 100 # NO DEFENSE
+      SMT_MORTAL_WOUNDS: -1 # No defense
 
   - type: STR_CAS_STRIKE_BOLTER_WEAPON      # Lightning CAS Heavy Bolter
     refNode: *STR_STRIKE_WEAPON_DEFAULTS

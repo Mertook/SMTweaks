@@ -193,7 +193,7 @@ extended:
           return power part side;
 
     damageUnit:
-      - new: SMTS_cmd_dmgunit           #*** AoC Armor Protection, SoF Armor Destruction, RA TU Recovery ***
+      - new: SMTS_cmd_dmgunit           #*** AoC Armor Protection, SoF Armor Destruction ***
         offset: 2.0
         code: |
           var int armorMult;
@@ -248,32 +248,6 @@ extended:
                   add to_armor 1;
                   muldiv to_armor armorMult 100; # multiply to_armor damage by armor reduction
                   #debug_log "SoF Trigger " to_armor armorMult;
-                end;
-              end;
-            end;
-
-          else eq temp 3; ## Relentless Assault
-            attacker.getFaction temp;
-            #debug_log "RA Ping1 " battle_action battle_action_hit temp FACTION_PLAYER;
-            if and eq temp FACTION_PLAYER eq battle_action battle_action_hit; # melee hits only
-              attacker.getTag temp Tag.UNIT_TYPE_ASTARTES; # only affects Space Marines
-              attacker.getTag temp2 Tag.SMT_RAMPAGE_COUNT; # can only trigger up to 4 times
-              #debug_log "RA Ping2 " temp temp2;
-              if and gt temp 0 lt temp2 4;
-                unit.getHealth temp;
-                #debug_log "RA Ping3 " temp to_health;
-                if ge to_health temp; # only killing blows
-                  add temp2 1;
-                  attacker.setTag Tag.SMT_RAMPAGE_COUNT temp2;
-                  attacker.getTimeUnitsMax temp;
-                  attacker.getTimeUnits temp2;
-                  #debug_log "RA Final1 " temp temp2;
-                  muldiv temp 33 100; # up to 33% of max TUs refunded
-                  add temp2 temp;
-                  attacker.getTimeUnitsMax temp;
-                  limit_upper temp2 temp;
-                  attacker.setTimeUnits temp2;
-                  #debug_log "RA Final2 " temp temp2;
                 end;
               end;
             end;

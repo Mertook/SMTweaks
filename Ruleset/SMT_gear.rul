@@ -753,6 +753,8 @@ items:
           - STR_INCENDIARY_GRENADE40
           - STR_KRAK_GRENADE40
           - STR_MELTA_GRENADE40
+          - STR_SMOKE_GRENADE40
+          - STR_PHOTON_GRENADE40
           - STR_PENITENCE_GRENADE40
     weight: 22 # was 25
     dropoff: 8 # was 5
@@ -764,7 +766,7 @@ items:
     accuracyAimed: 50 #
     tuSnap: 25 # was 25
     tuAuto: 35 # was 33
-    tuAimed: 40
+    tuAimed: 28
     confSnap: #Bolter
       shots: 2 # was 2
       name: STR_SNAP_SHOT
@@ -799,7 +801,7 @@ items:
     accuracyAimed: 55 # +5
     tuSnap: 25 # was 25
     tuAuto: 35 # was 33
-    tuAimed: 40
+    tuAimed: 28
     confSnap:
       shots: 2
       name: STR_SNAP_SHOT
@@ -889,6 +891,8 @@ items:
     ammo:
       0:
         compatibleAmmo: *Ref_Light_Bolter_Ammo_SoB
+      1:
+        compatibleAmmo: *Ref_Underslung_GL_Ammo
     dropoff: 8 # was 5
     autoRange: 8
     snapRange: 14 # was 13
@@ -898,7 +902,7 @@ items:
     accuracyAimed: 60
     tuAuto: 35 # was 40
     tuSnap: 25
-    tuAimed: 40 # was 37
+    tuAimed: 28 # was 37
     confAuto:
       shots: 4
     confSnap:
@@ -2011,7 +2015,7 @@ items:
     accuracyAimed: 66
     tuAuto: 40 # cawl 40 for 4
     tuSnap: 22
-    tuAimed: 40
+    tuAimed: 28
     ammo:
       0:
         compatibleAmmo: *Ref_Bolter_Ammo
@@ -3784,6 +3788,58 @@ items:
     tags:
       ITEM_IGNITES_TARGETS: 1
 
+### Heavy Stubbers
+  - type: STR_HEAVY_STUBBER_HYBRID          # Heavy Stubber w/GL
+    requiresBuy:
+      - STR_MIDTIER_PREREQ
+      - STR_GUARD_AND_ARBITES
+    costBuy: 150000
+    size: 0.3
+    costSell: 50000
+    weight: 35
+    ammo:
+      0:
+        compatibleAmmo:
+          - STR_HEAVY_STUBBER_CLIP
+          - STR_HEAVY_STUBBER_CLIP_MC
+      1:
+        compatibleAmmo: &Ref_Underslung_Slug_GL_Ammo
+          - STR_ROTOR_KOMBI_BUCKSHOT40
+          - STR_ROTOR_KOMBI_SLUG40
+          - STR_INCENDIARY_GRENADE40
+          - STR_MELTA_GRENADE40
+          - STR_KRAK_GRENADE40
+          - STR_SMOKE_GRENADE40
+          - STR_PHOTON_GRENADE40
+    armor: 300
+    dropoff: 4
+    autoRange: 15
+    snapRange: 21
+    aimRange: 16
+    accuracyAuto: 40
+    accuracySnap: 55
+    accuracyAimed: 50
+    tuAuto: 60
+    tuSnap: 30
+    tuAimed: 45
+    autoShots: 10
+    confSnap:
+      shots: 4
+      followProjectiles: false
+    confAimed:
+      shots: 1
+      ammoSlot: 1
+      name: STR_LAUNCH_GRENADE
+      shortName: STR_LAUNCH_GRENADE_SHORT
+      arcing: false
+      followProjectiles: true
+    sprayWaypoints: 2
+    tags:
+      ITEM_RECOIL: 40
+      REACTION_MULTIPLIER: 75
+      REACTION_PENALTY_KNEELING_BYPASS: 1
+
+
 ### Autoguns
   - type: STR_AUTOPISTOL                    # Autopistol
     armor: 300
@@ -3949,7 +4005,7 @@ items:
     accuracyAuto: 45
     tuAimed: 40
     tuSnap: 25 # was 25
-    tuAuto: 40 # was 33
+    tuAuto: 28 # was 33
     confSnap:
       shots: 3
       ammoSlot: 0
@@ -4289,6 +4345,170 @@ items:
       ToWound: 0.3
       RandomWound: false
     clipSize: 48
+
+### Rotor Cannons
+  - type: STR_ROTOR_CANNON                  # Rotor Cannon
+    size: 0.2 # was 0.5
+    dropoff: 5
+    costSell: 50000
+    weight: 40
+    compatibleAmmo:
+      - STR_HEAVY_STUBBER_CLIP
+      - STR_HEAVY_STUBBER_CLIP_MC
+      - STR_ROTOR_CANNON_AMMO
+      - STR_ROTOR_CANNON_KRAKEN_AMMO
+    armor: 300
+    tuAuto: 60
+    tuSnap: 0
+    tuAimed: 80
+    accuracyAuto: 40
+    accuracySnap: 0
+    accuracyAimed: 33
+    tuLoad: 30
+    autoShots: 15
+    snapRange: 0
+    autoRange: 18
+    aimRange: 16
+    confAuto:
+      spendPerShot: 2
+      followProjectiles: false
+    confAimed:
+      shots: 25
+      spendPerShot: 2
+      followProjectiles: false
+    sprayWaypoints: 2
+    tags:
+      ITEM_RECOIL: 45
+
+  - type: STR_ROTOR_CANNON_BLACK            # Rotor Cannon (Black)
+    size: 0.2 # was 0.5
+    dropoff: 5
+    requiresBuy:
+      - STR_CHAMBERMILITANT
+    costBuy: 300000
+    costSell: 25000
+    weight: 40
+    compatibleAmmo:
+      - STR_HEAVY_STUBBER_CLIP
+      - STR_HEAVY_STUBBER_CLIP_MC
+      - STR_ROTOR_CANNON_AMMO
+      - STR_ROTOR_CANNON_KRAKEN_AMMO
+    armor: 200
+    tuSnap: 0
+    tuAuto: 60
+    tuAimed: 80
+    accuracySnap: 0
+    accuracyAuto: 40
+    accuracyAimed: 33
+    tuLoad: 30
+    snapRange: 0
+    autoRange: 18
+    aimRange: 16
+    confAuto:
+      shots: 15
+      spendPerShot: 2
+      followProjectiles: false
+    confAimed:
+      name: STR_FULL_AUTO
+      shots: 25
+      spendPerShot: 2
+      followProjectiles: false
+    sprayWaypoints: 2
+    tags:
+      ITEM_RECOIL: 45
+
+  - type: STR_ROTOR_CANNON_KOMBI            # Rotor Cannon (w/GL)
+    size: 0.2 # was 0.5
+    dropoff: 5
+    costSell: 50000
+    weight: 45
+    ammo:
+      0:
+        compatibleAmmo:
+          - STR_HEAVY_STUBBER_CLIP
+          - STR_HEAVY_STUBBER_CLIP_MC
+          - STR_ROTOR_CANNON_AMMO
+          - STR_ROTOR_CANNON_KRAKEN_AMMO
+      1:
+        compatibleAmmo: *Ref_Underslung_Slug_GL_Ammo
+    armor: 300
+    tuAuto: 60
+    tuSnap: 45
+    tuAimed: 80
+    accuracyAuto: 40
+    accuracySnap: 50
+    accuracyAimed: 33
+    tuLoad: 30
+    autoRange: 18
+    snapRange: 15
+    aimRange: 16
+    confSnap:
+      shots: 1
+      ammoSlot: 1
+      arcing: false
+    confAuto:
+      shots: 15
+      spendPerShot: 2
+      ammoSlot: 0
+      arcing: false
+      followProjectiles: false
+    confAimed:
+      shots: 25
+      spendPerShot: 2
+      ammoSlot: 0
+      arcing: false
+      followProjectiles: false
+    sprayWaypoints: 3
+
+  - type: STR_ROTOR_CANNON_KOMBI_BLACK      # Rotor Cannon (Black w/GL)
+    size: 0.2 # was 0.5
+    requiresBuy:
+      - STR_CHAMBERMILITANT
+      - STR_MT_GK
+    costBuy: 400000
+    costSell: 30000
+    weight: 45
+    ammo:
+      0:
+        compatibleAmmo:
+          - STR_HEAVY_STUBBER_CLIP
+          - STR_HEAVY_STUBBER_CLIP_MC
+          - STR_ROTOR_CANNON_AMMO
+          - STR_ROTOR_CANNON_KRAKEN_AMMO
+      1:
+        compatibleAmmo: *Ref_Underslung_Slug_GL_Ammo
+    armor: 300
+    tuLoad: 30
+    tuAuto: 60
+    tuSnap: 45
+    tuAimed: 80
+    accuracyAuto: 40
+    accuracySnap: 50
+    accuracyAimed: 33
+    dropoff: 5
+    snapRange: 15
+    autoRange: 18
+    aimRange: 16
+    confSnap:
+      shots: 1
+      ammoSlot: 1
+      arcing: false
+    confAuto:
+      shots: 15
+      spendPerShot: 2
+      ammoSlot: 0
+      arcing: false
+      followProjectiles: false
+    confAimed:
+      name: STR_FULL_AUTO
+      shots: 25
+      spendPerShot: 2
+      ammoSlot: 0
+      arcing: false
+      followProjectiles: false
+    sprayWaypoints: 3
+    tags:
+      ITEM_RECOIL: 45
 
 ### Lasguns
   - &DMG_LASGUN_STD                         # Lasgun Standard Damage
@@ -5711,7 +5931,7 @@ items:
       ToHealth: 0.7
       ToWound: 0.05
       RandomWound: false
-      FireThreshold: 0
+      FireThreshold: 1
     tags:
       ITEM_ARMOR_DAMAGE_ALL: 50
       ITEM_ARMOR_TARGET_WEAKEST: 1
@@ -6273,6 +6493,7 @@ items:
     tags:
       SMT_AMMO_HP_PREDMG: 50
       ITEM_IGNITES_TARGETS: 1
+      ITEM_ARMOR_TARGET_FACE: 1
 
   - type: STR_NEOVOLKITE_PISTOL             # Neo-Volkite Pistol
     refNode: *DMG_VOLKITE_STD
@@ -6943,7 +7164,7 @@ items:
     fireSound: {mod: 40k, index: 755}
     bulletSpeed: 20
     twoHanded: true
-    oneHandedPenalty: 80 # minor penalty for dual-wielding if you can handle recoil
+    oneHandedPenalty: 60
     weight: 22
     compatibleAmmo:
       - STR_SHOTGUN_SHELLS_HEAVY
@@ -6962,6 +7183,8 @@ items:
       - STR_INCENDIARY_GRENADE40
       - STR_KRAK_GRENADE40
       - STR_MELTA_GRENADE40
+      - STR_SMOKE_GRENADE40
+      - STR_PHOTON_GRENADE40
       - STR_PENITENCE_GRENADE40
     dropoff: 5
     accuracyAuto: 55
@@ -7003,12 +7226,12 @@ items:
     bulletSpeed: 20
     weight: 22
     twoHanded: true
-    oneHandedPenalty: 100 # no penalty for dual-wielding
+    oneHandedPenalty: 60
     ammo:
       0: # Drums
         compatibleAmmo: [STR_RIPPER_GUN_CLIP, STR_RIPPER_GUN_CLIP_AP, STR_RIPPER_GUN_CLIP_INC, STR_RIPPER_GUN_CLIP_FRAG, STR_RIPPER_GUN_CLIP_MC, STR_RIPPER_GUN_CLIP_WYRM]
       1: # Alt Fire
-        compatibleAmmo: [STR_SHOTGUN_SHELLS_HEAVY, STR_SHOTGUN_SHELLS_H_AP, STR_SHOTGUN_SHELLS_H_INC, STR_SHOTGUN_SHELLS_H_FRAG, STR_SHOTGUN_SHELLS_HEAVY_MC, STR_SHOTGUN_SHELLS_WYRM, STR_STUN_SHELLS_HEAVY, STR_INCENDIARY_GRENADE40, STR_PENITENCE_GRENADE40, STR_KRAK_GRENADE40, STR_MELTA_GRENADE40]
+        compatibleAmmo: [STR_SHOTGUN_SHELLS_HEAVY, STR_SHOTGUN_SHELLS_H_AP, STR_SHOTGUN_SHELLS_H_INC, STR_SHOTGUN_SHELLS_H_FRAG, STR_SHOTGUN_SHELLS_HEAVY_MC, STR_SHOTGUN_SHELLS_WYRM, STR_STUN_SHELLS_HEAVY, STR_INCENDIARY_GRENADE40, STR_PENITENCE_GRENADE40, STR_KRAK_GRENADE40, STR_SMOKE_GRENADE40, STR_PHOTON_GRENADE40, STR_MELTA_GRENADE40]
     dropoff: 5
     accuracyAuto: 70
     accuracySnap: 75
@@ -7024,8 +7247,8 @@ items:
     confAimed:
       ammoSlot: 1  # Shells/Grenades
       name: STR_ALT_FIRE
-    tuLoad: 4 # DW shotgun bonus
-    tuUnload: 2 # DW shotgun bonus
+    tuLoad: 8
+    tuUnload: 4
     tags:
       REACTION_MULTIPLIER: 200 # 200% of normal - shotgun bonus
       ITEM_RECOIL: 55
@@ -7034,7 +7257,7 @@ items:
   - type: STR_MCSHOTGUN                     # Mastercrafted Shotgun
     armor: 300
     weight: 22
-    oneHandedPenalty: 80 # minor penalty for dual-wielding if you can handle recoil
+    oneHandedPenalty: 60
     bulletSpeed: 20
     dropoff: 5 # was 5
     autoRange: 8
@@ -7045,18 +7268,20 @@ items:
     accuracyAimed: 80
     tuAuto: 26
     tuSnap: 16 # was 25
-    tuAimed: 35
+    tuAimed: 22
     autoShots: 3
     ammo:
       0:
         compatibleAmmo: [STR_SHOTGUN_SHELLS, STR_SHOTGUN_SHELLS_AP, STR_SHOTGUN_SHELLS_INC, STR_SHOTGUN_SHELLS_MC, STR_SHOTGUN_SHELLS_WYRM]
       1:
-        compatibleAmmo: [STR_INCENDIARY_GRENADE40, STR_PENITENCE_GRENADE40, STR_KRAK_GRENADE40, STR_MELTA_GRENADE40]
+        compatibleAmmo: [STR_INCENDIARY_GRENADE40, STR_PENITENCE_GRENADE40, STR_KRAK_GRENADE40, STR_SMOKE_GRENADE40, STR_PHOTON_GRENADE40, STR_MELTA_GRENADE40]
     confAimed:  # Grenade launcher 40mm
       ammoSlot: 1  # Grenades
       name: STR_LAUNCH_GRENADE
       shortName: STR_LAUNCH_GRENADE_SHORT
       arcing: true
+    tuLoad: 8
+    tuUnload: 4
     tags:
       REACTION_MULTIPLIER: 200 # 200% of normal - MCshotgun bonus
       ITEM_RECOIL: 45 # High recoil, marines or strong scouts
@@ -7826,6 +8051,7 @@ items:
       - STR_INCENDIARY_GRENADE_DRUM
       - STR_SMOKE_GRENADE_DRUM
       - STR_PHOTON_GRENADE_DRUM
+      - STR_MELTA_GRENADE_DRUM
     accuracySnap: 70
     accuracyAuto: 0
     tuSnap: 30
@@ -7849,6 +8075,13 @@ items:
       - STR_GLAUNCHER_PREREQ
       - STR_NOT_ADEPTAS
       - STR_NOT_MARINES
+    compatibleAmmo:
+      - STR_FRAG_GRENADE_DRUM
+      - STR_KRAK_GRENADE_DRUM
+      - STR_INCENDIARY_GRENADE_DRUM
+      - STR_SMOKE_GRENADE_DRUM
+      - STR_PHOTON_GRENADE_DRUM
+      - STR_MELTA_GRENADE_DRUM
     dropoff: 4
     autoRange: 0
     snapRange: 21
@@ -8049,11 +8282,11 @@ items:
       1:
         compatibleAmmo: [STR_CASTELLAN_HE, STR_CASTELLAN_KRAK, STR_CASTELLAN_INCIN, STR_CASTELLAN_DEFOREST]
     dropoff: 4
-    aimRange: 20
+    aimRange: 18
     snapRange: 24
-    autoRange: 16
+    autoRange: 18
     minRange: 5
-    accuracyAimed: 50
+    accuracyAimed: 40
     accuracySnap: 80
     accuracyAuto: 66
     kneelBonus: 140
@@ -8085,14 +8318,22 @@ items:
   - type: STR_STUBCANNON_GUARD              # Stubcannon
     requiresBuy:
       - STR_GUARD_AND_ARBITES
-    weight: 9 # was 15
+    weight: 10 # was 15
     noLOSAccuracyPenalty: 75
+    compatibleAmmo:
+      - STR_ROTOR_KOMBI_BUCKSHOT40
+      - STR_ROTOR_KOMBI_SLUG40
+      - STR_INCENDIARY_GRENADE40
+      - STR_KRAK_GRENADE40
+      - STR_MELTA_GRENADE40
+      - STR_SMOKE_GRENADE40
+      - STR_PHOTON_GRENADE40
     autoRange: 0
     snapRange: 16
     aimRange: 16
     accuracyAuto: 0
-    accuracySnap: 40
-    accuracyAimed: 40
+    accuracySnap: 60 # was 40
+    accuracyAimed: 30
     tuAuto: 0
     tuSnap: 25
     tuAimed: 25
@@ -8100,6 +8341,8 @@ items:
       arcing: true
       name: STR_ARCING_SHOT
       shortName: STR_ARCING_SHOT_SHORT
+    tuLoad: 8
+    tuUnload: 4
 
   - type: STR_DISPOSABLE_LAUNCHER_KRAK      # Krak Launcher
     requires: # removed HWP IG requirement, added to CM
@@ -8128,8 +8371,8 @@ items:
     invHeight: 1
     requiresBuy:
       - STR_VENGOR_R
-    costBuy: 4500
-    costSell: 1500
+    costBuy: 6000
+    costSell: 2400
     weight: 7
     power: 80
     clipSize: 16
@@ -8140,7 +8383,7 @@ items:
     damageType: 3 # HE
     damageAlter:
       RandomType: 9 # 50-150
-      ArmorEffectiveness: 0.9  # concussive
+      ArmorEffectiveness: 0.9
       ToArmorPre: 0.1
       ToArmor: 0.1
       ToStun: 0.3
@@ -8215,16 +8458,19 @@ items:
       index: 80
     isFireExtinguisher: true
     damageType: 8 # ACID
-    power: 200
+    power: 100
     damageAlter:
       RandomType: 3 # fixed 100%
-      ArmorEffectiveness: 8.0 # anti-terrain, not a proper weapon
+      ArmorEffectiveness: 4.0 # anti-terrain, not a proper weapon
       ToArmorPre: 0.0
+      FireThreshold: 1000
+      SmokeThreshold: 1000
       ToArmor: 0.0
-      ToHealth: 0.05
+      ToHealth: 0.2
       RandomHealth: true
       ToStun: 0.0
-      ToTile: 0.21 # 42 base
+      ToTile: 4
+      TileDamageLimit: 60
       ToItem: 0.0
       TileDamageMethod: 2 # consistent tile damage
       FixRadius: 3
@@ -8320,11 +8566,13 @@ items:
   - type: STR_KRAK_GRENADE_DRUM             # GL Krak Rounds
     requiresBuy:
       - STR_GLAUNCHER_PREREQ
+    size: 0.05
 
   - type: STR_INCENDIARY_GRENADE_DRUM       # GL Incin Rounds
     power: 70 # was 50!
     requiresBuy:
       - STR_GLAUNCHER_PREREQ
+    size: 0.05
     tags:
       ITEM_ARMOR_TARGET_WEAKEST: 1
       ITEM_IGNITES_TARGETS: 2
@@ -8333,15 +8581,41 @@ items:
     requiresBuy:
       - STR_GLAUNCHER_PREREQ
       - STR_SMOKE
+    size: 0.05
 
   - type: STR_PHOTON_GRENADE_DRUM           # GL Photon Rounds
     requiresBuy:
       - STR_GLAUNCHER_PREREQ
       - STR_PHOTON_GRENADE_REQUISITION
+    size: 0.05
+
+  - type: STR_MELTA_GRENADE_DRUM            # GL Melta Rounds
+    refNode: *DMG_MELTA_BLAST
+    requiresBuy:
+      - STR_GLAUNCHER_PREREQ
+      - STR_MELTAGUN_TECH
+    size: 0.05
+    costBuy: 7500
+    costSell: 2000
+    weight: 5
+    clipSize: 6
+    armor: 200
+    power: 80
+    damageAlter:
+      FixRadius: 1
+    tags:
+      ITEM_AMMO_COLOR: 2
+      ITEM_GETS_FACTION_RECOLOR: 1
+      ITEM_BASE_COLOR: 4
 
   - type: STR_INCENDIARY_GRENADE40          # 40mm Incin Grenade
     requiresBuy:
       - STR_40MM_AMMO
+    size: 0.01
+    costBuy: 1500
+    costSell: 600
+    clipSize: 1
+    weight: 2
     damageAlter:
       FixRadius: 4 # was 2
       RadiusReduction: 5
@@ -8352,16 +8626,72 @@ items:
   - type: STR_KRAK_GRENADE40                # 40mm Krak Grenade
     requiresBuy:
       - STR_40MM_AMMO
+    size: 0.01
+    costBuy: 2500
+    costSell: 1000
+    clipSize: 1
+    weight: 2
 
   - type: STR_MELTA_GRENADE40               # 40mm Melta Grenade
     refNode: *DMG_MELTA_BLAST
-    power: 80 # was 90
     requiresBuy:
       - STR_40MM_AMMO
       - STR_MIDTIER_PREREQ
       - STR_MELTAGUN_TECH
+    size: 0.01
+    costBuy: 4000
+    costSell: 1600
+    clipSize: 1
+    weight: 2
+    power: 80 # was 90
     damageAlter:
       FixRadius: 1 # was 2
+
+  - type: STR_PENITENCE_GRENADE40           # 40mm Penitence Grenade
+    requiresBuy:
+      - STR_40MM_AMMO
+      - STR_ADEPTAS
+    costBuy: 500
+    costSell: 200
+    clipSize: 1
+    weight: 2
+    power: 80 # was 60
+
+  - type: STR_PHOTON_GRENADE40              # 40mm Photon Grenade
+    requiresBuy:
+      - STR_40MM_AMMO
+      - STR_PHOTON_GRENADE_REQUISITION
+    costBuy: 1500
+    costSell: 600
+    clipSize: 1
+    weight: 2
+    power: 60
+    damageType: 6 # STUN
+    damageAlter:
+      ArmorEffectiveness: 0.5
+      ToStun: 0.5
+      RandomStun: false
+      IgnorePainImmunity: true
+      ToTime: 1.0
+      ToEnergy: 0.5
+      RadiusReduction: 5.0
+      ToHealth: 0.05
+      ToWound: 0.00
+      RandomWound: false
+      FixRadius: 3
+
+  - type: STR_SMOKE_GRENADE40               # 40mm Smoke Grenade
+    requiresBuy:
+      - STR_40MM_AMMO
+      - STR_SMOKE
+    costBuy: 1500
+    costSell: 600
+    clipSize: 1
+    weight: 2
+    power: 60
+    damageType: 9 # SMOKE
+    damageAlter:
+      FixRadius: 4
 
   - type: STR_MORTAR_AMMO_HE                # Mortar HE
     requiresBuy:
@@ -8603,6 +8933,9 @@ items:
       energy: 4
     costPrime:
       time: 10
+    power: 60 # was 40
+    damageAlter:
+      FixRadius: 4
 
   - type: STR_SMOKE_BOMB                    # Smoke Bomb
     weight: 12 # was 20
@@ -8641,6 +8974,7 @@ items:
     damageAlter:
       ArmorEffectiveness: 0.5
       ToStun: 0.5
+      RandomStun: false
       ToTime: 1.0
       ToEnergy: 0.5
       RadiusReduction: 5.0
@@ -8756,19 +9090,20 @@ items:
       energy: true
     isFireExtinguisher: true
     damageType: 8 # ACID
-    power: 400
+    power: 200
     damageAlter:
       RandomType: 3 # fixed 100%
-      ArmorEffectiveness: 16.0 # anti-terrain, not a proper weapon
+      ArmorEffectiveness: 4.0 # anti-terrain, not a proper weapon
       FireThreshold: 1000
       SmokeThreshold: 1000
       ToArmorPre: 0.0
       ToArmor: 0.0
-      ToHealth: 0.05
+      ToHealth: 0.2
       RandomHealth: true
       ToStun: 0.0
       ToItem: 0.0
-      ToTile: 0.13 # 52 terrain dmg
+      ToTile: 4
+      TileDamageLimit: 60
       TileDamageMethod: 2 # consistent tile damage
       FixRadius: 9
       RadiusReduction: 0
@@ -9730,6 +10065,7 @@ items:
       REACTION_MULTIPLIER: 200
       DAMAGE_BONUS_PERCENT_DAEMONIC: 150 #1.5x damage vs Daemons
       ITEM_DOESNT_HURT_FRIENDS: 1
+      SMT_MORTAL_WOUNDS: -1
 
   - type: STR_FORCE_BLADE                   # Nemesis Force Blade
     costSell: 20000
@@ -9756,6 +10092,7 @@ items:
       ITEM_STRENGTH_REQUIREMENT: 60
       ITEM_STRENGTH_1H_REQUIREMENT: 90
       DAMAGE_BONUS_PERCENT_DAEMONIC: 150 #1.5x damage vs Daemons
+      SMT_MORTAL_WOUNDS: -1
 
 ###Crozius
   - type: AUX_CROZIUS                       # Crozius
@@ -10225,13 +10562,13 @@ items:
     damageType: 13 # WARP
     power: 20 # was 0
     damageBonus:
-      psiStrength: 0.75 # was 1.0
+      psiStrength: 0.70 # was 1.0
     damageAlter:
       RandomType: 8 # 25-175%
-      ArmorEffectiveness: 0.0 # was 0.25
+      ArmorEffectiveness: 0.1 # was 0.25
       ToArmor: 0.0
       ToHealth: 0.0
-      ToTime: 0.6 # was 1.0
+      ToTime: 0.5 # was 1.0
       ToEnergy: 0.6
       ToStun: 0.3
       ToMorale: 0.2
@@ -10846,6 +11183,8 @@ items:
     floorSprite: {mod: 40k, index: 169}
     size: 0.2
     armor: 600
+    invHeight: 3
+    invWidth: 2
     floorSprite: 99
     costSell: 20000
     supportedInventorySections:
@@ -10853,8 +11192,6 @@ items:
       - STR_GROUND
     inventoryMoveCost:
       basePercent: 1000 # 10x movement cost, only move during loadout
-    invWidth: 2
-    invHeight: 3
     tuAimed: 0
     tuSnap: 0
     tuAuto: 0
@@ -11078,6 +11415,8 @@ items:
     weight: 12
     size: 0.05
     armor: 600
+    invHeight: 3
+    invWidth: 1
     floorSprite: {mod: 40k, index: 168}
     costSell: 20000
     supportedInventorySections:
@@ -11106,8 +11445,6 @@ items:
     refNode: *REF_TECH_SUPPORT
     battleType: 9
     bigSprite: 317
-    invHeight: 2
-    invWidth: 1
     hitSound: {mod: 40k, index: 37} ###CHANGEME
     hitAnimation: {mod: 40k, index: 170} ###CHANGEME
     hitAnimFrames: 10
@@ -11135,8 +11472,6 @@ items:
   - type: STR_TECH_TOOL_SHIELD              # Techpriest Shield Overcharge
     refNode: *REF_TECH_SUPPORT
     bigSprite: 316
-    invHeight: 2
-    invWidth: 1
     battleType: 6
     medikitType: 3
     painKiller: 999
@@ -11160,8 +11495,6 @@ items:
     hitAnimFrames: 10
     targetMatrix: 6
     bigSprite: 315
-    invHeight: 2
-    invWidth: 1
     power: 1
     LOSRequired: true
     damageType: 0 # SUPPORT
@@ -11187,6 +11520,8 @@ items:
     weight: 8
     size: 0.02
     armor: 600
+    invHeight: 1
+    invWidth: 1
     floorSprite: {mod: 40k, index: 168}
     costSell: 20000
     supportedInventorySections:
@@ -11198,37 +11533,37 @@ items:
   - type: STR_TECH_PASSIVE_REPAIR           # Techpriest Self Repair
     refNode: *REF_TECH_BONUS
     tags:
-      ITEM_TECHMARINE_PASSIVE: 1
+      ITEM_PASSIVE_EFFECT: 1
 
   - type: STR_TECH_PASSIVE_SCANNER          # Techpriest Radar
     refNode: *REF_TECH_BONUS
     tags:
-      ITEM_TECHMARINE_PASSIVE: 2
+      ITEM_PASSIVE_EFFECT: 2
 
   - type: STR_TECH_PASSIVE_SHIELD           # Techpriest Passive Shield
     refNode: *REF_TECH_BONUS
     tags:
-      ITEM_TECHMARINE_PASSIVE: 3
+      ITEM_PASSIVE_EFFECT: 4
 
-  - type: STR_TECH_PASSIVE_OVERWATCH        # Techpriest Reaction Booster
+  - type: STR_TECH_PASSIVE_OVERWATCH        # Techpriest Defensive Targetting Array
     refNode: *REF_TECH_BONUS
     tags:
-      ITEM_TECHMARINE_PASSIVE: 4
+      ITEM_PASSIVE_EFFECT: 8
 
-  - type: STR_TECH_PASSIVE_STAMINA          # Techpriest Motive Enhancer
+  - type: STR_TECH_PASSIVE_REGEN            # Techpriest Curative
     refNode: *REF_TECH_BONUS
     tags:
-      ITEM_TECHMARINE_PASSIVE: 5
+      ITEM_PASSIVE_EFFECT: 16
 
-  - type: STR_TECH_PASSIVE_REACTIONBOOST    # Techpriest Reaction Booster
+  - type: STR_TECH_PASSIVE_REPAIR            # Techpriest Servo Welder
     refNode: *REF_TECH_BONUS
     tags:
-      ITEM_TECHMARINE_PASSIVE: 6
+      ITEM_PASSIVE_EFFECT: 32
 
   - type: STR_TECH_PASSIVE_DEFENSE          # Techpriest FeelNoPain
     refNode: *REF_TECH_BONUS
     tags:
-      ITEM_TECHMARINE_PASSIVE: 7
+      ITEM_PASSIVE_EFFECT: 64
 
   - type: STR_SKULL_ANALYZE                 # Skull Analyzer
     battleType: 8 # mind probe

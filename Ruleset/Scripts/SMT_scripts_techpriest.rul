@@ -1,0 +1,23 @@
+extended:
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
+
+  scripts:
+    skillUseUnit:
+      - new: SMTS_techpriest_skillcheck
+        offset: 1.0
+        code: |
+          var int skillTag;
+          var int userTag;
+
+          skill.getTag skillTag Tag.SKILL_SMT_TECHPRIEST;
+          actor.getTag userTag Tag.UNIT_TYPE_TECHPRIEST;
+
+          if and eq skillTag 1 eq userTag 0; # if trying to use techpriest skill without wearing techmarine armor
+            set spend_tu 0;
+            set continue_action 0;
+          end;
+
+          return;
+
+
+

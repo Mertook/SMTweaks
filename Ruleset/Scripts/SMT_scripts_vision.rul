@@ -1,0 +1,50 @@
+extended:
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
+
+  scripts:
+    visibilityUnit:
+      - new: SMTS_invisibility_detection
+        offset: 99
+        code: |
+          var int temp;
+
+          target_unit.getTag temp Tag.UNIT_IS_INVISIBLE;
+          if eq temp 0;
+            return current_visibility visibility_mode;
+          end;
+
+          return 0 visibility_mode;
+
+      - new: SMTS_marked_target
+        offset: 90
+        code: |
+          var int temp;
+
+          target_unit.getTag temp Tag.SMT_MARKED_INTENSITY;
+          debug_log "Marked Ping" temp current_visibility;
+          if gt temp 0;
+            add current_visibility temp;
+          else lt temp 0;
+            set current_visibility temp;
+          end;
+
+          return current_visibility visibility_mode;
+
+
+    reactionUnitAction:
+      - new: SMTS_invisibility_reaction
+        offset: 99
+        code: |
+          var int temp;
+
+          action_unit.getTag temp Tag.UNIT_IS_INVISIBLE;
+          if eq temp 0;
+            return reaction_chance;
+          end;
+
+          return 0;
+
+
+
+
+

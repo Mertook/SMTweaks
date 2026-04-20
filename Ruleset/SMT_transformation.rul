@@ -53,51 +53,6 @@ soldierTransformation:
     soldierBonusType: STR_BONUS_INQ_ROSARIUS
     listOrder: 90
 
-  - name: STR_APOTHECARY_TRAINING       # Apothecary Training
-    forbiddenPreviousTransformations:
-      - STR_APOTHECARY_TRAINING
-      - STR_TECHMARINE_TRAINING
-    requires:
-      - STR_APOTHECARY_TRAINING
-    cost: 60000
-    requiredItems:
-      STR_KILLPOINT_TOKEN: 100
-    transferTime: 0
-    keepSoldierArmor: true
-    allowsDeadSoldiers: false
-    allowsLiveSoldiers: true
-    allowsWoundedSoldiers: true
-    flatOverallStatChange:
-      bravery: 10
-    upperBoundAtStatCaps: true
-    allowedSoldierTypes:
-      - STR_GREYKNIGHT
-    soldierBonusType: STR_BONUS_APOTH_TRAINING
-    listOrder: 20
-
-  - name: STR_TECHMARINE_TRAINING       # Techmarine Training
-    forbiddenPreviousTransformations:
-      - STR_APOTHECARY_TRAINING
-      - STR_TECHMARINE_TRAINING
-    requires:
-      - STR_DEATHWATCH
-      - STR_TEC_BAYR
-    cost: 60000
-    requiredItems:
-      STR_KILLPOINT_TOKEN: 100
-    transferTime: 0
-    keepSoldierArmor: true
-    allowsDeadSoldiers: false
-    allowsLiveSoldiers: true
-    allowsWoundedSoldiers: true
-    flatOverallStatChange:
-      bravery: 10
-    upperBoundAtStatCaps: true
-    allowedSoldierTypes:
-      - STR_GREYKNIGHT
-    soldierBonusType: STR_BONUS_TECH_TRAINING
-    listOrder: 20
-
   - name: STR_PROMOTE_VETMARINE         # Marine -> Vet Marine
     requires:
       - STR_GENERALLOCK # temp disable
@@ -212,11 +167,7 @@ soldierTransformation:
       STR_TERMINATOR_CROSS: 0
     requiresBaseFunc: [PSI] #needs chapel
     requiredMinStats:
-      health: 100 # marine max 120  - training cap 80
-      firing: 100 # marine max 120  - training cap 100
-      melee: 80 # marine max 120   - training cap 100
-      strength: 80 # marine max 100 - training cap 80
-      psiSkill: 100 #
+      psiSkill: 100 # devotion
     listOrder: 70
 
   - &REF_CAPTAIN_FIRSTBORN              # Vet Marine -> Captain
@@ -351,6 +302,7 @@ soldierTransformation:
       - STR_NOT_PRIMARIS
       - STR_TEC_BAYR
     producedSoldierType: STR_SOLDIER_TECH
+    soldierBonusType: STR_BONUS_TECHMARINE_TRAINING
     cost: 20000
     requiredItems:
       STR_ALIEN_ALLOYS: 25
@@ -421,6 +373,7 @@ soldierTransformation:
     allowsWoundedSoldiers: true
     allowedSoldierTypes:
       - STR_SOLDIER_NEOPHYTE
+    soldierBonusType: STR_BONUS_LIBRARIAN_TRAINING
     transferTime: 0
     recoveryTime: 5
     requiredCommendations:
@@ -689,6 +642,7 @@ soldierTransformation:
     requiredItems:
       STR_KILLPOINT_TOKEN: 200
     producedSoldierType: STR_PRIMARIS_TECHNOVICE
+    soldierBonusType: STR_BONUS_TECHMARINE_TRAINING
     keepSoldierArmor: false
     allowsDeadSoldiers: false
     allowsLiveSoldiers: true
@@ -834,6 +788,7 @@ soldierTransformation:
     allowsWoundedSoldiers: true
     allowedSoldierTypes:
       - STR_SOLDIER_NEOPHYTE
+    soldierBonusType: STR_BONUS_LIBRARIAN_TRAINING
     transferTime: 0
     recoveryTime: 5
     requiredCommendations:
@@ -934,12 +889,32 @@ soldierTransformation:
     listOrder: 90
 
 ### Grey Knights
+  - name: STR_GK_APOTHECARY    # Apothecary Training
+    forbiddenPreviousTransformations:
+      - STR_GK_APOTHECARY
+    requires:
+      - STR_GREYKNIGHTS
+      - STR_APOTHECARY_TRAINING
+    cost: 60000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 100
+    transferTime: 0
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    upperBoundAtStatCaps: true
+    allowedSoldierTypes:
+      - STR_GREYKNIGHT
+    soldierBonusType: STR_BONUS_APOTH_TRAINING
+    listOrder: 20
+
   - name: STR_GK_LIBRARIAN              # Grey Knight -> Librarian
     requires:
       - STR_GREYKNIGHTS
       - STR_LIBRARY
     forbiddenPreviousTransformations:
-      - STR_APOTHECARY_TRAINING
+      - STR_GK_APOTHECARY
       - STR_PSIUNLOCK_FLAMES_GK
     producedSoldierType: STR_GREYKNIGHT_LIBRARIAN
     cost: 125000
@@ -968,9 +943,10 @@ soldierTransformation:
       - STR_GREYKNIGHTS
       - STR_TEC_BAY_CHAMBER_R
     forbiddenPreviousTransformations:
-      - STR_APOTHECARY_TRAINING
+      - STR_GK_APOTHECARY
       - STR_PSIUNLOCK_FLAMES_GK
     producedSoldierType: STR_GREYKNIGHT_TECHMARINE
+    soldierBonusType: STR_BONUS_TECHMARINE_TRAINING
     cost: 125000
     requiredItems:
       STR_KILLPOINT_TOKEN: 200
@@ -990,7 +966,7 @@ soldierTransformation:
       - STR_GREYKNIGHTS
       - STR_PSI_LAB
     forbiddenPreviousTransformations:
-      - STR_APOTHECARY_TRAINING
+      - STR_GK_APOTHECARY
     producedSoldierType: STR_GREYKNIGHT_CHAPLAIN
     cost: 125000
     requiredItems:
@@ -1058,7 +1034,7 @@ soldierTransformation:
     needsCorpseRecovered: false
     createsClone: true
     transferTime: 0
-    allowedSoldierTypes:
+    allowedSoldierTypes: &Ref_Deathwatch_Soldier
       - STR_ULTRAMARINE
       - STR_ULTRAMARINE_PRIMARIS
       - STR_IMPERIALF
@@ -1105,6 +1081,64 @@ soldierTransformation:
       - STR_CRISMONF_LEADER
     listOrder: 11
 
+  - name: STR_DW_VETERAN_TRAINING       # Veteran Training
+    forbiddenPreviousTransformations:
+      - STR_DW_VETERAN_TRAINING
+      - STR_DW_APOTHECARY_TRAINING
+      - STR_DW_TECHMARINE_TRAINING
+    requires:
+      - STR_DEATHWATCH
+    cost: 10000
+    transferTime: 0
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    upperBoundAtStatCaps: false
+    allowedSoldierTypes: *Ref_Deathwatch_Soldier
+    soldierBonusType: STR_BONUS_VETERAN_TRAINING
+    listOrder: 20
+
+  - name: STR_DW_APOTHECARY_TRAINING    # Apothecary Training
+    forbiddenPreviousTransformations:
+      - STR_DW_VETERAN_TRAINING
+      - STR_DW_APOTHECARY_TRAINING
+      - STR_DW_TECHMARINE_TRAINING
+    requires:
+      - STR_DEATHWATCH
+    cost: 50000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 50
+    transferTime: 0
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    upperBoundAtStatCaps: false
+    allowedSoldierTypes: *Ref_Deathwatch_Soldier
+    soldierBonusType: STR_BONUS_APOTH_TRAINING
+    listOrder: 21
+
+  - name: STR_DW_TECHMARINE_TRAINING    # Techmarine Training
+    forbiddenPreviousTransformations:
+      - STR_DW_VETERAN_TRAINING
+      - STR_DW_APOTHECARY_TRAINING
+      - STR_DW_TECHMARINE_TRAINING
+    requires:
+      - STR_DEATHWATCH
+      - STR_TEC_BAYR
+    cost: 50000
+    requiredItems:
+      STR_KILLPOINT_TOKEN: 100
+    transferTime: 0
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    upperBoundAtStatCaps: false
+    allowedSoldierTypes: *Ref_Deathwatch_Soldier
+    soldierBonusType: STR_BONUS_TECHMARINE_TRAINING
+    listOrder: 22
 
   - name: STR_RESURRECT_MARINE_DW       # Deathwatch Dreadnought
     requires:
@@ -1470,7 +1504,7 @@ soldierTransformation:
     forbiddenPreviousTransformations: *Psyker_TierFour_TransformList
     requiredMinStats: *Psyker_TierFour_MinStats
     listOrder: 4060
-    soldierBonusType: STR_PSIBONUS_RECOVERY
+    soldierBonusType: STR_PSIBONUS_PASSIVE_RECOVERY
 
   - name: STR_PSIUNLOCK_TRUESIGHT       # Psionic Vision (Tier 4)
     cost: 50000
@@ -1485,7 +1519,7 @@ soldierTransformation:
     forbiddenPreviousTransformations: *Psyker_TierFour_TransformList
     requiredMinStats: *Psyker_TierFour_MinStats
     listOrder: 4065
-    soldierBonusType: STR_PSIBONUS_TRUESIGHT
+    soldierBonusType: STR_PSIBONUS_PASSIVE_TRUESIGHT
 
   - name: STR_PSIUNLOCK_WARRIOR         # Heroic Might (Tier 4)
     cost: 50000
@@ -1703,58 +1737,150 @@ soldierBonuses:
       BONUS_ENERGY_SHIELD_HP_PER_TURN: 90
       BONUS_ENERGY_SHIELD_DECAY: 75
 
+  - name: STR_BONUS_VETERAN_TRAINING
+    stats:
+      melee: 10
+      firing: 10
+      throwing: 10
+      reactions: 10
+    tags:
+      SMT_BONUS_MORALE_RESISTANCE: 30
+
+  - name: STR_BONUS_CHAPLAIN_TRAINING
+    tags:
+      SMT_BONUS_MORALE_RESISTANCE: 50
+      BONUS_ENERGY_SHIELD_HP_PER_TURN: 75
+      BONUS_ENERGY_SHIELD_DECAY: 75
+
   - name: STR_BONUS_APOTH_TRAINING
     tags:
-      SMT_BONUS_MORALE_RESISTANCE: 20
+      SMT_BONUS_MORALE_RESISTANCE: 30
       #SMT_BONUS_MEDIC_GLOBAL: 15 # given by armor instead
+
+  - name: STR_BONUS_TECHMARINE_TRAINING
+    stats:
+      tu: -10
+      melee: -10
+      firing: -10
+    recovery:
+      energy:
+        stamina: 0.15
+      stun:
+        flatOne: 5
+    tags:
+      SMT_BONUS_MORALE_RESISTANCE: 30
+      SMT_BONUS_MEDBAY_RECOVERY: 33
 
   - name: STR_BONUS_LIBRARIAN_TRAINING
     stats:
+      tu: -10
       melee: -20
       firing: -20
+      mana: 40
+    recovery:
+      mana:
+        mana: 0.05 # 5% of max mana
+        manaNormalized: 12 # 12 * current mana %
+    tags:
+      SMT_BONUS_PERIL_RESISTANCE: 20
 
 ### Psi Bonuses
   - name: STR_PSIBONUS_SHROUD
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_FLARE
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_TELEPATHY
     heatVision: 10
     visibilityAtDark: 10
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_WALLBREAKER
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_FLASH
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_REFLEXES
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_SMITE
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_FLAMES_GK
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_HOLODUMMY
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_VIGILANCE
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_MENDWOUNDS
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_UNDYING
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_PASSIVESHIELD
     tags:
       BONUS_ENERGY_SHIELD_HP_PER_TURN: 90
       BONUS_ENERGY_SHIELD_DECAY: 75
-  - name: STR_PSIBONUS_RECOVERY
+  - name: STR_PSIBONUS_PASSIVE_RECOVERY
+    stats:
+      mana: 20
     recovery:
-      energy:
-        stamina: 0.30
-      stun:
-        flatOne: 5
+      mana:
+        flatOne: 4
       morale:
         flatOne: 15
-  - name: STR_PSIBONUS_TRUESIGHT
+  - name: STR_PSIBONUS_PASSIVE_TRUESIGHT
     visibilityAtDark: 40 # perfect night vision
     heatVision: 40
     psiVision: 4
+  # - name: STR_PSIBONUS_PASSIVE_STEELSKIN # Requires OXCE 8.5.3 - disabled until feature enters stable branch
+    # frontArmor: 10
+    # sideArmor: 10
+    # rearArmor: 10
+    # underArmor: 10
+    # stats:
+      # health: 30
+    # tags:
+      # SMT_BONUS_MAGIC_ARMOR: 80
+  - name: STR_PSIBONUS_PASSIVE_IRONWILL
+    stats:
+      bravery: 20
+    tags:
+      SMT_BONUS_PERIL_RESISTANCE: 80
+      SMT_BONUS_MORALE_RESISTANCE: 80
   - name: STR_PSIBONUS_WARRIOR
     stats:
       melee: 40
       strength: 10
       firing: 40
   - name: STR_PSIBONUS_SHIELD
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_SENTRYWARD
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_LOCKDOWN
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_TORMENT
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_CLOAK
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_HASTE
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_SOULSTORM
+    stats:
+      mana: 8
   - name: STR_PSIBONUS_HOLOCAUST
+    stats:
+      mana: 8
 

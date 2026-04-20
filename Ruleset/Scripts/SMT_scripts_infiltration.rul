@@ -478,18 +478,6 @@ extended:
 
           return 0 visibility_mode;
 
-      - new: SMTS_invisibility_detection
-        offset: 95
-        code: |
-          var int temp;
-
-          target_unit.getTag temp Tag.UNIT_IS_INVISIBLE;
-          if eq temp 0;
-            return current_visibility visibility_mode;
-          end;
-
-          return 0 visibility_mode;
-
       - delete: ROSIGMA_vU_infiltration_proximity_detection
 
     reactionUnitAction:

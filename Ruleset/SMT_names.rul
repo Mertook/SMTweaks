@@ -311,7 +311,6 @@ extraStrings:
       STR_CYCLONE_LAUNCHER: Cyclone Missiles
       STR_DREAD_MISSILES: Dreadnought Missiles
       STR_DREAD_STORMBOLTER: Stormbolter Fist
-      STR_SHOTGUN: Combat Shotgun
       STR_SHOTGUN_MARINE: Astartes Shotgun
       STR_SM_SCOUT_SCANNER: Scout Auspex
       STR_CLAWS_ASS: Lightning Claw
@@ -490,6 +489,9 @@ extraStrings:
       STR_TB_MISSILE_R: Hyperios Missiles
       STR_GENERICSERVITOR_AMMO: "Munitions Rack"
       STR_CLASCAN: Lascannon
+      STR_PHOTON_GRENADE40: "40mm Photon Grenade"
+      STR_SMOKE_GRENADE40: "40mm Smoke Grenade"
+      STR_MELTA_GRENADE_DRUM: "Melta Grenade Drum"
       ### CRAFT
       STR_AVENGER: "THUNDERHAWK T."
       AUX_BOLTER: Mounted Heavy Bolter
@@ -589,7 +591,7 @@ extraStrings:
       STR_CMD_FIRE_SKILL: Storm of Fire
       STR_CMD_MELEE_SKILL: Relentless Assault
       STR_CMD_REACT_SKILL: Lightning Blitz
-      STR_CMD_OVERWATCH_SKILL: Rigid Discipline
+      STR_CMD_OVERWATCH_SKILL: Exemplary Vigilance
       STR_CMD_CHECK_SKILL: Check CMD Points
       STR_GRAV_MORTAR: Fragstorm Grenades
       STR_TECH_PRIMARY_SKILL: Servo Weapon
@@ -631,9 +633,9 @@ extraStrings:
       STR_PSIUNLOCK_PASSIVESHIELD: T4 Psi - Psionic Shield
       STR_PSIBONUS_PASSIVESHIELD: Psionic Shield
       STR_PSIUNLOCK_RECOVERY: T4 Psi - Rapid Recovery
-      STR_PSIBONUS_RECOVERY: Rapid Recovery
+      STR_PSIBONUS_PASSIVE_RECOVERY: Rapid Recovery
       STR_PSIUNLOCK_TRUESIGHT: T4 Psi - Warp Vision
-      STR_PSIBONUS_TRUESIGHT: Warp Vision
+      STR_PSIBONUS_PASSIVE_TRUESIGHT: Warp Vision
       STR_PSIUNLOCK_WARRIOR: T4 Psi - Heroic Might
       STR_PSIBONUS_WARRIOR: Heroic Might
       STR_PSIUNLOCK_SHIELD: T5 Psi - Project Shield
@@ -681,6 +683,7 @@ extraStrings:
       STR_GK_LIBRARIAN: Train Librarian
       STR_GK_TECHMARINE: Train Techmarine
       STR_GK_CHAPLAIN: Anoint Chaplain
+      STR_GK_APOTHECARY: Train Apothecary
       ###RESEARCH
       STR_THE_EMPEROR_PROTECTS_RESEARCH: The Emperor Protects (Easy Mode)
       STR_PICKED_LOYALIST_STRATEGY: (Picked Imperium Strategy)
@@ -759,8 +762,8 @@ extraStrings:
       STR_INFERNOPISTOL_REQ: Inferno Pistol Prerequisite
       STR_TECHMARINE_GEAR: Mechanicus Equipment
       STR_STUBBERS_UNLOCK: (Stubber Weapons Unlocked)
-      STR_AUTOGUNS_UNLOCK: (Autogun Weapons Unlocked)
-      STR_LASGUNS_UNLOCK: (Lasgun Weapons Unlocked)
+      STR_AUTOGUNS_UNLOCK: Autogun Requisition
+      STR_LASGUNS_UNLOCK: Lasgun Requisition
       STR_LIGHT_BOLTERS_UNLOCK: (Light Bolters Unlocked)
       STR_BOLTERS_UNLOCK: (Bolters Unlocked)
       STR_40MM_AMMO: (40mm Grenade Ammo)
@@ -853,7 +856,7 @@ extraStrings:
       STR_SCRIPT_CMD_FIRE: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Storm of Fire"
       STR_SCRIPT_CMD_MELEE: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Relentless Assault"
       STR_SCRIPT_CMD_REACT: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Lightning Blitz"
-      STR_SCRIPT_CMD_OVERWATCH: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Battle Drill"
+      STR_SCRIPT_CMD_OVERWATCH: "Kill Points: {0} Available Commands: {1}{NEWLINE}Active Command: Exemplary Vigilance"
       STR_HEAT_AMMO_SPENT_FOR_INCREASE: "Heat increase per X ammo"
       STR_AIMED_ACCURACY_POWER_BONUS: "Aimed Shot Acc. Flat Power Bonus"
       STR_AIMED_ACCURACY_POWER_BONUS_PERCENT: "Aimed Shot Acc. % Power Bonus"
@@ -1441,6 +1444,8 @@ extraStrings:
       AUX_CROZIUS_UFOPEDIA: "{NEWLINE} The Crozius Arcanum serves as both a sacred staff of office and a close combat weapon for Space Marine Chaplains. It is a formidable Power weapon, and in the hands of a Chaplain can also be used to smite enemies with the Emperors fury.{NEWLINE}{NEWLINE} Restricted ({ALT}Chaplain{ALT})"
       STR_ASSC_UFOPEDIA: "{NEWLINE} The Assault Cannon is a six-barrelled, self-loading rotary Autocannon, effective against infantry targets and light vehicles at close to medium range. It fires medium caliber rounds as its 6 barrels are cycled past a single chamber by an electric motor.{NEWLINE}{NEWLINE} Recoil: {ALT}130{ALT} - {ALT}Heavy{ALT}"
       STR_CLAWS_UFOPEDIA: "{NEWLINE} Vicious power weapons used by elite Space Marines, Lightning Claws tear through armor and inflict heavy wounds."
+      STR_SHOTGUN: Combat Shotgun
+      STR_SHOTGUN_UFOPEDIA: "{NEWLINE} The Shotgun is an ancient Imperial weapon, firing buckshot spread out over a wider area. This military grade shotgun can be fired more rapidly, tearing through lightly armored enemies."
       STR_SHOTGUN_MARINE_UFOPEDIA: "{NEWLINE} The Astartes assault shotgun is larger and more powerful than standard shotguns, able to load custom shells and 40mm grenades. Assault shotguns are best used in urban and close-quarters combat, as well as in boarding actions aboard voidships.{NEWLINE}{NEWLINE} Recoil: {ALT}45"
       STR_SHOTGUN_DW_UFOPEDIA: "{NEWLINE} Deathwatch Shotguns are optimized for close-range combat in Space Hulks and other cramped enviroments. In addition to regular shells and 40mm grenades they can also utilize Wyrmsbreath shells to engulf an area in fire, purging entire rooms of lightly armored Xenos.{NEWLINE}{NEWLINE} Recoil: {ALT}45{ALT}{NEWLINE} Restricted ({ALT}Deathwatch{ALT})"
       STR_MCSHOTGUN_UFOPEDIA: "{NEWLINE} A Master-crafted weapon is a special weapon that has been enhanced by skilled artificers, giving it ornate detailing while also boosting its combat effectiveness. Compared to their counterparts Master-crafted weapons typically have higher accuracy, greater power, or are able to fire more rapidly.{NEWLINE}{NEWLINE} Recoil: {ALT}45"
@@ -1525,10 +1530,10 @@ extraStrings:
       STR_DW_CHAPTERS_CODEX: "{NEWLINE} Deathwatch hail from many different Chapters, bringing the experiences and tactics of their Chapter with them. Each Deathwatch Marine has a unique bonus related to their Chapter.{NEWLINE}{NEWLINE} Deathwatch Captains also come with unique equipment in addition to their Chapter bonus."
       STR_ULTRAMARINES: "Ultramarines"
       STR_ULTRAMARINES_INFO_1: "{NEWLINE}Of all the thousand and more Space Marine Chapters, it is the blue-clad Ultramarines that, in the mind of the countless billions of the Emperor's subjects, personify everything that the Adeptus Astartes stand for.  Originally known as the War-Born, these superb soldiers are here to stem the tide of Chaos on this Planet.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Tactical experts, they recover some TUs on enemy turns for reaction fire."
-      STR_ULTRAMARINES_INFO_2: "{NEWLINE} The Ultramarines Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Mastercrafted Absolvor Pistol{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Lightning Blitz{ALT}{NEWLINE} > {ALT}Rigid Discipline{ALT}"
+      STR_ULTRAMARINES_INFO_2: "{NEWLINE} The Ultramarines Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Mastercrafted Absolvor Pistol{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Lightning Blitz{ALT}{NEWLINE} > {ALT}Exemplary Vigilance{ALT}"
       STR_IF: "Imperial Fists"
       STR_IF_INFO_1: "{NEWLINE}One of the most valiant of all Chapters, held as paragons of the principles set down in the Codex Astartes. The Imperial Fists stand as the steadfast defenders of the Imperium and the Emperor's unwavering shield; for ten thousand standard years they have been the bulwark against which the armies of Traitors and aliens have shattered.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Experts in defense, they are less affected by Heavy Weapons and their armor is more durable."
-      STR_IF_INFO_2: "{NEWLINE} The Imperial Fists Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Mastercrafted Storm Bolter{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Rigid Discipline{ALT}"
+      STR_IF_INFO_2: "{NEWLINE} The Imperial Fists Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Mastercrafted Storm Bolter{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Storm of Fire{ALT}{NEWLINE} > {ALT}Exemplary Vigilance{ALT}"
       STR_BA: "Blood Angels"
       STR_BA_INFO_1: "{NEWLINE}The sons of Sanguinius are experts in the use of all weapons and launching of army-shattering assaults. Their Forces are an inspiring sight in the ranks of the Emperor. {NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Bound in blood, they can regenerate by feeding greatly reducing the time spent recovering from wounds."
       STR_BA_INFO_2: "{NEWLINE} The Blood Angels Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Jetpack{ALT} (3 turn flight){NEWLINE} > {ALT}¬ Power Sword{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Lightning Blitz{ALT}{NEWLINE} > {ALT}Relentless Assault{ALT}"
@@ -1543,7 +1548,7 @@ extraStrings:
       STR_WS_INFO_2: "{NEWLINE} The White Scars Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Force Halberd{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Farsight{ALT}{NEWLINE} > {ALT}Lockdown{ALT}{NEWLINE} > {ALT}Project Shield{ALT}{NEWLINE} > {ALT}Accelerate{ALT}"
       STR_SW: "Space Wolves"
       STR_SW_INFO_1: "{NEWLINE}Renowned for their ferocity, courage and hot-blooded approach to warfare. They are masters of the hunt, upholding the savage honour of Lemon Russ.{NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Born in harsh Fenris, they quickly regenerate from injuries during battle."
-      STR_SW_INFO_2: "{NEWLINE} The Space Wolves Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Power Axe{ALT}{NEWLINE} > {ALT}Medikit{ALT}{NEWLINE} > {ALT}Bless Allies{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Lightning Blitz{ALT}{NEWLINE} > {ALT}Rigid Discipline{ALT}"
+      STR_SW_INFO_2: "{NEWLINE} The Space Wolves Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}Power Axe{ALT}{NEWLINE} > {ALT}Medikit{ALT}{NEWLINE} > {ALT}Bless Allies{ALT}{NEWLINE} > {ALT}Armor of Contempt{ALT}{NEWLINE} > {ALT}Lightning Blitz{ALT}{NEWLINE} > {ALT}Exemplary Vigilance{ALT}"
       STR_DA: "Dark Angels"
       STR_DA_INFO_1: "{NEWLINE}The first Chapter founded by the Emperor, Dark Angels are highly secretive and ritualistic. They are relentless in hunting down those who have betrayed them. {NEWLINE}{NEWLINE}{ALT}Deathwath Bonus: Mercilessly hunting their targets, their shots are almost impossible to dodge."
       STR_DA_INFO_2: "{NEWLINE} The Dark Angels Captain comes with the following gear and abilities:{NEWLINE}{NEWLINE} > {ALT}¬ Twincore Plasma Rifle{ALT}{NEWLINE} > {ALT}Inspire{ALT}{NEWLINE} > {ALT}Hallucination{ALT}{NEWLINE} > {ALT}Mend Flesh{ALT}{NEWLINE} > {ALT}Torment{ALT}{NEWLINE} > {ALT}Soul Storm{ALT}"
@@ -1598,13 +1603,13 @@ extraStrings:
       STR_SMT_CAPTAIN_PROMOTION: Company Captain
       STR_SMT_CAPTAIN_PROMOTION_CODEX: "{NEWLINE} The most experienced and battle hardened Marines can be promoted to the rank of Captain, leading your forces from the front lines. Captains are capable of using powerful Commands in battles to bolster all allied Space Marines.{NEWLINE}{NEWLINE} Marines need the highest Mark of Honor and Hero of the Imperium commendations to be promoted to Captain.{NEWLINE}{NEWLINE}                               {ALT}>>"
       STR_SMT_COMMANDS: Captain Commands
-      STR_SMT_COMMANDS_CODEX: "{NEWLINE} Captain Commands are powerful skills that affect all allied Marines until the start of your next turn. Each Command requires 250 command points. Command points are earned in battle by killing enemies, with tougher enemies earning more points.{NEWLINE}{NEWLINE} Command List:{NEWLINE} {ALT}>{ALT} Armor of Contempt{NEWLINE} {ALT}>{ALT} Storm of Fire{NEWLINE} {ALT}>{ALT} Rigid Discipline{NEWLINE} {ALT}>{ALT} Relentless Assault{NEWLINE} {ALT}>{ALT} Lightning Blitz"
+      STR_SMT_COMMANDS_CODEX: "{NEWLINE} Captain Commands are powerful skills that affect all allied Marines until the start of your next turn. Each Command requires 250 command points. Command points are earned in battle by killing enemies, with tougher enemies earning more points.{NEWLINE}{NEWLINE} Command List:{NEWLINE} {ALT}>{ALT} Armor of Contempt{NEWLINE} {ALT}>{ALT} Storm of Fire{NEWLINE} {ALT}>{ALT} Exemplary Vigilance{NEWLINE} {ALT}>{ALT} Relentless Assault{NEWLINE} {ALT}>{ALT} Lightning Blitz"
       STR_SMT_CMD_AOC: Armor of Contempt
       STR_SMT_CMD_AOC_CODEX: "{NEWLINE} Unyielding in the face of any foe, the resilience of Space Marines is unmatched{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Reduce incoming damage by 20%{NEWLINE}> Reduce damage dealt to Armor{NEWLINE}> Use the strongest intact Armor facing to block attacks"
       STR_SMT_CMD_SOF: Storm of Fire
-      STR_SMT_CMD_SOF_CODEX: "{NEWLINE} No enemy can stand against the Astartes, no shield can protect from their fury{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Increase the power of ranged attacks if they are weaker than the targets armor{NEWLINE}> Increase the armor destruction of all ranged attacks"
-      STR_SMT_CMD_FD: Rigid Discipline
-      STR_SMT_CMD_FD_CODEX: "{NEWLINE} Space Marines battle with fierce determination and will exact a heavy toll on those trying to assault their formation{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Recover 100% TUs at the end of turn for reaction fire{NEWLINE}> Recover up to 50% more TUs upon successfully landing reaction shots"
+      STR_SMT_CMD_SOF_CODEX: "{NEWLINE} No enemy can stand against the Astartes, no shield can protect from their fury{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Enemy damage resistances against ranged attacks are halved{NEWLINE}> Increase the armor destruction of all ranged attacks"
+      STR_SMT_CMD_OW: Exemplary Vigilance
+      STR_SMT_CMD_OW_CODEX: "{NEWLINE} Space Marines battle with fierce determination and refuse to give up any{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> Recover 100% TUs at the end of turn for reaction fire{NEWLINE}> Recover up to 50% more TUs upon successfully landing reaction shots"
       STR_SMT_CMD_RA: Relentless Assault
       STR_SMT_CMD_RA_CODEX: "{NEWLINE} The Angels of Death descend upon their enemies, cutting through them in a whirlwind of violence{NEWLINE}{NEWLINE} While active allied Marines gain:{NEWLINE}> When killing an enemy unit with melee regain 33% of Max TUs (Up to 4 times){NEWLINE}> Increase the power of melee attacks"
       STR_SMT_CMD_LB: Lightning Blitz
@@ -1712,8 +1717,8 @@ extraStrings:
       STR_PSITOKEN_HOLODUMMY_CODEX: "{NEWLINE} Muddles the minds of enemies, creating a fake target to draw attacks.{NEWLINE}{NEWLINE} Hallucination uses arced targeting, and accuracy decreases at longer ranges.{NEWLINE}{NEWLINE} Accuracy scales with PsiStrength"
       #T4
       STR_PSIBONUS_PASSIVESHIELD_CODEX: "{NEWLINE} The Psyker projects a powerful psychic shield, passively protecting them from incoming attacks.{NEWLINE}{NEWLINE} The shield has a strength of {ALT}100{ALT} and stacks with any other shields from bonuses or armor."
-      STR_PSIBONUS_RECOVERY_CODEX: "{NEWLINE} The Psyker has unusual vigor, greatly increasing their natural recovery and allowing them to use psyker abilities more frequently.{NEWLINE}{NEWLINE} An additional {ALT}30%{ALT} Stamina, {ALT}15{ALT} Morale and {ALT}5{ALT} points of Stun are recovered each turn."
-      STR_PSIBONUS_TRUESIGHT_CODEX: "{NEWLINE} Augmenting their vision by peering into the warp, the Psyker is able to see enemies obscured by darkness, smoke and even cover.{NEWLINE}{NEWLINE} The Psyker gains perfect night vision, is {ALT}40%{ALT} better at seeing through smoke, and has {ALT}4{ALT} tiles of PsiVision, providing sight of enemies through walls and other obstacles."
+      STR_PSIBONUS_PASSIVE_RECOVERY_CODEX: "{NEWLINE} The Psyker has unusual vigor, greatly increasing their natural recovery and allowing them to use psyker abilities more frequently.{NEWLINE}{NEWLINE} An additional {ALT}30%{ALT} Stamina, {ALT}15{ALT} Morale and {ALT}5{ALT} points of Stun are recovered each turn."
+      STR_PSIBONUS_PASSIVE_TRUESIGHT_CODEX: "{NEWLINE} Augmenting their vision by peering into the warp, the Psyker is able to see enemies obscured by darkness, smoke and even cover.{NEWLINE}{NEWLINE} The Psyker gains perfect night vision, is {ALT}40%{ALT} better at seeing through smoke, and has {ALT}4{ALT} tiles of PsiVision, providing sight of enemies through walls and other obstacles."
       STR_PSIBONUS_WARRIOR_CODEX: "{NEWLINE} Channeling their psychic power into strenghtening their body, the Psyker is able to greatly improve their combat abilities.{NEWLINE}{NEWLINE} The Psyker gains {ALT}40{ALT} additional Firing and Melee skill, and {ALT}10{ALT} Strength."
       #T5
       STR_PSISKILL_SHIELD: Project Shield
@@ -1817,11 +1822,25 @@ extraStrings:
       STR_TECH_REPAIRTOOL: Repair
       STR_TECH_TOOL_SERVITOR: Sanctus Canister
       STR_TECH_TOOL_SERVITOR_CODEX: "{NEWLINE} Sanctus Canisters are blessed tools used to inspire strength, bolstering the power of warmachines.{NEWLINE}{NEWLINE} Friendly {ALT}Servitors{ALT}, {ALT}Tarantula Sentries{ALT} or {ALT}Thunderfire Cannons{ALT} can be enhanced once per battle, restoring some time units and granting them {ALT}+30{ALT} firing and melee accuracy for the rest of the battle."
-      STR_TECH_TOOL_SHIELD: Refractor Field Amplifier
-      STR_TECH_TOOL_SHIELD_CODEX: "{NEWLINE} This Refractor Field Amplifier can be activated to provide a powerful temporary shield. This effect can be combined with an existing personal shield, and the shield power will fade over time even if not attacked.{NEWLINE}{NEWLINE} The shield has {ALT}300{ALT} hitpoints and a four turn cooldown."
+      STR_TECH_TOOL_SHIELD: Conversion Field Emitter
+      STR_TECH_TOOL_SHIELD_CODEX: "{NEWLINE} This Conversion Field Emitter can be activated to provide a powerful temporary shield. This effect can be combined with an existing personal shield, and the shield power will fade over time even if not attacked.{NEWLINE}{NEWLINE} The shield has {ALT}300{ALT} hitpoints and a four turn cooldown."
       STR_TECH_TOOL_SCANNER: Omnispex
       STR_TECH_TOOL_SCANNER_CODEX: "{NEWLINE} Omnispex are advanced sensor devices equipped with powerful Machine Spirits, able to analyze enemies in depth and pinpoint weaknesses.{NEWLINE}{NEWLINE} Enemies marked by an Omnispex are made vulnerable, increasing the power of all incoming attacks by {ALT}25%{ALT} for the rest of the turn."
       STR_TECH_MEDKIT: Curatio Claw
+      STR_TECH_PASSIVE_REPAIR: Repair Mechadendrite
+      STR_TECH_PASSIVE_REPAIR_CODEX: "{NEWLINE} {NEWLINE}{NEWLINE} The Repair Mechadendrite automatically repairs the Techpriests damaged armor, restoring {ALT}20{ALT} armor each turn."
+      STR_TECH_PASSIVE_SCANNER: Augury Scanner
+      STR_TECH_PASSIVE_SCANNER_CODEX: "{NEWLINE} {NEWLINE}{NEWLINE} Augury Scanning"
+      STR_TECH_PASSIVE_SHIELD: Refractor Field Generator
+      STR_TECH_PASSIVE_SHIELD_CODEX: "{NEWLINE} {NEWLINE}{NEWLINE} The Refractor Field generates an {AlT}80 hitpoint{ALT} shield."
+      STR_TECH_PASSIVE_OVERWATCH: Reacto-Imperator Wafer
+      STR_TECH_PASSIVE_OVERWATCH_CODEX: "{NEWLINE} The Reacto-Imperator module allows the Techpriest to reactively fire{NEWLINE}{NEWLINE} "
+      STR_TECH_PASSIVE_REGEN: Curative AutoStimm
+      STR_TECH_PASSIVE_REGEN_CODEX: "{NEWLINE} {NEWLINE}{NEWLINE} AutoStimms restore {ALT}3 Health{ALT} and cure {ALT}1 Fatal Wound{ALT} each turn."
+      STR_TECH_PASSIVE_REPAIR: Cognis Manipulator
+      STR_TECH_PASSIVE_REPAIR_CODEX: "{NEWLINE} {NEWLINE}{NEWLINE} The Cognis Manipulator increases the effectiveness of repairs by {ALT}30%{ALT} and repairs all armor sides at once"
+      STR_TECH_PASSIVE_DEFENSE: Reinforced Bionics
+      STR_TECH_PASSIVE_DEFENSE_CODEX: "{NEWLINE} Bionic limbs and reinforced body plating grant the Techpriest durability far beyond that of flesh-bound individuals, shrugging off attacks that would cripple others.{NEWLINE}{NEWLINE} Reinforced Bionics grants the Techpriest {ALT}Feel No Pain{ALT} to greatly the reduce the damage of up to {ALT}1{ALT} attack per turn."
       STR_TECH_SKULL_SPAWNER: Servo Skull
       STR_TECH_SKULL_SPAWNER_CODEX: "{NEWLINE} Servo Skulls are valuable familiars used throughout the Imperium, able to assist with basic tasks. These Servo Skulls have been outfitted with basic scanners, able to identify the status of enemies and scout the battlefield without exposing the Techpriest to enemy fire."
       STR_TECH_SENTRY_SPAWNER: Tarantula Sentry

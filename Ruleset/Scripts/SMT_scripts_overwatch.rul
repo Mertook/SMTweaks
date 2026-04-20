@@ -23,17 +23,25 @@ extended:
           unit.getRuleArmor armorRule;
           armorRule.getTag percentTU Tag.ARMOR_OVERWATCH_TU_RESTORED;
           unit.getTag temp Tag.SMT_OVERWATCH_BUFF;
+          armorRule.getTag temp2 Tag.ARMOR_OVERWATCH_RESTORATION_CUMULATIVE;
           add percentTU temp;
-          if lt percentTU 1;
-            return;
-          end;
 
           unit.getTimeUnitsMax maxTU;
           set overwatchTU maxTU;
           muldiv overwatchTU percentTU 100; # calculate the TUs granted by Overwatch
 
+          unit.getTag temp Tag.UNIT_ITEM_BONUSES; # add techpriest bonus
+          bit_and temp 8;
+          if gt temp 0;
+            set temp maxTU;
+            muldiv temp 25 100;
+            add overwatchTU 25;
+          end;
+          if lt percentTU 1;
+            return;
+          end;
+
           unit.getTimeUnits currentTU;
-          armorRule.getTag temp2 Tag.ARMOR_OVERWATCH_RESTORATION_CUMULATIVE;
           if eq temp2 1; # check if our Overwatch TU stacks with our existing TU
             add overwatchTU currentTU; #stacks, add current TUs on top
           else;

@@ -1,0 +1,141 @@
+extended:
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
+
+  scripts:
+    skillUseUnit:
+      - new: SMTS_psychic_skill # 
+        offset: 10
+        code: |
+          var ptr RuleArmor armorRule;
+          var int psiDifficulty;
+          var int successChance;
+          var int temp;
+          var int temp2;
+
+          skill.getTag psiDifficulty Tag.SKILL_PSYCHIC_TEST;
+
+          if le psiDifficulty 0;
+            return;
+          end;
+
+          actor.getTag temp Tag.CURRENT_INFECTION_TYPE;
+          if eq temp 4; # Tzeentch corruption makes perils more likely
+            actor.getTag temp Tag.CURRENT_INFECTION_DAMAGE;
+            mul temp 2;
+            add psiDifficulty temp;
+          end;
+
+          actor.Stats.getPsiStrength successChance; # psiSkill
+          actor.getMana temp;
+          actor.getManaMax temp2;
+          muldiv temp 100 temp2; # get %mana
+          muldiv successChance temp 100;
+          actor.Stats.getPsiSkill temp; # devotion
+          actor.getMorale temp2;
+          muldiv temp temp2 100;
+          add successChance temp;
+
+          set temp psiDifficulty; # apply morale cost of ability *after* using it to set perils chances
+          div temp 8;
+          sub temp2 temp;
+          actor.setMorale temp2;
+
+          battle_game.randomRange temp 1 successChance;
+          battle_game.randomRange temp2 1 successChance;
+          add temp temp2;
+          if gt temp psiDifficulty; # passed psi test
+            return;
+          end;
+
+          sub psiDifficulty temp;
+          actor.getTag temp Tag.UNIT_PERILS_RESIST;
+          sub psiDifficulty temp;
+          mod temp2 4; # used to randomly select peril type
+          if lt psiDifficulty 40; # minor failure
+            if eq temp2 0; # morale loss
+              actor.getMorale temp;
+              sub temp 50;
+              limit_lower temp 0;
+              actor.setMorale temp;
+            else eq temp2 1; # mana loss
+              actor.getMana temp;
+              div temp 2;
+              limit_lower temp 0;
+              actor.setMana temp;
+            else eq temp2 2; # health loss
+              actor.getHealthMax temp;
+              muldiv temp 10 100;
+              limit_lower temp 8; # 10% of max health, minimun 8
+              actor.getHealth temp2;
+              sub temp2 temp;
+              limit_lower temp2 1; # nonlethal
+              actor.setHealth temp2;
+            else; # stamina loss
+              actor.getEnergyMax temp;
+              muldiv temp 60 100;
+              actor.getEnergy temp2;
+              sub temp2 temp;
+              limit_lower temp2 6;
+              actor.setEnergy temp2;
+            end;
+          else lt psiDifficulty 100; # major failure
+            if eq temp2 0; # mana/morale
+              actor.setMana 0;
+              actor.setMorale 0;
+            else eq temp2 1; # health loss & stun
+              actor.getHealthMax temp;
+              muldiv temp 30 100;
+              limit_lower temp 15; # 30% of max health, minimun 15
+              actor.getHealth temp2;
+              sub temp2 temp;
+              limit_lower temp2 1; # nonlethal
+              actor.setHealth temp2;
+              actor.getStun temp2;
+              add temp2 temp;
+              actor.setStun temp2;
+            else eq temp2 2; # Psi/Devotion loss
+              actor.Stats.getPsiStrength temp;
+              sub temp 8;
+              limit_lower temp 1;
+              actor.Stats.setPsiStrength temp;
+              actor.Stats.getPsiSkill temp;
+              sub temp 16;
+              limit_lower temp 1;
+              actor.Stats.setPsiSkill temp;
+            else; # corruption
+              actor.getTag temp Tag.CURRENT_INFECTION_DAMAGE;
+              add temp 20;
+              actor.setTag Tag.CURRENT_INFECTION_TYPE 4;
+              actor.setTag Tag.CURRENT_INFECTION_DAMAGE temp;
+            end;
+          else; # catastrophic failure
+            if lt temp2 2; # TU lockdown
+              actor.getTimeUnitsMax temp;
+              actor.setTag Tag.UNIT_TU_DRAIN_NEXT_TURN temp;
+            else; # corruption
+              actor.getTag temp Tag.CURRENT_INFECTION_DAMAGE;
+              add temp 80;
+              actor.setTag Tag.CURRENT_INFECTION_TYPE 4;
+              actor.setTag Tag.CURRENT_INFECTION_DAMAGE temp;
+            end;
+            actor.setMana 0;
+            actor.setMorale 0;
+            actor.getHealthMax temp;
+            muldiv temp 30 100;
+            limit_lower temp 15;
+            actor.getHealth temp2;
+            sub temp2 temp;
+            limit_lower temp2 1;
+            actor.setHealth temp2;
+            actor.Stats.getPsiStrength temp;
+            sub temp 12;
+            limit_lower temp 1;
+            actor.Stats.setPsiStrength temp;
+            actor.Stats.getPsiSkill temp;
+            sub temp 24;
+            limit_lower temp 1;
+            actor.Stats.setPsiSkill temp;
+          end;
+
+          return;
+

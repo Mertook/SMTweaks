@@ -1,0 +1,36 @@
+extended:
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
+
+  scripts:
+    newTurnUnit:
+      - new: SMTS_item_passives_check
+        offset: 1
+        code: |
+          var int invCount;
+          var int passiveList;
+          var int temp;
+          var ptr BattleItem activeItem;
+
+          if neq side FACTION_PLAYER; # only trigger on player turns
+            return;
+          end;
+          unit.getTag temp Tag.UNIT_TYPE_TECHPRIEST;
+          if eq temp 0; # only relevant for techpriests
+            return;
+          end;
+          unit.getInventoryItem.size invCount;
+          loop var i invCount; #cycle through all items
+            unit.getInventoryItem activeItem i;
+            activeItem.getTag temp Tag.ITEM_PASSIVE_EFFECT;
+            bit_or passiveList temp; # add them to passives list
+          end;
+          unit.getTag temp Tag.UNIT_ITEM_BONUSES;
+          debug_log "Item Passives Ping " temp passiveList invCount;
+
+          unit.setTag Tag.UNIT_ITEM_BONUSES passiveList;
+
+          return;
+
+
+
+

@@ -82,7 +82,7 @@ soldiers:
     femaleFrequency: 0
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 66
-      SMT_SOLDIER_MORALE_RESISTANCE: 33
+      SMT_SOLDIER_MORALE_RESISTANCE: 40
       UNIT_REGENERATE_HEALTH_FLAT: 3
       UNIT_REGENERATE_HEALTH_PERCENT: 3
       UNIT_REGENERATE_HEALTH_SOFTCAP: 66
@@ -97,7 +97,7 @@ soldiers:
     femaleFrequency: 0
     tags:
       SOLDIER_WOUND_TIME_MULTIPLIER: 50 # vet bonus
-      SMT_SOLDIER_MORALE_RESISTANCE: 33
+      SMT_SOLDIER_MORALE_RESISTANCE: 60
       UNIT_REGENERATE_HEALTH_FLAT: 3
       UNIT_REGENERATE_HEALTH_PERCENT: 5
       UNIT_REGENERATE_HEALTH_SOFTCAP: 66
@@ -2578,12 +2578,12 @@ soldiers:
       health: 140 # +10 over vetMarines
       bravery: 110
       reactions: 120
-      firing: 150
+      firing: 140
       throwing: 140
       strength: 110 # was 100 - adjusted for lost str bonus from armor
       psiStrength: 100
       psiSkill: 120
-      melee: 150
+      melee: 140
     trainingStatCaps:
       tu: 80
       stamina: 100
@@ -2601,6 +2601,11 @@ soldiers:
     allowPiloting: true
     femaleFrequency: 0
     value: 50
+    skills:
+      - STR_TECH_PRIMARY_SKILL
+      - STR_TECH_UTILITY_SKILL
+      - STR_TECH_UNIT_SKILL
+      - STR_TECH_REPAIR_SKILL
     moraleLossWhenKilled: 150 # Seeing an elite marine die is shocking for regular troops
     tags:
       SMT_ALPHA_ATTACKER_MODIFIER: -1 # can't turn traitor
@@ -3378,9 +3383,11 @@ soldiers:
     minStats:
       psiStrength: 45
       psiSkill: 20
+      mana: 30
     maxStats:
       psiStrength: 65
       psiSkill: 30
+      mana: 30
     statCaps:
       psiStrength: 120
       psiSkill: 100

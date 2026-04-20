@@ -1573,6 +1573,11 @@ manufacture:
     producedItems:
       STR_GRAVPISTOL_AMMO: 5
 
+  - delete: STR_SERVO_FLAMER
+  - delete: STR_SERVO_BOLTER
+  - delete: STR_SERVO_MELTA
+  - delete: STR_SERVO_GRAV
+  - delete: STR_SERVO_PLASMA
   - name: STR_TECHMARINE_FLAMER
     category: STR_CAT_TECHPRIEST
     requires:
@@ -1640,8 +1645,8 @@ manufacture:
     time: 600
     cost: 20000
     requiredItems:
-      STR_ALIEN_ALLOYS: 4
-      STR_ELERIUM_115: 6
+      STR_ALIEN_ALLOYS: 12
+      STR_ELERIUM_115: 20
 
   - name: STR_TECH_TOOL_SCANNER
     category: STR_CAT_TECHPRIEST
@@ -1651,8 +1656,8 @@ manufacture:
     time: 600
     cost: 20000
     requiredItems:
-      STR_ALIEN_ALLOYS: 4
-      STR_ELERIUM_115: 6
+      STR_ALIEN_ALLOYS: 12
+      STR_ELERIUM_115: 20
 
   - name: STR_TECH_TOOL_SERVITOR
     category: STR_CAT_TECHPRIEST
@@ -1660,6 +1665,83 @@ manufacture:
       - STR_TECHMARINE_GEAR
     space: 0
     time: 600
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 12
+      STR_ELERIUM_115: 20
+
+  - name: STR_TECH_PASSIVE_REPAIR
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TECHMARINE_GEAR
+    space: 0
+    time: 450
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 4
+      STR_ELERIUM_115: 6
+
+  - name: STR_TECH_PASSIVE_SCANNER
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TECHMARINE_GEAR
+    space: 0
+    time: 450
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 4
+      STR_ELERIUM_115: 6
+
+  - name: STR_TECH_PASSIVE_SHIELD
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TECHMARINE_GEAR
+    space: 0
+    time: 450
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 4
+      STR_ELERIUM_115: 6
+
+  - name: STR_TECH_PASSIVE_OVERWATCH
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TECHMARINE_GEAR
+    space: 0
+    time: 450
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 4
+      STR_ELERIUM_115: 6
+
+  - name: STR_TECH_PASSIVE_REGEN
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TECHMARINE_GEAR
+    space: 0
+    time: 450
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 4
+      STR_ELERIUM_115: 6
+
+  - name: STR_TECH_PASSIVE_REPAIR
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TECHMARINE_GEAR
+    space: 0
+    time: 450
+    cost: 20000
+    requiredItems:
+      STR_ALIEN_ALLOYS: 4
+      STR_ELERIUM_115: 6
+
+  - name: STR_TECH_PASSIVE_DEFENSE
+    category: STR_CAT_TECHPRIEST
+    requires:
+      - STR_TECHMARINE_GEAR
+    space: 0
+    time: 450
     cost: 20000
     requiredItems:
       STR_ALIEN_ALLOYS: 4
@@ -1673,7 +1755,7 @@ manufacture:
     time: 400
     cost: 25000
     requiredItems:
-      STR_ALIEN_ALLOYS: 1
+      STR_ALIEN_ALLOYS: 2
       STR_KILLPOINT_TOKEN: 10
 
   - name: STR_TECH_SENTRY_SPAWNER
@@ -1684,7 +1766,8 @@ manufacture:
     time: 600
     cost: 20000
     requiredItems:
-      STR_ALIEN_ALLOYS: 10
+      STR_ALIEN_ALLOYS: 20
+      STR_ELERIUM_115: 20
       STR_KILLPOINT_TOKEN: 10
 
   - name: STR_TECH_TF_SPAWNER
@@ -1695,7 +1778,8 @@ manufacture:
     time: 600
     cost: 20000
     requiredItems:
-      STR_ALIEN_ALLOYS: 10
+      STR_ALIEN_ALLOYS: 20
+      STR_ELERIUM_115: 20
       STR_KILLPOINT_TOKEN: 10
 
   - name: STR_PSILENCER
@@ -2206,7 +2290,7 @@ manufacture:
     time: 200
     cost: 500000
     requiredItems:
-      STR_KILLPOINT_TOKEN: 400
+      STR_KILLPOINT_TOKEN: 500
     producedItems: {}
     spawnedPersonType: STR_ENGINSEER
 

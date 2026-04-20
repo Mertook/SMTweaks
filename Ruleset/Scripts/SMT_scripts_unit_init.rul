@@ -103,11 +103,16 @@ extended:
           end;
 
           begin; ### Feel No Pain
-            unitArmor.getTag initVal Tag.UNIT_IS_DIEHARD;
+            unitArmor.getTag bonusVal Tag.UNIT_IS_DIEHARD;
+            unit.getTag initVal Tag.SMT_FEELNOPAIN_CAP;
+            add initVal bonusVal;
+            unit.setTag Tag.SMT_FEELNOPAIN_CAP initVal;
             unit.setTag Tag.DIEHARD_TEMP_MODIFIER initVal;
           end;
 
           return;
+
+
 
 
     applySoldierBonuses:
@@ -118,6 +123,30 @@ extended:
           var int initVal;
           var int temp;
           var ptr RuleSoldier unitSoldier;
+
+          begin; ### Simple Tag Bonuses
+            soldier_bonus.getTag bonusVal Tag.SMT_BONUS_MAGIC_ARMOR; # Steelskin
+            if gt bonusVal 0;
+              unit.getTag initVal Tag.UNIT_MAGIC_ARMOR;
+              limit_lower bonusVal initVal;
+              unit.setTag Tag.UNIT_MAGIC_ARMOR bonusVal;
+            end;
+
+            soldier_bonus.getTag bonusVal Tag.SMT_BONUS_PERIL_RESISTANCE; # Iron Will
+            if gt bonusVal 0;
+              unit.getTag initVal Tag.UNIT_PERILS_RESIST;
+              add initVal bonusVal;
+              unit.setTag Tag.UNIT_PERILS_RESIST initVal;
+            end;
+
+            soldier_bonus.getTag bonusVal Tag.SMT_BONUS_FEELNOPAIN; # FeelNoPain
+            if gt bonusVal 0;
+              unit.getTag initVal Tag.SMT_FEELNOPAIN_CAP;
+              add initVal bonusVal;
+              unit.setTag Tag.SMT_FEELNOPAIN_CAP initVal;
+              unit.setTag Tag.DIEHARD_TEMP_MODIFIER initVal;
+            end;
+          end;
 
           begin; ### Teachers
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_MEDIC_GLOBAL;
@@ -140,65 +169,108 @@ extended:
 
           begin; ### Damage Resistance
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_SHRED_RESISTANCE;
-            unit.getTag initVal Tag.SMT_UNIT_SHRED_RESISTANCE;
-            add initVal bonusVal;
-            limit_upper initVal 100;
-            unit.setTag Tag.SMT_UNIT_SHRED_RESISTANCE initVal;
+            if gt bonusVal 0;
+              unit.getTag initVal Tag.SMT_UNIT_SHRED_RESISTANCE;
+              add initVal bonusVal;
+              limit_upper initVal 100;
+              unit.setTag Tag.SMT_UNIT_SHRED_RESISTANCE initVal;
+            end;
 
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_SHRED_PLASMA_RESISTANCE;
-            unit.getTag initVal Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE;
-            add initVal bonusVal;
-            limit_upper initVal 100;
-            unit.setTag Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE initVal;
+            if gt bonusVal 0;
+              unit.getTag initVal Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE;
+              add initVal bonusVal;
+              limit_upper initVal 100;
+              unit.setTag Tag.SMT_UNIT_SHRED_PLASMA_RESISTANCE initVal;
+            end;
 
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_SHRED_MELTA_RESISTANCE;
-            unit.getTag initVal Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE;
-            add initVal bonusVal;
-            limit_upper initVal 100;
-            unit.setTag Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE initVal;
+            if gt bonusVal 0;
+              unit.getTag initVal Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE;
+              add initVal bonusVal;
+              limit_upper initVal 100;
+              unit.setTag Tag.SMT_UNIT_SHRED_MELTA_RESISTANCE initVal;
+            end;
 
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_MORALE_RESISTANCE;
-            unit.getTag initVal Tag.SMT_UNIT_MORALE_RESISTANCE;
-            add initVal bonusVal;
-            limit_upper initVal 100;
-            unit.setTag Tag.SMT_UNIT_MORALE_RESISTANCE initVal;
+            if gt bonusVal 0;
+              unit.getTag initVal Tag.SMT_UNIT_MORALE_RESISTANCE;
+              add initVal bonusVal;
+              limit_upper initVal 100;
+              unit.setTag Tag.SMT_UNIT_MORALE_RESISTANCE initVal;
+            end;
 
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_STUN_RESISTANCE;
-            unit.getTag initVal Tag.SMT_UNIT_STUN_RESISTANCE;
-            add initVal bonusVal;
-            limit_upper initVal 100;
-            unit.setTag Tag.SMT_UNIT_STUN_RESISTANCE initVal;
+            if gt bonusVal 0;
+              unit.getTag initVal Tag.SMT_UNIT_STUN_RESISTANCE;
+              add initVal bonusVal;
+              limit_upper initVal 100;
+              unit.setTag Tag.SMT_UNIT_STUN_RESISTANCE initVal;
+            end;
 
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_STAGGER_RESISTANCE;
-            unit.getTag initVal Tag.SMT_UNIT_STAGGER_RESISTANCE;
-            add initVal bonusVal;
-            limit_upper initVal 100;
-            unit.setTag Tag.SMT_UNIT_STAGGER_RESISTANCE initVal;
+            if gt bonusVal 0;
+              unit.getTag initVal Tag.SMT_UNIT_STAGGER_RESISTANCE;
+              add initVal bonusVal;
+              limit_upper initVal 100;
+              unit.setTag Tag.SMT_UNIT_STAGGER_RESISTANCE initVal;
+            end;
 
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_IMMOBILIZE_RESISTANCE;
-            unit.getTag initVal Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE;
-            add initVal bonusVal;
-            limit_upper initVal 100;
-            unit.setTag Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE initVal;
+            if gt bonusVal 0;
+              unit.getTag initVal Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE;
+              add initVal bonusVal;
+              limit_upper initVal 100;
+              unit.setTag Tag.SMT_UNIT_IMMOBILIZE_RESISTANCE initVal;
+            end;
           end;
 
           begin; ### Recovery Speed
             soldier_bonus.getTag bonusVal Tag.SMT_BONUS_MEDBAY_RECOVERY;
-            unit.getTag initVal Tag.SMT_UNIT_MEDBAY_RECOVERY;
-            if gt initVal 0;
-              sub initVal 100;
-              sub bonusVal 100;
-              muldiv initVal bonusVal 100;
-              sub initVal 100;
-              abs initVal;
-            else;
-              set initVal bonusVal;
+            if gt bonusVal 0;
+              unit.getTag initVal Tag.SMT_UNIT_MEDBAY_RECOVERY;
+              if gt initVal 0;
+                sub initVal 100;
+                sub bonusVal 100;
+                muldiv initVal bonusVal 100;
+                sub initVal 100;
+                abs initVal;
+              else;
+                set initVal bonusVal;
+              end;
+              limit_upper initVal 100;
+              unit.setTag Tag.SMT_UNIT_MEDBAY_RECOVERY initVal;
             end;
-            limit_upper initVal 100;
-            unit.setTag Tag.SMT_UNIT_MEDBAY_RECOVERY initVal;
+          end;
+
+          begin; ### Energy Shields
+            soldier_bonus.getTag bonusVal Tag.BONUS_ENERGY_SHIELD_HP_PER_TURN;
+            #debug_log "shieldBonus Ping: " bonusVal;
+            if gt bonusVal 0;
+              var int shieldDecay;
+              unit.getTag initVal Tag.UNIT_BONUS_ENERGY_SHIELD_HP_PER_TURN;
+              add bonusVal initVal;
+              #debug_log "shieldBonus Added: " bonusVal initVal;
+              unit.setTag Tag.UNIT_BONUS_ENERGY_SHIELD_HP_PER_TURN bonusVal;
+              soldier_bonus.getTag shieldDecay Tag.BONUS_ENERGY_SHIELD_DECAY;
+              unit.getTag temp Tag.UNIT_BONUS_ENERGY_SHIELD_DECAY;
+              #debug_log "shieldBonus Decay: " shieldDecay temp;
+              if gt temp 0;
+                add shieldDecay temp;
+                div shieldDecay 2; # get average
+              end;
+              unit.setTag Tag.UNIT_BONUS_ENERGY_SHIELD_DECAY shieldDecay;
+              # sets shield at max value (when flat addition = percent decay)
+              if neq 0 shieldDecay;
+                muldiv bonusVal 100 shieldDecay;
+              end;
+              unit.setTag Tag.UNIT_ENERGY_SHIELD_HP bonusVal;
+              #debug_log "shieldBonus Final: " bonusVal shieldDecay;
+            end;
           end;
 
           return;
 
 
+      - delete: ROSIGMA_aSB_personal_shield_soldier_bonus
 

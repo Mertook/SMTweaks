@@ -22,8 +22,9 @@ extended:
       ITEM_CLOAKING_EFFECT: int         # cloaks unit for 1 turn - X = detection range
       ITEM_EFFECT_DURATION: int         # length of items effect
       ITEM_SERVITOR_ENHANCER: int       # item buffs servitor units: x = firing/melee bonus given to servitors
+      ITEM_MARK_TARGET: int             # item applies mark to target: x = distance, -1 = unlimited
       ## Passive Bonus
-      ITEM_TECHMARINE_PASSIVE: int      # Techmarine items that give passive bonuses while held
+      ITEM_PASSIVE_EFFECT: int          # Item gives passive bonuses while held - X = effect lookup
       ## Weapon Ammo Sprites
       ITEM_AMMO_SKIP_BIGOBS: int        # ammo causes weapon sprite to change - X = size of index shift
       ## Heavy Weapons
@@ -76,6 +77,7 @@ extended:
       ARMOR_REGENERATE_HEALTH_SOFTCAP: int      # % of total missing HP unit can regenerate from special regen
       ARMOR_REGENERATE_HEALTH_BURN_TOGGLE: int  # does this unit regenerate when on fire? 0 = ignore, 1 = no regen on when fire, -1 = cancel out soldier penalty
       ARMOR_REGENERATE_DURABILITY: int          # Unit armor sides are restored by X each turn
+      ARMOR_MAGIC_ARMOR: int                    # Rapid armor regeneration up to X
       SMT_ARMOR_IS_MEDIC: int                   # All units get % reduced medbay recovery time if this unit is present
       ## Heavy Weapons
       SMT_ARMOR_HEAVY_WEAPON_USER: int          # counteracts the penalty for heavy weapons - 1 = ignores penalty, 2+ gives scaling reduction - 2 = 2/3, 3 = 2/4, 4 = 2/5 etc
@@ -144,12 +146,16 @@ extended:
       SOLDIER_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: int   # gain up to this much PsiStrength when earning experience in battles
     RuleSkill:
       ## Captain
-      SKILL_SMT_COMMAND: int                    # Command Type ( -1 - Check Commands, 1 - Armor of Contempt, 2 - Storm of Fire, 3 - Relentless Assault )
+      SKILL_SMT_COMMAND: int                    # Command Type ( -1 - Check Commands, 1 - Armor, 2 - Shooting, 3 - Melee, 4 - Blitz, 5 - Overwatch)
       ## Infiltrator
       SKILL_STEALTH_RANGE: int                  # skill used to activate restealth - X = detection range
       SKILL_STEALTH_DURATION: int               # duration of stealth
       SKILL_STEALTH_MOVEPENALTY: int            # % modifier on movespeed while stealthed
       SKILL_STEALTH_CHECK: int                  # skill used to check stealth requirements (>0) or remove stealth (<0)
+      ## Psyker
+      SKILL_PSYCHIC_TEST: int                   # is skill a psychic power - X = perils risk
+      ## Techpriest
+      SKILL_SMT_TECHPRIEST: int                 # is skill a techpriest ability
     RuleSoldierBonus:
       ## SoldierBonus Tag Boosts (Increase unit innate tag by X at the start of battles)
       SMT_BONUS_SHRED_RESISTANCE: int           # Reduce armor damage by % (Generic damage sources)
@@ -161,6 +167,9 @@ extended:
       SMT_BONUS_IMMOBILIZE_RESISTANCE: int      # Reduce TU damage by %
       SMT_BONUS_MEDIC_GLOBAL: int               # All units get % reduced medbay recovery time if this unit is present
       SMT_BONUS_MEDBAY_RECOVERY: int            # This unit has reduced medbay recovery time if injured
+      SMT_BONUS_PERIL_RESISTANCE: int           # Reduces the severity of warp perils attacks by X
+      SMT_BONUS_MAGIC_ARMOR: int                # Unit's max armor is raised to X if lower, and rapidly regenerates armor up to X
+      SMT_BONUS_FEELNOPAIN: int                 # Increase max number of stocked FNP triggers by X
       ## Rank Sprite Change
       SMT_BONUS_RANK_SPRITEMOD: int             # Modify Sprite if unit has bonus
     BattleUnit:
@@ -174,6 +183,8 @@ extended:
       SMT_REFLEX_REACTION_BONUS: int    # stores units reaction bonus
       SMT_VULN_ENDTURN: int             # store debuff duration
       SMT_VULN_INTENSITY: int           # store debuff strength
+      SMT_MARKED_ENDTURN: int           # store debuff duration
+      SMT_MARKED_INTENSITY: int         # store debuff strength
       SMT_SERVITOR_ENHANCED: int        # buff strength for servitor
       UNIT_MOVESPEED_MODIFIERS: int     # combined movespeed modifiers for a unit
       ## Rampage
@@ -195,9 +206,16 @@ extended:
       UNIT_ENERGY_MODIFIERS: int                # combined energy cost modifiers for a unit
       UNIT_CAMO_CLOAK_MOVE_COST_MULTIPLIER: int # for compat with Dig In
       UNIT_DIG_IN_MOVE_PENALTY: int             # for compat with Dig In
+      ## Passive Bonuses
+      UNIT_ITEM_BONUSES: int                    # bitmask for currently active item passives
+      UNIT_MAGIC_ARMOR: int                     # Unbreakable Armor from bonuses
+      UNIT_PERILS_RESIST: int                   # Reduces the severity of warp perils attacks by X
+      UNIT_IS_INVISIBLE: int                    # Unit can not be detected no matter what
       ## Shields
       SMT_SHIELD_ENDTURN: int                   # store duration for shield from item/ability
       UNIT_SHIELD_COOLDOWN: int                 # limit for reusing shield items
+      ## FeelNoPain
+      SMT_FEELNOPAIN_CAP: int                   # max number of stocked FNP triggers
       ## Special Damage Resistance (Unit Total)
       SMT_UNIT_SHRED_RESISTANCE: int            # Reduce armor damage by % (Generic damage sources)
       SMT_UNIT_SHRED_PLASMA_RESISTANCE: int     # Reduce armor damage by % (Plasma damage)

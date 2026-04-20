@@ -96,18 +96,26 @@ extended:
             return;
           end;
 
-          unit.getTag triggerCap Tag.UNIT_IS_DIEHARD;
+          unit.getTag triggerCap Tag.SMT_FEELNOPAIN_CAP;
+          unit.getTag temp Tag.UNIT_ITEM_BONUSES;
+          bit_and temp 64;
+          if gt temp 0;
+            add triggerCap 1; # techpriest item bonus
+          end;
           if eq triggerCap 0;
             return;
           end;
 
           unit.getTag temp Tag.DIEHARD_TEMP_MODIFIER;
+          if eq temp triggerCap;
+            return;
+          end;
           set temp2 triggerCap;
           div temp2 3;
           limit_lower temp2 1;
           add temp temp2;
           limit_upper temp triggerCap;
-          unit.setTag Tag.DIEHARD_TEMP_MODIFIER temp; # recover 33% of max stocked FNP triggers each turn
+          unit.setTag Tag.DIEHARD_TEMP_MODIFIER temp; # recover 33% of max stocked FNP triggers each turn, min 1
 
           return;
 

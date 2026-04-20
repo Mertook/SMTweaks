@@ -3,62 +3,6 @@ extended:
 
 
 items:
-  - &REF_PRECISION_AMMO                 # Precision Template
-    type: STR_PISTOL_CLIP_MC
-    scripts:
-      hitUnitAmmo: |
-        var int attackerFA;
-        var int precisionBonus;
-
-        damaging_item.getTag precisionBonus Tag.SMT_AMMO_BONUSDMG_FIRINGACC;
-        attacker.Stats.getFiring attackerFA;
-        sub attackerFA 100; # only units with FA above 100 benefit
-        #debug_log "PrecisionDmg pinged " precisionBonus attackerFA;
-        if and gt precisionBonus 0 gt attackerFA 0 gt power 0;
-          muldiv attackerFA precisionBonus 100;
-          add power attackerFA;
-          #debug_log "PrecisionDmg " attackerFA power;
-        end;
-
-        return power part side;
-
-  - type: STR_PISTOL_CLIP_MC            # Boltpistol
-    refNode: *REF_PRECISION_AMMO
-
-  - type: STR_RIFLE_CLIP_MC             # Bolter
-    refNode: *REF_PRECISION_AMMO
-
-  - type: STR_LIGHT_BOLTPISTOL_AMMO_MC  # Light Boltpistol
-    refNode: *REF_PRECISION_AMMO
-
-  - type: STR_LIGHT_BOLTER_AMMO_MC      # Light Bolter
-    refNode: *REF_PRECISION_AMMO
-
-  - type: STR_AC_MC_AMMO                # Heavy Bolter
-    refNode: *REF_PRECISION_AMMO
-
-  - type: STR_AC_MC_BELT                # Heavy Bolter Belt
-    refNode: *REF_PRECISION_AMMO
-
-  - type: STR_HB_CLIP_MC                # Stormbolter
-    refNode: *REF_PRECISION_AMMO
-
-  - type: STR_BOLTRIFLE_DRUM_MC         # Boltrifle Drum
-    refNode: *REF_PRECISION_AMMO
-
-  - type: STR_BOLTRIFLE_DRUM_MC_DW      # Boltrifle Drum (DW)
-    refNode: *REF_PRECISION_AMMO
-
-  - type: STR_ABSOLVOR_AMMO_MC          # Absolvor
-    refNode: *REF_PRECISION_AMMO
-
-  - type: STR_ABSOLVOR_AMMO_MC_DW       # Absolvor (DW)
-    refNode: *REF_PRECISION_AMMO
-
-  - type: STR_BOLT_SNIPER_AMMO_MC       # Bolt Sniper
-    refNode: *REF_PRECISION_AMMO
-
-
   - &REF_DEREVENANT_AMMO                # Derevenant Template
     type: STR_RIFLE_CLIP_DEREV
     scripts:
@@ -137,25 +81,6 @@ items:
 
   - type: STR_NEOVOLKITE_PISTOL         # NeoVolkite Pistol
     refNode: *REF_ARMOR_IGNORING_DMG
-
-  - &REF_SHIELDBREAKER_AMMO             # Shieldbreaker Template
-    type: STR_BOLT_SNIPER_AMMO_HELS
-    scripts:
-      hitUnitAmmo: |
-        var int dmgAmp;
-        var int shieldHP;
-
-        unit.getTag shieldHP Tag.UNIT_ENERGY_SHIELD_HP;
-        damaging_item.getTag dmgAmp Tag.SMT_SHIELD_DAMAGE_AMP;
-        if and gt dmgAmp 0 gt shieldHP 0; # increase power proportional to shield HP
-          muldiv shieldHP dmgAmp 100;
-          add power shieldHP;
-        end;
-
-        return power part side;
-
-  - type: STR_BOLT_SNIPER_AMMO_HELS     # Bolt Sniper Helspear ammo
-    refNode: *REF_SHIELDBREAKER_AMMO
 
   - &REF_GRAV_WEAPON                    # Grav Weapon
     type: STR_STUN_BOMB

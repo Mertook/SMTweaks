@@ -195,13 +195,13 @@ ufopaedia:
       - STR_CAPTAIN_CODEX
     text: STR_SMT_CMD_SOF_CODEX
     listOrder: 132
-  - id: STR_SMT_CMD_FD                  #00133 - Captain Command - Fire Discipline
+  - id: STR_SMT_CMD_OW                  #00133 - Captain Command - Exemplary Vigilance
     type_id: 10
     section: STR_STRATEGY
     image_id: CMDSOFUFO.SPK
     requires:
       - STR_CAPTAIN_CODEX
-    text: STR_SMT_CMD_FD_CODEX
+    text: STR_SMT_CMD_OW_CODEX
     listOrder: 133
   - id: STR_SMT_CMD_LB                  #00134 - Captain Command - Lightning Blitz
     type_id: 10
@@ -873,17 +873,17 @@ ufopaedia:
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_PSYKER_T4_UNLOCK
-  - id: STR_PSIBONUS_RECOVERY               # Rapid Recovery
+  - id: STR_PSIBONUS_PASSIVE_RECOVERY               # Rapid Recovery
     type_id: 10
     section: STR_BOOKS
-    text: STR_PSIBONUS_RECOVERY_CODEX
+    text: STR_PSIBONUS_PASSIVE_RECOVERY_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_PSYKER_T4_UNLOCK
-  - id: STR_PSIBONUS_TRUESIGHT              # Truesight
+  - id: STR_PSIBONUS_PASSIVE_TRUESIGHT              # Truesight
     type_id: 10
     section: STR_BOOKS
-    text: STR_PSIBONUS_TRUESIGHT_CODEX
+    text: STR_PSIBONUS_PASSIVE_TRUESIGHT_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_PSYKER_T4_UNLOCK

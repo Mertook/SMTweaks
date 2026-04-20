@@ -1039,9 +1039,12 @@ crafts:
 
   - type: STR_SPEEDC                        # Landspeeder
     fixedWeapons: ["STR_CANNON_UC"]
-    requires: # remove dedicated tech unlock
+    requires:
       - STR_MARINES_STRATEGY
+      - STR_PICKED_LOYALIST_STRATEGY
       - STR_NOT_PRIMARIS
+      - STR_NOT_SPACEWOLVES
+      - STR_NOT_WORDBEARERS
     speedMax: 800 # was 800
     fuelMax: 1200 # was 1000
     repairRate: 10

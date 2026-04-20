@@ -6,23 +6,35 @@ extended:
       - new: SMTS_blast_all_armor_sides
         offset: 96 # after all damage modifiers
         code: |
+          var int blastMod;
           var int temp;
 
-          damaging_item.getTag temp Tag.ITEM_ARMOR_DAMAGE_ALL;
-          if eq temp 0;
-            return;
+          damaging_item.getTag blastMod Tag.ITEM_ARMOR_DAMAGE_ALL;
+          if eq temp 0; # weapon doesn't damage all armor
+            if eq battle_action battle_action_hit;
+              attacker.getTag temp Tag.UNIT_ITEM_BONUSES;
+              bit_and temp 32; # melee bonus
+              #debug_log "Blast PassiveCheck " blastMod temp;
+              if eq temp 0; # unit does not have passive bonus
+                return;
+              end;
+              set blastMod 130;
+            else; # not melee hit
+              return;
+            end;
           end;
 
           #debug_log "Blast Ping " temp side to_armor;
-          muldiv to_armor temp 100; # modify armor damage by blast value
+          muldiv to_armor blastMod 100; # modify armor damage by blast value
           #debug_log "Blast DmgMod " side temp to_armor;
 
           loop var i 5; #cycle through the armor sides
             if neq side i; #ignore the side being targetted directly
-              #debug_log "Blast SidePre " i side temp;
               unit.getArmor temp i;
+              unit.getArmorMax blastMod i;
+              #debug_log "Blast SidePre " i side temp;
               sub temp to_armor;
-              limit_lower temp 0;
+              limit temp 0 blastMod;
               unit.setArmor i temp;
               #debug_log "Blast SidePost " i side temp;
             end;

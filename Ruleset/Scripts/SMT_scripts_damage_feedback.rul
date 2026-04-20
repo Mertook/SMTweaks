@@ -41,8 +41,8 @@ extended:
               return;
             end;
             set temp to_stun;
-            mul temp 2;
-            if gt temp to_health; # if incoming stun is >2x hp damage and unit won't die in <4 hits use stun effect instead
+            div temp 3;
+            if gt temp to_health; # if incoming stun is >3x hp damage and unit won't die in <4 hits use stun effect instead
               unit.setTag Tag.LAST_HIT_TYPE 3;
             end;
           end;

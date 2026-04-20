@@ -82,33 +82,43 @@ skills:
   - type: STR_TECH_PRIMARY_SKILL        # Techmarine Primary Item
     targetMode: 9
     compatibleWeapons: [STR_TECHMARINE_FLAMER, STR_TECHMARINE_BOLTER, STR_TECHMARINE_MELTA, STR_TECHMARINE_GRAV, STR_TECHMARINE_PLASMA]
+    requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]
     checkHandsOnly: false
     costUse:
       time: 35
     flatUse:
       time: false
+    tags:
+      SKILL_SMT_TECHPRIEST: 1
 
   - type: STR_TECH_UTILITY_SKILL        # Techmarine Utility Item
     targetMode: 11
     compatibleWeapons: [STR_TECH_TOOL_SCANNER, STR_TECH_TOOL_SHIELD, STR_TECH_TOOL_SERVITOR]
+    requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]
     checkHandsOnly: false
     costUse:
       time: 25
     flatUse:
       time: false
+    tags:
+      SKILL_SMT_TECHPRIEST: 1
 
-  - type: STR_TECH_UNIT_SKILL          # Techmarine Unit Deployment
+  - type: STR_TECH_UNIT_SKILL           # Techmarine Unit Deployment
     targetMode: 9
     compatibleWeapons: [STR_TECH_SKULL_SPAWNER, STR_TECH_SENTRY_SPAWNER, STR_TECH_TF_SPAWNER]
+    requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]
     checkHandsOnly: false
     costUse:
       time: 30
     flatUse:
       time: false
+    tags:
+      SKILL_SMT_TECHPRIEST: 1
 
   - type: STR_TECH_REPAIR_SKILL         # Techmarine Repair Armor
     targetMode: 10
     compatibleWeapons: [STR_TECH_REPAIRTOOL]
+    requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]
     checkHandsOnly: false
     costUse:
       time: 20
@@ -116,6 +126,8 @@ skills:
     flatUse:
       time: true
       energy: true
+    tags:
+      SKILL_SMT_TECHPRIEST: 1
 
   - type: STR_PSISKILL_SHROUD           # Psyker T1 - Shroud
     targetMode: 9
@@ -123,15 +135,15 @@ skills:
     requiredBonuses: [STR_PSIBONUS_SHROUD]
     checkHandsOnly: false
     costUse:
-      time: 20
-      energy: 25
-      stun: 10
-      morale: 15
+      time: 15
+      energy: 10
+      mana: 10
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 40
 
   - type: STR_PSISKILL_FLARE            # Psyker T1 - Illuminate
     targetMode: 9
@@ -139,15 +151,15 @@ skills:
     requiredBonuses: [STR_PSIBONUS_FLARE]
     checkHandsOnly: false
     costUse:
-      time: 20
-      energy: 25
-      stun: 10
-      morale: 15
+      time: 15
+      energy: 10
+      mana: 10
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 40
 
   - type: STR_PSISKILL_WALLBREAKER      # Psyker T1 - Rend Landscape
     targetMode: 9
@@ -155,15 +167,15 @@ skills:
     requiredBonuses: [STR_PSIBONUS_WALLBREAKER]
     checkHandsOnly: false
     costUse:
-      time: 20
-      energy: 25
-      stun: 10
-      morale: 15
+      time: 15
+      energy: 10
+      mana: 10
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 40
 
   - type: STR_PSISKILL_TELEPATHY        # Psyker T1 - Telepathy
     targetMode: 11
@@ -172,14 +184,14 @@ skills:
     checkHandsOnly: false
     costUse:
       time: 5
-      energy: 5
-      stun: 0
-      morale: 0
+      energy: 0
+      mana: 4
     flatUse:
       time: true
-      energy: false
-      stun: true
-      morale: true
+      energy: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: -1
 
   - type: STR_PSISKILL_FLASH            # Psyker T2 - Thunderclap
     targetMode: 11
@@ -188,14 +200,14 @@ skills:
     checkHandsOnly: false
     costUse:
       time: 24
-      energy: 30
-      stun: 15
-      morale: 15
+      energy: 10
+      mana: 24
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 80
 
   - type: STR_PSISKILL_REFLEXES         # Psyker T2 - Lightning Reflexes
     targetMode: 11
@@ -203,15 +215,15 @@ skills:
     requiredBonuses: [STR_PSIBONUS_REFLEXES]
     checkHandsOnly: false
     costUse:
-      time: 24
-      energy: 30
-      stun: 15
-      morale: 15
+      time: 20
+      energy: 10
+      mana: 20
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 60
 
   - type: STR_PSISKILL_VIGILANCE        # Psyker T2 - Vigilance
     targetMode: 11
@@ -220,14 +232,14 @@ skills:
     checkHandsOnly: false
     costUse:
       time: 24
-      energy: 30
-      stun: 15
-      morale: 15
+      energy: 10
+      mana: 28
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 80
 
   - type: STR_PSISKILL_SMITE            # Psyker T3 - Smite
     targetMode: 11
@@ -235,15 +247,15 @@ skills:
     requiredBonuses: [STR_PSIBONUS_SMITE]
     checkHandsOnly: false
     costUse:
-      time: 33
-      energy: 40
-      stun: 20
-      morale: 15
+      time: 25
+      energy: 10
+      mana: 22
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 100
 
   - type: STR_PSISKILL_FLAMES_GK        # Psyker T3 - Purifying Flames
     targetMode: 9
@@ -251,15 +263,15 @@ skills:
     requiredBonuses: [STR_PSIBONUS_FLAMES_GK]
     checkHandsOnly: false
     costUse:
-      time: 33
-      energy: 40
-      stun: 20
-      morale: 15
+      time: 25
+      energy: 10
+      mana: 22
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 100
 
   - type: STR_PSISKILL_MENDWOUNDS       # Psyker T3 - Mend Flesh
     targetMode: 11
@@ -267,15 +279,15 @@ skills:
     requiredBonuses: [STR_PSIBONUS_MENDWOUNDS]
     checkHandsOnly: false
     costUse:
-      time: 33
-      energy: 40
-      stun: 20
-      morale: 15
+      time: 30
+      energy: 10
+      mana: 22
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 100
 
   - type: STR_PSISKILL_MENDWOUNDS_FREE  # Psyker T3 - Mend Flesh (No Req)
     targetMode: 11
@@ -285,43 +297,43 @@ skills:
       time: 33
       energy: 40
       stun: 20
-      morale: 15
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 100
 
-  - type: STR_PSISKILL_HOLODUMMY        # Psyker T5 - Hallucinate
+  - type: STR_PSISKILL_HOLODUMMY        # Psyker T3 - Hallucinate
     targetMode: 9
     compatibleWeapons: [STR_PSITOKEN_HOLODUMMY]
     requiredBonuses: [STR_PSIBONUS_HOLODUMMY]
     checkHandsOnly: false
     costUse:
-      time: 33
-      energy: 40
-      stun: 20
-      morale: 15
+      time: 20
+      energy: 10
+      mana: 28
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 120
 
-  - type: STR_PSISKILL_HOLODUMMY_FREE   # Psyker T5 - Hallucinate (No Req)
+  - type: STR_PSISKILL_HOLODUMMY_FREE   # Psyker T3 - Hallucinate (No Req)
     targetMode: 9
     compatibleWeapons: [STR_PSITOKEN_HOLODUMMY]
     checkHandsOnly: false
     costUse:
-      time: 33
-      energy: 40
-      stun: 20
-      morale: 15
+      time: 20
+      energy: 10
+      mana: 28
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 120
 
   - type: STR_PSISKILL_UNDYING          # Psyker T3 - Martyrs Armor
     targetMode: 11
@@ -329,15 +341,15 @@ skills:
     requiredBonuses: [STR_PSIBONUS_UNDYING]
     checkHandsOnly: false
     costUse:
-      time: 33
-      energy: 40
-      stun: 20
-      morale: 15
+      time: 25
+      energy: 10
+      mana: 30
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 120
 
   - type: STR_PSISKILL_SENTRYWARD       # Psyker T5 - Farsight
     targetMode: 9
@@ -345,30 +357,30 @@ skills:
     requiredBonuses: [STR_PSIBONUS_SENTRYWARD]
     checkHandsOnly: false
     costUse:
-      time: 35
-      energy: 45
-      stun: 25
-      morale: 20
+      time: 25
+      energy: 10
+      mana: 30
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 160
 
   - type: STR_PSISKILL_SENTRYWARD_FREE  # Psyker T5 - Farsight (No Req)
     targetMode: 9
     compatibleWeapons: [STR_PSITOKEN_SENTRYWARD]
     checkHandsOnly: false
     costUse:
-      time: 35
-      energy: 45
-      stun: 25
-      morale: 20
+      time: 25
+      energy: 10
+      mana: 30
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 160
 
   - type: STR_PSISKILL_LOCKDOWN         # Psyker T5 - Lockdown
     targetMode: 11
@@ -376,30 +388,30 @@ skills:
     requiredBonuses: [STR_PSIBONUS_LOCKDOWN]
     checkHandsOnly: false
     costUse:
-      time: 35
-      energy: 45
-      stun: 25
-      morale: 20
+      time: 24
+      energy: 10
+      mana: 30
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 160
 
   - type: STR_PSISKILL_LOCKDOWN_FREE    # Psyker T5 - Lockdown (No Req)
     targetMode: 11
     compatibleWeapons: [STR_PSITOKEN_LOCKDOWN]
     checkHandsOnly: false
     costUse:
-      time: 35
-      energy: 45
-      stun: 25
-      morale: 20
+      time: 24
+      energy: 10
+      mana: 30
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 160
 
   - type: STR_PSISKILL_SHIELD           # Psyker T5 - Shield
     targetMode: 11
@@ -407,30 +419,30 @@ skills:
     requiredBonuses: [STR_PSIBONUS_SHIELD]
     checkHandsOnly: false
     costUse:
-      time: 35
-      energy: 45
-      stun: 25
-      morale: 20
+      time: 20
+      energy: 10
+      mana: 30
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 160
 
   - type: STR_PSISKILL_SHIELD_FREE      # Psyker T5 - Shield (No Req)
     targetMode: 11
     compatibleWeapons: [STR_PSITOKEN_SHIELD]
     checkHandsOnly: false
     costUse:
-      time: 35
-      energy: 45
-      stun: 25
-      morale: 20
+      time: 20
+      energy: 10
+      mana: 30
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 160
 
   - type: STR_PSISKILL_TORMENT          # Psyker T5 - Torment
     targetMode: 9
@@ -438,30 +450,30 @@ skills:
     requiredBonuses: [STR_PSIBONUS_TORMENT]
     checkHandsOnly: false
     costUse:
-      time: 35
-      energy: 45
-      stun: 25
-      morale: 20
+      time: 20
+      energy: 10
+      mana: 30
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 160
 
   - type: STR_PSISKILL_TORMENT_FREE     # Psyker T5 - Torment (No Req)
     targetMode: 9
     compatibleWeapons: [STR_PSITOKEN_TORMENT]
     checkHandsOnly: false
     costUse:
-      time: 35
-      energy: 45
-      stun: 25
-      morale: 20
+      time: 20
+      energy: 10
+      mana: 30
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 160
 
   - type: STR_PSISKILL_HASTE            # Psyker T6 - Accelerate
     targetMode: 11
@@ -469,30 +481,30 @@ skills:
     requiredBonuses: [STR_PSIBONUS_HASTE]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 50
-      stun: 35
-      morale: 25
+      time: 20
+      energy: 10
+      mana: 40
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 240
 
   - type: STR_PSISKILL_HASTE_FREE       # Psyker T6 - Accelerate (No Req)
     targetMode: 11
     compatibleWeapons: [STR_PSITOKEN_HASTE]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 50
-      stun: 35
-      morale: 25
+      time: 20
+      energy: 10
+      mana: 40
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 240
 
   - type: STR_PSISKILL_CLOAK            # Psyker T6 - Shadowstep
     targetMode: 11
@@ -500,15 +512,15 @@ skills:
     requiredBonuses: [STR_PSIBONUS_CLOAK]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 50
-      stun: 35
-      morale: 25
+      time: 25
+      energy: 10
+      mana: 35
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 240
 
   - type: STR_PSISKILL_SOULSTORM        # Psyker T6 - Soul Storm
     targetMode: 11
@@ -516,30 +528,30 @@ skills:
     requiredBonuses: [STR_PSIBONUS_SOULSTORM]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 50
-      stun: 35
-      morale: 25
+      time: 25
+      energy: 10
+      mana: 35
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 240
 
   - type: STR_PSISKILL_SOULSTORM_FREE   # Psyker T6 - Soul Storm (No Req)
     targetMode: 11
     compatibleWeapons: [STR_PSITOKEN_SOULSTORM]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 50
-      stun: 35
-      morale: 25
+      time: 25
+      energy: 10
+      mana: 35
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 240
 
   - type: STR_PSISKILL_HOLOCAUST        # Psyker T6 - Holocaust
     targetMode: 9
@@ -547,14 +559,14 @@ skills:
     requiredBonuses: [STR_PSIBONUS_HOLOCAUST]
     checkHandsOnly: false
     costUse:
-      time: 45
-      energy: 50
-      stun: 35
-      morale: 25
+      time: 25
+      energy: 10
+      mana: 35
     flatUse:
       time: false
       energy: false
-      stun: true
-      morale: true
+      mana: true
+    tags:
+      SKILL_PSYCHIC_TEST: 240
 
 

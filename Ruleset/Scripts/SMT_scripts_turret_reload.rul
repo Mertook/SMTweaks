@@ -66,14 +66,14 @@ extended:
           if gt timer 0;
             unit.setMana 0; # prevent any natural regen while reloading
             unit.setTag Tag.TURRET_RELOAD_TIMER timer;
-            battle_game.flashMessage "STR_SCRIPT_TURRET_RELOAD_RECHARGING" timer;
+            #battle_game.flashMessage "STR_SCRIPT_TURRET_RELOAD_RECHARGING" timer;
             return;
           end;
 
           unit.setTag Tag.TURRET_RELOAD_TIMER 0;
           unit.getManaMax temp;
           unit.setMana temp; # recharge mana
-          battle_game.flashMessage "STR_SCRIPT_TURRET_RELOAD_RECHARGED" temp;
+          #battle_game.flashMessage "STR_SCRIPT_TURRET_RELOAD_RECHARGED" temp;
 
           return;
 
@@ -84,7 +84,7 @@ extended:
         offset: 22
         code: |
           var int temp;
-          var int temp2; # turret reload turn data for right handed weapon
+          var int temp2;
           var ptr RuleItem weaponRule;
           var ptre BattleItem battleItem;
 

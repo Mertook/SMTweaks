@@ -104,6 +104,7 @@ armors:
   - &STR_DW_APOTH_MK7                       #Apothecary Armor (Firstborn)
     type: STR_DW_APOT_ARMOR_BA_UC
     ufopediaType: STR_DW_APOTH_CODEX_UC
+    requiresBonus: STR_BONUS_APOTH_TRAINING
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -427,6 +428,7 @@ armors:
     type: STR_DW_TECH_ARMOR_BA_UC
     ufopediaType: STR_DW_TECH_CODEX_UC
     loftempsSet: [ 3 ]
+    requiresBonus: STR_BONUS_TECHMARINE_TRAINING
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -464,7 +466,8 @@ armors:
       - 0.2 #IMPACT
       - 0.9 #MELTA
     builtInWeapons:
-      - STR_TT_DW_SPAWNER
+      - STR_TECH_REPAIRTOOL
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     tags:
       SMT_ARMOR_SHRED_RESISTANCE: 60 # Techmarine maintenance bonus
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
@@ -475,6 +478,7 @@ armors:
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_TECHPRIEST: 1
 
   - type: STR_DW_TECH_ARMOR_BA_UC
     refNode: *STR_DW_TECH_MK7
@@ -763,6 +767,7 @@ armors:
     loftempsSet: [ 4 ]
     forcedTorso: 1
     requiresAward: ""
+    requiresBonus: STR_BONUS_VETERAN_TRAINING
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -874,6 +879,7 @@ armors:
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
     requires: ""
     requiresAward: ""
+    requiresBonus: STR_BONUS_VETERAN_TRAINING
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -985,6 +991,7 @@ armors:
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
     requires: ""
     requiresAward: ""
+    requiresBonus: STR_BONUS_VETERAN_TRAINING
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -1263,6 +1270,7 @@ armors:
     storeItem: STR_POWER_SUIT # Now an alternate version of regular Term armor
     requires: ""
     requiresAward: ""
+    requiresBonus: STR_BONUS_VETERAN_TRAINING
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -1829,6 +1837,7 @@ armors:
   - &STR_DW_APOTH_MKX                       #Apothecary Armor (Primaris)
     type: STR_MKX_DW_APO_BA_UC
     ufopediaType: STR_DW_APOTH_CODEX_UC
+    requiresBonus: STR_BONUS_APOTH_TRAINING
     loftempsSet: [ 3 ]
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -1939,6 +1948,7 @@ armors:
     type: STR_MKX_DW_TEC_BA_UC
     ufopediaType: STR_DW_TECH_CODEX_UC
     loftempsSet: [ 3 ]
+    requiresBonus: STR_BONUS_TECHMARINE_TRAINING
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
       psiSkill: 1.5 #FAITH IS MY SHIELD (default is 1.0 psiStr + 0.2 psiSkill)
@@ -1976,7 +1986,8 @@ armors:
       - 0.2 #IMPACT
       - 0.9 #MELTA
     builtInWeapons:
-      - STR_TF_DW_SPAWNER
+      - STR_TECH_REPAIRTOOL
+    specialWeapon: STR_UNARMED_GAUNTLET_PLUS
     tags:
       SMT_ARMOR_SHRED_RESISTANCE: 60
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 35
@@ -1987,6 +1998,7 @@ armors:
       INFECTION_RESIST_TYPE: 0
       UNIT_TYPE_IMPERIUM: 1
       UNIT_TYPE_LIVING: 1
+      UNIT_TYPE_TECHPRIEST: 1
 
   - type: STR_MKX_DW_TEC_BA_UC
     refNode: *STR_DW_TECH_MKX
@@ -2042,6 +2054,7 @@ armors:
   - &STR_DW_PHB_MKX                         #Phobos Armor (Reiver)
     type: STR_MKX_DW_PHB_BA_UC
     ufopediaType: STR_DW_PHB_CODEX_UC
+    requiresBonus: STR_BONUS_VETERAN_TRAINING
     camouflageAtDay: -8
     camouflageAtDark: -8
     loftempsSet: [ 3 ]
@@ -2161,6 +2174,7 @@ armors:
     corpseBattle:
       - STR_MKX_DW_PHB_CORPSE
     storeItem: STR_MKX_PHB_ARMOR
+    requiresBonus: STR_BONUS_VETERAN_TRAINING
     corpseGeo: STR_FALLEN_CORPSE
     layersDefaultPrefix: "21"
     layersSpecificPrefix:
@@ -2380,6 +2394,7 @@ armors:
     corpseBattle:
       - STR_MKX_DW_GRV_CORPSE
     storeItem: STR_MKX_GRV_ARMOR
+    requiresBonus: STR_BONUS_VETERAN_TRAINING
     corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -2660,6 +2675,7 @@ armors:
     corpseBattle:
       - STR_MKX_DW_GRV_CORPSE
     storeItem: STR_MKX_GRV_ARMOR
+    requiresBonus: STR_BONUS_VETERAN_TRAINING
     corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -2950,6 +2966,7 @@ armors:
     corpseBattle:
       - STR_MKX_DW_GRV_CORPSE
     storeItem: STR_MKX_GRV_ARMOR
+    requiresBonus: STR_BONUS_VETERAN_TRAINING
     corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -3240,6 +3257,7 @@ armors:
     corpseBattle:
       - STR_MKX_DW_GRV_CORPSE
     storeItem: STR_MKX_GRV_ARMOR
+    requiresBonus: STR_BONUS_VETERAN_TRAINING
     corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -3525,6 +3543,7 @@ armors:
   - &STR_DW_INC_MKX                         #Omnis Armor (Primaris)
     type: STR_MKX_DW_INC_BA_UC
     ufopediaType: STR_DW_INC_CODEX_UC
+    requiresBonus: STR_BONUS_VETERAN_TRAINING
     loftempsSet: [ 4 ]
     forcedTorso: 1
     corpseBattle:
@@ -3658,6 +3677,7 @@ armors:
       - STR_MKX_DW_INC_CORPSE
     storeItem: STR_MKX_INC_ARMOR
     requires: STR_AUTOCANNON_AMMO_R # uses autocannon ammo
+    requiresBonus: STR_BONUS_VETERAN_TRAINING
     corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities
@@ -3953,6 +3973,7 @@ armors:
     corpseBattle:
       - STR_MKX_DW_INC_CORPSE
     storeItem: STR_MKX_INC_ARMOR
+    requiresBonus: STR_BONUS_VETERAN_TRAINING
     corpseGeo: STR_FALLEN_CORPSE
     psiDefence:
       psiStrength: 0.0 #Regular marines don't use or care for any psyker abilities

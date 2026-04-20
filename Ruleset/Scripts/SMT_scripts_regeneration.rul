@@ -5,7 +5,7 @@ extended:
     newTurnUnit:
       #*** Script that regenerates unit health depending on lost health % ***
       - new: SMTS_regen_health
-        offset: 1
+        offset: 1.5
         code: |
           var ptr RuleArmor unitArmor;
           var ptr RuleSoldier unitSoldier;
@@ -51,6 +51,11 @@ extended:
           unitSoldier.getTag regenHpPercent Tag.UNIT_REGENERATE_HEALTH_PERCENT;
           unitArmor.getTag temp Tag.ARMOR_REGENERATE_HEALTH_PERCENT;
           add regenHpPercent temp; #combine regen bonuses from armor & soldiertype
+          unit.getTag temp Tag.UNIT_ITEM_BONUSES;
+          bit_and temp 16;
+          if gt temp 0;
+            add regenHpFlat 3; # techpriest item bonus
+          end;
           if and le regenHpFlat 0 le regenHpPercent 0;  #skip if regen is <=0
             return;
           end;
@@ -85,7 +90,7 @@ extended:
           return;
 
       - new: SMTS_regen_wounds
-        offset: 2
+        offset: 2.5
         code: |
           var ptr RuleSoldier unitSoldier;
           var int woundRecovery;
@@ -104,6 +109,11 @@ extended:
 
           unit.getRuleSoldier unitSoldier;
           unitSoldier.getTag woundRecovery Tag.SMT_UNIT_REGEN_WOUND;
+          unit.getTag temp Tag.UNIT_ITEM_BONUSES;
+          bit_and temp 16;
+          if gt temp 0;
+            add woundRecovery 1; # techpriest item bonus
+          end;
           if eq woundRecovery 0; # skip if unit doesn't regen wounds
             return;
           end;
@@ -116,7 +126,7 @@ extended:
             return;
           end;
 
-          begin; #from rosigma wound regen
+          begin;
             var int numWounds 0;
             var int healWounds woundRecovery;
             loop var i 6; #cycle through the body parts
@@ -135,7 +145,7 @@ extended:
           return;
 
       - new: SMTS_regen_armor
-        offset: 1
+        offset: 1.6
         code: |
           var int armorRecovery;
           var int temp;
@@ -147,6 +157,12 @@ extended:
           end;
 
           unit.getTag armorRecovery Tag.ARMOR_REGENERATE_DURABILITY;
+          unit.getTag temp Tag.UNIT_ITEM_BONUSES;
+          bit_and temp 1;
+          #debug_log "RegenArmor Bonus  " temp armorRecovery;
+          if gt temp 0;
+            add armorRecovery 20; # techpriest item bonus
+          end;
           if eq armorRecovery 0; # skip if unit doesn't regen armor
             return;
           end;
@@ -162,6 +178,47 @@ extended:
           end;
 
           return;
+
+      # - new: SMTS_magic_armor # Needs OXCE 8.5.3 - Wait until release version is public
+        # offset: 1.6
+        # code: |
+          # var int magicArmor;
+          # var int armorRegen;
+          # var int temp;
+          # var int temp2;
+
+          # unit.getTag magicArmor Tag.UNIT_MAGIC_ARMOR;
+          # unit.getTag temp Tag.ARMOR_MAGIC_ARMOR;
+          # limit_lower magicArmor temp;
+          # #debug_log "MagicArmor Bonus  " temp magicArmor;
+          # if eq magicArmor 0;
+            # return;
+          # end;
+
+          # set armorRegen magicArmor;
+          # if gt armorRegen 60;
+            # div armorRegen 2;
+          # else;
+            # limit_upper armorRegen 30;
+          # end;
+
+          # loop var i 5; #cycle through the armor sides
+            # unit.getArmorMax temp i;
+            # if lt temp magicArmor;
+              # unit.setArmorMax i magicArmor;
+            # end;
+            # unit.getArmor temp i;
+            # #debug_log "RegenArmor Pre  " i temp temp2 magicArmor;
+            # if lt temp magicArmor;
+              # add temp armorRegen;
+              # limit_upper temp magicArmor;
+              # unit.setArmor i temp;
+            # end;
+            # #debug_log "RegenArmor Post " i temp temp2 magicArmor;
+          # end;
+
+          # return;
+
 
     returnFromMissionUnit:
       #*** Calculate Soldier recovery time based on % of missing health rather than absolute ***

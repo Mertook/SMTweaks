@@ -1,0 +1,202 @@
+extended:
+  tagsFile: Ruleset/Scripts/SMT_tags.rul
+
+  scripts:
+    damageUnit:
+      - new: SMTS_reduce_2x2_aoe
+        offset: -1
+        code: |
+          var int checkVal;
+          var int checkVal2;
+          var ptr RuleArmor unitArmor;
+          var ptr RuleItem damagingItem;
+          var ptr RuleDamageType damageType;
+
+          unit.getRuleArmor unitArmor;
+          unitArmor.getSize checkVal;
+          unitArmor.getTag checkVal2 Tag.UNIT_TYPE_SWARM;
+          if or neq checkVal 2 neq checkVal2 0; # is unit 2x2 and not a 'swarm' type unit?
+            return;
+          end;
+
+          damageType.isAreaOfEffect checkVal;
+          damaging_item.getRuleItem damagingItem;
+          damagingItem.getDamageType damageType;
+          damagingItem.getTag checkVal2 Tag.ITEM_IGNORES_2X2_REDUCTION;
+          if or neq checkVal 1 neq checkVal2 0; # is weapon aoe and not ignore the 2x2 reduction?
+            return;
+          end;
+
+          muldiv to_health 2 3;
+          muldiv to_armor 2 3;
+          muldiv to_stun 2 3;
+          muldiv to_time 2 3;
+          muldiv to_energy 2 3;
+          muldiv to_morale 2 3;
+          muldiv to_wound 2 3;
+          muldiv to_mana 2 3;
+
+          return;
+
+      - delete: ROSIGMA_dU_item_does_not_hurt_friends
+      - delete: ROSIGMA_reduce_2x2_aoe
+
+    hitUnit:
+      - new: SMTS_hitUnit_damageMult_preShield
+        offset: 10
+        code: |
+          var ptr BattleItem ammoItem;
+          var int checkVal;
+          var int flatBonus;
+          var int multBonus;
+          var int temp;
+          var int temp2;
+
+          weapon_item.getAmmoItem ammoItem;
+          set multBonus 100;
+
+          begin; ### Friendly Fire
+            if neq battle_action battle_action_hit; # ignore melee swings
+              damaging_item.getTag checkVal Tag.ITEM_DOESNT_HURT_USER;
+              if and eq unit attacker eq checkVal 1;
+                return 0 part side;
+              end;
+
+              damaging_item.getTag checkVal Tag.ITEM_DOESNT_HURT_FRIENDS;
+              unit.getFaction temp;
+              attacker.getFaction temp2;
+              if and eq temp temp2 eq checkVal 1;
+                return 0 part side; # ignore any other bonuses and set power to 0
+              end;
+            end;
+          end;
+
+          begin; ### Shieldbreaker
+            unit.getTag temp Tag.UNIT_ENERGY_SHIELD_HP;
+            damaging_item.getTag temp2 Tag.SMT_SHIELD_DAMAGE_AMP;
+            if and gt temp 0 gt temp2 0; # increase power proportional to shield HP
+              muldiv temp temp2 100;
+              add flatBonus temp;
+            end;
+          end;
+
+          begin; ### Precision
+            attacker.Stats.getFiring temp;
+            sub temp 100; # only units with FA above 100 benefit
+            damaging_item.getTag temp2 Tag.SMT_AMMO_BONUSDMG_FIRINGACC;
+            #debug_log "PrecisionDmg pinged " temp temp2;
+            if and gt temp 0 gt temp2 0 gt power 0;
+              muldiv temp temp2 100;
+              add flatBonus temp;
+            end;
+          end;
+
+          begin; ### Resistance Penetration
+            var int resistanceValue 100;
+            var int resistPen 0;
+            unit.reduceByResistance resistanceValue damaging_type;
+            if and gt resistanceValue 0 lt resistanceValue 100; # only if damage type is resisted but not ignored
+              weapon_item.getTag resistPen Tag.DAMAGE_RESIST_PENETRATION_PERCENT;
+              ammoItem.getTag temp Tag.DAMAGE_RESIST_PENETRATION_PERCENT;
+              set temp2 resistPen;
+              sub temp2 100;
+              mul temp2 -1;
+              muldiv temp2 temp 100;
+              add resistPen temp2; # combine weapon & ammo resistPen
+
+              unit.getTag temp Tag.CURRENT_INFECTION_TYPE; # Nurgle Corruption adds damagepen
+              if eq temp 1;
+                unit.getTag temp Tag.CURRENT_INFECTION_DAMAGE;
+                limit_upper temp 100;
+                set temp2 resistPen;
+                sub temp2 100;
+                mul temp2 -1;
+                muldiv temp2 temp 100;
+                add resistPen temp2;
+              end;
+
+              battle_game.getTurn temp;
+              battle_game.getTag temp2 Tag.SMT_COMMAND_TURN;
+              if eq temp temp2; # Storm of Fire
+                battle_game.getTag checkVal Tag.SMT_COMMAND_TYPE;
+                if eq checkVal 2;
+                  attacker.getTag temp Tag.UNIT_TYPE_ASTARTES; # only affects Space Marines
+                  if gt temp 0;
+                    if and ge battle_action battle_action_autoshoot le battle_action battle_action_aimshoot; # only if action is auto, snap or aimed shot (7/8/9)
+                      set temp resistPen;
+                      sub temp 100;
+                      muldiv temp -1 2; # 50% penetration
+                      add resistPen temp;
+                    end;
+                  end;
+                end;
+              end;
+
+              limit_upper resistPen 100;
+              set temp 10000;
+              div temp resistanceValue;
+              sub temp 100;
+              muldiv temp resistPen 100;
+              add temp 100;
+              muldiv multBonus temp 100;
+            end;
+          end;
+
+          begin; ### Item Passive Bonus
+            attacker.getTag temp Tag.UNIT_ITEM_BONUSES;
+            bit_and temp 32; # melee bonus
+            if and gt temp 0 eq battle_action battle_action_hit;
+              muldiv multBonus 110 100; # 10% bonus to melee power
+            end;
+          end;
+
+          begin; ### Space Marine Commands
+            if neq damaging_type 0; # ignore support type damage
+              battle_game.getTurn temp;
+              battle_game.getTag temp2 Tag.SMT_COMMAND_TURN;
+              if eq temp temp2; # only if command is active
+                battle_game.getTag checkVal Tag.SMT_COMMAND_TYPE;
+                if eq checkVal 1; # Armor of Contempt
+                  unit.getTag temp Tag.UNIT_TYPE_ASTARTES; # only affects Space Marines
+                  if gt temp 0;
+                    muldiv multBonus 80 100; # reduce power to 80%
+                    set temp2 0; # compare armor sides and pick most armored side
+                    loop var i 5; #cycle through the armor sides
+                      unit.getArmor temp i;
+                      if gt temp temp2;
+                       set side i;
+                        set temp2 temp;
+                      end;
+                    end;
+                    #debug_log "AoC Armor " multBonus;
+                  end;
+                else eq checkVal 3; # Relentless Assault
+                  attacker.getTag temp Tag.UNIT_TYPE_ASTARTES; # only affects Space Marines
+                  if gt temp 0;
+                    if eq battle_action battle_action_hit; # only if action is melee (10)
+                      muldiv multBonus 120 100; # +20% power
+                    end;
+                  end;
+                end;
+              end;
+            end;
+
+          end;
+
+          muldiv power multBonus 100;
+          add power flatBonus;
+          return power part side;
+
+      - new: SMTS_hitUnit_passive_bonus
+        offset: 14
+        code: |
+          var ptr RuleItem ruleItem;
+          var int checkVal;
+          var int sideAttacker;
+          var int sideDefender;
+
+          return power part side;
+
+      - delete: ROSIGMA_hU_resist_penetration
+
+

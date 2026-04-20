@@ -27,7 +27,7 @@ extended:
           var int temp;
           var int endTurn;
 
-          # Only run this at the start of the units turn - no double dipping for recharge/drain (generally makes inbuilt shields worse)
+          # Only run this at the start of the units turn - no double dipping for recharge/drain
           unit.getFaction temp;
           if neq side temp;
             return;
@@ -44,9 +44,26 @@ extended:
             limit_lower shieldDecay temp; # if unit only has one source, use that
           end;
 
-          # If they don't have either, use decay set by item
+          # if they don't have either, use decay set by item
           if eq shieldDecay 0;
             unit.getTag shieldDecay Tag.UNIT_ENERGY_SHIELD_DECAY;
+          end;
+
+          # Get shield recovery amount
+          armorRuleset.getTag shieldAdded Tag.ARMOR_ENERGY_SHIELD_HP_PER_TURN;
+          unit.getTag temp Tag.UNIT_BONUS_ENERGY_SHIELD_HP_PER_TURN;
+          add shieldAdded temp; # combine shield gain from armor and soldierBonus
+          unit.getTag temp Tag.UNIT_ITEM_BONUSES;
+          bit_and temp 4;
+          if gt temp 0;
+            if eq shieldDecay 0;
+              add shieldAdded 60; # add shield from techpriest passive item
+              set shieldDecay 75; # add decay for techpriest shield if no other decay exists
+            else;
+              set temp 80;
+              muldiv temp shieldDecay 100;
+              add shieldAdded temp;
+            end;
           end;
 
           set temp shieldDecay; # use temp var to keep calcuated shieldDecay intact for later
@@ -56,9 +73,6 @@ extended:
           mul temp -1;
           muldiv shieldHP temp 100;
           # Now add the per-turn amount, to be balanced by decay parameter
-          armorRuleset.getTag shieldAdded Tag.ARMOR_ENERGY_SHIELD_HP_PER_TURN;
-          unit.getTag temp Tag.UNIT_BONUS_ENERGY_SHIELD_HP_PER_TURN;
-          add shieldAdded temp; # combine shield gain from armor and soldierBonus
           add shieldHP shieldAdded;
 
           # Handle removing temporary shields that don't decay
@@ -128,9 +142,6 @@ extended:
           #debug_log "shieldBonus Final: " shieldAdded shieldDecay;
 
           return;
-
-      - delete: ROSIGMA_aSB_personal_shield_soldier_bonus
-
 
     damageUnit: 
       #*** Spells that add to energy shields - modified from 40k to account for turn-limited shields that don't decay***

@@ -251,6 +251,38 @@ items:
     bigSprite: 103
     invWidth: 2
     invHeight: 2 # was 2
+    armor: 300
+
+  - type: STR_MELTA_GRENADE_DRUM            # GL Melta Rounds
+    battleType: 2
+    categories: [STR_CAT_ROCKETL]
+    bigSprite: 408
+    floorSprite: {mod: 40k, index: 1008}
+    handSprite: {mod: 40k, index: 1048}
+    invWidth: 2
+    invHeight: 1
+    armor: 300
+    listOrder: 11871
+
+  - type: STR_SMOKE_GRENADE40               # 40mm Smoke Grenade
+    battleType: 2
+    categories: [STR_CAT_ROCKETL]
+    bigSprite: 410
+    floorSprite: {mod: 40k_ROSIGMA_edits, index: 2062}
+    handSprite: {mod: 40k, index: 352}
+    invWidth: 1
+    invHeight: 1
+    armor: 300
+
+  - type: STR_PHOTON_GRENADE40              # 40mm Photon Grenade
+    battleType: 2
+    categories: [STR_CAT_ROCKETL]
+    bigSprite: 409
+    floorSprite: {mod: 40k_ROSIGMA_edits, index: 2062}
+    handSprite: {mod: 40k, index: 352}
+    invWidth: 1
+    invHeight: 1
+    armor: 300
 
   - &REF_VOLKITE_SFX                        # Volkite Weapon Ref
     type: STR_NEOVOLKITE_PISTOL

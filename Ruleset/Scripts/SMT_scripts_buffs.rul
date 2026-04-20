@@ -514,6 +514,11 @@ extended:
           end;
 
           action_unit.getTag reactionBonus Tag.SMT_REFLEX_REACTION_BONUS;
+          action_unit.getTag temp Tag.UNIT_ITEM_BONUSES;
+          bit_and temp 32;
+          if gt temp 0;
+            add reactionBonus 30; # techpriest item bonus
+          end;
           if eq reactionBonus 0;
             return reaction_chance;
           end;

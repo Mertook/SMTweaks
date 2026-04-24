@@ -1769,11 +1769,11 @@ soldierBonuses:
   - name: STR_BONUS_APOTH_TRAINING
     tags:
       SMT_BONUS_MORALE_RESISTANCE: 30
-      #SMT_BONUS_MEDIC_GLOBAL: 15 # given by armor instead
+      SMT_BONUS_MEDIC_GLOBAL: 25
 
   - name: STR_BONUS_TECHMARINE_TRAINING
     stats:
-      tu: -10
+      tu: 0
       melee: -10
       firing: -10
     recovery:

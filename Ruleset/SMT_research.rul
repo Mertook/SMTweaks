@@ -462,6 +462,14 @@ research:
       - STR_INQ_STORMTROOPER_REQUISITION
       - STR_INQ_STORMTROOPER_CODEX_UNLOCKER
 
+
+  - name: STR_CHAMBER_NOT_ARBITES
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_GENERALLOCK
+    spawnedEvent: ""
+
 ## Imperial Guard
   - name: STR_NORMAL_STRATEGY_IG        # IG Standard Strategy
     unlocks: !add

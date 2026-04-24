@@ -82,7 +82,7 @@ skills:
   - type: STR_TECH_PRIMARY_SKILL        # Techmarine Primary Item
     targetMode: 9
     compatibleWeapons: [STR_TECHMARINE_FLAMER, STR_TECHMARINE_BOLTER, STR_TECHMARINE_MELTA, STR_TECHMARINE_GRAV, STR_TECHMARINE_PLASMA]
-    requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]
+    #requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]
     checkHandsOnly: false
     costUse:
       time: 30
@@ -94,7 +94,7 @@ skills:
   - type: STR_TECH_UTILITY_SKILL        # Techmarine Utility Item
     targetMode: 11
     compatibleWeapons: [STR_TECH_TOOL_SCANNER, STR_TECH_TOOL_SHIELD, STR_TECH_TOOL_SERVITOR]
-    requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]
+    #requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]
     checkHandsOnly: false
     costUse:
       time: 25
@@ -106,7 +106,7 @@ skills:
   - type: STR_TECH_UNIT_SKILL           # Techmarine Unit Deployment
     targetMode: 9
     compatibleWeapons: [STR_TECH_SKULL_SPAWNER, STR_TECH_SENTRY_SPAWNER, STR_TECH_TF_SPAWNER]
-    requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]
+    #requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]
     checkHandsOnly: false
     costUse:
       time: 35
@@ -116,6 +116,56 @@ skills:
       SKILL_SMT_TECHPRIEST: 1
 
   - type: STR_TECH_REPAIR_SKILL         # Techmarine Repair Armor
+    targetMode: 10
+    compatibleWeapons: [STR_TECH_REPAIRTOOL]
+    #requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]
+    checkHandsOnly: false
+    costUse:
+      time: 20
+      energy: 20
+    flatUse:
+      time: false
+      energy: true
+    tags:
+      SKILL_SMT_TECHPRIEST: 1
+
+  - type: STR_TECH_PRIMARY_SKILL_DW     # Techmarine Primary Item
+    targetMode: 9
+    compatibleWeapons: [STR_TECHMARINE_FLAMER, STR_TECHMARINE_BOLTER, STR_TECHMARINE_MELTA, STR_TECHMARINE_GRAV, STR_TECHMARINE_PLASMA]
+    requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]
+    checkHandsOnly: false
+    costUse:
+      time: 30
+    flatUse:
+      time: false
+    tags:
+      SKILL_SMT_TECHPRIEST: 1
+
+  - type: STR_TECH_UTILITY_SKILL_DW     # Techmarine Utility Item
+    targetMode: 11
+    compatibleWeapons: [STR_TECH_TOOL_SCANNER, STR_TECH_TOOL_SHIELD, STR_TECH_TOOL_SERVITOR]
+    requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]
+    checkHandsOnly: false
+    costUse:
+      time: 25
+    flatUse:
+      time: false
+    tags:
+      SKILL_SMT_TECHPRIEST: 1
+
+  - type: STR_TECH_UNIT_SKILL_DW        # Techmarine Unit Deployment
+    targetMode: 9
+    compatibleWeapons: [STR_TECH_SKULL_SPAWNER, STR_TECH_SENTRY_SPAWNER, STR_TECH_TF_SPAWNER]
+    requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]
+    checkHandsOnly: false
+    costUse:
+      time: 35
+    flatUse:
+      time: false
+    tags:
+      SKILL_SMT_TECHPRIEST: 1
+
+  - type: STR_TECH_REPAIR_SKILL_DW      # Techmarine Repair Armor
     targetMode: 10
     compatibleWeapons: [STR_TECH_REPAIRTOOL]
     requiredBonuses: [STR_BONUS_TECHMARINE_TRAINING]

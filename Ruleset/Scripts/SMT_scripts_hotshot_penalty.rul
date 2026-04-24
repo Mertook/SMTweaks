@@ -29,7 +29,7 @@ extended:
 
           weapon.getTag weaponQuality Tag.ITEM_HEAT_ACCURACY_PEN;
           if lt weaponQuality 0;
-            debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | No Penalty:" weaponQuality;
+            #debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | No Penalty:" weaponQuality;
             return bonus;
           end;
 
@@ -37,14 +37,14 @@ extended:
           muldiv weaponHeat 3 weaponQuality;
 
           if lt weaponHeat 1;
-            debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | No Penalty:" weaponHeat;
+            #debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | No Penalty:" weaponHeat;
             return bonus;
           end;
 
-          debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | Accuracy penalty, weaponHeat:" weaponHeat;
-          debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | Original accuracy, bonus:" bonus;
+          #debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | Accuracy penalty, weaponHeat:" weaponHeat;
+          #debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | Original accuracy, bonus:" bonus;
           sub bonus weaponHeat;
-          debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | New accuracy set, bonus:" bonus;
+          #debug_log "accuracyMultiplierBonusStats | ROSIGMA_aMBS_repeated_accuracy_penalty | offset: 10 | New accuracy set, bonus:" bonus;
           return bonus; # final accuracy
 
       - delete: ROSIGMA_aMBS_repeated_accuracy_penalty

@@ -15,7 +15,7 @@ extended:
             if and eq battle_action battle_action_hit lt to_armor 0;
               attacker.getTag temp Tag.UNIT_ITEM_BONUSES;
               bit_and temp 32; # melee bonus
-              debug_log "Blast PassiveCheck " blastMod temp to_armor;
+              #debug_log "Blast PassiveCheck " blastMod temp to_armor;
               if eq temp 0; # unit does not have passive bonus
                 return;
               end;
@@ -26,7 +26,7 @@ extended:
           end;
 
           muldiv to_armor blastMod 100; # modify armor damage by blast value
-          debug_log "Blast DmgMod " side blastMod to_armor;
+          #debug_log "Blast DmgMod " side blastMod to_armor;
 
           loop var i 5; #cycle through the armor sides
             if neq side i; #ignore the side being targetted directly

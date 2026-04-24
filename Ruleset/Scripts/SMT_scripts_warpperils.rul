@@ -18,7 +18,7 @@
             # return;
           # end;
 
-          # debug_log "Perils Ping " psiDifficulty;
+          # #debug_log "Perils Ping " psiDifficulty;
           # actor.getTag temp Tag.CURRENT_INFECTION_TYPE;
           # if eq temp 4; # Tzeentch corruption makes perils more likely
             # actor.getTag temp Tag.CURRENT_INFECTION_DAMAGE;
@@ -41,11 +41,11 @@
           # sub temp2 temp;
           # actor.setMorale temp2;
 
-          # debug_log "Perils Chance " successChance;
+          # #debug_log "Perils Chance " successChance;
           # battle_game.randomRange temp 1 successChance;
           # battle_game.randomRange temp2 1 successChance;
           # add temp temp2;
-          # debug_log "Perils Roll " temp psiDifficulty;
+          # #debug_log "Perils Roll " temp psiDifficulty;
           # if gt temp psiDifficulty; # passed psi test
             # return;
           # end;

@@ -54,7 +54,7 @@ extended:
           unit.getTag temp Tag.UNIT_ITEM_BONUSES;
           bit_and temp 16;
           if gt temp 0;
-            debug_log "HealthRegen TechPassive " temp regenHpFlat;
+            #debug_log "HealthRegen TechPassive " temp regenHpFlat;
             add regenHpFlat 3; # techpriest item bonus
           end;
           if and le regenHpFlat 0 le regenHpPercent 0;  #skip if regen is <=0
@@ -111,7 +111,7 @@ extended:
           unit.getTag temp Tag.UNIT_ITEM_BONUSES;
           bit_and temp 16;
           if gt temp 0;
-            debug_log "WoundRegen TechPassive " temp woundRecovery;
+            #debug_log "WoundRegen TechPassive " temp woundRecovery;
             add woundRecovery 1; # techpriest item bonus
           end;
           if eq woundRecovery 0; # skip if unit doesn't regen wounds
@@ -161,7 +161,7 @@ extended:
           bit_and temp 1;
           #debug_log "RegenArmor Bonus  " temp armorRecovery;
           if gt temp 0;
-            debug_log "ArmorRegen TechPassive " temp armorRecovery;
+            #debug_log "ArmorRegen TechPassive " temp armorRecovery;
             add armorRecovery 20; # techpriest item bonus
           end;
           if eq armorRecovery 0; # skip if unit doesn't regen armor

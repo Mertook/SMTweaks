@@ -103,6 +103,7 @@ extended:
               mul temp2 -1;
               muldiv temp2 temp 100;
               add resistPen temp2; # combine weapon & ammo resistPen
+              #debug_log "ResistPen Ping " multBonus resistanceValue resistPen temp;
 
               unit.getTag temp Tag.CURRENT_INFECTION_TYPE; # Nurgle Corruption adds damagepen
               if eq temp 1;
@@ -113,6 +114,7 @@ extended:
                 mul temp2 -1;
                 muldiv temp2 temp 100;
                 add resistPen temp2;
+                #debug_log "ResistPen PostCorruption " resistanceValue resistPen temp;
               end;
 
               battle_game.getTurn temp;
@@ -127,6 +129,7 @@ extended:
                       sub temp 100;
                       muldiv temp -1 2; # 50% penetration
                       add resistPen temp;
+                      #debug_log "ResistPen PostCommand " resistanceValue resistPen temp;
                     end;
                   end;
                 end;
@@ -139,6 +142,7 @@ extended:
               muldiv temp resistPen 100;
               add temp 100;
               muldiv multBonus temp 100;
+              #debug_log "ResistPen Final " multBonus temp;
             end;
           end;
 

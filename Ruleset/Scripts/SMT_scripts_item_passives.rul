@@ -25,7 +25,7 @@ extended:
             bit_or passiveList temp; # add them to passives list
           end;
           unit.getTag temp Tag.UNIT_ITEM_BONUSES;
-          debug_log "Item Passives Ping " temp passiveList invCount;
+          #debug_log "Item Passives Ping " temp passiveList invCount;
 
           unit.setTag Tag.UNIT_ITEM_BONUSES passiveList;
 

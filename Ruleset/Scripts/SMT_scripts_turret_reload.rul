@@ -112,7 +112,7 @@ extended:
           limit_lower temp temp2;
 
           if le temp 0;
-            # debug_log "Turret Reload Scripts; ROSIGMA_healU_turret_reload, offset 22: No TURRET_RELOAD_TURNS detected. Aborting. temp" temp;
+            # #debug_log "Turret Reload Scripts; ROSIGMA_healU_turret_reload, offset 22: No TURRET_RELOAD_TURNS detected. Aborting. temp" temp;
             return;
           end;
 

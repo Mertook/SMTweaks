@@ -32,7 +32,7 @@ extended:
           unit.getTag temp Tag.UNIT_ITEM_BONUSES; # add techpriest bonus
           bit_and temp 8;
           if gt temp 0;
-            debug_log "Overwatch TechBonus " temp overwatchTU unit;
+            #debug_log "Overwatch TechBonus " temp overwatchTU unit;
             set temp maxTU;
             muldiv temp 25 100;
             add overwatchTU temp;

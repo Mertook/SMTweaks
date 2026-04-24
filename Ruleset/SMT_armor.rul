@@ -5536,6 +5536,71 @@ armors:
       - STR_GUARDSL_VETERAN
       #- STR_GUARDSL_OFFICER_VETERAN
 
+  - type: STR_PSYKER_ARMOR              # Imperial Guard Psyker
+    specialWeapon: STR_NONE
+    frontArmor: 30
+    sideArmor: 20
+    rearArmor: 15
+    underArmor: 20
+    stats:
+      health: 5 # barely better than nothing
+      mana: 30
+    recovery:
+      mana:
+        mana: 0.05 # 5% of max mana
+        manaNormalized: 12 # 12 * current mana %
+    damageModifier:
+      - 1.0 #SUPPORT
+      - 1.0 #AP
+      - 1.2 #FLAMES
+      - 1.2 #HE
+      - 1.0 #LASCANON
+      - 1.0 #PLASMA
+      - 1.0 #STUN
+      - 1.1 #MELEE
+      - 1.0 #ACID
+      - 0.8 #SMOKE
+      - 1.0 #IMPACT
+      - 1.0 #MELTA
+      - 0.7 #GRAV
+      - 1.2 #WARP
+      - 1.0 #SONIC
+      - 1.0 #GAUSS
+    builtInWeapons:
+      - STR_PSITOKEN_SHROUD
+      - STR_PSITOKEN_FLARE
+      - STR_PSITOKEN_WALLBREAKER
+      - STR_PSITOKEN_TELEPATHY
+      - STR_PSITOKEN_FLASH
+      - STR_PSITOKEN_REFLEXES
+      - STR_PSITOKEN_VIGILANCE
+      - STR_PSITOKEN_SMITE
+      - STR_PSITOKEN_MENDWOUNDS
+      - STR_PSITOKEN_HOLODUMMY
+      - STR_PSITOKEN_SENTRYWARD
+      - STR_PSITOKEN_LOCKDOWN
+      - STR_PSITOKEN_SHIELD
+      - STR_PSITOKEN_TORMENT
+    tags:
+      ARMOR_GAINS_PSISKILL_SECONDARY_EXPERIENCE: 2 # was 6
+
+  - type: STR_BIOMANCER
+    requires: STR_GENERALLOCK
+
+  - type: STR_DIVINER
+    psiVision: 0
+    requires: STR_GENERALLOCK
+
+  - type: STR_PYROMANCER
+    requires: STR_GENERALLOCK
+
+  - type: STR_TELEKINE
+    requires: STR_GENERALLOCK
+
+  - type: STR_TELEPATH
+    psiVision: 0
+    requires: STR_GENERALLOCK
+
 ## Chamber
   - type: STR_FRATERIS_MILITIA_HEAVY            # Militia
     refNode: *REF_FLAK_ARMOR

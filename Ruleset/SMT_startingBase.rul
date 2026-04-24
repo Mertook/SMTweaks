@@ -29,10 +29,29 @@ startingBase: # Space Marines
 startingBaseExperienced: # Chamber militant
   scientists: 10
   engineers: 10
+  crafts:
+    - type: STR_XIPHON_GK
+      id: 1
+      fuel: 1000
+      damage: 0
+      weapons:
+        - type: STR_STINGRAY
+          ammo: 6
+        - type: STR_CANNON_UC
+          ammo: 100
+      status: STR_READY
+    - type: STR_XIPHON_GK
+      id: 2
+      fuel: 1000
+      damage: 0
+      weapons:
+        - type: STR_STINGRAY
+          ammo: 6
+        - type: STR_CANNON_UC
+          ammo: 100
+      status: STR_READY
   randomSoldiers:
-    STR_ADEPTAS_FRATERIS_MILITIA_VETERAN: 8
-    STR_INQ_STORMTROOPER: 2
-    STR_IMPERIAL_INQUISITOR: 1
+    STR_IMPERIAL_INQUISITOR: 0
   items:
     STR_SERVITOR: 1
     STR_AVALANCHE_LAUNCHER: 1
@@ -180,8 +199,12 @@ events:
     everyMultiItemList:
       STR_HB_CLIP: 24
       STR_KILLPOINT_TOKEN: 150
-    spawnedPersons: 2
-    spawnedPersonType: STR_GREYKNIGHT
+    spawnedPersons: 0
+    everyMultiSoldierList:
+      STR_IMPERIAL_INQUISITOR: 1
+      STR_INQ_STORMTROOPER: 2
+      STR_ADEPTAS_FRATERIS_MILITIA_VETERAN: 10
+      STR_GREYKNIGHT: 2
 
   - name: STR_DEATHWATCH_CARE_PACKAGE       # Deathwatch Starter Pack
     description: STR_DEATHWATCH_REINFORCEMENTS
@@ -198,6 +221,10 @@ events:
       STR_KILLPOINT_TOKEN: 300 # used to buy your first marine
     spawnedPersons: 0
     spawnedPersonType: STR_ULTRAMARINE
+    everyMultiSoldierList:
+      STR_IMPERIAL_INQUISITOR: 1
+      STR_INQ_STORMTROOPER: 2
+      STR_ADEPTAS_FRATERIS_MILITIA_VETERAN: 12
 
   - name: STR_ASSASSINORUM_CARE_PACKAGE
     description: STR_ASSASSINORUM_CARE_PACKAGE_DESCRIPTION
@@ -209,8 +236,11 @@ events:
       STR_TEMPLE_TOKEN: 4
       STR_KILLPOINT_TOKEN: 1000
       STR_TELEPORTARIUM_TOKEN: 1
-    spawnedPersons: 4
+    spawnedPersons: 0
     spawnedPersonType: STR_IMPERIAL_ASSASSINFEM
+    everyMultiSoldierList:
+      STR_IMPERIAL_INQUISITOR: 1
+      STR_IMPERIAL_ASSASSINFEM: 4
 
   - name: STR_IMPERIALAGENTS_CARE_PACKAGE   # Imperial Agents Starter Pack
     description: STR_REINFORCEMENTS_GK_DESCRIPTION ###CHANGEME
@@ -234,10 +264,11 @@ events:
       STR_TECHMARINE_FLAMER: 1
       STR_FLAMETHROWER_CLIP: 2
     everyMultiSoldierList:
-      STR_GUARDPD: 6
+      STR_IMPERIAL_INQUISITOR: 1
+      STR_GUARDPD: 8
       STR_GUARD_TANITH: 1
       STR_ADEPTAS_VETERAN: 1
-      STR_JUDGE: 1
+      STR_JUDGE: 2
       STR_GUARD_PRIEST: 1
       STR_ENGINSEER: 1
       STR_OGRYN: 1
@@ -267,10 +298,9 @@ events:
       STR_TECHMARINE_FLAMER: 1
       STR_FLAMETHROWER_CLIP: 2
     everyMultiSoldierList:
-      STR_GUARDPD: 6
-      STR_GUARD_TANITH: 1
-      STR_ENGINSEER: 1
-      STR_OGRYN: 2
+      STR_IMPERIAL_INQUISITOR: 1
+      STR_ADEPTAS_FRATERIS_MILITIA_VETERAN: 12
+      STR_OGRYN: 4
       STR_ARBITES_MASTIFF: 1
 
 

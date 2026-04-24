@@ -28,7 +28,7 @@ extended:
           end;
 
           damaging_item.getTag temp Tag.SMT_MORTAL_WOUNDS;
-          debug_log "FeelNoPain Ping " damaging_item temp;
+          debug_log "FeelNoPain Ping " temp damaging_item unit;
           if eq temp -1;
             return;
           else gt temp 0;
@@ -43,11 +43,13 @@ extended:
           div temp 10;
           limit temp 1 20;
           if gt temp to_health; # threshold for triggering is 10% of current health, with a ceiling of 20
+            debug_log "Feel No Pain HP " temp to_health;
             return;
           end;
 
           set temp2 to_health;
           muldiv temp2 10 temp; # damage * 10 / 10% of current health is added to base chance to proc FNP - chance proportional to DMG/HP%
+          debug_log "Feel No Pain chanceMod " temp2 temp to_health currentHealth;
 
           unit.getRuleArmor armorRule;
           armorRule.getTag temp Tag.DIEHARD_MODIFIER;
@@ -55,9 +57,10 @@ extended:
             set temp 10; # default base 10% trigger chance
           end;
           add temp temp2;
+          limit_upper temp 80; # always a 20% chance to fail no matter how much damage is dealt
           battle_game.randomRange randomNumber 0 100;
+          debug_log "Feel No Pain RNG " temp randomNumber;
           if ge randomNumber temp;
-            debug_log "Feel No Pain RNG " temp randomNumber;
             return;
           end;
 
@@ -100,6 +103,7 @@ extended:
           unit.getTag temp Tag.UNIT_ITEM_BONUSES;
           bit_and temp 64;
           if gt temp 0;
+            debug_log "Feel No Pain Tech " temp triggerCap;
             add triggerCap 1; # techpriest item bonus
           end;
           if eq triggerCap 0;

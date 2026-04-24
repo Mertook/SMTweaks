@@ -630,6 +630,8 @@ ufopaedia:
     section: STR_HELP_ADV
     image_id: UP033.SPK
     text: STR_PERILS_OF_THE_WARP_CODEX
+    requires:
+      - STR_GENERALLOCK
     #listOrder: 2050 # was 52924
 
   - id: STR_SMT_MASTERCRAFTED_AMMO          # MC Ammo Bonus
@@ -750,12 +752,12 @@ ufopaedia:
     text: STR_HONOR_MEDAL_DESCRIPTION
     listOrder: 100060
 
-  - id: STR_FACTION_KILLER_MEDAL            # Slayer Commendation
-    type_id: 10
-    section: STR_COMMENDATIONS_SECTION
-    image_id: COMMENDATION_TERMINATOR.SPK ###CHANGEME
-    text: STR_FACTION_KILLER_MEDAL_DESCRIPTION
-    listOrder: 100065
+  # - id: STR_FACTION_KILLER_MEDAL            # Slayer Commendation
+    # type_id: 10
+    # section: STR_COMMENDATIONS_SECTION
+    # image_id: COMMENDATION_TERMINATOR.SPK ###CHANGEME
+    # text: STR_FACTION_KILLER_MEDAL_DESCRIPTION
+    # listOrder: 100065
 
 ### 30000  - General Research
 ### 40000  - Base Facilities
@@ -788,6 +790,15 @@ ufopaedia:
     requires:
       - STR_PSYKER_T1_UNLOCK
 
+  - id: STR_SMT_WARP_PERILS                 # Perils of the Warp
+    type_id: 10
+    section: STR_BOOKS
+    image_id: LIBRARIANUFO.SPK
+    text: STR_SMT_WARP_PERILS_CODEX
+    requires:
+      - STR_PSYKER_T1_UNLOCK
+      - STR_GENERALLOCK
+
   - id: STR_PSITOKEN_SHROUD                 # Shroud
     type_id: 10
     section: STR_BOOKS
@@ -802,6 +813,13 @@ ufopaedia:
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_PSYKER_T1_UNLOCK
+  - id: STR_PSITOKEN_WALLBREAKER            # Rend Landscape
+    type_id: 10
+    section: STR_BOOKS
+    text: STR_PSITOKEN_WALLBREAKER_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T1_UNLOCK
   - id: STR_PSITOKEN_TELEPATHY              # Telepathy
     type_id: 10
     section: STR_BOOKS
@@ -810,7 +828,7 @@ ufopaedia:
     requires:
       - STR_PSYKER_T1_UNLOCK
   - id: STR_PSITOKEN_FLASH                  # Thunderclap
-    type_id: 14
+    type_id: 10
     section: STR_BOOKS
     text: STR_PSITOKEN_FLASH_CODEX
     image_id: LIBRARIANUFO.SPK
@@ -830,22 +848,15 @@ ufopaedia:
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_PSYKER_T2_UNLOCK
-  - id: STR_PSITOKEN_WALLBREAKER            # Rend Landscape
-    type_id: 10
-    section: STR_BOOKS
-    text: STR_PSITOKEN_WALLBREAKER_CODEX
-    image_id: LIBRARIANUFO.SPK
-    requires:
-      - STR_PSYKER_T2_UNLOCK
   - id: STR_PSITOKEN_SMITE                  # Smite
-    type_id: 14
+    type_id: 10
     section: STR_BOOKS
     text: STR_PSITOKEN_SMITE_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_PSYKER_T3_UNLOCK
   - id: STR_PSITOKEN_FLAMES_GK                  # Smite
-    type_id: 14
+    type_id: 10
     section: STR_BOOKS
     text: STR_PSITOKEN_FLAMES_GK_CODEX
     image_id: LIBRARIANUFO.SPK
@@ -873,17 +884,24 @@ ufopaedia:
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_PSYKER_T4_UNLOCK
-  - id: STR_PSIBONUS_PASSIVE_RECOVERY               # Rapid Recovery
+  - id: STR_PSIBONUS_RECOVERY               # Rapid Recovery
     type_id: 10
     section: STR_BOOKS
-    text: STR_PSIBONUS_PASSIVE_RECOVERY_CODEX
+    text: STR_PSIBONUS_RECOVERY_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_PSYKER_T4_UNLOCK
-  - id: STR_PSIBONUS_PASSIVE_TRUESIGHT              # Truesight
+  - id: STR_PSIBONUS_TRUESIGHT              # Truesight
     type_id: 10
     section: STR_BOOKS
-    text: STR_PSIBONUS_PASSIVE_TRUESIGHT_CODEX
+    text: STR_PSIBONUS_TRUESIGHT_CODEX
+    image_id: LIBRARIANUFO.SPK
+    requires:
+      - STR_PSYKER_T4_UNLOCK
+  - id: STR_PSIBONUS_IRONWILL                # Iron Will
+    type_id: 10
+    section: STR_BOOKS
+    text: STR_PSIBONUS_IRONWILL_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_PSYKER_T4_UNLOCK
@@ -895,7 +913,7 @@ ufopaedia:
     requires:
       - STR_PSYKER_T4_UNLOCK
   - id: STR_PSITOKEN_TORMENT                # Torment
-    type_id: 14
+    type_id: 10
     section: STR_BOOKS
     text: STR_PSITOKEN_TORMENT_CODEX
     image_id: LIBRARIANUFO.SPK
@@ -937,14 +955,14 @@ ufopaedia:
     requires:
       - STR_PSYKER_T6_UNLOCK
   - id: STR_PSITOKEN_SOULSTORM              # Soul Storm
-    type_id: 14
+    type_id: 10
     section: STR_BOOKS
     text: STR_PSITOKEN_SOULSTORM_CODEX
     image_id: LIBRARIANUFO.SPK
     requires:
       - STR_PSYKER_T6_UNLOCK
   - id: STR_PSITOKEN_HOLOCAUST              # Holocaust
-    type_id: 14
+    type_id: 10
     section: STR_BOOKS
     text: STR_PSITOKEN_HOLOCAUST_CODEX
     image_id: LIBRARIANUFO.SPK
@@ -1229,6 +1247,8 @@ ufopaedia:
   - id: STR_TECHMARINE_FLAMER               # Servo Arm Flamer
     text: STR_TECHMARINE_FLAMER_CODEX
     section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
     type_id: 14
     image_id: TECHPRIESTUFO.SPK #temp
     #listOrder: 2018
@@ -1236,6 +1256,8 @@ ufopaedia:
   - id: STR_TECHMARINE_MELTA                # Servo Arm Melta
     text: STR_TECHMARINE_MELTA_CODEX
     section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
     type_id: 14
     image_id: TECHPRIESTUFO.SPK #temp
     #listOrder: 2018
@@ -1243,6 +1265,8 @@ ufopaedia:
   - id: STR_TECHMARINE_GRAV                 # Servo Arm Graviton
     text: STR_TECHMARINE_GRAV_CODEX
     section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
     type_id: 14
     image_id: TECHPRIESTUFO.SPK #temp
     #listOrder: 2018
@@ -1250,6 +1274,8 @@ ufopaedia:
   - id: STR_TECHMARINE_PLASMA               # Servo Arm Plasma
     text: STR_TECHMARINE_PLASMA_CODEX
     section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
     type_id: 14
     image_id: TECHPRIESTUFO.SPK #temp
     #listOrder: 2018
@@ -1257,6 +1283,8 @@ ufopaedia:
   - id: STR_TECH_SKULL_SPAWNER              # Servo Skull
     text: STR_TECH_SKULL_SPAWNER_CODEX
     section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
     type_id: 10
     image_id: TECHPRIESTUFO.SPK #temp
     #listOrder: 2018
@@ -1264,6 +1292,8 @@ ufopaedia:
   - id: STR_TECH_SENTRY_SPAWNER             # Tarantula Sentry
     text: STR_TECH_SENTRY_SPAWNER_CODEX
     section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
     type_id: 10
     image_id: TECHPRIESTUFO.SPK #temp
     #listOrder: 2018
@@ -1271,13 +1301,17 @@ ufopaedia:
   - id: STR_TECH_TF_SPAWNER                 # Thunderfire Drone
     text: STR_TECH_TF_SPAWNER_CODEX
     section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
     type_id: 10
     image_id: TECHPRIESTUFO.SPK #temp
     #listOrder: 2018
 
-  - id: STR_TECH_TOOL_SHIELD                # Refractor Field Amplifier
+  - id: STR_TECH_TOOL_SHIELD                # Conversion Field Emitter
     text: STR_TECH_TOOL_SHIELD_CODEX
     section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
     type_id: 10
     image_id: TECHPRIESTUFO.SPK #temp
     #listOrder: 2018
@@ -1285,6 +1319,8 @@ ufopaedia:
   - id: STR_TECH_TOOL_SCANNER               # Omnispex
     text: STR_TECH_TOOL_SCANNER_CODEX
     section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
     type_id: 10
     image_id: TECHPRIESTUFO.SPK #temp
     #listOrder: 2018
@@ -1292,6 +1328,72 @@ ufopaedia:
   - id: STR_TECH_TOOL_SERVITOR              # Sanctus Canister
     text: STR_TECH_TOOL_SERVITOR_CODEX
     section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
+    type_id: 10
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECH_PASSIVE_SELF_REPAIR        # Repair Mechadendrite
+    text: STR_TECH_PASSIVE_SELF_REPAIR_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
+    type_id: 10
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECH_PASSIVE_SCANNER            # Augury Scanner
+    text: STR_TECH_PASSIVE_SCANNER_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
+      - STR_GENERALLOCK # disabled
+    type_id: 10
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECH_PASSIVE_SHIELD             # Refractor Field Generator
+    text: STR_TECH_PASSIVE_SHIELD_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
+    type_id: 10
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECH_PASSIVE_OVERWATCH          # Reacto-Imperator Wafer
+    text: STR_TECH_PASSIVE_OVERWATCH_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
+    type_id: 10
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECH_PASSIVE_REGEN              # Curative AutoStimm
+    text: STR_TECH_PASSIVE_REGEN_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
+    type_id: 10
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECH_PASSIVE_REPAIR             # Cognis Manipulator
+    text: STR_TECH_PASSIVE_REPAIR_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
+    type_id: 10
+    image_id: TECHPRIESTUFO.SPK #temp
+    #listOrder: 2018
+
+  - id: STR_TECH_PASSIVE_DEFENSE            # Reinforced Bionics
+    text: STR_TECH_PASSIVE_DEFENSE_CODEX
+    section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_TECHMARINE_GEAR
     type_id: 10
     image_id: TECHPRIESTUFO.SPK #temp
     #listOrder: 2018

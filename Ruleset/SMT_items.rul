@@ -2755,6 +2755,54 @@ items:
     transferTime: 48
     listOrder: 1852
 
+  - delete: STR_SERVO_FLAMER
+  - delete: STR_SERVO_BOLTER
+  - delete: STR_SERVO_MELTA
+  - delete: STR_SERVO_GRAV
+  - delete: STR_SERVO_PLASMA
+  - delete: STR_TECHPRIEST_TOOL_SERVITOR
+  - delete: STR_TECHPRIEST_TOOL_SHIELD
+  - delete: STR_TECHPRIEST_TOOL_SCANNER
+  - delete: STR_TECHPRIEST_MEDKIT
+
+  - &REF_TECH_BONUS                         # Techmarine Passive Tools
+    type: STR_TECH_PASSIVE_REPAIR
+    categories: [ STR_CAT_TECHPRIEST, STR_CAT_EQUIPMENT]
+    battleType: 8
+    tuUse: 0
+    invHeight: 1
+    invWidth: 1
+    floorSprite: {mod: 40k, index: 168}
+    handSprite: {mod: 40k, index: 352}
+
+  - type: STR_TECH_PASSIVE_SELF_REPAIR      # Techpriest Self Repair
+    refNode: *REF_TECH_BONUS
+    bigSprite: 412
+
+  - type: STR_TECH_PASSIVE_SCANNER          # Techpriest Radar
+    refNode: *REF_TECH_BONUS
+    bigSprite: 416
+
+  - type: STR_TECH_PASSIVE_SHIELD           # Techpriest Passive Shield
+    refNode: *REF_TECH_BONUS
+    bigSprite: 414
+
+  - type: STR_TECH_PASSIVE_OVERWATCH        # Techpriest Defensive Targetting Array
+    refNode: *REF_TECH_BONUS
+    bigSprite: 413
+
+  - type: STR_TECH_PASSIVE_REGEN            # Techpriest Curative
+    refNode: *REF_TECH_BONUS
+    bigSprite: 415
+
+  - type: STR_TECH_PASSIVE_REPAIR            # Techpriest Servo Welder
+    refNode: *REF_TECH_BONUS
+    bigSprite: 417
+
+  - type: STR_TECH_PASSIVE_DEFENSE          # Techpriest FeelNoPain
+    refNode: *REF_TECH_BONUS
+    bigSprite: 411
+
   - &FORCEBLADE_GLOW
     type: STR_FORCE_BLADE
     scripts: # blade shine

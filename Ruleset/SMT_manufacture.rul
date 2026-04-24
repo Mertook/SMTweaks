@@ -1670,7 +1670,7 @@ manufacture:
       STR_ALIEN_ALLOYS: 12
       STR_ELERIUM_115: 20
 
-  - name: STR_TECH_PASSIVE_REPAIR
+  - name: STR_TECH_PASSIVE_SELF_REPAIR
     category: STR_CAT_TECHPRIEST
     requires:
       - STR_TECHMARINE_GEAR
@@ -1685,6 +1685,7 @@ manufacture:
     category: STR_CAT_TECHPRIEST
     requires:
       - STR_TECHMARINE_GEAR
+      - STR_GENERALLOCK # disabled
     space: 0
     time: 450
     cost: 20000

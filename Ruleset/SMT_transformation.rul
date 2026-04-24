@@ -1485,6 +1485,7 @@ soldierTransformation:
       - STR_PSIUNLOCK_RECOVERY
       - STR_PSIUNLOCK_TRUESIGHT
       - STR_PSIUNLOCK_WARRIOR
+      - STR_PSIUNLOCK_IRONWILL
     transferTime: 0
     requiredMinStats: &Psyker_TierFour_MinStats
       psiStrength: 100
@@ -1504,7 +1505,7 @@ soldierTransformation:
     forbiddenPreviousTransformations: *Psyker_TierFour_TransformList
     requiredMinStats: *Psyker_TierFour_MinStats
     listOrder: 4060
-    soldierBonusType: STR_PSIBONUS_PASSIVE_RECOVERY
+    soldierBonusType: STR_PSIBONUS_RECOVERY
 
   - name: STR_PSIUNLOCK_TRUESIGHT       # Psionic Vision (Tier 4)
     cost: 50000
@@ -1519,7 +1520,7 @@ soldierTransformation:
     forbiddenPreviousTransformations: *Psyker_TierFour_TransformList
     requiredMinStats: *Psyker_TierFour_MinStats
     listOrder: 4065
-    soldierBonusType: STR_PSIBONUS_PASSIVE_TRUESIGHT
+    soldierBonusType: STR_PSIBONUS_TRUESIGHT
 
   - name: STR_PSIUNLOCK_WARRIOR         # Heroic Might (Tier 4)
     cost: 50000
@@ -1535,6 +1536,21 @@ soldierTransformation:
     requiredMinStats: *Psyker_TierFour_MinStats
     listOrder: 4067
     soldierBonusType: STR_PSIBONUS_WARRIOR
+
+  - name: STR_PSIUNLOCK_IRONWILL        # Iron Will (Tier 4)
+    cost: 50000
+    keepSoldierArmor: true
+    allowsDeadSoldiers: false
+    allowsLiveSoldiers: true
+    allowsWoundedSoldiers: true
+    transferTime: 0
+    requires: *Psyker_TierFour_Requires
+    requiredItems: *Psyker_TierFour_Cost
+    allowedSoldierTypes: *Psyker_TierFour_Soldiers
+    forbiddenPreviousTransformations: *Psyker_TierFour_TransformList
+    requiredMinStats: *Psyker_TierFour_MinStats
+    listOrder: 4067
+    soldierBonusType: STR_PSIBONUS_IRONWILL
 
 # Tier 5
   - name: STR_PSIUNLOCK_SHIELD          # Shield (Tier 5)
@@ -1749,8 +1765,6 @@ soldierBonuses:
   - name: STR_BONUS_CHAPLAIN_TRAINING
     tags:
       SMT_BONUS_MORALE_RESISTANCE: 50
-      BONUS_ENERGY_SHIELD_HP_PER_TURN: 75
-      BONUS_ENERGY_SHIELD_DECAY: 75
 
   - name: STR_BONUS_APOTH_TRAINING
     tags:
@@ -1827,15 +1841,15 @@ soldierBonuses:
     tags:
       BONUS_ENERGY_SHIELD_HP_PER_TURN: 90
       BONUS_ENERGY_SHIELD_DECAY: 75
-  - name: STR_PSIBONUS_PASSIVE_RECOVERY
+  - name: STR_PSIBONUS_RECOVERY
     stats:
       mana: 20
     recovery:
       mana:
         flatOne: 4
-      morale:
-        flatOne: 15
-  - name: STR_PSIBONUS_PASSIVE_TRUESIGHT
+      energy:
+        stamina: 0.15
+  - name: STR_PSIBONUS_TRUESIGHT
     visibilityAtDark: 40 # perfect night vision
     heatVision: 40
     psiVision: 4
@@ -1848,9 +1862,12 @@ soldierBonuses:
       # health: 30
     # tags:
       # SMT_BONUS_MAGIC_ARMOR: 80
-  - name: STR_PSIBONUS_PASSIVE_IRONWILL
+  - name: STR_PSIBONUS_IRONWILL
     stats:
-      bravery: 20
+      bravery: 10
+    recovery:
+      morale:
+        flatOne: 15
     tags:
       SMT_BONUS_PERIL_RESISTANCE: 80
       SMT_BONUS_MORALE_RESISTANCE: 80

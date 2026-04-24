@@ -56,6 +56,7 @@ extended:
           unit.getTag temp Tag.UNIT_ITEM_BONUSES;
           bit_and temp 4;
           if gt temp 0;
+            debug_log "Shield TechBonus " temp shieldAdded shieldDecay unit;
             if eq shieldDecay 0;
               add shieldAdded 60; # add shield from techpriest passive item
               set shieldDecay 75; # add decay for techpriest shield if no other decay exists

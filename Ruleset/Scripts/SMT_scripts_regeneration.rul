@@ -54,6 +54,7 @@ extended:
           unit.getTag temp Tag.UNIT_ITEM_BONUSES;
           bit_and temp 16;
           if gt temp 0;
+            debug_log "HealthRegen TechPassive " temp regenHpFlat;
             add regenHpFlat 3; # techpriest item bonus
           end;
           if and le regenHpFlat 0 le regenHpPercent 0;  #skip if regen is <=0
@@ -62,9 +63,7 @@ extended:
 
           unitSoldier.getTag temp Tag.UNIT_REGENERATE_HEALTH_SOFTCAP;
           unitArmor.getTag temp2 Tag.ARMOR_REGENERATE_HEALTH_SOFTCAP;
-          if gt temp temp2;
-            set temp temp2; # pick higher of two limits
-          end;
+          limit_lower temp temp2; # pick higher of two limits
 
           if gt temp 0; # if unit has a regeneration limit calculate it based on max hp - lowest hp
             sub unitMaxHp unitLowestHp;
@@ -112,6 +111,7 @@ extended:
           unit.getTag temp Tag.UNIT_ITEM_BONUSES;
           bit_and temp 16;
           if gt temp 0;
+            debug_log "WoundRegen TechPassive " temp woundRecovery;
             add woundRecovery 1; # techpriest item bonus
           end;
           if eq woundRecovery 0; # skip if unit doesn't regen wounds
@@ -161,6 +161,7 @@ extended:
           bit_and temp 1;
           #debug_log "RegenArmor Bonus  " temp armorRecovery;
           if gt temp 0;
+            debug_log "ArmorRegen TechPassive " temp armorRecovery;
             add armorRecovery 20; # techpriest item bonus
           end;
           if eq armorRecovery 0; # skip if unit doesn't regen armor

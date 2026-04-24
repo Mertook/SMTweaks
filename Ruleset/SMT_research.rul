@@ -289,6 +289,12 @@ research:
 
   - name: STR_WORDBEARERS_STRATEGY      # Word Bearers Strat
     listOrder: 7
+
+  - name: STR_BOOK_EREBUS               # Word Bearer Substrat Erebus
+    unlocks: !add
+      - STR_PICKED_CHAOS_STRATEGY
+
+  - name: STR_BOOK_KORPHAERON           # Word Bearer Substrat Korp
     unlocks: !add
       - STR_PICKED_CHAOS_STRATEGY
 
@@ -1973,8 +1979,8 @@ research:
       - STR_TECHMARINE_GEAR
 
   - name: STR_TECHMARINE_GEAR       # Techmarine Gear
-    cost: 0
-    points: 0
+    cost: 50
+    points: 10
     dependencies:
       - STR_MARINES_STRATEGY
       - STR_TEC_BAYR

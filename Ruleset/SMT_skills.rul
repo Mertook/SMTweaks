@@ -185,7 +185,7 @@ skills:
     costUse:
       time: 5
       energy: 0
-      mana: 4
+      mana: 3
     flatUse:
       time: true
       energy: true
@@ -207,7 +207,7 @@ skills:
       energy: false
       mana: true
     tags:
-      SKILL_PSYCHIC_TEST: 80
+      SKILL_PSYCHIC_TEST: 85
 
   - type: STR_PSISKILL_REFLEXES         # Psyker T2 - Lightning Reflexes
     targetMode: 11
@@ -223,7 +223,7 @@ skills:
       energy: false
       mana: true
     tags:
-      SKILL_PSYCHIC_TEST: 60
+      SKILL_PSYCHIC_TEST: 70
 
   - type: STR_PSISKILL_VIGILANCE        # Psyker T2 - Vigilance
     targetMode: 11
@@ -231,9 +231,9 @@ skills:
     requiredBonuses: [STR_PSIBONUS_VIGILANCE]
     checkHandsOnly: false
     costUse:
-      time: 24
+      time: 30
       energy: 10
-      mana: 28
+      mana: 22
     flatUse:
       time: false
       energy: false
@@ -247,7 +247,7 @@ skills:
     requiredBonuses: [STR_PSIBONUS_SMITE]
     checkHandsOnly: false
     costUse:
-      time: 25
+      time: 20
       energy: 10
       mana: 22
     flatUse:
@@ -281,7 +281,7 @@ skills:
     costUse:
       time: 30
       energy: 10
-      mana: 22
+      mana: 30
     flatUse:
       time: false
       energy: false
@@ -294,9 +294,9 @@ skills:
     compatibleWeapons: [STR_PSITOKEN_MENDWOUNDS]
     checkHandsOnly: false
     costUse:
-      time: 33
-      energy: 40
-      stun: 20
+      time: 30
+      energy: 10
+      mana: 30
     flatUse:
       time: false
       energy: false
@@ -312,7 +312,7 @@ skills:
     costUse:
       time: 20
       energy: 10
-      mana: 28
+      mana: 25
     flatUse:
       time: false
       energy: false
@@ -327,7 +327,7 @@ skills:
     costUse:
       time: 20
       energy: 10
-      mana: 28
+      mana: 25
     flatUse:
       time: false
       energy: false
@@ -419,7 +419,7 @@ skills:
     requiredBonuses: [STR_PSIBONUS_SHIELD]
     checkHandsOnly: false
     costUse:
-      time: 20
+      time: 24
       energy: 10
       mana: 30
     flatUse:
@@ -434,7 +434,7 @@ skills:
     compatibleWeapons: [STR_PSITOKEN_SHIELD]
     checkHandsOnly: false
     costUse:
-      time: 20
+      time: 24
       energy: 10
       mana: 30
     flatUse:
@@ -481,7 +481,7 @@ skills:
     requiredBonuses: [STR_PSIBONUS_HASTE]
     checkHandsOnly: false
     costUse:
-      time: 20
+      time: 25
       energy: 10
       mana: 40
     flatUse:
@@ -496,7 +496,7 @@ skills:
     compatibleWeapons: [STR_PSITOKEN_HASTE]
     checkHandsOnly: false
     costUse:
-      time: 20
+      time: 25
       energy: 10
       mana: 40
     flatUse:
@@ -528,7 +528,7 @@ skills:
     requiredBonuses: [STR_PSIBONUS_SOULSTORM]
     checkHandsOnly: false
     costUse:
-      time: 25
+      time: 20
       energy: 10
       mana: 35
     flatUse:
@@ -543,7 +543,7 @@ skills:
     compatibleWeapons: [STR_PSITOKEN_SOULSTORM]
     checkHandsOnly: false
     costUse:
-      time: 25
+      time: 20
       energy: 10
       mana: 35
     flatUse:
@@ -559,7 +559,7 @@ skills:
     requiredBonuses: [STR_PSIBONUS_HOLOCAUST]
     checkHandsOnly: false
     costUse:
-      time: 25
+      time: 20
       energy: 10
       mana: 35
     flatUse:

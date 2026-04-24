@@ -18,10 +18,10 @@ manufacture:
           - {commendationName: STR_HONOR_MEDAL,decorationLevel: 9}
           - {commendationName: STR_TERMINATOR_CROSS,decorationLevel: 9}
           - {commendationName: STR_VETERAN_COMMENDATION,decorationLevel: 1}
-      previousTransformations:
-        STR_GK_LIBRARIAN: 1
-      transformationBonuses:
-        STR_BONUS_LIBRARIAN_TRAINING: 1
+      # previousTransformations:
+        # STR_GK_LIBRARIAN: 1
+      # transformationBonuses:
+        # STR_BONUS_LIBRARIAN_TRAINING: 1
 
   - &STR_DWRECRUITP_TEMPLATE
     name: STR_DWULTRA_FB
@@ -35,6 +35,13 @@ manufacture:
       STR_DW_TOKEN: 1
       STR_KILLPOINT_TOKEN: 300
     producedItems: {}
+    spawnedSoldier:
+      diary:
+        commendations:
+          - {commendationName: STR_BATTLE_TESTED,decorationLevel: 0}
+          - {commendationName: STR_HONOR_MEDAL,decorationLevel: 9}
+          - {commendationName: STR_TERMINATOR_CROSS,decorationLevel: 9}
+          - {commendationName: STR_VETERAN_COMMENDATION,decorationLevel: 1}
 
 
   - name: STR_DWULTRA_FB                    # Ultramarine Firstborn

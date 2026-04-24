@@ -4003,9 +4003,9 @@ items:
     accuracyAimed: 40
     accuracySnap: 65
     accuracyAuto: 45
-    tuAimed: 40
+    tuAimed: 26
     tuSnap: 25 # was 25
-    tuAuto: 28 # was 33
+    tuAuto: 40 # was 33
     confSnap:
       shots: 3
       ammoSlot: 0
@@ -4043,8 +4043,8 @@ items:
     accuracySnap: 75
     accuracyAuto: 50
     tuAimed: 0
-    tuSnap: 22 # was 20
-    tuAuto: 36 # was 33
+    tuSnap: 21 # was 20
+    tuAuto: 35 # was 33
     confSnap:
       shots: 2
       name: STR_BURST_SNAP_SHOT
@@ -4073,7 +4073,7 @@ items:
     accuracySnap: 75
     accuracyAuto: 50
     tuAimed: 36
-    tuSnap: 22
+    tuSnap: 23
     tuAuto: 36
     confSnap:
       shots: 2
@@ -4105,7 +4105,7 @@ items:
     accuracyAuto: 50
     tuAimed: 0
     tuSnap: 26
-    tuAuto: 35
+    tuAuto: 40
     confSnap:
       shots: 3
       name: STR_BURST_SNAP_SHOT
@@ -4254,7 +4254,7 @@ items:
       ToStun: 0.25
       ToEnergy: 0.1
 
-  - type: STR_AUTOPISTOL_CLIP
+  - type: STR_AUTOPISTOL_CLIP               # Autopistol Ammo
     refNode: *REF_AUTOGUN_AMMO
     requiresBuy:
       - STR_GENERALLOCK
@@ -4266,14 +4266,14 @@ items:
     clipSize: 18
     listOrder: 10730
 
-  - type: STR_AUTOGUN_CLIP
+  - type: STR_AUTOGUN_CLIP                  # Autogun Ammo
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
     costBuy: 200
     costSell: 75
     listOrder: 10750
 
-  - type: STR_AUTOGUN_CLIP_DRUM
+  - type: STR_AUTOGUN_CLIP_DRUM             # Autogun Drum Ammo
     refNode: *REF_AUTOGUN_AMMO
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
@@ -4283,7 +4283,7 @@ items:
     weight: 6
     clipSize: 48 # was 40
 
-  - type: STR_AUTOGUN_CLIP_AP
+  - type: STR_AUTOGUN_CLIP_AP               # Autogun AP Ammo
     refNode: *REF_AUTOGUN_AMMO
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
@@ -4296,7 +4296,7 @@ items:
       ToHealth: 0.7
     clipSize: 30
 
-  - type: STR_AUTOGUN_CLIP_DRUM_KRAKEN
+  - type: STR_AUTOGUN_CLIP_DRUM_KRAKEN      # Autogun AP Drum Ammo
     refNode: *REF_AUTOGUN_AMMO
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
@@ -4311,7 +4311,7 @@ items:
       ToHealth: 0.7
     clipSize: 48 # was 40
 
-  - type: STR_AUTOGUN_CLIP_HP
+  - type: STR_AUTOGUN_CLIP_HP               # Autogun Expander Ammo
     refNode: *REF_AUTOGUN_AMMO
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
@@ -4327,7 +4327,7 @@ items:
       ToWound: 0.3
       RandomWound: false
 
-  - type: STR_AUTOGUN_CLIP_DRUM_HP
+  - type: STR_AUTOGUN_CLIP_DRUM_HP          # Autogun Expander Drum Ammo
     refNode: *REF_AUTOGUN_AMMO
     requiresBuy:
       - STR_AUTOGUNS_UNLOCK
@@ -11291,7 +11291,7 @@ items:
     explosionHitSound: {mod: 40k, index: 777}
     hitAnimation: {mod: 40k, index: 192}
     invWidth: 1
-    invHeight: 1
+    invHeight: 2
     supportedInventorySections:
       - STR_BACK_PACK
       - STR_GROUND
@@ -11387,9 +11387,7 @@ items:
     meleeMultiplier:
       melee: 0.5
       flatHundred: 1.0
-    power: 60
-    damageBonus:
-      strength: 0.5
+    power: 100
     damageType: 0 # SUPPORT
     damageAlter:
       RandomType: 3
@@ -11415,7 +11413,7 @@ items:
     weight: 12
     size: 0.05
     armor: 600
-    invHeight: 3
+    invHeight: 2
     invWidth: 1
     floorSprite: {mod: 40k, index: 168}
     costSell: 20000
@@ -11520,9 +11518,6 @@ items:
     weight: 8
     size: 0.02
     armor: 600
-    invHeight: 1
-    invWidth: 1
-    floorSprite: {mod: 40k, index: 168}
     costSell: 20000
     supportedInventorySections:
       - STR_BACK_PACK
@@ -11530,7 +11525,7 @@ items:
     inventoryMoveCost:
       basePercent: 1000 # 10x movement cost, only move during loadout
 
-  - type: STR_TECH_PASSIVE_REPAIR           # Techpriest Self Repair
+  - type: STR_TECH_PASSIVE_SELF_REPAIR      # Techpriest Self Repair
     refNode: *REF_TECH_BONUS
     tags:
       ITEM_PASSIVE_EFFECT: 1
@@ -11555,7 +11550,7 @@ items:
     tags:
       ITEM_PASSIVE_EFFECT: 16
 
-  - type: STR_TECH_PASSIVE_REPAIR            # Techpriest Servo Welder
+  - type: STR_TECH_PASSIVE_REPAIR           # Techpriest Servo Welder
     refNode: *REF_TECH_BONUS
     tags:
       ITEM_PASSIVE_EFFECT: 32

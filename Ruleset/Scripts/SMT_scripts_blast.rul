@@ -10,23 +10,23 @@ extended:
           var int temp;
 
           damaging_item.getTag blastMod Tag.ITEM_ARMOR_DAMAGE_ALL;
-          if eq temp 0; # weapon doesn't damage all armor
-            if eq battle_action battle_action_hit;
+          #debug_log "Blast Ping " blastMod to_armor battle_action;
+          if eq blastMod 0; # weapon doesn't damage all armor
+            if and eq battle_action battle_action_hit lt to_armor 0;
               attacker.getTag temp Tag.UNIT_ITEM_BONUSES;
               bit_and temp 32; # melee bonus
-              #debug_log "Blast PassiveCheck " blastMod temp;
+              debug_log "Blast PassiveCheck " blastMod temp to_armor;
               if eq temp 0; # unit does not have passive bonus
                 return;
               end;
-              set blastMod 130;
+              set blastMod 100;
             else; # not melee hit
               return;
             end;
           end;
 
-          #debug_log "Blast Ping " temp side to_armor;
           muldiv to_armor blastMod 100; # modify armor damage by blast value
-          #debug_log "Blast DmgMod " side temp to_armor;
+          debug_log "Blast DmgMod " side blastMod to_armor;
 
           loop var i 5; #cycle through the armor sides
             if neq side i; #ignore the side being targetted directly

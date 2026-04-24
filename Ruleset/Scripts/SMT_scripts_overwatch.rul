@@ -16,14 +16,13 @@ extended:
 
           battle_game.getTurnSide temp;
           unit.getFaction temp2;
-          if or eq temp temp2; # cancel if it's our turn
+          if eq temp temp2; # cancel if it's our turn
             return;
           end;
 
           unit.getRuleArmor armorRule;
           armorRule.getTag percentTU Tag.ARMOR_OVERWATCH_TU_RESTORED;
           unit.getTag temp Tag.SMT_OVERWATCH_BUFF;
-          armorRule.getTag temp2 Tag.ARMOR_OVERWATCH_RESTORATION_CUMULATIVE;
           add percentTU temp;
 
           unit.getTimeUnitsMax maxTU;
@@ -33,14 +32,16 @@ extended:
           unit.getTag temp Tag.UNIT_ITEM_BONUSES; # add techpriest bonus
           bit_and temp 8;
           if gt temp 0;
+            debug_log "Overwatch TechBonus " temp overwatchTU unit;
             set temp maxTU;
             muldiv temp 25 100;
-            add overwatchTU 25;
+            add overwatchTU temp;
           end;
           if lt percentTU 1;
             return;
           end;
 
+          armorRule.getTag temp2 Tag.ARMOR_OVERWATCH_RESTORATION_CUMULATIVE;
           unit.getTimeUnits currentTU;
           if eq temp2 1; # check if our Overwatch TU stacks with our existing TU
             add overwatchTU currentTU; #stacks, add current TUs on top

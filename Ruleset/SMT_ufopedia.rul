@@ -2243,6 +2243,35 @@ ufopaedia:
     image_id: 1LB.SPK
     text: STR_SHOTGUN_UFOPEDIA
 
+  - id: STR_GAUSS_REAPER  # GAUSS_REAPER
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: GAUSS_REAPER_CODEX.SPK
+    requires:
+      - STR_GAUSS_REAPER
+    text: STR_GAUSS_REAPER_CODEX
+  - id: STR_GAUSS_FLAYER
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1NEC1.SPK
+    requires:
+      - STR_GAUSS_FLAYER
+    text: STR_GAUSS_FLAYER_UFOPEDIA
+  - id: STR_SYNAPTIC_DISINTEGRATOR
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1NEC3.SPK
+    requires:
+      - STR_SYNAPTIC_DISINTEGRATOR
+    text: STR_SYNAPTIC_DISINTEGRATOR_UFOPEDIA
+  - id: STR_GAUSS_BLASTER
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    image_id: 1NEC2.SPK
+    requires:
+      - STR_GAUSS_BLASTER
+    text: STR_GAUSS_BLASTER_UFOPEDIA
+
 ###BOLTERS
   - id: STR_BOLTER_ENFORCER                 # Light Bolter (Locke)
     type_id: 14

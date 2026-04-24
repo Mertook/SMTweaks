@@ -4408,6 +4408,13 @@ armors:
     refNode: *STR_DW_LEADER_ARMOR
     units:
       - STR_DARKANGELS_LEADER
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatOne: 4
+        mana: 0.05 # 5% of max mana
+        manaNormalized: 12 # 12 * current mana %
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       0: 0
@@ -4436,7 +4443,7 @@ armors:
       - INV_NULL_3X1_BACKPACK
     tags:
       ARMOR_DODGE_CHANCE_PERCENT_REDUCTION: 90
-      ARMOR_PERILS_EFFECTS_RESISTANCE: 100 # immune to perils attacks
+      ARMOR_PERILS_EFFECTS_RESISTANCE: 100
 
   - type: STR_DW_LEADER_IF_UC
     refNode: *STR_DW_LEADER_ARMOR
@@ -4568,6 +4575,13 @@ armors:
     refNode: *STR_DW_LEADER_ARMOR
     units:
       - STR_WHITES_LEADER
+    stats:
+      mana: 100
+    recovery:
+      mana:
+        flatOne: 4
+        mana: 0.05 # 5% of max mana
+        manaNormalized: 12 # 12 * current mana %
     layersDefaultPrefix: 0
     layersSpecificPrefix:
       0: 0
@@ -4596,7 +4610,7 @@ armors:
     moveCost:
       basePercent: [100, 50] # was 100, 25
     tags:
-      ARMOR_PERILS_EFFECTS_RESISTANCE: 100 # immune to perils attacks
+      ARMOR_PERILS_EFFECTS_RESISTANCE: 100
 
   - type: STR_DW_TAC_CODEX_UC               # Tactical Codex
     refNode: *STR_DW_TAC_MK7

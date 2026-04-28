@@ -10610,6 +10610,8 @@ items:
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
       SMT_ITEM_MOVESPEED_BOOST: 0
       SMT_ITEM_REACTION_MOD: 100
+      ITEM_HIT_FLASH_COLOR: 1 # gold
+      ITEM_HIT_FLASH_SHADE: -1 # light shade
 
   - type: STR_PSITOKEN_VIGILANCE            # T2 Vigilance
     refNode: *REF_PSI_TOKEN
@@ -10638,6 +10640,8 @@ items:
     tags:
       ITEM_IS_BUFF_WEAPON: 1
       SMT_VIGILIANCE_BUFF: 100
+      ITEM_HIT_FLASH_COLOR: 1 # gold
+      ITEM_HIT_FLASH_SHADE: 0
 
   - type: STR_PSITOKEN_SMITE                # T3 Smite
     refNode: *REF_PSI_TOKEN
@@ -10962,6 +10966,8 @@ items:
       ITEM_IS_BUFF_WEAPON: 1
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 100
       ITEM_DAMAGE_PERCENT_VS_PILOTED: 100
+      ITEM_HIT_FLASH_COLOR: 9 # light blue
+      ITEM_HIT_FLASH_SHADE: -1
 
   - type: STR_PSITOKEN_TORMENT              # T5 Torment
     refNode: *REF_SKILL_TOKEN
@@ -11009,6 +11015,8 @@ items:
       SMT_VULN_DEBUFF_MOD: 100
       ITEM_EFFECT_DURATION: 2
       ITEM_DOESNT_HURT_FRIENDS: 1
+      ITEM_HIT_FLASH_COLOR: 13 # purple
+      ITEM_HIT_FLASH_SHADE: 0
 
   - type: STR_PSITOKEN_HASTE                # T6 Accelerate
     refNode: *REF_PSI_TOKEN
@@ -11037,6 +11045,8 @@ items:
       ITEM_IS_BUFF_WEAPON: 1
       ITEM_DAMAGE_PERCENT_VS_MECHANICAL: 0
       SMT_ITEM_MOVESPEED_BOOST: 2
+      ITEM_HIT_FLASH_COLOR: 14 # bright blue
+      ITEM_HIT_FLASH_SHADE: 2 # extremely bright
 
   - type: STR_PSITOKEN_CLOAK                # T6 Shadowcloak
     refNode: *REF_PSI_TOKEN
@@ -11682,15 +11692,35 @@ items:
     costBuy: 2000
     costSell: 500
     weight: 4
-    bigSprite: 134 ###CHANGEME
-    floorSprite: 72
+    bigSprite: 107
+    floorSprite: 106
+    armor: 300
+    invWidth: 1
+    invHeight: 1
+    clipSize: -1
+    inventoryMoveCost:
+      basePercent: 25 # reduced costs for moving into hands etc
+    costPrime:
+      time: 2
+    flatPrime:
+      time: true
+    costUnprime:
+      time: 2
+    flatUnprime:
+      time: true
+    fuseType: -2
+    fuseTriggerEvents:
+      defaultBehavior: true
+      throwTrigger: false
+      throwExplode: true
+    specialChance: 10
     power: 16
     fuseType: -2
     throwRange: 4
-    armor: 300
-    invWidth: 2
-    invHeight: 1
-    clipSize: -1
+    primeActionName: STR_TURN_ON
+    unprimeActionName: STR_TURN_OFF
+    primeActionMessage: STR_LIGHT_ON
+    unprimeActionMessage: STR_LIGHTS_OUT
 
   - type: STR_SUPERFLARE                    # Flare (Mortar)
     battleType: 10 # electroflare
@@ -12170,8 +12200,8 @@ items:
       ITEM_EFFECT_DURATION: 1
 
   - type: STR_INTIMIDATION_WEAPON           # Intimidation
-    snapRange: 5 # was 20 - have to be close to scare units
-    maxRange: 5 # was 20
+    snapRange: 10 # was 20 - have to be close to scare units
+    maxRange: 10 # was 20
 
 ###Jetpacks
 

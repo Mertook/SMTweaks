@@ -41,120 +41,108 @@ extended:
 
           return bonus; # final accuracy
 
-items:
-  - &STR_RESTRICTED_ITEM    # Template
-    type: AUX_CROZIUS
-    scripts:
-      hitUnitAmmo: |
-        var ptr RuleSoldier unitSoldier;
-        var int itemVal;
-        var int unitVal;
-        var int penalty;
+    hitUnit:
+      - new: SMTS_restricted_item_accuracy
+        offset: 5
+        code: |
+          var ptr RuleSoldier unitSoldier;
+          var int itemVal;
+          var int unitVal;
+          var int penalty;
 
-        attacker.getFaction unitVal;
-        if neq unitVal FACTION_PLAYER; # AI ignores restricted rules
-          return power part side;
-        end;
-
-        weapon_item.getTag itemVal Tag.SMT_RESTRICTED_ITEM;
-        attacker.getRuleSoldier unitSoldier;
-        unitSoldier.getTag unitVal Tag.SMT_RESTRICTED_ITEM_USER;
-        #debug_log "Restricted Item Dmg Ping - " itemVal unitVal power;
-
-        bit_and unitVal itemVal;
-        if eq unitVal itemVal;
-          return power part side;
-        end;
-
-        weapon_item.getTag penalty Tag.SMT_RESTRICTED_DAMAGE_PEN;
-        weapon_item.getTag itemVal Tag.SMT_RESTRICTED_DAMAGE_MELEE;
-        if eq battle_action battle_action_hit; # is this a melee hit?
-          if gt itemVal 0; # if item has melee penalty
-            sub itemVal 100;
-            mul itemVal -1;
-            set penalty itemVal; # set penalty according to melee value
-          else;
-            return power part side; # ignore if no melee penalty
+          attacker.getFaction unitVal;
+          if neq unitVal FACTION_PLAYER; # AI ignores restricted rules
+            return power part side;
           end;
-        end;
 
-        if gt penalty 0;
-          muldiv power penalty 100; # reduce power by penalty value if set
-        else;
-          set power 0; # otherwise reduce to 0
-        end;
-        #debug_log "Restricted Item Dmg End - " itemVal penalty power;
+          weapon_item.getTag itemVal Tag.SMT_RESTRICTED_ITEM;
+          attacker.getRuleSoldier unitSoldier;
+          unitSoldier.getTag unitVal Tag.SMT_RESTRICTED_ITEM_USER;
+          debug_log "Restricted Item Dmg Ping - " itemVal unitVal power;
 
-        return power part side;
+          bit_and unitVal itemVal;
+          if eq unitVal itemVal;
+            return power part side;
+          end;
 
+          weapon_item.getTag penalty Tag.SMT_RESTRICTED_DAMAGE_PEN;
+          weapon_item.getTag itemVal Tag.SMT_RESTRICTED_DAMAGE_MELEE;
+          if eq battle_action battle_action_hit; # is this a melee hit?
+            if gt itemVal 0; # if item has melee penalty
+              sub itemVal 100;
+              mul itemVal -1;
+              set penalty itemVal; # set penalty according to melee value
+            else;
+              return power part side; # ignore if no melee penalty
+            end;
+          end;
+
+          if gt penalty 0;
+            muldiv power penalty 100; # reduce power by penalty value if set
+          else;
+            set power 0; # otherwise reduce to 0
+          end;
+          debug_log "Restricted Item Dmg End - " itemVal penalty power;
+
+          return power part side;
+
+items:
   - type: AUX_CROZIUS                   # Crozius Arcanum (Chaplain - 1)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 1
       SMT_RESTRICTED_DAMAGE_MELEE: 90
 
   - type: AUX_CROZIUS_PRIMARIS          # Crozius Arcanum (Chaplain - 1)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 1
       SMT_RESTRICTED_DAMAGE_MELEE: 90
 
   - type: AUX_CROZIUS_DW                # Crozius Arcanum DW (Chaplain - 1)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 1
       SMT_RESTRICTED_DAMAGE_MELEE: 90
 
   - type: STR_RIFLEA                    # Artifex Bolter (Deathwatch - 2)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_RIFLEDW                   # DW Cawl Bolter (Deathwatch - 2)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_AUTO_CANNON_DW            # Artifex Heavy Bolter (Deathwatch - 2)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_LASCAN_DW                 # Artifex Lascannon (Deathwatch - 2)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_BOLT_SNIPER_RIFLE_DW      # DW Bolt Sniper Rifle (Deathwatch - 2)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_SHOTGUN_DW                # Deathwatch Shotgun (Deathwatch - 2)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_VOLKITE_DW                # Volkite Rifle (Deathwatch - 2)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0 # can't be higher, otherwise will get full power from penetrating dmg
 
   - type: STR_HEAVY_BOLTRIFLE_DW        # Heavy BoltRifle (Deathwatch - 2)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_FORCE_HALBERD_DW          # Force Halberd (Deathwatch - 2)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_ACCURACY_PEN: 0
@@ -162,44 +150,47 @@ items:
       SMT_RESTRICTED_DAMAGE_MELEE: 85 # 15% damage
 
   - type: STR_PLASMA_GUN_TWINCORE_DW    # Twincore Plasma (Deathwatch - 2)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_POWER_AXE_DW              # Power Axe (Deathwatch - 2)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_MELEE: 85 # 15% damage
 
   - type: STR_CAPTAIN_SWORD_DW          # Power Sword (Deathwatch - 2)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_MELEE: 85 # 15% damage
 
   - type: STR_ABSOLVOR_PISTOL_DW        # Absolvor Pistol (Deathwatch - 2)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0
 
   - type: STR_HB_DW                     # Stormbolter (Deathwatch - 2)
-    refNode: *STR_RESTRICTED_ITEM
     tags:
       SMT_RESTRICTED_ITEM: 2
       SMT_RESTRICTED_DAMAGE_PEN: 0
 
-  - type: STR_HALLEBARD                 # Force Halberd (Psyker - 8)
-    refNode: *STR_RESTRICTED_ITEM
+  - type: STR_PSILENCER                 # Psilencer (Psyker - 4)
+    tags:
+      SMT_RESTRICTED_ITEM: 4
+      SMT_RESTRICTED_DAMAGE_PEN: 0
+
+  - type: STR_PSYCANNON                 # Psycannon (Psyker - 4)
+    tags:
+      SMT_RESTRICTED_ITEM: 4
+      SMT_RESTRICTED_DAMAGE_PEN: 0
+
+  - type: STR_HALLEBARD                 # Force Halberd (Psyker - 4)
     tags:
       SMT_RESTRICTED_ITEM: 4
       SMT_RESTRICTED_DAMAGE_PEN: 50 # 50% damage
       SMT_RESTRICTED_DAMAGE_MELEE: 50 # 50% damage
 
-  - type: STR_FORCE_BLADE               # Force Sword (Psyker - 8)
-    refNode: *STR_RESTRICTED_ITEM
+  - type: STR_FORCE_BLADE               # Force Sword (Psyker - 4)
     tags:
       SMT_RESTRICTED_ITEM: 4
       SMT_RESTRICTED_ACCURACY_PEN: 100 # ignore, melee only

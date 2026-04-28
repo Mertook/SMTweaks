@@ -2399,25 +2399,28 @@ crafts:
 
   - type: STR_CASSIUM                       # Crassus
     speedMax: 250 #was 75
+    soldiers: 32
+    vehicles: 999
     battlescapeTerrainData:
-      name: CASSIUM
+      name: SHCASSIUM
       mapDataSets:
         - BLANKS
         - CASSIUM
+        - SMDOORUM
         - SMTBOMBARD
       mapBlocks:
-        - name: CASSIUM
+        - name: SHCASSIUM
           width: 10
           length: 20
           items:
             STR_CASSIUM_BOLTER_LEFT1_SPAWNER:
-              - [1, 14, 1]
+              - [1, 13, 1]
             STR_CASSIUM_BOLTER_LEFT2_SPAWNER:
-              - [3, 17, 1]
+              - [3, 16, 1]
             STR_CASSIUM_BOLTER_RIGHT1_SPAWNER:
-              - [8, 14, 1]
+              - [8, 13, 1]
             STR_CASSIUM_BOLTER_RIGHT2_SPAWNER:
-              - [6, 17, 1]
+              - [6, 16, 1]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -2436,28 +2439,64 @@ crafts:
             STR_CASSIUM_BOLTER_LEFT2_SPAWNER: [0, 0]
             STR_CASSIUM_BOLTER_RIGHT1_SPAWNER: [0, 0]
             STR_CASSIUM_BOLTER_RIGHT2_SPAWNER: [0, 0]
+    deployment:
+      - [3, 7, 1, 0]
+      - [4, 7, 1, 0]
+      - [5, 7, 1, 0]
+      - [6, 7, 1, 0]
+      - [3, 8, 1, 0]
+      - [4, 8, 1, 0]
+      - [5, 8, 1, 0]
+      - [6, 8, 1, 0]
+      - [3, 9, 1, 0]
+      - [4, 9, 1, 0]
+      - [5, 9, 1, 0]
+      - [6, 9, 1, 0]
+      - [3, 10, 1, 0]
+      - [4, 10, 1, 0]
+      - [5, 10, 1, 0]
+      - [6, 10, 1, 0]
+      - [3, 11, 1, 0]
+      - [4, 11, 1, 0]
+      - [5, 11, 1, 0]
+      - [6, 11, 1, 0]
+      - [3, 12, 1, 0]
+      - [4, 12, 1, 0]
+      - [5, 12, 1, 0]
+      - [6, 12, 1, 0]
+      - [3, 13, 1, 0]
+      - [4, 13, 1, 0]
+      - [5, 13, 1, 0]
+      - [6, 13, 1, 0]
+      - [3, 14, 1, 0]
+      - [4, 14, 1, 0]
+      - [5, 14, 1, 0]
+      - [6, 14, 1, 0]
 
   - type: STR_CASSIUMSL                     # Crassus (Steel Legion)
     speedMax: 325 #was 200
+    soldiers: 32
+    vehicles: 999
     battlescapeTerrainData:
-      name: CASSIUM
+      name: SHCASSIUM
       mapDataSets:
         - BLANKS
         - CASSIUM_SL
+        - SMDOORUM
         - SMTBOMBARD
       mapBlocks:
-        - name: CASSIUM
+        - name: SHCASSIUM
           width: 10
           length: 20
           items:
             STR_CASSIUM_BOLTER_LEFT1_SPAWNER:
-              - [1, 14, 1]
+              - [1, 13, 1]
             STR_CASSIUM_BOLTER_LEFT2_SPAWNER:
-              - [3, 17, 1]
+              - [3, 16, 1]
             STR_CASSIUM_BOLTER_RIGHT1_SPAWNER:
-              - [8, 14, 1]
+              - [8, 13, 1]
             STR_CASSIUM_BOLTER_RIGHT2_SPAWNER:
-              - [6, 17, 1]
+              - [6, 16, 1]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -2476,6 +2515,39 @@ crafts:
             STR_CASSIUM_BOLTER_LEFT2_SPAWNER: [0, 0]
             STR_CASSIUM_BOLTER_RIGHT1_SPAWNER: [0, 0]
             STR_CASSIUM_BOLTER_RIGHT2_SPAWNER: [0, 0]
+    deployment:
+      - [3, 7, 1, 0]
+      - [4, 7, 1, 0]
+      - [5, 7, 1, 0]
+      - [6, 7, 1, 0]
+      - [3, 8, 1, 0]
+      - [4, 8, 1, 0]
+      - [5, 8, 1, 0]
+      - [6, 8, 1, 0]
+      - [3, 9, 1, 0]
+      - [4, 9, 1, 0]
+      - [5, 9, 1, 0]
+      - [6, 9, 1, 0]
+      - [3, 10, 1, 0]
+      - [4, 10, 1, 0]
+      - [5, 10, 1, 0]
+      - [6, 10, 1, 0]
+      - [3, 11, 1, 0]
+      - [4, 11, 1, 0]
+      - [5, 11, 1, 0]
+      - [6, 11, 1, 0]
+      - [3, 12, 1, 0]
+      - [4, 12, 1, 0]
+      - [5, 12, 1, 0]
+      - [6, 12, 1, 0]
+      - [3, 13, 1, 0]
+      - [4, 13, 1, 0]
+      - [5, 13, 1, 0]
+      - [6, 13, 1, 0]
+      - [3, 14, 1, 0]
+      - [4, 14, 1, 0]
+      - [5, 14, 1, 0]
+      - [6, 14, 1, 0]
 
   - type: STR_PREATOR                       # Preator
     speedMax: 225 #was 75
@@ -2550,10 +2622,11 @@ crafts:
   - type: STR_GORGON                        # Gorgon
     speedMax: 225 #was 125
     battlescapeTerrainData:
-      name: GORGON
+      name: SHGORGON
       mapDataSets:
         - BLANKS
         - GORGON
+        - SMDOORUM
         - SMTBOMBARD
       mapBlocks:
         - name: GORGON
@@ -2602,10 +2675,11 @@ crafts:
     maxSkinIndex: 1 # allow roof
     skinSprites: [200]
     battlescapeTerrainData:
-      name: GORGON
+      name: SHGORGON
       mapDataSets:
         - BLANKS
         - GORGONSL
+        - SMDOORUM
         - SMTBOMBARD
       mapBlocks:
         - name: GORGON
@@ -3257,6 +3331,621 @@ crafts:
       - [5, 15, 2, 4]
 
 ### ARBITES CRAFT
+
+  - type: STR_PREATORPD                     # Preator (Arbites)
+    requiresBuyBaseFunc: [HANGAR]
+    requires:
+      - STR_PREATOR_PD_R
+    fuelMax: 1000
+    damageMax: 1440
+    speedMax: 75
+    maxAltitude: 1
+    accel: 1
+    soldiers: 20
+    vehicles: 0
+    costBuy: 1500000
+    costRent: 1000000
+    costSell: 1000000
+    refuelRate: 1000
+    transferTime: 96
+    score: 250
+    repairRate: 8
+    battlescapeTerrainData:
+      name: CASSIUMBOMB
+      mapDataSets:
+        - BLANKS
+        - CASSIUMBOMBPD
+        - CASSIUMTURRETPD
+        - SMTBOMBARD
+      mapBlocks:
+        - name: CASSIUMBOMB
+          width: 10
+          length: 20
+          items:
+            STR_CASSIUM_BOLTER_LEFT2_SPAWNER:
+              - [3, 17, 1]
+            STR_CASSIUM_BOLTER_RIGHT2_SPAWNER:
+              - [6, 17, 1]
+            STR_BOMBARD_ROCKET_SPAWNER:
+              - [0, 0, 5]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_CASSIUM_BOLTER_LEFT2_SPAWNER: [0, 0]
+            STR_CASSIUM_BOLTER_RIGHT2_SPAWNER: [0, 0]
+            STR_BOMBARD_ROCKET_SPAWNER: [0, 0]
+    deployment:
+      - [3, 8, 1, 0]
+      - [4, 8, 1, 0]
+      - [5, 8, 1, 0]
+      - [6, 8, 1, 0]
+      - [3, 9, 1, 0]
+      - [6, 9, 1, 0]
+      - [3, 10, 1, 0]
+      - [6, 10, 1, 0]
+      - [3, 11, 1, 0]
+      - [6, 11, 1, 0]
+      - [4, 12, 1, 0]
+      - [5, 12, 1, 0]
+      - [6, 12, 1, 0]
+      - [4, 13, 1, 0]
+      - [5, 13, 1, 0]
+      - [6, 13, 1, 0]
+      - [4, 14, 1, 0]
+      - [5, 14, 1, 0]
+      - [6, 14, 1, 0]
+      - [5, 15, 1, 0]
+    listOrder: 820
+    spacecraft: true
+
+  - type: STR_CASSIUMPD                     # Crassus (Arbites)
+    requiresBuyBaseFunc: [HANGAR]
+    requires:
+      - STR_ARBITES_HIGHTIER
+    fuelMax: 1000
+    damageMax: 1440
+    speedMax: 75
+    maxAltitude: 1
+    accel: 1
+    soldiers: 32
+    vehicles: 999
+    costBuy: 1500000
+    costRent: 1000000
+    costSell: 1000000
+    refuelRate: 1000
+    transferTime: 96
+    score: 250
+    repairRate: 8
+    battlescapeTerrainData:
+      name: SHCASSIUM
+      mapDataSets:
+        - BLANKS
+        - CASSIUM_3
+        - SMDOORUM
+        - SMTBOMBARD
+      mapBlocks:
+        - name: SHCASSIUM
+          width: 10
+          length: 20
+          items:
+            STR_CASSIUM_BOLTER_LEFT1_SPAWNER:
+              - [1, 13, 1]
+            STR_CASSIUM_BOLTER_LEFT2_SPAWNER:
+              - [3, 16, 1]
+            STR_CASSIUM_BOLTER_RIGHT1_SPAWNER:
+              - [8, 13, 1]
+            STR_CASSIUM_BOLTER_RIGHT2_SPAWNER:
+              - [6, 16, 1]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_CASSIUM_BOLTER_LEFT1_SPAWNER: [0, 0]
+            STR_CASSIUM_BOLTER_LEFT2_SPAWNER: [0, 0]
+            STR_CASSIUM_BOLTER_RIGHT1_SPAWNER: [0, 0]
+            STR_CASSIUM_BOLTER_RIGHT2_SPAWNER: [0, 0]
+    deployment:
+      - [3, 7, 1, 0]
+      - [4, 7, 1, 0]
+      - [5, 7, 1, 0]
+      - [6, 7, 1, 0]
+      - [3, 8, 1, 0]
+      - [4, 8, 1, 0]
+      - [5, 8, 1, 0]
+      - [6, 8, 1, 0]
+      - [3, 9, 1, 0]
+      - [4, 9, 1, 0]
+      - [5, 9, 1, 0]
+      - [6, 9, 1, 0]
+      - [3, 10, 1, 0]
+      - [4, 10, 1, 0]
+      - [5, 10, 1, 0]
+      - [6, 10, 1, 0]
+      - [3, 11, 1, 0]
+      - [4, 11, 1, 0]
+      - [5, 11, 1, 0]
+      - [6, 11, 1, 0]
+      - [3, 12, 1, 0]
+      - [4, 12, 1, 0]
+      - [5, 12, 1, 0]
+      - [6, 12, 1, 0]
+      - [3, 13, 1, 0]
+      - [4, 13, 1, 0]
+      - [5, 13, 1, 0]
+      - [6, 13, 1, 0]
+      - [3, 14, 1, 0]
+      - [4, 14, 1, 0]
+      - [5, 14, 1, 0]
+      - [6, 14, 1, 0]
+    listOrder: 820
+    spacecraft: true
+
+  - type: STR_THUNDERBOLTPD                 # Thunderbolt (Arbites)
+    requires:
+      - STR_ARBITES
+      - STR_NEW_FIGHTER_PD
+      - STR_GENERALLOCK # disabled, xiphons used instead
+
+  - type: STR_VULTURE                       # Vulture
+    requiresBuyBaseFunc: [HANGAR]
+    requires:
+      - STR_ARBITES
+    fuelMax: 1800
+    damageMax: 400
+    speedMax: 600
+    accel: 2
+    weapons: 3
+    weaponTypes:        #definition of allowed weapon types in craft. Max 4 different types per slot.
+      - 0               #slot 1 accepts weapons with type 0. This is default.
+      - 0               #slot 2 accepts weapons with type 0.
+      - [4, 5, 13]      #slot 3 accepts weapons with type 4, 5 and 13.
+    weaponStrings:
+      - STR_WEAPON_ONE
+      - STR_WEAPON_TWO
+      - STR_WEAPON_THREE
+    soldiers: 2
+    pilots: 2
+    costBuy: 600000
+    costRent: 400000
+    costSell: 400000
+    refuelRate: 200
+    transferTime: 96
+    score: 300
+    battlescapeTerrainData:
+      name: VULTURE
+      mapDataSets:
+        - BLANKS
+        - VULTUREPD
+      mapBlocks:
+        - name: VULTURE
+          width: 10
+          length: 20
+    deployment:
+      - [6, 13, 0, 4]
+      - [6, 12, 0, 4]
+    spacecraft: true
+    allowLanding: false
+    listOrder: 210
+
+  - type: STR_CHIMERAPD                     # APCs (Arbities)
+    takeoffSound: 63 #TANKMOVE SOUND
+    selectSound: [65, 66, 67, 68]  #HEAVY TRANSPORT SOUND
+    marker: 30
+    requiresBuyBaseFunc: [HANGAR]
+    requires:
+      - STR_ARBITES
+    maxSkinIndex: 2              # default 0
+    skinSprites: [546,547]   # default empty, contains all sprites except for the first (index zero)
+    sprite: 545
+    fuelMax: 1000
+    damageMax: 1000
+    speedMax: 180
+    maxAltitude: 1
+    accel: 2
+    weapons: 1
+    weaponTypes:
+      - 3
+    weaponStrings:
+      - STR_ANTI_AIR_WEAPONS
+    soldiers: 16
+    vehicles: 2
+    costBuy: 900000
+    costRent: 400000    #TIER I
+    costSell: 400000
+    refuelRate: 1000
+    transferTime: 96
+    score: 250
+    repairRate: 4
+    battlescapeTerrainData:
+      name: CHIMERAPD
+      mapDataSets:
+        - BLANKS
+        - CHIMERAPD
+        - SMTBOMBARD
+      mapBlocks:
+        - name: CHIMERAPD # CHIMERA
+          width: 10
+          length: 20
+          items:
+            STR_CHIMERAPD_TURRET_SPAWNER:
+              - [4, 5, 1]
+              - [3, 15, 1]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_CHIMERAPD_TURRET_SPAWNER: [0, 0]
+    craftInventoryTile: [1, 2, 0] #[5, 4, 0]
+    deployment:
+      - [3, 13, 0, 0]
+      - [4, 13, 0, 0]
+      - [3, 14, 0, 0]
+      - [4, 14, 0, 0]
+      - [4, 3, 0, 0]
+      - [5, 3, 0, 0]
+      - [4, 4, 0, 0]
+      - [5, 4, 0, 0]
+      - [3, 15, 0, 0]
+      - [4, 15, 0, 0]
+      - [3, 16, 0, 0]
+      - [4, 16, 0, 0]
+      - [4, 5, 0, 0]
+      - [5, 5, 0, 0]
+      - [4, 6, 0, 0]
+      - [5, 6, 0, 0]
+    listOrder: 800
+    spacecraft: true
+
+  - type: STR_CHIMERAPDH                    # Chimeras (Arbites)
+    costRent: 800000
+    costSell: 800000
+    requiresBuyBaseFunc: [HANGAR]
+    requires:
+      - STR_ARBITES_HIGHTIER
+    fuelMax: 1000
+    damageMax: 1000
+    speedMax: 90
+    maxAltitude: 1
+    accel: 2
+    weapons: 1
+    weaponTypes:
+      - 3
+    weaponStrings:
+      - STR_ANTI_AIR_WEAPONS
+    soldiers: 16
+    vehicles: 2
+    refuelRate: 1000
+    transferTime: 96
+    score: 250
+    repairRate: 4
+    battlescapeTerrainData:
+      name: CHIMERAPDH
+      mapDataSets:
+        - BLANKS
+        - CHIMERAPDH
+        - SMTBOMBARD
+      mapBlocks:
+        - name: CHIMERAPDH # CHIMERA
+          width: 10
+          length: 20
+          items:
+            STR_CHIMERAPDH_TURRET_SPAWNER:
+              - [2, 4, 1]
+              - [1, 16, 1]
+              - [6, 11, 1]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+          fuseTimers:
+            STR_CHIMERAPDH_TURRET_SPAWNER: [0, 0]
+    craftInventoryTile: [1, 2, 0] #[5, 4, 0]
+    deployment:
+      - [1, 2, 0, 0]
+      - [2, 2, 0, 0]
+      - [1, 3, 0, 0]
+      - [2, 3, 0, 0]
+      - [1, 14, 0, 0]
+      - [2, 14, 0, 0]
+      - [1, 15, 0, 0]
+      - [2, 15, 0, 0]
+      - [6, 9, 0, 0]
+      - [7, 9, 0, 0]
+      - [6, 10, 0, 0]
+      - [7, 10, 0, 0]
+      - [2, 4, 0, 0]
+      - [3, 4, 0, 0]
+      - [2, 5, 0, 0]
+      - [3, 5, 0, 0]
+      - [1, 16, 0, 0]
+      - [2, 16, 0, 0]
+      - [1, 17, 0, 0]
+      - [2, 17, 0, 0]
+      - [6, 10, 0, 0]
+      - [7, 10, 0, 0]
+      - [6, 11, 0, 0]
+      - [7, 11, 0, 0]
+    listOrder: 800
+    spacecraft: true
+
+  - type: STR_ARMYPD                        # Arbites Convoy
+    costRent: 800000          #TIER III
+    costSell: 800000
+    takeoffSound: 63 #TANKMOVE SOUND
+    selectSound: [65, 66, 67, 68]  #HEAVY TRANSPORT SOUND
+    marker: 30
+    requires:
+      - STR_LANDRAIDER_ARBITES
+    sprite: 1878
+    fuelMax: 1000
+    damageMax: 1000
+    speedMax: 90
+    maxAltitude: 1
+    accel: 2
+    weapons: 1
+    weaponTypes:
+      - 3
+    weaponStrings:
+      - STR_ANTI_AIR_WEAPONS
+    soldiers: 30
+    vehicles: 1
+#    costBuy: 9000000
+    refuelRate: 1000
+    transferTime: 96
+    score: 250
+    repairRate: 4
+    battlescapeTerrainData:
+      name: ARMYPD
+      mapDataSets:
+        - BLANKS
+        - TAUROX_4
+        - CHIMERAPDH
+        - WAGPD
+        - SMTBOMBARD
+      mapBlocks:
+        - name: ARMYPD
+          width: 10
+          length: 20
+          items:
+            STR_TTURRETPD_SPAWNER:
+              - [4, 16, 2]
+            STR_WHIRLWINDPD_SPAWNER:
+              - [1, 8, 1]
+            STR_DAMOCLESPD_SPAWNER:
+              - [6, 2, 2]
+          fuseTimers:
+            STR_TTURRETPD_SPAWNER: [0, 0]
+            STR_WHIRLWINDPD_SPAWNER: [0, 0]
+            STR_DAMOCLESPD_SPAWNER: [0, 0]
+    craftInventoryTile: [6, 2, 1] #[5, 4, 0]
+    deployment:
+      - [1, 6, 0, 0]
+      - [2, 6, 0, 0]
+      - [1, 7, 0, 0]
+      - [2, 7, 0, 0]
+      - [1, 8, 0, 0]
+      - [2, 8, 0, 0]
+      - [1, 9, 0, 0]
+      - [2, 9, 0, 0] #TAUROX
+      - [3, 13, 1, 0]
+      - [3, 14, 1, 0]
+      - [4, 14, 1, 0]
+      - [3, 15, 1, 0]
+      - [4, 15, 1, 0]
+      - [3, 16, 1, 0]
+      - [4, 16, 1, 0]
+      - [3, 17, 1, 0]
+      - [4, 17, 1, 0]
+      - [4, 18, 1, 0] #PRECINT
+      - [6, 2, 1, 0]
+      - [7, 2, 1, 0]
+      - [6, 3, 1, 0]
+      - [7, 3, 1, 0]
+      - [6, 4, 1, 0]
+      - [7, 4, 1, 0]
+      - [6, 5, 1, 0]
+      - [7, 5, 1, 0]
+      - [6, 6, 1, 0]
+      - [7, 6, 1, 0]
+      - [6, 7, 1, 0]
+      - [7, 7, 1, 0]
+      - [6, 8, 1, 0]
+      - [7, 8, 1, 0]
+    listOrder: 800
+    spacecraft: true
+
+  - type: STR_TAUROXPD                      # Taurox (Arbities)
+    costRent: 600000
+    costSell: 600000
+    marker: 30
+    requiresBuyBaseFunc: [HANGAR]
+    requires:
+      - STR_ARBITES
+      - STR_NEW_TRANSPORT_PD
+    sprite: 549
+    fuelMax: 1800
+    damageMax: 400
+    speedMax: 600
+    accel: 2
+    weapons: 0
+    soldiers: 14
+    vehicles: 0
+    refuelRate: 200
+    transferTime: 96
+    score: 200
+    repairRate: 4
+    battlescapeTerrainData:
+      name: TAUROXPD
+      mapDataSets:
+        - BLANKS
+        - TAUROX_4
+        - VHTPDEX
+        - SMTBOMBARD
+      mapBlocks:
+        - name: TAUROXPD
+          width: 10
+          length: 20
+          items:
+            STR_TTURRETPD_SPAWNER:
+              - [6, 5, 2]
+              - [4, 15, 2]
+            STR_VALK_CHARGE:
+              - [4, 6, 4]
+            STR_THUNDER_CHARGE2:
+              - [4, 2, 4]
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 19, 5] # Bombard Platform
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+              - [0, 19, 5]
+          fuseTimers:
+            STR_THUNDER_CHARGE2: [1, 1]
+            STR_VALK_CHARGE: [1, 1]
+            STR_TTURRETPD_SPAWNER: [0, 0]
+    craftInventoryTile: [6, 6, 1]
+    deployment:
+      - [5, 3, 1, 0]
+      - [6, 3, 1, 0]
+      - [5, 4, 1, 0]
+      - [6, 4, 1, 0]
+      - [5, 5, 1, 0]
+      - [6, 5, 1, 0]
+      - [6, 6, 1, 0]
+      - [3, 13, 1, 0]
+      - [4, 13, 1, 0]
+      - [3, 14, 1, 0]
+      - [4, 14, 1, 0]
+      - [3, 15, 1, 0]
+      - [4, 15, 1, 0]
+      - [4, 16, 1, 0]
+    listOrder: 810
+    spacecraft: true
+
+  - type: STR_ARVUS                         # Arvus (Arbites)
+    requires:
+      - STR_ARBITES
+    requiresBuyBaseFunc: [HANGAR]
+    maxSkinIndex: 0
+    fuelMax: 1800
+    damageMax: 400
+    speedMax: 600
+    accel: 2
+    weapons: 2 # two aux slots
+    weaponTypes:
+      - [4, 5, 13]
+      - [4, 5, 13]
+    weaponStrings:
+      - STR_AUX_ONE
+      - STR_AUX_TWO
+    soldiers: 24
+    vehicles: 999
+    pilots: 2
+    costBuy: 600000
+    costRent: 400000
+    costSell: 400000
+    refuelRate: 200
+    transferTime: 96
+    score: 300
+    listOrder: 210
+    battlescapeTerrainData:
+      name: ARVUS
+      mapDataSets:
+        - BLANKS
+        - ARVUS
+        - ARVUS_DOORS
+        - SMTBOMBARD
+      mapBlocks:
+        - name: ARVUS
+          width: 10
+          length: 20
+          items:
+            STR_BOMBARD_SPAWNER: # 12 strikes
+              - [0, 0, 5] # Bombard Platform
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+              - [0, 0, 5]
+    deployment:
+      - [3, 14, 0, 0]
+      - [4, 14, 0, 0]
+      - [5, 14, 0, 0]
+      - [3, 15, 0, 0]
+      - [4, 15, 0, 0]
+      - [5, 15, 0, 0]
+      - [3, 16, 0, 0]
+      - [4, 16, 0, 0]
+      - [5, 16, 0, 0]
+      - [3, 17, 0, 0]
+      - [4, 17, 0, 0]
+      - [5, 17, 0, 0]
+      - [3, 4, 0, 0]
+      - [4, 4, 0, 0]
+      - [5, 4, 0, 0]
+      - [3, 5, 0, 0]
+      - [4, 5, 0, 0]
+      - [5, 5, 0, 0]
+      - [3, 6, 0, 0]
+      - [4, 6, 0, 0]
+      - [5, 6, 0, 0]
+      - [3, 7, 0, 0]
+      - [4, 7, 0, 0]
+      - [5, 7, 0, 0]
+    spacecraft: true
 
 
 craftWeapons:

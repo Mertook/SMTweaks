@@ -25,8 +25,6 @@ extended:
       ITEM_MARK_TARGET: int             # item applies mark to target: x = distance, -1 = unlimited
       ## Passive Bonus
       ITEM_PASSIVE_EFFECT: int          # Item gives passive bonuses while held - X = effect lookup
-      ## Weapon Ammo Sprites
-      ITEM_AMMO_SKIP_BIGOBS: int        # ammo causes weapon sprite to change - X = size of index shift
       ## Heavy Weapons
       ITEM_HWP_IGNORES_ARMOR_BONUS: int # does weapon ignore armor hwp bonus (see below) meant for snipers etc
       ITEM_STRENGTH_1H_REQUIREMENT: int # item has non-standard strength penalty when used with both hands full
@@ -58,6 +56,10 @@ extended:
       ## Plasma Heat
       ITEM_HEAT_SINK_COLOR: int         # sprite color index for heatsink parts that glow, if not set defaults to 2 (red)
       ITEM_HEAT_ACCURACY_PEN: int       # how much is this item affected by accuracy penalties from overheating? 0 = 100%, 1 = 3/4, 2 = 3/5, 3 = 3/6, 4 = 3/7
+      ## Sprites
+      ITEM_AMMO_SKIP_BIGOBS: int        # ammo causes weapon sprite to change - X = size of index shift
+      ITEM_HIT_FLASH_COLOR: int         # overrides the standard hitcolor - X = color index +1
+      ITEM_HIT_FLASH_SHADE: int         # overrides unit shading when hit - X = shade index +1, -1 = halve unit shade values
     RuleArmor:
       ## Craft Turrets
       STARTS_WITH_FULL_TUS: int         # make sure unit has full starting TUs regardless of other scripts
@@ -225,8 +227,9 @@ extended:
       SMT_UNIT_STAGGER_RESISTANCE: int          # Reduce Stamina damage by %
       SMT_UNIT_IMMOBILIZE_RESISTANCE: int       # Reduce TU damage by %
       SMT_UNIT_MEDBAY_RECOVERY: int             # This unit has reduced medbay recovery time if injured
-      ## Rank Sprite Change
+      ## Sprite Change
       SMT_UNIT_RANK_SPRITEMOD: int              # Modify Sprite if unit has bonus
+      SMT_LAST_HIT_COLOR: int                   # Flash specific color when hit - X = color index +1
     BattleGame:
       ## Craft Turrets
       SMT_RAZOR_HBOLTER_COUNT: int  # number of Razorback HeavyBolter tokens

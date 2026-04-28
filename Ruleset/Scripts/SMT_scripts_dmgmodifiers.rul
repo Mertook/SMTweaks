@@ -52,6 +52,10 @@ extended:
           var int temp;
           var int temp2;
 
+          if eq power 0; # ignore everything if power has already been reduced to 0
+            return power part side;
+          end;
+
           weapon_item.getAmmoItem ammoItem;
           set multBonus 100;
 

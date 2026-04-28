@@ -9,8 +9,8 @@ extended:
           var int currentHealth;
           var int diehardTriggers;
           var int randomNumber;
+          var int triggerChance;
           var int temp;
-          var int temp2;
           var ptr RuleArmor armorRule;
 
           if lt to_health 1; # ignore if no damage dealt
@@ -32,7 +32,7 @@ extended:
           if eq temp -1;
             return;
           else gt temp 0;
-            battle_game.randomRange randomNumber 0 100;
+            battle_game.randomRange randomNumber 1 100;
             if gt temp randomNumber;
               return;
             end;
@@ -47,20 +47,21 @@ extended:
             return;
           end;
 
-          set temp2 to_health;
-          muldiv temp2 10 temp; # damage * 10 / 10% of current health is added to base chance to proc FNP - chance proportional to DMG/HP%
-          #debug_log "Feel No Pain chanceMod " temp2 temp to_health currentHealth;
+          set triggerChance to_health;
+          muldiv triggerChance 10 temp; # damage * 10 / 10% of current health is added to base chance to proc FNP - chance proportional to DMG/HP%
+          limit_upper triggerChance 40; # no more than +40% chance based on damage dealt
+          #debug_log "Feel No Pain chanceMod " triggerChance temp to_health currentHealth;
 
           unit.getRuleArmor armorRule;
           armorRule.getTag temp Tag.DIEHARD_MODIFIER;
           if eq temp 0;
             set temp 10; # default base 10% trigger chance
           end;
-          add temp temp2;
-          limit_upper temp 80; # always a 20% chance to fail no matter how much damage is dealt
-          battle_game.randomRange randomNumber 0 100;
+          add triggerChance temp;
+          limit_upper triggerChance 80; # always a 20% chance to fail no matter how much damage is dealt
+          battle_game.randomRange randomNumber 1 100;
           #debug_log "Feel No Pain RNG " temp randomNumber;
-          if ge randomNumber temp;
+          if lt triggerChance randomNumber;
             return;
           end;
 

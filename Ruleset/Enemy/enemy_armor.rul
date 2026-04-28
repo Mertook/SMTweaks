@@ -23,7 +23,7 @@ armors:
       - 0.8  # AP
       - 0.3  # FLAMES
       - 0.9  # HE
-      - 1.0  # LASCANON
+      - 0.9  # LASCANON
       - 0.9  # PLASMA
       - 0.5  # STUN
       - 0.9  # MELEE
@@ -33,6 +33,8 @@ armors:
       - 1.0  # MELTA
       - 0.2  # GRAV - Compensate for boss health/armor, not actually a superheavy unit
       - 0.5  # WARP
+      - 0.9  # SONIC
+      - 0.5  # GAUSS
     loftempsSet: [3]
     builtInWeapons: # make staff built in, can't drop it
       - STR_STAFF_OF_LIGHT
@@ -51,8 +53,8 @@ armors:
       ARMOR_OVERWATCH_RESTORATION_CUMULATIVE: 1
       MISSION_OBJECTIVE_UNIT: 100 # final boss
       UNIT_IMMOBILE_TURNS: 3 # don't run off the spawn point while player is clearing entrance
-      UNIT_RAPID_KO_RECOVERY: 100 # able to act with 100% TUs after getting up from stun
-      UNIT_DAMAGE_SOFTCAP: 75 # reduce incoming damage and prevent instant kills
+      UNIT_IS_DIEHARD: 12
+      DIEHARD_MODIFIER: 40
       ARMOR_REGENERATE_DURABILITY: 100 # necrodermis self repair
       SMT_ARMOR_SHRED_RESISTANCE: 75
       SMT_ARMOR_SHRED_PLASMA_RESISTANCE: 60

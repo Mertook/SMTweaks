@@ -2587,7 +2587,7 @@ crafts:
             STR_CASSIUM_BOLTER_RIGHT2_SPAWNER: [0, 0]
             STR_BOMBARD_ROCKET_SPAWNER: [0, 0]
 
-  - type: STR_TAUROX                        # Tauros
+  - type: STR_TAUROX                        # Taurox
     speedMax: 420 #was 240, pathetic for "fast recon"
     battlescapeTerrainData:
       name: TAUROX
@@ -3333,23 +3333,6 @@ crafts:
 ### ARBITES CRAFT
 
   - type: STR_PREATORPD                     # Preator (Arbites)
-    requiresBuyBaseFunc: [HANGAR]
-    requires:
-      - STR_PREATOR_PD_R
-    fuelMax: 1000
-    damageMax: 1440
-    speedMax: 75
-    maxAltitude: 1
-    accel: 1
-    soldiers: 20
-    vehicles: 0
-    costBuy: 1500000
-    costRent: 1000000
-    costSell: 1000000
-    refuelRate: 1000
-    transferTime: 96
-    score: 250
-    repairRate: 8
     battlescapeTerrainData:
       name: CASSIUMBOMB
       mapDataSets:
@@ -3406,8 +3389,6 @@ crafts:
       - [5, 14, 1, 0]
       - [6, 14, 1, 0]
       - [5, 15, 1, 0]
-    listOrder: 820
-    spacecraft: true
 
   - type: STR_CASSIUMPD                     # Crassus (Arbites)
     requiresBuyBaseFunc: [HANGAR]
@@ -3424,8 +3405,6 @@ crafts:
     costRent: 1000000
     costSell: 1000000
     refuelRate: 1000
-    transferTime: 96
-    score: 250
     repairRate: 8
     battlescapeTerrainData:
       name: SHCASSIUM
@@ -3498,14 +3477,12 @@ crafts:
       - [4, 14, 1, 0]
       - [5, 14, 1, 0]
       - [6, 14, 1, 0]
-    listOrder: 820
-    spacecraft: true
 
   - type: STR_THUNDERBOLTPD                 # Thunderbolt (Arbites)
     requires:
       - STR_ARBITES
       - STR_NEW_FIGHTER_PD
-      - STR_GENERALLOCK # disabled, xiphons used instead
+      #- STR_GENERALLOCK # disabled, xiphons used instead
 
   - type: STR_VULTURE                       # Vulture
     requiresBuyBaseFunc: [HANGAR]
@@ -3709,27 +3686,11 @@ crafts:
     spacecraft: true
 
   - type: STR_ARMYPD                        # Arbites Convoy
-    costRent: 800000          #TIER III
-    costSell: 800000
-    takeoffSound: 63 #TANKMOVE SOUND
-    selectSound: [65, 66, 67, 68]  #HEAVY TRANSPORT SOUND
-    marker: 30
-    requires:
-      - STR_LANDRAIDER_ARBITES
-    sprite: 1878
     fuelMax: 1000
     damageMax: 1000
-    speedMax: 90
-    maxAltitude: 1
-    accel: 2
-    weapons: 1
-    weaponTypes:
-      - 3
-    weaponStrings:
-      - STR_ANTI_AIR_WEAPONS
+    speedMax: 200 # was 90
     soldiers: 30
     vehicles: 1
-#    costBuy: 9000000
     refuelRate: 1000
     transferTime: 96
     score: 250
@@ -3749,14 +3710,13 @@ crafts:
           items:
             STR_TTURRETPD_SPAWNER:
               - [4, 16, 2]
-            STR_WHIRLWINDPD_SPAWNER:
+            STR_CHIMERAPDH_TURRET_SPAWNER:
               - [1, 8, 1]
-            STR_DAMOCLESPD_SPAWNER:
               - [6, 2, 2]
+              - [6, 6, 2]
           fuseTimers:
             STR_TTURRETPD_SPAWNER: [0, 0]
-            STR_WHIRLWINDPD_SPAWNER: [0, 0]
-            STR_DAMOCLESPD_SPAWNER: [0, 0]
+            STR_CHIMERAPDH_TURRET_SPAWNER: [0, 0]
     craftInventoryTile: [6, 2, 1] #[5, 4, 0]
     deployment:
       - [1, 6, 0, 0]
@@ -3791,13 +3751,8 @@ crafts:
       - [7, 7, 1, 0]
       - [6, 8, 1, 0]
       - [7, 8, 1, 0]
-    listOrder: 800
-    spacecraft: true
 
   - type: STR_TAUROXPD                      # Taurox (Arbities)
-    costRent: 600000
-    costSell: 600000
-    marker: 30
     requiresBuyBaseFunc: [HANGAR]
     requires:
       - STR_ARBITES
@@ -3809,7 +3764,6 @@ crafts:
     accel: 2
     weapons: 0
     soldiers: 14
-    vehicles: 0
     refuelRate: 200
     transferTime: 96
     score: 200
@@ -3870,10 +3824,7 @@ crafts:
     spacecraft: true
 
   - type: STR_ARVUS                         # Arvus (Arbites)
-    requires:
-      - STR_ARBITES
     requiresBuyBaseFunc: [HANGAR]
-    maxSkinIndex: 0
     fuelMax: 1800
     damageMax: 400
     speedMax: 600

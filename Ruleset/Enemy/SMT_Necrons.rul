@@ -2,6 +2,8 @@ weaponSets:
   # Necron Architect
   - type: ARCHITECT_STAFF_WITH_SCARABS
     weapons: [STR_STAFF_OF_LIGHT, STR_NECRON_SCARAB_SPAWNER_GRENADE, STR_NECRON_SCARAB_SPAWNER_GRENADE]
+  - type: BLANK_SET
+    weapons: []
 
 items:
   - type: STR_STAFF_OF_LIGHT                # Staff of Light (Architect)
@@ -198,7 +200,7 @@ items:
     tags:
       ITEM_AIMED_ACCURACY_POWER_BONUS_PERCENT: 0
       ITEM_SNAP_ACCURACY_POWER_BONUS_PERCENT: 0
-      DAMAGE_BONUS_PERCENT_MECHANICAL: 50 # reduced but not zeroed, AI doesn't understand this
+      DAMAGE_BONUS_PERCENT_MECHANICAL: 40 # reduced but not zeroed, AI doesn't understand this
       DAMAGE_BONUS_PERCENT_LIVING: 100
       SMT_LETHAL_STUN: 28 # 2.8x increased health damage against stun immune targets
 
@@ -305,13 +307,34 @@ units:
     sniper: 100
     energyRecovery: 200
     value: 25 # was 15 - Necron elites
-    builtInWeaponSets: []
-    weightedBuiltInWeaponSets: []
+    builtInWeaponSets:
+      - - STR_KILLPOINT_TOKEN_7
+      - - STR_KILLPOINT_TOKEN_7
+      - - STR_KILLPOINT_TOKEN_7
+    weightedBuiltInWeaponSets:
+      - # T1
+        BLANK_SET: 1
+      - # T2
+        BLANK_SET: 1
+      - # T3
+        BLANK_SET: 1
+
 
   - type: STR_NECRON_DEATHMARK_REVIVES          # Necron Deathmark (Revives)
     refNode: *REF_DEATHMARK_UNIT
     armor: STR_NECRON_DEATHMARK_ARMOR_REVIVES
     spawnUnit: STR_NECRON_DEATHMARK
+    builtInWeaponSets:
+      - - STR_KILLPOINT_TOKEN_7
+      - - STR_KILLPOINT_TOKEN_7
+      - - STR_KILLPOINT_TOKEN_7
+    weightedBuiltInWeaponSets:
+      - # T1
+        BLANK_SET: 1
+      - # T2
+        BLANK_SET: 1
+      - # T3
+        BLANK_SET: 1
 
   - &REF_FLAYEDONE_UNIT                         # Necron Flayed One
     type: STR_NECRON_FLAYED_ONE

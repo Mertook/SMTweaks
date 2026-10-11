@@ -207,12 +207,22 @@ terrains:
           STR_NECRON_TURRET_SPAWNER:
             - [1, 9, 4]
             - [9, 1, 4]
+          STR_SPAWNER_BLOCKER:
+            - [6, 17, 0]
+            - [7, 17, 0]
         fuseTimers:
           STR_NECRON_TURRET_SPAWNER: [0, 0]
+          STR_SPAWNER_BLOCKER: [0, 0]
       - name: TOMBSMT23 # 2x2 exit left
         width: 20
         length: 20
         groups: 7
+        items:
+          STR_SPAWNER_BLOCKER:
+            - [12, 17, 0]
+            - [13, 17, 0]
+        fuseTimers:
+          STR_SPAWNER_BLOCKER: [0, 0]
       - name: TOMBSMT24 # 2x2 exit middle
         width: 20
         length: 20
@@ -220,8 +230,12 @@ terrains:
         items:
           STR_NECRON_TURRET_SPAWNER:
             - [9, 6, 4]
+          STR_SPAWNER_BLOCKER:
+            - [9, 17, 0]
+            - [10, 17, 0]
         fuseTimers:
           STR_NECRON_TURRET_SPAWNER: [0, 0]
+          STR_SPAWNER_BLOCKER: [0, 0]
       - name: TOMBSMT25 # 2x1 stage 2 landing A
         width: 20
         length: 10

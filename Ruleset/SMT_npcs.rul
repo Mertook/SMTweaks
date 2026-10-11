@@ -66,6 +66,11 @@ items:
     spawnUnitFaction: 0 # Player
     spawnUnit: STR_T_MISSILE_BLACK
 
+  - type: STR_SPAWNER_BLOCKER               # Target Blocker
+    refNode: *REF_UNIT_SPAWNER
+    spawnUnitFaction: 1 # Enemy
+    spawnUnit: STR_DUMMY_BLOCKER
+
   - &REF_NPC_WEAPON                         # NPC Weapon Reference
     type: STR_RIFLEB_AI
     battleType: 1
@@ -489,6 +494,33 @@ units: # Civ units
     aggression: 1
     energyRecovery: 40
     builtInWeaponSets: []
+
+  - type: STR_DUMMY_BLOCKER
+    race: STR_TARGET_GUARD
+    cosmetic: true
+    ignoredByAI: true
+    stats:
+      tu: 1
+      stamina: 1
+      health: 300
+      bravery: 110
+      reactions: 1
+      firing: 1
+      throwing: 0
+      strength: 1
+      psiStrength: 250
+      psiSkill: 0
+      melee: 0
+    armor: TARGETA
+    moraleLossWhenKilled: 0
+    standHeight: 0
+    kneelHeight: 0
+    deathSound: 23
+    value: 0
+    livingWeapon: true
+    builtInWeaponSets: []
+    liveAlien: ""
+
 
   - type: STR_SKULL_TECH                    # Techpriest Servoskull
     race: STR_SKULL

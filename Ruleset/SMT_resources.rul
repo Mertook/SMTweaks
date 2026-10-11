@@ -2122,9 +2122,9 @@ extraSprites:
       0: Resources/CRAFT/GKRTT.png
 
 ###Tarantula Sentry
-  - typeSingle: TARANTULABLACK.SPK
+  - typeSingle: TARANTULAMBLACK.SPK
     fileSingle: Resources/UNITS/SENTRY/TarantulaM_I.png
-  - type: TARANTULABLACK.PCK 
+  - type: TARANTULAMBLACK.PCK 
     width: 256
     height: 840
     subX: 32
@@ -2225,6 +2225,14 @@ extraSprites:
     files:
       0: Resources/UNITS/TECH/ENGINSEER_S.png
 
+###Necron
+  - type: NECRONTURRET.PCK 
+    width: 256
+    height: 320
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/UNITS/NECRON/TURRET_S.png
 ###Backgrounds
   - type: GuardBG.SCR
     singleImage: true

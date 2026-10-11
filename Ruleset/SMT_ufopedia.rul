@@ -1243,7 +1243,13 @@ ufopaedia:
       - STR_NOT_GUARD
     image_id: AUTOCANNON.SPK
     text: STR_AUTOCANNON_HANDHELD_ANY_CODEX
-
+  - delete: STR_SERVO_BOLTER
+  - delete: STR_SERVO_FLAMER
+  - delete: STR_SERVO_MELTA
+  - delete: STR_SERVO_GRAV
+  - delete: STR_SERVO_PLASMA
+  - delete: STR_TECHPRIEST_POWERAXE
+  - delete: STR_TECHPRIEST_LASPISTOL
   - id: STR_TECHMARINE_FLAMER               # Servo Arm Flamer
     text: STR_TECHMARINE_FLAMER_CODEX
     section: STR_WEAPONS_AND_EQUIPMENT
@@ -1849,7 +1855,7 @@ ufopaedia:
     image_id: DREAD4UFO.SPK
     requires:
       - STR_DREADNOUGHT_MARINE
-      - STR_ASSC
+      - STR_CASS_R
     text: STR_DREAD_ARMOR4_UC_UFOPEDIA
     listOrder: 6450
 
@@ -2748,8 +2754,6 @@ ufopaedia:
   - id: STR_SHURIKEN_CLIP
     type_id: 14
     section: STR_NOT_AVAILABLE
-    requires:
-      - STR_SHURIKEN_CLIP
   - id: STR_BLASTER_BOMB
     type_id: 14
     section: STR_NOT_AVAILABLE

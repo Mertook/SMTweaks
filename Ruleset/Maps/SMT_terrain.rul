@@ -83,6 +83,219 @@ terrains:
           STR_MONON_SPAWNER: [0, 0]
           STR_MONOS_SPAWNER: [0, 0]
 
+  - name: TOMBSMT
+    enviroEffects: STR_URBAN_ENVIRO
+    script: 
+    mapDataSets:
+      - BLANKS
+      - 05FLOORTOMB
+      - 05WALLTOMB
+      - 05DOORTOMB
+      - 05ITENSTOMB
+      - 05TERRAINTOMB
+      - 05BASETOMB
+      - 05RGEMTOMB
+    mapBlocks:
+      - name: TOMBSMT00 # 1x1 lower
+        width: 10
+        length: 10
+      - name: TOMBSMT01 # 1x1 upper
+        width: 10
+        length: 10
+      - name: TOMBSMT02 # 1x1 turret
+        width: 10
+        length: 10
+        items:
+          STR_NECRON_TURRET_SPAWNER:
+            - [4, 4, 4]
+        fuseTimers:
+          STR_NECRON_TURRET_SPAWNER: [0, 0]
+      - name: TOMBSMT03 # 1x1 roof spawner
+        width: 10
+        length: 10
+      - name: TOMBSMT04 # 1x1 N spawner
+        width: 10
+        length: 10
+      - name: TOMBSMT05 # 2x2 big bridge
+        width: 20
+        length: 20
+        items:
+          STR_NECRON_TURRET_SPAWNER:
+            - [1, 9, 3]
+        fuseTimers:
+          STR_NECRON_TURRET_SPAWNER: [0, 0]
+      - name: TOMBSMT06 # 2x2 mass spawner
+        width: 20
+        length: 20
+      - name: TOMBSMT07 # 2x2 bridges
+        width: 20
+        length: 20
+      - name: TOMBSMT08 # 2x2 door
+        width: 20
+        length: 20
+      - name: TOMBSMT09 # 2x2 split
+        width: 20
+        length: 20
+        items:
+          STR_NECRON_TURRET_SPAWNER:
+            - [9, 5, 3]
+            - [9, 13, 3]
+        fuseTimers:
+          STR_NECRON_TURRET_SPAWNER: [0, 0]
+      - name: TOMBSMT10 # 1x2 turret
+        width: 10
+        length: 20
+        items:
+          STR_NECRON_TURRET_SPAWNER:
+            - [4, 9, 4]
+        fuseTimers:
+          STR_NECRON_TURRET_SPAWNER: [0, 0]
+      - name: TOMBSMT11 # 1x2 door
+        width: 10
+        length: 20
+      - name: TOMBSMT12 # 1x2 lower
+        width: 10
+        length: 20
+      - name: TOMBSMT13 # 2x1 turret
+        width: 20
+        length: 10
+        items:
+          STR_NECRON_TURRET_SPAWNER:
+            - [9, 4, 4]
+        fuseTimers:
+          STR_NECRON_TURRET_SPAWNER: [0, 0]
+      - name: TOMBSMT14 # 2x1 spawner
+        width: 20
+        length: 10
+      - name: TOMBSMT15 # 2x1 door
+        width: 20
+        length: 10
+      - name: TOMBSMT16 # 2x2 entrance middle door
+        width: 20
+        length: 20
+        groups: 5
+      - name: TOMBSMT17 # 2x2 entrance double door
+        width: 20
+        length: 20
+        groups: 5
+        items:
+          STR_NECRON_TURRET_SPAWNER:
+            - [9, 17, 4]
+        fuseTimers:
+          STR_NECRON_TURRET_SPAWNER: [0, 0]
+      - name: TOMBSMT18 # 2x2 entrance left door
+        width: 20
+        length: 20
+        groups: 5
+      - name: TOMBSMT19 # 2x2 entrance right door
+        width: 20
+        length: 20
+        groups: 5
+      - name: TOMBSMT20 # 1x1 entrance connector 1
+        width: 10
+        length: 10
+        groups: 6
+      - name: TOMBSMT21 # 1x1 entrance connector 2
+        width: 10
+        length: 10
+        groups: 6
+      - name: TOMBSMT22 # 2x2 exit right
+        width: 20
+        length: 20
+        groups: 7
+        items:
+          STR_NECRON_TURRET_SPAWNER:
+            - [1, 9, 4]
+            - [9, 1, 4]
+        fuseTimers:
+          STR_NECRON_TURRET_SPAWNER: [0, 0]
+      - name: TOMBSMT23 # 2x2 exit left
+        width: 20
+        length: 20
+        groups: 7
+      - name: TOMBSMT24 # 2x2 exit middle
+        width: 20
+        length: 20
+        groups: 7
+        items:
+          STR_NECRON_TURRET_SPAWNER:
+            - [9, 6, 4]
+        fuseTimers:
+          STR_NECRON_TURRET_SPAWNER: [0, 0]
+      - name: TOMBSMT25 # 2x1 stage 2 landing A
+        width: 20
+        length: 10
+        groups: 8
+      - name: TOMBSMT26 # 2x1 stage 2 landing B
+        width: 20
+        length: 10
+        groups: 8
+      - name: TOMBSMT27 # 2x2 crystal lower
+        width: 20
+        length: 20
+        groups: 9
+        randomizedItems:
+          - position: [9, 2, 1]
+            amount: 6
+            mixed: true
+            itemList: [STR_HYPERPHASESWORD_TOKEN, STR_NECRON_WARSCYTHE_TOKEN, STR_GAUSS_FLAYER_TOKEN, STR_GAUSS_FLAYER_TOKEN, STR_GAUSS_REAPER_TOKEN, STR_GAUSS_REAPER_TOKEN, STR_GAUSS_BLASTER_TOKEN, STR_SYNAPTIC_DISINTEGRATOR_TOKEN]
+        items:
+          STR_REQUISITION_BOUNTY_500K:
+            - [0, 0, 0]
+          STR_NECRON_TURRET_SPAWNER:
+            - [3, 8, 4]
+            - [15, 8, 4]
+        fuseTimers:
+          STR_NECRON_TURRET_SPAWNER: [0, 0]
+      - name: TOMBSMT28 # 2x2 crystal upper
+        width: 20
+        length: 20
+        groups: 9
+        randomizedItems:
+          - position: [9, 2, 5]
+            amount: 6
+            mixed: true
+            itemList: [STR_HYPERPHASESWORD_TOKEN, STR_NECRON_WARSCYTHE_TOKEN, STR_GAUSS_FLAYER_TOKEN, STR_GAUSS_FLAYER_TOKEN, STR_GAUSS_REAPER_TOKEN, STR_GAUSS_REAPER_TOKEN, STR_GAUSS_BLASTER_TOKEN, STR_SYNAPTIC_DISINTEGRATOR_TOKEN]
+        items:
+          STR_REQUISITION_BOUNTY_500K:
+            - [0, 0, 0]
+          STR_NECRON_TURRET_SPAWNER:
+            - [9, 17, 4]
+        fuseTimers:
+          STR_NECRON_TURRET_SPAWNER: [0, 0]
+      - name: TOMBSMT29 # 2x2 crystal twin right
+        width: 20
+        length: 20
+        groups: 9
+        randomizedItems:
+          - position: [13, 2, 4]
+            amount: 6
+            mixed: true
+            itemList: [STR_HYPERPHASESWORD_TOKEN, STR_NECRON_WARSCYTHE_TOKEN, STR_GAUSS_FLAYER_TOKEN, STR_GAUSS_FLAYER_TOKEN, STR_GAUSS_REAPER_TOKEN, STR_GAUSS_REAPER_TOKEN, STR_GAUSS_BLASTER_TOKEN, STR_SYNAPTIC_DISINTEGRATOR_TOKEN]
+        items:
+          STR_REQUISITION_BOUNTY_500K:
+            - [0, 0, 0]
+          STR_NECRON_TURRET_SPAWNER:
+            - [9, 8, 5]
+        fuseTimers:
+          STR_NECRON_TURRET_SPAWNER: [0, 0]
+      - name: TOMBSMT30 # 2x2 crystal twin left
+        width: 20
+        length: 20
+        groups: 9
+        randomizedItems:
+          - position: [5, 2, 4]
+            amount: 6
+            mixed: true
+            itemList: [STR_HYPERPHASESWORD_TOKEN, STR_NECRON_WARSCYTHE_TOKEN, STR_GAUSS_FLAYER_TOKEN, STR_GAUSS_FLAYER_TOKEN, STR_GAUSS_REAPER_TOKEN, STR_GAUSS_REAPER_TOKEN, STR_GAUSS_BLASTER_TOKEN, STR_SYNAPTIC_DISINTEGRATOR_TOKEN]
+        items:
+          STR_REQUISITION_BOUNTY_500K:
+            - [0, 0, 0]
+          STR_NECRON_TURRET_SPAWNER:
+            - [9, 8, 5]
+        fuseTimers:
+          STR_NECRON_TURRET_SPAWNER: [0, 0]
+
   - name: MARSGUARD_SL  # part 2
     ambience: {mod: 40k, index: 896}  # cave
     ambientVolume: 0.25
@@ -204,7 +417,7 @@ terrains:
       - name: MARS10
         width: 10
         length: 10
-        groups: 2
+        groups: 5
         items:
           STR_ORK_MEGANOB_SPAWNER:
             - [6, 2, 0]
@@ -486,7 +699,7 @@ terrains:
       - name: MARS10
         width: 10
         length: 10
-        groups: 2
+        groups: 5
         items:
           STR_DEAMONETTE_SPAWNER:
             - [6, 2, 0]
@@ -941,7 +1154,7 @@ terrains:
       - name: MARS10
         width: 10
         length: 10
-        groups: 2
+        groups: 5
         items:
           STR_DEAMONETTE_SPAWNER:
             - [6, 2, 0]
@@ -1116,3 +1329,44 @@ terrains:
 
 
 
+ufos:
+  - type: STR_DOOMSDAY_MONOLITH # Adjust Turret spawns
+    battlescapeTerrainData:
+      name: MONOD
+      mapDataSets:
+        - BLANKS
+        - 05FLOORTOMB
+        - 05WALLTOMB
+        - 05DOORTOMB
+        - 05ITENSTOMB
+        - 05SHIPTOMB
+        - 05HWPTOMB
+      mapBlocks:
+        - name: MONO03
+          width: 20
+          length: 20
+          randomizedItems:
+            - position: [9, 4, 1]
+              amount: 3
+              mixed: true
+              itemList: [STR_ALIEN_ALLOYS, STR_ALIEN_ALLOYS, STR_ALIEN_ALLOYS, STR_GAUSS_FLAYER_TOKEN, STR_GAUSS_FLAYER_TOKEN, STR_GAUSS_REAPER_TOKEN, STR_GAUSS_REAPER_TOKEN, STR_GAUSS_BLASTER_TOKEN, STR_SYNAPTIC_DISINTEGRATOR_TOKEN]
+          items:
+            STR_REQUISITION_BOUNTY_500K:
+              - [0, 0, 0]
+            STR_MONON_SPAWNER:
+              - [6, 3, 3]
+              - [3, 6, 3]
+            STR_MONOS_SPAWNER:
+              - [12, 15, 3]
+              - [15, 12, 3]
+            STR_MONOE_SPAWNER:
+              - [12, 3, 3]
+              - [15, 6, 3]
+            STR_MONOW_SPAWNER:
+              - [3, 12, 3]
+              - [6, 15, 3]
+          fuseTimers:
+            STR_MONOW_SPAWNER: [0, 0]
+            STR_MONOE_SPAWNER: [0, 0]
+            STR_MONON_SPAWNER: [0, 0]
+            STR_MONOS_SPAWNER: [0, 0]

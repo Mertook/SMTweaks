@@ -435,6 +435,18 @@ research:
       - STR_IMPERIAL_AGENTS
     spawnedEvent: STR_HERETICALMEANS_CARE_PACKAGE
 
+  - name: STR_THE_IMPERIAL_LAW_STRATEGY # Arbites Strategy
+    listOrder: 2
+    unlocks: !add
+      - STR_ARBITES_SOLDIERS
+      - STR_GUARD_AND_INQUISITION # Combined IG/CM/Arbites shared items/techs
+      - STR_40MM_AMMO
+      - STR_STUBBERS_UNLOCK
+      - STR_IMPERIAL_CHURCH
+      - STR_PICKED_LOYALIST_STRATEGY
+    reenables:
+      - STR_HEAVY_SHOTGUN_ARBITES
+
   - name: STR_RADICAL_INQUISITOR_STRATEGY
     dependencies:
       - STR_GENERALLOCK

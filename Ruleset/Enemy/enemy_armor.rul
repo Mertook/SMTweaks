@@ -279,6 +279,26 @@ armors:
   - type: STR_MONO_E_ARMOR
     refNode: *REF_MONOLITH_TURRET_ARMOR
 
+  - type: STR_NECRON_TURRET_ARMOR
+    refNode: *REF_MONOLITH_TURRET_ARMOR
+    spriteSheet: NECRONTURRET.PCK
+    allowInv: false
+    zombiImmune: true
+    bleedImmune: true
+    fearImmune: true
+    painImmune: true
+    corpseGeo:  STR_MONO_CORPSE
+    corpseBattle:
+      - OT_CORPSE1
+      - OT_CORPSE2
+      - OT_CORPSE3
+      - OT_CORPSE4
+    size: 2
+    loftempsSet: [ 92, 89, 90, 91 ]
+    drawingRoutine: 3
+    allowsMoving: false
+    builtInWeapons:
+      - STR_TRIPLE_GAUSS_CANNON
 
   - type: STR_NECRON_WARRIOR_ARMOR_REVIVES      # Warrior (revives)
     tags:

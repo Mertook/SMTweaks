@@ -2282,12 +2282,12 @@ crafts:
           length: 20
           items:
             STR_CHIMERA_COMMAND_TURRET_SPAWNER:
-              - [1, 4, 1]
+              - [1, 5, 1]
               - [7, 9, 1]
               - [2, 16, 1]
             STR_CHIMERA_HULL_SPAWNER:
+              - [2, 7, 0]
               - [8, 11, 0]
-              - [2, 6, 0]
               - [3, 18, 0]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
@@ -2348,12 +2348,12 @@ crafts:
           length: 20
           items:
             STR_CHIMERASL_COMMAND_TURRET_SPAWNER:
-              - [1, 4, 1]
+              - [1, 5, 1]
               - [7, 9, 1]
               - [2, 16, 1]
             STR_CHIMERASL_HULL_SPAWNER:
+              - [2, 7, 0]
               - [8, 11, 0]
-              - [2, 6, 0]
               - [3, 18, 0]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
@@ -2629,7 +2629,7 @@ crafts:
         - SMDOORUM
         - SMTBOMBARD
       mapBlocks:
-        - name: GORGON
+        - name: SHGORGON
           width: 10
           length: 20
           items:
@@ -2682,7 +2682,7 @@ crafts:
         - SMDOORUM
         - SMTBOMBARD
       mapBlocks:
-        - name: GORGON
+        - name: SHGORGON
           width: 10
           length: 20
           items:
@@ -2741,7 +2741,7 @@ crafts:
           length: 20
           items:
             STR_CHIMERA_COMMAND_TURRET_SPAWNER:
-              - [1, 4, 1]
+              - [1, 5, 1]
             STR_CHIMEDON_SPAWNER:
               - [7, 9, 1]
             STR_LEMONRUSS_SPAWNER:
@@ -2753,7 +2753,7 @@ crafts:
               - [3, 18, 0]
             STR_CHIMERA_HULL_SPAWNER:
               - [8, 11, 0]
-              - [2, 6, 0]
+              - [2, 7, 0]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -2821,7 +2821,7 @@ crafts:
           length: 20
           items:
             STR_CHIMERASL_COMMAND_TURRET_SPAWNER:
-              - [1, 4, 1]
+              - [1, 5, 1]
               - [7, 9, 1]
             STR_LEMANSL_COMMAND_TURRET_SPAWNER:
               - [2, 16, 1]
@@ -2832,7 +2832,7 @@ crafts:
               - [3, 18, 0]
             STR_CHIMERASL_HULL_SPAWNER:
               - [8, 11, 0]
-              - [2, 6, 0]
+              - [2, 7, 0]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -2891,7 +2891,7 @@ crafts:
           length: 20
           items:
             STR_CHIMERASL_COMMAND_TURRET_SPAWNER:
-              - [1, 4, 1]
+              - [1, 5, 1]
               - [7, 9, 1]
             STR_LEMANSL_COMMAND_TURRET_SPAWNER:
               - [2, 16, 1]
@@ -2901,8 +2901,8 @@ crafts:
             STR_LEMANSL_HULL_SPAWNER:
               - [3, 18, 0]
             STR_CHIMERASL_HULL_SPAWNER:
+              - [2, 7, 0]
               - [8, 11, 0]
-              - [2, 6, 0]
             STR_BOMBARD_SPAWNER: # 12 strikes
               - [0, 0, 5] # Bombard Platform
               - [0, 0, 5]
@@ -3477,12 +3477,6 @@ crafts:
       - [4, 14, 1, 0]
       - [5, 14, 1, 0]
       - [6, 14, 1, 0]
-
-  - type: STR_THUNDERBOLTPD                 # Thunderbolt (Arbites)
-    requires:
-      - STR_ARBITES
-      - STR_NEW_FIGHTER_PD
-      #- STR_GENERALLOCK # disabled, xiphons used instead
 
   - type: STR_VULTURE                       # Vulture
     requiresBuyBaseFunc: [HANGAR]

@@ -11,7 +11,7 @@ extended:
 
   scripts:
     hitUnit:
-    - override: ROSIGMA_hU_hand_shield_item # rework rosigma script to make the 2h penalty check armor - it's Terminator equipment, they have no problem using it while carrying an assault cannon
+    - new: SMTS_hU_hand_shield_item # rework rosigma script to make the 2h penalty check armor
       offset: 1 # Extend Front Armor facing (40k script) + Reduce incoming damage
       code: |   # use Shield Ammo as HP, if HP lower than attack power, shield doesn't protect
         var int unitDirection;
@@ -138,3 +138,6 @@ extended:
         end;
 
         return power part side;
+
+    - delete: ROSIGMA_hU_hand_shield_item
+

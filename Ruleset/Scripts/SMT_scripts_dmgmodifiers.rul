@@ -95,10 +95,22 @@ extended:
             end;
           end;
 
-          begin; ### Resistance Penetration
+          begin; ### Dual Resists & Resistance Penetration
             var int resistanceValue 100;
             var int resistPen 0;
             unit.reduceByResistance resistanceValue damaging_type;
+            weapon_item.getTag temp Tag.SMT_DUAL_RESIST_TYPE; # dual type resist
+            if gt temp 0;
+              set temp2 100;
+              unit.reduceByResistance temp2 temp;
+              add temp2 resistanceValue;
+              div temp2 2; # get average resist
+              set temp temp2;
+              muldiv temp 100 resistanceValue; # calculate the multiplier needed to adjust power
+              muldiv multBonus temp 100; # apply mult
+              set resistanceValue temp2; # set new resistance value for future pen calcs
+            end;
+
             if and gt resistanceValue 0 lt resistanceValue 100; # only if damage type is resisted but not ignored
               weapon_item.getTag resistPen Tag.DAMAGE_RESIST_PENETRATION_PERCENT;
               ammoItem.getTag temp Tag.DAMAGE_RESIST_PENETRATION_PERCENT;
@@ -191,8 +203,10 @@ extended:
 
           end;
 
+          #debug_log "PreShield DmgMod Final Mod " power multBonus flatBonus;
           muldiv power multBonus 100;
           add power flatBonus;
+          #debug_log "PreShield DmgMod Final Power " power;
           return power part side;
 
       - new: SMTS_hitUnit_passive_bonus

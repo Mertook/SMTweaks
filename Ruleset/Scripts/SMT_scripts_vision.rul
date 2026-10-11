@@ -21,8 +21,8 @@ extended:
           var int temp;
 
           target_unit.getTag temp Tag.SMT_MARKED_INTENSITY;
-          #debug_log "Marked Target " distance_max current_visibility target_unit;
-          #debug_log "Marked Observer " distance default_visibility observer_unit;
+          debug_log "Marked Target " distance_max current_visibility target_unit;
+          debug_log "Marked Observer " distance default_visibility observer_unit;
           if gt temp 0;
             add current_visibility temp;
           else lt temp 0;

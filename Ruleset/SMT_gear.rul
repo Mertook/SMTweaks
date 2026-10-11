@@ -377,7 +377,7 @@ items:
 
   - type: STR_LIGHT_BOLTER_AMMO_INF         # Light Bolter Incendiary ammo
     armor: 300
-    damageType: 2 # FIRE
+    damageType: 16 # FIRE
     damageAlter:
       RandomType: 7 # 50-200%
       IgnoreDirection: false
@@ -396,6 +396,7 @@ items:
     power: 60
     tags:
       ITEM_IGNITES_TARGETS: 1
+      SMT_DUAL_RESIST_TYPE: 1 # Standard
 
   - type: STR_CANTUS_BOLTER_AMMO            # Cantus Training Ammo
     refNode: *DMG_BOLTER_AMMO_STD
@@ -1220,23 +1221,24 @@ items:
       index: 88
     explosionSpeed: 3
     power: 80
-    damageType: 2 # FIRE
-    damageAlter:
+    damageType: 16 # FIRE
+    damageAlter: &Ref_Incen_Explosive_Dmg
       RandomType: 7 # 50-200%
       IgnoreDirection: false
       FireBlastCalc: false
       FireThreshold: 1
-      ArmorEffectiveness: 0.5
-      ToArmorPre: 0.02
-      ToArmor: 0.13
-      ToMorale: 2.0
-      ToHealth: 1.4
+      ArmorEffectiveness: 0.25
+      ToArmorPre: 0.01
+      ToArmor: 0.02
+      ToMorale: 1.5
+      ToHealth: 1.0
       ToStun: 0.2
       ToEnergy: 0.3
       ToWound: 0.5
-      ToTile: 0.20 #firey gas, not explosive
-      ToItem: 0.20 #firey gas, not explosive
-      FixRadius: 2 #
+      RandomWound: false
+      ToTile: 0.2
+      ToItem: 0.2
+      FixRadius: 2
     tags:
       ITEM_AMMO_COLOR: 9 # gold
       ITEM_ARMOR_TARGET_WEAKEST: 1
@@ -2562,23 +2564,8 @@ items:
       index: 88
     powerForAnimation: 40
     power: 85
-    damageType: 2 # FIRE
-    damageAlter:
-      RandomType: 7 # 50-200%
-      IgnoreDirection: false
-      FireBlastCalc: false
-      FixRadius: 2
-      FireThreshold: 1
-      ArmorEffectiveness: 0.6
-      ToArmorPre: 0.1
-      ToArmor: 0.1
-      ToTile: 0.0
-      ToMorale: 2.0
-      ToHealth: 1.1
-      ToStun: 0.2
-      ToEnergy: 0.3
-      ToWound: 0.2
-      RandomWound: false
+    damageType: 16 # FIRE
+    damageAlter: *Ref_Incen_Explosive_Dmg
     explosionSpeed: 3
     clipSize: 90
     armor: 300
@@ -2599,23 +2586,8 @@ items:
       index: 88
     powerForAnimation: 40
     power: 85
-    damageType: 2 # FIRE
-    damageAlter:
-      RandomType: 7 # 50-200%
-      IgnoreDirection: false
-      FireBlastCalc: false
-      FixRadius: 2
-      FireThreshold: 1
-      ArmorEffectiveness: 0.6
-      ToArmorPre: 0.1
-      ToArmor: 0.1
-      ToTile: 0.0
-      ToMorale: 2.0
-      ToHealth: 1.1
-      ToStun: 0.2
-      ToEnergy: 0.3
-      ToWound: 0.2
-      RandomWound: false
+    damageType: 16 # FIRE
+    damageAlter: *Ref_Incen_Explosive_Dmg
     requiresBuy:
       - STR_HBOLTER_AMMO_PREREQ
     listOrder: 12022
@@ -3199,21 +3171,8 @@ items:
     hitAnimation:
       mod: 40k
       index: 88
-    damageAlter: # Incendiary
-      FixRadius: 3
-      RadiusReduction: 5
-      RandomType: 9 # 50-150
-      ResistType: 2
-      ArmorEffectiveness: 0.7
-      ToHealth: 1.3
-      ToArmorPre: 0.0
-      ToArmor: 0.1
-      ToWound: 0.2
-      ToMorale: 1.0
-      FireThreshold: 1
-      RandomWound: false
-      ToTile: 0.10 # incin round
-      ToItem: 0.25
+    damageType: 16 # Incen
+    damageAlter: *Ref_Incen_Explosive_Dmg
     tags:
       ITEM_ARMOR_TARGET_WEAKEST: 1
       ITEM_IGNITES_TARGETS: 3
@@ -4533,7 +4492,7 @@ items:
     damageType: 4 # LAS
     damageAlter:
       RandomType: 8 # 25-175%
-      ArmorEffectiveness: 0.75 # was 0.75
+      ArmorEffectiveness: 0.8 # was 0.75
       ToArmorPre: 0.15 # was 0.2
       ToArmor: 0.05
       ToHealth: 1.0
@@ -4966,7 +4925,7 @@ items:
       firing: 0.5
       flatHundred: 0.5
     aimRange: 0
-    snapRange: 18 # was 16
+    snapRange: 16 # was 16
     autoRange: 14 # was 9
     accuracyAimed: 0
     accuracySnap: 80 # was 80
@@ -4986,7 +4945,7 @@ items:
       firing: 0.5
       flatHundred: 0.5
     aimRange: 0
-    snapRange: 18 # was 16
+    snapRange: 16 # was 16
     autoRange: 12 # was 9
     accuracyAimed: 0
     accuracySnap: 75 # was 70
@@ -5006,7 +4965,7 @@ items:
       firing: 0.5
       flatHundred: 0.5
     aimRange: 0
-    snapRange: 21 # was 17
+    snapRange: 18 # was 17
     autoRange: 15 # was 10
     accuracyAimed: 0
     accuracySnap: 90 # was 75
@@ -5029,7 +4988,7 @@ items:
     snapRange: 20 # was 18
     autoRange: 15
     accuracyAimed: 0 # was 85
-    accuracySnap: 90 # was 75
+    accuracySnap: 80 # was 75
     accuracyAuto: 75 # was 0
     tuAimed: 0 # was 65
     tuSnap: 25 # was 33
@@ -5053,7 +5012,7 @@ items:
     snapRange: 16 # was 13
     autoRange: 11 # was 7
     accuracyAimed: 0
-    accuracySnap: 80 # was 60
+    accuracySnap: 75 # was 60
     accuracyAuto: 60 # was 50
     tuAimed: 0
     tuSnap: 30 # was 30
@@ -5826,21 +5785,23 @@ items:
     power: 80
     powerRangeReduction: 15
     powerRangeThreshold: 22
-    damageAlter:
+    damageType: 16 # FIRE
+    damageAlter: &Ref_Incen_Flamer_Dmg
       RandomType: 9 # 50-150
-      ArmorEffectiveness: 0.7 # was 0.8
-      ToArmorPre: 0.1 # was 0.2
-      ToArmor: 0.05
-      ToHealth: 1.7
-      ToStun: 0.4
-      ToTile: 0.3
-      ToItem: 0.3
-      ToMorale: 1.5
-      ToTime: 0.2
-      FixRadius: 3
       FireBlastCalc: false
       IgnoreOverKill: false
       IgnoreDirection: false
+      ArmorEffectiveness: 0.25
+      ToArmorPre: 0.01
+      ToArmor: 0.02
+      ToHealth: 1.0
+      ToStun: 0.2
+      ToWound: 0.3
+      RandomWound: false
+      ToTile: 0.3
+      ToItem: 0.3
+      ToMorale: 1.5
+      FixRadius: 3
     clipSize: 40
     tags:
       ITEM_ARMOR_TARGET_WEAKEST: 1
@@ -5854,7 +5815,7 @@ items:
     damageBonus:
       psiStrength: [-0.15, 0.0075, -0.00003] # s60 = p11, s80 = p20, s100 = p30, s120 = p38, s140 = p43; S-curve, sharpest slope at 80~85, starts losing power at 160+
       flatHundred: -0.10
-    damageType: 13 # WARP
+    damageType: 14 # WARPBANE
     damageAlter:
       RandomType: 9 # 50-150%
       ArmorEffectiveness: 0.7
@@ -5876,6 +5837,7 @@ items:
       ITEM_ENERGY_SHIELD_PENETRATION_PERCENT: 100 # ignores shields
       ITEM_ARMOR_TARGET_WEAKEST: 1
       ITEM_IGNITES_TARGETS: 2
+      SMT_DUAL_RESIST_TYPE: 16 # FIRE
 
   - type: STR_FLAMETHROWER_CLIP             # Flamer Fuel
     size: 0.05
@@ -5906,17 +5868,19 @@ items:
     damageType: 11 # MELTA
     damageAlter:
       RandomType: 8 # 25-175
+      ArmorEffectiveness: 0.5
       ToArmorPre: 1.0
       ToHealth: 1.4 # was 1.6
-      ToTile: 4.0 # was 6.0
       ToWound: 0.05
       FireThreshold: 5
       RandomWound: false
       TileDamageMethod: 2
+      ToTile: 4.0 # was 6.0
+      TileDamageLimit: 240
     shotgunBehavior: 1
     shotgunSpread: 0
-    powerRangeReduction: 4.0 # was 1.0
-    powerRangeThreshold: 6.0 # was 3, deadlier at short range but falls off faster - 9 range is tipping point
+    powerRangeReduction: 5.0 # was 1.0
+    powerRangeThreshold: 6.0 # was 3
 
   - &DMG_MELTA_BLAST                        # Explosive Melta Damage
     type: STR_HIGH_EXPLOSIVE
@@ -5924,14 +5888,17 @@ items:
     damageType: 11 # MELTA
     damageAlter:
       RandomType: 9 # 50-150
+      ArmorEffectiveness: 0.5
       ToArmorPre: 1.0
-      ToTile: 1.0
       ToItem: 1.0
       ToArmor: 0
       ToHealth: 0.7
       ToWound: 0.05
       RandomWound: false
       FireThreshold: 1
+      TileDamageMethod: 2
+      ToTile: 4.0 # was 6.0
+      TileDamageLimit: 240
     tags:
       ITEM_ARMOR_DAMAGE_ALL: 50
       ITEM_ARMOR_TARGET_WEAKEST: 1
@@ -5940,8 +5907,10 @@ items:
   - type: STR_MELTA_AMMO                    # Meltagun Ammo
     refNode: *DMG_MELTA_STD
     size: 0.05
+    weight: 4 # was 3
     power: 30 # was 15
     shotgunPellets: 5 # was 10
+    clipSize: 6 # was 10
 
   - type: STR_LIGHT_MELTA_AMMO              # Light Melta Ammo
     refNode: *DMG_MELTA_STD
@@ -5953,18 +5922,18 @@ items:
   - type: STR_INFERNO_PISTOL_AMMO           # Inferno Pistol Ammo
     refNode: *DMG_MELTA_STD
     size: 0.05
-    power: 24 # was 15
+    power: 30 # was 15
     shotgunPellets: 4 # was 6
-    powerRangeThreshold: 5.0 # -1 for pistol
+    powerRangeThreshold: 3.0 # -3 for pistol
     clipSize: 5
 
   - type: STR_BLASTER_BOMB                  # Multimelta Ammo
     refNode: *DMG_MELTA_STD
     size: 0.05
-    weight: 6 # was 3
+    weight: 8 # was 3
     power: 36 # was 15
     shotgunPellets: 8 # was 20
-    powerRangeThreshold: 9.0 # multimelta
+    powerRangeThreshold: 10.0 # multimelta
     clipSize: 4 # was 3
 
   - &STR_MULTIMELTA_TEMPLATE
@@ -7489,23 +7458,26 @@ items:
     vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 1}
     vaporDensitySurface: 1
     vaporProbabilitySurface: 18
-    damageType: 2 #FIRE
+    damageType: 16 #FIRE
     damageAlter: &Ref_Shotgun_Dmg_Inc
       IgnoreDirection: false
       IgnoreOverKill: false
       FireBlastCalc: false
-      FireThreshold: 0
+      FireThreshold: 1
       RandomType: 8 # 25-175%
-      ArmorEffectiveness: 0.8
-      ToArmorPre: 0.02
-      ToArmor: 0.1
-      ToHealth: 1.2 # was 1.1
+      ArmorEffectiveness: 0.25
+      ToArmorPre: 0.01
+      ToArmor: 0.02
+      ToHealth: 1.0
       ToEnergy: 0.2
-      ToStun: 0.4
+      ToStun: 0.3
       ToMorale: 1.0
+      ToWound: 0.5
+      RandomWound: false
       FixRadius: 0
     tags:
       ITEM_IGNITES_TARGETS: 1
+      SMT_DUAL_RESIST_TYPE: 1 # Standard
 
   - type: STR_REDEEMER_SHELLS               # Redeemer Shells
     refNode: *REF_SHOTGUN_AMMO_STANDARD
@@ -7702,7 +7674,7 @@ items:
     vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 1}
     vaporDensitySurface: 1
     vaporProbabilitySurface: 18
-    damageType: 2 #FIRE
+    damageType: 16 #FIRE
     damageAlter: *Ref_Shotgun_Dmg_Inc
     tags:
       ITEM_AMMO_COLOR: 1 # yellow
@@ -7718,7 +7690,7 @@ items:
     vaporColorSurface: {mod: 40k_ROSIGMA_edits, index: 1}
     vaporDensitySurface: 1
     vaporProbabilitySurface: 18
-    damageType: 2 #FIRE
+    damageType: 16 #FIRE
     damageAlter: *Ref_Shotgun_Dmg_Inc
     tags:
       ITEM_AMMO_COLOR: 1 # yellow
@@ -7831,24 +7803,23 @@ items:
     shotgunSpread: 0
     power: 80
     powerRangeReduction: 5
-    damageType: 2 # FIRE
-    damageAlter:
-      RandomType: 9 # 50-150
-      FireBlastCalc: false
+    damageType: 16 # FIRE
+    damageAlter: &Ref_Incen_Explosive_Dmg_Big
+      RandomType: 7 # 50-200%
       IgnoreDirection: false
-      IgnoreOverKill: false
-      ArmorEffectiveness: 0.9
-      ToHealth: 1.2
-      ToArmorPre: 0.05
-      ToArmor: 0.15
-      ToStun: 0.5
+      FireBlastCalc: false
+      FireThreshold: 1
+      ArmorEffectiveness: 0.25
+      ToArmorPre: 0.01
+      ToArmor: 0.02
+      ToMorale: 1.5
+      ToHealth: 1.0
+      ToStun: 0.2
       ToEnergy: 0.3
-      ToWound: 0.2
-      ToMorale: 1.0
-      RadiusReduction: 3 # low power falloff
-      ToTile: 0.2
-      ToItem: 0.25
+      ToWound: 0.5
       RandomWound: false
+      ToTile: 0.2
+      ToItem: 0.2
       FixRadius: 4
     tags:
       ITEM_AMMO_COLOR: 1 # yellow
@@ -7874,25 +7845,8 @@ items:
     shotgunSpread: 0
     power: 80
     powerRangeReduction: 5
-    damageType: 2 # FIRE
-    damageAlter:
-      RandomType: 9 # 50-150
-      FireBlastCalc: false
-      IgnoreDirection: false
-      IgnoreOverKill: false
-      ArmorEffectiveness: 0.9
-      ToHealth: 1.2
-      ToArmorPre: 0.05
-      ToArmor: 0.15
-      ToStun: 0.5
-      ToEnergy: 0.3
-      ToWound: 0.2
-      ToMorale: 1.0
-      RadiusReduction: 3 # low power falloff
-      ToTile: 0.2
-      ToItem: 0.25
-      RandomWound: false
-      FixRadius: 4
+    damageType: 16 # FIRE
+    damageAlter: *Ref_Incen_Explosive_Dmg_Big
     tags:
       ITEM_AMMO_COLOR: 1 # yellow
       ITEM_ARMOR_TARGET_WEAKEST: 1
@@ -8374,7 +8328,7 @@ items:
     costBuy: 6000
     costSell: 2400
     weight: 7
-    power: 80
+    power: 85
     clipSize: 16
     listOrder: 12162
 
@@ -8425,22 +8379,23 @@ items:
     hitAnimation:
       mod: 40k
       index: 88
-    damageType: 2 # FIRE
+    damageType: 16 # FIRE
     damageAlter:
       RandomType: 9 # 50-150
       FireBlastCalc: false
       IgnoreDirection: false
       FireThreshold: 1
-      ArmorEffectiveness: 0.5
-      ToHealth: 1.2
-      ToArmorPre: 0.02 # basically nothing
-      ToArmor: 0.15
-      ToStun: 0.5
+      ArmorEffectiveness: 0.25
+      ToHealth: 1.0
+      ToArmorPre: 0.01
+      ToArmor: 0.02
+      ToStun: 0.2
       ToEnergy: 0.3
-      ToMorale: 2.0
+      ToMorale: 1.0
       ToWound: 0.2
       RandomWound: false
-      ToTile: 0.25
+      ToTile: 0.3
+      ToItem: 0.1
       FixRadius: 3
       RadiusReduction: 5
     tags:
@@ -8734,16 +8689,16 @@ items:
 
   - type: STR_MORTAR_AMMO_PHOSPHOR_EXPLOSION    # Mortar Explosion Phosphor
     power: 120
-    damageType: 2 # FIRE, was ACID
+    damageType: 16 # FIRE, was ACID
     damageAlter:
       RandomType: 2 # 50-150%
-      ArmorEffectiveness: 0.7
+      ArmorEffectiveness: 0.25
       ToArmorPre: 0.1
       ToArmor: 0.05
       ToMorale: 1.0
       ToWound: 0.2
       RandomWound: false
-      ToHealth: 0.7 # was 0.4
+      ToHealth: 1.0 # was 0.4
       ToStun: 0.4
       FireThreshold: 0
       FixRadius: 8
@@ -8902,23 +8857,8 @@ items:
       time: false
       energy: true
     power: 90 # was 80
-    damageType: 2 # FIRE, was ACID
-    damageAlter:
-      RandomType: 2 # 50-150%
-      ArmorEffectiveness: 0.7
-      ToArmorPre: 0.1
-      ToArmor: 0.05
-      ToMorale: 1.0
-      ToWound: 0.2
-      RandomWound: false
-      ToHealth: 0.9 # was 0.4
-      ToStun: 0.4
-      FireThreshold: 0
-      FixRadius: 6 # was 5
-      RadiusReduction: 5
-      FireBlastCalc: false
-      IgnoreOverKill: false
-      IgnoreDirection: false
+    damageType: 16 # FIRE, was ACID
+    damageAlter: *Ref_Incen_Explosive_Dmg_Big
     tags:
       ITEM_ARMOR_TARGET_WEAKEST: 1
       ITEM_IGNITES_TARGETS: 3
@@ -11629,7 +11569,7 @@ items:
     confSnap:
       shots: 2
     power: 60
-    damageType: 2 # FIRE
+    damageType: 16 # FIRE
     blastRadius: 2
     arcingShot: true
     noLOSAccuracyPenalty: 75 #indirect fire weapon

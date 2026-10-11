@@ -206,37 +206,687 @@ alienDeployments:
       palette: 4
 
 
-  - type: STR_MONOLITH    #NECRON
+  - type: STR_TOMB_SMT # Necron Tomb S1
+    enviroEffects: STR_INSIDE_ENVIRO
     data:
-      - alienRank: 5
-        lowQty: 6 #5
-        highQty: 6 #7
-        dQty: 6
+      - alienRank: 1 # leader
+        lowQty: 1
+        highQty: 1
+        dQty: 0
+        percentageOutsideUfo: 0
+        itemSets: *emptyItemSets
+      - alienRank: 7 # terror 2
+        lowQty: 1
+        highQty: 1
+        dQty: 0
         percentageOutsideUfo: 50
         itemSets: *emptyItemSets
-      - alienRank: 4
+      - alienRank: 4 # navigator
         lowQty: 1
-        highQty: 1 #2
-        dQty: 1 #0
+        highQty: 1
+        dQty: 1
         percentageOutsideUfo: 20
         itemSets: *emptyItemSets
-      - alienRank: 3
-        lowQty: 1
-        highQty: 1 #2
-        dQty: 1 #0
+      - alienRank: 2 # engineer
+        lowQty: 2
+        highQty: 2
+        dQty: 1
         percentageOutsideUfo: 20
         itemSets: *emptyItemSets
-      - alienRank: 2
+      - alienRank: 6 # terror 1
         lowQty: 1
-        highQty: 1 #2
-        dQty: 1 #0
+        highQty: 1
+        dQty: 2
+        percentageOutsideUfo: 50
+        itemSets: *emptyItemSets
+      - alienRank: 5 # soldier
+        lowQty: 5
+        highQty: 5
+        dQty: 2
+        percentageOutsideUfo: 70
+        itemSets: *emptyItemSets
+      - alienRank: 3 # medic
+        lowQty: 3
+        highQty: 3
+        dQty: 2
         percentageOutsideUfo: 20
         itemSets: *emptyItemSets
+    reinforcements:
+      - type: necronsAwakeningLight1
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_NECRON_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_TOMB_DESC_LIGHT
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 2
+        maxTurn: 3
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        spawnNodeRanks: [7] # medic nodes
+        mapBlockFilterType: 0 # all blocks, just go by node placement
+        data:
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 0
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+      - type: necronsAwakeningLight2
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_NECRON_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_TOMB_DESC_LIGHT
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 4
+        maxTurn: 5
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        spawnNodeRanks: [7] # medic nodes
+        mapBlockFilterType: 0 # all blocks, just go by node placement
+        data:
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 0
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+      - type: necronsAwakeningLight3
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_NECRON_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_TOMB_DESC_LIGHT
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 6
+        maxTurn: 7
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        spawnNodeRanks: [7] # medic nodes
+        mapBlockFilterType: 0 # all blocks, just go by node placement
+        data:
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 0
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+      - type: necronsAwakeningMedium1
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_NECRON_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 8
+        maxTurn: 9
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        spawnNodeRanks: [7] # medic nodes
+        mapBlockFilterType: 0
+        data:
+          - alienRank: 2
+            lowQty: 1
+            highQty: 1
+            dQty: 0
+            itemSets: *emptyItemSets
+          - alienRank: 6
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 2
+            highQty: 2
+            dQty: 0
+            itemSets: *emptyItemSets
+      - type: necronsAwakeningMedium2
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_NECRON_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 10
+        maxTurn: 11
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        spawnNodeRanks: [7] # medic nodes
+        mapBlockFilterType: 0
+        data:
+          - alienRank: 2
+            lowQty: 1
+            highQty: 1
+            dQty: 0
+            itemSets: *emptyItemSets
+          - alienRank: 6
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 2
+            highQty: 2
+            dQty: 0
+            itemSets: *emptyItemSets
+      - type: necronsAwakeningMedium3
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_NECRON_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 12
+        maxTurn: 13
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        spawnNodeRanks: [7] # medic nodes
+        mapBlockFilterType: 0
+        data:
+          - alienRank: 2
+            lowQty: 1
+            highQty: 1
+            dQty: 0
+            itemSets: *emptyItemSets
+          - alienRank: 6
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 2
+            highQty: 2
+            dQty: 0
+            itemSets: *emptyItemSets
+      - type: necronsAwakeningHeavy
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_NECRON_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_TOMB_DESC_HEAVY
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 15
+        executionOdds: 80
+        maxRuns: -1
+        useSpawnNodes: true
+        spawnNodeRanks: [7] # medic nodes
+        mapBlockFilterType: 0 # all blocks, just go by node placement
+        data:
+          - alienRank: 7
+            lowQty: 0
+            highQty: 0
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 4
+            lowQty: 1
+            highQty: 1
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 2
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 5
+            lowQty: 4
+            highQty: 4
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 1
+            highQty: 1
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 6
+            lowQty: 0
+            highQty: 0
+            dQty: 2
+            itemSets: *emptyItemSets
+    genMissionFreq: 5
+    genMission:
+      STR_MONOLITH_PATROL: 95
+      STR_NECRON_TERROR: 5
+    points: 15
+    objectiveFailed: [STR_NECRON_BASE_NOT_DESTROYED, -500]
+    abortPenalty: 500
+    shade: 8 # dark
+    width: 50
+    length: 60
+    height: 7
+    script: SMT_TOMB_P1
+    terrains:
+      - TOMBSMT
+    nextStage: STR_TOMB_SMT_P2
+    alienBase: true
+    briefing:
+      cutscene: NECRONTOMB
+      desc: STR_TOMB_P1_DESCRIPTION
+      music: gmstory2
+      showCraft: true
+      showTarget: false
+      background: BACK172.SCR
+      title: STR_ALIEN_BASE_ASSAULT
+      textOffset: -16
+      palette: 4
+
+  - type: STR_TOMB_SMT_P2 # Necron Tomb S2
+    enviroEffects: STR_INSIDE_ENVIRO
+    data:
+      - alienRank: 0 # commander
+        lowQty: 1
+        highQty: 1
+        dQty: 0
+        percentageOutsideUfo: 0
+        itemSets: *emptyItemSets
+      - alienRank: 5 # soldier
+        lowQty: 4
+        highQty: 4
+        dQty: 2
+        percentageOutsideUfo: 70
+        itemSets: *emptyItemSets
+      - alienRank: 4 # navigator
+        lowQty: 2
+        highQty: 2
+        dQty: 1
+        percentageOutsideUfo: 20
+        itemSets: *emptyItemSets
+      - alienRank: 3 # medic
+        lowQty: 4
+        highQty: 4
+        dQty: 2
+        percentageOutsideUfo: 20
+        itemSets: *emptyItemSets
+      - alienRank: 2 # engineer
+        lowQty: 2
+        highQty: 2
+        dQty: 1
+        percentageOutsideUfo: 20
+        itemSets: *emptyItemSets
+      - alienRank: 6 # terror 1
+        lowQty: 1
+        highQty: 1
+        dQty: 2
+        percentageOutsideUfo: 50
+        itemSets: *emptyItemSets
+      - alienRank: 7 # terror 2
+        lowQty: 1
+        highQty: 1
+        dQty: 1
+        percentageOutsideUfo: 50
+        itemSets: *emptyItemSets
+    reinforcements:
+      - type: necronsAwakeningLight1
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_NECRON_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 2
+        maxTurn: 3
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        spawnNodeRanks: [7] # medic nodes
+        mapBlockFilterType: 0 # all blocks, just go by node placement
+        data:
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 0
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 2
+            lowQty: 0
+            highQty: 0
+            dQty: 1
+            itemSets: *emptyItemSets
+      - type: necronsAwakeningLight2
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_NECRON_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 4
+        maxTurn: 5
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        spawnNodeRanks: [7] # medic nodes
+        mapBlockFilterType: 0 # all blocks, just go by node placement
+        data:
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 0
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 2
+            lowQty: 0
+            highQty: 0
+            dQty: 1
+            itemSets: *emptyItemSets
+      - type: necronsAwakeningLight3
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_NECRON_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 6
+        maxTurn: 7
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        spawnNodeRanks: [7] # medic nodes
+        mapBlockFilterType: 0 # all blocks, just go by node placement
+        data:
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 0
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 2
+            lowQty: 0
+            highQty: 0
+            dQty: 1
+            itemSets: *emptyItemSets
+      - type: necronsAwakeningMedium1
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_NECRON_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 8
+        maxTurn: 9
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        spawnNodeRanks: [7] # medic nodes
+        mapBlockFilterType: 0
+        data:
+          - alienRank: 6
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 1
+            highQty: 1
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 2
+            lowQty: 0
+            highQty: 0
+            dQty: 2
+            itemSets: *emptyItemSets
+      - type: necronsAwakeningMedium2
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_NECRON_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 10
+        maxTurn: 11
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        spawnNodeRanks: [7] # medic nodes
+        mapBlockFilterType: 0
+        data:
+          - alienRank: 6
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 1
+            highQty: 1
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 2
+            lowQty: 0
+            highQty: 0
+            dQty: 2
+            itemSets: *emptyItemSets
+      - type: necronsAwakeningMedium3
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_NECRON_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 12
+        maxTurn: 13
+        executionOdds: 100
+        maxRuns: 1
+        useSpawnNodes: true
+        spawnNodeRanks: [7] # medic nodes
+        mapBlockFilterType: 0
+        data:
+          - alienRank: 6
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 5
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 1
+            highQty: 1
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 2
+            lowQty: 0
+            highQty: 0
+            dQty: 2
+            itemSets: *emptyItemSets
+      - type: necronsAwakeningHeavy
+        briefing:
+          palette: 4
+          textOffset: -32
+          title: STR_NECRON_REINFORCEMENTS_TITLE
+          desc: STR_NECRON_REINFORCEMENTS_TOMB_DESC_HEAVY
+          background: BACK171.SCR
+          cutscene: ""
+          showCraft: false
+          showTarget: false
+        minTurn: 15
+        executionOdds: 80
+        maxRuns: -1
+        useSpawnNodes: true
+        spawnNodeRanks: [7] # medic nodes
+        mapBlockFilterType: 0 # all blocks, just go by node placement
+        data:
+          - alienRank: 7
+            lowQty: 0
+            highQty: 0
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 6
+            lowQty: 0
+            highQty: 0
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 4
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 2
+            lowQty: 1
+            highQty: 1
+            dQty: 1
+            itemSets: *emptyItemSets
+          - alienRank: 5
+            lowQty: 2
+            highQty: 2
+            dQty: 2
+            itemSets: *emptyItemSets
+          - alienRank: 3
+            lowQty: 1
+            highQty: 1
+            dQty: 2
+            itemSets: *emptyItemSets
+    objectiveComplete: [STR_NECRON_BASE_DESTROYED, 2000]
+    objectiveFailed: [STR_NECRON_BASE_NOT_DESTROYED, -500]
+    abortPenalty: 500
+    shade: 8 # dark
+    width: 40
+    length: 50
+    height: 7
+    script: SMT_TOMB_P2
+    terrains:
+      - TOMBSMT
+    missionBountyItem: STR_TOMB_DATASLATE
+    missionBountyItemCount: 1
+    objectiveType: 14
+    objectivesRequired: 1 # only destroy 1 of 8 tiles
+    briefing:
+      cutscene: NECRONTOMB
+      desc: STR_TOMB_P2_DESCRIPTION
+      music: gmstory2
+      showCraft: true
+      showTarget: false
+      background: NECRON_TOMB.SCR
+      title: STR_ALIEN_BASE_ASSAULT
+      textOffset: -16
+      palette: 4
+
+
+  - type: STR_MONOLITH    #NECRON
+    data:
       - alienRank: 1
         lowQty: 1
         highQty: 1
         dQty: 0
         percentageOutsideUfo: 0
+        itemSets: *emptyItemSets
+      - alienRank: 4
+        lowQty: 2
+        highQty: 2
+        dQty: 1
+        percentageOutsideUfo: 0
+        itemSets: *emptyItemSets
+      - alienRank: 2
+        lowQty: 1
+        highQty: 1
+        dQty: 1
+        percentageOutsideUfo: 20
+        itemSets: *emptyItemSets
+      - alienRank: 5
+        lowQty: 5
+        highQty: 5
+        dQty: 3
+        percentageOutsideUfo: 90
+        itemSets: *emptyItemSets
+      - alienRank: 3
+        lowQty: 5
+        highQty: 5
+        dQty: 3
+        percentageOutsideUfo: 90
         itemSets: *emptyItemSets
     reinforcements:
       - type: necronShipReinforcementStart
@@ -257,30 +907,25 @@ alienDeployments:
         #spawnNodeRanks: [4] # leader/commander nodes
         mapBlockFilterType: 1 # marked blocks - inside the monolith
         data:
-          - alienRank: 5
+          - alienRank: 2
             lowQty: 1
             highQty: 1
-            dQty: 3
+            dQty: 0
             itemSets: *emptyItemSets
-          - alienRank: 4
-            lowQty: 1
-            highQty: 1
-            dQty: 1
+          - alienRank: 5
+            lowQty: 2
+            highQty: 2
+            dQty: 2
             itemSets: *emptyItemSets
           - alienRank: 3
-            lowQty: 0
-            highQty: 0
+            lowQty: 1
+            highQty: 1
             dQty: 1
             itemSets: *emptyItemSets
           - alienRank: 6
             lowQty: 0
             highQty: 0
             dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 7
-            lowQty: 0
-            highQty: 0
-            dQty: 0
             itemSets: *emptyItemSets
       - type: necronShipReinforcementEnd
         briefing:
@@ -319,11 +964,6 @@ alienDeployments:
             lowQty: 0
             highQty: 0
             dQty: 1
-            itemSets: *emptyItemSets
-          - alienRank: 7
-            lowQty: 0
-            highQty: 0
-            dQty: 0
             itemSets: *emptyItemSets
     missionBountyItem: STR_REQUISITION_BOUNTY_500K
     missionBountyItemCount: 1

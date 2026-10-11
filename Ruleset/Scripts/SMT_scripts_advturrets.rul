@@ -19,7 +19,7 @@ extended:
               battle_game.getTag temp2 Tag.SMT_RAZOR_HBOLTER_COUNT;
               add temp2 1; # +1 to count
               battle_game.setTag Tag.SMT_RAZOR_HBOLTER_COUNT temp2;
-              #debug_log "TurretCounter (HeavyBolter) " temp2;
+              debug_log "TurretCounter (HeavyBolter) " temp2;
             else eq tokenVal 2;
               battle_game.getTag temp2 Tag.SMT_RAZOR_HFLAME_COUNT;
               add temp2 1; # +1 to count
@@ -77,9 +77,12 @@ extended:
               unit.setSpawnUnit turretUnit;
               unit.setSpawnUnitFaction FACTION_PLAYER;
               unit.setSpawnUnitInstantRespawn 1;
-              #debug_log "Spawn HBolter (tokens) " temp;
+              debug_log "Spawn HBolter (tokens) " temp;
               sub temp 1;
               battle_game.setTag Tag.SMT_RAZOR_HBOLTER_COUNT temp;
+              battle_game.getTag temp Tag.SMT_RAZOR_HBOLTER_DEATHS;
+              add temp 1;
+              battle_game.setTag Tag.SMT_RAZOR_HBOLTER_DEATHS temp;
               return;
             end;
           
@@ -119,6 +122,7 @@ extended:
             if and eq tokenVal 1 gt deathCount 0;
               sub deathCount 1;
               battle_game.setTag Tag.SMT_RAZOR_HBOLTER_DEATHS deathCount;
+              debug_log "Lost HBolter (tokens) " deathCount;
               item.setFuseTimer 0;
               return;
             end;

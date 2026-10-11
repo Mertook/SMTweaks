@@ -14,7 +14,7 @@ extraStrings:
       ### Race
       RACE_CULTIST: Heretic Cultist
       RACE_TRAITOR: Traitor Guard
-      RACE_CHAOSSISTER: Heretic Adeptas
+      RACE_CHAOSSISTER: Heretic Sororitas
       RACE_CSM: Heretic Astartes
       RACE_DEMON: Demon
       RACE_GSC: Genestealer Cult
@@ -38,7 +38,7 @@ extraStrings:
       STR_MANA_CURRENT: "CURRENT POWER"
       STR_MANA_NORMALIZED: "NORMALIZED POWER"
       STR_MANA_UC: "Power"
-      STR_MANA_UFOPEDIA: "{ALT}Ability Power is utilized for Psyker skills, special unit abilities and as munitions for vehicle turrets or inbuilt weapons; when depleted, or manually reloaded, a turret will begin a reload process lasting multiple turns.{ALT}"
+      STR_MANA_UFOPEDIA: "{ALT}Ability Power is utilized for Psyker skills and special unit abilities, as well as munitions for vehicle turrets or inbuilt weapons; when depleted or manually reloaded, a turret will begin a reload process lasting multiple turns.{ALT}"
       STR_COST_MANA: "power"
       manaExperience: "Power experience"
       manaRequired: "Power required?"
@@ -70,6 +70,8 @@ extraStrings:
       STR_THUNDERFIRE_TECH: Thunderfire Drone
       STR_T_MISSILE_BLACK: Tarantula Sentry
       TARANTULA_MISSILE_BLACK_ARMOR: Tarantula Sentry
+      STR_NECRON_TURRET: Gauss Turret
+      STR_NECRON_TURRET_ARMOR: Gauss Turret
       ### MISC
       STR_AWARD_DECOR_0: "Awarded"
       STR_AWARD_DECOR_1: "Second bronze pin"
@@ -140,10 +142,23 @@ extraStrings:
       STR_SIGNUM_ACTION: Squad Link
       STR_SIGNUM_ENEMY: Mark Target
       STR_TOGGLE_STEALTH: "Toggle Stealth Camo"
+      STR_DAMAGE_NONE: "SUPPORT"
+      STR_DAMAGE_ARMOR_PIERCING: "PHYSICAL"
+      STR_DAMAGE_HIGH_EXPLOSIVE: "EXPLOSIVE"
+      STR_DAMAGE_INCENDIARY: "BURNING"
+      STR_DAMAGE_LASER_BEAM: "LASER"
+      STR_DAMAGE_PLASMA_BEAM: "PLASMA"
+      STR_DAMAGE_STUN: "STUN"
+      STR_DAMAGE_MELEE: "MELEE"
+      STR_DAMAGE_ACID: "TOXIC"
+      STR_DAMAGE_SMOKE: "SMOKE"
+      STR_DAMAGE_10: "IMPACT"
+      STR_DAMAGE_11: "MELTA"
       STR_DAMAGE_12: "GRAVITON"
       STR_DAMAGE_13: "WARP"
-      STR_DAMAGE_14: "SONIC"
+      STR_DAMAGE_14: "WARPBANE"
       STR_DAMAGE_15: "GAUSS"
+      STR_DAMAGE_16: "INCENDIARY"
       STR_STRIKE_ORBITAL: Orbital Barrage
       STR_BOMBARD_SET_POSITION: Set Firing Position
       STR_CALL_ORBITAL: Orbital Barrage
@@ -160,8 +175,12 @@ extraStrings:
       STR_CAT_ASSASSIN: Assassin
       STR_CAT_TECHPRIEST: Techpriest
       STR_CAT_ARMOR: Armor
+      STR_TOMB_SMT: Necron Tomb
+      STR_TOMB_SMT_P2: Necron Tomb Depths
+      STR_TOMB_P1_DESCRIPTION: "An ancient Necron tomb has awakened at this location, requiring an immediate purge. Beware heavy resistance and the awakening of more Necrons should you not be swift enough.\n\nQuickly reach the elevator to reach the lower levels then click 'Abort Mission' to progress. Only soldiers on green exit tiles will move on to the next stage, but soldiers outside the zone will still survive as long as the mission is successful."
+      STR_TOMB_P2_DESCRIPTION: "An ancient Necron tomb has awakened at this location, requiring an immediate purge. Beware heavy resistance and the awakening of more Necrons should you not be swift enough. Destroy the Core!\n\nThe mission will only succeed when the Core has been destroyed even if all enemies are eliminated."
       STR_NECRON_REINFORCEMENTS_SHIP_DESC_START: "The Monolith is calling forth reinforcements, teleporting Necrons directly onto the battlefield. Hold the line against the Necron onslaught!"
-      STR_NECRON_REINFORCEMENTS_SHIP_DESC_END: "The flow of reserves has slowed, the Necrons appear unwilling the commit more to this assault. Defeat these final enemy forces and drive them back!"
+      STR_NECRON_REINFORCEMENTS_SHIP_DESC_END: "The flow of reserves has slowed, the Necrons appear unwilling to commit more to this assault. Defeat these final enemy forces and drive them back!"
       STR_NECRON_REINFORCEMENTS_TOMB_DESC_LIGHT: "Force Commander, the Necron Tomb is reacting to our presence and Necrons are being roused from stasis. While their numbers are low for now, we must make haste before they increase in intensity."
       STR_NECRON_REINFORCEMENTS_TOMB_DESC_MEDIUM: "Force Commander, the Tomb is awakening and more warriors are arriving to impede our progress. We need to be quick in reaching our objective or prepare to evacuate lest our forces be overwhelmed!"
       STR_NECRON_REINFORCEMENTS_TOMB_DESC_HEAVY: "Force Commander, the Necron Tomb is on high alert and summoning all of its warriors to bear on us. We must destroy the heart of the base immediately or risk being overwhelemd!"
@@ -492,6 +511,8 @@ extraStrings:
       STR_PISTOLB_AI: Boltpistol Ultra Pattern
       STR_RIFLEB_AI: Bolter Ultra Pattern
       INV_NULL_GAUSS_BACKPACK: ""
+      STR_TOMB_DATASLATE: Necron Tomb Dataslate
+      STR_NECRON_TURRET_SPAWNER: ""
       STR_GAUSS_FLAYER_TOKEN: Gauss Flayer
       STR_GAUSS_FLAYER_PLAYER: Xenarite Gauss Rifle
       STR_GAUSS_FLAYER_ARMOR: Xenarite Gauss Rifle

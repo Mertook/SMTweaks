@@ -1,4 +1,93 @@
 mapScripts:
+  - type: SMT_TOMB_P1 # Necron Tomb part 1
+    commands:
+    #*** Place exit
+    - type: addBlock # center
+      label: 1
+      executionChances: 50
+      rects:
+        - [1, 4, 3, 2]
+      size: 2
+      blocks: [24]
+    - type: addBlock # right
+      label: 2
+      conditionals: [-1]
+      executionChances: 50
+      rects:
+        - [3, 4, 2, 2]
+      size: 2
+      blocks: [22]
+    - type: addBlock # left
+      conditionals: [-1, -2]
+      rects:
+        - [0, 4, 2, 2]
+      size: 2
+      blocks: [23]
+    #*** Place entrances
+    - type: addBlock # spawn points
+      rects:
+        - [0, 0, 5, 2]
+      size: 2
+      blocks: [16, 17, 18, 19]
+      maxUses: [1, 1, 1, 1]
+      executions: 2
+    - type: addBlock # connector
+      rects:
+        - [0, 0, 5, 1]
+      size: 1
+      blocks: [20, 21]
+    #*** Fill remaining area
+    - type: addBlock # 2x2 blocks
+      size: 2
+      blocks: [5, 6, 7, 8, 9]
+      maxUses: [1, 1, 1, 1, 1]
+      executions: 3
+    - type: addBlock # 2x1 blocks
+      size: [2, 1, 0]
+      blocks: [13, 14, 15]
+      maxUses: [1, 1, 1]
+      executions: 2
+    - type: addBlock # 1x2 blocks
+      size: [1, 2, 0]
+      blocks: [10, 11, 12]
+      maxUses: [1, 1, 1]
+      executions: 2
+    - type: fillArea # 1x1 blocks
+      size: 1
+
+  - type: SMT_TOMB_P2 # Necron Tomb part 2
+    commands:
+    #*** Place p2 entrance
+    - type: addBlock
+      rects:
+        - [0, 4, 4, 1]
+      size: [2, 1]
+      blocks: [25, 26]
+    #*** Place crystal
+    - type: addBlock
+      rects:
+        - [0, 0, 4, 2]
+      size: 2
+      blocks: [27, 28, 29, 30]
+    #*** Fill remaining area
+    - type: addBlock # 2x2 blocks
+      size: 2
+      blocks: [5, 6, 7, 8, 9]
+      maxUses: [1, 1, 1, 1, 1]
+      executions: 2
+    - type: addBlock # 2x1 blocks
+      size: [2, 1, 0]
+      blocks: [13, 14, 15]
+      maxUses: [1, 1, 1]
+      executions: 2
+    - type: addBlock # 1x2 blocks
+      size: [1, 2, 0]
+      blocks: [10, 11, 12]
+      maxUses: [1, 1, 1]
+      executions: 2
+    - type: fillArea # 1x1 blocks
+      size: 1
+
   - type: INDUSTRIALURBANMONO # Terror 4
     commands:
     #*** Add Road

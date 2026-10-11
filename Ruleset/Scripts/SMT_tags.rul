@@ -39,7 +39,7 @@ extended:
       SMT_RESTRICTED_DAMAGE_PEN: int    # Percentage of weapon power when used by incorrect units
       SMT_RESTRICTED_DAMAGE_MELEE: int  # if !0, reduce melee power % by this much when used by incorrect units
       ## Shields
-      ## Custom Ammo
+      ## Custom Damage
       SMT_AMMO_BONUSDMG_FIRINGACC: int  # % bonus damage granted from units Firing Accuracy: (FA - 100) * Tag / 100
       SMT_DEREVENANT_AMMO: int          # Instantly kills Necrons that are or will be knocked unconcious - value = % bonus damage added against 2x2 Necrons
       SMT_AMMO_HP_PREDMG: int           # % of power directly added to health damage ignoring armor
@@ -53,6 +53,7 @@ extended:
       ITEM_IGNITES_TARGETS: int         # Weapon increases fire duration by X on hit
       SMT_LETHAL_STUN: int              # Weapon deals additional HP damage if stun is greater than units HP
       SMT_MORTAL_WOUNDS: int            # Weapon ignores special damage resistances (Feel No Pain, Heroic Save, etc)
+      SMT_DUAL_RESIST_TYPE: int         # Weapon averages damage with secondary resist type
       ## Plasma Heat
       ITEM_HEAT_SINK_COLOR: int         # sprite color index for heatsink parts that glow, if not set defaults to 2 (red)
       ITEM_HEAT_ACCURACY_PEN: int       # how much is this item affected by accuracy penalties from overheating? 0 = 100%, 1 = 3/4, 2 = 3/5, 3 = 3/6, 4 = 3/7
@@ -63,6 +64,9 @@ extended:
     RuleArmor:
       ## Craft Turrets
       STARTS_WITH_FULL_TUS: int         # make sure unit has full starting TUs regardless of other scripts
+      SMT_CRAFT_COMMAND_TYPE: int       # marks unit as a deployment command unit - XYY, X = faction, YY = deploy type
+      SMT_CRAFT_COMMAND_LIST: int       # bitmask of all weapon types that can be used by this command unit
+      SMT_CRAFT_DEPLOYED_UNIT: int      # marks unit as a deployed craft gear - X = associated item token type
       SMT_RAZORBACK_TURRET: int         # marks unit as Razorback default turret that can be replaced
       SMT_RAZOR_SBOLTER_TURRET: int     # marks unit as Razorback Stormbolter turret
       SMT_RAZOR_HBOLTER_TURRET: int     # marks unit as Razorback Heavy Bolter turret
@@ -102,7 +106,7 @@ extended:
       SMT_ARMOR_SHRED_MELTA_RESISTANCE: int     # Reduce armor damage by % (Melta damage)
       SMT_ARMOR_MORALE_RESISTANCE: int          # Reduce morale damage by %
       SMT_ARMOR_STUN_RESISTANCE: int            # Reduce stun damage by %
-      SMT_ARMOR_STAGGER_RESISTANCE: int         # Reduce Stamina damage by %
+      SMT_ARMOR_STAGGER_RESISTANCE: int         # Reduce stamina damage by %
       SMT_ARMOR_IMMOBILIZE_RESISTANCE: int      # Reduce TU damage by %
       ## Experience Gain
       ARMOR_GAINS_PSISTRENGTH_SECONDARY_EXPERIENCE: int # gain up to this much PsiStrength when earning experience in battles
@@ -189,6 +193,11 @@ extended:
       SMT_MARKED_INTENSITY: int         # store debuff strength
       SMT_SERVITOR_ENHANCED: int        # buff strength for servitor
       UNIT_MOVESPEED_MODIFIERS: int     # combined movespeed modifiers for a unit
+      ## Corruption
+      UNIT_CORRUPTION_NURGLE: int       # Amount of Nurgle corruption unit currently has
+      UNIT_CORRUPTION_TZEENTCH: int     # Amount of Tzeentch corruption unit currently has
+      UNIT_ORIGINAL_BRAVERY: int        # Unit Bravery without reductions
+      UNIT_CORRUPTION_SLAANESH: int     # Amount of Slaanesh corruption unit currently has
       ## Rampage
       SMT_RAMPAGE_COUNT: int            # # of times unit has refunded TUs from kills
       ## Regeneration

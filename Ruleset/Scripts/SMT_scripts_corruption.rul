@@ -1,0 +1,255 @@
+# extended:
+  # tagsFile: Ruleset/Scripts/SMT_tags.rul
+
+  # scripts:
+    # damageUnit:
+      # - new: SMTS_dU_corruption_application
+        # offset: 22 # handle applying corruption & adding debuffs
+        # code: |
+          # var ptr BattleItem ammoItem;
+          # var int infectionType;
+          # var int infectionResist;
+          # var int infectionDamage;
+          # var int corruptionLevel;
+          # var int temp;
+          # var int temp2;
+
+          # damaging_item.getTag infectionType Tag.INFECTION_TYPE;
+          # if eq infectionType 0; # skip if no corruption type
+            # return;
+          # end;
+
+          # if le to_mana 0; # skip if no corruption dealt
+            # return;
+          # end;
+
+          # unit.getTag infectionResist Tag.INFECTION_RESIST;
+          # if eq infectionResist -1; # skip if target is corruption immune
+            # return;
+          # end;
+
+          # unit.getTag temp Tag.UNIT_TYPE_MECHANICAL;
+          # unit.getTag temp2 Tag.UNIT_TYPE_LIVING;
+          # if and gt temp 0 eq temp2 0; # skip if mechanical and not living (catch-all for various vehicle turrets)
+            # return;
+          # end;
+
+          # set infectionDamage to_mana;
+          # unit.Stats.getPsiSkill temp;
+          # add infectionResist temp;
+          # set temp infectionDamage;
+          # div infectionResist 3; # 3 devotion = 1% resist
+          # limit_upper infectionResist 80; # max 80% reduction
+          # muldiv temp infectionResist 100;
+          # sub infectionDamage temp;
+
+          # if or eq infectionType 1 eq infectionType 2; # Nurgle
+            # unit.getTag corruptionLevel Tag.UNIT_CORRUPTION_NURGLE;
+            # add corruptionLevel infectionDamage;
+            # unit.setTag Tag.UNIT_CORRUPTION_NURGLE corruptionLevel;
+          # end;
+          # if or eq infectionType 1 eq infectionType 3; # Tzeentch
+            # unit.getTag corruptionLevel Tag.UNIT_CORRUPTION_TZEENTCH;
+            # add corruptionLevel infectionDamage;
+            # unit.setTag Tag.UNIT_CORRUPTION_TZEENTCH corruptionLevel;
+            # unit.Stats.getBravery temp;
+            # unit.getTag temp2 Tag.UNIT_ORIGINAL_BRAVERY; # adjust unit bravery based on new corruption
+            # if eq temp2 0;
+              # unit.setTag Tag.UNIT_ORIGINAL_BRAVERY temp;
+              # set temp2 temp;
+            # end;
+            # limit_upper corruptionLevel 200; # cap at -100 bravery
+            # div corruptionLevel 20;
+            # mul corruptionLevel 10; # steps of 10
+            # sub temp corruptionLevel;
+            # limit_lower temp 10; # can't go below 10 bravery
+            # unit.Stats.setBravery temp;
+          # end;
+          # if or eq infectionType 1 eq infectionType 4; # Slaanesh
+            # unit.getTag corruptionLevel Tag.UNIT_CORRUPTION_SLAANESH;
+            # add corruptionLevel infectionDamage;
+            # unit.setTag Tag.UNIT_CORRUPTION_SLAANESH corruptionLevel;
+          # end;
+
+          # return;
+
+      # - new: SMTS_dU_corruption_removal
+        # offset: 23 # handle removing corruption and debuffs
+        # code: |
+          # var int corruptionLevel;
+          # var int devotion;
+          # var int temp;
+
+          # unit.getTag corruptionLevel Tag.INFECTION_RESIST;
+
+          # end;
+          # return;
+
+      # - delete: ROSIGMA_dU_infections
+      # - delete: ROSIGMA_dU_infections_2
+
+    # newTurnUnit:
+      # - new: SMTS_nTU_corruption
+        # offset: 22  # 
+        # code: |
+          # var int infectionDamage;
+          # var int infectionType;
+
+          # # recover based on devotion, handle ongoing stat modifiers
+
+          # return;
+
+      # - delete: ROSIGMA_nTU_infections
+
+    # recolorItemSprite:
+      # - new: SMTS_rIS_corruption
+        # offset: 22  # change unit color to green so player knows who's infected
+        # code: |
+          # var int infectionDamage; # would be cool if I could get the offset so I could change specific pixels to show a number
+          # var int infectionType;
+          # var ptr BattleUnit myUnit;
+          # var int INFECTION_LOW_THRESHOLD;
+          # var int INFECTION_MID_THRESHOLD;
+          # var int INFECTION_HIGH_THRESHOLD;
+
+          # if or eq blit_part blit_item_big eq blit_part blit_item_floor;
+            # item.getBattleUnit myUnit;
+            # if neq myUnit null;
+              # myUnit.getTag infectionDamage Tag.CURRENT_INFECTION_DAMAGE;
+              # myUnit.getTag infectionType Tag.CURRENT_INFECTION_TYPE;
+              # if gt infectionDamage 0;
+                # set INFECTION_LOW_THRESHOLD 20;
+                # set INFECTION_MID_THRESHOLD 40;
+                # set INFECTION_HIGH_THRESHOLD 70;
+                # if eq infectionType 1;
+                  # set_color new_pixel COLOR_X1_GREEN0; # Nurgle infection
+                  # if gt infectionDamage INFECTION_LOW_THRESHOLD;
+                    # if and gt infectionDamage INFECTION_LOW_THRESHOLD le infectionDamage INFECTION_MID_THRESHOLD; # mid level infection
+                      # add_shade new_pixel 2;
+                    # else and gt infectionDamage INFECTION_MID_THRESHOLD le infectionDamage INFECTION_HIGH_THRESHOLD; # high level infection
+                      # add_shade new_pixel 4;
+                    # else; # very high level infection
+                      # add_shade new_pixel 6;
+                    # end;
+                  # end;
+                # # GSC INFECTION
+                # else eq infectionType 2;
+                  # set_color new_pixel COLOR_X1_PURPLE0; # GSC infection
+                  # if gt infectionDamage INFECTION_LOW_THRESHOLD;
+                    # if and gt infectionDamage INFECTION_LOW_THRESHOLD le infectionDamage INFECTION_MID_THRESHOLD; # mid level infection
+                      # add_shade new_pixel 2;
+                    # else and gt infectionDamage INFECTION_MID_THRESHOLD le infectionDamage INFECTION_HIGH_THRESHOLD; # high level infection
+                      # add_shade new_pixel 4;
+                    # else; # very high level infection
+                      # add_shade new_pixel 6;
+                    # end;
+                  # end;
+                # # SLAANESH INFECTION
+                # else eq infectionType 3;
+                  # set_color new_pixel COLOR_X1_PURPLE1;
+                  # if gt infectionDamage INFECTION_LOW_THRESHOLD;
+                    # if and gt infectionDamage INFECTION_LOW_THRESHOLD le infectionDamage INFECTION_MID_THRESHOLD; # mid level infection
+                      # add_shade new_pixel 2;
+                    # else and gt infectionDamage INFECTION_MID_THRESHOLD le infectionDamage INFECTION_HIGH_THRESHOLD; # high level infection
+                      # add_shade new_pixel 4;
+                    # else; # very high level infection
+                      # add_shade new_pixel 6;
+                    # end;
+                  # end;
+                # # TZEENTCH INFECTION
+                # else eq infectionType 4;
+                  # set_color new_pixel COLOR_X1_BLUE1; # Tzeentch infection
+                  # if gt infectionDamage INFECTION_LOW_THRESHOLD;
+                    # if and gt infectionDamage INFECTION_LOW_THRESHOLD le infectionDamage INFECTION_MID_THRESHOLD; # mid level infection
+                      # add_shade new_pixel 2;
+                    # else and gt infectionDamage INFECTION_MID_THRESHOLD le infectionDamage INFECTION_HIGH_THRESHOLD; # high level infection
+                      # add_shade new_pixel 4;
+                    # else; # very high level infection
+                      # add_shade new_pixel 6;
+                    # end;
+                  # end;
+                # end;
+              # end;
+            # end;
+          # end;
+          # return new_pixel;
+
+      # - delete: ROSIGMA_rIS_infections
+
+    # recolorUnitSprite:
+      # - new: SMTS_rUS_infections
+        # offset: 22  # change unit color to green so player knows who's infected
+        # code: |
+          # var int infectionDamage;
+          # var int infectionType;
+          # var int INFECTION_LOW_THRESHOLD;
+          # var int INFECTION_MID_THRESHOLD;
+          # var int INFECTION_HIGH_THRESHOLD;
+
+          # unit.getTag infectionDamage Tag.CURRENT_INFECTION_DAMAGE;
+          # unit.getTag infectionType Tag.CURRENT_INFECTION_TYPE;
+
+          # if gt infectionDamage 0;
+            # set INFECTION_LOW_THRESHOLD 20;
+            # set INFECTION_MID_THRESHOLD 40;
+            # set INFECTION_HIGH_THRESHOLD 70;
+            # # NURGLE INFECTION
+            # if eq infectionType 1;
+              # set_color new_pixel COLOR_X1_GREEN0; # Nurgle infection
+              # if gt infectionDamage INFECTION_LOW_THRESHOLD;
+                # if and gt infectionDamage INFECTION_LOW_THRESHOLD le infectionDamage INFECTION_MID_THRESHOLD; # mid level infection
+                  # add_shade new_pixel 2;
+                # else and gt infectionDamage INFECTION_MID_THRESHOLD le infectionDamage INFECTION_HIGH_THRESHOLD; # high level infection
+                  # add_shade new_pixel 3;
+                # else; # very high level infection
+                  # add_shade new_pixel 5;
+                # end;
+              # end;
+            # # GSC INFECTION
+            # else eq infectionType 2;
+              # set_color new_pixel COLOR_X1_PURPLE0; # GSC infection
+              # if gt infectionDamage INFECTION_LOW_THRESHOLD;
+                # if and gt infectionDamage INFECTION_LOW_THRESHOLD le infectionDamage INFECTION_MID_THRESHOLD; # mid level infection
+                  # add_shade new_pixel 2;
+                # else and gt infectionDamage INFECTION_MID_THRESHOLD le infectionDamage INFECTION_HIGH_THRESHOLD; # high level infection
+                  # add_shade new_pixel 3;
+                # else; # very high level infection
+                  # add_shade new_pixel 5;
+                # end;
+              # end;
+            # # SLAANESH INFECTION
+            # else eq infectionType 3;
+              # set_color new_pixel COLOR_X1_PURPLE1;
+              # if gt infectionDamage INFECTION_LOW_THRESHOLD;
+                # if and gt infectionDamage INFECTION_LOW_THRESHOLD le infectionDamage INFECTION_MID_THRESHOLD; # mid level infection
+                  # add_shade new_pixel 2;
+                # else and gt infectionDamage INFECTION_MID_THRESHOLD le infectionDamage INFECTION_HIGH_THRESHOLD; # high level infection
+                  # add_shade new_pixel 3;
+                # else; # very high level infection
+                  # add_shade new_pixel 5;
+                # end;
+              # end;
+            # # TZEENTCH INFECTION
+            # else eq infectionType 4;
+              # set_color new_pixel COLOR_X1_BLUE1; # Tzeentch infection
+              # if gt infectionDamage INFECTION_LOW_THRESHOLD;
+                # if and gt infectionDamage INFECTION_LOW_THRESHOLD le infectionDamage INFECTION_MID_THRESHOLD; # mid level infection
+                  # add_shade new_pixel 2;
+                # else and gt infectionDamage INFECTION_MID_THRESHOLD le infectionDamage INFECTION_HIGH_THRESHOLD; # high level infection
+                  # add_shade new_pixel 3;
+                # else; # very high level infection
+                  # add_shade new_pixel 5;
+                # end;
+              # end;
+            # end;
+          # end;
+
+          # return new_pixel;
+
+      # - delete: ROSIGMA_rUS_infections
+
+    # returnFromMissionUnit:
+      # - delete: ROSIGMA_rFMU_infections
+
+    # healUnit:
+      # - new: ROSIGMA_healU_infections
